@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";
 // TODO: Add your own Firebase configuration
 // For more information on how to get this, visit: https://firebase.google.com/docs/web/setup#available-libraries
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCRkpICJx9lXq6ggNJFjjMVB93l5cVGyp8",
+  authDomain: "teao-marama.firebaseapp.com",
+  projectId: "teao-marama",
+  storageBucket: "teao-marama.appspot.com",
+  messagingSenderId: "28147937673",
+  appId: "YOUR_APP_ID" // Replace with your actual App ID from Firebase console
 };
 
 // Initialize Firebase
