@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => (
   <header className="min-h-screen flex items-center">
@@ -8,8 +9,12 @@ const Hero: React.FC = () => (
         <h1 className="mb-4">Te Ao Mārama — A teaching resource home</h1>
         <p className="lead mb-6">A calm, consistent place for lessons, unit plans, handouts and interactive resources. Built to scale — beautifully.</p>
         <div className="flex gap-3">
-          <Button>Browse Resources</Button>
-          <Button variant="muted">Style guide</Button>
+          <Link to="/">
+            <Button>Browse Resources</Button>
+          </Link>
+          <Link to="/styleguide">
+            <Button variant="muted">Style guide</Button>
+          </Link>
         </div>
       </div>
     </div>
