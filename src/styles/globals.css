@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables.css";
+
+html,body,#root {
+  height: 100%;
+}
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  font-size: var(--type-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+
+h1{ font-size:var(--type-scale-h1); letter-spacing:var(--letter-sub); }
+h2{ font-size:var(--type-scale-h2); letter-spacing:var(--letter-sub); }
+h3{ font-size:var(--type-scale-h3); }
+
+.lead { font-size:1.125rem; color:var(--color-muted); }
+
+@layer utilities {
+  .bg-surface { background-color: var(--color-surface); }
+  .text-muted { color: var(--color-muted); }
+  .text-accent { color: var(--color-accent); }
+  .bg-accent { background-color: var(--color-accent); color:white; }
+  .rounded-md { border-radius: var(--radius-sm); }
+}

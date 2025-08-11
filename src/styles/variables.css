@@ -1,0 +1,27 @@
+:root{
+  --color-bg: #E5E3DF;
+  --color-surface: #F5F4F2;
+  --color-text: #2B2B2B;
+  --color-muted: #6B6B6B;
+  --color-accent: #A6937C;
+  --color-dark: #1A1A1A;
+  --color-link: #8B7E6A;
+
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 64px;
+
+  --type-base: 1rem;
+  --type-scale-h1: 2.5rem;
+  --type-scale-h2: 2rem;
+  --type-scale-h3: 1.5rem;
+
+  --letter-body: 0em;
+  --letter-sub: 0.02em;
+  --letter-nav: 0.05em;
+}
