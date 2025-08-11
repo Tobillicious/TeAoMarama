@@ -44,38 +44,32 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p className="error-message">{error}</p>}
-      {resetMsg && <p className="success-message">{resetMsg}</p>}
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <button type="button" onClick={handleReset} style={{ marginTop: '10px' }}>
-        Forgot password?
-      </button>
-      <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
+    <form onSubmit={handleLogin} className="flex flex-col gap-4 bg-white rounded-lg shadow p-6 w-full">
+      <h2 className="text-xl font-bold text-indigo-700 mb-2 text-center">Login</h2>
+      {error && <p className="text-red-600 text-sm text-center">Firebase: {error}</p>}
+      {resetMsg && <p className="text-green-600 text-sm text-center">{resetMsg}</p>}
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+      />
+      <button type="submit" className="bg-indigo-600 text-white font-semibold py-2 rounded hover:bg-indigo-700 transition">Login</button>
+      <button type="button" onClick={handleReset} className="text-indigo-600 hover:underline text-sm mt-2">Forgot password?</button>
+      <p className="text-center text-sm mt-2">
+        Don't have an account? <Link to="/signup" className="text-indigo-600 hover:underline">Sign Up</Link>
       </p>
-    </div>
+    </form>
   );
 }
 
