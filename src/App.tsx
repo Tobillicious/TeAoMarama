@@ -3,12 +3,24 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import { AuthProvider, useAuth } from './services/AuthContext';
 
+import { signOut } from 'firebase/auth';
+import { auth } from './firebaseConfig';
+
 function Dashboard() {
   const { currentUser } = useAuth();
+  const handleLogout = async () => {
+    await signOut(auth);
+    window.location.reload();
+  };
   return (
     <div className="flex flex-col items-center justify-center bg-white rounded-xl shadow-lg p-10 mt-8 w-full max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-2 text-gray-800">Welcome, {currentUser?.email}!</h2>
-      <p className="text-gray-600">You are now logged in.</p>
+      <p className="text-gray-600 mb-6">You are now logged in.</p>
+      <div className="mb-6 text-center">
+        <span className="text-lg font-semibold text-indigo-600">Kia kaha! Keep up the good mahi!</span>
+        <p className="text-sm text-gray-500 mt-2">This is your dashboard. More features coming soon!</p>
+      </div>
+      <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Log Out</button>
     </div>
   );
 }
