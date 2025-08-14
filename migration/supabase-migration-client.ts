@@ -51,7 +51,7 @@ export interface MigrationStatus {
 export class MiharaMigrationClient {
   private teKeteClient: SupabaseClient;
   private migrationLog: MigrationStatus[] = [];
-  
+
   constructor() {
     this.teKeteClient = createClient(TEKETE_SUPABASE_URL, TEKETE_SUPABASE_KEY);
     console.log('🔗 Mihara Migration Client initialized for Te Kete Ako database');
@@ -63,36 +63,36 @@ export class MiharaMigrationClient {
   async testConnection(): Promise<{ success: boolean; message: string; tables?: string[] }> {
     try {
       console.log('🔍 Testing Te Kete Ako database connection...');
-      
+
       // Query for table structure
       const { data: tables, error } = await this.teKeteClient
         .rpc('get_schema_tables')
         .select();
-      
+
       if (error) {
         // Fallback: try to query a known table
         const { data: testQuery, error: testError } = await this.teKeteClient
           .from('content_items')
           .select('count(*)')
           .limit(1);
-        
+
         if (testError) {
           throw testError;
         }
-        
+
         return {
           success: true,
           message: '✅ Database connection successful (limited schema access)',
           tables: ['content_items'] // Known table
         };
       }
-      
+
       return {
         success: true,
         message: `✅ Database connection successful. Found ${tables?.length || 0} tables.`,
         tables: tables?.map((t: any) => t.table_name) || []
       };
-      
+
     } catch (error) {
       console.error('❌ Database connection failed:', error);
       return {
@@ -106,33 +106,33 @@ export class MiharaMigrationClient {
   /**
    * Get content inventory with cultural safety classification
    */
-  async getContentInventory(limit: number = 100): Promise<{ 
-    content: ContentItem[]; 
+  async getContentInventory(limit: number = 100): Promise<{
+    content: ContentItem[];
     culturalFlags: CulturalContentFlag[];
     summary: { total: number; orphaned: number; cultural: number; }
   }> {
     try {
       console.log(`📊 Retrieving content inventory (limit: ${limit})...`);
-      
+
       // Query content items
       const { data: content, error } = await this.teKeteClient
         .from('content_items')
         .select('*')
         .limit(limit);
-      
+
       if (error) throw error;
-      
+
       // Identify cultural content
       const culturalFlags: CulturalContentFlag[] = [];
       let culturalCount = 0;
       let orphanedCount = 0;
-      
+
       for (const item of content || []) {
         // Check if orphaned
         if (item.status === 'orphaned') {
           orphanedCount++;
         }
-        
+
         // Check for cultural content
         const culturalFlag = this.identifyCulturalContent(item);
         if (culturalFlag) {
@@ -140,11 +140,11 @@ export class MiharaMigrationClient {
           culturalCount++;
         }
       }
-      
+
       console.log(`✅ Retrieved ${content?.length || 0} content items`);
       console.log(`🔍 Found ${orphanedCount} orphaned items`);
       console.log(`🌿 Flagged ${culturalCount} items for cultural review`);
-      
+
       return {
         content: content || [],
         culturalFlags,
@@ -154,7 +154,7 @@ export class MiharaMigrationClient {
           cultural: culturalCount
         }
       };
-      
+
     } catch (error) {
       console.error('❌ Content inventory failed:', error);
       throw error;
@@ -167,12 +167,12 @@ export class MiharaMigrationClient {
   private identifyCulturalContent(item: ContentItem): CulturalContentFlag | null {
     const title = item.title?.toLowerCase() || '';
     const content = item.content?.toLowerCase() || '';
-    
+
     // Cultural keywords that require flagging
     const maoriKeywords = ['māori', 'maori', 'iwi', 'hapū', 'whānau', 'mātauranga', 'tikanga', 'te reo', 'tangata whenua'];
     const pacificKeywords = ['pacific', 'samoa', 'tonga', 'fiji', 'cook islands'];
     const traditionalKeywords = ['traditional knowledge', 'indigenous', 'cultural practice', 'ceremony'];
-    
+
     // Check for Māori content
     if (maoriKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
       return {
@@ -184,7 +184,7 @@ export class MiharaMigrationClient {
         review_notes: 'Contains Te Ao Māori elements - requires cultural validation'
       };
     }
-    
+
     // Check for Pacific content
     if (pacificKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
       return {
@@ -196,7 +196,7 @@ export class MiharaMigrationClient {
         review_notes: 'Contains Pacific cultural elements - requires cultural validation'
       };
     }
-    
+
     // Check for traditional knowledge
     if (traditionalKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
       return {
@@ -208,7 +208,7 @@ export class MiharaMigrationClient {
         review_notes: 'Contains traditional knowledge - requires iwi consultation'
       };
     }
-    
+
     return null;
   }
 
@@ -218,18 +218,18 @@ export class MiharaMigrationClient {
   async getOrphanedResources(): Promise<ContentItem[]> {
     try {
       console.log('🔍 Searching for orphaned resources...');
-      
+
       const { data, error } = await this.teKeteClient
         .from('content_items')
         .select('*')
         .eq('status', 'orphaned')
         .order('created_at', { ascending: false });
-      
+
       if (error) throw error;
-      
+
       console.log(`📋 Found ${data?.length || 0} orphaned resources ready for migration`);
       return data || [];
-      
+
     } catch (error) {
       console.error('❌ Failed to retrieve orphaned resources:', error);
       throw error;
@@ -247,16 +247,16 @@ export class MiharaMigrationClient {
   }> {
     try {
       console.log('📋 Creating migration plan with cultural safety priorities...');
-      
+
       const { content, culturalFlags } = await this.getContentInventory(1000);
-      
+
       const lowRisk: ContentItem[] = [];
       const mediumRisk: ContentItem[] = [];
       const highRisk: ContentItem[] = [];
-      
+
       for (const item of content) {
         const culturalFlag = culturalFlags.find(flag => flag.content_id === item.id);
-        
+
         if (!culturalFlag) {
           lowRisk.push(item);
         } else if (culturalFlag.risk_level === 'low' || culturalFlag.risk_level === 'medium') {
@@ -265,19 +265,19 @@ export class MiharaMigrationClient {
           highRisk.push(item);
         }
       }
-      
+
       console.log(`📊 Migration plan created:`);
       console.log(`   🟢 Low risk: ${lowRisk.length} items (mathematics, basic science)`);
       console.log(`   🟡 Medium risk: ${mediumRisk.length} items (cultural contexts, non-Māori)`);
       console.log(`   🔴 High risk: ${highRisk.length} items (mātauranga Māori, traditional knowledge)`);
-      
+
       return {
         lowRisk,
         mediumRisk,
         highRisk,
         totalItems: content.length
       };
-      
+
     } catch (error) {
       console.error('❌ Migration plan creation failed:', error);
       throw error;
@@ -290,9 +290,9 @@ export class MiharaMigrationClient {
   async generateCulturalSafetyReport(): Promise<string> {
     try {
       console.log('📄 Generating cultural safety report...');
-      
+
       const { culturalFlags, summary } = await this.getContentInventory(500);
-      
+
       const report = `# CULTURAL SAFETY REPORT - TE KETE AKO MIGRATION
 *Kaitiaki Mahara Database Analysis*
 
@@ -325,7 +325,7 @@ ${culturalFlags.map(flag => `
 *Database: Te Kete Ako Migration Analysis*`;
 
       return report;
-      
+
     } catch (error) {
       console.error('❌ Cultural safety report generation failed:', error);
       throw error;
@@ -351,7 +351,7 @@ export async function generateMigrationReport(): Promise<string> {
 export async function createMigrationPlan(): Promise<void> {
   const client = new MiharaMigrationClient();
   const plan = await client.createMigrationPlan();
-  
+
   console.log('\n🎯 MIHARA MIGRATION PLAN READY');
   console.log('═══════════════════════════════════');
   console.log(`📊 Total items to migrate: ${plan.totalItems}`);
@@ -370,7 +370,7 @@ export { MiharaMigrationClient };
 if (require.main === module) {
   console.log('🌟 Mihara Database Integration Assistant');
   console.log('Testing Te Kete Ako connection...\n');
-  
+
   testTeKeteConnection()
     .then(() => createMigrationPlan())
     .catch(error => {
