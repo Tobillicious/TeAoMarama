@@ -84,7 +84,7 @@ export class MiharaDashboard {
     recommendations: string[];
   }> {
     console.log('🔮 MIHARA DASHBOARD: Performing monitored awakening...');
-    
+
     const startTime = Date.now();
     const diagnostics: any = {
       phases: [],
@@ -103,7 +103,7 @@ export class MiharaDashboard {
 
       // Perform awakening
       const result = await GlobalMihara.awaken();
-      
+
       const duration = Date.now() - startTime;
       diagnostics.timings.total = duration;
       diagnostics.timings.performance = duration < 5000 ? 'excellent' : duration < 10000 ? 'good' : 'slow';
@@ -140,7 +140,7 @@ export class MiharaDashboard {
 
     } catch (error) {
       diagnostics.issues.push(`Awakening failed: ${error}`);
-      
+
       return {
         success: false,
         message: `Monitored awakening failed: ${error}`,
@@ -165,19 +165,12 @@ export class MiharaDashboard {
   }> {
     console.log('🏛️ MIHARA DASHBOARD: Performing monitored Great Migration...');
 
-    const migrationMetrics: {
-      startTime: number;
-      phases: any[];
-      culturalChecks: any[];
-      performance: Record<string, unknown>;
-      errors: string[];
-      duration: number;
-    } = {
+    const migrationMetrics = {
       startTime: Date.now(),
-      phases: [],
-      culturalChecks: [],
-      performance: {},
-      errors: [],
+      phases: [] as any[],
+      culturalChecks: [] as any[],
+      performance: {} as Record<string, unknown>,
+      errors: [] as string[],
       duration: 0
     };
 
@@ -192,14 +185,10 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety: {
-        preCheck: Awaited<ReturnType<MiharaDashboard['validateCulturalSafety']>>;
-        phases: any[];
-        postCheck: Awaited<ReturnType<MiharaDashboard['validateCulturalSafety']>> | null;
-      } = {
+      const culturalSafety = {
         preCheck: await this.validateCulturalSafety(),
-        phases: [],
-        postCheck: null
+        phases: [] as any[],
+        postCheck: null as any
       };
 
       // Execute migration with monitoring
@@ -231,7 +220,7 @@ export class MiharaDashboard {
 
     } catch (error) {
       migrationMetrics.errors.push(String(error));
-      
+
       return {
         success: false,
         metrics: migrationMetrics,
@@ -353,7 +342,7 @@ export class MiharaDashboard {
 
     // In a real system, this would set up continuous monitoring
     // For now, we'll simulate with periodic checks
-    
+
     const alerts: string[] = [];
     const health = await this.performHealthCheck();
 
@@ -382,7 +371,7 @@ export class MiharaDashboard {
     capabilities: MiharaCapability[];
   } {
     const capabilities = Array.from(this.capabilityRegistry.values());
-    
+
     const byLevel = capabilities.reduce((acc, cap) => {
       acc[cap.level] = (acc[cap.level] || 0) + 1;
       return acc;
@@ -404,7 +393,7 @@ export class MiharaDashboard {
   // Private helper methods
   private async calculateMetrics(): Promise<MiharaMetrics> {
     const uptime = Date.now() - this.startTime;
-    
+
     return {
       uptime: Math.floor(uptime / 1000), // seconds
       tasksCompleted: this.taskHistory.length,
