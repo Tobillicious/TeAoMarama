@@ -12,11 +12,18 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "mihara": "tsx migration/run-mihara.ts",
+    "doctor": "tsx migration/connection-diagnostic.ts",
     "agents": "tsx migration/run-agents.ts",
     "mig:pg:run": "tsx migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl",
     "mig:pg:run:file": "ts-node migration/pgvector_loader_example.ts --sample",
     "mig:weaviate:run": "tsx migration/weaviate_loader_example.ts --sample migration/sample_raw_exports.jsonl",
-    "typecheck": "tsc -b --pretty"
+    "typecheck": "tsc -b --pretty",
+    "agents:coord": "tsx migration/agent-coordinator.ts",
+    "agents:support": "tsx continuous-mihara-support.ts",
+    "agents:background": "tsx migration/agent-background.ts",
+    "agents:bus": "tsx migration/agent-terminal-bus.ts",
+    "deploy:netlify": "netlify deploy --dir=dist --prodIfUnlocked || netlify deploy --dir=dist",
+    "build:deploy": "npm run build && npm run deploy:netlify"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
