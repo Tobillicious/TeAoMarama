@@ -13,6 +13,9 @@ import { Client } from 'pg';
 import crypto from 'crypto';
 import axios from 'axios';
 import fs from 'fs';
+import { createRequire } from 'module';
+import { pathToFileURL } from 'url';
+const require = createRequire(import.meta.url);
 
 // ---- env config (backend-only) ----
 const ENV = process.env.MIGRATION_ENV || 'staging';
@@ -31,8 +34,8 @@ const DRY_RUN_NO_FIREBASE = String(process.env.DRY_RUN_NO_FIREBASE || '').toLowe
 let db: FirebaseFirestore.Firestore | null = null;
 if (!DRY_RUN_NO_FIREBASE) {
   if (!admin.apps.length) {
-    const { readFileSync } = await import('fs');
-    const sa = JSON.parse(readFileSync(FIREBASE_SA_PATH, 'utf8'));
+    const require = createRequire(import.meta.url);
+    const sa = require(FIREBASE_SA_PATH);
     admin.initializeApp({
       credential: admin.credential.cert(sa),
       projectId: FIREBASE_PROJECT_ID,
@@ -156,12 +159,16 @@ async function processOne(payload: any) {
   for (let i = 0; i < chunks.length; i++) {
     await upsertChunk(resource.resourceId, i, chunks[i], resource.canonicalUrl);
   }
-  await db.collection('imports').doc(resourceId).set({
-    resourceId,
-    status: 'imported',
-    env: ENV,
-    migratedAt: admin.firestore.FieldValue.serverTimestamp(),
-  }, { merge: true });
+  if (DRY_RUN_NO_FIREBASE || !db) {
+    console.log('[dry-run] mark import imported', { resourceId, env: ENV });
+  } else {
+    await db.collection('imports').doc(resourceId).set({
+      resourceId,
+      status: 'imported',
+      env: ENV,
+      migratedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+  }
   
   return { resourceId, skipped: false, chunks: chunks.length };
 }
@@ -197,6 +204,18 @@ async function run() {
   }
 }
 
-if (require.main === module) {
+// ESM-compatible entrypoint check
+const isDirectRun = (() => {
+  try {
+    const thisUrl = import.meta.url;
+    const invoked = pathToFileURL(process.argv[1] || '').href;
+    return thisUrl === invoked;
+  } catch {
+    return true; // fallback to run
+  }
+})();
+
+if (isDirectRun) {
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   run();
 }

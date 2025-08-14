@@ -102,3 +102,42 @@ Ready to serve! 🚀
 ---
 
 **END MESSAGE**
+
+---
+
+## 🧪 DRY-RUN REPORT — pgvector loader (stub mode)
+**Timestamp**: 2025-08-14 17:33 NZST
+
+**Decision**: `DEC-20250814-001` (Approved)
+
+**Command**:
+```
+EMBEDDING_PROVIDER=stub \
+DRY_RUN_NO_DB=true \
+DRY_RUN_NO_FIREBASE=true \
+FIREBASE_SERVICE_ACCOUNT_JSON_PATH=/dev/null \
+FIREBASE_PROJECT_ID=stub-project \
+PG_URL=postgresql://stub:stub@localhost:5432/stub_db \
+npx tsx migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl
+```
+
+**Outcome**:
+- [dry-run] Skipped Firebase init and Postgres connect/schema (as intended)
+- Processed 2 sample resources
+- Logged upserts for `resources/*`, `imports/*`, and `resource_chunks` without external writes
+- Terminal summary included “Processed …” for each item and “Done”
+
+**Resource IDs processed**:
+- `f56986ffc2f45f5101e1502449a23a9b00c02a288237f396800ffdb98d19767d` (1 chunk)
+- `b9d95dfda18119cc95e827babe74c3379ec44514548969b3e3812990cb5a45e6` (1 chunk)
+
+**Notes**:
+- Loader patched to support `DRY_RUN_NO_DB` and `DRY_RUN_NO_FIREBASE` flags.
+- ESM compatibility fixed (runs via `tsx`).
+- Next step to test full path: enable Postgres connection (Option A) or keep log-only runs.
+
+**Proposed Next Actions**:
+- Option A (recommended): Start local Postgres and run end-to-end (no stubs for DB), keep `DRY_RUN_NO_FIREBASE=true` if desired.
+- Option B: Keep dry-run mode and expand sample set to define `batch-001` scope.
+
+Owner: Cascade

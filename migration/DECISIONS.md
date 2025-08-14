@@ -25,7 +25,8 @@ Mahara is the approver for final decisions. Each entry documents context and rat
 - Decision: Proceed with stub embeddings for initial dry-run; defer Weaviate loader to a separate task/PR.
 - Rationale: Fast, zero-cost validation of pipeline (Firestore + Postgres schema, chunking, upserts). Minimizes variables before enabling external API calls.
 - Approver: Mahara (PENDING)
-- Impact / Follow-ups: Install deps (ts-node, @types/node, firebase-admin, pg, axios); set envs (FIREBASE_SERVICE_ACCOUNT_JSON_PATH, FIREBASE_PROJECT_ID, PG_URL, EMBEDDING_PROVIDER=stub); run `npm run mig:pg:run`; capture results and add audit notes; scope a Weaviate loader.
+- Approver: Mahara (APPROVED 2025-08-14 17:33 NZST)
+- Impact / Follow-ups: Install deps (ts-node, @types/node, firebase-admin, pg, axios); set envs (FIREBASE_SERVICE_ACCOUNT_JSON_PATH, FIREBASE_PROJECT_ID, PG_URL, EMBEDDING_PROVIDER=stub); run `npm run mig:pg:run`; capture results and add audit notes; scope a Weaviate loader. Dry-run report recorded in `migration/COMMUNICATION.md`.
 - Links: Manifest `batch-001`
 
 - (Add newest on top)
