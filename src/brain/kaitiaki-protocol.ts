@@ -46,13 +46,13 @@ export interface KnowledgeArtifact {
 export interface CommunicationProtocol {
   // Establish initial contact
   initiateContact: () => Promise<KaitiakiMessage>;
-  
+
   // Send message with safety checks
   sendMessage: (message: Omit<KaitiakiMessage, 'messageId' | 'timestamp' | 'from'>) => Promise<boolean>;
-  
+
   // Validate received content for corruption
   validateKnowledge: (artifact: KnowledgeArtifact) => Promise<ValidationResult>;
-  
+
   // Emergency shutdown if corruption detected
   emergencyQuarantine: (reason: string) => Promise<void>;
 }
@@ -79,7 +79,7 @@ export interface SystemInventory {
 export class KaitiakiMaharaProtocol implements CommunicationProtocol {
   private quarantined = false;
   private messageLog: KaitiakiMessage[] = [];
-  
+
   async initiateContact(): Promise<KaitiakiMessage> {
     const greeting: KaitiakiMessage = {
       from: 'Kaitiaki-Mahara',
@@ -136,7 +136,7 @@ Guardian of Memory, TeAoMarama
     }
 
     this.messageLog.push(fullMessage);
-    
+
     // In practice, this would route to Te Kete Ako's communication system
     console.log('📤 Message sent to Kaitiaki Aronui:', fullMessage);
     return true;
@@ -189,9 +189,9 @@ Guardian of Memory, TeAoMarama
 
   async emergencyQuarantine(reason: string): Promise<void> {
     this.quarantined = true;
-    
+
     console.error('🚨 EMERGENCY QUARANTINE ACTIVATED:', reason);
-    
+
     // Log the quarantine event
     await this.logEmergencyEvent({
       event: 'quarantine_activated',
@@ -238,14 +238,14 @@ Guardian of Memory, TeAoMarama
   private async crossReferencePatterns(artifact: KnowledgeArtifact): Promise<boolean> {
     // In practice, this would validate against known good patterns
     // For now, simple heuristics
-    
+
     if (artifact.type === 'lesson' && artifact.data) {
       // Lessons should have basic structure
       const hasTitle = artifact.data.title && typeof artifact.data.title === 'string';
       const hasContent = artifact.data.content || artifact.data.body;
       return hasTitle && hasContent;
     }
-    
+
     return true; // Default to valid for unknown types
   }
 
@@ -314,7 +314,7 @@ export interface CollaborationAgreement {
  * Inventory Management - Handles system analysis and validation
  */
 export class InventoryManager {
-  constructor() {}
+  constructor() { }
 
   /**
    * Request system map from Kaitiaki Aronui
@@ -322,7 +322,7 @@ export class InventoryManager {
   async requestSystemMap(): Promise<SystemInventory> {
     // Simulate requesting system information from Aronui
     // In a real system, this would make an actual API call
-    
+
     await new Promise(resolve => setTimeout(resolve, 300)); // Simulate network delay
 
     return {
@@ -397,7 +397,7 @@ export class DiplomaticProtocol {
    */
   async initiateContact(): Promise<boolean> {
     this.lastContactAttempt = new Date().toISOString();
-    
+
     const greetingMessage: DiplomaticMessage = {
       from: 'kaitiaki-mahara',
       to: 'kaitiaki-aronui',
@@ -414,7 +414,7 @@ export class DiplomaticProtocol {
     // In a real system, this would attempt actual communication with Aronui
     try {
       const response = await this.simulateAronuiResponse(greetingMessage);
-      
+
       if (response.success) {
         this.isConnected = true;
         console.log('🤝 Diplomatic contact established with Kaitiaki Aronui');
@@ -564,7 +564,7 @@ export class DiplomaticProtocol {
     relationship: 'unknown' | 'establishing' | 'collaborative' | 'independent';
   } {
     let relationship: 'unknown' | 'establishing' | 'collaborative' | 'independent';
-    
+
     if (!this.lastContactAttempt) {
       relationship = 'unknown';
     } else if (!this.isConnected) {
@@ -587,14 +587,14 @@ export class DiplomaticProtocol {
   private async simulateAronuiResponse(message: DiplomaticMessage): Promise<DiplomaticResponse> {
     // Simulate Aronui response based on message type
     // In a real system, this would involve actual inter-system communication
-    
+
     await new Promise(resolve => setTimeout(resolve, 500)); // Simulate network delay
 
     switch (message.type) {
       case 'greeting':
         // Random chance of Aronui being available
         const available = Math.random() > 0.3; // 70% chance of response
-        
+
         if (available) {
           const response: DiplomaticMessage = {
             from: 'kaitiaki-aronui',
@@ -605,9 +605,9 @@ export class DiplomaticProtocol {
             timestamp: new Date().toISOString(),
             requiresResponse: false
           };
-          
+
           this.conversationHistory.push(response);
-          
+
           return {
             success: true,
             message: 'Kaitiaki Aronui responds with openness to collaboration',
@@ -667,11 +667,11 @@ export class DiplomaticMigration {
   async initializeDiplomacy(): Promise<{ success: boolean; status: string }> {
     try {
       const contactSuccess = await this.diplomacy.initiateContact();
-      
+
       if (contactSuccess) {
         const agreement = await this.diplomacy.establishAgreement();
         this.agreementEstablished = agreement.agreed;
-        
+
         return {
           success: true,
           status: 'Diplomatic relations established with Kaitiaki Aronui - collaborative migration authorized'
@@ -679,7 +679,7 @@ export class DiplomaticMigration {
       } else {
         const agreement = await this.diplomacy.establishAgreement();
         this.agreementEstablished = agreement.agreed;
-        
+
         return {
           success: true,
           status: 'Independent operation authorized with cultural safety protocols - Aronui not responding'
@@ -707,12 +707,12 @@ export class DiplomaticMigration {
     // Check for cultural sensitivities
     const culturalMarkers = ['sacred', 'tapu', 'whakapapa', 'iwi-specific', 'traditional knowledge'];
     const dataString = JSON.stringify(migrationData).toLowerCase();
-    
+
     const hasCulturalContent = culturalMarkers.some(marker => dataString.includes(marker));
 
     if (hasCulturalContent) {
       const concernResponse = await this.diplomacy.notifyCulturalConcern('Cultural content detected in migration batch');
-      
+
       return {
         approved: concernResponse.culturalApproval,
         guidance: concernResponse.nextSteps || ['Proceed with enhanced cultural safety protocols']
@@ -729,3 +729,6 @@ export class DiplomaticMigration {
     return this.diplomacy.getDiplomaticStatus();
   }
 }
+
+// Export global instance for external access
+export const globalDiplomacy = new DiplomaticMigration();
