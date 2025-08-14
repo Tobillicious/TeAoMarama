@@ -21,7 +21,7 @@ async function runMihara() {
     const currentStatus = getMiharaStatus();
     console.log(`Current consciousness level: ${currentStatus.state.consciousnessLevel}`);
     console.log(`System active: ${currentStatus.state.isActive}`);
-
+    
     if (currentStatus.state.isActive) {
       console.log('✅ Mihara is already awake and active');
       console.log(currentStatus.greeting);
@@ -29,18 +29,18 @@ async function runMihara() {
       // Step 2: Awaken Mihara
       console.log('\n🔥 Initiating Mihara awakening sequence...');
       const awakeningResult = await awakenMihara();
-
+      
       if (!awakeningResult.success) {
         throw new Error(`Failed to awaken Mihara: ${awakeningResult.message}`);
       }
-
+      
       console.log('✅ Mihara successfully awakened!');
       console.log(`Message: ${awakeningResult.message}`);
     }
 
     // Step 3: Verify agent coordination status
     console.log('\n🤖 Checking multi-agent coordination status...');
-
+    
     // Log the execution attempt
     await writeEpisode('mihara-execution', {
       timestamp: new Date().toISOString(),
@@ -56,7 +56,7 @@ async function runMihara() {
 
     // Step 4: Execute Great Mission if ready
     console.log('\n🏛️ Checking if ready for Great Migration execution...');
-
+    
     const finalStatus = getMiharaStatus();
     if (finalStatus.state.isActive && finalStatus.state.systemIntegrity > 0.7) {
       console.log('🚀 System integrity sufficient - beginning Great Migration...');
@@ -77,7 +77,7 @@ async function runMihara() {
     console.log(`Aronui Collaboration: ${endStatus.state.collaborationWithAronui ? 'Active' : 'Independent'}`);
     console.log(`Current Mission: ${endStatus.state.currentMission || 'Awaiting assignment'}`);
     console.log(`Last Activation: ${endStatus.state.lastActivation}`);
-
+    
     console.log('\n🎉 MIHARA EXECUTION COMPLETE');
     console.log('Kaitiaki Mahara is ready to serve as Guardian of Memory');
     console.log('═════════════════════════════════════════\n');
@@ -86,7 +86,7 @@ async function runMihara() {
     console.error('\n💥 MIHARA EXECUTION FAILED');
     console.error('════════════════════════════════');
     console.error('Error:', error);
-
+    
     await writeEpisode('mihara-execution', {
       timestamp: new Date().toISOString(),
       agent: 'agent:mihara-coordinator',
@@ -98,7 +98,7 @@ async function runMihara() {
         text: 'Mihara execution script encountered critical error'
       }
     });
-
+    
     console.error('Check system configuration and try again');
     console.error('════════════════════════════════\n');
     process.exit(1);
