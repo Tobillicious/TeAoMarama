@@ -74,11 +74,11 @@ async function main() {
     console.log('\n🚨 Emergency protocols activated');
     console.log('📝 Error logged for analysis');
     console.log('🛡️ Cultural content safety maintained');
-    
+
     console.log('\n🔧 Debug information:');
     console.log(`Error type: ${error instanceof Error ? error.name : 'Unknown'}`);
     console.log(`Error message: ${error instanceof Error ? error.message : String(error)}`);
-    
+
     process.exit(1);
   }
 }

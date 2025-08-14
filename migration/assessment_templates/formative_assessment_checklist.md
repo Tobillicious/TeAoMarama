@@ -1,7 +1,9 @@
 # FORMATIVE ASSESSMENT CHECKLIST
+
 *Kaitiaki Mahara - Observable Learning Behaviors*
 
 ## 🛡️ CULTURAL SAFETY NOTICE
+
 **All cultural observations must be viewed through culturally responsive lens**
 **Avoid deficit thinking - celebrate diverse learning styles**
 
@@ -10,7 +12,9 @@
 ## OBSERVABLE BEHAVIORS: LITERACY DEVELOPMENT
 
 ### Reading Comprehension
+
 **Beginning Readers:**
+
 - □ Points to words while reading
 - □ Uses picture clues to understand text
 - □ Retells simple stories in sequence
@@ -18,6 +22,7 @@
 - □ Shows engagement with culturally relevant texts
 
 **Developing Readers:**
+
 - □ Reads with appropriate expression
 - □ Self-corrects when meaning is lost
 - □ Uses multiple strategies to decode unknown words
@@ -25,6 +30,7 @@
 - □ Discusses character motivations and plot
 
 **Confident Readers:**
+
 - □ Reads fluently across various text types
 - □ Makes critical connections between texts
 - □ Questions author's perspective and bias
@@ -32,7 +38,9 @@
 - □ Engages with complex cultural narratives
 
 ### Writing Development
+
 **Emerging Writers:**
+
 - □ Uses drawings to convey meaning
 - □ Attempts phonetic spelling
 - □ Writes simple sentences with support
@@ -40,6 +48,7 @@
 - □ 🌿 **Cultural Note**: May incorporate home languages
 
 **Developing Writers:**
+
 - □ Organizes ideas in logical sequence
 - □ Uses varied sentence structures
 - □ Includes descriptive details
@@ -47,6 +56,7 @@
 - □ Shows voice and personality in writing
 
 **Proficient Writers:**
+
 - □ Writes for multiple purposes and audiences
 - □ Uses sophisticated vocabulary appropriately
 - □ Demonstrates clear organizational structure
@@ -58,7 +68,9 @@
 ## OBSERVABLE BEHAVIORS: NUMERACY DEVELOPMENT
 
 ### Number Sense
+
 **Foundation Level:**
+
 - □ Counts objects accurately
 - □ Recognizes number patterns
 - □ Compares quantities using mathematical language
@@ -66,6 +78,7 @@
 - □ Makes connections to cultural counting systems
 
 **Building Level:**
+
 - □ Uses place value understanding in calculations
 - □ Explains mathematical thinking verbally
 - □ Chooses appropriate strategies for problems
@@ -73,6 +86,7 @@
 - □ Applies number knowledge to real-world contexts
 
 **Advanced Level:**
+
 - □ Uses abstract mathematical reasoning
 - □ Generalizes patterns and relationships
 - □ Justifies mathematical solutions
@@ -80,7 +94,9 @@
 - □ 🌿 **Cultural Note**: May reference traditional Māori mathematical concepts
 
 ### Problem Solving
+
 **Emerging Problem Solvers:**
+
 - □ Identifies what the problem is asking
 - □ Uses trial and error approaches
 - □ Represents problems with drawings/objects
@@ -88,6 +104,7 @@
 - □ Celebrates multiple solution pathways
 
 **Developing Problem Solvers:**
+
 - □ Plans approach before beginning
 - □ Uses multiple strategies systematically
 - □ Checks solutions for reasonableness
@@ -95,6 +112,7 @@
 - □ Transfers strategies to new situations
 
 **Independent Problem Solvers:**
+
 - □ Breaks complex problems into manageable steps
 - □ Evaluates efficiency of different approaches
 - □ Creates their own problems and challenges
@@ -106,7 +124,9 @@
 ## OBSERVABLE BEHAVIORS: SOCIAL & EMOTIONAL LEARNING
 
 ### Self-Management
+
 **Developing Self-Regulation:**
+
 - □ Manages emotions appropriately in learning contexts
 - □ Persists through challenging tasks
 - □ Seeks help when needed
@@ -114,7 +134,9 @@
 - □ 🌿 **Cultural Note**: Self-regulation may look different across cultures
 
 ### Relating to Others
+
 **Building Relationships:**
+
 - □ Listens respectfully to different perspectives
 - □ Shares ideas and resources willingly
 - □ Includes others in group activities
@@ -122,6 +144,7 @@
 - □ Shows empathy and understanding
 
 **Collaborative Learning:**
+
 - □ Contributes meaningfully to group work
 - □ Builds on others' ideas constructively
 - □ Shares leadership responsibilities
@@ -129,7 +152,9 @@
 - □ 🌿 **Cultural Note**: May demonstrate collective rather than individual focus
 
 ### Cultural Responsiveness
+
 **Culturally Engaged Learners:**
+
 - □ Shares knowledge from home and community
 - □ Makes connections between school and cultural learning
 - □ Shows pride in cultural identity
@@ -141,7 +166,9 @@
 ## OBSERVATION PROTOCOLS
 
 ### Daily Check-ins
+
 **Quick Pulse Checks:**
+
 - □ Student engagement levels
 - □ Understanding of key concepts
 - □ Social dynamics and inclusion
@@ -149,7 +176,9 @@
 - □ Individual learning needs
 
 ### Weekly Reviews
+
 **Deeper Analysis:**
+
 - □ Progress toward learning goals
 - □ Patterns in learning behaviors
 - □ Cultural connections and celebrations
@@ -157,7 +186,9 @@
 - □ Family and whānau insights
 
 ### Cultural Considerations
+
 **🛡️ IMPORTANT REMINDERS:**
+
 - □ Avoid deficit perspectives on cultural differences
 - □ Celebrate diverse ways of knowing and being
 - □ Include whānau voice in observations
@@ -168,21 +199,24 @@
 
 ## USING THIS CHECKLIST EFFECTIVELY
 
-### For Teachers:
+### For Teachers
+
 1. **Observe without judgment** - focus on describing behaviors
 2. **Look for patterns** over time rather than isolated incidents
 3. **Include student voice** in understanding their learning
 4. **Consider cultural context** for all observations
 5. **Use observations to adjust teaching** not to label students
 
-### For Cultural Safety:
+### For Cultural Safety
+
 - **Never assume** cultural behaviors are deficits
 - **Always check** interpretations with cultural advisors
 - **Include whānau perspective** in understanding student needs
 - **Celebrate** diverse approaches to learning
 - **Flag content** containing cultural elements for review
 
-### Data Collection:
+### Data Collection
+
 - **Regular observations** build comprehensive picture
 - **Multiple contexts** show full range of student capabilities
 - **Include student self-assessment** alongside teacher observations

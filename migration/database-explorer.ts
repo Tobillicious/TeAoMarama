@@ -75,11 +75,11 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
     try {
       report.database_schema = await teKeteAkoClient.analyzeDatabaseSchema();
       const tableNames = [...new Set(report.database_schema.map(col => col.table_name))];
-      
+
       console.log(`✅ Schema analysis complete`);
       console.log(`📋 Found ${tableNames.length} tables with ${report.database_schema.length} total columns`);
       console.log(`📚 Key tables identified: ${tableNames.slice(0, 8).join(', ')}`);
-      
+
       if (tableNames.length > 8) {
         console.log(`   ... and ${tableNames.length - 8} more tables`);
       }
@@ -93,7 +93,7 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
     console.log('\n📋 Phase 3: Creating content inventory...');
     try {
       report.content_inventory = await teKeteAkoClient.createContentInventory();
-      
+
       console.log('✅ Content inventory complete');
       console.log(`📊 Total records found: ${report.content_inventory.total_records}`);
       console.log(`🏛️ Cultural content detected: ${report.content_inventory.cultural_content_count} items`);
@@ -115,15 +115,15 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
 
     // Phase 4: Cultural Content Scanning
     console.log('\n🛡️ Phase 4: Scanning for cultural content...');
-    
+
     // Try scanning different potential table names
     const tablesToScan = ['content_items', 'resources', 'units', 'lessons', 'activities', 'handouts'];
-    
+
     for (const tableName of tablesToScan) {
       try {
         const flags = await teKeteAkoClient.scanForCulturalContent(tableName, 50);
         report.cultural_flags.push(...flags);
-        
+
         if (flags.length > 0) {
           console.log(`🚨 Cultural content found in ${tableName}: ${flags.length} items flagged`);
           const highRisk = flags.filter(f => f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation');
@@ -143,7 +143,7 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
       // This would need to be refined based on actual database structure
       // For now, we'll mark this as requiring further investigation
       report.recommendations.push('INVESTIGATE: Implement orphaned resource detection based on actual database schema');
-      
+
     } catch (orphanError) {
       console.warn('⚠️ Orphaned resource detection needs custom implementation');
     }
@@ -178,17 +178,17 @@ async function generateKaitiakiReport(report: ExplorationReport): Promise<void> 
   console.log(`🕐 Timestamp: ${report.timestamp}`);
   console.log(`⚡ Urgency Level: ${report.urgency_level.toUpperCase()}`);
   console.log(`🔗 Connection Status: ${report.connection_status ? '✅ CONNECTED' : '❌ FAILED'}`);
-  
+
   console.log('\n📊 DATABASE METRICS:');
   console.log(`• Total Tables: ${[...new Set(report.database_schema.map(col => col.table_name))].length}`);
   console.log(`• Total Records Found: ${report.content_inventory.total_records}`);
   console.log(`• Cultural Content Items: ${report.content_inventory.cultural_content_count}`);
   console.log(`• Cultural Flags Created: ${report.cultural_flags.length}`);
-  
-  const highRiskFlags = report.cultural_flags.filter(f => 
+
+  const highRiskFlags = report.cultural_flags.filter(f =>
     f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation'
   );
-  
+
   if (highRiskFlags.length > 0) {
     console.log(`🚨 HIGH RISK CULTURAL CONTENT: ${highRiskFlags.length} items require immediate review`);
   }
@@ -228,16 +228,16 @@ async function main() {
   try {
     const report = await exploreTeKeteAkoDatabase();
     await generateKaitiakiReport(report);
-    
+
     // Save report for future reference
     const fs = await import('fs');
     await fs.promises.writeFile(
       './migration/database-exploration-report.json',
       JSON.stringify(report, null, 2)
     );
-    
+
     console.log('\n💾 Report saved to: ./migration/database-exploration-report.json');
-    
+
   } catch (error) {
     console.error('Fatal error in database exploration:', error);
     process.exit(1);
