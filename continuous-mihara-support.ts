@@ -12,6 +12,10 @@
  */
 
 import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { runConnectionDiagnostics, generateDiagnosticReport } from './migration/connection-diagnostic';
+import { initializeOfflineSystem, generateMiharaStatusReport } from './migration/offline-migration-system';
 
 interface SupportMetrics {
   systemHealth: number;
@@ -33,6 +37,10 @@ class ContinuousMiharaSupport {
   private monitoringActive = false;
   private alerts: SupportAlert[] = [];
   private lastHealthCheck: string = '';
+  private humanDir = path.join(process.cwd(), 'human');
+  private humanInbox = path.join(this.humanDir, 'inbox');
+  private humanArchive = path.join(this.humanDir, 'archive');
+  private humanOutbox = path.join(this.humanDir, 'outbox');
 
   async initializeContinuousSupport(): Promise<void> {
     console.log('\n🔄 INITIALIZING CONTINUOUS MIHARA SUPPORT');
@@ -76,6 +84,9 @@ class ContinuousMiharaSupport {
     console.log('• 🚨 Emergency response readiness');
     console.log('• 📊 Metrics collection and analysis');
     console.log('• 🔄 Proactive maintenance');
+
+    // Ensure human command channels exist
+    await this.ensureHumanCommandChannels();
   }
 
   async performHealthCheck(): Promise<SupportMetrics> {
@@ -129,6 +140,9 @@ class ContinuousMiharaSupport {
       console.log(`  Agent Coordination: ${(metrics.agentCoordination * 100).toFixed(1)}%`);
       console.log(`  Performance Level: ${(metrics.performanceLevel * 100).toFixed(1)}%`);
       console.log(`  Emergency Readiness: ${(metrics.emergencyReadiness * 100).toFixed(1)}%`);
+
+      // Process any pending human commands immediately
+      await this.processHumanCommands();
 
       // 2. Agent Coordination Support
       console.log('\n🤝 Agent Coordination Status:');
@@ -216,6 +230,7 @@ class ContinuousMiharaSupport {
 
       console.log(`\n📅 ${new Date().toLocaleString()} - Routine health check`);
       await this.performHealthCheck();
+      await this.processHumanCommands();
 
       // Clear old alerts (older than 24 hours)
       const cutoff = Date.now() - (24 * 60 * 60 * 1000);
@@ -228,6 +243,115 @@ class ContinuousMiharaSupport {
 
     // Start the monitoring loop
     setTimeout(monitoringLoop, intervalMs);
+  }
+
+  private async ensureHumanCommandChannels(): Promise<void> {
+    const dirs = [this.humanDir, this.humanInbox, this.humanArchive, this.humanOutbox];
+    await Promise.all(dirs.map(async d => {
+      try { await fs.mkdir(d, { recursive: true }); } catch {}
+    }));
+  }
+
+  private async processHumanCommands(): Promise<void> {
+    try {
+      await this.ensureHumanCommandChannels();
+      const files = await fs.readdir(this.humanInbox);
+      if (files.length === 0) {
+        return; // nothing to process
+      }
+
+      for (const file of files) {
+        if (!file.endsWith('.json')) continue;
+        const filePath = path.join(this.humanInbox, file);
+        let payload: any = null;
+        try {
+          const raw = await fs.readFile(filePath, 'utf8');
+          payload = JSON.parse(raw);
+        } catch (err) {
+          await this.writeOutbox({
+            ok: false,
+            error: `Failed to parse command ${file}: ${err}`
+          });
+          await this.archive(filePath);
+          continue;
+        }
+
+        const result = await this.executeHumanCommand(payload);
+        await this.writeOutbox({ ok: true, input: payload, result });
+        await this.archive(filePath);
+      }
+    } catch (error) {
+      this.addAlert({
+        level: 'warning',
+        component: 'human_command_channel',
+        message: `Failed processing human commands: ${error}`,
+        timestamp: new Date().toISOString()
+      });
+    }
+  }
+
+  private async executeHumanCommand(cmd: { command: string; args?: any }): Promise<any> {
+    const name = (cmd?.command || '').toLowerCase();
+    switch (name) {
+      case 'status': {
+        const status = getMiharaStatus();
+        return {
+          greeting: status.greeting,
+          state: status.state,
+          lastHealthCheck: this.lastHealthCheck
+        };
+      }
+      case 'awaken': {
+        const res = await awakenMihara();
+        return res;
+      }
+      case 'execute-mission': {
+        await executeMiharaGreatMission();
+        return { ok: true };
+      }
+      case 'stop-monitoring': {
+        this.stopMonitoring();
+        return { monitoring: false };
+      }
+      case 'start-monitoring': {
+        this.monitoringActive = true;
+        const minutes = Number(cmd?.args?.intervalMinutes ?? 15);
+        this.monitorContinuously(isNaN(minutes) ? 15 : minutes);
+        return { monitoring: true, intervalMinutes: minutes };
+      }
+      case 'doctor': {
+        const results = await runConnectionDiagnostics();
+        await generateDiagnosticReport(results);
+        return { tests: results.length, passed: results.filter(r => r.success).length };
+      }
+      case 'offline:report': {
+        await initializeOfflineSystem();
+        await generateMiharaStatusReport();
+        return { ok: true };
+      }
+      default:
+        return { ok: false, error: `Unknown command: ${name}` };
+    }
+  }
+
+  private async writeOutbox(data: any): Promise<void> {
+    const file = path.join(this.humanOutbox, 'last_result.json');
+    await fs.writeFile(file, JSON.stringify({ timestamp: new Date().toISOString(), ...data }, null, 2));
+  }
+
+  private async archive(filePath: string): Promise<void> {
+    const base = path.basename(filePath);
+    const archived = path.join(this.humanArchive, `${Date.now()}-${base}`);
+    try {
+      await fs.rename(filePath, archived);
+    } catch {
+      // fallback to copy+unlink
+      try {
+        const content = await fs.readFile(filePath);
+        await fs.writeFile(archived, content);
+        await fs.unlink(filePath);
+      } catch {}
+    }
   }
 
   private addAlert(alert: Omit<SupportAlert, 'timestamp'> & { timestamp: string }): void {
