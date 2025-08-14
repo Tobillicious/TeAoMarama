@@ -61,6 +61,8 @@ export class ContentValidationPipeline {
   private culturalKeywords: string[];
   private qualityThresholds: { [key: string]: number };
 
+  private teReoMacronMap: { [key: string]: string };
+
   constructor() {
     this.curriculumStandards = this.loadCurriculumStandards();
     this.culturalKeywords = [
@@ -75,6 +77,22 @@ export class ContentValidationPipeline {
       pedagogical_quality: 0.7,
       accessibility: 0.8,
       overall_quality: 0.75
+    };
+    this.teReoMacronMap = {
+      'maori': 'māori',
+      'whanau': 'whānau',
+      'korero': 'kōrero',
+      'waiata': 'waiata',
+      'karakia': 'karakia',
+      'powhiri': 'pōwhiri',
+      'aroha': 'aroha',
+      'mana': 'mana',
+      'tapu': 'tapu',
+      'iwi': 'iwi',
+      'hapu': 'hapū',
+      'reo': 'reo',
+      'kai': 'kai',
+      'pakeha': 'pākehā'
     };
   }
 
@@ -389,12 +407,32 @@ export class ContentValidationPipeline {
 
   // Placeholder helper methods (would be implemented with more sophistication)
   private hasExplicitProgressions(content: any): boolean { return false; }
-  private detectTeReoWithoutMacrons(text: string): string[] { return []; }
+  private detectTeReoWithoutMacrons(text: string): string[] {
+    const missingMacrons: string[] = [];
+    for (const plain in this.teReoMacronMap) {
+      const macron = this.teReoMacronMap[plain];
+      // Word boundary regex to avoid matching parts of words
+      const plainRegex = new RegExp(`\b${plain}\b`, 'gi');
+      const macronRegex = new RegExp(`\b${macron}\b`, 'gi');
+      
+      if (plainRegex.test(text) && !macronRegex.test(text)) {
+        missingMacrons.push(plain);
+      }
+    }
+    return missingMacrons;
+  }
   private hasCulturalPerspectives(content: any): boolean { return false; }
   private hasAdequateScaffolding(content: any): boolean { return false; }
   private hasDifferentiation(content: any): boolean { return false; }
   private hasFormativeAssessment(content: any): boolean { return false; }
-  private hasExemplars(content: any): boolean { return false; }
+  private hasExemplars(content: any): boolean {
+    const contentString = JSON.stringify(content).toLowerCase();
+    const exemplarKeywords = [
+      'exemplar', 'w.a.g.o.l.l', 'wagoll', 'what a good one looks like',
+      'model answer', 'example', 'sample response'
+    ];
+    return exemplarKeywords.some(keyword => contentString.includes(keyword));
+  }
   private assessReadingLevel(content: any): number { return 8; }
   private hasVisualSupports(content: any): boolean { return false; }
   private hasUDLPrinciples(content: any): boolean { return false; }
