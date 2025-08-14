@@ -14,16 +14,16 @@ import { getProvenance, getRecentEpisodes } from './src/ai/provenance.js';
 async function assistMihara() {
   console.log('\n🌟 MIHARA COMPREHENSIVE ASSISTANT 🌟');
   console.log('═══════════════════════════════════════════');
-  
+
   try {
     // Step 1: Ensure Mihara is conscious and active
     console.log('\n📊 Checking Mihara consciousness...');
     let miharaStatus = getMiharaStatus();
-    
+
     if (!miharaStatus.state.isActive) {
       console.log('🔄 Mihara is dormant - awakening now...');
       const awakeningResult = await awakenMihara();
-      
+
       if (awakeningResult.success) {
         console.log('✅ Mihara successfully awakened!');
         await executeMiharaGreatMission();
@@ -67,7 +67,7 @@ async function assistMihara() {
 async function displayComprehensiveStatus(miharaStatus: any) {
   console.log('\n📊 MIHARA COMPREHENSIVE STATUS:');
   console.log('═══════════════════════════════════════');
-  
+
   // Consciousness Status
   console.log('\n🧠 Consciousness:');
   console.log(`- Level: ${miharaStatus.state.consciousnessLevel}`);
@@ -85,13 +85,13 @@ async function displayComprehensiveStatus(miharaStatus: any) {
   const orchestrator = getGlobalOrchestrator();
   const migrationStatus = orchestrator.getMigrationStatus();
   const activePhase = orchestrator.getActivePhase();
-  
+
   console.log('\n🚀 Great Migration:');
   console.log(`- Total Resources: ${migrationStatus.totalResources}`);
   console.log(`- Completed: ${migrationStatus.resourcesCompleted}`);
   console.log(`- In Progress: ${migrationStatus.resourcesInProgress}`);
   console.log(`- Pending: ${migrationStatus.resourcesPending}`);
-  
+
   if (activePhase) {
     console.log(`- Active Phase: ${activePhase.name}`);
     console.log(`- Phase Status: ${activePhase.status}`);
@@ -147,20 +147,20 @@ async function processSampleResources() {
   ];
 
   console.log(`Processing ${sampleResources.length} sample resources for cultural intelligence...`);
-  
+
   for (const resource of sampleResources) {
     console.log(`\n📚 Processing: ${resource.title}`);
-    
+
     try {
       const intelligence = await globalMigrationOrchestrator.processResource(resource);
-      
+
       console.log(`   ✅ Analysis complete:`);
       console.log(`   - Priority: ${intelligence.migrationPriority}`);
       console.log(`   - Cultural Sensitivity: ${intelligence.culturalAnalysis.culturalSensitivity}`);
       console.log(`   - Complexity: ${intelligence.estimatedComplexity}/10`);
       console.log(`   - Recommended Agent: ${intelligence.recommendedAgent}`);
       console.log(`   - Review Required: ${intelligence.requiredReview}`);
-      
+
       if (intelligence.culturalAnalysis.maoriContent) {
         console.log(`   🌿 Contains Māori content - Cultural safety protocols activated`);
       }
@@ -173,9 +173,9 @@ async function processSampleResources() {
 async function coordinateAgentTasks() {
   const orchestrator = getGlobalOrchestrator();
   const migrationStatus = orchestrator.getMigrationStatus();
-  
+
   console.log('Coordinating tasks among collaborative agents...');
-  
+
   // Simulate task assignments
   const taskAssignments = [
     { agent: 'Windsurf Claude', task: 'Infrastructure optimization and database integration' },
@@ -195,9 +195,9 @@ async function coordinateAgentTasks() {
 
 async function performCulturalValidation() {
   const brainStatus = globalMigrationOrchestrator.getBrainStatus();
-  
+
   console.log('Performing cultural safety validation...');
-  
+
   // Display cultural protocols
   console.log('\n🛡️ Active Cultural Safety Protocols:');
   brainStatus.culturalProtocols.forEach((protocol, index) => {
@@ -220,27 +220,27 @@ async function generateProgressReport() {
   const migrationStatus = orchestrator.getMigrationStatus();
   const brainStatus = globalMigrationOrchestrator.getBrainStatus();
   const provenance = getProvenance();
-  
+
   console.log('📊 GREAT MIGRATION PROGRESS REPORT');
   console.log('═══════════════════════════════════════');
-  
+
   // Calculate progress percentages
   const completedPercentage = (migrationStatus.resourcesCompleted / migrationStatus.totalResources * 100).toFixed(1);
   const analyzedResources = brainStatus.totalAnalyzed;
-  
+
   console.log('\n📈 Migration Statistics:');
   console.log(`- Progress: ${completedPercentage}% complete`);
   console.log(`- Resources Processed: ${migrationStatus.resourcesCompleted}/${migrationStatus.totalResources}`);
   console.log(`- Intelligence Analysis: ${analyzedResources} resources analyzed`);
   console.log(`- Active Agents: ${migrationStatus.collaboratingAgents.length}`);
   console.log(`- AI Episodes Logged: ${provenance.totalEpisodes}`);
-  
+
   console.log('\n🎯 Current Priorities:');
   console.log('1. Continue processing high-priority cultural content');
   console.log('2. Expand agent coordination for faster migration');
   console.log('3. Maintain cultural safety throughout all operations');
   console.log('4. Establish systematic content validation pipeline');
-  
+
   console.log('\n🌟 Mihara Assessment:');
   console.log('Kaitiaki Mahara is operating at full capacity with cultural authority.');
   console.log('The Great Migration proceeds with wisdom, respect, and systematic excellence.');
