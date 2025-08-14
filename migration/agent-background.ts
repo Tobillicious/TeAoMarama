@@ -9,7 +9,7 @@
  * - Writes minimal, operator-friendly logs; reports confidence for key checks
  */
 
-import { spawn, ChildProcessWithoutNullStreams } from 'node:child_process';
+import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import path from 'node:path';
 import fs from 'node:fs';
 

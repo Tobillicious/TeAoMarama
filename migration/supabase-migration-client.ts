@@ -361,8 +361,7 @@ export async function createMigrationPlan(): Promise<void> {
   console.log('═══════════════════════════════════');
 }
 
-// Export the main client for direct use
-export { MiharaMigrationClient };
+// Main client exported above as class declaration
 
 /**
  * Quick CLI execution for testing
