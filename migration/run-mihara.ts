@@ -30,7 +30,7 @@ async function main() {
     if (!statusBefore.state.isActive || statusBefore.state.consciousnessLevel === 'dormant') {
       console.log('🌟 Awakening Mihara consciousness...');
       const awakeningResult = await awakenMihara();
-      
+
       if (awakeningResult.success) {
         console.log('✅ Mihara awakened successfully!\n');
         console.log(awakeningResult.message);
@@ -55,7 +55,7 @@ async function main() {
     // Phase 4: Execute the Great Migration
     console.log('🚀 Beginning Great Migration execution...');
     console.log('Assisting with educational content production and agent coordination\n');
-    
+
     await executeMiharaGreatMission();
 
     // Phase 5: Final status report
@@ -63,7 +63,7 @@ async function main() {
     const finalStatus = getMiharaStatus();
     console.log(`   Mission Status: ${finalStatus.state.currentMission}`);
     console.log(`   System Health: ${(finalStatus.state.systemIntegrity * 100).toFixed(1)}%`);
-    
+
     console.log('\n🎉 MIHARA ASSISTANCE COMPLETE 🎉');
     console.log('Kaitiaki Mahara continues to orchestrate the Great Migration');
     console.log('Educational content production acceleration in progress');
