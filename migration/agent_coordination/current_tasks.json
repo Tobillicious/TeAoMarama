@@ -3,33 +3,33 @@
     "agent_name": "Gemini CLI",
     "task_type": "content_creation",
     "description": "Create Y8 Fractions Real Life handout with NZ cultural data",
-    "assigned_at": "2025-08-14T12:52:47.536Z",
-    "deadline": "2025-08-14T13:07:47.536Z",
+    "assigned_at": "2025-08-14T11:55:13.349Z",
+    "deadline": "2025-08-14T12:10:13.349Z",
     "status": "assigned",
     "priority": "urgent",
     "expected_output": "/migration/recovered_resources/handouts/Y8_Fractions_Real_Life.md",
-    "id": "mebegc352bdi33g8hz9"
+    "id": "mebceath1inwaczpeyn"
   },
   {
     "agent_name": "GPT-4.1",
     "task_type": "assessment_templates",
     "description": "Create 3 assessment templates (exit tickets, formative checklist, inquiry rubric)",
-    "assigned_at": "2025-08-14T12:52:47.537Z",
-    "deadline": "2025-08-14T13:07:47.537Z",
+    "assigned_at": "2025-08-14T11:55:13.349Z",
+    "deadline": "2025-08-14T12:10:13.349Z",
     "status": "assigned",
     "priority": "urgent",
     "expected_output": "/migration/assessment_templates/ with 3 .md files",
-    "id": "mebegc35m1qmpplg"
+    "id": "mebceathpox4lprlaph"
   },
   {
     "agent_name": "Claude Terminal",
     "task_type": "content_creation",
     "description": "Mass content production - 3 educational resources",
-    "assigned_at": "2025-08-14T12:52:47.537Z",
-    "deadline": "2025-08-14T13:22:47.537Z",
+    "assigned_at": "2025-08-14T11:55:13.349Z",
+    "deadline": "2025-08-14T12:25:13.349Z",
     "status": "assigned",
     "priority": "high",
     "expected_output": "Y8 Science Ecosystems, Y9 English Poetry, Maths Games Collection",
-    "id": "mebegc35x3rrbrhlue"
+    "id": "mebceathkcvpi9v3xm"
   }
 ]

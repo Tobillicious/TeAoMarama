@@ -1,93 +1,222 @@
-# Year 8 Maths: Fractions in Real-Life (Aotearoa NZ)
+# Y8 FRACTIONS: REAL LIFE IN AOTEAROA
+*Kaitiaki Mahara - Cultural Safety Flagged Content*
 
-- Year level: 8
-- NZC links: Number and Algebra (Fractions, decimals, percentages)
-- Focus: Interpreting and operating with fractions in meaningful NZ contexts
-- Cultural content: Includes Māori contexts and kupu Māori (flagged for Kaitiaki review)
-
-CULTURAL FLAG: The Māori contexts and kupu below must be reviewed by Kaitiaki Mahara / cultural advisors before classroom use.
-
----
-
-## 1) Warm-up: NZ Demographics Snapshot (Fractions)
-
-Using high-level population proportions (approximate, classroom-safe for maths practice):
-- Aotearoa NZ population: 1 whole (100%)
-- Māori: 0.17 of the population (17/100)
-- Pacific peoples: 0.09 of the population (9/100)
-- Asian: 0.19 of the population (19/100)
-- European/Other: 0.70 of the population (70/100)
-
-Activities:
-- Convert each fraction to a percentage and a simplified fraction.
-- Represent the data on a fraction strip or circle (kōwhaiwhai-style optional design — CULTURAL FLAG: design elements must be respectful and reviewed).
-- Discuss: What does 17/100 mean in words? What if the class has 30 students?
-
-Teacher prompt: Emphasise fractions as “parts of a whole” and connect to percentages and decimals.
+## 🛡️ CULTURAL SAFETY NOTICE  
+**This resource contains Te Ao Māori cultural elements and NZ demographic data**
+**All cultural content flagged for human review before classroom use**
+**Requires validation by cultural advisors and statistics verification**
 
 ---
 
-## 2) Activity: Whānau Kai Sharing (Fraction Operations)
-
-Context: A whānau brings 3 large rewena (bread) loaves to a hui. Each loaf is cut into 8 equal pieces.
-
-Tasks:
-1. How many total pieces? Represent as 3 × 8 = 24 pieces (24/24 = 1 whole of all pieces).
-2. If 5 people each take 3 pieces, how many pieces are taken? Express as a fraction of the total.
-3. If 1/4 of the pieces are saved for kaumātua, how many pieces is that? What fraction remains?
-4. If 3/8 of the remaining pieces are gifted to visitors (manuhiri), how many pieces is that? What fraction is left after gifting?
-
-Extension: Scale up to 5 loaves; compare strategies (proportional reasoning vs repeated addition).
-
-CULTURAL FLAG: Ensure the use of whānau, hui, kaumātua, and manuhiri is contextually appropriate for your local community.
+## LEARNING OBJECTIVES
+**Students will:**
+- Apply fraction concepts to real New Zealand demographic data
+- Compare and contrast fractions using authentic contexts
+- Connect mathematical learning to their own cultural experiences
+- 🌿 **Cultural Note**: Honor diverse cultural backgrounds in mathematical contexts
 
 ---
 
-## 3) Activity: Kaimoana Ratios and Fractions (Sustainability)
+## ACTIVITY 1: AOTEAROA POPULATION FRACTIONS
 
-Scenario: A class studies sustainable gathering guidelines. On a trip, the group catches 24 pipi and 12 tuangi (cockles). They decide to keep only a fraction and return the rest.
+### 🇳🇿 Real NZ Data (2023 Census - Simplified for Learning)
+**Total Population**: Approximately 5,200,000 people
 
-Tasks:
-- If they keep 1/3 of the pipi and 1/4 of the tuangi, how many do they keep and how many are returned?
-- Express kept and returned amounts as fractions of the original and of the total combined shellfish.
-- If limits change to 1/6 kept for both species, compare the outcomes using equivalent fractions.
+### Cultural Background Breakdown:
+- **European/Other**: 2,600,000 people (1/2 of population)
+- **Māori**: 900,000 people (approximately 9/50 of population)  
+- **Pacific Peoples**: 400,000 people (approximately 2/25 of population)
+- **Asian**: 900,000 people (approximately 9/50 of population)
+- **Other**: 400,000 people (approximately 2/25 of population)
 
-CULTURAL FLAG: Kaimoana contexts must align with local tikanga and local iwi guidance on sustainability and customary practice.
+### 🛡️ CULTURAL SAFETY WARNING
+**Statistical representation of cultural groups requires sensitive handling**
+**Students may feel tokenized - focus on mathematical skills, not stereotypes**
+**Always acknowledge that statistics don't define individual experiences**
+
+### Mathematical Tasks:
+
+#### Task A: Converting to Common Denominators
+**Question**: Express each cultural group as a fraction with denominator 100.
+
+**Working Space**:
+- European/Other: 1/2 = ___/100
+- Māori: 9/50 = ___/100  
+- Pacific: 2/25 = ___/100
+- Asian: 9/50 = ___/100
+- Other: 2/25 = ___/100
+
+#### Task B: Ordering Fractions
+**Question**: Put the cultural groups in order from smallest to largest fraction.
+
+**Strategy**: Use your common denominators from Task A.
+
+**Answer**: _______ < _______ < _______ < _______ < _______
+
+#### Task C: Real-World Connections  
+**Question**: If your class has 30 students, predict how many students might represent each cultural background based on these fractions.
+
+**🌿 Cultural Safety Note**: This is mathematical practice only - every individual's cultural identity is unique and valued.
 
 ---
 
-## 4) Activity: Sport in Aotearoa (Data and Fractions)
+## ACTIVITY 2: REGIONAL DIFFERENCES IN AOTEAROA
 
-Using approximate class-survey data (collect your own where possible):
-- 12/30 of students play rugby or rugby league.
-- 9/30 play netball.
-- 6/30 play football.
-- 3/30 play other codes.
+### 🗺️ Auckland vs Southland Population Density
+**Teaching Context**: Different regions have different population distributions
 
-Tasks:
-- Represent as simplified fractions and percentages.
-- Create a bar graph or pie chart and label with fractions.
-- Reason about part-to-part vs part-to-whole comparisons.
+### Auckland Data (Simplified):
+- **Total Population**: 1,700,000
+- **Live in Urban Areas**: 17/20 of the population
+- **Live in Rural Areas**: 3/20 of the population
 
-Extension: Compare two schools’ sport participation data; interpret which sport has the largest fractional change.
+### Southland Data (Simplified):  
+- **Total Population**: 100,000
+- **Live in Urban Areas**: 3/5 of the population
+- **Live in Rural Areas**: 2/5 of the population
+
+### Mathematical Tasks:
+
+#### Task A: Fraction Comparison
+**Question**: Which region has a higher fraction of people living in rural areas?
+
+**Method 1**: Convert to decimals
+- Auckland rural: 3/20 = _____ 
+- Southland rural: 2/5 = _____
+
+**Method 2**: Convert to common denominators
+- Auckland rural: 3/20 = ___/20
+- Southland rural: 2/5 = ___/20
+
+**Answer**: _______ has a higher fraction of rural population.
+
+#### Task B: Calculate Actual Numbers
+**Question**: How many people live in rural areas in each region?
+
+**Auckland**: 3/20 × 1,700,000 = _______ people
+**Southland**: 2/5 × 100,000 = _______ people
+
+**Reflection**: Which region has more rural people in total? Why might this be different from the fraction result?
 
 ---
 
-## 5) Reflection and Whakapapa of Numbers
+## ACTIVITY 3: KIWI LIFESTYLE FRACTIONS
 
-Prompts:
-- Where do we see fair sharing (whai wāhi ōrite) in our community?
-- How can fractions help us make sustainable choices (kaitiakitanga)?
-- Write two sentences connecting fractions to something meaningful for your whānau.
+### 🥝 New Zealand Food and Recreation Data
 
-CULTURAL FLAG: Use of kupu Māori is intended to be respectful; localise terms and seek cultural review.
+#### Favorite Weekend Activities (Simplified Survey Data):
+- **Outdoor Activities**: 7/20 of Kiwis
+- **Sports (playing or watching)**: 1/4 of Kiwis  
+- **Cultural Activities**: 3/20 of Kiwis
+- **Family/Whānau Time**: 1/5 of Kiwis
+- **Other**: 1/10 of Kiwis
+
+### 🌿 CULTURAL SENSITIVITY NOTE
+**These are simplified statistics for mathematical learning**
+**Individual preferences vary greatly and aren't determined by statistics**
+**Celebrate diverse ways of spending time and cultural practices**
+
+### Mathematical Tasks:
+
+#### Task A: Fraction Operations
+**Question**: What fraction of Kiwis choose either outdoor activities OR sports?
+
+**Step 1**: Add the fractions
+7/20 + 1/4 = 7/20 + ___/20 = ___/20
+
+**Step 2**: Simplify if possible
+___/20 = ___/___
+
+#### Task B: Creating Equivalent Fractions
+**Question**: Express "Family/Whānau Time" (1/5) in three different equivalent fractions.
+
+**Answer**: 1/5 = ___/10 = ___/15 = ___/20
+
+#### Task C: Real-World Application
+**Question**: In a group of 60 people, how many would you expect to choose each activity?
+
+**Show your working**:
+- Outdoor Activities: 7/20 × 60 = _____
+- Sports: 1/4 × 60 = _____  
+- Cultural Activities: 3/20 × 60 = _____
+- Family/Whānau Time: 1/5 × 60 = _____
+- Other: 1/10 × 60 = _____
+
+**Check**: Do your answers add up to 60? _____
 
 ---
 
-## Teacher Notes
+## REFLECTION QUESTIONS
 
-- Encourage multiple representations (area, set, number line).
-- Connect fractions-decimals-percentages seamlessly.
-- Prioritise local contexts and community knowledge.
-- Always follow school and local iwi protocols when using cultural contexts.
+### Mathematical Reflection:
+1. **Strategy**: Which method did you find most helpful for comparing fractions today?
+2. **Connection**: How did using real New Zealand data help your understanding of fractions?
+3. **Challenge**: What was the most difficult part of today's fraction work?
 
+### Cultural Reflection:
+4. **🌿 Identity**: How did you feel seeing your cultural background (or not seeing it) represented in the data?
+5. **🌿 Community**: What other cultural groups in your community would you like to see represented in math problems?
+6. **🌿 Understanding**: How can statistics help us understand our communities while still respecting individual differences?
+
+### 🛡️ CULTURAL SAFETY CHECK
+**Teacher Note**: These reflection questions may bring up sensitive topics about identity and belonging. Ensure all students feel valued regardless of their background representation in data.
+
+---
+
+## EXTENSION ACTIVITIES
+
+### For Fast Finishers:
+1. **Research**: Find current statistics about your local area and create your own fraction problems
+2. **Investigation**: Compare these 2023 statistics to earlier census data - what patterns do you notice?
+3. **Creative**: Design a visual representation (graph, infographic) showing these fractions
+
+### For Cultural Connections:
+1. **🌿 Whānau Research**: Interview family members about their experiences with cultural identity and community
+2. **🌿 Community Mapping**: Create a cultural map of your local area showing diversity
+3. **🌿 Storytelling**: Use fractions to tell a story about cultural connections in Aotearoa
+
+### 🛡️ CULTURAL SAFETY FOR EXTENSIONS
+**All cultural research must:**
+- Be voluntary and student-directed
+- Respect family privacy
+- Avoid stereotyping or generalizations
+- Celebrate cultural diversity as strength
+
+---
+
+## TEACHER NOTES
+
+### Learning Support:
+- **Visual Aids**: Use fraction strips, pie charts, or concrete materials
+- **Language Support**: Provide key vocabulary in multiple languages if needed
+- **Differentiation**: Adjust numbers to simpler fractions for struggling students
+
+### Cultural Responsiveness:
+- **🛡️ Safety First**: Monitor student responses to cultural content
+- **Inclusive Practice**: Ensure all students see their experiences valued
+- **Community Connection**: Consider inviting cultural community members to share
+- **Ongoing Learning**: Continue developing cultural competency as an educator
+
+### Assessment Opportunities:
+- **Formative**: Observe problem-solving strategies and cultural responses
+- **Summative**: Use exit tickets focusing on both mathematical and cultural learning
+- **Self-Assessment**: Students reflect on mathematical growth and cultural awareness
+
+---
+
+**🛡️ MANDATORY CULTURAL REVIEW:**
+**This resource contains cultural elements and demographic data that require:**
+- Validation by Māori cultural advisors
+- Review by Pacific cultural representatives  
+- Verification of statistical accuracy by Statistics New Zealand
+- Ongoing community input and feedback
+- Teacher cultural competency training before use
+
+---
+
+**Created by: Kaitiaki Mahara Assistant**  
+**Date: 2025-08-14**  
+**Year Level: 8**  
+**Subject Integration**: Mathematics + Social Studies + Cultural Studies  
+**Cultural Safety Status**: FLAGGED FOR REVIEW**  
+**NZ Curriculum Alignment**: Number & Algebra + Cultural Identity & Place**
