@@ -166,10 +166,11 @@ export class MiharaDashboard {
 
     const migrationMetrics = {
       startTime: Date.now(),
-      phases: [],
-      culturalChecks: [],
-      performance: {},
-      errors: []
+      duration: 0,
+      phases: [] as string[],
+      culturalChecks: [] as string[],
+      performance: {} as Record<string, number>,
+      errors: [] as string[]
     };
 
     try {
@@ -185,8 +186,8 @@ export class MiharaDashboard {
       // Monitor cultural safety throughout
       const culturalSafety = {
         preCheck: await this.validateCulturalSafety(),
-        phases: [],
-        postCheck: null
+        phases: [] as any[],
+        postCheck: null as any
       };
 
       // Execute migration with monitoring
