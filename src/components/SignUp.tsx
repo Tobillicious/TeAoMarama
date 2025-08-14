@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuth } from '../services/AuthContext';
+import { useAuth } from '../services/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
@@ -9,7 +9,7 @@ export default function SignUp() {
   const { signUp } = useAuth();
   const navigate = useNavigate();
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     try {
@@ -31,7 +31,7 @@ export default function SignUp() {
   return (
     <div>
       <h2>Sign Up</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSignUp}>
         <input
           type="email"

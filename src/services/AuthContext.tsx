@@ -1,25 +1,11 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import type { Session, User } from '@supabase/supabase-js';
+import { AuthContext } from './AuthContextObject.tsx';
 import { supabase } from '../supabaseClient';
-import { Session, User } from '@supabase/supabase-js';
 
-interface AuthContextType {
-  currentUser: User | null;
-  session: Session | null;
-  loading: boolean;
-  signUp: (email, password) => Promise<any>;
-  logIn: (email, password) => Promise<any>;
-  logOut: () => Promise<void>;
-}
+// AuthContext moved to AuthContextObject.tsx
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-}
+// useAuth moved to useAuth.ts
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -31,7 +17,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setCurrentUser(session?.user ?? null);
       setLoading(false);
@@ -46,15 +32,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
 
     return () => {
-      authListener?.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 
-  const signUp = (email, password) => {
+  const signUp = (email: string, password: string) => {
     return supabase.auth.signUp({ email, password });
   };
 
-  const logIn = (email, password) => {
+  const logIn = (email: string, password: string) => {
     return supabase.auth.signInWithPassword({ email, password });
   };
 

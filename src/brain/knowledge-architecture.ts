@@ -12,7 +12,7 @@
  * - Provenance and confidence tracked for every node
  */
 
-import { CurriculumNode, Resource, ImportJob } from '../types/content';
+import type { CurriculumNode, Resource, ImportJob } from '../types/content';
 
 // Core knowledge hierarchy - designed for both speed and depth
 export interface KnowledgeNode {

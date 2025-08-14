@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../services/AuthContext';
+import { useAuth } from '../services/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient'; // Import supabase client for password reset
 

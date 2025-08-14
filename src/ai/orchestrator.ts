@@ -26,7 +26,7 @@ export class AIOrchestrator {
     
     // CRITICAL RULE: Claude can always handle everything as backup
     const fallbackToClaude = {
-      llm: this.registry.get("claude"),
+      llm: this.registry.getProvider("windsurf-claude"),
       model: "claude-3-5-sonnet-20241022",
       reason: "fallback_orchestrator"
     };
@@ -50,7 +50,7 @@ export class AIOrchestrator {
         console.warn(`Primary choice failed (${routing.primary.reason}):`, primaryError);
         
         // Claude steps in as intelligent backup
-        const result = await fallbackToClaude.llm.generate(
+        const result = await fallbackToClaude.llm?.generate?.(
           this.wrapPromptForClaudeOrchestration(task.prompt, task, primaryError),
           { model: fallbackToClaude.model }
         );
@@ -63,7 +63,7 @@ export class AIOrchestrator {
       // If routing itself fails, Claude handles everything
       console.error("Routing failed, Claude taking over:", routingError);
       
-      const result = await fallbackToClaude.llm.generate(
+      const result = await fallbackToClaude.llm?.generate?.(
         this.wrapPromptForClaudeOrchestration(task.prompt, task, routingError),
         { model: fallbackToClaude.model }
       );
@@ -78,7 +78,7 @@ export class AIOrchestrator {
     if (task.type.includes("multimodal") || task.type.includes("visual") || task.context?.hasMedia) {
       return {
         primary: { 
-          llm: this.registry.get("gemini"), 
+          llm: this.registry.getProvider("gemini-cli"), 
           model: "gemini-1.5-pro",
           reason: "multimodal_processing_required"
         }
@@ -89,7 +89,7 @@ export class AIOrchestrator {
     if (task.complexity === "complex" && (task.priority === "depth" || task.type.includes("math"))) {
       return {
         primary: { 
-          llm: this.registry.get("deepseek"), 
+          llm: this.registry.getProvider("deepseek"), 
           model: "deepseek-reasoner",
           reason: "complex_reasoning_required"
         }
@@ -100,7 +100,7 @@ export class AIOrchestrator {
     if (task.type.includes("creative") || task.type.includes("game") || task.type.includes("interactive")) {
       return {
         primary: { 
-          llm: this.registry.get("gemini"), 
+          llm: this.registry.getProvider("gemini-cli"), 
           model: "gemini-1.5-flash",
           reason: "creative_and_interactive_content"
         }
@@ -111,7 +111,7 @@ export class AIOrchestrator {
     if (task.complexity === "simple" && task.priority === "speed") {
       return {
         primary: { 
-          llm: this.registry.get("openai"), 
+          llm: this.registry.getProvider("openai"), 
           model: "gpt-4o-mini",
           reason: "speed_optimized"
         }
@@ -122,7 +122,7 @@ export class AIOrchestrator {
     if (task.culturalSensitive || task.complexity === "critical" || task.priority === "reliability") {
       return {
         primary: { 
-          llm: this.registry.get("claude"), 
+          llm: this.registry.getProvider("windsurf-claude"), 
           model: "claude-3-5-sonnet-20241022",
           reason: "cultural_safety_and_reliability"
         }
@@ -132,7 +132,7 @@ export class AIOrchestrator {
     // Default: Claude orchestrates everything else
     return {
       primary: { 
-        llm: this.registry.get("claude"), 
+        llm: this.registry.getProvider("windsurf-claude"), 
         model: "claude-3-5-sonnet-20241022",
         reason: "default_orchestrator"
       }
@@ -190,7 +190,7 @@ Handle this with your full capabilities, considering the failure context and ens
     });
   }
 
-  private async logEmergencyFallback(task: any, result: any, error: any) {
+  private async logEmergencyFallback(task: any, _result: any, error: any) {
     await writeEpisode({
       who: "agent:claude",
       kind: "emergency_orchestration",

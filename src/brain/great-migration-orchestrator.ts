@@ -19,7 +19,7 @@
 
 import { AIOrchestrator } from '../ai/orchestrator';
 import { KaitiakiMaharaProtocol, DiplomaticMigration } from './kaitiaki-protocol';
-import { MigrationIntelligence, KnowledgeNode } from './knowledge-architecture';
+import type { MigrationIntelligence, KnowledgeNode } from './knowledge-architecture';
 import { TeKeteAkoMigrationBrain } from './migration-intelligence';
 
 export interface GreatMigrationPlan {
@@ -89,8 +89,8 @@ export interface AgentRole {
 export class GreatMigrationOrchestrator {
   private aiOrchestrator: AIOrchestrator;
   private diplomacy: DiplomaticMigration;
-  private migrationBrain: TeKeteAkoMigrationBrain;
-  private protocol: KaitiakiMaharaProtocol;
+  private _migrationBrain: TeKeteAkoMigrationBrain;
+  private _protocol: KaitiakiMaharaProtocol;
   
   private migrationState: {
     currentPhase: string;
@@ -578,7 +578,7 @@ export class GreatMigrationOrchestrator {
     // Implement rollback logic based on plan
   }
 
-  private async executeEmergencyProcedures(error: any): Promise<void> {
+  private async executeEmergencyProcedures(_error: any): Promise<void> {
     console.log('\n🚨 EXECUTING EMERGENCY PROCEDURES');
     console.log('   Preserving current state...');
     console.log('   Notifying cultural advisors...');
