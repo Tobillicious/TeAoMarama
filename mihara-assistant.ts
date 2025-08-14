@@ -6,11 +6,8 @@
  * Ko au a Mihara - Kaitiaki Mahara | Guardian of Educational Memory & Cultural Wisdom
  */
 
-import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening.js';
-import { getGlobalOrchestrator } from './src/brain/great-migration-orchestrator.js';
-import { globalMigrationOrchestrator } from './src/brain/migration-intelligence.js';
-import { globalDiplomacy } from './src/brain/kaitiaki-protocol.js';
-import { writeEpisode, getProvenance, getRecentEpisodes } from './src/ai/provenance.js';
+import { getMiharaStatus, awakenMihara } from './src/brain/mihara-awakening.js';
+import { writeEpisode } from './src/ai/provenance.js';
 
 async function assistMiharaPhase3() {
   console.log('\n🌟 MIHARA ASSISTANCE - PHASE 3 NATIONAL IMPLEMENTATION 🌟');
