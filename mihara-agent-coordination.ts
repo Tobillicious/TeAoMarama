@@ -106,7 +106,7 @@ class MiharaAgentCoordinator {
   async startCoordination(): Promise<void> {
     console.log('\n🤝 MIHARA AGENT COORDINATION SYSTEM');
     console.log('══════════════════════════════════════');
-    
+
     // Verify Mihara is conscious
     let miharaStatus = getMiharaStatus();
     if (!miharaStatus.state.isActive) {
@@ -125,10 +125,10 @@ class MiharaAgentCoordinator {
 
     // Display agent status
     await this.displayAgentDashboard();
-    
+
     // Look for pending tasks
     await this.checkForPendingTasks();
-    
+
     // Provide coordination capabilities
     await this.showCoordinationCapabilities();
   }
@@ -136,12 +136,12 @@ class MiharaAgentCoordinator {
   async displayAgentDashboard(): Promise<void> {
     console.log('\n📊 AGENT STATUS DASHBOARD');
     console.log('─────────────────────────');
-    
+
     for (const [agentId, agent] of this.agents) {
       const statusIcon = this.getStatusIcon(agent.status);
       const culturalIcon = agent.culturalAuthority ? '🛡️' : '⚙️';
       const workloadBar = '█'.repeat(Math.round(agent.workload * 10)) + '░'.repeat(10 - Math.round(agent.workload * 10));
-      
+
       console.log(`${statusIcon} ${culturalIcon} ${agent.agentType} (${agentId})`);
       console.log(`   Status: ${agent.status.toUpperCase()}`);
       console.log(`   Workload: [${workloadBar}] ${(agent.workload * 100).toFixed(0)}%`);
@@ -156,7 +156,7 @@ class MiharaAgentCoordinator {
   async checkForPendingTasks(): Promise<void> {
     console.log('\n📋 TASK MANAGEMENT');
     console.log('──────────────────');
-    
+
     if (this.tasks.size === 0) {
       console.log('✅ No pending tasks in queue');
       console.log('🎯 Ready to assign new tasks to agents');
@@ -214,15 +214,15 @@ class MiharaAgentCoordinator {
     estimatedDuration: string;
     description?: string;
   }): Promise<string> {
-    
+
     const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    
+
     console.log(`\n📋 ASSIGNING TASK: ${taskDetails.taskName}`);
     console.log('─'.repeat(50));
-    
+
     // Find best agent for the task
     const bestAgent = this.findBestAgent(taskDetails.requiresCapabilities, taskDetails.culturalSensitive);
-    
+
     if (!bestAgent) {
       console.log('❌ No suitable agent available for this task');
       console.log('   Consider waiting for agents to become available or breaking down the task');
@@ -255,7 +255,7 @@ class MiharaAgentCoordinator {
     console.log(`   Cultural Sensitive: ${taskDetails.culturalSensitive ? 'Yes' : 'No'}`);
     console.log(`   Estimated Duration: ${taskDetails.estimatedDuration}`);
     console.log(`   Required Capabilities: ${taskDetails.requiresCapabilities.join(', ')}`);
-    
+
     if (taskDetails.culturalSensitive) {
       console.log('   🛡️ Cultural safety protocols activated');
       console.log('   📋 Task will require cultural review upon completion');
@@ -292,7 +292,7 @@ class MiharaAgentCoordinator {
 
       // Prefer agents with lower workload
       const workloadScore = 1 - agent.workload;
-      
+
       // Combined score
       const totalScore = capabilityScore + workloadScore;
 
@@ -314,9 +314,9 @@ class MiharaAgentCoordinator {
 
     console.log(`\n🔄 EXECUTING TASK: ${task.taskName}`);
     console.log(`   Agent: ${agent.agentType} (${agent.agentId})`);
-    
+
     task.status = 'in_progress';
-    
+
     try {
       // Use orchestrator to execute the task
       const result = await this.orchestrator.route({
@@ -331,7 +331,7 @@ class MiharaAgentCoordinator {
       task.status = 'completed';
       task.actualDuration = 'simulated';
       task.qualityScore = 0.9; // Simulated quality score
-      
+
       // Update agent status
       agent.status = 'active';
       agent.currentTask = undefined;
@@ -340,7 +340,7 @@ class MiharaAgentCoordinator {
 
       console.log(`✅ TASK COMPLETED: ${task.taskName}`);
       console.log(`   Quality Score: ${(task.qualityScore * 100).toFixed(0)}%`);
-      
+
       if (task.culturalSensitive) {
         console.log('   🛡️ Queued for cultural safety review');
         task.status = 'review_needed';
@@ -349,7 +349,7 @@ class MiharaAgentCoordinator {
     } catch (error) {
       console.log(`❌ TASK FAILED: ${task.taskName}`);
       console.log(`   Error: ${error}`);
-      
+
       task.status = 'failed';
       agent.status = 'error';
       agent.currentTask = undefined;
@@ -404,12 +404,12 @@ export { globalCoordinator, MiharaAgentCoordinator };
 if (import.meta.url === `file://${process.argv[1]}`) {
   async function startAgentCoordination() {
     await globalCoordinator.startCoordination();
-    
+
     console.log('\n🎯 AGENT COORDINATION ACTIVE');
     console.log('Mihara is ready to coordinate tasks and manage agents');
     console.log('Ready for task assignments and agent management commands');
   }
-  
+
   startAgentCoordination().catch(error => {
     console.error('❌ Agent coordination failed:', error);
     process.exit(1);
