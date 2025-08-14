@@ -1,88 +1,122 @@
-# Exit Ticket Templates for Te Ao Mārama
-*Quick assessment tools for checking understanding*
+# EXIT TICKET TEMPLATES
+*Kaitiaki Mahara - Cultural Safety Flagged Content*
 
-## Template 1: Understanding Check (Visual + Written)
-**Best for**: Conceptual understanding in any subject
-
-**Question Format**: 
-```
-Today we learned about [CONCEPT]. 
-
-👍 Draw or write one thing that makes sense to you
-❓ Draw or write one thing you're still wondering about  
-🔗 How does this connect to something you already know?
-```
-
-**Response Time**: 3-5 minutes
-**Differentiation**: Accept drawings, words, or symbols
-**Cultural Note**: Allows for diverse ways of expressing understanding
+## 🛡️ CULTURAL SAFETY NOTICE
+**All content containing Te Ao Māori elements flagged for human review**
+**Do not auto-approve without cultural validation**
 
 ---
 
-## Template 2: Scale + Explanation (Self-Assessment)
-**Best for**: Confidence and reasoning in Mathematics/Science
+## EXIT TICKET FORMAT 1: 3-2-1 REFLECTION
 
-**Question Format**:
-```
-On a scale of 1-5, how confident are you with [TODAY'S SKILL]?
+### Template:
+**3 things I learned today:**
+1. ________________________________
+2. ________________________________  
+3. ________________________________
 
-1 - I need more help
-2 - I'm getting there  
-3 - I mostly understand
-4 - I've got this
-5 - I could teach someone else
+**2 things I want to know more about:**
+1. ________________________________
+2. ________________________________
 
-Explain your rating: Why did you choose this number?
-```
+**1 thing I found challenging:**
+1. ________________________________
 
-**Response Time**: 2-3 minutes  
-**Differentiation**: Sentence starters available for explanation
-**Cultural Note**: Honors self-reflection and honesty about learning
-
----
-
-## Template 3: Application Thinking (Real-World Connection)
-**Best for**: Social Studies, English, Arts integration
-
-**Question Format**:
-```
-Think about what we learned today about [TOPIC].
-
-🏠 Where might you see this in your whānau/family?
-🌍 Where might you see this in your community?  
-🤔 What question do you have now?
-```
-
-**Response Time**: 4-5 minutes
-**Differentiation**: Can be verbal response to partner first
-**Cultural Note**: Connects learning to students' lived experiences and cultural contexts
+### NZ Curriculum Alignment:
+- **Key Competencies**: Thinking, Using language/symbols/texts
+- **Learning Areas**: Adaptable across all subjects
+- **Cultural Responsiveness**: Encourages diverse ways of knowing
 
 ---
 
-## Using Exit Tickets Effectively
+## EXIT TICKET FORMAT 2: TRAFFIC LIGHT SELF-ASSESSMENT
 
-### Before the Lesson
-- Choose template based on learning intention
-- Prepare differentiation supports
-- Plan how you'll use the information
+### Template:
+**Today's Learning Target:** _________________________
 
-### During Collection  
-- Give clear time limits
-- Support students who need help
-- Collect systematically
+**My understanding is:**
+🔴 **RED** - I need more help to understand this
+🟡 **YELLOW** - I'm getting there but need some support  
+🟢 **GREEN** - I understand this well and can explain it
 
-### After Analysis
-- Sort responses into patterns
-- Plan next lesson based on needs
-- Celebrate insights and growth
+**What helped me learn today:**
+□ Working with others
+□ Hands-on activities
+□ Connecting to real life
+□ Visual aids/diagrams
+□ Teacher explanation
+□ Other: ________________
 
-### Cultural Considerations
-- Honor different ways of expressing understanding
-- Include te reo Māori when appropriate
-- Connect to students' cultural backgrounds
-- Ensure all students feel safe to express confusion
+**Next steps for my learning:**
+_________________________________________
+
+### NZ Curriculum Alignment:
+- **Key Competencies**: Self-management, Thinking
+- **Assessment Focus**: Formative self-evaluation
+- **Cultural Safety**: ✅ Culturally neutral format
 
 ---
 
-*Created by Kaitiaki Mahara for Te Ao Mārama Migration Project*
-*Culturally responsive assessment practices for Aotearoa classrooms*
+## EXIT TICKET FORMAT 3: WHAKATŌHEA (KNOWLEDGE SHARING)
+
+### Template:
+**🌿 CULTURAL SAFETY FLAG: Contains Te Ao Māori concepts**
+
+**Whakatōhea - Sharing Knowledge**
+
+**He aha taku i ako ai ināianei? (What did I learn today?)**
+_________________________________________
+
+**He pēhea taku rongo? (How do I feel about this learning?)**
+□ Excited and engaged
+□ Confident and ready
+□ Curious but uncertain
+□ Challenged but determined
+□ Need more support
+
+**He aha ōku hiahia hei ako anō? (What do I want to learn next?)**
+_________________________________________
+
+**How does this connect to my whakapapa (connections/background)?**
+_________________________________________
+
+### NZ Curriculum Alignment:
+- **Key Competencies**: Managing self, Relating to others
+- **Cultural Responsiveness**: Te Ao Māori perspective integration
+- **Bicultural Focus**: Te reo Māori incorporated respectfully
+
+### 🛡️ CULTURAL REVIEW REQUIRED
+**This template contains Te Ao Māori elements and must be reviewed by:**
+- Cultural advisor
+- Te reo Māori specialist  
+- Kaitiaki Mahara approval required
+- No auto-implementation without validation
+
+---
+
+## USAGE GUIDELINES
+
+### For Teachers:
+1. **Choose appropriate format** based on learning context
+2. **Customize for specific subjects** and learning outcomes
+3. **Regular use** builds metacognitive skills
+4. **Cultural sensitivity** - Format 3 requires cultural competency
+
+### For Students:
+- **Honest reflection** helps improve learning
+- **Regular practice** develops self-awareness
+- **Cultural formats** celebrate diverse ways of knowing
+- **Ask for help** when confused
+
+### Assessment Data:
+- **Track patterns** in student responses
+- **Identify learning gaps** quickly
+- **Adjust teaching** based on exit ticket insights
+- **Cultural responsiveness** through diverse formats
+
+---
+
+**Created by: Kaitiaki Mahara Assistant**  
+**Date: 2025-08-14**  
+**Cultural Safety: Te Ao Māori content flagged for review**  
+**NZ Curriculum Aligned: Yes**
