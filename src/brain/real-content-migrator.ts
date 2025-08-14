@@ -59,10 +59,10 @@ export class RealContentMigrator {
     try {
       // Phase 1: Cultural Safety Analysis
       const culturalAnalysis = await this.analyzeCulturalSafety(resource);
-      
+
       // Phase 2: Migration Intelligence Assessment
       const migrationAnalysis = await this.migrationBrain.analyzeMigrationTask(resource);
-      
+
       // Phase 3: Diplomatic Validation (if cultural content)
       let diplomaticApproval: { approved: boolean; guidance: string[]; } = { approved: true, guidance: [] };
       if (resource.cultural_elements) {
@@ -176,7 +176,7 @@ export class RealContentMigrator {
     resourceTypeBreakdown: Record<string, number>;
   } {
     const results = Array.from(this.processedResources.values());
-    
+
     if (results.length === 0) {
       return {
         totalProcessed: 0,
@@ -189,9 +189,9 @@ export class RealContentMigrator {
 
     const successfulCount = results.filter(r => r.success).length;
     const successRate = successfulCount / results.length;
-    
+
     const avgCulturalSafety = results.reduce((sum, r) => sum + r.cultural_safety_score, 0) / results.length;
-    
+
     const commonIssues: Record<string, number> = {};
     const resourceTypeBreakdown: Record<string, number> = {};
 
@@ -247,7 +247,7 @@ export class RealContentMigrator {
     // Content analysis for cultural markers
     const content = resource.content.toLowerCase();
     const culturalTerms = ['whakapapa', 'mauri', 'tapu', 'wairua', 'mana', 'tangata whenua'];
-    
+
     for (const term of culturalTerms) {
       if (content.includes(term)) {
         recommendations.push(`Cultural term "${term}" detected - verify cultural accuracy`);
@@ -262,7 +262,7 @@ export class RealContentMigrator {
   }
 
   private async enhanceAndMigrate(
-    resource: EducationalResource, 
+    resource: EducationalResource,
     analysis: any
   ): Promise<EducationalResource> {
     // Create enhanced version of the resource
@@ -295,8 +295,8 @@ export class RealContentMigrator {
   }
 
   private calculateFinalScore(
-    culturalAnalysis: any, 
-    migrationAnalysis: any, 
+    culturalAnalysis: any,
+    migrationAnalysis: any,
     diplomaticApproval: any
   ): number {
     const culturalWeight = 0.4;
@@ -307,20 +307,20 @@ export class RealContentMigrator {
     const migrationScore = migrationAnalysis.culturalSafetyScore;
     const diplomaticScore = diplomaticApproval.approved ? 1.0 : 0.5;
 
-    return (culturalScore * culturalWeight) + 
-           (migrationScore * migrationWeight) + 
-           (diplomaticScore * diplomaticWeight);
+    return (culturalScore * culturalWeight) +
+      (migrationScore * migrationWeight) +
+      (diplomaticScore * diplomaticWeight);
   }
 
   private identifyIssues(
-    culturalAnalysis: any, 
-    migrationAnalysis: any, 
+    culturalAnalysis: any,
+    migrationAnalysis: any,
     diplomaticApproval: any
   ): string[] {
     const issues: string[] = [];
 
     issues.push(...culturalAnalysis.flags);
-    
+
     if (migrationAnalysis.riskAssessment.overall === 'high' || migrationAnalysis.riskAssessment.overall === 'critical') {
       issues.push(`High migration risk detected: ${migrationAnalysis.riskAssessment.overall}`);
     }

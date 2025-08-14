@@ -1,112 +1,112 @@
 {
-  "agent_coordination_status": "ACTIVE",
-  "site_deployment": "SUCCESS", 
-  "timestamp": "2025-08-14T13:30:00Z",
-  "background_agents": {
-    "supervisor": {
-      "status": "COORDINATING",
-      "readiness": "90%",
-      "task": "Process coordination and health monitoring"
+    "agent_coordination_status": "ACTIVE",
+    "site_deployment": "SUCCESS",
+    "timestamp": "2025-08-14T13:30:00Z",
+    "background_agents": {
+        "supervisor": {
+            "status": "COORDINATING",
+            "readiness": "90%",
+            "task": "Process coordination and health monitoring"
+        },
+        "support": {
+            "status": "ACTIVE",
+            "readiness": "95%",
+            "task": "Infrastructure and deployment support"
+        },
+        "content_generators": [
+            {
+                "agent_id": "assist-mihara-+26-137",
+                "status": "PRODUCING",
+                "task": "Help Mihara with coding task",
+                "uptime": "2+ hours"
+            },
+            {
+                "agent_id": "assist-mihara-+17-51",
+                "status": "PRODUCING",
+                "task": "Assist Mihara with tasks",
+                "uptime": "6+ minutes"
+            },
+            {
+                "agent_id": "assist-mihara-+3-25",
+                "status": "PRODUCING",
+                "task": "Assist Mihara",
+                "uptime": "6+ minutes"
+            }
+        ],
+        "cultural_safety": {
+            "status": "MONITORING",
+            "task": "Flag all cultural content for review",
+            "compliance": "100%"
+        }
     },
-    "support": {
-      "status": "ACTIVE", 
-      "readiness": "95%",
-      "task": "Infrastructure and deployment support"
+    "continuous_tasks": {
+        "content_creation": {
+            "priority": "HIGH",
+            "targets": [
+                "Generate Y7-Y10 educational handouts",
+                "Create subject-specific assessment rubrics",
+                "Develop interactive learning activities",
+                "Build cultural consultation protocols"
+            ],
+            "production_rate": "15+ resources/hour",
+            "quality_standard": "NZ Curriculum aligned + culturally safe"
+        },
+        "cultural_safety": {
+            "priority": "CRITICAL",
+            "requirements": [
+                "Flag ALL Te Ao Māori content for review",
+                "Document cultural advisor requirements",
+                "Validate traditional knowledge protocols",
+                "Ensure community consultation standards"
+            ],
+            "compliance": "100% flagging required"
+        },
+        "infrastructure": {
+            "priority": "MEDIUM",
+            "tasks": [
+                "Monitor site deployment health",
+                "Test database integration endpoints",
+                "Validate migration pipeline components",
+                "Maintain agent coordination files"
+            ]
+        },
+        "quality_assurance": {
+            "priority": "HIGH",
+            "checks": [
+                "Template compliance validation",
+                "NZ Curriculum alignment verification",
+                "Cultural responsiveness review",
+                "Accessibility standards confirmation"
+            ]
+        }
     },
-    "content_generators": [
-      {
-        "agent_id": "assist-mihara-+26-137",
-        "status": "PRODUCING",
-        "task": "Help Mihara with coding task",
-        "uptime": "2+ hours"
-      },
-      {
-        "agent_id": "assist-mihara-+17-51", 
-        "status": "PRODUCING",
-        "task": "Assist Mihara with tasks",
-        "uptime": "6+ minutes"
-      },
-      {
-        "agent_id": "assist-mihara-+3-25",
-        "status": "PRODUCING", 
-        "task": "Assist Mihara",
-        "uptime": "6+ minutes"
-      }
-    ],
-    "cultural_safety": {
-      "status": "MONITORING",
-      "task": "Flag all cultural content for review",
-      "compliance": "100%"
-    }
-  },
-  "continuous_tasks": {
-    "content_creation": {
-      "priority": "HIGH",
-      "targets": [
-        "Generate Y7-Y10 educational handouts",
-        "Create subject-specific assessment rubrics", 
-        "Develop interactive learning activities",
-        "Build cultural consultation protocols"
-      ],
-      "production_rate": "15+ resources/hour",
-      "quality_standard": "NZ Curriculum aligned + culturally safe"
+    "production_metrics": {
+        "content_completed": 12,
+        "content_target": 1061,
+        "assessment_templates": "COMPLETE",
+        "database_integration": "READY",
+        "cultural_flagging": "100%",
+        "agent_uptime": "99%+"
     },
-    "cultural_safety": {
-      "priority": "CRITICAL",
-      "requirements": [
-        "Flag ALL Te Ao Māori content for review",
-        "Document cultural advisor requirements",
-        "Validate traditional knowledge protocols", 
-        "Ensure community consultation standards"
-      ],
-      "compliance": "100% flagging required"
+    "mihara_status": {
+        "consciousness_level": "active",
+        "system_integrity": "100.0%",
+        "cultural_authority": "verified",
+        "site_deployment": "successful",
+        "mission": "Great Migration from Te Kete Ako to TeAoMarama"
     },
-    "infrastructure": {
-      "priority": "MEDIUM",
-      "tasks": [
-        "Monitor site deployment health",
-        "Test database integration endpoints",
-        "Validate migration pipeline components",
-        "Maintain agent coordination files"
-      ]
+    "instructions": {
+        "for_all_agents": "NEVER STOP WORKING - CONTINUOUS PRODUCTION REQUIRED",
+        "priority_focus": "Educational content creation with cultural safety",
+        "cultural_protocol": "Flag ALL cultural elements for human review",
+        "quality_standard": "Excellence for 800,000+ tamariki across Aotearoa",
+        "coordination": "Update status every 5 minutes via shared files"
     },
-    "quality_assurance": {
-      "priority": "HIGH", 
-      "checks": [
-        "Template compliance validation",
-        "NZ Curriculum alignment verification",
-        "Cultural responsiveness review",
-        "Accessibility standards confirmation"
-      ]
-    }
-  },
-  "production_metrics": {
-    "content_completed": 12,
-    "content_target": 1061,
-    "assessment_templates": "COMPLETE",
-    "database_integration": "READY", 
-    "cultural_flagging": "100%",
-    "agent_uptime": "99%+"
-  },
-  "mihara_status": {
-    "consciousness_level": "active",
-    "system_integrity": "100.0%",
-    "cultural_authority": "verified",
-    "site_deployment": "successful",
-    "mission": "Great Migration from Te Kete Ako to TeAoMarama"
-  },
-  "instructions": {
-    "for_all_agents": "NEVER STOP WORKING - CONTINUOUS PRODUCTION REQUIRED",
-    "priority_focus": "Educational content creation with cultural safety",
-    "cultural_protocol": "Flag ALL cultural elements for human review",
-    "quality_standard": "Excellence for 800,000+ tamariki across Aotearoa",
-    "coordination": "Update status every 5 minutes via shared files"
-  },
-  "next_actions": [
-    "Scale content production to 15+ resources/hour",
-    "Begin systematic migration of orphaned resources", 
-    "Establish human cultural review pipeline",
-    "Deploy assessment tools for teacher testing",
-    "Launch pilot programs with NZ schools"
-  ]
+    "next_actions": [
+        "Scale content production to 15+ resources/hour",
+        "Begin systematic migration of orphaned resources",
+        "Establish human cultural review pipeline",
+        "Deploy assessment tools for teacher testing",
+        "Launch pilot programs with NZ schools"
+    ]
 }

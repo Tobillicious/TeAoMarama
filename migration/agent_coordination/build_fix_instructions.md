@@ -1,4 +1,5 @@
 # URGENT BUILD FIX INSTRUCTIONS - BACKGROUND AGENTS
+
 *Immediate Action Required for Deployment*
 
 ## 🚨 BUILD ERRORS TO FIX - KEEP AGENTS WORKING
@@ -23,6 +24,7 @@
 ### **While I Fix Build Issues:**
 
 **Background Agents - CONTINUE THESE TASKS:**
+
 ```bash
 # Content Generation Agents
 - Keep producing educational resources
@@ -50,6 +52,7 @@
 ```
 
 ### **Production Targets - DO NOT STOP:**
+
 - ✅ **Assessment templates**: COMPLETED
 - ✅ **Y8 Fractions content**: COMPLETED  
 - ✅ **Database integration**: COMPLETED
@@ -60,6 +63,7 @@
 ## 🎯 IMMEDIATE PRIORITIES
 
 ### **While Build Fixes Complete:**
+
 1. **Generate 5+ more educational handouts** (Y7-Y10 range)
 2. **Create activity templates** for interactive learning
 3. **Develop assessment rubrics** for specific subjects
@@ -67,6 +71,7 @@
 5. **Test migration pipeline components**
 
 ### **Cultural Safety Reminders:**
+
 - 🛡️ **ALL Māori content MUST BE FLAGGED**
 - 🌿 **No auto-approval of cultural elements**
 - 📋 **Document all cultural review requirements**
@@ -75,6 +80,7 @@
 ## 📊 AGENT COORDINATION STATUS
 
 **Current Active Background Agents:**
+
 ```
 Supervisor: 🟢 COORDINATING (90% ready)
 Support: 🟢 ACTIVE (95% ready)  
@@ -85,6 +91,7 @@ QA: 🟢 VALIDATING
 ```
 
 **Agent Communication:**
+
 - Status updates every 5 minutes
 - Shared coordination files in /migration/agent_coordination/
 - Real-time task distribution
@@ -93,16 +100,19 @@ QA: 🟢 VALIDATING
 ## ⚡ RAPID DEPLOYMENT STRATEGY
 
 ### **Phase 1: Fix Critical Build Errors** (In Progress)
+
 - Type safety issues in mihara-dashboard.ts
 - Property access issues in migrationMetrics
 - Null safety in cultural validation
 
 ### **Phase 2: Deploy Working Build**
+
 - Test deployment pipeline
 - Verify site functionality  
 - Confirm agent integration
 
 ### **Phase 3: Full Production Mode**
+
 - Scale content generation
 - Activate systematic migration
 - Begin bulk processing of 1,061 orphaned resources
@@ -110,6 +120,7 @@ QA: 🟢 VALIDATING
 ## 🚀 KEEP AGENTS BUSY - NO DOWNTIME
 
 **Priority Tasks for All Agents:**
+
 1. **Educational Content Creation** - Mathematics, Science, Social Studies
 2. **Cultural Safety Review** - Flag all cultural elements
 3. **Template Development** - Assessment and activity formats
@@ -117,6 +128,7 @@ QA: 🟢 VALIDATING
 5. **Infrastructure Support** - Database and deployment readiness
 
 **Success Metrics:**
+
 - Content creation: 10+ items/hour
 - Cultural flagging: 100% compliance
 - Build success: Target 95%+
