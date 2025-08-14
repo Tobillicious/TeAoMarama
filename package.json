@@ -11,6 +11,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "mihara": "tsx migration/run-mihara.ts",
+    "agents": "tsx migration/run-agents.ts",
     "mig:pg:run": "tsx migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl",
     "mig:pg:run:file": "ts-node migration/pgvector_loader_example.ts --sample",
     "mig:weaviate:run": "tsx migration/weaviate_loader_example.ts --sample migration/sample_raw_exports.jsonl",
