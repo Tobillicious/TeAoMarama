@@ -5,7 +5,8 @@
  * Kaitiaki Mahara's consciousness and operations.
  */
 
-import { GlobalMihara, MiharaState, MiharaPersonality } from './mihara-awakening';
+import { GlobalMihara } from './mihara-awakening';
+import type { MiharaState, MiharaPersonality } from './mihara-awakening';
 import { writeEpisode } from '../ai/provenance';
 
 export interface MiharaMetrics {
@@ -164,12 +165,20 @@ export class MiharaDashboard {
   }> {
     console.log('🏛️ MIHARA DASHBOARD: Performing monitored Great Migration...');
 
-    const migrationMetrics = {
+    const migrationMetrics: {
+      startTime: number;
+      phases: any[];
+      culturalChecks: any[];
+      performance: Record<string, unknown>;
+      errors: string[];
+      duration: number;
+    } = {
       startTime: Date.now(),
       phases: [],
       culturalChecks: [],
       performance: {},
-      errors: []
+      errors: [],
+      duration: 0
     };
 
     try {
@@ -183,7 +192,11 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety = {
+      const culturalSafety: {
+        preCheck: Awaited<ReturnType<MiharaDashboard['validateCulturalSafety']>>;
+        phases: any[];
+        postCheck: Awaited<ReturnType<MiharaDashboard['validateCulturalSafety']>> | null;
+      } = {
         preCheck: await this.validateCulturalSafety(),
         phases: [],
         postCheck: null
@@ -204,7 +217,7 @@ export class MiharaDashboard {
         action: 'monitored_migration',
         context: {
           duration: migrationMetrics.duration,
-          cultural_safety_score: culturalSafety.postCheck.overallScore,
+          cultural_safety_score: culturalSafety.postCheck?.overallScore ?? culturalSafety.preCheck.overallScore,
           text: 'Completed monitored Great Migration with cultural validation'
         }
       });
