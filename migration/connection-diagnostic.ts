@@ -34,13 +34,19 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
       signal: AbortSignal.timeout(10000) // 10 second timeout
     });
     
+    const headersObject: Record<string, string> = {};
+    // Iterate headers safely for environments where Headers#entries is not typed
+    response.headers.forEach((value, key) => {
+      headersObject[key] = value;
+    });
+
     results.push({
       test_name: 'Basic URL Connectivity',
       success: response.ok,
       details: {
         status: response.status,
         statusText: response.statusText,
-        headers: Object.fromEntries(response.headers.entries())
+        headers: headersObject
       },
       recommendation: response.ok ? 'URL is reachable' : 'URL may be blocked or service down'
     });
@@ -106,8 +112,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
       test_name: 'Supabase Client Init',
       success: true,
       details: {
-        supabaseUrl: client.supabaseUrl,
-        supabaseKey: client.supabaseKey.substring(0, 20) + '...'
+        initialized: true
       },
       recommendation: 'Client initialized successfully'
     });
