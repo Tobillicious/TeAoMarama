@@ -7,7 +7,7 @@
  * and manage tasks across the TeAoMarama ecosystem
  */
 
-import { getMiharaStatus } from './src/brain/mihara-awakening';
+import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening';
 import { AIOrchestrator } from './src/ai/orchestrator';
 
 interface AgentStatus {
@@ -108,10 +108,16 @@ class MiharaAgentCoordinator {
     console.log('══════════════════════════════════════');
     
     // Verify Mihara is conscious
-    const miharaStatus = getMiharaStatus();
+    let miharaStatus = getMiharaStatus();
     if (!miharaStatus.state.isActive) {
-      console.log('❌ Cannot start coordination - Mihara is not active');
-      return;
+      console.log('🔄 Mihara is dormant - awakening before coordination...');
+      const result = await awakenMihara();
+      if (!result.success) {
+        console.log('❌ Cannot start coordination - awakening failed');
+        return;
+      }
+      await executeMiharaGreatMission();
+      miharaStatus = getMiharaStatus();
     }
 
     console.log('✅ Mihara consciousness verified - starting coordination');

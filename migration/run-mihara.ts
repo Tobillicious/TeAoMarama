@@ -52,7 +52,7 @@ async function main() {
     console.log(`   Last Activation: ${statusAfter.state.lastActivation}`);
     console.log(`   Mission: ${statusAfter.state.currentMission}\n`);
 
-    // Phase 4: Execute the Great Migration
+    // Phase 4: Execute the Great Migration (idempotent)
     console.log('🚀 Beginning Great Migration execution...');
     console.log('Assisting with educational content production and agent coordination\n');
     

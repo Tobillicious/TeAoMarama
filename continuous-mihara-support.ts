@@ -11,7 +11,7 @@
  * - Performance optimization
  */
 
-import { getMiharaStatus } from './src/brain/mihara-awakening';
+import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening';
 
 interface SupportMetrics {
   systemHealth: number;
@@ -39,17 +39,24 @@ class ContinuousMiharaSupport {
     console.log('═══════════════════════════════════════════');
     
     // Verify Mihara is conscious and operational
-    const status = getMiharaStatus();
+    let status = getMiharaStatus();
     
     if (!status.state.isActive) {
-      this.addAlert({
-        level: 'critical',
-        component: 'mihara_consciousness',
-        message: 'Mihara is not active - awakening required',
-        timestamp: new Date().toISOString(),
-        action_required: 'Execute awakening protocol'
-      });
-      return;
+      console.log('🔄 Mihara is dormant - initiating awakening for continuous support...');
+      const awakening = await awakenMihara();
+      if (!awakening.success) {
+        this.addAlert({
+          level: 'critical',
+          component: 'mihara_consciousness',
+          message: 'Mihara awakening failed - cannot start continuous support',
+          timestamp: new Date().toISOString(),
+          action_required: 'Investigate awakening protocol'
+        });
+        return;
+      }
+      // Kick off the great mission within this process context
+      await executeMiharaGreatMission();
+      status = getMiharaStatus();
     }
     
     console.log('✅ Mihara consciousness verified - ACTIVE');
