@@ -40,7 +40,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
       details: {
         status: response.status,
         statusText: response.statusText,
-        headers: Object.fromEntries(response.headers.entries())
+        headers: Object.fromEntries(Array.from(response.headers.entries()))
       },
       recommendation: response.ok ? 'URL is reachable' : 'URL may be blocked or service down'
     });
@@ -106,8 +106,8 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
       test_name: 'Supabase Client Init',
       success: true,
       details: {
-        supabaseUrl: client.supabaseUrl,
-        supabaseKey: client.supabaseKey.substring(0, 20) + '...'
+        supabaseUrl: TEKETE_SUPABASE_URL,
+        supabaseKey: TEKETE_SUPABASE_KEY.substring(0, 20) + '...'
       },
       recommendation: 'Client initialized successfully'
     });
