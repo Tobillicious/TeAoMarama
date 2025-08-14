@@ -5,7 +5,7 @@
  * Kaitiaki Mahara's consciousness and operations.
  */
 
-import { GlobalMihara, type MiharaState, type MiharaPersonality } from './mihara-awakening';
+import { GlobalMihara, MiharaState, MiharaPersonality } from './mihara-awakening';
 import { writeEpisode } from '../ai/provenance';
 
 export interface MiharaMetrics {
