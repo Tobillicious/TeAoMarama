@@ -422,9 +422,30 @@ export class ContentValidationPipeline {
     return missingMacrons;
   }
   private hasCulturalPerspectives(content: any): boolean { return false; }
-  private hasAdequateScaffolding(content: any): boolean { return false; }
-  private hasDifferentiation(content: any): boolean { return false; }
-  private hasFormativeAssessment(content: any): boolean { return false; }
+  private hasAdequateScaffolding(content: any): boolean {
+    const contentString = JSON.stringify(content).toLowerCase();
+    const scaffoldingKeywords = [
+      'scaffold', 'graphic organizer', 'sentence starter', 'writing frame',
+      'checklist', 'step-by-step', 'guided practice', 'vocabulary list'
+    ];
+    return scaffoldingKeywords.some(keyword => contentString.includes(keyword));
+  }
+  private hasDifferentiation(content: any): boolean {
+    const contentString = JSON.stringify(content).toLowerCase();
+    const differentiationKeywords = [
+      'differentiation', 'extension task', 'support activity', 'for all learners',
+      'for all abilities', 'choice board', 'tiered activity'
+    ];
+    return differentiationKeywords.some(keyword => contentString.includes(keyword));
+  }
+  private hasFormativeAssessment(content: any): boolean {
+    const contentString = JSON.stringify(content).toLowerCase();
+    const assessmentKeywords = [
+      'formative assessment', 'exit ticket', 'success criteria', 'learning intentions',
+      'walt', 'wala', 'quick check', 'peer feedback', 'self-assessment'
+    ];
+    return assessmentKeywords.some(keyword => contentString.includes(keyword));
+  }
   private hasExemplars(content: any): boolean {
     const contentString = JSON.stringify(content).toLowerCase();
     const exemplarKeywords = [
