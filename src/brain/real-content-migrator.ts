@@ -64,7 +64,7 @@ export class RealContentMigrator {
       const migrationAnalysis = await this.migrationBrain.analyzeMigrationTask(resource);
       
       // Phase 3: Diplomatic Validation (if cultural content)
-      let diplomaticApproval = { approved: true, guidance: [] };
+      let diplomaticApproval: { approved: boolean; guidance: string[]; } = { approved: true, guidance: [] };
       if (resource.cultural_elements) {
         diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource) as { approved: boolean; guidance: string[]; };
       }

@@ -40,7 +40,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
       details: {
         status: response.status,
         statusText: response.statusText,
-        headers: Object.fromEntries(Array.from(response.headers.entries()))
+        headers: {} as Record<string, string>
       },
       recommendation: response.ok ? 'URL is reachable' : 'URL may be blocked or service down'
     });
