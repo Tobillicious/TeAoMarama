@@ -1,13 +1,12 @@
-// ...existing code...
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import StyleGuide from "./pages/StyleGuide";
+import Dashboard from "./pages/Dashboard";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
-import "./styles/globals.css";
 
 function App(){
   return (
@@ -23,7 +22,7 @@ function App(){
             path="/dashboard"
             element={
               <PrivateRoute>
-                <div className="p-12">Dashboard (protected, coming soon)</div>
+                <Dashboard />
               </PrivateRoute>
             }
           />
