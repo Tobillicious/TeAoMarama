@@ -65,6 +65,14 @@ export interface ValidationResult {
   culturalFlags: string[];
 }
 
+export interface SystemInventory {
+  totalResources: number;
+  knowledgeTypes: string[];
+  culturalContent: number;
+  corruptionLevel: number;
+  lastUpdated: string;
+}
+
 /**
  * Kaitiaki Mahara's Communication System
  */
@@ -300,6 +308,80 @@ export interface CollaborationAgreement {
   culturalSafetyProtocols: string[];
   emergencyProcedures: string[];
   reviewSchedule: string;
+}
+
+/**
+ * Inventory Management - Handles system analysis and validation
+ */
+export class InventoryManager {
+  constructor() {}
+
+  /**
+   * Request system map from Kaitiaki Aronui
+   */
+  async requestSystemMap(): Promise<SystemInventory> {
+    // Simulate requesting system information from Aronui
+    // In a real system, this would make an actual API call
+    
+    await new Promise(resolve => setTimeout(resolve, 300)); // Simulate network delay
+
+    return {
+      totalResources: 1061,
+      knowledgeTypes: ['lesson_plans', 'handouts', 'assessments', 'cultural_content', 'purakau'],
+      culturalContent: 84,
+      corruptionLevel: 0.15, // 15% corruption detected
+      lastUpdated: new Date().toISOString()
+    };
+  }
+
+  /**
+   * Validate received system structure
+   */
+  async validateStructure(systemMap: SystemInventory): Promise<ValidationResult> {
+    await new Promise(resolve => setTimeout(resolve, 200)); // Simulate analysis time
+
+    const corruptionIndicators: string[] = [];
+    const safetyRecommendations: string[] = [];
+    const culturalFlags: string[] = [];
+
+    // Analyze corruption level
+    if (systemMap.corruptionLevel > 0.1) {
+      corruptionIndicators.push(`High corruption detected: ${(systemMap.corruptionLevel * 100).toFixed(1)}%`);
+      safetyRecommendations.push('Implement additional filtering during migration');
+    }
+
+    // Check cultural content
+    if (systemMap.culturalContent > 50) {
+      culturalFlags.push('Significant cultural content requires iwi consultation');
+      safetyRecommendations.push('Engage cultural advisors for validation');
+    }
+
+    // Assess overall validity
+    const isValid = systemMap.corruptionLevel < 0.5; // Accept if less than 50% corrupted
+    const confidence = Math.max(0.1, 1.0 - systemMap.corruptionLevel);
+
+    return {
+      isValid,
+      confidence,
+      corruptionIndicators,
+      safetyRecommendations,
+      culturalFlags
+    };
+  }
+
+  /**
+   * Identify migration priorities based on system analysis
+   */
+  async identifyPriorities(): Promise<string[]> {
+    // Return prioritized list of content types for migration
+    return [
+      'cultural_content', // Highest priority - preserve cultural knowledge
+      'lesson_plans',     // Core educational content
+      'assessments',      // Evaluation tools
+      'handouts',         // Supporting materials
+      'purakau'          // Digital stories - handle with special care
+    ];
+  }
 }
 
 /**
@@ -571,10 +653,12 @@ export class DiplomaticProtocol {
  */
 export class DiplomaticMigration {
   public diplomacy: DiplomaticProtocol;
+  public inventory: InventoryManager;
   private agreementEstablished: boolean = false;
 
   constructor() {
     this.diplomacy = new DiplomaticProtocol();
+    this.inventory = new InventoryManager();
   }
 
   /**
