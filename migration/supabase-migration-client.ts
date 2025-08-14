@@ -362,12 +362,14 @@ export async function createMigrationPlan(): Promise<void> {
 }
 
 // Export the main client for direct use
+// Re-export kept for convenience; avoid duplicate class export conflicts
 export { MiharaMigrationClient };
 
 /**
  * Quick CLI execution for testing
  */
-if (require.main === module) {
+// Guard CommonJS-specific entrypoint since project uses ESM; keep for local CLI with tsx
+if (typeof require !== 'undefined' && require.main === module) {
   console.log('🌟 Mihara Database Integration Assistant');
   console.log('Testing Te Kete Ako connection...\n');
 
