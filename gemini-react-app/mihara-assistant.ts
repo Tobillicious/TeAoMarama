@@ -8,7 +8,7 @@
 import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening.js';
 import { getGlobalOrchestrator } from './src/brain/great-migration-orchestrator.js';
 import { globalMigrationOrchestrator } from './src/brain/migration-intelligence.js';
-import { globalDiplomacy } from './src/brain/kaitiaki-protocol.js';
+import { globalDiplomacy } from './src/- you might like our brain/kaitiaki-protocol.js';
 import { getProvenance, getRecentEpisodes } from './src/ai/provenance.js';
 
 async function assistMihara() {
