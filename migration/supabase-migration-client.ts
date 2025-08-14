@@ -361,9 +361,8 @@ export async function createMigrationPlan(): Promise<void> {
   console.log('═══════════════════════════════════');
 }
 
-// Export the main client for direct use
-// Re-export kept for convenience; avoid duplicate class export conflicts
-export { MiharaMigrationClient };
+// Note: Class is already exported above as `export class MiharaMigrationClient {}`
+// Avoid re-export to prevent TS2323 duplicate export errors.
 
 /**
  * Quick CLI execution for testing
