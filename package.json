@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "mig:pg:run": "ts-node migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl",
+    "mig:pg:run": "tsx migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl",
     "mig:pg:run:file": "ts-node migration/pgvector_loader_example.ts --sample",
     "typecheck": "tsc -b --pretty"
   },
@@ -26,6 +26,7 @@
     "@eslint/js": "^9.32.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^24.2.1",
+    "@types/pg": "^8.15.5",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.7.0",
@@ -37,6 +38,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.4",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.0",
     "vite": "^7.1.0"

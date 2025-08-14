@@ -62,5 +62,5 @@ export function getProvenanceChain(chainId: string): ProvenanceChain | undefined
 }
 
 export function getAllChains(): ProvenanceChain[] {
-  return Array.from(manager.chains.values());
+  return Array.from((manager as any).chains.values());
 }

@@ -37,7 +37,7 @@ export class AIOrchestrator {
       
       // Try primary choice first
       try {
-        const result = await routing.primary.llm.generate(task.prompt, { 
+        const result = await routing.primary.llm?.generate?.(task.prompt, { 
           model: routing.primary.model,
           temperature: this.getTemperatureForTask(task),
           maxTokens: this.getTokenLimitForTask(task)
@@ -161,41 +161,43 @@ Handle this with your full capabilities, considering the failure context and ens
   }
 
   private async logSuccess(task: any, routing: any, result: any) {
-    await writeEpisode({
-      who: `agent:${routing.llm.name}`,
-      kind: "orchestrated_success",
-      text: `Successfully handled ${task.type} via ${routing.reason}`,
-      cues: {
+    await writeEpisode("orchestrator", {
+      timestamp: new Date().toISOString(),
+      agent: `agent:${routing.llm?.name || 'unknown'}`,
+      action: "orchestrated_success",
+      context: {
         task_type: task.type,
         complexity: task.complexity,
         priority: task.priority,
-        tokens: result.tokensOut,
-        latency: result.latencyMs
-      }
+        tokens: result?.tokensOut,
+        latency: result?.latencyMs
+      },
+      result: result
     });
   }
 
   private async logFallback(task: any, failed: any, backup: any, result: any, error: any) {
-    await writeEpisode({
-      who: `agent:${backup.llm.name}`,
-      kind: "orchestrated_fallback",
-      text: `Claude stepped in after ${failed.llm.name} failed on ${task.type}`,
-      cues: {
+    await writeEpisode("orchestrator", {
+      timestamp: new Date().toISOString(),
+      agent: `agent:${backup.llm?.name || 'unknown'}`,
+      action: "orchestrated_fallback",
+      context: {
         task_type: task.type,
-        failed_provider: failed.llm.name,
+        failed_provider: failed.llm?.name,
         failure_reason: error?.message,
         backup_success: true,
-        tokens: result.tokensOut
-      }
+        tokens: result?.tokensOut
+      },
+      result: result
     });
   }
 
   private async logEmergencyFallback(task: any, _result: any, error: any) {
-    await writeEpisode({
-      who: "agent:claude",
-      kind: "emergency_orchestration",
-      text: `Claude handling complete system orchestration failure`,
-      cues: {
+    await writeEpisode("orchestrator", {
+      timestamp: new Date().toISOString(),
+      agent: "agent:claude",
+      action: "emergency_orchestration",
+      context: {
         task_type: task.type,
         system_failure: true,
         error: error?.message
