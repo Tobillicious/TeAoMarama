@@ -5,7 +5,7 @@
  * and displays them in the TeAoMarama interface
  */
 
-import { TeachingResource } from './ResourceService';
+import type { TeachingResource } from './ResourceService';
 
 interface MigratedResource {
   sourceUrl: string;
@@ -323,7 +323,7 @@ export class RealResourceLoader {
     return 'Intermediate';
   }
 
-  private async generateFallbackResources(): TeachingResource[] {
+  private async generateFallbackResources(): Promise<TeachingResource[]> {
     console.log('⚠️  Using fallback resources - migration data not available');
     return []; // Return empty array as fallback
   }

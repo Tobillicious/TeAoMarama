@@ -6,7 +6,7 @@ import { Search, BookOpen, Users, TrendingUp, Calendar, Star, Filter, Grid, List
 interface Resource {
   id: string;
   title: string;
-  type: 'lesson_plan' | 'worksheet' | 'assessment' | 'video' | 'interactive';
+  type: 'lesson_plan' | 'worksheet' | 'assessment' | 'video' | 'interactive' | 'handout';
   subject: string;
   level: string;
   description: string;
