@@ -607,3 +607,10 @@ export async function beginGreatMigration(): Promise<void> {
   console.log(`   Collaboration Level: ${(result.collaborationLevel * 100).toFixed(0)}%`);
   console.log('\n' + '='.repeat(80));
 }
+
+// Export global instance for external access
+const globalOrchestrator = new GreatMigrationOrchestrator();
+export { globalOrchestrator };
+export function getGlobalOrchestrator(): GreatMigrationOrchestrator {
+  return globalOrchestrator;
+}
