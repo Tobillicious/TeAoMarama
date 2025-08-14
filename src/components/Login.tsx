@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '../firebaseConfig';
+import { useAuth } from '../services/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient'; // Import supabase client for password reset
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [resetMsg, setResetMsg] = useState('');
+  const { logIn } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    setResetMsg('');
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/');
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
+      const { error } = await logIn(email, password);
+      if (error) {
+        setError(error.message);
       } else {
-        setError('An unknown error occurred.');
+        navigate('/');
       }
+    } catch (err) {
+        setError('Failed to log in');
+        console.error(err);
     }
   };
 
@@ -32,21 +36,27 @@ const Login: React.FC = () => {
       return;
     }
     try {
-      await sendPasswordResetEmail(auth, email);
-      setResetMsg('Password reset email sent!');
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/update-password',
+      });
+      if (error) {
+        setError(error.message);
       } else {
-        setError('An unknown error occurred.');
+        setResetMsg('Password reset email sent!');
       }
+    } catch (err) {
+        if (err instanceof Error) {
+            setError(err.message);
+        } else {
+            setError('An unknown error occurred during password reset.');
+        }
     }
   };
 
   return (
     <form onSubmit={handleLogin} className="flex flex-col gap-4 bg-white rounded-lg shadow p-6 w-full">
       <h2 className="text-xl font-bold text-indigo-700 mb-2 text-center">Login</h2>
-      {error && <p className="text-red-600 text-sm text-center">Firebase: {error}</p>}
+      {error && <p className="text-red-600 text-sm text-center">Error: {error}</p>}
       {resetMsg && <p className="text-green-600 text-sm text-center">{resetMsg}</p>}
       <input
         type="email"
@@ -74,3 +84,4 @@ const Login: React.FC = () => {
 }
 
 export default Login;
+

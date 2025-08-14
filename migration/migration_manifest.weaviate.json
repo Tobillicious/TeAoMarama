@@ -1,0 +1,80 @@
+{
+  "envs": {
+    "staging": {
+      "firebaseProjectId": "teao-marama",
+      "weaviate": {
+        "instanceUrl": "https://YOUR_WEAVIATE_INSTANCE_URL",
+        "apiKey": "YOUR_WEAVIATE_API_KEY",
+        "defaultClassPrefix": "TeAoMarama_Staging"
+      }
+    },
+    "prod": {
+      "firebaseProjectId": "YOUR_FIREBASE_PROJECT_ID_PROD",
+      "weaviate": {
+        "instanceUrl": "https://YOUR_WEAVIATE_INSTANCE_URL",
+        "apiKey": "YOUR_WEAVIATE_API_KEY",
+        "defaultClassPrefix": "TeAoMarama_Prod"
+      }
+    }
+  },
+  "batches": [
+    {
+      "id": "batch-001-low-risk-lessons",
+      "description": "Initial low-risk sample; small lessons with full metadata",
+      "pattern": "legacy/lessons/*.html",
+      "sizeEstimate": 120,
+      "priority": "high",
+      "requiresManualReview": false
+    },
+    {
+      "id": "batch-002-games-stub",
+      "description": "Games (large binaries) — stub migrate metadata and asset pointers only",
+      "pattern": "legacy/games/**",
+      "sizeEstimate": 40,
+      "priority": "medium",
+      "requiresManualReview": true
+    }
+  ],
+  "weaviateClasses": [
+    {
+      "class": "CurriculumNode",
+      "properties": [
+        {"name":"code","dataType":["string"]},
+        {"name":"title","dataType":["string"]},
+        {"name":"description","dataType":["text"]},
+        {"name":"level","dataType":["string"]},
+        {"name":"related","dataType":["CurriculumNode[]"]}
+      ]
+    },
+    {
+      "class": "Resource",
+      "properties": [
+        {"name":"resourceId","dataType":["string"]},
+        {"name":"title","dataType":["string"]},
+        {"name":"summary","dataType":["text"]},
+        {"name":"canonicalUrl","dataType":["string"]},
+        {"name":"source","dataType":["string"]},
+        {"name":"publishedAt","dataType":["date"]},
+        {"name":"curriculumCandidates","dataType":["string[]"]}
+      ]
+    },
+    {
+      "class": "ResourceChunk",
+      "properties": [
+        {"name":"resourceId","dataType":["string"]},
+        {"name":"chunkIndex","dataType":["int"]},
+        {"name":"text","dataType":["text"]},
+        {"name":"sourceUrl","dataType":["string"]}
+      ]
+    },
+    {
+      "class": "Asset",
+      "properties": [
+        {"name":"resourceId","dataType":["string"]},
+        {"name":"url","dataType":["string"]},
+        {"name":"mimeType","dataType":["string"]},
+        {"name":"sizeBytes","dataType":["int"]}
+      ]
+    }
+  ]
+}

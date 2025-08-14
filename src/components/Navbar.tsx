@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../services/AuthContext";
 
 export const Navbar: React.FC = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logOut } = useAuth();
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      // You might want to navigate the user to the login page after logout
+    } catch (error) {
+      console.error("Failed to log out", error);
+    }
+  };
+
   return (
     <nav className="w-full bg-transparent px-6 py-4">
       <div className="max-w-[1280px] mx-auto flex items-center justify-between">
@@ -19,7 +28,7 @@ export const Navbar: React.FC = () => {
           {currentUser ? (
             <>
               <span className="text-xs text-muted hidden sm:inline">{currentUser.email}</span>
-              <button onClick={logout} className="text-sm text-muted hover:underline">Sign out</button>
+              <button onClick={handleLogout} className="text-sm text-muted hover:underline">Sign out</button>
             </>
           ) : (
             <Link to="/login" className="text-sm text-muted">Sign in</Link>

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CurriculumNode": {
+      "type": "object",
+      "properties": {
+        "code": {"type": "string"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "level": {"type": "string"}
+      },
+      "required": ["code", "title"]
+    },
+    "Asset": {
+      "type": "object",
+      "properties": {
+        "url": {"type": "string"},
+        "mimeType": {"type": "string"},
+        "sizeBytes": {"type": "integer"}
+      },
+      "required": ["url"]
+    },
+    "Resource": {
+      "type": "object",
+      "properties": {
+        "resourceId": {"type": "string"},
+        "title": {"type": "string"},
+        "summary": {"type": "string"},
+        "canonicalUrl": {"type": "string"},
+        "source": {"type": "string"},
+        "publishedAt": {"type": "string", "format": "date-time"},
+        "assets": {"type": "array", "items": {"$ref": "#/definitions/Asset"}},
+        "curriculumCandidates": {"type": "array", "items": {"type": "object", "properties": {"code": {"type": "string"}, "score": {"type": "number"}}}}
+      },
+      "required": ["resourceId", "title", "canonicalUrl"]
+    },
+    "ImportJob": {
+      "type": "object",
+      "properties": {
+        "jobId": {"type": "string"},
+        "env": {"type": "string"},
+        "batchId": {"type": "string"},
+        "startedAt": {"type": "string", "format": "date-time"},
+        "finishedAt": {"type": "string", "format": "date-time"},
+        "status": {"type": "string", "enum": ["pending", "running", "partial", "failed", "completed"]},
+        "stats": {"type": "object"}
+      }
+    }
+  }
+}

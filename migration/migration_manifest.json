@@ -1,0 +1,11 @@
+{
+  "pipelineId": "te-aomigration-0001",
+  "batches": [
+    {"id":"batch-001","source":"tekete","url":"https://tekete.netlify.app","pattern":"/resources/*","status":"pending"}
+  ],
+  "vectorProvider": "weaviate",
+  "graphProvider": "weaviate",
+  "firestoreProject": "YOUR_FIREBASE_PROJECT_ID",
+  "adminReviewCollection": "imports_review",
+  "retryPolicy": {"maxAttempts": 3}
+}

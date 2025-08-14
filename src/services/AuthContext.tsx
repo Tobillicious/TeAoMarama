@@ -1,15 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import { auth } from '../firebaseConfig';
-import type { User } from 'firebase/auth';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { supabase } from '../supabaseClient';
+import { Session, User } from '@supabase/supabase-js';
 
 interface AuthContextType {
   currentUser: User | null;
-  logout: () => Promise<void>;
+  session: Session | null;
+  loading: boolean;
+  signUp: (email, password) => Promise<any>;
+  logIn: (email, password) => Promise<any>;
+  logOut: () => Promise<void>;
 }
 
-const AuthContext = React.createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function useAuth() {
   const context = useContext(AuthContext);
@@ -25,20 +27,48 @@ interface AuthProviderProps {
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
-      setCurrentUser(user);
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      setCurrentUser(session?.user ?? null);
       setLoading(false);
     });
 
-    return unsubscribe;
+    // Fetch initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session);
+        setCurrentUser(session?.user ?? null);
+        setLoading(false);
+    });
+
+
+    return () => {
+      authListener?.unsubscribe();
+    };
   }, []);
+
+  const signUp = (email, password) => {
+    return supabase.auth.signUp({ email, password });
+  };
+
+  const logIn = (email, password) => {
+    return supabase.auth.signInWithPassword({ email, password });
+  };
+
+  const logOut = () => {
+    return supabase.auth.signOut();
+  };
 
   const value = {
     currentUser,
-    logout: () => signOut(auth),
+    session,
+    loading,
+    signUp,
+    logIn,
+    logOut,
   };
 
   return (

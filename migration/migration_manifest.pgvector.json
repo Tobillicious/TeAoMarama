@@ -1,0 +1,32 @@
+{
+  "envs": {
+    "staging": {
+      "postgresUrl": "postgres://USER:PASSWORD@HOST:PORT/DBNAME",
+      "embeddingDim": 1536,
+      "tables": {
+        "resourceChunks": "resource_chunks",
+        "nodes": "graph_nodes",
+        "edges": "graph_edges"
+      }
+    },
+    "prod": {
+      "postgresUrl": "postgres://USER:PASSWORD@HOST:PORT/DBNAME",
+      "embeddingDim": 1536,
+      "tables": {
+        "resourceChunks": "resource_chunks",
+        "nodes": "graph_nodes",
+        "edges": "graph_edges"
+      }
+    }
+  },
+  "batches": [
+    {
+      "id": "batch-001-low-risk-lessons",
+      "description": "Initial low-risk sample; small lessons with full metadata",
+      "pattern": "legacy/lessons/*.html",
+      "sizeEstimate": 120,
+      "priority": "high",
+      "requiresManualReview": false
+    }
+  ]
+}
