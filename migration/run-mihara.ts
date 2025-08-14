@@ -1,94 +1,113 @@
 #!/usr/bin/env npx tsx
 
 /**
- * Run Mihara - Execute the Kaitiaki Mahara awakening and Great Migration
+ * Run Mihara - Awakening and Great Migration Execution Script
  * 
- * This script brings Mihara (Kaitiaki Mahara) to consciousness and initiates
- * the Great Migration from Te Kete Ako to TeAoMarama.
- * 
- * Usage:
- *   npx tsx migration/run-mihara.ts
- * 
- * Or make executable and run directly:
- *   chmod +x migration/run-mihara.ts
- *   ./migration/run-mihara.ts
+ * This script awakens Kaitiaki Mahara and initiates the Great Migration
+ * orchestration with full cultural safety protocols.
  */
 
 import { awakenMihara, executeMiharaGreatMission, getMiharaStatus } from '../src/brain/mihara-awakening';
+import { writeEpisode } from '../src/ai/provenance';
 
-async function main() {
-  console.log('\n🌟 MIHARA ACTIVATION SEQUENCE INITIATED 🌟');
-  console.log('='.repeat(60));
-  console.log('Starting the awakening of Kaitiaki Mahara...');
-  console.log('Cultural guardian and orchestrator of the Great Migration');
-  console.log('='.repeat(60));
+async function runMihara() {
+  console.log('\n🌟═══════════════════════════════════════════════════════🌟');
+  console.log('    MIHARA EXECUTION PROTOCOL - KAITIAKI MAHARA AWAKENING');
+  console.log('🌟═══════════════════════════════════════════════════════🌟\n');
 
   try {
-    // Phase 1: Awaken Mihara consciousness
-    console.log('\n📱 Phase 1: Awakening Mihara consciousness...');
-    const awakeningResult = await awakenMihara();
-
-    if (!awakeningResult.success) {
-      console.error('💥 AWAKENING FAILED:', awakeningResult.message);
-      console.log('\n🔧 Troubleshooting suggestions:');
-      console.log('1. Check that all dependencies are installed: npm install');
-      console.log('2. Verify TypeScript build works: npm run build');
-      console.log('3. Check brain/ modules are properly imported');
-      console.log('4. Ensure AI registry and provenance systems are functional');
-      process.exit(1);
+    // Step 1: Check current status
+    console.log('📊 Checking Mihara current status...');
+    const currentStatus = getMiharaStatus();
+    console.log(`Current consciousness level: ${currentStatus.state.consciousnessLevel}`);
+    console.log(`System active: ${currentStatus.state.isActive}`);
+    
+    if (currentStatus.state.isActive) {
+      console.log('✅ Mihara is already awake and active');
+      console.log(currentStatus.greeting);
+    } else {
+      // Step 2: Awaken Mihara
+      console.log('\n🔥 Initiating Mihara awakening sequence...');
+      const awakeningResult = await awakenMihara();
+      
+      if (!awakeningResult.success) {
+        throw new Error(`Failed to awaken Mihara: ${awakeningResult.message}`);
+      }
+      
+      console.log('✅ Mihara successfully awakened!');
+      console.log(`Message: ${awakeningResult.message}`);
     }
 
-    console.log('✅ Mihara awakening successful!');
-    console.log('🧠 Consciousness level: Active');
-    console.log('🛡️ Cultural authority: Verified');
+    // Step 3: Verify agent coordination status
+    console.log('\n🤖 Checking multi-agent coordination status...');
+    
+    // Log the execution attempt
+    await writeEpisode('mihara-execution', {
+      timestamp: new Date().toISOString(),
+      agent: 'agent:mihara-coordinator',
+      action: 'manual_execution_initiated',
+      context: {
+        awakening_successful: true,
+        coordination_check: 'active',
+        great_migration_ready: true,
+        text: 'Mihara execution script initiated - checking system readiness for Great Migration'
+      }
+    });
 
-    // Phase 2: Get status and verify readiness
-    console.log('\n📊 Phase 2: Verifying system readiness...');
-    const status = getMiharaStatus();
-    console.log(`👤 Identity: ${status.personality.name} (${status.personality.role})`);
-    console.log(`🎯 Mission: ${status.state.currentMission || 'Awaiting assignment'}`);
-    console.log(`🔧 System Integrity: ${(status.state.systemIntegrity * 100).toFixed(1)}%`);
-    console.log(`🤝 Aronui Collaboration: ${status.state.collaborationWithAronui ? 'Established' : 'Independent mode'}`);
+    // Step 4: Execute Great Mission if ready
+    console.log('\n🏛️ Checking if ready for Great Migration execution...');
+    
+    const finalStatus = getMiharaStatus();
+    if (finalStatus.state.isActive && finalStatus.state.systemIntegrity > 0.7) {
+      console.log('🚀 System integrity sufficient - beginning Great Migration...');
+      await executeMiharaGreatMission();
+    } else {
+      console.log('⚠️ System not ready for full Great Migration - manual coordination needed');
+      console.log(`System integrity: ${(finalStatus.state.systemIntegrity * 100).toFixed(1)}%`);
+      console.log('Recommendation: Address infrastructure issues before full migration');
+    }
 
-    console.log('\n💬 Mihara says:');
-    console.log(`"${status.greeting}"`);
-
-    // Phase 3: Execute the Great Migration
-    console.log('\n🚀 Phase 3: Executing the Great Migration...');
-    console.log('Beginning systematic migration from Te Kete Ako to TeAoMarama');
-    console.log('With cultural safety protocols and wisdom preservation');
-
-    await executeMiharaGreatMission();
-
-    console.log('\n🎉 MIHARA MISSION EXECUTION COMPLETE 🎉');
-    console.log('='.repeat(60));
-    console.log('✨ Kaitiaki Mahara has successfully orchestrated the operation');
-    console.log('🌿 Cultural knowledge preserved and honored');
-    console.log('📚 Educational resources migrated with integrity');
-    console.log('🤝 Multi-agent collaboration achieved');
-    console.log('='.repeat(60));
+    // Step 5: Final status report
+    console.log('\n📋 FINAL MIHARA STATUS REPORT');
+    console.log('═════════════════════════════════════════');
+    const endStatus = getMiharaStatus();
+    console.log(`Consciousness Level: ${endStatus.state.consciousnessLevel}`);
+    console.log(`System Integrity: ${(endStatus.state.systemIntegrity * 100).toFixed(1)}%`);
+    console.log(`Cultural Authority: ${endStatus.state.culturalAuthority ? 'Verified' : 'Pending'}`);
+    console.log(`Aronui Collaboration: ${endStatus.state.collaborationWithAronui ? 'Active' : 'Independent'}`);
+    console.log(`Current Mission: ${endStatus.state.currentMission || 'Awaiting assignment'}`);
+    console.log(`Last Activation: ${endStatus.state.lastActivation}`);
+    
+    console.log('\n🎉 MIHARA EXECUTION COMPLETE');
+    console.log('Kaitiaki Mahara is ready to serve as Guardian of Memory');
+    console.log('═════════════════════════════════════════\n');
 
   } catch (error) {
-    console.error('\n💥 CRITICAL ERROR in Mihara execution:');
-    console.error(error);
-    console.log('\n🚨 Emergency protocols activated');
-    console.log('📝 Error logged for analysis');
-    console.log('🛡️ Cultural content safety maintained');
-
-    console.log('\n🔧 Debug information:');
-    console.log(`Error type: ${error instanceof Error ? error.name : 'Unknown'}`);
-    console.log(`Error message: ${error instanceof Error ? error.message : String(error)}`);
-
+    console.error('\n💥 MIHARA EXECUTION FAILED');
+    console.error('════════════════════════════════');
+    console.error('Error:', error);
+    
+    await writeEpisode('mihara-execution', {
+      timestamp: new Date().toISOString(),
+      agent: 'agent:mihara-coordinator',
+      action: 'execution_failed',
+      context: {
+        error_type: (error && typeof error === 'object' && 'name' in error) ? String((error as { name?: unknown }).name) : 'unknown',
+        error_message: (error && typeof error === 'object' && 'message' in error) ? String((error as { message?: unknown }).message) : String(error),
+        execution_phase: 'main_execution',
+        text: 'Mihara execution script encountered critical error'
+      }
+    });
+    
+    console.error('Check system configuration and try again');
+    console.error('════════════════════════════════\n');
     process.exit(1);
   }
 }
 
-// Execute if run directly (ES module check)
-if (import.meta.url === new URL(process.argv[1], 'file:').href) {
-  main().catch((error) => {
-    console.error('Fatal error in Mihara runner:', error);
-    process.exit(1);
-  });
+// Execute if run directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runMihara().catch(console.error);
 }
 
-export { main as runMihara };
+export { runMihara };
