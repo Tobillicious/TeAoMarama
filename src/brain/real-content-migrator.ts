@@ -63,11 +63,11 @@ export class RealContentMigrator {
       // Phase 2: Migration Intelligence Assessment
       const migrationAnalysis = await this.migrationBrain.analyzeMigrationTask(resource);
 
-      // Phase 3: Diplomatic Validation (if cultural content)
-      let diplomaticApproval: { approved: boolean; guidance: string[] } = { approved: true, guidance: [] };
-      if (resource.cultural_elements) {
-        diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource);
-      }
+              // Phase 3: Diplomatic Validation (if cultural content)
+        let diplomaticApproval = { approved: true, guidance: [] as string[] };
+        if (resource.cultural_elements) {
+          diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource);
+        }
 
       // Phase 4: Content Enhancement and Migration
       const migratedContent = await this.enhanceAndMigrate(resource, migrationAnalysis);
