@@ -66,7 +66,7 @@ export class RealContentMigrator {
       // Phase 3: Diplomatic Validation (if cultural content)
       let diplomaticApproval = { approved: true, guidance: [] };
       if (resource.cultural_elements) {
-        diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource);
+        diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource) as { approved: boolean; guidance: string[]; };
       }
 
       // Phase 4: Content Enhancement and Migration

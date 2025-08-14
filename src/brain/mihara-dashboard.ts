@@ -205,7 +205,7 @@ export class MiharaDashboard {
         action: 'monitored_migration',
         context: {
           duration: migrationMetrics.duration,
-          cultural_safety_score: culturalSafety.postCheck.overallScore,
+          cultural_safety_score: culturalSafety.postCheck?.overallScore || 0,
           text: 'Completed monitored Great Migration with cultural validation'
         }
       });
