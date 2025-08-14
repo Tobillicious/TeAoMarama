@@ -60,7 +60,7 @@ export const ACTIVE_OPTIMIZATIONS: WorkflowOptimization[] = [
     improvement: 'Dynamic Template Validation',
     implementation: 'Real-time validation against curriculum standards with auto-correction suggestions',
     impact: 'high',
-    status: 'deploying'
+    status: 'implementing'
   },
   {
     id: 'opt_004',
@@ -251,7 +251,8 @@ export function flagCulturalContent(
     content_type: contentType,
     risk_level: riskLevel,
     description: description,
-    requires_immediate_review: riskLevel === 'high' || riskLevel === 'critical'
+    requires_immediate_review: riskLevel === 'high' || riskLevel === 'critical',
+    kaitiaki_notified: false
   });
 }
 

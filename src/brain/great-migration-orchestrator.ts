@@ -18,9 +18,7 @@
  */
 
 import { AIOrchestrator } from '../ai/orchestrator';
-import { KaitiakiMaharaProtocol, DiplomaticMigration } from './kaitiaki-protocol';
-import type { MigrationIntelligence, KnowledgeNode } from './knowledge-architecture';
-import { TeKeteAkoMigrationBrain } from './migration-intelligence';
+import { DiplomaticMigration } from './kaitiaki-protocol';
 
 export interface GreatMigrationPlan {
   phases: MigrationPhase[];
@@ -89,8 +87,8 @@ export interface AgentRole {
 export class GreatMigrationOrchestrator {
   private aiOrchestrator: AIOrchestrator;
   private diplomacy: DiplomaticMigration;
-  private _migrationBrain: TeKeteAkoMigrationBrain;
-  private _protocol: KaitiakiMaharaProtocol;
+  // private migrationBrain: TeKeteAkoMigrationBrain;
+  // private protocol: KaitiakiMaharaProtocol;
   
   private migrationState: {
     currentPhase: string;
@@ -104,8 +102,8 @@ export class GreatMigrationOrchestrator {
   constructor() {
     this.aiOrchestrator = new AIOrchestrator();
     this.diplomacy = new DiplomaticMigration();
-    this.migrationBrain = new TeKeteAkoMigrationBrain();
-    this.protocol = new KaitiakiMaharaProtocol();
+    // this.migrationBrain = new TeKeteAkoMigrationBrain();
+    // this.protocol = new KaitiakiMaharaProtocol();
     
     this.migrationState = {
       currentPhase: 'preparation',

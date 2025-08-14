@@ -9,16 +9,17 @@
  */
 
 import admin from 'firebase-admin';
-import WeaviateClient from '@weaviate/weaviate-client';
+import weaviate from 'weaviate-client';
+import type { WeaviateClient } from 'weaviate-client';
 import crypto from 'crypto';
 import axios from 'axios';
 import fs from 'fs';
-import path from 'path';
+// import path from 'path';
 
 // ----- placeholder-driven config (see placeholders_index.md) -----
 const ENV = process.env.MIGRATION_ENV || 'staging'; // staging or prod
 const FIREBASE_SA_PATH = process.env.FIREBASE_SERVICE_ACCOUNT_JSON_PATH || 'PATH_TO_SA_JSON';
-const WEAVIATE_URL = process.env.WEAVIATE_INSTANCE_URL || 'https://YOUR_WEAVIATE_INSTANCE_URL';
+const WEAVIATE_URL = process.env.WEAVIATE_URL || 'xxwx3wwvtri7kb2glncy1q.c0.us-west3.gcp.weaviate.cloud';
 const WEAVIATE_API_KEY = process.env.WEAVIATE_API_KEY || 'YOUR_WEAVIATE_API_KEY';
 const EMBEDDING_PROVIDER = process.env.EMBEDDING_PROVIDER || 'openai'; // or other
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || 'YOUR_OPENAI_API_KEY';
@@ -34,12 +35,24 @@ if (!admin.apps.length) {
 }
 const db = admin.firestore();
 
-// init weaviate
-const weaviate = WeaviateClient.default({
-  scheme: WEAVIATE_URL.startsWith('https') ? 'https' : 'http',
-  host: WEAVIATE_URL.replace(/^https?:\/\//,''),
-  apiKey: WEAVIATE_API_KEY ? { apiKey: WEAVIATE_API_KEY } : undefined
-});
+// init weaviate with proper cloud connection
+let client: WeaviateClient | null = null;
+
+async function initWeaviate(): Promise<WeaviateClient> {
+  if (!client) {
+    client = await weaviate.connectToWeaviateCloud(WEAVIATE_URL, {
+      authCredentials: new weaviate.ApiKey(WEAVIATE_API_KEY),
+    });
+    
+    const isReady = await client.isReady();
+    console.log("Weaviate client is ready?", isReady);
+    
+    if (!isReady) {
+      throw new Error('Weaviate client failed to initialize');
+    }
+  }
+  return client;
+}
 
 // simple chunker
 function chunkText(text: string, maxChars = 2500) {
@@ -83,7 +96,8 @@ async function getEmbedding(text: string): Promise<number[]> {
 
 async function upsertResource(resource: any) {
   const resourceRef = db.collection('resources').doc(resource.resourceId);
-  const doc = await resourceRef.get();
+  const _doc = await resourceRef.get();
+  
   // idempotent upsert
   await resourceRef.set({
     ...resource,
@@ -92,6 +106,8 @@ async function upsertResource(resource: any) {
 }
 
 async function upsertWeaviateObjects(resource: any) {
+  // Initialize Weaviate client
+  const weaviateClient = await initWeaviate();
   // upsert Resource object
   const resourceObj = {
     class: 'Resource',
@@ -107,10 +123,15 @@ async function upsertWeaviateObjects(resource: any) {
     }
   };
   // weaviate client upsert (create or merge)
-  await weaviate.data.creator().withClassName('Resource').withId(resource.resourceId).withProperties(resourceObj.properties).do().catch(e=>{
-    // if creation fails due to existing id, we update
+  try {
+    await weaviateClient.collections.get('Resource').data.insert({
+      id: resource.resourceId,
+      properties: resourceObj.properties
+    });
+    console.log('✅ Resource upserted to Weaviate:', resource.resourceId);
+  } catch (e: any) {
     console.warn('Weaviate create failed, fallback update', e?.message || e);
-  });
+  }
 
   // chunk text, create ResourceChunk objects with vector embeddings
   const fullText = resource.textBody || resource.summary || '';
@@ -129,21 +150,28 @@ async function upsertWeaviateObjects(resource: any) {
         sourceUrl: resource.canonicalUrl
       }
     };
-    // upsert chunk
-    await weaviate.data.creator().withClassName('ResourceChunk').withId(chunkId).withProperties(chunkObj.properties).withVector(chunkObj.vector).do().catch(e=>{
+    // upsert chunk to Weaviate with embeddings
+    try {
+      await weaviateClient.collections.get('ResourceChunk').data.insert({
+        id: chunkId,
+        properties: chunkObj.properties,
+        vectors: chunkObj.vector
+      });
+      console.log(`✅ Chunk ${i+1}/${chunks.length} upserted for resource ${resource.resourceId}`);
+    } catch (e: any) {
       console.warn('Chunk create failed', e?.message || e);
-    });
+    }
     // optionally create an edge between Resource -> ResourceChunk (pseudo; weaviate uses references)
     // create reference from Resource to chunk (update Resource)
-    try {
-      await weaviate.data.referrer().withClassName('Resource').withId(resource.resourceId)
-        .withReferenceProperty('chunks') // requires schema with property 'chunks' as ref
-        .withReference({
-          beacon: `weaviate://localhost/ResourceChunk/${chunkId}`
-        }).do();
-    } catch (err) {
-      // ignore if schema doesn't include property
-    }
+    // try {
+    //   await weaviate.data.referrer().withClassName('Resource').withId(resource.resourceId)
+    //     .withReferenceProperty('chunks') // requires schema with property 'chunks' as ref
+    //     .withReference({
+    //       beacon: `weaviate://localhost/ResourceChunk/${chunkId}`
+    //     }).do();
+    // } catch (err) {
+    //   // ignore if schema doesn't include property
+    // }
   }
 }
 

@@ -307,10 +307,11 @@ export interface MigrationStrategy {
  */
 export class DiplomaticMigration implements MigrationStrategy {
   private protocol: KaitiakiMaharaProtocol;
-  private aronuiResponsive = false;
+  // private aronuiResponsive: boolean;
   
   constructor() {
     this.protocol = new KaitiakiMaharaProtocol();
+    // this.aronuiResponsive = false;
   }
 
   diplomacy = {
@@ -350,7 +351,7 @@ export class DiplomaticMigration implements MigrationStrategy {
       return {};
     },
 
-    validateStructure: async (structure: any): Promise<ValidationResult> => {
+    validateStructure: async (_structure: any): Promise<ValidationResult> => {
       console.log('✅ Validating received system structure');
       // Cross-reference with our own analysis
       return {
@@ -369,17 +370,17 @@ export class DiplomaticMigration implements MigrationStrategy {
   };
 
   extraction = {
-    extractWithGuidance: async (guidance: any): Promise<KnowledgeArtifact[]> => {
+    extractWithGuidance: async (_guidance: any): Promise<KnowledgeArtifact[]> => {
       console.log('📦 Extracting knowledge with Aronui guidance');
       return [];
     },
 
     crossValidate: async (artifacts: KnowledgeArtifact[]): Promise<ValidationResult[]> => {
       console.log('🔍 Cross-validating extracted artifacts');
-      return artifacts.map(artifact => this.protocol.validateKnowledge(artifact));
+      return await Promise.all(artifacts.map(artifact => this.protocol.validateKnowledge(artifact)));
     },
 
-    resolveConflicts: async (conflicts: any[]): Promise<any[]> => {
+    resolveConflicts: async (_conflicts: any[]): Promise<any[]> => {
       console.log('⚖️ Resolving conflicts between systems');
       return [];
     }

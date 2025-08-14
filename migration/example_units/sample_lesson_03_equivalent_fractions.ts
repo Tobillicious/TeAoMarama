@@ -9,14 +9,14 @@
  * - Assessment opportunities throughout
  */
 
-import { 
-  LessonPlanBuilder, 
+import type { 
   LessonPlan, 
   LessonSegment, 
   LessonResource, 
   WhatAGoodOneLooksLike,
   LessonVariation 
 } from '../lesson-plan-template';
+import { LessonPlanBuilder } from '../lesson-plan-template';
 
 // Create the detailed lesson plan
 export function createEquivalentFractionsLesson(): LessonPlan {

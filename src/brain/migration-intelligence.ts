@@ -12,10 +12,8 @@
  * - Makes nothing disappear - everything gets catalogued, even if deprecated
  */
 
-import { 
+import type { 
   KnowledgeNode, 
-  KnowledgeType, 
-  KnowledgeLevel,
   MigrationManifest,
   ExtractionBatch,
   ConsolidationPhase,
@@ -59,7 +57,7 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
     
     try {
       // Use DeepSeek for methodical analysis of source structure
-      const analysisResult = await this.orchestrator.route({
+      await this.orchestrator.route({
         type: "source_structure_analysis",
         complexity: "complex",
         priority: "depth",
@@ -94,15 +92,16 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
       
       this.manifest.extractionBatches.push(batch);
       
-      await writeEpisode({
-        who: "agent:migration-brain",
-        kind: "extraction_complete", 
-        text: `Extracted ${chunks.length} knowledge chunks from ${source.type}`,
-        cues: {
+      await writeEpisode('migration-brain', {
+        timestamp: new Date().toISOString(),
+        agent: "migration-brain",
+        action: "extraction_complete", 
+        context: {
           source_type: source.type,
           chunk_count: chunks.length,
           success_rate: batch.successRate,
-          quality: batch.estimatedQuality
+          quality: batch.estimatedQuality,
+          text: `Extracted ${chunks.length} knowledge chunks from ${source.type}`
         }
       });
 
@@ -152,14 +151,15 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
     const qualityGate = await this.assessClassificationQuality(classified);
     this.manifest.qualityGates.push(qualityGate);
 
-    await writeEpisode({
-      who: "agent:claude-migration",
-      kind: "classification_complete",
-      text: `Classified ${classified.length} knowledge chunks with ${qualityGate.score}% confidence`,
-      cues: {
+    await writeEpisode('migration-brain', {
+      timestamp: new Date().toISOString(),
+      agent: "claude-migration",
+      action: "classification_complete",
+      context: {
         classified_count: classified.length,
         quality_score: qualityGate.score,
-        cultural_flags: classified.filter(c => c.metadata.cultural?.requiresIwiReview).length
+        cultural_flags: classified.filter(c => c.metadata.cultural?.requiresIwiReview).length,
+        text: `Classified ${classified.length} knowledge chunks with ${qualityGate.score}% confidence`
       }
     });
 
@@ -208,13 +208,14 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
     // Apply identified relationships
     await this.applyRelationships(knowledgeNodes, relationshipResult);
 
-    await writeEpisode({
-      who: "agent:claude-migration",
-      kind: "relationship_building_complete",
-      text: `Built relationships for ${knowledgeNodes.length} knowledge nodes`,
-      cues: {
+    await writeEpisode('migration-brain', {
+      timestamp: new Date().toISOString(),
+      agent: "claude-migration",
+      action: "relationship_building_complete",
+      context: {
         node_count: knowledgeNodes.length,
-        relationship_count: knowledgeNodes.reduce((sum, n) => sum + (n.relationships?.length || 0), 0)
+        relationship_count: knowledgeNodes.reduce((sum, n) => sum + (n.relationships?.length || 0), 0),
+        text: `Built relationships for ${knowledgeNodes.length} knowledge nodes`
       }
     });
 
@@ -254,15 +255,16 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
 
     this.manifest.consolidationPhases.push(phase);
 
-    await writeEpisode({
-      who: "agent:claude-migration",
-      kind: "consolidation_complete",
-      text: `Consolidated ${nodes.length} nodes to ${consolidatedNodes.length} (${(phase.deduplicationRate * 100).toFixed(1)}% reduction)`,
-      cues: {
+    await writeEpisode('migration-brain', {
+      timestamp: new Date().toISOString(),
+      agent: "claude-migration",
+      action: "consolidation_complete",
+      context: {
         input_count: nodes.length,
         output_count: consolidatedNodes.length,
         dedup_rate: phase.deduplicationRate,
-        quality_score: phase.qualityImprovement
+        quality_score: phase.qualityImprovement,
+        text: `Consolidated ${nodes.length} nodes to ${consolidatedNodes.length} (${(phase.deduplicationRate * 100).toFixed(1)}% reduction)`
       }
     });
 
@@ -300,14 +302,15 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
       }
     }
 
-    await writeEpisode({
-      who: "agent:claude-migration",
-      kind: "cultural_review_complete",
-      text: `Reviewed ${nodes.length} nodes, ${this.culturalReviewQueue.length} need human review`,
-      cues: {
+    await writeEpisode('migration-brain', {
+      timestamp: new Date().toISOString(),
+      agent: "claude-migration",
+      action: "cultural_review_complete",
+      context: {
         reviewed_count: nodes.length,
         pending_review: this.culturalReviewQueue.length,
-        auto_approved: reviewedNodes.length - this.culturalReviewQueue.length
+        auto_approved: reviewedNodes.length - this.culturalReviewQueue.length,
+        text: `Reviewed ${nodes.length} nodes, ${this.culturalReviewQueue.length} need human review`
       }
     });
 
@@ -338,14 +341,15 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
       }
     };
 
-    await writeEpisode({
-      who: "agent:claude-migration", 
-      kind: "indexing_complete",
-      text: `Built optimized indexes for ${nodes.length} nodes`,
-      cues: {
+    await writeEpisode('migration-brain', {
+      timestamp: new Date().toISOString(),
+      agent: "claude-migration", 
+      action: "indexing_complete",
+      context: {
         node_count: nodes.length,
         hot_cache_size: hotCache.mostAccessedNodes.length,
-        semantic_clusters: semanticClusters.length
+        semantic_clusters: semanticClusters.length,
+        text: `Built optimized indexes for ${nodes.length} nodes`
       }
     });
 
@@ -372,7 +376,7 @@ export class TeKeteAkoMigrationBrain implements MigrationIntelligence {
     };
   }
 
-  private async executeExtractionRule(source: TeKeteAkoSource, rule: any): Promise<RawKnowledgeChunk[]> {
+  private async executeExtractionRule(_source: TeKeteAkoSource, _rule: any): Promise<RawKnowledgeChunk[]> {
     // Implementation would extract based on specific rule patterns
     return [];
   }
@@ -546,13 +550,14 @@ export class MigrationOrchestrator {
     } catch (error) {
       console.error('💥 Migration failed:', error);
       
-      await writeEpisode({
-        who: "agent:migration-orchestrator",
-        kind: "migration_failed",
-        text: `Great Migration failed: ${error}`,
-        cues: {
+      await writeEpisode('migration-brain', {
+        timestamp: new Date().toISOString(),
+        agent: "migration-orchestrator",
+        action: "migration_failed",
+        context: {
           error: String(error),
-          phase: "unknown"
+          phase: "unknown",
+          text: `Great Migration failed: ${error}`
         }
       });
 

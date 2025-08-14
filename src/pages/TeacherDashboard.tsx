@@ -12,7 +12,7 @@
  * - Contextual AI assistance without overwhelming
  */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from '../components/ui/card';
 import Button from '../components/Button';
@@ -421,7 +421,7 @@ function PlanningView({ memory }: { memory: DashboardMemory }) {
 }
 
 function ActivityIcon({ type }: { type: string }) {
-  const icons = {
+  const icons: { [key: string]: string } = {
     lesson_created: '📝',
     resource_viewed: '👀',
     assessment_graded: '✅',

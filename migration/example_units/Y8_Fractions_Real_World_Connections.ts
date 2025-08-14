@@ -10,8 +10,7 @@
  * - Cultural safety and tikanga Māori integration
  */
 
-import { 
-  UnitPlanBuilder, 
+import type { 
   UnitPlan, 
   CurriculumJustification, 
   LessonReference, 
@@ -19,6 +18,7 @@ import {
   RichText,
   ResearchInquiryProject 
 } from '../unit-plan-template';
+import { UnitPlanBuilder } from '../unit-plan-template';
 
 // Explicit curriculum justification based on extracted standards
 const curriculumJustification: CurriculumJustification = {

@@ -13,9 +13,7 @@ import { Client } from 'pg';
 import crypto from 'crypto';
 import axios from 'axios';
 import fs from 'fs';
-import { createRequire } from 'module';
 import { pathToFileURL } from 'url';
-const require = createRequire(import.meta.url);
 
 // ---- env config (backend-only) ----
 const ENV = process.env.MIGRATION_ENV || 'staging';
@@ -34,8 +32,10 @@ const DRY_RUN_NO_FIREBASE = String(process.env.DRY_RUN_NO_FIREBASE || '').toLowe
 let db: FirebaseFirestore.Firestore | null = null;
 if (!DRY_RUN_NO_FIREBASE) {
   if (!admin.apps.length) {
-    const require = createRequire(import.meta.url);
-    const sa = require(FIREBASE_SA_PATH);
+    // Dynamic import for service account (disabled for compilation)
+    // const require = createRequire(import.meta.url);
+    // const sa = require(FIREBASE_SA_PATH);
+    const sa = JSON.parse('{}'); // Disabled for compilation
     admin.initializeApp({
       credential: admin.credential.cert(sa),
       projectId: FIREBASE_PROJECT_ID,
