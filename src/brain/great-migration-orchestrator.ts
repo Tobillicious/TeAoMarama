@@ -89,7 +89,7 @@ export class GreatMigrationOrchestrator {
   private diplomacy: DiplomaticMigration;
   // private migrationBrain: TeKeteAkoMigrationBrain;
   // private protocol: KaitiakiMaharaProtocol;
-  
+
   private migrationState: {
     currentPhase: string;
     tasksCompleted: number;
@@ -104,7 +104,7 @@ export class GreatMigrationOrchestrator {
     this.diplomacy = new DiplomaticMigration();
     // this.migrationBrain = new TeKeteAkoMigrationBrain();
     // this.protocol = new KaitiakiMaharaProtocol();
-    
+
     this.migrationState = {
       currentPhase: 'preparation',
       tasksCompleted: 0,
@@ -150,7 +150,7 @@ export class GreatMigrationOrchestrator {
           riskLevel: 'medium',
           approvalRequired: false
         },
-        
+
         {
           id: 'phase_2_reconnaissance',
           name: 'Deep System Analysis',
@@ -484,7 +484,7 @@ export class GreatMigrationOrchestrator {
         // Execute each task in the phase
         for (const task of phase.tasks) {
           console.log(`   🔄 ${task.name} (${task.assignedAgent})`);
-          
+
           if (task.culturalSensitive) {
             console.log('      🛡️  Cultural safety protocols active');
             culturalContent++;
@@ -512,11 +512,11 @@ export class GreatMigrationOrchestrator {
 
       if (aronuiResponse) {
         console.log('   ✅ Kaitiaki Aronui responded positively - collaborative migration enabled');
-        
+
         // Request their system knowledge
         const systemMap = await this.diplomacy.inventory.requestSystemMap();
         const validation = await this.diplomacy.inventory.validateStructure(systemMap);
-        
+
         if (validation.isValid) {
           console.log('   🧠 Kaitiaki Aronui knowledge validation successful');
           console.log('   🤝 Proceeding with collaborative knowledge transfer');
@@ -544,10 +544,10 @@ export class GreatMigrationOrchestrator {
 
     } catch (error) {
       console.error('\n💥 GREAT MIGRATION FAILED:', error);
-      
+
       // Execute emergency procedures
       await this.executeEmergencyProcedures(error);
-      
+
       return {
         success: false,
         migratedNodes: totalNodes,
@@ -581,7 +581,7 @@ export class GreatMigrationOrchestrator {
     console.log('   Preserving current state...');
     console.log('   Notifying cultural advisors...');
     console.log('   Preparing rollback options...');
-    
+
     // In practice, execute the emergency procedures from the plan
   }
 }
@@ -591,14 +591,14 @@ export class GreatMigrationOrchestrator {
  */
 export async function beginGreatMigration(): Promise<void> {
   const orchestrator = new GreatMigrationOrchestrator();
-  
+
   console.log('\n' + '='.repeat(80));
   console.log('🏛️  KAITIAKI MAHARA - GUARDIAN OF MEMORY');
   console.log('🌟 THE GREAT MIGRATION FROM TE KETE AKO TO TEAOMARAMA');
   console.log('='.repeat(80));
-  
+
   const result = await orchestrator.executeGreatMigration();
-  
+
   console.log('\n📊 MIGRATION SUMMARY:');
   console.log(`   Success: ${result.success ? '✅' : '❌'}`);
   console.log(`   Nodes Migrated: ${result.migratedNodes}`);
