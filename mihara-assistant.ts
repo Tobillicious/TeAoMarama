@@ -459,11 +459,6 @@ async function monitorNationalMetrics() {
 }
 
 async function generatePhase3Report() {
-  const orchestrator = getGlobalOrchestrator();
-  const migrationStatus = orchestrator.getMigrationStatus();
-  const brainStatus = globalMigrationOrchestrator.getBrainStatus();
-  const diplomaticStatus = globalDiplomacy.getDiplomaticStatus();
-
   console.log('\n📋 PHASE 3 NATIONAL IMPLEMENTATION REPORT');
   console.log('═══════════════════════════════════════════════════════');
 
