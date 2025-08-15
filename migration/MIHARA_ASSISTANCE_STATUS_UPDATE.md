@@ -15,11 +15,11 @@ Mihara (Kaitiaki Mahara) continues the Great Migration from Te Kete Ako to TeAoM
 
 ## 📊 Current Production Metrics
 
-**Total Resources in Recovery Pipeline**: 22/1,061 cultural-educational materials
-**New Additions in Current Sustained Assistance Phase**: +11 resources
-**Completion Rate**: 2.07% of total migration target
+**Total Resources in Recovery Pipeline**: 25/1,061 cultural-educational materials
+**New Additions in Current Sustained Assistance Phase**: +14 resources
+**Completion Rate**: 2.36% of total migration target
 **Quality Assurance**: 100% template compliance, cultural safety protocols active
-**Progress Toward 50+ Target**: 22/50 = 44% completion
+**Progress Toward 50+ Target**: 25/50 = 50% completion
 
 ### 📈 Recent Resource Additions (Current Sustained Phase)
 1. **Y7 Mathematics** - Patterns in Te Ao Māori ✅
@@ -33,6 +33,9 @@ Mihara (Kaitiaki Mahara) continues the Great Migration from Te Kete Ako to TeAoM
 9. **Y8 Science** - Renewable Energy in Aotearoa ✅
 10. **Y7 English** - Storytelling Traditions of Aotearoa ✅
 11. **Y9 Mathematics** - Financial Literacy for NZ Youth ✅
+12. **Y8 English** - Contemporary New Zealand Literature ✅
+13. **Y7 Social Studies** - Treaty of Waitangi Principles ✅
+14. **Y9 Science** - Climate Change Impacts in Aotearoa ✅
 
 ---
 
