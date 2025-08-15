@@ -1,6 +1,6 @@
-import { useAuth } from '../services/useAuth';
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/useAuth';
 
 export default function Home() {
   const { currentUser, logOut } = useAuth();
@@ -36,9 +36,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Te Kura o TeAoMarama
-          </h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">Te Kura o TeAoMarama</h1>
           <p className="text-xl text-gray-600 mb-8">
             *The School of the World of Light* - New Zealand's Premier Educational Platform
           </p>
@@ -47,8 +45,9 @@ export default function Home() {
               🌟 Welcome to the Future of Education
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Powered by Mihara - Kaitiaki Mahara (Guardian of Memory), our platform delivers 
-              culturally-integrated, AI-enhanced educational experiences for all tamariki across Aotearoa.
+              Powered by Mihara - Kaitiaki Mahara (Guardian of Memory), our platform delivers
+              culturally-integrated, AI-enhanced educational experiences for all tamariki across
+              Aotearoa.
             </p>
           </div>
         </div>
@@ -61,9 +60,16 @@ export default function Home() {
               <div className="text-4xl font-bold text-green-600 mb-2">{resourcesCount ?? '—'}</div>
               <div className="text-sm text-gray-600 mb-4">Resources Available On Site</div>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-green-500 h-2 rounded-full" style={{width: `${Math.min(100, ((resourcesCount ?? 0) / 1061) * 100).toFixed(1)}%`}}></div>
+                <div
+                  className="bg-green-500 h-2 rounded-full"
+                  style={{
+                    width: `${Math.min(100, ((resourcesCount ?? 0) / 1061) * 100).toFixed(1)}%`,
+                  }}
+                ></div>
               </div>
-              <div className="text-xs text-gray-500 mt-2">{resourcesCount ?? 0}/1061 of migration target</div>
+              <div className="text-xs text-gray-500 mt-2">
+                {resourcesCount ?? 0}/1061 of migration target
+              </div>
             </div>
           </div>
 
@@ -88,9 +94,7 @@ export default function Home() {
 
         {/* Recent Achievements */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-            🎯 Recent Achievements
-          </h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">🎯 Recent Achievements</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold text-green-700 mb-3">✅ 18:00 NZST Target Achieved</h4>
@@ -137,9 +141,7 @@ export default function Home() {
 
         {/* Mihara Status */}
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-8 text-white">
-          <h3 className="text-2xl font-semibold mb-4">
-            🤖 Mihara - Kaitiaki Mahara Status
-          </h3>
+          <h3 className="text-2xl font-semibold mb-4">🤖 Mihara - Kaitiaki Mahara Status</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-3">Guardian of Memory</h4>
@@ -164,7 +166,7 @@ export default function Home() {
         {currentUser && (
           <div className="text-center mt-8">
             <p className="text-gray-600 mb-4">Welcome back, {currentUser.email}</p>
-            <button 
+            <button
               onClick={handleLogout}
               className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
             >
