@@ -1,9 +1,11 @@
 import { useAuth } from '../services/useAuth';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { currentUser, logOut } = useAuth();
   const navigate = useNavigate();
+  const [resourcesCount, setResourcesCount] = useState<number | null>(null);
 
   const handleLogout = async () => {
     try {
@@ -13,6 +15,21 @@ export default function Home() {
       console.error('Failed to log out', error);
     }
   };
+
+  useEffect(() => {
+    async function fetchCount() {
+      try {
+        const res = await fetch('/resources/index.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        const count = Array.isArray(data.items) ? data.items.length : 0;
+        setResourcesCount(count);
+      } catch {
+        // ignore
+      }
+    }
+    fetchCount();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -41,12 +58,12 @@ export default function Home() {
           {/* Production Progress */}
           <div className="bg-white rounded-lg shadow-lg p-6">
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">21</div>
-              <div className="text-sm text-gray-600 mb-4">Educational Resources</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">{resourcesCount ?? '—'}</div>
+              <div className="text-sm text-gray-600 mb-4">Resources Available On Site</div>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-green-500 h-2 rounded-full" style={{width: '2%'}}></div>
+                <div className="bg-green-500 h-2 rounded-full" style={{width: `${Math.min(100, ((resourcesCount ?? 0) / 1061) * 100).toFixed(1)}%`}}></div>
               </div>
-              <div className="text-xs text-gray-500 mt-2">21/1061 Completed</div>
+              <div className="text-xs text-gray-500 mt-2">{resourcesCount ?? 0}/1061 of migration target</div>
             </div>
           </div>
 
