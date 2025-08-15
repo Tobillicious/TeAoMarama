@@ -197,12 +197,7 @@ async function activateContinuousMigration() {
             phase: 'continuous-national-migration',
             details: { totalResources, batchesPlanned: nationalResourceBatches.length },
             metadata: { scope: 'national-curriculum', students: '800000+' }
-        },
-        outcome: {
-            success: true,
-            message: 'Continuous national migration operations successfully activated'
-        }
-    });
+            // Removed 'outcome' property as it is not valid in type 'EpisodeData'
 }
 
 async function deployTeacherTraining() {

@@ -10,6 +10,7 @@
     "prebuild": "tsx scripts/build-resources.ts",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "overseer:sync": "tsx scripts/overseer-sync.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "mihara": "tsx migration/run-mihara.ts",
