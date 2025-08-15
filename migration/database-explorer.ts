@@ -16,7 +16,8 @@
  * Usage: npx tsx migration/database-explorer.ts
  */
 
-import { teKeteAkoClient, ContentInventory, DatabaseSchema, CulturalContentFlag } from '../src/services/TeKeteAkoClient';
+import { teKeteAkoClient } from '../src/services/TeKeteAkoClient';
+import type { ContentInventory, DatabaseSchema, CulturalContentFlag } from '../src/services/TeKeteAkoClient';
 
 interface ExplorationReport {
   timestamp: string;
