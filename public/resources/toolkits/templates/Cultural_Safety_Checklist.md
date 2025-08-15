@@ -1,0 +1,1 @@
+# Cultural Safety Checklist (Complete before publishing)\n\n- Language: Te reo used correctly (macrons, meaning) ☐\n- Tikanga: Portrayals are respectful/accurate ☐\n- Whakapapa: Connections and attributions retained ☐\n- Local iwi: Context aligns or is flagged for review ☐\n- Sensitive content: Marked for Kaitiaki review ☐\n- Student safety: Inclusive, strengths-based framing ☐\n

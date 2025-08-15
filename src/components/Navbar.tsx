@@ -109,6 +109,7 @@ export const Navbar: React.FC = () => {
               <div className="flex space-x-6">
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/styleguide">Style Guide</NavLink>
+                <NavLink to="/resources">Resources</NavLink>
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </div>
 
@@ -194,6 +195,9 @@ export const Navbar: React.FC = () => {
               </NavLink>
               <NavLink to="/styleguide" mobile onClick={closeMobileMenu}>
                 Style Guide
+              </NavLink>
+              <NavLink to="/resources" mobile onClick={closeMobileMenu}>
+                Resources
               </NavLink>
               <NavLink to="/dashboard" mobile onClick={closeMobileMenu}>
                 Dashboard

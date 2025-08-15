@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import StyleGuide from "./pages/StyleGuide";
 import Dashboard from "./pages/Dashboard";
+import Resources from "./pages/Resources";
+import ResourceViewer from "./pages/ResourceViewer";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -16,6 +18,8 @@ function App(){
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/styleguide" element={<StyleGuide/>} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/resource" element={<ResourceViewer />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
