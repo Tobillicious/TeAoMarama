@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function ResourceViewer() {
   const [searchParams] = useSearchParams();
@@ -36,7 +38,9 @@ export default function ResourceViewer() {
         {loading && <p>Loading…</p>}
         {error && <p className="text-red-600">{error}</p>}
         {!loading && !error && (
-          <pre className="whitespace-pre-wrap text-sm leading-6">{content}</pre>
+          <article className="prose max-w-none">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          </article>
         )}
       </div>
     </div>
