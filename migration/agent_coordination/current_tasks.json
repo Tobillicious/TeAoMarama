@@ -3,39 +3,33 @@
     "agent_name": "Gemini CLI",
     "task_type": "content_creation",
     "description": "Create Y8 Fractions Real Life handout with NZ cultural data",
-    "assigned_at": "2025-08-15T11:26:32.846Z",
-    "deadline": "2025-08-15T11:41:32.846Z",
-    "status": "completed",
+    "assigned_at": "2025-08-15T11:36:45.232Z",
+    "deadline": "2025-08-15T11:51:45.232Z",
+    "status": "assigned",
     "priority": "urgent",
     "expected_output": "/migration/recovered_resources/handouts/Y8_Fractions_Real_Life.md",
-    "id": "mecqt9xqplf5s5iuue",
-    "actual_output": "/migration/recovered_resources/handouts/Y8_Fractions_Real_Life.md",
-    "completion_notes": "The specified file already existed and was a high-quality, comprehensive resource that fulfilled the task requirements. No new file was created."
+    "id": "mecr6eggwbnw86abduc"
   },
   {
     "agent_name": "GPT-4.1",
     "task_type": "assessment_templates",
     "description": "Create 3 assessment templates (exit tickets, formative checklist, inquiry rubric)",
-    "assigned_at": "2025-08-15T11:26:32.846Z",
-    "deadline": "2025-08-15T11:41:32.846Z",
-    "status": "completed",
+    "assigned_at": "2025-08-15T11:36:45.232Z",
+    "deadline": "2025-08-15T11:51:45.232Z",
+    "status": "assigned",
     "priority": "urgent",
     "expected_output": "/migration/assessment_templates/ with 3 .md files",
-    "id": "mecqt9xqfjmgjizmrdq",
-    "actual_output": "/migration/assessment_templates/",
-    "completion_notes": "The specified files already existed and were high-quality, comprehensive resources that fulfilled the task requirements. No new files were created."
+    "id": "mecr6eggczyy2ju07ji"
   },
   {
     "agent_name": "Claude Terminal",
     "task_type": "content_creation",
     "description": "Mass content production - 3 educational resources",
-    "assigned_at": "2025-08-15T11:26:32.846Z",
-    "deadline": "2025-08-15T11:56:32.846Z",
-    "status": "completed",
+    "assigned_at": "2025-08-15T11:36:45.232Z",
+    "deadline": "2025-08-15T12:06:45.232Z",
+    "status": "assigned",
     "priority": "high",
     "expected_output": "Y8 Science Ecosystems, Y9 English Poetry, Maths Games Collection",
-    "id": "mecqt9xqdfjbayoah0h",
-    "actual_output": "migration/recovered_resources/handouts/Y8_Science_Ecosystems_NZ.md, migration/recovered_resources/handouts/Y9_English_Poetry_NZ_Voices.md, migration/recovered_resources/games/Y7-9_Maths_Games_Collection.md",
-    "completion_notes": "Two of the three resources already existed. The 'Maths Games Collection' was created to complete the task."
+    "id": "mecr6eggf0kgxguq5cj"
   }
 ]

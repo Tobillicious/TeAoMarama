@@ -25,7 +25,10 @@
     "agents:background": "tsx migration/agent-background.ts",
     "agents:bus": "tsx migration/agent-terminal-bus.ts",
     "deploy:netlify": "netlify deploy --dir=dist --prodIfUnlocked || netlify deploy --dir=dist",
-    "build:deploy": "npm run build && npm run deploy:netlify"
+    "build:deploy": "npm run build && npm run deploy:netlify",
+    "import:te-kete": "tsx migration/import-te-kete-ako.ts --source /Users/admin/Documents/te-kete-ako-clean",
+    "gen:resources": "tsx scripts/generate-bulk-resources.ts --count 1000 && tsx scripts/build-resources.ts",
+    "gen:resources:2000": "tsx scripts/generate-bulk-resources.ts --count 2000 && tsx scripts/build-resources.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
