@@ -176,6 +176,7 @@ Cross:  ████████░░ 0/5 planned (0%)
 - [x] Complete Y9 Social Studies Geography
 - [x] Complete Y8 Mathematics Geometry Architecture
 - [x] Complete Y9 Social Studies NZ History Modern Era
+- [x] Fix TypeScript build errors and deployment issues
 - [ ] Deploy GPT-4.1 Assessment Suite  
 - [ ] Finish DeepSeek Y9 Mathematics
 - [ ] Setup GPT-5 bulk processing
