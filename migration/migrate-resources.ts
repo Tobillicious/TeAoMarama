@@ -46,6 +46,9 @@ function getCategoryFromFilename(filename: string): string | null {
     if (filename.includes('Poetry')) {
         return 'Poetry';
     }
+    if (filename.includes('Formal_Writing')) {
+        return 'Formal Writing';
+    }
     return null;
 }
 
@@ -388,6 +391,97 @@ Let's analyse the first stanza:
 1.  What is the main message of the poem "Not Understood"?
 2.  What is one literary device the poet uses to get his message across?
 3.  What is one thing you can do to be more understanding of others?
+
+---
+
+*Template compliance: ✅ | Cultural safety review: Required*
+`;
+}
+
+function generateFormalWritingContent(): string {
+    return `# English Y7 - Formal Writing
+*Te Kura o TeAoMarama - English*
+
+**Year Level**: 7
+**Subject**: English  
+**Duration**: 45 minutes
+**NZ Curriculum**: Language & Literature
+
+**Cultural Context**: Pōwhiri (formal welcome ceremony)
+**Te Reo Integration**: Greetings and closings in formal communication
+**Tikanga Connection**: Understanding the importance of formal protocols
+
+---
+
+## 🎯 Learning Intentions
+
+**WALT** (We Are Learning To):
+- Identify the key features of formal writing.
+- Write a formal email for a specific purpose.
+
+**WALA** (We Are Learning About):
+- The difference between formal and informal language.
+- How to structure a formal email.
+
+**Success Criteria**:
+- [ ] I can list three features of formal writing.
+- [ ] I can change an informal sentence into a formal one.
+- [ ] I can write a formal email to invite a guest to a school event.
+
+---
+
+## 📚 Learning Content
+
+### Context
+This resource explores formal writing by looking at a real-world example: inviting a respected community member to a school pōwhiri. Formal writing is like a kōrero with someone you respect – you use language that shows you are thoughtful and considerate.
+
+### Worked Example
+Here is an example of a formal sentence and an informal one:
+
+**Informal**: "Hey, wanna come to our school's pōwhiri?"
+**Formal**: "We would be honoured if you would consider attending our school's pōwhiri."
+
+The formal sentence uses more respectful language, avoids slang, and is a full sentence.
+
+### Practice
+Rewrite these informal sentences to make them more formal:
+1.  "Thanks for the chat, it was sweet as."
+2.  "Can I get an extension on my homework?"
+3.  "That movie was heaps of fun."
+
+---
+
+## 🏃‍♀️ Activities
+
+### Activity 1: The Two Invitations
+**Instructions**: Look at the two invitations below. In pairs, discuss the differences you notice.
+
+**Invitation 1 (Informal)**:
+> "Hey everyone, we're having a cool Matariki thing. Come along if you want. There'll be some kai. Chur."
+
+**Invitation 2 (Formal)**:
+> "You are cordially invited to attend our school's Matariki celebration. We would be honoured by your presence as we acknowledge the Māori New Year with a special assembly and shared feast. Please RSVP by [Date]."
+
+### Activity 2: Write a Formal Email
+**Instructions**: Your class is hosting a pōwhiri to welcome new students. Your task is to write a formal email to a local kaumātua or community leader, inviting them to be a guest speaker.
+
+**Include these parts in your email**:
+- **Subject Line**: e.g., Invitation to Speak at Matangi School Pōwhiri
+- **Salutation**: e.g., "Dear Mr. Smith," or "Tēnā koe Mrs. Jones,"
+- **Introduction**: Introduce yourself and why you are writing.
+- **Body**: Give details about the event (date, time, location).
+- **Conclusion**: Thank them for their time.
+- **Closing**: e.g., "Yours sincerely," or "Ngā mihi,"
+- **Signature**: Your full name and class.
+
+---
+
+## 🤔 Reflection & Assessment
+
+**Exit Ticket**:
+1.  When might you need to use formal writing in your life?
+2.  What is one thing to remember when writing a formal email?
+3.  What is one question you still have about formal writing?
 
 ---
 
