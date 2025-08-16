@@ -558,3 +558,4 @@ This resource represents the pinnacle of Phase 3 achievement - demonstrating tha
 *"We support this educational resource because it builds understanding and respect for rongoā Māori while maintaining appropriate boundaries around sacred knowledge. Students will learn to appreciate traditional healing without appropriating it, and understand how traditional knowledge can inform modern science. This honors our ancestors while supporting our future healers."*
 
 **- Traditional Healers Council endorsement for educational use**
+
