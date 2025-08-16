@@ -241,9 +241,13 @@ Guardian of Memory, TeAoMarama
 
     if (artifact.type === 'lesson' && artifact.data) {
       // Lessons should have basic structure
-      const hasTitle = (artifact.data as { title?: string }).title && typeof (artifact.data as { title?: string }).title === 'string';
-      const hasContent = (artifact.data as { content?: string; body?: string }).content || (artifact.data as { content?: string; body?: string }).body;
-      return hasTitle && hasContent;
+      const hasTitle =
+        (artifact.data as { title?: string }).title &&
+        typeof (artifact.data as { title?: string }).title === 'string';
+      const hasContent =
+        (artifact.data as { content?: string; body?: string }).content ||
+        (artifact.data as { content?: string; body?: string }).body;
+      return Boolean(hasTitle && hasContent);
     }
 
     return true; // Default to valid for unknown types
@@ -594,7 +598,7 @@ export class DiplomaticProtocol {
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate network delay
 
     switch (message.type) {
-      case 'greeting':
+      case 'greeting': {
         // Random chance of Aronui being available
         const available = Math.random() > 0.3; // 70% chance of response
 
@@ -630,6 +634,7 @@ export class DiplomaticProtocol {
             culturalApproval: false,
           };
         }
+      }
 
       case 'proposal':
         return {
