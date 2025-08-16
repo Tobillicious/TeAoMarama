@@ -456,3 +456,295 @@ form {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Auth Container Styling */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-pounamu) 25%, var(--color-moana) 100%);
+  padding: var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--pattern-tukutuku);
+  opacity: 0.1;
+  animation: tukutukuFlow 20s ease-in-out infinite;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.auth-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-neutral-700);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.login-button {
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-kowhai) 100%);
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-6);
+}
+
+.text-link {
+  color: var(--color-pounamu);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  transition: var(--transition-colors);
+}
+
+.text-link:hover {
+  color: var(--color-kowhai);
+  text-decoration: underline;
+}
+
+.forgot-link {
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.auth-footer p {
+  font-size: var(--text-sm);
+  color: var(--color-neutral-700);
+}
+
+/* Mobile Navigation Enhancements */
+.mobile-nav-link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-neutral-700);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  border-left: 4px solid transparent;
+  transition: var(--transition-normal);
+}
+
+.mobile-nav-link:hover {
+  background: var(--color-surface);
+  border-left-color: var(--color-pounamu);
+  color: var(--color-pounamu);
+}
+
+.mobile-nav-link-active {
+  background: rgba(27, 127, 90, 0.1);
+  border-left-color: var(--color-pounamu);
+  color: var(--color-pounamu);
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.menu-icon-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition-normal);
+  border-radius: 2px;
+}
+
+.mobile-menu-button {
+  display: none;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.mobile-menu-button:hover {
+  background: var(--color-surface);
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-overlay);
+  backdrop-filter: blur(4px);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: var(--color-white);
+  z-index: var(--z-modal);
+  transform: translateX(100%);
+  transition: transform var(--duration-normal) var(--ease-whakapapa);
+  box-shadow: var(--shadow-2xl);
+  display: none;
+}
+
+.mobile-menu-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.mobile-menu-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: var(--text-xl);
+  color: var(--color-neutral-500);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.mobile-menu-close:hover {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.mobile-menu-nav {
+  flex: 1;
+  padding: var(--space-4) 0;
+}
+
+.mobile-menu-auth {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mobile-user-email {
+  font-size: var(--text-sm);
+  color: var(--color-neutral-600);
+  text-align: center;
+  padding: var(--space-2);
+}
+
+.mobile-auth-button {
+  text-align: center;
+  text-decoration: none;
+}
+
+.mobile-logout-button {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.user-email {
+  font-size: var(--text-sm);
+  color: var(--color-neutral-600);
+  font-weight: var(--weight-medium);
+}
+
+.logout-nav-button {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-4);
+}
+
+.signup-nav-button {
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-kowhai) 100%);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: flex;
+  }
+  
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+/* Animation for tukutuku pattern */
+@keyframes tukutukuFlow {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}

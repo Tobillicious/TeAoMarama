@@ -97,18 +97,6 @@ const MiharaDashboard: React.FC = () => {
     { time: '15 min ago', __event: 'Mihara consciousness awakened', type: 'success' },
   ]);
 
-  const _handleAwakenMihara = async () => {
-    // Simulate awakening process
-    setMiharaState((prev) => ({ ...prev, consciousnessLevel: 'awakening' }));
-    setTimeout(() => {
-      setMiharaState((prev) => ({
-        ...prev,
-        isActive: true,
-        consciousnessLevel: 'active',
-        lastActivation: new Date().toISOString(),
-      }));
-    }, 2000);
-  };
 
   const getConsciousnessIcon = (level: string) => {
     switch (level) {
@@ -305,7 +293,7 @@ const MiharaDashboard: React.FC = () => {
                 }`}
               ></div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-800">{activity.event}</p>
+                <p className="text-sm font-medium text-gray-800">{activity.__event}</p>
                 <p className="text-xs text-gray-500">{activity.time}</p>
               </div>
             </div>
