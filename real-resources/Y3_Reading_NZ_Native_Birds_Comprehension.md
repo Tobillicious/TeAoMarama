@@ -230,7 +230,7 @@ Students create a fact file about a New Zealand native bird (not kiwi, tui, or w
 
 ## Teacher Notes
 
-# Preparation Tips
+### Preparation Tips
 
 - **Pre-read passages** to identify challenging vocabulary
 - **Prepare audio recordings** for students who need listening support
