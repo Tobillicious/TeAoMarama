@@ -308,28 +308,6 @@
     "rangatahi",
     "kaupapa",
     "mahi",
-    "whānau",
-    "whanau",
-    "korero",
-    "waiata",
-    "karakia",
-    "powhiri",
-    "hongi",
-    "mana",
-    "tapu",
-    "noa",
-    "utu",
-    "aroha",
-    "whanaungatanga",
-    "tūrangawaewae",
-    "kōhanga",
-    "reo",
-    "kai",
-    "pākehā",
-    "tamariki",
-    "rangatahi",
-    "kaupapa",
-    "mahi",
     "teao",
     "mauri",
     "wairua",
@@ -342,6 +320,27 @@
     "MAUI",
     "NZST",
     "pounamu",
-    "kowhai"
-  ]
+    "kowhai",
+
+    "Communication",
+    "snippets",
+    "Loader",
+    "Vectorizer",
+    "redacted",
+    "Chunk",
+    "stub",
+    "Inserted",
+    "Warnings",
+    "chunks",
+    "rows",
+    "Notes",
+    "brief"
+  ],
+  "languageSettings": [
+    {
+      "languageId": "markdown",
+      "ignoreRegExpList": ["```[\\s\\S]*?```"]
+    }
+  ],
+  "ignoreWords": ["Props", "Classes", "Logo", "Guide", "ghost", "started", "rounded", "these"]
 }

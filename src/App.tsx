@@ -9,12 +9,13 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
+import './App.css';
 
 function App(){
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="root">
       <Navbar />
-      <div className="flex-grow">
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/styleguide" element={<StyleGuide/>} />
@@ -31,7 +32,7 @@ function App(){
             }
           />
         </Routes>
-      </div>
+      </main>
       <Footer />
     </div>
   );
