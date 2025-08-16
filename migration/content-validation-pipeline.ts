@@ -1,8 +1,7 @@
 /**
  * Content Validation and Enrichment Pipeline
  * 
- * This system validates, enriches, and quality-assures all migrated content:
- * - Curriculum alignment validation
+ * This system validates, enriches, and quality-assures all migrated ___content: * - Curriculum alignment validation
  * - Cultural safety checks  
  * - Pedagogical Content Knowledge (PCK) enrichment
  * - Rich text identification and enhancement
@@ -14,56 +13,8 @@ import fs from 'fs';
 import path from 'path';
 
 export interface ValidationResult {
-  isValid: boolean;
-  confidence: number;
-  issues: ValidationIssue[];
-  enrichments: EnrichmentSuggestion[];
-  culturalFlags: CulturalFlag[];
-  quality_score: number; // 0-1
-}
-
-export interface ValidationIssue {
-  severity: 'critical' | 'major' | 'minor' | 'suggestion';
-  category: 'curriculum' | 'cultural' | 'pedagogical' | 'accessibility' | 'technical';
-  description: string;
-  suggestion: string;
-  auto_fixable: boolean;
-}
-
-export interface EnrichmentSuggestion {
-  type: 'pck' | 'scaffolding' | 'differentiation' | 'assessment' | 'cultural_connection' | 'rich_text';
-  description: string;
-  implementation: string;
-  priority: 'high' | 'medium' | 'low';
-  estimated_impact: number; // 0-1
-}
-
-export interface CulturalFlag {
-  type: 'te_reo_usage' | 'tikanga_reference' | 'cultural_sensitivity' | 'iwi_specific' | 'sacred_knowledge';
-  severity: 'info' | 'review_needed' | 'iwi_consultation_required';
-  description: string;
-  recommendation: string;
-}
-
-export interface ContentItem {
-  id: string;
-  type: 'unit_plan' | 'lesson_plan' | 'handout' | 'activity' | 'game' | 'assessment';
-  title: string;
-  content: any;
-  source: 'teketeako_migration' | 'generated' | 'human_created';
-  curriculum_alignment: string[];
-  year_level: number[];
-  subject: string;
-}
-
-export class ContentValidationPipeline {
-  private curriculumStandards: any;
-  private culturalKeywords: string[];
-  private qualityThresholds: { [key: string]: number };
-
-  private teReoMacronMap: { [key: string]: string };
-
-  constructor() {
+  isVal___id: boolean;
+  confidence) {
     this.curriculumStandards = this.loadCurriculumStandards();
     this.culturalKeywords = [
       'māori', 'tikanga', 'kawa', 'marae', 'iwi', 'hapū', 'whānau', 'whakapapa',
@@ -99,8 +50,8 @@ export class ContentValidationPipeline {
   async validateContent(item: ContentItem): Promise<ValidationResult> {
     console.log(`🔍 Validating ${item.type}: ${item.title}`);
 
-    const result: ValidationResult = {
-      isValid: true,
+    const __result: ValidationResult = {
+      isVal__id,
       confidence: 1.0,
       issues: [],
       enrichments: [],
@@ -130,7 +81,7 @@ export class ContentValidationPipeline {
     return result;
   }
 
-  private async validateCurriculumAlignment(item: ContentItem, result: ValidationResult): Promise<void> {
+  private async validateCurriculumAlignment(item: ContentItem, __result: ValidationResult): Promise<void> {
     if (!item.curriculum_alignment || item.curriculum_alignment.length === 0) {
       result.issues.push({
         severity: 'critical',
@@ -144,7 +95,7 @@ export class ContentValidationPipeline {
 
     // Check if aligned standards exist in our curriculum database
     const validStandards = item.curriculum_alignment.filter(standardId => 
-      this.curriculumStandards.some((s: any) => s.id === standardId)
+      this.curriculumStandards.some((s: unknown) => s.id === standardId)
     );
 
     if (validStandards.length < item.curriculum_alignment.length) {
@@ -169,7 +120,7 @@ export class ContentValidationPipeline {
     }
   }
 
-  private async validateCulturalSafety(item: ContentItem, result: ValidationResult): Promise<void> {
+  private async validateCulturalSafety(item: ContentItem, __result: ValidationResult): Promise<void> {
     const content_text = JSON.stringify(item.content).toLowerCase();
     
     // Check for cultural keywords that need review
@@ -212,7 +163,7 @@ export class ContentValidationPipeline {
     }
   }
 
-  private async validatePedagogicalQuality(item: ContentItem, result: ValidationResult): Promise<void> {
+  private async validatePedagogicalQuality(item: ContentItem, __result: ValidationResult): Promise<void> {
     // Check for scaffolding strategies
     if (!this.hasAdequateScaffolding(item.content)) {
       result.enrichments.push({
@@ -258,7 +209,7 @@ export class ContentValidationPipeline {
     }
   }
 
-  private async validateAccessibility(item: ContentItem, result: ValidationResult): Promise<void> {
+  private async validateAccessibility(item: ContentItem, __result: ValidationResult): Promise<void> {
     // Check reading level appropriateness
     const readingLevel = this.assessReadingLevel(item.content);
     if (readingLevel > item.year_level[0] + 2) { // More than 2 years above year level
@@ -294,7 +245,7 @@ export class ContentValidationPipeline {
     }
   }
 
-  private async identifyEnrichmentOpportunities(item: ContentItem, result: ValidationResult): Promise<void> {
+  private async identifyEnrichmentOpportunities(item: ContentItem, __result: ValidationResult): Promise<void> {
     // Identify opportunities for rich texts
     if (item.subject === 'Mathematics' && !this.hasRichMathematicalTexts(item.content)) {
       result.enrichments.push({
@@ -360,7 +311,7 @@ export class ContentValidationPipeline {
   }
 
   // Helper methods (implementations would be more detailed)
-  private loadCurriculumStandards(): any {
+  private loadCurriculumStandards(): unknown {
     try {
       const data = fs.readFileSync('./migration/CURRICULUM_EXTRACTION_LOG.json', 'utf8');
       return JSON.parse(data).standards;
@@ -370,7 +321,7 @@ export class ContentValidationPipeline {
     }
   }
 
-  private calculateQualityScore(result: ValidationResult): number {
+  private calculateQualityScore(__result: ValidationResult): number {
     let score = 1.0;
     
     // Deduct for issues
@@ -406,7 +357,7 @@ export class ContentValidationPipeline {
   }
 
   // Placeholder helper methods (would be implemented with more sophistication)
-  private hasExplicitProgressions(content: any): boolean { return false; }
+  private hasExplicitProgressions(___content: unknown): boolean { return false; }
   private detectTeReoWithoutMacrons(text: string): string[] {
     const missingMacrons: string[] = [];
     for (const plain in this.teReoMacronMap) {
@@ -421,8 +372,8 @@ export class ContentValidationPipeline {
     }
     return missingMacrons;
   }
-  private hasCulturalPerspectives(content: any): boolean { return false; }
-  private hasAdequateScaffolding(content: any): boolean {
+  private hasCulturalPerspectives(___content: unknown): boolean { return false; }
+  private hasAdequateScaffolding(___content: unknown): boolean {
     const contentString = JSON.stringify(content).toLowerCase();
     const scaffoldingKeywords = [
       'scaffold', 'graphic organizer', 'sentence starter', 'writing frame',
@@ -430,7 +381,7 @@ export class ContentValidationPipeline {
     ];
     return scaffoldingKeywords.some(keyword => contentString.includes(keyword));
   }
-  private hasDifferentiation(content: any): boolean {
+  private hasDifferentiation(___content: unknown): boolean {
     const contentString = JSON.stringify(content).toLowerCase();
     const differentiationKeywords = [
       'differentiation', 'extension task', 'support activity', 'for all learners',
@@ -438,7 +389,7 @@ export class ContentValidationPipeline {
     ];
     return differentiationKeywords.some(keyword => contentString.includes(keyword));
   }
-  private hasFormativeAssessment(content: any): boolean {
+  private hasFormativeAssessment(___content: unknown): boolean {
     const contentString = JSON.stringify(content).toLowerCase();
     const assessmentKeywords = [
       'formative assessment', 'exit ticket', 'success criteria', 'learning intentions',
@@ -446,7 +397,7 @@ export class ContentValidationPipeline {
     ];
     return assessmentKeywords.some(keyword => contentString.includes(keyword));
   }
-  private hasExemplars(content: any): boolean {
+  private hasExemplars(___content: unknown): boolean {
     const contentString = JSON.stringify(content).toLowerCase();
     const exemplarKeywords = [
       'exemplar', 'w.a.g.o.l.l', 'wagoll', 'what a good one looks like',
@@ -454,18 +405,18 @@ export class ContentValidationPipeline {
     ];
     return exemplarKeywords.some(keyword => contentString.includes(keyword));
   }
-  private assessReadingLevel(content: any): number { return 8; }
-  private hasVisualSupports(content: any): boolean { return false; }
-  private hasUDLPrinciples(content: any): boolean { return false; }
-  private hasRichMathematicalTexts(content: any): boolean { return false; }
-  private hasResearchInquiry(content: any): boolean { return false; }
-  private hasLocalConnections(content: any): boolean { return false; }
+  private assessReadingLevel(___content: unknown): number { return 8; }
+  private hasVisualSupports(___content: unknown): boolean { return false; }
+  private hasUDLPrinciples(___content: unknown): boolean { return false; }
+  private hasRichMathematicalTexts(___content: unknown): boolean { return false; }
+  private hasResearchInquiry(___content: unknown): boolean { return false; }
+  private hasLocalConnections(___content: unknown): boolean { return false; }
 
-  private async addScaffolding(content: any): Promise<any> { return content; }
-  private async addDifferentiation(content: any): Promise<any> { return content; }
-  private async addAssessmentStrategies(content: any): Promise<any> { return content; }
-  private async addRichTexts(content: any, subject: string): Promise<any> { return content; }
-  private async addCulturalConnections(content: any, subject: string): Promise<any> { return content; }
+  private async addScaffolding(___content: unknown): Promise<unknown> { return content; }
+  private async addDifferentiation(___content: unknown): Promise<unknown> { return content; }
+  private async addAssessmentStrategies(___content: unknown): Promise<unknown> { return content; }
+  private async addRichTexts(___content: unknown, _____subject: string): Promise<unknown> { return content; }
+  private async addCulturalConnections(___content: unknown, _____subject: string): Promise<unknown> { return content; }
 }
 
 // Factory function for pipeline usage

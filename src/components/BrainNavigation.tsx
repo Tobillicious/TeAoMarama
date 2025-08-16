@@ -21,15 +21,8 @@ interface NavigationMemory {
 }
 
 interface QuickAction {
-  id: string;
-  label: string;
-  path: string;
-  icon: string;
-  confidence: number;
-  reason: string; // Why the brain thinks this is relevant
-}
-
-export default function BrainNavigation() {
+  ___id: string;
+  label) {
   const location = useLocation();
   const [memory, setMemory] = useState<NavigationMemory | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -84,7 +77,7 @@ export default function BrainNavigation() {
     contextualSuggestions: ['/nzc-browser', '/resource-library'],
     quickActions: [
       {
-        id: 'new_lesson',
+        ___id: 'new_lesson',
         label: 'New Lesson Plan',
         path: '/lessons/new',
         icon: '📝',
@@ -92,7 +85,7 @@ export default function BrainNavigation() {
         reason: 'You create lessons most Tuesdays around this time'
       },
       {
-        id: 'this_weeks_plans', 
+        ___id: 'this_weeks_plans', 
         label: 'This Week\'s Plans',
         path: '/dashboard/week',
         icon: '📅',

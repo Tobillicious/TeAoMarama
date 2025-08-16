@@ -16,87 +16,14 @@
  * - Data-driven insights for improved student outcomes
  */
 
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
 import Button from '../components/Button';
 
 // TypeScript interfaces for comprehensive dashboard data
 interface TeacherProfile {
-  id: string;
-  name: string;
-  email: string;
-  subjects: string[];
-  yearLevels: number[];
-  currentTerm: number;
-  currentWeek: number;
-  school: string;
-  culturalBackground?: string;
-}
-
-interface StudentProgress {
-  id: string;
-  studentName: string;
-  yearLevel: number;
-  subject: string;
-  currentLevel: string;
-  progressPercentage: number;
-  lastAssessment: string;
-  needsAttention: boolean;
-  culturalEngagement: 'high' | 'medium' | 'low';
-}
-
-interface Resource {
-  id: string;
-  title: string;
-  type: 'lesson' | 'activity' | 'assessment' | 'handout' | 'cultural_content';
-  subject: string;
-  yearLevel: number;
-  nzcCodes: string[];
-  culturalContext: boolean;
-  approvalStatus: 'approved' | 'pending' | 'needs_review';
-  lastModified: string;
-  author: string;
-}
-
-interface Assessment {
-  id: string;
-  title: string;
-  subject: string;
-  yearLevel: number;
-  type: 'formative' | 'summative' | 'diagnostic';
-  dueDate: string;
-  completionRate: number;
-  averageScore?: number;
-  culturalAlignment: boolean;
-}
-
-interface CulturalContent {
-  id: string;
-  title: string;
-  type: 'story' | 'video' | 'activity' | 'resource';
-  iwi?: string;
-  region?: string;
-  approvalStatus: 'approved' | 'pending_review' | 'needs_revision';
-  reviewer?: string;
-  culturalAdvisor?: string;
-}
-
-interface DashboardData {
-  teacher: TeacherProfile;
-  studentProgress: StudentProgress[];
-  recentResources: Resource[];
-  upcomingAssessments: Assessment[];
-  culturalContent: CulturalContent[];
-  quickStats: {
-    totalStudents: number;
-    resourcesCreated: number;
-    assessmentsCompleted: number;
-    culturalContentApproved: number;
-  };
-}
-
-export default function TeacherDashboard() {
+  ___id: string;
+  name) {
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedView, setSelectedView] = useState<'overview' | 'students' | 'resources' | 'assessments' | 'cultural'>('overview');
@@ -121,7 +48,7 @@ export default function TeacherDashboard() {
 
   const getSampleDashboardData = (): DashboardData => ({
     teacher: {
-      id: 'teacher_001',
+      ___id: 'teacher_001',
       name: 'Kaiako Sarah Thompson',
       email: 'sarah.thompson@mangakotukutuku.ac.nz',
       subjects: ['Mathematics', 'Science', 'Te Reo Māori'],
@@ -133,10 +60,10 @@ export default function TeacherDashboard() {
     },
     studentProgress: [
       {
-        id: 'student_001',
+        ___id: 'student_001',
         studentName: 'Aroha Williams',
         yearLevel: 8,
-        subject: 'Mathematics',
+        _____subject: 'Mathematics',
         currentLevel: '4A',
         progressPercentage: 78,
         lastAssessment: '2024-08-10',
@@ -144,10 +71,10 @@ export default function TeacherDashboard() {
         culturalEngagement: 'high'
       },
       {
-        id: 'student_002',
+        ___id: 'student_002',
         studentName: 'Tane Johnson',
         yearLevel: 7,
-        subject: 'Science',
+        _____subject: 'Science',
         currentLevel: '3P',
         progressPercentage: 65,
         lastAssessment: '2024-08-12',
@@ -155,10 +82,10 @@ export default function TeacherDashboard() {
         culturalEngagement: 'medium'
       },
       {
-        id: 'student_003',
+        ___id: 'student_003',
         studentName: 'Kaia Patel',
         yearLevel: 9,
-        subject: 'Mathematics',
+        _____subject: 'Mathematics',
         currentLevel: '5B',
         progressPercentage: 89,
         lastAssessment: '2024-08-14',
@@ -168,10 +95,10 @@ export default function TeacherDashboard() {
     ],
     recentResources: [
       {
-        id: 'resource_001',
-        title: 'Y8 Fractions with Traditional Māori Games',
+        ___id: 'resource_001',
+        __title: 'Y8 Fractions with Traditional Māori Games',
         type: 'lesson',
-        subject: 'Mathematics',
+        _____subject: 'Mathematics',
         yearLevel: 8,
         nzcCodes: ['NA4-1', 'NA4-2'],
         culturalContext: true,
@@ -180,10 +107,10 @@ export default function TeacherDashboard() {
         author: 'Sarah Thompson'
       },
       {
-        id: 'resource_002',
-        title: 'Ecosystems of Aotearoa - Interactive Investigation',
+        ___id: 'resource_002',
+        __title: 'Ecosystems of Aotearoa - Interactive Investigation',
         type: 'activity',
-        subject: 'Science',
+        _____subject: 'Science',
         yearLevel: 7,
         nzcCodes: ['LW2-1', 'LW2-2'],
         culturalContext: true,
@@ -194,9 +121,9 @@ export default function TeacherDashboard() {
     ],
     upcomingAssessments: [
       {
-        id: 'assessment_001',
-        title: 'Y8 Algebraic Thinking Assessment',
-        subject: 'Mathematics',
+        ___id: 'assessment_001',
+        __title: 'Y8 Algebraic Thinking Assessment',
+        _____subject: 'Mathematics',
         yearLevel: 8,
         type: 'summative',
         dueDate: '2024-08-25',
@@ -204,9 +131,9 @@ export default function TeacherDashboard() {
         culturalAlignment: true
       },
       {
-        id: 'assessment_002',
-        title: 'Science Fair Project Presentations',
-        subject: 'Science',
+        ___id: 'assessment_002',
+        __title: 'Science Fair Project Presentations',
+        _____subject: 'Science',
         yearLevel: 9,
         type: 'summative',
         dueDate: '2024-09-02',
@@ -217,8 +144,8 @@ export default function TeacherDashboard() {
     ],
     culturalContent: [
       {
-        id: 'cultural_001',
-        title: 'Tūrangawaewae: Understanding Place and Identity',
+        ___id: 'cultural_001',
+        __title: 'Tūrangawaewae,
         type: 'story',
         iwi: 'Ngāti Tūwharetoa',
         region: 'Bay of Plenty',
@@ -227,8 +154,8 @@ export default function TeacherDashboard() {
         culturalAdvisor: 'Uncle Tom Richardson'
       },
       {
-        id: 'cultural_002',
-        title: 'Traditional Star Navigation Methods',
+        ___id: 'cultural_002',
+        __title: 'Traditional Star Navigation Methods',
         type: 'activity',
         iwi: 'Various',
         region: 'Aotearoa',
@@ -281,15 +208,15 @@ export default function TeacherDashboard() {
           {/* Navigation */}
           <nav className="space-y-2">
             {[
-              { id: 'overview', label: 'Dashboard Overview', icon: '📊' },
-              { id: 'students', label: 'Student Progress', icon: '👥' },
-              { id: 'resources', label: 'Resource Library', icon: '📚' },
-              { id: 'assessments', label: 'Assessment Tools', icon: '📋' },
-              { id: 'cultural', label: 'Cultural Content', icon: '🌿' }
+              { ___id: 'overview', label: 'Dashboard Overview', icon: '📊' },
+              { ___id: 'students', label: 'Student Progress', icon: '👥' },
+              { ___id: 'resources', label: 'Resource Library', icon: '📚' },
+              { ___id: 'assessments', label: 'Assessment Tools', icon: '📋' },
+              { ___id: 'cultural', label: 'Cultural Content', icon: '🌿' }
             ].map(item => (
               <button
                 key={item.id}
-                onClick={() => setSelectedView(item.id as any)}
+                onClick={() => setSelectedView(item.id as unknown)}
                 className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
                   selectedView === item.id
                     ? 'text-white'
@@ -847,11 +774,8 @@ function CulturalView({ data }: { data: DashboardData }) {
 
 // Utility Components
 function StatsCard({ title, value, icon, color }: {
-  title: string;
-  value: number;
-  icon: string;
-  color: string;
-}) {
+  __title: string;
+  value) {
   return (
     <Card>
       <CardContent className="p-6">

@@ -86,7 +86,7 @@ export default function Resources() {
               <option key={y} value={y}>{y === 'all' ? 'All years' : y}</option>
             ))}
           </select>
-          <select value={safety} onChange={e => setSafety(e.target.value as any)} className="flex-1 border rounded px-3 py-2">
+          <select value={safety} onChange={e => setSafety(e.target.value as unknown)} className="flex-1 border rounded px-3 py-2">
             <option value="all">All safety</option>
             <option value="clean">🟢 Clean</option>
             <option value="review">🟡 Review</option>

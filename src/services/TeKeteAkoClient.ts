@@ -16,51 +16,12 @@ const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co';
 const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
 
 export interface ContentMigration {
-  source_id: string;
-  content_type: 'handout' | 'activity' | 'game' | 'assessment' | 'unit_plan' | 'lesson_plan';
-  original_data: unknown;
-  migrated_data: unknown;
-  cultural_flags: string[];
-  migration_status: 'pending' | 'processing' | 'completed' | 'needs_review';
-  created_at?: string;
-  updated_at?: string;
-}
-
-export interface CulturalContentFlag {
-  content_id: string;
-  flag_type: 'maori_content' | 'pacific_content' | 'traditional_knowledge' | 'iwi_specific' | 'sacred_content';
-  risk_level: 'low' | 'medium' | 'high' | 'requires_iwi_consultation';
-  keywords_detected: string[];
-  reviewer_required: boolean;
-  kaitiaki_approved: boolean;
-  review_notes?: string;
-}
-
-export interface DatabaseSchema {
-  table_name: string;
-  column_name: string;
-  data_type: string;
-  is_nullable: string;
-  column_default: string | null;
-}
-
-export interface ContentInventory {
-  total_records: number;
-  content_types: Record<string, number>;
+  source____id: string;
+  content_type, number>;
   cultural_content_count: number;
   broken_links: number;
-  placeholder_content: number;
-  last_updated: string;
-}
-
-/**
- * Te Kete Ako Database Client with Cultural Safety Protocols
- */
-export class TeKeteAkoClient {
-  private client: SupabaseClient;
-  private culturalKeywords: string[];
-
-  constructor() {
+  placeholder____content: number;
+  last_updated) {
     this.client = createClient(TEKETE_SUPABASE_URL, TEKETE_SUPABASE_KEY);
     
     // Cultural content detection keywords
@@ -86,7 +47,7 @@ export class TeKeteAkoClient {
         .limit(5);
 
       if (error) {
-        await this.logActivity('connection_test_failed', { error: error.message });
+        await this.logActivity('connection_test_failed', { ___error: error.message });
         return {
           success: false,
           message: `Connection failed: ${error.message}`
@@ -106,11 +67,11 @@ export class TeKeteAkoClient {
 
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('connection_test_error', { error: errorMessage });
+      await this.logActivity('connection_test_error', { ___error: errorMessage });
       
       return {
         success: false,
-        message: `Connection error: ${errorMessage}`
+        message: `Connection ___error: ${errorMessage}`
       };
     }
   }
@@ -142,7 +103,7 @@ export class TeKeteAkoClient {
 
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('schema_analysis_failed', { error: errorMessage });
+      await this.logActivity('schema_analysis_failed', { ___error: errorMessage });
       throw error;
     }
   }
@@ -193,7 +154,7 @@ export class TeKeteAkoClient {
         content_types: contentTypes,
         cultural_content_count: culturalContentCount,
         broken_links: 0, // Will be analyzed in separate scan
-        placeholder_content: 0, // Will be analyzed in separate scan
+        placeholder____content: 0, // Will be analyzed in separate scan
         last_updated: new Date().toISOString()
       };
 
@@ -203,7 +164,7 @@ export class TeKeteAkoClient {
 
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('content_inventory_failed', { error: errorMessage });
+      await this.logActivity('content_inventory_failed', { ___error: errorMessage });
       throw error;
     }
   }
@@ -254,7 +215,7 @@ export class TeKeteAkoClient {
           }
 
           flags.push({
-            content_id: item.id,
+            content____id: item.id,
             flag_type: flagType,
             risk_level: riskLevel,
             keywords_detected: detectedKeywords,
@@ -276,7 +237,7 @@ export class TeKeteAkoClient {
 
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('cultural_scan_failed', { table: tableName, error: errorMessage });
+      await this.logActivity('cultural_scan_failed', { table: tableName, ___error: errorMessage });
       throw error;
     }
   }

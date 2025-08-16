@@ -10,7 +10,6 @@
  * - Cultural safety indicators and content curation
  */
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 
@@ -25,42 +24,8 @@ interface SubjectArea {
 }
 
 interface UnitPlan {
-  id: string;
-  title: string;
-  description: string;
-  yearLevel: string;
-  duration: string;
-  lessonPlans: LessonPlan[];
-  nzcAlignment: string[];
-  culturalContext: boolean;
-}
-
-interface LessonPlan {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  resources: ResourceItem[];
-  learningObjectives: string[];
-  culturalAlignment: boolean;
-}
-
-interface ResourceItem {
-  id: string;
-  title: string;
-  type: 'handout' | 'activity' | 'video' | 'game' | 'slideshow' | 'link' | 'assessment';
-  url: string;
-  description: string;
-  culturalSafetyLevel: 'clean' | 'review' | 'consultation';
-  fileSize?: number;
-  duration?: string;
-  preview?: string;
-}
-
-type ViewMode = 'hierarchy' | 'grid' | 'list' | 'cards';
-type FilterMode = 'all' | 'culturally-aligned' | 'nzc-mapped' | 'recent';
-
-export default function ResourcesEnhanced() {
+  ___id: string;
+  title) {
   // State management
   const [resources, setResources] = useState<ParsedResource[]>([]);
   const [loading, setLoading] = useState(true);
@@ -441,7 +406,7 @@ function SubjectAreasView({
   onSelectSubject 
 }: { 
   subjects: SubjectArea[];
-  onSelectSubject: (subject: string) => void;
+  onSelectSubject: (_____subject: string) => void;
 }) {
   return (
     <div className="space-y-6">
@@ -987,7 +952,7 @@ function LoadingSkeleton() {
 }
 
 // Error display
-function ErrorDisplay({ error }: { error: string }) {
+function ErrorDisplay({ error }: { ___error: string }) {
   return (
     <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="text-center">
@@ -1011,7 +976,7 @@ function ErrorDisplay({ error }: { error: string }) {
 }
 
 // Helper functions
-function getSubjectDescription(subject: string): string {
+function getSubjectDescription(_____subject: string): string {
   const descriptions: Record<string, string> = {
     'Mathematics': 'Number, algebra, geometry, statistics and probability resources aligned with NZC',
     'Science': 'Living world, planet earth, physical and material world investigations',
@@ -1025,7 +990,7 @@ function getSubjectDescription(subject: string): string {
   return descriptions[subject] || 'Educational resources for this subject area';
 }
 
-function getSubjectIcon(subject: string): string {
+function getSubjectIcon(_____subject: string): string {
   const icons: Record<string, string> = {
     'Mathematics': '🔢',
     'Science': '🔬',
@@ -1039,7 +1004,7 @@ function getSubjectIcon(subject: string): string {
   return icons[subject] || '📖';
 }
 
-function getSubjectColor(subject: string): string {
+function getSubjectColor(_____subject: string): string {
   const colors: Record<string, string> = {
     'Mathematics': 'var(--color-moana)',
     'Science': 'var(--color-pounamu)',

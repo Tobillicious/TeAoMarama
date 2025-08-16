@@ -25,7 +25,7 @@ interface ExplorationReport {
   database_schema: DatabaseSchema[];
   content_inventory: ContentInventory;
   cultural_flags: CulturalContentFlag[];
-  orphaned_resources: any[];
+  orphaned_resources: unknown[];
   recommendations: string[];
   urgency_level: 'low' | 'medium' | 'high' | 'critical';
 }
@@ -46,7 +46,7 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
       content_types: {},
       cultural_content_count: 0,
       broken_links: 0,
-      placeholder_content: 0,
+      placeholder____content: 0,
       last_updated: new Date().toISOString()
     },
     cultural_flags: [],

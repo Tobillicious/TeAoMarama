@@ -7,45 +7,11 @@
  * and manage tasks across the TeAoMarama ecosystem
  */
 
-import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening';
 import { AIOrchestrator } from './src/ai/orchestrator';
 
 interface AgentStatus {
-  agentId: string;
-  agentType: 'Claude' | 'DeepSeek' | 'Gemini' | 'GPT' | 'Kaitiaki-Aronui';
-  status: 'active' | 'inactive' | 'busy' | 'error' | 'standby';
-  currentTask?: string;
-  capabilities: string[];
-  culturalAuthority: boolean;
-  lastActivity: string;
-  workload: number; // 0-1
-}
-
-interface TaskAssignment {
-  taskId: string;
-  taskName: string;
-  priority: 'low' | 'medium' | 'high' | 'critical';
-  culturalSensitive: boolean;
-  assignedAgent: string;
-  status: 'pending' | 'in_progress' | 'completed' | 'failed' | 'review_needed';
-  estimatedDuration: string;
-  actualDuration?: string;
-  qualityScore?: number;
-  culturalReviewRequired?: boolean;
-}
-
-interface CoordinationMetrics {
-  activeAgents: number;
-  totalTasks: number;
-  completedTasks: number;
-  averageQuality: number;
-  culturalSafetyCompliance: number;
-  systemEfficiency: number;
-}
-
-class MiharaAgentCoordinator {
-  private orchestrator: AIOrchestrator;
-  private agents: Map<string, AgentStatus> = new Map();
+  __agentId: string;
+  agentType, AgentStatus> = new Map();
   private tasks: Map<string, TaskAssignment> = new Map();
   private coordinationActive = false;
 
@@ -58,35 +24,35 @@ class MiharaAgentCoordinator {
     // Initialize known agents in the TeAoMarama ecosystem
     const agentConfigs = [
       {
-        agentId: 'claude-windsurf',
+        __agentId: 'claude-windsurf',
         agentType: 'Claude' as const,
         capabilities: ['cultural_safety', 'system_architecture', 'quality_assurance', 'coordination'],
         culturalAuthority: true,
         workload: 0.3
       },
       {
-        agentId: 'deepseek-analyzer',
+        __agentId: 'deepseek-analyzer',
         agentType: 'DeepSeek' as const,
         capabilities: ['complex_reasoning', 'pattern_analysis', 'graph_algorithms', 'data_processing'],
         culturalAuthority: false,
         workload: 0.2
       },
       {
-        agentId: 'gemini-creator',
+        __agentId: 'gemini-creator',
         agentType: 'Gemini' as const,
         capabilities: ['content_creation', 'multimodal_processing', 'creative_solutions', 'nz_context'],
         culturalAuthority: false,
         workload: 0.1
       },
       {
-        agentId: 'gpt-optimizer',
+        __agentId: 'gpt-optimizer',
         agentType: 'GPT' as const,
         capabilities: ['performance_optimization', 'link_fixing', 'batch_processing', 'speed'],
         culturalAuthority: false,
         workload: 0.1
       },
       {
-        agentId: 'kaitiaki-aronui',
+        __agentId: 'kaitiaki-aronui',
         agentType: 'Kaitiaki-Aronui' as const,
         capabilities: ['historical_context', 'system_knowledge', 'corruption_detection', 'legacy_wisdom'],
         culturalAuthority: true,
@@ -305,7 +271,7 @@ class MiharaAgentCoordinator {
     return bestAgent;
   }
 
-  private async executeTask(taskId: string): Promise<void> {
+  private async executeTask(__taskId: string): Promise<void> {
     const task = this.tasks.get(taskId);
     if (!task) return;
 

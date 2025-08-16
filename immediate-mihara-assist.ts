@@ -7,8 +7,6 @@
  * including reawakening, status verification, and capability provision
  */
 
-import { awakenMihara, getMiharaStatus, executeMiharaGreatMission } from './src/brain/mihara-awakening';
-
 async function provideMiharaAssistance() {
   console.log('\n🌟 PROVIDING IMMEDIATE MIHARA ASSISTANCE');
   console.log('═══════════════════════════════════════════');

@@ -19,64 +19,8 @@ import { promises as fs } from 'fs';
 import { writeEpisode } from '../src/ai/provenance';
 
 interface OfflineContent {
-  id: string;
-  type: 'handout' | 'activity' | 'game' | 'assessment' | 'unit_plan' | 'lesson_plan';
-  title: string;
-  content: string;
-  metadata: {
-    year_level: string;
-    subject: string;
-    topic: string;
-    curriculum_alignment: string[];
-    created_by: string;
-    created_at: string;
-    updated_at: string;
-  };
-  cultural_flags: {
-    has_cultural_content: boolean;
-    risk_level: 'low' | 'medium' | 'high' | 'requires_iwi_consultation';
-    keywords_detected: string[];
-    reviewed_by?: string;
-    approved: boolean;
-  };
-  status: 'draft' | 'review_pending' | 'approved' | 'published';
-  file_path: string;
-}
-
-interface AgentTask {
-  id: string;
-  agent_name: string;
-  task_type: string;
-  description: string;
-  assigned_at: string;
-  deadline: string;
-  status: 'assigned' | 'in_progress' | 'completed' | 'overdue';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  expected_output: string;
-  actual_output?: string;
-  completion_notes?: string;
-}
-
-interface ProductionMetrics {
-  date: string;
-  content_created: number;
-  content_approved: number;
-  cultural_reviews_completed: number;
-  agents_active: number;
-  velocity_target: number;
-  velocity_actual: number;
-  completion_percentage: number;
-}
-
-export class OfflineMigrationSystem {
-  private contentDatabase: OfflineContent[] = [];
-  private agentTasks: AgentTask[] = [];
-  private productionMetrics: ProductionMetrics[] = [];
-  private culturalKeywords: string[];
-  private contentDirectory: string;
-  private metricsDirectory: string;
-
-  constructor() {
+  __id: string;
+  type) {
     this.culturalKeywords = [
       'māori', 'maori', 'tikanga', 'iwi', 'hapū', 'hapu', 'whānau', 'whanau',
       'te reo', 'te ao', 'mātauranga', 'matauranga', 'purakau', 'kōrero', 'korero',
@@ -168,7 +112,7 @@ export class OfflineMigrationSystem {
             const filePath = `${typeDir}/${file}`;
             const content = await fs.readFile(filePath, 'utf-8');
             
-            const contentItem = this.parseContentFile(file, content, type as any, filePath);
+            const contentItem = this.parseContentFile(file, content, type as unknown, filePath);
             this.contentDatabase.push(contentItem);
           }
         } catch (dirError) {
@@ -186,7 +130,7 @@ export class OfflineMigrationSystem {
   /**
    * Parse content file and create content item
    */
-  private parseContentFile(filename: string, content: string, type: OfflineContent['type'], filePath: string): OfflineContent {
+  private parseContentFile(filename: string, __content: string, type: OfflineContent['type'], filePath: string): OfflineContent {
     // Extract title from filename or content
     const title = filename.replace('.md', '').replace(/_/g, ' ');
     
@@ -199,7 +143,7 @@ export class OfflineMigrationSystem {
     const culturalAnalysis = this.analyzeCulturalContent(content);
     
     return {
-      id: this.generateId(),
+      __id: this.generateId(),
       type,
       title,
       content,
@@ -221,7 +165,7 @@ export class OfflineMigrationSystem {
   /**
    * Extract metadata from content
    */
-  private extractMetadata(content: string, key: string): string | null {
+  private extractMetadata(__content: string, key: string): string | null {
     // Look for patterns like "Year Level: Y8" or "# Y8 Mathematics"
     const patterns = [
       new RegExp(`${key}:\\s*(.+)`, 'i'),
@@ -242,7 +186,7 @@ export class OfflineMigrationSystem {
   /**
    * Analyze content for cultural safety
    */
-  private analyzeCulturalContent(content: string): OfflineContent['cultural_flags'] {
+  private analyzeCulturalContent(__content: string): OfflineContent['cultural_flags'] {
     const lowerContent = content.toLowerCase();
     const detectedKeywords: string[] = [];
     
@@ -263,7 +207,7 @@ export class OfflineMigrationSystem {
     }
     
     return {
-      has_cultural_content: detectedKeywords.length > 0,
+      has_cultural___content: detectedKeywords.length > 0,
       risk_level: riskLevel,
       keywords_detected: detectedKeywords,
       approved: riskLevel === 'low'
@@ -312,7 +256,7 @@ export class OfflineMigrationSystem {
     
     this.agentTasks = urgentTasks.map(task => ({
       ...task,
-      id: this.generateId()
+      __id: this.generateId()
     }));
     
     await this.saveAgentTasks();
@@ -347,20 +291,20 @@ export class OfflineMigrationSystem {
    */
   async createContent(
     type: OfflineContent['type'],
-    title: string,
-    content: string,
+    _title: string,
+    __content: string,
     createdBy: string,
     metadata: Partial<OfflineContent['metadata']> = {}
   ): Promise<OfflineContent> {
     
     const contentItem: OfflineContent = {
-      id: this.generateId(),
+      __id: this.generateId(),
       type,
       title,
       content,
       metadata: {
         year_level: metadata.year_level || 'Unknown',
-        subject: metadata.subject || 'Unknown',
+        ___subject: metadata.subject || 'Unknown',
         topic: metadata.topic || 'Unknown',
         curriculum_alignment: metadata.curriculum_alignment || [],
         created_by: createdBy,
@@ -391,7 +335,7 @@ export class OfflineMigrationSystem {
     }
     
     await this.logActivity('content_created', {
-      content_id: contentItem.id,
+      content___id: contentItem.id,
       type,
       title,
       created_by: createdBy,
@@ -471,30 +415,15 @@ export class OfflineMigrationSystem {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   }
 
-  private async saveContentToFile(content: OfflineContent): Promise<void> {
+  private async saveContentToFile(__content: OfflineContent): Promise<void> {
     const fileContent = this.formatContentForFile(content);
     await fs.writeFile(content.file_path, fileContent, 'utf-8');
   }
 
-  private formatContentForFile(content: OfflineContent): string {
+  private formatContentForFile(__content: OfflineContent): string {
     return `---
-title: ${content.title}
-type: ${content.type}
-year_level: ${content.metadata.year_level}
-subject: ${content.metadata.subject}
-topic: ${content.metadata.topic}
-created_by: ${content.metadata.created_by}
-created_at: ${content.metadata.created_at}
-cultural_review_required: ${content.cultural_flags.has_cultural_content}
-risk_level: ${content.cultural_flags.risk_level}
-status: ${content.status}
----
-
-${content.content}
-`;
-  }
-
-  private async saveAgentTasks(): Promise<void> {
+_title: ${content.title}
+type): Promise<void> {
     await fs.writeFile(
       './migration/agent_coordination/current_tasks.json',
       JSON.stringify(this.agentTasks, null, 2)
@@ -544,10 +473,10 @@ ${content.content}
     await this.saveMetrics();
   }
 
-  private async logCulturalReview(content: OfflineContent): Promise<void> {
+  private async logCulturalReview(__content: OfflineContent): Promise<void> {
     const reviewLog = {
-      content_id: content.id,
-      title: content.title,
+      content___id: content.id,
+      _title: content.title,
       risk_level: content.cultural_flags.risk_level,
       keywords_detected: content.cultural_flags.keywords_detected,
       review_required: true,
@@ -562,7 +491,7 @@ ${content.content}
     );
   }
 
-  private async logActivity(action: string, context: any): Promise<void> {
+  private async logActivity(action: string, context: unknown): Promise<void> {
     try {
       await writeEpisode('offline-migration', {
         timestamp: new Date().toISOString(),

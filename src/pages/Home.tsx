@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
-import { useDashboard, useAnimatedMetrics, useProgressAnimation } from '../hooks/useDashboard';
 import './Home.css';
 
 export default function Home() {

@@ -192,7 +192,7 @@ async function main() {
 
   for (const item of contentQueue) {
     await agent.generateResource(
-      item.type as any,
+      item.type as unknown,
       item.subject,
       item.yearLevel,
       item.topic

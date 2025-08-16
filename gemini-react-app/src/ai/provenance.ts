@@ -10,13 +10,13 @@ export interface Episode {
   agent: string;
   context: {
     phase: string;
-    details: Record<string, any>;
-    metadata: Record<string, any>;
+    details: Record<string, unknown>;
+    metadata: Record<string, unknown>;
   };
   outcome: {
     success: boolean;
     message: string;
-    data?: any;
+    data?: unknown;
   };
 }
 

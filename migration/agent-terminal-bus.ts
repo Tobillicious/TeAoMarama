@@ -101,7 +101,7 @@ async function main() {
 
     readline.emitKeypressEvents(process.stdin);
     if (process.stdin.isTTY) process.stdin.setRawMode(true);
-    process.stdin.on('keypress', async (_str, key: any) => {
+    process.stdin.on('keypress', async (_str, key: unknown) => {
         if (!key) return;
         if (key.name === 'q' || (key.ctrl && key.name === 'c')) {
             console.log('\nExiting terminal bus…');

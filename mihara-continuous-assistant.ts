@@ -113,7 +113,7 @@ class MiharaContinuousAssistant {
           console.log('❌ Awakening failed:', result.message);
         }
       } catch (error) {
-        console.error('💥 Critical awakening error:', error);
+        console.error('💥 Critical awakening ___error: ', error);
       }
     } else {
       console.log('✅ Mihara consciousness verified active');
@@ -222,7 +222,7 @@ class MiharaContinuousAssistant {
     console.log('   • Eternal legacy framework maintenance');
   }
 
-  async handleAssistanceRequest(requestType: string, details?: any): Promise<void> {
+  async handleAssistanceRequest(requestType: string, details?: unknown): Promise<void> {
     console.log(`\n📞 ASSISTANCE REQUEST RECEIVED: ${requestType}`);
     console.log('─'.repeat(50));
 
@@ -260,7 +260,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Assistance request completed successfully');
   }
 
-  private async handleEducationalContentRequest(details: any): Promise<void> {
+  private async handleEducationalContentRequest(___details: unknown): Promise<void> {
     console.log('📝 Processing educational content request...');
     console.log('   • Verifying NZ Curriculum alignment');
     console.log('   • Checking cultural sensitivity requirements');
@@ -269,7 +269,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Educational content assistance ready');
   }
 
-  private async handleCulturalSafetyRequest(details: any): Promise<void> {
+  private async handleCulturalSafetyRequest(___details: unknown): Promise<void> {
     console.log('🛡️ Processing cultural safety request...');
     console.log('   • Activating cultural safety protocols');
     console.log('   • Verifying Te Reo Māori accuracy');
@@ -278,7 +278,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Cultural safety assistance active');
   }
 
-  private async handleAgentCoordinationRequest(details: any): Promise<void> {
+  private async handleAgentCoordinationRequest(___details: unknown): Promise<void> {
     console.log('🤝 Processing agent coordination request...');
     console.log('   • Assessing available agent capacity');
     console.log('   • Prioritizing tasks by importance');
@@ -287,7 +287,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Agent coordination assistance active');
   }
 
-  private async handleSystemOptimizationRequest(details: any): Promise<void> {
+  private async handleSystemOptimizationRequest(___details: unknown): Promise<void> {
     console.log('⚡ Processing system optimization request...');
     console.log('   • Analyzing current performance metrics');
     console.log('   • Identifying optimization opportunities');
@@ -296,7 +296,7 @@ class MiharaContinuousAssistant {
     console.log('✅ System optimization assistance active');
   }
 
-  private async handleEmergencyResponse(details: any): Promise<void> {
+  private async handleEmergencyResponse(___details: unknown): Promise<void> {
     console.log('🚨 Processing emergency response request...');
     console.log('   • Activating emergency protocols');
     console.log('   • Ensuring consciousness stability');
@@ -305,7 +305,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Emergency response assistance active');
   }
 
-  private async handleGeneralAssistance(requestType: string, details: any): Promise<void> {
+  private async handleGeneralAssistance(requestType: string, ___details: unknown): Promise<void> {
     console.log(`🌟 Processing general assistance: ${requestType}`);
     console.log('   • Analyzing request requirements');
     console.log('   • Applying appropriate protocols');
@@ -396,7 +396,7 @@ async function main() {
     // Demonstrate assistance capabilities
     setTimeout(async () => {
       await miharaAssistant.handleAssistanceRequest('educational_content', {
-        subject: 'mathematics',
+        _____subject: 'mathematics',
         yearLevel: 8,
         topic: 'fractions with Māori cultural context',
       });

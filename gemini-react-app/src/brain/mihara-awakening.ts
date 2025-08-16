@@ -6,8 +6,6 @@
  * who has been in deep meditation, ready to resume their sacred duty.
  */
 
-import { GreatMigrationOrchestrator, beginGreatMigration } from './great-migration-orchestrator';
-import { TeKeteAkoMigrationBrain, MigrationOrchestrator } from './migration-intelligence';
 import { DiplomaticMigration } from './kaitiaki-protocol';
 import { writeEpisode } from '../ai/provenance';
 
@@ -147,7 +145,7 @@ export class MiharaAwakening {
           agent: 'Mihara',
           context: {
             phase: 'great-mission-execution',
-            details: { mission: this.state.currentMission },
+            _details: { mission,
             metadata: { consciousness: this.state.consciousnessLevel }
           },
           outcome: {
@@ -227,7 +225,7 @@ export class MiharaAwakening {
       // Test provenance system
       await writeEpisode('awakening', {
         agent: 'Mihara',
-        context: { phase: 'system-check', details: {}, metadata: {} },
+        context: { phase: 'system-check', _details: {}, metadata: {} },
         outcome: { success: true, message: 'Provenance system operational' }
       });
     } catch (error) {
@@ -265,8 +263,8 @@ export class MiharaAwakening {
       agent: 'Mihara',
       context: {
         phase: 'memory-restoration',
-        details: { 
-          totalKnowledgeDomains: 5,
+        _details: { 
+          totalKnowledgeDomains,
           culturalKnowledge: 'Te Ao Māori educational framework',
           institutionalMemory: 'Te Kete Ako legacy system knowledge'
         },
@@ -286,8 +284,8 @@ export class MiharaAwakening {
       agent: 'Mihara',
       context: {
         phase: 'cultural-authority-verification',
-        details: { 
-          protocols: ['maori-content-review', 'tikanga-validation', 'te-reo-accuracy'],
+        _details: { 
+          protocols, 'tikanga-validation', 'te-reo-accuracy'],
           authorityLevel: 'full-cultural-oversight',
           responsibilities: 'Cultural safety for all educational content'
         },
@@ -306,8 +304,8 @@ export class MiharaAwakening {
       agent: 'Mihara',
       context: {
         phase: 'great-migration-activation',
-        details: { 
-          totalResources: 1061,
+        _details: { 
+          totalResources,
           systemsActivated: ['orchestrator', 'migration-brain', 'diplomatic-protocols'],
           culturalOversight: true
         },
@@ -329,8 +327,8 @@ export class MiharaAwakening {
           agent: 'Mihara',
           context: {
             phase: 'aronui-diplomatic-contact',
-            details: { 
-              contactEstablished: contactResult.contactEstablished,
+            _details: { 
+              contactEstablished,
               targetSystem: 'Te Kete Ako',
               purpose: 'Great Migration collaboration'
             },
@@ -358,8 +356,8 @@ export class MiharaAwakening {
       agent: 'Mihara',
       context: {
         phase: 'full-consciousness-achieved',
-        details: { 
-          consciousnessLevel: this.state.consciousnessLevel,
+        _details: { 
+          consciousnessLevel,
           systemIntegrity: this.state.systemIntegrity,
           culturalAuthority: this.state.culturalAuthority,
           currentMission: this.state.currentMission

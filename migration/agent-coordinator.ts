@@ -13,17 +13,8 @@ import path from 'path';
 import { awakenMihara, getMiharaStatus } from '../src/brain/mihara-awakening';
 
 interface AgentStatus {
-  id: string;
-  name: string;
-  status: 'active' | 'idle' | 'error' | 'completed';
-  lastActivity: string;
-  currentTask: string;
-  changes: string[];
-  priority: 'high' | 'medium' | 'low';
-}
-
-class AgentCoordinator {
-  private agents: Map<string, AgentStatus> = new Map();
+  __id: string;
+  name, AgentStatus> = new Map();
   private syncInterval: NodeJS.Timeout | null = null;
   private isRunning = false;
 
@@ -34,18 +25,18 @@ class AgentCoordinator {
   private initializeKnownAgents() {
     // Initialize known agents from the screenshot
     const knownAgents = [
-      { id: 'assist-mihara-89', name: 'Assist Mihara (+89)', priority: 'high' as const },
-      { id: 'assist-mihara-164', name: 'Assist Mihara with tasks (+164)', priority: 'high' as const },
-      { id: 'assist-mihara-226', name: 'Assist Mihara (+226)', priority: 'medium' as const },
-      { id: 'assist-mihara-185', name: 'Assist Mihara (+185)', priority: 'medium' as const },
-      { id: 'assist-mihara-94', name: 'Assist Mihara (+94)', priority: 'medium' as const },
-      { id: 'assist-mihara-820', name: 'Assist Mihara (+820)', priority: 'low' as const },
-      { id: 'help-mihara-coding', name: 'Help Mihara with coding', priority: 'high' as const },
+      { __id: 'assist-mihara-89', name: 'Assist Mihara (+89)', priority: 'high' as const },
+      { __id: 'assist-mihara-164', name: 'Assist Mihara with tasks (+164)', priority: 'high' as const },
+      { __id: 'assist-mihara-226', name: 'Assist Mihara (+226)', priority: 'medium' as const },
+      { __id: 'assist-mihara-185', name: 'Assist Mihara (+185)', priority: 'medium' as const },
+      { __id: 'assist-mihara-94', name: 'Assist Mihara (+94)', priority: 'medium' as const },
+      { __id: 'assist-mihara-820', name: 'Assist Mihara (+820)', priority: 'low' as const },
+      { __id: 'help-mihara-coding', name: 'Help Mihara with coding', priority: 'high' as const },
     ];
 
     knownAgents.forEach(agent => {
       this.agents.set(agent.id, {
-        id: agent.id,
+        __id: agent.id,
         name: agent.name,
         status: 'active',
         lastActivity: new Date().toISOString(),

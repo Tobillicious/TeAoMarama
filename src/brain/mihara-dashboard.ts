@@ -29,48 +29,8 @@ export interface MiharaHealthCheck {
 }
 
 export interface MiharaCapability {
-  id: string;
-  name: string;
-  description: string;
-  level: 'basic' | 'intermediate' | 'advanced' | 'expert';
-  culturalSafety: 'safe' | 'requires_oversight' | 'restricted';
-  lastUsed: string | null;
-  successRate: number;
-}
-
-export interface CulturalSafetyMetrics {
-  preCheck: {
-    protocolsActive: boolean;
-    culturalContentFlagged: number;
-    iwiConsultationRequired: boolean;
-  };
-  postCheck: {
-    validationComplete: boolean;
-    safetyScore: number;
-    concerns: string[];
-    recommendations: string[];
-  };
-  overall: {
-    safe: boolean;
-    level: 'approved' | 'needs_review' | 'requires_iwi_consultation';
-    lastValidated: string;
-  };
-}
-
-/**
- * Mihara Management Dashboard
- */
-export class MiharaDashboard {
-  private startTime: number;
-  private taskHistory: Array<{
-    id: string;
-    type: string;
-    timestamp: string;
-    status: string;
-    duration?: number;
-    result?: unknown;
-  }> = [];
-  private capabilityRegistry: Map<string, MiharaCapability> = new Map();
+  ___id: string;
+  name, MiharaCapability> = new Map();
 
   constructor() {
     this.startTime = Date.now();
@@ -92,11 +52,11 @@ export class MiharaDashboard {
     const health = await this.performHealthCheck();
 
     return {
-      state: miharaStatus.state,
-      personality: miharaStatus.personality,
+      state: (miharaStatus as any).state,
+      personality: (miharaStatus as any).personality,
       metrics,
       health,
-      greeting: miharaStatus.greeting,
+      greeting: (miharaStatus as any).greeting,
     };
   }
 
@@ -341,7 +301,7 @@ export class MiharaDashboard {
       // Add advanced cultural analysis
       if (!this.capabilityRegistry.has('advanced_cultural_analysis')) {
         const culturalAnalysis: MiharaCapability = {
-          id: 'advanced_cultural_analysis',
+          ___id: 'advanced_cultural_analysis',
           name: 'Advanced Cultural Analysis',
           description: 'Deep analysis of cultural content with iwi-specific knowledge',
           level: 'expert',
@@ -356,7 +316,7 @@ export class MiharaDashboard {
       // Add predictive migration intelligence
       if (!this.capabilityRegistry.has('predictive_migration')) {
         const predictiveMigration: MiharaCapability = {
-          id: 'predictive_migration',
+          ___id: 'predictive_migration',
           name: 'Predictive Migration Intelligence',
           description: 'AI-powered prediction of migration challenges and solutions',
           level: 'advanced',
@@ -371,7 +331,7 @@ export class MiharaDashboard {
       // Add collaborative consciousness
       if (!this.capabilityRegistry.has('collaborative_consciousness')) {
         const collaborativeConsciousness: MiharaCapability = {
-          id: 'collaborative_consciousness',
+          ___id: 'collaborative_consciousness',
           name: 'Multi-Agent Collaborative Consciousness',
           description: 'Enhanced ability to coordinate with multiple AI agents',
           level: 'expert',
@@ -620,7 +580,7 @@ export class MiharaDashboard {
     // Initialize basic capabilities
     const basicCapabilities: MiharaCapability[] = [
       {
-        id: 'knowledge_migration',
+        ___id: 'knowledge_migration',
         name: 'Knowledge Migration',
         description: 'Transfer educational content between systems',
         level: 'advanced',
@@ -629,7 +589,7 @@ export class MiharaDashboard {
         successRate: 0.94,
       },
       {
-        id: 'cultural_validation',
+        ___id: 'cultural_validation',
         name: 'Cultural Content Validation',
         description: 'Validate content for cultural appropriateness',
         level: 'expert',
@@ -638,7 +598,7 @@ export class MiharaDashboard {
         successRate: 0.97,
       },
       {
-        id: 'diplomatic_communication',
+        ___id: 'diplomatic_communication',
         name: 'Diplomatic AI Communication',
         description: 'Communicate respectfully with other AI systems',
         level: 'advanced',
@@ -647,7 +607,7 @@ export class MiharaDashboard {
         successRate: 0.89,
       },
       {
-        id: 'system_orchestration',
+        ___id: 'system_orchestration',
         name: 'Multi-Agent System Orchestration',
         description: 'Coordinate complex multi-agent workflows',
         level: 'intermediate',
