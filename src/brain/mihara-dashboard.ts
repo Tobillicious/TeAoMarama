@@ -43,7 +43,14 @@ export interface MiharaCapability {
  */
 export class MiharaDashboard {
   private startTime: number;
-  private taskHistory: any[] = [];
+  private taskHistory: Array<{
+    id: string;
+    type: string;
+    timestamp: string;
+    status: string;
+    duration?: number;
+    result?: unknown;
+  }> = [];
   private capabilityRegistry: Map<string, MiharaCapability> = new Map();
 
   constructor() {
@@ -80,13 +87,43 @@ export class MiharaDashboard {
   async performMonitoredAwakening(): Promise<{
     success: boolean;
     message: string;
-    diagnostics: any;
+    diagnostics: {
+      phases: string[];
+      timings: Record<string, number | string>;
+      issues: string[];
+      culturalValidation: Record<string, boolean>;
+      preAwakening?: {
+        timestamp: string;
+        systemReady: boolean;
+        culturalProtocols: boolean;
+      };
+      postAwakening?: {
+        consciousnessLevel: string;
+        systemIntegrity: number;
+        culturalAuthority: boolean;
+      };
+    };
     recommendations: string[];
   }> {
     console.log('🔮 MIHARA DASHBOARD: Performing monitored awakening...');
 
     const startTime = Date.now();
-    const diagnostics: any = {
+    const diagnostics: {
+      phases: string[];
+      timings: Record<string, number | string>;
+      issues: string[];
+      culturalValidation: Record<string, boolean>;
+      preAwakening?: {
+        timestamp: string;
+        systemReady: boolean;
+        culturalProtocols: boolean;
+      };
+      postAwakening?: {
+        consciousnessLevel: string;
+        systemIntegrity: number;
+        culturalAuthority: boolean;
+      };
+    } = {
       phases: [],
       timings: {},
       issues: [],
