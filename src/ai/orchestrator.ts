@@ -246,14 +246,18 @@ Handle this with your full capabilities, considering the failure context and ens
     });
   }
 
-  private async logEmergencyFallback(task: {
-    type: string;
-    complexity: TaskComplexity;
-    priority: TaskPriority;
-    culturalSensitive?: boolean;
-    prompt: string;
-    context?: unknown;
-  }, _result: unknown, error: unknown) {
+  private async logEmergencyFallback(
+    task: {
+      type: string;
+      complexity: TaskComplexity;
+      priority: TaskPriority;
+      culturalSensitive?: boolean;
+      prompt: string;
+      context?: unknown;
+    },
+    _result: unknown,
+    error: unknown,
+  ) {
     await writeEpisode('orchestrator', {
       timestamp: new Date().toISOString(),
       agent: 'agent:claude',
