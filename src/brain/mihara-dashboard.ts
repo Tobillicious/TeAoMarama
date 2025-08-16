@@ -38,6 +38,25 @@ export interface MiharaCapability {
   successRate: number;
 }
 
+export interface CulturalSafetyMetrics {
+  preCheck: {
+    protocolsActive: boolean;
+    culturalContentFlagged: number;
+    iwiConsultationRequired: boolean;
+  };
+  postCheck: {
+    validationComplete: boolean;
+    safetyScore: number;
+    concerns: string[];
+    recommendations: string[];
+  };
+  overall: {
+    safe: boolean;
+    level: 'approved' | 'needs_review' | 'requires_iwi_consultation';
+    lastValidated: string;
+  };
+}
+
 /**
  * Mihara Management Dashboard
  */
@@ -197,7 +216,7 @@ export class MiharaDashboard {
   async performMonitoredMigration(): Promise<{
     success: boolean;
     metrics: unknown;
-    culturalSafety: unknown;
+    culturalSafety: CulturalSafetyMetrics;
     recommendations: string[];
   }> {
     console.log('🏛️ MIHARA DASHBOARD: Performing monitored Great Migration...');
@@ -221,18 +240,32 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety: unknown = {
-        preCheck: await this.validateCulturalSafety(),
-        phases: [],
-        postCheck: null,
+      const culturalSafety: CulturalSafetyMetrics = {
+        preCheck: {
+          protocolsActive: true,
+          culturalContentFlagged: 0,
+          iwiConsultationRequired: false,
+        },
+        postCheck: {
+          validationComplete: false,
+          safetyScore: 0,
+          concerns: [],
+          recommendations: [],
+        },
+        overall: {
+          safe: true,
+          level: 'approved',
+          lastValidated: new Date().toISOString(),
+        },
       };
 
       // Execute migration with monitoring
       await GlobalMihara.executeGreatMission();
 
       // Post-migration validation
-      (culturalSafety as { postCheck?: unknown }).postCheck = await this.validateCulturalSafety();
-      (migrationMetrics as { duration?: number; startTime: number }).duration = Date.now() - migrationMetrics.startTime;
+      culturalSafety.postCheck = await this.validateCulturalSafety();
+      (migrationMetrics as { duration?: number; startTime: number }).duration =
+        Date.now() - migrationMetrics.startTime;
 
       const recommendations = this.generateMigrationRecommendations(
         migrationMetrics,
@@ -245,7 +278,9 @@ export class MiharaDashboard {
         action: 'monitored_migration',
         context: {
           duration: (migrationMetrics as { duration?: number }).duration,
-          cultural_safety_score: (culturalSafety as { postCheck?: { overallScore?: number } }).postCheck?.overallScore || 0,
+          cultural_safety_score:
+            (culturalSafety as { postCheck?: { overallScore?: number } }).postCheck?.overallScore ||
+            0,
           text: 'Completed monitored Great Migration with cultural validation',
         },
       });
@@ -262,7 +297,24 @@ export class MiharaDashboard {
       return {
         success: false,
         metrics: migrationMetrics,
-        culturalSafety: { error: String(error) },
+        culturalSafety: {
+          preCheck: {
+            protocolsActive: false,
+            culturalContentFlagged: 0,
+            iwiConsultationRequired: false,
+          },
+          postCheck: {
+            validationComplete: false,
+            safetyScore: 0,
+            concerns: [String(error)],
+            recommendations: [],
+          },
+          overall: {
+            safe: false,
+            level: 'needs_review',
+            lastValidated: new Date().toISOString(),
+          },
+        },
         recommendations: [
           'Review migration logs for errors',
           'Validate cultural safety protocols',
@@ -480,20 +532,15 @@ export class MiharaDashboard {
   }
 
   private async validateCulturalSafety(): Promise<{
-    overallScore: number;
-    categories: Record<string, number>;
+    validationComplete: boolean;
+    safetyScore: number;
     concerns: string[];
     recommendations: string[];
   }> {
     // Simulate cultural safety validation
     return {
-      overallScore: 0.94,
-      categories: {
-        te_reo_accuracy: 0.96,
-        tikanga_respect: 0.95,
-        whakapapa_preservation: 0.92,
-        iwi_consultation: 0.9,
-      },
+      validationComplete: true,
+      safetyScore: 0.94,
       concerns: [],
       recommendations: [
         'Continue regular cultural advisor consultation',
@@ -520,10 +567,13 @@ export class MiharaDashboard {
     return recommendations;
   }
 
-  private generateMigrationRecommendations(metrics: unknown, culturalSafety: unknown): string[] {
+  private generateMigrationRecommendations(
+    metrics: unknown,
+    culturalSafety: CulturalSafetyMetrics,
+  ): string[] {
     const recommendations: string[] = [];
 
-    if (culturalSafety.postCheck?.overallScore < 0.9) {
+    if (culturalSafety.postCheck.safetyScore < 0.9) {
       recommendations.push('Enhanced cultural review recommended');
     }
 
