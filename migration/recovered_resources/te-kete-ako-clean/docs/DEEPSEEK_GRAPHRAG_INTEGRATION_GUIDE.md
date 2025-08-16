@@ -1,4 +1,5 @@
 # 🤖 DeepSeek + GraphRAG Integration Guide
+
 ## Multi-AI Terminal Coordination for Te Kete Ako
 
 ### 🎯 **What You Now Have:**
@@ -24,6 +25,7 @@ User Query → Firebase Auth → DeepSeek Agent → GraphRAG Brain → Enhanced 
 ```
 
 ### **The "Terminal Babes" Team:**
+
 1. **DeepSeek** - Smart reasoning and creative generation
 2. **GraphRAG** - Institutional memory and educational context
 3. **Firebase** - User identity and security
@@ -73,6 +75,7 @@ supabase db push
 ## 🎭 **How Multi-AI Coordination Works**
 
 ### **Phase 1: GraphRAG Brain Query**
+
 ```javascript
 // DeepSeek queries GraphRAG for institutional memory
 const context = await queryGraphRAGBrain(userQuery);
@@ -80,6 +83,7 @@ const context = await queryGraphRAGBrain(userQuery);
 ```
 
 ### **Phase 2: Enhanced DeepSeek Reasoning**
+
 ```javascript
 // DeepSeek receives GraphRAG context + user query
 const response = await queryDeepSeek(query, graphragContext);
@@ -87,6 +91,7 @@ const response = await queryDeepSeek(query, graphragContext);
 ```
 
 ### **Phase 3: Coordination Logging**
+
 ```javascript
 // System logs multi-AI interaction for analytics
 await logMultiAIInteraction(user, query, context, response);
@@ -98,22 +103,26 @@ await logMultiAIInteraction(user, query, context, response);
 ## 🌟 **Key Features**
 
 ### **🧠 Intelligent Coordination**
+
 - DeepSeek gets institutional memory from GraphRAG
 - Responses grounded in your 179+ educational resources
 - Cultural safety automatically triggered for Te Ao Māori content
 
 ### **📊 Real-Time Analytics**
+
 - Track multi-AI coordination success
 - Monitor GraphRAG brain utilization
 - Cultural resource access patterns
 - Performance metrics
 
 ### **🛡️ Cultural Safety**
+
 - Automatic detection of cultural content
 - Enhanced context for authentic representation
 - Te Ao Māori resource prioritization
 
 ### **⚡ Performance Features**
+
 - Graceful fallback (DeepSeek works without GraphRAG)
 - Caching and optimization
 - Real-time coordination monitoring
@@ -123,21 +132,27 @@ await logMultiAIInteraction(user, query, context, response);
 ## 🎯 **Example Queries That Showcase the Power**
 
 ### **1. Cultural Integration Query:**
+
 ```
 "How can I teach probability using Māori traditional knowledge?"
 ```
+
 **Result**: DeepSeek uses GraphRAG to find "Probability Matauranga Integration" resources, provides culturally-grounded response.
 
 ### **2. Systems Thinking Query:**
+
 ```
 "Explain how government systems connect to economic justice for Year 8 students"
 ```
+
 **Result**: GraphRAG finds connections between government lessons and economic justice units, DeepSeek synthesizes comprehensive response.
 
 ### **3. Resource Discovery Query:**
+
 ```
 "What's the best way to teach digital citizenship while honoring Te Ao Māori values?"
 ```
+
 **Result**: Multi-AI coordination finds digital citizenship resources + cultural safety frameworks.
 
 ---
@@ -145,16 +160,19 @@ await logMultiAIInteraction(user, query, context, response);
 ## 🔧 **API Endpoints Created**
 
 ### **Main Integration:**
+
 - `/.netlify/functions/deepseek-graphrag-bridge`
 - Handles DeepSeek + GraphRAG coordination
 - Returns enhanced responses with context
 
 ### **Frontend Interface:**
+
 - `/deepseek-graphrag-terminal.html`
 - Interactive chat interface
 - Real-time AI coordination visualization
 
 ### **Analytics:**
+
 - Supabase `multi_ai_coordination_log` table
 - `get_multi_ai_stats()` function for metrics
 - Real-time coordination monitoring
@@ -176,18 +194,22 @@ Your multi-AI system tracks:
 ## 🎉 **What Makes This Revolutionary**
 
 ### **1. First-Ever Educational GraphRAG + LLM Integration**
+
 - DeepSeek reasoning + institutional memory
 - Not just search - intelligent knowledge synthesis
 
 ### **2. Cultural AI Leadership**
+
 - Authentic Te Ao Māori integration
 - AI that enhances rather than replaces cultural knowledge
 
 ### **3. Multi-AI Coordination Framework**
+
 - Template for future AI-assisted education
 - Scalable across subjects and age groups
 
 ### **4. Real-Time Educational Intelligence**
+
 - Instant access to 179+ resources
 - Contextual recommendations
 - Cross-curricular connections
@@ -197,16 +219,19 @@ Your multi-AI system tracks:
 ## 🚀 **Next Steps**
 
 ### **Immediate (Ready Now):**
+
 1. Test the terminal interface
 2. Try educational queries
 3. Monitor coordination analytics
 
 ### **Phase 2 Enhancements:**
+
 1. Add Gemini CLI for content creation
 2. Integrate Exa.ai for external research
 3. Add SupaClaude for code analysis
 
 ### **Phase 3 Vision:**
+
 1. Student-specific AI tutors
 2. Teacher lesson planning assistance
 3. Cultural knowledge preservation system

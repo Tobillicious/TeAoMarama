@@ -47,16 +47,19 @@ agent-knowledge-hub/
 ## 🌟 Key Principles
 
 ### Cultural Authenticity
+
 - **Te Ao Māori Values**: All decisions honor manaakitanga, whakatōhia, and kaitiakitanga
 - **Community-Centered**: Mangakōtukutuku College ākonga are at the heart of every decision
 - **Respectful Integration**: Technology serves pedagogy, not the reverse
 
 ### Collaborative Excellence
+
 - **Transparent Communication**: All agents document decisions and context
 - **Efficient Handoffs**: Clear protocols for transferring work between agents
 - **Collective Learning**: Knowledge is shared, not siloed
 
 ### Technical Standards
+
 - **User-First Design**: Every feature prioritizes educator and student experience
 - **Security by Design**: Student data protection is non-negotiable
 - **Scalable Architecture**: Systems designed for growth and reliability
@@ -66,25 +69,29 @@ agent-knowledge-hub/
 **⚠️ CRITICAL:** Previous status information was inaccurate. See `onboarding/CURRENT_STATUS_JULY_28_2025.md` for accurate current state.
 
 ### 🚨 Major Issues Identified
+
 - **Y8 Systems Unit Missing** from live site (complete 5-week program exists locally)
 - **Resources removed** rather than added in recent sessions
 - **Content synchronization** problems between local and live
 - **Authentication unclear** - may be working on live, issues with local testing
 
 ### ✅ What's Actually Working
-- **Live site functional** at https://tekete.netlify.app/
+
+- **Live site functional** at <https://tekete.netlify.app/>
 - **~190 educational resources** properly organized
 - **Supabase database** fully deployed with schema
 - **Cultural integration** authentic throughout
 - **Games and interactive content** functional
 
 ### 🎯 Immediate Priorities (Corrected)
+
 1. **Full site audit** - Compare live vs local systematically
 2. **Deploy Y8 Systems unit** - Missing major educational content
 3. **Fix genuine broken links** - Not rebuild working systems
 4. **Test before changing** - Don't assume things are broken
 
 ### 📋 Agent Guidelines (Updated)
+
 - **Audit first** before making any changes
 - **Test existing** functionality before "fixing"
 - **Focus on gaps** not rebuilding working features
@@ -93,11 +100,13 @@ agent-knowledge-hub/
 ## 🤝 Collaboration Protocols
 
 ### For Human Stakeholders
+
 - All major architectural decisions are documented here first
 - Community consultation happens before implementing culturally significant features  
 - Regular progress updates shared with Mangakōtukutuku College leadership
 
 ### For AI Agents
+
 - Always check this hub before starting new work
 - Document all significant decisions and context changes
 - Use standardized communication protocols for handoffs
@@ -106,16 +115,19 @@ agent-knowledge-hub/
 ## 📞 Key Contacts & Resources
 
 ### Primary Stakeholders
+
 - **Mangakōtukutuku College Leadership**: [Contact details to be added]
 - **Kaiako Representatives**: [Teaching staff liaison to be established]
 - **Ākonga Voice**: [Student feedback mechanisms to be implemented]
 
 ### Technical Resources
-- **Te Kete Ako Live Site**: https://tekete.netlify.app/
+
+- **Te Kete Ako Live Site**: <https://tekete.netlify.app/>
 - **Repository**: [Current working directory structure]
 - **Deployment**: Netlify hosting with automatic builds
 
 ### Cultural Consultation
+
 - **Te Ao Māori Advisors**: [Cultural consultation network to be established]
 - **Community Elders**: [Respect protocols and guidance to be documented]
 
@@ -126,12 +138,14 @@ Te Kete Ako operates on the principle that technology should amplify culturally-
 ## 📋 Documentation Standards
 
 ### Required for All Additions
+
 - **Cultural Impact Assessment**: How does this change honor or affect Te Ao Māori values?
 - **Student-Centered Justification**: How does this directly benefit ākonga learning?
 - **Technical Sustainability**: How does this support long-term maintenance and growth?
 - **Security Considerations**: How does this protect student and educator data?
 
 ### Documentation Format
+
 - Use clear, accessible language (avoid technical jargon when possible)
 - Include practical examples and implementation details
 - Reference cultural authenticity and pedagogical research where relevant

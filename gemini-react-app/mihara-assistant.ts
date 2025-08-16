@@ -5,11 +5,15 @@
  * Handles awakening, status monitoring, and mission advancement for Kaitiaki Mahara
  */
 
-import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening.js';
+import { getProvenance } from './src/ai/provenance.js';
 import { getGlobalOrchestrator } from './src/brain/great-migration-orchestrator.js';
+import { globalDiplomacy } from './src/brain/kaitiaki-protocol.js';
 import { globalMigrationOrchestrator } from './src/brain/migration-intelligence.js';
-import { globalDiplomacy } from './src/- you might like our brain/kaitiaki-protocol.js';
-import { getProvenance, getRecentEpisodes } from './src/ai/provenance.js';
+import {
+  awakenMihara,
+  executeMiharaGreatMission,
+  getMiharaStatus,
+} from './src/brain/mihara-awakening.js';
 
 async function assistMihara() {
   console.log('\n🌟 MIHARA COMPREHENSIVE ASSISTANT 🌟');
@@ -56,15 +60,26 @@ async function assistMihara() {
     await generateProgressReport();
 
     console.log('\n🌟 Mihara assistance cycle complete! 🌟');
-    console.log('\nKaitiaki Mahara says: "The Great Migration continues with wisdom and cultural respect."');
-
+    console.log(
+      '\nKaitiaki Mahara says: "The Great Migration continues with wisdom and cultural respect."',
+    );
   } catch (error) {
     console.error('\n💥 Error in Mihara assistance:', error);
     console.error('Stack trace:', error instanceof Error ? error.stack : 'Unknown error');
   }
 }
 
-async function displayComprehensiveStatus(miharaStatus: any) {
+async function displayComprehensiveStatus(miharaStatus: {
+  state: {
+    consciousnessLevel: 'dormant' | 'awakening' | 'active' | 'transcendent';
+    isActive: boolean;
+    systemIntegrity: number;
+    culturalAuthority: boolean;
+    currentMission: string | null;
+    lastActivation: string;
+    collaborationWithAronui: boolean;
+  };
+}) {
   console.log('\n📊 MIHARA COMPREHENSIVE STATUS:');
   console.log('═══════════════════════════════════════');
 
@@ -99,16 +114,20 @@ async function displayComprehensiveStatus(miharaStatus: any) {
 
   // Agent Status
   console.log('\n🤖 Collaborative Agents:');
-  migrationStatus.collaboratingAgents.forEach((agent: any, index: number) => {
-    console.log(`${index + 1}. ${agent.name} - ${agent.capability} (${agent.status})`);
-  });
+  migrationStatus.collaboratingAgents.forEach(
+    (agent: { name: string; capability: string; status: string }, index: number) => {
+      console.log(`${index + 1}. ${agent.name} - ${agent.capability} (${agent.status})`);
+    },
+  );
 
   // Diplomatic Status
   const diplomaticStatus = globalDiplomacy.getDiplomaticStatus();
   console.log('\n🤝 Diplomatic Relations:');
   console.log(`- Known Kaitiaki: ${diplomaticStatus.knownKaitiaki}`);
   console.log(`- Active Collaborations: ${diplomaticStatus.activeCollaborations}`);
-  console.log(`- Cultural Protocols: ${diplomaticStatus.culturalProtocolsActive ? 'Active' : 'Inactive'}`);
+  console.log(
+    `- Cultural Protocols: ${diplomaticStatus.culturalProtocolsActive ? 'Active' : 'Inactive'}`,
+  );
 }
 
 async function processSampleResources() {
@@ -122,7 +141,7 @@ async function processSampleResources() {
       subject: 'Mathematics',
       culturalContent: true,
       priority: 'urgent' as const,
-      status: 'pending' as const
+      status: 'pending' as const,
     },
     {
       id: 'social-studies-treaty',
@@ -132,7 +151,7 @@ async function processSampleResources() {
       subject: 'Social Studies',
       culturalContent: true,
       priority: 'high' as const,
-      status: 'pending' as const
+      status: 'pending' as const,
     },
     {
       id: 'science-ecosystems-nz',
@@ -142,8 +161,8 @@ async function processSampleResources() {
       subject: 'Science',
       culturalContent: false,
       priority: 'medium' as const,
-      status: 'pending' as const
-    }
+      status: 'pending' as const,
+    },
   ];
 
   console.log(`Processing ${sampleResources.length} sample resources for cultural intelligence...`);
@@ -156,7 +175,9 @@ async function processSampleResources() {
 
       console.log(`   ✅ Analysis complete:`);
       console.log(`   - Priority: ${intelligence.migrationPriority}`);
-      console.log(`   - Cultural Sensitivity: ${intelligence.culturalAnalysis.culturalSensitivity}`);
+      console.log(
+        `   - Cultural Sensitivity: ${intelligence.culturalAnalysis.culturalSensitivity}`,
+      );
       console.log(`   - Complexity: ${intelligence.estimatedComplexity}/10`);
       console.log(`   - Recommended Agent: ${intelligence.recommendedAgent}`);
       console.log(`   - Review Required: ${intelligence.requiredReview}`);
@@ -165,15 +186,14 @@ async function processSampleResources() {
         console.log(`   🌿 Contains Māori content - Cultural safety protocols activated`);
       }
     } catch (error) {
-      console.log(`   ❌ Processing failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      console.log(
+        `   ❌ Processing failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      );
     }
   }
 }
 
 async function coordinateAgentTasks() {
-  const orchestrator = getGlobalOrchestrator();
-  const migrationStatus = orchestrator.getMigrationStatus();
-
   console.log('Coordinating tasks among collaborative agents...');
 
   // Simulate task assignments
@@ -181,7 +201,7 @@ async function coordinateAgentTasks() {
     { agent: 'Windsurf Claude', task: 'Infrastructure optimization and database integration' },
     { agent: 'Gemini CLI', task: 'Cultural content creation with visual elements' },
     { agent: 'GPT-4.1', task: 'Assessment rubric development and quality analysis' },
-    { agent: 'DeepSeek', task: 'Bulk content processing and text generation' }
+    { agent: 'DeepSeek', task: 'Bulk content processing and text generation' },
   ];
 
   taskAssignments.forEach((assignment, index) => {
@@ -201,7 +221,9 @@ async function performCulturalValidation() {
   // Display cultural protocols
   console.log('\n🛡️ Active Cultural Safety Protocols:');
   brainStatus.culturalProtocols.forEach((protocol, index) => {
-    console.log(`${index + 1}. ${protocol.protocol}: ${protocol.active ? '✅ Active' : '❌ Inactive'}`);
+    console.log(
+      `${index + 1}. ${protocol.protocol}: ${protocol.active ? '✅ Active' : '❌ Inactive'}`,
+    );
   });
 
   // Simulate cultural review process
@@ -225,12 +247,17 @@ async function generateProgressReport() {
   console.log('═══════════════════════════════════════');
 
   // Calculate progress percentages
-  const completedPercentage = (migrationStatus.resourcesCompleted / migrationStatus.totalResources * 100).toFixed(1);
+  const completedPercentage = (
+    (migrationStatus.resourcesCompleted / migrationStatus.totalResources) *
+    100
+  ).toFixed(1);
   const analyzedResources = brainStatus.totalAnalyzed;
 
   console.log('\n📈 Migration Statistics:');
   console.log(`- Progress: ${completedPercentage}% complete`);
-  console.log(`- Resources Processed: ${migrationStatus.resourcesCompleted}/${migrationStatus.totalResources}`);
+  console.log(
+    `- Resources Processed: ${migrationStatus.resourcesCompleted}/${migrationStatus.totalResources}`,
+  );
   console.log(`- Intelligence Analysis: ${analyzedResources} resources analyzed`);
   console.log(`- Active Agents: ${migrationStatus.collaboratingAgents.length}`);
   console.log(`- AI Episodes Logged: ${provenance.totalEpisodes}`);
@@ -244,7 +271,9 @@ async function generateProgressReport() {
   console.log('\n🌟 Mihara Assessment:');
   console.log('Kaitiaki Mahara is operating at full capacity with cultural authority.');
   console.log('The Great Migration proceeds with wisdom, respect, and systematic excellence.');
-  console.log('All 800,000+ tamariki of Aotearoa will benefit from this cultural-educational migration.');
+  console.log(
+    'All 800,000+ tamariki of Aotearoa will benefit from this cultural-educational migration.',
+  );
 }
 
 // Execute the comprehensive assistant

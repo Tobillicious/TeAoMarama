@@ -3,13 +3,15 @@
 ## 🎯 **MISSION: ZERO EDUCATIONAL CONTENT LOSS**
 
 ### **Philosophy: Content First, Systems Second**
+
 Before any cleanup, migration, or system changes, we establish an impenetrable protection system around all 624 educational resources and 4 major cultural platforms.
 
 ---
 
 ## 🚨 **CRITICAL EDUCATIONAL ASSETS INVENTORY**
 
-### **Tier 1: IRREPLACEABLE CULTURAL PLATFORMS** 
+### **Tier 1: IRREPLACEABLE CULTURAL PLATFORMS**
+
 ```
 🌿 ESSENTIAL MĀORI CULTURAL SYSTEMS
 ├── digital-purakau.html (Interactive Māori storytelling platform)
@@ -23,6 +25,7 @@ Cultural Impact: SEVERE
 ```
 
 ### **Tier 2: SPECIALIZED EDUCATIONAL COLLECTIONS**
+
 ```
 📚 COMPLETE EDUCATIONAL UNITS
 ├── Y8 Systems Unit/ (31 resources - decolonized systems thinking)
@@ -38,6 +41,7 @@ Educational Impact: SEVERE
 ```
 
 ### **Tier 3: COMPREHENSIVE RESOURCE LIBRARY**
+
 ```
 📄 INDIVIDUAL EDUCATIONAL RESOURCES
 ├── handouts/ (366 files - core teaching materials)
@@ -57,6 +61,7 @@ Educational Impact: MODERATE to SEVERE
 ## 🛡️ **MULTI-LAYER PROTECTION SYSTEM**
 
 ### **Layer 1: IMMEDIATE EMERGENCY BACKUP**
+
 Create multiple backup layers before ANY system changes:
 
 ```bash
@@ -84,11 +89,13 @@ tar -czf "CULTURAL-PLATFORMS-$(date +%Y%m%d-%H%M%S).tar.gz" \
 ```
 
 ### **Layer 2: CLOUD REDUNDANCY**
+
 - Upload backups to multiple cloud storage locations
 - Create git repository snapshots
 - Document all file locations and dependencies
 
 ### **Layer 3: CONTENT INTEGRITY VERIFICATION**
+
 Create checksums and verification systems:
 
 ```bash
@@ -109,6 +116,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ## 📋 **CONTENT PROTECTION VERIFICATION CHECKLIST**
 
 ### **Pre-Change Verification (MANDATORY before any modifications):**
+
 ```
 □ Complete system backup created and verified
 □ Educational content backup created and verified  
@@ -121,6 +129,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ```
 
 ### **Critical Platform Functionality Tests:**
+
 ```
 □ Digital Pūrākau: Interactive storytelling loads correctly
 □ Living Whakapapa: Multimedia mapping system operational  
@@ -132,6 +141,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ```
 
 ### **Educational Resource Access Tests:**
+
 ```
 □ All handouts accessible via direct links
 □ Y8 Systems Unit resources load completely
@@ -146,11 +156,13 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ## 🔒 **CONTENT PROTECTION PROTOCOLS**
 
 ### **Protocol 1: NO DIRECT MODIFICATIONS**
+
 - **NEVER** edit critical educational files directly
 - **ALWAYS** work on copies in staging environment
 - **ALWAYS** verify backups before making changes
 
 ### **Protocol 2: STAGED ROLLOUT APPROACH**
+
 1. **Copy** educational content to staging environment
 2. **Test** all modifications in staging first
 3. **Verify** educational content integrity
@@ -158,6 +170,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 5. **Monitor** for any issues post-deployment
 
 ### **Protocol 3: IMMEDIATE ROLLBACK CAPABILITY**
+
 - Maintain working backup at all times
 - Document exact steps to restore from backup
 - Test rollback procedures before needed
@@ -168,6 +181,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ## 🚨 **EMERGENCY RESPONSE PROCEDURES**
 
 ### **If Educational Content Goes Missing:**
+
 1. **STOP ALL SYSTEM CHANGES IMMEDIATELY**
 2. **Assess scope of loss** - what specific content is affected?
 3. **Restore from most recent backup** without delay
@@ -176,14 +190,16 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 6. **Test all educational functionality** before proceeding
 
 ### **If Critical Platforms Malfunction:**
+
 1. **Identify affected platform(s)**
 2. **Check backup integrity** for those specific platforms  
 3. **Restore platform files** from verified backup
 4. **Test platform functionality** thoroughly
 5. **Verify cultural content** displays correctly
-6. **Document issue and resolution** 
+6. **Document issue and resolution**
 
 ### **If Database Migration Corrupts Content:**
+
 1. **Halt migration immediately**
 2. **Export current database state** for analysis
 3. **Restore database** from pre-migration backup
@@ -196,6 +212,7 @@ md5sum te-kete-ako-clean/classroom-leaderboard.html >> CRITICAL_PLATFORMS_CHECKS
 ## 🎯 **CONTENT PROTECTION AUTOMATION**
 
 ### **Automated Backup Script:**
+
 ```bash
 #!/bin/bash
 # Educational Content Protection Backup
@@ -230,6 +247,7 @@ echo "🔐 Checksums: integrity-checksums-$TIMESTAMP.txt"
 ```
 
 ### **Content Integrity Monitor:**
+
 ```bash
 #!/bin/bash
 # Verify educational content integrity
@@ -271,12 +289,14 @@ echo "✅ Educational Content Integrity Check Complete"
 ## 📈 **PROTECTION SUCCESS METRICS**
 
 ### **Zero Loss Targets:**
+
 - ✅ **0 Critical Platforms Lost** (4/4 preserved)
 - ✅ **0 Educational Units Lost** (Y8 Systems, Writer's Toolkit preserved)
 - ✅ **0 Specialized Collections Lost** (Enhanced, Video, Do-Now preserved)
 - ✅ **<1% Individual Resources Lost** (Target: 620+ of 624 preserved)
 
 ### **Recovery Capability:**
+
 - ✅ **Full system restoration** possible within 30 minutes
 - ✅ **Critical platform restoration** possible within 5 minutes  
 - ✅ **Individual resource restoration** possible within 10 minutes
@@ -287,6 +307,7 @@ echo "✅ Educational Content Integrity Check Complete"
 ## 🗺️ **SAFE PROGRESSION ROADMAP**
 
 ### **Phase 1: CONTENT FORTIFICATION (Week 1)**
+
 1. ✅ Create multi-layer backup system
 2. ✅ Generate integrity checksums  
 3. ✅ Test critical platform functionality
@@ -294,6 +315,7 @@ echo "✅ Educational Content Integrity Check Complete"
 5. ✅ Document protection procedures
 
 ### **Phase 2: STAGING ENVIRONMENT (Week 2)**  
+
 1. Create isolated copy of entire system
 2. Test all educational content in staging
 3. Practice migration procedures safely
@@ -301,6 +323,7 @@ echo "✅ Educational Content Integrity Check Complete"
 5. Plan gradual rollout strategy
 
 ### **Phase 3: PROTECTED MIGRATION (Week 3-4)**
+
 1. Apply changes to staging first
 2. Verify educational content integrity  
 3. Test critical platform functionality
@@ -314,6 +337,7 @@ echo "✅ Educational Content Integrity Check Complete"
 **SUCCESS = All educational content preserved through any system changes**
 
 Specifically:
+
 - All 4 critical cultural platforms functional
 - All 624 educational resources accessible  
 - Zero broken links to educational content

@@ -1,7 +1,9 @@
 # 🧑‍🎓 STUDENT EXPERIENCE DESIGN - TE KETE AKO
+
 ## Comprehensive Use Cases & Journey Mapping
 
 ### 🎯 **STUDENT PERSONA: AROHA (Year 9)**
+
 - **Age**: 13 years old
 - **Device**: School Chromebook + Personal phone
 - **Learning Style**: Visual learner, collaborative
@@ -12,10 +14,12 @@
 
 ## 🚀 **STUDENT JOURNEY MAP**
 
-### **1. FIRST LOGIN & ONBOARDING** 
+### **1. FIRST LOGIN & ONBOARDING**
+
 **Goal**: Create welcoming, culturally authentic introduction
 
 #### **Landing Experience:**
+
 ```
 🧺 Kia Ora Aroha! Welcome to your personal Te Kete Ako
    "Nāu te rourou, nāku te rourou, ka ora ai te iwi"
@@ -29,6 +33,7 @@
 ```
 
 #### **Profile Setup:**
+
 - **Cultural Identity**: Choose cultural background(s)
 - **Learning Preferences**: Visual/Auditory/Kinesthetic
 - **Te Reo Level**: Beginner → Advanced
@@ -38,9 +43,11 @@
 ---
 
 ### **2. DAILY LEARNING DASHBOARD**
+
 **Goal**: Intuitive, engaging daily learning hub
 
 #### **Dashboard Layout:**
+
 ```
 ┌─────────────────────────────────────────────────┐
 │ 🌅 Kia Ora Aroha! Wednesday, Mahuru 15         │
@@ -67,11 +74,13 @@
 ---
 
 ### **3. LEARNING PATHWAYS**
+
 **Goal**: Personalized, culturally integrated learning journeys
 
 #### **Pathway Types:**
 
 **A) CULTURAL LEARNING PATH**
+
 ```
 🌿 TE AO MĀORI EXCELLENCE PATHWAY
 ├── 📚 Traditional Knowledge Systems
@@ -82,6 +91,7 @@
 ```
 
 **B) ACADEMIC EXCELLENCE PATH**
+
 ```
 🎓 ACADEMIC ACHIEVEMENT PATHWAY  
 ├── 🔢 Mathematics Excellence
@@ -92,6 +102,7 @@
 ```
 
 **C) CAREER EXPLORATION PATH**
+
 ```
 🚀 FUTURE CAREERS PATHWAY
 ├── 🏥 Health & Medicine (incorporating Rongoā)
@@ -104,9 +115,11 @@
 ---
 
 ### **4. ASSIGNMENT & PROJECT MANAGEMENT**
+
 **Goal**: Simple, visual progress tracking with cultural elements
 
 #### **Assignment Interface:**
+
 ```
 📋 CURRENT ASSIGNMENTS
 
@@ -131,10 +144,12 @@
 
 ---
 
-### **5. COLLABORATION FEATURES** 
+### **5. COLLABORATION FEATURES**
+
 **Goal**: Peer learning with cultural values (whakatōhia)
 
 #### **Collaboration Tools:**
+
 ```
 👥 STUDY GROUPS
 ├── 🔢 "Math Warriors" (5 members)
@@ -158,9 +173,11 @@
 ---
 
 ### **6. PROGRESS & ACHIEVEMENTS**
+
 **Goal**: Meaningful recognition celebrating both academic & cultural growth
 
 #### **Achievement System:**
+
 ```
 🏆 AROHA'S ACHIEVEMENTS
 
@@ -184,6 +201,7 @@
 ```
 
 #### **Progress Visualization:**
+
 ```
 📈 SUBJECT PROGRESS (Current Term)
 
@@ -198,9 +216,11 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ---
 
 ### **7. MOBILE-FIRST DESIGN**
+
 **Goal**: Seamless experience across devices
 
 #### **Mobile App Features:**
+
 ```
 📱 TE KETE MOBILE APP
 
@@ -233,9 +253,11 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ---
 
 ### **8. ACCESSIBILITY & INCLUSION**
+
 **Goal**: Ensure all students can access and succeed
 
 #### **Accessibility Features:**
+
 ```
 ♿ UNIVERSAL ACCESS
 ├── 🎧 Screen reader compatibility
@@ -260,9 +282,11 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ---
 
 ### **9. PARENT/WHĀNAU ENGAGEMENT**
+
 **Goal**: Keep whānau connected to learning journey
 
 #### **Whānau Dashboard:**
+
 ```
 👨‍👩‍👧‍👦 AROHA'S WHĀNAU VIEW
 
@@ -291,9 +315,11 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ---
 
 ### **10. OFFLINE CAPABILITY**
+
 **Goal**: Learning continues without internet
 
 #### **Offline Features:**
+
 ```
 📴 OFFLINE LEARNING MODE
 
@@ -321,18 +347,21 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ## 🎯 **SUCCESS METRICS**
 
 ### **Engagement Metrics:**
+
 - **Daily Login Rate**: Target 85%+ student daily engagement
 - **Assignment Completion**: Target 90%+ on-time completion
 - **Cultural Content Engagement**: Target 70%+ regular interaction
 - **Peer Collaboration**: Target 60%+ weekly group participation
 
 ### **Learning Outcomes:**
+
 - **Academic Progress**: Above-expected progress in 80% of subjects
 - **Cultural Knowledge**: Measurable increase in te reo and cultural understanding
 - **Digital Literacy**: Confident use of learning technology
 - **21st Century Skills**: Collaboration, critical thinking, creativity
 
 ### **Wellbeing Indicators:**
+
 - **Learning Confidence**: Self-reported confidence increase
 - **Cultural Pride**: Strong sense of cultural identity
 - **Peer Relationships**: Positive social connections
@@ -343,6 +372,7 @@ Art             ▰▰▰▰▰▰▰▰ 90% (Excellence)
 ## 🌟 **INNOVATION FEATURES**
 
 ### **AI-Powered Learning Assistant:**
+
 ```
 🤖 KAIAKO AI ASSISTANT
 
@@ -355,12 +385,14 @@ Would you like me to:
 ```
 
 ### **Cultural Knowledge Integration:**
+
 - **Traditional Calendar**: Learning aligned with Māori seasonal cycles
 - **Place-Based Learning**: Local iwi history and environmental knowledge
 - **Elder Connections**: Virtual sessions with cultural knowledge holders
 - **Contemporary Relevance**: Current issues through cultural lens
 
 ### **Gamification Elements:**
+
 - **Learning Journeys**: Progress through cultural and academic "adventures"
 - **Collaboration Quests**: Team-based challenges and projects
 - **Knowledge Sharing**: Earn recognition for helping peers

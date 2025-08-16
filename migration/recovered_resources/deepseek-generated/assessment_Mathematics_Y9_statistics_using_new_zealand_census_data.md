@@ -16,6 +16,7 @@ To explore statistical concepts using real data from the Aotearoa New Zealand Ce
 
 **Whāinga Ako (Learning Objectives):**  
 By the end of this assessment, ākonga (students) will be able to:  
+
 1. Collect, organise, and interpret data from the New Zealand Census.  
 2. Calculate and compare measures of central tendency (mean, median, mode).  
 3. Create appropriate graphs (bar graphs, pie charts, histograms) to represent data.  
@@ -45,10 +46,12 @@ Use the provided simplified New Zealand Census dataset (adapted for Year 9) to a
 
 **He Mahi (Activity):**  
 Choose **one** of the following datasets to investigate further:  
+
 - **Option 1:** Ethnic diversity in your local area (e.g., Māori, Pākehā, Pasifika, Asian populations).  
 - **Option 2:** Changes in Te Reo Māori speakers over the last 20 years.  
 
 **Tasks:**  
+
 1. Represent the data in **two different graph types** (e.g., pie chart and histogram).  
 2. Write **two observations** about the trends you notice.  
 3. Explain **one way** this data could help community decision-making (e.g., funding for kura kaupapa Māori).  
@@ -58,6 +61,7 @@ Choose **one** of the following datasets to investigate further:
 ## **Part 3: Reflection & Cultural Connection** *(20 minutes)*  
 
 **He Whakaaro (Reflection Questions):**  
+
 1. How does census data help us understand the needs of different cultures in Aotearoa?  
 2. Why is it important for statistics to include Māori perspectives?  
 3. If you could add one question to the NZ Census, what would it be and why?  
@@ -76,6 +80,7 @@ Choose **one** of the following datasets to investigate further:
 ---
 
 ## **Kupu Māori (Māori Vocabulary)**  
+
 - **Tatauranga** – Statistics  
 - **Raraunga** – Data  
 - **Rohe** – Region  
@@ -87,6 +92,7 @@ Choose **one** of the following datasets to investigate further:
 *(Through discussion, discussion, discussion, the right path is found.)*  
 
 **Notes for Kaiako (Teachers):**  
+
 - Ensure census data is simplified but culturally representative.  
 - Encourage discussions on equity and representation in statistics.  
 - Offer support for Te Reo Māori pronunciation/meanings if needed.  

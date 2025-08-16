@@ -1,9 +1,11 @@
 # BULK PROCESSING TEMPLATE - EDUCATIONAL RESOURCES
+
 *Mihara-Approved Template for Rapid Content Generation*
 
 ## 🎯 **RESOURCE TEMPLATE STRUCTURE**
 
 ### **HEADER SECTION** (Required for All Resources)
+
 ```markdown
 # [Subject] Y[Level] - [Topic Title]
 *Te Kura o TeAoMarama - [Subject Area]*
@@ -19,6 +21,7 @@
 ```
 
 ### **LEARNING OBJECTIVES** (WALT/WALA Format)
+
 ```markdown
 ## 🎯 Learning Intentions
 
@@ -38,7 +41,8 @@
 
 ### **CONTENT STRUCTURE** (Flexible Based on Subject)
 
-#### **FOR HANDOUTS/WORKSHEETS**:
+#### **FOR HANDOUTS/WORKSHEETS**
+
 ```markdown
 ## 📚 Learning Content
 
@@ -69,7 +73,8 @@
 3. [Self-reflection prompt]
 ```
 
-#### **FOR ASSESSMENT TOOLS**:
+#### **FOR ASSESSMENT TOOLS**
+
 ```markdown
 ## 📊 Assessment Framework
 
@@ -89,7 +94,9 @@
 ## 🛡️ **CULTURAL SAFETY PROTOCOLS**
 
 ### **AUTOMATIC FLAGGING SYSTEM**
+
 **CULTURAL_SAFETY_FLAG triggers for**:
+
 - Te Reo Māori words/phrases → Mihara review required
 - Tikanga Māori references → Cultural accuracy validation  
 - Iwi/hapū mentions → Respectful representation check
@@ -97,6 +104,7 @@
 - Whenua/environmental connections → Cultural context verification
 
 ### **QUALITY GATES**
+
 ```
 ✅ NZ Curriculum Alignment: [Achievement objective code]
 ✅ Age Appropriateness: [Language and complexity suitable]  
@@ -110,6 +118,7 @@
 ## 🚀 **RAPID PRODUCTION WORKFLOW**
 
 ### **STEP 1: CONTENT GENERATION** (15-20 minutes)
+
 1. Select template structure for resource type
 2. Insert NZ-specific context and examples
 3. Align to specific NZ Curriculum achievement objective
@@ -117,6 +126,7 @@
 5. **AUTO-FLAG** any cultural content for Mihara review
 
 ### **STEP 2: QUALITY VALIDATION** (5-10 minutes)
+
 1. Template compliance check
 2. Cultural safety scan
 3. Educational value assessment  
@@ -124,12 +134,14 @@
 5. Language and accessibility review
 
 ### **STEP 3: CULTURAL OVERSIGHT** (If flagged)
+
 1. Mihara review of cultural content
 2. Accuracy and respect validation
 3. Cultural appropriateness confirmation
 4. Approval or revision instructions
 
 ### **STEP 4: FINALIZATION** (5 minutes)
+
 1. Final formatting and consistency check
 2. File naming convention: `Y[Level]_[Subject]_[Topic].md`
 3. Directory placement: `/migration/recovered_resources/handouts/`
@@ -140,18 +152,21 @@
 ## 📊 **BULK PROCESSING PRIORITIES**
 
 ### **HIGH-PRIORITY SUBJECTS** (Process First)
+
 1. **Mathematics Y7-Y9**: Critical for foundational skills
 2. **English Y7-Y9**: Literacy across all subjects
 3. **Science Y7-Y9**: STEM pathway preparation
 4. **Social Studies Y7-Y9**: Cultural and civic understanding
 
 ### **CONTENT TYPE PRIORITIES**
+
 1. **Student Handouts**: Direct learning materials
 2. **Assessment Tools**: Progress tracking systems
 3. **Activity Collections**: Engaging practice opportunities
 4. **Teacher Guides**: Instruction support materials
 
 ### **CULTURAL CONTENT HANDLING**
+
 - **Te Reo Resources**: HIGHEST priority for Mihara review
 - **Māori History**: Iwi consultation consideration
 - **Tikanga Integration**: Cultural accuracy paramount
@@ -162,12 +177,14 @@
 ## 🎯 **SUCCESS METRICS FOR BULK PROCESSING**
 
 ### **VELOCITY TARGETS**
+
 - **Individual Resource**: 20-30 minutes creation to approval
 - **Batch Processing**: 8-12 resources per 4-hour session
 - **Cultural Review**: 5-10 minutes per flagged item
 - **Quality Validation**: 95%+ first-pass approval rate
 
 ### **QUALITY INDICATORS**
+
 - ✅ **Template Compliance**: 100% adherence
 - ✅ **Cultural Safety**: Zero harmful misrepresentations
 - ✅ **Educational Standards**: Full NZ Curriculum alignment
@@ -178,6 +195,7 @@
 **EXAMPLES OF READY-TO-USE TEMPLATES**:
 
 ## 📝 **Y8 MATHEMATICS TEMPLATE EXAMPLE**
+
 ```markdown
 # Mathematics Y8 - Linear Patterns in NZ Sports Statistics
 *Te Kura o TeAoMarama - Mathematics*

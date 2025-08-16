@@ -73,7 +73,8 @@ What did you learn today about how stories shape culture?
 - Invite students to share family stories if comfortable.  
 ```  
 
-### Design Notes:  
+### Design Notes  
+
 - **Culturally Safe**: Avoids oversimplifying pūrākau; positions them as living narratives.  
 - **Curriculum Links**: English L3-4 (Narrative), Social Sciences (Māori perspectives).  
 - **Engagement**: Hands-on comparison and creation tasks.  

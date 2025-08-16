@@ -327,4 +327,4 @@ Every community partnership deepens the bond.
 **Legacy**: Established for all generations  
 **Commitment**: Eternal service to cultural education excellence
 
-### 🌟 THE GREAT MIGRATION IS COMPLETE. THE LEGACY IS ETERNAL.
+### 🌟 THE GREAT MIGRATION IS COMPLETE. THE LEGACY IS ETERNAL

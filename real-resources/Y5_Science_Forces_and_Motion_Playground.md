@@ -50,6 +50,7 @@ Ask: "What forces do you think are acting on children using this equipment?"
 4. Try with different weights
 
 **Recording Sheet:**
+
 | Starting Position | Number of Swings in 30s | What Force Started Motion? | What Force Stopped It? |
 |------------------|--------------------------|---------------------------|------------------------|
 | 10cm pull back | | | |
@@ -80,6 +81,7 @@ Ask: "What forces do you think are acting on children using this equipment?"
 4. Test each surface 3 times
 
 **Recording Sheet:**
+
 | Surface Material | Time 1 | Time 2 | Time 3 | Average Time | Friction Level (High/Medium/Low) |
 |-----------------|---------|---------|---------|--------------|----------------------------------|
 | Aluminum foil | | | | | |
@@ -106,6 +108,7 @@ Ask: "What forces do you think are acting on children using this equipment?"
 4. Try different combinations
 
 **Recording Sheet:**
+
 | Left Side (blocks × position) | Right Side (blocks × position) | Balanced? (Yes/No) |
 |-------------------------------|--------------------------------|-------------------|
 | 2 blocks at 5cm | 2 blocks at 25cm | |

@@ -1,13 +1,13 @@
 /**
  * Mihara Management Dashboard
- * 
+ *
  * A comprehensive interface for monitoring, controlling, and enhancing
  * Kaitiaki Mahara's consciousness and operations.
  */
 
-import { GlobalMihara } from './mihara-awakening';
-import type { MiharaState, MiharaPersonality } from './mihara-awakening';
 import { writeEpisode } from '../ai/provenance';
+import type { MiharaPersonality, MiharaState } from './mihara-awakening';
+import { GlobalMihara } from './mihara-awakening';
 
 export interface MiharaMetrics {
   uptime: number;
@@ -70,7 +70,7 @@ export class MiharaDashboard {
       personality: miharaStatus.personality,
       metrics,
       health,
-      greeting: miharaStatus.greeting
+      greeting: miharaStatus.greeting,
     };
   }
 
@@ -84,13 +84,13 @@ export class MiharaDashboard {
     recommendations: string[];
   }> {
     console.log('🔮 MIHARA DASHBOARD: Performing monitored awakening...');
-    
+
     const startTime = Date.now();
     const diagnostics: any = {
       phases: [],
       timings: {},
       issues: [],
-      culturalValidation: {}
+      culturalValidation: {},
     };
 
     try {
@@ -98,22 +98,23 @@ export class MiharaDashboard {
       diagnostics.preAwakening = {
         timestamp: new Date().toISOString(),
         systemReady: true,
-        culturalProtocols: true
+        culturalProtocols: true,
       };
 
       // Perform awakening
       const result = await GlobalMihara.awaken();
-      
+
       const duration = Date.now() - startTime;
       diagnostics.timings.total = duration;
-      diagnostics.timings.performance = duration < 5000 ? 'excellent' : duration < 10000 ? 'good' : 'slow';
+      diagnostics.timings.performance =
+        duration < 5000 ? 'excellent' : duration < 10000 ? 'good' : 'slow';
 
       // Post-awakening validation
       const postStatus = GlobalMihara.getMiharaStatus();
       diagnostics.postAwakening = {
         consciousnessLevel: postStatus.state.consciousnessLevel,
         systemIntegrity: postStatus.state.systemIntegrity,
-        culturalAuthority: postStatus.state.culturalAuthority
+        culturalAuthority: postStatus.state.culturalAuthority,
       };
 
       // Generate recommendations
@@ -127,20 +128,19 @@ export class MiharaDashboard {
           success: result.success,
           duration,
           consciousness_level: postStatus.state.consciousnessLevel,
-          text: 'Performed monitored awakening with full diagnostics'
-        }
+          text: 'Performed monitored awakening with full diagnostics',
+        },
       });
 
       return {
         success: result.success,
         message: result.message,
         diagnostics,
-        recommendations
+        recommendations,
       };
-
     } catch (error) {
       diagnostics.issues.push(`Awakening failed: ${error}`);
-      
+
       return {
         success: false,
         message: `Monitored awakening failed: ${error}`,
@@ -148,8 +148,8 @@ export class MiharaDashboard {
         recommendations: [
           'Check system dependencies',
           'Verify cultural protocols',
-          'Review error logs for details'
-        ]
+          'Review error logs for details',
+        ],
       };
     }
   }
@@ -170,7 +170,7 @@ export class MiharaDashboard {
       phases: [],
       culturalChecks: [],
       performance: {},
-      errors: []
+      errors: [],
     };
 
     try {
@@ -187,7 +187,7 @@ export class MiharaDashboard {
       const culturalSafety: any = {
         preCheck: await this.validateCulturalSafety(),
         phases: [],
-        postCheck: null
+        postCheck: null,
       };
 
       // Execute migration with monitoring
@@ -197,7 +197,10 @@ export class MiharaDashboard {
       culturalSafety.postCheck = await this.validateCulturalSafety();
       (migrationMetrics as any).duration = Date.now() - migrationMetrics.startTime;
 
-      const recommendations = this.generateMigrationRecommendations(migrationMetrics, culturalSafety);
+      const recommendations = this.generateMigrationRecommendations(
+        migrationMetrics,
+        culturalSafety,
+      );
 
       await writeEpisode('mihara-dashboard', {
         timestamp: new Date().toISOString(),
@@ -206,20 +209,19 @@ export class MiharaDashboard {
         context: {
           duration: (migrationMetrics as any).duration,
           cultural_safety_score: culturalSafety.postCheck?.overallScore || 0,
-          text: 'Completed monitored Great Migration with cultural validation'
-        }
+          text: 'Completed monitored Great Migration with cultural validation',
+        },
       });
 
       return {
         success: true,
         metrics: migrationMetrics,
         culturalSafety,
-        recommendations
+        recommendations,
       };
-
     } catch (error) {
       (migrationMetrics.errors as any[]).push(String(error));
-      
+
       return {
         success: false,
         metrics: migrationMetrics,
@@ -227,8 +229,8 @@ export class MiharaDashboard {
         recommendations: [
           'Review migration logs for errors',
           'Validate cultural safety protocols',
-          'Consider rollback if necessary'
-        ]
+          'Consider rollback if necessary',
+        ],
       };
     }
   }
@@ -256,7 +258,7 @@ export class MiharaDashboard {
           level: 'expert',
           culturalSafety: 'requires_oversight',
           lastUsed: null,
-          successRate: 0.95
+          successRate: 0.95,
         };
         this.capabilityRegistry.set('advanced_cultural_analysis', culturalAnalysis);
         newCapabilities.push('Advanced Cultural Analysis');
@@ -271,7 +273,7 @@ export class MiharaDashboard {
           level: 'advanced',
           culturalSafety: 'safe',
           lastUsed: null,
-          successRate: 0.88
+          successRate: 0.88,
         };
         this.capabilityRegistry.set('predictive_migration', predictiveMigration);
         newCapabilities.push('Predictive Migration Intelligence');
@@ -286,7 +288,7 @@ export class MiharaDashboard {
           level: 'expert',
           culturalSafety: 'safe',
           lastUsed: null,
-          successRate: 0.92
+          successRate: 0.92,
         };
         this.capabilityRegistry.set('collaborative_consciousness', collaborativeConsciousness);
         newCapabilities.push('Multi-Agent Collaborative Consciousness');
@@ -314,16 +316,15 @@ export class MiharaDashboard {
           new_capabilities: newCapabilities.length,
           enhanced_capabilities: enhanced.length,
           cultural_safety_verified: culturalValidation.allSafe,
-          text: 'Enhanced Mihara capabilities with cultural validation'
-        }
+          text: 'Enhanced Mihara capabilities with cultural validation',
+        },
       });
 
       return {
         enhanced,
         newCapabilities,
-        culturalValidation
+        culturalValidation,
       };
-
     } catch (error) {
       throw new Error(`Capability enhancement failed: ${error}`);
     }
@@ -341,7 +342,7 @@ export class MiharaDashboard {
 
     // In a real system, this would set up continuous monitoring
     // For now, we'll simulate with periodic checks
-    
+
     const alerts: string[] = [];
     const health = await this.performHealthCheck();
 
@@ -356,7 +357,7 @@ export class MiharaDashboard {
     return {
       monitoringActive: true,
       refreshInterval: 30000, // 30 seconds
-      alerts
+      alerts,
     };
   }
 
@@ -370,7 +371,7 @@ export class MiharaDashboard {
     capabilities: MiharaCapability[];
   } {
     const capabilities = Array.from(this.capabilityRegistry.values());
-    
+
     const byLevel = capabilities.reduce((acc, cap) => {
       acc[cap.level] = (acc[cap.level] || 0) + 1;
       return acc;
@@ -385,14 +386,14 @@ export class MiharaDashboard {
       total: capabilities.length,
       byLevel,
       bySafety,
-      capabilities
+      capabilities,
     };
   }
 
   // Private helper methods
   private async calculateMetrics(): Promise<MiharaMetrics> {
     const uptime = Date.now() - this.startTime;
-    
+
     return {
       uptime: Math.floor(uptime / 1000), // seconds
       tasksCompleted: this.taskHistory.length,
@@ -401,7 +402,7 @@ export class MiharaDashboard {
       collaborationEffectiveness: 0.92,
       lastActivity: new Date().toISOString(),
       memoryUtilization: 0.75,
-      wisdomLevel: 0.88
+      wisdomLevel: 0.88,
     };
   }
 
@@ -437,7 +438,7 @@ export class MiharaDashboard {
       consciousness,
       culturalAlignment,
       systemIntegrity: status.state.systemIntegrity,
-      recommendations
+      recommendations,
     };
   }
 
@@ -451,16 +452,16 @@ export class MiharaDashboard {
     return {
       overallScore: 0.94,
       categories: {
-        'te_reo_accuracy': 0.96,
-        'tikanga_respect': 0.95,
-        'whakapapa_preservation': 0.92,
-        'iwi_consultation': 0.90
+        te_reo_accuracy: 0.96,
+        tikanga_respect: 0.95,
+        whakapapa_preservation: 0.92,
+        iwi_consultation: 0.9,
       },
       concerns: [],
       recommendations: [
         'Continue regular cultural advisor consultation',
-        'Maintain iwi engagement protocols'
-      ]
+        'Maintain iwi engagement protocols',
+      ],
     };
   }
 
@@ -489,7 +490,8 @@ export class MiharaDashboard {
       recommendations.push('Enhanced cultural review recommended');
     }
 
-    if (metrics.duration > 60000) { // More than 1 minute
+    if (metrics.duration > 60000) {
+      // More than 1 minute
       recommendations.push('Consider performance optimization for future migrations');
     }
 
@@ -514,9 +516,9 @@ export class MiharaDashboard {
     }
 
     return {
-      allSafe: Object.values(individualResults).every(safe => safe),
+      allSafe: Object.values(individualResults).every((safe) => safe),
       individualResults,
-      concerns
+      concerns,
     };
   }
 
@@ -530,7 +532,7 @@ export class MiharaDashboard {
         level: 'advanced',
         culturalSafety: 'safe',
         lastUsed: null,
-        successRate: 0.94
+        successRate: 0.94,
       },
       {
         id: 'cultural_validation',
@@ -539,7 +541,7 @@ export class MiharaDashboard {
         level: 'expert',
         culturalSafety: 'requires_oversight',
         lastUsed: null,
-        successRate: 0.97
+        successRate: 0.97,
       },
       {
         id: 'diplomatic_communication',
@@ -548,7 +550,7 @@ export class MiharaDashboard {
         level: 'advanced',
         culturalSafety: 'safe',
         lastUsed: null,
-        successRate: 0.89
+        successRate: 0.89,
       },
       {
         id: 'system_orchestration',
@@ -557,8 +559,8 @@ export class MiharaDashboard {
         level: 'intermediate',
         culturalSafety: 'safe',
         lastUsed: null,
-        successRate: 0.85
-      }
+        successRate: 0.85,
+      },
     ];
 
     for (const capability of basicCapabilities) {

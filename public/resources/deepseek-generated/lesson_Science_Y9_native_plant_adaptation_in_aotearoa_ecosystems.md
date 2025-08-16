@@ -86,6 +86,7 @@ By the end of this lesson, students will:
 ```  
 
 ### **Why This Works:**  
+
 - **Engaging:** Hands-on research, creativity, and te reo integration.  
 - **Culturally Responsive:** Highlights Māori knowledge without tokenism.  
 - **Accessible:** Clear steps, visual aids, and group collaboration.  

@@ -9,6 +9,7 @@
 ## 📊 **CURRENT GRAPHRAG STATE**
 
 ### **Resources Scanned:**
+
 - **309 educational resources** properly catalogued
 - **94 handouts** with metadata and cultural levels
 - **16 lessons** from guided inquiry and Y8 systems
@@ -19,6 +20,7 @@
 - **Navigation connections** mapped
 
 ### **Relationship Network:**
+
 - **90,635 relationships** between resources
 - **Subject-based connections** (same curriculum area)
 - **Year-level correlations** (learning progression)
@@ -44,6 +46,7 @@ node scripts/resource-recovery.js --deep-scan --include-units --include-experien
 ### **2. MISSING CONTENT CATEGORIES**
 
 Based on directory analysis, likely missing from GraphRAG:
+
 - **Units 1-7 lessons** (`public/units/lessons/` - 50+ files)
 - **Experience modules** (`public/experiences/` directory)
 - **YouTube Library System** (`public/youtube-library.html`, admin interface)
@@ -54,6 +57,7 @@ Based on directory analysis, likely missing from GraphRAG:
 ### **3. ENHANCED METADATA EXTRACTION**
 
 Current GraphRAG captures basic metadata. Enhance with:
+
 - **Learning objectives** from lesson content
 - **Assessment criteria** from rubrics
 - **Cultural context depth** analysis
@@ -65,6 +69,7 @@ Current GraphRAG captures basic metadata. Enhance with:
 ### **4. RELATIONSHIP SOPHISTICATION**
 
 Current relationships are basic (same subject, same year level). Add:
+
 - **Learning progression** relationships (prerequisite → advanced)
 - **Cultural thematic** connections (similar Māori concepts)
 - **Assessment alignment** (lessons → handouts → assessments)
@@ -77,6 +82,7 @@ Current relationships are basic (same subject, same year level). Add:
 ## 🛠️ **GRAPHRAG ENHANCEMENT COMMANDS**
 
 ### **Deep Content Analysis:**
+
 ```bash
 # Enhanced metadata extraction
 python scripts/extract_knowledge_graph.py --include-objectives --include-assessments
@@ -89,6 +95,7 @@ grep -r "deepseek\|exa-search\|graphrag" public/ --include="*.html" | python scr
 ```
 
 ### **Relationship Enhancement:**
+
 ```bash
 # Learning pathway analysis
 python scripts/analyze_learning_pathways.py --year-progression --cultural-threads
@@ -102,16 +109,19 @@ python scripts/cross_subject_analysis.py --te-ao-maori-integration
 ## 📋 **VERIFICATION STRATEGY**
 
 ### **Completeness Check:**
+
 1. **File count alignment**: `find public -name "*.html" | wc -l` should match GraphRAG resources
 2. **Directory coverage**: All major directories represented in GraphRAG
 3. **Navigation mapping**: All linked resources should be in GraphRAG
 
 ### **Quality Validation:**
+
 1. **Cultural accuracy**: Te Reo Māori terms correctly identified
 2. **Learning level appropriateness**: Year levels accurately assigned
 3. **Subject alignment**: NZ Curriculum areas properly mapped
 
 ### **Relationship Validation:**
+
 1. **No orphaned resources**: Every resource connected to at least 3 others
 2. **Progression pathways**: Clear learning sequences identifiable
 3. **Cultural threads**: Māori concepts properly interconnected
@@ -121,17 +131,20 @@ python scripts/cross_subject_analysis.py --te-ao-maori-integration
 ## 🎯 **SUCCESS METRICS**
 
 ### **Immediate Goals:**
+
 - [ ] **400+ resources** in GraphRAG (from current 309)
 - [ ] **All major directories** represented
 - [ ] **No missing navigation** connections
 
 ### **Enhanced Goals:**
+
 - [ ] **Learning pathway** relationships mapped
 - [ ] **Cultural concept** networks established  
 - [ ] **AI integration** points documented
 - [ ] **Assessment alignment** connections created
 
 ### **Advanced Goals:**
+
 - [ ] **Personalized learning** path generation ready
 - [ ] **Cultural progression** tracking enabled
 - [ ] **Cross-curricular** connections optimized
@@ -155,6 +168,7 @@ curl -X POST "/.netlify/functions/deepseek-agent" \
 ```
 
 ### **AI-Enhanced Metadata:**
+
 - **Cultural authenticity** scoring
 - **Learning objective** extraction
 - **Prerequisites** identification
@@ -167,18 +181,21 @@ curl -X POST "/.netlify/functions/deepseek-agent" \
 The completed GraphRAG should enable:
 
 ### **For Teachers:**
+
 - **Instant resource discovery** based on learning objectives
 - **Cultural integration** recommendations for any topic
 - **Assessment alignment** verification
 - **Learning pathway** customization
 
 ### **For Students:**
+
 - **Personalized learning** paths based on progress
 - **Cultural connection** exploration
 - **Prior knowledge** linking
 - **Extension resource** suggestions
 
 ### **For AI Systems:**
+
 - **Contextual recommendations** from EXA.ai searches
 - **DeepSeek reasoning** about educational connections
 - **Progress tracking** with intelligent next steps

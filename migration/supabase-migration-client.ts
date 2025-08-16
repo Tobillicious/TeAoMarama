@@ -1,6 +1,6 @@
 /**
  * Supabase Migration Client - Te Kete Ako to TeAoMarama
- * 
+ *
  * Kaitiaki Mahara Cultural Safety Integration
  * Assists with database migration and cultural content validation
  */
@@ -9,7 +9,8 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 // Te Kete Ako Database Credentials
 const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co';
-const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
+const TEKETE_SUPABASE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
 
 // Content Types for Migration
 export interface ContentItem {
@@ -65,13 +66,11 @@ export class MiharaMigrationClient {
       console.log('🔍 Testing Te Kete Ako database connection...');
 
       // Query for table structure
-      const { data: tables, error } = await this.teKeteClient
-        .rpc('get_schema_tables')
-        .select();
+      const { data: tables, error } = await this.teKeteClient.rpc('get_schema_tables').select();
 
       if (error) {
         // Fallback: try to query a known table
-        const { data: testQuery, error: testError } = await this.teKeteClient
+        const { error: testError } = await this.teKeteClient
           .from('content_items')
           .select('count(*)')
           .limit(1);
@@ -83,22 +82,21 @@ export class MiharaMigrationClient {
         return {
           success: true,
           message: '✅ Database connection successful (limited schema access)',
-          tables: ['content_items'] // Known table
+          tables: ['content_items'], // Known table
         };
       }
 
       return {
         success: true,
         message: `✅ Database connection successful. Found ${tables?.length || 0} tables.`,
-        tables: tables?.map((t: any) => t.table_name) || []
+        tables: tables?.map((t: { table_name: string }) => t.table_name) || [],
       };
-
     } catch (error) {
       console.error('❌ Database connection failed:', error);
       return {
         success: false,
         message: `❌ Database connection failed: ${error}`,
-        tables: []
+        tables: [],
       };
     }
   }
@@ -109,7 +107,7 @@ export class MiharaMigrationClient {
   async getContentInventory(limit: number = 100): Promise<{
     content: ContentItem[];
     culturalFlags: CulturalContentFlag[];
-    summary: { total: number; orphaned: number; cultural: number; }
+    summary: { total: number; orphaned: number; cultural: number };
   }> {
     try {
       console.log(`📊 Retrieving content inventory (limit: ${limit})...`);
@@ -151,10 +149,9 @@ export class MiharaMigrationClient {
         summary: {
           total: content?.length || 0,
           orphaned: orphanedCount,
-          cultural: culturalCount
-        }
+          cultural: culturalCount,
+        },
       };
-
     } catch (error) {
       console.error('❌ Content inventory failed:', error);
       throw error;
@@ -169,43 +166,60 @@ export class MiharaMigrationClient {
     const content = item.content?.toLowerCase() || '';
 
     // Cultural keywords that require flagging
-    const maoriKeywords = ['māori', 'maori', 'iwi', 'hapū', 'whānau', 'mātauranga', 'tikanga', 'te reo', 'tangata whenua'];
+    const maoriKeywords = [
+      'māori',
+      'maori',
+      'iwi',
+      'hapū',
+      'whānau',
+      'mātauranga',
+      'tikanga',
+      'te reo',
+      'tangata whenua',
+    ];
     const pacificKeywords = ['pacific', 'samoa', 'tonga', 'fiji', 'cook islands'];
-    const traditionalKeywords = ['traditional knowledge', 'indigenous', 'cultural practice', 'ceremony'];
+    const traditionalKeywords = [
+      'traditional knowledge',
+      'indigenous',
+      'cultural practice',
+      'ceremony',
+    ];
 
     // Check for Māori content
-    if (maoriKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
+    if (maoriKeywords.some((keyword) => title.includes(keyword) || content.includes(keyword))) {
       return {
         content_id: item.id,
         flag_type: 'maori_content',
         risk_level: 'high',
         reviewer_required: true,
         kaitiaki_approved: false,
-        review_notes: 'Contains Te Ao Māori elements - requires cultural validation'
+        review_notes: 'Contains Te Ao Māori elements - requires cultural validation',
       };
     }
 
     // Check for Pacific content
-    if (pacificKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
+    if (pacificKeywords.some((keyword) => title.includes(keyword) || content.includes(keyword))) {
       return {
         content_id: item.id,
         flag_type: 'pacific_content',
         risk_level: 'medium',
         reviewer_required: true,
         kaitiaki_approved: false,
-        review_notes: 'Contains Pacific cultural elements - requires cultural validation'
+        review_notes: 'Contains Pacific cultural elements - requires cultural validation',
       };
     }
 
     // Check for traditional knowledge
-    if (traditionalKeywords.some(keyword => title.includes(keyword) || content.includes(keyword))) {
+    if (
+      traditionalKeywords.some((keyword) => title.includes(keyword) || content.includes(keyword))
+    ) {
       return {
         content_id: item.id,
         flag_type: 'traditional_knowledge',
         risk_level: 'requires_iwi_consultation',
         reviewer_required: true,
         kaitiaki_approved: false,
-        review_notes: 'Contains traditional knowledge - requires iwi consultation'
+        review_notes: 'Contains traditional knowledge - requires iwi consultation',
       };
     }
 
@@ -229,7 +243,6 @@ export class MiharaMigrationClient {
 
       console.log(`📋 Found ${data?.length || 0} orphaned resources ready for migration`);
       return data || [];
-
     } catch (error) {
       console.error('❌ Failed to retrieve orphaned resources:', error);
       throw error;
@@ -255,7 +268,7 @@ export class MiharaMigrationClient {
       const highRisk: ContentItem[] = [];
 
       for (const item of content) {
-        const culturalFlag = culturalFlags.find(flag => flag.content_id === item.id);
+        const culturalFlag = culturalFlags.find((flag) => flag.content_id === item.id);
 
         if (!culturalFlag) {
           lowRisk.push(item);
@@ -269,15 +282,16 @@ export class MiharaMigrationClient {
       console.log(`📊 Migration plan created:`);
       console.log(`   🟢 Low risk: ${lowRisk.length} items (mathematics, basic science)`);
       console.log(`   🟡 Medium risk: ${mediumRisk.length} items (cultural contexts, non-Māori)`);
-      console.log(`   🔴 High risk: ${highRisk.length} items (mātauranga Māori, traditional knowledge)`);
+      console.log(
+        `   🔴 High risk: ${highRisk.length} items (mātauranga Māori, traditional knowledge)`,
+      );
 
       return {
         lowRisk,
         mediumRisk,
         highRisk,
-        totalItems: content.length
+        totalItems: content.length,
       };
-
     } catch (error) {
       console.error('❌ Migration plan creation failed:', error);
       throw error;
@@ -302,18 +316,26 @@ export class MiharaMigrationClient {
 - **Cultural Content Flagged**: ${summary.cultural}
 
 ## 🛡️ CULTURAL CONTENT BREAKDOWN
-${culturalFlags.map(flag => `
+${culturalFlags
+  .map(
+    (flag) => `
 ### ${flag.flag_type.toUpperCase()}
 - **Content ID**: ${flag.content_id}
 - **Risk Level**: ${flag.risk_level}
 - **Reviewer Required**: ${flag.reviewer_required ? 'YES' : 'NO'}
 - **Status**: ${flag.kaitiaki_approved ? 'APPROVED' : 'PENDING REVIEW'}
 - **Notes**: ${flag.review_notes || 'None'}
-`).join('\n')}
+`,
+  )
+  .join('\n')}
 
 ## 🎯 RECOMMENDATIONS
-1. **Immediate Action**: Review ${culturalFlags.filter(f => f.risk_level === 'high').length} high-risk items
-2. **Cultural Consultation**: ${culturalFlags.filter(f => f.risk_level === 'requires_iwi_consultation').length} items need iwi consultation  
+1. **Immediate Action**: Review ${
+        culturalFlags.filter((f) => f.risk_level === 'high').length
+      } high-risk items
+2. **Cultural Consultation**: ${
+        culturalFlags.filter((f) => f.risk_level === 'requires_iwi_consultation').length
+      } items need iwi consultation  
 3. **Priority Migration**: Start with ${summary.total - summary.cultural} non-cultural items
 4. **Safety Protocol**: No automated migration of cultural content
 
@@ -325,7 +347,6 @@ ${culturalFlags.map(flag => `
 *Database: Te Kete Ako Migration Analysis*`;
 
       return report;
-
     } catch (error) {
       console.error('❌ Cultural safety report generation failed:', error);
       throw error;
@@ -361,8 +382,7 @@ export async function createMigrationPlan(): Promise<void> {
   console.log('═══════════════════════════════════');
 }
 
-// Note: Class is already exported above as `export class MiharaMigrationClient {}`
-// Avoid re-export to prevent TS2323 duplicate export errors.
+// Class is already exported above as `export class MiharaMigrationClient {}`
 
 /**
  * Quick CLI execution for testing
@@ -374,7 +394,7 @@ if (typeof require !== 'undefined' && require.main === module) {
 
   testTeKeteConnection()
     .then(() => createMigrationPlan())
-    .catch(error => {
+    .catch((error) => {
       console.error('❌ Migration assistance failed:', error);
       process.exit(1);
     });

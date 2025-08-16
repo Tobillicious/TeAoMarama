@@ -11,12 +11,14 @@
 ### **🧠 Core Components**
 
 #### **1. DeepSeek Setup Guide** (`DEEPSEEK_SETUP_GUIDE.md`)
+
 - Comprehensive configuration instructions
 - API key setup guidance
 - Architecture explanation
 - Security and cultural protocols
 
 #### **2. DeepSeek Netlify Functions**
+
 - **Simple Agent** (`netlify/functions/deepseek-agent-simple.js`)
   - Direct DeepSeek API integration
   - Basic educational chat functionality
@@ -32,6 +34,7 @@
   - Educational analysis options
 
 #### **3. Test Interface** (`public/deepseek-agent-test.html`)
+
 - Complete testing environment
 - Configuration panel for different modes
 - Example queries for educational scenarios
@@ -39,6 +42,7 @@
 - Responsive design matching Te Kete Ako aesthetics
 
 #### **4. Integration Library** (`public/js/deepseek-graphrag-integration.js`)
+
 - JavaScript SDK for platform-wide integration
 - Educational method shortcuts
 - Query builder for structured prompts
@@ -46,6 +50,7 @@
 - Error handling and retry logic
 
 #### **5. Environment Configuration** (`.env.template`)
+
 - Complete environment setup template
 - Security settings
 - Cultural content configurations
@@ -58,6 +63,7 @@
 ### **Enhanced Educational Intelligence**
 
 #### **For Teachers:**
+
 ```javascript
 // Find cultural connections for any topic
 const result = await aiAgent.findCulturalConnections('algebra', 8);
@@ -70,11 +76,13 @@ const assessments = await aiAgent.suggestAssessmentMethods('geometry', 9, 'high'
 ```
 
 #### **For Students:**
+
 - **Intelligent Resource Discovery**: "Find resources connecting whakapapa to mathematics"
 - **Cultural Learning Support**: "Explain Treaty of Waitangi mathematical concepts"
 - **Personalized Pathways**: AI-generated learning sequences based on interests
 
 #### **For Administrators:**
+
 - **Curriculum Analysis**: Automated cultural integration assessment
 - **Resource Gap Detection**: AI-powered content analysis
 - **Quality Assurance**: Cultural authenticity validation
@@ -94,6 +102,7 @@ Student Question → DeepSeek Query Enhancement → GraphRAG Search → DeepSeek
 ### **Quick Start (5 minutes)**
 
 1. **Add DeepSeek API Key**
+
    ```bash
    # Copy template and add your key
    cp .env.template .env
@@ -101,6 +110,7 @@ Student Question → DeepSeek Query Enhancement → GraphRAG Search → DeepSeek
    ```
 
 2. **Test the Integration**
+
    ```bash
    # Open in browser
    open public/deepseek-agent-test.html
@@ -207,6 +217,7 @@ Te Kete Ako Platform
 ## 📊 **PERFORMANCE METRICS**
 
 ### **Current Capabilities**
+
 - ✅ **Query Enhancement**: 90%+ improvement in search relevance
 - ✅ **Resource Discovery**: Access to 179+ educational resources
 - ✅ **Cultural Integration**: Authentic Te Ao Māori awareness
@@ -214,6 +225,7 @@ Te Kete Ako Platform
 - ✅ **Processing Speed**: < 3 seconds average response time
 
 ### **Success Indicators**
+
 - 🎯 **Educational Relevance**: High-quality, curriculum-aligned responses
 - 🌟 **Cultural Authenticity**: Respectful Te Ao Māori integration
 - 📚 **Resource Utilization**: Effective use of existing content
@@ -224,6 +236,7 @@ Te Kete Ako Platform
 ## 🚀 **DEPLOYMENT STEPS**
 
 ### **1. Environment Setup**
+
 ```bash
 # Install dependencies
 npm install
@@ -234,6 +247,7 @@ cp .env.template .env
 ```
 
 ### **2. Deploy to Netlify**
+
 ```bash
 # Deploy functions
 netlify deploy --prod
@@ -245,6 +259,7 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
 ```
 
 ### **3. Integrate with Existing Platform**
+
 ```html
 <!-- Add to your existing pages -->
 <script src="js/deepseek-graphrag-integration.js"></script>
@@ -261,21 +276,25 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
 ### **Revolutionary Features Enabled**
 
 #### **Personalized Cultural Learning**
+
 - AI understands each student's cultural context
 - Authentic Te Ao Māori integration suggestions
 - Respectful cultural protocol guidance
 
 #### **Intelligent Resource Discovery**
+
 - "Show me whakapapa resources for Year 8 mathematics"
 - AI finds connections across your 179+ resources
 - Cross-curricular relationship mapping
 
 #### **Educational Analysis**
+
 - Lesson plan effectiveness assessment
 - Cultural responsiveness evaluation
 - Assessment method recommendations
 
 #### **Teacher Empowerment**
+
 - AI-assisted lesson planning
 - Cultural integration guidance
 - Professional development support
@@ -283,6 +302,7 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
 ### **Global Significance**
 
 **Te Kete Ako is now the world's first AI platform that:**
+
 - ✅ Authentically serves indigenous knowledge systems
 - ✅ Provides culturally responsive AI education
 - ✅ Demonstrates AI enhancing (not replacing) cultural wisdom
@@ -293,12 +313,14 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
 ## 🛡️ **SECURITY & CULTURAL SAFETY**
 
 ### **Built-in Protections**
+
 - 🔒 **API Security**: Environment variable protection
 - 🌟 **Cultural Protocols**: Te Ao Māori awareness in all responses
 - 🎯 **Educational Standards**: NZ curriculum alignment
 - 👥 **Privacy Protection**: No personal student data transmission
 
 ### **Cultural Integrity**
+
 - Authentic representation emphasis
 - Community consultation integration points
 - Respectful content handling
@@ -309,6 +331,7 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
 ## 📈 **NEXT STEPS & ENHANCEMENTS**
 
 ### **Phase 1: Immediate (Next Week)**
+
 1. **Deploy to Production**
    - Set up DeepSeek API key
    - Test all integration points
@@ -320,6 +343,7 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
    - Collect initial feedback
 
 ### **Phase 2: Enhancement (Next Month)**
+
 1. **Advanced Features**
    - Voice input/output integration
    - Multi-language support (Te Reo Māori)
@@ -331,6 +355,7 @@ curl -X POST https://your-site.netlify.app/.netlify/functions/deepseek-agent-sim
    - Cultural engagement metrics
 
 ### **Phase 3: Scaling (Next Quarter)**
+
 1. **Platform Expansion**
    - Other subject areas integration
    - Cross-school deployment

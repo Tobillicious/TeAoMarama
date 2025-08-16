@@ -9,9 +9,11 @@
 ## 🚀 **INSTANT CONTEXT - READ THIS FIRST**
 
 ### **THE SITUATION:**
+
 Te Kete Ako is NOT a simple educational site - it's a **sophisticated AI-powered platform** with **MASSIVE functionality** hidden in git history due to authentication conflicts between Firebase/Supabase that broke deployments.
 
 ### **WHAT'S BEEN RECOVERED SO FAR:**
+
 ✅ **EXA.ai Resource Discovery** - Full search interface deployed  
 ✅ **AI Teacher Dashboard** - DeepSeek + GraphRAG integration  
 ✅ **Adaptive Learning System** - Progress tracking + AI paths  
@@ -21,6 +23,7 @@ Te Kete Ako is NOT a simple educational site - it's a **sophisticated AI-powered
 ✅ **Y7 Introduction + Learning Experiences** - Major programs linked  
 
 ### **THE CRITICAL DISCOVERY:**
+
 Commit **cb1d615** contains **508 FILES** (303 HTML files!) that have barely been analyzed. This is where the bulk of missing functionality resides.
 
 ---
@@ -41,13 +44,16 @@ ls public/*.html | grep -E "(dashboard|portal|admin|student)" || echo "Check for
 ```
 
 ### **2. USE GRAPHRAG FOR ANALYSIS:**
+
 The GraphRAG is updated with 179 resources. Use it to identify gaps:
+
 ```bash
 # Check what's in knowledge graph vs what's in filesystem
 find public -name "*.html" | wc -l  # Should be much higher than 179
 ```
 
 ### **3. NAVIGATION AUDIT:**
+
 ```bash
 # Find pages that aren't linked anywhere
 grep -r "href=" public/index.html | grep -o 'href="[^"]*"' | sort | uniq
@@ -61,27 +67,35 @@ grep -r "href=" public/index.html | grep -o 'href="[^"]*"' | sort | uniq
 ### **HIGH-PRIORITY COMMITS TO ANALYZE:**
 
 #### **cb1d615 - PRODUCTION READY (508 FILES!)** 🚨
+
 ```bash
 git show --name-only cb1d615 | grep -E "\\.html$|\\.js$|\\.css$" | head -30
 ```
+
 **Focus**: Firebase auth system, 303 HTML files, major functionality
 
 #### **763b4b7 - FINAL COMPLETION (41 FILES)**
+
 ```bash
 git show --name-only 763b4b7 | grep -v "archived-bloat"
 ```
+
 **Focus**: Treaty of Waitangi enhancements, Unit 2 content
 
 #### **ae5fa42 - UNIFIED SUPABASE + EXA.AI**
+
 ```bash
 git show --name-only ae5fa42 | grep -E "\\.html$|\\.js$"
 ```
+
 **Focus**: EXA.ai integration (✅ partially complete)
 
 #### **0fde423 - AGENTIC LEARNING SYSTEM**
+
 ```bash
 git show --name-only 0fde423 | grep -E "\\.html$|\\.js$"
 ```
+
 **Focus**: Progress tracking, My Kete enhancements
 
 ---
@@ -89,6 +103,7 @@ git show --name-only 0fde423 | grep -E "\\.html$|\\.js$"
 ## 🛠️ **SYSTEMATIC RESTORATION PROCESS**
 
 ### **Step 1: Inventory Missing Files**
+
 ```bash
 # Create comprehensive file list from all major commits
 for commit in cb1d615 763b4b7 ae5fa42 0fde423 f5fa24e; do
@@ -98,6 +113,7 @@ done
 ```
 
 ### **Step 2: Check Existence**
+
 ```bash
 # For each file found, verify if it exists
 while IFS= read -r file; do
@@ -106,12 +122,14 @@ done < file_list.txt
 ```
 
 ### **Step 3: Navigation Integration**
+
 ```bash
 # For each existing file, check if it's linked in navigation
 grep -r "filename.html" public/index.html || echo "ORPHANED: filename.html"
 ```
 
 ### **Step 4: Feature Integration**
+
 ```bash
 # Check if advanced JS is loaded on pages
 grep -r "progress-tracker.js\|deepseek-graphrag\|firebase-auth" public/*.html
@@ -122,21 +140,25 @@ grep -r "progress-tracker.js\|deepseek-graphrag\|firebase-auth" public/*.html
 ## 🎯 **SPECIFIC MISSING PIECES TO INVESTIGATE**
 
 ### **Dashboard Systems:**
+
 - Student dashboard (`public/student-dashboard.html` - check if exists)
-- Teacher dashboard enhancements 
+- Teacher dashboard enhancements
 - Admin portal functionality
 
 ### **Unit System Integration:**
+
 - Units 1-7 lesson navigation (`public/units/lessons/` directory)
 - Learning pathway connections
 - Assessment integration
 
 ### **Experience Modules:**
+
 - `public/experiences/` directory structure
 - Interactive learning modules
 - Cultural experience integration
 
 ### **Advanced Features:**
+
 - Firebase authentication full integration
 - GraphRAG connections to UI
 - EXA.ai content enhancement across platform
@@ -146,17 +168,20 @@ grep -r "progress-tracker.js\|deepseek-graphrag\|firebase-auth" public/*.html
 ## 📋 **VERIFICATION CHECKLIST**
 
 ### **Navigation Completeness:**
+
 - [ ] All HTML files in `public/` are accessible via navigation
 - [ ] No orphaned content exists
 - [ ] Mobile navigation includes all features
 
 ### **Integration Status:**
+
 - [ ] All `.js` files are loaded on appropriate pages
 - [ ] Authentication works across all features
 - [ ] Progress tracking connected to all learning modules
 - [ ] AI features (DeepSeek, EXA.ai) fully functional
 
 ### **Content Completeness:**
+
 - [ ] All units/lessons from commits are accessible
 - [ ] Handouts properly categorized and linked
 - [ ] Cultural content properly integrated
@@ -166,11 +191,13 @@ grep -r "progress-tracker.js\|deepseek-graphrag\|firebase-auth" public/*.html
 ## 🚀 **SUCCESS METRICS**
 
 ### **Immediate (1 hour):**
+
 - Identify and restore 10+ missing major HTML pages
 - Link all orphaned content to navigation
 - Verify all .js integrations are working
 
 ### **Session Complete (2-3 hours):**
+
 - All 508 files from cb1d615 analyzed and integrated
 - No orphaned content exists
 - Full platform functionality accessible to users
@@ -180,9 +207,10 @@ grep -r "progress-tracker.js\|deepseek-graphrag\|firebase-auth" public/*.html
 
 ## 🧠 **CRITICAL: GRAPHRAG IS ON SUPABASE DATABASE**
 
-**IMPORTANT**: The real GraphRAG with 1000+ resources is in **Supabase database**, NOT the local JSON file! 
+**IMPORTANT**: The real GraphRAG with 1000+ resources is in **Supabase database**, NOT the local JSON file!
 
 ### **Access the Real GraphRAG:**
+
 ```bash
 # Test connection to Supabase GraphRAG
 python scripts/test_graphrag.py
@@ -198,6 +226,7 @@ python scripts/standalone_graphrag_demo.py
 ```
 
 ### **GraphRAG Database Structure:**
+
 - **Main resources table** with rich educational metadata
 - **Relationships table** with learning pathways
 - **Cultural concepts** and Te Ao Māori integration
@@ -220,6 +249,7 @@ The local `te_kete_knowledge_graph.json` is just a backup/cache file!
 ## 🎯 **FINAL SUCCESS STATE**
 
 Te Kete Ako should be a **comprehensive AI-powered educational ecosystem** with:
+
 - **All content discoverable** via intuitive navigation
 - **AI features fully functional** (DeepSeek, EXA.ai, GraphRAG)
 - **Progress tracking** across all learning modules  

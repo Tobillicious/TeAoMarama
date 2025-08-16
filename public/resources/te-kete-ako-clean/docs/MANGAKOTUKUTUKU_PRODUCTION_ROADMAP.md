@@ -1,4 +1,5 @@
 # 🏫 MANGAKŌTUKUTUKU COLLEGE - PRODUCTION ROADMAP
+
 ## Te Kete Ako Platform Evolution: Prototype → Professional Tool
 
 **Mission Critical**: Transform prototype into production-ready educational platform for 1000+ mokopuna and kaiako at revolutionary Years 7-13 Wharekura.
@@ -12,6 +13,7 @@
 **Timeline**: 4-week critical foundation → 8-week alpha readiness → 6-month full deployment
 
 ### **Core Vision**
+
 - **TEACHER EXPERIENCE**: KAMAR integration, weekly timetable sync, drag-drop planning, AI assessment feedback, reflection tools
 - **STUDENT EXPERIENCE**: Tailored learning paths, cultural content priority, progress tracking, whānau visibility
 - **INSTITUTIONAL**: 1000+ interconnected resources, professional UX, production stability
@@ -21,6 +23,7 @@
 ## 📊 **CURRENT STATE ANALYSIS**
 
 ### **✅ PLATFORM STRENGTHS (Build Foundation)**
+
 - **Authentication System**: Working Supabase auth (recently stabilized)
 - **Content Volume**: 332+ educational resources, 90+ handouts, 7 unit plans
 - **Cultural Integration**: Authentic Te Ao Māori throughout, cultural safety validation
@@ -29,6 +32,7 @@
 - **GraphRAG Knowledge**: 309 resources interconnected with 90k+ relationships
 
 ### **🔴 CRITICAL GAPS (Production Blockers)**
+
 - **Scalability**: No load testing, single database instance, no CDN
 - **User Experience**: Unpolished workflows, incomplete mobile optimization
 - **Professional Features**: Missing KAMAR integration, no timetable sync, basic planning tools
@@ -40,9 +44,11 @@
 ## 🚀 **3-PHASE TRANSFORMATION ROADMAP**
 
 ### **PHASE 1: CRITICAL FOUNDATION (0-4 weeks)**
+
 **Goal**: Stabilize platform for internal testing with selected kaiako
 
 #### **Week 1-2: Infrastructure Stabilization**
+
 ```javascript
 // Enhanced user management system
 CREATE TABLE user_profiles (
@@ -58,12 +64,14 @@ CREATE TABLE user_profiles (
 ```
 
 **Critical Deliverables**:
+
 - ✅ **Robust Authentication**: Role-based access, password policies, MFA for educators
 - ✅ **Performance Foundation**: Database indexing, CDN setup, code splitting
 - ✅ **Error Handling**: Global error boundaries, logging, monitoring setup
 - ✅ **Security Hardening**: API endpoint protection, input validation, secrets management
 
 #### **Week 3-4: Core Professional Features**
+
 - 🎯 **Basic KAMAR Integration**: User sync, class rosters (Phase 1)
 - 🎯 **Weekly Planner MVP**: Drag-drop lesson linking to resources
 - 🎯 **Progress Tracking**: Student completion dashboards
@@ -72,9 +80,11 @@ CREATE TABLE user_profiles (
 **Success Criteria**: Platform stable for 10-20 concurrent kaiako testing
 
 ### **PHASE 2: ALPHA TESTING READINESS (5-12 weeks)**
+
 **Goal**: Full feature set for pilot with Mangakōtukutuku College staff
 
 #### **Professional Teacher Experience**
+
 ```javascript
 // Advanced planning integration
 const TeacherPlanner = {
@@ -87,6 +97,7 @@ const TeacherPlanner = {
 ```
 
 **Deliverables**:
+
 - 📋 **Advanced KAMAR Integration**: Full timetable sync, attendance data
 - 🤖 **AI Assessment Assistant**: Automated feedback using DeepSeek API
 - 📝 **Reflection Tools**: Structured prompts for lesson improvement
@@ -94,6 +105,7 @@ const TeacherPlanner = {
 - 📊 **Teacher Analytics**: Class progress, engagement metrics, content effectiveness
 
 #### **Culturally-Centered Student Experience**
+
 - 🌺 **Adaptive Learning Paths**: AI-driven progression based on cultural context
 - 📈 **Progress Visualization**: Culturally appropriate progress indicators
 - 👨‍👩‍👧‍👦 **Whānau Portal**: Parent/caregiver access to student progress
@@ -102,9 +114,11 @@ const TeacherPlanner = {
 **Success Criteria**: 80% of Mangakōtukutuku kaiako actively using platform
 
 ### **PHASE 3: FULL PRODUCTION (13-26 weeks)**
+
 **Goal**: Scalable platform for 1000+ users, potential sector-wide deployment
 
 #### **Enterprise-Grade Infrastructure**
+
 ```yaml
 # Production architecture
 services:
@@ -123,6 +137,7 @@ services:
 ```
 
 **Advanced Features**:
+
 - 🔄 **Automated Content Updates**: MOE curriculum sync, AI content validation
 - 📱 **Native Mobile Apps**: iOS/Android with offline capability
 - 🌐 **Multi-School Support**: Architecture for sector expansion
@@ -133,7 +148,9 @@ services:
 ## 🛠️ **IMMEDIATE ACTION PLAN (Next 48 Hours)**
 
 ### **Critical Priority**
+
 1. **Authentication Stress Test**
+
    ```bash
    # Test concurrent user load
    curl -X POST "https://tekete.netlify.app/.netlify/functions/auth-login" 
@@ -151,6 +168,7 @@ services:
    - Validate API endpoint security
 
 ### **High Priority (This Week)**
+
 1. **User Flow Documentation**
    - Map complete student journey: registration → learning → assessment
    - Document teacher workflow: login → planning → resource access → reflection
@@ -166,18 +184,21 @@ services:
 ## 📊 **SUCCESS METRICS & KPIs**
 
 ### **Phase 1 Metrics (Foundation)**
+
 - **Uptime**: >99% availability
 - **Performance**: <3 second page loads on school networks
 - **Error Rate**: <1% application errors
 - **User Feedback**: >4.0/5 satisfaction from pilot teachers
 
 ### **Alpha Testing Metrics (Phase 2)**
+
 - **Teacher Adoption**: >80% of invited kaiako actively using
 - **Content Engagement**: >5 minutes average session time
 - **Feature Utilization**: >70% using planning tools weekly
 - **Cultural Content**: 100% Te Ao Māori resources culturally validated
 
 ### **Production Metrics (Phase 3)**
+
 - **Scale**: Support 1000+ concurrent users
 - **Reliability**: 99.9% SLA
 - **Educational Impact**: Measurable improvement in planning efficiency
@@ -188,18 +209,21 @@ services:
 ## 💼 **RESOURCE REQUIREMENTS**
 
 ### **Technical Team Structure**
+
 - **Lead Developer** (Tobias + AI orchestration): Architecture, strategic direction
 - **Frontend Specialist**: React optimization, responsive design, UX/UI polish
 - **Backend Engineer**: Database optimization, API development, integrations
 - **DevOps/Infrastructure**: CI/CD, monitoring, scalability planning
 
 ### **Budget Considerations**
+
 - **Infrastructure Scaling**: AWS/Azure auto-scaling services
 - **Third-Party Services**: Sentry, Cloudflare, monitoring tools
 - **AI API Costs**: DeepSeek, GraphRAG processing, content generation
 - **KAMAR Integration**: Licensing, API access, development time
 
 ### **Community Engagement**
+
 - **Māori Advisory Panel**: Cultural validation of all content
 - **Teacher Champions**: Early adopters for feedback and improvement
 - **Student Voice**: Regular feedback sessions on UX and content relevance
@@ -210,16 +234,19 @@ services:
 ## 🔄 **RISK MITIGATION STRATEGIES**
 
 ### **Technical Risks**
+
 - **Scalability Issues** → Cloud auto-scaling, load testing before deployment
 - **Data Loss** → Automated daily backups, disaster recovery plan
 - **Security Breaches** → Regular security audits, penetration testing
 
 ### **Educational Risks**
+
 - **Teacher Resistance** → Early champion program, comprehensive training
 - **Content Gaps** → Systematic content audit, AI-assisted generation
 - **Cultural Appropriation** → Ongoing cultural advisory oversight
 
 ### **Operational Risks**
+
 - **Resource Constraints** → Phased approach, MVP focus, community support
 - **Integration Failures** → KAMAR API backup plans, manual sync options
 - **User Overload** → Gradual rollout, support documentation, help desk
@@ -231,12 +258,14 @@ services:
 **From Prototype to Revolution**: Transform Te Kete Ako from experimental tool to the definitive educational platform for culturally-centered, professionally-supported teaching and learning.
 
 ### **6-Month Vision**
+
 - **Mangakōtukutuku College**: 100% kaiako using platform for weekly planning
 - **Student Success**: Measurable engagement with culturally-prioritized content
 - **Sector Interest**: Other kura expressing interest in adoption
 - **Cultural Impact**: Platform recognized as exemplar of Te Ao Māori integration
 
 ### **12-Month Vision**
+
 - **Multi-School Deployment**: Platform supporting 5+ educational institutions
 - **National Recognition**: Featured by MOE as innovative educational tool
 - **International Interest**: Indigenous education communities worldwide taking notice

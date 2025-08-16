@@ -7,6 +7,7 @@
 ## 🎯 **SYSTEM OVERVIEW**
 
 Complete YouTube educational content curation platform with:
+
 - **1000+ hours** of curriculum-aligned video content
 - **Cultural Safety Validation** for Te Ao Māori authenticity
 - **NZ Curriculum Alignment** verification
@@ -16,26 +17,31 @@ Complete YouTube educational content curation platform with:
 ## 📁 **FILE STRUCTURE**
 
 ### **Backend API**
+
 - `netlify/functions/youtube-library-api.js` - Serverless API endpoints
 - `supabase/migrations/20250805_youtube_library_system.sql` - Database schema
 
 ### **Frontend Components**
+
 - `public/youtube-library.html` - Public library interface
 - `public/admin-youtube-library.html` - Admin management interface
 - `public/css/youtube-library.css` - Styling system
 - `public/js/youtube-api.js` - Client-side YouTube integration
 
 ### **Core Libraries**
+
 - `js/cultural-safety-validation.js` - Cultural authenticity framework
 - `js/youtube-api-integration.js` - Educational content discovery
 - `js/youtube-library-enhanced.js` - Enhanced UI components
 
 ### **Data**
+
 - `data/educational-video-database.json` - Curated video metadata
 
 ## 🛠️ **API ENDPOINTS**
 
 ### **Video Management**
+
 ```
 GET    /.netlify/functions/youtube-library-api?action=videos
 POST   /.netlify/functions/youtube-library-api (action: add_video)
@@ -44,6 +50,7 @@ DELETE /.netlify/functions/youtube-library-api (action: delete_video)
 ```
 
 ### **Content Discovery**
+
 ```
 GET    /.netlify/functions/youtube-library-api?action=search&query={term}
 GET    /.netlify/functions/youtube-library-api?action=filter&subject={area}
@@ -51,6 +58,7 @@ GET    /.netlify/functions/youtube-library-api?action=cultural_content
 ```
 
 ### **Analytics**
+
 ```
 POST   /.netlify/functions/youtube-library-api (action: track_interaction)
 GET    /.netlify/functions/youtube-library-api?action=analytics
@@ -59,6 +67,7 @@ GET    /.netlify/functions/youtube-library-api?action=analytics
 ## 📊 **DATABASE SCHEMA**
 
 ### **youtube_videos** Table
+
 ```sql
 - id (UUID, primary key)
 - video_id (VARCHAR, YouTube ID)
@@ -91,6 +100,7 @@ GET    /.netlify/functions/youtube-library-api?action=analytics
 ```
 
 ### **Supporting Tables**
+
 ```sql
 -- user_bookmarks: User video bookmarks
 -- video_ratings: Community ratings
@@ -101,24 +111,28 @@ GET    /.netlify/functions/youtube-library-api?action=analytics
 ## 🎨 **FEATURES**
 
 ### **Cultural Safety Framework**
+
 - **Authenticity Validation**: Māori voice verification
 - **Appropriateness Assessment**: Cultural sensitivity screening  
 - **Community Integration**: Educator review workflows
 - **Stereotype Detection**: Misrepresentation prevention
 
 ### **Educational Discovery**
+
 - **Automated Curation**: YouTube API v3 integration
 - **Quality Metrics**: Educational channel verification
 - **Curriculum Mapping**: NZ Curriculum alignment
 - **Assessment Integration**: Assessment-ready identification
 
 ### **User Interface**
+
 - **Advanced Filtering**: Subject, year level, cultural safety
 - **Beautiful Design**: Te Kete Ako design system
 - **Responsive Layout**: Mobile-first design
 - **Real-time Search**: Dynamic content discovery
 
 ### **Admin Tools**
+
 - **Content Moderation**: Approval workflows
 - **Bulk Operations**: Mass content management
 - **Analytics Dashboard**: Usage insights
@@ -127,6 +141,7 @@ GET    /.netlify/functions/youtube-library-api?action=analytics
 ## 🔧 **CONFIGURATION REQUIRED**
 
 ### **Environment Variables**
+
 ```bash
 YOUTUBE_API_KEY=your_youtube_api_key_here
 SUPABASE_URL=your_supabase_project_url
@@ -134,11 +149,13 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ```
 
 ### **YouTube API Setup**
+
 1. Enable YouTube Data API v3 in Google Cloud Console
 2. Create API credentials
 3. Set daily quota limits (10,000 requests recommended)
 
 ### **Supabase Configuration**
+
 1. Run migration: `supabase/migrations/20250805_youtube_library_system.sql`
 2. Enable Row Level Security (RLS) policies
 3. Configure user authentication integration
@@ -146,6 +163,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ## 🚀 **DEPLOYMENT STEPS**
 
 ### **1. Commit Files**
+
 ```bash
 git add data/ js/ netlify/functions/youtube-library-api.js
 git add public/admin-youtube-library.html public/youtube-library.html
@@ -155,12 +173,14 @@ git commit -m "🎬 YouTube Educational Library: Complete system deployment"
 ```
 
 ### **2. Database Migration**
+
 ```sql
 -- In Supabase SQL Editor
 \i supabase/migrations/20250805_youtube_library_system.sql
 ```
 
 ### **3. Environment Setup**
+
 ```bash
 # In Netlify Dashboard → Environment Variables
 YOUTUBE_API_KEY=your_key
@@ -169,6 +189,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_key
 ```
 
 ### **4. Test Endpoints**
+
 ```bash
 # Test API functionality
 curl "https://teketeako.netlify.app/.netlify/functions/youtube-library-api?action=videos"
@@ -180,18 +201,21 @@ open https://teketeako.netlify.app/youtube-library.html
 ## 📈 **SUCCESS METRICS**
 
 ### **Content Goals**
+
 - ✅ **1000+ hours** of educational content
 - ✅ **100% cultural safety** validation coverage
 - ✅ **90% curriculum alignment** for core subjects
 - ✅ **Real-time discovery** of new content
 
 ### **Technical Goals**  
+
 - ✅ **Sub-2s load times** for video library
 - ✅ **Mobile responsive** design
 - ✅ **Accessibility compliant** interface
 - ✅ **Scalable architecture** for growth
 
 ### **Educational Goals**
+
 - ✅ **Teacher-approved** content quality
 - ✅ **Student-engaging** presentation
 - ✅ **Assessment-aligned** resources
@@ -200,6 +224,7 @@ open https://teketeako.netlify.app/youtube-library.html
 ## 🧠 **GRAPHRAG INTEGRATION**
 
 ### **Knowledge Graph Updates Needed**
+
 ```bash
 # Add YouTube library to GraphRag
 node scripts/update_graphrag_knowledge.py --include-youtube-library
@@ -207,6 +232,7 @@ python scripts/extract_knowledge_graph.py --youtube-metadata
 ```
 
 ### **Relationship Mappings**
+
 - **Video ↔ Lesson**: Content supporting lesson objectives
 - **Video ↔ Assessment**: Assessment-ready video identification  
 - **Video ↔ Cultural**: Cultural authenticity connections
@@ -215,11 +241,13 @@ python scripts/extract_knowledge_graph.py --youtube-metadata
 ## 🔮 **FUTURE ENHANCEMENTS**
 
 ### **AI Integration**
+
 - **DeepSeek Analysis**: Content quality assessment
 - **EXA.ai Discovery**: Automated content expansion
 - **Cultural AI**: Advanced authenticity validation
 
 ### **Advanced Features**
+
 - **Personalized Playlists**: AI-curated learning paths
 - **Interactive Annotations**: Video-linked activities  
 - **Progress Tracking**: Video completion analytics

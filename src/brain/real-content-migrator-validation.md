@@ -30,11 +30,13 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Verify that parallel batch processing improves throughput while maintaining quality
 
 **Preparation Data**:
+
 - 100 mixed educational resources (50 standard, 50 cultural)
 - Performance benchmarks for sequential processing
 - System monitoring tools for CPU/memory usage
 
 **Test Steps**:
+
 1. Initialize RealContentMigrator instance
 2. Create test dataset with mixed cultural/standard content
 3. Execute parallel batch migration with batch size of 5
@@ -43,6 +45,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Verify all resources processed successfully
 
 **Expected Results**:
+
 - Parallel processing ≥ 2x faster than sequential
 - Throughput ≥ 1.16 resources/second (100+ resources/day)
 - Success rate ≥ 95%
@@ -53,12 +56,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Ensure cultural safety protocols are never compromised during optimization
 
 **Preparation Data**:
+
 - Sacred content samples requiring iwi consultation
 - Tikanga Māori educational materials
 - Te Reo Māori language resources
 - Content with varying cultural complexity scores
 
 **Test Steps**:
+
 1. Process resources with sacred content markers
 2. Verify consultation_required flag is respected
 3. Check cultural safety scores are calculated correctly
@@ -66,6 +71,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 5. Validate that optimization doesn't skip cultural validation steps
 
 **Expected Results**:
+
 - Sacred content always flagged for consultation
 - Cultural safety scores ≥ 0.8 for all cultural content
 - Diplomatic approval required for culturally significant content
@@ -76,11 +82,13 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Verify episode batching improves performance without losing data
 
 **Preparation Data**:
+
 - Batch size configuration (BATCH_EPISODE_SIZE = 10)
 - Test resources to generate sufficient episodes
 - Provenance system mock or monitoring
 
 **Test Steps**:
+
 1. Configure episode batching with test batch size
 2. Process resources to generate episodes
 3. Monitor episode queuing behavior
@@ -89,6 +97,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Test flush on system shutdown/completion
 
 **Expected Results**:
+
 - Episodes queued until batch size reached
 - Automatic flush when batch size exceeded
 - All episodes successfully written to provenance
@@ -100,12 +109,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Validate content routing optimizes processing while preserving cultural protocols
 
 **Preparation Data**:
+
 - Mixed content with calculated cultural complexity scores
 - Resources with cultural_elements metadata
 - Resources without cultural_elements metadata
 - Edge cases near routing threshold (0.5)
 
 **Test Steps**:
+
 1. Create mixed content dataset
 2. Execute routing algorithm
 3. Verify cultural content routed to sequential processing
@@ -114,6 +125,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Validate processing approach matches content sensitivity
 
 **Expected Results**:
+
 - Cultural content (complexity > 0.5) routed to sequential processing
 - Standard content (complexity ≤ 0.5) routed to parallel processing
 - Routing decisions consistent and deterministic
@@ -124,11 +136,13 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Ensure performance metrics accurately reflect system performance
 
 **Preparation Data**:
+
 - Known test dataset with predictable processing characteristics
 - Expected metric values based on test data
 - System timing mechanisms
 
 **Test Steps**:
+
 1. Process known test dataset
 2. Capture performance metrics from system
 3. Calculate expected metrics independently
@@ -137,6 +151,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Test metric accuracy under different load conditions
 
 **Expected Results**:
+
 - Throughput calculations accurate within 5%
 - Cultural content ratio matches actual dataset composition
 - Episode queue counts accurate
@@ -147,12 +162,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Verify system maintains stability and cultural safety under stress
 
 **Preparation Data**:
+
 - Large dataset (500+ resources)
 - Mixed cultural and standard content
 - System resource monitoring tools
 - Stress testing configurations
 
 **Test Steps**:
+
 1. Initialize system monitoring
 2. Process large dataset in batch
 3. Monitor memory usage, CPU utilization
@@ -161,6 +178,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Test error recovery mechanisms
 
 **Expected Results**:
+
 - System processes full dataset without crashes
 - Memory usage remains stable
 - Cultural safety scores maintained ≥ 0.8
@@ -172,11 +190,13 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Ensure cultural content receives priority treatment in all scenarios
 
 **Preparation Data**:
+
 - High-priority cultural content (sacred, iwi-specific)
 - Mixed priority content batches
 - Cultural consultation requirements
 
 **Test Steps**:
+
 1. Process mixed priority batches
 2. Verify cultural content processed sequentially
 3. Check cultural validation steps not skipped
@@ -185,6 +205,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Test priority under high load conditions
 
 **Expected Results**:
+
 - Cultural content always processed with full validation
 - Sequential processing maintained for cultural content
 - Consultation requirements never bypassed
@@ -195,11 +216,13 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Verify system consistently achieves 100+ resources/day target
 
 **Preparation Data**:
+
 - Realistic content mix representing daily workload
 - 24-hour processing simulation data
 - Target performance benchmarks
 
 **Test Steps**:
+
 1. Simulate realistic daily processing workload
 2. Measure sustained throughput over extended period
 3. Calculate daily processing capacity
@@ -207,6 +230,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 5. Verify target achievement under different scenarios
 
 **Expected Results**:
+
 - Sustained throughput ≥ 1.16 resources/second
 - Daily capacity ≥ 100 resources
 - Performance maintained across content types
@@ -217,12 +241,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Validate system reliability and error recovery capabilities
 
 **Preparation Data**:
+
 - Resources that trigger various error conditions
 - Network failure simulations
 - System resource constraints
 - Invalid content formats
 
 **Test Steps**:
+
 1. Inject various error conditions
 2. Test parallel processing failure recovery
 3. Verify sequential processing fallback
@@ -231,6 +257,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Validate data integrity after errors
 
 **Expected Results**:
+
 - Graceful handling of processing errors
 - Automatic fallback to sequential processing
 - Complete error logging and reporting
@@ -242,12 +269,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 **Test Purpose**: Verify cultural complexity algorithm correctly identifies content sensitivity
 
 **Preparation Data**:
+
 - Content samples with known cultural complexity levels
 - Edge cases for complexity calculation
 - Various cultural element combinations
 - Content with cultural terminology
 
 **Test Steps**:
+
 1. Calculate complexity scores for test content
 2. Verify scoring algorithm accuracy
 3. Test edge cases and boundary conditions
@@ -256,6 +285,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 6. Ensure consistent scoring across similar content
 
 **Expected Results**:
+
 - Complexity scores accurately reflect content sensitivity
 - Sacred content scored > 0.8
 - Standard content scored ≤ 0.5
@@ -265,12 +295,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 ## Test Implementation Requirements
 
 ### Mock Strategy
+
 - Mock TeKeteAkoMigrationBrain for consistent test results
 - Mock DiplomaticMigration for controlled cultural validation
 - Mock provenance system for episode testing
 - Mock performance timers for deterministic timing tests
 
 ### Boundary Conditions
+
 - Empty resource batches
 - Single resource processing
 - Maximum batch sizes
@@ -278,12 +310,14 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 - Zero cultural elements vs undefined cultural elements
 
 ### Async Operations
+
 - Use proper async/await patterns in all tests
 - Mock Promise resolution/rejection for error scenarios
 - Test concurrent operations and race conditions
 - Verify proper cleanup of async resources
 
 ### Cultural Safety Testing
+
 - All cultural content must score ≥ 0.8 for safety
 - Sacred content must trigger consultation requirements
 - Cultural validation steps must never be skipped
@@ -292,6 +326,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 ## Performance Benchmarks
 
 ### Target Metrics
+
 - Throughput: ≥ 1.16 resources/second (100+ resources/day)
 - Success Rate: ≥ 95%
 - Cultural Safety Score: ≥ 0.8 for all cultural content
@@ -299,6 +334,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 - Error Recovery: < 5% processing failures
 
 ### Load Testing Scenarios
+
 - Standard Load: 100 resources/hour
 - Peak Load: 200 resources/hour
 - Mixed Content: 60% standard, 40% cultural
@@ -307,6 +343,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 ## Test Environment Setup
 
 ### Dependencies
+
 - RealContentMigrator class
 - TeKeteAkoMigrationBrain (mocked)
 - DiplomaticMigration (mocked)
@@ -314,6 +351,7 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 - Performance monitoring utilities
 
 ### Test Data Generation
+
 - Automated test resource creation
 - Cultural complexity variations
 - Content type distributions
@@ -322,16 +360,19 @@ Comprehensive validation tests for the optimized RealContentMigrator system to e
 ## Success Criteria
 
 ### Performance Success
+
 - All performance tests achieve target metrics
 - System maintains stability under load
 - Cultural safety preserved at all performance levels
 
 ### Cultural Safety Success
+
 - Perfect cultural safety record maintained
 - All cultural protocols respected
 - No compromise of cultural validation for performance
 
 ### System Reliability Success
+
 - Error handling prevents system failures
 - Recovery mechanisms restore normal operation
 - Data integrity maintained in all scenarios

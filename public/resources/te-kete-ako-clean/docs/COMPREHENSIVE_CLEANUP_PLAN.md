@@ -1,6 +1,7 @@
 # Te Kete Ako - Comprehensive Cleanup & Architecture Plan
 
 ## Current State Assessment
+
 - **Authentication**: Broken dual system (Supabase + Firebase fragments)
 - **Repo Structure**: 400+ files in root, archives/scripts/backups mixed with public assets
 - **Security**: API keys potentially exposed, no proper .gitignore
@@ -10,6 +11,7 @@
 ## Phase 1: Emergency Cleanup (Next 2 Hours)
 
 ### 1.1 Repo Structure Cleanup
+
 ```bash
 # Create clean structure
 mkdir -p {public,netlify/functions,scripts,docs,backups}
@@ -32,12 +34,14 @@ mv *_updates_*.json backups/
 ```
 
 ### 1.2 Security & Deployment
+
 - **Create proper .gitignore**
 - **Move API keys to Netlify environment variables**
 - **Add netlify.toml to exclude private files from deployment**
 - **Create staging branch for safe testing**
 
 ### 1.3 Authentication Unification
+
 - **Remove all legacy auth scripts** (simple-auth.js, auth-ui.js, etc.)
 - **Implement Firebase-only auth with Supabase GRAPHRAG bridge**
 - **Add email verification and password reset flows**
@@ -45,7 +49,9 @@ mv *_updates_*.json backups/
 ## Phase 2: EXA.ai Educational Enhancement (Next 4 Hours)
 
 ### 2.1 Automated Resource Discovery
+
 Using EXA.ai to enhance lesson plans with:
+
 - **NZhistory.govt.nz specific articles** for historical content
 - **RNZ educational content** for current affairs
 - **CrashCourse videos** for concept reinforcement  
@@ -53,6 +59,7 @@ Using EXA.ai to enhance lesson plans with:
 - **Guardian education articles** for global perspectives
 
 ### 2.2 Implementation Strategy
+
 ```javascript
 // scripts/exa-lesson-enhancer.js
 async function enhanceLessonWithResources(lessonTopic, yearLevel) {
@@ -69,17 +76,20 @@ async function enhanceLessonWithResources(lessonTopic, yearLevel) {
 ## Phase 3: Production Architecture (Next 6 Hours)
 
 ### 3.1 Firebase + Supabase Hybrid
+
 ```
 [Browser] → Firebase Auth → Netlify Function → Supabase GRAPHRAG
 ```
 
 ### 3.2 Enhanced Security
+
 - **HttpOnly cookies for auth tokens**
 - **Rate limiting on GRAPHRAG queries**
 - **Audit logging for teacher access**
 - **CSP headers for XSS protection**
 
 ### 3.3 Educational Features
+
 - **Teacher dashboards** with class analytics
 - **Student progress tracking** with Māori wordle scores
 - **Assignment creation** with EXA.ai suggested resources
@@ -88,6 +98,7 @@ async function enhanceLessonWithResources(lessonTopic, yearLevel) {
 ## Phase 4: Quality Assurance (Next 2 Hours)
 
 ### 4.1 Testing Checklist
+
 - [ ] Firebase auth signup/login/logout flow
 - [ ] Email verification process
 - [ ] Password reset functionality
@@ -98,6 +109,7 @@ async function enhanceLessonWithResources(lessonTopic, yearLevel) {
 - [ ] Cross-browser compatibility
 
 ### 4.2 Performance & SEO
+
 - [ ] Lighthouse audit scores >90
 - [ ] Core Web Vitals optimization
 - [ ] Proper meta tags and Open Graph
@@ -113,12 +125,14 @@ async function enhanceLessonWithResources(lessonTopic, yearLevel) {
 6. **Final cleanup and production deploy**
 
 ## API Keys & Environment
+
 - **Deepseek API**: sk-65624cc9a6fa45c8a7eebe1834dc9587 (for development)
 - **EXA.ai**: Available for educational resource discovery
 - **Firebase**: Project configuration needed
 - **Supabase**: Keep for GRAPHRAG only
 
 ## Success Metrics
+
 - [ ] Authentication works 100% reliably across all browsers
 - [ ] All lesson plans enhanced with 3-5 relevant external resources
 - [ ] Teacher/student role differentiation functional

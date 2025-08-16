@@ -45,8 +45,8 @@ You are the lead for this phase. Your mission is to create the orchestrating fun
 6. Finally, the function will synthesize the results from both the initial vector search and the graph query into a single, rich JSON response that includes the initial lessons and the newly discovered related games.
 
 // supabase/functions/get-contextual-recommendations/index.ts  
-import { serve } from 'https://deno.land/std@0.131.0/http/server.ts'  
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { serve } from '<https://deno.land/std@0.131.0/http/server.ts>'  
+import { createClient } from '<https://esm.sh/@supabase/supabase-js@2>'
 
 const supabase \= createClient(  
   Deno.env.get('SUPABASE\_URL')\!,  
@@ -74,7 +74,7 @@ serve(async (req) \=\> {
     RETURN DISTINCT game.title AS title, game.url AS url, concept.name AS relatedConcept  
     LIMIT 5  
   \`;  
-    
+
   const { data: relatedGames, error: graphError } \= await supabase.functions.invoke('neo4j-bridge', {  
       body: { query: cypherQuery, params: { lessonIds } },  
   });
@@ -84,7 +84,7 @@ serve(async (req) \=\> {
     initialLessons: initialLessons,  
     recommendedGames: graphError ? \[\] : relatedGames.map((r: any) \=\> r.get('game')),  
   };  
-    
+
   return new Response(JSON.stringify(response), {  
     headers: { 'Content-Type': 'application/json' },  
   });  

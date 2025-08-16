@@ -1,7 +1,9 @@
 # AUTH SYSTEM README - Te Kete Ako Authentication
+
 ## Production-Ready Authentication Implementation Guide
 
 ### 🎯 Overview
+
 Te Kete Ako uses a standardized Supabase authentication system with UMD loading, singleton guards, and robust error handling. This documentation provides the essential contracts and patterns for implementing authentication across all pages.
 
 ---
@@ -9,6 +11,7 @@ Te Kete Ako uses a standardized Supabase authentication system with UMD loading,
 ## 📋 Include Contract - Standard Authentication Stack
 
 ### Required Script Inclusion Pattern
+
 Every authenticated page MUST include scripts in this exact order:
 
 ```html
@@ -27,6 +30,7 @@ Every authenticated page MUST include scripts in this exact order:
 ```
 
 ### Critical Loading Requirements
+
 - **env-config.js** MUST load first to establish environment variables
 - **supabase.min.js** MUST use `defer` attribute to prevent blocking
 - **supabase-client.js** handles singleton initialization and CDN fallbacks
@@ -38,6 +42,7 @@ Every authenticated page MUST include scripts in this exact order:
 ## 🔒 Singleton Guards Implementation
 
 ### TeKeteAuthSystem Singleton Pattern
+
 The authentication system uses a singleton pattern to prevent duplicate initialization:
 
 ```javascript
@@ -52,6 +57,7 @@ window.teKeteAuth = window.TeKeteAuthSystem;
 ```
 
 ### Supabase Client Singleton (supabase-client.js)
+
 ```javascript
 // Prevent duplicate client initialization
 if (window.supabaseClient) return;
@@ -72,6 +78,7 @@ async function getSupabaseClient() {
 ```
 
 ### Environment Configuration Singleton (env-config.js)
+
 ```javascript
 // Single initialization guard
 if (window.__TKA_ENV__) return;
@@ -83,12 +90,14 @@ window.__TKA_ENV__ = true;
 ## 📦 UMD File Management
 
 ### Vendored Supabase UMD
+
 - **Location**: `/vendor/supabase.min.js`
 - **Version**: Latest stable Supabase UMD build
 - **Purpose**: Self-hosted to avoid CDN dependency issues
 - **MIME Type**: `application/javascript` (configured in server)
 
 ### UMD Loading Strategy
+
 ```javascript
 // Wait for Supabase CDN with fallback (supabase-client.js)
 let attempts = 0;
@@ -116,6 +125,7 @@ if (!window.supabase) {
 ## 🛡️ Content Security Policy (CSP) Configuration
 
 ### Production CSP Header (Required)
+
 ```html
 <meta http-equiv="Content-Security-Policy" content="
     default-src 'self'; 
@@ -128,12 +138,14 @@ if (!window.supabase) {
 ```
 
 ### CSP Domains Explanation
+
 - **script-src**: Allows self-hosted scripts + CDN fallbacks
 - **connect-src**: Permits Supabase API connections
 - **unsafe-inline**: Required for dynamic auth UI updates
 - **cdn.jsdelivr.net + unpkg.com**: Backup CDN sources
 
 ### CSP Fallback Strategy
+
 If CSP blocks Supabase loading, the system automatically provides a mock client to prevent JavaScript errors while displaying appropriate error messages to users.
 
 ---
@@ -141,6 +153,7 @@ If CSP blocks Supabase loading, the system automatically provides a mock client 
 ## 💡 Usage Examples
 
 ### Basic Authentication Check
+
 ```javascript
 // Wait for auth system to initialize
 document.addEventListener('DOMContentLoaded', async () => {
@@ -157,6 +170,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 ```
 
 ### Login Implementation
+
 ```javascript
 async function handleLogin(email, password) {
     try {
@@ -181,6 +195,7 @@ async function handleLogin(email, password) {
 ```
 
 ### Auth State Listener
+
 ```javascript
 // Listen for authentication changes
 window.addEventListener('teKeteAuthChange', (event) => {
@@ -198,6 +213,7 @@ window.addEventListener('teKeteAuthChange', (event) => {
 ```
 
 ### Role-Based Access Control
+
 ```javascript
 // Check user role
 if (window.teKeteAuth.hasRole('teacher')) {
@@ -210,6 +226,7 @@ if (window.teKeteAuth.hasRole('teacher')) {
 ```
 
 ### Session Validation
+
 ```javascript
 // Manual session check (automatic validation runs every 5 minutes)
 async function validateSession() {
@@ -230,6 +247,7 @@ async function validateSession() {
 ## 🔧 Error Handling Patterns
 
 ### Standard Error Messages
+
 ```javascript
 function getAuthErrorMessage(error) {
     switch (error.message) {
@@ -248,6 +266,7 @@ function getAuthErrorMessage(error) {
 ```
 
 ### Auth State Error Recovery
+
 ```javascript
 // Automatic retry on initialization failure
 handleAuthError(error) {
@@ -268,7 +287,8 @@ handleAuthError(error) {
 
 ## 🏗️ Implementation Checklist
 
-### For New Pages Requiring Auth:
+### For New Pages Requiring Auth
+
 - [ ] Include all 5 scripts in correct order
 - [ ] Add CSP meta tag with Supabase domain
 - [ ] Implement auth state checking
@@ -276,7 +296,8 @@ handleAuthError(error) {
 - [ ] Handle loading, signed-in, signed-out, and error states
 - [ ] Test with and without network connectivity
 
-### For Debugging Auth Issues:
+### For Debugging Auth Issues
+
 1. Check browser console for initialization errors
 2. Verify all script files load successfully (Network tab)
 3. Confirm `window.teKeteAuth` is available
@@ -288,13 +309,15 @@ handleAuthError(error) {
 
 ## 📞 Support & Troubleshooting
 
-### Common Issues:
+### Common Issues
+
 - **"Auth system not initialized"**: Check script loading order and timing
 - **"Supabase CDN failed to load"**: Verify CSP allows CDN domains
 - **"Environment configuration not loaded"**: Ensure env-config.js loads first
 - **Session validation fails**: Check Supabase connection and token expiry
 
-### Debug Authentication State:
+### Debug Authentication State
+
 ```javascript
 // Add to any page for debugging
 console.log('Auth Debug:', {

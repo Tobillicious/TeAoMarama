@@ -11,7 +11,8 @@
 ## 🎯 **ACTUAL CURRENT SITUATION**
 
 ### **✅ WHAT'S WORKING WELL (MUST PRESERVE)**
-- **Live Site:** https://tekete.netlify.app/ - Beautiful, functional educational platform
+
+- **Live Site:** <https://tekete.netlify.app/> - Beautiful, functional educational platform
 - **~190 Educational Resources:** Comprehensive content library
 - **Supabase Database:** Fully deployed with complete schema
 - **Cultural Integration:** Authentic Te Ao Māori elements throughout
@@ -19,6 +20,7 @@
 - **User Authentication:** Working on live site with "My Kete" functionality
 
 ### **🚨 MAJOR ISSUES IDENTIFIED**
+
 1. **Y8 Systems Unit MISSING from live site** - Complete 5-week program exists locally but not deployed
 2. **Resources have been REMOVED** rather than added in recent sessions
 3. **Inconsistent headers/footers** - changes made without understanding existing system
@@ -31,6 +33,7 @@
 ## 📊 **RESOURCE AUDIT STATUS**
 
 ### **Missing from Live Site:**
+
 - **Y8 Systems Unit** (`/y8-systems-unit.html` and entire `/y8-systems/` folder)
   - 10 detailed lesson plans (lesson-1-1.html through lesson-5-2.html)
   - 20+ supporting resources in `/y8-systems/resources/`
@@ -38,6 +41,7 @@
   - Complete "Decolonizing Power Structures" curriculum
 
 ### **Local vs Live Discrepancies:**
+
 - **Local Development:** Enhanced features, additional resources
 - **Live Production:** Stable but missing recent improvements
 - **Sync Issues:** 17+ modified files not reflected on live site
@@ -47,6 +51,7 @@
 ## 🛠️ **CORRECT APPROACH NEEDED**
 
 ### **DO NOT:**
+
 - ❌ Make wholesale changes without understanding existing system
 - ❌ "Fix" authentication that may already be working
 - ❌ Remove or modify existing functional features
@@ -54,6 +59,7 @@
 - ❌ Create placeholder content when real content exists
 
 ### **DO:**
+
 - ✅ **Comprehensive audit first** - Compare live site vs local folder systematically
 - ✅ **Identify genuine gaps** that need filling
 - ✅ **Deploy missing Y8 Systems content** carefully
@@ -65,17 +71,20 @@
 ## 📋 **IMMEDIATE PRIORITIES**
 
 ### **Priority 1: Full Site Audit**
-- Compare https://tekete.netlify.app/ with local `/Users/admin/Documents/te-kete-ako-clean/`
+
+- Compare <https://tekete.netlify.app/> with local `/Users/admin/Documents/te-kete-ako-clean/`
 - Document exactly what's different
 - Identify what's been lost vs what needs to be added
 
 ### **Priority 2: Y8 Systems Unit Deployment**
+
 - Deploy `/y8-systems-unit.html` to live site
 - Deploy entire `/y8-systems/` folder structure
 - Update navigation to include unit link
 - Test all internal links work
 
 ### **Priority 3: Content Synchronization**
+
 - Identify enhanced features in local that should be on live
 - Test authentication system status (may already work)
 - Fix any genuine broken links
@@ -94,14 +103,16 @@
 ## 🗄️ **TECHNICAL REALITY CHECK**
 
 ### **Supabase Status**
+
 - **Project URL:** `https://nlgldaqtubrlcqddppbq.supabase.co`
 - **Database:** Complete schema deployed
 - **API Keys:** May be working (needs verification)
 - **Authentication:** Working on live site, local issues may be different
 
 ### **File Structure**
+
 - **Local Enhanced:** `/Users/admin/Documents/te-kete-ako-clean/`
-- **Live Stable:** https://tekete.netlify.app/
+- **Live Stable:** <https://tekete.netlify.app/>
 - **Gap:** Missing Y8 Systems unit and other enhancements
 
 ---
@@ -109,6 +120,7 @@
 ## 📚 **AGENT WORKFLOW GUIDELINES**
 
 ### **Before Making ANY Changes:**
+
 1. **Audit thoroughly** - Document current state
 2. **Test existing functionality** - Don't assume it's broken
 3. **Identify real gaps** vs perceived issues
@@ -116,6 +128,7 @@
 5. **Document everything** - For next agent
 
 ### **Communication Style:**
+
 - **Be concise** - User wants direct, actionable information
 - **Focus on gaps** - What's actually missing, not what to rebuild
 - **Test first** - Verify problems exist before solving them
@@ -126,6 +139,7 @@
 ## ⚠️ **CRITICAL LEARNINGS**
 
 ### **From Previous Sessions:**
+
 - User frustrated by agents redoing completed work
 - Authentication may already work - test before rebuilding
 - Live site has functional features that shouldn't be modified
@@ -133,6 +147,7 @@
 - Quality over quantity - better to do fewer things well
 
 ### **Success Pattern:**
+
 1. Understand what exists
 2. Test what works
 3. Identify genuine gaps
@@ -144,12 +159,14 @@
 ## 🎯 **SUCCESS METRICS**
 
 ### **Short Term:**
+
 - [ ] Y8 Systems unit deployed and accessible
 - [ ] No functional features broken in process
 - [ ] Authentication status clarified (working or genuinely broken)
 - [ ] Broken links identified and fixed
 
 ### **Long Term:**
+
 - [ ] ~200 resources all accessible and well-organized
 - [ ] Consistent, beautiful user experience
 - [ ] All educational content properly integrated

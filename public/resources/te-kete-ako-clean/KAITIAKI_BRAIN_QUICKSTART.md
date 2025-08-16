@@ -1,6 +1,7 @@
 # 🧠 Kaitiaki Aronui Brain - Quick Start Guide
 
 ## What is this?
+
 The Kaitiaki Aronui Brain is a comprehensive AI system that transforms Te Kete Ako into an intelligent, culturally-aware educational platform. It consists of:
 
 - **🧠 Cortex (Extractor)**: Processes content and extracts structured knowledge
@@ -11,6 +12,7 @@ The Kaitiaki Aronui Brain is a comprehensive AI system that transforms Te Kete A
 ## Quick Commands
 
 ### 1. Start the Brain System
+
 ```bash
 # Start the extractor service
 npm run brain:extractor
@@ -23,19 +25,23 @@ npm run brain:ingest path/to/document.pdf "Document Title"
 ```
 
 ### 2. Environment Setup
+
 1. Copy `.env.example` to `.env`
 2. Add your Supabase URL and service key
 3. Add your DeepSeek API key: `sk-103cb83572a346e2aef89e2d2a4f7f89`
 4. Optionally add OpenAI API key for better embeddings
 
 ### 3. Database Setup
+
 Run this SQL in your Supabase SQL editor:
+
 ```sql
 -- Execute the brain migration
 \i migrations/20250810_kaitiaki_aronui_brain.sql
 ```
 
 ### 4. Test the System
+
 ```bash
 # Health check
 curl http://localhost:3001/health
@@ -66,6 +72,7 @@ npm run brain:indexer .
 ## What Each Component Does
 
 ### Cortex (kaitiaki-cortex.ts)
+
 - Runs as HTTP service on port 3001
 - Takes text chunks and extracts structured knowledge
 - Understands NZ Curriculum alignment
@@ -73,6 +80,7 @@ npm run brain:indexer .
 - Returns nodes (concepts) and edges (relationships)
 
 ### Memory (kaitiaki-memory.ts)
+
 - Scans all files in your project
 - Extracts metadata, keywords, cultural tags
 - Creates searchable index in Supabase
@@ -80,6 +88,7 @@ npm run brain:indexer .
 - Generates embeddings for semantic search
 
 ### Cerebellum (kaitiaki-cerebellum.ts)
+
 - Processes whole PDF documents
 - Chunks content intelligently
 - Coordinates with Cortex for extraction
@@ -87,6 +96,7 @@ npm run brain:indexer .
 - Provides batch processing capabilities
 
 ## Next Steps
+
 1. Run the database migration
 2. Configure your .env file
 3. Start with `npm run brain:extractor`
@@ -94,6 +104,7 @@ npm run brain:indexer .
 5. Explore the knowledge graph in Supabase
 
 ## Troubleshooting
+
 - Check logs for detailed error messages
 - Ensure all environment variables are set
 - Verify Supabase connection with health check

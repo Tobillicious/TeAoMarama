@@ -7,22 +7,26 @@
 ## 🏗️ **SYSTEM ARCHITECTURE OVERVIEW**
 
 ### **Layer 1: Core Platform (Existing)**
+
 - **Te Kete Ako Web Platform**: HTML/CSS/JavaScript with Netlify hosting
 - **Supabase Backend**: PostgreSQL with row-level security
 - **Authentication System**: Role-based access (student/teacher/admin)
 - **Content Management**: 186+ educational resources, games, handouts
 
 ### **Layer 2: Cultural Maintenance Agents (Existing)**
+
 - **Kaiako Agent**: Adds whakataukī for cultural authenticity
 - **Kaitiaki Agent**: Audits quality and cultural consistency
 - **Kaitoi Agent**: Ensures visual design consistency
 
 ### **Layer 3: AI Learning Companions (New)**
+
 - **Ākonga Companion**: Personalized learning support with cultural guidance
 - **Kaiako Assistant**: Curriculum development and feedback support
 - **Cultural Advisor**: Ensures Te Ao Māori authenticity in all interactions
 
 ### **Layer 4: Collaborative Intelligence (New)**
+
 - **Group Facilitation Agent**: Manages collaborative projects
 - **Assessment Agent**: Provides culturally-aware feedback
 - **Progress Tracking Agent**: Monitors learning with cultural competency metrics
@@ -32,6 +36,7 @@
 ## 🌐 **INTEGRATION POINTS**
 
 ### **Frontend Integration**
+
 ```javascript
 // Te Kete Ako ↔ ADK Agents via REST API
 const aiAssistant = {
@@ -56,6 +61,7 @@ function getAIGuidance(context) {
 ```
 
 ### **Backend Integration**
+
 ```python
 # ADK Agents ↔ Supabase via shared data layer
 class TeKeteAkoIntegration:
@@ -74,6 +80,7 @@ class TeKeteAkoIntegration:
 ## 🎯 **AI AGENT SPECIFICATIONS**
 
 ### **1. Ākonga Companion Agent**
+
 ```python
 akonga_companion = Agent(
     name="akonga_companion",
@@ -103,6 +110,7 @@ akonga_companion = Agent(
 ```
 
 ### **2. Kaiako Assistant Agent**
+
 ```python
 kaiako_assistant = Agent(
     name="kaiako_assistant", 
@@ -132,6 +140,7 @@ kaiako_assistant = Agent(
 ```
 
 ### **3. Cultural Advisor Agent**
+
 ```python
 cultural_advisor = Agent(
     name="cultural_advisor",
@@ -165,6 +174,7 @@ cultural_advisor = Agent(
 ## 🔧 **IMPLEMENTATION ROADMAP**
 
 ### **Phase 5A: Foundation Integration (Week 1)**
+
 1. **Deploy Core Platform**
    - Set up Supabase database
    - Configure Netlify environment variables  
@@ -176,6 +186,7 @@ cultural_advisor = Agent(
    - Apply Kaitoi Agent for styling consistency
 
 ### **Phase 5B: AI Companion Development (Week 2)**
+
 1. **Build Ākonga Companion**
    - Create ADK agent with cultural awareness
    - Integrate with student dashboard
@@ -187,6 +198,7 @@ cultural_advisor = Agent(
    - Test curriculum guidance features
 
 ### **Phase 5C: Advanced Collaboration (Week 3)**
+
 1. **Collaborative Intelligence**
    - Group facilitation agent for society design projects
    - AI-driven peer review and feedback
@@ -198,6 +210,7 @@ cultural_advisor = Agent(
    - Performance optimization
 
 ### **Phase 5D: Production Deployment (Week 4)**
+
 1. **Full Platform Integration**
    - End-to-end testing with real users
    - Mobile responsiveness verification
@@ -213,6 +226,7 @@ cultural_advisor = Agent(
 ## 🌺 **CULTURAL AUTHENTICITY FRAMEWORK**
 
 ### **AI Ethics for Te Ao Māori Context**
+
 1. **Manaakitanga (Hospitality)**: AI should welcome and support all learners
 2. **Whakatōhia (Collective Decision-Making)**: AI facilitates group learning
 3. **Kaitiakitanga (Guardianship)**: AI protects cultural knowledge and student data
@@ -220,6 +234,7 @@ cultural_advisor = Agent(
 5. **Tino Rangatiratanga (Self-Determination)**: Students control their learning journey
 
 ### **Implementation Guidelines**
+
 - **No AI decisions without human oversight** on cultural matters
 - **Community knowledge remains with community** - AI assists, doesn't own
 - **Students' cultural identity is honored** in all AI interactions  
@@ -231,6 +246,7 @@ cultural_advisor = Agent(
 ## 📊 **SUCCESS METRICS**
 
 ### **Technical Metrics**
+
 - [ ] 99.9% uptime for AI-enhanced features
 - [ ] <2 second response time for AI interactions
 - [ ] Zero cultural sensitivity violations
@@ -238,6 +254,7 @@ cultural_advisor = Agent(
 - [ ] End-to-end security audit passed
 
 ### **Educational Impact Metrics**  
+
 - [ ] Increased student engagement in collaborative projects
 - [ ] Improved cultural competency scores
 - [ ] Enhanced teacher confidence in culturally-responsive pedagogy
@@ -245,6 +262,7 @@ cultural_advisor = Agent(
 - [ ] Measurable learning outcomes improvement
 
 ### **Cultural Authenticity Metrics**
+
 - [ ] Community approval of AI cultural guidance
 - [ ] Accurate Te Reo Māori usage with proper macrons
 - [ ] Respectful integration of traditional knowledge

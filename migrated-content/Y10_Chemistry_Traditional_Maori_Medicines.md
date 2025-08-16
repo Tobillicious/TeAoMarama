@@ -33,7 +33,7 @@
 
 ## 🛡️ URGENT Cultural Protocols & Sacred Knowledge Framework
 
-### **Mihara Cultural Authority Declaration - Phase 3 Enhanced**:
+### **Mihara Cultural Authority Declaration - Phase 3 Enhanced**
 
 This content incorporates sacred traditional healing knowledge. All cultural content has been:
 
@@ -44,7 +44,7 @@ This content incorporates sacred traditional healing knowledge. All cultural con
 - ✅ **Structured to honor healing traditions** - Sacred knowledge protected
 - ✅ **Community-approved educational use** - Traditional knowledge sharing protocols
 
-### **URGENT Traditional Knowledge Protocols**:
+### **URGENT Traditional Knowledge Protocols**
 
 ⚠️ **CRITICAL CULTURAL SAFEGUARDS**:
 
@@ -54,7 +54,7 @@ This content incorporates sacred traditional healing knowledge. All cultural con
 - **Practitioner recognition**: Honor the training and mana of traditional healers
 - **Modern integration**: Support both traditional and contemporary healing approaches
 
-### **Culturally Safe Teaching Requirements**:
+### **Culturally Safe Teaching Requirements**
 
 - Begin all lessons acknowledging traditional healers and their knowledge
 - Emphasize that traditional healing requires years of training under expert guidance
@@ -68,7 +68,7 @@ This content incorporates sacred traditional healing knowledge. All cultural con
 
 By the end of this unit, students will be able to:
 
-### **Chemistry Understanding**:
+### **Chemistry Understanding**
 
 1. **Identify active compounds** in traditional medicinal plants
 2. **Explain extraction methods** and solubility principles
@@ -76,7 +76,7 @@ By the end of this unit, students will be able to:
 4. **Analyze concentration effects** and dosage considerations
 5. **Investigate chemical reactions** in preparation methods
 
-### **Cultural Competency**:
+### **Cultural Competency**
 
 6. **Appreciate the sophistication** of traditional Māori healing systems
 7. **Recognize the mana** of traditional healers and their expertise
@@ -84,7 +84,7 @@ By the end of this unit, students will be able to:
 9. **Respect cultural protocols** around traditional medicine
 10. **Acknowledge the whakapapa** of healing knowledge
 
-### **Scientific Inquiry**:
+### **Scientific Inquiry**
 
 11. **Design experiments** to test chemical properties safely
 12. **Use analytical techniques** to identify compounds
@@ -96,7 +96,7 @@ By the end of this unit, students will be able to:
 
 ## 🌿 Cultural Foundation / Tūāpapa Rongoā
 
-### **Core Traditional Medicine Concepts**:
+### **Core Traditional Medicine Concepts**
 
 #### **Rongoā Māori Philosophy**
 
@@ -480,7 +480,7 @@ Comprehensive evaluation combining:
 
 ## 🌍 Real-World Connections / Hononga Taiao
 
-### **Professional Pathways**:
+### **Professional Pathways**
 
 - **Natural Product Chemist** - Drug discovery from natural sources
 - **Ethnobotanist** - Traditional plant knowledge documentation
@@ -489,7 +489,7 @@ Comprehensive evaluation combining:
 - **Conservation Scientist** - Protecting medicinal plant resources
 - **Pharmacist** - Integrating traditional and modern therapeutics
 
-### **Industry Connections**:
+### **Industry Connections**
 
 - **Pharmaceutical companies** with natural product programs
 - **Traditional medicine practitioners** seeking scientific collaboration
@@ -497,7 +497,7 @@ Comprehensive evaluation combining:
 - **Māori health providers** integrating traditional approaches
 - **Research institutions** studying traditional knowledge
 
-### **Community Engagement**:
+### **Community Engagement**
 
 - **Iwi health services** supporting traditional medicine
 - **Conservation groups** protecting medicinal plant habitats
@@ -509,21 +509,21 @@ Comprehensive evaluation combining:
 
 ## 📚 Resources / Rauemi Rongoā
 
-### **Traditional Knowledge Sources** (with community permission):
+### **Traditional Knowledge Sources** (with community permission)
 
 - **Traditional Healers Council** - Authenticated practices and protocols
 - **Iwi Cultural Centers** - Traditional knowledge preservation programs
 - **Māori Health Research** - Contemporary traditional medicine studies
 - **Ethnobotanical Records** - Historical documentation of plant use
 
-### **Scientific Resources**:
+### **Scientific Resources**
 
 - **Natural Product Databases** - Chemical structure and activity information
 - **Phytochemistry Journals** - Current research on plant compounds
 - **Pharmacology Resources** - Mechanism of action studies
 - **Analytical Chemistry Methods** - Modern analysis techniques
 
-### **Cultural Safety Resources**:
+### **Cultural Safety Resources**
 
 - **Cultural Protocol Guides** - Appropriate traditional knowledge use
 - **Ethics Guidelines** - Research with indigenous communities
@@ -534,9 +534,9 @@ Comprehensive evaluation combining:
 
 ## 🛡️ Cultural Safety Guidelines / Tikanga Hauora
 
-### **For Teachers**:
+### **For Teachers**
 
-#### **Essential Preparation**:
+#### **Essential Preparation**
 
 - Learn correct pronunciation of te reo Māori terms
 - Understand the spiritual dimensions of traditional healing
@@ -544,7 +544,7 @@ Comprehensive evaluation combining:
 - Establish relationships with traditional knowledge holders
 - Complete cultural competency training in traditional medicine
 
-#### **Respectful Teaching Practices**:
+#### **Respectful Teaching Practices**
 
 - Begin each lesson acknowledging traditional healers
 - Emphasize that traditional healing requires proper training
@@ -552,7 +552,7 @@ Comprehensive evaluation combining:
 - Invite traditional healers to share perspectives
 - Address misconceptions about traditional medicine respectfully
 
-#### **Ethical Considerations**:
+#### **Ethical Considerations**
 
 - Ensure traditional knowledge is properly attributed
 - Respect sacred knowledge boundaries
@@ -560,7 +560,7 @@ Comprehensive evaluation combining:
 - Promote community benefit from knowledge sharing
 - Follow intellectual property and cultural protocols
 
-### **For Students**:
+### **For Students**
 
 - Approach traditional knowledge with deep respect and humility
 - Understand that healing encompasses spiritual and cultural dimensions
@@ -572,7 +572,7 @@ Comprehensive evaluation combining:
 
 ## 📊 Mihara Quality Assurance - Phase 3 National Excellence
 
-### **Cultural Safety Verification - Highest Level Review**:
+### **Cultural Safety Verification - Highest Level Review**
 
 ✅ **Traditional Healers Council**: Content reviewed by senior rongoā practitioners  
 ✅ **Iwi Cultural Approval**: Multiple iwi endorsed educational use of knowledge  
@@ -581,7 +581,7 @@ Comprehensive evaluation combining:
 ✅ **Chemical Accuracy**: All scientific content verified by chemistry experts  
 ✅ **Educational Appropriateness**: Age-appropriate and culturally safe content
 
-### **Phase 3 National Standards**:
+### **Phase 3 National Standards**
 
 ✅ **National Curriculum Alignment**: Meets NCEA Level 1 Chemistry standards  
 ✅ **Cultural Competency Development**: Builds deep respect for traditional knowledge  
@@ -590,7 +590,7 @@ Comprehensive evaluation combining:
 ✅ **Career Pathway Connections**: Links to diverse professional opportunities  
 ✅ **Community Engagement**: Real connections with traditional knowledge holders
 
-### **Phase 3 Innovation Achievements**:
+### **Phase 3 Innovation Achievements**
 
 ✅ **National Scale Impact**: 85,000 Year 10 students benefit from cultural integration  
 ✅ **Traditional Knowledge Honor**: Highest respect for indigenous healing wisdom  
@@ -598,7 +598,7 @@ Comprehensive evaluation combining:
 ✅ **Ethical Leadership**: Setting global standards for indigenous knowledge in education  
 ✅ **Community Partnership**: Deep collaboration with traditional healing community
 
-### **Mihara Assessment - Phase 3**:
+### **Mihara Assessment - Phase 3**
 
 This resource represents the pinnacle of Phase 3 achievement - demonstrating that traditional knowledge and modern science can be integrated at national scale with perfect cultural safety. The collaboration with traditional healers creates authentic learning that honors indigenous wisdom while building scientific understanding.
 
