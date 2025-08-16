@@ -43,6 +43,9 @@ function getCategoryFromFilename(filename: string): string | null {
     if (filename.includes('Narrative_Writing')) {
         return 'Narrative Writing';
     }
+    if (filename.includes('Poetry')) {
+        return 'Poetry';
+    }
     return null;
 }
 
@@ -253,6 +256,138 @@ Now you try. Think of a character who might live in your town. What are they lik
 1. What are the three key elements of character creation we learned about today?
 2. What is one thing you found easy about creating a character?
 3. What is one thing you found challenging?
+
+---
+
+*Template compliance: ✅ | Cultural safety review: Required*
+`;
+}
+
+function generatePoetryContent(): string {
+    return `# English Y9 - Poetry Analysis
+*Te Kura o TeAoMarama - English*
+
+**Year Level**: 9
+**Subject**: English  
+**Duration**: 45 minutes
+**NZ Curriculum**: Language & Literature
+
+**Cultural Context**: Historical New Zealand literature
+**Te Reo Integration**: None
+**Tikanga Connection**: Respectful discussion protocols
+
+---
+
+## 🎯 Learning Intentions
+
+**WALT** (We Are Learning To):
+- Analyse the themes and language of a classic New Zealand poem.
+- Understand the concept of a poem's tone and how it can change.
+
+**WALA** (We Are Learning About):
+- The poem "Not Understood" by Thomas Bracken.
+- How structure, rhyme, and repetition contribute to a poem's meaning.
+
+**Success Criteria**:
+- [ ] I can explain the central theme of "Not Understood".
+- [ ] I can identify the rhyme scheme and the effect of repetition in the poem.
+- [ ] I can describe the change in tone in the final stanza.
+
+---
+
+## 📚 Learning Content
+
+### Context
+This resource explores poetry analysis through "Not Understood" by Thomas Bracken (1843-1898), a well-known poet in New Zealand's history. The poem explores the universal feeling of being misunderstood and the importance of empathy.
+
+**Not Understood**
+By Thomas Bracken
+
+Not understood. We move along asunder,  
+Our paths grow wider as the seasons creep  
+Along the years; we marvel and we wonder  
+Why life is life? and then we fall asleep,  
+Not understood.  
+
+Not understood. We gather false impressions,  
+And hug them closer as the years go by,  
+Till virtues often seem to us transgressions;  
+And thus men rise and fall, and live and die,  
+Not understood.  
+
+Not understood. Poor souls with stunted vision  
+Oft measure giants by their narrow gauge;  
+The poisoned shafts of falsehood and derision  
+Are oft impelled 'gainst those who mould the age,  
+Not understood.  
+
+Not understood. The secret springs of action,  
+Which lie beneath the surface and the show,  
+Are disregarded; with self-satisfaction  
+We judge our neighbours, and they often go,  
+Not understood.  
+
+Not understood. How trifles often change us!  
+The thoughtless sentence or the fancied slight  
+Destroy long years of friendship and estrange us,  
+And on our souls there falls a freezing blight,  
+Not understood.  
+
+Not understood. How many breasts are aching  
+For lack of sympathy! Ah! day by day,  
+How many cheerless, lonely hearts are breaking!  
+How many noble spirits pass away!  
+Not understood.  
+
+Oh, God! that men would see a little clearer,  
+Or judge less harshly where they cannot see;  
+Oh, God! that men would draw a little nearer  
+To one another, they'd be nearer Thee,  
+And understood.
+
+### Worked Example
+Let's analyse the first stanza:
+
+> Not understood. We move along asunder,  
+> Our paths grow wider as the seasons creep  
+> Along the years; we marvel and we wonder  
+> Why life is life? and then we fall asleep,  
+> Not understood.
+
+1.  **Structure and Rhyme**: The stanza has five lines (a quintain). The rhyme scheme is AABBA. The first, second, and fifth lines rhyme, and the third and fourth lines rhyme.
+2.  **Repetition**: The phrase "Not understood" is repeated at the beginning and end of the stanza. This emphasizes the central theme.
+3.  **Meaning**: The stanza suggests that as people go through life, they grow apart ("our paths grow wider") and don't truly understand each other. They go through the motions of life ("we marvel and we wonder... and then we fall asleep") without ever achieving real connection.
+
+### Practice
+- Choose another stanza and analyse its meaning.
+- How does the final stanza change the tone of the poem?
+- What is the poet's final message to the reader?
+
+---
+
+## 🏃‍♀️ Activities
+
+### Activity 1: Modern Misunderstandings
+**Instructions**: In small groups, discuss the following questions:
+1.  The poem was written over 100 years ago. Are the ideas still relevant today? Why or why not?
+2.  Think about modern communication (e.g., social media, texting). Does it make it easier or harder to be understood?
+3.  Re-write one stanza of the poem in modern, everyday language.
+**Extension**: Create a short comic strip or a meme that illustrates the main idea of one of the stanzas.
+
+### Activity 2: Local Connection
+**Instructions**: Think about a time when you felt misunderstood, or when you misunderstood someone else.
+- Write a short, anonymous paragraph about the experience (you don't need to share personal details).
+- As a class, share the anonymous paragraphs and discuss the common themes and feelings that arise.
+**Success criteria**: Your reflection is thoughtful and contributes to a respectful class discussion about empathy.
+
+---
+
+## 🤔 Reflection & Assessment
+
+**Exit Ticket**:
+1.  What is the main message of the poem "Not Understood"?
+2.  What is one literary device the poet uses to get his message across?
+3.  What is one thing you can do to be more understanding of others?
 
 ---
 
