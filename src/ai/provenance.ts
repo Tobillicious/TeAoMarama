@@ -24,7 +24,7 @@ class ProvenanceManager {
       id,
       episodes: [],
       created: new Date().toISOString(),
-      lastUpdated: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
     };
     this.chains.set(id, chain);
     return chain;
@@ -50,9 +50,9 @@ export async function writeEpisode(chainId: string, episode: EpisodeData): Promi
   if (!manager.getChain(chainId)) {
     manager.createChain(chainId);
   }
-  
+
   manager.addEpisode(chainId, episode);
-  
+
   // In the future, could write to file or database
   console.log(`[PROVENANCE] ${episode.agent}: ${episode.action}`, episode);
 }
@@ -62,5 +62,5 @@ export function getProvenanceChain(chainId: string): ProvenanceChain | undefined
 }
 
 export function getAllChains(): ProvenanceChain[] {
-  return Array.from((manager as { chains: Map<string, unknown> }).chains.values());
+  return Array.from((manager as any).chains.values());
 }
