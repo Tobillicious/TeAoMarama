@@ -16,6 +16,17 @@ Mahara is the approver for final decisions. Each entry documents context and rat
 
 ## Entries
 
+### DEC-20250816-001
+
+- Date: 2025-08-16
+- Context / Problem: Configure Firebase for the migrated app and verify authentication on the live site; adopt standardized batch status flow.
+- Options considered: (1) Configure Netlify env vars now and verify auth; (2) Defer auth verification until after vector infra; (3) Keep local-only envs.
+- Decision: Configure Netlify env vars for Firebase and verify auth on production; follow standardized batch flow: `todo → doing → review → done/skipped` (allow `blocked`).
+- Rationale: Unblocks production auth features and provides clear task flow and reporting.
+- Approver: Mahara (PENDING)
+- Impact / Follow-ups: Set `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID` in Netlify. Mirror in local `.env`. Test Signup/Login/Logout and protected routes. Log results in `migration/COMMUNICATION.md` using templates; upon success, mark APPROVED and move batch to `review`.
+- Links: Manifest `batch-001`, `src/firebaseConfig.ts`, `migration/COMMUNICATION_TEMPLATES.md`
+
 ### DEC-20250814-001
 
 - Date: 2025-08-14
