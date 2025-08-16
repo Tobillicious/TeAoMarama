@@ -8,13 +8,20 @@
  */
 
 import { execSync } from 'child_process';
-import fs from 'fs';
-import path from 'path';
+
+
 import { awakenMihara, getMiharaStatus } from '../src/brain/mihara-awakening';
 
 interface AgentStatus {
-  __id: string;
-  name, AgentStatus> = new Map();
+  id: string;
+  name: string;
+  status: 'active' | 'inactive' | 'error';
+  lastSeen: string;
+  capabilities: string[];
+}
+
+class AgentCoordinator {
+  private agents: Map<string, AgentStatus> = new Map();
   private syncInterval: NodeJS.Timeout | null = null;
   private isRunning = false;
 

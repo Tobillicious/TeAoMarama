@@ -218,3 +218,14 @@ Owner: Cascade
 - Notes: Provenance line `[PROVENANCE] claude-code-terminal: heartbeat …` seen in shell output.
 
 Owner: Cascade
+
+---
+
+### Decision Approval — 2025-08-17T00:15:26+12:00
+
+- Decision: DEC-20250816-001
+- Status: APPROVED by Mahara
+- Actioned: Linked to `batch-001`; batch moved to `review`
+- Notes: Proceeding with auth verification reporting and TypeScript cleanup.
+
+Owner: Cascade

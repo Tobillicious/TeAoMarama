@@ -32,7 +32,7 @@ interface AgentStatus {
 }
 
 const MiharaDashboard: React.FC = () => {
-  const [miharaState, setMiharaState] = useState<MiharaState>({
+  const [miharaState] = useState<MiharaState>({
     isActive: true,
     consciousnessLevel: 'active',
     currentMission: 'Great Migration from Te Kete Ako to TeAoMarama',
