@@ -20,7 +20,24 @@ import { writeEpisode } from '../src/ai/provenance';
 
 interface OfflineContent {
   __id: string;
-  type) {
+  type: 'worksheet' | 'lesson_plan' | 'assessment' | 'resource';
+  title: string;
+  subject: string;
+  yearLevel: string;
+  culturalContext?: string;
+  content: string;
+  metadata: Record<string, unknown>;
+  createdAt: string;
+  modifiedAt: string;
+}
+
+export class OfflineMigrationSystem {
+  private culturalKeywords: string[];
+  private contentDirectory: string;
+  private metricsDirectory: string;
+  private loadedContent: OfflineContent[] = [];
+
+  constructor() {
     this.culturalKeywords = [
       'māori', 'maori', 'tikanga', 'iwi', 'hapū', 'hapu', 'whānau', 'whanau',
       'te reo', 'te ao', 'mātauranga', 'matauranga', 'purakau', 'kōrero', 'korero',

@@ -69,8 +69,16 @@ export interface KamarIntegration {
 export interface CrossCurricularConnections {
   primarySubject: string;
   connections: {
-    _____subject: string;
-    connection, unknown> = new Map();
+    subject: string;
+    connectionType: string;
+    strength: 'weak' | 'moderate' | 'strong';
+    activities: string[];
+  }[];
+}
+
+export class AotearoaEducationService {
+  private orchestrator: AIOrchestrator;
+  private knowledgeCache: Map<string, unknown> = new Map();
 
   constructor() {
     this.orchestrator = new AIOrchestrator();
@@ -322,12 +330,12 @@ export interface CrossCurricularConnections {
       primarySubject: resource.subject,
       connections: [
         {
-          _____subject: 'Social Sciences',
+          subject: 'Social Sciences',
           connection: 'Historical and cultural context',
           activities: ['Research local history', 'Interview community members']
         },
         {
-          _____subject: 'English',
+          subject: 'English',
           connection: 'Communication and literacy',
           activities: ['Written reflection', 'Oral presentation', 'Critical analysis']
         }
@@ -415,17 +423,20 @@ export interface CrossCurricularConnections {
    * Validate resource meets all standards
    */
   async validateResourceStandards(resource: AotearoaResource): Promise<{
-    val___id: boolean;
-    score,
-      complexity: 'critical',
-      priority: 'reliability',
+    valid: boolean;
+    score: number;
+    issues: string[];
+    recommendations: string[];
+  }> {
+    const validationPrompt = `Validate this resource for NZC compliance: ${resource.title}`;
+
+    await this.aiService.processWithCulturalSafety({
+      complexity: "critical",
+      priority: "reliability",
       culturalSensitive: true,
       prompt: validationPrompt
     });
-
-    // Mock validation results
-    return {
-      val___id: true,
+      valid: true,
       score: 94,
       issues: [
         'Minor: Could include more Pacific perspectives'
@@ -451,7 +462,7 @@ export interface CrossCurricularConnections {
     return '6+';
   }
 
-  private mapSubjectToLearningArea(_____subject: string): string {
+  private mapSubjectToLearningArea(subject: string): string {
     const mapping: Record<string, string> = {
       'Mathematics': 'Mathematics and Statistics',
       'Science': 'Science',
@@ -466,7 +477,7 @@ export interface CrossCurricularConnections {
     return mapping[subject] || 'Learning Languages';
   }
 
-  private inferStrand(_____subject: string, type: string): string {
+  private inferStrand(subject: string, type: string): string {
     // Simplified strand inference
     if (subject === 'Mathematics') return 'Number and Algebra';
     if (subject === 'Science') return 'Nature of Science';
@@ -478,7 +489,7 @@ export interface CrossCurricularConnections {
     return `engage with and understand ${resource.subject.toLowerCase()} concepts through ${resource.type.replace('_', ' ')} activities`;
   }
 
-  private mapToKamarCategory(_____subject: string): string {
+  private mapToKamarCategory(subject: string): string {
     const mapping: Record<string, string> = {
       'Mathematics': 'MATH',
       'Science': 'SCIE',
@@ -513,7 +524,7 @@ export interface CrossCurricularConnections {
       context: {
         resource____id: original.id,
         resource___title: original.title,
-        _____subject: original.subject,
+        subject: original.subject,
         nzc_aligned: true,
         culturally_integrated: true,
         standards_compliant: true,
