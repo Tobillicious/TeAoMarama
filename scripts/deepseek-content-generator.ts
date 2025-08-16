@@ -95,19 +95,34 @@ Include appropriate cultural connections to Te Ao Māori.
 Ensure content is culturally safe and authentic.
 `;
 
-    const prompt = `Create a ${type} for ${subject} Year ${yearLevel} on the topic: ${topic}
+    const prompt = `Create a DEPTH-FOCUSED ${type} for ${subject} Year ${yearLevel} on the topic: ${topic}
+
+CRITICAL: IMPLEMENT DEPTH OVER BREADTH PARADIGM
+- Create DEEP understanding rather than surface coverage
+- Build on previous learning with explicit connections
+- Design for spiral curriculum - students will return to this concept multiple times
+- Focus on WHY concepts matter, not just WHAT they are
+- Create transfer opportunities to other domains
+- Use cultural knowledge as deep anchor points
 
 Requirements:
-- Educationally sound and curriculum-aligned
-- Culturally responsive and inclusive
-- Age-appropriate for Year ${yearLevel}
-- Include clear learning objectives
-- Provide engaging activities
-- Include assessment criteria if applicable
-- Use accessible language
-- Include Te Reo Māori where appropriate
+- DEPTH: Progressive complexity building on solid foundations
+- CONNECTIONS: Explicit links to previous learning and future applications
+- TRANSFER: Applications across contexts and domains
+- CULTURAL ANCHORS: Deep connections to Māori worldview and practices
+- SPIRAL DESIGN: Prepare for students to revisit this at higher levels
+- UNDERSTANDING: Focus on conceptual grasp over memorization
+- Age-appropriate for Year ${yearLevel} with extension challenges
 
-Format as markdown with proper structure and headings.`;
+Include:
+- "Previous Learning Connections" section
+- "Deep Investigation" core activities
+- "Transfer Challenges" for applying understanding
+- "Future Learning Pathways" showing where this leads
+- "Cultural Wisdom Connections" section
+- Assessment focused on understanding transfer
+
+Format as markdown with depth-focused structure.`;
 
     try {
       const content = await this.generateContent(prompt, culturalContext);
