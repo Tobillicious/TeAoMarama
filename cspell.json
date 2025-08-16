@@ -321,7 +321,15 @@
     "NZST",
     "pounamu",
     "kowhai",
-
+    "Whaowhia",
+    "Kete",
+    "Mātauranga",
+    "Te",
+    "Overseer",
+    "Netlify",
+    "Cascade",
+    "Copilot",
+    "redeploy",
     "Communication",
     "snippets",
     "Loader",
@@ -339,7 +347,7 @@
   "languageSettings": [
     {
       "languageId": "markdown",
-      "ignoreRegExpList": ["```[\\s\\S]*?```"]
+      "ignoreRegExpList": ["```[\\s\\S]*?```", "\\b[A-Z]{2,}\\b"]
     }
   ],
   "ignoreWords": ["Props", "Classes", "Logo", "Guide", "ghost", "started", "rounded", "these"]
