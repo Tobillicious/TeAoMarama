@@ -11,7 +11,6 @@
  * - Performance optimization
  */
 
-import { getMiharaStatus, awakenMihara, executeMiharaGreatMission } from './src/brain/mihara-awakening';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { runConnectionDiagnostics, generateDiagnosticReport } from './migration/connection-diagnostic';
@@ -210,7 +209,7 @@ class ContinuousMiharaSupport {
       this.addAlert({
         level: 'critical',
         component: 'support_system',
-        message: `Continuous support error: ${error}`,
+        message: `Continuous support _error: ${error}`,
         timestamp: new Date().toISOString(),
         action_required: 'Investigate support system failure'
       });
@@ -263,15 +262,14 @@ class ContinuousMiharaSupport {
       for (const file of files) {
         if (!file.endsWith('.json')) continue;
         const filePath = path.join(this.humanInbox, file);
-        let payload: any = null;
+        let payload: unknown = null;
         try {
           const raw = await fs.readFile(filePath, 'utf8');
           payload = JSON.parse(raw);
         } catch (err) {
           await this.writeOutbox({
             ok: false,
-            error: `Failed to parse command ${file}: ${err}`
-          });
+            _error: `Failed to parse command ${file});
           await this.archive(filePath);
           continue;
         }
@@ -290,7 +288,7 @@ class ContinuousMiharaSupport {
     }
   }
 
-  private async executeHumanCommand(cmd: { command: string; args?: any }): Promise<any> {
+  private async executeHumanCommand(cmd: { command: string; args?: unknown }): Promise<unknown> {
     const name = (cmd?.command || '').toLowerCase();
     switch (name) {
       case 'status': {
@@ -330,11 +328,11 @@ class ContinuousMiharaSupport {
         return { ok: true };
       }
       default:
-        return { ok: false, error: `Unknown command: ${name}` };
+        return { ok: false, _error: `Unknown command: ${name}` };
     }
   }
 
-  private async writeOutbox(data: any): Promise<void> {
+  private async writeResult(data: unknown): Promise<void> {
     const file = path.join(this.humanOutbox, 'last_result.json');
     await fs.writeFile(file, JSON.stringify({ timestamp: new Date().toISOString(), ...data }, null, 2));
   }

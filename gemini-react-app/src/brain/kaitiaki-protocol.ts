@@ -24,7 +24,7 @@ export interface DiplomaticMessage {
   content: {
     subject: string;
     body: string;
-    data?: any;
+    data?: unknown;
   };
   culturalProtocol: 'formal' | 'collaborative' | 'urgent';
   requiresResponse: boolean;

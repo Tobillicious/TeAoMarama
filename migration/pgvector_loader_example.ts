@@ -110,7 +110,7 @@ async function ensureSchema() {
   `);
 }
 
-async function upsertResource(resource: any) {
+async function upsertResource(resource: unknown) {
   if (DRY_RUN_NO_FIREBASE || !db) {
     console.log('[dry-run] upsertResource', resource.resourceId);
     return;
@@ -133,11 +133,11 @@ async function upsertChunk(resourceId: string, chunkIndex: number, text: string,
     `INSERT INTO ${RESOURCE_CHUNKS_TABLE} (resource_id, chunk_index, text, source_url, embedding)
      VALUES ($1, $2, $3, $4, $5)
      ON CONFLICT (resource_id, chunk_index) DO UPDATE SET text = EXCLUDED.text, source_url = EXCLUDED.source_url, embedding = EXCLUDED.embedding`,
-    params as any
+    params as unknown
   );
 }
 
-async function processOne(payload: any) {
+async function processOne(payload: unknown) {
   const resourceId = stableResourceId(payload.canonicalUrl || payload.sourceUrl || '', payload.title || '');
   const resource = {
     resourceId,

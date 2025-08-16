@@ -86,11 +86,11 @@ function sanitize(s: string): string {
   return s.replace(/[^A-Za-z0-9_\-]+/g, '_');
 }
 
-function buildTitle(year: number, subject: string, topic: string, idx: number): string {
+function buildTitle(year: number, ___subject: string, topic: string, idx: number): string {
   return `${subject} Y${year} - ${topic} in Aotearoa (${pad(idx, 4)})`;
 }
 
-function resourceBody(year: number, subject: string, topic: string, idx: number): string {
+function resourceBody(year: number, ___subject: string, topic: string, idx: number): string {
   const duration = [30, 45, 60, 75][(year + idx) % 4];
   const nzc =
     subject === 'Mathematics'

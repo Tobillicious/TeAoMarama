@@ -39,7 +39,7 @@ export interface RiskAssessment {
  */
 export class TeKeteAkoMigrationBrain {
   private insights: MigrationInsight[] = [];
-  private culturalKnowledge: Map<string, any> = new Map();
+  private culturalKnowledge: Map<string, unknown> = new Map();
 
   constructor() {
     this.initializeCulturalKnowledge();

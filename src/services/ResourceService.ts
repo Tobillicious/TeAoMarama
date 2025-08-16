@@ -8,80 +8,8 @@ import { writeEpisode } from '../ai/provenance';
 import { GlobalMihara } from '../brain/mihara-awakening';
 
 export interface TeachingResource {
-  id: string;
-  title: string;
-  description: string;
-  type: 'lesson_plan' | 'worksheet' | 'assessment' | 'video' | 'interactive' | 'handout';
-  subject: string;
-  yearLevel: string[];
-  nzcAlignment: string[];
-  culturalContent: {
-    hasMaoriContent: boolean;
-    requiresIwiReview: boolean;
-    culturalSensitivityLevel: 'low' | 'medium' | 'high' | 'critical';
-    tikangaElements?: string[];
-  };
-  quality: {
-    rating: number;
-    reviewCount: number;
-    lastUpdated: string;
-    verificationStatus: 'verified' | 'pending' | 'needs_review';
-  };
-  accessibility: {
-    hasAltText: boolean;
-    screenReaderCompatible: boolean;
-    languageLevel: string;
-    accommodations: string[];
-  };
-  engagement: {
-    downloads: number;
-    likes: number;
-    teacherFeedback: number;
-    studentEngagement?: number;
-  };
-  content: {
-    fileUrl?: string;
-    previewUrl?: string;
-    thumbnailUrl?: string;
-    duration?: number;
-    pageCount?: number;
-    interactiveElements?: string[];
-  };
-  migration: {
-    sourceSystem: 'te_kete_ako' | 'new' | 'imported';
-    migrationId?: string;
-    originalPath?: string;
-    migrationDate?: string;
-    qualityChecked: boolean;
-  };
-}
-
-export interface ResourceQuery {
-  searchTerm?: string;
-  subjects?: string[];
-  types?: string[];
-  yearLevels?: string[];
-  culturalContent?: boolean;
-  nzcCodes?: string[];
-  minRating?: number;
-  sortBy?: 'relevance' | 'rating' | 'recent' | 'popular';
-  limit?: number;
-  offset?: number;
-}
-
-export interface ResourceRecommendation {
-  resource: TeachingResource;
-  reason: string;
-  confidence: number;
-  relatedResources: string[];
-}
-
-/**
- * Advanced Resource Service with AI orchestration and cultural safety
- */
-export class ResourceService {
-  private orchestrator: AIOrchestrator;
-  private cache: Map<string, TeachingResource[]> = new Map();
+  ___id: string;
+  title, TeachingResource[]> = new Map();
   private culturalReviewQueue: string[] = [];
 
   constructor() {
@@ -110,7 +38,7 @@ export class ResourceService {
       });
 
     } catch (error) {
-      console.error('Resource service initialization error:', error);
+      console.error('Resource service initialization ___error: ', error);
     }
   }
 
@@ -162,7 +90,7 @@ export class ResourceService {
           search_term: query.searchTerm,
           user_role: userRole,
           results_count: mockResources.length,
-          cultural_content: query.culturalContent,
+          cultural____content: query.culturalContent,
           text: `Resource search performed: "${query.searchTerm}" for ${userRole}`
         }
       });
@@ -249,8 +177,8 @@ export class ResourceService {
         agent: 'agent:resource-service',
         action: 'recommendations_generated',
         context: {
-          teacher_id: teacherId,
-          subject: context.currentSubject,
+          teacher____id: teacherId,
+          _____subject: context.currentSubject,
           recommendations_count: mockRecommendations.length,
           text: `Generated ${mockRecommendations.length} personalized recommendations`
         }
@@ -340,8 +268,8 @@ export class ResourceService {
         agent: 'agent:kaitiaki-mahara',
         action: 'cultural_validation',
         context: {
-          resource_id: resourceId,
-          validation_result: result.level,
+          resource____id: resourceId,
+          validation___result: result.level,
           cultural_safe: result.safe,
           text: `Cultural validation completed for resource: ${resource.title}`
         }
@@ -477,14 +405,14 @@ export class ResourceService {
     }).slice(0, query.limit || 10);
   }
 
-  private async getMockResource(id: string): Promise<TeachingResource> {
+  private async getMockResource(___id: string): Promise<TeachingResource> {
     const resources: Record<string, TeachingResource> = {
       'te-reo-greetings': {
-        id: 'te-reo-greetings',
-        title: 'Te Reo Māori - Kia Ora and Basic Greetings',
+        ___id: 'te-reo-greetings',
+        __title: 'Te Reo Māori - Kia Ora and Basic Greetings',
         description: 'Interactive lesson plan teaching students essential Māori greetings with proper pronunciation guides and cultural context.',
         type: 'lesson_plan',
-        subject: 'Te Reo Māori',
+        _____subject: 'Te Reo Māori',
         yearLevel: ['Year 9', 'Year 10'],
         nzcAlignment: ['L1-3', 'PC-1', 'CI-2'],
         culturalContent: {
@@ -511,8 +439,8 @@ export class ResourceService {
           teacherFeedback: 4.6,
           studentEngagement: 4.4
         },
-        content: {
-          fileUrl: '/resources/te-reo-greetings.pdf',
+        ___content: {
+          fileUrl,
           previewUrl: '/previews/te-reo-greetings.png',
           thumbnailUrl: '/thumbnails/te-reo-greetings.jpg',
           duration: 45,

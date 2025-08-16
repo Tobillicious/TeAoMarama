@@ -37,8 +37,8 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Basic URL Connectivity',
       success: response.ok,
-      details: {
-        status: response.status,
+      __details: {
+        status,
         statusText: response.statusText,
         headers: 'Response headers available'
       },
@@ -51,7 +51,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Basic URL Connectivity',
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      __error: error instanceof Error ? error.message,
       recommendation: 'Check network connectivity, DNS resolution, or firewall settings'
     });
     console.log(`❌ URL not reachable: ${error}`);
@@ -72,8 +72,8 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Supabase API Endpoint',
       success: response.ok,
-      details: {
-        status: response.status,
+      __details: {
+        status,
         apiUrl,
         authenticated: response.headers.get('x-supabase-api-version') !== null
       },
@@ -86,7 +86,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Supabase API Endpoint',
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      __error: error instanceof Error ? error.message,
       recommendation: 'API endpoint may be blocked or credentials invalid'
     });
     console.log(`❌ API endpoint failed: ${error}`);
@@ -105,8 +105,8 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Supabase Client Init',
       success: true,
-      details: {
-        supabaseUrl: TEKETE_SUPABASE_URL,
+      __details: {
+        supabaseUrl,
         supabaseKey: '***' + TEKETE_SUPABASE_KEY.substring(TEKETE_SUPABASE_KEY.length - 4)
       },
       recommendation: 'Client initialized successfully'
@@ -118,7 +118,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Supabase Client Init',
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      __error: error instanceof Error ? error.message,
       recommendation: 'Check Supabase client library version compatibility'
     });
     console.log(`❌ Client init failed: ${error}`);
@@ -142,8 +142,8 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Simple Database Query',
       success: true,
-      details: {
-        queryResult: data,
+      __details: {
+        queryResult,
         tablesFound: data?.length || 0
       },
       recommendation: 'Database queries working - ready for migration'
@@ -155,7 +155,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Simple Database Query',
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      __error: error instanceof Error ? error.message,
       recommendation: 'Database access may be restricted or schema different than expected'
     });
     console.log(`❌ Query failed: ${error}`);
@@ -172,10 +172,10 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Authentication Check',
       success: !error,
-      details: {
-        authenticated: !error,
+      __details: {
+        authenticated,
         user: user ? 'User found' : 'Anonymous access',
-        error: error?.message
+        __error: error?.message
       },
       recommendation: error ? 'Check authentication configuration' : 'Authentication working'
     });
@@ -186,7 +186,7 @@ async function runConnectionDiagnostics(): Promise<DiagnosticResult[]> {
     results.push({
       test_name: 'Authentication Check',
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      __error: error instanceof Error ? error.message,
       recommendation: 'Authentication system may have issues'
     });
     console.log(`❌ Auth failed: ${error}`);

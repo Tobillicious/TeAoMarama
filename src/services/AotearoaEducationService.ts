@@ -69,52 +69,8 @@ export interface KamarIntegration {
 export interface CrossCurricularConnections {
   primarySubject: string;
   connections: {
-    subject: string;
-    connection: string;
-    activities: string[];
-  }[];
-  realWorldApplications: string[];
-  futurePathways: string[];
-}
-
-export interface AotearoaResource extends TeachingResource {
-  nzcAlignmentDetailed: NZCAlignment;
-  nzcAlignment: string[]; // Keep original for compatibility
-  culturalIntegration: CulturalIntegration;
-  teachingStandards: TeachingCouncilStandards;
-  kamarIntegration: KamarIntegration;
-  crossCurricular: CrossCurricularConnections;
-  contextualRelevance: {
-    currentEvents: string[];
-    localCommunity: string[];
-    nationalPriorities: string[];
-    globalConnections: string[];
-  };
-  printOptimized: {
-    a4Compatible: boolean;
-    pageBreakOptimized: boolean;
-    printFriendlyColors: boolean;
-    resourceList: string[];
-  };
-}
-
-export interface EducationUpdate {
-  source: 'MoE' | 'TCA' | 'NZQA' | 'ERO' | 'Local';
-  date: string;
-  title: string;
-  impact: 'high' | 'medium' | 'low';
-  summary: string;
-  resourcesAffected: string[];
-  actionRequired: string[];
-}
-
-/**
- * Comprehensive Aotearoa Education Integration Service
- */
-export class AotearoaEducationService {
-  private orchestrator: AIOrchestrator;
-  private educationUpdates: EducationUpdate[] = [];
-  private nzcKnowledgeBase: Map<string, any> = new Map();
+    _____subject: string;
+    connection, unknown> = new Map();
 
   constructor() {
     this.orchestrator = new AIOrchestrator();
@@ -366,12 +322,12 @@ export class AotearoaEducationService {
       primarySubject: resource.subject,
       connections: [
         {
-          subject: 'Social Sciences',
+          _____subject: 'Social Sciences',
           connection: 'Historical and cultural context',
           activities: ['Research local history', 'Interview community members']
         },
         {
-          subject: 'English',
+          _____subject: 'English',
           connection: 'Communication and literacy',
           activities: ['Written reflection', 'Oral presentation', 'Critical analysis']
         }
@@ -392,7 +348,7 @@ export class AotearoaEducationService {
   /**
    * Add contemporary Aotearoa context
    */
-  private async addAotearoaContext(resource: TeachingResource): Promise<any> {
+  private async addAotearoaContext(resource: TeachingResource): Promise<unknown> {
     return {
       currentEvents: [
         'Climate change impacts in NZ',
@@ -420,7 +376,7 @@ export class AotearoaEducationService {
   /**
    * Optimize for classroom printing
    */
-  private async optimizeForClassroomPrinting(resource: TeachingResource): Promise<any> {
+  private async optimizeForClassroomPrinting(resource: TeachingResource): Promise<unknown> {
     return {
       a4Compatible: true,
       pageBreakOptimized: true,
@@ -443,7 +399,7 @@ export class AotearoaEducationService {
       {
         source: 'MoE',
         date: '2025-01-15',
-        title: 'Digital Technologies Curriculum Implementation Update',
+        __title: 'Digital Technologies Curriculum Implementation Update',
         impact: 'high',
         summary: 'New computational thinking requirements for all year levels',
         resourcesAffected: ['Technology', 'Mathematics', 'Science'],
@@ -459,30 +415,8 @@ export class AotearoaEducationService {
    * Validate resource meets all standards
    */
   async validateResourceStandards(resource: AotearoaResource): Promise<{
-    valid: boolean;
-    score: number; // 0-100
-    issues: string[];
-    recommendations: string[];
-  }> {
-    const validationPrompt = `
-    Validate this enhanced educational resource against all Aotearoa education standards:
-
-    Resource: ${resource.title}
-    Subject: ${resource.subject}
-    
-    Check compliance with:
-    1. New Zealand Curriculum requirements
-    2. Teaching Council professional standards
-    3. Cultural safety and Treaty principles
-    4. Ministry of Education expectations
-    5. Contemporary educational research
-    6. Practical classroom usability
-
-    Provide detailed validation report with specific recommendations.
-    `;
-
-    const result = await this.orchestrator.route({
-      type: 'standards_validation',
+    val___id: boolean;
+    score,
       complexity: 'critical',
       priority: 'reliability',
       culturalSensitive: true,
@@ -491,7 +425,7 @@ export class AotearoaEducationService {
 
     // Mock validation results
     return {
-      valid: true,
+      val___id: true,
       score: 94,
       issues: [
         'Minor: Could include more Pacific perspectives'
@@ -517,7 +451,7 @@ export class AotearoaEducationService {
     return '6+';
   }
 
-  private mapSubjectToLearningArea(subject: string): string {
+  private mapSubjectToLearningArea(_____subject: string): string {
     const mapping: Record<string, string> = {
       'Mathematics': 'Mathematics and Statistics',
       'Science': 'Science',
@@ -532,7 +466,7 @@ export class AotearoaEducationService {
     return mapping[subject] || 'Learning Languages';
   }
 
-  private inferStrand(subject: string, type: string): string {
+  private inferStrand(_____subject: string, type: string): string {
     // Simplified strand inference
     if (subject === 'Mathematics') return 'Number and Algebra';
     if (subject === 'Science') return 'Nature of Science';
@@ -544,7 +478,7 @@ export class AotearoaEducationService {
     return `engage with and understand ${resource.subject.toLowerCase()} concepts through ${resource.type.replace('_', ' ')} activities`;
   }
 
-  private mapToKamarCategory(subject: string): string {
+  private mapToKamarCategory(_____subject: string): string {
     const mapping: Record<string, string> = {
       'Mathematics': 'MATH',
       'Science': 'SCIE',
@@ -577,9 +511,9 @@ export class AotearoaEducationService {
       agent: 'agent:aotearoa-education-service',
       action: 'resource_enhanced',
       context: {
-        resource_id: original.id,
-        resource_title: original.title,
-        subject: original.subject,
+        resource____id: original.id,
+        resource___title: original.title,
+        _____subject: original.subject,
         nzc_aligned: true,
         culturally_integrated: true,
         standards_compliant: true,

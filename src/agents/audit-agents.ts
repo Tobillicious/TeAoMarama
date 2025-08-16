@@ -86,7 +86,7 @@ Format: { "issues": [{"severity": "high", "message": "Description", "location": 
     }
   }
 
-  private parseAuditResponse(response: any): { issues: AuditIssue[]; suggestions: string[] } {
+  private parseAuditResponse(response: unknown): { issues: AuditIssue[]; suggestions: string[] } {
     try {
       if (typeof response === 'string') {
         // Try to extract JSON from string response
@@ -163,7 +163,7 @@ Return JSON with specific actionable issues and improvements.
     };
   }
 
-  private parseAuditResponse(response: any): { issues: AuditIssue[]; suggestions: string[] } {
+  private parseAuditResponse(response: unknown): { issues: AuditIssue[]; suggestions: string[] } {
     // Same parsing logic as CSS agent
     try {
       const jsonMatch = typeof response === 'string' ? response.match(/\{.*\}/s) : null;
@@ -231,7 +231,7 @@ Return JSON with performance recommendations.
     };
   }
 
-  private parseAuditResponse(response: any): { issues: AuditIssue[]; suggestions: string[] } {
+  private parseAuditResponse(response: unknown): { issues: AuditIssue[]; suggestions: string[] } {
     try {
       const jsonMatch = typeof response === 'string' ? response.match(/\{.*\}/s) : null;
       const parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : response;
@@ -299,7 +299,7 @@ Return JSON with specific accessibility violations and fixes.
     };
   }
 
-  private parseAuditResponse(response: any): { issues: AuditIssue[]; suggestions: string[] } {
+  private parseAuditResponse(response: unknown): { issues: AuditIssue[]; suggestions: string[] } {
     try {
       const jsonMatch = typeof response === 'string' ? response.match(/\{.*\}/s) : null;
       const parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : response;

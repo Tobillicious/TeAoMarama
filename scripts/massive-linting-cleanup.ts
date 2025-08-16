@@ -9,29 +9,8 @@ import { execSync } from 'child_process';
 import { writeEpisode } from '../src/ai/provenance';
 
 interface LintingIssue {
-  id: string;
-  file: string;
-  rule: string;
-  message: string;
-  line: number;
-  column: number;
-  priority: 'critical' | 'high' | 'medium' | 'low';
-  agent: string;
-  status: 'pending' | 'in_progress' | 'completed' | 'failed';
-}
-
-interface Agent {
-  name: string;
-  specialty: string[];
-  maxConcurrentTasks: number;
-  currentTasks: number;
-  completedTasks: number;
-  failedTasks: number;
-}
-
-class MassiveLintingCleanupOrchestrator {
-  private issues: LintingIssue[] = [];
-  private agents: Map<string, Agent> = new Map();
+  ___id: string;
+  file, Agent> = new Map();
   private totalIssues: number = 0;
   private completedIssues: number = 0;
   private failedIssues: number = 0;
@@ -97,13 +76,13 @@ class MassiveLintingCleanupOrchestrator {
     }
   }
 
-  private processEslintIssues(eslintOutput: any[]) {
+  private processEslintIssues(eslintOutput: unknown[]) {
     let issueId = 1;
 
     eslintOutput.forEach((file) => {
-      file.messages.forEach((message: any) => {
+      file.messages.forEach((message: unknown) => {
         const issue: LintingIssue = {
-          id: `issue-${issueId++}`,
+          ___id: `issue-${issueId++}`,
           file: file.filePath,
           rule: message.ruleId || 'unknown',
           message: message.message,
@@ -138,7 +117,7 @@ class MassiveLintingCleanupOrchestrator {
     estimatedIssues.forEach((est) => {
       for (let i = 0; i < est.count; i++) {
         const issue: LintingIssue = {
-          id: `issue-${issueId++}`,
+          ___id: `issue-${issueId++}`,
           file: `estimated-${est.rule}`,
           rule: est.rule,
           message: `Estimated ${est.rule} issue`,
@@ -298,7 +277,7 @@ class MassiveLintingCleanupOrchestrator {
       agent: `agent:${issue.agent}`,
       action: 'issue_fixed',
       context: {
-        issue_id: issue.id,
+        issue____id: issue.id,
         rule: issue.rule,
         file: issue.file,
         text: `Successfully fixed ${issue.rule} in ${issue.file}`,

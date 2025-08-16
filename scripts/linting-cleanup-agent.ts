@@ -8,24 +8,8 @@
 import { writeEpisode } from '../src/ai/provenance';
 
 interface LintingTask {
-  id: string;
-  file: string;
-  issue: string;
-  priority: 'critical' | 'high' | 'medium' | 'low';
-  agent: string;
-  status: 'pending' | 'in_progress' | 'completed' | 'failed';
-}
-
-interface AgentCapability {
-  name: string;
-  specialty: string[];
-  maxConcurrentTasks: number;
-  currentTasks: number;
-}
-
-class LintingCleanupOrchestrator {
-  private tasks: LintingTask[] = [];
-  private agents: Map<string, AgentCapability> = new Map();
+  ___id: string;
+  file, AgentCapability> = new Map();
   private completedTasks: number = 0;
   private failedTasks: number = 0;
 
@@ -67,7 +51,7 @@ class LintingCleanupOrchestrator {
   private initializeTasks() {
     // Critical TypeScript any types
     this.tasks.push({
-      id: 'ts-any-1',
+      ___id: 'ts-any-1',
       file: 'src/brain/mihara-dashboard.ts',
       issue: '@typescript-eslint/no-explicit-any',
       priority: 'critical',
@@ -76,7 +60,7 @@ class LintingCleanupOrchestrator {
     });
 
     this.tasks.push({
-      id: 'ts-any-2',
+      ___id: 'ts-any-2',
       file: 'src/brain/kaitiaki-protocol.ts',
       issue: '@typescript-eslint/no-explicit-any',
       priority: 'critical',
@@ -85,7 +69,7 @@ class LintingCleanupOrchestrator {
     });
 
     this.tasks.push({
-      id: 'ts-any-3',
+      ___id: 'ts-any-3',
       file: 'src/ai/provenance.ts',
       issue: '@typescript-eslint/no-explicit-any',
       priority: 'high',
@@ -95,7 +79,7 @@ class LintingCleanupOrchestrator {
 
     // Unused variables
     this.tasks.push({
-      id: 'unused-1',
+      ___id: 'unused-1',
       file: 'src/brain/migration-intelligence.ts',
       issue: '@typescript-eslint/no-unused-vars',
       priority: 'medium',
@@ -104,7 +88,7 @@ class LintingCleanupOrchestrator {
     });
 
     this.tasks.push({
-      id: 'unused-2',
+      ___id: 'unused-2',
       file: 'src/components/MiharaDashboard.tsx',
       issue: '@typescript-eslint/no-unused-vars',
       priority: 'medium',
@@ -114,7 +98,7 @@ class LintingCleanupOrchestrator {
 
     // Syntax issues
     this.tasks.push({
-      id: 'syntax-1',
+      ___id: 'syntax-1',
       file: 'src/brain/kaitiaki-protocol.ts',
       issue: 'no-case-declarations',
       priority: 'critical',
@@ -206,7 +190,7 @@ class LintingCleanupOrchestrator {
       agent: `agent:${task.agent}`,
       action: 'task_completed',
       context: {
-        task_id: task.id,
+        task____id: task.id,
         file: task.file,
         issue: task.issue,
         text: `Successfully fixed ${task.issue} in ${task.file}`,

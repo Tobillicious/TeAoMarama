@@ -150,8 +150,8 @@ class OverseerDirectFix {
 
       // Fix unused variable declarations
       newContent = newContent.replace(
-        /const\s+\{\s*data:\s*testQuery,\s*error:\s*testError\s*\}\s*=/g,
-        'const { error: testError } =',
+        /const\s+\{\s*data:\s*testQuery,\s*___error: \s*testError\s*\}\s*=/g,
+        'const { ___error: testError } =',
       );
 
       if (newContent !== content) {

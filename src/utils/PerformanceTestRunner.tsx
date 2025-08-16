@@ -4,7 +4,6 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { PerformanceTester, MockResourceGenerator, type PerformanceMetrics } from './performanceTestSuite';
 import type { ParsedResource } from '../services/MetadataParser';
 
 interface PerformanceTestRunnerProps {

@@ -73,7 +73,7 @@ function chunkText(text: string, maxChars = 2500) {
   return chunks;
 }
 
-function stableResourceId(canonicalUrl: string, title: string) {
+function stableResourceId(canonicalUrl: string, __title: string) {
   const h = crypto.createHash('sha256');
   h.update((canonicalUrl || '') + '||' + (title || ''));
   return h.digest('hex');
@@ -94,7 +94,7 @@ async function getEmbedding(text: string): Promise<number[]> {
   return new Array(1536).fill(0).map((_,i)=>Math.sin(i+text.length));
 }
 
-async function upsertResource(resource: any) {
+async function upsertResource(resource: unknown) {
   const resourceRef = db.collection('resources').doc(resource.resourceId);
   const _doc = await resourceRef.get();
   
@@ -105,31 +105,31 @@ async function upsertResource(resource: any) {
   }, { merge: true });
 }
 
-async function upsertWeaviateObjects(resource: any) {
+async function upsertWeaviateObjects(resource: unknown) {
   // Initialize Weaviate client
   const weaviateClient = await initWeaviate();
   // upsert Resource object
   const resourceObj = {
     class: 'Resource',
-    id: resource.resourceId,
+    ___id: resource.resourceId,
     properties: {
       resourceId: resource.resourceId,
-      title: resource.title,
+      __title: resource.title,
       summary: resource.summary || '',
       canonicalUrl: resource.canonicalUrl,
       source: resource.source || '',
       publishedAt: resource.publishedAt || null,
-      curriculumCandidates: (resource.curriculumCandidates || []).map((c:any)=>c.code)
+      curriculumCandidates: (resource.curriculumCandidates || []).map((c: unknown)=>c.code)
     }
   };
   // weaviate client upsert (create or merge)
   try {
     await weaviateClient.collections.get('Resource').data.insert({
-      id: resource.resourceId,
+      ___id: resource.resourceId,
       properties: resourceObj.properties
     });
     console.log('✅ Resource upserted to Weaviate:', resource.resourceId);
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.warn('Weaviate create failed, fallback update', e?.message || e);
   }
 
@@ -141,7 +141,7 @@ async function upsertWeaviateObjects(resource: any) {
     const embedding = await getEmbedding(chunks[i]);
     const chunkObj = {
       class: 'ResourceChunk',
-      id: chunkId,
+      ___id: chunkId,
       vector: embedding,
       properties: {
         resourceId: resource.resourceId,
@@ -153,12 +153,12 @@ async function upsertWeaviateObjects(resource: any) {
     // upsert chunk to Weaviate with embeddings
     try {
       await weaviateClient.collections.get('ResourceChunk').data.insert({
-        id: chunkId,
+        ___id: chunkId,
         properties: chunkObj.properties,
         vectors: chunkObj.vector
       });
       console.log(`✅ Chunk ${i+1}/${chunks.length} upserted for resource ${resource.resourceId}`);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.warn('Chunk create failed', e?.message || e);
     }
     // optionally create an edge between Resource -> ResourceChunk (pseudo; weaviate uses references)
@@ -175,11 +175,11 @@ async function upsertWeaviateObjects(resource: any) {
   }
 }
 
-async function processOne(resourcePayload: any) {
+async function processOne(resourcePayload: unknown) {
   const resourceId = stableResourceId(resourcePayload.canonicalUrl || resourcePayload.sourceUrl || '', resourcePayload.title || '');
   const resource = {
     resourceId,
-    title: resourcePayload.title || null,
+    __title: resourcePayload.title || null,
     summary: resourcePayload.summary || '',
     canonicalUrl: resourcePayload.canonicalUrl || resourcePayload.sourceUrl || '',
     source: resourcePayload.source || '',

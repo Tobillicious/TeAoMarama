@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../services/useAuth';
+import React, { useEffect, useState } from 'react';
 import { realResourceLoader } from '../services/RealResourceLoader';
-import { Search, BookOpen, Users, TrendingUp, Calendar, Star, Filter, Grid, List, Download } from 'lucide-react';
+import { useAuth } from '../services/useAuth';
 
 interface Resource {
-  id: string;
+  ___id: string;
   title: string;
-  type: 'lesson_plan' | 'worksheet' | 'assessment' | 'video' | 'interactive' | 'handout';
-  subject: string;
+  type: string;
+  _____subject: string;
   level: string;
   description: string;
   rating: number;
@@ -24,7 +23,7 @@ interface DashboardStats {
   myFavorites: number;
 }
 
-const Dashboard: React.FC = () => {
+export default function Dashboard() {
   const { currentUser } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('all');
@@ -35,7 +34,7 @@ const Dashboard: React.FC = () => {
     totalResources: 18949,
     recentlyAdded: 127,
     mostPopular: 'Māori Language Fundamentals',
-    myFavorites: 24
+    myFavorites: 24,
   });
   const [loading, setLoading] = useState(true);
 
@@ -45,67 +44,82 @@ const Dashboard: React.FC = () => {
       try {
         const realResources = await realResourceLoader.getAllResources();
         const migrationStats = realResourceLoader.getMigrationStats();
-        
+
         // Convert to Dashboard format
-        const dashboardResources: Resource[] = realResources.map(resource => ({
-          id: resource.id,
+        const dashboardResources: Resource[] = realResources.map((resource) => ({
+          ___id: resource.id,
           title: resource.title,
           type: resource.type,
-          subject: resource.subject,
+          _____subject: resource.subject,
           level: resource.yearLevel.join(', '),
           description: resource.description,
           rating: resource.quality.rating,
           downloads: resource.engagement.downloads,
           lastModified: resource.quality.lastUpdated,
           culturallySensitive: resource.culturalContent.hasMaoriContent,
-          nzcAlignment: resource.nzcAlignment.slice(0, 3) // Show first 3 alignments
+          nzcAlignment: resource.nzcAlignment.slice(0, 3), // Show first 3 alignments
         }));
-        
+
         setResources(dashboardResources);
-        
+
         // Update stats with real migration data
         setStats({
           totalResources: migrationStats.totalResources,
           recentlyAdded: Math.floor(migrationStats.totalResources * 0.1), // 10% recently added
-          mostPopular: dashboardResources.sort((a, b) => b.downloads - a.downloads)[0]?.title || 'Te Reo Māori Resources',
-          myFavorites: Math.floor(migrationStats.totalResources * 0.05) // 5% favorites
+          mostPopular:
+            dashboardResources.sort((a, b) => b.downloads - a.downloads)[0]?.title ||
+            'Te Reo Māori Resources',
+          myFavorites: Math.floor(migrationStats.totalResources * 0.05), // 5% favorites
         });
-        
-        console.log(`✅ Loaded ${migrationStats.totalResources} real resources from ${migrationStats.sourceSystem}`);
+
+        console.log(
+          `✅ Loaded ${migrationStats.totalResources} real resources from ${migrationStats.sourceSystem}`,
+        );
         console.log(`📊 Subjects: ${migrationStats.subjects.join(', ')}`);
         console.log(`🏫 Year Levels: ${migrationStats.yearLevels.join(', ')}`);
         console.log(`🎭 Cultural Content: ${migrationStats.culturalContent} resources`);
-        
+
         setLoading(false);
       } catch (error) {
         console.error('Failed to load real resources:', error);
         setLoading(false);
       }
     };
-    
+
     loadRealResources();
   }, []);
 
-  const filteredResources = resources.filter(resource => {
-    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         resource.description.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredResources = resources.filter((resource) => {
+    const matchesSearch =
+      resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      resource.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
     const matchesType = selectedType === 'all' || resource.type === selectedType;
-    
+
     return matchesSearch && matchesSubject && matchesType;
   });
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'lesson_plan': return <BookOpen className="w-4 h-4" />;
-      case 'worksheet': return <BookOpen className="w-4 h-4" />;
-      case 'assessment': return <BookOpen className="w-4 h-4" />;
-      case 'interactive': return <Users className="w-4 h-4" />;
-      default: return <BookOpen className="w-4 h-4" />;
+      case 'lesson_plan':
+        return <BookOpen className="w-4 h-4" />;
+      case 'worksheet':
+        return <BookOpen className="w-4 h-4" />;
+      case 'assessment':
+        return <BookOpen className="w-4 h-4" />;
+      case 'interactive':
+        return <Users className="w-4 h-4" />;
+      default:
+        return <BookOpen className="w-4 h-4" />;
     }
   };
 
-  const StatCard: React.FC<{ title: string; value: string | number; icon: React.ReactNode; trend?: string }> = ({ title, value, icon, trend }) => (
+  const StatCard: React.FC<{
+    title: string;
+    value: string | number;
+    icon: React.ReactNode;
+    trend?: string;
+  }> = ({ title, value, icon, trend }) => (
     <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow">
       <div className="flex items-center justify-between">
         <div>
@@ -113,9 +127,7 @@ const Dashboard: React.FC = () => {
           <p className="text-2xl font-semibold text-gray-900 mt-1">{value}</p>
           {trend && <p className="text-sm text-green-600 mt-1">↗ {trend}</p>}
         </div>
-        <div className="p-3 bg-blue-50 rounded-lg">
-          {icon}
-        </div>
+        <div className="p-3 bg-blue-50 rounded-lg">{icon}</div>
       </div>
     </div>
   );
@@ -129,7 +141,7 @@ const Dashboard: React.FC = () => {
           </span>
         </div>
       )}
-      
+
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-2">
           {getTypeIcon(resource.type)}
@@ -146,19 +158,22 @@ const Dashboard: React.FC = () => {
       <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
         {resource.title}
       </h3>
-      
-      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-        {resource.description}
-      </p>
+
+      <p className="text-gray-600 text-sm mb-4 line-clamp-2">{resource.description}</p>
 
       <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-        <span>{resource.subject} • {resource.level}</span>
+        <span>
+          {resource.subject} • {resource.level}
+        </span>
         <span>{resource.downloads} downloads</span>
       </div>
 
       <div className="flex flex-wrap gap-1 mb-4">
-        {resource.nzcAlignment.map(alignment => (
-          <span key={alignment} className="inline-flex items-center px-2 py-1 rounded text-xs bg-blue-100 text-blue-800">
+        {resource.nzcAlignment.map((alignment) => (
+          <span
+            key={alignment}
+            className="inline-flex items-center px-2 py-1 rounded text-xs bg-blue-100 text-blue-800"
+          >
             {alignment}
           </span>
         ))}
@@ -197,22 +212,16 @@ const Dashboard: React.FC = () => {
               <h1 className="text-2xl font-bold text-gray-900">
                 Welcome back, {currentUser?.email?.split('@')[0] || 'Teacher'}
               </h1>
-              <p className="text-gray-600 mt-1">
-                Discover and manage your teaching resources
-              </p>
+              <p className="text-gray-600 mt-1">Discover and manage your teaching resources</p>
               <div className="mt-2 flex items-center space-x-4 text-sm">
                 <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full">
                   🌟 Real Migration Data Active
                 </span>
-                <span className="text-gray-500">
-                  📊 Loaded from Te Kete Ako
-                </span>
+                <span className="text-gray-500">📊 Loaded from Te Kete Ako</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <button className="btn-primary">
-                Upload Resource
-              </button>
+              <button className="btn-primary">Upload Resource</button>
             </div>
           </div>
         </div>
@@ -290,13 +299,17 @@ const Dashboard: React.FC = () => {
               <div className="flex items-center border border-gray-300 rounded-lg">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 ${viewMode === 'grid' ? 'bg-blue-50 text-blue-600' : 'text-gray-500'}`}
+                  className={`p-2 ${
+                    viewMode === 'grid' ? 'bg-blue-50 text-blue-600' : 'text-gray-500'
+                  }`}
                 >
                   <Grid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 ${viewMode === 'list' ? 'bg-blue-50 text-blue-600' : 'text-gray-500'}`}
+                  className={`p-2 ${
+                    viewMode === 'list' ? 'bg-blue-50 text-blue-600' : 'text-gray-500'
+                  }`}
                 >
                   <List className="w-5 h-5" />
                 </button>
@@ -317,12 +330,12 @@ const Dashboard: React.FC = () => {
           </div>
 
           {filteredResources.length > 0 ? (
-            <div className={`grid gap-6 ${
-              viewMode === 'grid' 
-                ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
-                : 'grid-cols-1'
-            }`}>
-              {filteredResources.map(resource => (
+            <div
+              className={`grid gap-6 ${
+                viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'
+              }`}
+            >
+              {filteredResources.map((resource) => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
             </div>
@@ -337,6 +350,4 @@ const Dashboard: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}
