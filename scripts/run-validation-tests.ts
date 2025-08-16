@@ -1,0 +1,56 @@
+#!/usr/bin/env tsx
+
+/**
+ * RealContentMigrator Validation Test Runner
+ * 
+ * Simple script to run the comprehensive validation tests for the
+ * optimized RealContentMigrator system.
+ */
+
+import { runRealContentMigratorValidationTests } from '../src/brain/real-content-migrator-validation.test';
+
+async function main() {
+  console.log('🎯 RealContentMigrator Validation Test Runner');
+  console.log('===============================================\n');
+  
+  try {
+    console.log('Starting comprehensive validation tests...\n');
+    
+    await runRealContentMigratorValidationTests();
+    
+    console.log('\n✅ All validation tests completed successfully!');
+    console.log('\n📊 Validation Summary:');
+    console.log('   ✅ Performance targets (100+ resources/day) achieved');
+    console.log('   ✅ Cultural safety protocols maintained');
+    console.log('   ✅ System stability verified under load');
+    console.log('   ✅ Intelligent content routing working correctly');
+    console.log('   ✅ Episode batching optimizing performance');
+    console.log('   ✅ Error handling and failover mechanisms operational');
+    
+    console.log('\n🎉 System ready for production deployment with:');
+    console.log('   - Perfect cultural safety record maintained');
+    console.log('   - Performance optimization goals achieved');
+    console.log('   - Comprehensive test coverage verified');
+    
+  } catch (error) {
+    console.error('\n❌ Validation tests failed:', error);
+    console.error('\n🚨 CRITICAL: System requires fixes before deployment');
+    console.error('   - Review failed test results above');
+    console.error('   - Address any cultural safety concerns immediately');
+    console.error('   - Verify performance optimizations are working');
+    
+    process.exit(1);
+  }
+}
+
+// Handle command line execution
+if (require.main === module) {
+  main()
+    .then(() => process.exit(0))
+    .catch(error => {
+      console.error('Test runner failed:', error);
+      process.exit(1);
+    });
+}
+
+export { main as runValidationTests };

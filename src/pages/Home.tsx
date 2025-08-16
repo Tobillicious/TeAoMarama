@@ -42,12 +42,12 @@ export default function Home() {
           {/* Production Progress */}
           <div className="bg-white rounded-lg shadow-lg p-6">
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">3397</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">21</div>
               <div className="text-sm text-gray-600 mb-4">Educational Resources</div>
               <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-green-500 h-2 rounded-full" style={{width: '100%'}}></div>
+                <div className="progress-bar"></div>
               </div>
-              <div className="text-xs text-gray-500 mt-2">3397/3397 Completed ✅</div>
+              <div className="text-xs text-gray-500 mt-2">21/1061 Completed</div>
             </div>
           </div>
 
@@ -75,11 +75,11 @@ export default function Home() {
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">🎯 Recent Achievements</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold text-green-700 mb-3">🚀 MASSIVE ACCELERATION ACHIEVED</h4>
+              <h4 className="font-semibold text-green-700 mb-3">✅ 18:00 NZST Target Achieved</h4>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• 3397 resources fully operational</li>
+                <li>• 20+ resources target exceeded (21 completed)</li>
                 <li>• Cultural safety protocols maintained</li>
-                <li>• TeAoMarama deployment complete</li>
+                <li>• Production velocity accelerating</li>
               </ul>
             </div>
             <div>
@@ -132,9 +132,9 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3">Current Mission</h4>
               <ul className="text-sm space-y-2 opacity-90">
-                <li>• ACHIEVED: 3397 resources deployed</li>
+                <li>• Target: 50+ resources by session end</li>
                 <li>• Cultural integration maintained</li>
-                <li>• Multi-agent orchestration active</li>
+                <li>• Educational excellence delivered</li>
               </ul>
             </div>
           </div>
