@@ -1,10 +1,10 @@
 /**
  * Te Kete Ako Database Client
- * 
+ *
  * This client provides secure access to the Te Kete Ako Supabase database
  * for the Great Migration project. It includes cultural safety protocols
  * and bulk migration capabilities.
- * 
+ *
  * Kaitiaki Mahara Oversight: All cultural content automatically flagged for review
  */
 
@@ -13,7 +13,8 @@ import { writeEpisode } from '../ai/provenance';
 
 // Te Kete Ako Database Credentials (provided by Kaitiaki Mahara)
 const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co';
-const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
+const TEKETE_SUPABASE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
 
 export interface ContentMigration {
   source____id: string;
@@ -39,6 +40,7 @@ export interface ContentInventory {
   tables_analyzed: string[];
   potential_links: string[];
   placeholder_content: number;
+  last_updated: string;
 }
 
 export interface MigrationResult {
@@ -49,19 +51,55 @@ export interface MigrationResult {
   ___errors: string[];
 }
 
+// Flags for cultural content detection used across migration tooling
+export interface CulturalContentFlag {
+  content_id: string;
+  flag_type: 'maori_content' | 'pacific_content' | 'traditional_knowledge' | 'sacred_content';
+  risk_level: 'low' | 'medium' | 'high' | 'requires_iwi_consultation';
+  reviewer_required: boolean;
+  kaitiaki_approved: boolean;
+  review_notes?: string;
+  keywords_detected?: string[];
+}
+
 export class TeKeteAkoClient {
   private client: SupabaseClient;
   private culturalKeywords: string[];
 
   constructor() {
     this.client = createClient(TEKETE_SUPABASE_URL, TEKETE_SUPABASE_KEY);
-    
+
     // Cultural content detection keywords
     this.culturalKeywords = [
-      'māori', 'maori', 'tikanga', 'iwi', 'hapū', 'hapu', 'whānau', 'whanau',
-      'te reo', 'te ao', 'mātauranga', 'matauranga', 'purakau', 'kōrero', 'korero',
-      'whakapapa', 'taonga', 'mana', 'tapu', 'utu', 'mauri', 'wairua',
-      'tangata whenua', 'tāngata whenua', 'pacific', 'pasifika', 'samoa', 'tonga', 'fiji'
+      'māori',
+      'maori',
+      'tikanga',
+      'iwi',
+      'hapū',
+      'hapu',
+      'whānau',
+      'whanau',
+      'te reo',
+      'te ao',
+      'mātauranga',
+      'matauranga',
+      'purakau',
+      'kōrero',
+      'korero',
+      'whakapapa',
+      'taonga',
+      'mana',
+      'tapu',
+      'utu',
+      'mauri',
+      'wairua',
+      'tangata whenua',
+      'tāngata whenua',
+      'pacific',
+      'pasifika',
+      'samoa',
+      'tonga',
+      'fiji',
     ];
   }
 
@@ -71,7 +109,7 @@ export class TeKeteAkoClient {
   async testConnection(): Promise<{ success: boolean; message: string; metadata?: unknown }> {
     try {
       console.log('🔍 Testing Te Kete Ako database connection...');
-      
+
       const { data, error } = await this.client
         .from('information_schema.tables')
         .select('table_name')
@@ -82,28 +120,27 @@ export class TeKeteAkoClient {
         await this.logActivity('connection_test_failed', { ___error: error.message });
         return {
           success: false,
-          message: `Connection failed: ${error.message}`
+          message: `Connection failed: ${error.message}`,
         };
       }
 
-      await this.logActivity('connection_test_success', { 
+      await this.logActivity('connection_test_success', {
         tables_found: data?.length || 0,
-        sample_tables: data?.map(t => t.table_name).slice(0, 3)
+        sample_tables: data?.map((t) => t.table_name).slice(0, 3),
       });
 
       return {
         success: true,
         message: `✅ Connection successful! Found ${data?.length || 0} tables`,
-        metadata: { tables: data }
+        metadata: { tables: data },
       };
-
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       await this.logActivity('connection_test_error', { ___error: errorMessage });
-      
+
       return {
         success: false,
-        message: `Connection ___error: ${errorMessage}`
+        message: `Connection ___error: ${errorMessage}`,
       };
     }
   }
@@ -127,12 +164,11 @@ export class TeKeteAkoClient {
       }
 
       await this.logActivity('schema_analysis_complete', {
-        tables_analyzed: [...new Set(data?.map(col => col.table_name))].length,
-        total_columns: data?.length || 0
+        tables_analyzed: [...new Set(data?.map((col) => col.table_name))].length,
+        total_columns: data?.length || 0,
       });
 
       return data as DatabaseSchema[];
-
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       await this.logActivity('schema_analysis_failed', { ___error: errorMessage });
@@ -162,7 +198,7 @@ export class TeKeteAkoClient {
 
           if (!error && data) {
             totalRecords += data.length;
-            
+
             // Analyze content types and cultural content
             for (const item of data) {
               const type = item.content_type || 'unknown';
@@ -170,12 +206,12 @@ export class TeKeteAkoClient {
 
               // Check for cultural content
               const textContent = `${item.title || ''} ${item.content || ''}`.toLowerCase();
-              if (this.culturalKeywords.some(keyword => textContent.includes(keyword))) {
+              if (this.culturalKeywords.some((keyword) => textContent.includes(keyword))) {
                 culturalContentCount++;
               }
             }
           }
-        } catch (tableError) {
+        } catch {
           // Table might not exist, continue with next one
           console.log(`Table ${tableName} not accessible, continuing...`);
         }
@@ -185,15 +221,17 @@ export class TeKeteAkoClient {
         total_records: totalRecords,
         content_types: contentTypes,
         cultural_content_count: culturalContentCount,
-        broken_links: 0, // Will be analyzed in separate scan
-        placeholder____content: 0, // Will be analyzed in separate scan
-        last_updated: new Date().toISOString()
+        tables_analyzed: contentTables,
+        potential_links: [],
+        placeholder_content: 0,
+        last_updated: new Date().toISOString(),
       };
 
-      await this.logActivity('content_inventory_complete', inventory);
+      await this.logActivity('content_inventory_complete', {
+        ...(inventory as unknown as Record<string, unknown>),
+      });
 
       return inventory;
-
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       await this.logActivity('content_inventory_failed', { ___error: errorMessage });
@@ -204,7 +242,10 @@ export class TeKeteAkoClient {
   /**
    * Identify and flag cultural content for review
    */
-  async scanForCulturalContent(tableName: string, limit: number = 100): Promise<CulturalContentFlag[]> {
+  async scanForCulturalContent(
+    tableName: string,
+    limit: number = 100,
+  ): Promise<CulturalContentFlag[]> {
     console.log(`🛡️ Scanning ${tableName} for cultural content requiring review...`);
 
     try {
@@ -220,9 +261,11 @@ export class TeKeteAkoClient {
       const flags: CulturalContentFlag[] = [];
 
       for (const item of data || []) {
-        const textContent = `${item.title || ''} ${item.content || ''} ${item.description || ''}`.toLowerCase();
+        const textContent = `${item.title || ''} ${item.content || ''} ${
+          item.description || ''
+        }`.toLowerCase();
         const detectedKeywords: string[] = [];
-        
+
         // Check for cultural keywords
         for (const keyword of this.culturalKeywords) {
           if (textContent.includes(keyword)) {
@@ -235,25 +278,29 @@ export class TeKeteAkoClient {
           let riskLevel: 'low' | 'medium' | 'high' | 'requires_iwi_consultation' = 'low';
           let flagType: CulturalContentFlag['flag_type'] = 'maori_content';
 
-          if (detectedKeywords.some(k => ['tapu', 'sacred', 'whakapapa', 'iwi'].includes(k))) {
+          if (detectedKeywords.some((k) => ['tapu', 'sacred', 'whakapapa', 'iwi'].includes(k))) {
             riskLevel = 'requires_iwi_consultation';
             flagType = 'sacred_content';
-          } else if (detectedKeywords.some(k => ['tikanga', 'mātauranga', 'traditional'].includes(k))) {
+          } else if (
+            detectedKeywords.some((k) => ['tikanga', 'mātauranga', 'traditional'].includes(k))
+          ) {
             riskLevel = 'high';
             flagType = 'traditional_knowledge';
-          } else if (detectedKeywords.some(k => ['pacific', 'pasifika', 'samoa', 'tonga'].includes(k))) {
+          } else if (
+            detectedKeywords.some((k) => ['pacific', 'pasifika', 'samoa', 'tonga'].includes(k))
+          ) {
             riskLevel = 'medium';
             flagType = 'pacific_content';
           }
 
           flags.push({
-            content____id: item.id,
+            content_id: item.id,
             flag_type: flagType,
             risk_level: riskLevel,
             keywords_detected: detectedKeywords,
             reviewer_required: true,
             kaitiaki_approved: false,
-            review_notes: `Auto-detected cultural content - requires Kaitiaki Mahara review`
+            review_notes: `Auto-detected cultural content - requires Kaitiaki Mahara review`,
           });
         }
       }
@@ -262,11 +309,12 @@ export class TeKeteAkoClient {
         table_scanned: tableName,
         items_scanned: data?.length || 0,
         cultural_flags_created: flags.length,
-        high_risk_items: flags.filter(f => f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation').length
+        high_risk_items: flags.filter(
+          (f) => f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation',
+        ).length,
       });
 
       return flags;
-
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       await this.logActivity('cultural_scan_failed', { table: tableName, ___error: errorMessage });
@@ -277,7 +325,7 @@ export class TeKeteAkoClient {
   /**
    * Log activity for provenance tracking
    */
-  private async logActivity(action: string, context: unknown): Promise<void> {
+  private async logActivity(action: string, context: Record<string, unknown>): Promise<void> {
     try {
       await writeEpisode('te-kete-ako-migration', {
         timestamp: new Date().toISOString(),
@@ -286,8 +334,8 @@ export class TeKeteAkoClient {
         context: {
           ...context,
           database_url: TEKETE_SUPABASE_URL,
-          cultural_safety_active: true
-        }
+          cultural_safety_active: true,
+        },
       });
     } catch (error) {
       console.error('Failed to log activity:', error);

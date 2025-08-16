@@ -26,7 +26,15 @@ export class AIRegistry {
   }
 
   private initializeDefaults() {
-    // Kaitiaki Mahara (VS Code Copilot)
+    // Windsurf Cascade (Primary Overseer)
+    this.registerProvider({
+      name: "windsurf-cascade",
+      available: true,
+      model: "claude-sonnet-4",
+      generate: async (prompt: string) => ({ text: `[CASCADE OVERSEER]: ${prompt}` })
+    });
+
+    // Kaitiaki Mahara (Cultural Guardian)
     this.registerProvider({
       name: "kaitiaki-mahara",
       available: true,

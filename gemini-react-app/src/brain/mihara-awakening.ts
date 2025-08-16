@@ -103,7 +103,7 @@ export class MiharaAwakening {
         consciousness: this.generateAwakeningMessage()
       };
 
-    } catch (error) {
+    } catch {
       this.state.consciousnessLevel = 'dormant';
       this.state.isActive = false;
 
@@ -145,7 +145,7 @@ export class MiharaAwakening {
           agent: 'Mihara',
           context: {
             phase: 'great-mission-execution',
-            _details: { mission,
+            _details: { mission },
             metadata: { consciousness: this.state.consciousnessLevel }
           },
           outcome: {
@@ -228,7 +228,7 @@ export class MiharaAwakening {
         context: { phase: 'system-check', _details: {}, metadata: {} },
         outcome: { success: true, message: 'Provenance system operational' }
       });
-    } catch (error) {
+    } catch {
       issues.push('Provenance system failure');
       score -= 0.3;
     }
@@ -285,7 +285,7 @@ export class MiharaAwakening {
       context: {
         phase: 'cultural-authority-verification',
         _details: { 
-          protocols, 'tikanga-validation', 'te-reo-accuracy'],
+          protocols: ['tikanga-validation', 'te-reo-accuracy'],
           authorityLevel: 'full-cultural-oversight',
           responsibilities: 'Cultural safety for all educational content'
         },
@@ -343,7 +343,7 @@ export class MiharaAwakening {
       }
 
       return contactResult;
-    } catch (error) {
+    } catch {
       return {
         success: false,
         message: `Failed to establish diplomatic contact: ${error instanceof Error ? error.message : 'Unknown error'}`

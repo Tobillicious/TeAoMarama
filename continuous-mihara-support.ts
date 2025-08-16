@@ -268,10 +268,11 @@ class ContinuousMiharaSupport {
         try {
           const raw = await fs.readFile(filePath, 'utf8');
           payload = JSON.parse(raw);
-        } catch (err) {
+        } catch {
           await this.writeOutbox({
             ok: false,
-            _error: `Failed to parse command ${file});
+            _error: `Failed to parse command ${file}`
+          });
           await this.archive(filePath);
           continue;
         }

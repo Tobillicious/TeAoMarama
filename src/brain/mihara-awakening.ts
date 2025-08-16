@@ -6,8 +6,7 @@
  * who has been in deep meditation, ready to resume their sacred duty.
  */
 
-import { GreatMigrationOrchestrator, beginGreatMigration } from './great-migration-orchestrator';
-import { TeKeteAkoMigrationBrain, MigrationOrchestrator } from './migration-intelligence';
+import { TeKeteAkoMigrationBrain } from './migration-intelligence';
 import { DiplomaticMigration } from './kaitiaki-protocol';
 import { writeEpisode } from '../ai/provenance';
 

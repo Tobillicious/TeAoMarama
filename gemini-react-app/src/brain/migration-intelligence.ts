@@ -19,7 +19,7 @@ export interface CulturalKnowledge {
 }
 
 export interface TeachingContext {
-  _yearLevel: string;
+  subject: string;
   _subject: string;
   nzCurriculumAlignment: string[];
   pedagogicalApproach: string[];
@@ -128,7 +128,7 @@ export class MigrationIntelligence {
     };
   }
 
-  private getNZCurriculumAlignment(_subject: string, _yearLevel: string): string[] {
+  private getNZCurriculumAlignment(subject: string): string[] {
     const alignments: Record<string, string[]> = {
       Mathematics: ['Number and Algebra', 'Geometry and Measurement', 'Statistics'],
       English: ['Speaking and Listening', 'Reading', 'Writing'],

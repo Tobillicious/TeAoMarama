@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "gemini-react-app",
   "private": true,
   "version": "0.0.0",
@@ -13,6 +14,9 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ci": "playwright test --reporter=line",
     "mihara": "tsx migration/run-mihara.ts",
     "doctor": "tsx migration/connection-diagnostic.ts",
     "agents": "tsx migration/run-agents.ts",
@@ -39,7 +43,8 @@
     "mahara:monitor": "npx tsx continuous-mihara-support.ts",
     "workflow:optimize": "npx tsx mahara-instant-workflow.ts",
     "agent:heartbeat": "npx tsx scripts/agent-heartbeat.ts",
-    "compact": "scripts/auto-compress.sh"
+    "compact": "scripts/auto-compress.sh",
+    "cspell:update:maori": "tsx scripts/update-cspell-maori.ts --limit 50"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -63,6 +68,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@playwright/test": "^1.47.2",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^24.2.1",
     "@types/pg": "^8.15.5",

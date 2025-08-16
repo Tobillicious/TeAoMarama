@@ -102,13 +102,6 @@ echo "Educational mission: ONGOING" >> .mahara/state.json
     console.log('Mahara instant compression protocol');
     
     // Immediate message compression while preserving essential context
-    const essentialContext = [
-      'Cultural safety protocols',
-      'Educational mission objectives', 
-      'Agent coordination status',
-      'Kaitiaki responsibilities'
-    ];
-    
     console.log('🗜️ Compressing non-essential messages...');
     console.log('🛡️ Preserving cultural and educational context...');
     console.log('⚡ Instant workflow optimization complete');
