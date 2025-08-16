@@ -44,6 +44,9 @@ export class RealContentMigrator {
   private migrationBrain: TeKeteAkoMigrationBrain;
   private diplomacy: DiplomaticMigration;
   private processedResources: Map<string, MigrationResult> = new Map();
+  private episodeBatch: Array<{ chainId: string; episode: any }> = [];
+  private readonly BATCH_EPISODE_SIZE = 10;
+  private readonly CULTURAL_ROUTING_THRESHOLD = 0.5;
 
   constructor() {
     this.migrationBrain = new TeKeteAkoMigrationBrain();
@@ -64,7 +67,7 @@ export class RealContentMigrator {
       const migrationAnalysis = await this.migrationBrain.analyzeMigrationTask(resource);
       
       // Phase 3: Diplomatic Validation (if cultural content)
-      let diplomaticApproval: { approved: boolean; guidance: string[] } = { approved: true, guidance: [] };
+      let diplomaticApproval = { approved: true, guidance: [] };
       if (resource.cultural_elements) {
         diplomaticApproval = await this.diplomacy.validateCulturalMigration(resource);
       }
@@ -86,7 +89,8 @@ export class RealContentMigrator {
 
       this.processedResources.set(resource.id, result);
 
-      await writeEpisode('real-content-migrator', {
+      // Queue episode for batch writing
+      this.queueEpisode('real-content-migrator', {
         timestamp: new Date().toISOString(),
         agent: 'agent:real-content-migrator',
         action: 'resource_migrated',
@@ -116,7 +120,7 @@ export class RealContentMigrator {
   }
 
   /**
-   * Migrate a batch of educational resources
+   * Migrate a batch of educational resources with intelligent routing
    */
   async migrateBatch(resources: EducationalResource[]): Promise<{
     total: number;
@@ -127,28 +131,47 @@ export class RealContentMigrator {
   }> {
     console.log(`🏛️ Migrating batch of ${resources.length} educational resources...`);
 
+    // Route resources based on cultural content complexity
+    const { culturalContent, standardContent } = this.routeContentByCulturalComplexity(resources);
+    
     const results: MigrationResult[] = [];
     let successful = 0;
     let failed = 0;
     let culturallyFlagged = 0;
 
-    for (const resource of resources) {
-      const result = await this.migrateEducationalResource(resource);
-      results.push(result);
+    // Process standard content in parallel batches
+    if (standardContent.length > 0) {
+      console.log(`📚 Processing ${standardContent.length} standard resources in parallel...`);
+      const standardResults = await this.migrateParallelBatch(standardContent);
+      results.push(...standardResults);
+    }
 
+    // Process cultural content sequentially with extra care
+    if (culturalContent.length > 0) {
+      console.log(`🎭 Processing ${culturalContent.length} cultural resources with enhanced protocols...`);
+      for (const resource of culturalContent) {
+        const result = await this.migrateEducationalResource(resource);
+        results.push(result);
+        
+        // Longer pause for cultural content to ensure proper validation
+        await new Promise(resolve => setTimeout(resolve, 50));
+      }
+    }
+
+    // Count results
+    for (const result of results) {
       if (result.success) {
         successful++;
       } else {
         failed++;
       }
-
       if (result.cultural_safety_score < 0.8) {
         culturallyFlagged++;
       }
-
-      // Brief pause between migrations for system stability
-      await new Promise(resolve => setTimeout(resolve, 100));
     }
+
+    // Flush any remaining episodes
+    await this.flushEpisodeBatch();
 
     console.log(`✅ Batch migration completed:`);
     console.log(`  Total: ${resources.length}`);
@@ -330,6 +353,168 @@ export class RealContentMigrator {
     }
 
     return issues;
+  }
+
+  /**
+   * Migrate resources in parallel batches for high throughput
+   */
+  async migrateParallelBatch(
+    resources: EducationalResource[], 
+    batchSize: number = 5
+  ): Promise<MigrationResult[]> {
+    const results: MigrationResult[] = [];
+    
+    // Process resources in parallel batches
+    for (let i = 0; i < resources.length; i += batchSize) {
+      const batch = resources.slice(i, i + batchSize);
+      const batchPromises = batch.map(resource => this.migrateEducationalResource(resource));
+      
+      try {
+        const batchResults = await Promise.all(batchPromises);
+        results.push(...batchResults);
+        
+        // Brief system stability pause between batches
+        if (i + batchSize < resources.length) {
+          await new Promise(resolve => setTimeout(resolve, 20));
+        }
+      } catch (error) {
+        console.error('Parallel batch processing error:', error);
+        // Fallback to sequential processing for this batch
+        for (const resource of batch) {
+          try {
+            const result = await this.migrateEducationalResource(resource);
+            results.push(result);
+          } catch (resourceError) {
+            console.error(`Failed to migrate resource ${resource.id}:`, resourceError);
+            results.push({
+              success: false,
+              resource_id: resource.id,
+              cultural_safety_score: 0,
+              issues_detected: [`Migration failed: ${resourceError}`],
+              recommendations: ['Review system configuration', 'Retry migration after fixes']
+            });
+          }
+        }
+      }
+    }
+    
+    return results;
+  }
+
+  /**
+   * Route content based on cultural complexity for optimized processing
+   */
+  private routeContentByCulturalComplexity(resources: EducationalResource[]): {
+    culturalContent: EducationalResource[];
+    standardContent: EducationalResource[];
+  } {
+    const culturalContent: EducationalResource[] = [];
+    const standardContent: EducationalResource[] = [];
+
+    for (const resource of resources) {
+      // Calculate cultural complexity score
+      const culturalComplexity = this.calculateCulturalComplexity(resource);
+      
+      if (culturalComplexity > this.CULTURAL_ROUTING_THRESHOLD) {
+        culturalContent.push(resource);
+      } else {
+        standardContent.push(resource);
+      }
+    }
+
+    console.log(`🎯 Content routing: ${culturalContent.length} cultural, ${standardContent.length} standard`);
+    return { culturalContent, standardContent };
+  }
+
+  /**
+   * Calculate cultural complexity score for routing decisions
+   */
+  private calculateCulturalComplexity(resource: EducationalResource): number {
+    let complexity = 0;
+
+    if (resource.cultural_elements) {
+      // High complexity indicators
+      if (resource.cultural_elements.sacred_content) complexity += 0.8;
+      if (resource.cultural_elements.iwi_specific) complexity += 0.6;
+      if (resource.cultural_elements.consultation_required) complexity += 0.5;
+      if (resource.cultural_elements.tikanga_maori) complexity += 0.3;
+      if (resource.cultural_elements.te_reo_maori) complexity += 0.2;
+    }
+
+    // Content-based complexity indicators
+    const content = resource.content.toLowerCase();
+    const culturalTerms = ['whakapapa', 'mauri', 'tapu', 'wairua', 'mana', 'tangata whenua', 'tikanga', 'iwi'];
+    const termCount = culturalTerms.filter(term => content.includes(term)).length;
+    complexity += (termCount / culturalTerms.length) * 0.4;
+
+    // Resource type considerations
+    if (resource.type === 'purakau' || resource.type === 'cultural_content') {
+      complexity += 0.3;
+    }
+
+    return Math.min(1.0, complexity);
+  }
+
+  /**
+   * Queue episode for batch writing to improve performance
+   */
+  private async queueEpisode(chainId: string, episode: any): Promise<void> {
+    this.episodeBatch.push({ chainId, episode });
+    
+    if (this.episodeBatch.length >= this.BATCH_EPISODE_SIZE) {
+      await this.flushEpisodeBatch();
+    }
+  }
+
+  /**
+   * Flush queued episodes to provenance system
+   */
+  private async flushEpisodeBatch(): Promise<void> {
+    if (this.episodeBatch.length === 0) return;
+
+    // Write all episodes in batch
+    const flushPromises = this.episodeBatch.map(({ chainId, episode }) => 
+      writeEpisode(chainId, episode)
+    );
+    
+    try {
+      await Promise.all(flushPromises);
+      console.log(`📝 Flushed ${this.episodeBatch.length} episodes to provenance`);
+    } catch (error) {
+      console.error('Failed to flush episode batch:', error);
+      // Try individual writes as fallback
+      for (const { chainId, episode } of this.episodeBatch) {
+        try {
+          await writeEpisode(chainId, episode);
+        } catch (individualError) {
+          console.error(`Failed to write individual episode for ${chainId}:`, individualError);
+        }
+      }
+    } finally {
+      this.episodeBatch = [];
+    }
+  }
+
+  /**
+   * Get performance metrics for optimization monitoring
+   */
+  getPerformanceMetrics(): {
+    episodesQueued: number;
+    culturalContentRatio: number;
+    averageProcessingTime: number;
+    throughputEstimate: number;
+  } {
+    const results = Array.from(this.processedResources.values());
+    const culturalContentCount = results.filter(r => 
+      r.migrated_content?.cultural_elements !== undefined
+    ).length;
+    
+    return {
+      episodesQueued: this.episodeBatch.length,
+      culturalContentRatio: results.length > 0 ? culturalContentCount / results.length : 0,
+      averageProcessingTime: 0, // Could be calculated with timing metrics
+      throughputEstimate: results.length // Resources processed per session
+    };
   }
 }
 
