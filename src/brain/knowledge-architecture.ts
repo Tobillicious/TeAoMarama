@@ -239,7 +239,7 @@ export interface MigrationIntelligence {
 
 export interface TeKeteAkoSource {
   type: 'database' | 'file_system' | 'api_export';
-  connection: any; // Database connection or file path
+  connection: unknown; // Database connection or file path
   extractionRules: ExtractionRule[];
 }
 
@@ -254,7 +254,7 @@ export interface ExtractionRule {
 export interface RawKnowledgeChunk {
   sourceId: string;
   sourceType: string;
-  rawData: any;
+  rawData: unknown;
   extractedAt: string;
   extractionRule: string;
 }

@@ -3,8 +3,8 @@ export interface EpisodeData {
   timestamp: string;
   agent: string;
   action: string;
-  context: any;
-  result?: any;
+  context: unknown;
+  result?: unknown;
   culturalFlags?: string[];
   quality?: number;
 }
@@ -62,5 +62,5 @@ export function getProvenanceChain(chainId: string): ProvenanceChain | undefined
 }
 
 export function getAllChains(): ProvenanceChain[] {
-  return Array.from((manager as any).chains.values());
+  return Array.from((manager as { chains: Map<string, unknown> }).chains.values());
 }

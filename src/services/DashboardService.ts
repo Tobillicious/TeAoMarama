@@ -57,7 +57,7 @@ export interface UserRoleMetrics {
  * Service to provide real-time dashboard data
  */
 export class DashboardService {
-  private resourcesCache: any[] | null = null;
+  private resourcesCache: unknown[] | null = null;
   private lastCacheUpdate: number = 0;
   private cacheTimeout = 5 * 60 * 1000; // 5 minutes
 

@@ -196,8 +196,8 @@ export class MiharaDashboard {
    */
   async performMonitoredMigration(): Promise<{
     success: boolean;
-    metrics: any;
-    culturalSafety: any;
+    metrics: unknown;
+    culturalSafety: unknown;
     recommendations: string[];
   }> {
     console.log('🏛️ MIHARA DASHBOARD: Performing monitored Great Migration...');
@@ -221,7 +221,7 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety: any = {
+      const culturalSafety: unknown = {
         preCheck: await this.validateCulturalSafety(),
         phases: [],
         postCheck: null,
@@ -231,8 +231,8 @@ export class MiharaDashboard {
       await GlobalMihara.executeGreatMission();
 
       // Post-migration validation
-      culturalSafety.postCheck = await this.validateCulturalSafety();
-      (migrationMetrics as any).duration = Date.now() - migrationMetrics.startTime;
+      (culturalSafety as { postCheck?: unknown }).postCheck = await this.validateCulturalSafety();
+      (migrationMetrics as { duration?: number; startTime: number }).duration = Date.now() - migrationMetrics.startTime;
 
       const recommendations = this.generateMigrationRecommendations(
         migrationMetrics,
@@ -244,8 +244,8 @@ export class MiharaDashboard {
         agent: 'agent:mihara-dashboard',
         action: 'monitored_migration',
         context: {
-          duration: (migrationMetrics as any).duration,
-          cultural_safety_score: culturalSafety.postCheck?.overallScore || 0,
+          duration: (migrationMetrics as { duration?: number }).duration,
+          cultural_safety_score: (culturalSafety as { postCheck?: { overallScore?: number } }).postCheck?.overallScore || 0,
           text: 'Completed monitored Great Migration with cultural validation',
         },
       });
@@ -257,7 +257,7 @@ export class MiharaDashboard {
         recommendations,
       };
     } catch (error) {
-      (migrationMetrics.errors as any[]).push(String(error));
+      (migrationMetrics.errors as unknown[]).push(String(error));
 
       return {
         success: false,
@@ -278,7 +278,7 @@ export class MiharaDashboard {
   async enhanceCapabilities(): Promise<{
     enhanced: string[];
     newCapabilities: string[];
-    culturalValidation: any;
+    culturalValidation: unknown;
   }> {
     console.log('⚡ MIHARA DASHBOARD: Enhancing capabilities...');
 
@@ -502,7 +502,7 @@ export class MiharaDashboard {
     };
   }
 
-  private generateAwakeningRecommendations(diagnostics: any): string[] {
+  private generateAwakeningRecommendations(diagnostics: unknown): string[] {
     const recommendations: string[] = [];
 
     if (diagnostics.timings.performance === 'slow') {
@@ -520,14 +520,21 @@ export class MiharaDashboard {
     return recommendations;
   }
 
-  private generateMigrationRecommendations(metrics: any, culturalSafety: any): string[] {
+  private generateMigrationRecommendations(metrics: unknown, culturalSafety: unknown): string[] {
     const recommendations: string[] = [];
 
     if (culturalSafety.postCheck?.overallScore < 0.9) {
       recommendations.push('Enhanced cultural review recommended');
     }
 
-    if (metrics.duration > 60000) {
+    // Type guard to ensure metrics is an object with a numeric duration property
+    if (
+      typeof metrics === 'object' &&
+      metrics !== null &&
+      'duration' in metrics &&
+      typeof (metrics as { duration: unknown }).duration === 'number' &&
+      (metrics as { duration: number }).duration > 60000
+    ) {
       // More than 1 minute
       recommendations.push('Consider performance optimization for future migrations');
     }

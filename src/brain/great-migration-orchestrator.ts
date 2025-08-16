@@ -43,8 +43,8 @@ export interface MigrationTask {
   id: string;
   name: string;
   assignedAgent: string;
-  inputData: any;
-  expectedOutput: any;
+  inputData: unknown;
+  expectedOutput: unknown;
   culturalSensitive: boolean;
   rollbackPlan: string;
 }
@@ -576,7 +576,7 @@ export class GreatMigrationOrchestrator {
     // Implement rollback logic based on plan
   }
 
-  private async executeEmergencyProcedures(_error: any): Promise<void> {
+  private async executeEmergencyProcedures(_error: unknown): Promise<void> {
     console.log('\n🚨 EXECUTING EMERGENCY PROCEDURES');
     console.log('   Preserving current state...');
     console.log('   Notifying cultural advisors...');

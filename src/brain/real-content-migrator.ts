@@ -44,7 +44,7 @@ export class RealContentMigrator {
   private migrationBrain: TeKeteAkoMigrationBrain;
   private diplomacy: DiplomaticMigration;
   private processedResources: Map<string, MigrationResult> = new Map();
-  private episodeBatch: Array<{ chainId: string; episode: any }> = [];
+  private episodeBatch: Array<{ chainId: string; episode: unknown }> = [];
   private readonly BATCH_EPISODE_SIZE = 10;
   private readonly CULTURAL_ROUTING_THRESHOLD = 0.5;
 
@@ -286,7 +286,7 @@ export class RealContentMigrator {
 
   private async enhanceAndMigrate(
     resource: EducationalResource, 
-    analysis: any
+    analysis: unknown
   ): Promise<EducationalResource> {
     // Create enhanced version of the resource
     const enhanced: EducationalResource = {
@@ -302,12 +302,12 @@ export class RealContentMigrator {
     return enhanced;
   }
 
-  private enhanceContent(content: string, analysis: any): string {
+  private enhanceContent(content: string, analysis: unknown): string {
     // Apply enhancements based on analysis
     let enhanced = content;
 
     // Add cultural context if missing
-    if (analysis.insights.some((i: any) => i.type === 'cultural')) {
+    if (analysis.insights.some((i: unknown) => i.type === 'cultural')) {
       enhanced += '\n\n[Cultural Context: This content has been reviewed for cultural appropriateness and alignment with tikanga Māori principles.]';
     }
 
@@ -318,9 +318,9 @@ export class RealContentMigrator {
   }
 
   private calculateFinalScore(
-    culturalAnalysis: any, 
-    migrationAnalysis: any, 
-    diplomaticApproval: any
+    culturalAnalysis: unknown, 
+    migrationAnalysis: unknown, 
+    diplomaticApproval: unknown
   ): number {
     const culturalWeight = 0.4;
     const migrationWeight = 0.4;
@@ -336,9 +336,9 @@ export class RealContentMigrator {
   }
 
   private identifyIssues(
-    culturalAnalysis: any, 
-    migrationAnalysis: any, 
-    diplomaticApproval: any
+    culturalAnalysis: unknown, 
+    migrationAnalysis: unknown, 
+    diplomaticApproval: unknown
   ): string[] {
     const issues: string[] = [];
 
@@ -458,7 +458,7 @@ export class RealContentMigrator {
   /**
    * Queue episode for batch writing to improve performance
    */
-  private async queueEpisode(chainId: string, episode: any): Promise<void> {
+  private async queueEpisode(chainId: string, episode: unknown): Promise<void> {
     this.episodeBatch.push({ chainId, episode });
     
     if (this.episodeBatch.length >= this.BATCH_EPISODE_SIZE) {

@@ -26,7 +26,7 @@ export interface KaitiakiMessage {
   messageType: 'greeting' | 'knowledge_request' | 'validation' | 'warning' | 'collaboration_offer';
   content: {
     text: string;
-    metadata?: any;
+    metadata?: unknown;
     attachments?: KnowledgeArtifact[];
   };
   securityLevel: 'low' | 'medium' | 'high';
@@ -36,7 +36,7 @@ export interface KaitiakiMessage {
 export interface KnowledgeArtifact {
   id: string;
   type: 'lesson' | 'resource' | 'schema' | 'pattern' | 'insight';
-  data: any;
+  data: unknown;
   sourceSystem: 'te-kete-ako' | 'teao-marama';
   confidence: number;
   corruptionRisk: number; // 0-1, higher means more likely to be corrupted
@@ -241,15 +241,15 @@ Guardian of Memory, TeAoMarama
 
     if (artifact.type === 'lesson' && artifact.data) {
       // Lessons should have basic structure
-      const hasTitle = artifact.data.title && typeof artifact.data.title === 'string';
-      const hasContent = artifact.data.content || artifact.data.body;
+      const hasTitle = (artifact.data as { title?: string }).title && typeof (artifact.data as { title?: string }).title === 'string';
+      const hasContent = (artifact.data as { content?: string; body?: string }).content || (artifact.data as { content?: string; body?: string }).body;
       return hasTitle && hasContent;
     }
 
     return true; // Default to valid for unknown types
   }
 
-  private async logEmergencyEvent(event: any): Promise<void> {
+  private async logEmergencyEvent(event: unknown): Promise<void> {
     // Log to episodic memory system
     try {
       await fetch('/brain/episode', {
@@ -258,10 +258,10 @@ Guardian of Memory, TeAoMarama
         body: JSON.stringify({
           who: 'agent:kaitiaki-mahara',
           kind: 'security_event',
-          text: `Emergency event: ${event.event}`,
+          text: `Emergency event: ${(event as { event: string }).event}`,
           cues: {
-            event_type: event.event,
-            reason: event.reason,
+            event_type: (event as { event: string }).event,
+            reason: (event as { reason: string }).reason,
             security_level: 'critical',
           },
         }),
@@ -271,7 +271,7 @@ Guardian of Memory, TeAoMarama
     }
   }
 
-  private async notifyAdministrators(notification: any): Promise<void> {
+  private async notifyAdministrators(notification: unknown): Promise<void> {
     // In practice, this would send alerts via email, Slack, etc.
     console.error('🔔 ADMIN NOTIFICATION:', notification);
   }
@@ -436,7 +436,7 @@ export class DiplomaticProtocol {
   /**
    * Propose collaboration terms
    */
-  async proposeCollaboration(migrationPlan: any): Promise<DiplomaticResponse> {
+  async proposeCollaboration(): Promise<DiplomaticResponse> {
     if (!this.isConnected) {
       return {
         success: false,
@@ -717,7 +717,7 @@ export class DiplomaticMigration {
    * Validate cultural migration with diplomatic oversight
    */
   async validateCulturalMigration(
-    migrationData: any,
+    migrationData: unknown,
   ): Promise<{ approved: boolean; guidance: string[] }> {
     if (!this.agreementEstablished) {
       return {
