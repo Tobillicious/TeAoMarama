@@ -184,7 +184,7 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety = {
+      const culturalSafety: any = {
         preCheck: await this.validateCulturalSafety(),
         phases: [],
         postCheck: null
