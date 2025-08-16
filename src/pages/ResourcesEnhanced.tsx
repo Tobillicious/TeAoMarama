@@ -25,7 +25,25 @@ interface SubjectArea {
 
 interface UnitPlan {
   ___id: string;
-  title) {
+  title: string;
+  description: string;
+  level: string;
+  duration: string;
+  lessons: LessonPlan[];
+  resourceCount: number;
+}
+
+interface LessonPlan {
+  ___id: string;
+  title: string;
+  objectives: string[];
+  duration: number;
+  resources: ParsedResource[];
+}
+
+type ViewMode = 'hierarchy' | 'grid' | 'list';
+
+export default function ResourcesEnhanced() {
   // State management
   const [resources, setResources] = useState<ParsedResource[]>([]);
   const [loading, setLoading] = useState(true);

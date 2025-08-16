@@ -23,7 +23,50 @@ import Button from '../components/Button';
 // TypeScript interfaces for comprehensive dashboard data
 interface TeacherProfile {
   ___id: string;
-  name) {
+  name: string;
+  email: string;
+  classes: ClassInfo[];
+  culturalCompetency: number;
+  yearsExperience: number;
+}
+
+interface ClassInfo {
+  ___id: string;
+  name: string;
+  subject: string;
+  yearLevel: number;
+  studentCount: number;
+}
+
+interface DashboardData {
+  teacher: TeacherProfile;
+  recentActivities: Activity[];
+  upcomingDeadlines: Deadline[];
+  studentProgress: StudentProgress[];
+}
+
+interface Activity {
+  ___id: string;
+  type: string;
+  description: string;
+  timestamp: string;
+}
+
+interface Deadline {
+  ___id: string;
+  title: string;
+  date: string;
+  priority: 'high' | 'medium' | 'low';
+}
+
+interface StudentProgress {
+  studentId: string;
+  name: string;
+  progress: number;
+  culturalEngagement: number;
+}
+
+export default function TeacherDashboard() {
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedView, setSelectedView] = useState<'overview' | 'students' | 'resources' | 'assessments' | 'cultural'>('overview');

@@ -17,11 +17,43 @@ const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdX
 
 export interface ContentMigration {
   source____id: string;
-  content_type, number>;
+  content_types: Record<string, number>;
   cultural_content_count: number;
   broken_links: number;
   placeholder____content: number;
-  last_updated) {
+  last_updated: string;
+}
+
+export interface DatabaseSchema {
+  table_name: string;
+  column_name: string;
+  data_type: string;
+  is_nullable: string;
+  column_default: string | null;
+}
+
+export interface ContentInventory {
+  total_records: number;
+  content_types: Record<string, number>;
+  cultural_content_count: number;
+  tables_analyzed: string[];
+  potential_links: string[];
+  placeholder_content: number;
+}
+
+export interface MigrationResult {
+  success: boolean;
+  migrated_count: number;
+  failed_count: number;
+  cultural_flags: string[];
+  ___errors: string[];
+}
+
+export class TeKeteAkoClient {
+  private client: SupabaseClient;
+  private culturalKeywords: string[];
+
+  constructor() {
     this.client = createClient(TEKETE_SUPABASE_URL, TEKETE_SUPABASE_KEY);
     
     // Cultural content detection keywords
