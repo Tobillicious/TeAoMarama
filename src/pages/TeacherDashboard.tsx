@@ -188,7 +188,7 @@ export default function TeacherDashboard() {
     culturalContent: [
       {
         ___id: 'cultural_001',
-        __title: 'Tūrangawaewae,
+        __title: 'Tūrangawaewae',
         type: 'story',
         iwi: 'Ngāti Tūwharetoa',
         region: 'Bay of Plenty',
@@ -817,8 +817,11 @@ function CulturalView({ data }: { data: DashboardData }) {
 
 // Utility Components
 function StatsCard({ title, value, icon, color }: {
-  __title: string;
-  value) {
+  title: string;
+  value: string | number;
+  icon: string;
+  color: string;
+}) {
   return (
     <Card>
       <CardContent className="p-6">

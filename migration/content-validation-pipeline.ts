@@ -1,7 +1,8 @@
 /**
  * Content Validation and Enrichment Pipeline
  * 
- * This system validates, enriches, and quality-assures all migrated ___content: * - Curriculum alignment validation
+ * This system validates, enriches, and quality-assures all migrated content:
+ * - Curriculum alignment validation
  * - Cultural safety checks  
  * - Pedagogical Content Knowledge (PCK) enrichment
  * - Rich text identification and enhancement
@@ -13,8 +14,20 @@ import fs from 'fs';
 import path from 'path';
 
 export interface ValidationResult {
-  isVal___id: boolean;
-  confidence) {
+  isValid: boolean;
+  confidence: number;
+  issues: string[];
+  recommendations: string[];
+  culturalSafetyScore: number;
+  curriculumAlignment: number;
+}
+
+export class ContentValidationPipeline {
+  private curriculumStandards: any;
+  private culturalKeywords: string[];
+  private qualityThresholds: Record<string, number>;
+
+  constructor() {
     this.curriculumStandards = this.loadCurriculumStandards();
     this.culturalKeywords = [
       'māori', 'tikanga', 'kawa', 'marae', 'iwi', 'hapū', 'whānau', 'whakapapa',

@@ -217,7 +217,7 @@ class MassiveLintingCleanup {
     });
 
     // Process each agent's issues
-    for (const [agentName, agentIssues] of Array.from(agentGroups.entries())) {
+    for (const [agentName, agentIssues] of agentGroups) {
       const agent = this.agents.get(agentName);
       if (!agent) continue;
 
