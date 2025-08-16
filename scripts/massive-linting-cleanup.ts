@@ -156,11 +156,8 @@ class MassiveLintingCleanup {
     console.log(`📊 Estimated ${this.totalIssues} linting issues`);
   }
 
-  private determinePriority(
-    rule: string,
-    severity: number,
-  ): 'high' | 'medium' | 'low' {
-    if (severity === 2) return 'critical';
+  private determinePriority(rule: string, severity: number): 'high' | 'medium' | 'low' {
+    if (severity === 2) return 'high';
     if (rule?.includes('markdownlint')) return 'low';
     if (rule?.includes('@typescript-eslint/no-explicit-any')) return 'high';
     return 'medium';
@@ -253,7 +250,7 @@ class MassiveLintingCleanup {
     agent.currentTasks = batch.length;
 
     for (const issue of batch) {
-      issue.status = 'in_progress';
+      issue.status = 'in-progress';
 
       try {
         await this.fixIssue(issue);

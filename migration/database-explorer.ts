@@ -17,7 +17,7 @@
  */
 
 import { teKeteAkoClient } from '../src/services/TeKeteAkoClient';
-import type { ContentInventory, DatabaseSchema, CulturalContentFlag } from '../src/services/TeKeteAkoClient';
+import type { ContentInventory, DatabaseSchema } from '../src/services/TeKeteAkoClient';
 
 interface ExplorationReport {
   timestamp: string;

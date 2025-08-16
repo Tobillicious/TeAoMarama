@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../services/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../supabaseClient'; // Import supabase client for password reset
+import { supabase } from '../supabaseClient';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -54,34 +54,63 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="flex flex-col gap-4 bg-white rounded-lg shadow p-6 w-full">
-      <h2 className="text-xl font-bold text-indigo-700 mb-2 text-center">Login</h2>
-      {error && <p className="text-red-600 text-sm text-center">Error: {error}</p>}
-      {resetMsg && <p className="text-green-600 text-sm text-center">{resetMsg}</p>}
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-      />
-      <button type="submit" className="bg-indigo-600 text-white font-semibold py-2 rounded hover:bg-indigo-700 transition">Login</button>
-      <button type="button" onClick={handleReset} className="text-indigo-600 hover:underline text-sm mt-2">Forgot password?</button>
-      <p className="text-center text-sm mt-2">
-        Don't have an account? <Link to="/signup" className="text-indigo-600 hover:underline">Sign Up</Link>
-      </p>
-    </form>
+    <div className="auth-container">
+      <div className="app-container">
+        <form onSubmit={handleLogin} className="auth-form">
+          <h2 className="auth-title">Whakatōmuri Te Kete Ako</h2>
+          <p className="auth-subtitle">Welcome back to Te Ao Mārama</p>
+          
+          {error && <div className="error-message">{error}</div>}
+          {resetMsg && <div className="success-message">{resetMsg}</div>}
+          
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="your.email@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Your secure password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+          
+          <button type="submit" className="form-button login-button">
+            🌟 Sign In to Te Ao Mārama
+          </button>
+          
+          <button 
+            type="button" 
+            onClick={handleReset} 
+            className="text-link forgot-link"
+          >
+            Forgot your password?
+          </button>
+          
+          <div className="auth-footer">
+            <p>
+              Don't have an account? 
+              <Link to="/signup" className="text-link"> Create one here</Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
 export default Login;
-
