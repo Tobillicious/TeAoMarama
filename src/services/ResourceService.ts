@@ -9,7 +9,65 @@ import { GlobalMihara } from '../brain/mihara-awakening';
 
 export interface TeachingResource {
   ___id: string;
-  title, TeachingResource[]> = new Map();
+  __title: string;
+  description: string;
+  type: string;
+  _____subject: string;
+  yearLevel: string[];
+  nzcAlignment: string[];
+  culturalContent: {
+    hasMaoriContent: boolean;
+    requiresIwiReview: boolean;
+    culturalSensitivityLevel: string;
+    tikangaElements: string[];
+  };
+  quality: {
+    rating: number;
+    reviewCount: number;
+    lastUpdated: string;
+    verificationStatus: string;
+  };
+  accessibility: {
+    hasAltText: boolean;
+    screenReaderCompatible: boolean;
+    languageLevel: string;
+    accommodations: string[];
+  };
+  engagement: {
+    downloads: number;
+    likes: number;
+    teacherFeedback: number;
+    studentEngagement: number;
+  };
+  ___content: {
+    fileUrl?: string;
+    previewUrl: string;
+    thumbnailUrl: string;
+    duration: number;
+    pageCount: number;
+    interactiveElements: string[];
+  };
+  migration: {
+    migrationId: string;
+    originalPath: string;
+    migrationDate: string;
+    qualityChecked: boolean;
+  };
+}
+
+export interface ResourceQuery {
+  searchTerm?: string;
+  subject?: string;
+  yearLevel?: string;
+  resourceType?: string;
+  culturalContent?: boolean;
+  limit?: number;
+  offset?: number;
+}
+
+export class ResourceService {
+  private orchestrator: AIOrchestrator;
+  private resourceCache: Map<string, TeachingResource[]> = new Map();
   private culturalReviewQueue: string[] = [];
 
   constructor() {
@@ -226,7 +284,7 @@ export interface TeachingResource {
       const validationPrompt = `
       Perform cultural safety validation for this educational resource:
       
-      Resource: ${resource.title}
+      Resource: ${resource.__title}
       Description: ${resource.description}
       Cultural Elements: ${resource.culturalContent.tikangaElements?.join(', ') || 'Not specified'}
       Sensitivity Level: ${resource.culturalContent.culturalSensitivityLevel}
@@ -271,7 +329,7 @@ export interface TeachingResource {
           resource____id: resourceId,
           validation___result: result.level,
           cultural_safe: result.safe,
-          text: `Cultural validation completed for resource: ${resource.title}`
+          text: `Cultural validation completed for resource: ${resource.__title}`
         }
       });
 
@@ -388,7 +446,7 @@ export interface TeachingResource {
     return baseResources.filter(resource => {
       if (query.searchTerm) {
         const searchLower = query.searchTerm.toLowerCase();
-        return resource.title.toLowerCase().includes(searchLower) ||
+        return resource.__title.toLowerCase().includes(searchLower) ||
                resource.description.toLowerCase().includes(searchLower) ||
                resource.subject.toLowerCase().includes(searchLower);
       }
@@ -440,7 +498,7 @@ export interface TeachingResource {
           studentEngagement: 4.4
         },
         ___content: {
-          fileUrl,
+          fileUrl: '/files/te-reo-greetings.pdf',
           previewUrl: '/previews/te-reo-greetings.png',
           thumbnailUrl: '/thumbnails/te-reo-greetings.jpg',
           duration: 45,

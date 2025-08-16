@@ -30,7 +30,73 @@ export interface GreatMigrationPlan {
 
 export interface MigrationPhase {
   ___id: string;
-  name) {
+  name: string;
+  description: string;
+  prerequisites: string[];
+  tasks: MigrationTask[];
+  estimatedDuration: string;
+  riskLevel: string;
+  approvalRequired: boolean;
+  id?: string;
+}
+
+export interface MigrationTask {
+  ___id: string;
+  name: string;
+  assignedAgent: string;
+  inputData: Record<string, unknown>;
+  expectedOutput: Record<string, unknown>;
+  culturalSensitive: boolean;
+  rollbackPlan: string;
+}
+
+export interface CulturalProtocol {
+  ___id: string;
+  trigger: string;
+  reviewLevel: string;
+  escalationPath: string[];
+  timeoutDays: number;
+}
+
+export interface QualityGate {
+  ___id: string;
+  criteria: string[];
+  automatedChecks: string[];
+  humanValidation: boolean;
+  passThreshold: number;
+  blockingFailures: string[];
+}
+
+export interface EmergencyProcedure {
+  trigger: string;
+  action: string;
+  notificationList: string[];
+  rollbackSteps: string[];
+}
+
+export interface AgentRole {
+  agent: string;
+  primaryRole: string;
+  specializations: string[];
+  culturalAuthority: boolean;
+  escalationThreshold: number;
+}
+
+export interface MigrationState {
+  currentPhase: string;
+  tasksCompleted: number;
+  tasksTotal: number;
+  culturalReviewQueue: unknown[];
+  emergencyAlerts: unknown[];
+  aronuiCollaboration: boolean;
+}
+
+export class GreatMigrationOrchestrator {
+  private aiOrchestrator: AIOrchestrator;
+  private diplomacy: DiplomaticMigration;
+  private migrationState: MigrationState;
+
+  constructor() {
     this.aiOrchestrator = new AIOrchestrator();
     this.diplomacy = new DiplomaticMigration();
     // this.migrationBrain = new TeKeteAkoMigrationBrain();
@@ -403,7 +469,7 @@ export interface MigrationPhase {
         console.log(`   Risk Level: ${phase.riskLevel}`);
         console.log(`   Estimated Duration: ${phase.estimatedDuration}\n`);
 
-        this.migrationState.currentPhase = phase.id;
+        this.migrationState.currentPhase = phase.___id;
 
         // Human approval required for high-risk phases
         if (phase.approvalRequired && phase.riskLevel === 'cultural_critical') {

@@ -20,6 +20,7 @@
     "mig:pg:run:file": "ts-node migration/pgvector_loader_example.ts --sample",
     "mig:weaviate:run": "tsx migration/weaviate_loader_example.ts --sample migration/sample_raw_exports.jsonl",
     "typecheck": "tsc -b --pretty",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "agents:coord": "tsx migration/agent-coordinator.ts",
     "agents:support": "tsx continuous-mihara-support.ts",
     "agents:background": "tsx migration/agent-background.ts",

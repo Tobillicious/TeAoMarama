@@ -22,7 +22,13 @@ interface NavigationMemory {
 
 interface QuickAction {
   ___id: string;
-  label) {
+  label: string;
+  path: string;
+  icon: string;
+  priority: number;
+}
+
+export default function BrainNavigation() {
   const location = useLocation();
   const [memory, setMemory] = useState<NavigationMemory | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);

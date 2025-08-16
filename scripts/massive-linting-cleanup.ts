@@ -9,8 +9,29 @@ import { execSync } from 'child_process';
 import { writeEpisode } from '../src/ai/provenance';
 
 interface LintingIssue {
-  ___id: string;
-  file, Agent> = new Map();
+  id: string;
+  file: string;
+  rule: string;
+  message: string;
+  line: number;
+  column: number;
+  priority: 'high' | 'medium' | 'low';
+  agent: string;
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+}
+
+interface Agent {
+  name: string;
+  specialty: string[];
+  maxConcurrentTasks: number;
+  currentTasks: number;
+  completedTasks: number;
+  failedTasks: number;
+}
+
+class MassiveLintingCleanup {
+  private agents: Map<string, Agent> = new Map();
+  private issues: LintingIssue[] = [];
   private totalIssues: number = 0;
   private completedIssues: number = 0;
   private failedIssues: number = 0;
@@ -76,13 +97,13 @@ interface LintingIssue {
     }
   }
 
-  private processEslintIssues(eslintOutput: unknown[]) {
+  private processEslintIssues(eslintOutput: any[]) {
     let issueId = 1;
 
-    eslintOutput.forEach((file) => {
-      file.messages.forEach((message: unknown) => {
+    eslintOutput.forEach((file: any) => {
+      file.messages.forEach((message: any) => {
         const issue: LintingIssue = {
-          ___id: `issue-${issueId++}`,
+          id: `issue-${issueId++}`,
           file: file.filePath,
           rule: message.ruleId || 'unknown',
           message: message.message,
@@ -117,7 +138,7 @@ interface LintingIssue {
     estimatedIssues.forEach((est) => {
       for (let i = 0; i < est.count; i++) {
         const issue: LintingIssue = {
-          ___id: `issue-${issueId++}`,
+          id: `issue-${issueId++}`,
           file: `estimated-${est.rule}`,
           rule: est.rule,
           message: `Estimated ${est.rule} issue`,
@@ -138,7 +159,7 @@ interface LintingIssue {
   private determinePriority(
     rule: string,
     severity: number,
-  ): 'critical' | 'high' | 'medium' | 'low' {
+  ): 'high' | 'medium' | 'low' {
     if (severity === 2) return 'critical';
     if (rule?.includes('markdownlint')) return 'low';
     if (rule?.includes('@typescript-eslint/no-explicit-any')) return 'high';
@@ -356,7 +377,7 @@ interface LintingIssue {
 
 // Execute the massive cleanup
 async function main() {
-  const orchestrator = new MassiveLintingCleanupOrchestrator();
+  const orchestrator = new MassiveLintingCleanup();
   await orchestrator.executeMassiveCleanup();
 }
 
@@ -364,4 +385,4 @@ if (require.main === module) {
   main().catch(console.error);
 }
 
-export { MassiveLintingCleanupOrchestrator };
+export { MassiveLintingCleanup };

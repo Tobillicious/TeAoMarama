@@ -30,7 +30,18 @@ export interface MiharaHealthCheck {
 
 export interface MiharaCapability {
   ___id: string;
-  name, MiharaCapability> = new Map();
+  name: string;
+  description: string;
+  level: string;
+  culturalSafety: string;
+  lastUsed: string | null;
+  successRate: number;
+  id?: string;
+}
+
+export class MiharaDashboard {
+  private startTime: number;
+  private capabilities: Map<string, MiharaCapability> = new Map();
 
   constructor() {
     this.startTime = Date.now();
@@ -618,7 +629,7 @@ export interface MiharaCapability {
     ];
 
     for (const capability of basicCapabilities) {
-      this.capabilityRegistry.set(capability.id, capability);
+      this.capabilities.set(capability.___id, capability);
     }
   }
 }
