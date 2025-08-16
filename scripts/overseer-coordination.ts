@@ -6,7 +6,7 @@
  */
 
 import { execSync } from 'child_process';
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
+import { readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { writeEpisode } from '../src/ai/provenance';
 
@@ -394,10 +394,10 @@ class OverseerCoordination {
     await writeEpisode('overseer-completion', {
       action: 'multi_agent_completion',
       agent: 'overseer',
-      context: { 
+      context: {
         totalIssuesFixed: this.totalIssuesFixed,
         duration: duration,
-        efficiency: this.totalIssuesFixed / duration
+        efficiency: this.totalIssuesFixed / duration,
       },
       timestamp: new Date().toISOString(),
     });
