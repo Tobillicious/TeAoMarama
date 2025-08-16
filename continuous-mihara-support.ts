@@ -13,6 +13,8 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { getMiharaStatus, awakenMihara } from './src/brain/mihara-awakening';
+import { executeMiharaGreatMission } from './src/brain/great-migration-orchestrator';
 import { runConnectionDiagnostics, generateDiagnosticReport } from './migration/connection-diagnostic';
 import { initializeOfflineSystem, generateMiharaStatusReport } from './migration/offline-migration-system';
 

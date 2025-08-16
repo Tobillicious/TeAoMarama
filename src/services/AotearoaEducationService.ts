@@ -436,15 +436,18 @@ export class AotearoaEducationService {
       culturalSensitive: true,
       prompt: validationPrompt
     });
+
+    // Mock validation results
+    return {
       valid: true,
       score: 94,
       issues: [
-        'Minor: Could include more Pacific perspectives'
+        "Minor: Could include more Pacific perspectives"
       ],
       recommendations: [
-        'Add Pacific Islander case studies',
-        'Include more contemporary examples',
-        'Consider additional differentiation options'
+        "Add Pacific Islander case studies",
+        "Include more contemporary examples",
+        "Consider additional differentiation options"
       ]
     };
   }
