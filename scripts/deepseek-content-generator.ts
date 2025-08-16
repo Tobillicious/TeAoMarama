@@ -191,8 +191,7 @@ async function main() {
   console.log('📋 Next: Run npm run prebuild to index new resources');
 }
 
-if (require.main === module) {
-  main().catch(console.error);
-}
+// Run main if called directly
+main().catch(console.error);
 
 export { DeepSeekAgent };
