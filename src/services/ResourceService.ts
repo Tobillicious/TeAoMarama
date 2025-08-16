@@ -546,7 +546,7 @@ export const useResourceSearch = () => {
   return {
     searchResources: (query: ResourceQuery, userRole?: 'teacher' | 'student') => 
       resourceService.searchResources(query, userRole),
-    getRecommendations: (teacherId: string, context: any) => 
+    getRecommendations: (teacherId: string, context: unknown) => 
       resourceService.getRecommendations(teacherId, context),
     validateCulturalContent: (resourceId: string) => 
       resourceService.validateCulturalContent(resourceId)

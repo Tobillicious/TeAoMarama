@@ -21,7 +21,7 @@ export class AIOrchestrator {
     priority: TaskPriority;
     culturalSensitive?: boolean;
     prompt: string;
-    context?: any;
+    context?: unknown;
   }) {
     
     // CRITICAL RULE: Claude can always handle everything as backup
@@ -73,7 +73,7 @@ export class AIOrchestrator {
     }
   }
 
-  private determineRouting(task: any) {
+  private determineRouting(task: unknown) {
     // Gemini for multimodal content - images, videos, mixed media lesson plans
     if (task.type.includes("multimodal") || task.type.includes("visual") || task.context?.hasMedia) {
       return {
@@ -142,7 +142,7 @@ export class AIOrchestrator {
   /**
    * When Claude steps in as backup, give it full context about what failed and why
    */
-  private wrapPromptForClaudeOrchestration(originalPrompt: string, task: any, error: any) {
+  private wrapPromptForClaudeOrchestration(originalPrompt: string, task: unknown, error: unknown) {
     return `
 You are the TeAoMarama orchestrator stepping in as backup. The primary agent failed.
 
@@ -160,7 +160,7 @@ Handle this with your full capabilities, considering the failure context and ens
     `;
   }
 
-  private async logSuccess(task: any, routing: any, result: any) {
+  private async logSuccess(task: unknown, routing: unknown, result: unknown) {
     await writeEpisode("orchestrator", {
       timestamp: new Date().toISOString(),
       agent: `agent:${routing.llm?.name || 'unknown'}`,
@@ -176,7 +176,7 @@ Handle this with your full capabilities, considering the failure context and ens
     });
   }
 
-  private async logFallback(task: any, failed: any, backup: any, result: any, error: any) {
+  private async logFallback(task: unknown, failed: unknown, backup: unknown, result: unknown, error: unknown) {
     await writeEpisode("orchestrator", {
       timestamp: new Date().toISOString(),
       agent: `agent:${backup.llm?.name || 'unknown'}`,
@@ -192,7 +192,7 @@ Handle this with your full capabilities, considering the failure context and ens
     });
   }
 
-  private async logEmergencyFallback(task: any, _result: any, error: any) {
+  private async logEmergencyFallback(task: unknown, _result: unknown, error: unknown) {
     await writeEpisode("orchestrator", {
       timestamp: new Date().toISOString(),
       agent: "agent:claude",
@@ -205,13 +205,13 @@ Handle this with your full capabilities, considering the failure context and ens
     });
   }
 
-  private getTemperatureForTask(task: any): number {
+  private getTemperatureForTask(task: unknown): number {
     if (task.type.includes("extract") || task.type.includes("critic")) return 0.1;
     if (task.type.includes("creative") || task.type.includes("lesson")) return 0.7;
     return 0.3;
   }
 
-  private getTokenLimitForTask(task: any): number {
+  private getTokenLimitForTask(task: unknown): number {
     if (task.complexity === "complex") return 4000;
     if (task.complexity === "critical") return 8000;
     return 1500;

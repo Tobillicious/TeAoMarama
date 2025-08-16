@@ -18,8 +18,8 @@ const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdX
 export interface ContentMigration {
   source_id: string;
   content_type: 'handout' | 'activity' | 'game' | 'assessment' | 'unit_plan' | 'lesson_plan';
-  original_data: any;
-  migrated_data: any;
+  original_data: unknown;
+  migrated_data: unknown;
   cultural_flags: string[];
   migration_status: 'pending' | 'processing' | 'completed' | 'needs_review';
   created_at?: string;
@@ -75,7 +75,7 @@ export class TeKeteAkoClient {
   /**
    * Test database connection and health
    */
-  async testConnection(): Promise<{ success: boolean; message: string; metadata?: any }> {
+  async testConnection(): Promise<{ success: boolean; message: string; metadata?: unknown }> {
     try {
       console.log('🔍 Testing Te Kete Ako database connection...');
       
@@ -284,7 +284,7 @@ export class TeKeteAkoClient {
   /**
    * Log activity for provenance tracking
    */
-  private async logActivity(action: string, context: any): Promise<void> {
+  private async logActivity(action: string, context: unknown): Promise<void> {
     try {
       await writeEpisode('te-kete-ako-migration', {
         timestamp: new Date().toISOString(),

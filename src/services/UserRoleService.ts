@@ -164,7 +164,7 @@ export class UserRoleService {
       const permission = profile.permissions.find(p => p.resource === resource);
       if (!permission) return false;
       
-      if (!permission.actions.includes(action as any)) return false;
+      if (!permission.actions.includes(action as unknown)) return false;
       
       // Check conditions
       if (permission.conditions) {
@@ -232,7 +232,7 @@ export class UserRoleService {
   /**
    * Get filtered resources based on user role and permissions
    */
-  filterResourcesByRole(resources: any[], profile: UserProfile): any[] {
+  filterResourcesByRole(resources: unknown[], profile: UserProfile): unknown[] {
     return resources.filter(resource => {
       // Admin can see everything
       if (profile.role === 'admin') return true;

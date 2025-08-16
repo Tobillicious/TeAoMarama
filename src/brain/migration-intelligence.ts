@@ -48,7 +48,7 @@ export class TeKeteAkoMigrationBrain {
   /**
    * Analyze a migration task for cultural and technical considerations
    */
-  async analyzeMigrationTask(task: any): Promise<MigrationAnalysis> {
+  async analyzeMigrationTask(task: unknown): Promise<MigrationAnalysis> {
     const insights = await this.generateInsights(task);
     const riskAssessment = this.assessRisks(task, insights);
     const culturalSafetyScore = this.calculateCulturalSafety(insights);
@@ -66,7 +66,7 @@ export class TeKeteAkoMigrationBrain {
   /**
    * Monitor ongoing migration for cultural safety
    */
-  async monitorCulturalSafety(contentBatch: any[]): Promise<{ safe: boolean; concerns: string[] }> {
+  async monitorCulturalSafety(contentBatch: unknown[]): Promise<{ safe: boolean; concerns: string[] }> {
     const concerns: string[] = [];
 
     for (const content of contentBatch) {
@@ -123,7 +123,7 @@ export class TeKeteAkoMigrationBrain {
     ]);
   }
 
-  private async generateInsights(task: any): Promise<MigrationInsight[]> {
+  private async generateInsights(task: unknown): Promise<MigrationInsight[]> {
     const insights: MigrationInsight[] = [];
 
     // Cultural insight
@@ -156,7 +156,7 @@ export class TeKeteAkoMigrationBrain {
     return insights;
   }
 
-  private assessRisks(task: any, insights: MigrationInsight[]): RiskAssessment {
+  private assessRisks(task: unknown, insights: MigrationInsight[]): RiskAssessment {
     const culturalRisk = insights.some(i => i.type === 'cultural' && i.level === 'high') ? 0.8 : 0.3;
     const technicalRisk = 0.4; // Moderate due to system migration
     const educationalRisk = 0.2; // Low due to good curriculum alignment
@@ -217,21 +217,21 @@ export class TeKeteAkoMigrationBrain {
     return recommendations;
   }
 
-  private hasCulturalContent(task: any): boolean {
+  private hasCulturalContent(task: unknown): boolean {
     if (!task) return false;
     const content = JSON.stringify(task).toLowerCase();
     const culturalMarkers = ['māori', 'maori', 'te reo', 'tikanga', 'whakapapa', 'iwi', 'tangata whenua', 'aotearoa'];
     return culturalMarkers.some(marker => content.includes(marker));
   }
 
-  private containsSacredContent(content: any): boolean {
+  private containsSacredContent(content: unknown): boolean {
     if (!content) return false;
     const text = JSON.stringify(content).toLowerCase();
     const sacredIndicators = this.culturalKnowledge.get('sacred_indicators') || [];
     return sacredIndicators.some((indicator: string) => text.includes(indicator.toLowerCase()));
   }
 
-  private lacksProperAttribution(content: any): boolean {
+  private lacksProperAttribution(content: unknown): boolean {
     // Check if cultural content has proper attribution
     if (!this.hasCulturalContent(content)) return false;
     
@@ -243,7 +243,7 @@ export class TeKeteAkoMigrationBrain {
     return !hasAttribution;
   }
 
-  private hasAppropriation(content: any): boolean {
+  private hasAppropriation(content: unknown): boolean {
     // Very basic check - in reality this would be much more sophisticated
     if (!this.hasCulturalContent(content)) return false;
     
@@ -266,7 +266,7 @@ export class MigrationOrchestrator {
     this.brain = new TeKeteAkoMigrationBrain();
   }
 
-  async coordinateMigration(migrationPlan: any): Promise<{ success: boolean; culturalSafety: boolean; report: string }> {
+  async coordinateMigration(migrationPlan: unknown): Promise<{ success: boolean; culturalSafety: boolean; report: string }> {
     this.migrationState = 'analyzing';
     
     try {

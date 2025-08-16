@@ -5,7 +5,7 @@ export interface AIProvider {
   baseURL?: string;
   model?: string;
   available: boolean;
-  generate?: (prompt: string, options?: any) => Promise<any>;
+  generate?: (prompt: string, options?: unknown) => Promise<any>;
 }
 
 export interface AICapability {
