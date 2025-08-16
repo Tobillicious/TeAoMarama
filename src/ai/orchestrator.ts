@@ -1,13 +1,13 @@
 // src/ai/orchestrator.ts
-import { AIRegistry } from "./registry";
-import { writeEpisode } from "./provenance";
+import { writeEpisode } from './provenance';
+import { AIRegistry } from './registry';
 
-type TaskPriority = "speed" | "depth" | "reliability" | "cost";
-type TaskComplexity = "simple" | "medium" | "complex" | "critical";
+type TaskPriority = 'speed' | 'depth' | 'reliability' | 'cost';
+type TaskComplexity = 'simple' | 'medium' | 'complex' | 'critical';
 
 export class AIOrchestrator {
   private registry: AIRegistry;
-  
+
   constructor() {
     this.registry = new AIRegistry();
   }
@@ -23,49 +23,46 @@ export class AIOrchestrator {
     prompt: string;
     context?: unknown;
   }) {
-    
     // CRITICAL RULE: Claude can always handle everything as backup
     const fallbackToClaude = {
-      llm: this.registry.getProvider("windsurf-claude"),
-      model: "claude-3-5-sonnet-20241022",
-      reason: "fallback_orchestrator"
+      llm: this.registry.getProvider('windsurf-claude'),
+      model: 'claude-3-5-sonnet-20241022',
+      reason: 'fallback_orchestrator',
     };
 
     try {
       // Route based on task characteristics
       const routing = this.determineRouting(task);
-      
+
       // Try primary choice first
       try {
-        const result = await routing.primary.llm?.generate?.(task.prompt, { 
+        const result = await routing.primary.llm?.generate?.(task.prompt, {
           model: routing.primary.model,
           temperature: this.getTemperatureForTask(task),
-          maxTokens: this.getTokenLimitForTask(task)
+          maxTokens: this.getTokenLimitForTask(task),
         });
 
         await this.logSuccess(task, routing.primary, result);
         return result;
-
       } catch (primaryError) {
         console.warn(`Primary choice failed (${routing.primary.reason}):`, primaryError);
-        
+
         // Claude steps in as intelligent backup
         const result = await fallbackToClaude.llm?.generate?.(
           this.wrapPromptForClaudeOrchestration(task.prompt, task, primaryError),
-          { model: fallbackToClaude.model }
+          { model: fallbackToClaude.model },
         );
 
         await this.logFallback(task, routing.primary, fallbackToClaude, result, primaryError);
         return result;
       }
-
     } catch (routingError) {
       // If routing itself fails, Claude handles everything
-      console.error("Routing failed, Claude taking over:", routingError);
-      
+      console.error('Routing failed, Claude taking over:', routingError);
+
       const result = await fallbackToClaude.llm?.generate?.(
         this.wrapPromptForClaudeOrchestration(task.prompt, task, routingError),
-        { model: fallbackToClaude.model }
+        { model: fallbackToClaude.model },
       );
 
       await this.logEmergencyFallback(task, result, routingError);
@@ -73,76 +70,109 @@ export class AIOrchestrator {
     }
   }
 
-  private determineRouting(task: unknown) {
+  private determineRouting(task: {
+    type: string;
+    complexity: TaskComplexity;
+    priority: TaskPriority;
+    culturalSensitive?: boolean;
+    prompt: string;
+    context?: unknown;
+  }) {
     // Gemini for multimodal content - images, videos, mixed media lesson plans
-    if (task.type.includes("multimodal") || task.type.includes("visual") || task.context?.hasMedia) {
+    if (
+      task.type.includes('multimodal') ||
+      task.type.includes('visual') ||
+      task.context?.hasMedia
+    ) {
       return {
-        primary: { 
-          llm: this.registry.getProvider("gemini-cli"), 
-          model: "gemini-1.5-pro",
-          reason: "multimodal_processing_required"
-        }
+        primary: {
+          llm: this.registry.getProvider('gemini-cli'),
+          model: 'gemini-1.5-pro',
+          reason: 'multimodal_processing_required',
+        },
       };
     }
 
     // DeepSeek for heavy reasoning and mathematical content
-    if (task.complexity === "complex" && (task.priority === "depth" || task.type.includes("math"))) {
+    if (
+      task.complexity === 'complex' &&
+      (task.priority === 'depth' || task.type.includes('math'))
+    ) {
       return {
-        primary: { 
-          llm: this.registry.getProvider("deepseek"), 
-          model: "deepseek-reasoner",
-          reason: "complex_reasoning_required"
-        }
+        primary: {
+          llm: this.registry.getProvider('deepseek'),
+          model: 'deepseek-reasoner',
+          reason: 'complex_reasoning_required',
+        },
       };
     }
 
     // Gemini for creative lesson design and gamification (good at creative tasks)
-    if (task.type.includes("creative") || task.type.includes("game") || task.type.includes("interactive")) {
+    if (
+      task.type.includes('creative') ||
+      task.type.includes('game') ||
+      task.type.includes('interactive')
+    ) {
       return {
-        primary: { 
-          llm: this.registry.getProvider("gemini-cli"), 
-          model: "gemini-1.5-flash",
-          reason: "creative_and_interactive_content"
-        }
+        primary: {
+          llm: this.registry.getProvider('gemini-cli'),
+          model: 'gemini-1.5-flash',
+          reason: 'creative_and_interactive_content',
+        },
       };
     }
 
     // GPT for fast, simple tasks and embeddings
-    if (task.complexity === "simple" && task.priority === "speed") {
+    if (task.complexity === 'simple' && task.priority === 'speed') {
       return {
-        primary: { 
-          llm: this.registry.getProvider("openai"), 
-          model: "gpt-4o-mini",
-          reason: "speed_optimized"
-        }
+        primary: {
+          llm: this.registry.getProvider('openai'),
+          model: 'gpt-4o-mini',
+          reason: 'speed_optimized',
+        },
       };
     }
 
     // Claude for cultural sensitivity, critical tasks, orchestration, or when reliability is key
-    if (task.culturalSensitive || task.complexity === "critical" || task.priority === "reliability") {
+    if (
+      task.culturalSensitive ||
+      task.complexity === 'critical' ||
+      task.priority === 'reliability'
+    ) {
       return {
-        primary: { 
-          llm: this.registry.getProvider("windsurf-claude"), 
-          model: "claude-3-5-sonnet-20241022",
-          reason: "cultural_safety_and_reliability"
-        }
+        primary: {
+          llm: this.registry.getProvider('windsurf-claude'),
+          model: 'claude-3-5-sonnet-20241022',
+          reason: 'cultural_safety_and_reliability',
+        },
       };
     }
 
     // Default: Claude orchestrates everything else
     return {
-      primary: { 
-        llm: this.registry.getProvider("windsurf-claude"), 
-        model: "claude-3-5-sonnet-20241022",
-        reason: "default_orchestrator"
-      }
+      primary: {
+        llm: this.registry.getProvider('windsurf-claude'),
+        model: 'claude-3-5-sonnet-20241022',
+        reason: 'default_orchestrator',
+      },
     };
   }
 
   /**
    * When Claude steps in as backup, give it full context about what failed and why
    */
-  private wrapPromptForClaudeOrchestration(originalPrompt: string, task: unknown, error: unknown) {
+  private wrapPromptForClaudeOrchestration(
+    originalPrompt: string,
+    task: {
+      type: string;
+      complexity: TaskComplexity;
+      priority: TaskPriority;
+      culturalSensitive?: boolean;
+      prompt: string;
+      context?: unknown;
+    },
+    error: unknown,
+  ) {
     return `
 You are the TeAoMarama orchestrator stepping in as backup. The primary agent failed.
 
@@ -160,60 +190,105 @@ Handle this with your full capabilities, considering the failure context and ens
     `;
   }
 
-  private async logSuccess(task: unknown, routing: unknown, result: unknown) {
-    await writeEpisode("orchestrator", {
+  private async logSuccess(
+    task: {
+      type: string;
+      complexity: TaskComplexity;
+      priority: TaskPriority;
+      culturalSensitive?: boolean;
+      prompt: string;
+      context?: unknown;
+    },
+    routing: unknown,
+    result: unknown,
+  ) {
+    await writeEpisode('orchestrator', {
       timestamp: new Date().toISOString(),
       agent: `agent:${routing.llm?.name || 'unknown'}`,
-      action: "orchestrated_success",
+      action: 'orchestrated_success',
       context: {
         task_type: task.type,
         complexity: task.complexity,
         priority: task.priority,
         tokens: result?.tokensOut,
-        latency: result?.latencyMs
+        latency: result?.latencyMs,
       },
-      result: result
+      result: result,
     });
   }
 
-  private async logFallback(task: unknown, failed: unknown, backup: unknown, result: unknown, error: unknown) {
-    await writeEpisode("orchestrator", {
+  private async logFallback(
+    task: {
+      type: string;
+      complexity: TaskComplexity;
+      priority: TaskPriority;
+      culturalSensitive?: boolean;
+      prompt: string;
+      context?: unknown;
+    },
+    failed: unknown,
+    backup: unknown,
+    result: unknown,
+    error: unknown,
+  ) {
+    await writeEpisode('orchestrator', {
       timestamp: new Date().toISOString(),
       agent: `agent:${backup.llm?.name || 'unknown'}`,
-      action: "orchestrated_fallback",
+      action: 'orchestrated_fallback',
       context: {
         task_type: task.type,
         failed_provider: failed.llm?.name,
         failure_reason: error?.message,
         backup_success: true,
-        tokens: result?.tokensOut
+        tokens: result?.tokensOut,
       },
-      result: result
+      result: result,
     });
   }
 
-  private async logEmergencyFallback(task: unknown, _result: unknown, error: unknown) {
-    await writeEpisode("orchestrator", {
+  private async logEmergencyFallback(task: {
+    type: string;
+    complexity: TaskComplexity;
+    priority: TaskPriority;
+    culturalSensitive?: boolean;
+    prompt: string;
+    context?: unknown;
+  }, _result: unknown, error: unknown) {
+    await writeEpisode('orchestrator', {
       timestamp: new Date().toISOString(),
-      agent: "agent:claude",
-      action: "emergency_orchestration",
+      agent: 'agent:claude',
+      action: 'emergency_orchestration',
       context: {
         task_type: task.type,
         system_failure: true,
-        error: error?.message
-      }
+        error: error?.message,
+      },
     });
   }
 
-  private getTemperatureForTask(task: unknown): number {
-    if (task.type.includes("extract") || task.type.includes("critic")) return 0.1;
-    if (task.type.includes("creative") || task.type.includes("lesson")) return 0.7;
+  private getTemperatureForTask(task: {
+    type: string;
+    complexity: TaskComplexity;
+    priority: TaskPriority;
+    culturalSensitive?: boolean;
+    prompt: string;
+    context?: unknown;
+  }): number {
+    if (task.type.includes('extract') || task.type.includes('critic')) return 0.1;
+    if (task.type.includes('creative') || task.type.includes('lesson')) return 0.7;
     return 0.3;
   }
 
-  private getTokenLimitForTask(task: unknown): number {
-    if (task.complexity === "complex") return 4000;
-    if (task.complexity === "critical") return 8000;
+  private getTokenLimitForTask(task: {
+    type: string;
+    complexity: TaskComplexity;
+    priority: TaskPriority;
+    culturalSensitive?: boolean;
+    prompt: string;
+    context?: unknown;
+  }): number {
+    if (task.complexity === 'complex') return 4000;
+    if (task.complexity === 'critical') return 8000;
     return 1500;
   }
 }
