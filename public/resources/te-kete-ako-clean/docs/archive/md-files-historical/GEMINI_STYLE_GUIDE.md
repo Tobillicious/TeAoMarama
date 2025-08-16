@@ -3,6 +3,7 @@
 ## 🎨 **CSS Classes & Components Reference**
 
 ### **Core Layout Structure**
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +34,7 @@
 ### **Essential CSS Classes for Content**
 
 #### **Typography & Headings**
+
 ```css
 /* Use these heading classes */
 .page-title          /* Main page heading */
@@ -46,6 +48,7 @@
 ```
 
 #### **Content Containers**
+
 ```css
 .handout-container    /* Wrapper for handout content */
 .lesson-container     /* Wrapper for lesson content */
@@ -58,6 +61,7 @@
 ```
 
 #### **Interactive Elements**
+
 ```css
 .technique-box        /* Individual techniques/concepts */
 .example-box          /* Example sections */
@@ -70,6 +74,7 @@
 ```
 
 #### **Cultural Design Elements**
+
 ```css
 .cultural-accent      /* Cultural background styling */
 .maori-pattern        /* Traditional pattern backgrounds */
@@ -78,6 +83,7 @@
 ```
 
 #### **Color System Variables**
+
 ```css
 /* Primary colors for backgrounds and text */
 var(--color-primary)      /* #1a1a1a - Deep Charcoal */
@@ -96,6 +102,7 @@ var(--color-cultural-light) /* #f0f8f0 - Light cultural bg */
 ## 📝 **Content Templates for Gemini**
 
 ### **Handout Template**
+
 ```html
 <div class="handout-container">
     <div class="page-header">
@@ -137,11 +144,13 @@ var(--color-cultural-light) /* #f0f8f0 - Light cultural bg */
 ### **Cultural Integration Requirements**
 
 #### **Te Reo Māori Integration**
+
 - Always include Te Reo Māori terms with proper `lang="mi"` attributes
 - Use `.cultural-emphasis` class for Māori terms
 - Include glossary sections with bilingual definitions
 
 #### **Whakataukī (Proverbs)**
+
 ```html
 <div class="cultural-protocol-box">
     <p class="whakataukī" lang="mi">"[MĀORI PROVERB]"</p>
@@ -151,6 +160,7 @@ var(--color-cultural-light) /* #f0f8f0 - Light cultural bg */
 ```
 
 #### **Assessment Integration**
+
 - Always include both formative and summative assessment options
 - Use PEEL paragraph structure for writing activities
 - Include peer collaboration opportunities
@@ -159,16 +169,19 @@ var(--color-cultural-light) /* #f0f8f0 - Light cultural bg */
 ## 🎯 **Subject-Specific Guidelines**
 
 ### **English/Literacy**
+
 - Focus on author's purpose, rhetorical devices, media literacy
 - Include diverse cultural perspectives in text selection
 - Integrate oral tradition and storytelling elements
 
 ### **Social Studies**
+
 - Center Indigenous perspectives and decolonized history
 - Include contemporary social justice connections
 - Use primary sources from Māori perspectives when possible
 
 ### **Science/STEM**
+
 - Connect traditional Māori knowledge (mātauranga Māori) with Western science
 - Include environmental stewardship (kaitiakitanga) concepts
 - Use place-based learning examples from Aotearoa
@@ -176,24 +189,28 @@ var(--color-cultural-light) /* #f0f8f0 - Light cultural bg */
 ## 📊 **Quality Checklist for Generated Content**
 
 ### **Technical Requirements**
+
 - [ ] Proper HTML structure with semantic elements
 - [ ] CSS classes from this style guide used correctly
 - [ ] Mobile-responsive design considerations
 - [ ] Print-friendly formatting (no-print classes where needed)
 
 ### **Cultural Requirements**
+
 - [ ] Te Reo Māori terms included with proper attributes
 - [ ] Cultural context provided for all Māori concepts
 - [ ] Respectful representation of Indigenous knowledge
 - [ ] Contemporary relevance clearly established
 
 ### **Educational Requirements**
+
 - [ ] Clear learning objectives stated
 - [ ] Multiple assessment options provided
 - [ ] Differentiation strategies included
 - [ ] Connection to NZ Curriculum standards
 
 ### **Accessibility Requirements**
+
 - [ ] Alt text for all images
 - [ ] Proper heading hierarchy (h1, h2, h3...)
 - [ ] High contrast color combinations

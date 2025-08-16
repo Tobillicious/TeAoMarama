@@ -1,7 +1,9 @@
 # 🏛️ Unit Plans Transformation: From Good → WORLD-CLASS
+
 *Leveraging Y8 Systems as our Gold Standard Template*
 
 ## 🎯 VISION
+
 Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educational hub that rivals the world's best platforms, using our exceptional Y8 Systems unit as the template for excellence.
 
 ---
@@ -9,6 +11,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ## 📊 CURRENT STATE ANALYSIS
 
 ### ✅ What's Already EXCELLENT
+
 - **Y8 Systems Unit** - Professionally designed with:
   - Stunning visual hierarchy with color-coded lessons
   - Cultural context integration (whakataukī, tikanga)
@@ -18,6 +21,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
   - Teacher implementation guidance
 
 ### 🔧 What Needs Enhancement
+
 - **Unit Plans Landing Page** - Basic structure needs upgrading to showcase our amazing content
 - **Navigation Hierarchy** - Need clear Unit → Lesson → Handout pathways
 - **Visual Consistency** - Apply Y8 Systems design language across all units
@@ -28,9 +32,11 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ## 🎨 TRANSFORMATION STRATEGY
 
 ### PHASE 1: SPECTACULAR UNIT PLANS LANDING PAGE
+
 **Transform `/unit-plans.html` into a world-class showcase**
 
 #### A. Hero Section Upgrade
+
 ```html
 <section class="units-hero-modern">
     <div class="hero-content-container">
@@ -47,7 +53,9 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 #### B. Featured Units Showcase
+
 **Highlight our best content with visual impact**
+
 ```html
 <section class="featured-units-showcase">
     <h2>🌟 Featured Gold Standard Units</h2>
@@ -94,7 +102,9 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 #### C. Complete Units Directory
+
 **Organized by year level with sophisticated filtering**
+
 ```html
 <section class="complete-units-directory">
     <div class="directory-header">
@@ -131,9 +141,11 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 ### PHASE 2: ADVANCED UNIT CARD COMPONENTS
+
 **Create reusable, beautiful unit cards following Y8 Systems template**
 
 #### A. Unit Card Component Design
+
 ```css
 .unit-card-professional {
     background: white;
@@ -165,6 +177,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 #### B. Progress Tracking Integration
+
 ```html
 <div class="unit-progress-tracker">
     <div class="progress-header">
@@ -182,9 +195,11 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 ### PHASE 3: HIERARCHICAL NAVIGATION SYSTEM
+
 **Create clear Unit → Lesson → Handout pathways**
 
 #### A. Breadcrumb Enhancement
+
 ```html
 <nav class="breadcrumbs-enhanced" aria-label="Educational Pathway">
     <ol class="breadcrumbs-path">
@@ -197,6 +212,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 #### B. Related Content Suggestions
+
 ```html
 <section class="related-content-smart">
     <h3>🔗 Related in this Unit</h3>
@@ -218,9 +234,11 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 ### PHASE 4: MASTER BROWSE PAGES UPGRADE
+
 **Enhance `/lessons.html` and `/handouts.html` with advanced features**
 
 #### A. Smart Content Discovery
+
 ```html
 <section class="content-discovery-hub">
     <div class="discovery-header">
@@ -275,6 +293,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ```
 
 #### B. AI-Powered Recommendations
+
 ```html
 <section class="ai-recommendations">
     <h3>🤖 Personalized Recommendations</h3>
@@ -289,6 +308,7 @@ Transform Te Kete Ako's unit plans page into a sophisticated, hierarchical educa
 ## 🛠️ TECHNICAL IMPLEMENTATION
 
 ### JavaScript Architecture
+
 ```javascript
 class TeKeteAkoNavigationSystem {
     constructor() {
@@ -312,6 +332,7 @@ class TeKeteAkoNavigationSystem {
 ```
 
 ### CSS Architecture Enhancement
+
 ```css
 /* Extend our design system with unit-specific variables */
 :root {
@@ -335,6 +356,7 @@ class TeKeteAkoNavigationSystem {
 ## 📋 IMPLEMENTATION CHECKLIST
 
 ### Phase 1: Unit Plans Landing Page (2-3 hours)
+
 - [ ] Create spectacular hero section with stats
 - [ ] Build featured units showcase
 - [ ] Implement advanced filtering system
@@ -342,6 +364,7 @@ class TeKeteAkoNavigationSystem {
 - [ ] Integrate progress tracking
 
 ### Phase 2: Unit Page Templates (1-2 hours)
+
 - [ ] Apply Y8 Systems template to all existing units
 - [ ] Create consistent color coding system
 - [ ] Add cultural context sections
@@ -349,12 +372,14 @@ class TeKeteAkoNavigationSystem {
 - [ ] Add resource categorization
 
 ### Phase 3: Navigation Enhancement (1 hour)
+
 - [ ] Upgrade breadcrumb system
 - [ ] Add related content suggestions
 - [ ] Create unit progression indicators
 - [ ] Implement smart linking between content
 
 ### Phase 4: Browse Pages Upgrade (2 hours)
+
 - [ ] Transform lessons.html with advanced discovery
 - [ ] Upgrade handouts.html with smart filtering
 - [ ] Add AI-powered recommendations
@@ -362,6 +387,7 @@ class TeKeteAkoNavigationSystem {
 - [ ] Create content analytics integration
 
 ### Phase 5: Polish & Testing (1 hour)
+
 - [ ] Cross-browser testing
 - [ ] Mobile responsiveness verification
 - [ ] Performance optimization
@@ -373,23 +399,26 @@ class TeKeteAkoNavigationSystem {
 ## 🎯 SUCCESS METRICS
 
 ### Immediate Impact
+
 - **Visual Excellence**: Platform appearance matches world-class educational sites
 - **Navigation Clarity**: Users can easily find and explore content hierarchically
 - **Content Discovery**: 95% of content is easily discoverable through multiple pathways
 
 ### Medium-term Goals
+
 - **User Engagement**: 50% increase in session duration
 - **Content Utilization**: 75% of units/lessons accessed regularly
 - **Teacher Adoption**: Positive feedback from Mangakōtukutuku College trial
 
 ### Long-term Vision
+
 - **Platform Recognition**: Te Kete Ako referenced as best-practice educational platform
 - **Cultural Impact**: Model for indigenous education technology worldwide
 - **Educational Excellence**: Demonstrable improvement in student outcomes
 
 ---
 
-## 🚀 READY TO TRANSFORM!
+## 🚀 READY TO TRANSFORM
 
 This plan leverages our existing excellence (Y8 Systems) and extends it across the entire platform. We have:
 

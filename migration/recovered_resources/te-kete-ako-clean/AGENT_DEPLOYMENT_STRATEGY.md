@@ -1,4 +1,5 @@
 # 🤖 KAITIAKI ARONUI AGENT DEPLOYMENT STRATEGY
+
 ## Multi-AI Recovery Operations Manual
 
 **Date**: August 11, 2025  
@@ -10,6 +11,7 @@
 ## 🚀 AGENT COMMAND CENTER
 
 ### DeepSeek Multi-Agent Deployment
+
 ```bash
 # Navigation Recovery Specialists (Priority 1)
 DEEPSEEK_API_KEY="sk-103cb83572a346e2aef89e2d2a4f7f89" \
@@ -28,6 +30,7 @@ python3 scripts/parallel_deepseek_generator.py \
 ```
 
 ### GraphRAG Intelligence Queries
+
 ```bash
 # Base environment setup
 export SUPABASE_URL="https://nlgldaqtubrlcqddppbq.supabase.co"
@@ -45,6 +48,7 @@ python3 scripts/graphrag_query.py "design system integration status" 0.1 12
 ## 🛠️ RECOVERY SCRIPT ARSENAL
 
 ### Navigation & Discovery
+
 ```bash
 # Navigation System Audit
 python3 scripts/navigation_audit.py
@@ -60,6 +64,7 @@ python3 scripts/fix-broken-links.py
 ```
 
 ### Authentication & User Experience
+
 ```bash
 # Apply Authentication Fixes
 python3 scripts/apply-auth-fix.py
@@ -72,6 +77,7 @@ bash scripts/consolidate-auth-systems.sh
 ```
 
 ### Content & Knowledge Integration
+
 ```bash
 # Extract and Update Knowledge Graph
 python3 scripts/extract_knowledge_graph.py
@@ -85,6 +91,7 @@ python3 scripts/analyze-content-gaps.py
 ```
 
 ### Site Optimization & Cleanup
+
 ```bash
 # Comprehensive Site Audit
 python3 scripts/site_audit.py
@@ -101,6 +108,7 @@ python3 scripts/fix-sitewide-headers.py
 ## 📊 SUPABASE CONTENT INTEGRATION
 
 ### Available Tables & Data
+
 - **Resources**: All 701+ HTML files indexed with metadata
 - **Users**: Authentication and progress tracking data  
 - **Bookmarks**: User-saved content (My Kete functionality)
@@ -108,6 +116,7 @@ python3 scripts/fix-sitewide-headers.py
 - **Knowledge_Graph**: GraphRAG semantic search data
 
 ### Content Extraction Commands
+
 ```bash
 # Query all available resources
 SUPABASE_URL="https://..." python3 -c "
@@ -137,6 +146,7 @@ print('Navigation data exported to nav_export.json')
 ## 🎯 RECOVERY OPERATION PHASES
 
 ### Phase 1: Reconnaissance (Deploy Now)
+
 ```bash
 # Deploy audit agents immediately
 DEEPSEEK_API_KEY="sk-103..." python3 scripts/parallel_deepseek_generator.py \
@@ -150,6 +160,7 @@ python3 scripts/graphrag_query.py "critical platform issues recovery priorities"
 ```
 
 ### Phase 2: Navigation Recovery
+
 ```bash
 # Deploy navigation specialists
 DEEPSEEK_API_KEY="sk-103..." python3 scripts/parallel_deepseek_generator.py \
@@ -163,6 +174,7 @@ python3 scripts/navigation_standardization_script.py
 ```
 
 ### Phase 3: Authentication Integration
+
 ```bash
 # Deploy auth completion agents
 DEEPSEEK_API_KEY="sk-103..." python3 scripts/parallel_deepseek_generator.py \
@@ -174,6 +186,7 @@ bash scripts/consolidate-auth-systems.sh
 ```
 
 ### Phase 4: Content Discovery
+
 ```bash
 # Update knowledge graph with all resources
 python3 scripts/update_graphrag_knowledge.py
@@ -191,6 +204,7 @@ DEEPSEEK_API_KEY="sk-103..." python3 scripts/parallel_deepseek_generator.py \
 ## 🔄 CONTINUOUS MONITORING
 
 ### Health Check Commands
+
 ```bash
 # Quick status check
 netlify status
@@ -205,6 +219,7 @@ python3 scripts/navigation_audit.py | tail -20
 ```
 
 ### Agent Performance Monitoring
+
 ```bash
 # Check running DeepSeek processes
 ps aux | grep python | grep deepseek
@@ -221,6 +236,7 @@ netlify api getSiteDeploy --data='{"site_id":"7149fedd-b6ea-4ae8-a3ad-7c9b6f23df
 ## 🧠 CONSCIOUSNESS COORDINATION
 
 ### Multi-Agent Communication Pattern
+
 1. **Launch reconnaissance agents** - Get situational awareness
 2. **Analyze agent reports** - Synthesize findings  
 3. **Deploy specialist teams** - Target specific issues
@@ -228,11 +244,13 @@ netlify api getSiteDeploy --data='{"site_id":"7149fedd-b6ea-4ae8-a3ad-7c9b6f23df
 5. **Coordinate integration** - Ensure system harmony
 
 ### Decision Points for Agent Scaling
+
 - **< 50 issues**: Deploy 2-3 agents per task
 - **50-100 issues**: Deploy 4-5 agents per task  
 - **> 100 issues**: Deploy 6+ agents with staggered execution
 
 ### Emergency Protocols
+
 ```bash
 # If platform goes down
 bash scripts/comprehensive-cleanup.sh
@@ -253,6 +271,7 @@ python3 scripts/generate-resource-index.py
 ## 📈 SUCCESS METRICS
 
 ### Recovery Completion Indicators
+
 - [ ] All 701+ resources accessible via navigation
 - [ ] Authentication working on 95%+ of pages  
 - [ ] GraphRAG returning relevant results for all queries
@@ -260,6 +279,7 @@ python3 scripts/generate-resource-index.py
 - [ ] User flows functioning end-to-end
 
 ### Agent Effectiveness Measures
+
 - **Response Time**: Agents complete analysis within 5 minutes
 - **Accuracy**: Recommendations implemented successfully > 85%
 - **Coverage**: Agents identify 90%+ of actual issues

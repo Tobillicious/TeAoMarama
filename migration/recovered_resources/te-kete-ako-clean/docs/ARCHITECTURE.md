@@ -1,7 +1,9 @@
 # AUTHENTICATION ARCHITECTURE - Te Kete Ako System Design
+
 ## Comprehensive System Architecture & Implementation Guide
 
 ### 🏗️ System Overview
+
 Te Kete Ako implements a layered authentication architecture using Supabase as the backend with a sophisticated frontend system designed for educational environments. The system prioritizes reliability, cultural sensitivity, and ease of use for New Zealand schools.
 
 ---
@@ -9,6 +11,7 @@ Te Kete Ako implements a layered authentication architecture using Supabase as t
 ## 🎯 Authentication System Components
 
 ### Core Architecture Layers
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    USER INTERFACE LAYER                     │
@@ -41,6 +44,7 @@ Te Kete Ako implements a layered authentication architecture using Supabase as t
 ## 📂 File Structure & Dependencies
 
 ### Authentication Core Files
+
 ```
 /public/js/
 ├── env-config.js              # Environment configuration singleton
@@ -63,6 +67,7 @@ Te Kete Ako implements a layered authentication architecture using Supabase as t
 ```
 
 ### Database Schema
+
 ```
 supabase/
 ├── migrations/
@@ -85,6 +90,7 @@ Database Tables:
 ## 🔄 Authentication Flow Diagram
 
 ### User Registration Flow
+
 ```mermaid
 graph TD
     A[User visits register-simple.html] --> B[Fill registration form]
@@ -101,6 +107,7 @@ graph TD
 ```
 
 ### User Login Flow  
+
 ```mermaid
 graph TD
     A[User visits login.html] --> B[Page loads auth scripts]
@@ -121,6 +128,7 @@ graph TD
 ```
 
 ### Session Management Flow
+
 ```mermaid
 graph TD
     A[User navigates to protected page] --> B[Auth scripts load]
@@ -142,13 +150,15 @@ graph TD
 ### Page-Level Authentication Roles
 
 #### 🔓 Public Pages (No Auth Required)
+
 - **index.html** - Homepage with limited functionality
 - **about.html** - Site information
 - **handouts.html** - Public educational resources
 - **lessons.html** - Public lesson previews
 
 #### 🔒 Authentication Pages (Auth Workflow)
-- **login.html** 
+
+- **login.html**
   - Handles user sign-in
   - Auto-redirects authenticated users
   - Provides error handling and recovery
@@ -171,6 +181,7 @@ graph TD
   - New password setting
 
 #### 🛡️ Protected Pages (Auth Required)
+
 - **my-kete.html**
   - Personal dashboard
   - Bookmark management
@@ -182,12 +193,13 @@ graph TD
   - Progress visualization
   - Assignment submission
 
-- **teacher-dashboard.html** 
+- **teacher-dashboard.html**
   - Teacher-specific resources
   - Class management
   - Advanced educational tools
 
 #### 🔧 Diagnostic Pages (Development)
+
 - **auth-diagnostics.html**
   - Real-time auth state debugging
   - Configuration validation
@@ -198,6 +210,7 @@ graph TD
 ## ⚙️ System Configuration
 
 ### Environment Variables (env-config.js)
+
 ```javascript
 window.ENV = {
     SUPABASE_URL: 'https://nlgldaqtubrlcqddppbq.supabase.co',
@@ -210,6 +223,7 @@ window.ENV = {
 ```
 
 ### Supabase Configuration
+
 ```javascript
 // Client configuration in supabase-client.js
 supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey, {
@@ -223,6 +237,7 @@ supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey, {
 ```
 
 ### Row Level Security (RLS) Policies
+
 ```sql
 -- Allow users to manage their own profiles
 CREATE POLICY "authenticated_users_own_profile" ON public.profiles
@@ -238,6 +253,7 @@ CREATE POLICY "allow_signup_trigger_insert" ON public.profiles
 ## 🎯 Role-Based Access Control
 
 ### User Roles Hierarchy
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        ADMIN                                │
@@ -269,6 +285,7 @@ CREATE POLICY "allow_signup_trigger_insert" ON public.profiles
 ```
 
 ### Role Implementation
+
 ```javascript
 // Role checking methods in TeKeteAuthSystem
 getUserRole() {
@@ -294,6 +311,7 @@ if (window.teKeteAuth.hasRole('teacher')) {
 ### Multi-Layer Error Recovery
 
 #### 1. Network Error Handling (AuthResilienceManager)
+
 ```javascript
 class AuthResilienceManager {
     constructor() {
@@ -311,6 +329,7 @@ class AuthResilienceManager {
 ```
 
 #### 2. Session Recovery
+
 ```javascript
 // Automatic session validation every 5 minutes
 setupSessionValidation() {
@@ -323,6 +342,7 @@ setupSessionValidation() {
 ```
 
 #### 3. CDN Fallback Strategy
+
 ```javascript
 // If Supabase CDN fails, provide graceful degradation
 if (!window.supabase) {
@@ -343,6 +363,7 @@ if (!window.supabase) {
 ## 📱 Multi-Tab Synchronization
 
 ### Cross-Tab Authentication State
+
 ```javascript
 // Listen for auth changes in other tabs
 setupMultiTabSync() {
@@ -360,6 +381,7 @@ setupMultiTabSync() {
 ## 🔍 Development & Debugging
 
 ### Authentication State Debugging
+
 ```javascript
 // Available on any page with auth system loaded
 window.debugAuth = function() {
@@ -376,6 +398,7 @@ window.debugAuth = function() {
 ```
 
 ### Common Debug Commands
+
 ```javascript
 // Check system status
 console.log(window.debugAuth());
@@ -395,16 +418,19 @@ console.log(window.checkEnvironmentConfig());
 ## 🚀 Performance Optimizations
 
 ### Lazy Loading Strategy
+
 - Auth scripts use `defer` attribute to avoid render blocking
 - Supabase client initializes asynchronously
 - UI updates happen only when auth state changes
 
 ### Caching & Storage
+
 - Session data persisted in browser storage
 - Auth state cached to avoid repeated API calls
 - Profile data cached after first successful login
 
 ### Network Efficiency
+
 - Single Supabase client instance across all pages
 - Exponential backoff for retry operations
 - Connection pooling via Supabase client configuration
@@ -414,16 +440,19 @@ console.log(window.checkEnvironmentConfig());
 ## 🛡️ Security Considerations
 
 ### Content Security Policy Integration
+
 - Strict CSP headers on all pages
 - Whitelisted domains for Supabase connections
 - No eval() or unsafe-eval usage
 
 ### Token Management
+
 - Automatic token refresh before expiration
 - Secure token storage in httpOnly cookies (via Supabase)
 - Session timeout handling
 
 ### Input Validation
+
 - Email format validation on client and server
 - Password complexity requirements
 - XSS prevention in all user inputs

@@ -16,13 +16,15 @@
 ## 📊 **ACTUAL PROJECT STATUS**
 
 ### **✅ WORKING WELL (Don't Touch)**
-- **Live Site:** https://tekete.netlify.app/ - Beautiful, functional
+
+- **Live Site:** <https://tekete.netlify.app/> - Beautiful, functional
 - **Authentication:** Working on live site with "My Kete" functionality  
 - **Games:** Te Reo Māori Wordle, Countdown Letters all functional
 - **Resources:** ~190 educational resources properly organized
 - **Supabase:** Database fully deployed with complete schema
 
 ### **🚨 GENUINE PROBLEMS TO SOLVE**
+
 1. **Y8 Systems Unit Missing** - Complete 5-week program exists locally but not on live site
 2. **Content Sync Issues** - Enhanced features in local not reflected on live
 3. **Some Broken Links** - Need identification and fixing
@@ -33,6 +35,7 @@
 ## 🛠️ **CORRECT APPROACH**
 
 ### **STEP 1: AUDIT FIRST**
+
 ```
 DO THIS BEFORE ANYTHING ELSE:
 1. Compare https://tekete.netlify.app/ with local folder
@@ -42,6 +45,7 @@ DO THIS BEFORE ANYTHING ELSE:
 ```
 
 ### **STEP 2: FOCUS ON GAPS**
+
 ```
 DEPLOY MISSING CONTENT:
 - Y8 Systems Unit (/y8-systems-unit.html)
@@ -51,6 +55,7 @@ DEPLOY MISSING CONTENT:
 ```
 
 ### **STEP 3: FIX, DON'T REBUILD**
+
 ```
 FOR BROKEN FEATURES:
 - Test if they actually work first
@@ -86,6 +91,7 @@ FOR BROKEN FEATURES:
 ## 📁 **KEY FILE LOCATIONS**
 
 ### **Missing from Live (Deploy These):**
+
 ```
 /y8-systems-unit.html - Complete unit hub page
 /y8-systems/ - Entire folder with lessons and resources
@@ -94,12 +100,14 @@ FOR BROKEN FEATURES:
 ```
 
 ### **Database Schema (Already Deployed):**
+
 ```
 agent-knowledge-hub/architecture/supabase-schema.sql
 resources-table-schema.sql
 ```
 
 ### **Current Status Docs:**
+
 ```
 agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_28_2025.md (CURRENT)
 agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
@@ -118,12 +126,14 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ## 📞 **COMMUNICATION GUIDELINES**
 
 ### **With User:**
+
 - **Be concise** - Focus on actual progress
 - **Test before claiming fixes** - Verify things work
 - **Focus on gaps** - What's missing, not what to rebuild
 - **Document clearly** - Next agent needs accurate info
 
 ### **With Codebase:**
+
 - **Preserve working features** - Don't break existing functionality
 - **Make minimal changes** - Small, targeted fixes only
 - **Test thoroughly** - Every change should be verified
@@ -134,6 +144,7 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ## 🚀 **IMMEDIATE NEXT STEPS**
 
 ### **Priority 1: Site Audit**
+
 ```
 1. Visit https://tekete.netlify.app/
 2. Test authentication (try logging in)
@@ -143,6 +154,7 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ```
 
 ### **Priority 2: Deploy Y8 Systems Unit**
+
 ```
 1. Verify /y8-systems-unit.html exists locally
 2. Test all internal links work
@@ -152,6 +164,7 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ```
 
 ### **Priority 3: Content Sync**
+
 ```
 1. Identify other enhanced local content
 2. Deploy selectively and test
@@ -164,6 +177,7 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ## ⚠️ **WARNING SIGNS**
 
 **If you find yourself doing these, STOP:**
+
 - Rebuilding authentication from scratch
 - Creating new CSS or JS files to "improve" existing ones
 - Making changes to working headers/footers
@@ -177,12 +191,14 @@ agent-knowledge-hub/onboarding/CURRENT_STATUS_JULY_2025.md (OUTDATED)
 ## 📈 **SUCCESS METRICS**
 
 ### **Short Term:**
+
 - [ ] Y8 Systems unit accessible on live site
 - [ ] No existing functionality broken
 - [ ] Authentication status clarified (working or genuinely broken)
 - [ ] Major content gaps identified and filled
 
 ### **Long Term:**
+
 - [ ] All ~190 resources accessible and working
 - [ ] Students and teachers can use platform effectively
 - [ ] Cultural integration preserved and enhanced

@@ -1,7 +1,9 @@
 # NEXT STEPS - Te Kete Ako Development Roadmap
+
 ## Strategic Development Plan Post-Authentication Hotfix
 
 ### 🎯 Development Context
+
 Following the successful authentication hotfix that standardized Supabase UMD loading, implemented singleton guards, resolved MIME type errors, and established consistent auth flow across all pages, Te Kete Ako is now positioned for advanced feature development.
 
 ---
@@ -9,11 +11,13 @@ Following the successful authentication hotfix that standardized Supabase UMD lo
 ## 🔐 Priority 1: Supabase TOTP Step-Up Authentication
 
 ### Implementation Overview
+
 Add Time-based One-Time Password (TOTP) authentication as a second factor for enhanced security, particularly for teacher and admin accounts.
 
 ### Technical Requirements
 
 #### Database Schema Extensions
+
 ```sql
 -- Add TOTP support to profiles table
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS totp_enabled BOOLEAN DEFAULT false;
@@ -40,6 +44,7 @@ CREATE POLICY "users_own_totp_verifications" ON public.totp_verifications
 ```
 
 #### Authentication Flow Enhancement
+
 ```javascript
 // Extend TeKeteAuthSystem class (auth-enhanced.js)
 class TeKeteAuthSystem {
@@ -125,6 +130,7 @@ class TeKeteAuthSystem {
 ```
 
 #### UI Implementation
+
 ```html
 <!-- totp-setup.html -->
 <div class="totp-setup-container">
@@ -150,6 +156,7 @@ class TeKeteAuthSystem {
 ```
 
 #### Implementation Timeline
+
 - **Week 1**: Database schema and backend functions
 - **Week 2**: Frontend TOTP setup and verification UI
 - **Week 3**: Integration with existing auth flow
@@ -160,11 +167,13 @@ class TeKeteAuthSystem {
 ## 📊 Priority 2: Student Dashboard MVP Development
 
 ### Dashboard Feature Overview
+
 Create a comprehensive student learning dashboard that integrates with existing authentication and provides personalized learning analytics.
 
 ### Core Features
 
 #### 1. Learning Progress Visualization
+
 ```javascript
 // js/student-dashboard-enhanced.js
 class StudentDashboardSystem {
@@ -214,6 +223,7 @@ class StudentDashboardSystem {
 ```
 
 #### 2. Personalized Learning Paths
+
 ```sql
 -- Database schema for learning paths
 CREATE TABLE IF NOT EXISTS public.learning_paths (
@@ -241,6 +251,7 @@ CREATE TABLE IF NOT EXISTS public.learning_path_steps (
 ```
 
 #### 3. Achievement System
+
 ```html
 <!-- Dashboard achievement section -->
 <div class="achievements-section">
@@ -268,18 +279,21 @@ CREATE TABLE IF NOT EXISTS public.learning_path_steps (
 ### Implementation Phases
 
 #### Phase 1: Core Dashboard (Weeks 1-2)
+
 - User authentication integration
 - Basic progress visualization
 - Resource bookmark display
 - Activity history timeline
 
 #### Phase 2: Advanced Analytics (Weeks 3-4)
+
 - Learning velocity tracking
 - Subject-specific progress charts
 - Time spent analytics
 - Performance trend analysis
 
 #### Phase 3: Personalization (Weeks 5-6)
+
 - Adaptive learning path suggestions
 - AI-powered content recommendations
 - Difficulty adjustment based on performance
@@ -290,11 +304,13 @@ CREATE TABLE IF NOT EXISTS public.learning_path_steps (
 ## 🧠 Priority 3: GraphRAG Refresh Plan
 
 ### Current GraphRAG Integration Status
+
 Te Kete Ako has established GraphRAG foundations with DeepSeek integration and knowledge graph capabilities. The refresh plan focuses on expanding ingestion sources and improving semantic tagging.
 
 ### Ingestion Roots Expansion
 
 #### 1. Multi-Source Content Ingestion
+
 ```python
 # scripts/enhanced_graphrag_ingestion.py
 class EnhancedGraphRAGIngestion:
@@ -344,6 +360,7 @@ class EnhancedGraphRAGIngestion:
 ```
 
 #### 2. Enhanced Tagging System
+
 ```python
 class SemanticTaggingSystem:
     def __init__(self):
@@ -386,6 +403,7 @@ class SemanticTaggingSystem:
 ```
 
 ### Implementation Timeline
+
 - **Week 1-2**: Enhanced ingestion pipeline development
 - **Week 3-4**: Semantic tagging system implementation
 - **Week 5-6**: Knowledge graph relationship mapping
@@ -398,6 +416,7 @@ class SemanticTaggingSystem:
 ### Immediate Development Targets (Next 4 Weeks)
 
 #### High Impact, Low Effort
+
 1. **Enhanced Error Messages** (2 days)
    - Culturally appropriate error messaging
    - Multi-language support (English/Te Reo Māori)
@@ -414,6 +433,7 @@ class SemanticTaggingSystem:
    - Authentication performance metrics
 
 #### Medium Impact, Medium Effort
+
 4. **Advanced Search Integration** (1 week)
    - GraphRAG-powered semantic search
    - Cross-resource discovery
@@ -432,6 +452,7 @@ class SemanticTaggingSystem:
 ### Medium-Term Targets (Weeks 5-12)
 
 #### Educational Innovation
+
 7. **AI Teaching Assistant** (3 weeks)
    - ChatGPT/DeepSeek integration for personalized help
    - Cultural context awareness
@@ -448,6 +469,7 @@ class SemanticTaggingSystem:
    - Leaderboards with cultural sensitivity
 
 #### Technical Infrastructure  
+
 10. **API Gateway Implementation** (2 weeks)
     - Rate limiting and security
     - API versioning strategy
@@ -466,16 +488,19 @@ class SemanticTaggingSystem:
 ### Long-Term Vision (3-6 Months)
 
 #### Scalability & Growth
+
 - Multi-school deployment architecture
 - Cloud infrastructure optimization
 - International expansion preparation
 
 #### Advanced AI Integration
+
 - Custom LLM fine-tuning for Māori education
 - Automated content generation
 - Intelligent curriculum mapping
 
 #### Community Features
+
 - Parent/whānau engagement portals
 - Community knowledge sharing
 - Elder wisdom integration platform
@@ -485,6 +510,7 @@ class SemanticTaggingSystem:
 ## 🔄 Development Methodology
 
 ### Agile Sprints Structure
+
 - **Sprint Duration**: 2 weeks
 - **Sprint Planning**: Feature prioritization based on cultural impact and technical feasibility
 - **Daily Standups**: Progress tracking with cultural sensitivity check-ins
@@ -492,6 +518,7 @@ class SemanticTaggingSystem:
 - **Retrospectives**: Continuous improvement with mātauranga Māori principles
 
 ### Quality Assurance Framework
+
 - **Cultural Review**: All features reviewed by Māori education specialists
 - **User Testing**: Regular testing with actual students and teachers
 - **Security Audits**: Monthly security assessments
@@ -499,6 +526,7 @@ class SemanticTaggingSystem:
 - **Accessibility Testing**: WCAG 2.1 AA compliance verification
 
 ### Risk Management
+
 - **Technical Risks**: Dependency management, API changes, scalability challenges
 - **Cultural Risks**: Misrepresentation of Māori knowledge, inappropriate content
 - **Educational Risks**: Pedagogical effectiveness, curriculum alignment

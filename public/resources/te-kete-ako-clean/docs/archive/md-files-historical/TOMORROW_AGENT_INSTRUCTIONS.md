@@ -1,4 +1,5 @@
 # 🧺 CRITICAL: 373 Untracked Changes Need Review
+
 **Date:** July 31, 2025 23:57  
 **Urgent Priority:** High  
 **Context:** Claude Code session ended with 373 untracked items in source control
@@ -8,9 +9,11 @@
 ## 🚨 **IMMEDIATE ACTION REQUIRED**
 
 ### **The Problem:**
+
 Screenshot shows **373 untracked changes** in source control that need systematic review. These contain recent work from the past few days that wasn't syncing to live site due to deployment folder confusion (now fixed).
 
 ### **What Was Fixed:**
+
 ✅ **Deployment sync issue resolved** - netlify.toml now publishes from root  
 ✅ **GraphRAG updated** - 163 resources, 23 concepts, 503 relationships indexed  
 ✅ **Authentication migrated** - Firebase → Supabase complete  
@@ -21,6 +24,7 @@ Screenshot shows **373 untracked changes** in source control that need systemati
 ## 📋 **STEP-BY-STEP REVIEW PROCESS**
 
 ### **1. Examine Untracked Changes**
+
 ```bash
 # See all untracked files
 git status --porcelain
@@ -33,24 +37,30 @@ git ls-files --others --exclude-standard | head -20
 ```
 
 ### **2. Categorize Each Item**
+
 For each untracked file, determine:
+
 - **KEEP & COMMIT**: Valuable new work that should go live
 - **STASH**: Development artifacts to keep locally but not commit  
 - **DELETE**: Temporary/duplicate files that can be removed
 
 ### **3. Priority Categories**
+
 **HIGH PRIORITY (Commit immediately):**
+
 - New lesson content in `lessons/` or `guided-inquiry-unit/`
 - Enhanced filtering systems in `js/`
 - Cultural authenticity improvements
 - Navigation fixes
 
 **MEDIUM PRIORITY (Review carefully):**
+
 - Documentation updates
 - Configuration changes
 - Resource additions
 
 **LOW PRIORITY (Consider stashing):**
+
 - Development logs
 - Temporary test files
 - Backup duplicates
@@ -60,6 +70,7 @@ For each untracked file, determine:
 ## 🛠️ **RECOMMENDED COMMANDS**
 
 ### **Review and Commit Valuable Work:**
+
 ```bash
 # Add specific valuable files
 git add [filename]
@@ -77,6 +88,7 @@ git push origin main
 ```
 
 ### **Stash Development Artifacts:**
+
 ```bash
 # Create .gitignore entries for development files
 echo "development_logs/" >> .gitignore
@@ -92,6 +104,7 @@ mv [development-files] ../te-kete-dev-artifacts/
 ## 🧠 **GRAPHRAG INTEGRATION**
 
 **CRITICAL**: After committing new content, update GraphRAG:
+
 ```bash
 # Update knowledge base with new resources
 python3 local_knowledge_update.py
@@ -105,6 +118,7 @@ python3 local_knowledge_update.py
 ## 📁 **KEY FILES TO CHECK**
 
 ### **Likely High-Value Content:**
+
 - Any files in `lessons/podcast-series/` (mentioned in documentation)
 - New interactive tools in `y8-systems/resources/`
 - Enhanced filtering systems in `js/`
@@ -112,6 +126,7 @@ python3 local_knowledge_update.py
 - Navigation anchor fixes
 
 ### **Files to Preserve Locally (Don't Commit):**
+
 - `.env` (contains credentials - already ignored)
 - `public_backup_20250731/` (duplicate content backup)
 - Development logs and temporary files
@@ -121,13 +136,15 @@ python3 local_knowledge_update.py
 ## 🔄 **SUCCESS CRITERIA**
 
 ### **Repository is Clean When:**
+
 - [ ] `git status` shows clean working tree
 - [ ] All valuable educational content is committed and live
 - [ ] Development artifacts are stashed or ignored appropriately
 - [ ] GraphRAG knowledge base reflects any new content additions
-- [ ] Live site (https://tekete.netlify.app) shows latest improvements
+- [ ] Live site (<https://tekete.netlify.app>) shows latest improvements
 
 ### **Check Your Work:**
+
 ```bash
 # Should show minimal/clean output
 git status

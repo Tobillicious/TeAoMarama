@@ -31,7 +31,7 @@ CREATE TABLE lesson\_embeddings (
   embedding vector(384), \-- Corresponds to the dimensions of the all-MiniLM-L6-v2 model  
   created\_at timestamptz DEFAULT now() NOT NULL,  
   CONSTRAINT fk\_lesson  
-    FOREIGN KEY(lesson\_id)   
+    FOREIGN KEY(lesson\_id)
     REFERENCES lessons(id)  
     ON DELETE CASCADE  
 );
@@ -74,7 +74,7 @@ lessons \= response.data
 for lesson in lessons:  
     lesson\_id \= lesson\['id'\]  
     content \= lesson\['content'\]  
-      
+
     \# Generate embedding  
     embedding \= model.encode(content).tolist()  
       
@@ -180,11 +180,11 @@ function LessonSearch() {
   const handleSearch \= async () \=\> {  
     if (\!query.trim()) return  
     setLoading(true)  
-      
+
     const { data, error } \= await supabase.functions.invoke('find-similar-lessons', {  
       body: { query },  
     })  
-      
+
     if (error) {  
       console.error('Error searching:', error)  
     } else {  
@@ -195,9 +195,9 @@ function LessonSearch() {
 
   return (  
     \<div\>  
-      \<input   
-        type="text"   
-        value={query}   
+      \<input
+        type="text"
+        value={query}
         onChange={(e) \=\> setQuery(e.target.value)}  
         placeholder="What do you want to learn about?"  
       /\>  

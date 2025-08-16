@@ -1,4 +1,5 @@
 # 📊 CLASSIFICATION EXAMPLE: Y8 Systems Unit
+
 **Practical Application of Cross-Subject Resource Classification Standards**
 
 ---
@@ -6,6 +7,7 @@
 ## 🎯 **Y8 SYSTEMS UNIT ANALYSIS**
 
 ### **Unit Overview:**
+
 - **31 total resources** (lessons, handouts, activities)
 - **5-week complete unit** on "How Systems Shape Our Lives"
 - **Decolonized approach** with significant Māori governance integration
@@ -16,21 +18,25 @@
 ## 📏 **PRIMARY CLASSIFICATION DETERMINATION**
 
 ### **Content Analysis:**
+
 - **Social Studies Focus: 75%** - How societies organize, governance systems, power structures
 - **Te Ao Māori Integration: 35%** - Māori governance principles, tino rangatiratanga, traditional decision-making
 - **English Integration: 25%** - Reading comprehension, written responses, group discussions
 - **Mathematics Integration: 10%** - Basic graphing, system modeling, data analysis
 
 ### **Learning Objectives Analysis:**
+
 - **Primary**: Understanding how systems shape society (Social Studies Achievement Objective Level 4)
 - **Secondary**: Appreciating Māori governance systems and tino rangatiratanga
 - **Tertiary**: Developing inquiry and communication skills
 
 ### **Assessment Focus:**
+
 - **Main assessment**: Systems thinking and social organization understanding
 - **Supporting assessments**: Cultural competency, written communication
 
 ### **RESULT: PRIMARY CLASSIFICATION = Social Studies**
+
 **Rationale**: 75% of learning time and primary assessment focus on social organization and systems thinking
 
 ---
@@ -38,7 +44,9 @@
 ## 🏷️ **SECONDARY SUBJECT TAGGING**
 
 ### **Te Ao Māori: HIGH Integration (35%)**
+
 **Why HIGH**: Substantial focus on Māori governance systems as legitimate alternative to Western systems
+
 - **Resources with HIGH Māori focus:**
   - Māori Governance Systems handout
   - Decolonized Design Template  
@@ -49,7 +57,9 @@
 **Integration Quality**: Authentic traditional knowledge, not tokenistic inclusion
 
 ### **English: MODERATE Integration (25%)**
+
 **Why MODERATE**: Clear literacy components but supporting rather than central
+
 - **Literacy elements:**
   - Reading comprehension activities across all lessons
   - Written reflection templates
@@ -59,7 +69,9 @@
 **Integration Quality**: Literacy skills developed through social studies content
 
 ### **Mathematics: LOW Integration (10%)**
+
 **Why LOW**: Basic quantitative elements but minimal mathematical thinking
+
 - **Mathematical elements:**
   - Simple graphing of survey results
   - Basic statistical analysis
@@ -75,6 +87,7 @@
 ### **Where Y8 Systems Unit Appears:**
 
 #### **1. Social Studies Landing Page (Primary)**
+
 ```
 🏛️ SOCIAL STUDIES > COMPLETE UNITS
 ┌─────────────────────────────────────────────┐
@@ -86,6 +99,7 @@
 ```
 
 #### **2. Te Ao Māori Landing Page (Secondary - HIGH)**
+
 ```
 🌿 TE AO MĀORI > CONTEMPORARY APPLICATIONS
 ┌─────────────────────────────────────────────┐
@@ -98,6 +112,7 @@
 ```
 
 #### **3. English Landing Page (Secondary - MODERATE)**
+
 ```
 📖 ENGLISH > CROSS-CURRICULAR LITERACY
 ┌─────────────────────────────────────────────┐
@@ -110,6 +125,7 @@
 ```
 
 #### **4. GraphRAG Search Results**
+
 ```
 Query: "māori governance systems"
 Results:
@@ -129,18 +145,21 @@ Results:
 ## ✅ **BENEFITS OF THIS CLASSIFICATION**
 
 ### **For Teachers:**
+
 - **Clear Primary Discovery**: Find Y8 Systems in Social Studies when planning social inquiry
 - **Cross-Curricular Awareness**: Discover Māori governance integration when exploring Te Ao Māori
 - **Literacy Integration**: Recognize English skill development opportunities
 - **Comprehensive Planning**: Use secondary tags to plan integrated curriculum
 
 ### **for Students:**
+
 - **Coherent Learning**: Experience unit as social studies with clear subject focus
 - **Cultural Integration**: Encounter authentic Māori perspectives within social context
 - **Skill Transfer**: Develop literacy skills through meaningful social inquiry
 - **Connected Knowledge**: See relationships between subjects without confusion
 
 ### **For Curriculum Alignment:**
+
 - **Achievement Objectives**: Clear alignment with Social Studies Level 4 objectives
 - **Key Competencies**: Thinking, participating, contributing developed through unit
 - **Cultural Responsiveness**: Māori worldviews integrated authentically
@@ -151,6 +170,7 @@ Results:
 ## 🎯 **IMPLEMENTATION IN SUBJECT PAGES**
 
 ### **Social Studies Landing Page Structure:**
+
 ```
 🏛️ SOCIAL STUDIES (97 resources)
 
@@ -180,11 +200,13 @@ Results:
 ## 🧠 **GRAPHRAG QUERY EXAMPLES**
 
 ### **Subject-Specific Queries:**
+
 - `"social studies systems thinking"` → Finds Y8 Systems (Primary) + related Social Studies resources
 - `"māori governance in social studies"` → Finds Y8 Systems (Secondary) + other culturally integrated resources
 - `"literacy through social inquiry"` → Finds Y8 Systems (Secondary) + other cross-curricular literacy resources
 
 ### **Cross-Curricular Discovery:**
+
 - `"systems thinking across subjects"` → Finds Y8 Systems + Mathematics modeling + Science ecology systems
 - `"māori perspectives in multiple subjects"` → Shows authentic integration levels across subject areas
 - `"complete units ready to teach"` → Filters for comprehensive unit-level resources
@@ -194,12 +216,14 @@ Results:
 ## 📈 **MEASUREMENT & REFINEMENT**
 
 ### **Success Metrics:**
+
 - **Discovery Accuracy**: Teachers find Y8 Systems when searching Social Studies
 - **Cross-Curricular Awareness**: Teachers discover Māori integration through Te Ao Māori browsing
 - **Usage Patterns**: Analytics show how teachers navigate between primary/secondary classifications
 - **Teacher Feedback**: Validation that classification serves actual planning needs
 
 ### **Refinement Indicators:**
+
 - If teachers consistently search for Y8 Systems in Te Ao Māori → Consider reclassifying as Te Ao Māori primary
 - If literacy components prove more substantial → Upgrade English integration from MODERATE to HIGH
 - If mathematical modeling expands → Increase Mathematics integration level

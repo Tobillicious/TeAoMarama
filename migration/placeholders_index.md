@@ -3,6 +3,7 @@
 This file lists every placeholder token used in the migration artifacts and where it appears.
 
 ## Common env placeholders
+
 - `YOUR_FIREBASE_PROJECT_ID_STAGING`
   - Files: `migration_manifest.weaviate.json`
   - Meaning: Firebase staging project id. Replace with staging project id.
@@ -36,6 +37,7 @@ This file lists every placeholder token used in the migration artifacts and wher
   - Meaning: Which embedding provider to call (`openai`, `your-provider`). Update `getEmbedding()` to match.
 
 ### Postgres/pgvector (Supabase/Neon)
+
 - `PG_URL` / `SUPABASE_DB_URL`
   - Files: `pgvector_loader_example.ts`, `README_migration.md`
   - Meaning: Postgres connection string (server-only). Example: `postgres://USER:PASSWORD@HOST:PORT/DBNAME`.
@@ -49,6 +51,7 @@ This file lists every placeholder token used in the migration artifacts and wher
   - Meaning: Table name for chunk storage with `vector` column. Default `resource_chunks`.
 
 ## File / Batch placeholders
+
 - `batch-001-low-risk-lessons`
   - Files: `migration_manifest.weaviate.json`, `agents_prompts_short.md`
   - Meaning: Example batch id. Replace / extend batch definitions.
@@ -58,17 +61,20 @@ This file lists every placeholder token used in the migration artifacts and wher
   - Meaning: Local sample JSONL path. Replace with actual sample file path.
 
 ## Schema / class names
+
 - `TeAoMarama_Staging`, `TeAoMarama_Prod`
   - Files: `migration_manifest.weaviate.json`
   - Meaning: Prefix for Weaviate class names. Change only if you need a different namespace.
 
 ### Postgres schema files
+
 - `migration/migration_manifest.pgvector.json`
   - Meaning: Env-separated config for pgvector stack (connection URL, dim, table names).
 - `migration/pgvector_loader_example.ts`
   - Meaning: Example loader that writes canonical resources to Firestore and chunks+embeddings to Postgres (pgvector).
 
 ## Notes on replacements
+
 - Use a secure vault (GitHub Secrets, Secrets Manager) for all API keys; do not commit secrets.
 - After replacing placeholders, run a single-item dry-run (one resource) before scaling up.
 - If you want me to populate these placeholders with concrete values, paste them here securely (or tell me the exact names to use) and I’ll regenerate the files.

@@ -12,11 +12,12 @@ During a security audit, I identified a critical vulnerability that requires imm
 
 Multiple Python scripts, JavaScript files, and even HTML files contain hardcoded API keys and database passwords in plain text. This poses a significant security risk.
 
-###  Affected Files & Credentials
+### Affected Files & Credentials
 
 **1. Supabase Key (`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`)**
 
 This key was found in the following locations:
+
 - `embed_resources.py`
 - `execute-resource-integration.js`
 - `extract_knowledge_graph.py`
@@ -30,12 +31,14 @@ This key was found in the following locations:
 **2. Alternate Supabase Key (`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...8tJj0dBaF...`)**
 
 A different Supabase key was found in:
+
 - `js/supabase-client.js`
 - `public/js/supabase-client.js`
 
 **3. Neo4j Password (`te0kutquDw1nIft0mcrvxOn_TEEtybBzM9IYf_IQa88`)**
 
 This password was found in:
+
 - `neo4j_loader_official.py`
 - `update_graphrag_knowledge.py`
 - `load_neo4j_graph.py`
@@ -45,10 +48,10 @@ This password was found in:
 
 The standard and secure practice is to load these credentials from environment variables, not from the source code.
 
-1.  **Create a `.env` file:** Add the credentials to a `.env` file in the project's root directory.
-2.  **Update `.gitignore`:** Ensure the `.env` file is added to `.gitignore` to prevent it from being committed.
-3.  **Refactor Scripts:**
-    *   **For Python:** Use the `python-dotenv` library to load variables from the `.env` file. The scripts should then use `os.getenv("VARIABLE_NAME")` to access the credentials.
-    *   **For JavaScript/HTML:** Refactor the code to pull variables from the hosting environment (e.g., `process.env.VARIABLE_NAME` or via server-side injection).
+1. **Create a `.env` file:** Add the credentials to a `.env` file in the project's root directory.
+2. **Update `.gitignore`:** Ensure the `.env` file is added to `.gitignore` to prevent it from being committed.
+3. **Refactor Scripts:**
+    - **For Python:** Use the `python-dotenv` library to load variables from the `.env` file. The scripts should then use `os.getenv("VARIABLE_NAME")` to access the credentials.
+    - **For JavaScript/HTML:** Refactor the code to pull variables from the hosting environment (e.g., `process.env.VARIABLE_NAME` or via server-side injection).
 
 This action will secure the application without changing its core logic. Please handle this with priority.

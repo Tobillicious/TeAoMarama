@@ -1,4 +1,5 @@
 # Te Kete Ako - Platform Excellence Showcase
+
 ## Supporting Mangakōtukutuku College's Educational Transformation
 
 ### 🌟 **THE MISSION: Community Transformation Through Education**
@@ -14,6 +15,7 @@ Te Kete Ako isn't just providing resources - **we're part of saving a community.
 Using GraphRAG as persistent brain, we've uncovered **WORLD-CLASS educational depth** already existing across the platform:
 
 #### **1. Y8 SYSTEMS UNIT** ⭐ (PROVEN GOLD STANDARD)
+
 - **10 comprehensive lessons** with full resource integration
 - **22 supporting materials** including templates, case studies, frameworks
 - **Print-ready handouts** with download links embedded in lessons
@@ -22,6 +24,7 @@ Using GraphRAG as persistent brain, we've uncovered **WORLD-CLASS educational de
 - **Method:** Station rotations, deep inquiry, systems thinking
 
 #### **2. GUIDED INQUIRY UNIT** 🚀 (MASSIVE UNDERUTILIZED ASSET)
+
 - **47,470 bytes** of sophisticated society design methodology
 - **46,755 bytes** interactive society design tool
 - **6 comprehensive lessons + 12 materials + template guide**
@@ -29,6 +32,7 @@ Using GraphRAG as persistent brain, we've uncovered **WORLD-CLASS educational de
 - **Quality Level:** Matches Y8 Systems depth but hidden from main navigation
 
 #### **3. UNIT 1 TE AO MĀORI** 🌿 (NEWLY TRANSFORMED)
+
 - **NOW Y8-Systems-level depth** with 5 comprehensive resources
 - **4-station rotation activities** (20+ minutes each)
 - **Holistic assessment portfolio** with culturally responsive rubric
@@ -36,12 +40,14 @@ Using GraphRAG as persistent brain, we've uncovered **WORLD-CLASS educational de
 - **Cross-platform connections** to 15+ existing resources
 
 #### **4. WRITERS TOOLKIT** ✍️ (COMPREHENSIVE BUT NEEDS VISIBILITY)
+
 - **11 complete lesson plans** with matching handouts
 - **Sophisticated pedagogical approach** to writing instruction
 - **PEEL method, revision processes, rhetorical devices** etc.
 - **Ready for integration** with all other units
 
 #### **5. EXPERIENCES DIRECTORY** 🌈 (REVOLUTIONARY PLATFORMS)
+
 - **Virtual Marae:** World-first VR cultural training
 - **Digital Pūrākau:** Interactive storytelling with cultural authenticity
 - **Adaptive Pathways:** AI-powered personalized learning
@@ -77,21 +83,25 @@ Assessment ←→ Culturally responsive, holistic evaluation
 #### **IMMEDIATE IMPACT MOVES:**
 
 **1. CREATE LEARNING PATHWAYS HUB**
+
 - Show teachers how Unit 1 → Y8 Systems → Guided Inquiry connect
 - Make the "hidden goldmines" discoverable through navigation
 - Create "Recommended Learning Journeys" for different year levels
 
 **2. MANGAKŌTUKUTUKU SUCCESS SHOWCASE**
+
 - Document how this platform specifically supports the college's kaupapa
 - Show concrete examples of resources addressing community needs
 - Highlight cultural authenticity and educational transformation focus
 
 **3. TEACHER EXPERIENCE OPTIMIZATION**
+
 - One-click access to comprehensive lesson packages
 - "Everything You Need" bundles for each topic
 - Clear progression from basic → advanced resources
 
 **4. STUDENT ENGAGEMENT AMPLIFICATION**
+
 - Connect interactive experiences to every lesson
 - Show progression pathways for different learning styles
 - Make advanced platforms easily accessible
@@ -112,12 +122,14 @@ Assessment ←→ Culturally responsive, holistic evaluation
 ### 🚀 **THE TRANSFORMATION PROOF**
 
 **BEFORE GraphRAG Discovery:**
+
 - Scattered excellent resources
 - Hidden gems not visible to teachers
 - Units existing independently
 - Amazing depth not showcased
 
 **AFTER GraphRAG-Powered Connection:**
+
 - Coherent educational ecosystem
 - Clear learning pathways
 - Interconnected resource web
@@ -130,6 +142,7 @@ Assessment ←→ Culturally responsive, holistic evaluation
 ### 💪 **COMMUNITY TRANSFORMATION THROUGH EDUCATION**
 
 This platform now provides **concrete proof** that:
+
 - **Cultural authenticity enhances rather than limits academic excellence**
 - **Systems thinking and inquiry-based learning prepare students for success**
 - **Technology can amplify rather than replace meaningful human connection**

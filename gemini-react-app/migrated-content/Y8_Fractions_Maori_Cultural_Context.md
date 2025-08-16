@@ -1,9 +1,11 @@
 # Y8 Fractions in Māori Cultural Context
+
 **Migrated by Mihara - Kaitiaki Mahara | Priority: HIGH | Cultural Review: ✅ PASSED**
 
 ---
 
 ## 🌟 Mihara Migration Summary
+
 - **Original Source**: Te Kete Ako Legacy System
 - **Migration Date**: 2025-08-14
 - **Cultural Sensitivity**: HIGH
@@ -16,6 +18,7 @@
 ## 📚 Lesson Overview
 
 ### **Te Reo Title**: Nga Hautanga - Fractions within Te Ao Māori
+
 ### **English Title**: Year 8 Mathematics - Fractions Through Cultural Understanding
 
 **Year Level**: Year 8 (13-14 years)  
@@ -39,13 +42,15 @@ Students will be able to:
 
 ## 🌿 Cultural Framework / Tikanga Māori
 
-### **Key Cultural Concepts**:
+### **Key Cultural Concepts**
+
 - **Whakapapa** (genealogical connections) - understanding relationships between parts and wholes
 - **Kotahitanga** (unity) - how fractions combine to create unity
 - **Manaakitanga** (hospitality) - sharing resources fairly using fractions
 - **Whakatōhea** (working together) - collaborative problem-solving
 
-### **Cultural Safety Protocols**:
+### **Cultural Safety Protocols**
+
 ✅ All content reviewed by cultural advisors  
 ✅ Te Reo pronunciation guide provided  
 ✅ Traditional knowledge used respectfully  
@@ -60,7 +65,7 @@ Students will be able to:
 
 *"Kia ora tamariki! Today we explore how our tīpuna (ancestors) understood parts and wholes through their daily lives in te taiao (the natural world)."*
 
-**Traditional Context**: 
+**Traditional Context**:
 Before calculators and textbooks, Māori people used sophisticated mathematical thinking in their daily lives - from dividing kai (food) fairly among whānau, to understanding seasonal cycles, to managing resources sustainably.
 
 ---
@@ -72,6 +77,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 **Cultural Learning**: Understanding **manaakitanga** through mathematical thinking.
 
 **Problems**:
+
 1. If you have 12 kūmara (sweet potatoes), what fraction does each person receive?
    - Answer: 12 ÷ 24 = 1/2 kūmara per person
 
@@ -80,6 +86,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
    - Still needed: 1 - 3/4 = 1/4
 
 **Te Reo Vocabulary**:
+
 - **Hauwhā** = quarter (1/4)
 - **Hawhe** = half (1/2)  
 - **Hautoru** = third (1/3)
@@ -94,6 +101,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 **Concept**: Just as people have family relationships, fractions have family connections.
 
 **Visual Representation**:
+
 ```
         1 (Tipuna - Ancestor)
        / \
@@ -103,6 +111,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 ```
 
 **Activity**: Create fraction family trees showing:
+
 - How 1/2 and 1/2 combine to make 1 whole
 - How four 1/4 pieces create unity (kotahitanga)
 - How equivalent fractions are like extended whānau (2/4 = 1/2)
@@ -118,6 +127,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 **Traditional Knowledge**: Māori divided the year into seasons based on celestial observations and natural indicators.
 
 **Problems**:
+
 1. **Raumati** (summer) lasts approximately 1/4 of the year. How many months is this?
    - 1/4 × 12 months = 3 months
 
@@ -135,6 +145,7 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 **Scenario**: Building a waka requires careful measurement and proportion.
 
 **Problems**:
+
 1. If the waka hull is 12 meters long, and the taurapa (stern post) should be 1/8 of the total length, how long should it be?
    - 1/8 × 12 = 1.5 meters
 
@@ -147,19 +158,23 @@ Before calculators and textbooks, Māori people used sophisticated mathematical 
 
 ## 🎨 Assessment / Aromatawai
 
-### **Formative Assessment**:
+### **Formative Assessment**
+
 - **Cultural Respect Check**: Students demonstrate appropriate use of Te Reo terms
 - **Mathematical Understanding**: Accurate fraction operations in cultural contexts
 - **Collaborative Skills**: Working together with manaakitanga during group activities
 
-### **Summative Assessment**:
+### **Summative Assessment**
+
 Students create their own cultural fraction scenario incorporating:
+
 - Authentic Māori cultural context
 - Correct mathematical operations
 - Respectful use of mātauranga Māori
 - Clear explanation of both cultural and mathematical learning
 
-### **Success Criteria**:
+### **Success Criteria**
+
 ✅ Demonstrates understanding of fraction concepts  
 ✅ Uses cultural contexts respectfully and accurately  
 ✅ Shows mathematical reasoning clearly  
@@ -179,19 +194,22 @@ Students create their own cultural fraction scenario incorporating:
 
 ## 📚 Resources / Rauemi
 
-### **Cultural Resources**:
+### **Cultural Resources**
+
 - Te Ara Encyclopedia of New Zealand - Māori Mathematics
 - Local iwi cultural advisors
 - Traditional measurement tool replicas
 - Māori calendar resources
 
-### **Mathematical Resources**:
+### **Mathematical Resources**
+
 - Fraction manipulation materials
 - Visual fraction models
 - Calculator for checking work
 - Grid paper for drawings
 
-### **Te Reo Support**:
+### **Te Reo Support**
+
 - Pronunciation audio guides
 - Mathematical terms in Te Reo glossary
 - Cultural concept explanations
@@ -201,12 +219,14 @@ Students create their own cultural fraction scenario incorporating:
 ## 🤝 Community Connections / Hononga Hapori
 
 **Cultural Partnerships**:
+
 - Local iwi education coordinators
 - Kaumātua knowledge holders
 - Māori language specialists
 - Cultural practice groups
 
 **Acknowledgments**:
+
 - Mana whenua for sharing knowledge
 - Cultural advisors for guidance
 - Whānau for supporting learning
@@ -216,6 +236,7 @@ Students create their own cultural fraction scenario incorporating:
 ## 🛡️ Cultural Safety Notes / Manaakitanga
 
 **For Teachers**:
+
 - Pronounce Te Reo terms correctly (audio support provided)
 - Acknowledge that this is shared cultural knowledge, not appropriation
 - Invite cultural experts to co-teach if possible

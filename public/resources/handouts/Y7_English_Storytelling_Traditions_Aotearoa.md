@@ -1,9 +1,12 @@
 # Storytelling Traditions of Aotearoa - Year 7 English
+
 *Exploring the rich narrative heritage of New Zealand through oral and written traditions*
 
 ## Learning Intention
+
 **WALT**: We are learning to understand and appreciate the diverse storytelling traditions of Aotearoa New Zealand
 **Success Criteria**:
+
 - I can identify different storytelling traditions from Māori and other cultures in New Zealand
 - I can analyze the structure and purpose of traditional stories
 - I can explain the cultural significance of storytelling in different communities
@@ -21,18 +24,21 @@ Māori storytelling has been the backbone of cultural transmission for over 1,00
 **Types of Traditional Māori Stories**:
 
 **1. Pūrākau (Ancient Stories/Legends)**:
+
 - **Creation narratives**: Stories of how the world came to be
 - **Cosmological tales**: Explaining natural phenomena and spiritual relationships
 - **Genealogical stories**: Tracing whakapapa (ancestral connections)
 - **Examples**: The separation of Ranginui and Papatūānuku, Māui's adventures
 
 **2. Kōrero Tawhito (Historical Accounts)**:
+
 - **Tribal histories**: Stories of migrations, settlements, and important events
 - **Whakapapa recitations**: Genealogical connections spanning generations
 - **Battle narratives**: Accounts of conflicts and their resolution
 - **Settlement stories**: How different iwi came to inhabit specific regions
 
 **3. Whakatauākī and Whakataukī (Proverbs and Sayings)**:
+
 - **Wisdom teachings**: Condensed life lessons and cultural values
 - **Metaphorical knowledge**: Using natural imagery to convey deeper truths
 - **Practical guidance**: Advice for daily living and decision-making
@@ -50,6 +56,7 @@ With the help of his brothers, Māui traveled to the eastern edge of the world w
 The sun, trapped and struggling, finally agreed to travel more slowly across the heavens. From that day forward, the days became longer, and people had time to complete their important work.
 
 **Cultural Elements in This Story**:
+
 - **Problem-solving**: Māui as cultural hero who helps humanity
 - **Cooperation**: Working together (whakatōhia) to achieve goals
 - **Respect for nature**: Negotiating with natural forces rather than conquering them
@@ -58,6 +65,7 @@ The sun, trapped and struggling, finally agreed to travel more slowly across the
 ### 🌊 **Traditional Māori Storytelling Techniques**
 
 **Oral Performance Elements**:
+
 - **Whakatōhea (Call and response)**: Audience participation in storytelling
 - **Facial expressions (mata)**: Dramatic emphasis using traditional expressions
 - **Hand gestures (ringa)**: Supporting the narrative with movement
@@ -65,6 +73,7 @@ The sun, trapped and struggling, finally agreed to travel more slowly across the
 - **Repetition patterns**: Key phrases repeated for emphasis and memory
 
 **Structural Patterns**:
+
 - **Whakataukī openings**: Beginning with proverbial wisdom
 - **Karakia elements**: Spiritual acknowledgments and protections
 - **Genealogical frameworks**: Placing events within whakapapa context
@@ -72,6 +81,7 @@ The sun, trapped and struggling, finally agreed to travel more slowly across the
 - **Circular conclusions**: Endings that connect back to beginnings
 
 **Cultural Protocols**:
+
 - **Appropriate contexts**: When and where certain stories can be told
 - **Audience considerations**: Stories suitable for different age groups
 - **Seasonal timing**: Stories connected to specific times of year
@@ -84,6 +94,7 @@ The sun, trapped and struggling, finally agreed to travel more slowly across the
 European settlers brought their own storytelling traditions and adapted them to the New Zealand context. These stories often reflected the challenges and opportunities of colonial life.
 
 **Pioneer Stories**:
+
 - **Immigration narratives**: Stories of the journey to New Zealand
 - **Settlement challenges**: Tales of building communities in a new land
 - **Cultural encounters**: Stories of meeting Māori and learning new ways
@@ -95,6 +106,7 @@ Butler's letters and stories described the Canterbury high country, introducing 
 *"The mountains here are different from anything in Europe—more stark, more immediate. They seem to watch you as you work, silent witnesses to human struggle against an ancient land."*
 
 **Gold Rush Stories (1860s-1880s)**:
+
 - **Adventure narratives**: Tales of seeking fortune in dangerous conditions
 - **Community formation**: Stories of boom towns and social relationships
 - **Cultural mixing**: Accounts of diverse populations working together
@@ -102,6 +114,7 @@ Butler's letters and stories described the Canterbury high country, introducing 
 
 **Women's Pioneer Stories**:
 Writers like Lady Barker and Charlotte Godley documented the domestic experience of colonial life:
+
 - **Household management**: Adapting European customs to New Zealand conditions
 - **Social relationships**: Building communities and maintaining connections
 - **Child-rearing**: Raising families in isolated rural areas
@@ -113,6 +126,7 @@ Writers like Lady Barker and Charlotte Godley documented the domestic experience
 Chinese miners and merchants brought rich storytelling traditions from various regions of China:
 
 **Oral Traditions**:
+
 - **Family legends**: Stories of ancestors and their journeys to New Zealand
 - **Moral tales**: Confucian teachings adapted to immigrant experiences
 - **Festival stories**: Narratives connected to Chinese celebrations and customs
@@ -122,12 +136,14 @@ Chinese miners and merchants brought rich storytelling traditions from various r
 Pacific communities brought ancient storytelling traditions that often paralleled Māori customs:
 
 **Common Elements**:
+
 - **Creation stories**: Similar themes of gods, heroes, and natural forces
 - **Navigation tales**: Stories of oceanic voyaging and discovery
 - **Family sagas**: Multi-generational narratives of migration and settlement
 - **Trickster figures**: Characters similar to Māui in different cultural contexts
 
 **Indian Subcontinental Stories**:
+
 - **Folk tales**: Traditional stories adapted to New Zealand contexts
 - **Religious narratives**: Hindu, Sikh, and Muslim storytelling traditions
 - **Historical accounts**: Stories of partition, migration, and settlement
@@ -145,11 +161,13 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 *"Our stories are our treasures. They tell us who we are, where we come from, how we should live."*
 
 **Contemporary Pacific Writing**:
+
 - **Albert Wendt**: Samoan-New Zealand writer exploring Pacific identity
 - **Sia Figiel**: Addressing contemporary Pacific women's experiences
 - **Selina Tusitala Marsh**: Poetry combining traditional and modern forms
 
 **Multicultural Voices**:
+
 - **Chinese New Zealand**: Writers like Lynda Chanwai-Earle exploring dual identity
 - **Indian New Zealand**: Authors like Kapka Kassabova examining migration stories
 - **Refugee narratives**: Stories of recent immigrants and their settlement experiences
@@ -159,18 +177,21 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 **Traditional Performance Contexts**:
 
 **Māori Performance**:
+
 - **Marae protocols**: Storytelling as part of formal welcomes and ceremonies
 - **Waiata (songs)**: Musical storytelling traditions
 - **Haka**: Dance narratives expressing tribal identity and values
 - **Whaikōrero**: Formal speech-making that includes narrative elements
 
 **Contemporary Storytelling Venues**:
+
 - **Storytelling festivals**: Annual events celebrating oral tradition
 - **School performances**: Educational storytelling programs
 - **Community centers**: Local storytelling circles and workshops
 - **Digital platforms**: Online sharing of traditional and contemporary stories
 
 **Storytelling Techniques for Performance**:
+
 - **Voice control**: Using pitch, pace, and volume for dramatic effect
 - **Body language**: Gestures and movement supporting narrative
 - **Audience engagement**: Interactive elements and participation
@@ -181,6 +202,7 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 ## Three Ways to Use This Resource
 
 ### 📖 **Activity 1: Traditional Story Structure Analysis**
+
 **Time**: 60 minutes | **Materials**: Selection of traditional stories, analysis worksheets, presentation materials
 
 **Phase 1 - Story Selection and Reading** (20 minutes):
@@ -203,6 +225,7 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 *Story Summary*: Modern New Zealand story combining Māori and Pākehā cultural elements.
 
 **Reading Task**:
+
 - **Individual reading**: 10 minutes silent reading of assigned story
 - **Group discussion**: 10 minutes sharing initial impressions and questions
 - **Cultural context research**: Brief background on storytelling tradition
@@ -212,24 +235,28 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 **Analysis Framework** (complete for each story):
 
 **1. Opening Elements**:
+
 - **Setting establishment**: How is time and place introduced?
 - **Character introduction**: Who are the main figures and their relationships?
 - **Cultural markers**: What elements identify the storytelling tradition?
 - **Hook/engagement**: How does the story capture audience attention?
 
 **2. Development Patterns**:
+
 - **Conflict introduction**: What problem or challenge drives the story?
 - **Character actions**: How do characters respond to challenges?
 - **Cultural values**: What beliefs or principles guide character behavior?
 - **Narrative techniques**: Repetition, symbolism, dialogue patterns
 
 **3. Resolution and Meaning**:
+
 - **Problem resolution**: How is the central conflict addressed?
 - **Cultural teaching**: What lesson or wisdom does the story convey?
 - **Community relevance**: How does the story serve its cultural community?
 - **Universal themes**: What aspects connect across different cultures?
 
 **Comparison Chart** (create for all stories):
+
 | Element | Māori | European | Chinese | Pacific | Contemporary |
 |---------|-------|----------|---------|---------|--------------|
 | Opening style | | | | | |
@@ -242,12 +269,14 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 **Phase 3 - Presentation and Synthesis** (15 minutes):
 
 **Group Presentations** (3 minutes each):
+
 1. **Story summary**: Brief retelling highlighting key elements
 2. **Cultural context**: Explanation of storytelling tradition background
 3. **Structural analysis**: Key findings about story organization
 4. **Cross-cultural connections**: Similarities with other group stories
 
 **Class Discussion** (10 minutes):
+
 - **Common patterns**: What storytelling elements appear across cultures?
 - **Cultural specifics**: How do different traditions handle similar themes?
 - **Modern relevance**: Why do these traditional stories still matter today?
@@ -256,6 +285,7 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 ---
 
 ### 🎭 **Activity 2: Community Storytelling Project**
+
 **Time**: 90 minutes (with follow-up) | **Materials**: Recording equipment, interview guides, presentation setup
 
 **Project Goal**: Collect and present oral stories from the local community, representing diverse cultural backgrounds
@@ -264,6 +294,7 @@ Contemporary Māori writers blend traditional storytelling with modern literary 
 
 **Community Mapping**:
 Students identify potential storytellers in their local area:
+
 - **Family members**: Grandparents, parents, aunts, uncles with interesting stories
 - **Community elders**: Māori kaumātua, Pacific elders, immigrant community leaders
 - **Local historians**: Long-time residents with settlement stories
@@ -274,24 +305,28 @@ Students identify potential storytellers in their local area:
 **Question Development** (groups develop questions for different story types):
 
 **Personal History Questions**:
+
 - "Can you tell me about how your family came to live in this area?"
 - "What was it like when you first arrived in New Zealand?"
 - "What stories did your parents/grandparents tell you about the old days?"
 - "What traditions from your culture have you maintained here?"
 
 **Community Story Questions**:
+
 - "What changes have you seen in this community over the years?"
 - "Are there any local legends or stories about this place?"
 - "What events in local history do you think are important to remember?"
 - "How has your cultural community contributed to this area?"
 
 **Cultural Tradition Questions**:
+
 - "What stories were traditionally told in your culture?"
 - "How were stories shared in your family or community?"
 - "What values or lessons do these stories teach?"
 - "How have you adapted these stories for life in New Zealand?"
 
 **Technical Preparation**:
+
 - **Recording setup**: Test audio equipment and backup methods
 - **Note-taking**: Prepare observation sheets for non-verbal elements
 - **Cultural protocols**: Research appropriate behavior for different cultural contexts
@@ -301,18 +336,21 @@ Students identify potential storytellers in their local area:
 
 **Interview Process** (students conduct 1-2 interviews each):
 **Before the Interview**:
+
 - **Schedule appropriately**: Respect storyteller's time and cultural protocols
 - **Prepare space**: Comfortable, quiet environment for recording
 - **Cultural respect**: Follow appropriate greetings and customs
 - **Technology check**: Ensure recording equipment works properly
 
 **During the Interview**:
+
 - **Active listening**: Focus on storyteller, not just note-taking
 - **Follow-up questions**: Ask for clarification and additional details
 - **Cultural sensitivity**: Respect boundaries about sacred or private stories
 - **Natural flow**: Allow conversation to develop organically
 
 **After the Interview**:
+
 - **Immediate notes**: Record observations while fresh in memory
 - **Thank you**: Follow appropriate cultural protocols for gratitude
 - **Transcription**: Convert recording to written format
@@ -322,6 +360,7 @@ Students identify potential storytellers in their local area:
 
 **Story Organization**:
 Students categorize collected stories:
+
 - **Migration narratives**: Stories of coming to New Zealand
 - **Settlement tales**: Establishing communities and overcoming challenges
 - **Cultural maintenance**: Preserving traditions in new environment
@@ -330,12 +369,14 @@ Students categorize collected stories:
 
 **Analysis Components**:
 **Cultural Patterns**:
+
 - **Common themes**: What topics appear across different cultural stories?
 - **Storytelling styles**: How do different cultures structure their narratives?
 - **Value systems**: What beliefs and principles emerge from the stories?
 - **Adaptation strategies**: How do immigrants maintain culture while adapting?
 
 **Historical Insights**:
+
 - **Time periods**: What eras and events feature prominently in stories?
 - **Social changes**: How do stories reflect changing community dynamics?
 - **Cultural interactions**: What examples of cross-cultural contact appear?
@@ -346,30 +387,35 @@ Students categorize collected stories:
 **Presentation Formats** (students choose based on story content):
 
 **Option A - Traditional Oral Presentation**:
+
 - **Story retelling**: 5-minute version of collected story
 - **Cultural context**: Background on storytelling tradition
 - **Personal reflection**: What the student learned from the experience
 - **Community connections**: How this story relates to local history
 
 **Option B - Digital Story Creation**:
+
 - **Audio recording**: Edited version of original interview
 - **Visual accompaniment**: Photos, maps, artifacts supporting the story
 - **Narrative framework**: Student introduction and conclusion
 - **Cultural respect**: Appropriate representation of storyteller's tradition
 
 **Option C - Dramatic Performance**:
+
 - **Story adaptation**: Theatrical version respecting original cultural style
 - **Multiple voices**: Different students representing different perspectives
 - **Cultural elements**: Appropriate costumes, music, or visual aids
 - **Educational value**: Clear explanation of cultural and historical significance
 
 **Community Connections**:
+
 - **Invite storytellers**: Original interviewees attend presentations if possible
 - **Cultural advisors**: Local cultural leaders provide feedback and validation
 - **School community**: Parents and families invited to celebration
 - **Documentation**: Create lasting record of community stories collected
 
 **Assessment Elements**:
+
 - **Cultural respect**: Appropriate handling of sensitive cultural material
 - **Research quality**: Thorough preparation and thoughtful questioning
 - **Communication skills**: Clear, engaging presentation of collected stories
@@ -379,6 +425,7 @@ Students categorize collected stories:
 ---
 
 ### ✍️ **Activity 3: Creating New Zealand Stories - Fusion Writing Workshop**
+
 **Time**: 75 minutes | **Materials**: Writing materials, story structure guides, cultural resource materials
 
 **Workshop Goal**: Students create original stories that blend different cultural storytelling traditions found in New Zealand
@@ -390,6 +437,7 @@ Students categorize collected stories:
 **Station 1 - Māori Narrative Patterns**:
 **Learning Focus**: Traditional pūrākau structure and spiritual elements
 **Key Techniques**:
+
 - **Genealogical grounding**: Connecting characters to ancestral lineages
 - **Natural metaphors**: Using landscape and creatures as spiritual symbols
 - **Cyclical time**: Events that echo across generations
@@ -401,6 +449,7 @@ Students categorize collected stories:
 **Station 2 - European Linear Storytelling**:
 **Learning Focus**: Classical narrative structure with clear character development
 **Key Techniques**:
+
 - **Individual character arcs**: Personal growth and change over time
 - **Cause-and-effect plotting**: Logical sequence of events
 - **Psychological realism**: Internal character motivation and conflict
@@ -412,6 +461,7 @@ Students categorize collected stories:
 **Station 3 - Pacific Oral Storytelling**:
 **Learning Focus**: Community narrative voice and spiritual elements
 **Key Techniques**:
+
 - **Collective narration**: Stories told from community perspective
 - **Repetitive patterns**: Phrases and structures that aid memorization
 - **Ocean metaphors**: Sea and navigation imagery for life experiences
@@ -423,6 +473,7 @@ Students categorize collected stories:
 **Station 4 - Asian Narrative Traditions**:
 **Learning Focus**: Symbolic storytelling and moral instruction
 **Key Techniques**:
+
 - **Symbolic characters**: Animals and natural elements representing human qualities
 - **Moral framework**: Stories that explicitly teach ethical principles
 - **Circular conclusions**: Endings that reflect beginnings with new understanding
@@ -434,6 +485,7 @@ Students categorize collected stories:
 **Station 5 - Contemporary Fusion Techniques**:
 **Learning Focus**: Blending multiple cultural storytelling approaches
 **Key Techniques**:
+
 - **Multiple perspective narration**: Different cultural viewpoints on same events
 - **Code-switching language**: Mixing languages and cultural expressions
 - **Parallel structure**: Comparing similar themes across different cultures
@@ -469,18 +521,21 @@ Students choose one of these fusion scenarios or create their own:
 
 **Planning Framework**:
 **Character Development**:
+
 - **Primary character**: Choose main perspective and cultural background
 - **Supporting characters**: Representatives of other cultural traditions
 - **Character relationships**: How different cultural backgrounds interact
 - **Character growth**: What each character learns from cross-cultural encounter
 
 **Cultural Research Requirements**:
+
 - **Authentic details**: Research actual cultural practices and beliefs
 - **Respectful representation**: Avoid stereotypes and cultural appropriation
 - **Consultation approach**: How would you verify cultural accuracy?
 - **Sensitivity awareness**: What cultural boundaries need to be respected?
 
 **Narrative Structure Planning**:
+
 - **Opening**: Which cultural storytelling style will you use to begin?
 - **Development**: How will you integrate different cultural perspectives?
 - **Climax**: What moment brings cultural differences into focus?
@@ -491,6 +546,7 @@ Students choose one of these fusion scenarios or create their own:
 **Writing Process** (20 minutes):
 **Individual Writing Time**: Students develop their fusion stories using planned elements
 **Writing Guidelines**:
+
 - **Length target**: 500-750 words (approximately 2-3 pages)
 - **Cultural balance**: Include at least 3 different cultural perspectives
 - **Authentic voice**: Choose consistent narrative perspective
@@ -502,21 +558,25 @@ Students choose one of these fusion scenarios or create their own:
 
 **Review Criteria**:
 **Cultural Authenticity**:
+
 - Are cultural elements represented respectfully and accurately?
 - Do characters seem realistic rather than stereotypical?
 - Is the cultural research evident in authentic details?
 
 **Storytelling Effectiveness**:
+
 - Does the story engage the reader from the beginning?
 - Are the cultural fusion elements integrated naturally?
 - Is the resolution satisfying and meaningful?
 
 **New Zealand Relevance**:
+
 - Does the story reflect genuine New Zealand multicultural experience?
 - Are the settings and contexts recognizable and believable?
 - Does the story contribute to understanding of cultural diversity?
 
 **Feedback Format**:
+
 - **One strength**: What works best in the cultural fusion approach?
 - **One suggestion**: How could cultural representation be improved?
 - **One connection**: How does this story relate to your own cultural experience?
@@ -528,16 +588,18 @@ Volunteers share favorite excerpts or most successful cultural fusion moments fr
 
 ## Assessment Opportunities
 
-### **Formative Assessment Strategies**:
+### **Formative Assessment Strategies**
+
 - **Story mapping**: Students create visual representations of narrative structures
 - **Cultural comparison charts**: Ongoing comparison of storytelling elements across traditions
 - **Reflection journals**: Regular writing about personal responses to different story types
 - **Peer storytelling**: Students practice oral storytelling with feedback from classmates
 
-### **Summative Assessment Options**:
+### **Summative Assessment Options**
 
 **Option A - Cultural Storytelling Portfolio**:
 Comprehensive collection demonstrating understanding of diverse traditions:
+
 - **Traditional story analysis**: In-depth examination of one story from each cultural tradition
 - **Interview project**: Documented conversation with community storyteller
 - **Creative adaptation**: Original story blending multiple cultural elements
@@ -545,6 +607,7 @@ Comprehensive collection demonstrating understanding of diverse traditions:
 
 **Option B - Community Storytelling Performance**:
 Live presentation demonstrating storytelling skills and cultural understanding:
+
 - **Traditional retelling**: Authentic presentation of story from one cultural tradition
 - **Cultural context explanation**: Background information about storytelling tradition
 - **Personal connection**: How the story relates to student's own experience
@@ -552,12 +615,14 @@ Live presentation demonstrating storytelling skills and cultural understanding:
 
 **Option C - Digital Storytelling Project**:
 Multimedia presentation combining traditional and contemporary elements:
+
 - **Story collection**: Recorded interviews with community storytellers
 - **Cultural research**: Background information about storytelling traditions
 - **Creative presentation**: Digital story using audio, visual, and text elements
 - **Community sharing**: Presentation to wider school or community audience
 
-### **Success Indicators**:
+### **Success Indicators**
+
 - **Achieved**: Identifies different storytelling traditions, retells stories with basic accuracy
 - **Merit**: Analyzes cultural significance of stories, creates original work showing cultural understanding
 - **Excellence**: Synthesizes multiple storytelling traditions, demonstrates sophisticated cultural sensitivity and creative integration
@@ -566,25 +631,29 @@ Multimedia presentation combining traditional and contemporary elements:
 
 ## Extension & Cross-Curricular Connections
 
-### **Social Studies Integration**:
+### **Social Studies Integration**
+
 - **Historical research**: Investigating the historical context of traditional stories
 - **Cultural geography**: Mapping the origins and spread of different storytelling traditions
 - **Migration studies**: Understanding how stories travel with people across cultures
 - **Contemporary society**: Analyzing how traditional stories address modern issues
 
-### **Performing Arts Connections**:
+### **Performing Arts Connections**
+
 - **Drama techniques**: Using theater skills to enhance oral storytelling
 - **Music integration**: Incorporating traditional songs and instruments into stories
 - **Dance elements**: Traditional movement and gesture in storytelling performance
 - **Digital media**: Creating multimedia storytelling presentations
 
-### **Languages Learning**:
+### **Languages Learning**
+
 - **Te Reo Māori**: Learning Māori language through traditional stories
 - **Community languages**: Exploring stories in heritage languages of students
 - **Translation studies**: Comparing stories across different language versions
 - **Linguistic diversity**: Understanding how language shapes storytelling style
 
-### **Visual Arts Links**:
+### **Visual Arts Links**
+
 - **Traditional art forms**: Connecting stories to visual cultural expressions
 - **Illustration projects**: Creating visual representations of traditional stories
 - **Cultural symbols**: Understanding symbolic meanings in different artistic traditions
@@ -594,19 +663,22 @@ Multimedia presentation combining traditional and contemporary elements:
 
 ## Differentiation Strategies
 
-### **Support for Struggling Learners**:
+### **Support for Struggling Learners**
+
 - **Audio resources**: Recorded versions of stories for listening support
 - **Visual story maps**: Graphic organizers for understanding narrative structure
 - **Collaborative partnerships**: Pairing with students who have strong storytelling backgrounds
 - **Modified writing tasks**: Shorter creative pieces focusing on specific cultural elements
 
-### **Challenge for Advanced Students**:
+### **Challenge for Advanced Students**
+
 - **Independent research**: In-depth investigation of specific storytelling traditions
 - **Community partnerships**: Working directly with cultural practitioners and elders
 - **Creative leadership**: Organizing storytelling events for younger students
 - **Academic connections**: Connecting classroom learning to university-level cultural studies
 
-### **Cultural Responsiveness**:
+### **Cultural Responsiveness**
+
 - **Multiple perspectives**: Including diverse storytelling traditions in all activities
 - **Community involvement**: Engaging families and cultural groups in classroom learning
 - **Cultural protocols**: Respecting appropriate ways of sharing different types of stories
@@ -616,20 +688,24 @@ Multimedia presentation combining traditional and contemporary elements:
 
 ## Safety & Cultural Considerations
 
-### **Cultural Safety Guidelines**:
+### **Cultural Safety Guidelines**
+
 ⚠️ **Essential Principles**:
+
 - **Sacred story protocols**: Understanding which stories are appropriate for classroom sharing
 - **Cultural consultation**: Checking with cultural advisors before teaching specific traditions
 - **Respectful representation**: Avoiding stereotypes and cultural appropriation
 - **Permission processes**: Obtaining appropriate consent for recording and sharing stories
 
-### **Inclusive Practices**:
+### **Inclusive Practices**
+
 - **Multiple traditions**: Ensuring representation of diverse cultural backgrounds
 - **Contemporary relevance**: Connecting traditional stories to modern student experience
 - **Family involvement**: Encouraging students to share appropriate family stories
 - **Community connections**: Building relationships with local cultural practitioners
 
-### **Sensitive Topics**:
+### **Sensitive Topics**
+
 - **Historical trauma**: Handling stories that address difficult historical events
 - **Sacred narratives**: Respecting cultural boundaries around spiritual stories
 - **Family privacy**: Maintaining confidentiality around personal family histories
@@ -639,25 +715,29 @@ Multimedia presentation combining traditional and contemporary elements:
 
 ## Professional Resources & Community Connections
 
-### **Cultural Organizations**:
+### **Cultural Organizations**
+
 - **Local iwi and hapū**: Māori tribal groups for authentic cultural guidance
 - **Pacific community groups**: Island-specific cultural organizations
 - **Multicultural councils**: Local organizations supporting diverse communities
 - **Arts councils**: Organizations promoting traditional and contemporary storytelling
 
-### **Educational Resources**:
+### **Educational Resources**
+
 - **National Library**: Oral history collections and storytelling resources
 - **Museums**: Cultural institutions with storytelling programs and archives
 - **Universities**: Academic departments studying New Zealand literature and culture
 - **Cultural centers**: Community spaces dedicated to cultural preservation and sharing
 
-### **Professional Storytellers**:
+### **Professional Storytellers**
+
 - **Traditional practitioners**: Kaumātua, cultural elders, and community storytellers
 - **Contemporary artists**: Modern storytellers working in traditional and fusion styles
 - **Educational specialists**: Professionals who specialize in cultural education
 - **Community volunteers**: Local residents willing to share their cultural stories
 
-### **Digital Resources**:
+### **Digital Resources**
+
 - **Online archives**: Digital collections of traditional stories and oral histories
 - **Cultural websites**: Organizations maintaining storytelling traditions online
 - **Educational platforms**: Resources specifically designed for classroom use

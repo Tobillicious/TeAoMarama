@@ -8,6 +8,7 @@
 - **Orphan asset candidates**: 17
 
 ### Recommendations
+
 - **CSS include standard**: use `css/main.css` with correct relative path; fix any `/css/style.css` or `css/style.css` mismatches.
 - **Auth standard**: Supabase is current; remove or archive Firebase/Auth0 remnants; ensure `js/supabase-client.js` and `js/auth-ui.js` are the only auth clients loaded.
 - **Remove template placeholders**: replace any `${...}` tokens with final values.
@@ -15,6 +16,7 @@
 - **Include paths**: convert root-relative `/css/*` to relative paths for static hosting consistency.
 
 ### Top Missing Includes (first 15)
+
 - public/activities.html → src `js/activity-generator.js` → /Users/admin/Documents/te-kete-ako-clean/public/js/activity-generator.js
 - public/activities.html → src `js/shared-components.js` → /Users/admin/Documents/te-kete-ako-clean/public/js/shared-components.js
 - public/activities.html → src `js/footer.js` → /Users/admin/Documents/te-kete-ako-clean/public/js/footer.js
@@ -32,6 +34,7 @@
 - public/privacy-policy.html → src `js/global-feedback.js` → /Users/admin/Documents/te-kete-ako-clean/public/js/global-feedback.js
 
 ### Third-Party Reference Map
+
 - **deepseek**: 39 files
 - **exa**: 781 files
 - **firebase**: 15 files

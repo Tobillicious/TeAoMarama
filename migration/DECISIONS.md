@@ -14,7 +14,6 @@ Mahara is the approver for final decisions. Each entry documents context and rat
 - Impact / Follow-ups:
 - Links: PRs, Issues, Manifest batch ids
 
-
 ## Entries
 
 ### DEC-20250814-001

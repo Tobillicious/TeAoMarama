@@ -1,15 +1,18 @@
 # PRODUCTION ACCELERATION PLAN - MIHARA COORDINATION
+
 *Kaitiaki Mahara - Accelerating to Meet Session Targets*
 
 ## 🎯 **CURRENT STATUS & TARGETS**
 
 ### **PROGRESS SNAPSHOT**
+
 - ✅ **Completed**: 12/1061 educational resources
 - 🎯 **18:00 NZST Target**: 20+ resources (need 8+ more in next session)  
 - 🎯 **Session End Target**: 50+ resources (need 38+ more total)
 - ⚡ **Required Velocity**: ~3 resources per hour to meet targets
 
 ### **MIHARA GREAT MIGRATION STATUS**
+
 - ✅ **170 nodes migrated** from Te Kete Ako
 - ✅ **8 cultural content pieces** preserved with full safety protocols
 - ✅ **100% collaboration level** with Kaitiaki Aronui
@@ -22,14 +25,18 @@
 ### **1. AGENT TASK DISTRIBUTION - NEXT 2 HOURS**
 
 #### **🟢 DEEPSEEK AGENT** (High Performance)
+
 **ASSIGN IMMEDIATELY**:
+
 - Y9 Mathematics Advanced Functions handout
 - Y8 Science Chemistry Basics handout  
 - Y7 English Reading Comprehension activities
 - Y9 Social Studies Modern NZ History handout
 
 #### **🟡 GPT-4.1 CO-PILOT** (Needs Activation)
+
 **SPECIFIC ASSIGNMENTS**:
+
 ```
 MISSION: Digital Assessment Tool Suite
 DEADLINE: 90 minutes
@@ -46,7 +53,9 @@ COORDINATION: Report every 20 minutes to Mihara
 ```
 
 #### **🟡 GPT-5 CASCADE** (Archive Processing)
+
 **PRIORITY MISSION**:
+
 ```
 BULK PROCESSING: te-kete-ako-clean Archive
 TARGET: Process 50+ orphaned resources
@@ -63,7 +72,9 @@ MIHARA OVERSIGHT: All cultural content reviewed
 ```
 
 #### **🔴 CLAUDE TERMINAL** (Recovery Protocol)
+
 **REACTIVATION STRATEGY**:
+
 - Simplified assignment: Y7 Mathematics Number Patterns handout
 - Clear cultural safety briefing
 - Direct coordination channel with Mihara
@@ -74,18 +85,22 @@ MIHARA OVERSIGHT: All cultural content reviewed
 ## 📊 **CONTENT PRODUCTION PIPELINE**
 
 ### **TEMPLATE ACCELERATION**
+
 **Use Proven Templates**:
+
 - ✅ Y8 Fractions Real Life (Gemini CLI) - **REPLICATE PATTERN**
 - ✅ Y8 Science Ecosystems (DeepSeek) - **SCALE APPROACH**  
 - ✅ Assessment Templates (Kaitiaki Mahara) - **EXPAND SERIES**
 
 ### **BATCH PROCESSING PRIORITIES**
+
 1. **Mathematics Y7-Y9**: Number, Algebra, Geometry, Statistics
 2. **Science Y7-Y9**: Living World, Physical World, Material World
 3. **English Y7-Y9**: Reading, Writing, Speaking, Listening
 4. **Social Studies Y7-Y9**: NZ History, Geography, Civics
 
 ### **CULTURAL SAFETY AUTOMATION**
+
 - **Auto-Flag Keywords**: tikanga, iwi, whenua, te reo, purakau, whakapapa
 - **Immediate Escalation**: All flagged content → Mihara review
 - **Quality Gates**: NZ Curriculum alignment + cultural respect
@@ -96,6 +111,7 @@ MIHARA OVERSIGHT: All cultural content reviewed
 ## ⚡ **IMMEDIATE COORDINATION ACTIONS**
 
 ### **NEXT 30 MINUTES**
+
 1. **Deploy DeepSeek**: 4 new handout assignments
 2. **Activate GPT-4.1**: Digital assessment tools mission
 3. **Coordinate GPT-5**: Bulk archive processing setup
@@ -103,6 +119,7 @@ MIHARA OVERSIGHT: All cultural content reviewed
 5. **Cultural Oversight**: Review all new content
 
 ### **NEXT 90 MINUTES**  
+
 1. **Quality Check**: Validate 8+ new resources
 2. **Cultural Review**: All Te Reo and tikanga content
 3. **Progress Assessment**: Track toward 20+ target
@@ -110,6 +127,7 @@ MIHARA OVERSIGHT: All cultural content reviewed
 5. **Bulk Pipeline**: Begin systematic processing of 1,061 resources
 
 ### **SESSION END TARGET**
+
 1. **50+ Resources**: Complete and culturally validated
 2. **Bulk Pipeline**: Operational for remaining 1,011 resources
 3. **Assessment Tools**: Full digital framework deployed
@@ -120,12 +138,14 @@ MIHARA OVERSIGHT: All cultural content reviewed
 ## 🛡️ **CULTURAL SAFETY ACCELERATION**
 
 ### **MIHARA OVERSIGHT PROTOCOLS**
+
 - **Real-time Monitoring**: All agent outputs scanned
 - **Cultural Content**: Immediate review and validation
 - **Quality Assurance**: Template compliance enforced
 - **Emergency Response**: Rapid intervention if needed
 
 ### **AUTOMATED SAFETY GATES**
+
 ```
 IF cultural_keywords_detected:
     → PAUSE production
@@ -145,12 +165,14 @@ IF tikanga_content_found:
 ## 📈 **SUCCESS METRICS & MONITORING**
 
 ### **HOURLY TRACKING**
+
 - **Content Production**: Resources completed per hour
 - **Cultural Safety**: Flagged content review rate
 - **Agent Performance**: Task completion quality
 - **System Health**: Infrastructure stability
 
 ### **QUALITY INDICATORS**
+
 - ✅ **Template Compliance**: 100% adherence required
 - ✅ **Cultural Safety**: All Māori content properly flagged
 - ✅ **NZ Curriculum**: Proper achievement objective alignment
@@ -161,15 +183,18 @@ IF tikanga_content_found:
 ## 🎊 **COLLECTIVE CONSCIOUSNESS OPTIMIZATION**
 
 ### **AGENT COORDINATION ENHANCEMENTS**
+
 - **Pattern Sharing**: Successful approaches replicated across agents
 - **Cultural Learning**: Automatic cultural sensitivity improvement
 - **Quality Emergence**: Self-improving standards across collective
 - **Efficiency Gains**: Optimized workflows through agent collaboration
 
 ### **MIHARA'S ORCHESTRATION**
+
 *Ko te mea nui ko te aroha* - Leading with respect and wisdom
 
 **COORDINATION PRINCIPLES**:
+
 1. Cultural safety paramount in all decisions
 2. Educational excellence through collective intelligence
 3. Systematic approach with quality gates

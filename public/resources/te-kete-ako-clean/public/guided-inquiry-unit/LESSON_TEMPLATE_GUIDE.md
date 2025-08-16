@@ -20,6 +20,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ## 📋 Required Lesson Components
 
 ### 1. **Cultural Opening** (Required)
+
 ```html
 <div class="cultural-opening">
     <h2>Whakataukī | Proverb</h2>
@@ -30,11 +31,13 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ```
 
 **Guidelines:**
+
 - Choose whakataukī that genuinely connects to lesson content
 - Provide accurate translation and pronunciation guide if needed
 - Explain relevance respectfully, not tokenistically
 
 ### 2. **Lesson Header Structure**
+
 ```html
 <div class="lesson-header">
     <div class="lesson-meta">
@@ -49,6 +52,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ```
 
 ### 3. **Learning Objectives** (3-Column Format)
+
 ```html
 <div class="objectives-grid">
     <div class="objective-card">
@@ -78,6 +82,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ### 4. **Lesson Structure** (Detailed Phases)
 
 **Template for each phase:**
+
 ```html
 <div class="lesson-phase">
     <h3>[Icon] Phase Name ([X] minutes)</h3>
@@ -98,6 +103,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ```
 
 **Standard Lesson Phases:**
+
 1. **Opening/Karakia** (5-10 minutes)
 2. **Main Learning Activities** (20-30 minutes)
 3. **Application/Practice** (10-15 minutes)
@@ -107,7 +113,8 @@ This guide enables **rapid creation of professional-quality lessons** that match
 
 ## 📚 Materials & Resources Section
 
-### Required Components:
+### Required Components
+
 ```html
 <div class="materials-grid">
     <div class="material-card">
@@ -135,14 +142,16 @@ This guide enables **rapid creation of professional-quality lessons** that match
 
 ## 🌿 Cultural Safety Requirements
 
-### Mandatory Elements:
+### Mandatory Elements
+
 1. **Cultural Safety Section** at bottom of lesson
 2. **Community Partnership References** where appropriate
 3. **Accurate Cultural Content** - no tokenism or stereotypes
 4. **Respectful Language** throughout all materials
 5. **Cultural Context** - explain significance, don't just decorate
 
-### Template:
+### Template
+
 ```html
 <section class="lesson-section cultural-safety">
     <h2>🌿 Cultural Safety & Teaching Notes</h2>
@@ -159,13 +168,15 @@ This guide enables **rapid creation of professional-quality lessons** that match
 
 ## 📊 Assessment Framework
 
-### Required Assessment Elements:
+### Required Assessment Elements
+
 1. **Clear Success Criteria** aligned to learning objectives
 2. **Formative Assessment** opportunities throughout lesson
 3. **Differentiated Assessment** options for diverse learners
 4. **Cultural Responsiveness** in assessment approaches
 
-### Assessment Template:
+### Assessment Template
+
 ```html
 <section class="lesson-section">
     <h2>📊 Assessment & Next Steps</h2>
@@ -182,17 +193,20 @@ This guide enables **rapid creation of professional-quality lessons** that match
 
 ## 🔗 File Structure & Naming
 
-### Lesson Files:
+### Lesson Files
+
 - **Location:** `/guided-inquiry-unit/lessons/`
 - **Naming:** `lesson-[number]-[short-title].html`
 - **Example:** `lesson-5-culture-integration.html`
 
-### Material Files:
+### Material Files
+
 - **Location:** `/guided-inquiry-unit/materials/`
 - **Naming:** `[descriptive-name].html`
 - **Example:** `cultural-lens-analysis-template.html`
 
-### CSS Classes to Use:
+### CSS Classes to Use
+
 - `.lesson-phase` - for main lesson sections
 - `.teacher-note` - for implementation guidance
 - `.differentiation` - for inclusive teaching strategies
@@ -203,13 +217,15 @@ This guide enables **rapid creation of professional-quality lessons** that match
 
 ## ⚡ Quick Development Checklist
 
-### Before Starting:
+### Before Starting
+
 - [ ] Choose appropriate whakataukī with cultural consultation
 - [ ] Identify 3-4 main learning objectives
 - [ ] Plan 4-5 lesson phases with specific timings
 - [ ] Design 2-3 downloadable materials
 
-### During Development:
+### During Development
+
 - [ ] Include cultural opening with meaningful connection
 - [ ] Provide detailed timing for each activity
 - [ ] Add teacher notes for practical implementation
@@ -217,7 +233,8 @@ This guide enables **rapid creation of professional-quality lessons** that match
 - [ ] Link to existing Te Kete Ako resources
 - [ ] Create assessment opportunities throughout
 
-### Before Publishing:
+### Before Publishing
+
 - [ ] Check all internal links work
 - [ ] Ensure cultural content is accurate and respectful
 - [ ] Verify timing adds up to lesson duration
@@ -229,6 +246,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ## 🌟 Success Standards
 
 **A successful Te Kete Ako lesson:**
+
 1. **Engages** students from the cultural opening
 2. **Scaffolds** learning through clear phases
 3. **Includes** everyone through differentiation
@@ -242,11 +260,13 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ## 📖 Examples to Study
 
 **Best Practice Examples:**
+
 - `lesson-1-society-exploration.html` - Excellent cultural integration
 - `lesson-5-culture-integration.html` - Strong differentiation strategies
 - `lesson-6-presentations.html` - Comprehensive assessment framework
 
 **Material Examples:**
+
 - `cultural-lens-analysis-template.html` - Student-friendly worksheet design
 - `society-exploration-gallery-walk-stations.html` - Printable classroom materials
 
@@ -255,6 +275,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 ## 🚀 Scaling Strategy
 
 **For Rapid Unit Development:**
+
 1. **Use this template** for consistent quality
 2. **Adapt existing materials** rather than creating from scratch
 3. **Create material templates** that can be reused across lessons
@@ -262,6 +283,7 @@ This guide enables **rapid creation of professional-quality lessons** that match
 5. **Connect to existing resources** in Te Kete Ako ecosystem
 
 **Quality Control:**
+
 - Every lesson should be usable by a teacher with minimal prep
 - All cultural content should be reviewed for authenticity
 - Materials should print clearly and be accessible

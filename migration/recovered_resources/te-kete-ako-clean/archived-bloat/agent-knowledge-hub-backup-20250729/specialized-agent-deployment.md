@@ -11,6 +11,7 @@ The platform is fully functional with 186+ educational resources, working authen
 ## 🏗️ Current Platform Status
 
 ### ✅ Completed Infrastructure
+
 - **Platform**: Fully deployed at `https://tekete.netlify.app/`
 - **Database**: Supabase PostgreSQL with complete schema
 - **Authentication**: Working role-based system (teacher/student)
@@ -19,7 +20,9 @@ The platform is fully functional with 186+ educational resources, working authen
 - **Functions**: All Netlify Functions operational
 
 ### 🎯 Next Phase Requirements
+
 The platform needs specialized agents to handle:
+
 1. **Content Enhancement**: YouTube integration, missing page completion
 2. **Performance Optimization**: Speed, accessibility, link verification
 3. **Launch Strategy**: Community engagement, marketing, outreach
@@ -32,6 +35,7 @@ The platform needs specialized agents to handle:
 ### 1. Content Curation Agent 🎬
 
 **Primary Responsibilities:**
+
 - YouTube content integration and video embedding
 - Complete missing or placeholder pages
 - Enhance multimedia learning experiences
@@ -39,6 +43,7 @@ The platform needs specialized agents to handle:
 - Maintain content quality standards
 
 **Deployment Instructions:**
+
 ```python
 # Deploy to: /agents/content_curator/agent.py
 
@@ -86,6 +91,7 @@ content_curator = Agent(
 ```
 
 **Key Tasks:**
+
 - Integrate YouTube videos for video-activities in `/handouts/video-activities/`
 - Complete placeholder content in education frameworks
 - Enhance games with multimedia elements
@@ -94,6 +100,7 @@ content_curator = Agent(
 ### 2. Performance Optimization Agent ⚡
 
 **Primary Responsibilities:**
+
 - Website performance optimization
 - Accessibility compliance verification
 - Link testing and broken link repair
@@ -101,6 +108,7 @@ content_curator = Agent(
 - Loading speed optimization
 
 **Deployment Instructions:**
+
 ```python
 # Deploy to: /agents/performance_optimizer/agent.py
 
@@ -149,6 +157,7 @@ performance_optimizer = Agent(
 ```
 
 **Key Tasks:**
+
 - Audit all 186+ pages for performance bottlenecks
 - Optimize images in handouts and games
 - Test accessibility with screen readers
@@ -157,6 +166,7 @@ performance_optimizer = Agent(
 ### 3. Launch Strategy Agent 🚀
 
 **Primary Responsibilities:**
+
 - Community engagement strategy development
 - Educational sector outreach planning
 - Marketing material creation (culturally appropriate)
@@ -164,6 +174,7 @@ performance_optimizer = Agent(
 - Public launch coordination
 
 **Deployment Instructions:**
+
 ```python
 # Deploy to: /agents/launch_strategist/agent.py
 
@@ -212,6 +223,7 @@ launch_strategist = Agent(
 ```
 
 **Key Tasks:**
+
 - Develop culturally-appropriate launch timeline
 - Create educational sector presentation materials
 - Identify Māori education network partnerships
@@ -220,6 +232,7 @@ launch_strategist = Agent(
 ### 4. Quality Assurance Agent 🔍
 
 **Primary Responsibilities:**
+
 - Cultural authenticity verification across all new content
 - Educational effectiveness assessment
 - User experience testing with actual educators
@@ -227,6 +240,7 @@ launch_strategist = Agent(
 - Continuous improvement recommendations
 
 **Deployment Instructions:**
+
 ```python
 # Deploy to: /agents/quality_assurance/agent.py
 
@@ -275,6 +289,7 @@ quality_assurance = Agent(
 ```
 
 **Key Tasks:**
+
 - Comprehensive platform audit before public launch
 - Cultural authenticity verification
 - Educational effectiveness assessment
@@ -285,6 +300,7 @@ quality_assurance = Agent(
 ## 🤝 Agent Coordination Protocol
 
 ### Team Structure
+
 ```
 Agent Overseer (You) 
 ├── Content Curation Agent 🎬
@@ -300,21 +316,25 @@ Agent Overseer (You)
 ### Coordination Principles
 
 **1. Cultural Authenticity Chain of Authority**
+
 - All cultural decisions flow through Cultural Advisor Agent
 - New content requires cultural authenticity verification
 - Community consultation protocols must be followed
 
 **2. Educational Excellence Standards**
+
 - Kaiako Assistant validates all teaching strategies
 - Educational effectiveness measured against learning outcomes
 - Student-centered design principles maintained
 
 **3. Parallel Processing Workflow**
+
 - Content Curation and Performance Optimization work simultaneously
 - Launch Strategy prepares while technical work continues
 - Quality Assurance conducts ongoing verification
 
 **4. Communication Protocol**
+
 ```
 Daily Standup Questions:
 - What did you complete yesterday?
@@ -326,16 +346,19 @@ Daily Standup Questions:
 ### Handoff Procedures
 
 **Content Curation → Performance Optimization**
+
 - Content creator provides performance requirements
 - Optimizer tests new content integration
 - Shared responsibility for loading speed
 
-**Performance Optimization → Quality Assurance** 
+**Performance Optimization → Quality Assurance**
+
 - Optimizer provides performance test results
 - QA validates user experience improvements
 - Shared accessibility compliance verification
 
 **All Agents → Launch Strategy**
+
 - Weekly readiness assessments
 - Cultural protocol verification
 - Community preparation coordination
@@ -345,24 +368,28 @@ Daily Standup Questions:
 ## 📋 Immediate Deployment Tasks
 
 ### Phase 1: Agent Setup (1-2 hours)
+
 1. Deploy all four specialized agents to `/agents/` directory
 2. Test integration with existing Cultural Advisor and Kaiako Assistant
 3. Verify communication protocols and tool access
 4. Establish shared workspace in knowledge hub
 
-### Phase 2: Content Enhancement (3-4 hours) 
+### Phase 2: Content Enhancement (3-4 hours)
+
 1. **Content Curation Agent**: YouTube integration for video activities
 2. **Performance Optimization Agent**: Site-wide performance audit
 3. **Quality Assurance Agent**: Baseline quality assessment
 4. **Launch Strategy Agent**: Community mapping and consultation planning
 
 ### Phase 3: Launch Preparation (2-3 hours)
+
 1. Complete content gaps and performance optimizations
 2. Conduct comprehensive quality review
 3. Finalize community outreach strategy
 4. Prepare launch materials and timeline
 
 ### Phase 4: Public Launch (1-2 hours)
+
 1. Final quality verification
 2. Community consultation completion
 3. Launch announcement coordination
@@ -373,21 +400,25 @@ Daily Standup Questions:
 ## 🎯 Success Metrics
 
 ### Content Quality
+
 - 100% of video activities have integrated, appropriate YouTube content
 - All missing pages completed with culturally-authentic content
 - Multimedia resources enhance rather than replace cultural knowledge
 
 ### Performance Excellence
+
 - Site loading time < 3 seconds on mobile devices
 - 100% accessibility compliance across all pages
 - Zero broken links or technical issues
 
 ### Cultural Authenticity
+
 - All new content approved by Cultural Advisor Agent
 - Community consultation completed for major changes
 - Te Ao Māori values maintained throughout enhancements
 
 ### Launch Readiness
+
 - Culturally-appropriate outreach strategy implemented
 - Educational sector partnerships identified and contacted
 - Public launch timeline respects cultural protocols

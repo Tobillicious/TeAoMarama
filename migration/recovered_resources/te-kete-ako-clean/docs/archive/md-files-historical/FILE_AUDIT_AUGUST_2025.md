@@ -8,7 +8,7 @@ This comprehensive audit of Te Kete Ako's 2,148 files has identified significant
 
 ### 🌟 CRITICAL DISCOVERIES
 
-1. **EXPERIENCES DIRECTORY - THE GOLDMINE** 
+1. **EXPERIENCES DIRECTORY - THE GOLDMINE**
    - 4 revolutionary educational innovations severely underutilized (~15-25% utilization)
    - Adaptive Pathways: AI-powered personalized learning system
    - Virtual Marae: First-of-its-kind VR cultural training
@@ -34,16 +34,19 @@ This comprehensive audit of Te Kete Ako's 2,148 files has identified significant
 ## Priority Action Items
 
 ### 🔥 TIER 1: IMMEDIATE HIGH-IMPACT (This Week)
+
 1. **Activate Experiences Directory** - Create hub and integrate with lessons
 2. **Expand Games Portfolio** - Create 10+ new games using existing engines  
 3. **Complete Handout Resources** - Add missing rubrics and extensions
 
 ### 🎯 TIER 2: STRATEGIC FOUNDATION (Next Month)
+
 1. **Scale Y8 Systems Model** - Extract patterns for all year levels
 2. **Cross-Platform Navigation** - Intelligent resource linking
 3. **Cultural Content Authentication** - Validate all Māori content
 
 ### 🚀 TIER 3: TRANSFORMATIONAL (Next Quarter)
+
 1. **Deploy Adaptive Learning** - Personalized pathways
 2. **Launch Digital Pūrākau** - Premier cultural learning experience
 3. **Complete NZ Curriculum Coverage** - All learning areas and year levels
@@ -51,6 +54,7 @@ This comprehensive audit of Te Kete Ako's 2,148 files has identified significant
 ## GraphRAG Integration Notes
 
 New Y8 Systems resources added:
+
 - lesson-1-1-society-stations.html
 - lesson-1-2-draw-your-system-template.html  
 - lesson-2-1-case-studies.html

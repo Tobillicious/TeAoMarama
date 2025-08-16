@@ -100,6 +100,7 @@ Provide character cards with their motivations and concerns.
 **Translation Detective Work**
 
 Compare key phrases in both versions:
+
 | English Version | Te Reo Māori Version | What's the Difference? |
 |-----------------|---------------------|------------------------|
 | "sovereignty" | "kāwanatanga" | |

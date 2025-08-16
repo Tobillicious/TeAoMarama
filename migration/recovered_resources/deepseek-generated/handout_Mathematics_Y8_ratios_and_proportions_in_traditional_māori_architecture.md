@@ -78,7 +78,8 @@ Design a miniature wharenui front wall with:
 **Kia mahara!** Always ask a kaumātua or cultural advisor if you’re unsure about sacred knowledge.  
 ```  
 
-### Design Notes for Teachers:  
+### Design Notes for Teachers  
+
 1. **Cultural Safety:** Avoid sharing restricted (tapu) wharenui details; use generic examples.  
 2. **Differentiation:** Provide grid paper for students struggling with scaling.  
 3. **Extension:** Advanced students can explore the golden ratio in Māori art.  

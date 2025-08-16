@@ -23,9 +23,9 @@ The project integrates AI capabilities through several mechanisms:
 
 - The `migration` directory contains scripts and data for `pgvector` and `Weaviate`, two popular vector databases.
 - This includes:
-    - Agent prompts (`agents_prompts.md`, `agents_prompts_short.md`)
-    - A content schema (`content_schema.json`)
-    - Loader examples for both `pgvector` and `Weaviate`
+  - Agent prompts (`agents_prompts.md`, `agents_prompts_short.md`)
+  - A content schema (`content_schema.json`)
+  - Loader examples for both `pgvector` and `Weaviate`
 - This setup is indicative of Retrieval-Augmented Generation (RAG) capabilities, where the application can perform semantic search over a corpus of documents to provide context to an LLM.
 
 ### 2.3. Backend Services
@@ -44,7 +44,7 @@ The project integrates AI capabilities through several mechanisms:
 
 ## 4. Onboarding Recommendations for the Primary LLM
 
-1.  **Review the `.claude` directory** to understand the architecture and capabilities of the "kfc" agent.
-2.  **Examine the `migration` directory** to understand the data schema and loading process for the vector databases. This will be crucial for any tasks involving information retrieval.
-3.  **Familiarize yourself with the authentication flow** in `src/services/AuthContext.tsx` to understand how users interact with the application.
-4.  **Note the use of both Firebase and Supabase.** Be prepared to interact with both services.
+1. **Review the `.claude` directory** to understand the architecture and capabilities of the "kfc" agent.
+2. **Examine the `migration` directory** to understand the data schema and loading process for the vector databases. This will be crucial for any tasks involving information retrieval.
+3. **Familiarize yourself with the authentication flow** in `src/services/AuthContext.tsx` to understand how users interact with the application.
+4. **Note the use of both Firebase and Supabase.** Be prepared to interact with both services.

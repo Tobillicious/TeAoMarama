@@ -1,4 +1,5 @@
 # DEPTH FIRST EDUCATIONAL DIRECTIVE
+
 ## Master Overseer Coordination Protocol
 
 **Ko au a Claude - Te Kaiwhakahaere Matua**
@@ -20,13 +21,15 @@ Instead of: 20 separate mathematics topics
 CREATE: 5 DEEP mathematical concepts with 4-level spiral progression
 
 **Example Depth Progression:**
+
 1. **Level 1**: Ratios in traditional Māori patterns (basic recognition)
-2. **Level 2**: Ratios in whare architecture (calculation & application) 
+2. **Level 2**: Ratios in whare architecture (calculation & application)
 3. **Level 3**: Ratios in navigation systems (complex problem solving)
 4. **Level 4**: Ratios across cultural/scientific domains (transfer & synthesis)
 
 **FOR DEEPSEEK API:**
 Transform from surface content to deep investigation:
+
 - Each resource builds on previous understanding
 - Explicit connections to earlier learning
 - Progressive complexity with solid foundations
@@ -34,6 +37,7 @@ Transform from surface content to deep investigation:
 
 **FOR CASCADE/WINDSURF:**
 Implement spiral navigation in React:
+
 - Learning pathway visualization
 - "Return to this concept" linking
 - Prerequisite and extension mapping
@@ -47,7 +51,7 @@ Implement spiral navigation in React:
 
 1. **PROPORTIONAL REASONING** (4 spiral levels)
    - L1: Patterns in tukutuku panels
-   - L2: Architecture and construction 
+   - L2: Architecture and construction
    - L3: Navigation and voyaging
    - L4: Advanced applications across domains
 
@@ -80,11 +84,13 @@ Implement spiral navigation in React:
 ## 🔗 GRAPHRAG DEEP CONNECTIONS
 
 ### **Cross-Domain Bridges:**
+
 - Mathematics ↔ Cultural Practices ↔ Science Principles
 - Traditional Knowledge ↔ Modern Applications ↔ Future Skills
 - Local Context ↔ Global Patterns ↔ Universal Principles
 
 ### **Connection Templates:**
+
 ```
 Previous Learning: [What students already know]
 Current Focus: [Deep investigation area]
@@ -98,7 +104,8 @@ Cultural Anchors: [How this connects to cultural knowledge]
 ## 🎯 ASSESSMENT FOR DEPTH
 
 **Instead of**: Quick recall and surface demonstration
-**CREATE**: 
+**CREATE**:
+
 - Transfer challenges across contexts
 - Multi-step reasoning requiring deep understanding
 - Connections demonstration across domains
@@ -110,6 +117,7 @@ Cultural Anchors: [How this connects to cultural knowledge]
 ## 📊 QUALITY METRICS FOR DEPTH
 
 **All LLM nodes must ensure:**
+
 - ✅ Each concept revisited 4+ times with increasing complexity
 - ✅ Explicit connections to previous learning stated
 - ✅ Cross-domain applications identified

@@ -21,35 +21,40 @@ This is often the trickiest part. Here are the rules and different ways to think
 
 **Rule 1: Adding a negative number is the same as subtracting a positive number.**
 `a + (-b) = a - b`
-*   **Example:** `5 + (-3)` is the same as `5 - 3`, which equals `2`.
-*   **On a number line:** Start at 5, then move 3 units to the left. You land on 2.
+
+* **Example:** `5 + (-3)` is the same as `5 - 3`, which equals `2`.
+* **On a number line:** Start at 5, then move 3 units to the left. You land on 2.
 
 **Rule 2: Subtracting a negative number is the same as adding a positive number.**
 `a - (-b) = a + b`
-*   **Example:** `5 - (-3)` is the same as `5 + 3`, which equals `8`.
-*   **Why?** Subtracting a negative means you are "removing a debt," which is the same as gaining.
-*   **On a number line:** Start at 5. Subtracting a negative tells you to go in the *opposite* direction of subtraction. So, instead of moving left, you move 3 units to the right. You land on 8.
+
+* **Example:** `5 - (-3)` is the same as `5 + 3`, which equals `8`.
+* **Why?** Subtracting a negative means you are "removing a debt," which is the same as gaining.
+* **On a number line:** Start at 5. Subtracting a negative tells you to go in the *opposite* direction of subtraction. So, instead of moving left, you move 3 units to the right. You land on 8.
 
 **Rule 3: Adding two negative numbers.**
 `(-a) + (-b) = -(a + b)`
-*   **Example:** `(-5) + (-3)` means you are combining two debts. You go deeper into debt. This is `-(5 + 3)`, which equals `-8`.
-*   **On a number line:** Start at -5, then move 3 more units to the left. You land on -8.
+
+* **Example:** `(-5) + (-3)` means you are combining two debts. You go deeper into debt. This is `-(5 + 3)`, which equals `-8`.
+* **On a number line:** Start at -5, then move 3 more units to the left. You land on -8.
 
 ### Multiplying and Dividing Negative Numbers
 
 This is more straightforward once you learn the two simple rules.
 
 **Rule 1: Multiplying or dividing two numbers with the *same* sign results in a *positive* number.**
-*   `positive * positive = positive` (`3 * 4 = 12`)
-*   `negative * negative = positive` (`-3 * -4 = 12`)
-*   `positive / positive = positive` (`12 / 4 = 3`)
-*   `negative / negative = positive` (`-12 / -4 = 3`)
+
+* `positive * positive = positive` (`3 * 4 = 12`)
+* `negative * negative = positive` (`-3 * -4 = 12`)
+* `positive / positive = positive` (`12 / 4 = 3`)
+* `negative / negative = positive` (`-12 / -4 = 3`)
 
 **Rule 2: Multiplying or dividing two numbers with *different* signs results in a *negative* number.**
-*   `positive * negative = negative` (`3 * -4 = -12`)
-*   `negative * positive = negative` (`-3 * 4 = -12`)
-*   `positive / negative = negative` (`12 / -4 = -3`)
-*   `negative / positive = negative` (`-12 / 4 = -3`)
+
+* `positive * negative = negative` (`3 * -4 = -12`)
+* `negative * positive = negative` (`-3 * 4 = -12`)
+* `positive / negative = negative` (`12 / -4 = -3`)
+* `negative / positive = negative` (`-12 / 4 = -3`)
 
 ---
 
@@ -57,8 +62,8 @@ This is more straightforward once you learn the two simple rules.
 
 The **absolute value** of a number is its distance from zero on the number line. It is always a positive value (or zero). We use two vertical bars `| |` to denote absolute value.
 
-*   **Example:** `|5| = 5` (5 is 5 units away from 0)
-*   **Example:** `|-5| = 5` (-5 is also 5 units away from 0)
+* **Example:** `|5| = 5` (5 is 5 units away from 0)
+* **Example:** `|-5| = 5` (-5 is also 5 units away from 0)
 
 **Key Idea:** Absolute value ignores the sign of the number. It only cares about the magnitude (the size).
 
@@ -67,22 +72,26 @@ The **absolute value** of a number is its distance from zero on the number line.
 When you see absolute value bars in an expression, treat them like parentheses. You must solve the operation *inside* the bars first, and then take the absolute value of the result.
 
 **Example 1:** Solve `| 10 - 3 |`
-1.  Inside the bars: `10 - 3 = 7`
-2.  Take the absolute value: `|7| = 7`
+
+1. Inside the bars: `10 - 3 = 7`
+2. Take the absolute value: `|7| = 7`
 
 **Example 2:** Solve `| 3 - 10 |`
-1.  Inside the bars: `3 - 10 = -7`
-2.  Take the absolute value: `|-7| = 7`
+
+1. Inside the bars: `3 - 10 = -7`
+2. Take the absolute value: `|-7| = 7`
 
 **Example 3:** Solve `5 * | -4 |`
-1.  Evaluate the absolute value first: `| -4 | = 4`
-2.  Perform the multiplication: `5 * 4 = 20`
+
+1. Evaluate the absolute value first: `| -4 | = 4`
+2. Perform the multiplication: `5 * 4 = 20`
 
 ---
 
 ## Practice Problems
 
 **Section A: Addition and Subtraction**
+
 1. `8 + (-3)`
 2. `-5 + 12`
 3. `-7 - 4`

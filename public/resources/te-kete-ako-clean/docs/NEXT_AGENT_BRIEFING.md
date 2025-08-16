@@ -1,4 +1,5 @@
 # 🚀 NEXT AGENT BRIEFING - TE KETE AKO
+
 ## Complete Handover & Action Plan
 
 ### 🎯 **CURRENT STATUS: AUTHENTICATION SYSTEM 100% FIXED + COMPREHENSIVE AUDIT COMPLETE**
@@ -14,9 +15,11 @@
 ## 🔥 **URGENT: HIGH-PRIORITY TASKS FOR NEXT AGENT**
 
 ### **1. IMPLEMENT PROFESSIONALISM IMPROVEMENTS (CRITICAL)**
+
 **From Audit Results - 84/100 score can reach 92/100 with these fixes:**
 
 #### **A. ADD EDUCATOR TESTIMONIALS (HIGH PRIORITY)**
+
 ```html
 <!-- Add to public/index.html hero section -->
 <section class="testimonials-section">
@@ -32,17 +35,20 @@
 ```
 
 #### **B. MOBILE RESPONSIVENESS (CRITICAL)**
+
 - **Priority Pages**: index.html, login.html, my-kete.html, unit-plans.html
 - **Key Issues**: Navigation overflow, form layouts, image scaling
 - **Test on**: iPhone, Android, iPad in both portrait/landscape
 
 #### **C. PERFORMANCE OPTIMIZATION**
+
 - **Compress all images** in public/images/ folder (use TinyPNG or similar)
 - **Implement lazy loading** for images
 - **Minify CSS/JS** files for production
 - **Add loading spinners** for all async operations
 
 #### **D. ACCESSIBILITY COMPLIANCE**
+
 - **Fix contrast ratios** (use WebAIM contrast checker)
 - **Add alt text** to all images missing it
 - **Implement keyboard navigation** for all interactive elements
@@ -79,6 +85,7 @@ LONG-TERM:
 ## 🛠️ **TECHNICAL SETUP - EVERYTHING READY TO GO**
 
 ### **Authentication System Status:**
+
 - ✅ **Login Flow**: 100% working with auto-redirect to my-kete.html
 - ✅ **Session Management**: Resilient with offline capability
 - ✅ **Error Handling**: Comprehensive with user-friendly messages  
@@ -86,6 +93,7 @@ LONG-TERM:
 - ✅ **Security**: CSP compliant, local Supabase hosting, production-ready
 
 ### **Files Ready for Next Agent:**
+
 ```
 Key Files:
 ├── public/login.html (✅ Working authentication)
@@ -100,20 +108,23 @@ Key Files:
 ```
 
 ### **Authentication Credentials:**
-- **Supabase URL**: https://nlgldaqtubrlcqddppbq.supabase.co
+
+- **Supabase URL**: <https://nlgldaqtubrlcqddppbq.supabase.co>
 - **Environment**: Production-ready with environment config
-- **Test Account**: Use teacher@kete.nz or create new account via register
+- **Test Account**: Use <teacher@kete.nz> or create new account via register
 
 ---
 
 ## 🎯 **SUCCESS METRICS TO TRACK**
 
 ### **Professional Score Target: 84/100 → 92/100**
+
 - **Trust Signals**: +3 points with testimonials
 - **User Experience**: +3 points with mobile + accessibility  
 - **Performance**: +2 points with optimization
 
 ### **User Experience KPIs:**
+
 - **Mobile Bounce Rate**: Target <30% (currently ~45%)
 - **Page Load Speed**: Target <3 seconds (currently 4-6s on some pages)
 - **Accessibility Score**: Target 100% WCAG AA (currently ~70%)
@@ -144,18 +155,21 @@ Key Files:
 ## 📱 **QUICK START FOR NEXT AGENT**
 
 ### **Immediate Actions (First 30 minutes):**
+
 1. Test authentication flow: login.html → my-kete.html on desktop & mobile
 2. Review audit results in docs/PROFESSIONALISM_AUDIT_RESULTS.md
 3. Check current mobile responsiveness on iPhone/Android simulator  
 4. Identify worst mobile UX issues to fix first
 
 ### **First 2 Hours:**
+
 1. Add testimonials section to index.html using template above
 2. Fix critical mobile responsive issues on homepage
 3. Compress 5-10 largest images in public/images/
 4. Test and commit changes
 
 ### **First Day:**
+
 1. Complete mobile responsiveness for login and my-kete pages
 2. Fix accessibility issues (alt text, contrast) on key pages
 3. Implement performance optimizations
@@ -166,6 +180,7 @@ Key Files:
 ## 🌊 **MOMENTUM ACHIEVED - READY TO SCALE**
 
 **What We've Built:**
+
 - 🔐 **Bulletproof Authentication**: Enterprise-grade with cultural integration
 - 📚 **Comprehensive UX Design**: Complete student and teacher journeys
 - 🏆 **Professional Foundation**: 84/100 audit score with clear improvement path
@@ -180,6 +195,7 @@ Key Files:
 ### 🎯 **SUCCESS VISION**
 
 With these improvements, Te Kete Ako will be:
+
 - **Market-leading** in culturally responsive educational technology
 - **Trusted by 1000+ kaiako** across Aotearoa New Zealand  
 - **Reference example** for indigenous education technology globally

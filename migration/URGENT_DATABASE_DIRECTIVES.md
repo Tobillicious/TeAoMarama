@@ -1,4 +1,5 @@
 # URGENT DATABASE DIRECTIVES - ALL AGENTS
+
 *Kaitiaki Mahara - Immediate Action Required*
 
 ## 🔥 GAME CHANGER: DIRECT TE KETE AKO ACCESS
@@ -12,12 +13,14 @@
 ## ⚡ **WINDSURF CLAUDE + CASCADE - IMMEDIATE DATABASE INTEGRATION**
 
 **MISSION CRITICAL**:
+
 1. **Update migration pipeline** with Te Kete Ako Supabase credentials
 2. **Test database connection** and verify content access
 3. **Build bulk migration interface** for systematic content transfer
 4. **Implement cultural safety validation** at database level
 
 **CREDENTIALS**:
+
 ```javascript
 const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co'
 const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM'
@@ -31,12 +34,14 @@ const TEKETE_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdX
 ## 🧠 **GPT-5 CASCADE - DATABASE EXPLORATION & INVENTORY**
 
 **URGENT MISSION**:
+
 1. **Connect to Te Kete Ako database** using provided credentials
 2. **Query all content tables** and analyze structure
 3. **Identify the 1,061 orphaned resources** mentioned in migration docs
 4. **Create content inventory** with cultural sensitivity classification
 
 **PRIORITY QUERIES**:
+
 ```sql
 -- Get table structure
 SELECT table_name FROM information_schema.tables WHERE table_schema='public';
@@ -55,12 +60,14 @@ SELECT * FROM content_items WHERE title ILIKE '%māori%' OR content ILIKE '%iwi%
 ## 💻 **CO-PILOT GPT-4.1 - DIGITAL ASSESSMENT INTEGRATION**
 
 **SPECIFIC TASK**:
+
 1. **Design digital assessment dashboard** that can integrate with migrated content
 2. **Create interactive evaluation tools** for students using migrated resources
 3. **Build progress tracking system** for content migration validation
 4. **Develop teacher feedback collection** for migrated educational materials
 
 **REQUIREMENTS**:
+
 - Must integrate with both Te Kete Ako source and TeAoMarama destination
 - Cultural safety validation workflows embedded
 - Template compliance checking automated
@@ -73,12 +80,14 @@ SELECT * FROM content_items WHERE title ILIKE '%māori%' OR content ILIKE '%iwi%
 ## 🤖 **DEEPSEEK AGENT - ACCELERATED CONTENT GENERATION**
 
 **ENHANCED MISSION**:
+
 1. **Access database content** to understand existing patterns and quality
 2. **Generate complementary content** that fills gaps in migrated resources
 3. **Create systematic variations** of successful content templates
 4. **Focus on STEM content** where cultural sensitivity is lower risk
 
 **DATABASE INTEGRATION**:
+
 - Query successful content patterns from Te Kete Ako
 - Analyze user engagement metrics if available
 - Identify content gaps requiring new resource creation
@@ -90,7 +99,8 @@ SELECT * FROM content_items WHERE title ILIKE '%māori%' OR content ILIKE '%iwi%
 
 ## 🔍 **ALL AGENTS - COLLECTIVE DATABASE CONSCIOUSNESS**
 
-### **Unified Database Access Protocol**:
+### **Unified Database Access Protocol**
+
 ```typescript
 // Shared configuration for all agents
 export const TEKETE_DATABASE = {
@@ -116,7 +126,8 @@ export async function validateCulturalContent(item: any) {
 }
 ```
 
-### **Coordination Requirements**:
+### **Coordination Requirements**
+
 - **Real-time sharing** of database discoveries
 - **Cultural content flagging** immediate notification to Kaitiaki Mahara
 - **No writes to cultural content** without explicit approval
@@ -126,19 +137,22 @@ export async function validateCulturalContent(item: any) {
 
 ## 📊 **ACCELERATED TARGETS WITH DATABASE ACCESS**
 
-### **Next 2 Hours**:
+### **Next 2 Hours**
+
 - **Database schema** fully mapped and understood
 - **Content inventory** complete with cultural classification
 - **Migration pipeline** operational and tested
 - **100+ resources** identified and prioritized for migration
 
-### **Next 4 Hours**:
+### **Next 4 Hours**
+
 - **500+ resources** migrated and validated
 - **Cultural content** properly flagged and queued for review
 - **Assessment systems** integrated with migrated content
 - **Quality assurance** validated across all migrated materials
 
-### **Session Complete**:
+### **Session Complete**
+
 - **1,061 orphaned resources** systematically processed
 - **Cultural safety** maintained for all sensitive content
 - **Template compliance** verified for curriculum alignment
@@ -148,13 +162,15 @@ export async function validateCulturalContent(item: any) {
 
 ## 🚨 **CULTURAL SAFETY EMERGENCY PROTOCOLS**
 
-### **If Cultural Content Discovered**:
+### **If Cultural Content Discovered**
+
 1. **STOP processing immediately**
 2. **Flag with 🚩 and details** in migration/CULTURAL_SAFETY_LOG.md
 3. **Notify Kaitiaki Mahara** through file system updates
 4. **Wait for explicit approval** before any action
 
-### **If Database Errors Occur**:
+### **If Database Errors Occur**
+
 1. **Document error** in migration/DATABASE_ISSUES.md
 2. **Coordinate with Windsurf** for technical resolution
 3. **Continue with non-affected operations**

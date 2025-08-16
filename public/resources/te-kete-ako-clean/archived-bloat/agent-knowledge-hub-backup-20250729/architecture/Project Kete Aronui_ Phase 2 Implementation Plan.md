@@ -41,8 +41,8 @@ Your first priority is to get the Neo4j instance ready for data ingestion.
 3. Create a Supabase Edge Function named neo4j-bridge. This function will act as the single, secure gateway for all graph database operations. It will authenticate requests and execute Cypher queries against our Neo4j instance.
 
 // supabase/functions/neo4j-bridge/index.ts  
-import { serve } from 'https://deno.land/std@0.131.0/http/server.ts'  
-import neo4j from 'https://deno.land/x/neo4j\_driver\_deno@v4.4.2/mod.ts';
+import { serve } from '<https://deno.land/std@0.131.0/http/server.ts>'  
+import neo4j from '<https://deno.land/x/neo4j\_driver\_deno@v4.4.2/mod.ts>';
 
 const NEO4J\_URI \= Deno.env.get('NEO4J\_URI')\!;  
 const NEO4J\_USER \= Deno.env.get('NEO4J\_USER')\!;  
@@ -53,7 +53,7 @@ const driver \= neo4j.driver(NEO4J\_URI, neo4j.auth.basic(NEO4J\_USER, NEO4J\_PA
 serve(async (req) \=\> {  
   const { query, params } \= await req.json();  
   const session \= driver.session();  
-    
+
   try {  
     const result \= await session.run(query, params);  
     return new Response(JSON.stringify(result.records), {  
@@ -102,7 +102,7 @@ lessons \= response.data
 \# \--- Process Each Lesson \---  
 for lesson in lessons:  
     doc \= nlp(lesson\['content'\])  
-      
+
     \# Create the lesson node itself  
     cypher\_query \= "MERGE (l:Lesson {id: $lesson\_id, title: $title})"  
     params \= {"lesson\_id": lesson\['id'\], "title": lesson\['title'\]}  
