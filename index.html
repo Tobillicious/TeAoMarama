@@ -14,8 +14,73 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Te Kete Ako" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Critical CSS for above-the-fold content - Performance Optimization -->
+    <style>
+      /* Critical CSS Variables */
+      :root {
+        --color-primary: #1e40af;
+        --color-pounamu: #059669;
+        --color-kowhai: #ca8a04;
+        --color-moana: #0891b2;
+        --color-kahurangi: #7c3aed;
+        --color-success: #16a34a;
+        --color-error: #dc2626;
+        --color-warning: #d97706;
+        --color-neutral-50: #f9fafb;
+        --color-neutral-100: #f3f4f6;
+        --color-neutral-500: #6b7280;
+        --color-neutral-600: #4b5563;
+        --color-neutral-700: #374151;
+        --color-neutral-800: #1f2937;
+        --color-neutral-900: #111827;
+        --color-bg: #f9fafb;
+        --color-pounamu-light: #10b981;
+        --color-deep-purple: #5b21b6;
+      }
+
+      /* Critical above-the-fold styles */
+      * { box-sizing: border-box; }
+      
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--color-bg);
+        color: var(--color-neutral-800);
+        line-height: 1.6;
+      }
+
+      /* Critical loading spinner */
+      .min-h-screen { min-height: 100vh; }
+      .flex { display: flex; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .text-center { text-align: center; }
+      .animate-spin { animation: spin 1s linear infinite; }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .rounded-full { border-radius: 9999px; }
+      .h-12 { height: 3rem; }
+      .w-12 { width: 3rem; }
+      .border-b-2 { border-bottom-width: 2px; }
+      .border-pounamu { border-color: var(--color-pounamu); }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .mb-4 { margin-bottom: 1rem; }
+      .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+      .font-medium { font-weight: 500; }
+
+      /* Critical App container */
+      .App { min-height: 100vh; display: flex; flex-direction: column; }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/styles/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/styles/critical.css"></noscript>
   </head>
   <body>
     <div id="root"></div>
