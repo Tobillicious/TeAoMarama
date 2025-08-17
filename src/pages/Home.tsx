@@ -15,7 +15,9 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setResourceCount(data.items?.length?.toLocaleString() || '0');
-        const uniqueCategories = [...new Set(data.items?.map((item: any) => item.category) || [])];
+        const uniqueCategories = [
+          ...new Set(data.items?.map((item: any) => item.category as string) || []),
+        ] as string[];
         setCategories(uniqueCategories);
       })
       .catch(() => setResourceCount('5,439'));
@@ -26,22 +28,22 @@ export default function Home() {
       await logOut();
       navigate('/login');
     } catch (error) {
-      console.error('Failed to log out', error);
+      console.error('Failed to log out:', error);
     }
   };
 
   return (
     <div className="home-container">
-      {/* NEW: Dramatic Hero Section */}
+      {/* Hero Section */}
       <section className="hero-section-new">
-        <div className="hero-background">
-          <div className="hero-pattern"></div>
-          <div className="hero-glow"></div>
-        </div>
         <div className="hero-content-new">
-          <div className="hero-badge">🌟 Mangakotukutuku College</div>
-          <h1 className="hero-title-new">Te Kete Ako</h1>
-          <p className="hero-subtitle-new">Digital Learning Hub for Aotearoa's Future Leaders</p>
+          <div className="hero-badge">🌿 Te Kete Ako - Educational Excellence</div>
+          <h1 className="hero-title-new">Empowering Aotearoa's Educators</h1>
+          <p className="hero-subtitle-new">
+            Comprehensive educational resources designed for New Zealand teachers and students, with
+            cultural integration and modern pedagogy.
+          </p>
+
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-number">{resourceCount}</span>
@@ -56,119 +58,144 @@ export default function Home() {
               <span className="stat-label">Categories</span>
             </div>
           </div>
+
           <div className="hero-actions-new">
-            <button className="btn-primary-new" onClick={() => navigate('/resources')}>
-              🚀 Explore Resources
-            </button>
-            <button className="btn-secondary-new" onClick={() => navigate('/dashboard')}>
-              📊 View Dashboard
-            </button>
+            <a href="/resources" className="btn-primary-new">
+              Browse Resources
+            </a>
+            <a href="/dashboard" className="btn-secondary-new">
+              Teacher Dashboard
+            </a>
           </div>
         </div>
       </section>
 
-      {/* NEW: Feature Grid */}
+      {/* Features Section */}
       <section className="features-section">
         <div className="container">
-          <h2 className="section-title-new">What's New at Mangakotukutuku</h2>
+          <h2 className="section-title-new">Why Choose Te Kete Ako?</h2>
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">📚</div>
-              <h3>Resource Library</h3>
-              <p>{resourceCount} educational resources ready for your classroom</p>
+              <h3>Comprehensive Library</h3>
+              <p>
+                {resourceCount} educational resources ready for your classroom, covering all
+                curriculum areas and year levels.
+              </p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">🌿</div>
               <h3>Cultural Integration</h3>
-              <p>Māori perspectives woven throughout all content</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Instant Access</h3>
-              <p>Find what you need in seconds with smart search</p>
+              <p>
+                Authentic Māori content and perspectives woven throughout, respecting Te Tiriti o
+                Waitangi principles.
+              </p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">🎯</div>
-              <h3>NZC Aligned</h3>
-              <p>All resources mapped to New Zealand Curriculum</p>
+              <h3>Curriculum Aligned</h3>
+              <p>
+                All resources mapped to the New Zealand Curriculum, with clear learning intentions
+                and success criteria.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🚀</div>
+              <h3>Modern Pedagogy</h3>
+              <p>
+                Evidence-based teaching strategies and innovative approaches to engage today's
+                learners.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🔍</div>
+              <h3>Smart Search</h3>
+              <p>
+                Advanced filtering and search capabilities to find exactly what you need, when you
+                need it.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">💡</div>
+              <h3>Teacher Support</h3>
+              <p>
+                Professional development resources and collaborative tools to enhance your teaching
+                practice.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* NEW: Quick Access Section */}
-      <section className="quick-access-section">
+      {/* Quick Actions Section */}
+      <section className="quick-actions">
         <div className="container">
           <h2 className="section-title-new">Quick Access</h2>
-          <div className="quick-access-grid">
+          <div className="quick-grid">
             <div className="quick-card" onClick={() => navigate('/resources')}>
               <div className="quick-icon">🔍</div>
               <h3>Browse All Resources</h3>
-              <p>Search and filter {resourceCount} educational materials</p>
+              <p>
+                Search and filter {resourceCount} educational materials by subject, year level, and
+                more.
+              </p>
             </div>
             <div className="quick-card" onClick={() => navigate('/resources')}>
               <div className="quick-icon">📖</div>
-              <h3>View Recent</h3>
-              <p>Latest additions to our resource collection</p>
+              <h3>Lesson Plans</h3>
+              <p>
+                Ready-to-use lesson plans with activities, assessments, and cultural connections.
+              </p>
             </div>
             <div className="quick-card" onClick={() => navigate('/resources')}>
-              <div className="quick-icon">⭐</div>
-              <h3>Featured Content</h3>
-              <p>Hand-picked resources for your classroom</p>
+              <div className="quick-icon">🎨</div>
+              <h3>Activities & Games</h3>
+              <p>Engaging classroom activities and educational games for interactive learning.</p>
+            </div>
+            <div className="quick-card" onClick={() => navigate('/resources')}>
+              <div className="quick-icon">📊</div>
+              <h3>Assessment Tools</h3>
+              <p>Formative and summative assessment resources with rubrics and tracking tools.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* NEW: Status Dashboard */}
+      {/* Status Section */}
       <section className="status-section">
         <div className="container">
-          <h2 className="section-title-new">Platform Status</h2>
-          <div className="status-grid">
-            <div className="status-card-new">
-              <div className="status-header-new">
-                <div className="status-icon-new">✅</div>
-                <div className="status-info">
-                  <h3>System Online</h3>
-                  <p>All services operational</p>
-                </div>
+          <div className="status-card">
+            <div className="status-header-new">
+              <div className="status-icon-new">📊</div>
+              <div className="status-info">
+                <h3>{resourceCount} Resources</h3>
+                <p>Available for download and classroom use</p>
               </div>
             </div>
-            <div className="status-card-new">
-              <div className="status-header-new">
-                <div className="status-icon-new">📊</div>
-                <div className="status-info">
-                  <h3>{resourceCount} Resources</h3>
-                  <p>Available for download</p>
-                </div>
+            {currentUser && (
+              <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                <p style={{ marginBottom: '1rem', color: '#666' }}>
+                  Welcome back, {currentUser.email}
+                </p>
+                <button
+                  onClick={handleLogout}
+                  style={{
+                    background: '#dc3545',
+                    color: 'white',
+                    border: 'none',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                  }}
+                >
+                  Sign Out
+                </button>
               </div>
-            </div>
-            <div className="status-card-new">
-              <div className="status-header-new">
-                <div className="status-icon-new">🌿</div>
-                <div className="status-info">
-                  <h3>Cultural Safety</h3>
-                  <p>100% protocols active</p>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
-
-      {/* User Actions */}
-      {currentUser && (
-        <section className="user-section">
-          <div className="container">
-            <div className="user-card">
-              <p className="user-greeting">Welcome back, {currentUser.email}</p>
-              <button onClick={handleLogout} className="btn-logout">
-                Log Out
-              </button>
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   );
 }
