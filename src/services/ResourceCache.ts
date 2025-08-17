@@ -3,7 +3,7 @@
  * Provides high-performance caching for educational resources
  */
 
-import { ParsedResource } from './MetadataParser';
+import type { ParsedResource } from './MetadataParser';
 
 interface CacheEntry {
   data: ParsedResource[];
