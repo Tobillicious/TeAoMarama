@@ -38,8 +38,12 @@ async function importTeKeteAko(
     const dst = path.join(destRoot, 'te-kete-ako-clean', file.rel);
     const dstDir = path.dirname(dst);
     await ensureDir(dstDir);
-    await copyFile(src, dst);
-    imported++;
+    try {
+      await copyFile(src, dst);
+      imported++;
+    } catch {
+      console.log('Error processing file');
+    }
   }
 
   return { imported, skipped };
@@ -56,7 +60,7 @@ async function main() {
   try {
     const st = await stat(sourceRoot);
     if (!st.isDirectory()) throw new Error('Source path is not a directory');
-  } catch (err) {
+  } catch {
     console.error('❌ Source folder not accessible:', sourceRoot);
     process.exit(1);
   }

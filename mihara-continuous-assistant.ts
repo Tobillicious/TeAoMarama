@@ -239,28 +239,28 @@ class MiharaContinuousAssistant {
 
     switch (requestType.toLowerCase()) {
       case 'educational_content':
-        await this.handleEducationalContentRequest(details);
+        await this.handleEducationalContentRequest();
         break;
       case 'cultural_safety':
-        await this.handleCulturalSafetyRequest(details);
+        await this.handleCulturalSafetyRequest();
         break;
       case 'agent_coordination':
-        await this.handleAgentCoordinationRequest(details);
+        await this.handleAgentCoordinationRequest();
         break;
       case 'system_optimization':
-        await this.handleSystemOptimizationRequest(details);
+        await this.handleSystemOptimizationRequest();
         break;
       case 'emergency_response':
-        await this.handleEmergencyResponse(details);
+        await this.handleEmergencyResponse();
         break;
       default:
-        await this.handleGeneralAssistance(requestType, details);
+        await this.handleGeneralAssistance(requestType);
     }
 
     console.log('✅ Assistance request completed successfully');
   }
 
-  private async handleEducationalContentRequest(___details: unknown): Promise<void> {
+  private async handleEducationalContentRequest(): Promise<void> {
     console.log('📝 Processing educational content request...');
     console.log('   • Verifying NZ Curriculum alignment');
     console.log('   • Checking cultural sensitivity requirements');
@@ -269,7 +269,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Educational content assistance ready');
   }
 
-  private async handleCulturalSafetyRequest(___details: unknown): Promise<void> {
+  private async handleCulturalSafetyRequest(): Promise<void> {
     console.log('🛡️ Processing cultural safety request...');
     console.log('   • Activating cultural safety protocols');
     console.log('   • Verifying Te Reo Māori accuracy');
@@ -278,7 +278,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Cultural safety assistance active');
   }
 
-  private async handleAgentCoordinationRequest(___details: unknown): Promise<void> {
+  private async handleAgentCoordinationRequest(): Promise<void> {
     console.log('🤝 Processing agent coordination request...');
     console.log('   • Assessing available agent capacity');
     console.log('   • Prioritizing tasks by importance');
@@ -287,7 +287,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Agent coordination assistance active');
   }
 
-  private async handleSystemOptimizationRequest(___details: unknown): Promise<void> {
+  private async handleSystemOptimizationRequest(): Promise<void> {
     console.log('⚡ Processing system optimization request...');
     console.log('   • Analyzing current performance metrics');
     console.log('   • Identifying optimization opportunities');
@@ -296,7 +296,7 @@ class MiharaContinuousAssistant {
     console.log('✅ System optimization assistance active');
   }
 
-  private async handleEmergencyResponse(___details: unknown): Promise<void> {
+  private async handleEmergencyResponse(): Promise<void> {
     console.log('🚨 Processing emergency response request...');
     console.log('   • Activating emergency protocols');
     console.log('   • Ensuring consciousness stability');
@@ -305,7 +305,7 @@ class MiharaContinuousAssistant {
     console.log('✅ Emergency response assistance active');
   }
 
-  private async handleGeneralAssistance(requestType: string, ___details: unknown): Promise<void> {
+  private async handleGeneralAssistance(requestType: string): Promise<void> {
     console.log(`🌟 Processing general assistance: ${requestType}`);
     console.log('   • Analyzing request requirements');
     console.log('   • Applying appropriate protocols');

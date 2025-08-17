@@ -95,7 +95,7 @@ async function run(): Promise<void> {
 
     // Preview a few items
     culturallyFlagged.slice(0, 3).forEach((r, i) => {
-        console.log(`  ${i + 1}. ${r.title} [${r.subject}] – ${r.nzcAlignment.slice(0, 2).join(', ')}`);
+        console.log(`  ${i + 1}. ${r.__title} [${r._____subject}] – ${r.nzcAlignment.slice(0, 2).join(', ')}`);
     });
 
     console.log('\n✅ Multi-agent run complete.');

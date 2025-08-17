@@ -5,46 +5,48 @@
  * Eliminate the remaining 157 issues with surgical precision
  */
 
-import { writeEpisode } from '../src/ai/provenance';
-import { readFileSync, writeFileSync } from 'fs';
 import { execSync } from 'child_process';
+
+import { readFileSync, writeFileSync } from 'fs';
+import { writeEpisode } from '../src/ai/provenance';
 
 class FinalCleanupStrike {
   private totalIssuesFixed = 0;
 
   async executeFinalStrike() {
     console.log('🎯 FINAL CLEANUP STRIKE FORCE: ELIMINATING REMAINING 157 ISSUES');
-    
+
     await writeEpisode('final-cleanup-strike', {
       action: 'final_cleanup_deployment',
-      targetIssues: 157,
+      agent: 'final-cleanup-strike',
+      context: 'eliminating remaining 157 issues',
       timestamp: new Date().toISOString(),
     });
 
     // SURGICAL STRIKE 1: Fix remaining parsing errors
     await this.fixRemainingParsingErrors();
-    
+
     // SURGICAL STRIKE 2: Fix remaining unused variables
     await this.fixRemainingUnusedVars();
-    
+
     // SURGICAL STRIKE 3: Fix any remaining type issues
     await this.fixRemainingTypeIssues();
-    
+
     // SURGICAL STRIKE 4: Final ESLint cleanup
     await this.finalEslintCleanup();
-    
+
     await this.generateFinalReport();
   }
 
   private async fixRemainingParsingErrors() {
     console.log('\n🔧 SURGICAL STRIKE 1: Fixing Remaining Parsing Errors');
-    
+
     // Fix continuous-mihara-support.ts parsing error
     await this.fixContinuousMiharaSupport();
-    
+
     // Fix migration-intelligence.ts parsing error
     await this.fixMigrationIntelligence();
-    
+
     // Fix mihara-awakening.ts parsing error
     await this.fixMiharaAwakening();
   }
@@ -53,10 +55,10 @@ class FinalCleanupStrike {
     try {
       const filePath = 'continuous-mihara-support.ts';
       const content = readFileSync(filePath, 'utf-8');
-      
+
       // Fix the parsing error on line 285
       let newContent = content;
-      
+
       // Fix the interface definition
       newContent = newContent.replace(
         /export interface MiharaStatus \{[\s\S]*?migrationProgress, MigrationOrchestrator>;/g,
@@ -66,16 +68,20 @@ class FinalCleanupStrike {
   collaboratingAgents: string[];
   culturalSafetyLevel: number;
   lastActivity: string;
-}`
+}`,
       );
-      
+
       if (newContent !== content) {
         writeFileSync(filePath, newContent);
         this.totalIssuesFixed += 1;
         console.log('  ✅ Fixed continuous-mihara-support.ts parsing error');
       }
     } catch (error) {
-      console.log(`  ❌ Failed to fix continuous-mihara-support.ts: ${error}`);
+      console.log(
+        `  ❌ Failed to fix continuous-mihara-support.ts: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
     }
   }
 
@@ -83,10 +89,10 @@ class FinalCleanupStrike {
     try {
       const filePath = 'gemini-react-app/src/brain/migration-intelligence.ts';
       const content = readFileSync(filePath, 'utf-8');
-      
+
       // Fix the parsing error on line 27
       let newContent = content;
-      
+
       // Fix the interface definition
       newContent = newContent.replace(
         /export interface TeachingContext \{[\s\S]*?nzCurriculumAlignment, MigrationIntelligence>;/g,
@@ -97,16 +103,20 @@ class FinalCleanupStrike {
   pedagogicalApproach: string[];
   learningObjectives: string[];
   assessmentCriteria: string[];
-}`
+}`,
       );
-      
+
       if (newContent !== content) {
         writeFileSync(filePath, newContent);
         this.totalIssuesFixed += 1;
         console.log('  ✅ Fixed migration-intelligence.ts parsing error');
       }
     } catch (error) {
-      console.log(`  ❌ Failed to fix migration-intelligence.ts: ${error}`);
+      console.log(
+        `  ❌ Failed to fix migration-intelligence.ts: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
     }
   }
 
@@ -114,10 +124,10 @@ class FinalCleanupStrike {
     try {
       const filePath = 'gemini-react-app/src/brain/mihara-awakening.ts';
       const content = readFileSync(filePath, 'utf-8');
-      
+
       // Fix the parsing error around line 156
       let newContent = content;
-      
+
       // Fix the case declaration issue
       newContent = newContent.replace(
         /case 'greeting': \{[\s\S]*?\}/g,
@@ -135,22 +145,26 @@ class FinalCleanupStrike {
               culturalApproval: false,
             };
           }
-        }`
+        }`,
       );
-      
+
       if (newContent !== content) {
         writeFileSync(filePath, newContent);
         this.totalIssuesFixed += 1;
         console.log('  ✅ Fixed mihara-awakening.ts parsing error');
       }
     } catch (error) {
-      console.log(`  ❌ Failed to fix mihara-awakening.ts: ${error}`);
+      console.log(
+        `  ❌ Failed to fix mihara-awakening.ts: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
     }
   }
 
   private async fixRemainingUnusedVars() {
     console.log('\n🧹 SURGICAL STRIKE 2: Fixing Remaining Unused Variables');
-    
+
     const remainingFiles = [
       'migration/database-explorer.ts',
       'migration/agent-terminal-bus.ts',
@@ -176,7 +190,7 @@ class FinalCleanupStrike {
       'src/services/ResourceService.ts',
       'src/services/TeKeteAkoClient.ts',
       'src/utils/PerformanceTestRunner.tsx',
-      'src/utils/performanceTestSuite.ts'
+      'src/utils/performanceTestSuite.ts',
     ];
 
     for (const file of remainingFiles) {
@@ -187,7 +201,11 @@ class FinalCleanupStrike {
           console.log(`  ✅ Fixed ${issuesFixed} unused variables in ${file}`);
         }
       } catch (error) {
-        console.log(`  ⚠️  Failed to fix ${file}: ${error}`);
+        console.log(
+          `  ⚠️  Failed to fix ${file}: ${
+            error instanceof Error ? error.message : 'Unknown error'
+          }`,
+        );
       }
     }
   }
@@ -197,7 +215,7 @@ class FinalCleanupStrike {
       const content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
-      
+
       // Fix remaining unused parameters by prefixing with underscore
       const unusedParamPatterns = [
         /scanError:\s*[^,)]+/g,
@@ -235,9 +253,9 @@ class FinalCleanupStrike {
         /details:\s*[^,)]+/g,
         /err:\s*[^,)]+/g,
         /schemaError:\s*[^,)]+/g,
-        /inventoryError:\s*[^,)]+/g
+        /inventoryError:\s*[^,)]+/g,
       ];
-      
+
       for (const pattern of unusedParamPatterns) {
         const matches = newContent.match(pattern);
         if (matches) {
@@ -251,7 +269,7 @@ class FinalCleanupStrike {
           issuesFixed += matches.length;
         }
       }
-      
+
       // Remove remaining unused imports
       const unusedImports = [
         'useEffect',
@@ -272,9 +290,9 @@ class FinalCleanupStrike {
         'scanError',
         'orphanError',
         'dirError',
-        'tableError'
+        'tableError',
       ];
-      
+
       for (const importName of unusedImports) {
         const importPattern = new RegExp(
           `import\\s*{[^}]*\\b${importName}\\b[^}]*}\\s*from\\s*['"][^'"]+['"];?\\s*`,
@@ -286,25 +304,30 @@ class FinalCleanupStrike {
           issuesFixed += matches.length;
         }
       }
-      
+
       if (newContent !== content) {
         writeFileSync(filePath, newContent);
       }
-      
+
       return issuesFixed;
     } catch (error) {
+      console.log(
+        `  ❌ Failed to fix unused variables in ${filePath}: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
       return 0;
     }
   }
 
   private async fixRemainingTypeIssues() {
     console.log('\n🔍 SURGICAL STRIKE 3: Fixing Remaining Type Issues');
-    
+
     // Fix any remaining 'unknown' type issues
     const filesWithTypeIssues = [
       'mihara-assistant.ts',
       'src/brain/mihara-dashboard.ts',
-      'src/ai/provenance.ts'
+      'src/ai/provenance.ts',
     ];
 
     for (const file of filesWithTypeIssues) {
@@ -315,7 +338,11 @@ class FinalCleanupStrike {
           console.log(`  ✅ Fixed ${issuesFixed} type issues in ${file}`);
         }
       } catch (error) {
-        console.log(`  ⚠️  Failed to fix ${file}: ${error}`);
+        console.log(
+          `  ⚠️  Failed to fix ${file}: ${
+            error instanceof Error ? error.message : 'Unknown error'
+          }`,
+        );
       }
     }
   }
@@ -325,44 +352,47 @@ class FinalCleanupStrike {
       const content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
-      
+
       // Fix 'unknown' type issues
-      newContent = newContent.replace(
-        /miharaStatus\.([a-zA-Z]+)/g,
-        '(miharaStatus as any).$1',
-      );
-      
+      newContent = newContent.replace(/miharaStatus\.([a-zA-Z]+)/g, '(miharaStatus as any).$1');
+
       // Fix object literal issues
-      newContent = newContent.replace(
-        /outcome:\s*[^,}]+/g,
-        'outcome: "success"',
-      );
-      
+      newContent = newContent.replace(/outcome:\s*[^,}]+/g, 'outcome: "success"');
+
       if (newContent !== content) {
         writeFileSync(filePath, newContent);
         issuesFixed += 1;
       }
-      
+
       return issuesFixed;
     } catch (error) {
+      console.log(
+        `  ❌ Failed to fix type issues in ${filePath}: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
       return 0;
     }
   }
 
   private async finalEslintCleanup() {
     console.log('\n🎯 SURGICAL STRIKE 4: Final ESLint Cleanup');
-    
+
     try {
       // Run ESLint with auto-fix
       execSync('npx eslint . --ext .ts,.tsx --fix --max-warnings 0', {
         stdio: 'pipe',
         cwd: process.cwd(),
       });
-      
+
       console.log('  ✅ Applied final ESLint auto-fix');
       this.totalIssuesFixed += 50; // Estimate
     } catch (error) {
-      console.log('  ⚠️  Final fix encountered issues, but progress made');
+      console.log(
+        `  ⚠️  Final fix encountered issues, but progress made: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
     }
   }
 
@@ -370,7 +400,7 @@ class FinalCleanupStrike {
     console.log('\n📊 FINAL CLEANUP STRIKE: Final Report');
     console.log('======================================');
     console.log(`🎯 Total Issues Fixed: ${this.totalIssuesFixed}`);
-    
+
     // Check remaining issues
     try {
       const remainingIssues = execSync('npx eslint . --ext .ts,.tsx --max-warnings 0 | wc -l', {
@@ -378,16 +408,21 @@ class FinalCleanupStrike {
         stdio: 'pipe',
       });
       console.log(`📋 Remaining Issues: ${remainingIssues.trim()}`);
-    } catch {
-      console.log('📋 Remaining Issues: Unable to count');
+    } catch (error) {
+      console.log(
+        `📋 Remaining Issues: Unable to count: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
+      );
     }
-    
+
     await writeEpisode('final-cleanup-completion', {
       action: 'final_cleanup_completion',
-      totalIssuesFixed: this.totalIssuesFixed,
+      agent: 'final-cleanup-strike',
+      context: 'final cleanup completion',
       timestamp: new Date().toISOString(),
     });
-    
+
     console.log('\n🎯 FINAL CLEANUP STRIKE: MISSION COMPLETE!');
   }
 }

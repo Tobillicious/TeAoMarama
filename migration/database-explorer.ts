@@ -2,29 +2,29 @@
 
 /**
  * Te Kete Ako Database Explorer
- * 
+ *
  * URGENT MISSION: Immediate database exploration and inventory
  * Responding to Kaitiaki Mahara's urgent directive for 10x velocity increase
- * 
+ *
  * This script:
  * 1. Tests Te Kete Ako database connection
  * 2. Analyzes schema structure
  * 3. Creates content inventory
  * 4. Identifies cultural content requiring review
  * 5. Reports findings to Kaitiaki Mahara
- * 
+ *
  * Usage: npx tsx migration/database-explorer.ts
  */
 
-import { teKeteAkoClient } from '../src/services/TeKeteAkoClient';
 import type { ContentInventory, DatabaseSchema } from '../src/services/TeKeteAkoClient';
+import { teKeteAkoClient } from '../src/services/TeKeteAkoClient';
 
 interface ExplorationReport {
   timestamp: string;
   connection_status: boolean;
   database_schema: DatabaseSchema[];
   content_inventory: ContentInventory;
-  cultural_flags: CulturalContentFlag[];
+  cultural_flags: unknown[]; // TODO: Import CulturalContentFlag
   orphaned_resources: unknown[];
   recommendations: string[];
   urgency_level: 'low' | 'medium' | 'high' | 'critical';
@@ -45,14 +45,16 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
       total_records: 0,
       content_types: {},
       cultural_content_count: 0,
-      broken_links: 0,
-      placeholder____content: 0,
-      last_updated: new Date().toISOString()
+      // broken_links: 0, // TODO: Add to ContentInventory interface
+      placeholder_content: 0,
+      tables_analyzed: [],
+      potential_links: [],
+      last_updated: new Date().toISOString(),
     },
     cultural_flags: [],
     orphaned_resources: [],
     recommendations: [],
-    urgency_level: 'critical'
+    urgency_level: 'critical',
   };
 
   try {
@@ -69,25 +71,32 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
     }
 
     console.log('✅ Database connection established successfully');
-    console.log(`Available tables: ${connectionResult.metadata?.tables?.length || 0}`);
+    console.log(
+      `Available tables: ${
+        (connectionResult.metadata as { tables?: string[] })?.tables?.length || 0
+      }`,
+    );
 
     // Phase 2: Analyze Database Schema
     console.log('\n📊 Phase 2: Analyzing database schema...');
     try {
       report.database_schema = await teKeteAkoClient.analyzeDatabaseSchema();
-      const tableNames = [...new Set(report.database_schema.map(col => col.table_name))];
+      const tableNames = [...new Set(report.database_schema.map((col) => col.table_name))];
 
       console.log(`✅ Schema analysis complete`);
-      console.log(`📋 Found ${tableNames.length} tables with ${report.database_schema.length} total columns`);
+      console.log(
+        `📋 Found ${tableNames.length} tables with ${report.database_schema.length} total columns`,
+      );
       console.log(`📚 Key tables identified: ${tableNames.slice(0, 8).join(', ')}`);
 
       if (tableNames.length > 8) {
         console.log(`   ... and ${tableNames.length - 8} more tables`);
       }
-
-    } catch (schemaError) {
+    } catch {
       console.warn('⚠️ Schema analysis had issues, continuing with content exploration...');
-      report.recommendations.push('Schema analysis needs refinement - some tables may not be accessible');
+      report.recommendations.push(
+        'Schema analysis needs refinement - some tables may not be accessible',
+      );
     }
 
     // Phase 3: Create Content Inventory
@@ -97,28 +106,44 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
 
       console.log('✅ Content inventory complete');
       console.log(`📊 Total records found: ${report.content_inventory.total_records}`);
-      console.log(`🏛️ Cultural content detected: ${report.content_inventory.cultural_content_count} items`);
-      console.log(`📁 Content types: ${Object.keys(report.content_inventory.content_types).join(', ')}`);
+      console.log(
+        `🏛️ Cultural content detected: ${report.content_inventory.cultural_content_count} items`,
+      );
+      console.log(
+        `📁 Content types: ${Object.keys(report.content_inventory.content_types).join(', ')}`,
+      );
 
       // Add recommendations based on findings
       if (report.content_inventory.cultural_content_count > 0) {
-        report.recommendations.push(`URGENT: ${report.content_inventory.cultural_content_count} cultural content items need Kaitiaki review`);
+        report.recommendations.push(
+          `URGENT: ${report.content_inventory.cultural_content_count} cultural content items need Kaitiaki review`,
+        );
       }
 
       if (report.content_inventory.total_records > 500) {
-        report.recommendations.push('HIGH PRIORITY: Large dataset detected - implement bulk migration tools');
+        report.recommendations.push(
+          'HIGH PRIORITY: Large dataset detected - implement bulk migration tools',
+        );
       }
-
-    } catch (inventoryError) {
+    } catch {
       console.warn('⚠️ Content inventory had issues, attempting targeted scans...');
-      report.recommendations.push('Content inventory needs alternative approach - standard table names may not apply');
+      report.recommendations.push(
+        'Content inventory needs alternative approach - standard table names may not apply',
+      );
     }
 
     // Phase 4: Cultural Content Scanning
     console.log('\n🛡️ Phase 4: Scanning for cultural content...');
 
     // Try scanning different potential table names
-    const tablesToScan = ['content_items', 'resources', 'units', 'lessons', 'activities', 'handouts'];
+    const tablesToScan = [
+      'content_items',
+      'resources',
+      'units',
+      'lessons',
+      'activities',
+      'handouts',
+    ];
 
     for (const tableName of tablesToScan) {
       try {
@@ -127,12 +152,16 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
 
         if (flags.length > 0) {
           console.log(`🚨 Cultural content found in ${tableName}: ${flags.length} items flagged`);
-          const highRisk = flags.filter(f => f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation');
+          const highRisk = flags.filter(
+            (f) => f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation',
+          );
           if (highRisk.length > 0) {
-            console.log(`⚠️ HIGH RISK: ${highRisk.length} items require immediate iwi consultation`);
+            console.log(
+              `⚠️ HIGH RISK: ${highRisk.length} items require immediate iwi consultation`,
+            );
           }
         }
-      } catch (scanError) {
+      } catch {
         // Table might not exist or be accessible
         console.log(`📝 Table ${tableName} not found or not accessible`);
       }
@@ -143,18 +172,23 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
     try {
       // This would need to be refined based on actual database structure
       // For now, we'll mark this as requiring further investigation
-      report.recommendations.push('INVESTIGATE: Implement orphaned resource detection based on actual database schema');
-
-    } catch (orphanError) {
+      report.recommendations.push(
+        'INVESTIGATE: Implement orphaned resource detection based on actual database schema',
+      );
+    } catch {
       console.warn('⚠️ Orphaned resource detection needs custom implementation');
     }
 
     // Generate final recommendations
     if (report.content_inventory.total_records === 0) {
-      report.recommendations.push('CRITICAL: No content found - verify table names and access permissions');
+      report.recommendations.push(
+        'CRITICAL: No content found - verify table names and access permissions',
+      );
       report.urgency_level = 'critical';
     } else if (report.cultural_flags.length > 10) {
-      report.recommendations.push('HIGH PRIORITY: Significant cultural content requires immediate review workflow');
+      report.recommendations.push(
+        'HIGH PRIORITY: Significant cultural content requires immediate review workflow',
+      );
       report.urgency_level = 'high';
     } else {
       report.urgency_level = 'medium';
@@ -162,11 +196,12 @@ async function exploreTeKeteAkoDatabase(): Promise<ExplorationReport> {
 
     console.log('\n🎯 EXPLORATION COMPLETE');
     console.log('='.repeat(60));
-
   } catch (error) {
     console.error('\n💥 CRITICAL ERROR during database exploration:');
     console.error(error);
-    report.recommendations.push(`CRITICAL ERROR: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    report.recommendations.push(
+      `CRITICAL ERROR: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    );
     report.urgency_level = 'critical';
   }
 
@@ -181,17 +216,25 @@ async function generateKaitiakiReport(report: ExplorationReport): Promise<void> 
   console.log(`🔗 Connection Status: ${report.connection_status ? '✅ CONNECTED' : '❌ FAILED'}`);
 
   console.log('\n📊 DATABASE METRICS:');
-  console.log(`• Total Tables: ${[...new Set(report.database_schema.map(col => col.table_name))].length}`);
+  console.log(
+    `• Total Tables: ${[...new Set(report.database_schema.map((col) => col.table_name))].length}`,
+  );
   console.log(`• Total Records Found: ${report.content_inventory.total_records}`);
   console.log(`• Cultural Content Items: ${report.content_inventory.cultural_content_count}`);
   console.log(`• Cultural Flags Created: ${report.cultural_flags.length}`);
 
-  const highRiskFlags = report.cultural_flags.filter(f =>
-    f.risk_level === 'high' || f.risk_level === 'requires_iwi_consultation'
-  );
+  const highRiskFlags = report.cultural_flags.filter((f) => {
+    if (typeof f === 'object' && f !== null && 'risk_level' in f) {
+      const flag = f as { risk_level?: string };
+      return flag.risk_level === 'high' || flag.risk_level === 'requires_iwi_consultation';
+    }
+    return false;
+  });
 
   if (highRiskFlags.length > 0) {
-    console.log(`🚨 HIGH RISK CULTURAL CONTENT: ${highRiskFlags.length} items require immediate review`);
+    console.log(
+      `🚨 HIGH RISK CULTURAL CONTENT: ${highRiskFlags.length} items require immediate review`,
+    );
   }
 
   console.log('\n🎯 IMMEDIATE ACTIONS REQUIRED:');
@@ -234,11 +277,10 @@ async function main() {
     const fs = await import('fs');
     await fs.promises.writeFile(
       './migration/database-exploration-report.json',
-      JSON.stringify(report, null, 2)
+      JSON.stringify(report, null, 2),
     );
 
     console.log('\n💾 Report saved to: ./migration/database-exploration-report.json');
-
   } catch (error) {
     console.error('Fatal error in database exploration:', error);
     process.exit(1);

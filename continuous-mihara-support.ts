@@ -179,7 +179,7 @@ class ContinuousMiharaSupport {
       if (this.alerts.length > 0) {
         console.log('\n⚠️ ACTIVE ALERTS:');
         console.log('─────────────────');
-        this.alerts.forEach((alert, index) => {
+        this.alerts.forEach((alert) => {
           const icon = alert.level === 'critical' ? '🚨' : alert.level === 'warning' ? '⚠️' : 'ℹ️';
           console.log(`${icon} [${alert.level.toUpperCase()}] ${alert.component}: ${alert.message}`);
           if (alert.action_required) {
@@ -249,7 +249,7 @@ class ContinuousMiharaSupport {
   private async ensureHumanCommandChannels(): Promise<void> {
     const dirs = [this.humanDir, this.humanInbox, this.humanArchive, this.humanOutbox];
     await Promise.all(dirs.map(async d => {
-      try { await fs.mkdir(d, { recursive: true }); } catch {}
+      try { await fs.mkdir(d, { recursive: true }); } catch { /* empty */ }
     }));
   }
 
@@ -351,7 +351,7 @@ class ContinuousMiharaSupport {
         const content = await fs.readFile(filePath);
         await fs.writeFile(archived, content);
         await fs.unlink(filePath);
-      } catch {}
+      } catch { /* empty */ }
     }
   }
 

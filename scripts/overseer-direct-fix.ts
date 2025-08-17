@@ -91,7 +91,7 @@ class OverseerDirectFix {
       }
 
       return issuesFixed;
-    } catch (error) {
+    } catch {
       return 0;
     }
   }
@@ -111,7 +111,7 @@ class OverseerDirectFix {
 
       console.log('  ✅ Applied ESLint auto-fix for unused variables');
       this.totalIssuesFixed += 50; // Estimate
-    } catch (error) {
+    } catch {
       console.log('  ⚠️  ESLint auto-fix encountered issues, continuing...');
     }
   }
@@ -128,7 +128,7 @@ class OverseerDirectFix {
 
       console.log('  ✅ Applied ESLint auto-fix for import/export issues');
       this.totalIssuesFixed += 30; // Estimate
-    } catch (error) {
+    } catch {
       console.log('  ⚠️  Import/export fix encountered issues, continuing...');
     }
   }

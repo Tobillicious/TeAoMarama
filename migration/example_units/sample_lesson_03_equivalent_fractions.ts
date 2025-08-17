@@ -13,7 +13,6 @@ import type {
   LessonPlan, 
   LessonSegment, 
   LessonResource, 
-  WhatAGoodOneLooksLike,
   LessonVariation 
 } from '../lesson-plan-template';
 import { LessonPlanBuilder } from '../lesson-plan-template';
