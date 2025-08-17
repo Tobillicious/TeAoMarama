@@ -20,6 +20,19 @@ interface LintingIssue {
   status: 'pending' | 'in-progress' | 'completed' | 'failed';
 }
 
+interface ESLintMessage {
+  ruleId: string | null;
+  message: string;
+  line: number;
+  column: number;
+  severity: number;
+}
+
+interface ESLintFile {
+  filePath: string;
+  messages: ESLintMessage[];
+}
+
 interface Agent {
   name: string;
   specialty: string[];
@@ -91,26 +104,27 @@ class MassiveLintingCleanup {
 
       const eslintIssues = JSON.parse(eslintOutput);
       this.processEslintIssues(eslintIssues);
-    } catch (error) {
+    } catch {
       console.log('⚠️ ESLint scan failed, proceeding with estimated issues...');
       this.estimateIssues();
     }
   }
 
-  private processEslintIssues(eslintOutput: any[]) {
+  private processEslintIssues(eslintOutput: ESLintFile[]) {
     let issueId = 1;
 
-    eslintOutput.forEach((file: any) => {
-      file.messages.forEach((message: any) => {
+    eslintOutput.forEach((file: ESLintFile) => {
+      file.messages.forEach((message: ESLintMessage) => {
+        const ruleId = message.ruleId || 'unknown';
         const issue: LintingIssue = {
           id: `issue-${issueId++}`,
           file: file.filePath,
-          rule: message.ruleId || 'unknown',
+          rule: ruleId,
           message: message.message,
           line: message.line,
           column: message.column,
-          priority: this.determinePriority(message.ruleId, message.severity),
-          agent: this.assignAgent(message.ruleId),
+          priority: this.determinePriority(ruleId, message.severity),
+          agent: this.assignAgent(ruleId),
           status: 'pending',
         };
 
@@ -259,7 +273,7 @@ class MassiveLintingCleanup {
         agent.completedTasks++;
 
         console.log(`✅ ${agent.name}: Fixed ${issue.rule} in ${issue.file}`);
-      } catch (error) {
+      } catch {
         issue.status = 'failed';
         this.failedIssues++;
         agent.failedTasks++;
@@ -378,8 +392,7 @@ async function main() {
   await orchestrator.executeMassiveCleanup();
 }
 
-if (require.main === module) {
-  main().catch(console.error);
-}
+// Execute the massive cleanup
+main().catch(console.error);
 
 export { MassiveLintingCleanup };

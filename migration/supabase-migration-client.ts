@@ -8,9 +8,9 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 // Te Kete Ako Database Credentials
-const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co';
+const TEKETE_SUPABASE_URL = 'https://cpvherfewjpnhxfhrvlt.supabase.co';
 const TEKETE_SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwdmhlcmZld2pwbmh4Zmhydmx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4OTYzMjMsImV4cCI6MjA3MDQ3MjMyM30.jReaXtIkyoRthvkohTcl66DMwyJbFyWwqDYBlHLB8vY';
 
 // Content Types for Migration
 export interface ContentItem {

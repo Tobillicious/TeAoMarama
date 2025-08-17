@@ -102,7 +102,7 @@ async function main() {
         console.log(`\n[${timestamp()}] ⏹️  Shutting down supervisor …`);
         PROC_SPEC.forEach(spec => {
             if (spec.proc && !spec.proc.killed) {
-                try { spec.proc.kill('SIGINT'); } catch {}
+                try { spec.proc.kill('SIGINT'); } catch { /* empty */ }
             }
         });
         process.exit(0);

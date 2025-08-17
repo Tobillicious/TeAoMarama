@@ -18,8 +18,8 @@ class MassiveBatchFix {
 
     await writeEpisode('massive-batch-fix', {
       action: 'massive_batch_fix_deployment',
-      strategy: 'systematic_cleanup',
-      targetIssues: 1830,
+      agent: 'massive-batch-fix',
+      context: 'deploying massive batch fix for remaining issues',
       timestamp: new Date().toISOString(),
     });
 
@@ -118,7 +118,7 @@ class MassiveBatchFix {
       }
 
       return issuesFixed;
-    } catch (error) {
+    } catch {
       return 0;
     }
   }
@@ -241,7 +241,7 @@ class MassiveBatchFix {
       }
 
       return issuesFixed;
-    } catch (error) {
+    } catch {
       return 0;
     }
   }
@@ -287,7 +287,7 @@ class MassiveBatchFix {
       }
 
       return issuesFixed;
-    } catch (error) {
+    } catch {
       return 0;
     }
   }
@@ -320,8 +320,8 @@ class MassiveBatchFix {
         this.totalIssuesFixed += issuesFixed;
         console.log(`  ✅ Fixed continuous-mihara-support.ts`);
       }
-    } catch (error) {
-      console.log(`  ⚠️  Failed to fix continuous-mihara-support.ts: ${error}`);
+    } catch {
+      console.log(`  ⚠️  Failed to fix continuous-mihara-support.ts`);
     }
   }
 
@@ -342,8 +342,8 @@ class MassiveBatchFix {
         this.totalIssuesFixed += 1;
         console.log(`  ✅ Fixed provenance.ts`);
       }
-    } catch (error) {
-      console.log(`  ⚠️  Failed to fix provenance.ts: ${error}`);
+    } catch {
+      console.log(`  ⚠️  Failed to fix provenance.ts`);
     }
   }
 
@@ -378,8 +378,8 @@ class MassiveBatchFix {
         this.totalIssuesFixed += 1;
         console.log(`  ✅ Fixed kaitiaki-protocol.ts`);
       }
-    } catch (error) {
-      console.log(`  ⚠️  Failed to fix kaitiaki-protocol.ts: ${error}`);
+    } catch {
+      console.log(`  ⚠️  Failed to fix kaitiaki-protocol.ts`);
     }
   }
 
@@ -395,7 +395,7 @@ class MassiveBatchFix {
 
       console.log('  ✅ Applied comprehensive ESLint auto-fix');
       this.totalIssuesFixed += 200; // Estimate
-    } catch (error) {
+    } catch {
       console.log('  ⚠️  Comprehensive fix encountered issues, but progress made');
     }
   }
@@ -418,7 +418,8 @@ class MassiveBatchFix {
 
     await writeEpisode('massive-batch-completion', {
       action: 'massive_batch_completion',
-      totalIssuesFixed: this.totalIssuesFixed,
+      agent: 'massive-batch-fix',
+      context: 'massive batch fix completion',
       timestamp: new Date().toISOString(),
     });
 

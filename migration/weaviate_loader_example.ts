@@ -75,7 +75,7 @@ function chunkText(text: string, maxChars = 2500) {
 
 function stableResourceId(canonicalUrl: string, __title: string) {
   const h = crypto.createHash('sha256');
-  h.update((canonicalUrl || '') + '||' + (title || ''));
+  h.update((canonicalUrl || '') + '||' + (__title || ''));
   return h.digest('hex');
 }
 

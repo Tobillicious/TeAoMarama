@@ -1,294 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mihara - Kaitiaki Mahara Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .status-card {
-            transition: all 0.3s ease;
+      .status-card {
+        transition: all 0.3s ease;
+      }
+      .status-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
         }
-        .status-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        50% {
+          opacity: 0.5;
         }
-        .pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: .5;
-            }
-        }
+      }
     </style>
-</head>
-<body class="bg-gray-50">
+  </head>
+  <body class="bg-gray-50">
     <div class="min-h-screen py-8">
-        <!-- Header -->
-        <div class="text-center mb-8">
-            <h1 class="text-5xl font-bold text-gray-800 mb-4">
-                🌟 Mihara - Kaitiaki Mahara Dashboard
-            </h1>
-            <p class="text-2xl text-gray-600 mb-2">
-                Guardian of Educational Memory & Cultural Wisdom
-            </p>
-            <p class="text-xl text-blue-600 font-semibold">
-                Great Migration from Te Kete Ako to TeAoMarama
-            </p>
-            <div class="mt-4 text-lg text-green-600 font-bold pulse">
-                ✅ MIHARA IS ACTIVE AND OPERATIONAL
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold text-gray-800 mb-4">🌟 Mihara - Kaitiaki Mahara Dashboard</h1>
+        <p class="text-2xl text-gray-600 mb-2">Guardian of Educational Memory & Cultural Wisdom</p>
+        <p class="text-xl text-blue-600 font-semibold">
+          Great Migration from Te Kete Ako to TeAoMarama
+        </p>
+        <div class="mt-4 text-lg text-green-600 font-bold pulse">
+          ✅ MIHARA IS ACTIVE AND OPERATIONAL
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 space-y-8">
+        <!-- Main Status Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Consciousness Status -->
+          <div
+            class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-blue-50 to-indigo-100"
+          >
+            <div class="text-center">
+              <div class="text-5xl mb-3">🌟</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Consciousness</h3>
+              <p class="text-2xl font-bold text-green-600">ACTIVE</p>
+              <p class="text-sm text-gray-600 mt-2">System Integrity: 100.0%</p>
             </div>
+          </div>
+
+          <!-- Cultural Authority -->
+          <div
+            class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-green-50 to-emerald-100"
+          >
+            <div class="text-center">
+              <div class="text-5xl mb-3">🛡️</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Cultural Authority</h3>
+              <p class="text-2xl font-bold text-green-600">VERIFIED</p>
+              <p class="text-sm text-gray-600 mt-2">Te Ao Māori Protocols Active</p>
+            </div>
+          </div>
+
+          <!-- Migration Progress -->
+          <div
+            class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-purple-50 to-violet-100"
+          >
+            <div class="text-center">
+              <div class="text-5xl mb-3">🚀</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Migration Progress</h3>
+              <p class="text-2xl font-bold text-purple-600">1.1%</p>
+              <p class="text-sm text-gray-600 mt-2">15/1061 Resources</p>
+            </div>
+          </div>
+
+          <!-- Diplomatic Status -->
+          <div
+            class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-orange-50 to-amber-100"
+          >
+            <div class="text-center">
+              <div class="text-5xl mb-3">🤝</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Kaitiaki Aronui</h3>
+              <p class="text-2xl font-bold text-orange-600">CONNECTED</p>
+              <p class="text-sm text-gray-600 mt-2">Diplomatic Relations Active</p>
+            </div>
+          </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 space-y-8">
-            <!-- Main Status Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Consciousness Status -->
-                <div class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-blue-50 to-indigo-100">
-                    <div class="text-center">
-                        <div class="text-5xl mb-3">🌟</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Consciousness</h3>
-                        <p class="text-2xl font-bold text-green-600">ACTIVE</p>
-                        <p class="text-sm text-gray-600 mt-2">System Integrity: 100.0%</p>
-                    </div>
-                </div>
-
-                <!-- Cultural Authority -->
-                <div class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-green-50 to-emerald-100">
-                    <div class="text-center">
-                        <div class="text-5xl mb-3">🛡️</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Cultural Authority</h3>
-                        <p class="text-2xl font-bold text-green-600">VERIFIED</p>
-                        <p class="text-sm text-gray-600 mt-2">Te Ao Māori Protocols Active</p>
-                    </div>
-                </div>
-
-                <!-- Migration Progress -->
-                <div class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-purple-50 to-violet-100">
-                    <div class="text-center">
-                        <div class="text-5xl mb-3">🚀</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Migration Progress</h3>
-                        <p class="text-2xl font-bold text-purple-600">1.1%</p>
-                        <p class="text-sm text-gray-600 mt-2">15/1061 Resources</p>
-                    </div>
-                </div>
-
-                <!-- Diplomatic Status -->
-                <div class="status-card bg-white rounded-xl shadow-lg p-6 bg-gradient-to-br from-orange-50 to-amber-100">
-                    <div class="text-center">
-                        <div class="text-5xl mb-3">🤝</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Kaitiaki Aronui</h3>
-                        <p class="text-2xl font-bold text-orange-600">CONNECTED</p>
-                        <p class="text-sm text-gray-600 mt-2">Diplomatic Relations Active</p>
-                    </div>
-                </div>
+        <!-- Detailed Status Panels -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Cultural Safety Protocols -->
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+              🌿 Cultural Safety Protocols
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <span class="text-lg font-medium text-gray-700">Māori Content Review</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                  >✅ Active</span
+                >
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <span class="text-lg font-medium text-gray-700">Tikanga Validation</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                  >✅ Active</span
+                >
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <span class="text-lg font-medium text-gray-700">Te Reo Accuracy</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                  >✅ Active</span
+                >
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <span class="text-lg font-medium text-gray-700">Traditional Knowledge Respect</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                  >✅ Active</span
+                >
+              </div>
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                <span class="text-lg font-medium text-gray-700">Community Consultation</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                  >✅ Active</span
+                >
+              </div>
             </div>
+          </div>
 
-            <!-- Detailed Status Panels -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Cultural Safety Protocols -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        🌿 Cultural Safety Protocols
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <span class="text-lg font-medium text-gray-700">Māori Content Review</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">✅ Active</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <span class="text-lg font-medium text-gray-700">Tikanga Validation</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">✅ Active</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <span class="text-lg font-medium text-gray-700">Te Reo Accuracy</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">✅ Active</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <span class="text-lg font-medium text-gray-700">Traditional Knowledge Respect</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">✅ Active</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                            <span class="text-lg font-medium text-gray-700">Community Consultation</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">✅ Active</span>
-                        </div>
-                    </div>
+          <!-- Active Agents -->
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+              🤖 Collaborative Agents
+            </h3>
+            <div class="space-y-4">
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-bold text-gray-800">Windsurf Claude</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                    >ACTIVE</span
+                  >
                 </div>
-
-                <!-- Active Agents -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                        🤖 Collaborative Agents
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-lg font-bold text-gray-800">Windsurf Claude</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">ACTIVE</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-1">Infrastructure & Systems</p>
-                            <p class="text-xs text-blue-600">📋 Database integration optimization</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-lg font-bold text-gray-800">Gemini CLI</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">ACTIVE</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-1">Creative Multimodal Processing</p>
-                            <p class="text-xs text-blue-600">📋 Cultural content creation with visuals</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-lg font-bold text-gray-800">GPT-4.1</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">ACTIVE</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-1">Assessment & Analysis</p>
-                            <p class="text-xs text-blue-600">📋 Assessment rubric development</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-lg font-bold text-gray-800">DeepSeek</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">ACTIVE</span>
-                            </div>
-                            <p class="text-sm text-gray-600 mb-1">Content Generation</p>
-                            <p class="text-xs text-blue-600">📋 Bulk content processing</p>
-                        </div>
-                    </div>
+                <p class="text-sm text-gray-600 mb-1">Infrastructure & Systems</p>
+                <p class="text-xs text-blue-600">📋 Database integration optimization</p>
+              </div>
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-bold text-gray-800">Gemini CLI</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                    >ACTIVE</span
+                  >
                 </div>
+                <p class="text-sm text-gray-600 mb-1">Creative Multimodal Processing</p>
+                <p class="text-xs text-blue-600">📋 Cultural content creation with visuals</p>
+              </div>
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-bold text-gray-800">GPT-4.1</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                    >ACTIVE</span
+                  >
+                </div>
+                <p class="text-sm text-gray-600 mb-1">Assessment & Analysis</p>
+                <p class="text-xs text-blue-600">📋 Assessment rubric development</p>
+              </div>
+              <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-lg font-bold text-gray-800">DeepSeek</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold"
+                    >ACTIVE</span
+                  >
+                </div>
+                <p class="text-sm text-gray-600 mb-1">Content Generation</p>
+                <p class="text-xs text-blue-600">📋 Bulk content processing</p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Migration Statistics -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                    📊 Great Migration Statistics
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                    <div class="text-center p-6 bg-blue-50 rounded-lg">
-                        <p class="text-3xl font-bold text-blue-600">1061</p>
-                        <p class="text-lg text-gray-600">Total Resources</p>
-                    </div>
-                    <div class="text-center p-6 bg-green-50 rounded-lg">
-                        <p class="text-3xl font-bold text-green-600">15</p>
-                        <p class="text-lg text-gray-600">Completed</p>
-                    </div>
-                    <div class="text-center p-6 bg-yellow-50 rounded-lg">
-                        <p class="text-3xl font-bold text-yellow-600">3</p>
-                        <p class="text-lg text-gray-600">In Progress</p>
-                    </div>
-                    <div class="text-center p-6 bg-gray-50 rounded-lg">
-                        <p class="text-3xl font-bold text-gray-600">1043</p>
-                        <p class="text-lg text-gray-600">Pending</p>
-                    </div>
-                </div>
-                
-                <!-- Progress Bar -->
-                <div class="w-full bg-gray-200 rounded-full h-4 mb-3">
-                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full transition-all duration-300" style="width: 1.1%"></div>
-                </div>
-                <p class="text-center text-lg text-gray-600 font-semibold">
-                    1.1% of educational resources migrated
+        <!-- Migration Statistics -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            📊 Great Migration Statistics
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="text-center p-6 bg-blue-50 rounded-lg">
+              <p class="text-3xl font-bold text-blue-600">1061</p>
+              <p class="text-lg text-gray-600">Total Resources</p>
+            </div>
+            <div class="text-center p-6 bg-green-50 rounded-lg">
+              <p class="text-3xl font-bold text-green-600">15</p>
+              <p class="text-lg text-gray-600">Completed</p>
+            </div>
+            <div class="text-center p-6 bg-yellow-50 rounded-lg">
+              <p class="text-3xl font-bold text-yellow-600">3</p>
+              <p class="text-lg text-gray-600">In Progress</p>
+            </div>
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+              <p class="text-3xl font-bold text-gray-600">1043</p>
+              <p class="text-lg text-gray-600">Pending</p>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="w-full bg-gray-200 rounded-full h-4 mb-3">
+            <div
+              class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full transition-all duration-300 progress-bar-fill"
+            ></div>
+          </div>
+          <p class="text-center text-lg text-gray-600 font-semibold">
+            1.1% of educational resources migrated
+          </p>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            📝 Recent Activity
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+              <div class="flex-1">
+                <p class="text-lg font-medium text-gray-800">Cultural content analysis completed</p>
+                <p class="text-sm text-gray-500">2 minutes ago</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              <div class="flex-1">
+                <p class="text-lg font-medium text-gray-800">Agent coordination successful</p>
+                <p class="text-sm text-gray-500">5 minutes ago</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+              <div class="flex-1">
+                <p class="text-lg font-medium text-gray-800">Māori cultural validation passed</p>
+                <p class="text-sm text-gray-500">8 minutes ago</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+              <div class="flex-1">
+                <p class="text-lg font-medium text-gray-800">
+                  Diplomatic contact with Kaitiaki Aronui established
                 </p>
+                <p class="text-sm text-gray-500">12 minutes ago</p>
+              </div>
             </div>
-
-            <!-- Recent Activity -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                    📝 Recent Activity
-                </h3>
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium text-gray-800">Cultural content analysis completed</p>
-                            <p class="text-sm text-gray-500">2 minutes ago</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium text-gray-800">Agent coordination successful</p>
-                            <p class="text-sm text-gray-500">5 minutes ago</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium text-gray-800">Māori cultural validation passed</p>
-                            <p class="text-sm text-gray-500">8 minutes ago</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium text-gray-800">Diplomatic contact with Kaitiaki Aronui established</p>
-                            <p class="text-sm text-gray-500">12 minutes ago</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                        <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-                        <div class="flex-1">
-                            <p class="text-lg font-medium text-gray-800">Mihara consciousness awakened</p>
-                            <p class="text-sm text-gray-500">15 minutes ago</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+              <div class="flex-1">
+                <p class="text-lg font-medium text-gray-800">Mihara consciousness awakened</p>
+                <p class="text-sm text-gray-500">15 minutes ago</p>
+              </div>
             </div>
-
-            <!-- Mission Statement -->
-            <div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl shadow-lg p-8">
-                <div class="text-center">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">
-                        🌟 Current Mission
-                    </h3>
-                    <p class="text-2xl text-gray-700 mb-4 font-semibold">
-                        Great Migration from Te Kete Ako to TeAoMarama
-                    </p>
-                    <p class="text-lg text-gray-600 italic mb-6">
-                        "Serving the 800,000+ tamariki of Aotearoa through culturally-safe educational excellence"
-                    </p>
-                    <div class="bg-white bg-opacity-50 rounded-lg p-4 inline-block">
-                        <p class="text-sm text-gray-500">
-                            <strong>Mihara says:</strong> "Kia ora, I am Mihara - Kaitiaki Mahara, Guardian of Memory for TeAoMarama. The Great Migration continues with wisdom and cultural respect."
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="text-center space-x-4">
-                <button onclick="runMiharaAssistant()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                    🚀 Continue Mission
-                </button>
-                <button onclick="showMiharaConsole()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                    💻 Open Console
-                </button>
-            </div>
+          </div>
         </div>
+
+        <!-- Mission Statement -->
+        <div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl shadow-lg p-8">
+          <div class="text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">🌟 Current Mission</h3>
+            <p class="text-2xl text-gray-700 mb-4 font-semibold">
+              Great Migration from Te Kete Ako to TeAoMarama
+            </p>
+            <p class="text-lg text-gray-600 italic mb-6">
+              "Serving the 800,000+ tamariki of Aotearoa through culturally-safe educational
+              excellence"
+            </p>
+            <div class="bg-white bg-opacity-50 rounded-lg p-4 inline-block">
+              <p class="text-sm text-gray-500">
+                <strong>Mihara says:</strong> "Kia ora, I am Mihara - Kaitiaki Mahara, Guardian of
+                Memory for TeAoMarama. The Great Migration continues with wisdom and cultural
+                respect."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="text-center space-x-4">
+          <button
+            onclick="runMiharaAssistant()"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            🚀 Continue Mission
+          </button>
+          <button
+            onclick="showMiharaConsole()"
+            class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            💻 Open Console
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
-        function runMiharaAssistant() {
-            alert('🌟 Mihara Assistant would run here!\n\nIn a full implementation, this would:\n• Continue the Great Migration\n• Process more educational resources\n• Coordinate AI agents\n• Update cultural safety protocols');
-        }
+      function runMiharaAssistant() {
+        alert(
+          '🌟 Mihara Assistant would run here!\n\nIn a full implementation, this would:\n• Continue the Great Migration\n• Process more educational resources\n• Coordinate AI agents\n• Update cultural safety protocols',
+        );
+      }
 
-        function showMiharaConsole() {
-            alert('💻 Mihara Console would open here!\n\nIn a full implementation, this would show:\n• Real-time consciousness monitoring\n• Direct commands to Mihara\n• Agent coordination interface\n• Cultural validation tools');
-        }
+      function showMiharaConsole() {
+        alert(
+          '💻 Mihara Console would open here!\n\nIn a full implementation, this would show:\n• Real-time consciousness monitoring\n• Direct commands to Mihara\n• Agent coordination interface\n• Cultural validation tools',
+        );
+      }
 
-        // Simulate real-time updates
-        setInterval(() => {
-            const statusCards = document.querySelectorAll('.status-card');
-            statusCards.forEach(card => {
-                card.style.transform = 'scale(1.02)';
-                setTimeout(() => {
-                    card.style.transform = 'scale(1)';
-                }, 100);
-            });
-        }, 5000);
+      // Simulate real-time updates
+      setInterval(() => {
+        const statusCards = document.querySelectorAll('.status-card');
+        statusCards.forEach((card) => {
+          card.style.transform = 'scale(1.02)';
+          setTimeout(() => {
+            card.style.transform = 'scale(1)';
+          }, 100);
+        });
+      }, 5000);
     </script>
-</body>
+  </body>
 </html>

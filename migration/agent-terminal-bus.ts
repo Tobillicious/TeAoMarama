@@ -50,7 +50,7 @@ async function tail(file: string, label: string, color: string) {
     const stat = fs.statSync(file);
     offsets[file] = stat.size; // start from EOF
 
-    fs.watch(file, { persistent: true }, async (event) => {
+    fs.watch(file, { persistent: true }, async () => {
         try {
             const s = fs.statSync(file);
             const from = offsets[file] ?? 0;
