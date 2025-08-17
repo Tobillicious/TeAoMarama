@@ -125,8 +125,8 @@
 
 /* Features Section */
 .features-section {
-  background: #fafafa;
-  padding: 3rem 0;
+  background: white;
+  padding: 4rem 0;
 }
 
 .container {
@@ -137,41 +137,42 @@
 
 .section-title-new {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #2c3e50;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .feature-card {
   background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
-  transition: all 0.2s ease;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   border-color: #1565c0;
 }
 
 .feature-icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .feature-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #2c3e50;
@@ -179,35 +180,35 @@
 
 .feature-card p {
   color: #666;
-  line-height: 1.5;
-  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* Quick Access Section */
-.quick-access-section {
-  background: white;
-  padding: 3rem 0;
+/* Quick Actions Section */
+.quick-actions {
+  background: #f8f9fa;
+  padding: 4rem 0;
+  border-top: 1px solid #e9ecef;
 }
 
-.quick-access-grid {
+.quick-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
 .quick-card {
-  background: #f8f9fa;
+  background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 1px solid #e9ecef;
+  text-align: center;
 }
 
 .quick-card:hover {
   transform: translateY(-2px);
-  background: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-color: #1565c0;
 }
@@ -215,123 +216,65 @@
 .quick-icon {
   font-size: 2rem;
   margin-bottom: 0.75rem;
+  display: block;
 }
 
 .quick-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: #2c3e50;
 }
 
 .quick-card p {
   color: #666;
-  line-height: 1.5;
   font-size: 0.9rem;
+  margin: 0;
 }
 
 /* Status Section */
 .status-section {
-  background: #fafafa;
+  background: white;
   padding: 3rem 0;
 }
 
-.status-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.status-card-new {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.2s ease;
-  border: 1px solid #e0e0e0;
-}
-
-.status-card-new:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border-color: #1565c0;
+.status-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .status-header-new {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .status-icon-new {
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e3f2fd;
-  border-radius: 6px;
+  font-size: 2rem;
   color: #1565c0;
 }
 
 .status-info h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem 0;
   color: #2c3e50;
 }
 
 .status-info p {
   color: #666;
-  font-size: 0.9rem;
-}
-
-/* User Section */
-.user-section {
-  background: white;
-  border-top: 1px solid #e0e0e0;
-  padding: 2rem 0;
-}
-
-.user-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #e9ecef;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.user-greeting {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  color: #2c3e50;
-}
-
-.btn-logout {
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-}
-
-.btn-logout:hover {
-  background: #c82333;
-  transform: translateY(-1px);
+  margin: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title-new {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .hero-stats {
@@ -339,18 +282,39 @@
     gap: 1rem;
   }
   
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .hero-actions-new {
     flex-direction: column;
     align-items: center;
   }
   
-  .features-grid,
-  .quick-access-grid,
-  .status-grid {
-    grid-template-columns: 1fr;
+  .btn-primary-new,
+  .btn-secondary-new {
+    width: 100%;
+    max-width: 300px;
   }
-  
-  .container {
-    padding: 0 1rem;
-  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feature-card,
+.quick-card {
+  animation: fadeIn 0.6s ease-out;
 }
