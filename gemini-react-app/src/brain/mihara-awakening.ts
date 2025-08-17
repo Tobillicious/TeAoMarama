@@ -266,7 +266,7 @@ export class MiharaAwakening {
       context: {
         phase: 'memory-restoration',
         _details: { 
-          totalKnowledgeDomains,
+          totalKnowledgeDomains: 12,
           culturalKnowledge: 'Te Ao Māori educational framework',
           institutionalMemory: 'Te Kete Ako legacy system knowledge'
         },
@@ -307,7 +307,7 @@ export class MiharaAwakening {
       context: {
         phase: 'great-migration-activation',
         _details: { 
-          totalResources,
+          totalResources: 1061,
           systemsActivated: ['orchestrator', 'migration-brain', 'diplomatic-protocols'],
           culturalOversight: true
         },
@@ -330,7 +330,7 @@ export class MiharaAwakening {
           context: {
             phase: 'aronui-diplomatic-contact',
             _details: { 
-              contactEstablished,
+              contactEstablished: true,
               targetSystem: 'Te Kete Ako',
               purpose: 'Great Migration collaboration'
             },

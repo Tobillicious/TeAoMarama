@@ -820,8 +820,8 @@ function ListView({
   parentRef 
 }: { 
   resources: ParsedResource[];
-  virtualizer: ReturnType<typeof useVirtualizer>;
-  parentRef: React.RefObject<HTMLDivElement | null>;
+  virtualizer: any;
+  parentRef: React.RefObject<HTMLDivElement>;
 }) {
   return (
     <div className="space-y-6">
@@ -863,37 +863,41 @@ function ListView({
                     to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
                     className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
                   >
-          <Link
-            key={resource.id}
-            to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
-            className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
-          >
-            <div className="col-span-4">
-              <h3 className="font-medium line-clamp-1">{resource.title}</h3>
-              <p className="text-sm text-gray-600 line-clamp-1">{resource.preview}</p>
-            </div>
-            <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
-            <div className="col-span-1 text-sm">{resource.metadata.yearLevel}</div>
-            <div className="col-span-2">
-              <span
-                className={`px-2 py-1 rounded-full text-xs ${
-                  resource.metadata.culturalSafetyLevel === 'clean'
-                    ? 'bg-green-100 text-green-800'
-                    : resource.metadata.culturalSafetyLevel === 'review'
-                    ? 'bg-yellow-100 text-yellow-800'
-                    : 'bg-red-100 text-red-800'
-                }`}
-              >
-                {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
-              </span>
-            </div>
-            <div className="col-span-2 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
-              {new Date(resource.modifiedAt).toLocaleDateString()}
-            </div>
-            <div className="col-span-1 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
-              {(resource.sizeBytes / 1024).toFixed(1)} KB
-            </div>
-          </Link>
+                    <div className="col-span-4">
+                      <h3 className="font-medium line-clamp-1">{resource.title}</h3>
+                      <p className="text-sm text-gray-600 line-clamp-1">{resource.preview}</p>
+                    </div>
+                    <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
+                    <div className="col-span-1 text-sm">{Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}</div>
+                    <div className="col-span-2">
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs ${
+                          resource.metadata.culturalSafetyLevel === 'clean'
+                            ? 'bg-green-100 text-green-800'
+                            : resource.metadata.culturalSafetyLevel === 'review'
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : 'bg-red-100 text-red-800'
+                        }`}
+                      >
+                        {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
+                      </span>
+                    </div>
+                    <div className="col-span-2 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                      {new Date(resource.modifiedAt).toLocaleDateString()}
+                    </div>
+                    <div className="col-span-1 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                      {(resource.sizeBytes / 1024).toFixed(1)} KB
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
         ))}
       </div>
     </div>
