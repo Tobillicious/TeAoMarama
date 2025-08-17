@@ -4,84 +4,106 @@ type: handout
 subject: Mathematics
 year_level: 8
 generated_by: deepseek-agent
-generated_at: 2025-08-16T02:24:33.792Z
+generated_at: 2025-08-17T08:25:54.786Z
 cultural_safety: pending_review
 status: draft
 ---
 
 ```markdown
-# Ratios and Proportions in Traditional Māori Architecture  
-**Year 8 Mathematics**  
-*Te Whāriki o Aotearoa Curriculum Aligned*  
+# He Whare Takitahi: Ratios and Proportions in Traditional Māori Architecture  
+*Year 8 Mathematics - Depth-Focused Learning*  
 
-## He Whāinga Ako / Learning Objectives  
-By the end of this lesson, you will be able to:  
-1. Understand ratios and proportions in real-world contexts (ACMMG188)  
-2. Apply ratio calculations to analyse traditional Māori buildings  
-3. Recognise symmetry and balance (tōtika) in wharenui design  
-4. Use Te Reo Māori mathematical terms correctly  
+## Previous Learning Connections  
+**Anchor Points:**  
+- Fractions as part-whole relationships (Year 7)  
+- Scale drawings in technology (Year 7-8)  
+- Simple ratios in daily life (e.g., 1:2 mixing ratios)  
 
-## Ngā Tikanga / Cultural Context  
-Māori architecture, like wharenui (meeting houses), uses precise ratios to reflect:  
-- Whakapapa (genealogy) – represented by structural proportions  
-- Tōtika (balance) – seen in symmetrical carvings and tukutuku panels  
-- Mana (prestige) – shown through scale relationships  
+**Māori Knowledge Bridge:**  
+- Whakapapa (genealogical relationships) as proportional connections  
+- Karakia timatanga (opening incantations) that reference balance  
 
-### Te Reo Māori Kupu (Key Words):  
-- **Ōwehenga** – Ratio  
-- **Whakatairite** – Proportion  
-- **Tōtika** – Symmetry/Balance  
-- **Wharenui** – Traditional meeting house  
+---
 
-## Ngā Mahi / Activities  
+## Deep Investigation: The Sacred Geometry of Wharenui  
 
-### Activity 1: Wharenui Ratios  
-Examine this wharenui diagram (simplified for Year 8):  
-![Wharenui outline showing length:width ratio](placeholder-for-actual-image)  
+### 1. Foundation Concept: The Body Ratio  
+*Investigate how the wharenui represents an ancestral body:*  
+- Measure proportions of different wharenui (photos/plans provided)  
+- Calculate ratio of:  
+  - Ridgepole (tāhuhu) length to wall height  
+  - Door width to total façade width  
+
+**Cultural Wisdom Connection:**  
+> "Ko te tāhuhu he tuarā, ko ngā poupou he wae"  
+> "The ridgepole is the spine, the wall posts are legs"  
+> - Whakataukī about wharenui symbolism  
+
+### 2. Progressive Challenge: Structural Harmony  
+*Analyze the golden ratio (1:1.618) in:*  
+- Spacing between tukutuku panels  
+- Ratio of carved figures' head-to-body proportions  
+
+**Māori Mathematical Practice:**  
+- Use of tohi (cord measurements) to maintain sacred proportions  
+- Connection to whetū (star) navigation ratios  
+
+---
+
+## Transfer Challenges  
+
+### Applied Contexts:  
+1. **Waka Design:** Calculate ideal length-to-width ratios for ocean voyaging  
+2. **Kōwhaiwhai Patterns:** Identify repeating ratio sequences in rafters  
+
+### Interdisciplinary Links:  
+- **Science:** Compare with human body proportions  
+- **Art:** Design a contemporary whare using traditional ratios  
+
+---
+
+## Future Learning Pathways  
+*Where this knowledge grows:*  
+- Year 9: Algebraic representation of ratios  
+- Year 10: Trigonometry in whare roof angles  
+- Senior Maths: Golden ratio in Māori art algorithms  
+
+---
+
+## Understanding Assessment  
 
 **Task:**  
-1. Measure the length (te roa) and width (te whānui) using the scale provided.  
-2. Calculate the ratio of length to width (e.g., 6:1).  
-3. Compare your ratio with a classmate’s. Why might ratios differ between wharenui?  
+"Design a whare kai (dining hall) for your school that honors traditional proportions while meeting modern needs."  
 
-### Activity 2: Tukutuku Panel Proportions  
-Tukutuku (woven panels) often use repeating geometric patterns.  
+**Criteria:**  
+- Demonstrate correct use of at least 3 key ratios  
+- Explain how proportions connect to Māori worldview  
+- Justify any modern adaptations  
 
-**Task:**  
-- A panel has 20 red crosses (poutama) and 30 white diamonds (patiki).  
-- Write the ratio of poutama to patiki in simplest form.  
-- If the panel were extended to 50 patiki, how many poutama would maintain the proportion?  
+**Cultural Rubric:**  
+- Manaakitanga (care for users) in spatial planning  
+- Whanaungatanga (relationships) shown through communal ratios  
 
-### Activity 3: Design Your Own Whare  
-**Creative Challenge:**  
-Design a miniature wharenui front wall with:  
-- A length-to-width ratio of 5:2  
-- At least one symmetrical (tōtika) element  
+---
 
-## Aromatawai / Assessment Criteria  
-| Skill                  | Achieved (✓) |  
-|------------------------|-------------|  
-| Correct ratio calculations |             |  
-| Explains proportions in context |             |  
-| Uses Te Reo kupu appropriately |             |  
-| Demonstrates tōtika in design |             |  
+## Whakamahi i te Mātauranga (Applying the Knowledge)  
 
-## He Pātai / Reflection Questions  
-1. Why are ratios important in Māori architecture?  
-2. How does tōtika reflect Māori values?  
-3. Where else do you see proportions in your community?  
+**Extension Challenge:**  
+Research how Ngāti Whātua used tidal ratios when designing Tāmaki pā sites. Create an infographic showing the mathematical relationships between food storage areas and tidal flows.  
 
-## Ngā Rauemi / Further Resources  
-- [Te Papa’s Wharenui Collection](https://www.tepapa.govt.nz) (virtual tour)  
-- "Te Whare Māori" by Hirini Moko Mead (book reference)  
+**Whakatauākī Reflection:**  
+> "He aha te mea nui o te ao? He tangata, he tangata, he tangata"  
+> "What is most important in the world? It is people, it is people, it is people"  
+> - How do your ratio calculations serve people?  
 
-**Kia mahara!** Always ask a kaumātua or cultural advisor if you’re unsure about sacred knowledge.  
+*Design Note: This content is flagged for Kaitiaki review to ensure cultural accuracy in architectural examples.*  
 ```  
 
-### Design Notes for Teachers  
+**Depth Design Features:**  
+1. *Conceptual Progression:* Body ratios → golden ratio → modern applications  
+2. *Cultural Anchors:* Whakataukī, tohi measurements, pā design  
+3. *Transfer Preparation:* Explicit waka/kōwhaiwhai connections  
+4. *Spiral Structure:* Future trig and algebra pathways identified  
+5. *Assessment Depth:* Requires justification and worldview integration  
 
-1. **Cultural Safety:** Avoid sharing restricted (tapu) wharenui details; use generic examples.  
-2. **Differentiation:** Provide grid paper for students struggling with scaling.  
-3. **Extension:** Advanced students can explore the golden ratio in Māori art.  
-
-*Aligns with NZC Level 4: Geometry & Measurement (ACMMG188), Social Sciences (Place & Environment).*
+*Follow-up: In Year 9, students will revisit these ratios when studying similar triangles in whare reconstruction projects.*
