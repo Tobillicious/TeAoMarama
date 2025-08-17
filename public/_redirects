@@ -1,2 +1,6 @@
-/resources/*    /resources/:splat   200
+# Handle static resources directory
+/resources/index.json    /resources/index.json   200
+/resources/*.json        /resources/:splat        200
+
+# Handle React routes - this must come AFTER the static resource rules
 /*    /index.html   200
