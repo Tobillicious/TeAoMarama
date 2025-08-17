@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { Link, useSearchParams } from 'react-router-dom';
+import LightweightMarkdown from '../components/LightweightMarkdown';
 
 export default function ResourceViewer() {
   const [searchParams] = useSearchParams();
@@ -33,18 +32,18 @@ export default function ResourceViewer() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <Link to="/resources" className="text-indigo-600 hover:underline">← Back to Resources</Link>
+      <Link to="/resources" className="text-indigo-600 hover:underline">
+        ← Back to Resources
+      </Link>
       <div className="mt-4 bg-white rounded-lg border p-4">
         {loading && <p>Loading…</p>}
         {error && <p className="text-red-600">{error}</p>}
         {!loading && !error && (
           <article className="prose max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            <LightweightMarkdown content={content} />
           </article>
         )}
       </div>
     </div>
   );
 }
-
-

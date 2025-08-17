@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Link, useSearchParams } from 'react-router-dom';
-import remarkGfm from 'remark-gfm';
+import LightweightMarkdown from '../components/LightweightMarkdown';
 
 const defaultDocs = [
   {
@@ -72,7 +71,7 @@ export default function DocPage() {
         {error && <p className="text-red-600">{error}</p>}
         {!loading && !error && (
           <article className="prose max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+            <LightweightMarkdown content={content} />
           </article>
         )}
       </div>

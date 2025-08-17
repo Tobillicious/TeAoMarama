@@ -8,6 +8,7 @@
 
 /* Import design tokens */
 @import './variables.css';
+@import './components.css';
 
 /* === CSS Reset & Base === */
 *,

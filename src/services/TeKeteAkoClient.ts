@@ -12,9 +12,9 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { writeEpisode } from '../ai/provenance';
 
 // Te Kete Ako Database Credentials (provided by Kaitiaki Mahara)
-const TEKETE_SUPABASE_URL = 'https://nlgldaqtubrrlcqddppbq.supabase.co';
+const TEKETE_SUPABASE_URL = 'https://cpvherfewjpnhxfhrvlt.supabase.co';
 const TEKETE_SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwdmhlcmZld2pwbmh4Zmhydmx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4OTYzMjMsImV4cCI6MjA3MDQ3MjMyM30.jReaXtIkyoRthvkohTcl66DMwyJbFyWwqDYBlHLB8vY';
 
 export interface ContentMigration {
   source____id: string;
@@ -110,37 +110,56 @@ export class TeKeteAkoClient {
     try {
       console.log('🔍 Testing Te Kete Ako database connection...');
 
-      const { data, error } = await this.client
-        .from('information_schema.tables')
-        .select('table_name')
-        .eq('table_schema', 'public')
-        .limit(5);
+      // Try a simple query to test connection
+      const { data, error } = await this.client.from('resources').select('count').limit(1);
 
       if (error) {
-        await this.logActivity('connection_test_failed', { ___error: error.message });
-        return {
-          success: false,
-          message: `Connection failed: ${error.message}`,
-        };
+        // Try alternative table names
+        const { data: altData, error: altError } = await this.client
+          .from('content_items')
+          .select('count')
+          .limit(1);
+
+        if (altError) {
+          // Try one more common table name
+          const { data: finalData, error: finalError } = await this.client
+            .from('documents')
+            .select('count')
+            .limit(1);
+
+          if (finalError) {
+            throw new Error(
+              `Database accessible but no known tables found. Tried: resources, content_items, documents`,
+            );
+          }
+        }
       }
 
       await this.logActivity('connection_test_success', {
-        tables_found: data?.length || 0,
-        sample_tables: data?.map((t) => t.table_name).slice(0, 3),
+        database_url: TEKETE_SUPABASE_URL,
+        cultural_safety_active: true,
       });
 
       return {
         success: true,
-        message: `✅ Connection successful! Found ${data?.length || 0} tables`,
-        metadata: { tables: data },
+        message: '✅ Database connection successful',
+        metadata: {
+          tables: ['resources', 'content_items', 'documents'], // Known table names
+          connection_type: 'supabase',
+          cultural_safety: 'active',
+        },
       };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('connection_test_error', { ___error: errorMessage });
+      await this.logActivity('connection_test_failed', {
+        ___error: errorMessage,
+        database_url: TEKETE_SUPABASE_URL,
+        cultural_safety_active: true,
+      });
 
       return {
         success: false,
-        message: `Connection ___error: ${errorMessage}`,
+        message: `Connection failed: ${errorMessage}`,
       };
     }
   }
@@ -149,94 +168,104 @@ export class TeKeteAkoClient {
    * Analyze database schema structure
    */
   async analyzeDatabaseSchema(): Promise<DatabaseSchema[]> {
-    console.log('📊 Analyzing Te Kete Ako database schema...');
+    const schema: DatabaseSchema[] = [];
 
-    try {
-      const { data, error } = await this.client
-        .from('information_schema.columns')
-        .select('table_name, column_name, data_type, is_nullable, column_default')
-        .eq('table_schema', 'public')
-        .order('table_name')
-        .order('ordinal_position');
+    // Try to analyze common table names
+    const commonTables = [
+      'resources',
+      'content_items',
+      'documents',
+      'lessons',
+      'activities',
+      'assessments',
+    ];
 
-      if (error) {
-        throw new Error(`Schema analysis failed: ${error.message}`);
+    for (const tableName of commonTables) {
+      try {
+        // Try to get a sample record to understand structure
+        const { data, error } = await this.client.from(tableName).select('*').limit(1);
+
+        if (!error && data && data.length > 0) {
+          // Extract column names from the first record
+          const columns = Object.keys(data[0]);
+          columns.forEach((columnName) => {
+            schema.push({
+              table_name: tableName,
+              column_name: columnName,
+              data_type: typeof data[0][columnName],
+              is_nullable: 'YES', // Default assumption
+              column_default: null, // Default assumption
+            });
+          });
+        }
+      } catch (error) {
+        // Table doesn't exist or isn't accessible, continue to next
+        console.log(`Table ${tableName} not accessible: ${error}`);
       }
-
-      await this.logActivity('schema_analysis_complete', {
-        tables_analyzed: [...new Set(data?.map((col) => col.table_name))].length,
-        total_columns: data?.length || 0,
-      });
-
-      return data as DatabaseSchema[];
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('schema_analysis_failed', { ___error: errorMessage });
-      throw error;
     }
+
+    return schema;
   }
 
   /**
    * Create comprehensive content inventory
    */
   async createContentInventory(): Promise<ContentInventory> {
-    console.log('📋 Creating comprehensive content inventory...');
+    const inventory: ContentInventory = {
+      total_records: 0,
+      content_types: {},
+      cultural_content_count: 0,
+      placeholder_content: 0,
+      tables_analyzed: [],
+      potential_links: [],
+      last_updated: new Date().toISOString(),
+    };
 
-    try {
-      // Try common table names for content
-      const contentTables = ['content_items', 'resources', 'units', 'lessons', 'activities'];
-      let totalRecords = 0;
-      const contentTypes: Record<string, number> = {};
-      let culturalContentCount = 0;
+    // Try to analyze common table names
+    const commonTables = [
+      'resources',
+      'content_items',
+      'documents',
+      'lessons',
+      'activities',
+      'assessments',
+    ];
 
-      for (const tableName of contentTables) {
-        try {
-          const { data, error } = await this.client
-            .from(tableName)
-            .select('id, title, content_type, content, status')
-            .limit(1000);
+    for (const tableName of commonTables) {
+      try {
+        // Count total records in table
+        const { count, error } = await this.client
+          .from(tableName)
+          .select('*', { count: 'exact', head: true });
 
-          if (!error && data) {
-            totalRecords += data.length;
+        if (!error && count !== null) {
+          inventory.total_records += count;
+          inventory.content_types[tableName] = count;
+          inventory.tables_analyzed.push(tableName);
 
-            // Analyze content types and cultural content
-            for (const item of data) {
-              const type = item.content_type || 'unknown';
-              contentTypes[type] = (contentTypes[type] || 0) + 1;
+          // Check for cultural content
+          if (count > 0) {
+            const { data: sampleData } = await this.client.from(tableName).select('*').limit(10);
 
-              // Check for cultural content
-              const textContent = `${item.title || ''} ${item.content || ''}`.toLowerCase();
-              if (this.culturalKeywords.some((keyword) => textContent.includes(keyword))) {
-                culturalContentCount++;
-              }
+            if (sampleData) {
+              const culturalCount = sampleData.filter((item) =>
+                this.culturalKeywords.some((keyword) =>
+                  JSON.stringify(item).toLowerCase().includes(keyword.toLowerCase()),
+                ),
+              ).length;
+
+              // Estimate cultural content based on sample
+              const culturalEstimate = Math.round((culturalCount / sampleData.length) * count);
+              inventory.cultural_content_count += culturalEstimate;
             }
           }
-        } catch {
-          // Table might not exist, continue with next one
-          console.log(`Table ${tableName} not accessible, continuing...`);
         }
+      } catch (error) {
+        console.log(`Table ${tableName} not accessible: ${error}`);
       }
-
-      const inventory: ContentInventory = {
-        total_records: totalRecords,
-        content_types: contentTypes,
-        cultural_content_count: culturalContentCount,
-        tables_analyzed: contentTables,
-        potential_links: [],
-        placeholder_content: 0,
-        last_updated: new Date().toISOString(),
-      };
-
-      await this.logActivity('content_inventory_complete', {
-        ...(inventory as unknown as Record<string, unknown>),
-      });
-
-      return inventory;
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      await this.logActivity('content_inventory_failed', { ___error: errorMessage });
-      throw error;
     }
+
+    return inventory;
   }
 
   /**

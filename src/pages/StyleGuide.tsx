@@ -1,17 +1,18 @@
 // ...existing code...
-import Button from "../components/Button";
-import Card from "../components/Card";
+import Button from '../components/Button';
+import Card from '../components/Card';
+import '../styles/styleguide.css';
 
-export default function StyleGuide(){
+export default function StyleGuide() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-12">
       <h1>Style Guide</h1>
       <section className="mt-6">
         <h2>Colors</h2>
         <div className="flex gap-4 mt-4">
-          <div className="p-6 rounded-md" style={{background:'var(--color-bg)'}}>bg</div>
-          <div className="p-6 rounded-md" style={{background:'var(--color-surface)'}}>surface</div>
-          <div className="p-6 rounded-md" style={{background:'var(--color-accent)', color:'#fff'}}>accent</div>
+          <div className="color-swatch bg">bg</div>
+          <div className="color-swatch surface">surface</div>
+          <div className="color-swatch accent">accent</div>
         </div>
       </section>
 

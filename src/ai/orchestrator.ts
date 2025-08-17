@@ -32,7 +32,11 @@ export class AIOrchestrator {
 
     try {
       // Route based on task characteristics
-      const routing = this.determineRouting(task);
+      const routing = await this.getRouting(task);
+      if (typeof routing === 'object' && routing !== null && 'llm' in routing) {
+        const route = routing as { llm?: { name: string } };
+        console.log(`Routing to: ${route.llm?.name || 'unknown'}`);
+      }
 
       // Try primary choice first
       try {
@@ -70,7 +74,7 @@ export class AIOrchestrator {
     }
   }
 
-  private determineRouting(task: {
+  private async getRouting(task: {
     type: string;
     complexity: TaskComplexity;
     priority: TaskPriority;
@@ -82,13 +86,13 @@ export class AIOrchestrator {
     if (
       task.type.includes('multimodal') ||
       task.type.includes('visual') ||
-      task.context?.hasMedia
+      (task.context as { hasMedia?: boolean })?.hasMedia
     ) {
       return {
         primary: {
           llm: this.registry.getProvider('gemini-cli'),
-          model: 'gemini-1.5-pro',
-          reason: 'multimodal_processing_required',
+          model: 'gemini-1.5-flash',
+          reason: 'multimodal_content',
         },
       };
     }
@@ -181,7 +185,7 @@ CONTEXT:
 - Complexity: ${task.complexity}
 - Priority: ${task.priority}
 - Cultural sensitive: ${task.culturalSensitive || false}
-- Error: ${error?.message || 'Unknown failure'}
+- Error: ${(error as { message?: string })?.message}
 
 ORIGINAL PROMPT:
 ${originalPrompt}
@@ -199,7 +203,7 @@ Handle this with your full capabilities, considering the failure context and ens
       prompt: string;
       context?: unknown;
     },
-    routing: unknown,
+    routing: { llm?: { name: string } },
     result: unknown,
   ) {
     await writeEpisode('orchestrator', {
@@ -210,8 +214,8 @@ Handle this with your full capabilities, considering the failure context and ens
         task_type: task.type,
         complexity: task.complexity,
         priority: task.priority,
-        tokens: result?.tokensOut,
-        latency: result?.latencyMs,
+        tokens: (result as { tokensOut?: number })?.tokensOut,
+        latency: (result as { latencyMs?: number })?.latencyMs,
       },
       result: result,
     });
@@ -226,8 +230,8 @@ Handle this with your full capabilities, considering the failure context and ens
       prompt: string;
       context?: unknown;
     },
-    failed: unknown,
-    backup: unknown,
+    failed: { llm?: { name: string } },
+    backup: { llm?: { name: string } },
     result: unknown,
     error: unknown,
   ) {
@@ -238,9 +242,9 @@ Handle this with your full capabilities, considering the failure context and ens
       context: {
         task_type: task.type,
         failed_provider: failed.llm?.name,
-        failure_reason: error?.message,
+        failure_reason: (error as { message?: string })?.message,
         backup_success: true,
-        tokens: result?.tokensOut,
+        tokens: (result as { tokensOut?: number })?.tokensOut,
       },
       result: result,
     });
@@ -265,7 +269,7 @@ Handle this with your full capabilities, considering the failure context and ens
       context: {
         task_type: task.type,
         system_failure: true,
-        error: error?.message,
+        error: (error as { message?: string })?.message,
       },
     });
   }

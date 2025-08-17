@@ -1,6 +1,6 @@
 /**
  * Enhanced Resources Page - Scalable for Thousands of Educational Resources
- * 
+ *
  * Features:
  * - Hierarchical navigation: Subject Areas > Unit Plans > Lesson Plans > Resources
  * - Beautiful Te Kete Ako design system integration
@@ -10,6 +10,7 @@
  * - Cultural safety indicators and content curation
  */
 
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 
@@ -48,19 +49,19 @@ export default function ResourcesEnhanced() {
   const [resources, setResources] = useState<ParsedResource[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   // Navigation state
   const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
-  const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
-  const [selectedUnit, setSelectedUnit] = useState<string | null>(null);
-  const [selectedLesson, setSelectedLesson] = useState<string | null>(null);
-  
+  const [selectedSubject, setSelectedSubject] = React.useState<string | null>(null);
+  const [selectedUnit, setSelectedUnit] = React.useState<string | null>(null);
+  const [selectedLesson, setSelectedLesson] = React.useState<string | null>(null);
+
   // Filter state
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterMode, setFilterMode] = useState<FilterMode>('all');
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [filterMode, setFilterMode] = React.useState<'all' | 'someOtherMode'>('all');
   const [yearLevelFilter, setYearLevelFilter] = useState<string>('all');
   const [safetyFilter, setSafetyFilter] = useState<string>('all');
-  
+
   // UI state
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [showPreview, setShowPreview] = useState<string | null>(null);
@@ -83,10 +84,10 @@ export default function ResourcesEnhanced() {
   // Transform flat resources into hierarchical structure
   const subjectAreas = useMemo(() => {
     const subjects: Record<string, SubjectArea> = {};
-    
-    resources.forEach(resource => {
+
+    resources.forEach((resource) => {
       const subject = resource.metadata.subject || 'General';
-      
+
       if (!subjects[subject]) {
         subjects[subject] = {
           name: subject,
@@ -94,65 +95,70 @@ export default function ResourcesEnhanced() {
           icon: getSubjectIcon(subject),
           color: getSubjectColor(subject),
           unitPlans: [],
-          totalResources: 0
+          totalResources: 0,
         };
       }
-      
+
       subjects[subject].totalResources++;
-      
+
       // Group by unit plans (simplified for demo)
       // In real implementation, this would be based on resource metadata
     });
-    
+
     return Object.values(subjects);
   }, [resources]);
 
   // Filter resources based on current filters
   const filteredResources = useMemo(() => {
     let filtered = resources;
-    
+
     // Apply search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(r => 
-        r.title.toLowerCase().includes(query) ||
-        r.searchableText?.toLowerCase().includes(query) ||
-        r.metadata.subject?.toLowerCase().includes(query)
+      filtered = filtered.filter(
+        (r) =>
+          r.title.toLowerCase().includes(query) ||
+          r.searchableText?.toLowerCase().includes(query) ||
+          r.metadata.subject?.toLowerCase().includes(query),
       );
     }
-    
+
     // Apply filter mode
     switch (filterMode) {
       case 'culturally-aligned':
-        filtered = filtered.filter(r => r.metadata.culturalSafetyLevel === 'clean');
+        filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === 'clean');
         break;
       case 'nzc-mapped':
-        filtered = filtered.filter(r => r.metadata.nzcAlignment && r.metadata.nzcAlignment.length > 0);
+        filtered = filtered.filter(
+          (r) => r.metadata.nzcAlignment && r.metadata.nzcAlignment.length > 0,
+        );
         break;
       case 'recent':
-        filtered = filtered.filter(r => {
+        filtered = filtered.filter((r) => {
           const modDate = new Date(r.modifiedAt);
           const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
           return modDate > weekAgo;
         });
         break;
     }
-    
+
     // Apply year level filter
     if (yearLevelFilter !== 'all') {
-      filtered = filtered.filter(r => r.metadata.yearLevel === yearLevelFilter);
+      filtered = filtered.filter((r) => r.metadata.yearLevel === yearLevelFilter);
     }
-    
+
     // Apply safety filter
     if (safetyFilter !== 'all') {
-      filtered = filtered.filter(r => r.metadata.culturalSafetyLevel === safetyFilter);
+      filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === safetyFilter);
     }
-    
+
     return filtered;
   }, [resources, searchQuery, filterMode, yearLevelFilter, safetyFilter]);
 
   const breadcrumbs = useMemo(() => {
-    const crumbs: Array<{ label: string; path: string | null }> = [{ label: 'All Subjects', path: null }];
+    const crumbs: Array<{ label: string; path: string | null }> = [
+      { label: 'All Subjects', path: null },
+    ];
     if (selectedSubject) {
       crumbs.push({ label: selectedSubject, path: selectedSubject });
     }
@@ -160,7 +166,10 @@ export default function ResourcesEnhanced() {
       crumbs.push({ label: selectedUnit, path: `${selectedSubject}/${selectedUnit}` });
     }
     if (selectedLesson) {
-      crumbs.push({ label: selectedLesson, path: `${selectedSubject}/${selectedUnit}/${selectedLesson}` });
+      crumbs.push({
+        label: selectedLesson,
+        path: `${selectedSubject}/${selectedUnit}/${selectedLesson}`,
+      });
     }
     return crumbs;
   }, [selectedSubject, selectedUnit, selectedLesson]);
@@ -171,38 +180,29 @@ export default function ResourcesEnhanced() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
       {/* Enhanced Header */}
-      <header className="sticky top-0 z-50 border-b" style={{ 
-        backgroundColor: 'var(--color-white)',
-        borderColor: 'var(--color-border)',
-        boxShadow: 'var(--shadow-light)'
-      }}>
+      <header className="sticky top-0 z-50 border-b">
         <div className="container-wide px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
                 className="p-2 rounded-lg transition-colors lg:hidden"
-                style={{ 
-                  backgroundColor: 'var(--color-neutral-100)',
-                  color: 'var(--color-primary)'
-                }}
               >
                 ☰
               </button>
-              
+
               <div>
-                <h1 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-                  Te Kete Ako Resources
-                </h1>
-                <p className="text-sm" style={{ color: 'var(--color-neutral-700)' }}>
-                  {filteredResources.length.toLocaleString()} resources • {subjectAreas.length} subject areas
+                <h1 className="text-2xl font-bold">Te Kete Ako Resources</h1>
+                <p className="text-sm">
+                  {filteredResources.length.toLocaleString()} resources • {subjectAreas.length}{' '}
+                  subject areas
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-3">
               {/* View Mode Selector */}
-              <div className="flex rounded-lg border" style={{ borderColor: 'var(--color-border)' }}>
+              <div className="flex rounded-lg border">
                 {(['hierarchy', 'grid', 'list', 'cards'] as ViewMode[]).map((mode) => (
                   <button
                     key={mode}
@@ -211,23 +211,32 @@ export default function ResourcesEnhanced() {
                       viewMode === mode ? 'text-white' : 'text-gray-700 hover:text-white'
                     }`}
                     style={{
-                      backgroundColor: viewMode === mode ? 'var(--color-pounamu)' : 'transparent'
+                      backgroundColor: viewMode === mode ? 'var(--color-pounamu)' : 'transparent',
                     }}
                   >
-                    {mode === 'hierarchy' ? '🌳' : mode === 'grid' ? '⊞' : mode === 'list' ? '☰' : '📋'}
+                    {mode === 'hierarchy'
+                      ? '🌳'
+                      : mode === 'grid'
+                      ? '⊞'
+                      : mode === 'list'
+                      ? '☰'
+                      : '📋'}
                   </button>
                 ))}
               </div>
-              
-              <button className="px-4 py-2 rounded-lg font-medium transition-all" style={{
-                backgroundColor: 'var(--color-kowhai)',
-                color: 'white'
-              }}>
+
+              <button
+                className="px-4 py-2 rounded-lg font-medium transition-all"
+                style={{
+                  backgroundColor: 'var(--color-kowhai)',
+                  color: 'white',
+                }}
+              >
                 ➕ Add Resource
               </button>
             </div>
           </div>
-          
+
           {/* Breadcrumb Navigation */}
           {breadcrumbs.length > 1 && (
             <nav className="flex items-center gap-2 mt-4 text-sm">
@@ -248,14 +257,13 @@ export default function ResourcesEnhanced() {
                       }
                     }}
                     className={`transition-colors ${
-                      index === breadcrumbs.length - 1 
-                        ? 'font-medium' 
-                        : 'hover:underline'
+                      index === breadcrumbs.length - 1 ? 'font-medium' : 'hover:underline'
                     }`}
-                    style={{ 
-                      color: index === breadcrumbs.length - 1 
-                        ? 'var(--color-primary)' 
-                        : 'var(--color-pounamu)'
+                    style={{
+                      color:
+                        index === breadcrumbs.length - 1
+                          ? 'var(--color-primary)'
+                          : 'var(--color-pounamu)',
                     }}
                   >
                     {crumb.label}
@@ -269,12 +277,11 @@ export default function ResourcesEnhanced() {
 
       <div className="flex">
         {/* Advanced Sidebar */}
-        <aside className={`fixed lg:sticky top-0 h-screen transition-all duration-300 z-40 ${
-          sidebarCollapsed ? 'w-0 lg:w-16' : 'w-80'
-        }`} style={{ 
-          backgroundColor: 'var(--color-white)',
-          borderRight: '1px solid var(--color-border)'
-        }}>
+        <aside
+          className={`fixed lg:sticky top-0 h-screen transition-all duration-300 z-40 ${
+            sidebarCollapsed ? 'w-0 lg:w-16' : 'w-80'
+          }`}
+        >
           <div className={`p-6 h-full overflow-y-auto ${sidebarCollapsed && 'lg:px-2'}`}>
             {!sidebarCollapsed && (
               <>
@@ -286,33 +293,49 @@ export default function ResourcesEnhanced() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border transition-colors"
-                    style={{ 
-                      borderColor: 'var(--color-border)',
-                      backgroundColor: 'var(--color-neutral-50)'
-                    }}
                   />
                 </div>
 
                 {/* Quick Filters */}
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3" style={{ color: 'var(--color-primary)' }}>
-                    Quick Filters
-                  </h3>
+                  <h3 className="font-semibold mb-3">Quick Filters</h3>
                   <div className="space-y-2">
-                    {([
-                      { key: 'all', label: '📚 All Resources', count: resources.length },
-                      { key: 'culturally-aligned', label: '🌿 Culturally Aligned', count: resources.filter(r => r.metadata.culturalSafetyLevel === 'clean').length },
-                      { key: 'nzc-mapped', label: '🎯 NZC Mapped', count: resources.filter(r => r.metadata.nzcAlignment?.length).length },
-                      { key: 'recent', label: '🆕 Recently Added', count: resources.filter(r => new Date(r.modifiedAt) > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)).length }
-                    ] as const).map((filter) => (
+                    {(
+                      [
+                        { key: 'all', label: '📚 All Resources', count: resources.length },
+                        {
+                          key: 'culturally-aligned',
+                          label: '🌿 Culturally Aligned',
+                          count: resources.filter((r) => r.metadata.culturalSafetyLevel === 'clean')
+                            .length,
+                        },
+                        {
+                          key: 'nzc-mapped',
+                          label: '🎯 NZC Mapped',
+                          count: resources.filter((r) => r.metadata.nzcAlignment?.length).length,
+                        },
+                        {
+                          key: 'recent',
+                          label: '🆕 Recently Added',
+                          count: resources.filter(
+                            (r) =>
+                              new Date(r.modifiedAt) >
+                              new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+                          ).length,
+                        },
+                      ] as const
+                    ).map((filter) => (
                       <button
                         key={filter.key}
                         onClick={() => setFilterMode(filter.key)}
                         className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-                          filterMode === filter.key ? 'text-white' : 'text-gray-700 hover:bg-gray-50'
+                          filterMode === filter.key
+                            ? 'text-white'
+                            : 'text-gray-700 hover:bg-gray-50'
                         }`}
                         style={{
-                          backgroundColor: filterMode === filter.key ? 'var(--color-pounamu)' : 'transparent'
+                          backgroundColor:
+                            filterMode === filter.key ? 'var(--color-pounamu)' : 'transparent',
                         }}
                       >
                         <span className="font-medium">{filter.label}</span>
@@ -324,32 +347,42 @@ export default function ResourcesEnhanced() {
 
                 {/* Year Level Filter */}
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3" style={{ color: 'var(--color-primary)' }}>
-                    Year Level
-                  </h3>
+                  <h3 className="font-semibold mb-3">Year Level</h3>
                   <select
                     value={yearLevelFilter}
                     onChange={(e) => setYearLevelFilter(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border"
-                    style={{ borderColor: 'var(--color-border)' }}
                   >
                     <option value="all">All Year Levels</option>
-                    {['Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6', 'Y7', 'Y8', 'Y9', 'Y10', 'Y11', 'Y12', 'Y13'].map(year => (
-                      <option key={year} value={year}>{year}</option>
+                    {[
+                      'Y1',
+                      'Y2',
+                      'Y3',
+                      'Y4',
+                      'Y5',
+                      'Y6',
+                      'Y7',
+                      'Y8',
+                      'Y9',
+                      'Y10',
+                      'Y11',
+                      'Y12',
+                      'Y13',
+                    ].map((year) => (
+                      <option key={year} value={year}>
+                        {year}
+                      </option>
                     ))}
                   </select>
                 </div>
 
                 {/* Cultural Safety Filter */}
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3" style={{ color: 'var(--color-primary)' }}>
-                    Cultural Safety
-                  </h3>
+                  <h3 className="font-semibold mb-3">Cultural Safety</h3>
                   <select
                     value={safetyFilter}
                     onChange={(e) => setSafetyFilter(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border"
-                    style={{ borderColor: 'var(--color-border)' }}
                   >
                     <option value="all">All Safety Levels</option>
                     <option value="clean">🟢 Clean (Ready to Use)</option>
@@ -363,26 +396,25 @@ export default function ResourcesEnhanced() {
         </aside>
 
         {/* Main Content Area */}
-        <main className={`flex-1 transition-all duration-300 ${
-          sidebarCollapsed ? 'lg:ml-16' : 'ml-0 lg:ml-80'
-        }`}>
+        <main
+          className={`flex-1 transition-all duration-300 ${
+            sidebarCollapsed ? 'lg:ml-16' : 'ml-0 lg:ml-80'
+          }`}
+        >
           <div className="p-6">
             {viewMode === 'hierarchy' && !selectedSubject && (
-              <SubjectAreasView
-                subjects={subjectAreas}
-                onSelectSubject={setSelectedSubject}
-              />
+              <SubjectAreasView subjects={subjectAreas} onSelectSubject={setSelectedSubject} />
             )}
-            
+
             {viewMode === 'hierarchy' && selectedSubject && !selectedUnit && (
               <UnitPlansView
                 subjectName={selectedSubject}
-                resources={filteredResources.filter(r => r.metadata.subject === selectedSubject)}
+                resources={filteredResources.filter((r) => r.metadata.subject === selectedSubject)}
                 onSelectUnit={setSelectedUnit}
                 onBack={() => setSelectedSubject(null)}
               />
             )}
-            
+
             {viewMode === 'hierarchy' && selectedUnit && !selectedLesson && (
               <LessonPlansView
                 unitName={selectedUnit}
@@ -391,7 +423,7 @@ export default function ResourcesEnhanced() {
                 onBack={() => setSelectedUnit(null)}
               />
             )}
-            
+
             {viewMode === 'hierarchy' && selectedLesson && (
               <ResourcesDetailView
                 lessonName={selectedLesson}
@@ -399,18 +431,12 @@ export default function ResourcesEnhanced() {
                 onBack={() => setSelectedLesson(null)}
               />
             )}
-            
-            {viewMode === 'grid' && (
-              <GridView resources={filteredResources} />
-            )}
-            
-            {viewMode === 'list' && (
-              <ListView resources={filteredResources} />
-            )}
-            
-            {viewMode === 'cards' && (
-              <CardsView resources={filteredResources} />
-            )}
+
+            {viewMode === 'grid' && <GridView resources={filteredResources} />}
+
+            {viewMode === 'list' && <ListView resources={filteredResources} />}
+
+            {viewMode === 'cards' && <CardsView resources={filteredResources} />}
           </div>
         </main>
       </div>
@@ -419,34 +445,26 @@ export default function ResourcesEnhanced() {
 }
 
 // Subject Areas Overview
-function SubjectAreasView({ 
-  subjects, 
-  onSelectSubject 
-}: { 
+function SubjectAreasView({
+  subjects,
+  onSelectSubject,
+}: {
   subjects: SubjectArea[];
   onSelectSubject: (_____subject: string) => void;
 }) {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--color-primary)' }}>
-          Educational Subject Areas
-        </h2>
-        <p className="text-lg" style={{ color: 'var(--color-neutral-700)' }}>
-          Explore thousands of resources organized by curriculum areas
-        </p>
+        <h2 className="text-3xl font-bold mb-4">Educational Subject Areas</h2>
+        <p className="text-lg">Explore thousands of resources organized by curriculum areas</p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {subjects.map((subject) => (
           <div
             key={subject.name}
             onClick={() => onSelectSubject(subject.name)}
             className="group cursor-pointer rounded-xl border p-6 transition-all duration-300 hover:shadow-xl"
-            style={{ 
-              borderColor: 'var(--color-border)',
-              backgroundColor: 'var(--color-white)'
-            }}
           >
             <div className="flex items-center gap-4 mb-4">
               <div
@@ -459,22 +477,20 @@ function SubjectAreasView({
                 <h3 className="font-bold text-lg group-hover:text-pounamu transition-colors">
                   {subject.name}
                 </h3>
-                <p className="text-sm" style={{ color: 'var(--color-neutral-700)' }}>
-                  {subject.totalResources} resources
-                </p>
+                <p className="text-sm">{subject.totalResources} resources</p>
               </div>
             </div>
-            
-            <p className="text-sm mb-4" style={{ color: 'var(--color-neutral-700)' }}>
-              {subject.description}
-            </p>
-            
+
+            <p className="text-sm mb-4">{subject.description}</p>
+
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium" style={{ color: 'var(--color-pounamu)' }}>
                 Explore Area →
               </span>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                   style={{ backgroundColor: 'var(--color-neutral-100)' }}>
+              <div
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
+                style={{ backgroundColor: 'var(--color-neutral-100)' }}
+              >
                 →
               </div>
             </div>
@@ -486,12 +502,12 @@ function SubjectAreasView({
 }
 
 // Unit Plans View (when subject is selected)
-function UnitPlansView({ 
-  subjectName, 
-  resources, 
-  onSelectUnit, 
-  onBack 
-}: { 
+function UnitPlansView({
+  subjectName,
+  resources,
+  onSelectUnit,
+  onBack,
+}: {
   subjectName: string;
   resources: ParsedResource[];
   onSelectUnit: (unit: string) => void;
@@ -500,7 +516,7 @@ function UnitPlansView({
   // Group resources by unit plans (simplified - in real app this would be metadata-driven)
   const units = useMemo(() => {
     const unitMap: Record<string, ParsedResource[]> = {};
-    resources.forEach(resource => {
+    resources.forEach((resource) => {
       const unit = resource.metadata.curriculumArea || 'General Resources';
       if (!unitMap[unit]) {
         unitMap[unit] = [];
@@ -510,57 +526,44 @@ function UnitPlansView({
     return Object.entries(unitMap).map(([name, resources]) => ({
       name,
       resources,
-      count: resources.length
+      count: resources.length,
     }));
   }, [resources]);
 
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4 mb-6">
-        <button
-          onClick={onBack}
-          className="p-2 rounded-lg transition-colors"
-          style={{ 
-            backgroundColor: 'var(--color-neutral-100)',
-            color: 'var(--color-primary)'
-          }}
-        >
+        <button onClick={onBack} className="p-2 rounded-lg transition-colors">
           ← Back
         </button>
         <div>
-          <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-            {subjectName} Unit Plans
-          </h2>
-          <p style={{ color: 'var(--color-neutral-700)' }}>
+          <h2 className="text-2xl font-bold">{subjectName} Unit Plans</h2>
+          <p>
             {resources.length} resources across {units.length} units
           </p>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {units.map((unit) => (
           <div
             key={unit.name}
             onClick={() => onSelectUnit(unit.name)}
             className="cursor-pointer rounded-lg border p-6 transition-all hover:shadow-lg"
-            style={{ 
-              borderColor: 'var(--color-border)',
-              backgroundColor: 'var(--color-white)'
-            }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                   style={{ backgroundColor: 'var(--color-pounamu)' }}>
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                style={{ backgroundColor: 'var(--color-pounamu)' }}
+              >
                 <span className="text-white text-lg">📋</span>
               </div>
               <div>
                 <h3 className="font-bold">{unit.name}</h3>
-                <p className="text-sm" style={{ color: 'var(--color-neutral-700)' }}>
-                  {unit.count} resources
-                </p>
+                <p className="text-sm">{unit.count} resources</p>
               </div>
             </div>
-            
+
             <div className="space-y-2">
               {unit.resources.slice(0, 3).map((resource) => (
                 <div key={resource.id} className="text-sm flex items-center gap-2">
@@ -582,12 +585,12 @@ function UnitPlansView({
 }
 
 // Lesson Plans View (when unit is selected)
-function LessonPlansView({ 
-  unitName, 
-  resources, 
-  onSelectLesson, 
-  onBack 
-}: { 
+function LessonPlansView({
+  unitName,
+  resources,
+  onSelectLesson,
+  onBack,
+}: {
   unitName: string;
   resources: ParsedResource[];
   onSelectLesson: (lesson: string) => void;
@@ -596,67 +599,44 @@ function LessonPlansView({
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4 mb-6">
-        <button
-          onClick={onBack}
-          className="p-2 rounded-lg transition-colors"
-          style={{ 
-            backgroundColor: 'var(--color-neutral-100)',
-            color: 'var(--color-primary)'
-          }}
-        >
+        <button onClick={onBack} className="p-2 rounded-lg transition-colors">
           ← Back
         </button>
         <div>
-          <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-            {unitName} - Lesson Plans
-          </h2>
-          <p style={{ color: 'var(--color-neutral-700)' }}>
-            Individual lessons and activities
-          </p>
+          <h2 className="text-2xl font-bold">{unitName} - Lesson Plans</h2>
+          <p>Individual lessons and activities</p>
         </div>
       </div>
-      
+
       <div className="space-y-4">
         {resources.map((resource) => (
           <div
             key={resource.id}
             onClick={() => onSelectLesson(resource.title)}
             className="cursor-pointer rounded-lg border p-6 transition-all hover:shadow-lg"
-            style={{ 
-              borderColor: 'var(--color-border)',
-              backgroundColor: 'var(--color-white)'
-            }}
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <h3 className="font-bold text-lg mb-2">{resource.title}</h3>
-                <p className="text-sm mb-3" style={{ color: 'var(--color-neutral-700)' }}>
-                  {resource.preview || 'No preview available'}
-                </p>
-                
+                <p className="text-sm mb-3">{resource.preview || 'No preview available'}</p>
+
                 <div className="flex items-center gap-4 text-sm">
-                  <span className="px-2 py-1 rounded-full" style={{ 
-                    backgroundColor: 'var(--color-neutral-100)',
-                    color: 'var(--color-neutral-700)'
-                  }}>
-                    {resource.metadata.subject}
-                  </span>
-                  <span className="px-2 py-1 rounded-full" style={{ 
-                    backgroundColor: 'var(--color-neutral-100)',
-                    color: 'var(--color-neutral-700)'
-                  }}>
-                    {resource.metadata.yearLevel}
-                  </span>
-                  <span className={`px-2 py-1 rounded-full ${
-                    resource.metadata.culturalSafetyLevel === 'clean' ? 'bg-green-100 text-green-800' :
-                    resource.metadata.culturalSafetyLevel === 'review' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-red-100 text-red-800'
-                  }`}>
+                  <span className="px-2 py-1 rounded-full">{resource.metadata.subject}</span>
+                  <span className="px-2 py-1 rounded-full">{resource.metadata.yearLevel}</span>
+                  <span
+                    className={`px-2 py-1 rounded-full ${
+                      resource.metadata.culturalSafetyLevel === 'clean'
+                        ? 'bg-green-100 text-green-800'
+                        : resource.metadata.culturalSafetyLevel === 'review'
+                        ? 'bg-yellow-100 text-yellow-800'
+                        : 'bg-red-100 text-red-800'
+                    }`}
+                  >
                     {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
                   </span>
                 </div>
               </div>
-              
+
               <div className="text-right">
                 <p className="text-sm" style={{ color: 'var(--color-neutral-500)' }}>
                   {new Date(resource.modifiedAt).toLocaleDateString()}
@@ -674,17 +654,17 @@ function LessonPlansView({
 }
 
 // Resources Detail View (when lesson is selected)
-function ResourcesDetailView({ 
-  lessonName, 
-  resources, 
-  onBack 
-}: { 
+function ResourcesDetailView({
+  lessonName,
+  resources,
+  onBack,
+}: {
   lessonName: string;
   resources: ParsedResource[];
   onBack: () => void;
 }) {
-  const lesson = resources.find(r => r.title === lessonName);
-  
+  const lesson = resources.find((r) => r.title === lessonName);
+
   if (!lesson) {
     return <div>Lesson not found</div>;
   }
@@ -692,47 +672,47 @@ function ResourcesDetailView({
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4 mb-6">
-        <button
-          onClick={onBack}
-          className="p-2 rounded-lg transition-colors"
-          style={{ 
-            backgroundColor: 'var(--color-neutral-100)',
-            color: 'var(--color-primary)'
-          }}
-        >
+        <button onClick={onBack} className="p-2 rounded-lg transition-colors">
           ← Back
         </button>
         <div>
-          <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-            {lesson.title}
-          </h2>
-          <p style={{ color: 'var(--color-neutral-700)' }}>
-            Resources and materials for this lesson
-          </p>
+          <h2 className="text-2xl font-bold">{lesson.title}</h2>
+          <p>Resources and materials for this lesson</p>
         </div>
       </div>
-      
-      <div className="bg-white rounded-lg border p-6" style={{ borderColor: 'var(--color-border)' }}>
+
+      <div className="bg-white rounded-lg border p-6">
         <div className="prose max-w-none">
           <h3>Lesson Overview</h3>
           <p>{lesson.preview || 'No description available'}</p>
-          
+
           <h3>Resource Details</h3>
           <ul>
-            <li><strong>Subject:</strong> {lesson.metadata.subject}</li>
-            <li><strong>Year Level:</strong> {lesson.metadata.yearLevel}</li>
-            <li><strong>Cultural Safety:</strong> {lesson.metadata.culturalSafetyIcon} {lesson.metadata.culturalSafetyLevel}</li>
-            <li><strong>Last Modified:</strong> {new Date(lesson.modifiedAt).toLocaleDateString()}</li>
-            <li><strong>File Size:</strong> {(lesson.sizeBytes / 1024).toFixed(1)} KB</li>
+            <li>
+              <strong>Subject:</strong> {lesson.metadata.subject}
+            </li>
+            <li>
+              <strong>Year Level:</strong> {lesson.metadata.yearLevel}
+            </li>
+            <li>
+              <strong>Cultural Safety:</strong> {lesson.metadata.culturalSafetyIcon}{' '}
+              {lesson.metadata.culturalSafetyLevel}
+            </li>
+            <li>
+              <strong>Last Modified:</strong> {new Date(lesson.modifiedAt).toLocaleDateString()}
+            </li>
+            <li>
+              <strong>File Size:</strong> {(lesson.sizeBytes / 1024).toFixed(1)} KB
+            </li>
           </ul>
-          
+
           <div className="mt-6">
             <Link
               to={`/resource?path=${encodeURIComponent(lesson.relativePath)}`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all"
               style={{
                 backgroundColor: 'var(--color-pounamu)',
-                color: 'white'
+                color: 'white',
               }}
             >
               📖 View Resource
@@ -748,47 +728,38 @@ function ResourcesDetailView({
 function GridView({ resources }: { resources: ParsedResource[] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-        All Resources - Grid View
-      </h2>
-      
+      <h2 className="text-2xl font-bold">All Resources - Grid View</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {resources.map((resource) => (
           <Link
             key={resource.id}
             to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
             className="block rounded-lg border p-4 transition-all hover:shadow-lg"
-            style={{ 
-              borderColor: 'var(--color-border)',
-              backgroundColor: 'var(--color-white)'
-            }}
           >
-            <div className="aspect-square bg-gradient-to-br rounded-lg mb-4 flex items-center justify-center text-4xl"
-                 style={{ 
-                   backgroundImage: `linear-gradient(135deg, var(--color-pounamu), var(--color-kowhai))`
-                 }}>
+            <div
+              className="aspect-square bg-gradient-to-br rounded-lg mb-4 flex items-center justify-center text-4xl"
+              style={{
+                backgroundImage: `linear-gradient(135deg, var(--color-pounamu), var(--color-kowhai))`,
+              }}
+            >
               📄
             </div>
-            
+
             <h3 className="font-bold mb-2 line-clamp-2">{resource.title}</h3>
-            
+
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm">
-                <span className="px-2 py-1 rounded-full text-xs" style={{ 
-                  backgroundColor: 'var(--color-neutral-100)',
-                  color: 'var(--color-neutral-700)'
-                }}>
-                  {resource.metadata.subject}
-                </span>
-                <span className="px-2 py-1 rounded-full text-xs" style={{ 
-                  backgroundColor: 'var(--color-neutral-100)',
-                  color: 'var(--color-neutral-700)'
-                }}>
+                <span className="px-2 py-1 rounded-full text-xs">{resource.metadata.subject}</span>
+                <span className="px-2 py-1 rounded-full text-xs">
                   {resource.metadata.yearLevel}
                 </span>
               </div>
-              
-              <div className="flex items-center justify-between text-xs" style={{ color: 'var(--color-neutral-500)' }}>
+
+              <div
+                className="flex items-center justify-between text-xs"
+                style={{ color: 'var(--color-neutral-500)' }}
+              >
                 <span>{new Date(resource.modifiedAt).toLocaleDateString()}</span>
                 <span>{(resource.sizeBytes / 1024).toFixed(1)} KB</span>
               </div>
@@ -804,16 +775,10 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
 function ListView({ resources }: { resources: ParsedResource[] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-        All Resources - List View
-      </h2>
-      
-      <div className="bg-white rounded-lg border overflow-hidden" style={{ borderColor: 'var(--color-border)' }}>
-        <div className="grid grid-cols-12 gap-4 p-4 border-b font-medium text-sm" 
-             style={{ 
-               borderColor: 'var(--color-border)',
-               backgroundColor: 'var(--color-neutral-50)'
-             }}>
+      <h2 className="text-2xl font-bold">All Resources - List View</h2>
+
+      <div className="bg-white rounded-lg border overflow-hidden">
+        <div className="grid grid-cols-12 gap-4 p-4 border-b font-medium text-sm">
           <div className="col-span-4">Title</div>
           <div className="col-span-2">Subject</div>
           <div className="col-span-1">Year</div>
@@ -821,13 +786,12 @@ function ListView({ resources }: { resources: ParsedResource[] }) {
           <div className="col-span-2">Modified</div>
           <div className="col-span-1">Size</div>
         </div>
-        
+
         {resources.map((resource) => (
           <Link
             key={resource.id}
             to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
             className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
-            style={{ borderColor: 'var(--color-border)' }}
           >
             <div className="col-span-4">
               <h3 className="font-medium line-clamp-1">{resource.title}</h3>
@@ -836,11 +800,15 @@ function ListView({ resources }: { resources: ParsedResource[] }) {
             <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
             <div className="col-span-1 text-sm">{resource.metadata.yearLevel}</div>
             <div className="col-span-2">
-              <span className={`px-2 py-1 rounded-full text-xs ${
-                resource.metadata.culturalSafetyLevel === 'clean' ? 'bg-green-100 text-green-800' :
-                resource.metadata.culturalSafetyLevel === 'review' ? 'bg-yellow-100 text-yellow-800' :
-                'bg-red-100 text-red-800'
-              }`}>
+              <span
+                className={`px-2 py-1 rounded-full text-xs ${
+                  resource.metadata.culturalSafetyLevel === 'clean'
+                    ? 'bg-green-100 text-green-800'
+                    : resource.metadata.culturalSafetyLevel === 'review'
+                    ? 'bg-yellow-100 text-yellow-800'
+                    : 'bg-red-100 text-red-800'
+                }`}
+              >
                 {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
               </span>
             </div>
@@ -861,65 +829,57 @@ function ListView({ resources }: { resources: ParsedResource[] }) {
 function CardsView({ resources }: { resources: ParsedResource[] }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold" style={{ color: 'var(--color-primary)' }}>
-        All Resources - Card View
-      </h2>
-      
+      <h2 className="text-2xl font-bold">All Resources - Card View</h2>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {resources.map((resource) => (
-          <div
-            key={resource.id}
-            className="bg-white rounded-lg border p-6"
-            style={{ 
-              borderColor: 'var(--color-border)',
-              boxShadow: 'var(--shadow-light)'
-            }}
-          >
+          <div key={resource.id} className="bg-white rounded-lg border p-6">
             <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
-                   style={{ backgroundColor: 'var(--color-pounamu)' }}>
+              <div
+                className="w-16 h-16 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
+                style={{ backgroundColor: 'var(--color-pounamu)' }}
+              >
                 📄
               </div>
-              
+
               <div className="flex-1">
                 <h3 className="font-bold text-lg mb-2">{resource.title}</h3>
-                <p className="text-sm mb-3 line-clamp-2" style={{ color: 'var(--color-neutral-700)' }}>
+                <p className="text-sm mb-3 line-clamp-2">
                   {resource.preview || 'No preview available'}
                 </p>
-                
+
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-1 rounded-full text-xs" style={{ 
-                    backgroundColor: 'var(--color-neutral-100)',
-                    color: 'var(--color-neutral-700)'
-                  }}>
+                  <span className="px-2 py-1 rounded-full text-xs">
                     {resource.metadata.subject}
                   </span>
-                  <span className="px-2 py-1 rounded-full text-xs" style={{ 
-                    backgroundColor: 'var(--color-neutral-100)',
-                    color: 'var(--color-neutral-700)'
-                  }}>
+                  <span className="px-2 py-1 rounded-full text-xs">
                     {resource.metadata.yearLevel}
                   </span>
-                  <span className={`px-2 py-1 rounded-full text-xs ${
-                    resource.metadata.culturalSafetyLevel === 'clean' ? 'bg-green-100 text-green-800' :
-                    resource.metadata.culturalSafetyLevel === 'review' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-red-100 text-red-800'
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs ${
+                      resource.metadata.culturalSafetyLevel === 'clean'
+                        ? 'bg-green-100 text-green-800'
+                        : resource.metadata.culturalSafetyLevel === 'review'
+                        ? 'bg-yellow-100 text-yellow-800'
+                        : 'bg-red-100 text-red-800'
+                    }`}
+                  >
                     {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
                   </span>
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="text-sm" style={{ color: 'var(--color-neutral-500)' }}>
-                    {new Date(resource.modifiedAt).toLocaleDateString()} • {(resource.sizeBytes / 1024).toFixed(1)} KB
+                    {new Date(resource.modifiedAt).toLocaleDateString()} •{' '}
+                    {(resource.sizeBytes / 1024).toFixed(1)} KB
                   </div>
-                  
+
                   <Link
                     to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
                     className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     style={{
                       backgroundColor: 'var(--color-pounamu)',
-                      color: 'white'
+                      color: 'white',
                     }}
                   >
                     View Resource
@@ -940,13 +900,13 @@ function LoadingSkeleton() {
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div className="animate-pulse">
         {/* Header skeleton */}
-        <div className="h-20 border-b" style={{ backgroundColor: 'var(--color-white)' }}>
+        <div className="h-20 border-b">
           <div className="container-wide px-6 py-4">
             <div className="h-8 bg-gray-200 rounded w-64 mb-2"></div>
             <div className="h-4 bg-gray-200 rounded w-48"></div>
           </div>
         </div>
-        
+
         {/* Content skeleton */}
         <div className="flex">
           <div className="w-80 h-screen bg-white border-r p-6">
@@ -972,7 +932,10 @@ function LoadingSkeleton() {
 // Error display
 function ErrorDisplay({ error }: { ___error: string }) {
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--color-bg)' }}>
+    <div
+      className="min-h-screen flex items-center justify-center"
+      style={{ backgroundColor: 'var(--color-bg)' }}
+    >
       <div className="text-center">
         <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--color-error)' }}>
           Failed to Load Resources
@@ -983,7 +946,7 @@ function ErrorDisplay({ error }: { ___error: string }) {
           className="px-6 py-3 rounded-lg font-medium"
           style={{
             backgroundColor: 'var(--color-pounamu)',
-            color: 'white'
+            color: 'white',
           }}
         >
           Try Again
@@ -996,42 +959,42 @@ function ErrorDisplay({ error }: { ___error: string }) {
 // Helper functions
 function getSubjectDescription(_____subject: string): string {
   const descriptions: Record<string, string> = {
-    'Mathematics': 'Number, algebra, geometry, statistics and probability resources aligned with NZC',
-    'Science': 'Living world, planet earth, physical and material world investigations',
-    'English': 'Reading, writing, speaking, listening and visual language resources',
+    Mathematics: 'Number, algebra, geometry, statistics and probability resources aligned with NZC',
+    Science: 'Living world, planet earth, physical and material world investigations',
+    English: 'Reading, writing, speaking, listening and visual language resources',
     'Social Studies': 'Identity, culture, place, time and change explorations',
     'Te Reo Māori': 'Indigenous language learning and cultural knowledge resources',
-    'Technology': 'Digital technologies and technological practice resources',
-    'Health': 'Physical health, mental wellbeing and safety education',
-    'Arts': 'Visual arts, music, drama and dance creative resources'
+    Technology: 'Digital technologies and technological practice resources',
+    Health: 'Physical health, mental wellbeing and safety education',
+    Arts: 'Visual arts, music, drama and dance creative resources',
   };
   return descriptions[subject] || 'Educational resources for this subject area';
 }
 
 function getSubjectIcon(_____subject: string): string {
   const icons: Record<string, string> = {
-    'Mathematics': '🔢',
-    'Science': '🔬',
-    'English': '📚',
+    Mathematics: '🔢',
+    Science: '🔬',
+    English: '📚',
     'Social Studies': '🌍',
     'Te Reo Māori': '🌿',
-    'Technology': '💻',
-    'Health': '💪',
-    'Arts': '🎨'
+    Technology: '💻',
+    Health: '💪',
+    Arts: '🎨',
   };
   return icons[subject] || '📖';
 }
 
 function getSubjectColor(_____subject: string): string {
   const colors: Record<string, string> = {
-    'Mathematics': 'var(--color-moana)',
-    'Science': 'var(--color-pounamu)',
-    'English': 'var(--color-kowhai)',
+    Mathematics: 'var(--color-moana)',
+    Science: 'var(--color-pounamu)',
+    English: 'var(--color-kowhai)',
     'Social Studies': 'var(--color-primary)',
     'Te Reo Māori': 'var(--color-pounamu-light)',
-    'Technology': 'var(--color-kahurangi)',
-    'Health': 'var(--color-success)',
-    'Arts': 'var(--color-deep-purple)'
+    Technology: 'var(--color-kahurangi)',
+    Health: 'var(--color-success)',
+    Arts: 'var(--color-deep-purple)',
   };
   return colors[subject] || 'var(--color-neutral-600)';
 }

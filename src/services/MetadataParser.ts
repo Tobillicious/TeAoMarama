@@ -272,7 +272,7 @@ export class MetadataParser {
     };
   }
 
-  private static generateTags(content: string, _____subject: string, ___yearLevel: string): string[] {
+  private static generateTags(content: string, subject: string, yearLevel: string): string[] {
     const tags: string[] = [subject.toLowerCase(), yearLevel.toLowerCase()];
 
     // Add content-based tags
@@ -296,8 +296,7 @@ export class MetadataParser {
   }
 
   private static inferDifficulty(
-    ___yearLevel: string,
-    ___content: string,
+    yearLevel: string,
   ): 'beginner' | 'intermediate' | 'advanced' {
     // Extract year number
     const yearMatch = yearLevel.match(/(\d+)/);
