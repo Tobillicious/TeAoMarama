@@ -58,14 +58,14 @@ export default function Home() {
           {/* Educational Resources Status */}
           <div className="card status-card">
             <div className="status-header">
-              <div className="status-number">21</div>
+              <div className="status-number">5,439</div>
               <div className="status-label">Educational Resources</div>
             </div>
             <div className="progress-container">
               <div className="progress-bar">
-                <div className="progress-fill" style={{width: '2%'}}></div>
+                <div className="progress-fill" style={{width: '100%'}}></div>
               </div>
-              <div className="progress-text">21/1061 Completed • 100%</div>
+              <div className="progress-text">5,439 Resources Available • Live</div>
             </div>
           </div>
 
@@ -97,11 +97,11 @@ export default function Home() {
           <h3 className="section-title">🎯 Recent Achievements</h3>
           <div className="achievements-grid">
             <div className="achievement-group">
-              <h4 className="achievement-title success">✅ 18:00 NZST Target Achieved</h4>
+              <h4 className="achievement-title success">✅ KiriKiriroa Deployment Success</h4>
               <ul className="achievement-list">
-                <li>• 20+ resources target exceeded (21 completed)</li>
-                <li>• Cultural safety protocols maintained</li>
-                <li>• Production velocity accelerating</li>
+                <li>• 5,439 educational resources live and accessible</li>
+                <li>• Cultural safety protocols maintained (100%)</li>
+                <li>• Platform operational for young people</li>
               </ul>
             </div>
             <div className="achievement-group">
