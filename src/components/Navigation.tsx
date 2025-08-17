@@ -11,6 +11,7 @@ export default function Navigation() {
     { path: '/', label: 'Home', icon: '🏠' },
     { path: '/resources', label: 'Resources', icon: '📚' },
     { path: '/unit-plan', label: 'Unit Plans', icon: '📋' },
+    { path: '/lesson-plan', label: 'Lessons', icon: '📖' },
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
     { path: '/mihara', label: 'Mihara AI', icon: '🧠' },
   ];
