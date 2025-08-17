@@ -137,10 +137,7 @@ async function initializePhase3Infrastructure() {
         // If additional metadata is required, add here.
       },
     },
-    outcome: "success",
-      message: 'Phase 3 national infrastructure successfully deployed and verified',
-      // All outcome fields are present and valid.
-    },
+    result: 'Phase 3 national infrastructure successfully deployed and verified',
   });
 }
 

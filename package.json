@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsx scripts/build-resources.ts && vite build",
+    "build:analyze": "tsx scripts/build-resources.ts && vite build --mode analyze",
     "overseer:sync": "tsx scripts/overseer-sync.ts",
     "preview": "vite preview",
     "test": "vitest",
@@ -43,8 +44,8 @@
     "mahara:monitor": "npx tsx continuous-mihara-support.ts",
     "workflow:optimize": "npx tsx mahara-instant-workflow.ts",
     "agent:heartbeat": "npx tsx scripts/agent-heartbeat.ts",
-    "compact": "scripts/auto-compress.sh",
-    "cspell:update:maori": "tsx scripts/update-cspell-maori.ts --limit 50"
+    "performance:audit": "npx lighthouse http://localhost:5174 --output=json --output-path=./lighthouse-audit.json --chrome-flags=\"--headless\"",
+    "performance:report": "npm run performance:audit && node -e \"const report = require('./lighthouse-audit.json'); console.log('Performance Score:', report.categories.performance.score); console.log('LCP:', report.audits['largest-contentful-paint'].displayValue); console.log('FCP:', report.audits['first-contentful-paint'].displayValue);\""
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
