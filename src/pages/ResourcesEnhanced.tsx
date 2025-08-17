@@ -10,9 +10,10 @@
  * - Cultural safety indicators and content curation
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
+import './ResourcesEnhanced.css';
 
 // Types for hierarchical content organization
 interface SubjectArea {
@@ -42,7 +43,7 @@ interface LessonPlan {
   resources: ParsedResource[];
 }
 
-type ViewMode = 'hierarchy' | 'grid' | 'list';
+type ViewMode = 'hierarchy' | 'grid' | 'list' | 'cards';
 
 export default function ResourcesEnhanced() {
   // State management
@@ -58,7 +59,9 @@ export default function ResourcesEnhanced() {
 
   // Filter state
   const [searchQuery, setSearchQuery] = React.useState('');
-  const [filterMode, setFilterMode] = React.useState<'all' | 'someOtherMode'>('all');
+  const [filterMode, setFilterMode] = useState<
+    'all' | 'culturally-aligned' | 'nzc-mapped' | 'recent'
+  >('all');
   const [yearLevelFilter, setYearLevelFilter] = useState<string>('all');
   const [safetyFilter, setSafetyFilter] = useState<string>('all');
 
@@ -144,7 +147,7 @@ export default function ResourcesEnhanced() {
 
     // Apply year level filter
     if (yearLevelFilter !== 'all') {
-      filtered = filtered.filter((r) => r.metadata.yearLevel === yearLevelFilter);
+      filtered = filtered.filter((r) => r.metadata.yearLevel.includes(yearLevelFilter));
     }
 
     // Apply safety filter
@@ -352,6 +355,7 @@ export default function ResourcesEnhanced() {
                     value={yearLevelFilter}
                     onChange={(e) => setYearLevelFilter(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border"
+                    aria-label="Filter by year level"
                   >
                     <option value="all">All Year Levels</option>
                     {[
@@ -383,6 +387,7 @@ export default function ResourcesEnhanced() {
                     value={safetyFilter}
                     onChange={(e) => setSafetyFilter(e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border"
+                    aria-label="Filter by cultural safety level"
                   >
                     <option value="all">All Safety Levels</option>
                     <option value="clean">🟢 Clean (Ready to Use)</option>
@@ -450,7 +455,7 @@ function SubjectAreasView({
   onSelectSubject,
 }: {
   subjects: SubjectArea[];
-  onSelectSubject: (_____subject: string) => void;
+  onSelectSubject: (subject: string) => void;
 }) {
   return (
     <div className="space-y-6">
@@ -930,7 +935,7 @@ function LoadingSkeleton() {
 }
 
 // Error display
-function ErrorDisplay({ error }: { ___error: string }) {
+function ErrorDisplay({ error }: { error: string }) {
   return (
     <div
       className="min-h-screen flex items-center justify-center"
@@ -957,7 +962,7 @@ function ErrorDisplay({ error }: { ___error: string }) {
 }
 
 // Helper functions
-function getSubjectDescription(_____subject: string): string {
+function getSubjectDescription(subject: string): string {
   const descriptions: Record<string, string> = {
     Mathematics: 'Number, algebra, geometry, statistics and probability resources aligned with NZC',
     Science: 'Living world, planet earth, physical and material world investigations',
@@ -971,7 +976,7 @@ function getSubjectDescription(_____subject: string): string {
   return descriptions[subject] || 'Educational resources for this subject area';
 }
 
-function getSubjectIcon(_____subject: string): string {
+function getSubjectIcon(subject: string): string {
   const icons: Record<string, string> = {
     Mathematics: '🔢',
     Science: '🔬',
@@ -985,7 +990,7 @@ function getSubjectIcon(_____subject: string): string {
   return icons[subject] || '📖';
 }
 
-function getSubjectColor(_____subject: string): string {
+function getSubjectColor(subject: string): string {
   const colors: Record<string, string> = {
     Mathematics: 'var(--color-moana)',
     Science: 'var(--color-pounamu)',
