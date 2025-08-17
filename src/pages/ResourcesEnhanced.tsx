@@ -196,6 +196,18 @@ export default function ResourcesEnhanced() {
 
   if (loading) return <LoadingSkeleton />;
   if (error) return <ErrorDisplay error={error} />;
+  
+  // Show loading indicator for filter changes
+  if (filterLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--color-bg)' }}>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pounamu mx-auto mb-4"></div>
+          <p className="text-lg">Applying filters...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
