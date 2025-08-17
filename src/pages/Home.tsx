@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
-import { useEffect, useState } from 'react';
 import './Home.css';
 
 export default function Home() {
@@ -12,8 +12,8 @@ export default function Home() {
   useEffect(() => {
     // Load real resource data
     fetch('/resources/index.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setResourceCount(data.items?.length?.toLocaleString() || '0');
         const uniqueCategories = [...new Set(data.items?.map((item: any) => item.category) || [])];
         setCategories(uniqueCategories);
@@ -41,9 +41,7 @@ export default function Home() {
         <div className="hero-content-new">
           <div className="hero-badge">🌟 Mangakotukutuku College</div>
           <h1 className="hero-title-new">Te Kete Ako</h1>
-          <p className="hero-subtitle-new">
-            Digital Learning Hub for Aotearoa's Future Leaders
-          </p>
+          <p className="hero-subtitle-new">Digital Learning Hub for Aotearoa's Future Leaders</p>
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-number">{resourceCount}</span>
@@ -54,21 +52,15 @@ export default function Home() {
               <span className="stat-label">Cultural Safety</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">Live</span>
-              <span className="stat-label">Platform</span>
+              <span className="stat-number">🔥 {categories.length}</span>
+              <span className="stat-label">Categories</span>
             </div>
           </div>
           <div className="hero-actions-new">
-            <button 
-              className="btn-primary-new" 
-              onClick={() => navigate('/resources')}
-            >
+            <button className="btn-primary-new" onClick={() => navigate('/resources')}>
               🚀 Explore Resources
             </button>
-            <button 
-              className="btn-secondary-new" 
-              onClick={() => navigate('/dashboard')}
-            >
+            <button className="btn-secondary-new" onClick={() => navigate('/dashboard')}>
               📊 View Dashboard
             </button>
           </div>
@@ -170,10 +162,7 @@ export default function Home() {
           <div className="container">
             <div className="user-card">
               <p className="user-greeting">Welcome back, {currentUser.email}</p>
-              <button
-                onClick={handleLogout}
-                className="btn-logout"
-              >
+              <button onClick={handleLogout} className="btn-logout">
                 Log Out
               </button>
             </div>
