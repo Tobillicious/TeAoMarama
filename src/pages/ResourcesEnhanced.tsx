@@ -485,6 +485,9 @@ export default function ResourcesEnhanced() {
       
       {/* Performance Monitor */}
       <PerformanceMonitor />
+      
+      {/* Migration Dashboard */}
+      <MigrationDashboard />
     </div>
   );
 }
