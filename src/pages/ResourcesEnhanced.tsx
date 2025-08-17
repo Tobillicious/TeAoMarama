@@ -60,8 +60,7 @@ export default function ResourcesEnhanced() {
   
   // Mihara integration
   const miharaService = MiharaService.getInstance();
-  const [miharaStatus, setMiharaStatus] = useState(miharaService.getStatus());
-  const [migrationProgress, setMigrationProgress] = useState(miharaService.getMigrationProgress());
+  const migrationProgress = miharaService.getMigrationProgress();
 
   // Navigation state
   const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
