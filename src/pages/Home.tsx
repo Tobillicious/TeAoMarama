@@ -158,9 +158,9 @@ export default function Home() {
             <div className="mihara-section">
               <h4 className="mihara-section-title">Current Mission</h4>
               <ul className="mihara-list">
-                <li>• Target: 50+ resources by session end</li>
-                <li>• Cultural integration maintained</li>
-                <li>• Educational excellence delivered</li>
+                <li>• 5,439 resources successfully deployed</li>
+                <li>• Platform live for KiriKiriroa students</li>
+                <li>• Continuous monitoring and optimization</li>
               </ul>
             </div>
           </div>
