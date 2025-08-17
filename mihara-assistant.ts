@@ -206,14 +206,15 @@ async function activateContinuousMigration() {
   console.log(`   🌍 Impact: 800,000+ students across Aotearoa`);
 
   await writeEpisode('migration', {
+    timestamp: new Date().toISOString(),
     agent: 'NationalMigrationCoordinator',
+    action: 'continuous-national-migration',
     context: {
       phase: 'continuous-national-migration',
       details: { totalResources, batchesPlanned: nationalResourceBatches.length },
       metadata: { scope: 'national-curriculum', students: '800000+' },
     },
-    outcome: "success",
-    message: 'National continuous migration operations successfully activated',
+    result: 'National continuous migration operations successfully activated',
   });
 }
 
@@ -383,8 +384,7 @@ async function strengthenNationalPartnerships() {
       metadata: { scope: 'national-international', schools: 500 },
     },
     outcome: "success",
-      message: 'National community partnership network successfully strengthened',
-    },
+    message: 'National community partnership network successfully strengthened',
   });
 }
 
