@@ -213,8 +213,7 @@ async function activateContinuousMigration() {
       metadata: { scope: 'national-curriculum', students: '800000+' },
     },
     outcome: "success",
-      message: 'National continuous migration operations successfully activated',
-    },
+    message: 'National continuous migration operations successfully activated',
   });
 }
 
@@ -291,8 +290,7 @@ async function deployTeacherTraining() {
       metadata: { scope: 'nationwide', certification: 'enhanced-credentials' },
     },
     outcome: "success",
-      message: 'Comprehensive teacher training programs successfully deployed nationwide',
-    },
+    message: 'Comprehensive teacher training programs successfully deployed nationwide',
   });
 }
 

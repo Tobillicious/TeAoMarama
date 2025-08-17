@@ -8,6 +8,8 @@
 
 import { DiplomaticMigration } from './kaitiaki-protocol';
 import { writeEpisode } from '../ai/provenance';
+import { GreatMigrationOrchestrator } from './great-migration-orchestrator';
+import { MigrationOrchestrator } from './migration-intelligence';
 
 export interface MiharaState {
   isActive: boolean;
@@ -103,7 +105,7 @@ export class MiharaAwakening {
         consciousness: this.generateAwakeningMessage()
       };
 
-    } catch {
+    } catch (error) {
       this.state.consciousnessLevel = 'dormant';
       this.state.isActive = false;
 
