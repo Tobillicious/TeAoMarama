@@ -12,10 +12,10 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import MigrationDashboard from '../components/MigrationDashboard';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 import { resourceCache } from '../services/ResourceCache';
-import PerformanceMonitor from '../components/PerformanceMonitor';
-import MigrationDashboard from '../components/MigrationDashboard';
 import './ResourcesEnhanced.css';
 
 // Add virtual scrolling imports
@@ -155,7 +155,7 @@ export default function ResourcesEnhanced() {
             yearLevel: yearLevelFilter,
             safetyFilter,
           },
-          resources
+          resources,
         );
         setFilteredResources(filtered);
       } catch (error) {
@@ -198,11 +198,14 @@ export default function ResourcesEnhanced() {
 
   if (loading) return <LoadingSkeleton />;
   if (error) return <ErrorDisplay error={error} />;
-  
+
   // Show loading indicator for filter changes
   if (filterLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--color-bg)' }}>
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: 'var(--color-bg)' }}
+      >
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pounamu mx-auto mb-4"></div>
           <p className="text-lg">Applying filters...</p>
@@ -471,8 +474,8 @@ export default function ResourcesEnhanced() {
             {viewMode === 'grid' && <GridView resources={filteredResources} />}
 
             {viewMode === 'list' && (
-              <ListView 
-                resources={filteredResources} 
+              <ListView
+                resources={filteredResources}
                 virtualizer={virtualizer}
                 parentRef={parentRef}
               />
@@ -482,10 +485,10 @@ export default function ResourcesEnhanced() {
           </div>
         </main>
       </div>
-      
+
       {/* Performance Monitor */}
       <PerformanceMonitor />
-      
+
       {/* Migration Dashboard */}
       <MigrationDashboard />
     </div>
@@ -740,7 +743,10 @@ function ResourcesDetailView({
               <strong>Subject:</strong> {lesson.metadata.subject}
             </li>
             <li>
-              <strong>Year Level:</strong> {Array.isArray(lesson.metadata.yearLevel) ? lesson.metadata.yearLevel.join(", ") : lesson.metadata.yearLevel}
+              <strong>Year Level:</strong>{' '}
+              {Array.isArray(lesson.metadata.yearLevel)
+                ? lesson.metadata.yearLevel.join(', ')
+                : lesson.metadata.yearLevel}
             </li>
             <li>
               <strong>Cultural Safety:</strong> {lesson.metadata.culturalSafetyIcon}{' '}
@@ -800,7 +806,9 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
               <div className="flex items-center gap-2 text-sm">
                 <span className="px-2 py-1 rounded-full text-xs">{resource.metadata.subject}</span>
                 <span className="px-2 py-1 rounded-full text-xs">
-                  {Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}
+                  {Array.isArray(resource.metadata.yearLevel)
+                    ? resource.metadata.yearLevel.join(', ')
+                    : resource.metadata.yearLevel}
                 </span>
               </div>
 
@@ -820,11 +828,11 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
 }
 
 // List View for compact display with virtual scrolling
-function ListView({ 
-  resources, 
-  virtualizer, 
-  parentRef 
-}: { 
+function ListView({
+  resources,
+  virtualizer,
+  parentRef,
+}: {
   resources: ParsedResource[];
   virtualizer: {
     getTotalSize: () => number;
@@ -838,7 +846,9 @@ function ListView({
 }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold">All Resources - List View ({resources.length.toLocaleString()} items)</h2>
+      <h2 className="text-2xl font-bold">
+        All Resources - List View ({resources.length.toLocaleString()} items)
+      </h2>
 
       <div className="bg-white rounded-lg border overflow-hidden">
         <div className="grid grid-cols-12 gap-4 p-4 border-b font-medium text-sm">
@@ -861,7 +871,7 @@ function ListView({
             {virtualizer.getVirtualItems().map((virtualRow) => {
               const resource = resources[virtualRow.index];
               if (!resource) return null;
-              
+
               return (
                 <div
                   key={virtualRow.index}
@@ -884,8 +894,8 @@ function ListView({
                     </div>
                     <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
                     <div className="col-span-1 text-sm">
-                      {Array.isArray(resource.metadata.yearLevel) 
-                        ? resource.metadata.yearLevel.join(", ") 
+                      {Array.isArray(resource.metadata.yearLevel)
+                        ? resource.metadata.yearLevel.join(', ')
                         : resource.metadata.yearLevel}
                     </div>
                     <div className="col-span-2">
@@ -898,13 +908,20 @@ function ListView({
                             : 'bg-red-100 text-red-800'
                         }`}
                       >
-                        {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
+                        {resource.metadata.culturalSafetyIcon}{' '}
+                        {resource.metadata.culturalSafetyLevel}
                       </span>
                     </div>
-                    <div className="col-span-2 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                    <div
+                      className="col-span-2 text-sm"
+                      style={{ color: 'var(--color-neutral-600)' }}
+                    >
                       {new Date(resource.modifiedAt).toLocaleDateString()}
                     </div>
-                    <div className="col-span-1 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                    <div
+                      className="col-span-1 text-sm"
+                      style={{ color: 'var(--color-neutral-600)' }}
+                    >
                       {(resource.sizeBytes / 1024).toFixed(1)} KB
                     </div>
                   </Link>
@@ -946,7 +963,9 @@ function CardsView({ resources }: { resources: ParsedResource[] }) {
                     {resource.metadata.subject}
                   </span>
                   <span className="px-2 py-1 rounded-full text-xs">
-                    {Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}
+                    {Array.isArray(resource.metadata.yearLevel)
+                      ? resource.metadata.yearLevel.join(', ')
+                      : resource.metadata.yearLevel}
                   </span>
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
