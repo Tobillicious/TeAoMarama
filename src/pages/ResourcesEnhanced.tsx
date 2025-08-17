@@ -63,7 +63,7 @@ export default function ResourcesEnhanced() {
   const migrationProgress = miharaService.getMigrationProgress();
 
   // Navigation state
-  const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
+  const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [selectedSubject, setSelectedSubject] = React.useState<string | null>(null);
   const [selectedUnit, setSelectedUnit] = React.useState<string | null>(null);
   const [selectedLesson, setSelectedLesson] = React.useState<string | null>(null);
