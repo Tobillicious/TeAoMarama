@@ -46,7 +46,7 @@ export default function Resources() {
     return resources.filter(r => {
       if (category !== 'all' && r.category !== category) return false;
       if (subject !== 'all' && r.metadata.subject !== subject) return false;
-      if (yearLevel !== 'all' && r.metadata.yearLevel !== yearLevel) return false;
+      if (yearLevel !== 'all' && !(Array.isArray(r.metadata.yearLevel) ? r.metadata.yearLevel.includes(yearLevel) : r.metadata.yearLevel === yearLevel)) return false;
       if (safety !== 'all' && r.metadata.culturalSafetyLevel !== safety) return false;
       if (!q) return true;
       return (
@@ -146,8 +146,8 @@ export default function Resources() {
                 className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:border-emerald-500 focus:ring focus:ring-emerald-200 bg-white"
               >
                 {years.map(y => (
-                  <option key={y} value={y}>
-                    {y === 'all' ? '🎯 All Year Levels' : `📊 ${y}`}
+                  <option key={Array.isArray(y) ? y.join(',') : y} value={Array.isArray(y) ? y.join(',') : y}>
+                    {(Array.isArray(y) ? y.join(',') : y) === 'all' ? '🎯 All Year Levels' : `📊 ${Array.isArray(y) ? y.join(',') : y}`}
                   </option>
                 ))}
               </select>
