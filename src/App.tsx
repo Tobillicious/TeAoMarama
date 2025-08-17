@@ -1,5 +1,6 @@
 import { Suspense, lazy, memo, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Navigation from './components/Navigation';
 import './App.css';
 
 // Lazy load components for code splitting with preloading
@@ -69,6 +70,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           {routes.map(({ path, element }) => (
