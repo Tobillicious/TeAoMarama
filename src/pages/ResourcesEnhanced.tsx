@@ -816,19 +816,26 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
   );
 }
 
-// List View for compact display
+// List View for compact display with virtual scrolling
 function ListView({ 
   resources, 
   virtualizer, 
   parentRef 
 }: { 
   resources: ParsedResource[];
-  virtualizer: any;
-  parentRef: React.RefObject<HTMLDivElement>;
+  virtualizer: {
+    getTotalSize: () => number;
+    getVirtualItems: () => Array<{
+      index: number;
+      size: number;
+      start: number;
+    }>;
+  };
+  parentRef: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold">All Resources - List View</h2>
+      <h2 className="text-2xl font-bold">All Resources - List View ({resources.length.toLocaleString()} items)</h2>
 
       <div className="bg-white rounded-lg border overflow-hidden">
         <div className="grid grid-cols-12 gap-4 p-4 border-b font-medium text-sm">
@@ -850,6 +857,8 @@ function ListView({
           >
             {virtualizer.getVirtualItems().map((virtualRow) => {
               const resource = resources[virtualRow.index];
+              if (!resource) return null;
+              
               return (
                 <div
                   key={virtualRow.index}
@@ -871,7 +880,11 @@ function ListView({
                       <p className="text-sm text-gray-600 line-clamp-1">{resource.preview}</p>
                     </div>
                     <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
-                    <div className="col-span-1 text-sm">{Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}</div>
+                    <div className="col-span-1 text-sm">
+                      {Array.isArray(resource.metadata.yearLevel) 
+                        ? resource.metadata.yearLevel.join(", ") 
+                        : resource.metadata.yearLevel}
+                    </div>
                     <div className="col-span-2">
                       <span
                         className={`px-2 py-1 rounded-full text-xs ${
