@@ -67,15 +67,27 @@ export default function Home() {
           </div>
 
           <div className="hero-actions-new">
-            <a href="/resources" className="btn-primary-new">
+            <button 
+              type="button"
+              className="btn-primary-new"
+              onClick={() => navigate('/resources')}
+            >
               Browse Resources
-            </a>
-            <a href="/unit-plan" className="btn-secondary-new">
+            </button>
+            <button 
+              type="button"
+              className="btn-secondary-new"
+              onClick={() => navigate('/unit-plan')}
+            >
               View Unit Plan Template
-            </a>
-            <a href="/dashboard" className="btn-secondary-new">
+            </button>
+            <button 
+              type="button"
+              className="btn-secondary-new"
+              onClick={() => navigate('/dashboard')}
+            >
               Teacher Dashboard
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -188,6 +200,7 @@ export default function Home() {
                   Welcome back, {currentUser.email}
                 </p>
                 <button
+                  type="button"
                   onClick={handleLogout}
                   style={{
                     background: '#dc3545',
