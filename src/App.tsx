@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Lazy load components for code splitting
@@ -29,22 +29,20 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/resources" element={<ResourcesEnhanced />} />
-            <Route path="/resource" element={<ResourceViewer />} />
-            <Route path="/doc" element={<DocPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/styleguide" element={<StyleGuide />} />
-          </Routes>
-        </Suspense>
-      </div>
-    </Router>
+    <div className="App">
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/resources" element={<ResourcesEnhanced />} />
+          <Route path="/resource" element={<ResourceViewer />} />
+          <Route path="/doc" element={<DocPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/styleguide" element={<StyleGuide />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
 }
 
