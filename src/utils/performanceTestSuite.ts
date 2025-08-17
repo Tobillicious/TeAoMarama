@@ -514,7 +514,7 @@ export class PerformanceTester {
       const memory = (performance as unknown).memory;
       report.memoryUsage.peak = Math.max(
         report.memoryUsage.peak,
-        Math.round(memory.usedJSHeapSize / 1024 / 1024),
+        Math.round((memory as any)?.usedJSHeapSize || 0 / 1024 / 1024),
       );
     }
 
