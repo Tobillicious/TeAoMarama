@@ -230,31 +230,31 @@
   font-size: 0.9rem;
 }
 
-/* NEW: Status Section */
+/* Status Section */
 .status-section {
-  background: #f8fafc;
-  color: #1e3c72;
-  padding: 5rem 0;
+  background: #fafafa;
+  padding: 3rem 0;
 }
 
 .status-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .status-card-new {
   background: white;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  border: 1px solid #e0e0e0;
 }
 
 .status-card-new:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-color: #1565c0;
 }
 
 .status-header-new {
@@ -264,26 +264,26 @@
 }
 
 .status-icon-new {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 15px;
-  color: white;
+  background: #e3f2fd;
+  border-radius: 6px;
+  color: #1565c0;
 }
 
 .status-info h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #1e3c72;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #2c3e50;
 }
 
 .status-info p {
-  color: #64748b;
+  color: #666;
   font-size: 0.9rem;
 }
 
