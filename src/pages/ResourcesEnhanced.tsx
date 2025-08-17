@@ -13,6 +13,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
+import { resourceCache } from '../services/ResourceCache';
 import './ResourcesEnhanced.css';
 
 // Add virtual scrolling imports
@@ -137,51 +138,33 @@ export default function ResourcesEnhanced() {
     return Object.values(subjects);
   }, [resources]);
 
-  // Filter resources based on current filters
-  const filteredResources = useMemo(() => {
-    let filtered = resources;
+  // Filter resources based on current filters with caching
+  const [filteredResources, setFilteredResources] = useState<ParsedResource[]>([]);
+  const [filterLoading, setFilterLoading] = useState(false);
 
-    // Apply search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (r) =>
-          r.title.toLowerCase().includes(query) ||
-          r.searchableText?.toLowerCase().includes(query) ||
-          r.metadata.subject?.toLowerCase().includes(query),
-      );
-    }
-
-    // Apply filter mode
-    switch (filterMode) {
-      case 'culturally-aligned':
-        filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === 'clean');
-        break;
-      case 'nzc-mapped':
-        filtered = filtered.filter(
-          (r) => r.metadata.nzcAlignment && r.metadata.nzcAlignment.length > 0,
+  useEffect(() => {
+    const applyFilters = async () => {
+      setFilterLoading(true);
+      try {
+        const filtered = await resourceCache.getFilteredResources(
+          {
+            searchQuery,
+            filterMode,
+            yearLevel: yearLevelFilter,
+            safetyFilter,
+          },
+          resources
         );
-        break;
-      case 'recent':
-        filtered = filtered.filter((r) => {
-          const modDate = new Date(r.modifiedAt);
-          const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          return modDate > weekAgo;
-        });
-        break;
-    }
+        setFilteredResources(filtered);
+      } catch (error) {
+        console.error('Error applying filters:', error);
+        setFilteredResources(resources);
+      } finally {
+        setFilterLoading(false);
+      }
+    };
 
-    // Apply year level filter
-    if (yearLevelFilter !== 'all') {
-      filtered = filtered.filter((r) => r.metadata.yearLevel.includes(yearLevelFilter));
-    }
-
-    // Apply safety filter
-    if (safetyFilter !== 'all') {
-      filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === safetyFilter);
-    }
-
-    return filtered;
+    applyFilters();
   }, [resources, searchQuery, filterMode, yearLevelFilter, safetyFilter]);
 
   // Virtual scrolling setup for large resource lists
