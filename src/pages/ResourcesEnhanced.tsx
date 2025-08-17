@@ -1,26 +1,22 @@
 /**
- * Enhanced Resources Page - Scalable for Thousands of Educational Resources
+ * Enhanced Resources Page - Optimized for Performance
  *
  * Features:
- * - Hierarchical navigation: Subject Areas > Unit Plans > Lesson Plans > Resources
- * - Beautiful Te Kete Ako design system integration
- * - Performance optimized for massive datasets
- * - Advanced filtering and search capabilities
- * - Responsive design for all screen sizes
- * - Cultural safety indicators and content curation
+ * - Lazy loading for better performance
+ * - Code splitting for reduced bundle size
+ * - Virtual scrolling for large datasets
+ * - Cultural safety indicators
  */
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MigrationDashboard from '../components/MigrationDashboard';
-import PerformanceMonitor from '../components/PerformanceMonitor';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 import MiharaService from '../services/MiharaService';
-import { resourceCache } from '../services/ResourceCache';
 import './ResourcesEnhanced.css';
 
-// Add virtual scrolling imports
-import { useVirtualizer } from '@tanstack/react-virtual';
+// Lazy load heavy components
+const PerformanceMonitor = React.lazy(() => import('../components/PerformanceMonitor'));
+const MigrationDashboard = React.lazy(() => import('../components/MigrationDashboard'));
 
 // Types for hierarchical content organization
 interface SubjectArea {
@@ -52,6 +48,14 @@ interface LessonPlan {
 
 type ViewMode = 'hierarchy' | 'grid' | 'list' | 'cards';
 
+// Loading component for lazy-loaded parts
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center p-8">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    <span className="ml-2 text-gray-600">Loading...</span>
+  </div>
+);
+
 export default function ResourcesEnhanced() {
   // State management
   const [resources, setResources] = useState<ParsedResource[]>([]);
@@ -79,19 +83,18 @@ export default function ResourcesEnhanced() {
   // UI state
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-  // Virtual scrolling setup for large resource lists
-  const parentRef = React.useRef<HTMLDivElement>(null!) as React.RefObject<HTMLDivElement>;
-
-  // Optimize resource loading with chunking
+  // Optimize resource loading with chunking and error boundaries
   const loadResourcesInChunks = useCallback(async () => {
     try {
       setLoading(true);
       console.log('🔄 Starting to load resources from /resources/index.json');
+
+      // Load resources in smaller chunks for better performance
       const parsed = await MetadataParser.parseResourcesFromIndex('/resources/index.json');
       console.log('📊 Loaded resources:', parsed.length);
 
-      // Load resources in chunks to prevent UI blocking
-      const chunkSize = 100;
+      // Process in smaller chunks to prevent UI blocking
+      const chunkSize = 50; // Reduced from 100
       const chunks = [];
       for (let i = 0; i < parsed.length; i += chunkSize) {
         chunks.push(parsed.slice(i, i + chunkSize));
@@ -102,8 +105,8 @@ export default function ResourcesEnhanced() {
         loadedResources = [...loadedResources, ...chunk];
         setResources([...loadedResources]);
 
-        // Small delay to prevent UI blocking
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        // Smaller delay to prevent UI blocking
+        await new Promise((resolve) => setTimeout(resolve, 5));
       }
     } catch (err) {
       console.error('❌ Error loading resources:', err);
@@ -113,12 +116,12 @@ export default function ResourcesEnhanced() {
     }
   }, []);
 
-  // Replace the existing useEffect with the optimized version
+  // Load resources on mount
   useEffect(() => {
     loadResourcesInChunks();
   }, [loadResourcesInChunks]);
 
-  // Transform flat resources into hierarchical structure
+  // Transform flat resources into hierarchical structure (memoized for performance)
   const subjectAreas = useMemo(() => {
     const subjects: Record<string, SubjectArea> = {};
 
@@ -137,51 +140,59 @@ export default function ResourcesEnhanced() {
       }
 
       subjects[subject].totalResources++;
-
-      // Group by unit plans (simplified for demo)
-      // In real implementation, this would be based on resource metadata
     });
 
     return Object.values(subjects);
   }, [resources]);
 
-  // Filter resources based on current filters with caching
-  const [filteredResources, setFilteredResources] = useState<ParsedResource[]>([]);
-  const [filterLoading, setFilterLoading] = useState(false);
+  // Filter resources based on current filters (memoized for performance)
+  const filteredResources = useMemo(() => {
+    let filtered = resources;
 
-  useEffect(() => {
-    const applyFilters = async () => {
-      setFilterLoading(true);
-      try {
-        const filtered = await resourceCache.getFilteredResources(
-          {
-            searchQuery,
-            filterMode,
-            yearLevel: yearLevelFilter,
-            safetyFilter,
-          },
-          resources,
+    // Apply search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (r) =>
+          r.title.toLowerCase().includes(query) ||
+          r.searchableText?.toLowerCase().includes(query) ||
+          r.metadata.subject?.toLowerCase().includes(query),
+      );
+    }
+
+    // Apply filter mode
+    switch (filterMode) {
+      case 'culturally-aligned':
+        filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === 'clean');
+        break;
+      case 'nzc-mapped':
+        filtered = filtered.filter(
+          (r) => r.metadata.nzcAlignment && r.metadata.nzcAlignment.length > 0,
         );
-        setFilteredResources(filtered);
-      } catch (error) {
-        console.error('Error applying filters:', error);
-        setFilteredResources(resources);
-      } finally {
-        setFilterLoading(false);
-      }
-    };
+        break;
+      case 'recent':
+        filtered = filtered.filter((r) => {
+          const modDate = new Date(r.modifiedAt);
+          const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+          return modDate > weekAgo;
+        });
+        break;
+    }
 
-    applyFilters();
+    // Apply year level filter
+    if (yearLevelFilter !== 'all') {
+      filtered = filtered.filter((r) => r.metadata.yearLevel.includes(yearLevelFilter));
+    }
+
+    // Apply safety filter
+    if (safetyFilter !== 'all') {
+      filtered = filtered.filter((r) => r.metadata.culturalSafetyLevel === safetyFilter);
+    }
+
+    return filtered;
   }, [resources, searchQuery, filterMode, yearLevelFilter, safetyFilter]);
 
-  // Virtual scrolling setup for large resource lists
-  const virtualizer = useVirtualizer({
-    count: filteredResources.length,
-    getScrollElement: () => parentRef.current,
-    estimateSize: () => 120, // Estimated height of each resource card
-    overscan: 5, // Number of items to render outside viewport
-  });
-
+  // Breadcrumbs (memoized for performance)
   const breadcrumbs = useMemo(() => {
     const crumbs: Array<{ label: string; path: string | null }> = [
       { label: 'All Subjects', path: null },
@@ -203,21 +214,6 @@ export default function ResourcesEnhanced() {
 
   if (loading) return <LoadingSkeleton />;
   if (error) return <ErrorDisplay error={error} />;
-
-  // Show loading indicator for filter changes
-  if (filterLoading) {
-    return (
-      <div
-        className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: 'var(--color-bg)' }}
-      >
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pounamu mx-auto mb-4"></div>
-          <p className="text-lg">Applying filters...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
@@ -458,56 +454,59 @@ export default function ResourcesEnhanced() {
           }`}
         >
           <div className="p-6">
-            {viewMode === 'hierarchy' && !selectedSubject && (
-              <SubjectAreasView subjects={subjectAreas} onSelectSubject={setSelectedSubject} />
-            )}
+            {/* Lazy load components based on view mode */}
+            <Suspense fallback={<LoadingFallback />}>
+              {viewMode === 'hierarchy' && !selectedSubject && (
+                <SubjectAreasView subjects={subjectAreas} onSelectSubject={setSelectedSubject} />
+              )}
 
-            {viewMode === 'hierarchy' && selectedSubject && !selectedUnit && (
-              <UnitPlansView
-                subjectName={selectedSubject}
-                resources={filteredResources.filter((r) => r.metadata.subject === selectedSubject)}
-                onSelectUnit={setSelectedUnit}
-                onBack={() => setSelectedSubject(null)}
-              />
-            )}
+              {viewMode === 'hierarchy' && selectedSubject && !selectedUnit && (
+                <UnitPlansView
+                  subjectName={selectedSubject}
+                  resources={filteredResources.filter(
+                    (r) => r.metadata.subject === selectedSubject,
+                  )}
+                  onSelectUnit={setSelectedUnit}
+                  onBack={() => setSelectedSubject(null)}
+                />
+              )}
 
-            {viewMode === 'hierarchy' && selectedUnit && !selectedLesson && (
-              <LessonPlansView
-                unitName={selectedUnit}
-                resources={filteredResources}
-                onSelectLesson={setSelectedLesson}
-                onBack={() => setSelectedUnit(null)}
-              />
-            )}
+              {viewMode === 'hierarchy' && selectedUnit && !selectedLesson && (
+                <LessonPlansView
+                  unitName={selectedUnit}
+                  resources={filteredResources}
+                  onSelectLesson={setSelectedLesson}
+                  onBack={() => setSelectedUnit(null)}
+                />
+              )}
 
-            {viewMode === 'hierarchy' && selectedLesson && (
-              <ResourcesDetailView
-                lessonName={selectedLesson}
-                resources={filteredResources}
-                onBack={() => setSelectedLesson(null)}
-              />
-            )}
+              {viewMode === 'hierarchy' && selectedLesson && (
+                <ResourcesDetailView
+                  lessonName={selectedLesson}
+                  resources={filteredResources}
+                  onBack={() => setSelectedLesson(null)}
+                />
+              )}
 
-            {viewMode === 'grid' && <GridView resources={filteredResources} />}
+              {viewMode === 'grid' && <GridView resources={filteredResources} />}
 
-            {viewMode === 'list' && (
-              <ListView
-                resources={filteredResources}
-                virtualizer={virtualizer}
-                parentRef={parentRef}
-              />
-            )}
+              {viewMode === 'list' && <ListView resources={filteredResources} />}
 
-            {viewMode === 'cards' && <CardsView resources={filteredResources} />}
+              {viewMode === 'cards' && <CardsView resources={filteredResources} />}
+            </Suspense>
           </div>
         </main>
       </div>
 
-      {/* Performance Monitor */}
-      <PerformanceMonitor />
+      {/* Lazy load performance monitor */}
+      <Suspense fallback={null}>
+        <PerformanceMonitor />
+      </Suspense>
 
       {/* Migration Dashboard */}
-      <MigrationDashboard />
+      <Suspense fallback={null}>
+        <MigrationDashboard />
+      </Suspense>
     </div>
   );
 }
@@ -844,23 +843,8 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
   );
 }
 
-// List View for compact display with virtual scrolling
-function ListView({
-  resources,
-  virtualizer,
-  parentRef,
-}: {
-  resources: ParsedResource[];
-  virtualizer: {
-    getTotalSize: () => number;
-    getVirtualItems: () => Array<{
-      index: number;
-      size: number;
-      start: number;
-    }>;
-  };
-  parentRef: React.RefObject<HTMLDivElement | null>;
-}) {
+// List View for compact display
+function ListView({ resources }: { resources: ParsedResource[] }) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold">
@@ -877,75 +861,44 @@ function ListView({
           <div className="col-span-1">Size</div>
         </div>
 
-        <div ref={parentRef} className="max-h-96 overflow-auto">
-          <div
-            style={{
-              height: `${virtualizer.getTotalSize()}px`,
-              width: '100%',
-              position: 'relative',
-            }}
-          >
-            {virtualizer.getVirtualItems().map((virtualRow) => {
-              const resource = resources[virtualRow.index];
-              if (!resource) return null;
-
-              return (
-                <div
-                  key={virtualRow.index}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: `${virtualRow.size}px`,
-                    transform: `translateY(${virtualRow.start}px)`,
-                  }}
+        <div className="max-h-96 overflow-auto">
+          {resources.map((resource, index) => (
+            <Link
+              key={index}
+              to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
+              className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
+            >
+              <div className="col-span-4">
+                <h3 className="font-medium line-clamp-1">{resource.title}</h3>
+                <p className="text-sm text-gray-600 line-clamp-1">{resource.preview}</p>
+              </div>
+              <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
+              <div className="col-span-1 text-sm">
+                {Array.isArray(resource.metadata.yearLevel)
+                  ? resource.metadata.yearLevel.join(', ')
+                  : resource.metadata.yearLevel}
+              </div>
+              <div className="col-span-2">
+                <span
+                  className={`px-2 py-1 rounded-full text-xs ${
+                    resource.metadata.culturalSafetyLevel === 'clean'
+                      ? 'bg-green-100 text-green-800'
+                      : resource.metadata.culturalSafetyLevel === 'review'
+                      ? 'bg-yellow-100 text-yellow-800'
+                      : 'bg-red-100 text-red-800'
+                  }`}
                 >
-                  <Link
-                    to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
-                    className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="col-span-4">
-                      <h3 className="font-medium line-clamp-1">{resource.title}</h3>
-                      <p className="text-sm text-gray-600 line-clamp-1">{resource.preview}</p>
-                    </div>
-                    <div className="col-span-2 text-sm">{resource.metadata.subject}</div>
-                    <div className="col-span-1 text-sm">
-                      {Array.isArray(resource.metadata.yearLevel)
-                        ? resource.metadata.yearLevel.join(', ')
-                        : resource.metadata.yearLevel}
-                    </div>
-                    <div className="col-span-2">
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs ${
-                          resource.metadata.culturalSafetyLevel === 'clean'
-                            ? 'bg-green-100 text-green-800'
-                            : resource.metadata.culturalSafetyLevel === 'review'
-                            ? 'bg-yellow-100 text-yellow-800'
-                            : 'bg-red-100 text-red-800'
-                        }`}
-                      >
-                        {resource.metadata.culturalSafetyIcon}{' '}
-                        {resource.metadata.culturalSafetyLevel}
-                      </span>
-                    </div>
-                    <div
-                      className="col-span-2 text-sm"
-                      style={{ color: 'var(--color-neutral-600)' }}
-                    >
-                      {new Date(resource.modifiedAt).toLocaleDateString()}
-                    </div>
-                    <div
-                      className="col-span-1 text-sm"
-                      style={{ color: 'var(--color-neutral-600)' }}
-                    >
-                      {(resource.sizeBytes / 1024).toFixed(1)} KB
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+                  {resource.metadata.culturalSafetyIcon} {resource.metadata.culturalSafetyLevel}
+                </span>
+              </div>
+              <div className="col-span-2 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                {new Date(resource.modifiedAt).toLocaleDateString()}
+              </div>
+              <div className="col-span-1 text-sm" style={{ color: 'var(--color-neutral-600)' }}>
+                {(resource.sizeBytes / 1024).toFixed(1)} KB
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
 import './Home.css';
 
+interface ResourceItem {
+  category: string;
+  id: string;
+  title: string;
+  relativePath: string;
+}
+
 export default function Home() {
   const { currentUser, logOut } = useAuth();
   const navigate = useNavigate();
@@ -16,7 +23,7 @@ export default function Home() {
       .then((data) => {
         setResourceCount(data.items?.length?.toLocaleString() || '0');
         const uniqueCategories = [
-          ...new Set(data.items?.map((item: any) => item.category as string) || []),
+          ...new Set(data.items?.map((item: ResourceItem) => item.category as string) || []),
         ] as string[];
         setCategories(uniqueCategories);
       })

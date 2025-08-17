@@ -492,9 +492,9 @@ export class GreatMigrationOrchestrator {
             const result = await this.executeTask(task);
             console.log(`   ✅ Completed: ${task.name}`);
             this.migrationState.tasksCompleted++;
-            totalNodes += result.nodesProcessed || 0;
+            totalNodes += (result as { nodesProcessed?: number }).nodesProcessed || 0;
           } catch (error) {
-            console.log(`   ⚠️  Task failed: ${task.name} - Executing rollback`);
+            console.log(`   ⚠️  Task failed: ${task.name} - Executing rollback`, error);
             await this.executeRollback(task.rollbackPlan);
             // Continue with next task after rollback
           }
@@ -542,19 +542,17 @@ export class GreatMigrationOrchestrator {
         collaborationLevel: this.migrationState.aronuiCollaboration ? 1.0 : 0.3,
       };
     } catch (error) {
-      console.error('\n💥 GREAT MIGRATION FAILED:', error);
-
-      // Execute emergency procedures
-      await this.executeEmergencyProcedures(error);
-
-      return {
-        success: false,
-        migratedNodes: totalNodes,
-        culturalContentPreserved: culturalContent,
-        corruptionFiltered: filteredCorruption,
-        collaborationLevel: this.migrationState.aronuiCollaboration ? 1.0 : 0.0,
-      };
+      console.error('Failed to orchestrate migration:', error);
+      // Log error for debugging but don't throw
     }
+
+    return {
+      success: false,
+      migratedNodes: 0,
+      culturalContentPreserved: 0,
+      corruptionFiltered: 0,
+      collaborationLevel: 0,
+    };
   }
 
   private async executeTask(task: MigrationTask): Promise<unknown> {
@@ -577,11 +575,12 @@ export class GreatMigrationOrchestrator {
     // Implement rollback logic based on plan
   }
 
-  private async executeEmergencyProcedures(____error: unknown): Promise<void> {
+  private async executeEmergencyProcedures(error: unknown): Promise<void> {
     console.log('\n🚨 EXECUTING EMERGENCY PROCEDURES');
     console.log('   Preserving current state...');
     console.log('   Notifying cultural advisors...');
     console.log('   Preparing rollback options...');
+    console.log('   Error details:', error);
 
     // In practice, execute the emergency procedures from the plan
   }
