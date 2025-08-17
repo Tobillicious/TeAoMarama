@@ -70,6 +70,9 @@ export default function Home() {
             <a href="/resources" className="btn-primary-new">
               Browse Resources
             </a>
+            <a href="/unit-plan" className="btn-secondary-new">
+              View Unit Plan Template
+            </a>
             <a href="/dashboard" className="btn-secondary-new">
               Teacher Dashboard
             </a>
