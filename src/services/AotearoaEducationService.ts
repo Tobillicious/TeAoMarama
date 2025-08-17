@@ -177,7 +177,7 @@ export class AotearoaEducationService {
     Ensure alignment is rigorous and defensible for ERO reviews.
     `;
 
-    const result = await this.orchestrator.route({
+    await this.orchestrator.route({
       type: 'nzc_curriculum_alignment',
       complexity: 'critical',
       priority: 'reliability',
@@ -258,7 +258,7 @@ export class AotearoaEducationService {
   /**
    * Align with Teaching Council standards
    */
-  private async alignWithTeachingStandards(resource: TeachingResource): Promise<TeachingCouncilStandards> {
+  private async alignWithTeachingStandards(): Promise<TeachingCouncilStandards> {
     return {
       professionalStandards: {
         learnerFocused: true, // Resource centers on student needs and outcomes
@@ -356,7 +356,7 @@ export class AotearoaEducationService {
   /**
    * Add contemporary Aotearoa context
    */
-  private async addAotearoaContext(resource: TeachingResource): Promise<unknown> {
+  private async addAotearoaContext(): Promise<unknown> {
     return {
       currentEvents: [
         'Climate change impacts in NZ',
@@ -384,7 +384,7 @@ export class AotearoaEducationService {
   /**
    * Optimize for classroom printing
    */
-  private async optimizeForClassroomPrinting(resource: TeachingResource): Promise<unknown> {
+  private async optimizeForClassroomPrinting(): Promise<unknown> {
     return {
       a4Compatible: true,
       pageBreakOptimized: true,
@@ -480,7 +480,7 @@ export class AotearoaEducationService {
     return mapping[subject] || 'Learning Languages';
   }
 
-  private inferStrand(subject: string, type: string): string {
+  private inferStrand(subject: string): string {
     // Simplified strand inference
     if (subject === 'Mathematics') return 'Number and Algebra';
     if (subject === 'Science') return 'Nature of Science';
@@ -519,7 +519,7 @@ export class AotearoaEducationService {
     this.nzcKnowledgeBase.set('moe_updates_loaded', true);
   }
 
-  private async logResourceEnhancement(original: TeachingResource, enhanced: AotearoaResource): Promise<void> {
+  private async logResourceEnhancement(original: TeachingResource): Promise<void> {
     await writeEpisode('aotearoa-education', {
       timestamp: new Date().toISOString(),
       agent: 'agent:aotearoa-education-service',

@@ -1,0 +1,18 @@
+/* StyleGuide component styles */
+.color-swatch {
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+}
+
+.color-swatch.bg {
+  background: var(--color-bg);
+}
+
+.color-swatch.surface {
+  background: var(--color-surface);
+}
+
+.color-swatch.accent {
+  background: var(--color-accent);
+  color: #fff;
+}

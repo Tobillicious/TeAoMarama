@@ -237,7 +237,7 @@ export class MockResourceGenerator {
     };
   }
 
-  private static generateTags(_____subject: string, ___yearLevel: string): string[] {
+  private static generateTags(subject: string, yearLevel: string): string[] {
     const baseTags = [subject.toLowerCase(), yearLevel.toLowerCase()];
     const additionalTags = ['interactive', 'assessment', 'collaborative', 'cultural', 'practical'];
 
@@ -249,7 +249,7 @@ export class MockResourceGenerator {
     return [...new Set(baseTags)];
   }
 
-  private static generateDifficulty(___yearLevel: string): 'beginner' | 'intermediate' | 'advanced' {
+  private static generateDifficulty(yearLevel: string): 'beginner' | 'intermediate' | 'advanced' {
     const year = parseInt(yearLevel.match(/\d+/)?.[0] || '8');
     if (year <= 8) return 'beginner';
     if (year <= 10) return 'intermediate';
@@ -309,7 +309,7 @@ export class PerformanceTester {
     const startTime = performance.now();
 
     // Generate large dataset
-    const mockResources = MockResourceGenerator.generateMockResources(resourceCount);
+    MockResourceGenerator.generateMockResources(resourceCount);
 
     // Simulate React rendering time
     await new Promise((resolve) => setTimeout(resolve, 50));

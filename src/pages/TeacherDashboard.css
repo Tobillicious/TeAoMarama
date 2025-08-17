@@ -1,0 +1,74 @@
+/* TeacherDashboard Component Styles */
+
+.teacher-dashboard {
+  background-color: var(--color-porcelain);
+}
+
+.loading-spinner {
+  border-color: var(--color-gold);
+}
+
+.sidebar {
+  background-color: var(--color-royal-blue);
+}
+
+.sidebar-logo {
+  background-color: var(--color-gold);
+}
+
+.sidebar-border {
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+.sidebar-profile {
+  background-color: var(--color-gold);
+}
+
+.header-border {
+  border-color: var(--color-gold);
+}
+
+.add-resource-btn {
+  background-color: var(--color-pounamu);
+  color: white;
+}
+
+.student-progress-indicator {
+  background-color: var(--color-success);
+}
+
+.student-progress-indicator.warning {
+  background-color: var(--color-warning);
+}
+
+.student-progress-indicator.error {
+  background-color: var(--color-error);
+}
+
+.cultural-engagement-high {
+  color: var(--color-success);
+}
+
+.cultural-engagement-medium {
+  color: var(--color-warning);
+}
+
+.cultural-engagement-low {
+  color: var(--color-error);
+}
+
+.stats-card {
+  background-color: var(--color-pounamu);
+}
+
+.stats-card.kowhai {
+  background-color: var(--color-kowhai);
+}
+
+.stats-card.moana {
+  background-color: var(--color-moana);
+}
+
+.stats-card.primary {
+  background-color: var(--color-primary);
+}
