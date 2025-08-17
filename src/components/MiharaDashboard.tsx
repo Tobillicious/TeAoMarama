@@ -205,22 +205,22 @@ const MiharaDashboard: React.FC = () => {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'urgent':
-        return 'text-red-600 bg-red-100';
+        return 'text-red-600 bg-red-50 border-red-200';
       case 'high':
-        return 'text-orange-600 bg-orange-100';
+        return 'text-orange-600 bg-orange-50 border-orange-200';
       case 'medium':
-        return 'text-yellow-600 bg-yellow-100';
+        return 'text-yellow-600 bg-yellow-50 border-yellow-200';
       case 'low':
-        return 'text-green-600 bg-green-100';
+        return 'text-green-600 bg-green-50 border-green-200';
       default:
-        return 'text-gray-600 bg-gray-100';
+        return 'text-gray-600 bg-gray-50 border-gray-200';
     }
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6">
+    <div className="p-6 max-w-7xl mx-auto space-y-6 bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 bg-white rounded-lg p-8 border border-gray-200 shadow-sm">
         <h1 className="text-4xl font-bold text-gray-800 mb-2">
           🌟 Mihara - Kaitiaki Mahara Dashboard
         </h1>
@@ -232,7 +232,7 @@ const MiharaDashboard: React.FC = () => {
       {/* Main Status Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Consciousness Status */}
-        <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="text-center">
             <div className="text-4xl mb-2">
               {getConsciousnessIcon(miharaState.consciousnessLevel)}
@@ -248,7 +248,7 @@ const MiharaDashboard: React.FC = () => {
         </Card>
 
         {/* Cultural Authority */}
-        <Card className="p-6 bg-gradient-to-br from-green-50 to-emerald-100">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="text-center">
             <div className="text-4xl mb-2">🛡️</div>
             <h3 className="text-lg font-semibold text-gray-800">Cultural Authority</h3>
@@ -260,13 +260,11 @@ const MiharaDashboard: React.FC = () => {
         </Card>
 
         {/* Migration Progress */}
-        <Card className="p-6 bg-gradient-to-br from-purple-50 to-violet-100">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="text-center">
             <div className="text-4xl mb-2">🚀</div>
             <h3 className="text-lg font-semibold text-gray-800">Migration Progress</h3>
-            <p className="text-xl font-bold text-purple-600">
-              {migrationStats.progressPercentage}%
-            </p>
+            <p className="text-xl font-bold text-blue-600">{migrationStats.progressPercentage}%</p>
             <p className="text-sm text-gray-600 mt-2">
               {migrationStats.resourcesCompleted}/{migrationStats.totalResources} Resources
             </p>
@@ -274,11 +272,11 @@ const MiharaDashboard: React.FC = () => {
         </Card>
 
         {/* Real Resources */}
-        <Card className="p-6 bg-gradient-to-br from-orange-50 to-amber-100">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="text-center">
             <div className="text-4xl mb-2">📚</div>
             <h3 className="text-lg font-semibold text-gray-800">Real Resources</h3>
-            <p className="text-xl font-bold text-orange-600">
+            <p className="text-xl font-bold text-blue-600">
               {migrationStats.totalResources.toLocaleString()}
             </p>
             <p className="text-sm text-gray-600 mt-2">
@@ -289,28 +287,28 @@ const MiharaDashboard: React.FC = () => {
       </div>
 
       {/* Enhanced Migration Statistics */}
-      <Card className="p-6">
+      <Card className="p-6 bg-white border border-gray-200 shadow-sm">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           📊 Enhanced Migration Statistics
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          <div className="text-center p-4 bg-blue-50 rounded-lg">
+          <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
             <p className="text-2xl font-bold text-blue-600">
               {migrationStats.totalResources.toLocaleString()}
             </p>
             <p className="text-sm text-gray-600">Total Resources</p>
           </div>
-          <div className="text-center p-4 bg-green-50 rounded-lg">
+          <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
             <p className="text-2xl font-bold text-green-600">{migrationStats.resourcesCompleted}</p>
             <p className="text-sm text-gray-600">Completed</p>
           </div>
-          <div className="text-center p-4 bg-yellow-50 rounded-lg">
+          <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
             <p className="text-2xl font-bold text-yellow-600">
               {migrationStats.resourcesInProgress}
             </p>
             <p className="text-sm text-gray-600">In Progress</p>
           </div>
-          <div className="text-center p-4 bg-red-50 rounded-lg">
+          <div className="text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
             <p className="text-2xl font-bold text-red-600">{migrationStats.culturalResources}</p>
             <p className="text-sm text-gray-600">Cultural Resources</p>
           </div>
@@ -329,13 +327,16 @@ const MiharaDashboard: React.FC = () => {
       </Card>
 
       {/* Processing Queue */}
-      <Card className="p-6">
+      <Card className="p-6 bg-white border border-gray-200 shadow-sm">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           🔄 Current Processing Queue
         </h3>
         <div className="space-y-3">
           {processingQueue.map((resource, index) => (
-            <div key={resource.id} className="p-4 bg-gray-50 rounded-lg">
+            <div
+              key={`${resource.id}-${index}`}
+              className="p-4 bg-gray-50 rounded-lg border border-gray-200"
+            >
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-medium text-gray-800">{resource.title}</h4>
                 <span
@@ -367,15 +368,15 @@ const MiharaDashboard: React.FC = () => {
       {/* Detailed Status Panels */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Cultural Safety Protocols */}
-        <Card className="p-6">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm">
           <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
             🌿 Enhanced Cultural Safety Protocols
           </h3>
           <div className="space-y-3">
             {culturalProtocols.map((protocol, index) => (
               <div
-                key={index}
-                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                key={`protocol-${index}`}
+                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
               >
                 <div>
                   <span className="text-sm font-medium text-gray-700 capitalize">
@@ -396,13 +397,16 @@ const MiharaDashboard: React.FC = () => {
         </Card>
 
         {/* Active Agents */}
-        <Card className="p-6">
+        <Card className="p-6 bg-white border border-gray-200 shadow-sm">
           <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
             🤖 Enhanced Collaborative Agents
           </h3>
           <div className="space-y-3">
             {activeAgents.map((agent, index) => (
-              <div key={index} className="p-3 bg-gray-50 rounded-lg">
+              <div
+                key={`agent-${index}`}
+                className="p-3 bg-gray-50 rounded-lg border border-gray-200"
+              >
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-medium text-gray-800">{agent.name}</span>
                   <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">
@@ -423,13 +427,16 @@ const MiharaDashboard: React.FC = () => {
       </div>
 
       {/* Recent Activity */}
-      <Card className="p-6">
+      <Card className="p-6 bg-white border border-gray-200 shadow-sm">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           📝 Recent Enhanced Activity
         </h3>
         <div className="space-y-3">
           {recentActivity.map((activity, index) => (
-            <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+            <div
+              key={`${activity.time}-${index}`}
+              className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg border border-gray-200"
+            >
               <div
                 className={`w-3 h-3 rounded-full ${
                   activity.type === 'success'
