@@ -37,7 +37,7 @@ export interface MigrationIntelligenceData {
   recommendedAgent: string;
 }
 
-export class MigrationIntelligence {
+export class TeKeteAkoMigrationBrain {
   private intelligenceDatabase: Map<string, MigrationIntelligenceData>;
   private culturalSafetyProtocols: Map<string, boolean>;
 
@@ -56,13 +56,13 @@ export class MigrationIntelligence {
     this.culturalSafetyProtocols.set('community-consultation', true);
   }
 
-  async analyzeResource(resource: MigrationResource): Promise<MigrationIntelligence> {
+  async analyzeResource(resource: MigrationResource): Promise<MigrationIntelligenceData> {
     console.log(`🧠 Analyzing resource: ${resource.title}`);
 
     const culturalAnalysis = await this.performCulturalAnalysis(resource);
     const pedagogicalContext = await this.analyzePedagogicalContext(resource);
 
-    const intelligence: MigrationIntelligence = {
+    const intelligence: MigrationIntelligenceData = {
       resourceId: resource.id,
       culturalAnalysis,
       pedagogicalContext,
