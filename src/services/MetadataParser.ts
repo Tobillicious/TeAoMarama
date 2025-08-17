@@ -123,7 +123,12 @@ export class MetadataParser {
   ): Promise<ParsedResource[]> {
     try {
       console.log(`🔄 Loading resource index from ${indexPath}`);
-      const response = await fetch(indexPath, { cache: 'no-store' });
+      
+      // Handle both browser and Node.js environments
+      const url = indexPath.startsWith('http') ? indexPath : 
+        (typeof window !== 'undefined' ? indexPath : `http://localhost:5173${indexPath}`);
+      
+      const response = await fetch(url, { cache: 'no-store' });
       if (!response.ok) {
         throw new Error(`Failed to load ${indexPath}: ${response.status} ${response.statusText}`);
       }

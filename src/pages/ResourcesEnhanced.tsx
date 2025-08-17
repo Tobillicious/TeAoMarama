@@ -16,6 +16,7 @@ import MigrationDashboard from '../components/MigrationDashboard';
 import PerformanceMonitor from '../components/PerformanceMonitor';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 import { resourceCache } from '../services/ResourceCache';
+import MiharaService from '../services/MiharaService';
 import './ResourcesEnhanced.css';
 
 // Add virtual scrolling imports
@@ -56,6 +57,11 @@ export default function ResourcesEnhanced() {
   const [resources, setResources] = useState<ParsedResource[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Mihara integration
+  const miharaService = MiharaService.getInstance();
+  const [miharaStatus, setMiharaStatus] = useState(miharaService.getStatus());
+  const [migrationProgress, setMigrationProgress] = useState(miharaService.getMigrationProgress());
 
   // Navigation state
   const [viewMode, setViewMode] = useState<ViewMode>('hierarchy');
@@ -216,26 +222,38 @@ export default function ResourcesEnhanced() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
-      {/* Enhanced Header */}
-      <header className="sticky top-0 z-50 border-b">
-        <div className="container-wide px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                className="p-2 rounded-lg transition-colors lg:hidden"
-              >
-                ☰
-              </button>
+                {/* Enhanced Header */}
+          <header className="sticky top-0 z-50 border-b">
+            <div className="container-wide px-6 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+                    className="p-2 rounded-lg transition-colors lg:hidden"
+                  >
+                    ☰
+                  </button>
 
-              <div>
-                <h1 className="text-2xl font-bold">Te Kete Ako Resources</h1>
-                <p className="text-sm">
-                  {filteredResources.length.toLocaleString()} resources • {subjectAreas.length}{' '}
-                  subject areas
-                </p>
-              </div>
-            </div>
+                  <div>
+                    <h1 className="text-2xl font-bold">Te Kete Ako Resources</h1>
+                    <p className="text-sm">
+                      {filteredResources.length.toLocaleString()} resources • {subjectAreas.length}{' '}
+                      subject areas
+                    </p>
+                    {/* Mihara Status */}
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800">
+                        🌟 Mihara Active
+                      </span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800">
+                        {migrationProgress.progressPercentage.toFixed(1)}% Migrated
+                      </span>
+                      <span className="text-xs px-2 py-1 rounded-full bg-orange-100 text-orange-800">
+                        {migrationProgress.culturalResources} Cultural Resources
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
             <div className="flex items-center gap-3">
               {/* View Mode Selector */}
