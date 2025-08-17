@@ -10,10 +10,13 @@
  * - Cultural safety indicators and content curation
  */
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 import './ResourcesEnhanced.css';
+
+// Add virtual scrolling imports
+import { useVirtualizer } from '@tanstack/react-virtual';
 
 // Types for hierarchical content organization
 interface SubjectArea {
@@ -67,22 +70,42 @@ export default function ResourcesEnhanced() {
 
   // UI state
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [showPreview, setShowPreview] = useState<string | null>(null);
 
-  // Load resources
-  useEffect(() => {
-    async function loadResources() {
-      try {
-        const parsed = await MetadataParser.parseResourcesFromIndex('/resources/index.json');
-        setResources(parsed);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load resources');
-      } finally {
-        setLoading(false);
+  // Virtual scrolling setup for large resource lists
+  const parentRef = React.useRef<HTMLDivElement>(null);
+
+  // Optimize resource loading with chunking
+  const loadResourcesInChunks = useCallback(async () => {
+    try {
+      setLoading(true);
+      const parsed = await MetadataParser.parseResourcesFromIndex('/resources/index.json');
+
+      // Load resources in chunks to prevent UI blocking
+      const chunkSize = 100;
+      const chunks = [];
+      for (let i = 0; i < parsed.length; i += chunkSize) {
+        chunks.push(parsed.slice(i, i + chunkSize));
       }
+
+      let loadedResources: ParsedResource[] = [];
+      for (const chunk of chunks) {
+        loadedResources = [...loadedResources, ...chunk];
+        setResources([...loadedResources]);
+
+        // Small delay to prevent UI blocking
+        await new Promise((resolve) => setTimeout(resolve, 10));
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load resources');
+    } finally {
+      setLoading(false);
     }
-    loadResources();
   }, []);
+
+  // Replace the existing useEffect with the optimized version
+  useEffect(() => {
+    loadResourcesInChunks();
+  }, [loadResourcesInChunks]);
 
   // Transform flat resources into hierarchical structure
   const subjectAreas = useMemo(() => {
@@ -157,6 +180,14 @@ export default function ResourcesEnhanced() {
 
     return filtered;
   }, [resources, searchQuery, filterMode, yearLevelFilter, safetyFilter]);
+
+  // Virtual scrolling setup for large resource lists
+  const virtualizer = useVirtualizer({
+    count: filteredResources.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 120, // Estimated height of each resource card
+    overscan: 5, // Number of items to render outside viewport
+  });
 
   const breadcrumbs = useMemo(() => {
     const crumbs: Array<{ label: string; path: string | null }> = [
@@ -439,7 +470,13 @@ export default function ResourcesEnhanced() {
 
             {viewMode === 'grid' && <GridView resources={filteredResources} />}
 
-            {viewMode === 'list' && <ListView resources={filteredResources} />}
+            {viewMode === 'list' && (
+              <ListView 
+                resources={filteredResources} 
+                virtualizer={virtualizer}
+                parentRef={parentRef}
+              />
+            )}
 
             {viewMode === 'cards' && <CardsView resources={filteredResources} />}
           </div>
@@ -777,7 +814,15 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
 }
 
 // List View for compact display
-function ListView({ resources }: { resources: ParsedResource[] }) {
+function ListView({ 
+  resources, 
+  virtualizer, 
+  parentRef 
+}: { 
+  resources: ParsedResource[];
+  virtualizer: ReturnType<typeof useVirtualizer>;
+  parentRef: React.RefObject<HTMLDivElement | null>;
+}) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold">All Resources - List View</h2>
@@ -792,7 +837,32 @@ function ListView({ resources }: { resources: ParsedResource[] }) {
           <div className="col-span-1">Size</div>
         </div>
 
-        {resources.map((resource) => (
+        <div ref={parentRef} className="max-h-96 overflow-auto">
+          <div
+            style={{
+              height: `${virtualizer.getTotalSize()}px`,
+              width: '100%',
+              position: 'relative',
+            }}
+          >
+            {virtualizer.getVirtualItems().map((virtualRow) => {
+              const resource = resources[virtualRow.index];
+              return (
+                <div
+                  key={virtualRow.index}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: `${virtualRow.size}px`,
+                    transform: `translateY(${virtualRow.start}px)`,
+                  }}
+                >
+                  <Link
+                    to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
+                    className="grid grid-cols-12 gap-4 p-4 border-b hover:bg-gray-50 transition-colors"
+                  >
           <Link
             key={resource.id}
             to={`/resource?path=${encodeURIComponent(resource.relativePath)}`}
