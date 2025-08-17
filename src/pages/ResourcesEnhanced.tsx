@@ -78,7 +78,9 @@ export default function ResourcesEnhanced() {
   const loadResourcesInChunks = useCallback(async () => {
     try {
       setLoading(true);
+      console.log('🔄 Starting to load resources from /resources/index.json');
       const parsed = await MetadataParser.parseResourcesFromIndex('/resources/index.json');
+      console.log('📊 Loaded resources:', parsed.length);
 
       // Load resources in chunks to prevent UI blocking
       const chunkSize = 100;
@@ -96,6 +98,7 @@ export default function ResourcesEnhanced() {
         await new Promise((resolve) => setTimeout(resolve, 10));
       }
     } catch (err) {
+      console.error('❌ Error loading resources:', err);
       setError(err instanceof Error ? err.message : 'Failed to load resources');
     } finally {
       setLoading(false);
