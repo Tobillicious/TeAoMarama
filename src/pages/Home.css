@@ -1,9 +1,10 @@
-/* NEW: Modern Home Page Design for Mangakotukutuku College */
+/* Clean Professional Design for Te Kete Ako */
 
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #fafafa;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 /* NEW: Hero Section */
