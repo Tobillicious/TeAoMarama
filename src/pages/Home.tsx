@@ -46,7 +46,7 @@ export default function Home() {
           </p>
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-number">5,439</span>
+              <span className="stat-number">{resourceCount}</span>
               <span className="stat-label">Resources</span>
             </div>
             <div className="stat-item">
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="feature-card">
               <div className="feature-icon">📚</div>
               <h3>Resource Library</h3>
-              <p>5,439 educational resources ready for your classroom</p>
+              <p>{resourceCount} educational resources ready for your classroom</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">🌿</div>
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="quick-card" onClick={() => navigate('/resources')}>
               <div className="quick-icon">🔍</div>
               <h3>Browse All Resources</h3>
-              <p>Search and filter 5,439 educational materials</p>
+              <p>Search and filter {resourceCount} educational materials</p>
             </div>
             <div className="quick-card" onClick={() => navigate('/resources')}>
               <div className="quick-icon">📖</div>
@@ -146,7 +146,7 @@ export default function Home() {
               <div className="status-header-new">
                 <div className="status-icon-new">📊</div>
                 <div className="status-info">
-                  <h3>5,439 Resources</h3>
+                  <h3>{resourceCount} Resources</h3>
                   <p>Available for download</p>
                 </div>
               </div>
