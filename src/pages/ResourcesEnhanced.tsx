@@ -14,6 +14,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MetadataParser, type ParsedResource } from '../services/MetadataParser';
 import { resourceCache } from '../services/ResourceCache';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 import './ResourcesEnhanced.css';
 
 // Add virtual scrolling imports
@@ -480,6 +481,9 @@ export default function ResourcesEnhanced() {
           </div>
         </main>
       </div>
+      
+      {/* Performance Monitor */}
+      <PerformanceMonitor />
     </div>
   );
 }
