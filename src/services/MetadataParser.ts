@@ -116,38 +116,47 @@ export class MetadataParser {
   }
 
   /**
-   * Parse resources from index.json with enhanced metadata
+   * Parse resources from index.json with enhanced metadata (optimized for performance)
    */
   static async parseResourcesFromIndex(
     indexPath: string = '/resources/index.json',
   ): Promise<ParsedResource[]> {
     try {
+      console.log(`🔄 Loading resource index from ${indexPath}`);
       const response = await fetch(indexPath, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Failed to load ${indexPath}`);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${indexPath}: ${response.status} ${response.statusText}`);
+      }
 
       const data = await response.json();
+      console.log(`📊 Raw index data:`, { 
+        hasItems: !!data.items, 
+        itemsCount: data.items?.length || 0,
+        generatedAt: data.generatedAt 
+      });
+      
       const items = Array.isArray(data.items) ? data.items : [];
+      if (items.length === 0) {
+        console.warn('⚠️ No items found in index.json');
+        return [];
+      }
 
       const parsedResources: ParsedResource[] = [];
 
-      // Parse each resource file to extract metadata
+      // OPTIMIZED: Use metadata from filename and title instead of fetching each file
       for (const item of items) {
         try {
-          // Fetch the actual resource content
-          const resourceResponse = await fetch(`/${item.relativePath}`, { cache: 'no-store' });
-          if (resourceResponse.ok) {
-            const content = await resourceResponse.text();
-            const metadata = this.parseFromContent(content);
+          // Extract metadata from filename and title (much faster than fetching files)
+          const metadata = this.parseMetadataFromFilename(item.title, item.relativePath, item.category);
 
-            const parsedResource: ParsedResource = {
-              ...item,
-              metadata,
-              searchableText: this.createSearchableText(content, metadata),
-              preview: this.extractPreview(content),
-            };
+          const parsedResource: ParsedResource = {
+            ...item,
+            metadata,
+            searchableText: this.createSearchableTextFromBasicInfo(item.title, metadata),
+            preview: this.generatePreviewFromTitle(item.title),
+          };
 
-            parsedResources.push(parsedResource);
-          }
+          parsedResources.push(parsedResource);
         } catch (error) {
           console.warn(`Failed to parse resource ${item.relativePath}:`, error);
           // Add basic resource with minimal metadata
@@ -155,17 +164,17 @@ export class MetadataParser {
             title: item.title,
             subject: this.inferSubject(item.title),
             yearLevel: [this.inferYearLevel(item.title)],
-            resourceType: 'Handout',
+            resourceType: this.inferResourceType(item.category, item.relativePath),
             culturalSafetyLevel: 'clean',
             culturalSafetyIcon: '🟢',
             nzcAlignment: [],
             learningObjectives: [],
             culturalContent: {
-              hasMaoriContent: false,
+              hasMaoriContent: this.detectMaoriContent(item.title),
               culturalSensitivityLevel: 'clean',
               iwiConsultation: false,
             },
-            tags: [],
+            tags: this.generateTagsFromBasicInfo(item.title, item.category),
             difficulty: 'intermediate',
           };
 
@@ -173,16 +182,206 @@ export class MetadataParser {
             ...item,
             metadata: basicMetadata,
             searchableText: item.title,
-            preview: 'Preview not available',
+            preview: this.generatePreviewFromTitle(item.title),
           });
         }
       }
 
+      console.log(`✅ Successfully parsed ${parsedResources.length} resources`);
       return parsedResources;
     } catch (error) {
-      console.error('Failed to parse resources from index:', error);
+      console.error('❌ Failed to parse resources from index:', error);
       return [];
     }
+  }
+
+  /**
+   * Parse metadata from filename and title (optimized approach)
+   */
+  private static parseMetadataFromFilename(
+    title: string, 
+    relativePath: string, 
+    category: string
+  ): ResourceMetadata {
+    // Clean title
+    const cleanTitle = title.replace(/^\*\*|\*\*$/g, '').trim();
+    
+    // Extract information from filename
+    const filename = relativePath.split('/').pop() || '';
+    const fullText = `${cleanTitle} ${filename} ${category}`;
+    
+    // Extract metadata using patterns
+    const subject = this.extractSubjectFromText(fullText);
+    const yearLevel = [this.extractYearLevelFromText(fullText)];
+    const resourceType = this.inferResourceType(category, relativePath);
+    
+    // Cultural safety analysis
+    const culturalSafety = this.analyzeCulturalSafetyFromText(fullText);
+    
+    // Generate tags and content analysis
+    const tags = this.generateTagsFromBasicInfo(fullText, category);
+    const hasMaoriContent = this.detectMaoriContent(fullText);
+    
+    return {
+      title: cleanTitle,
+      subject,
+      yearLevel,
+      resourceType,
+      culturalSafetyLevel: culturalSafety.level,
+      culturalSafetyIcon: culturalSafety.icon,
+      nzcAlignment: this.extractNZCFromText(fullText),
+      learningObjectives: [],
+      culturalContent: {
+        hasMaoriContent,
+        culturalSensitivityLevel: hasMaoriContent ? 'review' : 'clean',
+        iwiConsultation: culturalSafety.level === 'consultation',
+      },
+      tags,
+      difficulty: this.inferDifficultyFromYearLevel(yearLevel[0]),
+    };
+  }
+
+  // Helper methods for optimized parsing
+  private static extractSubjectFromText(text: string): string {
+    // Try to extract subject from filename patterns first
+    const subjectPatterns = [
+      /[_\s]Mathematics?[_\s]/i,
+      /[_\s]Science[_\s]/i,
+      /[_\s]English[_\s]/i,
+      /[_\s]Social[\s_]Studies[_\s]/i,
+      /[_\s]Te[\s_]Reo[_\s]/i,
+      /[_\s]Technology[_\s]/i,
+      /[_\s]Health[_\s]/i,
+      /[_\s]Arts?[_\s]/i,
+    ];
+    
+    for (const pattern of subjectPatterns) {
+      if (pattern.test(text)) {
+        const match = text.match(pattern);
+        if (match) {
+          return match[0].replace(/[_\s]/g, '').replace(/s$/, ''); // Clean up
+        }
+      }
+    }
+    
+    // Fallback to general inference
+    return this.inferSubject(text);
+  }
+
+  private static extractYearLevelFromText(text: string): string {
+    // Look for Y7, Y8, Year 7, etc. patterns
+    const yearPatterns = [
+      /\bY(\d{1,2})\b/i,
+      /\bYear[\s_](\d{1,2})\b/i,
+    ];
+    
+    for (const pattern of yearPatterns) {
+      const match = text.match(pattern);
+      if (match) {
+        return `Year ${match[1]}`;
+      }
+    }
+    
+    return this.inferYearLevel(text);
+  }
+
+  private static inferResourceType(category: string, path: string): string {
+    const typeMap: Record<string, string> = {
+      'handouts': 'Handout',
+      'games': 'Activity',
+      'assessments': 'Assessment',
+      'lessons': 'Lesson Plan',
+      'activities': 'Activity',
+      'deepseek-generated': 'Resource'
+    };
+    
+    // Check category first
+    if (typeMap[category]) {
+      return typeMap[category];
+    }
+    
+    // Check filename patterns
+    const filename = path.toLowerCase();
+    if (filename.includes('activity')) return 'Activity';
+    if (filename.includes('assessment')) return 'Assessment';
+    if (filename.includes('lesson')) return 'Lesson Plan';
+    if (filename.includes('handout')) return 'Handout';
+    if (filename.includes('game')) return 'Activity';
+    
+    return 'Resource';
+  }
+
+  private static analyzeCulturalSafetyFromText(text: string): {
+    level: 'clean' | 'review' | 'consultation';
+    icon: string;
+  } {
+    // High sensitivity terms
+    if (/\b(tapu|sacred|karakia|whakapapa|marae|tangi|waiata|haka)\b/i.test(text)) {
+      return { level: 'consultation', icon: '🔴' };
+    }
+    
+    // Medium sensitivity terms  
+    if (/\b(māori|maori|iwi|hapū|whānau|tikanga|kawa|mana|aotearoa)\b/i.test(text)) {
+      return { level: 'review', icon: '🟡' };
+    }
+    
+    return { level: 'clean', icon: '🟢' };
+  }
+
+  private static extractNZCFromText(text: string): string[] {
+    const nzcPattern = /\b[A-Z]\d+-\d+\b/g;
+    const matches = text.match(nzcPattern) || [];
+    return [...new Set(matches)];
+  }
+
+  private static detectMaoriContent(text: string): boolean {
+    return /\b(māori|maori|te[\s_]reo|tikanga|iwi|hapū|whānau|aotearoa|pūrākau|kōrero)\b/i.test(text);
+  }
+
+  private static generateTagsFromBasicInfo(text: string, category: string): string[] {
+    const tags: string[] = [category];
+    
+    const tagPatterns = [
+      { pattern: /interactive|activity|hands-on/i, tag: 'interactive' },
+      { pattern: /assessment|test|quiz/i, tag: 'assessment' },
+      { pattern: /group|collaboration|team/i, tag: 'collaborative' },
+      { pattern: /māori|cultural|tikanga/i, tag: 'cultural' },
+      { pattern: /real.world|authentic|practical/i, tag: 'practical' },
+      { pattern: /digital|technology|online/i, tag: 'digital' },
+    ];
+    
+    for (const { pattern, tag } of tagPatterns) {
+      if (pattern.test(text)) {
+        tags.push(tag);
+      }
+    }
+    
+    return [...new Set(tags)];
+  }
+
+  private static createSearchableTextFromBasicInfo(title: string, metadata: ResourceMetadata): string {
+    return [
+      title,
+      metadata.subject,
+      metadata.yearLevel.join(' '),
+      metadata.resourceType,
+      ...metadata.tags,
+    ].filter(Boolean).join(' ').toLowerCase();
+  }
+
+  private static generatePreviewFromTitle(title: string): string {
+    // Clean and extract meaningful preview from title
+    const cleanTitle = title.replace(/^\*\*|\*\*$|^#+\s*/g, '').trim();
+    return cleanTitle.length > 100 ? cleanTitle.substring(0, 100) + '...' : cleanTitle;
+  }
+
+  private static inferDifficultyFromYearLevel(yearLevel: string): 'beginner' | 'intermediate' | 'advanced' {
+    const yearMatch = yearLevel.match(/(\d+)/);
+    const year = yearMatch ? parseInt(yearMatch[1]) : 8;
+    
+    if (year <= 8) return 'beginner';
+    if (year <= 10) return 'intermediate';
+    return 'advanced';
   }
 
   // Private helper methods

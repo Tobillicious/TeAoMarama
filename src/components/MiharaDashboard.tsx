@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card } from './ui/card';
 
 interface MiharaState {
@@ -71,9 +71,17 @@ const MiharaDashboard: React.FC = () => {
 
   const [culturalProtocols] = useState<CulturalProtocol[]>([
     { protocol: 'maori-content-review', active: true, status: 'Active - 230 resources flagged' },
-    { protocol: 'tikanga-validation', active: true, status: 'Active - Cultural elements identified' },
+    {
+      protocol: 'tikanga-validation',
+      active: true,
+      status: 'Active - Cultural elements identified',
+    },
     { protocol: 'te-reo-accuracy', active: true, status: 'Active - Te Reo usage validated' },
-    { protocol: 'traditional-knowledge-respect', active: true, status: 'Active - Consultation required' },
+    {
+      protocol: 'traditional-knowledge-respect',
+      active: true,
+      status: 'Active - Consultation required',
+    },
     { protocol: 'community-consultation', active: true, status: 'Active - 15 resources flagged' },
   ]);
 
@@ -109,11 +117,31 @@ const MiharaDashboard: React.FC = () => {
   ]);
 
   const [recentActivity] = useState([
-    { time: '2 min ago', event: 'Enhanced cultural analysis completed for 230 resources', type: 'success' },
-    { time: '5 min ago', event: 'Real resource processing initiated - 3,493 resources found', type: 'info' },
-    { time: '8 min ago', event: 'Māori cultural validation passed for 15 high-priority resources', type: 'success' },
-    { time: '12 min ago', event: 'Diplomatic contact with Kaitiaki Aronui established', type: 'info' },
-    { time: '15 min ago', event: 'Mihara consciousness awakened with enhanced capabilities', type: 'success' },
+    {
+      time: '2 min ago',
+      event: 'Enhanced cultural analysis completed for 230 resources',
+      type: 'success',
+    },
+    {
+      time: '5 min ago',
+      event: 'Real resource processing initiated - 3,493 resources found',
+      type: 'info',
+    },
+    {
+      time: '8 min ago',
+      event: 'Māori cultural validation passed for 15 high-priority resources',
+      type: 'success',
+    },
+    {
+      time: '12 min ago',
+      event: 'Diplomatic contact with Kaitiaki Aronui established',
+      type: 'info',
+    },
+    {
+      time: '15 min ago',
+      event: 'Mihara consciousness awakened with enhanced capabilities',
+      type: 'success',
+    },
   ]);
 
   const [processingQueue] = useState<RealResource[]>([
@@ -267,7 +295,9 @@ const MiharaDashboard: React.FC = () => {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           <div className="text-center p-4 bg-blue-50 rounded-lg">
-            <p className="text-2xl font-bold text-blue-600">{migrationStats.totalResources.toLocaleString()}</p>
+            <p className="text-2xl font-bold text-blue-600">
+              {migrationStats.totalResources.toLocaleString()}
+            </p>
             <p className="text-sm text-gray-600">Total Resources</p>
           </div>
           <div className="text-center p-4 bg-green-50 rounded-lg">
@@ -275,7 +305,9 @@ const MiharaDashboard: React.FC = () => {
             <p className="text-sm text-gray-600">Completed</p>
           </div>
           <div className="text-center p-4 bg-yellow-50 rounded-lg">
-            <p className="text-2xl font-bold text-yellow-600">{migrationStats.resourcesInProgress}</p>
+            <p className="text-2xl font-bold text-yellow-600">
+              {migrationStats.resourcesInProgress}
+            </p>
             <p className="text-sm text-gray-600">In Progress</p>
           </div>
           <div className="text-center p-4 bg-red-50 rounded-lg">
@@ -306,7 +338,11 @@ const MiharaDashboard: React.FC = () => {
             <div key={resource.id} className="p-4 bg-gray-50 rounded-lg">
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-medium text-gray-800">{resource.title}</h4>
-                <span className={`px-2 py-1 rounded-full text-xs font-bold ${getPriorityColor(resource.priority)}`}>
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-bold ${getPriorityColor(
+                    resource.priority,
+                  )}`}
+                >
                   {resource.priority.toUpperCase()}
                 </span>
               </div>
@@ -418,7 +454,8 @@ const MiharaDashboard: React.FC = () => {
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">🌟 Enhanced Mission</h3>
           <p className="text-lg text-gray-700 mb-2">{miharaState.currentMission}</p>
           <p className="text-sm text-gray-600 italic">
-            "Processing 3,493 real educational resources with cultural intelligence and safety protocols"
+            "Processing 3,493 real educational resources with cultural intelligence and safety
+            protocols"
           </p>
           <p className="text-xs text-gray-500 mt-4">
             Last activated: {new Date(miharaState.lastActivation).toLocaleString()}
