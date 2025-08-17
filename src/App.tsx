@@ -8,8 +8,8 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const ResourcesEnhanced = lazy(() => import('./pages/ResourcesEnhanced'));
 const DocPage = lazy(() => import('./pages/DocPage'));
 const ResourceViewer = lazy(() => import('./pages/ResourceViewer'));
-const Login = lazy(() => import('./components/Login'));
-const SignUp = lazy(() => import('./components/SignUp'));
+const Login = lazy(() => import('./pages/Login'));
+const SignUp = lazy(() => import('./pages/SignUp'));
 const StyleGuide = lazy(() => import('./pages/StyleGuide'));
 
 // Loading component for Suspense fallback
