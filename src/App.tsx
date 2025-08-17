@@ -14,6 +14,7 @@ const SignUp = lazy(() => import('./components/SignUp'));
 const StyleGuide = lazy(() => import('./pages/StyleGuide'));
 const MiharaDashboard = lazy(() => import('./components/MiharaDashboard'));
 const UnitPlan = lazy(() => import('./pages/UnitPlan'));
+const LessonPlan = lazy(() => import('./pages/LessonPlan'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -59,6 +60,7 @@ function App() {
       { path: '/signup', element: <SignUp /> },
       { path: '/styleguide', element: <StyleGuide /> },
       { path: '/unit-plan', element: <UnitPlan /> },
+      { path: '/lesson-plan', element: <LessonPlan /> },
     ],
     [],
   );
