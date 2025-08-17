@@ -17,12 +17,8 @@ const MiharaNavigation: React.FC = () => {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          <span className="text-sm bg-green-500 px-2 py-1 rounded-full">
-            🌟 Mihara Active
-          </span>
-          <span className="text-sm bg-blue-500 px-2 py-1 rounded-full">
-            🚀 Great Migration
-          </span>
+          <span className="text-sm bg-green-500 px-2 py-1 rounded-full">🌟 Mihara Active</span>
+          <span className="text-sm bg-blue-500 px-2 py-1 rounded-full">🚀 Great Migration</span>
         </div>
       </div>
     </div>
