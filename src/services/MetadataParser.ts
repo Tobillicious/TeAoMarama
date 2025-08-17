@@ -18,9 +18,22 @@ export interface ResourceMetadata {
     hasMaoriContent: boolean;
     culturalSensitivityLevel: string;
     iwiConsultation: boolean;
+    tikangaElements?: string[];
   };
   tags: string[];
   difficulty: string;
+}
+
+export interface ParsedResource {
+  id: string;
+  title: string;
+  relativePath: string;
+  category: string;
+  sizeBytes: number;
+  modifiedAt: string;
+  metadata: ResourceMetadata;
+  searchableText?: string;
+  preview?: string;
 }
 
 export class MetadataParser {
@@ -44,6 +57,11 @@ export class MetadataParser {
     'Year 13': /year\s*13|y13/i,
   };
 
+  private static readonly CULTURAL_SAFETY_PATTERNS = {
+    consultation: /sacred|tapu|whakapapa|karakia|waiata|haka|marae|tangi/i,
+    review: /māori|maori|iwi|hapu|whanau|tikanga|kawa|mana/i,
+  };
+
   /**
    * Parse metadata from a resource file content
    */
@@ -55,8 +73,9 @@ export class MetadataParser {
 
     // Extract structured metadata from the header section
     const subject = this.extractMetadataField(content, 'Subject') || this.inferSubject(content);
-    const yearLevel =
-      this.extractMetadataField(content, 'Year Level') || this.inferYearLevel(content);
+    const yearLevel = [
+      this.extractMetadataField(content, 'Year Level') || this.inferYearLevel(content),
+    ];
     const resourceType = this.extractMetadataField(content, 'Resource Type') || 'Handout';
     const duration = this.extractMetadataField(content, 'Duration');
     const curriculumArea = this.extractMetadataField(content, 'Curriculum Area');
@@ -74,10 +93,10 @@ export class MetadataParser {
     const culturalContent = this.extractCulturalContent(content);
 
     // Generate tags based on content
-    const tags = this.generateTags(content, subject, yearLevel);
+    const tags = this.generateTags(content, subject, yearLevel[0] || 'Mixed Levels');
 
     // Infer difficulty level
-    const difficulty = this.inferDifficulty(yearLevel, content);
+    const difficulty = this.inferDifficulty(yearLevel[0] || 'Mixed Levels');
 
     return {
       title,
@@ -133,12 +152,21 @@ export class MetadataParser {
           console.warn(`Failed to parse resource ${item.relativePath}:`, error);
           // Add basic resource with minimal metadata
           const basicMetadata: ResourceMetadata = {
-            __title: item.title,
-            _____subject: this.inferSubject(item.title),
-            yearLevel: this.inferYearLevel(item.title),
+            title: item.title,
+            subject: this.inferSubject(item.title),
+            yearLevel: [this.inferYearLevel(item.title)],
             resourceType: 'Handout',
             culturalSafetyLevel: 'clean',
             culturalSafetyIcon: '🟢',
+            nzcAlignment: [],
+            learningObjectives: [],
+            culturalContent: {
+              hasMaoriContent: false,
+              culturalSensitivityLevel: 'clean',
+              iwiConsultation: false,
+            },
+            tags: [],
+            difficulty: 'intermediate',
           };
 
           parsedResources.push({
@@ -267,8 +295,9 @@ export class MetadataParser {
 
     return {
       hasMaoriContent,
+      culturalSensitivityLevel: hasMaoriContent ? 'review' : 'clean',
+      iwiConsultation: requiresIwiReview,
       tikangaElements: tikangaElements.length > 0 ? tikangaElements : undefined,
-      requiresIwiReview,
     };
   }
 
@@ -295,9 +324,7 @@ export class MetadataParser {
     return [...new Set(tags)]; // Remove duplicates
   }
 
-  private static inferDifficulty(
-    yearLevel: string,
-  ): 'beginner' | 'intermediate' | 'advanced' {
+  private static inferDifficulty(yearLevel: string): 'beginner' | 'intermediate' | 'advanced' {
     // Extract year number
     const yearMatch = yearLevel.match(/(\d+)/);
     const year = yearMatch ? parseInt(yearMatch[1]) : 8;
