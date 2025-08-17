@@ -378,7 +378,7 @@ export class PerformanceTester {
       },
       {
         name: 'Year Level Filter',
-        fn: () => resources.filter((r) => r.metadata.yearLevel === 'Year 9'),
+        fn: () => resources.filter((r) => Array.isArray(r.metadata.yearLevel) ? r.metadata.yearLevel.includes('Year 9') : r.metadata.yearLevel === 'Year 9'),
       },
       {
         name: 'Cultural Safety Filter',
@@ -390,7 +390,7 @@ export class PerformanceTester {
           resources.filter(
             (r) =>
               r.metadata.subject === 'Science' &&
-              r.metadata.yearLevel === 'Year 10' &&
+              (Array.isArray(r.metadata.yearLevel) ? r.metadata.yearLevel.includes('Year 10') : r.metadata.yearLevel === 'Year 10') &&
               r.metadata.culturalSafetyLevel === 'clean',
           ),
       },
@@ -473,7 +473,7 @@ export class PerformanceTester {
         this.metrics.memoryUsage = { initial: 0, afterLoad: 0, peak: 0 };
       }
 
-      this.metrics.memoryUsage[phase] = Math.round(memory.usedJSHeapSize / 1024 / 1024); // MB
+      this.metrics.memoryUsage[phase] = Math.round((memory?.usedJSHeapSize || 0) / 1024 / 1024); // MB
 
       console.log(`Memory usage (${phase}): ${this.metrics.memoryUsage[phase]} MB`);
     }

@@ -72,7 +72,7 @@ export default function ResourcesEnhanced() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   // Virtual scrolling setup for large resource lists
-  const parentRef = React.useRef<HTMLDivElement>(null);
+  const parentRef = React.useRef<HTMLDivElement>(null!) as React.RefObject<HTMLDivElement>;
 
   // Optimize resource loading with chunking
   const loadResourcesInChunks = useCallback(async () => {
