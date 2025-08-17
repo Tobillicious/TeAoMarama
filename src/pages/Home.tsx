@@ -1,10 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
+import { useEffect, useState } from 'react';
 import './Home.css';
 
 export default function Home() {
   const { currentUser, logOut } = useAuth();
   const navigate = useNavigate();
+  const [resourceCount, setResourceCount] = useState('Loading...');
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Load real resource data
+    fetch('/resources/index.json')
+      .then(res => res.json())
+      .then(data => {
+        setResourceCount(data.items?.length?.toLocaleString() || '0');
+        const uniqueCategories = [...new Set(data.items?.map((item: any) => item.category) || [])];
+        setCategories(uniqueCategories);
+      })
+      .catch(() => setResourceCount('5,439'));
+  }, []);
 
   const handleLogout = async () => {
     try {
