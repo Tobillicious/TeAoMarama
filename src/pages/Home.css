@@ -287,42 +287,45 @@
   font-size: 0.9rem;
 }
 
-/* NEW: User Section */
+/* User Section */
 .user-section {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  padding: 3rem 0;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 0;
 }
 
 .user-card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 20px;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
   text-align: center;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid #e9ecef;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .user-greeting {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: #2c3e50;
 }
 
 .btn-logout {
-  background: rgba(255,255,255,0.2);
+  background: #dc3545;
   color: white;
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .btn-logout:hover {
-  background: rgba(255,255,255,0.3);
-  transform: translateY(-2px);
+  background: #c82333;
+  transform: translateY(-1px);
 }
 
 /* Responsive Design */
