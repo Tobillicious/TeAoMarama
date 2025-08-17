@@ -11,6 +11,7 @@ const ResourceViewer = lazy(() => import('./pages/ResourceViewer'));
 const Login = lazy(() => import('./components/Login'));
 const SignUp = lazy(() => import('./components/SignUp'));
 const StyleGuide = lazy(() => import('./pages/StyleGuide'));
+const MiharaDashboard = lazy(() => import('./components/MiharaDashboard'));
 
 // Loading component for Suspense fallback
 const LoadingSpinner = () => (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/resources" element={<ResourcesEnhanced />} />
+          <Route path="/mihara" element={<MiharaDashboard />} />
           <Route path="/resource" element={<ResourceViewer />} />
           <Route path="/doc" element={<DocPage />} />
           <Route path="/login" element={<Login />} />
