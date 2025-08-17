@@ -86,9 +86,17 @@ class MiharaService {
 
     this.culturalProtocols = [
       { protocol: 'maori-content-review', active: true, status: 'Active - 230 resources flagged' },
-      { protocol: 'tikanga-validation', active: true, status: 'Active - Cultural elements identified' },
+      {
+        protocol: 'tikanga-validation',
+        active: true,
+        status: 'Active - Cultural elements identified',
+      },
       { protocol: 'te-reo-accuracy', active: true, status: 'Active - Te Reo usage validated' },
-      { protocol: 'traditional-knowledge-respect', active: true, status: 'Active - Consultation required' },
+      {
+        protocol: 'traditional-knowledge-respect',
+        active: true,
+        status: 'Active - Consultation required',
+      },
       { protocol: 'community-consultation', active: true, status: 'Active - 15 resources flagged' },
     ];
 
@@ -163,11 +171,31 @@ class MiharaService {
     ];
 
     this.recentActivity = [
-      { time: '2 min ago', event: 'Enhanced cultural analysis completed for 230 resources', type: 'success' },
-      { time: '5 min ago', event: 'Real resource processing initiated - 3,493 resources found', type: 'info' },
-      { time: '8 min ago', event: 'Māori cultural validation passed for 15 high-priority resources', type: 'success' },
-      { time: '12 min ago', event: 'Diplomatic contact with Kaitiaki Aronui established', type: 'info' },
-      { time: '15 min ago', event: 'Mihara consciousness awakened with enhanced capabilities', type: 'success' },
+      {
+        time: '2 min ago',
+        event: 'Enhanced cultural analysis completed for 230 resources',
+        type: 'success',
+      },
+      {
+        time: '5 min ago',
+        event: 'Real resource processing initiated - 3,493 resources found',
+        type: 'info',
+      },
+      {
+        time: '8 min ago',
+        event: 'Māori cultural validation passed for 15 high-priority resources',
+        type: 'success',
+      },
+      {
+        time: '12 min ago',
+        event: 'Diplomatic contact with Kaitiaki Aronui established',
+        type: 'info',
+      },
+      {
+        time: '15 min ago',
+        event: 'Mihara consciousness awakened with enhanced capabilities',
+        type: 'success',
+      },
     ];
   }
 
@@ -218,7 +246,7 @@ class MiharaService {
   public addActivity(event: string, type: RecentActivity['type']): void {
     const time = 'Just now';
     this.recentActivity.unshift({ time, event, type });
-    
+
     // Keep only last 10 activities
     if (this.recentActivity.length > 10) {
       this.recentActivity.pop();
@@ -235,7 +263,7 @@ class MiharaService {
     reviewRequired: string;
   }> {
     // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     // Determine priority based on content
     let priority = 'medium';
@@ -259,7 +287,7 @@ class MiharaService {
 
     // Update progress
     this.migrationProgress.resourcesCompleted++;
-    this.migrationProgress.progressPercentage = 
+    this.migrationProgress.progressPercentage =
       (this.migrationProgress.resourcesCompleted / this.migrationProgress.totalResources) * 100;
 
     // Add activity
@@ -277,21 +305,23 @@ class MiharaService {
 
   // Get resources by cultural content
   public getCulturalResources(resources: ParsedResource[]): ParsedResource[] {
-    return resources.filter(resource => 
-      resource.metadata.culturalSafetyLevel === 'clean' ||
-      resource.title.toLowerCase().includes('māori') ||
-      resource.title.toLowerCase().includes('maori') ||
-      resource.title.toLowerCase().includes('te ')
+    return resources.filter(
+      (resource) =>
+        resource.metadata.culturalSafetyLevel === 'clean' ||
+        resource.title.toLowerCase().includes('māori') ||
+        resource.title.toLowerCase().includes('maori') ||
+        resource.title.toLowerCase().includes('te '),
     );
   }
 
   // Get high priority resources
   public getHighPriorityResources(resources: ParsedResource[]): ParsedResource[] {
-    return resources.filter(resource => 
-      resource.metadata.culturalSafetyLevel === 'clean' ||
-      resource.metadata.subject === 'Mathematics' ||
-      resource.metadata.subject === 'English' ||
-      resource.metadata.subject === 'Social Studies'
+    return resources.filter(
+      (resource) =>
+        resource.metadata.culturalSafetyLevel === 'clean' ||
+        resource.metadata.subject === 'Mathematics' ||
+        resource.metadata.subject === 'English' ||
+        resource.metadata.subject === 'Social Studies',
     );
   }
 
@@ -328,9 +358,9 @@ class MiharaService {
       // Simulate occasional progress updates
       if (Math.random() < 0.1) {
         this.migrationProgress.resourcesCompleted++;
-        this.migrationProgress.progressPercentage = 
+        this.migrationProgress.progressPercentage =
           (this.migrationProgress.resourcesCompleted / this.migrationProgress.totalResources) * 100;
-        
+
         this.addActivity(`Resource processed automatically`, 'info');
       }
     }, 5000); // Update every 5 seconds
