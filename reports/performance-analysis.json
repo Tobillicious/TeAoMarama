@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-08-17T10:39:02.917Z",
+  "totalBundles": 20,
+  "totalSize": 669.58,
+  "totalGzipSize": 213.5,
+  "largestBundles": [
+    {
+      "file": "markdown-vendor-BROyci8B",
+      "size": 222.47,
+      "gzipSize": 76.82,
+      "percentage": 33.22530541533498
+    },
+    {
+      "file": "index-CQZskvl_",
+      "size": 179.05,
+      "gzipSize": 57.25,
+      "percentage": 26.740643388392726
+    },
+    {
+      "file": "database-vendor-Dyv3s2ij",
+      "size": 121.91,
+      "gzipSize": 32.19,
+      "percentage": 18.206935691030196
+    },
+    {
+      "file": "ResourcesEnhanced-CpADEHM_",
+      "size": 36.05,
+      "gzipSize": 9.62,
+      "percentage": 5.383972042175691
+    },
+    {
+      "file": "router-vendor-BmSjY8IS",
+      "size": 31.73,
+      "gzipSize": 11.62,
+      "percentage": 4.738791481227038
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "critical",
+      "message": "Large bundle detected: database-vendor-Dyv3s2ij (121.91KB)",
+      "impact": "high",
+      "action": "Consider code splitting or lazy loading for this module"
+    },
+    {
+      "type": "critical",
+      "message": "Large bundle detected: index-CQZskvl_ (179.05KB)",
+      "impact": "high",
+      "action": "Consider code splitting or lazy loading for this module"
+    },
+    {
+      "type": "critical",
+      "message": "Large bundle detected: markdown-vendor-BROyci8B (222.47KB)",
+      "impact": "high",
+      "action": "Consider code splitting or lazy loading for this module"
+    },
+    {
+      "type": "critical",
+      "message": "Markdown processing bundle is large: markdown-vendor-BROyci8B (222.47KB)",
+      "impact": "high",
+      "action": "Implement lazy loading for markdown processing - only load when needed"
+    },
+    {
+      "type": "warning",
+      "message": "Database bundle is large: database-vendor-Dyv3s2ij (121.91KB)",
+      "impact": "medium",
+      "action": "Consider lazy loading database operations"
+    }
+  ],
+  "optimizationScore": 0
+}

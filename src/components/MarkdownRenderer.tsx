@@ -1,0 +1,76 @@
+import React, { useEffect, useState } from 'react';
+
+interface MarkdownRendererProps {
+  content: string;
+  className?: string;
+}
+
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className }) => {
+  const [renderedContent, setRenderedContent] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const renderMarkdown = async () => {
+      try {
+        setIsLoading(true);
+        
+        // Dynamically import markdown processing libraries only when needed
+        const [{ marked }, { default: DOMPurify }] = await Promise.all([
+          import('marked'),
+          import('dompurify')
+        ]);
+
+        // Configure marked options
+        marked.setOptions({
+          breaks: true,
+          gfm: true,
+          sanitize: false, // We'll use DOMPurify instead
+        });
+
+        // Render markdown to HTML
+        const rawHtml = marked(content);
+        
+        // Sanitize the HTML
+        const cleanHtml = DOMPurify.sanitize(rawHtml, {
+          ALLOWED_TAGS: [
+            'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+            'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img',
+            'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'span'
+          ],
+          ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id'],
+        });
+
+        setRenderedContent(cleanHtml);
+      } catch (error) {
+        console.error('Error rendering markdown:', error);
+        // Fallback to plain text
+        setRenderedContent(content.replace(/[<>]/g, ''));
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (content) {
+      renderMarkdown();
+    }
+  }, [content]);
+
+  if (isLoading) {
+    return (
+      <div className={`animate-pulse ${className}`}>
+        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+        <div className="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
+        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      className={`prose prose-sm max-w-none ${className}`}
+      dangerouslySetInnerHTML={{ __html: renderedContent }}
+    />
+  );
+};
+
+export default MarkdownRenderer;
