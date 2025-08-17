@@ -153,9 +153,9 @@ export class MockResourceGenerator {
       const culturalSafetyLevel = this.getRandomItem(this.CULTURAL_SAFETY_LEVELS);
 
       const metadata: ResourceMetadata = {
-        __title: `${this.getRandomItem(this.SAMPLE_TITLES)} ${i + 1}`,
+        title: `${this.getRandomItem(this.SAMPLE_TITLES)} ${i + 1}`,
         subject,
-        yearLevel,
+        yearLevel: [yearLevel],
         resourceType,
         duration: this.generateRandomDuration(),
         culturalSafetyLevel,
@@ -170,8 +170,8 @@ export class MockResourceGenerator {
       };
 
       const resource: ParsedResource = {
-        ___id: `mock-resource-${i}`,
-        __title: metadata.title,
+        id: `mock-resource-${i}`,
+        title: metadata.title,
         relativePath: `resources/${subject.toLowerCase()}/resource-${i}.md`,
         category: subject,
         sizeBytes: Math.floor(Math.random() * 50000) + 1000, // 1KB to 50KB
@@ -232,8 +232,9 @@ export class MockResourceGenerator {
 
     return {
       hasMaoriContent,
+      culturalSensitivityLevel: hasMaoriContent ? 'review' : 'clean',
+      iwiConsultation: hasMaoriContent && Math.random() < 0.1,
       tikangaElements: hasMaoriContent ? ['whakapapa', 'manaakitanga', 'kotahitanga'] : undefined,
-      requiresIwiReview: hasMaoriContent && Math.random() < 0.1,
     };
   }
 
@@ -266,7 +267,7 @@ export class MockResourceGenerator {
     return [
       metadata.title,
       metadata.subject,
-      metadata.yearLevel,
+      ...(Array.isArray(metadata.yearLevel) ? metadata.yearLevel : [metadata.yearLevel]),
       metadata.resourceType,
       metadata.curriculumArea,
       ...(metadata.learningObjectives || []),

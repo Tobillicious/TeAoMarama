@@ -79,7 +79,7 @@ export class TeKeteAkoMigrationBrain {
       context: {
         phase: 'resource-analysis',
         _details: {
-          resourceId,
+          resourceId: resource.id,
           title: resource.title,
           priority: intelligence.migrationPriority,
           complexity: intelligence.estimatedComplexity,
