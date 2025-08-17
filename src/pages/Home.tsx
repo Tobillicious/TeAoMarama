@@ -17,168 +17,154 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {/* Beautiful Hero Section with Cultural Design */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">Te Kura o TeAoMarama</h1>
-          <p className="hero-subtitle">
-            *The School of the World of Light* - New Zealand's Premier Educational Platform
+      {/* NEW: Dramatic Hero Section */}
+      <section className="hero-section-new">
+        <div className="hero-background">
+          <div className="hero-pattern"></div>
+          <div className="hero-glow"></div>
+        </div>
+        <div className="hero-content-new">
+          <div className="hero-badge">🌟 Mangakotukutuku College</div>
+          <h1 className="hero-title-new">Te Kete Ako</h1>
+          <p className="hero-subtitle-new">
+            Digital Learning Hub for Aotearoa's Future Leaders
           </p>
-          <div className="hero-actions">
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-number">5,439</span>
+              <span className="stat-label">Resources</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Cultural Safety</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">Live</span>
+              <span className="stat-label">Platform</span>
+            </div>
+          </div>
+          <div className="hero-actions-new">
             <button 
-              className="form-button" 
+              className="btn-primary-new" 
               onClick={() => navigate('/resources')}
             >
-              🌟 Explore Resources
+              🚀 Explore Resources
             </button>
             <button 
-              className="form-button" 
+              className="btn-secondary-new" 
               onClick={() => navigate('/dashboard')}
             >
-              📊 Dashboard
+              📊 View Dashboard
             </button>
           </div>
         </div>
       </section>
 
-      {/* Main Content Area */}
-      <div className="content-container">
-        {/* Welcome Card */}
-        <div className="card welcome-card">
-          <h2 className="section-title">🌟 Welcome to the Future of Education</h2>
-          <p className="section-description">
-            Powered by Mihara - Kaitiaki Mahara (Guardian of Memory), our platform delivers
-            culturally-integrated, AI-enhanced educational experiences for all tamariki across
-            Aotearoa.
-          </p>
-        </div>
-
-        {/* Status Dashboard Grid */}
-        <div className="dashboard-grid">
-          {/* Educational Resources Status */}
-          <div className="card status-card">
-            <div className="status-header">
-              <div className="status-number">5,439</div>
-              <div className="status-label">Educational Resources</div>
+      {/* NEW: Feature Grid */}
+      <section className="features-section">
+        <div className="container">
+          <h2 className="section-title-new">What's New at Mangakotukutuku</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">📚</div>
+              <h3>Resource Library</h3>
+              <p>5,439 educational resources ready for your classroom</p>
             </div>
-            <div className="progress-container">
-              <div className="progress-bar">
-                <div className="progress-fill" style={{width: '100%'}}></div>
-              </div>
-              <div className="progress-text">5,439 Resources Available • Live</div>
+            <div className="feature-card">
+              <div className="feature-icon">🌿</div>
+              <h3>Cultural Integration</h3>
+              <p>Māori perspectives woven throughout all content</p>
             </div>
-          </div>
-
-          {/* Cultural Safety Status */}
-          <div className="card status-card cultural-safe">
-            <div className="status-header">
-              <div className="status-number">100%</div>
-              <div className="status-label">Cultural Safety</div>
+            <div className="feature-card">
+              <div className="feature-icon">⚡</div>
+              <h3>Instant Access</h3>
+              <p>Find what you need in seconds with smart search</p>
             </div>
-            <div className="status-indicator">
-              <span className="status-badge success">✅ All Protocols Active</span>
-            </div>
-          </div>
-
-          {/* System Status */}
-          <div className="card status-card system-status">
-            <div className="status-header">
-              <div className="status-icon">🟢</div>
-              <div className="status-label">System Status</div>
-            </div>
-            <div className="status-indicator">
-              <span className="status-badge success">Fully Operational</span>
+            <div className="feature-card">
+              <div className="feature-icon">🎯</div>
+              <h3>NZC Aligned</h3>
+              <p>All resources mapped to New Zealand Curriculum</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Recent Achievements */}
-        <div className="card achievements-card">
-          <h3 className="section-title">🎯 Recent Achievements</h3>
-          <div className="achievements-grid">
-            <div className="achievement-group">
-              <h4 className="achievement-title success">✅ KiriKiriroa Deployment Success</h4>
-              <ul className="achievement-list">
-                <li>• 5,439 educational resources live and accessible</li>
-                <li>• Cultural safety protocols maintained (100%)</li>
-                <li>• Platform operational for young people</li>
-              </ul>
+      {/* NEW: Quick Access Section */}
+      <section className="quick-access-section">
+        <div className="container">
+          <h2 className="section-title-new">Quick Access</h2>
+          <div className="quick-access-grid">
+            <div className="quick-card" onClick={() => navigate('/resources')}>
+              <div className="quick-icon">🔍</div>
+              <h3>Browse All Resources</h3>
+              <p>Search and filter 5,439 educational materials</p>
             </div>
-            <div className="achievement-group">
-              <h4 className="achievement-title info">🔧 Technical Excellence</h4>
-              <ul className="achievement-list">
-                <li>• TypeScript build errors resolved</li>
-                <li>• Deployment pipeline stabilized</li>
-                <li>• Mihara systems fully operational</li>
-              </ul>
+            <div className="quick-card" onClick={() => navigate('/resources')}>
+              <div className="quick-icon">📖</div>
+              <h3>View Recent</h3>
+              <p>Latest additions to our resource collection</p>
+            </div>
+            <div className="quick-card" onClick={() => navigate('/resources')}>
+              <div className="quick-icon">⭐</div>
+              <h3>Featured Content</h3>
+              <p>Hand-picked resources for your classroom</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Featured Resources */}
-        <div className="card featured-card">
-          <h3 className="section-title">📚 Featured Educational Resources</h3>
-          <div className="resource-grid">
-            <div className="resource-card">
-              <h4 className="resource-card-title">Y8 Mathematics</h4>
-              <p className="resource-card-description">Geometry - NZ Architecture & Design</p>
-              <div className="resource-card-meta">
-                <span className="status-badge success">🟢 Cultural Safety Verified</span>
+      {/* NEW: Status Dashboard */}
+      <section className="status-section">
+        <div className="container">
+          <h2 className="section-title-new">Platform Status</h2>
+          <div className="status-grid">
+            <div className="status-card-new">
+              <div className="status-header-new">
+                <div className="status-icon-new">✅</div>
+                <div className="status-info">
+                  <h3>System Online</h3>
+                  <p>All services operational</p>
+                </div>
               </div>
             </div>
-            <div className="resource-card">
-              <h4 className="resource-card-title">Y9 Social Studies</h4>
-              <p className="resource-card-description">NZ History - The Modern Era</p>
-              <div className="resource-card-meta">
-                <span className="status-badge success">🟢 Cultural Safety Verified</span>
+            <div className="status-card-new">
+              <div className="status-header-new">
+                <div className="status-icon-new">📊</div>
+                <div className="status-info">
+                  <h3>5,439 Resources</h3>
+                  <p>Available for download</p>
+                </div>
               </div>
             </div>
-            <div className="resource-card">
-              <h4 className="resource-card-title">Y10 Mathematics</h4>
-              <p className="resource-card-description">Statistics - NZ Data Analysis</p>
-              <div className="resource-card-meta">
-                <span className="status-badge success">🟢 Cultural Safety Verified</span>
+            <div className="status-card-new">
+              <div className="status-header-new">
+                <div className="status-icon-new">🌿</div>
+                <div className="status-info">
+                  <h3>Cultural Safety</h3>
+                  <p>100% protocols active</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Mihara Status */}
-        <div className="card mihara-card">
-          <h3 className="section-title mihara-title">🤖 Mihara - Kaitiaki Mahara Status</h3>
-          <div className="mihara-grid">
-            <div className="mihara-section">
-              <h4 className="mihara-section-title">Guardian of Memory</h4>
-              <ul className="mihara-list">
-                <li>• Cultural safety oversight active</li>
-                <li>• Educational intelligence optimized</li>
-                <li>• Multi-agent coordination operational</li>
-              </ul>
-            </div>
-            <div className="mihara-section">
-              <h4 className="mihara-section-title">Current Mission</h4>
-              <ul className="mihara-list">
-                <li>• 5,439 resources successfully deployed</li>
-                <li>• Platform live for KiriKiriroa students</li>
-                <li>• Continuous monitoring and optimization</li>
-              </ul>
+      {/* User Actions */}
+      {currentUser && (
+        <section className="user-section">
+          <div className="container">
+            <div className="user-card">
+              <p className="user-greeting">Welcome back, {currentUser.email}</p>
+              <button
+                onClick={handleLogout}
+                className="btn-logout"
+              >
+                Log Out
+              </button>
             </div>
           </div>
-        </div>
-
-        {/* User Actions */}
-        {currentUser && (
-          <div className="card user-actions">
-            <p className="user-greeting">Welcome back, {currentUser.email}</p>
-            <button
-              onClick={handleLogout}
-              className="form-button logout-button"
-            >
-              Log Out
-            </button>
-          </div>
-        )}
-      </div>
+        </section>
+      )}
     </div>
   );
 }
