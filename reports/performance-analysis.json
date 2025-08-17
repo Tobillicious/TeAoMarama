@@ -1,38 +1,38 @@
 {
-  "timestamp": "2025-08-17T10:39:02.917Z",
-  "totalBundles": 20,
-  "totalSize": 669.58,
-  "totalGzipSize": 213.5,
+  "timestamp": "2025-08-17T13:45:47.159Z",
+  "totalBundles": 22,
+  "totalSize": 686.38,
+  "totalGzipSize": 219.14,
   "largestBundles": [
     {
       "file": "markdown-vendor-BROyci8B",
       "size": 222.47,
       "gzipSize": 76.82,
-      "percentage": 33.22530541533498
+      "percentage": 32.41207494390862
     },
     {
-      "file": "index-CQZskvl_",
-      "size": 179.05,
-      "gzipSize": 57.25,
-      "percentage": 26.740643388392726
+      "file": "index-D6dVwOUY",
+      "size": 180.5,
+      "gzipSize": 57.75,
+      "percentage": 26.29738628747924
     },
     {
       "file": "database-vendor-Dyv3s2ij",
       "size": 121.91,
       "gzipSize": 32.19,
-      "percentage": 18.206935691030196
+      "percentage": 17.761298406130717
     },
     {
-      "file": "ResourcesEnhanced-CpADEHM_",
+      "file": "ResourcesEnhanced-nZQOFuX4",
       "size": 36.05,
-      "gzipSize": 9.62,
-      "percentage": 5.383972042175691
+      "gzipSize": 9.63,
+      "percentage": 5.2521926629563795
     },
     {
-      "file": "router-vendor-BmSjY8IS",
-      "size": 31.73,
+      "file": "router-vendor-BX4HhqbZ",
+      "size": 31.74,
       "gzipSize": 11.62,
-      "percentage": 4.738791481227038
+      "percentage": 4.6242606136542435
     }
   ],
   "recommendations": [
@@ -44,7 +44,7 @@
     },
     {
       "type": "critical",
-      "message": "Large bundle detected: index-CQZskvl_ (179.05KB)",
+      "message": "Large bundle detected: index-D6dVwOUY (180.5KB)",
       "impact": "high",
       "action": "Consider code splitting or lazy loading for this module"
     },
