@@ -51,7 +51,11 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
 }
 
 .stat-item {
@@ -60,18 +64,17 @@
 
 .stat-number {
   display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #ffd700;
-  text-shadow: 0 0 20px rgba(255,215,0,0.5);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 0.25rem;
 }
 
 .stat-label {
   display: block;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
 }
 
 .hero-actions-new {
