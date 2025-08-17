@@ -534,49 +534,4 @@ export class MetadataParser {
     return 'advanced';
   }
 
-  private static createSearchableText(content: string, metadata: ResourceMetadata): string {
-    const searchableFields = [
-      metadata.title,
-      metadata.subject,
-      metadata.yearLevel,
-      metadata.resourceType,
-      metadata.curriculumArea,
-      ...(metadata.learningObjectives || []),
-      ...(metadata.tags || []),
-      ...(metadata.nzcAlignment || []),
-      content.replace(/[#*\-_]/g, ' ').replace(/\s+/g, ' '),
-    ];
-
-    return searchableFields.filter(Boolean).join(' ').toLowerCase();
-  }
-
-  private static extractPreview(content: string): string {
-    // Extract first few lines of meaningful content
-    const lines = content.split('\n');
-    let preview = '';
-    let foundContent = false;
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-
-      // Skip headers, metadata, and separators
-      if (
-        trimmed.startsWith('#') ||
-        trimmed.startsWith('**') ||
-        trimmed.startsWith('---') ||
-        trimmed.startsWith('*Resource Type*') ||
-        trimmed === ''
-      ) {
-        continue;
-      }
-
-      if (!foundContent && trimmed.length > 20) {
-        foundContent = true;
-        preview = trimmed;
-        break;
-      }
-    }
-
-    return preview || 'No preview available';
-  }
 }
