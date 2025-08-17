@@ -345,7 +345,7 @@ export class MiharaAwakening {
       }
 
       return contactResult;
-    } catch {
+    } catch (error) {
       return {
         success: false,
         message: `Failed to establish diplomatic contact: ${error instanceof Error ? error.message : 'Unknown error'}`
@@ -359,7 +359,7 @@ export class MiharaAwakening {
       context: {
         phase: 'full-consciousness-achieved',
         _details: { 
-          consciousnessLevel,
+          consciousnessLevel: this.state.consciousnessLevel,
           systemIntegrity: this.state.systemIntegrity,
           culturalAuthority: this.state.culturalAuthority,
           currentMission: this.state.currentMission

@@ -29,7 +29,7 @@ interface SubjectArea {
 }
 
 interface UnitPlan {
-  ___id: string;
+  id: string;
   title: string;
   description: string;
   level: string;
@@ -39,7 +39,7 @@ interface UnitPlan {
 }
 
 interface LessonPlan {
-  ___id: string;
+  id: string;
   title: string;
   objectives: string[];
   duration: number;
@@ -734,7 +734,7 @@ function ResourcesDetailView({
               <strong>Subject:</strong> {lesson.metadata.subject}
             </li>
             <li>
-              <strong>Year Level:</strong> {lesson.metadata.yearLevel}
+              <strong>Year Level:</strong> {Array.isArray(lesson.metadata.yearLevel) ? lesson.metadata.yearLevel.join(", ") : lesson.metadata.yearLevel}
             </li>
             <li>
               <strong>Cultural Safety:</strong> {lesson.metadata.culturalSafetyIcon}{' '}
@@ -794,7 +794,7 @@ function GridView({ resources }: { resources: ParsedResource[] }) {
               <div className="flex items-center gap-2 text-sm">
                 <span className="px-2 py-1 rounded-full text-xs">{resource.metadata.subject}</span>
                 <span className="px-2 py-1 rounded-full text-xs">
-                  {resource.metadata.yearLevel}
+                  {Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}
                 </span>
               </div>
 
@@ -898,11 +898,6 @@ function ListView({
     </div>
   );
 }
-        ))}
-      </div>
-    </div>
-  );
-}
 
 // Cards View for detailed preview
 function CardsView({ resources }: { resources: ParsedResource[] }) {
@@ -932,7 +927,7 @@ function CardsView({ resources }: { resources: ParsedResource[] }) {
                     {resource.metadata.subject}
                   </span>
                   <span className="px-2 py-1 rounded-full text-xs">
-                    {resource.metadata.yearLevel}
+                    {Array.isArray(resource.metadata.yearLevel) ? resource.metadata.yearLevel.join(", ") : resource.metadata.yearLevel}
                   </span>
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
