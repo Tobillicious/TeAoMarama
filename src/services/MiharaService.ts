@@ -2,7 +2,7 @@
  * Mihara Service - Integration between Mihara's real resource processing and web interface
  */
 
-import { ParsedResource } from './MetadataParser';
+import type { ParsedResource } from './MetadataParser';
 
 export interface MiharaStatus {
   isActive: boolean;
