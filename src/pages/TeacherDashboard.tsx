@@ -310,7 +310,7 @@ export default function TeacherDashboard() {
             </div>
             {!sidebarCollapsed && (
               <div>
-                <h2 className="font-bold text-white">Te Kete Ako</h2>
+                <h2 className="font-bold text-white">TeAoMarama</h2>
                 <p className="text-xs text-white/70">Teacher Dashboard</p>
               </div>
             )}
