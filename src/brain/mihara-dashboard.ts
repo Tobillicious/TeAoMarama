@@ -241,7 +241,7 @@ export class MiharaDashboard {
       await GlobalMihara.executeGreatMission();
 
       // Post-migration validation
-      culturalSafety.postCheck = await this.validateCulturalSafety();
+      (culturalSafety as any).postCheck = await this.validateCulturalSafety();
       (migrationMetrics as { duration?: number; startTime: number }).duration =
         Date.now() - migrationMetrics.startTime;
 
