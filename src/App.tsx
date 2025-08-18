@@ -26,6 +26,7 @@ const Year8ReadingStrategies = lazy(() => import('./pages/Year8ReadingStrategies
 const Year8WritingRevolution = lazy(() => import('./pages/Year8WritingRevolution'));
 const Year8CriticalLiteracy = lazy(() => import('./pages/Year8CriticalLiteracy'));
 const Year8ReadingUnits = lazy(() => import('./pages/Year8ReadingUnits'));
+const Year8WritingUnits = lazy(() => import('./pages/Year8WritingUnits'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (

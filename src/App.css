@@ -748,3 +748,194 @@ form {
     background-position: 100% 50%; 
   }
 }
+
+/* Performance optimizations */
+.lcp-optimized {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.loading-spinner-container {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.loading-spinner-text {
+  will-change: opacity;
+  contain: layout style paint;
+}
+
+/* Optimized animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* App container optimizations */
+.App {
+  contain: layout style paint;
+  will-change: scroll-position;
+}
+
+/* Navigation performance */
+.navigation-container {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+.nav-items {
+  contain: layout style paint;
+}
+
+.nav-item {
+  contain: layout style paint;
+  will-change: transform, background-color;
+}
+
+/* Content area optimizations */
+.content-area {
+  contain: layout style paint;
+  will-change: scroll-position;
+}
+
+/* Card optimizations */
+.card, .unit-card, .component-card {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Button optimizations */
+button {
+  contain: layout style paint;
+  will-change: transform, background-color;
+}
+
+/* Image optimizations */
+img {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Text optimizations */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  contain: layout style paint;
+}
+
+/* List optimizations */
+ul, ol, li {
+  contain: layout style paint;
+}
+
+/* Form optimizations */
+input, textarea, select {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Modal optimizations */
+.modal, .modal-content {
+  contain: layout style paint;
+  will-change: transform, opacity;
+}
+
+/* Grid optimizations */
+.grid, .flex {
+  contain: layout style paint;
+}
+
+/* Section optimizations */
+section {
+  contain: layout style paint;
+}
+
+/* Hero section optimizations */
+.hero-section {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Filter optimizations */
+.filter-section {
+  contain: layout style paint;
+}
+
+.filter-btn {
+  contain: layout style paint;
+  will-change: transform, background-color;
+}
+
+/* Methodology section optimizations */
+.methodology-section {
+  contain: layout style paint;
+}
+
+.methodology-item {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* CTA section optimizations */
+.cta-section {
+  contain: layout style paint;
+}
+
+.cta-btn {
+  contain: layout style paint;
+  will-change: transform, background-color;
+}
+
+/* Responsive optimizations */
+@media (max-width: 768px) {
+  .nav-items {
+    contain: layout style paint;
+    will-change: transform, opacity;
+  }
+  
+  .nav-items-open {
+    will-change: transform, opacity;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  * {
+    contain: layout style paint;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode optimizations */
+@media (prefers-contrast: high) {
+  * {
+    contain: layout style paint;
+  }
+}
+
+/* Reduced motion optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-spin {
+    animation: none;
+  }
+}
