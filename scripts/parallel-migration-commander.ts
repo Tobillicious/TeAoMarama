@@ -5,9 +5,8 @@
  * Target: Process 706 remaining HTML files in parallel batches
  */
 
-import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
-import { join, basename } from 'path';
-import { existsSync } from 'fs';
+import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
 const TE_KETE_HANDOUTS_PATH = join(process.cwd(), 'te-kete-ako-clean/public/handouts');
 const TARGET_PATH = join(process.cwd(), 'src/components/educational/handouts');
@@ -29,22 +28,22 @@ class ParallelMigrationCommander {
     console.log('🚀 PARALLEL MIGRATION COMMANDER INITIALIZING');
     console.log('🎯 TARGET: Process 706 HTML files in parallel batches');
     console.log('⚡ SPEED: Maximum parallel processing for quick completion');
-    
+
     // Ensure target directory exists
     await mkdir(TARGET_PATH, { recursive: true });
-    
+
     // Get all HTML files
     const files = await readdir(TE_KETE_HANDOUTS_PATH);
-    const htmlFiles = files.filter(file => file.endsWith('.html') && !file.startsWith('.'));
-    
+    const htmlFiles = files.filter((file) => file.endsWith('.html') && !file.startsWith('.'));
+
     console.log(`📊 Found ${htmlFiles.length} HTML files to migrate`);
-    
+
     // Create migration tasks
-    this.tasks = htmlFiles.map(filename => ({
+    this.tasks = htmlFiles.map((filename) => ({
       filename,
-      status: 'pending'
+      status: 'pending',
     }));
-    
+
     console.log(`🤖 Created ${this.tasks.length} migration tasks`);
   }
 
@@ -53,48 +52,47 @@ class ParallelMigrationCommander {
       try {
         task.status = 'processing';
         task.startTime = Date.now();
-        
+
         await this.migrateSingleFile(task.filename);
-        
+
         task.status = 'completed';
         task.endTime = Date.now();
-        
+
         const duration = task.endTime - task.startTime;
         console.log(`✅ ${task.filename} migrated in ${duration}ms`);
-        
       } catch (error) {
         task.status = 'failed';
         task.endTime = Date.now();
         console.error(`❌ ${task.filename} failed:`, error.message);
       }
     });
-    
+
     await Promise.all(batchPromises);
   }
 
   async migrateSingleFile(filename: string) {
     const filePath = join(TE_KETE_HANDOUTS_PATH, filename);
     const content = await readFile(filePath, 'utf-8');
-    
+
     // Extract title from HTML
     const titleMatch = content.match(/<title>([^<]+)<\/title>/);
     const title = titleMatch ? titleMatch[1] : filename.replace('.html', '');
-    
+
     // Create component name
     const componentName = filename
       .replace(/\.html$/, '')
       .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, l => l.toUpperCase())
+      .replace(/\b\w/g, (l) => l.toUpperCase())
       .replace(/\s/g, '');
-    
+
     // Generate React component
     const componentContent = this.generateReactComponent(componentName, title, content);
     const cssContent = this.generateCSS(componentName);
-    
+
     // Write files
     const componentPath = join(TARGET_PATH, `${componentName}.tsx`);
     const cssPath = join(TARGET_PATH, `${componentName}.css`);
-    
+
     await writeFile(componentPath, componentContent);
     await writeFile(cssPath, cssContent);
   }
@@ -144,7 +142,9 @@ const ${componentName}: React.FC<${componentName}Props> = ({
           </div>
 
           <section className="content-section">
-            <div className="content-text" dangerouslySetInnerHTML={{ __html: \`${this.extractMainContent(htmlContent)}\` }} />
+            <div className="content-text" dangerouslySetInnerHTML={{ __html: \`${this.extractMainContent(
+              htmlContent,
+            )}\` }} />
           </section>
         </div>
       </main>
@@ -316,15 +316,15 @@ export default ${componentName};
     const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
     if (bodyMatch) {
       let content = bodyMatch[1];
-      
+
       // Remove navigation and header elements
       content = content.replace(/<header[^>]*>[\s\S]*?<\/header>/gi, '');
       content = content.replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, '');
       content = content.replace(/<aside[^>]*>[\s\S]*?<\/aside>/gi, '');
-      
+
       // Clean up extra whitespace
       content = content.replace(/\s+/g, ' ').trim();
-      
+
       return content;
     }
     return htmlContent;
@@ -332,24 +332,28 @@ export default ${componentName};
 
   async execute() {
     await this.initialize();
-    
+
     console.log('🚀 STARTING PARALLEL MIGRATION EXECUTION');
-    
+
     // Process in batches
     for (let i = 0; i < this.tasks.length; i += BATCH_SIZE) {
       const batch = this.tasks.slice(i, i + BATCH_SIZE);
-      console.log(`🔄 Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(this.tasks.length / BATCH_SIZE)}`);
-      
+      console.log(
+        `🔄 Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(
+          this.tasks.length / BATCH_SIZE,
+        )}`,
+      );
+
       await this.processBatch(batch);
-      
+
       // Small delay between batches to prevent overwhelming
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
-    
+
     // Generate summary
-    const completed = this.tasks.filter(t => t.status === 'completed').length;
-    const failed = this.tasks.filter(t => t.status === 'failed').length;
-    
+    const completed = this.tasks.filter((t) => t.status === 'completed').length;
+    const failed = this.tasks.filter((t) => t.status === 'failed').length;
+
     console.log('🎯 MIGRATION COMPLETE!');
     console.log(`✅ Completed: ${completed}`);
     console.log(`❌ Failed: ${failed}`);

@@ -1,0 +1,362 @@
+/* 🏥 Health Education Correlation - TeAoMarama Unified Design */
+
+.health-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  min-height: 100vh;
+}
+
+.health-header {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(22, 163, 74, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.health-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="health" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,5 L12,8 L15,8 L13,11 L14,14 L10,12 L6,14 L7,11 L5,8 L8,8 Z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23health)"/></svg>');
+  opacity: 0.3;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0 0 1.25rem 0;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.tabs {
+  margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: white;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+.metrics,
+.practices,
+.correlation,
+.activities {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.metrics h2,
+.practices h2,
+.correlation h2,
+.activities h2 {
+  color: #16a34a;
+  margin-bottom: 1.5rem;
+}
+
+.metric-selector,
+.practice-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-pill,
+.practice-pill {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.metric-pill:hover,
+.practice-pill:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.metric-pill.active,
+.practice-pill.active {
+  background: #16a34a;
+  color: white;
+  border-color: #16a34a;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+.metric-details h3,
+.practice-details h3 {
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+
+.metric-grid,
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-section,
+.practice-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.metric-section h4,
+.practice-section h4 {
+  color: #16a34a;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.metric-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #16a34a;
+  margin: 0;
+}
+
+.trend-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.trend-badge.improving {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.trend-badge.stable {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.trend-badge.declining {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.metric-section p,
+.practice-section p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.correlation-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.correlation-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.correlation-section h3 {
+  color: #16a34a;
+  margin: 0 0 1rem 0;
+}
+
+.correlation-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.correlation-section li {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.activity h3 {
+  color: #16a34a;
+  margin: 0 0 1rem 0;
+}
+
+.activity p {
+  margin: 0 0 1rem 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.activity ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.activity li {
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.motto {
+  color: #16a34a;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.platform {
+  color: #475569;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .health-container {
+    padding: 1rem;
+  }
+
+  .health-header {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .metric-grid,
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .metric-selector,
+  .practice-selector {
+    flex-direction: column;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metrics,
+.practices,
+.correlation,
+.activities {
+  animation: fadeUp 0.5s ease-out;
+}
