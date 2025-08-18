@@ -11,6 +11,12 @@
 3. **PERFORMANCE CRISIS** - 5.8s FID (should be <100ms)
 4. **PROFESSIONAL APPEARANCE** - Broken functionality visible to ERO
 
+### **📋 UNIVERSAL LLM SYNCHRONIZATION:**
+
+- **Primary:** `LLM_UNIVERSAL_ONBOARDING.md` - Complete context
+- **Quick Reference:** `LLM_QUICK_REFERENCE.md` - Instant context
+- **All LLMs MUST read these first** before making any changes
+
 ### **🎯 UNIFIED AGENT COORDINATION PLAN:**
 
 - **PHASE 1:** Critical functional fixes (15 min) - PRIORITY 1
