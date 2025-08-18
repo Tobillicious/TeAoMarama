@@ -1,4 +1,16 @@
 // Performance optimization utilities for Warp 9 speed
+
+// Global gtag interface declaration
+declare global {
+  interface Window {
+    gtag?: (
+      command: 'event' | 'config' | 'set',
+      eventName: string,
+      parameters?: Record<string, unknown>
+    ) => void;
+  }
+}
+
 export interface PerformanceMetrics {
   fcp: number;
   lcp: number;
@@ -6,6 +18,16 @@ export interface PerformanceMetrics {
   cls: number;
   ttfb: number;
   fmp: number;
+}
+
+// Extended PerformanceEntry interface for first-input events
+interface FirstInputPerformanceEntry extends PerformanceEntry {
+  processingStart: number;
+}
+
+// Layout shift performance entry interface
+interface LayoutShiftPerformanceEntry extends PerformanceEntry {
+  value: number;
 }
 
 export interface PerformanceObserver {
@@ -44,27 +66,30 @@ export class PerformanceMonitor {
 
     // First Input Delay
     this.observeMetric('first-input', (entry) => {
-      this.metrics.fid = entry.processingStart - entry.startTime;
+      const firstInputEntry = entry as FirstInputPerformanceEntry;
+      this.metrics.fid = firstInputEntry.processingStart - firstInputEntry.startTime;
       this.logMetric('FID', this.metrics.fid);
     });
 
     // Cumulative Layout Shift
     this.observeMetric('layout-shift', (entry) => {
       if (!this.metrics.cls) this.metrics.cls = 0;
-      this.metrics.cls += (entry as any).value;
+      const layoutShiftEntry = entry as LayoutShiftPerformanceEntry;
+      this.metrics.cls += layoutShiftEntry.value;
       this.logMetric('CLS', this.metrics.cls);
     });
 
     // Time to First Byte
     this.observeMetric('navigation', (entry) => {
-      this.metrics.ttfb = (entry as any).responseStart - (entry as any).requestStart;
+      const navEntry = entry as PerformanceNavigationTiming;
+      this.metrics.ttfb = navEntry.responseStart - navEntry.requestStart;
       this.logMetric('TTFB', this.metrics.ttfb);
     });
   }
 
   private observeMetric(entryType: string, callback: (entry: PerformanceEntry) => void) {
     try {
-      const observer = new (window as any).PerformanceObserver(
+      const observer = new window.PerformanceObserver(
         (list: PerformanceObserverEntryList) => {
           for (const entry of list.getEntries()) {
             callback(entry);
@@ -82,8 +107,8 @@ export class PerformanceMonitor {
     console.log(`🚀 ${name}: ${value.toFixed(2)}ms`);
 
     // Send to analytics if available
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'performance_metric', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'performance_metric', {
         metric_name: name,
         metric_value: value,
         page_location: window.location.href,
@@ -248,8 +273,8 @@ export class MemoryManager {
     if ('memory' in performance) {
       setInterval(() => {
         const memory = (performance as any).memory;
-        const usedMB = memory.usedJSHeapSize / 1024 / 1024;
-        const totalMB = memory.totalJSHeapSize / 1024 / 1024;
+        const usedMB = memory?.usedJSHeapSize ? memory.usedJSHeapSize / 1024 / 1024 : 0;
+        const totalMB = memory?.totalJSHeapSize ? memory.totalJSHeapSize / 1024 / 1024 : 0;
 
         if (usedMB > totalMB * 0.8) {
           console.warn('High memory usage detected:', usedMB.toFixed(2), 'MB');
@@ -326,8 +351,8 @@ export const initPerformanceMonitoring = () => {
 // Performance analytics
 export const sendPerformanceData = (metrics: Partial<PerformanceMetrics>) => {
   // Send to analytics service
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'performance_data', {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'performance_data', {
       ...metrics,
       page_location: window.location.href,
       timestamp: Date.now(),

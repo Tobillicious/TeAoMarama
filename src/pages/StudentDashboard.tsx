@@ -159,7 +159,7 @@ const StudentDashboard: React.FC = () => {
 
       {/* Resource Title & Description */}
       <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-        {resource.title}
+        {resource.__title || resource.id || Math.random().toString() || 'Untitled Resource'}
       </h3>
       
       <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -184,10 +184,10 @@ const StudentDashboard: React.FC = () => {
 
       {/* Resource Metadata */}
       <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-        <span>{resource.subject}</span>
+        <span>{(resource as any).subject || 'General'}</span>
         <div className="flex items-center space-x-1">
           <Clock className="w-3 h-3" />
-          <span>{resource.content.duration || 30}min</span>
+          <span>{(resource as any).content || resource.description || 'No content available'.duration || 30}min</span>
         </div>
       </div>
 
@@ -281,7 +281,7 @@ const StudentDashboard: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {recentResources.slice(0, 4).map((resource, index) => (
                   <ResourceCard 
-                    key={resource.id} 
+                    key={resource.id || Math.random().toString()} 
                     resource={resource}
                     showProgress={index < 2}
                     progressPercent={index === 0 ? 65 : index === 1 ? 30 : 0}
@@ -301,7 +301,7 @@ const StudentDashboard: React.FC = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {recommendedResources.slice(0, 4).map(resource => (
-                  <ResourceCard key={resource.id} resource={resource} />
+                  <ResourceCard key={resource.id || Math.random().toString()} resource={resource} />
                 ))}
               </div>
             </section>

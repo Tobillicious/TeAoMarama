@@ -36,14 +36,9 @@ export default function BrainNavigation() {
   const [isExpanded] = useState(false);
 
   useEffect(() => {
-    // Load navigation memory from our brain API
-    loadNavigationMemory();
-
     // Record this page visit as an episodic event
     recordPageVisit(location.pathname);
   }, [location]);
-
-  const loadNavigationMemory = async () => {
     try {
       // In practice, this would call our brain API
       const response = await fetch('/brain/navigation-memory');
@@ -336,6 +331,6 @@ function StaticNavigation() {
   );
 }
 
-function formatPath(path: string): string {
+export function formatPath(path: string): string {
   return path.replace(/[-_]/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }

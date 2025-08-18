@@ -1,0 +1,729 @@
+/* Phonological Awareness - Professional Educational Design */
+
+.phonological-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  min-height: 100vh;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+/* Header */
+.phonological-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.phonological-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2C5F41 0%, #00b0b9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.phonological-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Cultural Framework */
+.cultural-framework {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid #ff6b35;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cultural-framework h2 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.cultural-framework p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.framework-highlight {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Skills Overview */
+.skills-overview {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skills-overview h3 {
+  color: #2C5F41;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.skills-progression {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.skill-stage {
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-stage.foundation {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  border-top: 4px solid #4caf50;
+}
+
+.skill-stage.developing {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-top: 4px solid #ff9800;
+}
+
+.skill-stage.advanced {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-top: 4px solid #2196f3;
+}
+
+.skill-stage h4 {
+  color: #2C5F41;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.skill-stage ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.skill-stage li {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-left: 3px solid currentColor;
+}
+
+.skill-stage.foundation li {
+  border-left-color: #4caf50;
+}
+
+.skill-stage.developing li {
+  border-left-color: #ff9800;
+}
+
+.skill-stage.advanced li {
+  border-left-color: #2196f3;
+}
+
+/* Filters Section */
+.filters-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.filters-section h3 {
+  color: #2C5F41;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #2C5F41;
+  font-size: 0.9rem;
+}
+
+.filter-group select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #00b0b9;
+}
+
+.random-activity-btn {
+  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: end;
+}
+
+.random-activity-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
+}
+
+.random-activity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-results {
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.results-count {
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Featured Activity */
+.featured-activity {
+  margin-bottom: 3rem;
+}
+
+.activity-spotlight {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.activity-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.activity-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.type-badge, .level-badge, .age-badge, .duration-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.type-badge {
+  background: #2C5F41;
+}
+
+.age-badge {
+  background: #666;
+}
+
+.duration-badge {
+  background: #9c27b0;
+}
+
+.activity-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2C5F41;
+  margin-bottom: 1rem;
+}
+
+.activity-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.activity-details {
+  display: grid;
+  gap: 2rem;
+}
+
+.instructions-section, .cultural-connection {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #00b0b9;
+}
+
+.cultural-connection {
+  border-left-color: #ff9800;
+  background: #fff3e0;
+}
+
+.instructions-section h4, .cultural-connection h4 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.instructions-section p, .cultural-connection p {
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.activity-components {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.target-skills, .materials-needed, .examples-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.target-skills h4, .materials-needed h4, .examples-section h4 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.skill-tag {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.materials-needed ul {
+  list-style: none;
+  padding: 0;
+}
+
+.materials-needed li {
+  background: white;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #4caf50;
+  font-size: 0.9rem;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.example-item {
+  background: #fff3e0;
+  color: #f57c00;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.activity-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.demo-btn, .print-btn, .adapt-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-btn {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+}
+
+.print-btn {
+  background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+  color: white;
+}
+
+.adapt-btn {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+}
+
+.demo-btn:hover, .print-btn:hover, .adapt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Activities Grid */
+.activities-grid-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.activities-grid-section h3 {
+  color: #2C5F41;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #00b0b9;
+}
+
+.activity-card-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-type-badge {
+  background: #2C5F41;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.card-level-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2C5F41;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-age, .card-duration {
+  background: #f0f7ff;
+  color: #1976d2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.card-expand-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #666;
+  font-size: 1rem;
+}
+
+.activity-card-details {
+  padding: 0 1.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-instructions, .card-cultural {
+  margin-bottom: 1.5rem;
+}
+
+.card-instructions h5, .card-cultural h5 {
+  color: #2C5F41;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-instructions p, .card-cultural p {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-actions {
+  text-align: center;
+}
+
+.select-btn {
+  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
+}
+
+/* Assessment Section */
+.assessment-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-section h3 {
+  color: #2C5F41;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.assessment-category {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 4px solid #d32f2f;
+}
+
+.assessment-category h4 {
+  color: #c62828;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.assessment-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assessment-category li {
+  background: white;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #ef5350;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+.phonological-footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cultural-motto {
+  font-size: 1.2rem;
+  color: #2C5F41;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.platform-info {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .phonological-container {
+    padding: 1rem;
+  }
+  
+  .phonological-header {
+    padding: 2rem 1.5rem;
+  }
+  
+  .phonological-title {
+    font-size: 2rem;
+  }
+  
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-progression {
+    grid-template-columns: 1fr;
+  }
+  
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .activity-components {
+    grid-template-columns: 1fr;
+  }
+  
+  .assessment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .activity-actions {
+    flex-direction: column;
+  }
+  
+  .examples-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .phonological-container {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .activity-card,
+  .assessment-category {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .filters-section {
+    display: none;
+  }
+  
+  .demo-btn,
+  .print-btn,
+  .adapt-btn,
+  .select-btn {
+    display: none;
+  }
+  
+  .activity-card-details {
+    display: block !important;
+  }
+}

@@ -101,8 +101,8 @@ Format: { "issues": [{"severity": "high", "message": "Description", "location": 
       }
       
       return {
-        issues: response?.issues || [],
-        suggestions: response?.suggestions || []
+        issues: (response as any)?.issues || [],
+        suggestions: (response as any)?.suggestions || []
       };
     } catch {
       // Fallback parsing

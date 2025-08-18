@@ -7,7 +7,29 @@
 
 import { TeKeteAkoMigrationBrain } from './migration-intelligence';
 import { DiplomaticMigration } from './kaitiaki-protocol';
-import { writeEpisode } from '../ai/provenance';
+import { writeEpisode, type EpisodeData } from '../ai/provenance';
+
+// Analysis result interfaces for type safety
+interface CulturalAnalysis {
+  score: number;
+  flags: string[];
+  [key: string]: unknown;
+}
+
+interface MigrationAnalysisResult {
+  culturalSafetyScore: number;
+  riskAssessment: {
+    overall: 'low' | 'medium' | 'high' | 'critical';
+    [key: string]: unknown;
+  };
+  insights: Array<{ type: string; [key: string]: unknown }>;
+  [key: string]: unknown;
+}
+
+interface DiplomaticApproval {
+  approved: boolean;
+  [key: string]: unknown;
+}
 
 export interface EducationalResource {
   id: string;
@@ -44,7 +66,7 @@ export class RealContentMigrator {
   private migrationBrain: TeKeteAkoMigrationBrain;
   private diplomacy: DiplomaticMigration;
   private processedResources: Map<string, MigrationResult> = new Map();
-  private episodeBatch: Array<{ chainId: string; episode: unknown }> = [];
+  private episodeBatch: Array<{ chainId: string; episode: EpisodeData }> = [];
   private readonly BATCH_EPISODE_SIZE = 10;
   private readonly CULTURAL_ROUTING_THRESHOLD = 0.5;
 
@@ -302,12 +324,12 @@ export class RealContentMigrator {
     return enhanced;
   }
 
-  private enhanceContent(content: string, analysis: unknown): string {
+  private enhanceContent(content: string, analysis: MigrationAnalysisResult): string {
     // Apply enhancements based on analysis
     let enhanced = content;
 
     // Add cultural context if missing
-    if (analysis.insights.some((i: unknown) => i.type === 'cultural')) {
+    if (analysis.insights.some((i) => i.type === 'cultural')) {
       enhanced += '\n\n[Cultural Context: This content has been reviewed for cultural appropriateness and alignment with tikanga Māori principles.]';
     }
 
@@ -318,9 +340,9 @@ export class RealContentMigrator {
   }
 
   private calculateFinalScore(
-    culturalAnalysis: unknown, 
-    migrationAnalysis: unknown, 
-    diplomaticApproval: unknown
+    culturalAnalysis: CulturalAnalysis, 
+    migrationAnalysis: MigrationAnalysisResult, 
+    diplomaticApproval: DiplomaticApproval
   ): number {
     const culturalWeight = 0.4;
     const migrationWeight = 0.4;
@@ -336,9 +358,9 @@ export class RealContentMigrator {
   }
 
   private identifyIssues(
-    culturalAnalysis: unknown, 
-    migrationAnalysis: unknown, 
-    diplomaticApproval: unknown
+    culturalAnalysis: CulturalAnalysis, 
+    migrationAnalysis: MigrationAnalysisResult, 
+    diplomaticApproval: DiplomaticApproval
   ): string[] {
     const issues: string[] = [];
 

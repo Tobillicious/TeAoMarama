@@ -15,30 +15,34 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         setIsLoading(true);
         
         // Dynamically import markdown processing libraries only when needed
-        const [{ marked }, { default: DOMPurify }] = await Promise.all([
+        const [{ marked }, sanitizeHtml] = await Promise.all([
           import('marked'),
-          import('dompurify')
+          import('sanitize-html')
         ]);
 
         // Configure marked options
         marked.setOptions({
           breaks: true,
           gfm: true,
-          sanitize: false, // We'll use DOMPurify instead
         });
 
         // Render markdown to HTML
-        const rawHtml = marked(content);
+        const rawHtml = await (typeof marked.parse === 'function' ? marked.parse(content) : marked(content));
+        const htmlString = typeof rawHtml === 'string' ? rawHtml : String(rawHtml);
         
         // Sanitize the HTML
-        const cleanHtml = DOMPurify.sanitize(rawHtml, {
-          ALLOWED_TAGS: [
+        const cleanHtml = sanitizeHtml.default ? sanitizeHtml.default(htmlString, {
+          allowedTags: [
             'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
             'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img',
             'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'span'
           ],
-          ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id'],
-        });
+          allowedAttributes: {
+            '*': ['class', 'id'],
+            'a': ['href', 'title'],
+            'img': ['src', 'alt', 'title']
+          },
+        }) : sanitizeHtml(htmlString);
 
         setRenderedContent(cleanHtml);
       } catch (error) {
