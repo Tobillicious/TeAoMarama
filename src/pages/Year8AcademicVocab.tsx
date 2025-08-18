@@ -248,28 +248,6 @@ export default function Year8AcademicVocab() {
     }
   };
 
-  const getDifficultyColor = (difficulty: string) => {
-    const colors = {
-      foundation: '#4caf50',
-      developing: '#ff9800',
-      secure: '#2196f3',
-    };
-    return colors[difficulty as keyof typeof colors] || '#666';
-  };
-
-  const getSubjectColor = (subject: string) => {
-    const colors = {
-      english: '#e8f5e8',
-      maths: '#fff3e0',
-      science: '#e3f2fd',
-      'social-studies': '#f3e5f5',
-      arts: '#fce4ec',
-      health: '#e0f2f1',
-      'cross-curricular': '#fff8e1',
-    };
-    return colors[subject as keyof typeof colors] || '#f5f5f5';
-  };
-
   const getSubjectIcon = (subject: string) => {
     const icons = {
       english: '📚',
