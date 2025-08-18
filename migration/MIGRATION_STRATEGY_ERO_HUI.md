@@ -14,8 +14,9 @@
 
 - **Our System:** 5,439 educational resources ✅
 - **Te Kete Ako:** 708 HTML files + 193 handouts
-- **Build Performance:** 6.10s (55% improvement) ✅
+- **Build Performance:** 8.44s (38% improvement) ✅
 - **ERO Demo Components:** Ready ✅
+- **Migration Progress:** 1/193 handouts migrated (Māori Battalion Legacy) ✅
 
 ---
 

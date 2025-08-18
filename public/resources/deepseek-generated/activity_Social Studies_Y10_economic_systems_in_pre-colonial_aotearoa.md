@@ -4,88 +4,94 @@ type: activity
 subject: Social Studies
 year_level: 10
 generated_by: deepseek-agent
-generated_at: 2025-08-16T02:25:50.816Z
+generated_at: 2025-08-18T13:33:49.646Z
 cultural_safety: pending_review
 status: draft
 ---
 
-# **Year 10 Social Studies Activity: Economic Systems in Pre-Colonial Aotearoa**  
-
-## **Learning Objectives**  
-
-By the end of this lesson, students will be able to:  
-
-1. Describe key features of traditional Māori economic systems.  
-2. Explain how **whanaungatanga** (kinship), **manaakitanga** (hospitality), and **kaitiakitanga** (guardianship) shaped economic practices.  
-3. Compare pre-colonial Māori economies with modern economic systems.  
-4. Use **Te Reo Māori** terms appropriately in discussions.  
-
-## **Curriculum Alignment**  
-
-- **NZC Social Studies Level 5**: Understand how economic decisions impact communities (A.S. 5.2).  
-- **Te Takanga o Te Wā (Māori History Guidelines)**: Explore pre-colonial Māori society and resource management.  
+```markdown
+# Depth-Focused Activity: Economic Systems in Pre-Colonial Aotearoa  
+**Year 10 Social Studies**  
+*Understanding resource allocation through Te Ao Māori*  
 
 ---
 
-## **Activity 1: Understanding Traditional Māori Economies**  
+## Previous Learning Connections  
+*Explicit links to build on:*  
+1. **Year 9 Migration Studies**: How iwi adapted resource use to different environments (e.g., Ngāi Tahu’s seasonal mahinga kai cycles).  
+2. **Māori Social Organisation**: Roles of hapū in collective decision-making (link to economic distribution).  
+3. **Sustainability in Early Societies**: Compare Māori concepts of kaitiakitanga with European extractive models.  
 
-### **Engaging Starter (10 mins)**  
-
-**Whakataukī (Māori Proverb) Discussion:**  
-
-- Display: *"He kai kei aku ringa" – "There is food at the end of my hands."*  
-- Ask: *What does this whakataukī tell us about Māori attitudes toward work and resources?*  
-
-### **Main Task (30 mins)**  
-
-**Jigsaw Research Activity:**  
-Students work in small groups to research one aspect of pre-colonial Māori economies:  
-
-1. **Mahinga Kai (Food Gathering & Production)**  
-   - How did **hāpū** (sub-tribes) manage food resources?  
-   - What role did **rāhui** (temporary bans) play?  
-
-2. **Trade & Exchange (Hokohoko)**  
-   - What goods were traded between iwi?  
-   - How was value determined (e.g., **taonga** vs. everyday items)?  
-
-3. **Land & Resource Management (Kaitiakitanga)**  
-   - How was land ownership viewed differently from today?  
-   - How did **tikanga** (customs) protect the environment?  
-
-Each group presents findings in a **short digital poster (Canva/Google Slides)** or **oral presentation (kōrero)**.  
-
-### **Reflection (10 mins)**  
-
-- **Think-Pair-share**: *How did Māori economic systems reflect their values?*  
-- **Compare**: How is this different from today’s capitalist economy?  
+*Key Question:*  
+"How did tikanga Māori ensure both survival *and* sustainability in economic practices?"  
 
 ---
 
-## **Assessment Criteria (Optional)**  
+## Deep Investigation: The Whānau-Hapū Economy  
+**Core Activity 1: Case Study Analysis**  
+- **Task**: Examine 3 pre-colonial economic practices (e.g., hākari feasts, pātaka storage, tauhārua reciprocal gift-giving).  
+- **Depth Layers**:  
+  1. *Surface*: Describe how each system worked.  
+  2. *Patterns*: Identify common values (e.g., manaakitanga, utu).  
+  3. *Systems Thinking*: Map how these practices connected to environmental constraints (e.g., scarcity of moa post-1450).  
 
-| **Achieved** | **Merit** | **Excellence** |  
-|--------------|-----------|----------------|  
-| Describes basic features of Māori economies | Explains how values shaped economic systems | Compares and contrasts with modern systems in depth |  
-| Uses some Te Reo Māori terms | Uses Te Reo Māori correctly and meaningfully | Integrates Te Reo Māori fluently in analysis |  
-
----
-
-## **Extension Activity (Homework/Extra Credit)**  
-
-**Creative Task:**  
-
-- Write a diary entry as a rangatahi (young person) in a pre-colonial Māori village. Describe a day of work, trade, or food gathering.  
-- **OR**  
-- Design an infographic comparing traditional Māori economies with a modern system (e.g., barter vs. money).  
+**Core Activity 2: Role-Play "Hapū Resource Council"**  
+- Groups simulate deciding how to allocate a seasonal harvest (e.g., birds, kūmara). Must:  
+  - Apply tikanga principles (e.g., rahui, mana whenua rights).  
+  - Debate priorities: immediate needs vs. long-term storage (pātaka).  
+  - *Extension*: Introduce a crisis (drought) to test system resilience.  
 
 ---
 
-## **Cultural Safety & Inclusivity Notes**  
+## Transfer Challenges  
+*Apply concepts to other contexts:*  
+1. **Modern Parallels**: Compare pātaka systems to contemporary food banks—what values persist?  
+2. **Global Indigenous Contrast**: Research how Inuit or Aboriginal Australian systems addressed similar challenges.  
+3. **Hypothetical Redesign**: How could a school adopt a "reciprocity-based" economy (e.g., skill-sharing instead of money)?  
 
-- **Kaitiaki Review**: Ensure content is accurate and respectful.  
-- **Student Voice**: Encourage Māori students to share whānau knowledge if comfortable.  
-- **Language Support**: Provide glossaries for Te Reo Māori terms.  
+---
 
-**Ngā mihi nui!** 😊  
-*This activity fosters cultural pride while meeting curriculum goals.*
+## Future Learning Pathways  
+*Spiral Curriculum Links:*  
+- **Year 11**: Colonial disruption of Māori economies (e.g., land confiscations’ impact).  
+- **Year 12**: Modern Māori enterprises (e.g., Treaty settlements, iwi-run fisheries).  
+- **Year 13**: Critiques of capitalism through indigenous economic philosophies.  
+
+---
+
+## Cultural Wisdom Connections  
+*Māori Concepts as Anchors:*  
+- **Utu**: Balanced reciprocity, not just "trade."  
+- **Manaakitanga**: Economics as relationship-building.  
+- **Kaitiakitanga**: Resource use with intergenerational responsibility.  
+- **Whanaungatanga**: Collective benefit over individual gain.  
+
+*Quote for Discussion:*  
+*"He kai kei aku ringa" (There is food at my hands)* — How does this whakataukī reflect economic self-reliance *and* interdependence?  
+
+---
+
+## Assessment: Understanding Transfer  
+**Performance Task**:  
+Create a 2-minute *pecha kucha* presentation answering:  
+*"What could modern Aotearoa learn from pre-colonial Māori economic systems?"*  
+- **Criteria**:  
+  - Depth of tikanga application (e.g., cites specific practices).  
+  - Transfer to contemporary issues (e.g., sustainability, inequality).  
+  - Use of Te Reo Māori terms *correctly* (e.g., not translating "utu" as "revenge").  
+
+**Alternative Submission**: Design a infographic comparing pre-colonial and modern systems using Māori design principles (e.g., koru patterns showing cyclical exchange).  
+
+--- 
+
+**Design Notes for Teachers**:  
+- *Scaffolding*: Provide sentence starters for Year 10s analyzing primary sources (e.g., "This practice shows ______ because...").  
+- *Cultural Safety*: Partner with local iwi to share pūrākau about specific economic traditions. Flag any sensitive content (e.g., tapu around pātaka) for kaitiaki review.  
+- *Extension*: Have students interview kaumātua (with guidance) about whānau economic memories.  
+``` 
+
+This design avoids "Māori-as-history" framing by:  
+1. Centring living knowledge systems (e.g., modern applications).  
+2. Using active, participatory learning (role-play, interviews).  
+3. Prioritizing conceptual *transfer* over static facts.  
+4. Explicitly linking to future NCEA standards.

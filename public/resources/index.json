@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2025-08-18T13:30:53.911Z",
+  "generatedAt": "2025-08-18T13:50:19.666Z",
   "items": [
     {
-      "id": "year-10-social-studies-activity-economic-systems-in-pre-colonial-aotearoa",
-      "title": "**Year 10 Social Studies Activity: Economic Systems in Pre-Colonial Aotearoa**",
+      "id": "depth-focused-activity-economic-systems-in-pre-colonial-aotearoa",
+      "title": "Depth-Focused Activity: Economic Systems in Pre-Colonial Aotearoa",
       "relativePath": "resources/deepseek-generated/activity_Social Studies_Y10_economic_systems_in_pre-colonial_aotearoa.md",
       "category": "deepseek-generated",
-      "sizeBytes": 3462,
-      "modifiedAt": "2025-08-16T09:48:29.854Z",
+      "sizeBytes": 4469,
+      "modifiedAt": "2025-08-18T13:33:49.647Z",
       "subject": "Social Studies",
-      "yearLevel": "Year 10",
+      "yearLevel": "Year 9",
       "type": "lesson_plan",
       "culturalContent": true,
       "priority": "medium",
@@ -17,25 +17,23 @@
       "tags": [
         "assessment",
         "activity",
-        "lesson",
         "resource",
-        "guide",
         "cultural",
-        "traditional",
+        "indigenous",
         "modern",
-        "digital",
+        "individual",
         "group"
       ]
     },
     {
-      "id": "year-9-mathematics-assessment-statistics-using-new-zealand-census-data",
-      "title": "Year 9 Mathematics Assessment: Statistics Using New Zealand Census Data",
+      "id": "year-9-mathematics-depth-assessment-statistics-with-nz-census-data",
+      "title": "Year 9 Mathematics Depth Assessment: Statistics with NZ Census Data",
       "relativePath": "resources/deepseek-generated/assessment_Mathematics_Y9_statistics_using_new_zealand_census_data.md",
       "category": "deepseek-generated",
-      "sizeBytes": 4449,
-      "modifiedAt": "2025-08-16T09:48:29.850Z",
+      "sizeBytes": 3758,
+      "modifiedAt": "2025-08-18T13:35:46.043Z",
       "subject": "Mathematics",
-      "yearLevel": "Year 9",
+      "yearLevel": "Year 8",
       "type": "lesson_plan",
       "culturalContent": true,
       "priority": "urgent",
@@ -43,16 +41,18 @@
       "tags": [
         "assessment",
         "activity",
-        "cultural"
+        "cultural",
+        "traditional",
+        "project"
       ]
     },
     {
-      "id": "narrative-structure-in-m-ori-p-r-kau",
-      "title": "Narrative Structure in Māori Pūrākau",
+      "id": "he-h-honu-deep-dive-into-narrative-structure-in-m-ori-p-r-kau",
+      "title": "He Hōhonu: Deep Dive into Narrative Structure in Māori Pūrākau",
       "relativePath": "resources/deepseek-generated/handout_English_Y7_narrative_structure_in_māori_pūrākau.md",
       "category": "deepseek-generated",
-      "sizeBytes": 3420,
-      "modifiedAt": "2025-08-16T09:48:29.845Z",
+      "sizeBytes": 4407,
+      "modifiedAt": "2025-08-18T13:34:55.745Z",
       "subject": "English",
       "yearLevel": "Year 7",
       "type": "lesson_plan",
@@ -63,30 +63,31 @@
         "assessment",
         "activity",
         "lesson",
-        "resource",
         "cultural",
-        "traditional"
+        "modern",
+        "digital",
+        "group"
       ]
     },
     {
-      "id": "he-whare-takitahi-ratios-and-proportions-in-traditional-m-ori-architecture",
-      "title": "He Whare Takitahi: Ratios and Proportions in Traditional Māori Architecture",
+      "id": "he-whare-takirua-ratios-and-proportions-in-traditional-m-ori-architecture",
+      "title": "He Whare Takirua: Ratios and Proportions in Traditional Māori Architecture",
       "relativePath": "resources/deepseek-generated/handout_Mathematics_Y8_ratios_and_proportions_in_traditional_māori_architecture.md",
       "category": "deepseek-generated",
-      "sizeBytes": 3869,
-      "modifiedAt": "2025-08-17T08:25:54.788Z",
+      "sizeBytes": 4525,
+      "modifiedAt": "2025-08-18T13:31:46.488Z",
       "subject": "Mathematics",
       "yearLevel": "Year 7",
       "type": "lesson_plan",
       "culturalContent": true,
-      "priority": "urgent",
+      "priority": "medium",
       "description": "title: \"Ratios and Proportions in Traditional Māori Architecture - Year 8 Mathematics\" type: handout subject: Mathematics",
       "tags": [
         "assessment",
+        "activity",
         "cultural",
         "traditional",
-        "modern",
-        "project"
+        "modern"
       ]
     },
     {
@@ -94,20 +95,20 @@
       "title": "Year 9 Science: Native Plant Adaptation in Aotearoa Ecosystems",
       "relativePath": "resources/deepseek-generated/lesson_Science_Y9_native_plant_adaptation_in_aotearoa_ecosystems.md",
       "category": "deepseek-generated",
-      "sizeBytes": 4578,
-      "modifiedAt": "2025-08-17T08:26:57.426Z",
-      "subject": "Mathematics",
+      "sizeBytes": 4710,
+      "modifiedAt": "2025-08-18T13:32:49.063Z",
+      "subject": "Science",
       "yearLevel": "Year 7",
       "type": "lesson_plan",
       "culturalContent": true,
-      "priority": "urgent",
+      "priority": "medium",
       "description": "title: \"Native Plant Adaptation in Aotearoa Ecosystems - Year 9 Science\" type: lesson subject: Science",
       "tags": [
         "assessment",
+        "activity",
         "lesson",
-        "worksheet",
         "cultural",
-        "project"
+        "traditional"
       ]
     },
     {
