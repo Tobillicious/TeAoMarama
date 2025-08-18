@@ -753,7 +753,7 @@ export default function Year8WritingRevolution() {
         <p className="cultural-motto">
           🌿 "Mā te tuhituhi, ka whakaatu ai ngā whakaaro" - Through writing, thoughts are revealed
         </p>
-        <p className="platform-info">Te Kete Ako - Writing Revolution Excellence for Year 8</p>
+        <p className="platform-info">TeAoMarama - Writing Revolution Excellence for Year 8</p>
       </footer>
     </div>
   );
