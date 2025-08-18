@@ -57,7 +57,7 @@ const Login: React.FC = () => {
     <div className="auth-container">
       <div className="app-container">
         <form onSubmit={handleLogin} className="auth-form">
-          <h2 className="auth-title">Whakatōmuri Te Kete Ako</h2>
+          <h2 className="auth-title">Whakatōmuri TeAoMarama</h2>
           <p className="auth-subtitle">Welcome back to Te Ao Mārama</p>
           
           {error && <div className="error-message">{error}</div>}
