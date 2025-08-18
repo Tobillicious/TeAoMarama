@@ -558,17 +558,15 @@ export default function Year8ReadingStrategies() {
             <h3>🧠 All Reading Strategies ({filteredStrategies.length})</h3>
             <div className="strategies-grid">
               {filteredStrategies.map((strategy) => (
-                <div
-                  key={strategy.id}
-                  className="strategy-card"
-                  style={{ backgroundColor: getCategoryColor(strategy.category) }}
+                                <div 
+                  key={strategy.id} 
+                  className={`strategy-card category-${strategy.category}`}
                   onClick={() => setSelectedStrategy(strategy)}
                 >
                   <div className="card-header">
                     <span className="card-category-icon">{getCategoryIcon(strategy.category)}</span>
-                    <span
-                      className="card-difficulty-dot"
-                      style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
+                                        <span 
+                      className={`card-difficulty-dot difficulty-${strategy.difficulty}`}
                     ></span>
                   </div>
 
