@@ -1,0 +1,603 @@
+/* Structured Literacy Unit - Professional Educational Design */
+
+.structured-literacy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  min-height: 100vh;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+}
+
+/* Header Section */
+.literacy-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+  text-align: center;
+}
+
+.unit-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2C5F41 0%, #00b0b9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.unit-metadata {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.metadata-item {
+  background: #00b0b9;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.target-description {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Cultural Framework */
+.cultural-framework {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 6px solid #ff6b35;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cultural-framework h2 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.cultural-framework p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.framework-highlight {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Navigation Tabs */
+.content-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+  background: white;
+  color: #2C5F41;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Methodology Overview */
+.methodology-overview {
+  margin-bottom: 2rem;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.method-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #00b0b9;
+  transition: all 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.method-card.cultural-integration {
+  border-top-color: #ff6b35;
+}
+
+.method-card h3 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.method-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.method-card li {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #00b0b9;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.cultural-integration li {
+  border-left-color: #ff6b35;
+}
+
+/* Lessons Section */
+.lessons-section {
+  margin-bottom: 2rem;
+}
+
+.lessons-intro {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lessons-intro h2 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+}
+
+.lessons-intro p {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Lesson Cards */
+.lesson-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.lesson-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lesson-header:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.lesson-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 140px;
+}
+
+.phase-badge {
+  background: #00b0b9;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.phase-badge.phase-2 {
+  background: #4caf50;
+}
+
+.phase-badge.phase-3 {
+  background: #ff9800;
+}
+
+.lesson-number {
+  background: #2C5F41;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.lesson-title {
+  flex: 1;
+  margin: 0 1rem;
+  color: #2C5F41;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.expand-icon {
+  color: #666;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+/* Lesson Details */
+.lesson-details {
+  padding: 2rem;
+  background: white;
+}
+
+.cultural-connection {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.cultural-connection h4 {
+  color: #f57c00;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.cultural-connection p {
+  color: #333;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-top: 3px solid #00b0b9;
+}
+
+.skills-section h4 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-section li {
+  background: white;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #00b0b9;
+  font-size: 0.9rem;
+}
+
+/* Activities Section */
+.activities-section {
+  margin-bottom: 2rem;
+}
+
+.activities-section h4 {
+  color: #2C5F41;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity-item {
+  background: #e3f2fd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #1976d2;
+}
+
+.activity-item strong {
+  color: #1565c0;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.activity-item p {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Resources Section */
+.resources-section h4 {
+  color: #2C5F41;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.resources-list {
+  list-style: none;
+  padding: 0;
+  background: #f0f7ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #2196f3;
+}
+
+.resources-list li {
+  background: white;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border-left: 3px solid #64b5f6;
+}
+
+/* Assessment Section */
+.assessment-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.assessment-section h2 {
+  color: #2C5F41;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.assessment-category {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 4px solid #d32f2f;
+}
+
+.assessment-category h3 {
+  color: #c62828;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.assessment-category p {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.assessment-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assessment-category li {
+  background: white;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #ef5350;
+  font-size: 0.9rem;
+}
+
+.assessment-notes {
+  background: #e8f5e8;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #4caf50;
+}
+
+.assessment-notes h4 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.assessment-notes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assessment-notes li {
+  padding: 0.5rem 0;
+  color: #333;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #c8e6c9;
+}
+
+.assessment-notes li:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+.literacy-footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pld-connection {
+  background: #e3f2fd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #1976d2;
+  margin-bottom: 1.5rem;
+}
+
+.pld-connection h4 {
+  color: #1565c0;
+  margin-bottom: 0.75rem;
+}
+
+.pld-connection p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cultural-motto {
+  font-size: 1.2rem;
+  color: #2C5F41;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.platform-info {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .structured-literacy-container {
+    padding: 1rem;
+  }
+  
+  .literacy-header {
+    padding: 2rem 1.5rem;
+  }
+  
+  .unit-title {
+    font-size: 2rem;
+  }
+  
+  .unit-metadata {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .content-tabs {
+    flex-direction: column;
+  }
+  
+  .methodology-grid,
+  .skills-grid,
+  .activities-grid,
+  .assessment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lesson-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .lesson-meta {
+    min-width: auto;
+  }
+  
+  .lesson-title {
+    margin: 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .structured-literacy-container {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .lesson-card,
+  .method-card,
+  .assessment-category {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .tab-button {
+    display: none;
+  }
+  
+  .lesson-details {
+    display: block !important;
+  }
+}

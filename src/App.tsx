@@ -15,6 +15,15 @@ const StyleGuide = lazy(() => import('./pages/StyleGuide'));
 const MiharaDashboard = lazy(() => import('./components/MiharaDashboard'));
 const UnitPlan = lazy(() => import('./pages/UnitPlan'));
 const LessonPlan = lazy(() => import('./pages/LessonPlan'));
+const StructuredLiteracyUnit = lazy(() => import('./pages/StructuredLiteracyUnit'));
+const StructuredLiteracyUnits = lazy(() => import('./pages/StructuredLiteracyUnits'));
+const PhoneticsCards = lazy(() => import('./pages/PhoneticsCards'));
+const PhonologicalAwareness = lazy(() => import('./pages/PhonologicalAwareness'));
+const SightWords = lazy(() => import('./pages/SightWords'));
+const AdvancedMorphology = lazy(() => import('./pages/AdvancedMorphology'));
+const Year8AcademicVocab = lazy(() => import('./pages/Year8AcademicVocab'));
+const Year8ReadingStrategies = lazy(() => import('./pages/Year8ReadingStrategies'));
+const Year8WritingRevolution = lazy(() => import('./pages/Year8WritingRevolution'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -61,6 +70,15 @@ function App() {
       { path: '/styleguide', element: <StyleGuide /> },
       { path: '/unit-plan', element: <UnitPlan /> },
       { path: '/lesson-plan', element: <LessonPlan /> },
+      { path: '/structured-literacy', element: <StructuredLiteracyUnit /> },
+      { path: '/structured-literacy-units', element: <StructuredLiteracyUnits /> },
+      { path: '/phonetics-cards', element: <PhoneticsCards /> },
+      { path: '/phonological-awareness', element: <PhonologicalAwareness /> },
+      { path: '/sight-words', element: <SightWords /> },
+      { path: '/advanced-morphology', element: <AdvancedMorphology /> },
+      { path: '/year8-academic-vocab', element: <Year8AcademicVocab /> },
+      { path: '/year8-reading-strategies', element: <Year8ReadingStrategies /> },
+      { path: '/year8-writing-revolution', element: <Year8WritingRevolution /> },
     ],
     [],
   );

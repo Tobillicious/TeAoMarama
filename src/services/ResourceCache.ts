@@ -70,20 +70,34 @@ export class ResourceCache {
   /**
    * Get filtered resources with caching
    */
-  async getFilteredResources(
-    filters: {
-      searchQuery?: string;
-      filterMode?: string;
-      yearLevel?: string;
-      safetyFilter?: string;
-    },
-    allResources: ParsedResource[]
-  ): Promise<ParsedResource[]> {
-    const cacheKey = this.generateFilterKey(filters);
+  async getFilteredResources(filters: {
+    search?: string;
+    category?: string;
+    yearLevel?: string;
+    subject?: string;
+  }): Promise<ParsedResource[]> {
+    const filterKey = this.generateFilterKey(filters);
     
-    return this.getResources(cacheKey, () => {
-      return Promise.resolve(this.applyFilters(allResources, filters));
-    });
+    // Check cache first
+    if (this.cache.has(filterKey)) {
+      const cached = this.cache.get(filterKey)!;
+      this.stats.hits++;
+      return cached.data;
+    }
+
+    // Apply filters
+    const filtered = this.applyFilters(this.resources, filters);
+    
+    // Cache result
+    this.cache.set(filterKey, { data: filtered, timestamp: Date.now(), ttl: this.DEFAULT_TTL });
+    this.stats.misses++;
+    
+    // Evict if cache is too large
+    if (this.cache.size > this.MAX_CACHE_SIZE) {
+      this.evictOldest();
+    }
+    
+    return filtered;
   }
 
   /**
@@ -226,7 +240,7 @@ export class ResourceCache {
     ];
 
     for (const filter of commonFilters) {
-      await this.getFilteredResources(filter, resources);
+      await this.getFilteredResources(filter);
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import './VirtualizedResourceList.css';
 
 interface ResourceItem {
@@ -20,16 +20,20 @@ const CONTAINER_HEIGHT = 600;
 const VISIBLE_ITEMS = Math.ceil(CONTAINER_HEIGHT / ITEM_HEIGHT);
 const BUFFER_SIZE = 5;
 
-export default function VirtualizedResourceList({ resources, onResourceSelect }: VirtualizedResourceListProps) {
+export default function VirtualizedResourceList({
+  resources,
+  onResourceSelect,
+}: VirtualizedResourceListProps) {
   const [scrollTop, setScrollTop] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Filter resources based on search and category
   const filteredResources = useMemo(() => {
-    return resources.filter(resource => {
-      const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           resource.category.toLowerCase().includes(searchTerm.toLowerCase());
+    return resources.filter((resource) => {
+      const matchesSearch =
+        resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        resource.category.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || resource.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
@@ -37,7 +41,7 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
 
   // Get unique categories for filter
   const categories = useMemo(() => {
-    const cats = ['All', ...new Set(resources.map(r => r.category))];
+    const cats = ['All', ...new Set(resources.map((r) => r.category))];
     return cats;
   }, [resources]);
 
@@ -46,13 +50,13 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
     const startIndex = Math.max(0, Math.floor(scrollTop / ITEM_HEIGHT) - BUFFER_SIZE);
     const endIndex = Math.min(
       filteredResources.length,
-      startIndex + VISIBLE_ITEMS + (BUFFER_SIZE * 2)
+      startIndex + VISIBLE_ITEMS + BUFFER_SIZE * 2,
     );
-    
+
     return {
       startIndex,
       endIndex,
-      items: filteredResources.slice(startIndex, endIndex)
+      items: filteredResources.slice(startIndex, endIndex),
     };
   }, [filteredResources, scrollTop]);
 
@@ -75,10 +79,10 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
   const getCategoryIcon = (category: string) => {
     const icons: Record<string, string> = {
       'deepseek-generated': '🤖',
-      'handouts': '📄',
-      'games': '🎮',
+      handouts: '📄',
+      games: '🎮',
       'te-kete-ako-clean': '🌿',
-      'toolkits': '🛠️'
+      toolkits: '🛠️',
     };
     return icons[category] || '📚';
   };
@@ -97,14 +101,15 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
           />
           <span className="search-icon">🔍</span>
         </div>
-        
+
         <div className="category-filter">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="category-select"
+            aria-label="Filter by category"
           >
-            {categories.map(category => (
+            {categories.map((category) => (
               <option key={category} value={category}>
                 {category === 'All' ? 'All Categories' : category}
               </option>
@@ -112,39 +117,35 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
           </select>
         </div>
 
-        <div className="results-count">
-          {filteredResources.length.toLocaleString()} resources
-        </div>
+        <div className="results-count">{filteredResources.length.toLocaleString()} resources</div>
       </div>
 
       {/* Virtualized List */}
-      <div 
+      <div
         className="virtual-list-container"
         style={{ height: CONTAINER_HEIGHT }}
         onScroll={handleScroll}
       >
-        <div 
+        <div
           className="virtual-list-spacer"
           style={{ height: filteredResources.length * ITEM_HEIGHT }}
         >
-          <div 
+          <div
             className="virtual-list-content"
-            style={{ 
+            style={{
               transform: `translateY(${visibleItems.startIndex * ITEM_HEIGHT}px)`,
-              height: visibleItems.items.length * ITEM_HEIGHT
+              height: visibleItems.items.length * ITEM_HEIGHT,
             }}
           >
-            {visibleItems.items.map((resource, index) => (
+            {visibleItems.items.map((resource) => (
               <div
                 key={resource.id}
                 className="resource-item"
                 style={{ height: ITEM_HEIGHT }}
                 onClick={() => onResourceSelect(resource)}
               >
-                <div className="resource-icon">
-                  {getCategoryIcon(resource.category)}
-                </div>
-                
+                <div className="resource-icon">{getCategoryIcon(resource.category)}</div>
+
                 <div className="resource-content">
                   <h3 className="resource-title">{resource.title}</h3>
                   <div className="resource-meta">
@@ -155,7 +156,7 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
                 </div>
 
                 <div className="resource-actions">
-                  <button 
+                  <button
                     type="button"
                     className="view-button"
                     onClick={(e) => {
@@ -175,8 +176,8 @@ export default function VirtualizedResourceList({ resources, onResourceSelect }:
       {/* Performance Info */}
       <div className="performance-info">
         <small>
-          Showing {visibleItems.items.length} of {filteredResources.length} resources 
-          (Virtualized for performance)
+          Showing {visibleItems.items.length} of {filteredResources.length} resources (Virtualized
+          for performance)
         </small>
       </div>
     </div>

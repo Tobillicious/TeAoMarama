@@ -180,23 +180,28 @@ export class MigrationProgressTracker {
   /**
    * Simulate batch processing for demo purposes
    */
-  simulateBatchProcessing(batchSize: number = 50): void {
-    const pendingResources = Array.from(this.resourceStatuses.entries())
-      .filter(([_, status]) => status.status === 'pending')
-      .slice(0, batchSize);
-
-    pendingResources.forEach(([resourceId, status]) => {
+  private simulateBatchProcessing(): void {
+    // Simulate processing a batch of resources
+    const batchSize = 10;
+    const pendingResources = this.progress.pendingResources;
+    
+    for (let i = 0; i < batchSize && pendingResources > 0; i++) {
+      const resourceId = `resource-${i}`; // Placeholder for actual resource ID
       this.startProcessingResource(resourceId, 'cultural-safety-check');
       
       // Simulate processing time
       setTimeout(() => {
-        const culturalSafetyLevel = Math.random() > 0.1 ? 'clean' : 'review';
-        const qualityScore = 0.7 + Math.random() * 0.3; // 0.7 to 1.0
-        const processingTime = 1000 + Math.random() * 2000; // 1-3 seconds
-        
-        this.completeResource(resourceId, culturalSafetyLevel, qualityScore, processingTime);
-      }, Math.random() * 5000); // Random delay up to 5 seconds
-    });
+        const success = Math.random() > 0.1; // 90% success rate
+        if (success) {
+          const culturalSafetyLevel = Math.random() > 0.1 ? 'clean' : 'review';
+          const qualityScore = 0.7 + Math.random() * 0.3; // 0.7 to 1.0
+          const processingTime = 1000 + Math.random() * 2000; // 1-3 seconds
+          this.completeResource(resourceId, culturalSafetyLevel, qualityScore, processingTime);
+        } else {
+          this.failResource(resourceId, ['Simulated processing error']);
+        }
+      }, Math.random() * 2000 + 500); // 0.5-2.5 seconds
+    }
   }
 
   /**

@@ -511,10 +511,11 @@ export class PerformanceTester {
 
     // Update peak memory usage
     if ('memory' in performance) {
-      const memory = (performance as unknown).memory;
+      const memory = (performance as any).memory;
+      const usedMemory = memory?.usedJSHeapSize || 0;
       report.memoryUsage.peak = Math.max(
         report.memoryUsage.peak,
-        Math.round((memory as any)?.usedJSHeapSize || 0 / 1024 / 1024),
+        Math.round(usedMemory / 1024 / 1024),
       );
     }
 

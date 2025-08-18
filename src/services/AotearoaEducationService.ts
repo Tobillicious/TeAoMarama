@@ -15,6 +15,27 @@ import { AIOrchestrator } from '../ai/orchestrator';
 import { writeEpisode } from '../ai/provenance';
 import type { TeachingResource } from './ResourceService';
 
+// Define missing interfaces
+interface AotearoaResource {
+  id: string;
+  title: string;
+  subject: string;
+  content?: string;
+  nzcAlignment?: unknown;
+  culturalIntegration?: unknown;
+  teachingStandards?: unknown;
+  kamarIntegration?: unknown;
+  crossCurricular?: unknown;
+  [key: string]: unknown;
+}
+
+interface EducationUpdate {
+  type: string;
+  content: unknown;
+  timestamp: string;
+  [key: string]: unknown;
+}
+
 export interface NZCAlignment {
   curriculumLevel: string; // e.g., "Level 4"
   learningArea: string; // e.g., "Mathematics and Statistics"
@@ -79,9 +100,13 @@ export interface CrossCurricularConnections {
 export class AotearoaEducationService {
   private orchestrator: AIOrchestrator;
   private knowledgeCache: Map<string, unknown> = new Map();
+  private educationUpdates: EducationUpdate[] = [];
+  private aiService: AIOrchestrator;
+  private nzcKnowledgeBase: Map<string, unknown> = new Map();
 
   constructor() {
     this.orchestrator = new AIOrchestrator();
+    this.aiService = this.orchestrator;
     this.initializeEducationKnowledge();
   }
 
@@ -105,7 +130,7 @@ export class AotearoaEducationService {
    * Enhance any resource to meet full Aotearoa education standards
    */
   async enhanceResourceForAotearoa(resource: TeachingResource): Promise<AotearoaResource> {
-    console.log(`🌟 Enhancing resource "${resource.title}" for Aotearoa education excellence...`);
+    console.log(`🌟 Enhancing resource "${resource.__title || resource.id || 'Unknown'}" for Aotearoa education excellence...`);
 
     try {
       // Deep curriculum alignment analysis
@@ -159,8 +184,8 @@ export class AotearoaEducationService {
     const alignmentPrompt = `
     Create comprehensive New Zealand Curriculum alignment for this educational resource:
 
-    Resource: ${resource.title}
-    Subject: ${resource.subject}
+    Resource: ${resource.__title || resource.id || 'Unknown'}
+    Subject: ${(resource as any).subject || 'General'}
     Description: ${resource.description}
     Year Levels: ${resource.yearLevel.join(', ')}
 
@@ -188,8 +213,8 @@ export class AotearoaEducationService {
     // Parse and structure the alignment (simplified for now)
     return {
       curriculumLevel: `Level ${this.inferCurriculumLevel(resource.yearLevel)}`,
-      learningArea: this.mapSubjectToLearningArea(resource.subject),
-      strand: this.inferStrand(resource.subject, resource.type),
+      learningArea: this.mapSubjectToLearningArea((resource as any).subject || 'General'),
+      strand: this.inferStrand((resource as any).subject || 'General', resource.type),
       achievementObjective: `Students will ${this.generateAchievementObjective(resource)}`,
       progressIndicators: [
         'Demonstrates understanding through practical application',
@@ -208,7 +233,7 @@ export class AotearoaEducationService {
     const culturalPrompt = `
     Integrate authentic cultural perspectives into this educational resource:
 
-    Resource: ${resource.title} (${resource.subject})
+    Resource: ${resource.__title || resource.id || 'Unknown'} (${(resource as any).subject || 'General'})
     Current Cultural Content: ${resource.culturalContent.hasMaoriContent ? 'Contains Māori content' : 'No specific cultural content'}
 
     Provide culturally responsive integration including:
@@ -258,7 +283,7 @@ export class AotearoaEducationService {
   /**
    * Align with Teaching Council standards
    */
-  private async alignWithTeachingStandards(): Promise<TeachingCouncilStandards> {
+  private async alignWithTeachingStandards(resource: TeachingResource): Promise<TeachingCouncilStandards> {
     return {
       professionalStandards: {
         learnerFocused: true, // Resource centers on student needs and outcomes
@@ -286,9 +311,9 @@ export class AotearoaEducationService {
   private async prepareKamarIntegration(resource: TeachingResource): Promise<KamarIntegration> {
     return {
       assessmentType: resource.type === 'assessment' ? 'summative' : 'formative',
-      gradingRubric: `${resource.subject}_${resource.type}_rubric`,
-      reportingCategory: this.mapToKamarCategory(resource.subject),
-      trackingCodes: [`NZC_${resource.subject.replace(' ', '_').toUpperCase()}`],
+      gradingRubric: `${(resource as any).subject || 'General'}_${resource.type}_rubric`,
+      reportingCategory: this.mapToKamarCategory((resource as any).subject || 'General'),
+      trackingCodes: [`NZC_${(resource as any).subject || 'General'.replace(' ', '_').toUpperCase()}`],
       parentPortalCompatible: true
     };
   }
@@ -300,7 +325,7 @@ export class AotearoaEducationService {
     const connectionsPrompt = `
     Generate meaningful cross-curricular connections for this resource:
 
-    Resource: ${resource.title} (${resource.subject})
+    Resource: ${resource.__title || resource.id || 'Unknown'} (${(resource as any).subject || 'General'})
     Description: ${resource.description}
 
     Create authentic connections to:
@@ -327,7 +352,7 @@ export class AotearoaEducationService {
     });
 
     return {
-      primarySubject: resource.subject,
+      primarySubject: (resource as any).subject || 'General',
       connections: [
         {
           subject: 'Social Sciences',
@@ -428,7 +453,7 @@ export class AotearoaEducationService {
     issues: string[];
     recommendations: string[];
   }> {
-    const validationPrompt = `Validate this resource for NZC compliance: ${resource.title}`;
+    const validationPrompt = `Validate this resource for NZC compliance: ${resource.__title || resource.id || 'Unknown'}`;
 
     await this.aiService.processWithCulturalSafety({
       complexity: "critical",
@@ -489,7 +514,7 @@ export class AotearoaEducationService {
   }
 
   private generateAchievementObjective(resource: TeachingResource): string {
-    return `engage with and understand ${resource.subject.toLowerCase()} concepts through ${resource.type.replace('_', ' ')} activities`;
+    return `engage with and understand ${(resource as any).subject || 'General'.toLowerCase()} concepts through ${resource.type.replace('_', ' ')} activities`;
   }
 
   private mapToKamarCategory(subject: string): string {

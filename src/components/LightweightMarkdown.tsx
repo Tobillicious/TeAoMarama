@@ -11,19 +11,19 @@ export default function LightweightMarkdown({ content, className = '' }: Lightwe
   const [html, setHtml] = useState('');
 
   useEffect(() => {
-    // Configure marked options for better output
-    marked.setOptions({
-      gfm: true, // GitHub Flavored Markdown
-      breaks: true, // Convert line breaks to <br>
-      headerIds: true, // Add IDs to headers
-      mangle: false, // Don't mangle email addresses
-    });
+    const processMarkdown = async () => {
+      // Configure marked options for better output
+      marked.setOptions({
+        gfm: true, // GitHub Flavored Markdown
+        breaks: true, // Convert line breaks to <br>
+      });
 
-    // Convert markdown to HTML
-    const rawHtml = marked(content);
-    
-    // Sanitize HTML for security
-    const sanitizedHtml = sanitizeHtml(rawHtml, {
+      // Convert markdown to HTML  
+      const rawHtml = await (typeof marked.parse === 'function' ? marked.parse(content) : marked(content));
+      const htmlString = typeof rawHtml === 'string' ? rawHtml : String(rawHtml);
+      
+      // Sanitize HTML for security
+      const sanitizedHtml = sanitizeHtml(htmlString, {
       allowedTags: [
         'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
         'p', 'br', 'hr',
@@ -60,7 +60,10 @@ export default function LightweightMarkdown({ content, className = '' }: Lightwe
       }
     });
 
-    setHtml(sanitizedHtml);
+      setHtml(sanitizedHtml);
+    };
+
+    processMarkdown().catch(console.error);
   }, [content]);
 
   return (

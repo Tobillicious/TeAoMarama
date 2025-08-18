@@ -37,6 +37,17 @@ export interface RiskAssessment {
 /**
  * Te Kete Ako Migration Brain - The analytical intelligence
  */
+// Content interfaces for better type safety
+interface MigrationContent {
+  id?: string;
+  title?: string;
+  culturalAttribution?: boolean;
+  kaumatuaConsultation?: boolean;
+  iwiApproval?: boolean;
+  culturalAdvisor?: string;
+  [key: string]: unknown;
+}
+
 export class TeKeteAkoMigrationBrain {
   private insights: MigrationInsight[] = [];
   private culturalKnowledge: Map<string, unknown> = new Map();
@@ -66,23 +77,23 @@ export class TeKeteAkoMigrationBrain {
   /**
    * Monitor ongoing migration for cultural safety
    */
-  async monitorCulturalSafety(contentBatch: unknown[]): Promise<{ safe: boolean; concerns: string[] }> {
+  async monitorCulturalSafety(contentBatch: MigrationContent[]): Promise<{ safe: boolean; concerns: string[] }> {
     const concerns: string[] = [];
 
     for (const content of contentBatch) {
       // Check for sacred or sensitive content
       if (this.containsSacredContent(content)) {
-        concerns.push(`Sacred content detected requiring iwi consultation: ${content.title || content.id}`);
+        concerns.push(`Sacred content detected requiring iwi consultation: ${content.title || content.id || 'Unknown'}`);
       }
 
       // Check for proper cultural attribution
       if (this.lacksProperAttribution(content)) {
-        concerns.push(`Missing cultural attribution: ${content.title || content.id}`);
+        concerns.push(`Missing cultural attribution: ${content.title || content.id || 'Unknown'}`);
       }
 
       // Check for cultural appropriation risks
       if (this.hasAppropriation(content)) {
-        concerns.push(`Cultural appropriation risk: ${content.title || content.id}`);
+        concerns.push(`Cultural appropriation risk: ${content.title || content.id || 'Unknown'}`);
       }
     }
 
@@ -217,21 +228,21 @@ export class TeKeteAkoMigrationBrain {
     return recommendations;
   }
 
-  private hasCulturalContent(task: unknown): boolean {
+  private hasCulturalContent(task: MigrationContent): boolean {
     if (!task) return false;
     const content = JSON.stringify(task).toLowerCase();
     const culturalMarkers = ['māori', 'maori', 'te reo', 'tikanga', 'whakapapa', 'iwi', 'tangata whenua', 'aotearoa'];
     return culturalMarkers.some(marker => content.includes(marker));
   }
 
-  private containsSacredContent(content: unknown): boolean {
+  private containsSacredContent(content: MigrationContent): boolean {
     if (!content) return false;
     const text = JSON.stringify(content).toLowerCase();
-    const sacredIndicators = this.culturalKnowledge.get('sacred_indicators') || [];
+    const sacredIndicators = this.culturalKnowledge.get('sacred_indicators') as string[] || [];
     return sacredIndicators.some((indicator: string) => text.includes(indicator.toLowerCase()));
   }
 
-  private lacksProperAttribution(content: unknown): boolean {
+  private lacksProperAttribution(content: MigrationContent): boolean {
     // Check if cultural content has proper attribution
     if (!this.hasCulturalContent(content)) return false;
     
@@ -243,7 +254,7 @@ export class TeKeteAkoMigrationBrain {
     return !hasAttribution;
   }
 
-  private hasAppropriation(content: unknown): boolean {
+  private hasAppropriation(content: MigrationContent): boolean {
     // Very basic check - in reality this would be much more sophisticated
     if (!this.hasCulturalContent(content)) return false;
     

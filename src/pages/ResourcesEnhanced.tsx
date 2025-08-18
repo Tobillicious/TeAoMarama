@@ -720,7 +720,7 @@ function LessonPlansView({
   );
 }
 
-// Resources Detail View (when lesson is selected)
+// Resources Detail View Component
 function ResourcesDetailView({
   lessonName,
   resources,
@@ -730,65 +730,41 @@ function ResourcesDetailView({
   resources: ParsedResource[];
   onBack: () => void;
 }) {
-  const lesson = resources.find((r) => r.title === lessonName);
-
-  if (!lesson) {
-    return <div>Lesson not found</div>;
-  }
-
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4 mb-6">
-        <button onClick={onBack} className="p-2 rounded-lg transition-colors">
-          ← Back
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-pounamu hover:text-pounamu-dark transition-colors"
+        >
+          ← Back to Lessons
         </button>
-        <div>
-          <h2 className="text-2xl font-bold">{lesson.title}</h2>
-          <p>Resources and materials for this lesson</p>
-        </div>
+        <h2 className="text-2xl font-bold">{lessonName}</h2>
       </div>
 
-      <div className="bg-white rounded-lg border p-6">
-        <div className="prose max-w-none">
-          <h3>Lesson Overview</h3>
-          <p>{lesson.preview || 'No description available'}</p>
-
-          <h3>Resource Details</h3>
-          <ul>
-            <li>
-              <strong>Subject:</strong> {lesson.metadata.subject}
-            </li>
-            <li>
-              <strong>Year Level:</strong>{' '}
-              {Array.isArray(lesson.metadata.yearLevel)
-                ? lesson.metadata.yearLevel.join(', ')
-                : lesson.metadata.yearLevel}
-            </li>
-            <li>
-              <strong>Cultural Safety:</strong> {lesson.metadata.culturalSafetyIcon}{' '}
-              {lesson.metadata.culturalSafetyLevel}
-            </li>
-            <li>
-              <strong>Last Modified:</strong> {new Date(lesson.modifiedAt).toLocaleDateString()}
-            </li>
-            <li>
-              <strong>File Size:</strong> {(lesson.sizeBytes / 1024).toFixed(1)} KB
-            </li>
-          </ul>
-
-          <div className="mt-6">
-            <Link
-              to={`/resource?path=${encodeURIComponent(lesson.relativePath)}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all"
-              style={{
-                backgroundColor: 'var(--color-pounamu)',
-                color: 'white',
-              }}
-            >
-              📖 View Resource
-            </Link>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {resources.map((resource) => (
+          <div
+            key={resource.id}
+            className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+          >
+            <h3 className="font-semibold mb-2">{resource.title}</h3>
+            <p className="text-sm text-gray-600 mb-2">
+              {resource.preview || resource.metadata.subject}
+            </p>
+            <div className="flex items-center gap-2 text-xs text-gray-500">
+              <span>{resource.category}</span>
+              {resource.metadata.yearLevel && (
+                <span>
+                  • Year{' '}
+                  {Array.isArray(resource.metadata.yearLevel)
+                    ? resource.metadata.yearLevel.join(', ')
+                    : resource.metadata.yearLevel}
+                </span>
+              )}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
