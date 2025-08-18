@@ -356,8 +356,7 @@ const StudentDashboard: React.FC = () => {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full"
-                        style={{ width: `${85 - index * 10}%` }}
+                        className={`bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full skill-progress-${85 - index * 10}`}
                       ></div>
                     </div>
                   </div>
