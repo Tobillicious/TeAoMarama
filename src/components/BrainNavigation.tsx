@@ -10,7 +10,7 @@
  * - Class-specific shortcuts
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface NavigationMemory {
@@ -35,15 +35,7 @@ export default function BrainNavigation() {
   const [memory, setMemory] = useState<NavigationMemory | null>(null);
   const [isExpanded] = useState(false);
 
-  useEffect(() => {
-    // Record this page visit as an episodic event
-    recordPageVisit(location.pathname);
-    
-    // Load navigation memory
-    loadNavigationMemory();
-  }, [location]);
-
-  const loadNavigationMemory = async () => {
+  const loadNavigationMemory = useCallback(async () => {
     try {
       // In practice, this would call our brain API
       const response = await fetch('/brain/navigation-memory');
@@ -53,7 +45,15 @@ export default function BrainNavigation() {
       console.warn('Brain navigation memory unavailable, using static nav');
       setMemory(getStaticNavigation());
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // Record this page visit as an episodic event
+    recordPageVisit(location.pathname);
+
+    // Load navigation memory
+    loadNavigationMemory();
+  }, [location, loadNavigationMemory]);
 
   const recordPageVisit = async (path: string) => {
     try {
@@ -185,7 +185,7 @@ export default function BrainNavigation() {
       )}
 
       {/* Smart Breadcrumbs with Context */}
-      <SmartBreadcrumbs currentPath={location.pathname} memory={memory} />
+      <SmartBreadcrumbs currentPath={location.pathname} />
     </nav>
   );
 }
@@ -296,7 +296,7 @@ function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
   );
 }
 
-function SmartBreadcrumbs({ currentPath, memory }: { currentPath: string; memory: NavigationMemory }) {
+function SmartBreadcrumbs({ currentPath }: { currentPath: string }) {
   const pathParts = currentPath.split('/').filter(Boolean);
 
   return (
@@ -334,6 +334,6 @@ function SmartBreadcrumbs({ currentPath, memory }: { currentPath: string; memory
   );
 }
 
-export function formatPath(path: string): string {
+function formatPath(path: string): string {
   return path.replace(/[-_]/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 }

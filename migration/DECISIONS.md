@@ -16,6 +16,22 @@ Mahara is the approver for final decisions. Each entry documents context and rat
 
 ## Entries
 
+### DEC-20250818-001
+
+- Date: 2025-08-18
+- Context / Problem: Establish clear governance, persistent agent naming, and a generative collaboration workflow ahead of ERO hui, using the current repo-native setup.
+- Options considered: (1) Keep ad-hoc coordination; (2) Introduce external PM tools; (3) Standardize repo-native governance + workflow now.
+- Decision: Confirm Best Overseer as the Overseer; approve persistent agent roster names; adopt Improved Workflow v1 leveraging current repo-native communications, decision log, provenance, and batch statuses.
+- Rationale: Minimizes tooling change, maximizes clarity and velocity before hui; aligns with existing coordination artifacts and Mahara’s preferences.
+- Approver: Mahara (PENDING CONFIRMATION)
+- Impact / Follow-ups:
+  - Publish roster and workflow announcement in `migration/COMMUNICATION.md` and `migration/agent_coordination/agent_sync_status.md`.
+  - Use standardized batch statuses in `migration/migration_manifest.json` (todo → doing → review → done/skipped; allow blocked).
+  - Enforce engineering standards: env vars for secrets, TypeScript strict, JSDoc for public methods, consistent error handling, input validation, parameterized queries, structured logging.
+  - Provenance: continue `writeEpisode()` for key actions; heartbeat remains active.
+  - Security: move Supabase creds in `src/services/TeKeteAkoClient.ts` to env vars.
+- Links: `migration/COMMUNICATION.md`, `migration/agent_coordination/agent_sync_status.md`, `src/services/TeKeteAkoClient.ts`, `migration/migration_manifest.json`
+
 ### DEC-20250816-001
 
 - Date: 2025-08-16

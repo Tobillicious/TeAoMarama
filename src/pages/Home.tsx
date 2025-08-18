@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
 import './Home.css';
 
+interface ResourceIndexItem {
+  category: string;
+}
+
 export default function Home() {
   const { currentUser, logOut } = useAuth();
   const navigate = useNavigate();
@@ -15,7 +19,11 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setResourceCount(data.items?.length?.toLocaleString() || '0');
-        const uniqueCategories = [...new Set(data.items?.map((item: any) => item.category as string) || [])] as string[];
+        const uniqueCategories = [
+          ...new Set(
+            (data.items as ResourceIndexItem[] | undefined)?.map((item) => item.category) || [],
+          ),
+        ];
         setCategories(uniqueCategories);
       })
       .catch(() => setResourceCount('5,439')); // Fallback if fetch fails
@@ -59,16 +67,10 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-actions">
-            <button 
-              className="btn-primary" 
-              onClick={() => navigate('/year8-writing-revolution')}
-            >
+            <button className="btn-primary" onClick={() => navigate('/year8-writing-revolution')}>
               🚀 Year 8 Structured Literacy
             </button>
-            <button 
-              className="btn-secondary" 
-              onClick={() => navigate('/resources')}
-            >
+            <button className="btn-secondary" onClick={() => navigate('/resources')}>
               📊 Explore Resources
             </button>
           </div>
@@ -83,8 +85,9 @@ export default function Home() {
             <div className="gold-badge">🏆 GOLD STANDARD</div>
             <h3 className="unit-title">📝 Y8 Structured Literacy: Writing Revolution</h3>
             <p className="unit-description">
-              Complete systematic literacy instruction combining The Writing Revolution methodology with Te Ao Māori perspectives. 
-              Features comprehensive sentence-level instruction, cultural integration, and NCEA preparation.
+              Complete systematic literacy instruction combining The Writing Revolution methodology
+              with Te Ao Māori perspectives. Features comprehensive sentence-level instruction,
+              cultural integration, and NCEA preparation.
             </p>
             <div className="unit-metrics">
               <div className="metric">
@@ -104,7 +107,7 @@ export default function Home() {
                 <span className="metric-label">Cultural Integration</span>
               </div>
             </div>
-            <button 
+            <button
               className="explore-gold-btn"
               onClick={() => navigate('/year8-writing-revolution')}
             >
@@ -122,13 +125,19 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>🎵 Phonological Awareness</h3>
-              <p>Foundation sound awareness through Te Ao Māori oral traditions and systematic skill development.</p>
+              <p>
+                Foundation sound awareness through Te Ao Māori oral traditions and systematic skill
+                development.
+              </p>
               <div className="unit-stats">
                 <span>📖 8 Activities</span>
                 <span>📋 20+ Resources</span>
                 <span>⏱️ 6 Weeks</span>
               </div>
-              <button onClick={() => navigate('/phonological-awareness')} className="explore-unit-btn">
+              <button
+                onClick={() => navigate('/phonological-awareness')}
+                className="explore-unit-btn"
+              >
                 Explore Unit →
               </button>
             </div>
@@ -136,7 +145,9 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>🔤 Systematic Phonics</h3>
-              <p>Phases 1-6 phonics instruction with cultural connections and The Code methodology.</p>
+              <p>
+                Phases 1-6 phonics instruction with cultural connections and The Code methodology.
+              </p>
               <div className="unit-stats">
                 <span>📖 6 Phases</span>
                 <span>📋 30+ Cards</span>
@@ -150,7 +161,9 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>👁️ Sight Word Mastery</h3>
-              <p>High-frequency word recognition with Dolch, Fry, and Māori vocabulary integration.</p>
+              <p>
+                High-frequency word recognition with Dolch, Fry, and Māori vocabulary integration.
+              </p>
               <div className="unit-stats">
                 <span>📖 407+ Words</span>
                 <span>📋 3 Modes</span>
@@ -164,13 +177,18 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>📖 Reading Strategies</h3>
-              <p>Advanced comprehension techniques with cultural text analysis and critical thinking.</p>
+              <p>
+                Advanced comprehension techniques with cultural text analysis and critical thinking.
+              </p>
               <div className="unit-stats">
                 <span>📖 12 Strategies</span>
                 <span>📋 25+ Resources</span>
                 <span>⏱️ 10 Weeks</span>
               </div>
-              <button onClick={() => navigate('/year8-reading-strategies')} className="explore-unit-btn">
+              <button
+                onClick={() => navigate('/year8-reading-strategies')}
+                className="explore-unit-btn"
+              >
                 Explore Unit →
               </button>
             </div>
@@ -178,13 +196,18 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>📚 Academic Vocabulary</h3>
-              <p>Subject-specific academic words with morphological analysis and NCEA preparation.</p>
+              <p>
+                Subject-specific academic words with morphological analysis and NCEA preparation.
+              </p>
               <div className="unit-stats">
                 <span>📖 150+ Words</span>
                 <span>📋 8 Subjects</span>
                 <span>⏱️ 12 Weeks</span>
               </div>
-              <button onClick={() => navigate('/year8-academic-vocab')} className="explore-unit-btn">
+              <button
+                onClick={() => navigate('/year8-academic-vocab')}
+                className="explore-unit-btn"
+              >
                 Explore Unit →
               </button>
             </div>
@@ -192,7 +215,10 @@ export default function Home() {
             <div className="unit-card premium">
               <div className="unit-badge">✨ PREMIUM</div>
               <h3>🔬 Advanced Morphology</h3>
-              <p>Latin, Greek, and Anglo-Saxon roots with Māori morphological patterns for secondary success.</p>
+              <p>
+                Latin, Greek, and Anglo-Saxon roots with Māori morphological patterns for secondary
+                success.
+              </p>
               <div className="unit-stats">
                 <span>📖 200+ Morphemes</span>
                 <span>📋 6 Origins</span>
