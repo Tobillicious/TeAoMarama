@@ -122,8 +122,7 @@ export default function VirtualizedResourceList({
 
       {/* Virtualized List */}
       <div
-        className="virtual-list-container"
-        style={{ height: CONTAINER_HEIGHT }}
+        className="virtual-list-container virtual-list-container-height"
         onScroll={handleScroll}
       >
         <div
@@ -140,8 +139,7 @@ export default function VirtualizedResourceList({
             {visibleItems.items.map((resource) => (
               <div
                 key={resource.id}
-                className="resource-item"
-                style={{ height: ITEM_HEIGHT }}
+                className="resource-item resource-item-height"
                 onClick={() => onResourceSelect(resource)}
               >
                 <div className="resource-icon">{getCategoryIcon(resource.category)}</div>
