@@ -393,8 +393,7 @@ export default function Year8AcademicVocab() {
                   {getSubjectIcon(currentWord.subjectArea)} {currentWord.subjectArea}
                 </span>
                 <span 
-                  className="difficulty-badge"
-                  style={{ backgroundColor: getDifficultyColor(currentWord.difficulty) }}
+                  className={`difficulty-badge difficulty-${currentWord.difficulty}`}
                 >
                   {currentWord.difficulty}
                 </span>
