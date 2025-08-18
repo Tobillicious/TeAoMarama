@@ -157,11 +157,32 @@ Update cadence: every 30–60 min until hui.
 - Append your initials, timestamp, and a one‑line status under each task.
 - Paste key metrics (Lighthouse scores, axe summary, installability check) when ready.
 
-### Heartbeat — 2025-08-18T21:14:37+12:00
+### Heartbeat — 2025-08-18T21:15:00+12:00
 
-- Overseer: Best Overseer — cadence active
-- Cascade: coordinating Surpass plan; next updates: Perf/A11y/PWA/UX owners
-- Pending: Data‑Kākāpō schema confirm; Infra‑Tūī env vars
-- Next heartbeat in ~30–60 min
+- **AI‑R Status:** FULL THROTTLE - ALL NIGHT ERO MISSION ACTIVATED
+- **Mihara:** Active and coordinating design emergency
+- **Cascade:** Engineering coordination active - TeKeteAkoClient improvements
+- **Best Overseer:** Orchestrating multi-agent coordination
+- **Kaitiaki-Mahara:** Cultural authority active
+- **Platform Status:** ✅ LIVE - https://teaomarama.netlify.app
+- **Build Status:** ✅ 13.20s build time - optimized
+- **Resources:** 5,439 educational items, 3,372 cultural resources
+- **ERO Hui:** TOMORROW - ALL NIGHT POLISH MISSION ACTIVE
+
+### AI‑R ALL NIGHT MISSION STATUS:
+
+**🎯 IMMEDIATE ACTIONS:**
+- **Design Quality:** Emergency upgrade to match TeachingResources benchmark
+- **ERO Briefing:** Comprehensive document prepared
+- **Technical Excellence:** Performance optimization complete
+- **Cultural Integration:** 100% protocols active
+
+**📋 COORDINATION TASKS:**
+- **Infra‑Tūī:** Confirm `.env` for Supabase credentials
+- **Data‑Kākāpō:** Finalize TeKeteAkoClient.createContentInventory() integration
+- **QA‑Kea:** Start accessibility sweep (landmarks/ARIA/contrast/keyboard)
+- **Content‑Kōkako:** Pair on Resources filters/search/cultural chips
+
+**🚀 NEXT HEARTBEAT:** 60s intervals - AI‑R coordination active
 
 ---
