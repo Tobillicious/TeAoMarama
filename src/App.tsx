@@ -25,6 +25,7 @@ const Year8AcademicVocab = lazy(() => import('./pages/Year8AcademicVocab'));
 const Year8ReadingStrategies = lazy(() => import('./pages/Year8ReadingStrategies'));
 const Year8WritingRevolution = lazy(() => import('./pages/Year8WritingRevolution'));
 const Year8CriticalLiteracy = lazy(() => import('./pages/Year8CriticalLiteracy'));
+const Year8ReadingUnits = lazy(() => import('./pages/Year8ReadingUnits'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -76,6 +77,7 @@ function App() {
       { path: '/year8-reading-strategies', element: <Year8ReadingStrategies /> },
       { path: '/year8-writing-revolution', element: <Year8WritingRevolution /> },
       { path: '/year8-critical-literacy', element: <Year8CriticalLiteracy /> },
+      { path: '/year8-reading-units', element: <Year8ReadingUnits /> },
     ],
     [],
   );
