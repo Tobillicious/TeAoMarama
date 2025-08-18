@@ -245,10 +245,7 @@ export class MiharaDashboard {
       (migrationMetrics as { duration?: number; startTime: number }).duration =
         Date.now() - migrationMetrics.startTime;
 
-      const recommendations = this.generateMigrationRecommendations(
-        migrationMetrics,
-        culturalSafety,
-      );
+      const recommendations = this.generateMigrationRecommendations(migrationMetrics);
 
       await writeEpisode('mihara-dashboard', {
         timestamp: new Date().toISOString(),
