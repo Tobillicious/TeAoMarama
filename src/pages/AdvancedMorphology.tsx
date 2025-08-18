@@ -287,16 +287,7 @@ export default function AdvancedMorphology() {
     setAnalysisResults(results);
   };
 
-  const getDifficultyColor = (difficulty: string) => {
-    const colors = {
-      'year7': '#4caf50',
-      'year8': '#8bc34a',
-      'year9': '#ff9800', 
-      'year10': '#f44336',
-      'advanced': '#9c27b0'
-    };
-    return colors[difficulty as keyof typeof colors] || '#666';
-  };
+
 
   const getTypeIcon = (type: string) => {
     const icons = {
