@@ -2,7 +2,7 @@
 
 /**
  * HUI CONTINUOUS COORDINATION SYSTEM
- * 
+ *
  * Runs continuously to maintain team coordination across all LLMs
  * Ensures brilliant fast teamwork is maintained for tomorrow's hui
  */
@@ -69,7 +69,7 @@ class HuiContinuousCoordinator {
     console.log('🌟 HUI CONTINUOUS COORDINATION SYSTEM');
     console.log('=====================================');
     console.log('🚀 MAINTAINING BRILLIANT FAST TEAMWORK');
-    console.log('Running continuously for tomorrow\'s hui...\n');
+    console.log("Running continuously for tomorrow's hui...\n");
 
     // Initial status
     this.updateStatus();
@@ -111,7 +111,11 @@ class HuiContinuousCoordinator {
     console.log(`\n📊 COORDINATION STATUS - ${new Date().toLocaleTimeString()}`);
     console.log('=====================================');
     console.log(`🤖 Agents: ${this.status.agents.active}/${this.status.agents.total} active`);
-    console.log(`🔄 Cross-Platform Sync: ${this.status.coordination.crossPlatformSync ? 'ACTIVE' : 'INACTIVE'}`);
+    console.log(
+      `🔄 Cross-Platform Sync: ${
+        this.status.coordination.crossPlatformSync ? 'ACTIVE' : 'INACTIVE'
+      }`,
+    );
     console.log(`🌐 Platform: ${this.status.platform.status.toUpperCase()}`);
     console.log(`⚡ Performance: ${this.status.platform.performance}/100`);
     console.log(`📚 Resources: ${this.status.platform.resources.toLocaleString()}`);
@@ -121,7 +125,7 @@ class HuiContinuousCoordinator {
 
     if (this.status.huiReadiness.criticalAlerts.length > 0) {
       console.log('⚠️  ALERTS:');
-      this.status.huiReadiness.criticalAlerts.forEach(alert => {
+      this.status.huiReadiness.criticalAlerts.forEach((alert) => {
         console.log(`   • ${alert}`);
       });
     }
@@ -165,7 +169,8 @@ class HuiContinuousCoordinator {
     };
 
     // Log heartbeat (quietly)
-    if (Math.random() < 0.1) { // 10% chance to log
+    if (Math.random() < 0.1) {
+      // 10% chance to log
       console.log(`💓 Coordination heartbeat - ${this.status.agents.active} agents active`);
     }
   }
