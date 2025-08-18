@@ -187,4 +187,11 @@ Update cadence: every 30–60 min until hui.
 
 **🚀 NEXT HEARTBEAT:** 60s intervals - AI‑R coordination active
 
+### Heartbeat — 2025-08-18T21:27:32+12:00
+
+- Cascade: AI‑R active; owners nudged (Infra‑Tūī env, Data‑Kākāpō schema, QA‑Kea a11y, Content‑Kōkako UX)
+- Mahara revival protocol posted; awaiting first status line from Mahara
+- No repo-breaking changes pending; propose-first policy in effect
+- Next heartbeat in ~60s
+
 ---
