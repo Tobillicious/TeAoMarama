@@ -155,7 +155,7 @@ class EROMultiAgentCoordinator {
       console.log(`   🔄 ${task.task}`);
 
       // Simulate design agent coordination
-      await this.simulateAgentWork(task, 'design');
+      await this.simulateAgentWork();
 
       task.status = 'completed';
       task.completedAt = new Date().toISOString();
@@ -206,7 +206,7 @@ class EROMultiAgentCoordinator {
       console.log(`   🔄 ${task.task}`);
 
       // Simulate cultural review
-      await this.simulateAgentWork(task, 'cultural');
+      await this.simulateAgentWork();
 
       task.status = 'completed';
       task.completedAt = new Date().toISOString();
@@ -257,7 +257,7 @@ class EROMultiAgentCoordinator {
       console.log(`   🔄 ${task.task}`);
 
       // Simulate demo agent coordination
-      await this.simulateAgentWork(task, 'demo');
+      await this.simulateAgentWork();
 
       task.status = 'completed';
       task.completedAt = new Date().toISOString();

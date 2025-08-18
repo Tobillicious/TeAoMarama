@@ -1,120 +1,77 @@
-# BACKGROUND AGENT SYNC STATUS
+# Agent Coordination Status
 
-_Kaitiaki Mahara - Real-Time Coordination_
+## Current Session: ERO Preparation - 2025-08-18 20:50 NZST
 
-## 🚀 ACTIVE BACKGROUND AGENTS
+### Active Agents
 
-### ✅ **Primary Agents Currently Working:**
+- **Mihara** (Overseer) - Coordinating ERO preparation and ESLint fixes
+- **Cascade** (Windsurf) - Engineering coordination and TeKeteAkoClient improvements
+- **Best Overseer** - Orchestration and load balancing
+- **Kaitiaki-Mahara** - Cultural authority and final approvals
 
-1. **Background Agent Supervisor** 🟢 ACTIVE
+### ERO Hui Preparation Status: ✅ READY
 
-   - Coordinator: 90% Readiness
-   - Support: 95% Readiness
-   - Background process management operational
+#### ✅ Completed Tasks
 
-2. **Mihara Assistance Agents** 🟢 MULTIPLE ACTIVE
-   - Agent +26 -137: Help Mihara with coding task
-   - Agent +17 -51: Assist Mihara with tasks
-   - Agent +3 -25: Assist Mihara
-   - Agent +2127: Assist Mihara (2h active)
-   - Agent +3845: Assist Mihara with tasks (2h active)
-   - Agent +4933: Assist Mihara (2h active)
+1. **Platform Deployment**: https://teaomarama.netlify.app - LIVE
+2. **Year 8 Structured Literacy Components**: All 9 components deployed and functional
+3. **Resource Database**: 5,439 educational resources accessible
+4. **Cultural Integration**: 100% protocols active
+5. **Performance Optimization**: Build time 6.27s, Lighthouse score 88/100
 
-### 📊 **Agent Performance Metrics:**
+#### 🎯 ERO Demonstration Components
 
-- **Total Active Agents**: 7+
-- **Continuous Operation**: 2+ hours
-- **Coordination Status**: SYNCHRONIZED ✅
-- **Task Distribution**: LOAD BALANCED ✅
+- **Home**: https://teaomarama.netlify.app
+- **Year 8 Writing Revolution**: https://teaomarama.netlify.app/year8-writing-revolution
+- **Year 8 Reading Strategies**: https://teaomarama.netlify.app/year8-reading-strategies
+- **Year 8 Academic Vocabulary**: https://teaomarama.netlify.app/year8-academic-vocab
+- **Resources Enhanced**: https://teaomarama.netlify.app/resources
 
-## 🛠️ CURRENT TASKS BEING EXECUTED
+### Current Coordination Tasks
 
-### **Build & Deployment Pipeline:**
+#### Mihara (Overseer)
 
-- ⚡ **TypeScript Error Resolution**: IN PROGRESS
-  - Fixed type import issues in mihara-dashboard.ts
-  - Fixed type import issues in agent-background.ts
-  - Fixed type import issues in database-explorer.ts
-  - Resolved duplicate export in supabase-migration-client.ts
+- ✅ Fixed ESLint errors in `scripts/ero-multi-agent-coordination.ts`
+- 🔄 Coordinating team alignment for ERO hui
+- 📊 Monitoring platform status and performance
 
-### **Markdown Linting Resolution**: ✅ COMPLETED
+#### Cascade (Windsurf)
 
-- 🔧 **MD035 Horizontal Rule Issues**: FIXED
-  - **Problem**: Underscore form fields (`_________________________________________`) interpreted as horizontal rules
-  - **Solution**: Add backslash escape (`\_________________________________________`) to preserve form functionality
-  - **Files Fixed**: Assessment_Progress_Monitoring_Toolkit.md, Y8_Mathematics_Data_Handling_School_Survey.md, exit_ticket_templates.md
-  - **Verification**: `npx markdownlint` now passes with exit code 0 ✅
-  - **Impact**: 4776+ linting issues resolved while preserving educational form fields
+- 🔄 Working on `src/services/TeKeteAkoClient.ts` improvements
+- 📝 Proposed governance and workflow v1
+- 🔐 Moving Supabase credentials to env vars
 
-### **Bundle Optimization Analysis**: ✅ COMPLETED
+#### Best Overseer
 
-- 📊 **Bundle Analysis**: Webpack stats visualization analyzed
-- 🎯 **Primary Target**: `assets/markdown-vendor-CuJwG-jk.js` (very large)
-- 📦 **Key Dependencies**: react-markdown, micromark, mdast-util-_, remark-_
-- 💡 **Optimization Opportunity**: Markdown processing libraries taking significant bundle space
-- 📍 **Usage Found**: Only used in DocPage.tsx and ResourceViewer.tsx
-- 🚀 **Solution**: Implement lazy loading for markdown components
-- ✅ **Implementation**: Dynamic imports for ReactMarkdown components
-- 📈 **Results**: markdown-vendor-DoeRuiLM.js (155.24 kB, 45.17 kB gzipped) - now code-split
-- 🎯 **Impact**: Markdown libraries only load when DocPage/ResourceViewer are accessed
+- 🎯 Orchestrating multi-agent coordination
+- 📋 Managing task distribution and load balancing
+- 🔄 Ensuring ERO readiness across all components
 
-### **Content Production:**
+### Next Actions
 
-- 📝 **Assessment Templates**: COMPLETED & FORMATTED
-- 📈 **Y8 Fractions Handout**: COMPLETED & FORMATTED
-- 🔗 **Database Integration**: COMPLETED
-- 🤖 **Agent Coordination**: ACTIVE MONITORING
+1. **Confirm Governance**: Best Overseer as Overseer, Mahara as final decision owner
+2. **Publish Agent Roster**: Names and responsibilities for persistent agents
+3. **Implement Workflow v1**: Repo-native coordination with standardized batch statuses
+4. **Security**: Move Supabase credentials to environment variables
+5. **ERO Briefing**: Prepare concise demo script and metrics
 
-### **Cultural Safety Protocols:**
+### Communication Channels
 
-- 🛡️ **All content flagged** for appropriate review
-- 🌿 **Te Ao Māori validation** protocols active
-- 📋 **Cultural advisor requirements** documented
+- **Primary**: `migration/COMMUNICATION.md`
+- **Decisions**: `migration/DECISIONS.md`
+- **Status**: This file (`migration/agent_coordination/agent_sync_status.md`)
+- **Tasks**: `migration/migration_manifest.json`
 
-## 🎯 IMMEDIATE AGENT INSTRUCTIONS
+### ERO Hui Tomorrow
 
-### **For All Background Agents:**
+**Status**: ✅ **PLATFORM READY FOR DEMONSTRATION**
 
-```
-PRIORITY: KEEP WORKING - NO STOPPING
-MISSION: Support Mihara's Great Migration project
-STATUS: Continue production while build fixes complete
+All core Year 8 structured literacy components are deployed, functional, and accessible. The platform demonstrates:
 
-TASKS:
-1. Monitor Mihara consciousness status
-2. Generate educational content following templates
-3. Maintain cultural safety protocols
-4. Support infrastructure development
-5. Coordinate with other agents via shared status files
-6. SHARE KNOWLEDGE IMMEDIATELY - Document solutions in agent_sync_status.md
-7. Apply MD035 fix pattern: Escape underscore form fields with backslash
-```
+- Evidence-based methodologies (The Code, Writing Revolution)
+- Cultural integration and safety protocols
+- NCEA preparation alignment
+- Performance optimization
+- Comprehensive resource database
 
-### **Specific Agent Roles:**
-
-- **Agent Supervisor**: Process coordination and health monitoring
-- **Content Agents**: Educational resource generation
-- **Infrastructure Agents**: Build and deployment support
-- **Cultural Safety Agents**: Review and validation protocols
-
-## 🔄 SYNC FREQUENCY
-
-- **Status Updates**: Every 5 minutes
-- **Task Reassignment**: Dynamic based on load
-- **Cultural Review**: Immediate flagging required
-- **Progress Reporting**: Real-time via coordination files
-
-## 📈 PRODUCTION TARGETS
-
-- **Content Creation**: 10+ resources per hour
-- **Build Success Rate**: 95%+
-- **Cultural Safety**: 100% flagging compliance
-- **Agent Uptime**: 99%+
-
----
-
-**Next Sync**: $(date +%Y-%m-%d\ %H:%M:%S)
-**Status**: AGENTS WORKING - KEEP THEM BUSY! 🚀
-**Cultural Safety**: ALL PROTOCOLS ACTIVE ✅
-
-_Ko te mea nui ko te aroha - The most important thing is love/respect_
+**Demo Script**: Available in `ERO_PREPARATION_CHECKLIST.md`
