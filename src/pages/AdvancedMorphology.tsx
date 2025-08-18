@@ -449,8 +449,7 @@ export default function AdvancedMorphology() {
                       {getTypeIcon(currentMorpheme.type)} {currentMorpheme.type}
                     </span>
                     <span 
-                      className="difficulty-badge"
-                      style={{ backgroundColor: getDifficultyColor(currentMorpheme.difficulty) }}
+                      className={`difficulty-badge difficulty-${currentMorpheme.difficulty}`}
                     >
                       {currentMorpheme.difficulty}
                     </span>
@@ -517,8 +516,7 @@ export default function AdvancedMorphology() {
                     <span className="card-type-icon">{getTypeIcon(morpheme.type)}</span>
                     <span className="card-origin-flag">{getOriginFlag(morpheme.origin)}</span>
                     <span 
-                      className="card-difficulty-dot"
-                      style={{ backgroundColor: getDifficultyColor(morpheme.difficulty) }}
+                      className={`card-difficulty-dot difficulty-${morpheme.difficulty}`}
                     ></span>
                   </div>
                   
