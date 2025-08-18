@@ -131,16 +131,16 @@ export class ResourceService {
     try {
       // 🚀 USE PERFORMANCE OPTIMIZER FOR SPEED
       const searchPrompt = this.buildSearchPrompt(query, userRole);
-      
+
       console.log('⚡ Using performance optimizer for resource search...');
       const startTime = Date.now();
-      
+
       const result = await llmOptimizer.fastLLMCall(searchPrompt, {
         type: 'resource_search',
         complexity: 'medium',
         priority: 'speed', // Prioritize speed for search
         culturalSensitive: query.culturalContent || false,
-        context: { userRole, query }
+        context: { userRole, query },
       });
 
       const searchTime = Date.now() - startTime;

@@ -4,9 +4,9 @@
  * Process multiple Te Kete Ako handouts simultaneously for ERO Hui
  */
 
-import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
-import { join, basename } from 'path';
+import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
+import { basename, join } from 'path';
 
 const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
 const TARGET_PATH = 'src/components/educational/handouts';
@@ -44,7 +44,7 @@ async function extractHandoutData(filePath: string): Promise<HandoutData> {
     filename: basename(filePath, '.html'),
     culturalThemes,
     subject,
-    yearLevel
+    yearLevel,
   };
 }
 
@@ -68,10 +68,14 @@ function extractCulturalThemes(content: string, title: string): string[] {
 function determineSubject(content: string, title: string): string {
   const text = `${title} ${content}`.toLowerCase();
 
-  if (text.includes('math') || text.includes('algebra') || text.includes('geometry')) return 'Mathematics';
-  if (text.includes('science') || text.includes('biology') || text.includes('chemistry')) return 'Science';
-  if (text.includes('english') || text.includes('writing') || text.includes('reading')) return 'English';
-  if (text.includes('social studies') || text.includes('history') || text.includes('geography')) return 'Social Studies';
+  if (text.includes('math') || text.includes('algebra') || text.includes('geometry'))
+    return 'Mathematics';
+  if (text.includes('science') || text.includes('biology') || text.includes('chemistry'))
+    return 'Science';
+  if (text.includes('english') || text.includes('writing') || text.includes('reading'))
+    return 'English';
+  if (text.includes('social studies') || text.includes('history') || text.includes('geography'))
+    return 'Social Studies';
   if (text.includes('te reo') || text.includes('māori language')) return 'Te Reo Māori';
   if (text.includes('art') || text.includes('creative')) return 'Arts';
   if (text.includes('health') || text.includes('physical')) return 'Health & Physical Education';
@@ -96,7 +100,7 @@ function determineYearLevel(content: string, title: string): string {
 function generateComponentName(filename: string): string {
   return filename
     .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, l => l.toUpperCase())
+    .replace(/\b\w/g, (l) => l.toUpperCase())
     .replace(/\s/g, '');
 }
 
@@ -121,17 +125,23 @@ export const ${componentName}: React.FC<${componentName}Props> = ({ className = 
     >
       <div className="handout-content">
         {/* Cultural Context */}
-        ${handout.culturalThemes.length > 0 ? `
+        ${
+          handout.culturalThemes.length > 0
+            ? `
         <div className="cultural-context">
           <h3 className="cultural-title">
             <span className="cultural-icon">🌿</span>
             Cultural Themes
           </h3>
           <div className="cultural-themes">
-            ${handout.culturalThemes.map(theme => `<span className="theme-tag">${theme}</span>`).join('\n            ')}
+            ${handout.culturalThemes
+              .map((theme) => `<span className="theme-tag">${theme}</span>`)
+              .join('\n            ')}
           </div>
         </div>
-        ` : ''}
+        `
+            : ''
+        }
 
         {/* Main Content */}
         <div className="content-section">
@@ -289,20 +299,20 @@ function generateCSS(handout: HandoutData): string {
 async function migrateHandout(filePath: string): Promise<void> {
   try {
     console.log(`🔄 Migrating: ${basename(filePath)}`);
-    
+
     const handout = await extractHandoutData(filePath);
     const componentName = generateComponentName(handout.filename);
-    
+
     // Generate React component
     const componentCode = generateReactComponent(handout);
     const componentPath = join(TARGET_PATH, `${componentName}.tsx`);
     await writeFile(componentPath, componentCode);
-    
+
     // Generate CSS
     const cssCode = generateCSS(handout);
     const cssPath = join(TARGET_PATH, `${componentName}.css`);
     await writeFile(cssPath, cssCode);
-    
+
     console.log(`✅ Migrated: ${componentName} (${handout.culturalThemes.join(', ')})`);
   } catch (error) {
     console.error(`❌ Failed to migrate ${basename(filePath)}:`, error);
@@ -312,28 +322,25 @@ async function migrateHandout(filePath: string): Promise<void> {
 async function main() {
   try {
     console.log('🚀 RAPID BATCH MIGRATION STARTED');
-    
+
     // Ensure target directory exists
     await mkdir(TARGET_PATH, { recursive: true });
-    
+
     // Get first 20 handouts for rapid processing
     const files = await readdir(TE_KETE_HANDOUTS_PATH);
     const handoutFiles = files
-      .filter(file => file.endsWith('.html') && !file.startsWith('.'))
+      .filter((file) => file.endsWith('.html') && !file.startsWith('.'))
       .slice(0, 20);
-    
+
     console.log(`📊 Processing ${handoutFiles.length} handouts in parallel`);
-    
+
     // Process all handouts in parallel
     await Promise.all(
-      handoutFiles.map(file => 
-        migrateHandout(join(TE_KETE_HANDOUTS_PATH, file))
-      )
+      handoutFiles.map((file) => migrateHandout(join(TE_KETE_HANDOUTS_PATH, file))),
     );
-    
+
     console.log('🎯 RAPID BATCH MIGRATION COMPLETE!');
     console.log(`📁 Components available at: ${TARGET_PATH}`);
-    
   } catch (error) {
     console.error('❌ Rapid migration failed:', error);
   }
