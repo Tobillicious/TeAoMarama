@@ -247,7 +247,7 @@ export class MiharaDashboard {
 
       const recommendations = this.generateMigrationRecommendations({
         duration: (migrationMetrics as { duration?: number }).duration || 0,
-        errors: (migrationMetrics.errors as string[]) || []
+        errors: (migrationMetrics.errors as string[]) || [],
       });
 
       await writeEpisode('mihara-dashboard', {
