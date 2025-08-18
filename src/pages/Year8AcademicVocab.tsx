@@ -607,7 +607,7 @@ export default function Year8AcademicVocab() {
         <p className="cultural-motto">
           🌿 "He kupu ako, he tangata ako" - Learning words, learning people
         </p>
-        <p className="platform-info">Te Kete Ako - Year 8 Academic Excellence</p>
+        <p className="platform-info">TeAoMarama - Year 8 Academic Excellence</p>
       </footer>
     </div>
   );
