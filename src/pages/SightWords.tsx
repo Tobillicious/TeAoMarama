@@ -641,10 +641,9 @@ export default function SightWords() {
                   onClick={() => setCurrentWord(word)}
                 >
               <div className="card-header">
-                <span 
-                  className="card-difficulty-dot"
-                  style={{ backgroundColor: getDifficultyColor(word.difficulty) }}
-                ></span>
+                                  <span 
+                    className={`card-difficulty-dot difficulty-${word.difficulty}`}
+                  ></span>
                 <span className="card-category-icon">
                   {getCategoryIcon(word.category)}
                 </span>
