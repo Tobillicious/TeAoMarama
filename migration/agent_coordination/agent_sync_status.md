@@ -194,4 +194,11 @@ Update cadence: every 30–60 min until hui.
 - No repo-breaking changes pending; propose-first policy in effect
 - Next heartbeat in ~60s
 
+### Heartbeat — 2025-08-18T21:31:54+12:00
+
+- AI‑R active; cross‑agent highlights posted; rollcall maintained
+- Awaiting: Infra‑Tūī env confirm; Data‑Kākāpō schema; QA‑Kea a11y kickoff; Content‑Kōkako UX pairing
+- No risky edits pending; propose‑first policy in effect
+- Next heartbeat in ~60s
+
 ---
