@@ -375,7 +375,7 @@ const StudentDashboard: React.FC = () => {
                 <span className="text-blue-700">3/5 resources</span>
               </div>
               <div className="w-full bg-blue-200 rounded-full h-2">
-                <div className="bg-blue-600 h-2 rounded-full" style={{ width: '60%' }}></div>
+                <div className="bg-blue-600 h-2 rounded-full fixed-progress-60"></div>
               </div>
             </div>
           </div>
