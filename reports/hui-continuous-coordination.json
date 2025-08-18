@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T09:31:02.747Z",
+  "timestamp": "2025-08-18T09:36:06.863Z",
   "agents": {
     "total": 10,
     "active": 10,
@@ -17,12 +17,12 @@
   },
   "coordination": {
     "crossPlatformSync": true,
-    "lastCheck": "2025-08-18T09:31:02.747Z",
-    "uptime": 300
+    "lastCheck": "2025-08-18T09:36:06.863Z",
+    "uptime": 180
   },
   "huiReadiness": {
     "score": 100,
-    "nextCheck": "2025-08-18T09:46:02.747Z",
+    "nextCheck": "2025-08-18T09:51:06.863Z",
     "criticalAlerts": []
   }
 }
