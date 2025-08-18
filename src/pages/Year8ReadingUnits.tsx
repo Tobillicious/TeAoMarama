@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import './Year8ReadingUnits.css';
 
+interface TeachingResource {
+  id: string;
+  type: 'slideshow' | 'handout' | 'card' | 'podcast' | 'news-story' | 'video' | 'worksheet' | 'assessment';
+  title: string;
+  description: string;
+  url?: string;
+  fileType: string;
+  duration?: string;
+  targetAudience: 'teacher' | 'student' | 'both';
+  culturalContext: string;
+}
+
 interface ReadingUnit {
   id: string;
   title: string;
@@ -15,6 +27,10 @@ interface ReadingUnit {
   activities: ReadingActivity[];
   assessment: AssessmentItem[];
   resources: string[];
+  teachingResources: TeachingResource[];
+  explicitTeachingStrategies: string[];
+  multimediaIntegration: string[];
+  differentiationStrategies: string[];
 }
 
 interface ReadingActivity {
@@ -33,6 +49,8 @@ interface ReadingActivity {
   materials: string[];
   culturalIntegration: string;
   differentiation: string[];
+  explicitTeaching: string[];
+  multimediaElements: string[];
 }
 
 interface AssessmentItem {
@@ -40,6 +58,7 @@ interface AssessmentItem {
   description: string;
   criteria: string[];
   culturalConsiderations: string;
+  assessmentTools: string[];
 }
 
 const readingUnits: ReadingUnit[] = [
@@ -82,6 +101,8 @@ const readingUnits: ReadingUnit[] = [
           'Cultural vocabulary lists',
           'Question prompts',
           'Whiteboard',
+          'Interactive slideshow',
+          'Student response cards',
         ],
         culturalIntegration:
           'Incorporates Māori bird species, native plants, and cultural concepts in sentence expansion.',
@@ -89,6 +110,18 @@ const readingUnits: ReadingUnit[] = [
           'Foundation: Focus on 2-3 detail additions',
           'Developing: Add 4-5 details with cultural context',
           'Advanced: Create compound-complex sentences with multiple cultural references',
+        ],
+        explicitTeaching: [
+          'Direct instruction on sentence structure',
+          'Modeling with think-aloud protocols',
+          'Guided practice with cultural examples',
+          'Independent practice with feedback',
+        ],
+        multimediaElements: [
+          'Slideshow with animated sentence building',
+          'Audio pronunciation of Te Reo Māori words',
+          'Video clips of native birds and plants',
+          'Interactive whiteboard activities',
         ],
       },
       {
@@ -104,13 +137,31 @@ const readingUnits: ReadingUnit[] = [
           'Place appositives next to nouns with proper punctuation',
           'Check sentence clarity and cultural accuracy',
         ],
-        materials: ['Cultural figure cards', 'Appositive examples', 'Practice worksheets'],
+        materials: [
+          'Cultural figure cards',
+          'Appositive examples',
+          'Practice worksheets',
+          'Digital sentence builder',
+          'Cultural context slideshow',
+        ],
         culturalIntegration:
           'Uses Māori historical figures, cultural concepts, and traditional knowledge in appositive practice.',
         differentiation: [
           'Foundation: Simple appositives with basic cultural terms',
           'Developing: Complex appositives with historical context',
           'Advanced: Multiple appositives with detailed cultural explanations',
+        ],
+        explicitTeaching: [
+          'Step-by-step appositive construction',
+          'Cultural context mini-lessons',
+          'Peer feedback protocols',
+          'Individual conferencing',
+        ],
+        multimediaElements: [
+          'Biographical slideshows of Māori figures',
+          'Podcast interviews with cultural experts',
+          'Interactive sentence building games',
+          'Digital flashcards with audio',
         ],
       },
     ],
@@ -126,6 +177,12 @@ const readingUnits: ReadingUnit[] = [
         ],
         culturalConsiderations:
           'Ensure cultural accuracy and respect in all sentence examples and assessments.',
+        assessmentTools: [
+          'Sentence complexity rubrics',
+          'Cultural accuracy checklists',
+          'Peer review protocols',
+          'Digital assessment platforms',
+        ],
       },
     ],
     resources: [
@@ -133,6 +190,70 @@ const readingUnits: ReadingUnit[] = [
       'Māori cultural vocabulary lists',
       'Sentence pattern cards',
       'Cultural context guides',
+    ],
+    teachingResources: [
+      {
+        id: 'sentence-expansion-slideshow',
+        type: 'slideshow',
+        title: 'Sentence Expansion Interactive Slideshow',
+        description: 'Animated slideshow showing sentence building process with cultural examples',
+        fileType: 'PowerPoint/Google Slides',
+        targetAudience: 'both',
+        culturalContext: 'Māori cultural examples and Te Reo Māori vocabulary',
+      },
+      {
+        id: 'kernel-sentence-cards',
+        type: 'card',
+        title: 'Kernel Sentence Cards with Cultural Context',
+        description: 'Printable cards with basic sentences ready for expansion',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Māori cultural themes and vocabulary',
+      },
+      {
+        id: 'cultural-vocabulary-handout',
+        type: 'handout',
+        title: 'Te Reo Māori Vocabulary for Sentence Building',
+        description: 'Comprehensive vocabulary list with pronunciation guides',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Authentic Te Reo Māori vocabulary and cultural terms',
+      },
+      {
+        id: 'maori-birds-podcast',
+        type: 'podcast',
+        title: 'Native Birds of Aotearoa',
+        description: 'Podcast episode about native birds and their cultural significance',
+        url: 'https://example.com/maori-birds-podcast',
+        fileType: 'MP3',
+        duration: '15 minutes',
+        targetAudience: 'both',
+        culturalContext: 'Māori cultural knowledge about native birds',
+      },
+    ],
+    explicitTeachingStrategies: [
+      'Direct instruction with modeling',
+      'Think-aloud protocols',
+      'Guided practice with immediate feedback',
+      'Scaffolded sentence building',
+      'Cultural context mini-lessons',
+      'Peer teaching and collaboration',
+    ],
+    multimediaIntegration: [
+      'Interactive whiteboard activities',
+      'Digital sentence builders',
+      'Audio pronunciation guides',
+      'Video cultural context clips',
+      'Online vocabulary games',
+      'Podcast integration for background knowledge',
+    ],
+    differentiationStrategies: [
+      'Tiered sentence complexity levels',
+      'Cultural knowledge pre-teaching',
+      'Visual supports and graphic organizers',
+      'Audio supports for pronunciation',
+      'Extended time for complex tasks',
+      'Peer tutoring opportunities',
     ],
   },
   {
@@ -169,13 +290,32 @@ const readingUnits: ReadingUnit[] = [
           'Map phoneme-grapheme correspondences',
           'Practice blending and segmenting',
         ],
-        materials: ['Phoneme cards', 'Māori vocabulary cards', 'Mapping grids', 'Sound boxes'],
+        materials: [
+          'Phoneme cards',
+          'Māori vocabulary cards',
+          'Mapping grids',
+          'Sound boxes',
+          'Digital phonics games',
+          'Audio pronunciation guides',
+        ],
         culturalIntegration:
           'Uses authentic Māori words and proper pronunciation to build phonological awareness.',
         differentiation: [
           'Foundation: Focus on common phonemes',
           'Developing: Include digraphs and blends',
           'Advanced: Complex phoneme patterns and Māori-specific sounds',
+        ],
+        explicitTeaching: [
+          'Systematic phoneme introduction',
+          'Multi-sensory phonics instruction',
+          'Immediate feedback and correction',
+          'Progressive complexity building',
+        ],
+        multimediaElements: [
+          'Interactive phoneme-grapheme mapping tools',
+          'Audio pronunciation recordings',
+          'Digital flashcards with sound',
+          'Phonics games and apps',
         ],
       },
       {
@@ -190,13 +330,31 @@ const readingUnits: ReadingUnit[] = [
           'Practice reading multisyllabic words',
           'Connect to cultural meanings',
         ],
-        materials: ['Syllable cards', 'Māori place names', 'Cultural terms list'],
+        materials: [
+          'Syllable cards',
+          'Māori place names',
+          'Cultural terms list',
+          'Digital syllable divider',
+          'Interactive whiteboard activities',
+        ],
         culturalIntegration:
           'Uses authentic Māori place names and cultural terms to teach syllable division.',
         differentiation: [
           'Foundation: Simple 2-3 syllable words',
           'Developing: Complex multisyllabic words',
           'Advanced: Compound words and phrases',
+        ],
+        explicitTeaching: [
+          'Syllable division rules instruction',
+          'Modeling with cultural examples',
+          'Guided practice with feedback',
+          'Independent application',
+        ],
+        multimediaElements: [
+          'Animated syllable division demonstrations',
+          'Audio pronunciation of place names',
+          'Interactive syllable counting games',
+          'Digital word building tools',
         ],
       },
     ],
@@ -212,6 +370,12 @@ const readingUnits: ReadingUnit[] = [
         ],
         culturalConsiderations:
           'Ensure proper pronunciation and cultural respect in all assessments.',
+        assessmentTools: [
+          'Phonological awareness tests',
+          'Pronunciation recording tools',
+          'Digital assessment platforms',
+          'Cultural accuracy checklists',
+        ],
       },
     ],
     resources: [
@@ -219,6 +383,70 @@ const readingUnits: ReadingUnit[] = [
       'Māori pronunciation guides',
       'Phonological awareness games',
       'Cultural vocabulary cards',
+    ],
+    teachingResources: [
+      {
+        id: 'phonics-slideshow',
+        type: 'slideshow',
+        title: 'Systematic Phonics Instruction Slideshow',
+        description: 'Step-by-step phonics instruction with Māori cultural integration',
+        fileType: 'PowerPoint/Google Slides',
+        targetAudience: 'both',
+        culturalContext: 'Te Reo Māori phonology and cultural vocabulary',
+      },
+      {
+        id: 'phoneme-cards',
+        type: 'card',
+        title: 'Phoneme Cards with Māori Examples',
+        description: 'Printable cards showing phoneme-grapheme correspondences',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Māori words and pronunciation guides',
+      },
+      {
+        id: 'pronunciation-podcast',
+        type: 'podcast',
+        title: 'Te Reo Māori Pronunciation Guide',
+        description: 'Podcast series on correct pronunciation of Māori words',
+        url: 'https://example.com/maori-pronunciation',
+        fileType: 'MP3',
+        duration: '20 minutes',
+        targetAudience: 'both',
+        culturalContext: 'Authentic Māori pronunciation and cultural context',
+      },
+      {
+        id: 'phonics-worksheet',
+        type: 'worksheet',
+        title: 'Phoneme-Grapheme Mapping Worksheets',
+        description: 'Printable worksheets for phoneme-grapheme mapping practice',
+        fileType: 'PDF',
+        targetAudience: 'student',
+        culturalContext: 'Māori vocabulary and cultural themes',
+      },
+    ],
+    explicitTeachingStrategies: [
+      'Systematic phonics instruction',
+      'Multi-sensory learning approaches',
+      'Immediate feedback and correction',
+      'Progressive complexity building',
+      'Cultural context integration',
+      'Individual and small group instruction',
+    ],
+    multimediaIntegration: [
+      'Digital phonics games and apps',
+      'Audio pronunciation guides',
+      'Interactive whiteboard activities',
+      'Video demonstrations of mouth movements',
+      'Online phonics assessment tools',
+      'Podcast integration for pronunciation',
+    ],
+    differentiationStrategies: [
+      'Individualized phonics progression',
+      'Multi-sensory learning supports',
+      'Extended practice opportunities',
+      'Cultural knowledge pre-teaching',
+      'Peer tutoring and collaboration',
+      'Technology-assisted learning',
     ],
   },
   {
@@ -255,13 +483,31 @@ const readingUnits: ReadingUnit[] = [
           'Demonstrate comprehension monitoring',
           'Validate diverse perspectives',
         ],
-        materials: ['Cultural text selection', 'Think-aloud prompts', 'Comprehension questions'],
+        materials: [
+          'Cultural text selection',
+          'Think-aloud prompts',
+          'Comprehension questions',
+          'Digital text annotation tools',
+          'Audio recording equipment',
+        ],
         culturalIntegration:
           'Uses authentic Māori and Pacific texts with proper cultural protocols and respect.',
         differentiation: [
           'Foundation: Simple texts with basic strategies',
           'Developing: Complex texts with multiple strategies',
           'Advanced: Multiple texts with comparative analysis',
+        ],
+        explicitTeaching: [
+          'Think-aloud modeling and demonstration',
+          'Strategy instruction and practice',
+          'Cultural sensitivity training',
+          'Comprehension monitoring techniques',
+        ],
+        multimediaElements: [
+          'Digital text annotation tools',
+          'Audio recordings of think-alouds',
+          'Video modeling of strategies',
+          'Interactive comprehension games',
         ],
       },
       {
@@ -276,13 +522,31 @@ const readingUnits: ReadingUnit[] = [
           'What do I Want to learn about this culture?',
           'What have I Acquired/learned after reading?',
         ],
-        materials: ['KWA chart templates', 'Cultural context guides', 'Background information'],
+        materials: [
+          'KWA chart templates',
+          'Cultural context guides',
+          'Background information',
+          'Digital KWA chart tools',
+          'Cultural knowledge databases',
+        ],
         culturalIntegration:
           'Incorporates mātauranga Māori and cultural knowledge in the "Know" column.',
         differentiation: [
           'Foundation: Basic cultural concepts',
           'Developing: Historical and contemporary contexts',
           'Advanced: Complex cultural analysis and synthesis',
+        ],
+        explicitTeaching: [
+          'KWA chart construction instruction',
+          'Cultural knowledge activation',
+          'Question generation strategies',
+          'Knowledge synthesis techniques',
+        ],
+        multimediaElements: [
+          'Digital KWA chart templates',
+          'Cultural knowledge databases',
+          'Interactive background information',
+          'Video cultural context clips',
         ],
       },
     ],
@@ -298,6 +562,12 @@ const readingUnits: ReadingUnit[] = [
         ],
         culturalConsiderations:
           'Ensure cultural protocols are followed and diverse perspectives are valued.',
+        assessmentTools: [
+          'Self-reflection rubrics',
+          'Strategy use checklists',
+          'Cultural sensitivity assessments',
+          'Digital portfolio tools',
+        ],
       },
     ],
     resources: [
@@ -305,6 +575,70 @@ const readingUnits: ReadingUnit[] = [
       'Cultural context guides',
       'Comprehension strategy cards',
       'Graphic organizers',
+    ],
+    teachingResources: [
+      {
+        id: 'comprehension-strategies-slideshow',
+        type: 'slideshow',
+        title: 'Comprehension Strategies with Cultural Texts',
+        description: 'Interactive slideshow teaching comprehension strategies',
+        fileType: 'PowerPoint/Google Slides',
+        targetAudience: 'both',
+        culturalContext: 'Māori and Pacific cultural texts and contexts',
+      },
+      {
+        id: 'cultural-texts-handout',
+        type: 'handout',
+        title: 'Authentic Cultural Texts Collection',
+        description: 'Curated collection of appropriate cultural texts for instruction',
+        fileType: 'PDF',
+        targetAudience: 'teacher',
+        culturalContext: 'Authentic Māori and Pacific literature and texts',
+      },
+      {
+        id: 'maori-stories-podcast',
+        type: 'podcast',
+        title: 'Māori Stories and Traditions',
+        description: 'Podcast series featuring traditional and contemporary Māori stories',
+        url: 'https://example.com/maori-stories',
+        fileType: 'MP3',
+        duration: '25 minutes',
+        targetAudience: 'both',
+        culturalContext: 'Traditional and contemporary Māori narratives',
+      },
+      {
+        id: 'comprehension-cards',
+        type: 'card',
+        title: 'Comprehension Strategy Cards',
+        description: 'Printable cards with comprehension strategies and prompts',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Cultural sensitivity and respect guidelines',
+      },
+    ],
+    explicitTeachingStrategies: [
+      'Strategy modeling and demonstration',
+      'Guided practice with feedback',
+      'Cultural sensitivity training',
+      'Comprehension monitoring instruction',
+      'Critical thinking development',
+      'Peer collaboration and discussion',
+    ],
+    multimediaIntegration: [
+      'Digital text annotation tools',
+      'Audio recordings of readings',
+      'Video cultural context clips',
+      'Interactive comprehension games',
+      'Online discussion forums',
+      'Podcast integration for background knowledge',
+    ],
+    differentiationStrategies: [
+      'Text complexity differentiation',
+      'Strategy scaffolding',
+      'Cultural knowledge pre-teaching',
+      'Extended time for complex texts',
+      'Peer support and collaboration',
+      'Technology-assisted reading',
     ],
   },
   {
@@ -340,13 +674,31 @@ const readingUnits: ReadingUnit[] = [
           'Build word families',
           'Practice in context',
         ],
-        materials: ['Word analysis cards', 'Cultural etymology guides', 'Context examples'],
+        materials: [
+          'Word analysis cards',
+          'Cultural etymology guides',
+          'Context examples',
+          'Digital word analysis tools',
+          'Interactive vocabulary games',
+        ],
         culturalIntegration:
           'Uses Māori word origins and cultural meanings to build vocabulary understanding.',
         differentiation: [
           'Foundation: Basic word analysis',
           'Developing: Complex word origins',
           'Advanced: Comparative language analysis',
+        ],
+        explicitTeaching: [
+          'Word analysis strategy instruction',
+          'Cultural etymology mini-lessons',
+          'Context clue strategies',
+          'Vocabulary building techniques',
+        ],
+        multimediaElements: [
+          'Interactive word analysis tools',
+          'Digital etymology databases',
+          'Audio pronunciation guides',
+          'Vocabulary building games',
         ],
       },
       {
@@ -362,12 +714,31 @@ const readingUnits: ReadingUnit[] = [
           'Create semantic relationships',
           'Build concept networks',
         ],
-        materials: ['Semantic mapping templates', 'Cultural concept cards', 'Relationship markers'],
-        culturalIntegration: 'Connects vocabulary to authentic cultural concepts and contexts.',
+        materials: [
+          'Semantic mapping templates',
+          'Cultural concept cards',
+          'Relationship markers',
+          'Digital mapping tools',
+          'Interactive whiteboard',
+        ],
+        culturalIntegration:
+          'Connects vocabulary to authentic cultural concepts and contexts.',
         differentiation: [
           'Foundation: Simple concept maps',
           'Developing: Complex relationship networks',
           'Advanced: Multi-dimensional concept analysis',
+        ],
+        explicitTeaching: [
+          'Semantic mapping instruction',
+          'Cultural concept exploration',
+          'Relationship building strategies',
+          'Concept synthesis techniques',
+        ],
+        multimediaElements: [
+          'Digital semantic mapping tools',
+          'Interactive concept databases',
+          'Video cultural context clips',
+          'Online vocabulary games',
         ],
       },
     ],
@@ -383,6 +754,12 @@ const readingUnits: ReadingUnit[] = [
         ],
         culturalConsiderations:
           'Ensure cultural accuracy and appropriate use of Te Reo Māori terms.',
+        assessmentTools: [
+          'Vocabulary assessment tools',
+          'Cultural accuracy checklists',
+          'Bilingual proficiency measures',
+          'Digital vocabulary games',
+        ],
       },
     ],
     resources: [
@@ -390,6 +767,70 @@ const readingUnits: ReadingUnit[] = [
       'Cultural concept guides',
       'Vocabulary development games',
       'Bilingual dictionaries',
+    ],
+    teachingResources: [
+      {
+        id: 'vocabulary-slideshow',
+        type: 'slideshow',
+        title: 'Academic Vocabulary with Cultural Context',
+        description: 'Interactive slideshow teaching academic vocabulary with cultural integration',
+        fileType: 'PowerPoint/Google Slides',
+        targetAudience: 'both',
+        culturalContext: 'Te Reo Māori academic terms and cultural concepts',
+      },
+      {
+        id: 'academic-glossary-handout',
+        type: 'handout',
+        title: 'Te Reo Māori Academic Glossary',
+        description: 'Comprehensive glossary of academic terms in Te Reo Māori',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Authentic Te Reo Māori academic vocabulary',
+      },
+      {
+        id: 'cultural-concepts-podcast',
+        type: 'podcast',
+        title: 'Māori Cultural Concepts Explained',
+        description: 'Podcast series explaining key Māori cultural concepts and terms',
+        url: 'https://example.com/maori-concepts',
+        fileType: 'MP3',
+        duration: '30 minutes',
+        targetAudience: 'both',
+        culturalContext: 'Traditional and contemporary Māori cultural concepts',
+      },
+      {
+        id: 'vocabulary-cards',
+        type: 'card',
+        title: 'Academic Vocabulary Cards',
+        description: 'Printable cards with academic terms and cultural context',
+        fileType: 'PDF',
+        targetAudience: 'both',
+        culturalContext: 'Te Reo Māori academic terms and cultural explanations',
+      },
+    ],
+    explicitTeachingStrategies: [
+      'Direct vocabulary instruction',
+      'Cultural context exploration',
+      'Bilingual language development',
+      'Context clue strategies',
+      'Word analysis techniques',
+      'Semantic mapping instruction',
+    ],
+    multimediaIntegration: [
+      'Digital vocabulary games and apps',
+      'Audio pronunciation guides',
+      'Interactive semantic mapping tools',
+      'Video cultural context clips',
+      'Online vocabulary databases',
+      'Podcast integration for cultural concepts',
+    ],
+    differentiationStrategies: [
+      'Vocabulary complexity differentiation',
+      'Cultural knowledge pre-teaching',
+      'Bilingual support strategies',
+      'Extended practice opportunities',
+      'Peer tutoring and collaboration',
+      'Technology-assisted vocabulary building',
     ],
   },
 ];
@@ -427,6 +868,29 @@ const Year8ReadingUnits = () => {
         return 'var(--color-deep-purple)';
       default:
         return 'var(--color-neutral-600)';
+    }
+  };
+
+  const getResourceIcon = (type: string) => {
+    switch (type) {
+      case 'slideshow':
+        return '📊';
+      case 'handout':
+        return '📄';
+      case 'card':
+        return '🃏';
+      case 'podcast':
+        return '🎧';
+      case 'news-story':
+        return '📰';
+      case 'video':
+        return '🎥';
+      case 'worksheet':
+        return '📝';
+      case 'assessment':
+        return '✅';
+      default:
+        return '📎';
     }
   };
 
@@ -547,6 +1011,46 @@ const Year8ReadingUnits = () => {
                   </div>
 
                   <div className="detail-section">
+                    <h4>Explicit Teaching Strategies:</h4>
+                    <ul>
+                      {unit.explicitTeachingStrategies.map((strategy, index) => (
+                        <li key={index}>{strategy}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="detail-section">
+                    <h4>Multimedia Integration:</h4>
+                    <ul>
+                      {unit.multimediaIntegration.map((element, index) => (
+                        <li key={index}>{element}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="detail-section">
+                    <h4>Teaching Resources:</h4>
+                    <div className="resources-grid">
+                      {unit.teachingResources.map((resource) => (
+                        <div key={resource.id} className="resource-item">
+                          <div className="resource-icon">{getResourceIcon(resource.type)}</div>
+                          <div className="resource-info">
+                            <h5>{resource.title}</h5>
+                            <p>{resource.description}</p>
+                            <div className="resource-meta">
+                              <span className="resource-type">{resource.type}</span>
+                              <span className="resource-file">{resource.fileType}</span>
+                              {resource.duration && (
+                                <span className="resource-duration">{resource.duration}</span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="detail-section">
                     <h4>Key Activities:</h4>
                     <div className="activities-list">
                       {unit.activities.map((activity) => (
@@ -556,6 +1060,20 @@ const Year8ReadingUnits = () => {
                           <div className="activity-meta">
                             <span className="activity-type">{activity.type}</span>
                             <span className="activity-duration">{activity.duration}</span>
+                          </div>
+                          <div className="activity-details">
+                            <h6>Explicit Teaching:</h6>
+                            <ul>
+                              {activity.explicitTeaching.map((teaching, index) => (
+                                <li key={index}>{teaching}</li>
+                              ))}
+                            </ul>
+                            <h6>Multimedia Elements:</h6>
+                            <ul>
+                              {activity.multimediaElements.map((element, index) => (
+                                <li key={index}>{element}</li>
+                              ))}
+                            </ul>
                           </div>
                         </div>
                       ))}
@@ -569,16 +1087,24 @@ const Year8ReadingUnits = () => {
                         <div key={index} className="assessment-item">
                           <h5>{item.type}</h5>
                           <p>{item.description}</p>
+                          <div className="assessment-tools">
+                            <h6>Assessment Tools:</h6>
+                            <ul>
+                              {item.assessmentTools.map((tool, toolIndex) => (
+                                <li key={toolIndex}>{tool}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="detail-section">
-                    <h4>Resources:</h4>
-                    <ul className="resources-list">
-                      {unit.resources.map((resource, index) => (
-                        <li key={index}>{resource}</li>
+                    <h4>Differentiation Strategies:</h4>
+                    <ul>
+                      {unit.differentiationStrategies.map((strategy, index) => (
+                        <li key={index}>{strategy}</li>
                       ))}
                     </ul>
                   </div>
