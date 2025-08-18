@@ -291,7 +291,7 @@ export default function LessonPlan() {
       {/* Footer */}
       <footer className="lesson-footer">
         <p className="cultural-motto">🌿 Whaowhia te kete mātauranga - Fill the basket of knowledge</p>
-        <p className="platform-credit">Created with Te Kete Ako - Culturally Responsive Education Platform</p>
+        <p className="platform-credit">Created with TeAoMarama - Culturally Responsive Education Platform</p>
       </footer>
     </div>
   );
