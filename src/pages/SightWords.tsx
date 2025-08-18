@@ -509,15 +509,13 @@ export default function SightWords() {
       {currentWord && (
         <section className="word-display-section">
           <div 
-            className="word-spotlight"
-            style={{ backgroundColor: getListColor(currentWord.list) }}
+            className={`word-spotlight list-${currentWord.list}`}
           >
             <div className="word-header">
               <div className="word-badges">
                 <span className="list-badge">{currentWord.list}</span>
                 <span 
-                  className="difficulty-badge"
-                  style={{ backgroundColor: getDifficultyColor(currentWord.difficulty) }}
+                  className={`difficulty-badge difficulty-${currentWord.difficulty}`}
                 >
                   Level {currentWord.difficulty}
                 </span>
