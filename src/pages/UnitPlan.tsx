@@ -246,7 +246,7 @@ export default function UnitPlan() {
 
       <footer className="unit-footer">
         <p className="motto">🌿 Whaowhia te kete mātauranga - Fill the basket of knowledge</p>
-        <p className="platform">Created with Te Kete Ako - Culturally Responsive Education Platform</p>
+        <p className="platform">Created with TeAoMarama - Culturally Responsive Education Platform</p>
       </footer>
     </div>
   );
