@@ -53,7 +53,8 @@ const features: Feature[] = [
   {
     id: 'year8-literacy',
     title: 'Year 8 Critical Literacy',
-    description: 'Comprehensive literacy units with Liz Kane methodologies and cultural integration',
+    description:
+      'Comprehensive literacy units with Liz Kane methodologies and cultural integration',
     icon: '📖',
     link: '/year8-critical-literacy',
   },
@@ -93,8 +94,8 @@ const Home = () => {
             <span className="hero-subtitle">Educational Resources Platform</span>
           </h1>
           <p className="hero-description">
-            Comprehensive educational resources for New Zealand teachers and students, 
-            with deep cultural integration and curriculum alignment.
+            Comprehensive educational resources for New Zealand teachers and students, with deep
+            cultural integration and curriculum alignment.
           </p>
           <div className="hero-cta">
             <Link to="/resources" className="cta-button primary">
@@ -158,14 +159,23 @@ const Home = () => {
             <div className="cultural-text">
               <h3>Māori Integration & Cultural Safety</h3>
               <ul className="cultural-list">
-                <li><strong>Tikanga:</strong> Cultural protocols and practices</li>
-                <li><strong>Te Reo Māori:</strong> Authentic language usage</li>
-                <li><strong>Mātauranga Māori:</strong> Traditional knowledge systems</li>
-                <li><strong>Ako:</strong> Reciprocal learning approaches</li>
+                <li>
+                  <strong>Tikanga:</strong> Cultural protocols and practices
+                </li>
+                <li>
+                  <strong>Te Reo Māori:</strong> Authentic language usage
+                </li>
+                <li>
+                  <strong>Mātauranga Māori:</strong> Traditional knowledge systems
+                </li>
+                <li>
+                  <strong>Ako:</strong> Reciprocal learning approaches
+                </li>
               </ul>
               <p className="cultural-description">
-                Every resource includes cultural connections and is reviewed for cultural appropriateness, 
-                ensuring respectful representation of Māori knowledge and community consultation protocols.
+                Every resource includes cultural connections and is reviewed for cultural
+                appropriateness, ensuring respectful representation of Māori knowledge and community
+                consultation protocols.
               </p>
             </div>
             <div className="cultural-visual">
@@ -209,9 +219,16 @@ const Home = () => {
             <div className="ncea-cultural">
               <h3>Cultural Competency</h3>
               <ul className="cultural-competency-list">
-                <li><strong>Mana ōrite mo te mātauranga Māori:</strong> Equal status for Māori knowledge</li>
-                <li><strong>Te Tiriti o Waitangi:</strong> Treaty principles integration</li>
-                <li><strong>Cultural Safety:</strong> Respectful and appropriate content</li>
+                <li>
+                  <strong>Mana ōrite mo te mātauranga Māori:</strong> Equal status for Māori
+                  knowledge
+                </li>
+                <li>
+                  <strong>Te Tiriti o Waitangi:</strong> Treaty principles integration
+                </li>
+                <li>
+                  <strong>Cultural Safety:</strong> Respectful and appropriate content
+                </li>
               </ul>
             </div>
           </div>
@@ -223,8 +240,8 @@ const Home = () => {
         <div className="container">
           <h2 className="cta-title">Ready to Transform Your Teaching?</h2>
           <p className="cta-description">
-            Join thousands of New Zealand teachers using TeAoMarama to deliver 
-            culturally responsive, curriculum-aligned education.
+            Join thousands of New Zealand teachers using TeAoMarama to deliver culturally
+            responsive, curriculum-aligned education.
           </p>
           <div className="cta-buttons">
             <Link to="/resources" className="cta-button primary large">

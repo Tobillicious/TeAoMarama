@@ -1,0 +1,347 @@
+.year8-social-studies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.platform-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.unit-overview {
+  margin-bottom: 3rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #7c3aed;
+}
+
+.overview-card h3 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.overview-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overview-card li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.overview-card li:last-child {
+  border-bottom: none;
+}
+
+.curriculum-section {
+  background: #faf5ff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.curriculum-section h2 {
+  color: #7c3aed;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.curriculum-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.objectives,
+.achievement-objectives {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.objectives h3,
+.achievement-objectives h3 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.objectives ul,
+.achievement-objectives ul {
+  list-style: none;
+  padding: 0;
+}
+
+.objectives li,
+.achievement-objectives li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  line-height: 1.6;
+}
+
+.objectives li:last-child,
+.achievement-objectives li:last-child {
+  border-bottom: none;
+}
+
+.lessons-section {
+  margin-bottom: 3rem;
+}
+
+.lessons-section h2 {
+  color: #7c3aed;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.lesson-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.lesson-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: #7c3aed;
+}
+
+.lesson-card h3 {
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.lesson-duration {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-intention {
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.lesson-activities h4 {
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.lesson-activities ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.lesson-activities li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.lesson-assessment {
+  background: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.assessment-section,
+.resources-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.assessment-section h2,
+.resources-section h2 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.assessment-section ul,
+.resources-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assessment-section li,
+.resources-section li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  line-height: 1.6;
+}
+
+.assessment-section li:last-child,
+.resources-section li:last-child {
+  border-bottom: none;
+}
+
+.lesson-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  margin: 2rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6b7280;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+}
+
+.lesson-detail-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.lesson-detail-header h2 {
+  color: #7c3aed;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.lesson-detail-content > div {
+  margin-bottom: 2rem;
+}
+
+.lesson-detail-content h3 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.lesson-detail-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lesson-detail-content li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  line-height: 1.6;
+}
+
+.lesson-detail-content li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .year8-social-studies-container {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .curriculum-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .lessons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}

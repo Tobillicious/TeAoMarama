@@ -27,6 +27,7 @@ const Year8WritingRevolution = lazy(() => import('./pages/Year8WritingRevolution
 const Year8CriticalLiteracy = lazy(() => import('./pages/Year8CriticalLiteracy'));
 const Year8ReadingUnits = lazy(() => import('./pages/Year8ReadingUnits'));
 const Year8WritingUnits = lazy(() => import('./pages/Year8WritingUnits'));
+const Year8SocialStudiesUnits = lazy(() => import('./pages/Year8SocialStudiesUnits'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -79,6 +80,8 @@ function App() {
       { path: '/year8-writing-revolution', element: <Year8WritingRevolution /> },
       { path: '/year8-critical-literacy', element: <Year8CriticalLiteracy /> },
       { path: '/year8-reading-units', element: <Year8ReadingUnits /> },
+      { path: '/year8-writing-units', element: <Year8WritingUnits /> },
+      { path: '/year8-social-studies-units', element: <Year8SocialStudiesUnits /> },
     ],
     [],
   );
