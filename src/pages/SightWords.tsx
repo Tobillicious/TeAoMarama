@@ -300,33 +300,6 @@ export default function SightWords() {
     }
   };
 
-  const getDifficultyColor = (difficulty: number) => {
-    const colors = {
-      1: '#4caf50',
-      2: '#8bc34a', 
-      3: '#ff9800',
-      4: '#ff5722',
-      5: '#f44336'
-    };
-    return colors[difficulty as keyof typeof colors] || '#666';
-  };
-
-  const getListColor = (list: string) => {
-    const colors = {
-      'dolch-pre': '#e8f5e8',
-      'dolch-primer': '#fff3e0',
-      'dolch-1': '#e3f2fd',
-      'dolch-2': '#f3e5f5',
-      'dolch-3': '#fce4ec',
-      'fry-1': '#e0f2f1',
-      'fry-2': '#f1f8e9',
-      'fry-3': '#fce4ec',
-      'nz-common': '#fff8e1',
-      'maori-blend': '#f3e5f5'
-    };
-    return colors[list as keyof typeof colors] || '#f5f5f5';
-  };
-
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'function': return '🔧';
