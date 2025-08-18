@@ -635,12 +635,11 @@ export default function SightWords() {
         <h3>📋 All Words ({filteredWords.length})</h3>
         <div className="words-grid">
           {filteredWords.map((word) => (
-            <div 
-              key={word.id} 
-              className="word-card"
-              style={{ backgroundColor: getListColor(word.list) }}
-              onClick={() => setCurrentWord(word)}
-            >
+                            <div 
+                  key={word.id} 
+                  className={`word-card list-${word.list}`}
+                  onClick={() => setCurrentWord(word)}
+                >
               <div className="card-header">
                 <span 
                   className="card-difficulty-dot"
