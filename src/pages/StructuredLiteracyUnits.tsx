@@ -506,7 +506,7 @@ export default function StructuredLiteracyUnits() {
           </p>
         </div>
         <p className="cultural-motto">🌿 "He kōrero, he mahi, he tipu" - Through speaking, working, and growing together</p>
-        <p className="platform-info">Te Kete Ako - Systematic Literacy Excellence for Aotearoa</p>
+        <p className="platform-info">TeAoMarama - Systematic Literacy Excellence for Aotearoa</p>
       </footer>
     </div>
   );
