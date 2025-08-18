@@ -323,23 +323,23 @@
   .year8-social-studies-container {
     padding: 1rem;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .overview-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .curriculum-details {
     grid-template-columns: 1fr;
   }
-  
+
   .lessons-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .modal-content {
     margin: 1rem;
     padding: 1.5rem;

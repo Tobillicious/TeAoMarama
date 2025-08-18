@@ -1,0 +1,424 @@
+/* 🌿 TeAoMarama Unified Design System - ERO Professional Excellence */
+/* Synthesized from TeachingResources beauty + te-kete-ako-production functionality */
+
+:root {
+  /* === PROFESSIONAL TEAL EXCELLENCE === */
+  --color-primary: #00b0b9; /* Professional teal - TeachingResources inspired */
+  --color-primary-dark: #2c5f41; /* Deep forest complement */
+  --color-primary-light: #4fd1c7; /* Jade shimmer */
+  --color-secondary: #f18f01; /* Golden kowhai - Cultural accent */
+  --color-secondary-dark: #e67e00; /* Deep gold */
+  --color-secondary-light: #ffb74d; /* Light gold */
+
+  /* === TEAL GRADIENT SYSTEM === */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+
+  /* === CULTURAL COLORS - TE AO MĀORI === */
+  --color-pounamu: #0f766e; /* Sacred greenstone */
+  --color-pounamu-light: #2dd4bf; /* Jade shimmer */
+  --color-kowhai: #f18f01; /* Golden flower */
+  --color-kowhai-light: #ffb74d; /* Light kowhai */
+  --color-moana: #0ea5e9; /* Ocean deep */
+  --color-whenua: #a16207; /* Earth brown */
+  --color-maori-red: #dc2626; /* Traditional red */
+  --color-maori-orange: #ea580c; /* Traditional orange */
+  --color-maori-green: #16a34a; /* Traditional green */
+  --color-maori-purple: #7c3aed; /* Traditional purple */
+
+  /* === NEUTRAL SYSTEM === */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* === SEMANTIC COLORS === */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* === TYPOGRAPHY SYSTEM === */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-family-serif: Georgia, 'Times New Roman', serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
+    monospace;
+
+  /* === FONT SCALE === */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* === FONT WEIGHTS === */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* === LINE HEIGHTS === */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* === SPACING SYSTEM === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* === BORDER RADIUS === */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  /* === SHADOW SYSTEM === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* === ERO PROFESSIONAL ENHANCEMENTS === */
+  --ero-badge-gradient: linear-gradient(45deg, #ff6b6b, #feca57);
+  --ero-header-gradient: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
+  --ero-card-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --ero-cultural-gradient: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+}
+
+/* === UNIFIED COMPONENT STYLES === */
+
+/* Professional Header System */
+.ero-header {
+  background: var(--ero-header-gradient);
+  color: white;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+}
+
+.ero-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: var(--ero-badge-gradient);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  animation: pulse 2s infinite;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.ero-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ero-subtitle {
+  font-size: var(--text-lg);
+  opacity: 0.9;
+  margin-bottom: var(--space-4);
+}
+
+.ero-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition-normal);
+}
+
+.stat:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Professional Card System */
+.ero-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gray-200);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.ero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.ero-card-header {
+  background: var(--ero-card-gradient);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.ero-card-content {
+  padding: var(--space-6);
+}
+
+.ero-card-footer {
+  background: var(--color-gray-50);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* Cultural Integration System */
+.cultural-section {
+  background: var(--ero-cultural-gradient);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border-left: 4px solid var(--color-pounamu);
+  margin: var(--space-6) 0;
+}
+
+.cultural-badge {
+  background: var(--color-pounamu);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  display: inline-block;
+  margin-bottom: var(--space-2);
+}
+
+/* Resource Integration System */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-6) 0;
+}
+
+.resource-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--color-primary);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.priority-badge {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+}
+
+.priority-high {
+  background: var(--color-error);
+  color: white;
+}
+
+.priority-medium {
+  background: var(--color-warning);
+  color: var(--color-gray-900);
+}
+
+.priority-low {
+  background: var(--color-info);
+  color: white;
+}
+
+.resource-content {
+  padding: var(--space-4);
+}
+
+.resource-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-2);
+}
+
+.resource-description {
+  color: var(--color-gray-600);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+/* Professional Button System */
+.btn-ero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-ero:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-ero-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+}
+
+.btn-ero-cultural {
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-pounamu-light) 100%);
+}
+
+/* Animation System */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Responsive Design System */
+@media (max-width: 768px) {
+  .ero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ero-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .ero-badge,
+  .btn-ero {
+    display: none;
+  }
+
+  .ero-card {
+    box-shadow: none;
+    border: 1px solid var(--color-gray-300);
+  }
+}

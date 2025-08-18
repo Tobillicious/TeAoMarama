@@ -24,7 +24,8 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
     topic: 'history',
     duration: '8 weeks',
     difficulty: 'foundation',
-    description: 'Comprehensive exploration of Te Tiriti o Waitangi, its historical context, significance, and ongoing impact on New Zealand society. Students develop deep understanding of Treaty principles and their application in modern Aotearoa.',
+    description:
+      'Comprehensive exploration of Te Tiriti o Waitangi, its historical context, significance, and ongoing impact on New Zealand society. Students develop deep understanding of Treaty principles and their application in modern Aotearoa.',
     learningObjectives: [
       'Understand the historical context leading to the signing of Te Tiriti o Waitangi',
       'Analyze the different versions and interpretations of the Treaty',
@@ -32,8 +33,10 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
       'Examine contemporary Treaty settlements and their significance',
       'Develop critical thinking about Treaty principles in modern society',
     ],
-    culturalContext: 'This unit honors Māori perspectives and knowledge systems, incorporating authentic voices and cultural protocols. Students engage with both historical and contemporary Māori viewpoints on Te Tiriti.',
-    nceaAlignment: 'Builds foundation for NCEA Level 1 History standards, particularly AS 91001 and AS 91002.',
+    culturalContext:
+      'This unit honors Māori perspectives and knowledge systems, incorporating authentic voices and cultural protocols. Students engage with both historical and contemporary Māori viewpoints on Te Tiriti.',
+    nceaAlignment:
+      'Builds foundation for NCEA Level 1 History standards, particularly AS 91001 and AS 91002.',
     activities: [
       'Te Tiriti Timeline Creation',
       'Contemporary Treaty Issues Debate',
@@ -56,7 +59,8 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
     topic: 'cultural-studies',
     duration: '6 weeks',
     difficulty: 'developing',
-    description: 'Students explore the dynamic nature of Māori culture in contemporary New Zealand, examining how traditional knowledge and practices continue to evolve and thrive in modern society.',
+    description:
+      'Students explore the dynamic nature of Māori culture in contemporary New Zealand, examining how traditional knowledge and practices continue to evolve and thrive in modern society.',
     learningObjectives: [
       'Understand the diversity and complexity of contemporary Māori culture',
       'Explore how traditional knowledge adapts to modern contexts',
@@ -64,8 +68,10 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
       'Examine contemporary Māori leadership and innovation',
       'Develop appreciation for cultural diversity and resilience',
     ],
-    culturalContext: 'This unit celebrates the vibrancy and resilience of Māori culture, incorporating authentic voices and contemporary perspectives while honoring traditional knowledge systems.',
-    nceaAlignment: 'Supports NCEA Level 1 Social Studies standards, particularly AS 91040 and AS 91041.',
+    culturalContext:
+      'This unit celebrates the vibrancy and resilience of Māori culture, incorporating authentic voices and contemporary perspectives while honoring traditional knowledge systems.',
+    nceaAlignment:
+      'Supports NCEA Level 1 Social Studies standards, particularly AS 91040 and AS 91041.',
     activities: [
       'Contemporary Māori Leadership Study',
       'Cultural Innovation Research',
@@ -88,7 +94,8 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
     topic: 'geography',
     duration: '7 weeks',
     difficulty: 'foundation',
-    description: 'Students explore the diverse geography of Aotearoa New Zealand, from physical landscapes to human settlements, understanding how geography shapes our identity and way of life.',
+    description:
+      'Students explore the diverse geography of Aotearoa New Zealand, from physical landscapes to human settlements, understanding how geography shapes our identity and way of life.',
     learningObjectives: [
       'Understand the physical geography of New Zealand',
       'Explore how geography influences human settlement patterns',
@@ -96,8 +103,10 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
       'Examine the relationship between people and place',
       'Develop geographic thinking and spatial awareness',
     ],
-    culturalContext: 'This unit incorporates Māori perspectives on land, water, and place, honoring the deep connection between Māori and the whenua (land).',
-    nceaAlignment: 'Builds foundation for NCEA Level 1 Geography standards, particularly AS 91007 and AS 91008.',
+    culturalContext:
+      'This unit incorporates Māori perspectives on land, water, and place, honoring the deep connection between Māori and the whenua (land).',
+    nceaAlignment:
+      'Builds foundation for NCEA Level 1 Geography standards, particularly AS 91007 and AS 91008.',
     activities: [
       'Local Place Study',
       'Geographic Feature Analysis',
@@ -120,16 +129,19 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
     topic: 'civics',
     duration: '6 weeks',
     difficulty: 'developing',
-    description: 'Students explore New Zealand\'s democratic system, understanding how government works, the role of citizens, and how to participate effectively in our democracy.',
+    description:
+      "Students explore New Zealand's democratic system, understanding how government works, the role of citizens, and how to participate effectively in our democracy.",
     learningObjectives: [
-      'Understand New Zealand\'s democratic system',
+      "Understand New Zealand's democratic system",
       'Explore the role of government and citizens',
       'Analyze current political issues and debates',
       'Develop civic participation skills',
       'Examine the Treaty relationship in governance',
     ],
-    culturalContext: 'This unit examines how Te Tiriti o Waitangi influences our democratic system and governance, incorporating Māori perspectives on citizenship and participation.',
-    nceaAlignment: 'Supports NCEA Level 1 Social Studies standards, particularly AS 91037 and AS 91038.',
+    culturalContext:
+      'This unit examines how Te Tiriti o Waitangi influences our democratic system and governance, incorporating Māori perspectives on citizenship and participation.',
+    nceaAlignment:
+      'Supports NCEA Level 1 Social Studies standards, particularly AS 91037 and AS 91038.',
     activities: [
       'School Democracy Simulation',
       'Political Issue Analysis',
@@ -152,7 +164,8 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
     topic: 'environmental',
     duration: '7 weeks',
     difficulty: 'advanced',
-    description: 'Students explore environmental challenges facing New Zealand and the world, examining sustainable solutions and the role of kaitiakitanga (guardianship) in environmental protection.',
+    description:
+      'Students explore environmental challenges facing New Zealand and the world, examining sustainable solutions and the role of kaitiakitanga (guardianship) in environmental protection.',
     learningObjectives: [
       'Understand key environmental challenges',
       'Explore sustainable solutions and practices',
@@ -160,7 +173,8 @@ const socialStudiesUnits: SocialStudiesUnit[] = [
       'Examine global and local environmental issues',
       'Develop environmental action plans',
     ],
-    culturalContext: 'This unit centers kaitiakitanga (guardianship) as a fundamental principle, incorporating Māori environmental knowledge and practices throughout.',
+    culturalContext:
+      'This unit centers kaitiakitanga (guardianship) as a fundamental principle, incorporating Māori environmental knowledge and practices throughout.',
     nceaAlignment: 'Supports NCEA Level 1 Geography standards, particularly AS 91007 and AS 91008.',
     activities: [
       'Environmental Action Project',
@@ -186,9 +200,11 @@ const Year8SocialStudies = () => {
 
   const filteredUnits = socialStudiesUnits.filter((unit) => {
     const matchesTopic = selectedTopic === 'all' || unit.topic === selectedTopic;
-    const matchesDifficulty = selectedDifficulty === 'all' || unit.difficulty === selectedDifficulty;
-    const matchesSearch = unit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         unit.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesDifficulty =
+      selectedDifficulty === 'all' || unit.difficulty === selectedDifficulty;
+    const matchesSearch =
+      unit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      unit.description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesTopic && matchesDifficulty && matchesSearch;
   });
 
@@ -219,8 +235,9 @@ const Year8SocialStudies = () => {
             <span className="hero-subtitle">Exploring Aotearoa New Zealand and Our World</span>
           </h1>
           <p className="hero-description">
-            Comprehensive social studies units covering New Zealand history, geography, civics, and cultural studies. 
-            All content integrates curriculum requirements with authentic Māori perspectives and cultural responsiveness.
+            Comprehensive social studies units covering New Zealand history, geography, civics, and
+            cultural studies. All content integrates curriculum requirements with authentic Māori
+            perspectives and cultural responsiveness.
           </p>
           <div className="hero-stats">
             <div className="stat-item">
@@ -272,7 +289,9 @@ const Year8SocialStudies = () => {
                 <button
                   key={difficulty.id}
                   onClick={() => setSelectedDifficulty(difficulty.id)}
-                  className={`difficulty-btn ${selectedDifficulty === difficulty.id ? 'active' : ''}`}
+                  className={`difficulty-btn ${
+                    selectedDifficulty === difficulty.id ? 'active' : ''
+                  }`}
                 >
                   <span className="difficulty-icon">{difficulty.icon}</span>
                   {difficulty.label}
@@ -297,7 +316,7 @@ const Year8SocialStudies = () => {
                 <h3 className="unit-title">{unit.title}</h3>
                 <p className="unit-subtitle">{unit.subtitle}</p>
                 <p className="unit-description">{unit.description}</p>
-                
+
                 <div className="unit-metrics">
                   <div className="metric">
                     <span className="metric-icon">⏱️</span>
@@ -309,7 +328,9 @@ const Year8SocialStudies = () => {
                   </div>
                   <div className="metric">
                     <span className="metric-icon">🎯</span>
-                    <span className="metric-value">{unit.learningObjectives.length} Objectives</span>
+                    <span className="metric-value">
+                      {unit.learningObjectives.length} Objectives
+                    </span>
                   </div>
                 </div>
 
@@ -347,9 +368,7 @@ const Year8SocialStudies = () => {
                   </div>
                 </div>
 
-                <button className="explore-unit-btn">
-                  Explore Unit →
-                </button>
+                <button className="explore-unit-btn">Explore Unit →</button>
               </div>
             ))}
           </div>
@@ -364,18 +383,40 @@ const Year8SocialStudies = () => {
             <div className="curriculum-item">
               <h3>New Zealand Curriculum Alignment</h3>
               <ul className="curriculum-list">
-                <li><strong>Social Sciences:</strong> Understand how societies work and how people can participate as critical, active, informed, and responsible citizens</li>
-                <li><strong>Key Competencies:</strong> Thinking, Using language, symbols, and texts, Managing self, Relating to others, Participating and contributing</li>
-                <li><strong>Values:</strong> Excellence, Innovation, inquiry, and curiosity, Diversity, Equity, Community and participation, Ecological sustainability, Integrity, Respect</li>
-                <li><strong>Principles:</strong> Treaty of Waitangi, Cultural diversity, Inclusion, Learning to learn, Community engagement, Coherence, Future focus</li>
+                <li>
+                  <strong>Social Sciences:</strong> Understand how societies work and how people can
+                  participate as critical, active, informed, and responsible citizens
+                </li>
+                <li>
+                  <strong>Key Competencies:</strong> Thinking, Using language, symbols, and texts,
+                  Managing self, Relating to others, Participating and contributing
+                </li>
+                <li>
+                  <strong>Values:</strong> Excellence, Innovation, inquiry, and curiosity,
+                  Diversity, Equity, Community and participation, Ecological sustainability,
+                  Integrity, Respect
+                </li>
+                <li>
+                  <strong>Principles:</strong> Treaty of Waitangi, Cultural diversity, Inclusion,
+                  Learning to learn, Community engagement, Coherence, Future focus
+                </li>
               </ul>
             </div>
             <div className="curriculum-item">
               <h3>NCEA Level 1 Preparation</h3>
               <ul className="ncea-list">
-                <li><strong>History:</strong> AS 91001, AS 91002 - Understanding significant events and places</li>
-                <li><strong>Geography:</strong> AS 91007, AS 91008 - Geographic understanding of environments and population</li>
-                <li><strong>Social Studies:</strong> AS 91037, AS 91038 - Social studies concepts and inquiry</li>
+                <li>
+                  <strong>History:</strong> AS 91001, AS 91002 - Understanding significant events
+                  and places
+                </li>
+                <li>
+                  <strong>Geography:</strong> AS 91007, AS 91008 - Geographic understanding of
+                  environments and population
+                </li>
+                <li>
+                  <strong>Social Studies:</strong> AS 91037, AS 91038 - Social studies concepts and
+                  inquiry
+                </li>
               </ul>
             </div>
           </div>
@@ -389,15 +430,25 @@ const Year8SocialStudies = () => {
           <div className="cultural-content">
             <div className="cultural-item">
               <h3>Māori Perspectives Integration</h3>
-              <p>Every unit incorporates authentic Māori perspectives, honoring traditional knowledge systems and cultural protocols. Students engage with both historical and contemporary Māori viewpoints.</p>
+              <p>
+                Every unit incorporates authentic Māori perspectives, honoring traditional knowledge
+                systems and cultural protocols. Students engage with both historical and
+                contemporary Māori viewpoints.
+              </p>
             </div>
             <div className="cultural-item">
               <h3>Cultural Safety</h3>
-              <p>All content is reviewed for cultural appropriateness, ensuring respectful representation of Māori knowledge and community consultation protocols.</p>
+              <p>
+                All content is reviewed for cultural appropriateness, ensuring respectful
+                representation of Māori knowledge and community consultation protocols.
+              </p>
             </div>
             <div className="cultural-item">
               <h3>Te Tiriti o Waitangi</h3>
-              <p>The Treaty relationship is central to our social studies approach, examining how Treaty principles influence governance, citizenship, and social relationships.</p>
+              <p>
+                The Treaty relationship is central to our social studies approach, examining how
+                Treaty principles influence governance, citizenship, and social relationships.
+              </p>
             </div>
           </div>
         </div>
@@ -408,15 +459,12 @@ const Year8SocialStudies = () => {
         <div className="container">
           <h2 className="cta-title">Ready to Explore Our Social World?</h2>
           <p className="cta-description">
-            Dive into comprehensive social studies units that connect curriculum requirements with authentic cultural perspectives.
+            Dive into comprehensive social studies units that connect curriculum requirements with
+            authentic cultural perspectives.
           </p>
           <div className="cta-buttons">
-            <button className="cta-button primary">
-              Start Learning
-            </button>
-            <button className="cta-button secondary">
-              View All Units
-            </button>
+            <button className="cta-button primary">Start Learning</button>
+            <button className="cta-button secondary">View All Units</button>
           </div>
         </div>
       </section>
