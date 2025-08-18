@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Year8ReadingStrategies.css';
 
 interface ReadingStrategy {
@@ -43,7 +43,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Skim the first and last paragraphs',
       'Activate background knowledge',
       'Make predictions about content',
-      'Set a purpose for reading'
+      'Set a purpose for reading',
     ],
     culturalApplication: 'Connect to whakapapa and cultural knowledge before reading Māori texts',
     textTypes: ['All text types'],
@@ -53,8 +53,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Predicting story outcomes from cover art',
       'Connecting article topics to personal experience',
-      'Setting purpose before reading instructions'
-    ]
+      'Setting purpose before reading instructions',
+    ],
   },
   {
     id: 'kwa-chart',
@@ -64,7 +64,7 @@ const readingStrategies: ReadingStrategy[] = [
     steps: [
       'What do I already Know about this topic?',
       'What do I Want to learn?',
-      'What have I Acquired/learned after reading?'
+      'What have I Acquired/learned after reading?',
     ],
     culturalApplication: 'Include mātauranga Māori and cultural knowledge in "Know" column',
     textTypes: ['Informational texts', 'Articles', 'Non-fiction'],
@@ -74,8 +74,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Researching traditional Māori navigation',
       'Learning about environmental issues',
-      'Exploring historical events'
-    ]
+      'Exploring historical events',
+    ],
   },
 
   // During Reading Strategies
@@ -89,7 +89,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Stop and share your thinking',
       'Make connections and predictions',
       'Ask questions about confusing parts',
-      'Visualize what you read'
+      'Visualize what you read',
     ],
     culturalApplication: 'Share cultural connections and validate diverse perspectives',
     textTypes: ['Complex narratives', 'Academic texts'],
@@ -98,8 +98,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Thinking through character motivations',
       'Processing scientific explanations',
-      'Understanding poetic imagery'
-    ]
+      'Understanding poetic imagery',
+    ],
   },
   {
     id: 'annotation',
@@ -111,7 +111,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Circle unfamiliar vocabulary',
       'Write questions in margins',
       'Note personal connections',
-      'Mark important quotes'
+      'Mark important quotes',
     ],
     culturalApplication: 'Note cultural references and compare with own cultural knowledge',
     textTypes: ['All text types'],
@@ -120,8 +120,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Annotating poems for literary devices',
       'Marking evidence in arguments',
-      'Noting bias in historical accounts'
-    ]
+      'Noting bias in historical accounts',
+    ],
   },
   {
     id: 'questioning',
@@ -133,7 +133,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Ask inferential questions (Why did this happen?)',
       'Ask evaluative questions (What do you think?)',
       'Ask connection questions (How does this relate?)',
-      'Ask extension questions (What if?)'
+      'Ask extension questions (What if?)',
     ],
     culturalApplication: 'Ask questions that honor different cultural perspectives',
     textTypes: ['All text types'],
@@ -141,9 +141,9 @@ const readingStrategies: ReadingStrategy[] = [
     nceaConnection: 'Builds questioning skills for independent analysis',
     examples: [
       'Questioning character decisions',
-      'Evaluating author\'s evidence',
-      'Connecting themes to real life'
-    ]
+      "Evaluating author's evidence",
+      'Connecting themes to real life',
+    ],
   },
 
   // After Reading Strategies
@@ -157,7 +157,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Remove unnecessary information',
       'Combine related ideas',
       'Use your own words',
-      'Check against original text'
+      'Check against original text',
     ],
     culturalApplication: 'Include cultural significance and diverse perspectives in summaries',
     textTypes: ['All text types'],
@@ -166,8 +166,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Summarizing scientific articles',
       'Condensing historical events',
-      'Capturing story themes'
-    ]
+      'Capturing story themes',
+    ],
   },
   {
     id: 'text-to-connections',
@@ -179,7 +179,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Text-to-World: How does this connect to world events?',
       'Text-to-Text: How does this relate to other readings?',
       'Discuss connections with others',
-      'Evaluate the strength of connections'
+      'Evaluate the strength of connections',
     ],
     culturalApplication: 'Honor connections to whānau, iwi, and cultural experiences',
     textTypes: ['All text types'],
@@ -188,8 +188,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Connecting characters to family members',
       'Relating themes to current events',
-      'Comparing different authors\' styles'
-    ]
+      "Comparing different authors' styles",
+    ],
   },
 
   // Vocabulary Strategies
@@ -203,7 +203,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Look for definition clues in surrounding sentences',
       'Check for examples or synonyms nearby',
       'Consider word parts (prefix, root, suffix)',
-      'Make an educated guess and check if it makes sense'
+      'Make an educated guess and check if it makes sense',
     ],
     culturalApplication: 'Apply knowledge of Te Reo Māori word patterns and meanings',
     textTypes: ['Academic texts', 'Literature'],
@@ -212,8 +212,8 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Inferring scientific term meanings',
       'Understanding historical vocabulary',
-      'Decoding literary language'
-    ]
+      'Decoding literary language',
+    ],
   },
 
   // Comprehension Strategies
@@ -227,7 +227,7 @@ const readingStrategies: ReadingStrategy[] = [
       'Look for topic sentences',
       'Identify supporting details',
       'Distinguish between main ideas and details',
-      'Create a visual organizer'
+      'Create a visual organizer',
     ],
     culturalApplication: 'Recognize how cultural perspectives shape main ideas',
     textTypes: ['Informational texts', 'Articles'],
@@ -237,9 +237,9 @@ const readingStrategies: ReadingStrategy[] = [
     examples: [
       'Analyzing news articles',
       'Understanding textbook chapters',
-      'Identifying themes in stories'
-    ]
-  }
+      'Identifying themes in stories',
+    ],
+  },
 ];
 
 const textSamples: TextSample[] = [
@@ -258,21 +258,21 @@ Finally, they reached the shores of Aotearoa. The land was rich with forests, ri
       literal: [
         'Where did the Whakatōhea people originally live?',
         'Who was their leader during the migration?',
-        'What navigation methods did they use?'
+        'What navigation methods did they use?',
       ],
       inferential: [
         'Why might overcrowding have led to conflicts?',
         'What does "called upon their spiritual strength" suggest about Māori beliefs?',
-        'How did this journey affect future generations?'
+        'How did this journey affect future generations?',
       ],
       evaluative: [
         'What qualities made this migration successful?',
         'How does this account reflect Māori values?',
-        'What can modern people learn from this story?'
-      ]
+        'What can modern people learn from this story?',
+      ],
     },
     vocabularyFocus: ['migration', 'whakapapa', 'seaworthy', 'navigation', 'ancestors'],
-    readingLevel: 8
+    readingLevel: 8,
   },
   {
     id: 'sample-2',
@@ -289,32 +289,34 @@ However, Pacific communities are not passive victims. They combine traditional e
       literal: [
         'What environmental challenges do Pacific Islands face?',
         'How are traditional practices being affected?',
-        'What solutions are communities developing?'
+        'What solutions are communities developing?',
       ],
       inferential: [
         'Why might traditional knowledge be "challenged" by climate change?',
         'What does "unprecedented" suggest about these challenges?',
-        'How do communities show resilience?'
+        'How do communities show resilience?',
       ],
       evaluative: [
         'How effective might combining traditional and modern knowledge be?',
         'What responsibility do other nations have to help?',
-        'What lessons can other communities learn from Pacific responses?'
-      ]
+        'What lessons can other communities learn from Pacific responses?',
+      ],
     },
     vocabularyFocus: ['unprecedented', 'submerge', 'disrupt', 'resilience', 'innovative'],
-    readingLevel: 9
-  }
+    readingLevel: 9,
+  },
 ];
 
 export default function Year8ReadingStrategies() {
   const [selectedStrategy, setSelectedStrategy] = useState<ReadingStrategy | null>(null);
   const [selectedText, setSelectedText] = useState<TextSample | null>(null);
-  const [activeMode, setActiveMode] = useState<'strategies' | 'practice' | 'assessment'>('strategies');
+  const [activeMode, setActiveMode] = useState<'strategies' | 'practice' | 'assessment'>(
+    'strategies',
+  );
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [practiceAnswers, setPracticeAnswers] = useState<{[key: string]: string}>({});
+  const [practiceAnswers, setPracticeAnswers] = useState<{ [key: string]: string }>({});
 
-  const filteredStrategies = readingStrategies.filter(strategy => {
+  const filteredStrategies = readingStrategies.filter((strategy) => {
     if (selectedCategory !== 'all' && strategy.category !== selectedCategory) return false;
     return true;
   });
@@ -337,8 +339,8 @@ export default function Year8ReadingStrategies() {
       'before-reading': '#e8f5e8',
       'during-reading': '#fff3e0',
       'after-reading': '#e3f2fd',
-      'vocabulary': '#f3e5f5',
-      'comprehension': '#fce4ec'
+      vocabulary: '#f3e5f5',
+      comprehension: '#fce4ec',
     };
     return colors[category as keyof typeof colors] || '#f5f5f5';
   };
@@ -348,25 +350,25 @@ export default function Year8ReadingStrategies() {
       'before-reading': '🎯',
       'during-reading': '📖',
       'after-reading': '💭',
-      'vocabulary': '📝',
-      'comprehension': '🧠'
+      vocabulary: '📝',
+      comprehension: '🧠',
     };
     return icons[category as keyof typeof icons] || '📚';
   };
 
   const getDifficultyColor = (difficulty: string) => {
     const colors = {
-      'foundation': '#4caf50',
-      'developing': '#ff9800',
-      'advanced': '#2196f3'
+      foundation: '#4caf50',
+      developing: '#ff9800',
+      advanced: '#2196f3',
     };
     return colors[difficulty as keyof typeof colors] || '#666';
   };
 
   const handleAnswerChange = (questionId: string, answer: string) => {
-    setPracticeAnswers(prev => ({
+    setPracticeAnswers((prev) => ({
       ...prev,
-      [questionId]: answer
+      [questionId]: answer,
     }));
   };
 
@@ -375,7 +377,8 @@ export default function Year8ReadingStrategies() {
       <header className="year8-reading-header">
         <h1 className="year8-reading-title">📚 Year 8 Reading Strategies - Rautaki Pānui</h1>
         <p className="year8-reading-subtitle">
-          Advanced reading comprehension strategies for Year 8 academic success and critical thinking
+          Advanced reading comprehension strategies for Year 8 academic success and critical
+          thinking
         </p>
       </header>
 
@@ -385,7 +388,10 @@ export default function Year8ReadingStrategies() {
         <div className="framework-grid">
           <div className="framework-card">
             <h3>🎯 Before Reading</h3>
-            <p>Activate prior knowledge, set purposes, and make predictions to prepare for successful reading.</p>
+            <p>
+              Activate prior knowledge, set purposes, and make predictions to prepare for successful
+              reading.
+            </p>
             <ul>
               <li>Preview text features</li>
               <li>Connect to cultural knowledge</li>
@@ -394,7 +400,10 @@ export default function Year8ReadingStrategies() {
           </div>
           <div className="framework-card">
             <h3>📖 During Reading</h3>
-            <p>Monitor comprehension, ask questions, and make connections while actively engaging with text.</p>
+            <p>
+              Monitor comprehension, ask questions, and make connections while actively engaging
+              with text.
+            </p>
             <ul>
               <li>Think aloud about meaning</li>
               <li>Ask strategic questions</li>
@@ -417,19 +426,19 @@ export default function Year8ReadingStrategies() {
       <section className="mode-section">
         <h3>🎮 Learning Modes</h3>
         <div className="mode-buttons">
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'strategies' ? 'active' : ''}`}
             onClick={() => setActiveMode('strategies')}
           >
             🧠 Strategy Instruction
           </button>
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'practice' ? 'active' : ''}`}
             onClick={() => setActiveMode('practice')}
           >
             📖 Guided Practice
           </button>
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'assessment' ? 'active' : ''}`}
             onClick={() => setActiveMode('assessment')}
           >
@@ -446,9 +455,9 @@ export default function Year8ReadingStrategies() {
             <div className="filters-grid">
               <div className="filter-group">
                 <label htmlFor="category-filter">Strategy Category:</label>
-                <select 
+                <select
                   id="category-filter"
-                  value={selectedCategory} 
+                  value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
                   <option value="all">All Categories</option>
@@ -460,7 +469,7 @@ export default function Year8ReadingStrategies() {
                 </select>
               </div>
 
-              <button 
+              <button
                 className="random-strategy-btn"
                 onClick={selectRandomStrategy}
                 disabled={filteredStrategies.length === 0}
@@ -468,31 +477,28 @@ export default function Year8ReadingStrategies() {
                 🎲 Random Strategy
               </button>
             </div>
-            
+
             <div className="filter-results">
-              <span className="results-count">{filteredStrategies.length} strategies available</span>
+              <span className="results-count">
+                {filteredStrategies.length} strategies available
+              </span>
             </div>
           </section>
 
           {/* Featured Strategy */}
           {selectedStrategy && (
             <section className="strategy-showcase">
-              <div 
-                className={`strategy-spotlight category-${selectedStrategy.category}`}
-              >
+              <div className={`strategy-spotlight category-${selectedStrategy.category}`}>
                 <div className="strategy-header">
                   <div className="strategy-badges">
                     <span className="category-badge">
                       {getCategoryIcon(selectedStrategy.category)} {selectedStrategy.category}
                     </span>
-                    <span 
-                      className="difficulty-badge"
-                      style={{ backgroundColor: getDifficultyColor(selectedStrategy.difficulty) }}
-                    >
+                    <span className={`difficulty-badge difficulty-${selectedStrategy.difficulty}`}>
                       {selectedStrategy.difficulty}
                     </span>
                   </div>
-                  
+
                   <h2 className="strategy-name">{selectedStrategy.name}</h2>
                   <p className="strategy-description">{selectedStrategy.description}</p>
                 </div>
@@ -517,7 +523,9 @@ export default function Year8ReadingStrategies() {
                       <h4>📚 Best for Text Types</h4>
                       <div className="text-type-tags">
                         {selectedStrategy.textTypes.map((type, index) => (
-                          <span key={index} className="text-type-tag">{type}</span>
+                          <span key={index} className="text-type-tag">
+                            {type}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -533,7 +541,9 @@ export default function Year8ReadingStrategies() {
                       <h4>💡 Examples in Practice</h4>
                       <div className="examples-grid">
                         {selectedStrategy.examples.map((example, index) => (
-                          <div key={index} className="example-item">{example}</div>
+                          <div key={index} className="example-item">
+                            {example}
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -548,25 +558,23 @@ export default function Year8ReadingStrategies() {
             <h3>🧠 All Reading Strategies ({filteredStrategies.length})</h3>
             <div className="strategies-grid">
               {filteredStrategies.map((strategy) => (
-                <div 
-                  key={strategy.id} 
+                <div
+                  key={strategy.id}
                   className="strategy-card"
                   style={{ backgroundColor: getCategoryColor(strategy.category) }}
                   onClick={() => setSelectedStrategy(strategy)}
                 >
                   <div className="card-header">
-                    <span className="card-category-icon">
-                      {getCategoryIcon(strategy.category)}
-                    </span>
-                    <span 
+                    <span className="card-category-icon">{getCategoryIcon(strategy.category)}</span>
+                    <span
                       className="card-difficulty-dot"
                       style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
                     ></span>
                   </div>
-                  
+
                   <h4 className="card-strategy-name">{strategy.name}</h4>
                   <p className="card-description">{strategy.description}</p>
-                  
+
                   <div className="card-meta">
                     <span className="card-category">{strategy.category}</span>
                     <span className="card-difficulty">{strategy.difficulty}</span>
@@ -583,10 +591,7 @@ export default function Year8ReadingStrategies() {
           <div className="practice-header">
             <h3>📖 Guided Reading Practice</h3>
             <p>Apply reading strategies with authentic New Zealand texts</p>
-            <button 
-              className="new-text-btn"
-              onClick={selectRandomText}
-            >
+            <button className="new-text-btn" onClick={selectRandomText}>
               📚 New Reading Passage
             </button>
           </div>
@@ -605,23 +610,23 @@ export default function Year8ReadingStrategies() {
 
               <div className="reading-passage">
                 <h4>📝 Reading Passage</h4>
-                <div className="passage-text">
-                  {selectedText.excerpt}
-                </div>
+                <div className="passage-text">{selectedText.excerpt}</div>
               </div>
 
               <div className="vocabulary-focus">
                 <h4>🔍 Vocabulary Focus</h4>
                 <div className="vocab-words">
                   {selectedText.vocabularyFocus.map((word, index) => (
-                    <span key={index} className="vocab-word">{word}</span>
+                    <span key={index} className="vocab-word">
+                      {word}
+                    </span>
                   ))}
                 </div>
               </div>
 
               <div className="comprehension-questions">
                 <h4>🧠 Comprehension Questions</h4>
-                
+
                 <div className="question-category">
                   <h5>📖 Literal Questions (What the text says)</h5>
                   {selectedText.comprehensionQuestions.literal.map((question, index) => (
@@ -679,9 +684,12 @@ export default function Year8ReadingStrategies() {
         <section className="assessment-mode">
           <h3>📊 Reading Strategy Assessment</h3>
           <div className="assessment-info">
-            <p>Track your progress with reading comprehension strategies and identify areas for growth.</p>
+            <p>
+              Track your progress with reading comprehension strategies and identify areas for
+              growth.
+            </p>
           </div>
-          
+
           <div className="assessment-categories">
             <div className="assessment-category">
               <h4>🎯 Before Reading Skills</h4>
@@ -692,7 +700,7 @@ export default function Year8ReadingStrategies() {
                 <li>Previews text features systematically</li>
               </ul>
             </div>
-            
+
             <div className="assessment-category">
               <h4>📖 During Reading Skills</h4>
               <ul>
@@ -702,7 +710,7 @@ export default function Year8ReadingStrategies() {
                 <li>Makes meaningful connections</li>
               </ul>
             </div>
-            
+
             <div className="assessment-category">
               <h4>💭 After Reading Skills</h4>
               <ul>
@@ -717,7 +725,9 @@ export default function Year8ReadingStrategies() {
       )}
 
       <footer className="year8-reading-footer">
-        <p className="cultural-motto">🌿 "Mā te pānui, ka mārama" - Through reading, understanding comes</p>
+        <p className="cultural-motto">
+          🌿 "Mā te pānui, ka mārama" - Through reading, understanding comes
+        </p>
         <p className="platform-info">Te Kete Ako - Year 8 Reading Excellence</p>
       </footer>
     </div>
