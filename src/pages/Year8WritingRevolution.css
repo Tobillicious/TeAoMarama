@@ -4,7 +4,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   min-height: 100vh;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #333;
@@ -24,9 +24,9 @@
 .writing-revolution-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #2C5F41 0%, #00b0b9 100%);
+  background: linear-gradient(135deg, #2c5f41 0%, #00b0b9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -52,7 +52,7 @@
 }
 
 .writing-philosophy h2 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.5rem;
   text-align: center;
@@ -78,7 +78,7 @@
 }
 
 .philosophy-card h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -101,7 +101,7 @@
 }
 
 .mode-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
   text-align: center;
@@ -133,7 +133,7 @@
 }
 
 .mode-btn.active {
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   color: white;
   box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
 }
@@ -149,7 +149,7 @@
 }
 
 .filters-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
 }
@@ -170,7 +170,7 @@
 
 .filter-group label {
   font-weight: 600;
-  color: #2C5F41;
+  color: #2c5f41;
   font-size: 0.95rem;
 }
 
@@ -188,8 +188,9 @@
   border-color: #00b0b9;
 }
 
-.random-activity-btn, .random-pattern-btn {
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+.random-activity-btn,
+.random-pattern-btn {
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -201,7 +202,8 @@
   align-self: end;
 }
 
-.random-activity-btn:hover:not(:disabled), .random-pattern-btn:hover {
+.random-activity-btn:hover:not(:disabled),
+.random-pattern-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
 }
@@ -253,7 +255,9 @@
   flex-wrap: wrap;
 }
 
-.category-badge, .level-badge, .time-badge {
+.category-badge,
+.level-badge,
+.time-badge {
   padding: 0.5rem 1rem;
   border-radius: 16px;
   font-size: 0.85rem;
@@ -262,7 +266,7 @@
 }
 
 .category-badge {
-  background: #2C5F41;
+  background: #2c5f41;
   text-transform: capitalize;
 }
 
@@ -273,12 +277,13 @@
 .activity-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.activity-description, .activity-purpose {
+.activity-description,
+.activity-purpose {
   font-size: 1.2rem;
   color: #555;
   line-height: 1.6;
@@ -289,12 +294,17 @@
   text-align: left;
 }
 
-.steps-section, .examples-section, .cultural-application, .activity-info-grid {
+.steps-section,
+.examples-section,
+.cultural-application,
+.activity-info-grid {
   margin-bottom: 2.5rem;
 }
 
-.steps-section h4, .examples-section h4, .cultural-application h4 {
-  color: #2C5F41;
+.steps-section h4,
+.examples-section h4,
+.cultural-application h4 {
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -374,14 +384,16 @@
   gap: 2rem;
 }
 
-.ncea-relevance, .materials-needed {
+.ncea-relevance,
+.materials-needed {
   background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 12px;
 }
 
-.ncea-relevance h4, .materials-needed h4 {
-  color: #2C5F41;
+.ncea-relevance h4,
+.materials-needed h4 {
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -417,7 +429,7 @@
 }
 
 .activities-grid-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.4rem;
   text-align: center;
@@ -465,7 +477,7 @@
 .card-activity-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
@@ -510,7 +522,7 @@
 }
 
 .patterns-intro h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -556,19 +568,20 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: white;
-  background: #2C5F41;
+  background: #2c5f41;
   text-transform: capitalize;
 }
 
 .pattern-name {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-family: 'Courier New', monospace;
 }
 
-.pattern-purpose, .pattern-structure {
+.pattern-purpose,
+.pattern-structure {
   font-size: 1.1rem;
   color: #555;
   line-height: 1.6;
@@ -581,7 +594,7 @@
 }
 
 .pattern-examples h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   text-align: center;
@@ -601,7 +614,7 @@
 }
 
 .example-type h5 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 0.75rem;
   font-size: 1rem;
 }
@@ -618,7 +631,7 @@
 }
 
 .signal-words h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -678,7 +691,7 @@
 }
 
 .patterns-grid-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.4rem;
   text-align: center;
@@ -711,7 +724,7 @@
 }
 
 .pattern-type-badge {
-  background: #2C5F41;
+  background: #2c5f41;
   color: white;
   padding: 0.3rem 0.7rem;
   border-radius: 12px;
@@ -723,7 +736,7 @@
 .pattern-card-name {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 0.75rem;
   line-height: 1.3;
   font-family: 'Courier New', monospace;
@@ -761,7 +774,7 @@
 }
 
 .practice-header h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -802,7 +815,7 @@
 }
 
 .writing-area h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -859,7 +872,7 @@
   background: #f8f9fa;
 }
 
-.checklist-item input[type="checkbox"] {
+.checklist-item input[type='checkbox'] {
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
@@ -883,7 +896,7 @@
 
 .cultural-motto {
   font-size: 1.2rem;
-  color: #2C5F41;
+  color: #2c5f41;
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-style: italic;
@@ -899,54 +912,153 @@
   .writing-revolution-container {
     padding: 1rem;
   }
-  
+
   .writing-revolution-header {
     padding: 2rem 1.5rem;
   }
-  
+
   .writing-revolution-title {
     font-size: 2.2rem;
   }
-  
+
   .filters-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .philosophy-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .activities-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .patterns-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .activity-info-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .examples-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .checklist-items {
     grid-template-columns: 1fr;
   }
-  
+
   .mode-buttons {
     flex-direction: column;
   }
-  
+
   .activity-name {
     font-size: 2rem;
   }
-  
+
   .pattern-name {
     font-size: 1.8rem;
   }
+}
+
+/* Dynamic Background Colors for Categories */
+.activity-spotlight.category-sentence {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+}
+
+.activity-spotlight.category-paragraph {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.activity-spotlight.category-outline {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.activity-spotlight.category-revision {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+
+.activity-spotlight.category-editing {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+}
+
+.activity-card.category-sentence {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+}
+
+.activity-card.category-paragraph {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.activity-card.category-outline {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.activity-card.category-revision {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+
+.activity-card.category-editing {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+}
+
+/* Dynamic Background Colors for Levels */
+.level-badge.level-foundation {
+  background: #4caf50;
+}
+
+.level-badge.level-intermediate {
+  background: #ff9800;
+}
+
+.level-badge.level-advanced {
+  background: #2196f3;
+}
+
+.card-level-dot.level-foundation {
+  background: #4caf50;
+}
+
+.card-level-dot.level-intermediate {
+  background: #ff9800;
+}
+
+.card-level-dot.level-advanced {
+  background: #2196f3;
+}
+
+/* Dynamic Background Colors for Pattern Types */
+.pattern-spotlight.type-simple {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+}
+
+.pattern-spotlight.type-compound {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.pattern-spotlight.type-complex {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.pattern-spotlight.type-compound-complex {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+}
+
+.pattern-card.type-simple {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+}
+
+.pattern-card.type-compound {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+}
+
+.pattern-card.type-complex {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.pattern-card.type-compound-complex {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
 }
 
 /* Print Styles */
@@ -955,24 +1067,24 @@
     background: white;
     padding: 1rem;
   }
-  
+
   .activity-card,
   .pattern-card {
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #ddd;
   }
-  
+
   .filters-section,
   .mode-section {
     display: none;
   }
-  
+
   .random-activity-btn,
   .random-pattern-btn {
     display: none;
   }
-  
+
   .writing-input {
     border: 1px solid #333;
     min-height: 8rem;

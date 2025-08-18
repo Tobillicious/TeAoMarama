@@ -6,7 +6,7 @@ declare global {
     gtag?: (
       command: 'event' | 'config' | 'set',
       eventName: string,
-      parameters?: Record<string, unknown>
+      parameters?: Record<string, unknown>,
     ) => void;
   }
 }
@@ -89,13 +89,11 @@ export class PerformanceMonitor {
 
   private observeMetric(entryType: string, callback: (entry: PerformanceEntry) => void) {
     try {
-      const observer = new window.PerformanceObserver(
-        (list: PerformanceObserverEntryList) => {
-          for (const entry of list.getEntries()) {
-            callback(entry);
-          }
-        },
-      );
+      const observer = new window.PerformanceObserver((list: PerformanceObserverEntryList) => {
+        for (const entry of list.getEntries()) {
+          callback(entry);
+        }
+      });
       observer.observe({ entryTypes: [entryType] });
       this.observers.push(observer);
     } catch (error) {
@@ -272,7 +270,11 @@ export class MemoryManager {
   private setupMemoryMonitoring() {
     if ('memory' in performance) {
       setInterval(() => {
-        const memory = (performance as any).memory;
+        const memory = (
+          performance as Performance & {
+            memory?: { usedJSHeapSize?: number; totalJSHeapSize?: number };
+          }
+        ).memory;
         const usedMB = memory?.usedJSHeapSize ? memory.usedJSHeapSize / 1024 / 1024 : 0;
         const totalMB = memory?.totalJSHeapSize ? memory.totalJSHeapSize / 1024 / 1024 : 0;
 

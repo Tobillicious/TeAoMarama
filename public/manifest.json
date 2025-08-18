@@ -1,11 +1,11 @@
 {
-  "name": "Te Kete Ako - Educational Resources",
+  "name": "Te Kete Ako - Structured Literacy Platform",
   "short_name": "Te Kete Ako",
-  "description": "Comprehensive educational resources for New Zealand teachers and students",
+  "description": "Comprehensive structured literacy platform for Aotearoa's future leaders with Māori cultural integration",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f9fafb",
-  "theme_color": "#3B82F6",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
@@ -19,31 +19,47 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/vite.svg",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
     },
     {
-      "src": "/vite.svg",
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "type": "image/png"
     }
   ],
   "shortcuts": [
-    {
-      "name": "Dashboard",
-      "short_name": "Dashboard",
-      "description": "Access your dashboard",
-      "url": "/dashboard",
-      "icons": [
-        {
-          "src": "/vite.svg",
-          "sizes": "96x96"
-        }
-      ]
-    },
     {
       "name": "Resources",
       "short_name": "Resources",
@@ -57,10 +73,22 @@
       ]
     },
     {
-      "name": "Mihara",
-      "short_name": "Mihara",
-      "description": "Access Mihara dashboard",
-      "url": "/mihara",
+      "name": "Year 8 Writing",
+      "short_name": "Y8 Writing",
+      "description": "Year 8 Structured Literacy",
+      "url": "/year8-writing-revolution",
+      "icons": [
+        {
+          "src": "/vite.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Teacher dashboard",
+      "url": "/dashboard",
       "icons": [
         {
           "src": "/vite.svg",
@@ -71,33 +99,23 @@
   ],
   "screenshots": [
     {
-      "src": "/vite.svg",
+      "src": "/screenshots/home.png",
       "sizes": "1280x720",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "form_factor": "wide",
-      "label": "Te Kete Ako Dashboard"
+      "label": "Home page with featured units"
     },
     {
-      "src": "/vite.svg",
-      "sizes": "750x1334",
-      "type": "image/svg+xml",
-      "form_factor": "narrow",
-      "label": "Te Kete Ako Mobile"
+      "src": "/screenshots/resources.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Resources library with search and filters"
     }
   ],
   "related_applications": [],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
-  },
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "handle_links": "preferred",
-  "protocol_handlers": [
-    {
-      "protocol": "web+te-kete-ako",
-      "url": "/?resource=%s"
-    }
-  ]
+  }
 }

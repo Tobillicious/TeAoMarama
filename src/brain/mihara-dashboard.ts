@@ -194,7 +194,7 @@ export class MiharaDashboard {
   async performMonitoredMigration(): Promise<{
     success: boolean;
     metrics: unknown;
-    culturalSafety: any;
+    culturalSafety: unknown;
     recommendations: string[];
   }> {
     console.log('🏛️ MIHARA DASHBOARD: Performing monitored Great Migration...');
@@ -218,7 +218,7 @@ export class MiharaDashboard {
       }
 
       // Monitor cultural safety throughout
-      const culturalSafety: any = {
+      const culturalSafety: unknown = {
         preCheck: {
           protocolsActive: true,
           culturalContentFlagged: 0,
@@ -527,7 +527,7 @@ export class MiharaDashboard {
     };
   }
 
-  private generateAwakeningRecommendations(diagnostics: any): string[] {
+  private generateAwakeningRecommendations(diagnostics: unknown): string[] {
     const recommendations: string[] = [];
 
     if (diagnostics.timings.performance === 'slow') {

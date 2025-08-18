@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Year8WritingRevolution.css';
 
 interface WritingActivity {
@@ -45,17 +45,18 @@ const writingActivities: WritingActivity[] = [
       'Ask questions: Who? What? When? Where? Why? How?',
       'Add details one at a time',
       'Check that the sentence still makes sense',
-      'Read aloud to check flow and clarity'
+      'Read aloud to check flow and clarity',
     ],
     examples: [
       'Basic: The bird flew.',
       'Expanded: The native tūī flew gracefully through the kōwhai tree.',
-      'Further: Yesterday, the native tūī flew gracefully through the golden kōwhai tree in our school garden.'
+      'Further: Yesterday, the native tūī flew gracefully through the golden kōwhai tree in our school garden.',
     ],
-    culturalApplication: 'Use Te Reo Māori vocabulary and cultural contexts in sentence expansion exercises',
+    culturalApplication:
+      'Use Te Reo Māori vocabulary and cultural contexts in sentence expansion exercises',
     nceaRelevance: 'Builds foundation skills for detailed description and analysis in NCEA writing',
     timeRequired: '15-20 minutes',
-    materials: ['Kernel sentence cards', 'Question prompts', 'Cultural vocabulary lists']
+    materials: ['Kernel sentence cards', 'Question prompts', 'Cultural vocabulary lists'],
   },
   {
     id: 'sentence-combining',
@@ -69,17 +70,17 @@ const writingActivities: WritingActivity[] = [
       'Choose appropriate connecting words',
       'Combine sentences using conjunctions',
       'Check for proper punctuation',
-      'Ensure the combined sentence flows naturally'
+      'Ensure the combined sentence flows naturally',
     ],
     examples: [
       'Simple: The marae is sacred. Visitors must follow protocols.',
       'Combined: The marae is sacred, so visitors must follow protocols.',
-      'Complex: Because the marae is sacred, visitors must follow protocols.'
+      'Complex: Because the marae is sacred, visitors must follow protocols.',
     ],
     culturalApplication: 'Combine sentences about cultural practices and traditional knowledge',
     nceaRelevance: 'Essential for creating sophisticated arguments and explanations in NCEA essays',
     timeRequired: '20-25 minutes',
-    materials: ['Simple sentence pairs', 'Conjunction reference cards', 'Practice worksheets']
+    materials: ['Simple sentence pairs', 'Conjunction reference cards', 'Practice worksheets'],
   },
   {
     id: 'appositives',
@@ -93,17 +94,17 @@ const writingActivities: WritingActivity[] = [
       'Create a phrase that renames or describes the noun',
       'Place the appositive next to the noun',
       'Use commas to set off the appositive',
-      'Check that the sentence is clear'
+      'Check that the sentence is clear',
     ],
     examples: [
       'Basic: Tane Mahuta is huge.',
       'With appositive: Tane Mahuta, a giant kauri tree in Waipoua Forest, is over 2000 years old.',
-      'Academic: Te Tiriti o Waitangi, the founding document of New Zealand, established important principles.'
+      'Academic: Te Tiriti o Waitangi, the founding document of New Zealand, established important principles.',
     ],
     culturalApplication: 'Use appositives to provide cultural context and background information',
     nceaRelevance: 'Advanced sentence structure for sophisticated NCEA writing tasks',
     timeRequired: '25-30 minutes',
-    materials: ['Noun identification sheets', 'Appositive examples', 'Cultural context cards']
+    materials: ['Noun identification sheets', 'Appositive examples', 'Cultural context cards'],
   },
 
   // Paragraph Level Activities
@@ -119,18 +120,19 @@ const writingActivities: WritingActivity[] = [
       'List 3-4 supporting details',
       'Arrange details in logical order',
       'Write the paragraph using the outline',
-      'Check that all details support the topic sentence'
+      'Check that all details support the topic sentence',
     ],
     examples: [
       'Topic: Traditional Māori fishing methods were sustainable.',
       'Detail 1: Used seasonal calendars to know when to fish',
       'Detail 2: Implemented rāhui to protect breeding areas',
-      'Detail 3: Only took what was needed for the community'
+      'Detail 3: Only took what was needed for the community',
     ],
-    culturalApplication: 'Write paragraphs about cultural practices, values, and traditional knowledge',
+    culturalApplication:
+      'Write paragraphs about cultural practices, values, and traditional knowledge',
     nceaRelevance: 'Foundation skill for all NCEA paragraph writing tasks',
     timeRequired: '30-35 minutes',
-    materials: ['SPO templates', 'Topic sentence examples', 'Cultural topic cards']
+    materials: ['SPO templates', 'Topic sentence examples', 'Cultural topic cards'],
   },
   {
     id: 'transition-practice',
@@ -144,20 +146,24 @@ const writingActivities: WritingActivity[] = [
       'Choose appropriate transition words',
       'Place transitions at the beginning of sentences',
       'Vary transition words to avoid repetition',
-      'Read aloud to check flow'
+      'Read aloud to check flow',
     ],
     examples: [
       'Addition: Furthermore, traditional knowledge includes sustainable practices.',
       'Contrast: However, modern methods often ignore environmental impacts.',
-      'Cause/Effect: Therefore, combining both approaches creates better solutions.'
+      'Cause/Effect: Therefore, combining both approaches creates better solutions.',
     ],
     culturalApplication: 'Connect traditional and contemporary perspectives using transitions',
     nceaRelevance: 'Essential for coherent NCEA essay writing and text analysis',
     timeRequired: '20-25 minutes',
-    materials: ['Transition word charts', 'Practice paragraphs', 'Relationship identification cards']
+    materials: [
+      'Transition word charts',
+      'Practice paragraphs',
+      'Relationship identification cards',
+    ],
   },
 
-  // Outline Activities  
+  // Outline Activities
   {
     id: 'multi-paragraph-outline',
     name: 'Multi-Paragraph Outline (MPO)',
@@ -170,18 +176,18 @@ const writingActivities: WritingActivity[] = [
       'Arrange paragraphs in logical order',
       'Write topic sentences for each paragraph',
       'List supporting details under each topic',
-      'Check that paragraphs connect to overall theme'
+      'Check that paragraphs connect to overall theme',
     ],
     examples: [
       'Theme: The importance of te reo Māori revitalization',
       'Paragraph 1: Historical decline of te reo Māori',
       'Paragraph 2: Current revitalization efforts',
-      'Paragraph 3: Benefits of bilingual education'
+      'Paragraph 3: Benefits of bilingual education',
     ],
     culturalApplication: 'Plan essays exploring cultural themes and contemporary issues',
     nceaRelevance: 'Planning skill for NCEA extended writing tasks',
     timeRequired: '40-45 minutes',
-    materials: ['MPO templates', 'Theme cards', 'Planning sheets']
+    materials: ['MPO templates', 'Theme cards', 'Planning sheets'],
   },
 
   // Revision Activities
@@ -197,17 +203,17 @@ const writingActivities: WritingActivity[] = [
       'Remove unnecessary words and phrases',
       'Rewrite the kernel clearly',
       'Add back only essential details',
-      'Compare original and revised versions'
+      'Compare original and revised versions',
     ],
     examples: [
       'Original: There are many people who think that the environment is important.',
       'Kernel: People value the environment.',
-      'Revised: Many New Zealanders prioritize environmental protection.'
+      'Revised: Many New Zealanders prioritize environmental protection.',
     ],
     culturalApplication: 'Revise sentences to clarify cultural concepts and values',
     nceaRelevance: 'Develops clarity essential for NCEA writing assessment',
     timeRequired: '25-30 minutes',
-    materials: ['Weak sentence examples', 'Revision checklists', 'Before/after comparisons']
+    materials: ['Weak sentence examples', 'Revision checklists', 'Before/after comparisons'],
   },
 
   // Editing Activities
@@ -223,19 +229,20 @@ const writingActivities: WritingActivity[] = [
       'Check sentence structure and completeness',
       'Verify subject-verb agreement',
       'Confirm correct punctuation usage',
-      'Proofread for spelling and word choice'
+      'Proofread for spelling and word choice',
     ],
     examples: [
       'Fragment: Because traditional knowledge is important.',
       'Corrected: Traditional knowledge is important because it guides sustainable practices.',
       'Agreement error: The students was learning.',
-      'Corrected: The students were learning about cultural protocols.'
+      'Corrected: The students were learning about cultural protocols.',
     ],
-    culturalApplication: 'Edit texts about cultural topics to ensure respectful and accurate language',
+    culturalApplication:
+      'Edit texts about cultural topics to ensure respectful and accurate language',
     nceaRelevance: 'Editing skills crucial for NCEA writing excellence',
     timeRequired: '20-25 minutes',
-    materials: ['Error identification charts', 'Practice texts', 'Editing checklists']
-  }
+    materials: ['Error identification charts', 'Practice texts', 'Editing checklists'],
+  },
 ];
 
 const sentencePatterns: SentencePattern[] = [
@@ -248,10 +255,10 @@ const sentencePatterns: SentencePattern[] = [
     examples: {
       basic: 'Students learn quickly.',
       cultural: 'Kaumātua share traditional knowledge.',
-      academic: 'Researchers analyze historical data.'
+      academic: 'Researchers analyze historical data.',
     },
     signalWords: [],
-    commonMistakes: ['Missing subject', 'Incomplete verb', 'Fragment sentences']
+    commonMistakes: ['Missing subject', 'Incomplete verb', 'Fragment sentences'],
   },
   {
     id: 'compound-coordination',
@@ -262,10 +269,14 @@ const sentencePatterns: SentencePattern[] = [
     examples: {
       basic: 'The weather was cold, but we went outside.',
       cultural: 'The hui was long, yet everyone stayed engaged.',
-      academic: 'The experiment succeeded, and the results were significant.'
+      academic: 'The experiment succeeded, and the results were significant.',
     },
     signalWords: ['and', 'but', 'or', 'nor', 'for', 'so', 'yet'],
-    commonMistakes: ['Missing comma before conjunction', 'Using subordinating conjunction', 'Creating run-on sentences']
+    commonMistakes: [
+      'Missing comma before conjunction',
+      'Using subordinating conjunction',
+      'Creating run-on sentences',
+    ],
   },
   {
     id: 'complex-because',
@@ -276,10 +287,14 @@ const sentencePatterns: SentencePattern[] = [
     examples: {
       basic: 'Because it rained, the game was cancelled.',
       cultural: 'Because the marae is tapu, visitors must follow protocols.',
-      academic: 'Because climate change affects ecosystems, conservation efforts are essential.'
+      academic: 'Because climate change affects ecosystems, conservation efforts are essential.',
     },
     signalWords: ['because', 'since', 'as'],
-    commonMistakes: ['Comma after "because"', 'Fragment after comma', 'Unclear cause-effect relationship']
+    commonMistakes: [
+      'Comma after "because"',
+      'Fragment after comma',
+      'Unclear cause-effect relationship',
+    ],
   },
   {
     id: 'complex-although',
@@ -290,10 +305,10 @@ const sentencePatterns: SentencePattern[] = [
     examples: {
       basic: 'Although she was tired, she finished her homework.',
       cultural: 'Although traditions evolve, core values remain constant.',
-      academic: 'Although the study had limitations, the findings were valuable.'
+      academic: 'Although the study had limitations, the findings were valuable.',
     },
     signalWords: ['although', 'though', 'even though', 'while', 'whereas'],
-    commonMistakes: ['Using "but" with "although"', 'Unclear contrast', 'Missing comma']
+    commonMistakes: ['Using "but" with "although"', 'Unclear contrast', 'Missing comma'],
   },
   {
     id: 'complex-when',
@@ -304,10 +319,10 @@ const sentencePatterns: SentencePattern[] = [
     examples: {
       basic: 'When the bell rings, class begins.',
       cultural: 'When visitors arrive at the marae, they participate in pōwhiri.',
-      academic: 'When data supports the hypothesis, researchers can draw conclusions.'
+      academic: 'When data supports the hypothesis, researchers can draw conclusions.',
     },
     signalWords: ['when', 'whenever', 'as soon as', 'after', 'before', 'until'],
-    commonMistakes: ['Missing comma', 'Unclear time relationship', 'Fragment sentences']
+    commonMistakes: ['Missing comma', 'Unclear time relationship', 'Fragment sentences'],
   },
   {
     id: 'appositives-pattern',
@@ -317,22 +332,29 @@ const sentencePatterns: SentencePattern[] = [
     structure: '[Subject], [descriptive phrase], [verb + rest]',
     examples: {
       basic: 'My teacher, a kind person, helped me understand.',
-      cultural: 'Te Tiriti o Waitangi, New Zealand\'s founding document, established important principles.',
-      academic: 'Photosynthesis, the process plants use to make food, requires sunlight.'
+      cultural:
+        "Te Tiriti o Waitangi, New Zealand's founding document, established important principles.",
+      academic: 'Photosynthesis, the process plants use to make food, requires sunlight.',
     },
     signalWords: [],
-    commonMistakes: ['Missing commas around appositive', 'Unclear reference', 'Too many appositives']
-  }
+    commonMistakes: [
+      'Missing commas around appositive',
+      'Unclear reference',
+      'Too many appositives',
+    ],
+  },
 ];
 
 export default function Year8WritingRevolution() {
   const [selectedActivity, setSelectedActivity] = useState<WritingActivity | null>(null);
   const [selectedPattern, setSelectedPattern] = useState<SentencePattern | null>(null);
-  const [activeMode, setActiveMode] = useState<'activities' | 'patterns' | 'practice'>('activities');
+  const [activeMode, setActiveMode] = useState<'activities' | 'patterns' | 'practice'>(
+    'activities',
+  );
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [studentWriting, setStudentWriting] = useState('');
 
-  const filteredActivities = writingActivities.filter(activity => {
+  const filteredActivities = writingActivities.filter((activity) => {
     if (selectedCategory !== 'all' && activity.category !== selectedCategory) return false;
     return true;
   });
@@ -349,53 +371,26 @@ export default function Year8WritingRevolution() {
     setSelectedPattern(sentencePatterns[randomIndex]);
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      'sentence': '#e8f5e8',
-      'paragraph': '#fff3e0',
-      'outline': '#e3f2fd',
-      'revision': '#f3e5f5',
-      'editing': '#fce4ec'
-    };
-    return colors[category as keyof typeof colors] || '#f5f5f5';
-  };
-
   const getCategoryIcon = (category: string) => {
     const icons = {
-      'sentence': '📝',
-      'paragraph': '📄',
-      'outline': '📋',
-      'revision': '🔄',
-      'editing': '✏️'
+      sentence: '📝',
+      paragraph: '📄',
+      outline: '📋',
+      revision: '🔄',
+      editing: '✏️',
     };
     return icons[category as keyof typeof icons] || '📚';
-  };
-
-  const getLevelColor = (level: string) => {
-    const colors = {
-      'foundation': '#4caf50',
-      'intermediate': '#ff9800',
-      'advanced': '#2196f3'
-    };
-    return colors[level as keyof typeof colors] || '#666';
-  };
-
-  const getPatternTypeColor = (type: string) => {
-    const colors = {
-      'simple': '#e8f5e8',
-      'compound': '#fff3e0',
-      'complex': '#e3f2fd',
-      'compound-complex': '#f3e5f5'
-    };
-    return colors[type as keyof typeof colors] || '#f5f5f5';
   };
 
   return (
     <div className="writing-revolution-container">
       <header className="writing-revolution-header">
-        <h1 className="writing-revolution-title">✍️ Year 8 Writing Revolution - Rautaki Tuhituhi</h1>
+        <h1 className="writing-revolution-title">
+          ✍️ Year 8 Writing Revolution - Rautaki Tuhituhi
+        </h1>
         <p className="writing-revolution-subtitle">
-          Systematic writing instruction using The Writing Revolution methodology for Year 8 academic success
+          Systematic writing instruction using The Writing Revolution methodology for Year 8
+          academic success
         </p>
       </header>
 
@@ -405,19 +400,31 @@ export default function Year8WritingRevolution() {
         <div className="philosophy-grid">
           <div className="philosophy-card">
             <h3>📝 Sentence First</h3>
-            <p>All good writing starts with well-constructed sentences. Master sentence patterns before attempting longer pieces.</p>
+            <p>
+              All good writing starts with well-constructed sentences. Master sentence patterns
+              before attempting longer pieces.
+            </p>
           </div>
           <div className="philosophy-card">
             <h3>🏗️ Systematic Building</h3>
-            <p>Build writing skills step-by-step, from sentences to paragraphs to complete essays, with explicit instruction.</p>
+            <p>
+              Build writing skills step-by-step, from sentences to paragraphs to complete essays,
+              with explicit instruction.
+            </p>
           </div>
           <div className="philosophy-card">
             <h3>🔄 Thinking Through Writing</h3>
-            <p>Writing is thinking on paper. Structured writing activities develop both writing skills and critical thinking.</p>
+            <p>
+              Writing is thinking on paper. Structured writing activities develop both writing
+              skills and critical thinking.
+            </p>
           </div>
           <div className="philosophy-card">
             <h3>🌿 Cultural Integration</h3>
-            <p>Use meaningful cultural content to practice writing skills, honoring students' backgrounds and knowledge.</p>
+            <p>
+              Use meaningful cultural content to practice writing skills, honoring students'
+              backgrounds and knowledge.
+            </p>
           </div>
         </div>
       </section>
@@ -426,19 +433,19 @@ export default function Year8WritingRevolution() {
       <section className="mode-section">
         <h3>🎮 Learning Modes</h3>
         <div className="mode-buttons">
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'activities' ? 'active' : ''}`}
             onClick={() => setActiveMode('activities')}
           >
             🎯 Writing Activities
           </button>
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'patterns' ? 'active' : ''}`}
             onClick={() => setActiveMode('patterns')}
           >
             📝 Sentence Patterns
           </button>
-          <button 
+          <button
             className={`mode-btn ${activeMode === 'practice' ? 'active' : ''}`}
             onClick={() => setActiveMode('practice')}
           >
@@ -455,9 +462,9 @@ export default function Year8WritingRevolution() {
             <div className="filters-grid">
               <div className="filter-group">
                 <label htmlFor="category-filter">Activity Category:</label>
-                <select 
+                <select
                   id="category-filter"
-                  value={selectedCategory} 
+                  value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
                   <option value="all">All Categories</option>
@@ -469,7 +476,7 @@ export default function Year8WritingRevolution() {
                 </select>
               </div>
 
-              <button 
+              <button
                 className="random-activity-btn"
                 onClick={selectRandomActivity}
                 disabled={filteredActivities.length === 0}
@@ -477,36 +484,34 @@ export default function Year8WritingRevolution() {
                 🎲 Random Activity
               </button>
             </div>
-            
+
             <div className="filter-results">
-              <span className="results-count">{filteredActivities.length} activities available</span>
+              <span className="results-count">
+                {filteredActivities.length} activities available
+              </span>
             </div>
           </section>
 
           {/* Featured Activity */}
           {selectedActivity && (
             <section className="activity-showcase">
-              <div 
-                className="activity-spotlight"
-                style={{ backgroundColor: getCategoryColor(selectedActivity.category) }}
-              >
+              <div className={`activity-spotlight category-${selectedActivity.category}`}>
                 <div className="activity-header">
                   <div className="activity-badges">
                     <span className="category-badge">
                       {getCategoryIcon(selectedActivity.category)} {selectedActivity.category}
                     </span>
-                    <span 
-                      className="level-badge"
-                      style={{ backgroundColor: getLevelColor(selectedActivity.level) }}
-                    >
+                    <span className={`level-badge level-${selectedActivity.level}`}>
                       {selectedActivity.level}
                     </span>
                     <span className="time-badge">{selectedActivity.timeRequired}</span>
                   </div>
-                  
+
                   <h2 className="activity-name">{selectedActivity.name}</h2>
                   <p className="activity-description">{selectedActivity.description}</p>
-                  <p className="activity-purpose"><strong>Purpose:</strong> {selectedActivity.purpose}</p>
+                  <p className="activity-purpose">
+                    <strong>Purpose:</strong> {selectedActivity.purpose}
+                  </p>
                 </div>
 
                 <div className="activity-details">
@@ -523,7 +528,9 @@ export default function Year8WritingRevolution() {
                     <h4>💡 Examples</h4>
                     <div className="examples-list">
                       {selectedActivity.examples.map((example, index) => (
-                        <div key={index} className="example-item">{example}</div>
+                        <div key={index} className="example-item">
+                          {example}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -558,25 +565,19 @@ export default function Year8WritingRevolution() {
             <h3>🎯 All Writing Activities ({filteredActivities.length})</h3>
             <div className="activities-grid">
               {filteredActivities.map((activity) => (
-                <div 
-                  key={activity.id} 
-                  className="activity-card"
-                  style={{ backgroundColor: getCategoryColor(activity.category) }}
+                <div
+                  key={activity.id}
+                  className={`activity-card category-${activity.category}`}
                   onClick={() => setSelectedActivity(activity)}
                 >
                   <div className="card-header">
-                    <span className="card-category-icon">
-                      {getCategoryIcon(activity.category)}
-                    </span>
-                    <span 
-                      className="card-level-dot"
-                      style={{ backgroundColor: getLevelColor(activity.level) }}
-                    ></span>
+                    <span className="card-category-icon">{getCategoryIcon(activity.category)}</span>
+                    <span className={`card-level-dot level-${activity.level}`}></span>
                   </div>
-                  
+
                   <h4 className="card-activity-name">{activity.name}</h4>
                   <p className="card-description">{activity.description}</p>
-                  
+
                   <div className="card-meta">
                     <span className="card-category">{activity.category}</span>
                     <span className="card-time">{activity.timeRequired}</span>
@@ -592,11 +593,10 @@ export default function Year8WritingRevolution() {
         <>
           <section className="patterns-intro">
             <h3>📝 Sentence Pattern Mastery</h3>
-            <p>Master these essential sentence patterns for clear, sophisticated academic writing.</p>
-            <button 
-              className="random-pattern-btn"
-              onClick={selectRandomPattern}
-            >
+            <p>
+              Master these essential sentence patterns for clear, sophisticated academic writing.
+            </p>
+            <button className="random-pattern-btn" onClick={selectRandomPattern}>
               🎲 Random Pattern
             </button>
           </section>
@@ -604,18 +604,19 @@ export default function Year8WritingRevolution() {
           {/* Featured Pattern */}
           {selectedPattern && (
             <section className="pattern-showcase">
-              <div 
-                className="pattern-spotlight"
-                style={{ backgroundColor: getPatternTypeColor(selectedPattern.type) }}
-              >
+              <div className={`pattern-spotlight type-${selectedPattern.type}`}>
                 <div className="pattern-header">
                   <div className="pattern-badges">
                     <span className="type-badge">{selectedPattern.type}</span>
                   </div>
-                  
+
                   <h2 className="pattern-name">{selectedPattern.pattern}</h2>
-                  <p className="pattern-purpose"><strong>Purpose:</strong> {selectedPattern.purpose}</p>
-                  <p className="pattern-structure"><strong>Structure:</strong> {selectedPattern.structure}</p>
+                  <p className="pattern-purpose">
+                    <strong>Purpose:</strong> {selectedPattern.purpose}
+                  </p>
+                  <p className="pattern-structure">
+                    <strong>Structure:</strong> {selectedPattern.structure}
+                  </p>
                 </div>
 
                 <div className="pattern-examples">
@@ -641,7 +642,9 @@ export default function Year8WritingRevolution() {
                     <h4>🔗 Signal Words</h4>
                     <div className="signal-words-list">
                       {selectedPattern.signalWords.map((word, index) => (
-                        <span key={index} className="signal-word">{word}</span>
+                        <span key={index} className="signal-word">
+                          {word}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -664,19 +667,18 @@ export default function Year8WritingRevolution() {
             <h3>📝 All Sentence Patterns</h3>
             <div className="patterns-grid">
               {sentencePatterns.map((pattern) => (
-                <div 
-                  key={pattern.id} 
-                  className="pattern-card"
-                  style={{ backgroundColor: getPatternTypeColor(pattern.type) }}
+                <div
+                  key={pattern.id}
+                  className={`pattern-card type-${pattern.type}`}
                   onClick={() => setSelectedPattern(pattern)}
                 >
                   <div className="pattern-card-header">
                     <span className="pattern-type-badge">{pattern.type}</span>
                   </div>
-                  
+
                   <h4 className="pattern-card-name">{pattern.pattern}</h4>
                   <p className="pattern-card-purpose">{pattern.purpose}</p>
-                  
+
                   <div className="pattern-example-preview">
                     <strong>Example:</strong> {pattern.examples.basic}
                   </div>
@@ -697,7 +699,10 @@ export default function Year8WritingRevolution() {
           <div className="practice-workspace">
             <div className="writing-prompt">
               <h4>📝 Writing Prompt</h4>
-              <p>Write a paragraph explaining why traditional knowledge is important in modern times. Use at least two different sentence patterns and include specific examples.</p>
+              <p>
+                Write a paragraph explaining why traditional knowledge is important in modern times.
+                Use at least two different sentence patterns and include specific examples.
+              </p>
             </div>
 
             <div className="writing-area">
@@ -745,7 +750,9 @@ export default function Year8WritingRevolution() {
       )}
 
       <footer className="writing-revolution-footer">
-        <p className="cultural-motto">🌿 "Mā te tuhituhi, ka whakaatu ai ngā whakaaro" - Through writing, thoughts are revealed</p>
+        <p className="cultural-motto">
+          🌿 "Mā te tuhituhi, ka whakaatu ai ngā whakaaro" - Through writing, thoughts are revealed
+        </p>
         <p className="platform-info">Te Kete Ako - Writing Revolution Excellence for Year 8</p>
       </footer>
     </div>

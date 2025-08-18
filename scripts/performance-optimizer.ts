@@ -55,7 +55,7 @@ class PerformanceOptimizer {
 
   private parseBuildOutput(output: string): void {
     const lines = output.split('\n');
-    const bundleRegex = /dist\/assets\/(.+)\.js\s+(\d+\.\d+)\s+kB\s+\│\s+gzip:\s+(\d+\.\d+)\s+kB/;
+    const bundleRegex = /dist\/assets\/(.+)\.js\s+(\d+\.\d+)\s+kB\s+│\s+gzip:\s+(\d+\.\d+)\s+kB/;
 
     lines.forEach((line) => {
       const match = line.match(bundleRegex);
