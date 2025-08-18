@@ -9,7 +9,7 @@ import { writeEpisode } from '../src/ai/provenance';
 
 interface LintingTask {
   ___id: string;
-  file, AgentCapability> = new Map();
+  file: string;
   private completedTasks: number = 0;
   private failedTasks: number = 0;
 

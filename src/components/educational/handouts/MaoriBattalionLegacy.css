@@ -1,0 +1,403 @@
+/* Māori Battalion Legacy Handout - Te Kete Ako Beauty Patterns */
+
+.maori-battalion-handout.cultural-focus {
+  background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
+  border-left: 4px solid var(--color-pounamu);
+  position: relative;
+  overflow: hidden;
+}
+
+.maori-battalion-handout.cultural-focus::before {
+  content: '⚔️';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.1;
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+.handout-content {
+  padding: 2rem;
+  position: relative;
+}
+
+/* Whakataukī Section */
+.whakatauki-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.8) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid rgba(27, 127, 90, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.whakatauki-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-pounamu) 0%, var(--color-kowhai) 50%, var(--color-moana) 100%);
+}
+
+.whakatauki-content {
+  position: relative;
+  z-index: 1;
+}
+
+.whakatauki-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.whakatauki-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-pounamu);
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.whakatauki-translation {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title.cultural-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-pounamu);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(27, 127, 90, 0.2);
+}
+
+.title-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Paradox Grid */
+.paradox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.paradox-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(27, 127, 90, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.paradox-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-pounamu) 0%, var(--color-kowhai) 100%);
+}
+
+.paradox-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(27, 127, 90, 0.15);
+}
+
+.paradox-card.fighting-abroad::before {
+  background: linear-gradient(90deg, var(--color-moana) 0%, var(--color-kahurangi) 100%);
+}
+
+.paradox-card.fighting-home::before {
+  background: linear-gradient(90deg, var(--color-kowhai) 0%, var(--color-kumara) 100%);
+}
+
+.paradox-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.paradox-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.paradox-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-pounamu);
+  margin: 0;
+}
+
+.paradox-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Critical Thinking Box */
+.critical-thinking-box {
+  background: linear-gradient(135deg, var(--color-kowhai) 0%, #FDB462 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(241, 143, 1, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.critical-thinking-box::before {
+  content: '💭';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.2;
+}
+
+.thinking-question {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* External Resources Section */
+.external-resources-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.9) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(27, 127, 90, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.external-resources-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
+}
+
+.resources-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.resources-icon {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.resources-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-pounamu);
+  margin: 0;
+}
+
+.resources-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resource-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(27, 127, 90, 0.1);
+  transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(27, 127, 90, 0.1);
+}
+
+.resource-item h4 {
+  margin: 0 0 1rem 0;
+}
+
+.resource-link {
+  color: var(--color-pounamu);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: var(--color-moana);
+  text-decoration: underline;
+}
+
+.resource-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+.tag.official {
+  background: var(--color-pounamu);
+}
+
+.tag.years {
+  background: var(--color-kowhai);
+}
+
+.tag.match {
+  background: var(--color-moana);
+}
+
+/* Cultural Footer */
+.cultural-footer {
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cultural-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="koru" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 10 Q15 5 20 10 Q15 15 10 10" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23koru)"/></svg>');
+  opacity: 0.3;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.footer-text {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .handout-content {
+    padding: 1rem;
+  }
+  
+  .paradox-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .section-title.cultural-title {
+    font-size: 1.3rem;
+  }
+  
+  .whakatauki-text {
+    font-size: 1.3rem;
+  }
+  
+  .resource-tags {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .maori-battalion-handout.cultural-focus {
+    background: white;
+    border-left: 2px solid var(--color-pounamu);
+  }
+  
+  .paradox-card,
+  .critical-thinking-box,
+  .external-resources-section {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .cultural-footer {
+    background: #f5f5f5;
+    color: #333;
+  }
+  
+  .footer-text {
+    color: #333;
+  }
+}

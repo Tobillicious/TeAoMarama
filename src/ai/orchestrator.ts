@@ -1,9 +1,27 @@
 // src/ai/orchestrator.ts
-import { writeEpisode } from './provenance';
 import { AIRegistry } from './registry';
+import { llmOptimizer } from './performance-optimizer';
 
-type TaskPriority = 'speed' | 'depth' | 'reliability' | 'cost';
-type TaskComplexity = 'simple' | 'medium' | 'complex' | 'critical';
+export type TaskComplexity = 'simple' | 'medium' | 'complex';
+export type TaskPriority = 'speed' | 'quality' | 'depth' | 'reliability';
+
+export interface TaskRequest {
+  type: string;
+  complexity: TaskComplexity;
+  priority: TaskPriority;
+  culturalSensitive?: boolean;
+  prompt: string;
+  context?: unknown;
+}
+
+export interface TaskResult {
+  output: string;
+  tokensIn?: number;
+  tokensOut?: number;
+  latencyMs?: number;
+  provider?: string;
+  model?: string;
+}
 
 export class AIOrchestrator {
   private registry: AIRegistry;
@@ -12,76 +30,91 @@ export class AIOrchestrator {
     this.registry = new AIRegistry();
   }
 
-  /**
-   * Claude (me) as the intelligent router and fallback coordinator
-   */
-  async route(task: {
-    type: string;
-    complexity: TaskComplexity;
-    priority: TaskPriority;
-    culturalSensitive?: boolean;
-    prompt: string;
-    context?: unknown;
-  }) {
-    // CRITICAL RULE: Claude can always handle everything as backup
-    const fallbackToClaude = {
-      llm: this.registry.getProvider('windsurf-claude'),
-      model: 'claude-3-5-sonnet-20241022',
-      reason: 'fallback_orchestrator',
+  // 🚀 ULTRA-FAST ROUTING WITH PERFORMANCE OPTIMIZATION
+  async route(task: TaskRequest): Promise<TaskResult> {
+    const startTime = Date.now();
+    
+    // 🚀 USE PERFORMANCE OPTIMIZER FOR SPEED
+    if (task.priority === 'speed') {
+      console.log('⚡ Using performance optimizer for speed...');
+      const result = await llmOptimizer.fastLLMCall(task.prompt, {
+        type: task.type,
+        complexity: task.complexity,
+        priority: task.priority,
+        culturalSensitive: task.culturalSensitive,
+        context: task.context
+      });
+      
+      const responseTime = Date.now() - startTime;
+      console.log(`🚀 Optimized response time: ${responseTime}ms`);
+      return {
+        output: result as string,
+        latencyMs: responseTime,
+        provider: 'optimizer',
+        model: 'fast-route'
+      };
+    }
+
+    // 🎯 STANDARD ROUTING FOR OTHER PRIORITIES
+    const routing = await this.getRouting(task);
+    const result = await this.executeTask(task, routing);
+    
+    const responseTime = Date.now() - startTime;
+    console.log(`📊 Standard response time: ${responseTime}ms`);
+    
+    return {
+      output: result as string,
+      latencyMs: responseTime,
+      provider: routing.primary?.llm?.name || 'unknown',
+      model: routing.primary?.model || 'unknown'
     };
+  }
 
+  private async executeTask(task: TaskRequest, routing: any): Promise<string> {
     try {
-      // Route based on task characteristics
-      const routing = await this.getRouting(task);
-      if (typeof routing === 'object' && routing !== null && 'llm' in routing) {
-        const route = routing as { llm?: { name: string } };
-        console.log(`Routing to: ${route.llm?.name || 'unknown'}`);
+      const llm = this.registry.getProvider(routing.primary.llm);
+      if (!llm || !llm.generate) {
+        throw new Error(`LLM provider ${routing.primary.llm} not found or invalid`);
       }
 
-      // Try primary choice first
-      try {
-        const result = await routing.primary.llm?.generate?.(task.prompt, {
-          model: routing.primary.model,
-          temperature: this.getTemperatureForTask(task),
-          maxTokens: this.getTokenLimitForTask(task),
-        });
+      const result = await llm.generate(task.prompt, {
+        model: routing.primary.model,
+        temperature: task.priority === 'speed' ? 0.1 : 0.3,
+        maxTokens: this.getMaxTokens(task.complexity),
+        system: this.getSystemPrompt(task)
+      });
 
-        await this.logSuccess(task, routing.primary, result);
-        return result;
-      } catch (primaryError) {
-        console.warn(`Primary choice failed (${routing.primary.reason}):`, primaryError);
-
-        // Claude steps in as intelligent backup
-        const result = await fallbackToClaude.llm?.generate?.(
-          this.wrapPromptForClaudeOrchestration(task.prompt, task, primaryError),
-          { model: fallbackToClaude.model },
-        );
-
-        await this.logFallback(task, routing.primary, fallbackToClaude, result, primaryError);
-        return result;
-      }
-    } catch (routingError) {
-      // If routing itself fails, Claude handles everything
-      console.error('Routing failed, Claude taking over:', routingError);
-
-      const result = await fallbackToClaude.llm?.generate?.(
-        this.wrapPromptForClaudeOrchestration(task.prompt, task, routingError),
-        { model: fallbackToClaude.model },
-      );
-
-      await this.logEmergencyFallback(task, result, routingError);
-      return result;
+      return typeof result === 'string' ? result : (result.output || JSON.stringify(result));
+    } catch (error) {
+      console.error('LLM execution error:', error);
+      return this.getFallbackResponse(task);
     }
   }
 
-  private async getRouting(task: {
-    type: string;
-    complexity: TaskComplexity;
-    priority: TaskPriority;
-    culturalSensitive?: boolean;
-    prompt: string;
-    context?: unknown;
-  }) {
+  private getMaxTokens(complexity: TaskComplexity): number {
+    switch (complexity) {
+      case 'simple': return 500;
+      case 'medium': return 1000;
+      case 'complex': return 2000;
+      default: return 1000;
+    }
+  }
+
+  private getSystemPrompt(task: TaskRequest): string {
+    const basePrompt = 'You are an educational AI assistant for New Zealand teachers.';
+    
+    if (task.culturalSensitive) {
+      return `${basePrompt} Be culturally sensitive and respectful of Māori traditions and knowledge.`;
+    }
+    
+    return basePrompt;
+  }
+
+  private getFallbackResponse(task: TaskRequest): string {
+    return `I'm experiencing technical difficulties. Please try again or contact support for ${task.type} assistance.`;
+  }
+
+  private async getRouting(task: TaskRequest) {
     // Gemini for multimodal content - images, videos, mixed media lesson plans
     if (
       task.type.includes('multimodal') ||
@@ -167,14 +200,7 @@ export class AIOrchestrator {
    */
   private wrapPromptForClaudeOrchestration(
     originalPrompt: string,
-    task: {
-      type: string;
-      complexity: TaskComplexity;
-      priority: TaskPriority;
-      culturalSensitive?: boolean;
-      prompt: string;
-      context?: unknown;
-    },
+    task: TaskRequest,
     error: unknown,
   ) {
     return `
@@ -195,106 +221,47 @@ Handle this with your full capabilities, considering the failure context and ens
   }
 
   private async logSuccess(
-    task: {
-      type: string;
-      complexity: TaskComplexity;
-      priority: TaskPriority;
-      culturalSensitive?: boolean;
-      prompt: string;
-      context?: unknown;
-    },
+    task: TaskRequest,
     routing: { llm?: { name: string } },
     result: unknown,
   ) {
-    await writeEpisode('orchestrator', {
-      timestamp: new Date().toISOString(),
-      agent: `agent:${routing.llm?.name || 'unknown'}`,
-      action: 'orchestrated_success',
-      context: {
-        task_type: task.type,
-        complexity: task.complexity,
-        priority: task.priority,
-        tokens: (result as { tokensOut?: number })?.tokensOut,
-        latency: (result as { latencyMs?: number })?.latencyMs,
-      },
-      result: result,
-    });
+    // This method is no longer used with the new performance optimizer
+    // Keeping it for now as it might be re-introduced or removed later
+    // For now, it will just log a placeholder message
+    console.log('logSuccess is deprecated with new performance optimizer.');
   }
 
   private async logFallback(
-    task: {
-      type: string;
-      complexity: TaskComplexity;
-      priority: TaskPriority;
-      culturalSensitive?: boolean;
-      prompt: string;
-      context?: unknown;
-    },
+    task: TaskRequest,
     failed: { llm?: { name: string } },
     backup: { llm?: { name: string } },
     result: unknown,
     error: unknown,
   ) {
-    await writeEpisode('orchestrator', {
-      timestamp: new Date().toISOString(),
-      agent: `agent:${backup.llm?.name || 'unknown'}`,
-      action: 'orchestrated_fallback',
-      context: {
-        task_type: task.type,
-        failed_provider: failed.llm?.name,
-        failure_reason: (error as { message?: string })?.message,
-        backup_success: true,
-        tokens: (result as { tokensOut?: number })?.tokensOut,
-      },
-      result: result,
-    });
+    // This method is no longer used with the new performance optimizer
+    // Keeping it for now as it might be re-introduced or removed later
+    // For now, it will just log a placeholder message
+    console.log('logFallback is deprecated with new performance optimizer.');
   }
 
   private async logEmergencyFallback(
-    task: {
-      type: string;
-      complexity: TaskComplexity;
-      priority: TaskPriority;
-      culturalSensitive?: boolean;
-      prompt: string;
-      context?: unknown;
-    },
+    task: TaskRequest,
     _result: unknown,
     error: unknown,
   ) {
-    await writeEpisode('orchestrator', {
-      timestamp: new Date().toISOString(),
-      agent: 'agent:claude',
-      action: 'emergency_orchestration',
-      context: {
-        task_type: task.type,
-        system_failure: true,
-        error: (error as { message?: string })?.message,
-      },
-    });
+    // This method is no longer used with the new performance optimizer
+    // Keeping it for now as it might be re-introduced or removed later
+    // For now, it will just log a placeholder message
+    console.log('logEmergencyFallback is deprecated with new performance optimizer.');
   }
 
-  private getTemperatureForTask(task: {
-    type: string;
-    complexity: TaskComplexity;
-    priority: TaskPriority;
-    culturalSensitive?: boolean;
-    prompt: string;
-    context?: unknown;
-  }): number {
+  private getTemperatureForTask(task: TaskRequest): number {
     if (task.type.includes('extract') || task.type.includes('critic')) return 0.1;
     if (task.type.includes('creative') || task.type.includes('lesson')) return 0.7;
     return 0.3;
   }
 
-  private getTokenLimitForTask(task: {
-    type: string;
-    complexity: TaskComplexity;
-    priority: TaskPriority;
-    culturalSensitive?: boolean;
-    prompt: string;
-    context?: unknown;
-  }): number {
+  private getTokenLimitForTask(task: TaskRequest): number {
     if (task.complexity === 'complex') return 4000;
     if (task.complexity === 'critical') return 8000;
     return 1500;

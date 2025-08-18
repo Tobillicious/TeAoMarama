@@ -1,0 +1,547 @@
+/* 📚 Lessons Integration - TeAoMarama Unified Design */
+
+.lessons-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  min-height: 100vh;
+}
+
+.lessons-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.lessons-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="koru" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,10 Q15,5 20,10 Q15,15 10,10" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23koru)"/></svg>');
+  opacity: 0.3;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0 0 1.25rem 0;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.tabs {
+  margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  border-color: #10b981;
+  color: #10b981;
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+.lessons,
+.critical-thinking,
+.cultural {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lessons h2,
+.critical-thinking h2,
+.cultural h2 {
+  color: #10b981;
+  margin-bottom: 1.5rem;
+}
+
+.lesson-selector,
+.module-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lesson-pill,
+.module-pill {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.lesson-pill:hover,
+.module-pill:hover {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.lesson-pill.active,
+.module-pill.active {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
+}
+
+.lesson-details h3,
+.module-details h3 {
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.lesson-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-badge {
+  background: #10b981;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.learning-intention {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.learning-intention h4 {
+  color: #10b981;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.learning-intention p {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.learning-intention ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.learning-intention li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.lesson-structure h4,
+.module-focus h4,
+.activities h4,
+.cultural-connections h4 {
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.do-now {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.do-now h5 {
+  color: #10b981;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.do-now p {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.segments {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.segment {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.segment h5 {
+  color: #10b981;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.segment p {
+  margin: 0 0 1rem 0;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.segment-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.teacher-actions h6,
+.student-actions h6 {
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.teacher-actions ul,
+.student-actions ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.teacher-actions li,
+.student-actions li {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.3;
+}
+
+.lesson-resources h4 {
+  color: #10b981;
+  margin-bottom: 0.75rem;
+}
+
+.lesson-resources ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.lesson-resources li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.module-description {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.difficulty-badge {
+  background: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.module-focus p {
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.activities {
+  margin-bottom: 1.5rem;
+}
+
+.activity {
+  background: #f9fafb;
+  border-left: 3px solid #10b981;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.activity h5 {
+  color: #10b981;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.activity p {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.materials strong {
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.materials ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.materials li {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.cultural-connections ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.cultural-connections li {
+  margin-bottom: 0.75rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.cultural-principles h3 {
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.cultural-principles p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.principle {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.principle h4 {
+  color: #10b981;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.principle p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.integration-examples h3 {
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.example {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.example h4 {
+  color: #10b981;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.example ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.example li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.cultural-guidelines h3 {
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.cultural-guidelines ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.cultural-guidelines li {
+  margin-bottom: 0.75rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.motto {
+  color: #10b981;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.platform {
+  color: #475569;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .lessons-container {
+    padding: 1rem;
+  }
+
+  .lessons-header {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .segment-details {
+    grid-template-columns: 1fr;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .lesson-selector,
+  .module-selector {
+    flex-direction: column;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lessons,
+.critical-thinking,
+.cultural {
+  animation: fadeUp 0.5s ease-out;
+}

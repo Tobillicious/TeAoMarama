@@ -4,100 +4,105 @@ type: assessment
 subject: Mathematics
 year_level: 9
 generated_by: deepseek-agent
-generated_at: 2025-08-16T02:27:11.753Z
+generated_at: 2025-08-18T13:35:46.043Z
 cultural_safety: pending_review
 status: draft
 ---
 
-# Year 9 Mathematics Assessment: Statistics Using New Zealand Census Data  
-
-**Kaupapa (Purpose):**  
-To explore statistical concepts using real data from the Aotearoa New Zealand Census, making connections to Te Ao Māori and our communities.  
-
-**Whāinga Ako (Learning Objectives):**  
-By the end of this assessment, ākonga (students) will be able to:  
-
-1. Collect, organise, and interpret data from the New Zealand Census.  
-2. Calculate and compare measures of central tendency (mean, median, mode).  
-3. Create appropriate graphs (bar graphs, pie charts, histograms) to represent data.  
-4. Analyse data to identify trends and make inferences about Aotearoa’s population.  
-5. Discuss how statistics can reflect cultural diversity and community needs.  
+```markdown
+# Year 9 Mathematics Depth Assessment: Statistics with NZ Census Data  
+**Kaupapa:** Understanding data as a taonga (treasure) that tells stories of our communities  
 
 ---
 
-## **Part 1: Data Collection & Interpretation** *(40 minutes)*  
-
-**He Pātai (Questions):**  
-Use the provided simplified New Zealand Census dataset (adapted for Year 9) to answer the following:  
-
-1. **Te Reo Māori Speakers (Ngā Kaikōrero Māori):**  
-   - The census shows that **X%** of people in Aotearoa speak Te Reo Māori.  
-   - **Task:** Calculate the mean, median, and mode for the number of Te Reo speakers across different rohe (regions).  
-   - **Question:** Why might some regions have higher numbers of Te Reo speakers than others?  
-
-2. **Whānau Size (Te Rāheitanga o te Whānau):**  
-   - The average whānau size in NZ is **Y**.  
-   - **Task:** Create a bar graph comparing whānau sizes in urban (tāone) vs. rural (taiwhenua) areas.  
-   - **Question:** How might living in a rural or urban area affect whānau size?  
+## Previous Learning Connections  
+*Tūhonohono ki ngā akoranga o mua*  
+- Recaps Year 8 skills:  
+  - Calculating mean/median/mode from simple datasets  
+  - Basic interpretation of bar graphs  
+- Introduces:  
+  - **Māori data sovereignty** concept (who controls data about iwi?)  
+  - Real-world census questions about iwi affiliation  
 
 ---
 
-## **Part 2: Data Representation & Analysis** *(40 minutes)*  
+## Deep Investigation  
+*Te Tūhura Hōhonu*  
+**Part 1: Data as Whakapapa (40 mins)**  
+- Analyze census data about:  
+  - Population changes in local rohe (region)  
+  - Shifts in Te Reo Māori speaker numbers  
+- Calculate:  
+  - Percentage changes between census years  
+  - Comparative averages between regions  
 
-**He Mahi (Activity):**  
-Choose **one** of the following datasets to investigate further:  
-
-- **Option 1:** Ethnic diversity in your local area (e.g., Māori, Pākehā, Pasifika, Asian populations).  
-- **Option 2:** Changes in Te Reo Māori speakers over the last 20 years.  
-
-**Tasks:**  
-
-1. Represent the data in **two different graph types** (e.g., pie chart and histogram).  
-2. Write **two observations** about the trends you notice.  
-3. Explain **one way** this data could help community decision-making (e.g., funding for kura kaupapa Māori).  
-
----
-
-## **Part 3: Reflection & Cultural Connection** *(20 minutes)*  
-
-**He Whakaaro (Reflection Questions):**  
-
-1. How does census data help us understand the needs of different cultures in Aotearoa?  
-2. Why is it important for statistics to include Māori perspectives?  
-3. If you could add one question to the NZ Census, what would it be and why?  
+**Part 2: Critical Data Literacy (60 mins)**  
+- Evaluate how census questions about ethnicity have changed over time  
+- Discuss in pairs:  
+  - "How might how we collect data affect Māori communities?"  
+  - "Why is 'iwi affiliation' data important for health services?"  
 
 ---
 
-## **Assessment Criteria (Aromatawai)**  
+## Transfer Challenges  
+*Ngā Wero Whakawhiti*  
+1. **Whānau Data Project**  
+   - Interview whānau members about household patterns  
+   - Compare to national census data on family structures  
 
-| **Skill**                     | **Tino Pai (Excellent)** | **Pai (Good)** | **Kei te Haere (Developing)** |
-|-------------------------------|-------------------------|----------------|-----------------------------|
-| Data calculation & accuracy   | Correct calculations, clear working | Minor errors, mostly correct | Several errors, needs revision |
-| Graph representation          | Appropriate, labelled, accurate | Minor mistakes | Incomplete or unclear |
-| Analysis & inference          | Insightful observations, links to real life | Basic observations | Limited or unclear analysis |
-| Cultural connection           | Strong links to Te Ao Māori | Some relevance | Minimal connection |
+2. **Marae Capacity Analysis**  
+   - Use seating data from local marae events  
+   - Calculate average attendance with confidence intervals  
+
+3. **Future City Planning**  
+   - Project population growth for local area  
+   - Propose infrastructure needs based on data trends  
 
 ---
 
-## **Kupu Māori (Māori Vocabulary)**  
+## Future Learning Pathways  
+*Ngā Ara Akoranga*  
+- Year 10: Standard deviation using climate data  
+- Year 11: Statistical inference with health disparities  
+- Year 12: Time series analysis of land use changes  
+- NCEA L3: Multivariate analysis of socioeconomic factors  
 
-- **Tatauranga** – Statistics  
-- **Raraunga** – Data  
-- **Rohe** – Region  
-- **Whānau** – Family  
-- **Kaikōrero Māori** – Māori speakers  
+---
 
-**Whakataukī (Proverb):**  
-*"He kōrero, he kōrero, he kōrero, ka kitea te ara tika."*  
-*(Through discussion, discussion, discussion, the right path is found.)*  
+## Cultural Wisdom Connections  
+*Ngā Pūkenga Tikanga*  
+- **Mātauranga Māori:** Traditional methods of recording whakapapa data  
+- **Kaitiakitanga:** Ethical use of community data  
+- **Tohunga practices:** Historical experts who memorized complex genealogies  
 
-**Notes for Kaiako (Teachers):**  
+---
 
-- Ensure census data is simplified but culturally representative.  
-- Encourage discussions on equity and representation in statistics.  
-- Offer support for Te Reo Māori pronunciation/meanings if needed.  
+## Assessment Rubric  
+| Criteria | Emerging (A) | Developing (M) | Mastering (E) |  
+|----------|-------------|---------------|--------------|  
+| **Data Analysis** | Basic calculations | Comparative analysis | Critical evaluation of methods |  
+| **Cultural Context** | Identifies Māori data | Explains significance | Proposes ethical improvements |  
+| **Transfer Ability** | Simple applications | Cross-context analysis | Novel problem-solving |  
 
-**Approved by:** [Your School’s Kaitiaki or HOD]  
+**Extension Task:**  
+Research how Stats NZ partners with iwi to improve data collection, then design a culturally responsive survey question about housing needs.  
 
----  
-This assessment aligns with the **NZ Curriculum Level 5** (Statistics strand) and incorporates mātauranga Māori in a meaningful way. Let me know if you'd like any refinements!
+---
+```  
+
+**Design Notes:**  
+1. **Spiral Curriculum Hooks**  
+   - Confidence intervals previewed here become NCEA L2 standard  
+   - Ethical data discussion scaffolds L3 research internal  
+
+2. **Cultural Depth Mechanisms**  
+   - Contrasts Western statistical methods with Māori oral record-keeping  
+   - Uses real census controversies (e.g., 2018 iwi affiliation changes)  
+
+3. **Transfer Focus**  
+   - Every activity requires applying math to social/cultural contexts  
+   - Rubric rewards innovative applications over rote repetition  
+
+4. **Future-Proofing**  
+   - "Marae Capacity" task can be revisited with regression in Year 11  
+   - Census analysis connects directly to Geography L7 population studies

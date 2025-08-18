@@ -1,0 +1,121 @@
+import React from 'react';
+import { Card } from '../../Card';
+import '../../../styles/te-kete-synthesis.css';
+
+interface AiImpactComprehensionHandoutProps {
+  culturalContext?: string;
+  yearLevel?: string;
+  subject?: string;
+}
+
+const AiImpactComprehensionHandout: React.FC<AiImpactComprehensionHandoutProps> = ({
+  culturalContext = "Educational content with cultural integration",
+  yearLevel = "Year 7-8",
+  subject = "English, Literacy"
+}) => {
+  return (
+    <div className="ai-impact-comprehension-handout">
+      <Card title="AI Impact Reading Comprehension | Mangakōtukutuku College" className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">AI Impact Reading Comprehension | Mangakōtukutuku College</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
+          </div>
+        </div>
+
+        <div className="handout-content">
+          <div 
+            className="te-kete-content"
+            dangerouslySetInnerHTML={{ __html: `
+            <div class="mb-4">
+                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title" class="wiley-hero-title">Reading Comprehension: The AI Revolution</h1>
+                <p class="page-subtitle">asTTle-Style Analysis of Artificial Intelligence in Aotearoa</p>
+            </div>
+
+            <article class="handout-content mb-4">
+                <h2 class="section-title" class="wiley-section-title">How AI is Changing Our World</h2>
+                <p>
+                    Artificial Intelligence (AI), the simulation of human intelligence in machines, is no longer science fiction; it's a part of everyday life in Aotearoa. When you get a movie recommendation from Netflix or see a personalised ad on social media, you are interacting with an AI. These systems use complex algorithms to analyse vast amounts of data, identify patterns, and make predictions. In New Zealand, AI is being adopted across various sectors. In agriculture, for instance, AI-powered drones can monitor crop health and apply fertiliser with precision, reducing waste and environmental impact.
+                </p>
+                <p>
+                    The potential of AI in healthcare is particularly significant. Researchers at the University of Otago are training AI models to detect early signs of skin cancer from images with an accuracy rate that could soon surpass human dermatologists. One model achieved a 95% accuracy rate in identifying malignant melanomas in a recent trial. This could lead to faster, more accessible diagnostics for people in remote areas. However, the use of AI also raises ethical questions. Who is responsible if an AI makes a mistake in a diagnosis? How do we ensure that the data used to train these systems is unbiased and representative of all New Zealanders, including Māori and Pasifika peoples?
+                </p>
+                <p>
+                    As AI becomes more integrated into our society, the conversation about its impact on jobs is growing louder. While some roles may be automated, many experts believe AI will create new jobs that require different skills. The focus is shifting towards human-AI collaboration, where AI handles repetitive tasks, freeing up humans to concentrate on creativity, critical thinking, and complex problem-solving. The challenge for New Zealand's education system is to prepare students for this future, equipping them with the adaptability and digital literacy skills needed to thrive in an AI-driven world.
+                </p>
+            </article>
+
+            <section class="handout-questions mb-4">
+                <h2 class="section-title" class="wiley-section-title">Comprehension & Critical Thinking Questions</h2>
+                
+                <div class="space-y-4">
+                    <!-- Question 1 -->
+                    <div class="question-block">
+                        <p><strong>1. According to the text, what is a real-world example of AI being used in New Zealand's agriculture sector?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) AI robots planting entire forests.</div>
+                            <div class="question-option">B) AI predicting the weather with perfect accuracy.</div>
+                            <div class="question-option">C) AI-powered drones monitoring crop health.</div>
+                            <div class="question-option">D) AI translating conversations between farmers.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-block">
+                        <p><strong>2. (Numeracy) In the University of Otago trial, if the AI model analysed 200 images of melanomas, how many would it correctly identify based on its 95% accuracy rate?</p>
+                         <div class="answer-space">
+                            <p>Answer: </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-block">
+                        <p><strong>3. What is one of the main ethical questions raised about using AI in healthcare?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Whether AI is becoming too expensive for hospitals.</div>
+                            <div class="question-option">B) Who is responsible if an AI makes an incorrect diagnosis.</div>
+                            <div class="question-option">C) Whether AI can work without an internet connection.</div>
+                            <div class="question-option">D) Whether human doctors will still be needed for surgery.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-block">
+                        <p><strong>4. (Critical Thinking) The text suggests AI will handle "repetitive tasks" while humans focus on "creativity, critical thinking, and complex problem-solving." Provide one example of a repetitive task AI could do in a school, and one example of a creative task a student would still need to do.</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-block">
+                        <p><strong>5. (Critical Thinking) The text mentions the need to ensure AI training data is "unbiased." Why is this important? What might happen if an AI used for hiring people was trained on biased data?</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="handout-footer">
+                <div class="curriculum-links-box">
+                    <h3>Further Reading</h3>
+                    <ul>
+                        <li><a href="https://aiforum.org.nz/" target="_blank" rel="noopener noreferrer">AI Forum New Zealand</a></li>
+                        <li><a href="https://www.newzealand.ai/" target="_blank" rel="noopener noreferrer">The Aotearoa AI Explorer</a></li>
+                        <li><a href="https://www.data.govt.nz/maori-data-sovereignty/" target="_blank" rel="noopener noreferrer">Māori Data Sovereignty</a></li>
+                    </ul>
+                </div>
+            </section>
+        ` }}
+          />
+        </div>
+      </Card>
+    </div>
+  );
+};
+
+export default AiImpactComprehensionHandout;
