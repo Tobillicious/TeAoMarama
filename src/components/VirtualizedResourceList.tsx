@@ -121,10 +121,7 @@ export default function VirtualizedResourceList({
       </div>
 
       {/* Virtualized List */}
-      <div
-        className="virtual-list-container virtual-list-container-height"
-        onScroll={handleScroll}
-      >
+      <div className="virtual-list-container virtual-list-container-height" onScroll={handleScroll}>
         <div
           className="virtual-list-spacer"
           style={{ height: filteredResources.length * ITEM_HEIGHT }}
