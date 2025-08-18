@@ -706,7 +706,7 @@ export default function Year8ReadingStrategies() {
         <p className="cultural-motto">
           🌿 "Mā te pānui, ka mārama" - Through reading, understanding comes
         </p>
-        <p className="platform-info">Te Kete Ako - Year 8 Reading Excellence</p>
+        <p className="platform-info">TeAoMarama - Year 8 Reading Excellence</p>
       </footer>
     </div>
   );
