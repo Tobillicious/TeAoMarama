@@ -162,7 +162,7 @@ export class ResourceCache {
   /**
    * Generate cache key for filters
    */
-  private generateFilterKey(filters: any): string {
+  private generateFilterKey(filters: unknown): string {
     return `filters:${JSON.stringify(filters)}`;
   }
 

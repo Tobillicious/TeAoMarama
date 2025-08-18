@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './MiharaDashboard.css';
 import { Card } from './ui/card';
 
 interface MiharaState {
@@ -339,8 +340,9 @@ const MiharaDashboard: React.FC = () => {
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
           <div
-            className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-300"
-            style={{ width: `${migrationStats.progressPercentage}%` }}
+            className={`progress-bar-fill progress-bar-fill-${Math.round(
+              migrationStats.progressPercentage,
+            )}`}
           ></div>
         </div>
         <p className="text-center text-sm text-gray-600">
