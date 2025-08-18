@@ -555,10 +555,9 @@ export default function Year8AcademicVocab() {
                 >
               <div className="card-header">
                 <span className="card-subject-icon">{getSubjectIcon(word.subjectArea)}</span>
-                <span
-                  className="card-difficulty-dot"
-                  style={{ backgroundColor: getDifficultyColor(word.difficulty) }}
-                ></span>
+                                 <span 
+                   className={`card-difficulty-dot difficulty-${word.difficulty}`}
+                 ></span>
                 {word.nceaRelevance && <span className="card-ncea">⭐</span>}
               </div>
 
