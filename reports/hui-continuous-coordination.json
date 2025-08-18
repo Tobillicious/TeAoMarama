@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-18T09:31:02.747Z",
+  "agents": {
+    "total": 10,
+    "active": 10,
+    "locations": [
+      "Cursor",
+      "Windsurf",
+      "Terminal",
+      "Background"
+    ]
+  },
+  "platform": {
+    "status": "operational",
+    "performance": 93,
+    "resources": 3238
+  },
+  "coordination": {
+    "crossPlatformSync": true,
+    "lastCheck": "2025-08-18T09:31:02.747Z",
+    "uptime": 300
+  },
+  "huiReadiness": {
+    "score": 100,
+    "nextCheck": "2025-08-18T09:46:02.747Z",
+    "criticalAlerts": []
+  }
+}
