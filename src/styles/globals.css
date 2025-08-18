@@ -1,6 +1,15 @@
 /* Te Kete Ako - ERO Ready Professional Design System */
 /* Inspired by TeachingResources quality standards - GLORIOUS POLISH */
 
+/* Loading Spinner Styles */
+.loading-spinner-container {
+  background-color: var(--color-bg);
+}
+
+.loading-spinner-text {
+  color: var(--color-pounamu);
+}
+
 :root {
   /* Professional Color Palette - ERO Ready */
   --color-primary: #0ea5e9;
