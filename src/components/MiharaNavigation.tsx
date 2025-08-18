@@ -7,7 +7,7 @@ const MiharaNavigation: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-6">
           <Link to="/" className="text-xl font-bold hover:text-blue-200 transition-colors">
-            🌟 Te Kete Ako
+            🌟 TeAoMarama
           </Link>
           <Link to="/resources" className="hover:text-blue-200 transition-colors">
             📚 Resources
