@@ -42,6 +42,9 @@ const HealthEducationCorrelation = lazy(
 const DesignThinkingProcess = lazy(
   () => import('./components/educational/handouts/DesignThinkingProcess'),
 );
+const WhakataukiWisdom = lazy(
+  () => import('./components/educational/handouts/WhakataukiWisdom'),
+);
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -103,6 +106,7 @@ function App() {
       { path: '/maori-astronomy-navigation', element: <MaoriAstronomyNavigation /> },
       { path: '/health-education-correlation', element: <HealthEducationCorrelation /> },
       { path: '/design-thinking-process', element: <DesignThinkingProcess /> },
+      { path: '/whakatauki-wisdom', element: <WhakataukiWisdom /> },
     ],
     [],
   );
