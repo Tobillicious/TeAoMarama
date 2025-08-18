@@ -280,7 +280,7 @@ class EROMultiAgentCoordinator {
       console.log(`   🔄 ${task.task}`);
 
       // Simulate accessibility agent coordination
-      await this.simulateAgentWork(task, 'accessibility');
+      await this.simulateAgentWork();
 
       task.status = 'completed';
       task.completedAt = new Date().toISOString();
@@ -291,7 +291,7 @@ class EROMultiAgentCoordinator {
     }
   }
 
-  private async simulateAgentWork(task: AgentTask, agentType: string): Promise<void> {
+  private async simulateAgentWork(): Promise<void> {
     // Simulate agent processing time
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
@@ -303,7 +303,7 @@ class EROMultiAgentCoordinator {
         { encoding: 'utf8' },
       );
       return parseInt(output.trim());
-    } catch (error) {
+    } catch {
       return 5439; // Fallback to expected count
     }
   }

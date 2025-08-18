@@ -11,10 +11,23 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { writeEpisode } from '../ai/provenance';
 
-// Te Kete Ako Database Credentials (provided by Kaitiaki Mahara)
-const TEKETE_SUPABASE_URL = 'https://cpvherfewjpnhxfhrvlt.supabase.co';
-const TEKETE_SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNwdmhlcmZld2pwbmh4Zmhydmx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4OTYzMjMsImV4cCI6MjA3MDQ3MjMyM30.jReaXtIkyoRthvkohTcl66DMwyJbFyWwqDYBlHLB8vY';
+// Te Kete Ako Database Credentials (from environment; do not hardcode)
+function getEnv(key: string): string | undefined {
+  // Vite provides import.meta.env in the browser/build. In Node, use process.env.
+  const viteEnv =
+    (typeof import.meta !== 'undefined' && (import.meta as { env?: Record<string, string> }).env) ||
+    undefined;
+  return viteEnv?.[key] ?? process.env[key];
+}
+
+const TEKETE_SUPABASE_URL = getEnv('VITE_TEKETE_SUPABASE_URL') || '';
+const TEKETE_SUPABASE_KEY = getEnv('VITE_TEKETE_SUPABASE_ANON_KEY') || '';
+
+if (!TEKETE_SUPABASE_URL || !TEKETE_SUPABASE_KEY) {
+  console.warn(
+    'TeKeteAkoClient: Supabase credentials are missing. Set VITE_TEKETE_SUPABASE_URL and VITE_TEKETE_SUPABASE_ANON_KEY.',
+  );
+}
 
 export interface ContentMigration {
   source____id: string;
@@ -105,24 +118,26 @@ export class TeKeteAkoClient {
 
   /**
    * Test database connection and health
+   *
+   * @returns A structured result indicating connection success and metadata when available.
    */
   async testConnection(): Promise<{ success: boolean; message: string; metadata?: unknown }> {
     try {
       console.log('🔍 Testing Te Kete Ako database connection...');
 
       // Try a simple query to test connection
-      const { data, error } = await this.client.from('resources').select('count').limit(1);
+      const { error } = await this.client.from('resources').select('count').limit(1);
 
       if (error) {
         // Try alternative table names
-        const { data: altData, error: altError } = await this.client
+        const { error: altError } = await this.client
           .from('content_items')
           .select('count')
           .limit(1);
 
         if (altError) {
           // Try one more common table name
-          const { data: finalData, error: finalError } = await this.client
+          const { error: finalError } = await this.client
             .from('documents')
             .select('count')
             .limit(1);
@@ -166,6 +181,9 @@ export class TeKeteAkoClient {
 
   /**
    * Analyze database schema structure
+   *
+   * Attempts to sample common tables to infer column names and basic data types.
+   * @returns An array describing discovered table columns.
    */
   async analyzeDatabaseSchema(): Promise<DatabaseSchema[]> {
     const schema: DatabaseSchema[] = [];
@@ -209,6 +227,9 @@ export class TeKeteAkoClient {
 
   /**
    * Create comprehensive content inventory
+   *
+   * Aggregates counts across common tables and estimates cultural content via keyword sampling.
+   * @returns A `ContentInventory` with totals, per-table counts, and cultural content estimate.
    */
   async createContentInventory(): Promise<ContentInventory> {
     const inventory: ContentInventory = {
@@ -270,6 +291,10 @@ export class TeKeteAkoClient {
 
   /**
    * Identify and flag cultural content for review
+   *
+   * @param tableName Table to scan (must include id/title/content/description/tags when available)
+   * @param limit Max items to scan (default 100)
+   * @returns Array of `CulturalContentFlag` entries requiring reviewer attention.
    */
   async scanForCulturalContent(
     tableName: string,
