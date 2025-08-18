@@ -334,17 +334,6 @@ export default function Year8ReadingStrategies() {
     setPracticeAnswers({});
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      'before-reading': '#e8f5e8',
-      'during-reading': '#fff3e0',
-      'after-reading': '#e3f2fd',
-      vocabulary: '#f3e5f5',
-      comprehension: '#fce4ec',
-    };
-    return colors[category as keyof typeof colors] || '#f5f5f5';
-  };
-
   const getCategoryIcon = (category: string) => {
     const icons = {
       'before-reading': '🎯',
@@ -354,15 +343,6 @@ export default function Year8ReadingStrategies() {
       comprehension: '🧠',
     };
     return icons[category as keyof typeof icons] || '📚';
-  };
-
-  const getDifficultyColor = (difficulty: string) => {
-    const colors = {
-      foundation: '#4caf50',
-      developing: '#ff9800',
-      advanced: '#2196f3',
-    };
-    return colors[difficulty as keyof typeof colors] || '#666';
   };
 
   const handleAnswerChange = (questionId: string, answer: string) => {
@@ -558,14 +538,14 @@ export default function Year8ReadingStrategies() {
             <h3>🧠 All Reading Strategies ({filteredStrategies.length})</h3>
             <div className="strategies-grid">
               {filteredStrategies.map((strategy) => (
-                                <div 
-                  key={strategy.id} 
+                <div
+                  key={strategy.id}
                   className={`strategy-card category-${strategy.category}`}
                   onClick={() => setSelectedStrategy(strategy)}
                 >
                   <div className="card-header">
                     <span className="card-category-icon">{getCategoryIcon(strategy.category)}</span>
-                                        <span 
+                    <span
                       className={`card-difficulty-dot difficulty-${strategy.difficulty}`}
                     ></span>
                   </div>
