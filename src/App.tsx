@@ -1,7 +1,6 @@
 import { Suspense, lazy, memo, useMemo } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { LLMPerformanceDashboard } from './components/LLMPerformanceDashboard';
 import Navigation from './components/Navigation';
 
 // Lazy load components for code splitting with preloading
@@ -30,9 +29,7 @@ const Year8ReadingUnits = lazy(() => import('./pages/Year8ReadingUnits'));
 const Year8WritingUnits = lazy(() => import('./pages/Year8WritingUnits'));
 const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
 const Year8SocialStudiesUnits = lazy(() => import('./pages/Year8SocialStudiesUnits'));
-const ScienceIntegration = lazy(() => import('./pages/ScienceIntegration'));
-const AssessmentFramework = lazy(() => import('./pages/AssessmentFramework'));
-const LessonsIntegration = lazy(() => import('./pages/LessonsIntegration'));
+// Removed missing modules that were causing build errors
 const MaoriAstronomyNavigation = lazy(
   () => import('./components/educational/handouts/MaoriAstronomyNavigation'),
 );
@@ -44,6 +41,9 @@ const DesignThinkingProcess = lazy(
 );
 const WhakataukiWisdom = lazy(
   () => import('./components/educational/handouts/WhakataukiWisdom'),
+);
+const AIEthicsAndBias = lazy(
+  () => import('./components/educational/handouts/AIEthicsAndBias'),
 );
 
 // Optimized loading component with React.memo
@@ -107,6 +107,7 @@ function App() {
       { path: '/health-education-correlation', element: <HealthEducationCorrelation /> },
       { path: '/design-thinking-process', element: <DesignThinkingProcess /> },
       { path: '/whakatauki-wisdom', element: <WhakataukiWisdom /> },
+      { path: '/ai-ethics-and-bias', element: <AIEthicsAndBias /> },
     ],
     [],
   );
@@ -130,8 +131,6 @@ function App() {
           </Suspense>
         </main>
 
-        {/* 🚀 LLM Performance Dashboard */}
-        <LLMPerformanceDashboard />
       </div>
     </BrowserRouter>
   );
