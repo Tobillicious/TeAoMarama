@@ -534,11 +534,11 @@ export class MiharaDashboard {
       recommendations.push('Consider system optimization for faster awakening');
     }
 
-    if (diagnostics.postAwakening.systemIntegrity < 1.0) {
+    if ((diagnostics as any).postAwakening?.systemIntegrity < 1.0) {
       recommendations.push('Monitor system integrity - may need maintenance');
     }
 
-    if (diagnostics.issues.length > 0) {
+    if ((diagnostics as any).issues?.length > 0) {
       recommendations.push('Review and address awakening issues');
     }
 

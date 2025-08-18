@@ -1,65 +1,34 @@
-import { useEffect, useState, type ReactNode } from 'react';
-import type { Session, User } from '@supabase/supabase-js';
+import { useState, type ReactNode } from 'react';
 import { AuthContext } from './AuthContextObject.tsx';
-import { supabase } from '../supabaseClient';
-
-// AuthContext moved to AuthContextObject.tsx
-
-// useAuth moved to useAuth.ts
 
 interface AuthProviderProps {
   children: ReactNode;
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      setCurrentUser(session?.user ?? null);
-      setLoading(false);
-    });
-
-    // Fetch initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session);
-        setCurrentUser(session?.user ?? null);
-        setLoading(false);
-    });
-
-
-    return () => {
-      subscription?.unsubscribe();
-    };
-  }, []);
-
-  const signUp = (email: string, password: string) => {
-    return supabase.auth.signUp({ email, password });
+  const signUp = async () => {
+    return { data: { user: null, session: null }, error: null };
   };
 
-  const logIn = (email: string, password: string) => {
-    return supabase.auth.signInWithPassword({ email, password });
+  const logIn = async () => {
+    return { data: { user: null, session: null }, error: null };
   };
 
-  const logOut = () => {
-    return supabase.auth.signOut();
+  const logOut = async () => {
+    return { error: null };
   };
 
   const value = {
     currentUser,
-    session,
+    session: null,
     loading,
     signUp,
     logIn,
     logOut,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
