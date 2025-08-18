@@ -21,7 +21,7 @@ interface NavigationMemory {
 }
 
 interface QuickAction {
-  ___id: string;
+  id: string;
   label: string;
   path: string;
   icon: string;
@@ -38,7 +38,12 @@ export default function BrainNavigation() {
   useEffect(() => {
     // Record this page visit as an episodic event
     recordPageVisit(location.pathname);
+    
+    // Load navigation memory
+    loadNavigationMemory();
   }, [location]);
+
+  const loadNavigationMemory = async () => {
     try {
       // In practice, this would call our brain API
       const response = await fetch('/brain/navigation-memory');
@@ -80,7 +85,7 @@ export default function BrainNavigation() {
     contextualSuggestions: ['/nzc-browser', '/resource-library'],
     quickActions: [
       {
-        ___id: 'new_lesson',
+        id: 'new_lesson',
         label: 'New Lesson Plan',
         path: '/lessons/new',
         icon: '📝',
@@ -89,7 +94,7 @@ export default function BrainNavigation() {
         reason: 'You create lessons most Tuesdays around this time',
       },
       {
-        ___id: 'this_weeks_plans',
+        id: 'this_weeks_plans',
         label: "This Week's Plans",
         path: '/dashboard/week',
         icon: '📅',
@@ -100,7 +105,30 @@ export default function BrainNavigation() {
     ],
   });
 
-  if (!memory) return <StaticNavigation />;
+  if (!memory) {
+    return (
+      <nav className="bg-surface border-b border-accent/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center space-x-8">
+              <Link to="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">T</span>
+                </div>
+                <span className="text-lg font-medium text-text">TeAoMarama</span>
+              </Link>
+              <div className="hidden md:flex space-x-6">
+                <NavLink path="/dashboard" label="Dashboard" />
+                <NavLink path="/lessons" label="Lessons" />
+                <NavLink path="/resources" label="Resources" />
+                <NavLink path="/assessments" label="Assessments" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="bg-surface border-b border-accent/20">
@@ -185,11 +213,11 @@ function BrainQuickActions({ actions }: { actions: QuickAction[] }) {
     <div className="flex items-center space-x-2">
       <span className="text-xs text-muted font-medium">Quick:</span>
       {actions.slice(0, 2).map((action) => (
-        <div key={action.___id} className="relative">
+        <div key={action.id} className="relative">
           <Link
             to={action.path}
             className="flex items-center space-x-1 px-3 py-1.5 bg-accent/10 hover:bg-accent/20 rounded-md text-sm text-accent font-medium transition-colors"
-            onMouseEnter={() => setShowTooltip(action.___id)}
+            onMouseEnter={() => setShowTooltip(action.id)}
             onMouseLeave={() => setShowTooltip(null)}
           >
             <span>{action.icon}</span>
@@ -197,7 +225,7 @@ function BrainQuickActions({ actions }: { actions: QuickAction[] }) {
           </Link>
 
           {/* Smart Tooltip */}
-          {showTooltip === action.___id && (
+          {showTooltip === action.id && (
             <div className="absolute top-full mt-2 left-0 bg-text text-white text-xs rounded-md px-2 py-1 whitespace-nowrap z-10">
               {action.reason}
               <div className="text-xs opacity-75">
@@ -268,7 +296,7 @@ function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
   );
 }
 
-function SmartBreadcrumbs({ currentPath }: { currentPath: string; memory: NavigationMemory }) {
+function SmartBreadcrumbs({ currentPath, memory }: { currentPath: string; memory: NavigationMemory }) {
   const pathParts = currentPath.split('/').filter(Boolean);
 
   return (
@@ -303,31 +331,6 @@ function SmartBreadcrumbs({ currentPath }: { currentPath: string; memory: Naviga
         </div>
       </div>
     </div>
-  );
-}
-
-function StaticNavigation() {
-  return (
-    <nav className="bg-surface border-b border-accent/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-8">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center">
-                <span className="text-white text-sm font-bold">T</span>
-              </div>
-              <span className="text-lg font-medium text-text">TeAoMarama</span>
-            </Link>
-            <div className="hidden md:flex space-x-6">
-              <NavLink path="/dashboard" label="Dashboard" />
-              <NavLink path="/lessons" label="Lessons" />
-              <NavLink path="/resources" label="Resources" />
-              <NavLink path="/assessments" label="Assessments" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
   );
 }
 
