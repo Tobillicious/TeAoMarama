@@ -36,32 +36,32 @@ const year8SocialStudiesUnit: SocialStudiesUnit = {
   curriculumStrand: 'Identity, Culture, and Organization',
   curriculumObjectives: [
     'Students will understand how people pass on and sustain culture and heritage for different reasons and that this has consequences for people',
-    'Students will understand how people\'s management of resources impacts on environmental and social sustainability',
-    'Students will understand how exploration and innovation create opportunities and challenges for people, places, and environments'
+    "Students will understand how people's management of resources impacts on environmental and social sustainability",
+    'Students will understand how exploration and innovation create opportunities and challenges for people, places, and environments',
   ],
   achievementObjectives: [
     'AO: Students will demonstrate knowledge and understanding of how people pass on and sustain culture and heritage for different reasons and that this has consequences for people',
-    'AO: Students will demonstrate knowledge and understanding of how people\'s management of resources impacts on environmental and social sustainability',
-    'AO: Students will demonstrate knowledge and understanding of how exploration and innovation create opportunities and challenges for people, places, and environments'
+    "AO: Students will demonstrate knowledge and understanding of how people's management of resources impacts on environmental and social sustainability",
+    'AO: Students will demonstrate knowledge and understanding of how exploration and innovation create opportunities and challenges for people, places, and environments',
   ],
   learningIntentions: [
     'Understand how culture and heritage are sustained and passed on',
     'Analyze the impact of resource management on sustainability',
     'Explore how innovation creates opportunities and challenges',
-    'Develop critical thinking about identity and belonging'
+    'Develop critical thinking about identity and belonging',
   ],
   successCriteria: [
     'Can explain how culture and heritage are maintained and transmitted',
     'Can analyze resource management impacts on sustainability',
     'Can evaluate the effects of innovation on society',
-    'Can demonstrate understanding of multiple perspectives on identity'
+    'Can demonstrate understanding of multiple perspectives on identity',
   ],
   culturalFocus: 'Māori culture and heritage, Pacific identities, New Zealand identity formation',
   assessments: [
     'Cultural heritage investigation and presentation',
     'Resource management case study analysis',
     'Innovation impact assessment',
-    'Identity and belonging reflection portfolio'
+    'Identity and belonging reflection portfolio',
   ],
   resources: [
     'Māori cultural heritage resources',
@@ -69,7 +69,7 @@ const year8SocialStudiesUnit: SocialStudiesUnit = {
     'New Zealand history and identity texts',
     'Resource management case studies',
     'Innovation and technology impact studies',
-    'Digital cultural heritage platforms'
+    'Digital cultural heritage platforms',
   ],
   lessons: [
     {
@@ -80,21 +80,21 @@ const year8SocialStudiesUnit: SocialStudiesUnit = {
       successCriteria: [
         'Can identify elements of cultural heritage',
         'Can explain how heritage influences identity',
-        'Can reflect on personal cultural connections'
+        'Can reflect on personal cultural connections',
       ],
       activities: [
         'Cultural heritage exploration through artifacts and stories',
         'Identity mapping and reflection exercises',
         'Cultural heritage preservation discussion',
-        'Personal heritage investigation and sharing'
+        'Personal heritage investigation and sharing',
       ],
       resources: [
         'Cultural heritage artifacts and images',
         'Identity mapping templates',
         'Heritage preservation case studies',
-        'Personal investigation guides'
+        'Personal investigation guides',
       ],
-      assessment: 'Cultural heritage investigation report'
+      assessment: 'Cultural heritage investigation report',
     },
     {
       id: 'social-studies-lesson-2',
@@ -104,21 +104,21 @@ const year8SocialStudiesUnit: SocialStudiesUnit = {
       successCriteria: [
         'Can identify resource management practices',
         'Can analyze environmental and social impacts',
-        'Can evaluate sustainability approaches'
+        'Can evaluate sustainability approaches',
       ],
       activities: [
         'Resource management case study analysis',
         'Environmental impact assessment exercises',
         'Sustainability solution development',
-        'Community resource planning simulation'
+        'Community resource planning simulation',
       ],
       resources: [
         'Resource management case studies',
         'Environmental impact data',
         'Sustainability frameworks',
-        'Community planning tools'
+        'Community planning tools',
       ],
-      assessment: 'Resource management impact analysis'
+      assessment: 'Resource management impact analysis',
     },
     {
       id: 'social-studies-lesson-3',
@@ -128,23 +128,23 @@ const year8SocialStudiesUnit: SocialStudiesUnit = {
       successCriteria: [
         'Can identify innovation opportunities',
         'Can analyze social change impacts',
-        'Can evaluate innovation consequences'
+        'Can evaluate innovation consequences',
       ],
       activities: [
         'Innovation case study exploration',
         'Social change impact analysis',
         'Future scenario development',
-        'Innovation consequence evaluation'
+        'Innovation consequence evaluation',
       ],
       resources: [
         'Innovation case studies',
         'Social change data',
         'Future scenario frameworks',
-        'Impact evaluation tools'
+        'Impact evaluation tools',
       ],
-      assessment: 'Innovation impact assessment'
-    }
-  ]
+      assessment: 'Innovation impact assessment',
+    },
+  ],
 };
 
 const Year8SocialStudiesUnits: React.FC = () => {
@@ -164,11 +164,17 @@ const Year8SocialStudiesUnits: React.FC = () => {
         <div className="overview-grid">
           <div className="overview-card">
             <h3>Curriculum Alignment</h3>
-            <p><strong>Level:</strong> {year8SocialStudiesUnit.curriculumLevel}</p>
-            <p><strong>Strand:</strong> {year8SocialStudiesUnit.curriculumStrand}</p>
-            <p><strong>Duration:</strong> {year8SocialStudiesUnit.duration}</p>
+            <p>
+              <strong>Level:</strong> {year8SocialStudiesUnit.curriculumLevel}
+            </p>
+            <p>
+              <strong>Strand:</strong> {year8SocialStudiesUnit.curriculumStrand}
+            </p>
+            <p>
+              <strong>Duration:</strong> {year8SocialStudiesUnit.duration}
+            </p>
           </div>
-          
+
           <div className="overview-card">
             <h3>Cultural Focus</h3>
             <p>{year8SocialStudiesUnit.culturalFocus}</p>
@@ -261,8 +267,10 @@ const Year8SocialStudiesUnits: React.FC = () => {
       {selectedLesson && (
         <div className="lesson-detail-modal">
           <div className="modal-content">
-            <button className="close-btn" onClick={() => setSelectedLesson(null)}>×</button>
-            
+            <button className="close-btn" onClick={() => setSelectedLesson(null)}>
+              ×
+            </button>
+
             <div className="lesson-detail-header">
               <h2>{selectedLesson.title}</h2>
               <p className="lesson-duration">{selectedLesson.duration}</p>
