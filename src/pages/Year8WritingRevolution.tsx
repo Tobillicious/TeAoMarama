@@ -484,13 +484,14 @@ export default function Year8WritingRevolution() {
               skills and critical thinking.
             </p>
           </div>
-          <div className="philosophy-card">
-            <h3>🌿 Cultural Integration</h3>
-            <p>
-              Use meaningful cultural content to practice writing skills, honoring students'
-              backgrounds and knowledge.
-            </p>
-          </div>
+                  <div className="philosophy-card cultural-highlight">
+          <h3>🌿 Te Ao Māori Integration</h3>
+          <p>
+            Use meaningful cultural content to practice writing skills, honoring students'
+            backgrounds and knowledge. Integrate 3,372 Māori cultural resources seamlessly.
+          </p>
+          <div className="cultural-badge">5,439 Total Resources • 3,372 Māori Cultural</div>
+        </div>
         </div>
       </section>
 
