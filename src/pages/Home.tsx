@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
+import WhakataukiWisdom from '../components/WhakataukiWisdom';
+import CulturalConsultationProtocol from '../components/CulturalConsultationProtocol';
 import './Home.css';
 
 interface ResourceItem {
@@ -48,8 +50,11 @@ export default function Home() {
           <h1 className="hero-title-new">Empowering Aotearoa's Educators</h1>
           <p className="hero-subtitle-new">
             Comprehensive educational resources designed for New Zealand teachers and students, with
-            cultural integration and modern pedagogy.
+            authentic cultural integration and transformative pedagogy.
           </p>
+          
+          {/* Integrated Whakataukī Wisdom */}
+          <WhakataukiWisdom variant="hero" className="hero-wisdom" />
 
           <div className="hero-stats">
             <div className="stat-item">
@@ -183,34 +188,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cultural Excellence Framework */}
+      <section className="cultural-excellence-section">
+        <div className="container">
+          <h2 className="section-title-new">Cultural Excellence & Consultation</h2>
+          <p className="section-subtitle">
+            Authentic iwi engagement and postcolonial pedagogical framework ensuring 
+            cultural safety and authentic representation in all educational content.
+          </p>
+          
+          <CulturalConsultationProtocol variant="summary" />
+          
+          {/* Enhanced Guiding Wisdom */}
+          <WhakataukiWisdom variant="card" className="cultural-wisdom-card" />
+        </div>
+      </section>
+
       {/* Status Section */}
       <section className="status-section">
         <div className="container">
-          <div className="status-card">
+          <div className="status-card-enhanced">
             <div className="status-header-new">
               <div className="status-icon-new">📊</div>
               <div className="status-info">
-                <h3>{resourceCount} Resources</h3>
-                <p>Available for download and classroom use</p>
+                <h3>{resourceCount} Educational Resources</h3>
+                <p>100% culturally reviewed and curriculum-aligned</p>
               </div>
+              <CulturalConsultationProtocol variant="widget" className="status-consultation-widget" />
             </div>
             {currentUser && (
-              <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-                <p style={{ marginBottom: '1rem', color: '#666' }}>
-                  Welcome back, {currentUser.email}
+              <div className="user-section">
+                <p className="welcome-message">
+                  Kia ora, {currentUser.email} - Welcome to Te Kete Ako
                 </p>
                 <button
                   type="button"
                   onClick={handleLogout}
-                  style={{
-                    background: '#dc3545',
-                    color: 'white',
-                    border: 'none',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                    fontSize: '0.9rem',
-                  }}
+                  className="sign-out-button"
                 >
                   Sign Out
                 </button>

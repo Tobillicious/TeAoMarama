@@ -1,0 +1,244 @@
+/* He Whakataukī - Our Guiding Wisdom Component */
+
+.whakataukī-wisdom {
+  margin: 2rem 0;
+  font-family: var(--font-primary);
+}
+
+/* Card Variant (Default) */
+.whakataukī-card {
+  background: var(--gradient-card);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--color-border-cultural);
+  box-shadow: 0 8px 24px rgba(0, 176, 185, 0.12);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.whakataukī-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-cultural);
+}
+
+/* Hero Variant */
+.whakataukī-hero {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: white;
+}
+
+.whakataukī-hero .whakataukī-maori {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.whakataukī-hero .whakataukī-english {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.whakataukī-hero .whakataukī-context p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Inline Variant */
+.whakataukī-inline {
+  background: var(--color-teal-50);
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.whakataukī-inline .whakataukī-header {
+  margin-bottom: 1rem;
+}
+
+.whakataukī-inline .whakataukī-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Header Styles */
+.whakataukī-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.whakataukī-icon {
+  font-size: 1.5rem;
+  color: var(--color-pounamu);
+}
+
+.whakataukī-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Content Styles */
+.whakataukī-content {
+  margin-bottom: 1.5rem;
+}
+
+.whakataukī-quote {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  border: none;
+}
+
+.whakataukī-maori {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.whakataukī-english {
+  font-size: 1.1rem;
+  color: var(--color-pounamu);
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.whakataukī-context {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1rem;
+}
+
+.whakataukī-context p {
+  font-size: 0.95rem;
+  color: var(--color-neutral-700);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.whakataukī-source {
+  font-size: 0.85rem;
+  color: var(--color-neutral-600);
+  font-style: italic;
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+/* Navigation Dots */
+.whakataukī-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.whakataukī-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-neutral-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whakataukī-dot:hover {
+  background: var(--color-pounamu);
+  transform: scale(1.2);
+}
+
+.whakataukī-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px rgba(0, 176, 185, 0.3);
+}
+
+/* Animations */
+.whakataukī-content {
+  animation: fadeInWisdom 0.8s ease-out;
+}
+
+@keyframes fadeInWisdom {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cultural pattern overlay for card variant */
+.whakataukī-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(circle, var(--color-pounamu-light) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whakataukī-card {
+    padding: 1.5rem;
+  }
+  
+  .whakataukī-hero {
+    padding: 2rem;
+  }
+  
+  .whakataukī-maori {
+    font-size: 1.2rem;
+  }
+  
+  .whakataukī-english {
+    font-size: 1rem;
+  }
+  
+  .whakataukī-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .whakataukī-card {
+    border: 2px solid var(--color-primary);
+  }
+  
+  .whakataukī-dot {
+    border: 1px solid var(--color-neutral-600);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .whakataukī-content {
+    animation: none;
+  }
+  
+  .whakataukī-dot {
+    transition: none;
+  }
+}

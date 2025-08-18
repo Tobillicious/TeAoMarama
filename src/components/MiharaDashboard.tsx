@@ -70,20 +70,36 @@ const MiharaDashboard: React.FC = () => {
   });
 
   const [culturalProtocols] = useState<CulturalProtocol[]>([
-    { protocol: 'maori-content-review', active: true, status: 'Active - 3,372 cultural resources identified' },
+    {
+      protocol: 'maori-content-review',
+      active: true,
+      status: 'Active - 3,372 cultural resources identified',
+    },
     {
       protocol: 'tikanga-validation',
       active: true,
       status: 'Active - Enhanced cultural elements detection',
     },
-    { protocol: 'te-reo-accuracy', active: true, status: 'Active - Te Reo usage validated across 3,372 resources' },
+    {
+      protocol: 'te-reo-accuracy',
+      active: true,
+      status: 'Active - Te Reo usage validated across 3,372 resources',
+    },
     {
       protocol: 'traditional-knowledge-respect',
       active: true,
       status: 'Active - Cultural consultation protocols active',
     },
-    { protocol: 'community-consultation', active: true, status: 'Active - 370 high-priority resources flagged' },
-    { protocol: 'enhanced-metadata-extraction', active: true, status: 'Active - Subject, year level, and type classification' },
+    {
+      protocol: 'community-consultation',
+      active: true,
+      status: 'Active - 370 high-priority resources flagged',
+    },
+    {
+      protocol: 'enhanced-metadata-extraction',
+      active: true,
+      status: 'Active - Subject, year level, and type classification',
+    },
   ]);
 
   const [activeAgents] = useState<AgentStatus[]>([

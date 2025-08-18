@@ -1,19 +1,32 @@
-/* Te Kete Ako Cultural Design System
- * Sophisticated porcelain white, gold, royal blue palette
- * For educational transformation across Aotearoa
+/* Te Kete Ako Professional Design System
+ * Tekete-Inspired Teal Excellence with Cultural Sophistication
+ * For transformative educational experiences across Aotearoa
  */
 
 :root {
-  /* === Te Ao Māori Cultural Colors === */
-  --color-primary: #1B4332;        /* Deep kauri forest */
+  /* === Tekete Professional Teal Gradient System === */
+  --color-primary: #00b0b9;        /* Professional teal */
+  --color-primary-dark: #2C5F41;   /* Deep forest complement */
   --color-pounamu: #1B7F5A;        /* Sacred greenstone */
   --color-pounamu-light: #4FD1C7;  /* Jade shimmer */
   --color-kowhai: #F18F01;         /* Golden flower */
-  --color-moana: #0081A7;          /* Ocean deep (royal blue) */
+  --color-moana: #0081A7;          /* Ocean deep */
   --color-kahurangi: #0284c7;      /* Sky blue */
   --color-whenua: #8B4513;         /* Earth brown */
   
-  /* === Kehinde Wiley Sophistication === */
+  /* === Professional Teal Gradient Palette === */
+  --color-teal-50: #f0fdfa;        /* Lightest teal */
+  --color-teal-100: #ccfbf1;       /* Very light teal */
+  --color-teal-200: #99f6e4;       /* Light teal */
+  --color-teal-300: #5eead4;       /* Medium light teal */
+  --color-teal-400: #2dd4bf;       /* Medium teal */
+  --color-teal-500: #14b8a6;       /* Standard teal */
+  --color-teal-600: #0d9488;       /* Professional teal */
+  --color-teal-700: #0f766e;       /* Dark teal */
+  --color-teal-800: #115e59;       /* Darker teal */
+  --color-teal-900: #134e4a;       /* Darkest teal */
+  
+  /* === Sophisticated Design System === */
   --color-royal-blue: #003366;     /* Deep, regal blue */
   --color-gold: #FFD700;           /* Pure, confident gold */
   --color-gold-warm: #F5D915;      /* Kōwhai golden yellow */
@@ -32,14 +45,21 @@
   --color-neutral-800: #343A40;    /* Deeper text */
   --color-neutral-900: #212529;    /* Rich black */
   
-  /* === Background System === */
+  /* === Professional Background System === */
   --color-bg: #FFFFFF;
-  --color-bg-secondary: #F8F9FA;
+  --color-bg-secondary: var(--color-teal-50);
   --color-surface: #FFFFFF;
-  --color-surface-hover: #F8F9FA;
+  --color-surface-hover: var(--color-teal-50);
   --color-border: #e5e7eb;
-  --color-border-light: rgba(27, 67, 50, 0.1);
-  --color-border-cultural: rgba(27, 127, 90, 0.15);
+  --color-border-light: rgba(0, 176, 185, 0.1);
+  --color-border-cultural: rgba(0, 176, 185, 0.15);
+  
+  /* === Tekete Professional Gradients === */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  --gradient-teal: linear-gradient(135deg, var(--color-teal-500) 0%, var(--color-teal-700) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 60%, var(--color-teal-800) 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(240,253,250,0.95) 100%);
+  --gradient-cultural: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-kowhai) 100%);
   
   /* === Educational Intent Colors === */
   --color-success: #10B981;        /* Growth and progress */
@@ -47,9 +67,9 @@
   --color-error: #EF4444;          /* Critical issues */
   --color-info: #3B82F6;           /* Information */
   
-  /* === Typography Scale === */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Playfair Display', 'Georgia', serif;
+  /* === Professional Typography Scale (Tekete-Inspired) === */
+  --font-primary: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Montserrat', 'Segoe UI', 'Helvetica Neue', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   
   /* Font Weights */

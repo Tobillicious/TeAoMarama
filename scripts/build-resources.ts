@@ -6,7 +6,7 @@
  * - Provides cultural content detection and priority assessment
  */
 
-import { mkdir, readdir, readFile, stat, writeFile, copyFile } from 'fs/promises';
+import { copyFile, mkdir, readdir, readFile, stat, writeFile } from 'fs/promises';
 import path from 'path';
 
 type ResourceIndexEntry = {
@@ -33,15 +33,15 @@ const DEST_ROOT = path.join(PUBLIC_ROOT, 'resources');
 
 // Subject mapping patterns
 const SUBJECT_PATTERNS = {
-  'Mathematics': /math|mathematics|algebra|geometry|calculus|statistics/i,
-  'English': /english|literature|writing|reading|grammar|poetry/i,
-  'Science': /science|biology|chemistry|physics|experiment|lab/i,
+  Mathematics: /math|mathematics|algebra|geometry|calculus|statistics/i,
+  English: /english|literature|writing|reading|grammar|poetry/i,
+  Science: /science|biology|chemistry|physics|experiment|lab/i,
   'Social Studies': /social|history|geography|civics|economics|society/i,
   'Te Reo Māori': /maori|te reo|tikanga|whakapapa|karakia/i,
   'Physical Education': /pe|physical|sport|fitness|health/i,
-  'Arts': /art|music|drama|dance|creative|visual/i,
-  'Technology': /technology|computing|digital|coding|programming/i,
-  'Languages': /language|french|spanish|german|japanese|chinese/i,
+  Arts: /art|music|drama|dance|creative|visual/i,
+  Technology: /technology|computing|digital|coding|programming/i,
+  Languages: /language|french|spanish|german|japanese|chinese/i,
 };
 
 // Year level patterns
@@ -57,12 +57,12 @@ const YEAR_LEVEL_PATTERNS = {
 
 // Resource type patterns
 const TYPE_PATTERNS = {
-  'lesson_plan': /lesson|plan|unit|curriculum/i,
-  'worksheet': /worksheet|activity|exercise|task/i,
-  'assessment': /assessment|test|quiz|exam|evaluation/i,
-  'handout': /handout|resource|material|guide/i,
-  'game': /game|interactive|play|fun/i,
-  'presentation': /presentation|slide|powerpoint/i,
+  lesson_plan: /lesson|plan|unit|curriculum/i,
+  worksheet: /worksheet|activity|exercise|task/i,
+  assessment: /assessment|test|quiz|exam|evaluation/i,
+  handout: /handout|resource|material|guide/i,
+  game: /game|interactive|play|fun/i,
+  presentation: /presentation|slide|powerpoint/i,
 };
 
 // Cultural content indicators
@@ -143,14 +143,14 @@ function extractType(text: string): string | undefined {
 }
 
 function detectCulturalContent(text: string): boolean {
-  return CULTURAL_INDICATORS.some(pattern => pattern.test(text));
+  return CULTURAL_INDICATORS.some((pattern) => pattern.test(text));
 }
 
 function assessPriority(text: string, sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
   const hasCultural = detectCulturalContent(text);
   const isLarge = sizeBytes > 10000;
   const hasUrgentKeywords = /urgent|critical|important|priority/i.test(text);
-  
+
   if (hasUrgentKeywords) return 'urgent';
   if (hasCultural && isLarge) return 'high';
   if (hasCultural || isLarge) return 'medium';
@@ -161,39 +161,56 @@ function extractDescription(content: string): string {
   const lines = content.split(/\r?\n/);
   const descriptionLines = lines
     .slice(0, 10) // Look at first 10 lines
-    .filter(line => line.trim() && !line.startsWith('#') && !line.startsWith('---'))
+    .filter((line) => line.trim() && !line.startsWith('#') && !line.startsWith('---'))
     .slice(0, 3); // Take first 3 non-empty lines
-  
-  return descriptionLines.join(' ').substring(0, 200) + (descriptionLines.join(' ').length > 200 ? '...' : '');
+
+  return (
+    descriptionLines.join(' ').substring(0, 200) +
+    (descriptionLines.join(' ').length > 200 ? '...' : '')
+  );
 }
 
 function extractTags(content: string): string[] {
   const tags: string[] = [];
   const lines = content.split(/\r?\n/);
-  
+
   // Look for tags in frontmatter or markdown
   for (const line of lines) {
     if (line.includes('tags:') || line.includes('keywords:')) {
       const match = line.match(/tags?:\s*\[(.*?)\]/i) || line.match(/keywords?:\s*\[(.*?)\]/i);
       if (match) {
-        tags.push(...match[1].split(',').map(t => t.trim().replace(/['"]/g, '')));
+        tags.push(...match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
       }
     }
   }
-  
+
   // Extract common educational terms
   const educationalTerms = [
-    'assessment', 'activity', 'lesson', 'worksheet', 'resource', 'guide',
-    'maori', 'cultural', 'indigenous', 'traditional', 'modern', 'digital',
-    'interactive', 'collaborative', 'individual', 'group', 'project'
+    'assessment',
+    'activity',
+    'lesson',
+    'worksheet',
+    'resource',
+    'guide',
+    'maori',
+    'cultural',
+    'indigenous',
+    'traditional',
+    'modern',
+    'digital',
+    'interactive',
+    'collaborative',
+    'individual',
+    'group',
+    'project',
   ];
-  
-  educationalTerms.forEach(term => {
+
+  educationalTerms.forEach((term) => {
     if (content.toLowerCase().includes(term) && !tags.includes(term)) {
       tags.push(term);
     }
   });
-  
+
   return tags.slice(0, 10); // Limit to 10 tags
 }
 
@@ -201,7 +218,7 @@ async function extractTitleFromMarkdown(absFile: string): Promise<string> {
   try {
     const content = await readFile(absFile, 'utf-8');
     const lines = content.split(/\r?\n/);
-    const heading = lines.find(l => l.trim().startsWith('# '));
+    const heading = lines.find((l) => l.trim().startsWith('# '));
     return heading ? heading.replace(/^#\s+/, '').trim() : path.basename(absFile);
   } catch {
     return path.basename(absFile);
@@ -264,15 +281,23 @@ async function buildResources(): Promise<void> {
 
   // Write index.json
   const indexFile = path.join(DEST_ROOT, 'index.json');
-  await writeFile(indexFile, JSON.stringify({ generatedAt: new Date().toISOString(), items: index }, null, 2), 'utf-8');
-  
+  await writeFile(
+    indexFile,
+    JSON.stringify({ generatedAt: new Date().toISOString(), items: index }, null, 2),
+    'utf-8',
+  );
+
   // Enhanced reporting for Mihara
-  const culturalCount = index.filter(r => r.culturalContent).length;
-  const highPriorityCount = index.filter(r => r.priority === 'high' || r.priority === 'urgent').length;
-  const subjects = [...new Set(index.map(r => r.subject).filter(Boolean))];
-  const yearLevels = [...new Set(index.map(r => r.yearLevel).filter(Boolean))];
-  
-  console.log(`✅ Resources prepared: ${index.length} items -> ${path.relative(PROJECT_ROOT, indexFile)}`);
+  const culturalCount = index.filter((r) => r.culturalContent).length;
+  const highPriorityCount = index.filter(
+    (r) => r.priority === 'high' || r.priority === 'urgent',
+  ).length;
+  const subjects = [...new Set(index.map((r) => r.subject).filter(Boolean))];
+  const yearLevels = [...new Set(index.map((r) => r.yearLevel).filter(Boolean))];
+
+  console.log(
+    `✅ Resources prepared: ${index.length} items -> ${path.relative(PROJECT_ROOT, indexFile)}`,
+  );
   console.log(`📊 Enhanced Metadata:`);
   console.log(`   - Cultural Resources: ${culturalCount}`);
   console.log(`   - High Priority: ${highPriorityCount}`);
@@ -280,9 +305,7 @@ async function buildResources(): Promise<void> {
   console.log(`   - Year Levels: ${yearLevels.length} (${yearLevels.join(', ')})`);
 }
 
-buildResources().catch(err => {
+buildResources().catch((err) => {
   console.error('❌ build-resources failed:', err);
   process.exitCode = 1;
 });
-
-
