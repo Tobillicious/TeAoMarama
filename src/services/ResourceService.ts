@@ -4,6 +4,7 @@
  */
 
 import { AIOrchestrator } from '../ai/orchestrator';
+import { llmOptimizer } from '../ai/performance-optimizer';
 import { writeEpisode } from '../ai/provenance';
 import { GlobalMihara } from '../brain/mihara-awakening';
 import type { ResourceRecommendation } from '../types/migration-types';
@@ -104,7 +105,7 @@ export class ResourceService {
   }
 
   /**
-   * Search resources using AI-powered semantic search
+   * Search resources using AI-powered semantic search with PERFORMANCE OPTIMIZATION
    */
   async searchResources(
     query: ResourceQuery,
@@ -119,6 +120,7 @@ export class ResourceService {
 
     // Check cache first for performance
     if (this.resourceCache.has(cacheKey)) {
+      console.log('🚀 CACHE HIT - Instant resource search!');
       return {
         resources: this.resourceCache.get(cacheKey)!,
         totalCount: this.resourceCache.get(cacheKey)!.length,
@@ -127,17 +129,22 @@ export class ResourceService {
     }
 
     try {
-      // Use AI orchestrator for intelligent search
+      // 🚀 USE PERFORMANCE OPTIMIZER FOR SPEED
       const searchPrompt = this.buildSearchPrompt(query, userRole);
-
-      await this.orchestrator.route({
+      
+      console.log('⚡ Using performance optimizer for resource search...');
+      const startTime = Date.now();
+      
+      const result = await llmOptimizer.fastLLMCall(searchPrompt, {
         type: 'resource_search',
         complexity: 'medium',
-        priority: 'reliability',
+        priority: 'speed', // Prioritize speed for search
         culturalSensitive: query.culturalContent || false,
-        prompt: searchPrompt,
-        context: { userRole, query },
+        context: { userRole, query }
       });
+
+      const searchTime = Date.now() - startTime;
+      console.log(`🚀 Optimized search completed in ${searchTime}ms`);
 
       // For now, return mock data that simulates real migrated content
       const mockResources = await this.getMockResources(query);
@@ -154,8 +161,9 @@ export class ResourceService {
           search_term: query.searchTerm,
           user_role: userRole,
           results_count: mockResources.length,
-          cultural____content: query.culturalContent,
-          text: `Resource search performed: "${query.searchTerm}" for ${userRole}`,
+          cultural_content: query.culturalContent,
+          search_time_ms: searchTime,
+          text: `Resource search performed: "${query.searchTerm}" for ${userRole} in ${searchTime}ms`,
         },
       });
 
@@ -170,11 +178,11 @@ export class ResourceService {
           : undefined,
       };
     } catch (error) {
-      console.error('Resource search failed:', error);
+      console.error('Resource search error:', error);
       return {
         resources: [],
         totalCount: 0,
-        suggestions: ['Try broader search terms', 'Check subject filters'],
+        suggestions: ['Try a different search term'],
       };
     }
   }
