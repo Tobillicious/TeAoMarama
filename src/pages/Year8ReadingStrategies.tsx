@@ -478,8 +478,7 @@ export default function Year8ReadingStrategies() {
           {selectedStrategy && (
             <section className="strategy-showcase">
               <div 
-                className="strategy-spotlight"
-                style={{ backgroundColor: getCategoryColor(selectedStrategy.category) }}
+                className={`strategy-spotlight category-${selectedStrategy.category}`}
               >
                 <div className="strategy-header">
                   <div className="strategy-badges">
