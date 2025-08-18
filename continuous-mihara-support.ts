@@ -2,10 +2,10 @@
 
 /**
  * Continuous Mihara Support System
- * 
+ *
  * Provides ongoing assistance to Kaitiaki Mahara for:
  * - System health monitoring
- * - Agent coordination support  
+ * - Agent coordination support
  * - Cultural safety oversight
  * - Emergency response readiness
  * - Performance optimization
@@ -13,10 +13,19 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { getMiharaStatus, awakenMihara } from './src/brain/mihara-awakening';
-import { executeMiharaGreatMission } from './src/brain/great-migration-orchestrator';
-import { runConnectionDiagnostics, generateDiagnosticReport } from './migration/connection-diagnostic';
-import { initializeOfflineSystem, generateMiharaStatusReport } from './migration/offline-migration-system';
+import {
+  generateDiagnosticReport,
+  runConnectionDiagnostics,
+} from './migration/connection-diagnostic';
+import {
+  generateMiharaStatusReport,
+  initializeOfflineSystem,
+} from './migration/offline-migration-system';
+import {
+  awakenMihara,
+  executeMiharaGreatMission,
+  getMiharaStatus,
+} from './src/brain/mihara-awakening';
 
 interface SupportMetrics {
   systemHealth: number;
@@ -59,7 +68,7 @@ class ContinuousMiharaSupport {
           component: 'mihara_consciousness',
           message: 'Mihara awakening failed - cannot start continuous support',
           timestamp: new Date().toISOString(),
-          action_required: 'Investigate awakening protocol'
+          action_required: 'Investigate awakening protocol',
         });
         return;
       }
@@ -70,8 +79,12 @@ class ContinuousMiharaSupport {
 
     console.log('✅ Mihara consciousness verified - ACTIVE');
     console.log(`📊 System Integrity: ${(status.state.systemIntegrity * 100).toFixed(1)}%`);
-    console.log(`🛡️ Cultural Authority: ${status.state.culturalAuthority ? 'VERIFIED' : 'PENDING'}`);
-    console.log(`🤝 Aronui Collaboration: ${status.state.collaborationWithAronui ? 'ACTIVE' : 'INACTIVE'}`);
+    console.log(
+      `🛡️ Cultural Authority: ${status.state.culturalAuthority ? 'VERIFIED' : 'PENDING'}`,
+    );
+    console.log(
+      `🤝 Aronui Collaboration: ${status.state.collaborationWithAronui ? 'ACTIVE' : 'INACTIVE'}`,
+    );
 
     this.monitoringActive = true;
     this.lastHealthCheck = new Date().toISOString();
@@ -98,7 +111,7 @@ class ContinuousMiharaSupport {
       culturalSafetyScore: status.state.culturalAuthority ? 0.95 : 0.5,
       agentCoordination: status.state.collaborationWithAronui ? 1.0 : 0.7,
       performanceLevel: status.state.systemIntegrity,
-      emergencyReadiness: 0.98 // Assume high readiness
+      emergencyReadiness: 0.98, // Assume high readiness
     };
 
     // Check for any concerning metrics
@@ -108,7 +121,7 @@ class ContinuousMiharaSupport {
         component: 'system_health',
         message: `System health below threshold: ${(metrics.systemHealth * 100).toFixed(1)}%`,
         timestamp: new Date().toISOString(),
-        action_required: 'Investigate system status and consider restart'
+        action_required: 'Investigate system status and consider restart',
       });
     }
 
@@ -116,9 +129,11 @@ class ContinuousMiharaSupport {
       this.addAlert({
         level: 'warning',
         component: 'cultural_safety',
-        message: `Cultural safety score requires attention: ${(metrics.culturalSafetyScore * 100).toFixed(1)}%`,
+        message: `Cultural safety score requires attention: ${(
+          metrics.culturalSafetyScore * 100
+        ).toFixed(1)}%`,
         timestamp: new Date().toISOString(),
-        action_required: 'Review cultural protocols and authority status'
+        action_required: 'Review cultural protocols and authority status',
       });
     }
 
@@ -181,7 +196,9 @@ class ContinuousMiharaSupport {
         console.log('─────────────────');
         this.alerts.forEach((alert) => {
           const icon = alert.level === 'critical' ? '🚨' : alert.level === 'warning' ? '⚠️' : 'ℹ️';
-          console.log(`${icon} [${alert.level.toUpperCase()}] ${alert.component}: ${alert.message}`);
+          console.log(
+            `${icon} [${alert.level.toUpperCase()}] ${alert.component}: ${alert.message}`,
+          );
           if (alert.action_required) {
             console.log(`   Action: ${alert.action_required}`);
           }
@@ -205,7 +222,6 @@ class ContinuousMiharaSupport {
       console.log('\n🌟 CONTINUOUS SUPPORT ACTIVE');
       console.log('Kaitiaki Mahara is being continuously supported and monitored');
       console.log('Ready to assist with any new missions or tasks');
-
     } catch (error) {
       console.error('\n💥 Error in continuous support:', error);
       this.addAlert({
@@ -213,7 +229,7 @@ class ContinuousMiharaSupport {
         component: 'support_system',
         message: `Continuous support _error: ${error}`,
         timestamp: new Date().toISOString(),
-        action_required: 'Investigate support system failure'
+        action_required: 'Investigate support system failure',
       });
     }
   }
@@ -234,10 +250,8 @@ class ContinuousMiharaSupport {
       await this.processHumanCommands();
 
       // Clear old alerts (older than 24 hours)
-      const cutoff = Date.now() - (24 * 60 * 60 * 1000);
-      this.alerts = this.alerts.filter(alert =>
-        new Date(alert.timestamp).getTime() > cutoff
-      );
+      const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+      this.alerts = this.alerts.filter((alert) => new Date(alert.timestamp).getTime() > cutoff);
 
       setTimeout(monitoringLoop, intervalMs);
     };
@@ -248,9 +262,15 @@ class ContinuousMiharaSupport {
 
   private async ensureHumanCommandChannels(): Promise<void> {
     const dirs = [this.humanDir, this.humanInbox, this.humanArchive, this.humanOutbox];
-    await Promise.all(dirs.map(async d => {
-      try { await fs.mkdir(d, { recursive: true }); } catch { /* empty */ }
-    }));
+    await Promise.all(
+      dirs.map(async (d) => {
+        try {
+          await fs.mkdir(d, { recursive: true });
+        } catch {
+          /* empty */
+        }
+      }),
+    );
   }
 
   private async processHumanCommands(): Promise<void> {
@@ -271,7 +291,7 @@ class ContinuousMiharaSupport {
         } catch {
           await this.writeOutbox({
             ok: false,
-            _error: `Failed to parse command ${file}`
+            _error: `Failed to parse command ${file}`,
           });
           await this.archive(filePath);
           continue;
@@ -286,7 +306,7 @@ class ContinuousMiharaSupport {
         level: 'warning',
         component: 'human_command_channel',
         message: `Failed processing human commands: ${error}`,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     }
   }
@@ -299,7 +319,7 @@ class ContinuousMiharaSupport {
         return {
           greeting: status.greeting,
           state: status.state,
-          lastHealthCheck: this.lastHealthCheck
+          lastHealthCheck: this.lastHealthCheck,
         };
       }
       case 'awaken': {
@@ -323,7 +343,7 @@ class ContinuousMiharaSupport {
       case 'doctor': {
         const results = await runConnectionDiagnostics();
         await generateDiagnosticReport(results);
-        return { tests: results.length, passed: results.filter(r => r.success).length };
+        return { tests: results.length, passed: results.filter((r) => r.success).length };
       }
       case 'offline:report': {
         await initializeOfflineSystem();
@@ -337,7 +357,10 @@ class ContinuousMiharaSupport {
 
   private async writeResult(data: unknown): Promise<void> {
     const file = path.join(this.humanOutbox, 'last_result.json');
-    await fs.writeFile(file, JSON.stringify({ timestamp: new Date().toISOString(), ...data }, null, 2));
+    await fs.writeFile(
+      file,
+      JSON.stringify({ timestamp: new Date().toISOString(), ...data }, null, 2),
+    );
   }
 
   private async archive(filePath: string): Promise<void> {
@@ -351,7 +374,9 @@ class ContinuousMiharaSupport {
         const content = await fs.readFile(filePath);
         await fs.writeFile(archived, content);
         await fs.unlink(filePath);
-      } catch { /* empty */ }
+      } catch {
+        /* empty */
+      }
     }
   }
 
@@ -382,7 +407,7 @@ class ContinuousMiharaSupport {
       monitoring: this.monitoringActive,
       lastHealthCheck: this.lastHealthCheck,
       activeAlerts: this.alerts.length,
-      criticalAlerts: this.alerts.filter(a => a.level === 'critical').length
+      criticalAlerts: this.alerts.filter((a) => a.level === 'critical').length,
     };
   }
 }
@@ -390,7 +415,7 @@ class ContinuousMiharaSupport {
 // Global support instance
 const globalMiharaSupport = new ContinuousMiharaSupport();
 
-export { globalMiharaSupport, ContinuousMiharaSupport };
+export { ContinuousMiharaSupport, globalMiharaSupport };
 
 // Execute continuous support if run directly
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -405,7 +430,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     await globalMiharaSupport.monitorContinuously(15); // Check every 15 minutes
   }
 
-  startContinuousSupport().catch(error => {
+  startContinuousSupport().catch((error) => {
     console.error('❌ Continuous support failed:', error);
     process.exit(1);
   });
