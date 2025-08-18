@@ -1,0 +1,429 @@
+/* 📊 Assessment Framework - TeAoMarama Unified Design */
+
+.assessment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  min-height: 100vh;
+}
+
+.assessment-header {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.assessment-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="koru" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,10 Q15,5 20,10 Q15,15 10,10" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23koru)"/></svg>');
+  opacity: 0.3;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0 0 1.25rem 0;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.tabs {
+  margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.rubric,
+.projects,
+.cultural {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.rubric h2,
+.projects h2,
+.cultural h2 {
+  color: #6366f1;
+  margin-bottom: 1.5rem;
+}
+
+.level-selector,
+.project-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.level-pill,
+.project-pill {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.level-pill:hover,
+.project-pill:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.level-pill.active,
+.project-pill.active {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+.level-details h3 {
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+}
+
+.level-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.criterion-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.criterion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.criterion-card h4 {
+  color: #6366f1;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.approaches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.approach h5 {
+  color: #374151;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.approach ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.approach li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.project-details h3 {
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.difficulty-badge {
+  background: #6366f1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-section {
+  background: #f9fafb;
+  border-left: 3px solid #6366f1;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.project-section h4 {
+  color: #6366f1;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+}
+
+.project-section p {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.project-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.project-section li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+.cultural-notice {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cultural-notice h3 {
+  color: #92400e;
+  margin: 0 0 0.75rem 0;
+}
+
+.cultural-notice p {
+  margin: 0;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.cultural-principles h3 {
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.cultural-principles p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.principle {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.principle h4 {
+  color: #6366f1;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.principle p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.cultural-guidelines h3 {
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.cultural-guidelines ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.cultural-guidelines li {
+  margin-bottom: 0.75rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.motto {
+  color: #6366f1;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.platform {
+  color: #475569;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .assessment-container {
+    padding: 1rem;
+  }
+
+  .assessment-header {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .criteria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approaches {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .level-selector,
+  .project-selector {
+    flex-direction: column;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rubric,
+.projects,
+.cultural {
+  animation: fadeUp 0.5s ease-out;
+}

@@ -1,68 +1,68 @@
 {
-  "timestamp": "2025-08-17T13:45:47.159Z",
-  "totalBundles": 22,
-  "totalSize": 686.38,
-  "totalGzipSize": 219.14,
+  "timestamp": "2025-08-18T13:30:59.938Z",
+  "totalBundles": 35,
+  "totalSize": 880.8499999999999,
+  "totalGzipSize": 273.10999999999996,
   "largestBundles": [
     {
-      "file": "markdown-vendor-BROyci8B",
-      "size": 222.47,
-      "gzipSize": 76.82,
-      "percentage": 32.41207494390862
+      "file": "markdown-vendor-B4Y7sXFB",
+      "size": 222.31,
+      "gzipSize": 76.87,
+      "percentage": 25.238122268263613
     },
     {
-      "file": "index-D6dVwOUY",
-      "size": 180.5,
-      "gzipSize": 57.75,
-      "percentage": 26.29738628747924
+      "file": "index-CtsaiWEi",
+      "size": 183.92,
+      "gzipSize": 58.55,
+      "percentage": 20.879831980473405
     },
     {
-      "file": "database-vendor-Dyv3s2ij",
-      "size": 121.91,
-      "gzipSize": 32.19,
-      "percentage": 17.761298406130717
-    },
-    {
-      "file": "ResourcesEnhanced-nZQOFuX4",
-      "size": 36.05,
-      "gzipSize": 9.63,
-      "percentage": 5.2521926629563795
+      "file": "database-vendor-DrBh9WPY",
+      "size": 121.85,
+      "gzipSize": 32.23,
+      "percentage": 13.833229267185107
     },
     {
       "file": "router-vendor-BX4HhqbZ",
       "size": 31.74,
       "gzipSize": 11.62,
-      "percentage": 4.6242606136542435
+      "percentage": 3.6033376851904415
+    },
+    {
+      "file": "Year8ReadingUnits-Buobw2dT",
+      "size": 31.07,
+      "gzipSize": 7.2,
+      "percentage": 3.527274791394676
     }
   ],
   "recommendations": [
     {
       "type": "critical",
-      "message": "Large bundle detected: database-vendor-Dyv3s2ij (121.91KB)",
+      "message": "Large bundle detected: database-vendor-DrBh9WPY (121.85KB)",
       "impact": "high",
       "action": "Consider code splitting or lazy loading for this module"
     },
     {
       "type": "critical",
-      "message": "Large bundle detected: index-D6dVwOUY (180.5KB)",
+      "message": "Large bundle detected: index-CtsaiWEi (183.92KB)",
       "impact": "high",
       "action": "Consider code splitting or lazy loading for this module"
     },
     {
       "type": "critical",
-      "message": "Large bundle detected: markdown-vendor-BROyci8B (222.47KB)",
+      "message": "Large bundle detected: markdown-vendor-B4Y7sXFB (222.31KB)",
       "impact": "high",
       "action": "Consider code splitting or lazy loading for this module"
     },
     {
       "type": "critical",
-      "message": "Markdown processing bundle is large: markdown-vendor-BROyci8B (222.47KB)",
+      "message": "Markdown processing bundle is large: markdown-vendor-B4Y7sXFB (222.31KB)",
       "impact": "high",
       "action": "Implement lazy loading for markdown processing - only load when needed"
     },
     {
       "type": "warning",
-      "message": "Database bundle is large: database-vendor-Dyv3s2ij (121.91KB)",
+      "message": "Database bundle is large: database-vendor-DrBh9WPY (121.85KB)",
       "impact": "medium",
       "action": "Consider lazy loading database operations"
     }

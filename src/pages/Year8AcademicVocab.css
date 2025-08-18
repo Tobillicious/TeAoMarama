@@ -82,7 +82,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   min-height: 100vh;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #333;
@@ -102,9 +102,9 @@
 .year8-vocab-title {
   font-size: 2.6rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #2C5F41 0%, #00b0b9 100%);
+  background: linear-gradient(135deg, #2c5f41 0%, #00b0b9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -130,7 +130,7 @@
 }
 
 .year8-focus h2 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.5rem;
   text-align: center;
@@ -156,7 +156,7 @@
 }
 
 .focus-card h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.15rem;
   font-weight: 600;
@@ -179,7 +179,7 @@
 }
 
 .practice-mode-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
   text-align: center;
@@ -211,7 +211,7 @@
 }
 
 .mode-btn.active {
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   color: white;
   box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
 }
@@ -227,7 +227,7 @@
 }
 
 .filters-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
 }
@@ -248,7 +248,7 @@
 
 .filter-group label {
   font-weight: 600;
-  color: #2C5F41;
+  color: #2c5f41;
   font-size: 0.95rem;
 }
 
@@ -267,7 +267,7 @@
 }
 
 .random-word-btn {
-  background: linear-gradient(135deg, #00b0b9 0%, #2C5F41 100%);
+  background: linear-gradient(135deg, #00b0b9 0%, #2c5f41 100%);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -308,14 +308,51 @@
 }
 
 .word-spotlight {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 700px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 3.5rem;
+  box-shadow: 0 15px 45px rgba(0, 176, 185, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.word-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-kowhaiwhai);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.word-spotlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--gradient-pounamu);
+  opacity: 0.08;
+  border-radius: 50%;
+  transform: translate(40px, -40px);
+}
+
+.word-spotlight:hover::before {
+  transform: scaleX(1);
+}
+
+.word-spotlight:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 176, 185, 0.25);
 }
 
 .word-header {
@@ -331,7 +368,10 @@
   flex-wrap: wrap;
 }
 
-.subject-badge, .difficulty-badge, .ncea-badge, .frequency-badge {
+.subject-badge,
+.difficulty-badge,
+.ncea-badge,
+.frequency-badge {
   padding: 0.5rem 1rem;
   border-radius: 16px;
   font-size: 0.85rem;
@@ -340,7 +380,7 @@
 }
 
 .subject-badge {
-  background: #2C5F41;
+  background: #2c5f41;
 }
 
 .ncea-badge {
@@ -354,7 +394,7 @@
 .featured-word {
   font-size: 4rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -372,12 +412,16 @@
   text-align: left;
 }
 
-.context-section, .cultural-connection, .synonyms-section {
+.context-section,
+.cultural-connection,
+.synonyms-section {
   margin-bottom: 2rem;
 }
 
-.context-section h4, .cultural-connection h4, .synonyms-section h4 {
-  color: #2C5F41;
+.context-section h4,
+.cultural-connection h4,
+.synonyms-section h4 {
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -449,12 +493,14 @@
   border: 2px solid #e0e0e0;
 }
 
-.morphemes-section, .code-components {
+.morphemes-section,
+.code-components {
   margin-bottom: 2rem;
 }
 
-.morphemes-section h4, .code-components h4 {
-  color: #2C5F41;
+.morphemes-section h4,
+.code-components h4 {
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -498,7 +544,7 @@
 }
 
 .sentence-building h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
@@ -519,12 +565,14 @@
   font-family: 'Times New Roman', serif;
 }
 
-.example-application, .practice-prompt {
+.example-application,
+.practice-prompt {
   margin-bottom: 2rem;
 }
 
-.example-application h5, .practice-prompt h5 {
-  color: #2C5F41;
+.example-application h5,
+.practice-prompt h5 {
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -564,7 +612,7 @@
 }
 
 .morpheme-analysis h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
@@ -576,12 +624,16 @@
   border: 2px solid #e0e0e0;
 }
 
-.morpheme-details, .phonics-analysis, .word-family {
+.morpheme-details,
+.phonics-analysis,
+.word-family {
   margin-bottom: 2rem;
 }
 
-.morpheme-details h5, .phonics-analysis h5, .word-family h5 {
-  color: #2C5F41;
+.morpheme-details h5,
+.phonics-analysis h5,
+.word-family h5 {
+  color: #2c5f41;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -632,7 +684,7 @@
 }
 
 .words-grid-section h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.4rem;
   text-align: center;
@@ -685,7 +737,7 @@
 .card-word {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 0.75rem;
   text-align: center;
 }
@@ -749,7 +801,7 @@
 }
 
 .teaching-strategies h3 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 2rem;
   font-size: 1.4rem;
   text-align: center;
@@ -775,7 +827,7 @@
 }
 
 .strategy-card h4 {
-  color: #2C5F41;
+  color: #2c5f41;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -808,7 +860,7 @@
 
 .cultural-motto {
   font-size: 1.2rem;
-  color: #2C5F41;
+  color: #2c5f41;
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-style: italic;
@@ -824,39 +876,39 @@
   .year8-vocab-container {
     padding: 1rem;
   }
-  
+
   .year8-vocab-header {
     padding: 2rem 1.5rem;
   }
-  
+
   .year8-vocab-title {
     font-size: 2.2rem;
   }
-  
+
   .filters-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .focus-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .academic-words-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .strategies-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .mode-buttons {
     flex-direction: column;
   }
-  
+
   .featured-word {
     font-size: 3rem;
   }
-  
+
   .morphemes-display {
     flex-direction: column;
   }
@@ -868,24 +920,24 @@
     background: white;
     padding: 1rem;
   }
-  
+
   .academic-word-card,
   .strategy-card {
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #ddd;
   }
-  
+
   .filters-section,
   .practice-mode-section {
     display: none;
   }
-  
+
   .random-word-btn,
   .breakdown-btn {
     display: none;
   }
-  
+
   .word-breakdown {
     display: block !important;
   }

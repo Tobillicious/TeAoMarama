@@ -1,45 +1,218 @@
-/* Year8ReadingStrategies Component Styles */
+/* Year8ReadingStrategies Component Styles - ENHANCED WITH TE KETE AKO BEAUTY */
 
-/* Dynamic Background Colors for Categories */
+/* =================================================================
+   TE KETE AKO CULTURAL DESIGN SYSTEM INTEGRATION
+   "Whaowhia te kete mātauranga" - Fill the basket of knowledge
+   ================================================================= */
+
+/* Cultural Color Variables - Te Ao Māori Contemporary */
+:root {
+  --color-pounamu: #1b7f5a; /* Sacred greenstone */
+  --color-pounamu-light: #4fd1c7; /* Jade shimmer */
+  --color-pounamu-lighter: #90e0c7; /* Light jade */
+  --color-pounamu-glow: rgba(27, 127, 90, 0.15); /* Jade glow */
+  --color-kauri: #8b5a3c; /* Ancient wood */
+  --color-whenua: #6b4e3d; /* Rich earth */
+  --color-rangi: #87ceeb; /* Sky father */
+  --color-kowhai: #f18f01; /* Golden flower */
+  --color-moana: #0081a7; /* Ocean deep */
+  --color-kahurangi: #0284c7; /* Sky blue */
+}
+
+/* Dynamic Background Colors for Categories - ENHANCED WITH CULTURAL PATTERNS */
 .strategy-spotlight.category-comprehension {
-  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-pounamu-lighter) 0%,
+    var(--color-pounamu-light) 100%
+  );
+  position: relative;
+}
+
+.strategy-spotlight.category-comprehension::before {
+  content: '🌿';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: gentle-float 3s ease-in-out infinite;
 }
 
 .strategy-spotlight.category-fluency {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  background: linear-gradient(135deg, var(--color-kowhai) 0%, #fdb462 100%);
+  position: relative;
+}
+
+.strategy-spotlight.category-fluency::before {
+  content: '🌊';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: gentle-float 3s ease-in-out infinite 0.5s;
 }
 
 .strategy-spotlight.category-vocabulary {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  background: linear-gradient(135deg, var(--color-rangi) 0%, var(--color-kahurangi) 100%);
+  position: relative;
+}
+
+.strategy-spotlight.category-vocabulary::before {
+  content: '☁️';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: gentle-float 3s ease-in-out infinite 1s;
 }
 
 .strategy-spotlight.category-critical-thinking {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  background: linear-gradient(135deg, var(--color-kauri) 0%, var(--color-whenua) 100%);
+  position: relative;
+}
+
+.strategy-spotlight.category-critical-thinking::before {
+  content: '🌳';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: gentle-float 3s ease-in-out infinite 1.5s;
 }
 
 .strategy-spotlight.category-cultural-literacy {
-  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
+  position: relative;
 }
 
-/* Dynamic Background Colors for Strategy Cards */
+.strategy-spotlight.category-cultural-literacy::before {
+  content: '💎';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: gentle-float 3s ease-in-out infinite 2s;
+}
+
+/* Cultural Animation - Gentle Floating Movement */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Dynamic Background Colors for Strategy Cards - ENHANCED WITH CULTURAL PATTERNS */
 .strategy-card.category-comprehension {
-  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-pounamu-lighter) 0%,
+    var(--color-pounamu-light) 100%
+  );
+  border-left: 4px solid var(--color-pounamu);
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-card.category-comprehension::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent var(--color-pounamu) transparent transparent;
+  opacity: 0.3;
 }
 
 .strategy-card.category-fluency {
-  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  background: linear-gradient(135deg, var(--color-kowhai) 0%, #fdb462 100%);
+  border-left: 4px solid var(--color-kowhai);
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-card.category-fluency::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent var(--color-kowhai) transparent transparent;
+  opacity: 0.3;
 }
 
 .strategy-card.category-vocabulary {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  background: linear-gradient(135deg, var(--color-rangi) 0%, var(--color-kahurangi) 100%);
+  border-left: 4px solid var(--color-kahurangi);
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-card.category-vocabulary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent var(--color-kahurangi) transparent transparent;
+  opacity: 0.3;
 }
 
 .strategy-card.category-critical-thinking {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  background: linear-gradient(135deg, var(--color-kauri) 0%, var(--color-whenua) 100%);
+  border-left: 4px solid var(--color-kauri);
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-card.category-critical-thinking::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent var(--color-kauri) transparent transparent;
+  opacity: 0.3;
 }
 
 .strategy-card.category-cultural-literacy {
-  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
+  border-left: 4px solid var(--color-pounamu);
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-card.category-cultural-literacy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent var(--color-pounamu) transparent transparent;
+  opacity: 0.3;
 }
 
 /* Dynamic Background Colors for Difficulty Levels */
@@ -76,26 +249,141 @@
   background-color: #9c27b0;
 }
 
-/* Component Structure */
+/* Component Structure - ENHANCED WITH TE KETE AKO BEAUTY */
 .strategy-showcase {
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.strategy-showcase::before {
+  content: '📚';
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  font-size: 3rem;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.strategy-showcase::after {
+  content: '🌿';
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  font-size: 2.5rem;
+  opacity: 0.1;
+  z-index: -1;
 }
 
 .strategy-spotlight {
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 25px var(--color-pounamu-glow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.9));
+  border: 1px solid rgba(27, 127, 90, 0.1);
+  margin-bottom: 2rem;
+}
+
+.strategy-spotlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px var(--color-pounamu-glow);
+  border-color: var(--color-pounamu);
+}
+
+/* Cultural Header Enhancement */
+.strategy-spotlight h2 {
+  color: var(--color-pounamu);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.strategy-spotlight h2::before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.strategy-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-pounamu);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.strategy-spotlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 176, 185, 0.1) 50%, transparent 70%);
+  transform: rotate(45deg) translate(20px, -20px);
   transition: all 0.3s ease;
 }
 
-.strategy-header {
-  margin-bottom: 1.5rem;
+.strategy-spotlight:hover::before {
+  transform: scaleX(1);
 }
 
+.strategy-spotlight:hover::after {
+  transform: rotate(45deg) translate(30px, -30px);
+  opacity: 0.8;
+}
+
+.strategy-spotlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 176, 185, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.95));
+}
+
+/* Enhanced Cultural Design Elements */
+.strategy-spotlight.cultural-focus {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.9));
+  border-left: 4px solid #d97706;
+}
+
+.strategy-spotlight.cultural-focus::before {
+  background: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24);
+}
+
+/* Enhanced Header Styling */
+.strategy-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.strategy-header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: var(--gradient-pounamu);
+  border-radius: 1px;
+}
+
+/* Enhanced Badge System */
 .strategy-badges {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .category-badge {
@@ -104,6 +392,30 @@
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
+  border: 1px solid rgba(0, 176, 185, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 176, 185, 0.1), transparent);
+  transition: left 0.3s ease;
+}
+
+.category-badge:hover::before {
+  left: 100%;
+}
+
+.category-badge:hover {
+  background: rgba(0, 176, 185, 0.1);
+  transform: translateY(-1px);
 }
 
 .difficulty-badge {
@@ -112,20 +424,72 @@
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.difficulty-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.difficulty-badge:hover::before {
+  transform: translateX(100%);
+}
+
+/* Enhanced Typography */
 .strategy-name {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1f2937;
+  background: linear-gradient(135deg, #1f2937, #374151);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.strategy-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-pounamu);
+  transition: width 0.3s ease;
+}
+
+.strategy-spotlight:hover .strategy-name::after {
+  width: 100%;
 }
 
 .strategy-description {
   color: #6b7280;
   line-height: 1.6;
+  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
+.strategy-spotlight:hover .strategy-description {
+  color: #4b5563;
+}
+
+/* Enhanced Content Sections */
 .strategy-details {
   display: grid;
   gap: 1.5rem;
@@ -139,181 +503,271 @@
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
 }
 
+.steps-section h4::before,
+.cultural-application h4::before,
+.text-types h4::before,
+.ncea-connection h4::before,
+.examples-section h4::before {
+  content: '';
+  width: 4px;
+  height: 1.2em;
+  background: var(--gradient-pounamu);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.strategy-spotlight:hover .steps-section h4::before,
+.strategy-spotlight:hover .cultural-application h4::before,
+.strategy-spotlight:hover .text-types h4::before,
+.strategy-spotlight:hover .ncea-connection h4::before,
+.strategy-spotlight:hover .examples-section h4::before {
+  width: 8px;
+}
+
+/* Enhanced List Styling */
 .strategy-steps {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .strategy-steps li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
-  padding-left: 1.5rem;
+  padding: 0.75rem 0 0.75rem 2rem;
+  border-left: 2px solid rgba(0, 176, 185, 0.2);
+  margin-left: 1rem;
+  transition: all 0.2s ease;
 }
 
-.strategy-steps li:before {
-  content: counter(step-counter);
-  counter-increment: step-counter;
+.strategy-steps li::before {
+  content: '';
   position: absolute;
-  left: 0;
-  top: 0.5rem;
-  background: #3b82f6;
-  color: white;
-  width: 1.25rem;
-  height: 1.25rem;
+  left: -0.5rem;
+  top: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--gradient-pounamu);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 600;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
-.strategy-steps {
-  counter-reset: step-counter;
+.strategy-steps li:hover {
+  border-left-color: rgba(0, 176, 185, 0.6);
+  background: rgba(0, 176, 185, 0.02);
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin-left: 0.5rem;
+  padding-left: 2.5rem;
 }
 
-.cultural-application p {
-  color: #6b7280;
-  line-height: 1.6;
+.strategy-steps li:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.strategy-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+/* Enhanced Cultural Application Styling */
+.cultural-application {
+  background: linear-gradient(135deg, rgba(255, 248, 240, 0.5), rgba(254, 243, 199, 0.3));
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.text-type-tags {
+.cultural-application::before {
+  content: '🌿';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.strategy-spotlight:hover .cultural-application::before {
+  opacity: 0.6;
+}
+
+/* Enhanced Text Types Styling */
+.text-types {
+  background: linear-gradient(135deg, rgba(240, 249, 255, 0.5), rgba(219, 234, 254, 0.3));
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.text-types ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.text-type-tag {
+.text-types li {
   background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.ncea-connection p {
-  color: #6b7280;
-  line-height: 1.6;
-}
-
-.examples-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.example-item {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1rem;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
-  border-left: 4px solid #3b82f6;
-  font-style: italic;
-  color: #4b5563;
-}
-
-/* Strategies Grid */
-.strategies-grid-section {
-  margin-top: 2rem;
-}
-
-.strategies-grid-section h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1f2937;
-}
-
-.strategies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.strategy-card {
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.strategy-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.card-category-icon {
-  font-size: 1.5rem;
-}
-
-.card-difficulty-dot {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-}
-
-.card-strategy-name {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-.card-description {
-  color: #6b7280;
   font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-}
-
-.card-category {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
   font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.2s ease;
 }
 
-.card-difficulty {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.text-types li:hover {
+  background: rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
 }
 
-/* Responsive Design */
+/* Enhanced NCEA Connection Styling */
+.ncea-connection {
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.5), rgba(254, 226, 226, 0.3));
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  position: relative;
+}
+
+.ncea-connection::after {
+  content: '🎓';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+/* Enhanced Examples Styling */
+.examples-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.examples-section li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(0, 176, 185, 0.3);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.examples-section li::before {
+  content: '💡';
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.examples-section li {
+  padding-left: 2.5rem;
+}
+
+.examples-section li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-left-color: rgba(0, 176, 185, 0.6);
+  transform: translateX(0.25rem);
+}
+
+/* Enhanced Responsive Design */
 @media (max-width: 768px) {
-  .strategy-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .strategies-grid {
-    grid-template-columns: 1fr;
-  }
-
   .strategy-spotlight {
     padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .strategy-name {
+    font-size: 1.25rem;
+  }
+
+  .strategy-badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text-types ul {
+    flex-direction: column;
+  }
+
+  .strategy-steps li {
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .strategy-steps li::before {
+    left: -0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+/* Enhanced Loading States */
+.strategy-spotlight.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.strategy-spotlight.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Enhanced Focus States for Accessibility */
+.strategy-spotlight:focus-within {
+  outline: 2px solid rgba(0, 176, 185, 0.5);
+  outline-offset: 2px;
+}
+
+.strategy-steps li:focus-within {
+  background: rgba(0, 176, 185, 0.05);
+  border-left-color: rgba(0, 176, 185, 0.8);
+}
+
+/* Enhanced Print Styles */
+@media print {
+  .strategy-spotlight {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+    background: white;
+  }
+
+  .strategy-spotlight::before,
+  .strategy-spotlight::after {
+    display: none;
+  }
+
+  .strategy-badges {
+    display: none;
   }
 }
