@@ -1,6 +1,7 @@
 import { Suspense, lazy, memo, useMemo } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { LLMPerformanceDashboard } from './components/LLMPerformanceDashboard';
 import Navigation from './components/Navigation';
 
 // Lazy load components for code splitting with preloading
@@ -32,6 +33,15 @@ const Year8SocialStudiesUnits = lazy(() => import('./pages/Year8SocialStudiesUni
 const ScienceIntegration = lazy(() => import('./pages/ScienceIntegration'));
 const AssessmentFramework = lazy(() => import('./pages/AssessmentFramework'));
 const LessonsIntegration = lazy(() => import('./pages/LessonsIntegration'));
+const MaoriAstronomyNavigation = lazy(
+  () => import('./components/educational/handouts/MaoriAstronomyNavigation'),
+);
+const HealthEducationCorrelation = lazy(
+  () => import('./components/educational/handouts/HealthEducationCorrelation'),
+);
+const DesignThinkingProcess = lazy(
+  () => import('./components/educational/handouts/DesignThinkingProcess'),
+);
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -90,6 +100,9 @@ function App() {
       { path: '/science-integration', element: <ScienceIntegration /> },
       { path: '/assessment-framework', element: <AssessmentFramework /> },
       { path: '/lessons-integration', element: <LessonsIntegration /> },
+      { path: '/maori-astronomy-navigation', element: <MaoriAstronomyNavigation /> },
+      { path: '/health-education-correlation', element: <HealthEducationCorrelation /> },
+      { path: '/design-thinking-process', element: <DesignThinkingProcess /> },
     ],
     [],
   );
@@ -100,16 +113,23 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navigation />
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          {routes.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
-        </Routes>
-      </Suspense>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-50">
+        <Navigation />
+        <main className="flex-1">
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              {routes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+            </Routes>
+          </Suspense>
+        </main>
+
+        {/* 🚀 LLM Performance Dashboard */}
+        <LLMPerformanceDashboard />
+      </div>
+    </BrowserRouter>
   );
 }
 
