@@ -1,12 +1,4 @@
-import {
-  User,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-} from 'firebase/auth';
-import { useEffect, useState, type ReactNode } from 'react';
-import { auth } from '../firebaseConfig';
+import { useState, type ReactNode } from 'react';
 import { AuthContext } from './AuthContextObject.tsx';
 
 interface AuthProviderProps {
@@ -14,38 +6,30 @@ interface AuthProviderProps {
 }
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [currentUser] = useState(null);
+  const [loading] = useState(false); // Set to false to avoid loading state
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  const signUp = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  // Simplified auth provider for ERO hui - Firebase disabled temporarily
+  const signUp = async () => {
+    return { data: { user: null }, error: { message: 'Auth temporarily disabled' } };
   };
 
-  const logIn = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const logIn = async () => {
+    return { data: { user: null }, error: { message: 'Auth temporarily disabled' } };
   };
 
-  const logOut = () => {
-    return signOut(auth);
+  const logOut = async () => {
+    return { error: null };
   };
 
   const value = {
     currentUser,
-    session: null, // Firebase doesn't use sessions like Supabase
+    session: null,
     loading,
     signUp,
     logIn,
     logOut,
   };
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

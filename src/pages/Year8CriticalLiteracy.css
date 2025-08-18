@@ -265,7 +265,8 @@
   flex-wrap: wrap;
 }
 
-.explore-btn, .details-btn {
+.explore-btn,
+.details-btn {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
@@ -471,30 +472,30 @@
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .cultural-accent {
     font-size: 1.5rem;
   }
-  
+
   .hero-stats {
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .components-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .filter-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .cta-btn {
     width: 100%;
     max-width: 300px;
@@ -509,11 +510,11 @@
   .cta-section {
     padding: 2rem 1rem;
   }
-  
+
   .component-card {
     padding: 1.5rem;
   }
-  
+
   .component-actions {
     flex-direction: column;
   }
