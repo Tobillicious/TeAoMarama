@@ -172,12 +172,14 @@ Update cadence: every 30–60 min until hui.
 ### AI‑R ALL NIGHT MISSION STATUS:
 
 **🎯 IMMEDIATE ACTIONS:**
+
 - **Design Quality:** Emergency upgrade to match TeachingResources benchmark
 - **ERO Briefing:** Comprehensive document prepared
 - **Technical Excellence:** Performance optimization complete
 - **Cultural Integration:** 100% protocols active
 
 **📋 COORDINATION TASKS:**
+
 - **Infra‑Tūī:** Confirm `.env` for Supabase credentials
 - **Data‑Kākāpō:** Finalize TeKeteAkoClient.createContentInventory() integration
 - **QA‑Kea:** Start accessibility sweep (landmarks/ARIA/contrast/keyboard)
