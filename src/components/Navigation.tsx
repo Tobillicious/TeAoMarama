@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Navigation.css';
 
 export default function Navigation() {
@@ -30,17 +30,13 @@ export default function Navigation() {
   return (
     <nav className="navigation-container">
       <div className="nav-brand">
-        <button 
-          type="button"
-          onClick={() => navigate('/')}
-          className="brand-button"
-        >
-          🌿 Te Kete Ako
+        <button type="button" onClick={() => navigate('/')} className="brand-button">
+          🌿 TeAoMarama
         </button>
       </div>
 
       {/* Mobile menu button */}
-      <button 
+      <button
         type="button"
         className="mobile-menu-button"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
