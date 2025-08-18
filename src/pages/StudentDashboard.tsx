@@ -176,7 +176,7 @@ const StudentDashboard: React.FC = () => {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className={`progress-bar-fill progress-bar-fill-${Math.round(progress)}`}
+              className={`progress-bar-fill progress-bar-fill-${Math.round(progressPercent)}`}
             ></div>
           </div>
         </div>
