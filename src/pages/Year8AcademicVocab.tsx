@@ -526,16 +526,14 @@ export default function Year8AcademicVocab() {
         <h3>📚 Year 8 Academic Word Bank ({filteredWords.length})</h3>
         <div className="academic-words-grid">
           {filteredWords.map((word) => (
-                            <div 
-                  key={word.id} 
-                  className={`academic-word-card subject-${word.subjectArea}`}
-                  onClick={() => setCurrentWord(word)}
-                >
+            <div
+              key={word.id}
+              className={`academic-word-card subject-${word.subjectArea}`}
+              onClick={() => setCurrentWord(word)}
+            >
               <div className="card-header">
                 <span className="card-subject-icon">{getSubjectIcon(word.subjectArea)}</span>
-                                 <span 
-                   className={`card-difficulty-dot difficulty-${word.difficulty}`}
-                 ></span>
+                <span className={`card-difficulty-dot difficulty-${word.difficulty}`}></span>
                 {word.nceaRelevance && <span className="card-ncea">⭐</span>}
               </div>
 
