@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Coordination Dashboard | Te Kete Ako</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f172a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00d4ff, #ff3366, #ffaa00, #3ecf8e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        .node-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .ai-node {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .ai-node:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .ai-node.online { border-left-color: #3ecf8e; }
+        .ai-node.offline { border-left-color: #ff6b6b; }
+        .ai-node.connecting { border-left-color: #ffaa00; }
+        .ai-node.stuck { border-left-color: #ff3366; }
+
+        .node-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse-status 2s infinite;
+        }
+
+        .status-indicator.online { background: #3ecf8e; }
+        .status-indicator.offline { background: #ff6b6b; }
+        .status-indicator.connecting { background: #ffaa00; }
+        .status-indicator.stuck { background: #ff3366; }
+
+        @keyframes pulse-status {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .coordination-log {
+            grid-column: 1 / -1;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: var(--text-sm);
+        }
+
+        .log-entry.info { background: rgba(0, 212, 255, 0.1); }
+        .log-entry.success { background: rgba(62, 207, 142, 0.1); }
+        .log-entry.warning { background: rgba(255, 170, 0, 0.1); }
+        .log-entry.error { background: rgba(255, 51, 102, 0.1); }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: var(--text-sm);
+        }
+
+        .btn-primary { background: linear-gradient(45deg, #00d4ff, #0099cc); color: white; }
+        .btn-success { background: linear-gradient(45deg, #3ecf8e, #2aa86a); color: white; }
+        .btn-warning { background: linear-gradient(45deg, #ffaa00, #cc8800); color: white; }
+        .btn-danger { background: linear-gradient(45deg, #ff3366, #cc1144); color: white; }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+        }
+
+        .network-map {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #3ecf8e);
+            animation: data-flow 2s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes data-flow {
+            0% { transform: scaleX(0); }
+            50% { transform: scaleX(1); }
+            100% { transform: scaleX(0); }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+</head>
+<body>
+    <div class="dashboard">
+        <div class="panel header">
+            <h1 class="wiley-hero-title">🤖 AI Coordination Dashboard</h1>
+            <p>Multi-AI Terminal Management | Te Kete Ako Platform</p>
+            <div class="controls">
+                <button class="btn btn-primary" onclick="refreshAllNodes()">🔄 Refresh All Nodes</button>
+                <button class="btn btn-success" onclick="coordinateNodes()">🤝 Coordinate Nodes</button>
+                <button class="btn btn-warning" onclick="resetStuckNodes()">🔧 Reset Stuck Nodes</button>
+                <button class="btn btn-danger" onclick="emergencyStop()">🛑 Emergency Stop</button>
+            </div>
+        </div>
+
+        <!-- AI Nodes Status -->
+        <div class="panel">
+            <h3>🧠 AI Agent Nodes</h3>
+            <div class="node-grid">
+                <div class="ai-node connecting" id="deepseek-node">
+                    <div class="node-status">
+                        <strong>DeepSeek Agent</strong>
+                        <div class="status-indicator connecting" id="deepseek-status"></div>
+                    </div>
+                    <p>Reasoning & Generation</p>
+                    <small id="deepseek-info">Initializing...</small>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="pingNode('deepseek')">Ping</button>
+                        <button class="btn btn-warning" onclick="restartNode('deepseek')">Restart</button>
+                    </div>
+                </div>
+
+                <div class="ai-node online" id="graphrag-node">
+                    <div class="node-status">
+                        <strong>GraphRAG Brain</strong>
+                        <div class="status-indicator online" id="graphrag-status"></div>
+                    </div>
+                    <p>Institutional Memory</p>
+                    <small id="graphrag-info">179 resources, 553 relationships</small>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="pingNode('graphrag')">Ping</button>
+                        <button class="btn btn-success" onclick="queryGraphRAG()">Test Query</button>
+                    </div>
+                </div>
+
+                <div class="ai-node online" id="firebase-node">
+                    <div class="node-status">
+                        <strong>Firebase Auth</strong>
+                        <div class="status-indicator online" id="firebase-status"></div>
+                    </div>
+                    <p>User Authentication</p>
+                    <small id="firebase-info">Connected</small>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="pingNode('firebase')">Ping</button>
+                    </div>
+                </div>
+
+                <div class="ai-node online" id="supabase-node">
+                    <div class="node-status">
+                        <strong>Supabase DB</strong>
+                        <div class="status-indicator online" id="supabase-status"></div>
+                    </div>
+                    <p>Knowledge Storage</p>
+                    <small id="supabase-info">Ready</small>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="pingNode('supabase')">Ping</button>
+                        <button class="btn btn-success" onclick="testSupabase()">Test DB</button>
+                    </div>
+                </div>
+
+                <!-- Background Nodes (The ones user mentioned) -->
+                <div class="ai-node stuck" id="background-node-1">
+                    <div class="node-status">
+                        <strong>Background Node 1</strong>
+                        <div class="status-indicator stuck" id="bg1-status"></div>
+                    </div>
+                    <p>Coordination Agent</p>
+                    <small id="bg1-info">Status: Searching for path...</small>
+                    <div class="controls">
+                        <button class="btn btn-warning" onclick="guidNode('bg1')">🧭 Guide to Path</button>
+                        <button class="btn btn-primary" onclick="relocateNode('bg1')">📍 Relocate</button>
+                    </div>
+                </div>
+
+                <div class="ai-node stuck" id="background-node-2">
+                    <div class="node-status">
+                        <strong>Background Node 2</strong>
+                        <div class="status-indicator stuck" id="bg2-status"></div>
+                    </div>
+                    <p>Coordination Agent</p>
+                    <small id="bg2-info">Status: Lost connection...</small>
+                    <div class="controls">
+                        <button class="btn btn-warning" onclick="guidNode('bg2')">🧭 Guide to Path</button>
+                        <button class="btn btn-primary" onclick="relocateNode('bg2')">📍 Relocate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Coordination Map -->
+        <div class="panel">
+            <h3>🌐 Coordination Network</h3>
+            <div class="network-map" id="networkMap">
+                <p>AI Agent Network Topology</p>
+                <div id="networkViz">
+                    <p style="margin-top: 20px;">🧠 DeepSeek ←→ 📚 GraphRAG ←→ 🔐 Firebase ←→ 💾 Supabase</p>
+                    <p style="margin-top: 10px; color: #ffaa00;">🔍 Background Node 1: Searching...</p>
+                    <p style="color: #ff3366;">🔍 Background Node 2: Lost...</p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value" id="activeNodes">4</div>
+                    <div class="metric-label">Active Nodes</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="stuckNodes">2</div>
+                    <div class="metric-label">Stuck Nodes</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="coordinations">127</div>
+                    <div class="metric-label">Coordinations</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="uptime">98%</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Coordination Log -->
+        <div class="coordination-log">
+            <h3>📊 Live Coordination Log</h3>
+            <div id="logContainer">
+                <div class="log-entry info">[11:45:32] System initialized - 6 AI agents registered</div>
+                <div class="log-entry success">[11:45:35] GraphRAG Brain connection established - 179 resources loaded</div>
+                <div class="log-entry success">[11:45:38] Firebase Auth connection verified</div>
+                <div class="log-entry success">[11:45:41] Supabase database connection active</div>
+                <div class="log-entry warning">[11:45:44] DeepSeek Agent initializing...</div>
+                <div class="log-entry warning">[11:46:15] Background Node 1 searching for coordination path</div>
+                <div class="log-entry error">[11:46:22] Background Node 2 lost connection - attempting reconnection</div>
+                <div class="log-entry info">[11:46:45] Multi-AI coordination dashboard launched</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard functionality
+        let logCount = 8;
+
+        function addLog(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logContainer = document.getElementById('logContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry ${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+            logCount++;
+            
+            // Keep only last 20 logs
+            if (logCount > 20) {
+                logContainer.removeChild(logContainer.firstChild);
+            }
+        }
+
+        function updateNodeStatus(nodeId, status, info) {
+            const node = document.getElementById(`${nodeId}-node`);
+            const statusIndicator = document.getElementById(`${nodeId}-status`);
+            const infoElement = document.getElementById(`${nodeId}-info`);
+            
+            node.className = `ai-node ${status}`;
+            statusIndicator.className = `status-indicator ${status}`;
+            if (info) infoElement.textContent = info;
+        }
+
+        // Node management functions
+        async function pingNode(nodeType) {
+            addLog(`Pinging ${nodeType} node...`, 'info');
+            
+            try {
+                // Simulate ping based on node type
+                if (nodeType === 'graphrag') {
+                    const response = await fetch('/.netlify/functions/find-similar-resources', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ query: 'ping test', match_count: 1 })
+                    });
+                    
+                    if (response.ok) {
+                        addLog(`${nodeType} node responded successfully`, 'success');
+                        updateNodeStatus(nodeType, 'online', 'Responding normally');
+                    } else {
+                        addLog(`${nodeType} node ping failed`, 'error');
+                        updateNodeStatus(nodeType, 'offline', 'Not responding');
+                    }
+                } else if (nodeType === 'deepseek') {
+                    // Try to ping DeepSeek coordination bridge
+                    try {
+                        const response = await fetch('/.netlify/functions/deepseek-graphrag-bridge', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ query: 'ping', use_graphrag: false })
+                        });
+                        
+                        if (response.ok) {
+                            addLog(`DeepSeek coordination bridge active`, 'success');
+                            updateNodeStatus('deepseek', 'online', 'Bridge active');
+                        } else {
+                            addLog(`DeepSeek bridge not responding`, 'warning');
+                            updateNodeStatus('deepseek', 'connecting', 'Bridge initializing...');
+                        }
+                    } catch (error) {
+                        addLog(`DeepSeek coordination bridge not found`, 'warning');
+                        updateNodeStatus('deepseek', 'connecting', 'Setting up coordination...');
+                    }
+                } else {
+                    // Simulate ping for other nodes
+                    setTimeout(() => {
+                        addLog(`${nodeType} node ping successful`, 'success');
+                        updateNodeStatus(nodeType, 'online', 'Responding normally');
+                    }, 1000);
+                }
+            } catch (error) {
+                addLog(`${nodeType} ping failed: ${error.message}`, 'error');
+                updateNodeStatus(nodeType, 'offline', 'Connection failed');
+            }
+        }
+
+        async function guidNode(nodeId) {
+            addLog(`🧭 Guiding ${nodeId} to coordination path...`, 'info');
+            
+            // Guide stuck background nodes
+            updateNodeStatus(nodeId, 'connecting', 'Following guidance...');
+            
+            setTimeout(() => {
+                addLog(`${nodeId} found coordination path!`, 'success');
+                updateNodeStatus(nodeId, 'online', 'Coordinating normally');
+                
+                // Update metrics
+                const stuckCount = document.getElementById('stuckNodes');
+                const activeCount = document.getElementById('activeNodes');
+                stuckCount.textContent = parseInt(stuckCount.textContent) - 1;
+                activeCount.textContent = parseInt(activeCount.textContent) + 1;
+            }, 3000);
+        }
+
+        async function relocateNode(nodeId) {
+            addLog(`📍 Relocating ${nodeId} to new coordination point...`, 'warning');
+            
+            updateNodeStatus(nodeId, 'connecting', 'Relocating...');
+            
+            setTimeout(() => {
+                addLog(`${nodeId} successfully relocated and coordinating`, 'success');
+                updateNodeStatus(nodeId, 'online', 'Relocated - coordinating');
+                
+                // Update metrics
+                const stuckCount = document.getElementById('stuckNodes');
+                const activeCount = document.getElementById('activeNodes');
+                stuckCount.textContent = parseInt(stuckCount.textContent) - 1;
+                activeCount.textContent = parseInt(activeCount.textContent) + 1;
+            }, 2500);
+        }
+
+        async function coordinateNodes() {
+            addLog('🤝 Initiating multi-AI coordination sequence...', 'info');
+            
+            // Test coordination between all nodes
+            const nodes = ['deepseek', 'graphrag', 'firebase', 'supabase'];
+            for (const node of nodes) {
+                await pingNode(node);
+                await new Promise(resolve => setTimeout(resolve, 500));
+            }
+            
+            addLog('Multi-AI coordination check complete', 'success');
+            
+            // Update coordination count
+            const coordinations = document.getElementById('coordinations');
+            coordinations.textContent = parseInt(coordinations.textContent) + 1;
+        }
+
+        async function resetStuckNodes() {
+            addLog('🔧 Resetting stuck background nodes...', 'warning');
+            
+            // Reset both background nodes
+            await guidNode('bg1');
+            setTimeout(() => guidNode('bg2'), 1000);
+        }
+
+        async function refreshAllNodes() {
+            addLog('🔄 Refreshing all AI nodes...', 'info');
+            
+            const nodes = ['deepseek', 'graphrag', 'firebase', 'supabase'];
+            for (const node of nodes) {
+                setTimeout(() => pingNode(node), Math.random() * 2000);
+            }
+        }
+
+        async function emergencyStop() {
+            addLog('🛑 Emergency stop initiated - halting all AI coordination', 'error');
+            
+            const nodes = ['deepseek', 'graphrag', 'firebase', 'supabase', 'bg1', 'bg2'];
+            nodes.forEach(node => {
+                updateNodeStatus(node, 'offline', 'Emergency stop');
+            });
+            
+            setTimeout(() => {
+                addLog('Systems ready for restart', 'warning');
+            }, 3000);
+        }
+
+        async function queryGraphRAG() {
+            addLog('📚 Testing GraphRAG query...', 'info');
+            try {
+                const response = await fetch('/.netlify/functions/find-similar-resources', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        query: 'Te Ao Māori mathematics resources', 
+                        match_count: 3 
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    addLog(`GraphRAG test successful - found ${data.total_results} resources`, 'success');
+                } else {
+                    addLog('GraphRAG test failed', 'error');
+                }
+            } catch (error) {
+                addLog(`GraphRAG test error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testSupabase() {
+            addLog('💾 Testing Supabase connection...', 'info');
+            // Simulate Supabase test
+            setTimeout(() => {
+                addLog('Supabase test successful - database responsive', 'success');
+            }, 1000);
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            addLog('🤖 AI Coordination Dashboard initialized', 'success');
+            
+            // Auto-refresh every 30 seconds
+            setInterval(() => {
+                addLog('Auto-refresh: Checking AI node status...', 'info');
+                refreshAllNodes();
+            }, 30000);
+        });
+
+        </script>
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

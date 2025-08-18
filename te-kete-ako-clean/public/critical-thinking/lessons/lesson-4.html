@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Kete Ako | Critical Thinking - Lesson 4: Logic & Reasoning</title>
+    
+    
+    
+    <link rel="stylesheet" href="../../../css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+<body data-auto-init="true">
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="lesson-header">
+            <h1 class="wiley-hero-title">Logic & Reasoning</h1>
+            <p class="lesson-meta"><strong>Critical Thinking Unit - Lesson 4 of 22</strong> | Year 9-10 | Social Studies</p>
+        </div>
+
+        <section class="maori-theme">
+            <h2 class="wiley-section-title">🌿 Whakataukī (Māori Proverb)</h2>
+            <p><em>"He aha te mea nui o te ao? He tangata, he tangata, he tangata"</em></p>
+            <p><strong>Meaning:</strong> What is the most important thing in the world? It is people, it is people, it is people</p>
+            <p>Today we learn that good reasoning serves people - it helps us make better decisions and understand truth together. In te ao Māori, wisdom comes through collective reasoning and listening to all voices.</p>
+        </section>
+
+        <section class="learning-objectives">
+            <h2 class="wiley-section-title">🎯 Learning Objectives</h2>
+            <p>By the end of this lesson, you will be able to:</p>
+            <ul>
+                <li>Identify different types of logical reasoning (deductive, inductive, abductive)</li>
+                <li>Recognize common logical fallacies in arguments</li>
+                <li>Construct well-reasoned arguments with clear premises and conclusions</li>
+                <li>Apply Māori approaches to collective reasoning and decision-making</li>
+                <li>Use the SIFT method to evaluate the logical structure of claims</li>
+            </ul>
+        </section>
+
+        <div class="curriculum-links">
+            <h3>📋 NZ Curriculum Alignment</h3>
+            <p><strong>Social Studies Level 5:</strong> Understand how people make decisions about values and social issues (Achievement Objective 5.3)</p>
+            <p><strong>English Level 5:</strong> Show understanding of ideas within, across, and beyond texts, including how writers structure and control texts</p>
+            <p><strong>Key Competencies:</strong> Thinking, Managing self, Relating to others</p>
+            <p><strong>Te Marautanga o Aotearoa:</strong> Te whakatakoto whakaaro me te whakamātau i ngā kōrero</p>
+        </div>
+
+        <section class="interactive">
+            <h2 class="wiley-section-title">🔍 Engage: Reasoning in Daily Life</h2>
+            <p>We use reasoning constantly! Click each scenario to see different types of reasoning at work:</p>
+            <div>
+                <button class="btn-interactive" onclick="showReasoning(1)">🌧️ Weather Decision</button>
+                <button class="btn-interactive" onclick="showReasoning(2)">🏫 School Choice</button>
+                <button class="btn-interactive" onclick="showReasoning(3)">🗳️ Voting Decision</button>
+            </div>
+            <div id="reasoning-display" class="argument-example"></div>
+        </section>
+
+        <section>
+            <h2 class="wiley-section-title">🧠 Explore: Types of Logical Reasoning</h2>
+            <div class="reasoning-types">
+                <div class="content-card">
+                    <h3>🔬 Deductive Reasoning</h3>
+                    <p><strong>Pattern:</strong> General rule → Specific case → Certain conclusion</p>
+                    <div class="nz-example">
+                        <p><strong>NZ Example:</strong></p>
+                        <p>• All NZ citizens can vote at 18<br>
+                        • Aroha is a NZ citizen who is 19<br>
+                        • Therefore, Aroha can vote</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>🔍 Inductive Reasoning</h3>
+                    <p><strong>Pattern:</strong> Specific observations → General pattern → Probable conclusion</p>
+                    <div class="nz-example">
+                        <p><strong>NZ Example:</strong></p>
+                        <p>• Wellington has been windy every day this week<br>
+                        • It was windy last week too<br>
+                        • Therefore, Wellington is probably a windy city</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>💡 Abductive Reasoning</h3>
+                    <p><strong>Pattern:</strong> Observation → Best explanation → Likely conclusion</p>
+                    <div class="nz-example">
+                        <p><strong>NZ Example:</strong></p>
+                        <p>• The kauri trees are dying<br>
+                        • There's a known disease called kauri dieback<br>
+                        • The trees probably have kauri dieback disease</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <h3>🤝 Activity: Reasoning Detective</h3>
+                <p>In groups of 3, examine the following NZ-based scenarios and identify the type of reasoning used. Be prepared to explain your choices:</p>
+                <ol>
+                    <li>"Every All Blacks game I've watched this year, they've won. They'll probably win today too."</li>
+                    <li>"All public transport in Auckland requires a HOP card. I need to catch the bus, so I need a HOP card."</li>
+                    <li>"My phone battery died suddenly, and I noticed it's been getting hot lately. It probably needs replacing."</li>
+                </ol>
+                <p><strong>Time:</strong> 10 minutes</p>
+            </div>
+        </section>
+
+        <section class="maori-theme">
+            <h2 class="wiley-section-title">🌺 Te Ao Māori: Collective Reasoning</h2>
+            <p>In Māori tradition, decision-making often follows collective reasoning processes:</p>
+            <ul>
+                <li><strong>Whakatōhea:</strong> Gathering diverse perspectives before making judgments</li>
+                <li><strong>Kōrerorero:</strong> Discussion that considers past, present, and future impacts</li>
+                <li><strong>Whakatōtanga:</strong> Reaching consensus through reasoned dialogue</li>
+                <li><strong>Whakapapa thinking:</strong> Understanding connections and relationships in reasoning</li>
+            </ul>
+            <p>This approach values the collective wisdom and ensures decisions benefit the whole whānau/community.</p>
+        </section>
+
+        <section>
+            <h2 class="wiley-section-title">🚫 Common Logical Fallacies</h2>
+            <p>Understanding fallacies helps us spot weak reasoning. Here are some common ones in New Zealand contexts:</p>
+            
+            <div class="fallacy-card">
+                <h4>🎯 Ad Hominem (Attacking the Person)</h4>
+                <p><strong>Example:</strong> "Don't listen to her views on housing policy - she's too young to understand."</p>
+                <p><strong>Why it's wrong:</strong> Age doesn't automatically invalidate someone's reasoning about policy.</p>
+            </div>
+
+            <div class="fallacy-card">
+                <h4>🌊 Bandwagon Fallacy</h4>
+                <p><strong>Example:</strong> "Everyone's moving to Australia, so it must be better than NZ."</p>
+                <p><strong>Why it's wrong:</strong> Popular choices aren't automatically correct choices.</p>
+            </div>
+
+            <div class="fallacy-card">
+                <h4>⚡ False Cause</h4>
+                <p><strong>Example:</strong> "Since the new government came in, house prices rose. The government caused high house prices."</p>
+                <p><strong>Why it's wrong:</strong> Correlation doesn't equal causation - many factors affect house prices.</p>
+            </div>
+
+            <div class="fallacy-card">
+                <h4>🎭 Straw Man</h4>
+                <p><strong>Example:</strong> "You support the smoking ban? So you want to control every aspect of people's lives!"</p>
+                <p><strong>Why it's wrong:</strong> This misrepresents the original position to make it easier to attack.</p>
+            </div>
+
+            <div class="activity">
+                <h3>🕵️ Fallacy Hunt</h3>
+                <p>Find examples of these fallacies in:</p>
+                <ul>
+                    <li>Social media posts about New Zealand issues</li>
+                    <li>Letters to the editor in NZ newspapers</li>
+                    <li>Political debates or speeches</li>
+                </ul>
+                <p>Document one example and explain why it's a fallacy. Share with a partner.</p>
+                <p><strong>Time:</strong> 15 minutes</p>
+            </div>
+        </section>
+
+        <section class="logic-structure">
+            <h2 class="wiley-section-title">🏗️ Building Strong Arguments</h2>
+            <p>A well-constructed argument has three key parts:</p>
+            <ol>
+                <li><strong>Premises:</strong> The evidence or reasons you're starting with</li>
+                <li><strong>Logic:</strong> How your premises connect to your conclusion</li>
+                <li><strong>Conclusion:</strong> What you're arguing for</li>
+            </ol>
+
+            <div class="interactive">
+                <h3>🎯 Practice: Argument Construction</h3>
+                <p><strong>Topic:</strong> Should New Zealand lower the voting age to 16?</p>
+                <p>Let's build arguments together. Consider:</p>
+                <ul>
+                    <li>What premises (evidence/facts) might support each side?</li>
+                    <li>How do these premises logically connect to the conclusion?</li>
+                    <li>What might be the strongest argument for each position?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="wiley-section-title">🛡️ SIFT Method for Logical Claims</h2>
+            <p>When you encounter arguments and claims, use SIFT to evaluate their logical strength:</p>
+            <div class="content-cards">
+                <div class="content-card">
+                    <h3>🛑 STOP</h3>
+                    <p>Pause and ask: What is the actual claim being made? What's the evidence? Do I notice any immediate logical problems?</p>
+                </div>
+                <div class="content-card">
+                    <h3>🔍 INVESTIGATE the Logic</h3>
+                    <p>Check: Are the premises actually true? Does the conclusion follow from the premises? Are there any logical fallacies?</p>
+                </div>
+                <div class="content-card">
+                    <h3>📊 FIND Better Reasoning</h3>
+                    <p>Look for: More complete arguments, counter-evidence, expert analysis of the logical structure.</p>
+                </div>
+                <div class="content-card">
+                    <h3>🔗 TRACE the Argument Chain</h3>
+                    <p>Follow: What are the underlying assumptions? What evidence supports each premise? Where did this reasoning originate?</p>
+                </div>
+            </div>
+
+            <div class="activity">
+                <h3>🚀 SIFT Practice: Political Logic</h3>
+                <p><strong>Scenario:</strong> "Young people don't vote because they don't care about politics. Therefore, we shouldn't lower the voting age."</p>
+                <p>Apply SIFT to analyze this argument:</p>
+                <ol>
+                    <li><strong>Stop:</strong> What's the claim? What's the reasoning?</li>
+                    <li><strong>Investigate:</strong> Is the premise true? Does the conclusion follow?</li>
+                    <li><strong>Find:</strong> What other explanations or evidence exist?</li>
+                    <li><strong>Trace:</strong> What assumptions underlie this argument?</li>
+                </ol>
+            </div>
+        </section>
+
+        <div class="assessment">
+            <h2 class="wiley-section-title">📝 Assessment: Argument Analysis & Construction</h2>
+            <p><strong>Part A: Fallacy Identification (10 minutes)</strong></p>
+            <p>Read the provided arguments about New Zealand issues. Identify any logical fallacies and explain why they weaken the reasoning.</p>
+            
+            <p><strong>Part B: Argument Construction (20 minutes)</strong></p>
+            <p>Choose one of these New Zealand topics and construct a well-reasoned argument:</p>
+            <ul>
+                <li>Should NZ become a republic?</li>
+                <li>Should te reo Māori be compulsory in all schools?</li>
+                <li>Should NZ ban single-use plastic bags nationwide?</li>
+            </ul>
+            
+            <p><strong>Your argument must include:</strong></p>
+            <ul>
+                <li>✅ Clear premises supported by evidence</li>
+                <li>🔗 Logical connection between premises and conclusion</li>
+                <li>🌿 Consideration of both Western and Māori perspectives</li>
+                <li>🚫 Avoidance of logical fallacies</li>
+                <li>🤔 Acknowledgment of potential counter-arguments</li>
+            </ul>
+            
+            <p><strong>Success Criteria:</strong> Demonstrates understanding of logical reasoning principles, constructs coherent arguments, shows cultural awareness in reasoning.</p>
+        </div>
+
+        <section>
+            <h2 class="wiley-section-title">🤔 Reflect & Connect</h2>
+            <div class="reflection-prompts">
+                <h3>Individual Reflection (5 minutes):</h3>
+                <ul>
+                    <li>How has learning about logical fallacies changed how you evaluate arguments?</li>
+                    <li>Which type of reasoning (deductive, inductive, abductive) do you use most in daily life?</li>
+                    <li>How might Māori approaches to collective reasoning improve decision-making in your community?</li>
+                </ul>
+                <h3>Pair Share:</h3>
+                <p>Share one fallacy you've noticed in recent news or social media. Discuss how the argument could be strengthened.</p>
+            </div>
+        </section>
+
+        <div class="lesson-nav">
+            <a href="/lesson-3.html" class="nav-button">← Lesson 3: Source Evaluation</a>
+            <a href="/lesson-5.html" class="nav-button">Lesson 5: Digital Literacy →</a>
+        </div>
+
+        <section class="lesson-footer">
+            <h3>🔗 Next Steps</h3>
+            <p><strong>Lesson 5:</strong> We'll explore digital literacy and how to navigate online information environments critically.</p>
+            <p><strong>Homework:</strong> Find one opinion piece from a New Zealand news source. Analyze its logical structure and identify the type of reasoning used. Bring it to next lesson for discussion.</p>
+        </section>
+    </main>
+
+    <script>
+        function showReasoning(type) {
+            const display = document.getElementById('reasoning-display');
+            let content = '';
+            
+            switch(type) {
+                case 1:
+                    content = `<h4>🌧️ Weather Decision (Inductive Reasoning)</h4>
+                              <p><strong>Thinking:</strong> "The clouds are dark and heavy, it's humid, and the weather app shows rain. It will probably rain soon, so I should bring an umbrella."</p>
+                              <p><small><strong>Type:</strong> Inductive - using multiple observations to make a probable prediction</small></p>`;
+                    break;
+                case 2:
+                    content = `<h4>🏫 School Choice (Abductive Reasoning)</h4>
+                              <p><strong>Thinking:</strong> "This school has excellent NCEA results, happy students, and great facilities. The best explanation is that it's a high-quality school, so I should apply here."</p>
+                              <p><small><strong>Type:</strong> Abductive - finding the best explanation for observed evidence</small></p>`;
+                    break;
+                case 3:
+                    content = `<h4>🗳️ Voting Decision (Deductive Reasoning)</h4>
+                              <p><strong>Thinking:</strong> "I believe in environmental protection. This candidate has the strongest environmental policies. Therefore, I should vote for this candidate."</p>
+                              <p><small><strong>Type:</strong> Deductive - applying general principles to reach a specific conclusion</small></p>`;
+                    break;
+            }
+            
+            display.innerHTML = content;
+            display.style.display = 'block';
+        }
+    </script>
+    
+    <script src="js/main.js"></script>
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

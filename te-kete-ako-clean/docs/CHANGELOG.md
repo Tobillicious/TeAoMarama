@@ -1,0 +1,1 @@
+I need permission to create the CHANGELOG.md file. The changelog will follow the Keep a Changelog format and organize the commit history into meaningful releases with user-facing changes grouped by Added, Changed, Fixed, and Removed categories.

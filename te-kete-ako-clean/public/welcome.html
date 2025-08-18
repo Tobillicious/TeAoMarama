@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Te Kete Ako | Educational Resources for New Zealand</title>
+    
+    <!-- Critical CSS inlined for fastest rendering -->
+    <style>
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #00b0b9;
+            --color-accent: #f5a623;
+            --color-forest: #2C5F41;
+            --color-background: #ffffff;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #6c757d;
+            --color-border: #e5e7eb;
+            --font-headings: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+            --font-body: 'Lato', 'Helvetica', 'Arial', sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hero-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f8f0 0%, #e8f4f8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8);
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+        }
+        
+        .hero-logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: var(--font-headings);
+            font-size: 3rem;
+            color: var(--color-forest);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-whakatauki {
+            font-size: 1.8rem;
+            color: var(--color-secondary);
+            font-style: italic;
+            margin-bottom: var(--space-2);
+        }
+        
+        .hero-translation {
+            color: var(--color-text-secondary);
+            font-size: var(--text-xl);
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 12px var(--shadow-md);
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+        
+        .stat-label {
+            display: block;
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .cta-section {
+            margin-top: 3rem;
+        }
+        
+        .cta-description {
+            font-size: 1.3rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: var(--text-lg);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-secondary), var(--color-forest));
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 176, 185, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 176, 185, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-forest);
+            border: 2px solid var(--color-forest);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-forest);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .features-preview {
+            background: rgba(255, 255, 255, 0.9);
+            margin: 3rem 0;
+            padding: var(--space-8);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow-md);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            text-align: left;
+            padding: var(--space-6);
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 2px 8px var(--shadow-md);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            color: var(--color-primary);
+            margin-bottom: var(--space-2);
+            font-weight: bold;
+        }
+        
+        .feature-description {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-whakatauki {
+                font-size: 1.4rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+    
+    <!-- Preconnect to external services -->
+    
+    
+
+
+
+</head>
+<body>
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-logo">🧺</div>
+            <h1 class="hero-title" class="wiley-hero-title">Te Kete Ako</h1>
+            <div class="hero-whakatauki">Whaowhia te kete mātauranga</div>
+            <div class="hero-translation">Fill the basket of knowledge</div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">467+</span>
+                    <span class="stat-label">Educational Resources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🧠</span>
+                    <span class="stat-label">AI-Powered Discovery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">NZ Curriculum Aligned</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🌿</span>
+                    <span class="stat-label">Te Ao Māori Integrated</span>
+                </div>
+            </div>
+            
+            <div class="features-preview">
+                <h2 class="text-center" class="wiley-section-title">
+                    Revolutionary Educational Platform for Aotearoa
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI Teacher Assistant</h3>
+                        <p class="feature-description">DeepSeek-powered educational AI with GraphRAG knowledge discovery and cultural integration</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">Complete Resource Library</h3>
+                        <p class="feature-description">467+ handouts, lessons, unit plans, and interactive tools covering all curriculum levels</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3 class="feature-title">Authentic Te Ao Māori</h3>
+                        <p class="feature-description">Culturally grounded resources validated by Māori educators with integrated tikanga</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Adaptive Learning Paths</h3>
+                        <p class="feature-description">Personalized journeys that adapt to individual learning styles and progress</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧺</div>
+                        <h3 class="feature-title">Personal Teaching Kete</h3>
+                        <p class="feature-description">Save, organize, and curate your favorite resources in your personalized collection</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3 class="feature-title">Smart Resource Discovery</h3>
+                        <p class="feature-description">AI-powered search that understands educational context and cultural nuances</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-description">
+                    Join thousands of New Zealand teachers already using Te Kete Ako to transform their teaching practice with culturally responsive, AI-enhanced educational resources.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="register-simple.html" class="btn btn-primary">
+                        🚀 Start Free Account
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        🔐 Teacher Login
+                    </a>
+                </div>
+                
+                <p style="margin-top: 2rem; color: var(--color-text-secondary); font-size: var(--text-sm);">
+                    Already have 250+ resources available to explore immediately
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Minimal JavaScript for progressive enhancement -->
+    <script>
+        // Simple analytics tracking (if needed)
+        // Service worker temporarily disabled to resolve CSP conflicts
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('/sw.js').catch(console.error);
+        // }
+        
+        // Add subtle animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.feature-card, .stat-item');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* =================================================================
+   KEHINDE WILEY DESIGN SYSTEM - SITE-WIDE IMPLEMENTATION
+   Bold, ornate, culturally resonant design across all components
+   ================================================================= */
+
+/* Global body styling with Wiley aesthetic */
+body {
+    font-family: var(--font-wiley-body, 'Inter', sans-serif);
+    background: var(--wiley-ivory, #FFFFF0);
+    color: var(--wiley-charcoal, #36454F);
+    line-height: 1.6;
+}
+
+/* Site header with Wiley-inspired treatment */
+.site-header {
+    background: linear-gradient(135deg, var(--wiley-royal-blue, #003366), var(--wiley-emerald, #006A4E));
+    position: relative;
+    overflow: hidden;
+    padding: var(--wiley-space-md, 2rem) 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Ornate header pattern overlay */
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 105, 180, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Navigation styling with Wiley typography */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--wiley-space-md, 2rem);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-brand h1 {
+    font-family: var(--font-wiley-display, 'Playfair Display', serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--wiley-gold, #FFD700);
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--wiley-space-lg, 4rem);
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--wiley-gold, #FFD700);
+    transform: translateY(-1px);
+}
+
+/* Wiley hero section */
+.hero-section {
+    background: linear-gradient(135deg, var(--wiley-royal-blue, #003366) 0%, var(--wiley-emerald, #006A4E) 100%);
+    color: white;
+    padding: var(--wiley-space-xxl, 10rem) var(--wiley-space-md, 2rem);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ornate hero pattern */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 105, 180, 0.08) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, 
+            rgba(156, 175, 136, 0.05) 0px, 
+            rgba(156, 175, 136, 0.05) 2px, 
+            transparent 2px, 
+            transparent 60px);
+    pointer-events: none;
+}
+
+/* Hero typography with Wiley styling */
+.hero-title {
+    font-family: var(--font-wiley-display, 'Playfair Display', serif);
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: var(--wiley-gold, #FFD700);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-family: var(--font-wiley-body, 'Inter', sans-serif);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: rgba(255,255,255,0.95);
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* Wiley whakataukī styling */
+.whakataukī {
+    font-family: var(--font-wiley-accent, 'Crimson Text', serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 3rem;
+    padding: var(--wiley-space-lg, 2rem);
+    color: white;
+    border-left: 4px solid var(--wiley-gold, #FFD700);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 240, 0.15) 0%, 
+        rgba(156, 175, 136, 0.1) 100%);
+    border-radius: var(--wiley-radius-organic, 12px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* Feature cards with Wiley ornate styling */
+.feature-card {
+    background: linear-gradient(135deg, 
+        var(--wiley-ivory, #FFFFF0) 0%, 
+        rgba(255, 255, 240, 0.95) 100%);
+    border: 2px solid var(--wiley-bronze, #CD7F32);
+    border-radius: var(--wiley-radius-frame, 20px);
+    padding: var(--wiley-space-lg, 2rem);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '❋';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.2rem;
+    color: var(--wiley-gold, #FFD700);
+    opacity: 0.5;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: var(--wiley-gold, #FFD700);
+}
+
+.feature-title {
+    font-family: var(--font-wiley-display, 'Playfair Display', serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--wiley-royal-blue, #003366);
+}
+
+.feature-description {
+    color: var(--wiley-charcoal, #36454F);
+    line-height: 1.6;
+}
+
+/* Features grid with proper spacing */
+.features-grid {
+    background: var(--wiley-ivory, #FFFFF0);
+    padding: var(--wiley-space-xxl, 6rem) var(--wiley-space-md, 2rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--wiley-space-lg, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cultural section with Wiley treatment */
+.cultural-section {
+    background: linear-gradient(135deg, 
+        var(--maori-pounamu, #1B6B42) 0%, 
+        var(--wiley-emerald, #006A4E) 100%);
+    color: white;
+    padding: var(--wiley-space-xxl, 6rem) var(--wiley-space-md, 2rem);
+    text-align: center;
+    position: relative;
+}
+
+.cultural-title {
+    font-family: var(--font-wiley-display, 'Playfair Display', serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--wiley-gold, #FFD700);
+    margin-bottom: 2rem;
+}
+
+.cultural-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.95);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Quick access with ornate styling */
+.quick-access {
+    padding: var(--wiley-space-xxl, 6rem) var(--wiley-space-md, 2rem);
+    background: var(--wiley-ivory, #FFFFF0);
+}
+
+.quick-access-title {
+    font-family: var(--font-wiley-display, 'Playfair Display', serif);
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--wiley-royal-blue, #003366);
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.quick-link {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--wiley-radius-organic, 12px);
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid var(--wiley-bronze, #CD7F32);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.quick-link:hover {
+    border-color: var(--wiley-gold, #FFD700);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Button styling with Wiley aesthetic */
+.btn {
+    background: linear-gradient(135deg, var(--wiley-gold, #FFD700), var(--maori-kōwhai, #F5D915));
+    color: var(--wiley-royal-blue, #003366);
+    border: 2px solid var(--wiley-bronze, #CD7F32);
+    border-radius: var(--wiley-radius-organic, 12px);
+    padding: 1rem 2rem;
+    font-family: var(--font-wiley-body, 'Inter', sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, var(--maori-kōwhai, #F5D915), var(--wiley-gold, #FFD700));
+}
+
+/* Footer with Wiley styling */
+.site-footer {
+    background: linear-gradient(135deg, var(--wiley-charcoal, #36454F), var(--wiley-royal-blue, #003366));
+    color: white;
+    padding: var(--wiley-space-lg, 4rem) var(--wiley-space-md, 2rem);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 1rem 4rem;
+        min-height: 80vh;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 4rem 1rem;
+    }
+    
+    .quick-access-grid {
+        grid-template-columns: 1fr;
+    }
+}

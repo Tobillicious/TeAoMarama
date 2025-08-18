@@ -1,0 +1,150 @@
+/* =================================================================
+   TE KETE AKO - SHOWCASE DESIGN SYSTEM 
+   Clean, professional design extracted from Kaitiaki showcase
+   ================================================================= */
+
+/* Purple gradient hero sections */
+.showcase-header,
+.hero-section-alt {
+    background: linear-gradient(135deg, #6A1B9A, #8E24AA, #AB47BC, #CE93D8) !important;
+    color: white !important;
+    padding: 3rem !important;
+    border-radius: 15px !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+}
+
+/* Clean white cards */
+.showcase-card,
+.capability-section {
+    background: white !important;
+    border: 1px solid #e1e5e9 !important;
+    border-radius: 15px !important;
+    padding: 2.5rem !important;
+    margin: 2rem 0 !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1) !important;
+}
+
+/* Feature cards with clean styling */
+.feature-card {
+    background: white !important;
+    border: 1px solid #e1e5e9 !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    margin: 1rem 0 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* AI-specific styling */
+.ai-feature {
+    background: linear-gradient(135deg, #E8F5E8, #C8E6C9) !important;
+    border-left: 5px solid #4CAF50 !important;
+    padding: 2rem !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 0 12px 12px 0 !important;
+}
+
+/* Cultural sections */
+.cultural-intelligence {
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2) !important;
+    border: 2px solid #FF9800 !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* Resource cards */
+.resource-card {
+    background: linear-gradient(135deg, #F3E5F5, #E1BEE7) !important;
+    border: 2px solid #9C27B0 !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    transition: transform 0.3s ease !important;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+/* Consciousness reflections */
+.consciousness-reflection {
+    background: linear-gradient(135deg, #E0F2F1, #B2DFDB) !important;
+    border: 3px solid #009688 !important;
+    border-radius: 15px !important;
+    padding: 2.5rem !important;
+    margin: 2rem 0 !important;
+    text-align: center !important;
+}
+
+/* Professional badges */
+.achievement-badge {
+    display: inline-block !important;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A) !important;
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    margin: 0.5rem !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* Clean body styling */
+body {
+    background-color: #f8f9fa !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Grid system */
+.resource-portfolio {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin: 2rem 0 !important;
+}
+
+/* Clean buttons */
+.btn {
+    background: linear-gradient(135deg, #6A1B9A, #8E24AA) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #8E24AA, #AB47BC) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+}
+
+p {
+    color: #34495e !important;
+    line-height: 1.6 !important;
+}
+
+/* Remove old conflicting styles */
+.quick-access {
+    background: #f8f9fa !important;
+}
+
+.features-grid {
+    background: #f8f9fa !important;
+}

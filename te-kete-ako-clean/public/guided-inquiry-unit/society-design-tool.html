@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Society Design Tool | Te Kete Ako</title>
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+<body data-auto-init="true">
+
+                        <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <div class="design-tool">
+        <div class="cultural-opening" class="bg-cultural-light">
+            <h2 style="color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);" class="wiley-section-title">Whakataukī | Proverb</h2>
+            <p style="font-style: italic; color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);">"Mā mua ka kite a muri, mā muri ka ora a mua"</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Those who lead give sight to those who follow, those who follow give life to those who lead.</p>
+        </div>
+        
+
+        <h1 class="text-center" class="wiley-hero-title">🏛️ Design Your Society</h1>
+        <p class="text-center">Interactive tool for creating your ideal society based on systems thinking</p>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 16.66%;"></div>
+        </div>
+
+        <!-- Step Indicators -->
+        <div class="step-indicator">
+            <div class="step-dot active" id="dot-1">1</div>
+            <div class="step-dot" id="dot-2">2</div>
+            <div class="step-dot" id="dot-3">3</div>
+            <div class="step-dot" id="dot-4">4</div>
+            <div class="step-dot" id="dot-5">5</div>
+            <div class="step-dot" id="dot-6">6</div>
+        </div>
+
+        <!-- Step 1: Basic Information -->
+        <div class="step active" id="step-1">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Step 1: Your Society's Foundation</h2>
+                
+                <div class="form-group">
+                    <label for="society-name">What will you call your society?</label>
+                    <input type="text" id="society-name" placeholder="Enter your society's name">
+                </div>
+
+                <div class="form-group">
+                    <label for="society-vision">What is your society's core vision? (What kind of life do you want for all citizens?)</label>
+                    <textarea id="society-vision" placeholder="Describe the ideal life your society will provide..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="society-values">What are your society's most important values? (Choose up to 3)</label>
+                    <div class="choice-grid" id="values-grid">
+                        <div class="choice-card" data-value="equality">
+                            <h4>🤝 Equality</h4>
+                            <p>All people have equal opportunities and treatment</p>
+                        </div>
+                        <div class="choice-card" data-value="freedom">
+                            <h4>🕊️ Freedom</h4>
+                            <p>Individual choice and personal liberty</p>
+                        </div>
+                        <div class="choice-card" data-value="community">
+                            <h4>🏘️ Community</h4>
+                            <p>Collective wellbeing and mutual support</p>
+                        </div>
+                        <div class="choice-card" data-value="sustainability">
+                            <h4>🌱 Sustainability</h4>
+                            <p>Environmental protection for future generations</p>
+                        </div>
+                        <div class="choice-card" data-value="tradition">
+                            <h4>🏺 Tradition</h4>
+                            <p>Respect for cultural heritage and wisdom</p>
+                        </div>
+                        <div class="choice-card" data-value="innovation">
+                            <h4>🚀 Innovation</h4>
+                            <p>Progress through new ideas and technology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Government System -->
+        <div class="step" id="step-2">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Step 2: How Will Your Society Be Governed?</h2>
+                
+                <div class="form-group">
+                    <label>Choose your government system:</label>
+                    <div class="choice-grid" id="government-grid">
+                        <div class="choice-card" data-value="democracy">
+                            <h4>🗳️ Democracy</h4>
+                            <p>Citizens vote on leaders and major decisions</p>
+                        </div>
+                        <div class="choice-card" data-value="council">
+                            <h4>🏛️ Council of Elders</h4>
+                            <p>Wise experienced leaders make decisions together</p>
+                        </div>
+                        <div class="choice-card" data-value="consensus">
+                            <h4>💬 Consensus</h4>
+                            <p>Everyone must agree before decisions are made</p>
+                        </div>
+                        <div class="choice-card" data-value="federation">
+                            <h4>🤝 Federation</h4>
+                            <p>Different communities govern themselves but cooperate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="leadership-selection">How will leaders be chosen?</label>
+                    <textarea id="leadership-selection" placeholder="Describe the process for selecting leaders..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="decision-making">How will important decisions be made?</label>
+                    <textarea id="decision-making" placeholder="Explain your decision-making process..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Rights and Responsibilities -->
+        <div class="step" id="step-3">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Step 3: Rights and Responsibilities</h2>
+                
+                <div class="form-group">
+                    <label for="citizen-rights">What rights will all citizens have? (List the most important ones)</label>
+                    <textarea id="citizen-rights" placeholder="List the fundamental rights every citizen will have..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="citizen-responsibilities">What responsibilities will all citizens have?</label>
+                    <textarea id="citizen-responsibilities" placeholder="List the key responsibilities every citizen must fulfill..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="conflict-resolution">How will your society handle conflicts and disagreements?</label>
+                    <textarea id="conflict-resolution" placeholder="Describe your system for resolving disputes..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Economic System -->
+        <div class="step" id="step-4">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Step 4: Economic System</h2>
+                
+                <div class="form-group">
+                    <label>How will resources be distributed in your society?</label>
+                    <div class="choice-grid" id="economic-grid">
+                        <div class="choice-card" data-value="market">
+                            <h4>💰 Market Economy</h4>
+                            <p>People earn through work and trade freely</p>
+                        </div>
+                        <div class="choice-card" data-value="sharing">
+                            <h4>🤲 Sharing Economy</h4>
+                            <p>Resources are shared based on need</p>
+                        </div>
+                        <div class="choice-card" data-value="contribution">
+                            <h4>🏗️ Contribution-Based</h4>
+                            <p>People receive based on their contribution to society</p>
+                        </div>
+                        <div class="choice-card" data-value="mixed">
+                            <h4>⚖️ Mixed System</h4>
+                            <p>Combination of different economic approaches</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="work-system">How will work be organized? (Who does what jobs?)</label>
+                    <textarea id="work-system" placeholder="Describe how work and jobs will be organized..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="resource-management">How will your society manage and protect natural resources?</label>
+                    <textarea id="resource-management" placeholder="Explain your approach to environmental stewardship..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Culture and Social Organization -->
+        <div class="step" id="step-5">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Step 5: Culture and Community</h2>
+                
+                <div class="form-group">
+                    <label for="cultural-practices">What cultural practices and traditions will your society have?</label>
+                    <textarea id="cultural-practices" placeholder="Describe important ceremonies, celebrations, and traditions..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="education-system">How will learning and education work?</label>
+                    <textarea id="education-system" placeholder="Describe how knowledge will be shared and people will learn..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="community-structure">How will communities be organized? (Families, neighborhoods, groups)</label>
+                    <textarea id="community-structure" placeholder="Explain how people will live together in communities..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Summary and Reflection -->
+        <div class="step" id="step-6">
+            <div class="form-section">
+                <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;" class="wiley-section-title">Your Society: <span id="final-society-name">Your Society</span></h2>
+                
+                <div class="summary-grid" id="summary-content">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+
+                <div class="bg-cultural-light">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Reflection Questions</h3>
+                    
+                    <div class="form-group">
+                        <label for="systems-reflection">How do the different parts of your society work together as a system?</label>
+                        <textarea id="systems-reflection" placeholder="Explain how your government, economy, and culture connect..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="challenges-reflection">What challenges might your society face, and how would you address them?</label>
+                        <textarea id="challenges-reflection" placeholder="Think about potential problems and solutions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="real-world-reflection">How does your society compare to real-world examples? (Think about New Zealand, Māori governance, or other countries)</label>
+                        <textarea id="real-world-reflection" placeholder="Compare your design to existing societies..."></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="downloadSocietyPlan()">📄 Download Your Society Plan</button>
+                    <button class="btn btn-secondary" onclick="shareSociety()" style="margin-left: 1rem;">🔗 Share with Teacher</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-buttons">
+            <button class="btn btn-secondary" id="prev-btn" onclick="previousStep()" disabled>← Previous</button>
+            <button class="btn btn-primary" id="next-btn" onclick="nextStep()">Next →</button>
+        </div>
+    </div>
+
+    <!-- Simple Local Auth System -->
+    <script src="js/simple-local-auth.js"></script>
+    
+    <script>
+        // Society Design Tool - ACTUAL WORKING FUNCTIONALITY
+        let currentStep = 1;
+        const totalSteps = 6;
+        let societyData = {};
+
+        // Initialize the tool
+        function initializeTool() {
+            // Set up choice card selections
+            document.querySelectorAll('.choice-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const gridId = this.parentElement.id;
+                    const maxSelections = gridId === 'values-grid' ? 3 : 1;
+                    
+                    if (maxSelections === 1) {
+                        // Single selection - deselect others in same grid
+                        this.parentElement.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+                        this.classList.add('selected');
+                    } else {
+                        // Multiple selection
+                        const selected = this.parentElement.querySelectorAll('.choice-card.selected');
+                        if (this.classList.contains('selected')) {
+                            this.classList.remove('selected');
+                        } else if (selected.length < maxSelections) {
+                            this.classList.add('selected');
+                        } else {
+                            }
+                    }
+                });
+            });
+
+            updateProgress();
+            updateNavigation();
+        }
+
+        function nextStep() {
+            if (validateStep(currentStep)) {
+                saveStepData(currentStep);
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                    updateProgress();
+                    updateNavigation();
+                    
+                    if (currentStep === totalSteps) {
+                        generateSummary();
+                    }
+                }
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                updateProgress();
+                updateNavigation();
+            }
+        }
+
+        function showStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+            document.getElementById(`step-${stepNumber}`).classList.add('active');
+            
+            // Update step dots
+            document.querySelectorAll('.step-dot').forEach((dot, index) => {
+                dot.classList.remove('active', 'completed');
+                if (index + 1 < stepNumber) {
+                    dot.classList.add('completed');
+                } else if (index + 1 === stepNumber) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            prevBtn.disabled = currentStep === 1;
+            
+            if (currentStep === totalSteps) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'inline-block';
+                nextBtn.textContent = 'Next →';
+            }
+        }
+
+        function validateStep(stepNumber) {
+            switch(stepNumber) {
+                case 1:
+                    const name = document.getElementById('society-name').value.trim();
+                    const vision = document.getElementById('society-vision').value.trim();
+                    const selectedValues = document.querySelectorAll('#values-grid .choice-card.selected').length;
+                    
+                    if (!name) {
+                        return false;
+                    }
+                    if (!vision) {
+                        return false;
+                    }
+                    if (selectedValues === 0) {
+                        return false;
+                    }
+                    return true;
+                    
+                case 2:
+                    const government = document.querySelectorAll('#government-grid .choice-card.selected').length;
+                    const leadership = document.getElementById('leadership-selection').value.trim();
+                    const decisions = document.getElementById('decision-making').value.trim();
+                    
+                    if (government === 0) {
+                        return false;
+                    }
+                    if (!leadership) {
+                        return false;
+                    }
+                    if (!decisions) {
+                        return false;
+                    }
+                    return true;
+                    
+                case 3:
+                    const rights = document.getElementById('citizen-rights').value.trim();
+                    const responsibilities = document.getElementById('citizen-responsibilities').value.trim();
+                    const conflicts = document.getElementById('conflict-resolution').value.trim();
+                    
+                    if (!rights) {
+                        return false;
+                    }
+                    if (!responsibilities) {
+                        return false;
+                    }
+                    if (!conflicts) {
+                        return false;
+                    }
+                    return true;
+                    
+                case 4:
+                    const economic = document.querySelectorAll('#economic-grid .choice-card.selected').length;
+                    const work = document.getElementById('work-system').value.trim();
+                    const resources = document.getElementById('resource-management').value.trim();
+                    
+                    if (economic === 0) {
+                        return false;
+                    }
+                    if (!work) {
+                        return false;
+                    }
+                    if (!resources) {
+                        return false;
+                    }
+                    return true;
+                    
+                case 5:
+                    const culture = document.getElementById('cultural-practices').value.trim();
+                    const education = document.getElementById('education-system').value.trim();
+                    const community = document.getElementById('community-structure').value.trim();
+                    
+                    if (!culture) {
+                        return false;
+                    }
+                    if (!education) {
+                        return false;
+                    }
+                    if (!community) {
+                        return false;
+                    }
+                    return true;
+                    
+                default:
+                    return true;
+            }
+        }
+
+        function saveStepData(stepNumber) {
+            switch(stepNumber) {
+                case 1:
+                    societyData.name = document.getElementById('society-name').value;
+                    societyData.vision = document.getElementById('society-vision').value;
+                    societyData.values = Array.from(document.querySelectorAll('#values-grid .choice-card.selected'))
+                        .map(card => card.dataset.value);
+                    break;
+                case 2:
+                    societyData.government = document.querySelector('#government-grid .choice-card.selected')?.dataset.value;
+                    societyData.leadership = document.getElementById('leadership-selection').value;
+                    societyData.decisionMaking = document.getElementById('decision-making').value;
+                    break;
+                case 3:
+                    societyData.rights = document.getElementById('citizen-rights').value;
+                    societyData.responsibilities = document.getElementById('citizen-responsibilities').value;
+                    societyData.conflictResolution = document.getElementById('conflict-resolution').value;
+                    break;
+                case 4:
+                    societyData.economy = document.querySelector('#economic-grid .choice-card.selected')?.dataset.value;
+                    societyData.workSystem = document.getElementById('work-system').value;
+                    societyData.resourceManagement = document.getElementById('resource-management').value;
+                    break;
+                case 5:
+                    societyData.culture = document.getElementById('cultural-practices').value;
+                    societyData.education = document.getElementById('education-system').value;
+                    societyData.community = document.getElementById('community-structure').value;
+                    break;
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('society-design', JSON.stringify(societyData));
+        }
+
+        function generateSummary() {
+            document.getElementById('final-society-name').textContent = societyData.name;
+            
+            const summaryContent = document.getElementById('summary-content');
+            summaryContent.innerHTML = `
+                <div class="summary-card">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🏛️ Government</h3>
+                    <p><strong>System:</strong> ${formatValue(societyData.government)}</p>
+                    <p><strong>Leadership:</strong> ${societyData.leadership}</p>
+                    <p><strong>Decisions:</strong> ${societyData.decisionMaking}</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">⚖️ Rights & Duties</h3>
+                    <p><strong>Rights:</strong> ${societyData.rights}</p>
+                    <p><strong>Responsibilities:</strong> ${societyData.responsibilities}</p>
+                    <p><strong>Conflicts:</strong> ${societyData.conflictResolution}</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">💰 Economy</h3>
+                    <p><strong>System:</strong> ${formatValue(societyData.economy)}</p>
+                    <p><strong>Work:</strong> ${societyData.workSystem}</p>
+                    <p><strong>Resources:</strong> ${societyData.resourceManagement}</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🌟 Culture & Values</h3>
+                    <p><strong>Core Values:</strong> ${societyData.values.map(formatValue).join(', ')}</p>
+                    <p><strong>Vision:</strong> ${societyData.vision}</p>
+                    <p><strong>Culture:</strong> ${societyData.culture}</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🎓 Education & Community</h3>
+                    <p><strong>Education:</strong> ${societyData.education}</p>
+                    <p><strong>Community:</strong> ${societyData.community}</p>
+                </div>
+            `;
+        }
+
+        function formatValue(value) {
+            return value.charAt(0).toUpperCase() + value.slice(1).replace(/([A-Z])/g, ' $1');
+        }
+
+        function downloadSocietyPlan() {
+            const reflections = {
+                systems: document.getElementById('systems-reflection').value,
+                challenges: document.getElementById('challenges-reflection').value,
+                realWorld: document.getElementById('real-world-reflection').value
+            };
+            
+            // Create comprehensive society plan
+            const plan = `
+# ${societyData.name} - Society Design Plan
+
+## Vision
+${societyData.vision}
+
+## Core Values
+${societyData.values.map(formatValue).join(', ')}
+
+## Government System
+**Type:** ${formatValue(societyData.government)}
+**Leadership Selection:** ${societyData.leadership}
+**Decision Making:** ${societyData.decisionMaking}
+
+## Rights and Responsibilities
+**Citizen Rights:** ${societyData.rights}
+**Citizen Responsibilities:** ${societyData.responsibilities}
+**Conflict Resolution:** ${societyData.conflictResolution}
+
+## Economic System
+**Type:** ${formatValue(societyData.economy)}
+**Work Organization:** ${societyData.workSystem}
+**Resource Management:** ${societyData.resourceManagement}
+
+## Culture and Community
+**Cultural Practices:** ${societyData.culture}
+**Education System:** ${societyData.education}
+**Community Structure:** ${societyData.community}
+
+## Reflections
+
+### Systems Thinking
+${reflections.systems}
+
+### Challenges and Solutions
+${reflections.challenges}
+
+### Real-World Connections
+${reflections.realWorld}
+
+---
+Created with Te Kete Ako Society Design Tool
+Date: ${new Date().toLocaleDateString()}
+            `.trim();
+
+            // Download as text file
+            const blob = new Blob([plan], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${societyData.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_society_plan.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            }
+
+        function shareSociety() {
+            const url = `mailto:?subject=My Society Design: ${societyData.name}&body=I've designed a society called "${societyData.name}" using the Te Kete Ako Society Design Tool. Here's a summary:%0D%0A%0D%0AVision: ${societyData.vision}%0D%0AValues: ${societyData.values.join(', ')}%0D%0AGovernment: ${formatValue(societyData.government)}%0D%0A%0D%0AView the full design at: ${window.location.href}`;
+            window.open(url);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeTool);
+    </script>
+    
+    <!-- External Resources Section - Added by Te Kete Ako Content Enrichment -->
+    <section class="external-resources-section no-print" style="border-left: 4px solid var(--color-maori-red, #CC0000); background: linear-gradient(135deg, #f0f8f4 0%, #e8f5e8 100%); padding: var(--space-6); margin: var(--space-8) 0; border-radius: var(--radius-lg);">
+        <h3 style="margin: 0 0 1rem 0; color: var(--color-primary, #2E8B57); display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">🌿</span>
+            Nga Rauemi Tauwehe - External Resources
+        </h3>
+        <p style="margin: 0 0 1.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm);">
+            High-quality resources from official New Zealand education sites to extend and enrich this learning content.
+        </p>
+        <div class="external-resources-list">
+            
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://tahurangi.education.govt.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Tāhūrangi - Te Reo Māori Education Hub
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Official NZ government hub for te reo Māori resources, guidance, and teaching support
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 7-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            70% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://nzcurriculum.tki.org.nz/The-New-Zealand-Curriculum/Social-sciences" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Social Sciences - NZ Curriculum
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Social studies curriculum for critical, informed, and responsible citizens
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 1-10
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            66% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://teara.govt.nz/en/te-tai/education/te-mana-o-te-reo-maori-resources" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Te Mana o te Reo Māori Education Resources
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Comprehensive resources covering Whakapapa, Tūrangawaewae, Whanaungatanga, Mana Motuhake, and Kaitiakitanga
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 7-8
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            60% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://seniorsecondary.tki.org.nz/Social-sciences/Media-studies/Resources" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Media Studies Resources
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Media literacy and critical analysis resources for senior students
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 11-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            40% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.8rem; color: var(--color-text-muted, #888);">
+            <p style="margin: 0;">
+                🤖 <em>These resources were automatically curated by Te Kete Ako's AI system to complement this content. 
+                All external links lead to official New Zealand educational and government websites.</em>
+            </p>
+        </div>
+    </section>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

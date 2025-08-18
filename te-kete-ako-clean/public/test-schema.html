@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+</head>
+<body>
+    <h1 class="wiley-hero-title">Database Schema Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        const supabaseUrl = 'https://nlgldaqtubrlcqddppbq.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE4Nzg3MzcsImV4cCI6MjAzNzQ1NDczN30.j2p9UeHpHuGWnJ6rDv5XGq-AZI11-UXwFsKR3IHQT48';
+        
+        const supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        async function testSchema() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing database schema...</p>';
+            
+            try {
+                // Test 1: Get profiles with new columns
+                const { data: profiles, error: profilesError } = await supabase
+                    .from('profiles')
+                    .select('id, learning_style, last_handoff_agent, knowledge_vectors')
+                    .limit(1);
+                
+                results.innerHTML += '<h3>Profiles Test:</h3>';
+                if (profilesError) {
+                    results.innerHTML += '<pre style="color: red;">' + JSON.stringify(profilesError, null, 2) + '</pre>';
+                } else {
+                    results.innerHTML += '<pre style="color: green;">' + JSON.stringify(profiles, null, 2) + '</pre>';
+                }
+                
+                // Test 2: Check table schema
+                const { data: columns, error: columnsError } = await supabase
+                    .from('information_schema.columns')
+                    .select('column_name, data_type')
+                    .eq('table_name', 'profiles')
+                    .eq('table_schema', 'public');
+                
+                results.innerHTML += '<h3>Schema Test:</h3>';
+                if (columnsError) {
+                    results.innerHTML += '<pre style="color: red;">' + JSON.stringify(columnsError, null, 2) + '</pre>';
+                } else {
+                    results.innerHTML += '<pre style="color: blue;">' + JSON.stringify(columns, null, 2) + '</pre>';
+                }
+                
+            } catch (error) {
+                results.innerHTML += '<pre style="color: red;">Error: ' + error.message + '</pre>';
+            }
+        }
+        
+        testSchema();
+    </script>
+</body>
+</html>

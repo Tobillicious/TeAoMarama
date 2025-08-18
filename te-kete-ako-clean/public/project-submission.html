@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Submission | Te Kete Ako</title>
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+<body data-auto-init="true" data-current-page="project-submission">
+
+                        <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <div class="submission-container">
+        <div class="submission-header">
+            <h1 class="wiley-hero-title">🏛️ Society Design Project Submission</h1>
+            <p id="submission-subtitle">Share your vision for an ideal society with your kaiako and peers</p>
+        </div>
+        
+
+        <div class="cultural-opening" class="bg-cultural-light">
+            <h2 style="color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);" class="wiley-section-title">Whakataukī | Proverb</h2>
+            <p style="font-style: italic; color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);">"Ehara taku toa i te toa takitahi, he toa takitini"</p>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem;">My strength is not as an individual, but as part of a collective.</p>
+            <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-top: 0.5rem;">Your project reflects not just your individual creativity, but the collective wisdom of your group and community.</p>
+        </div>
+
+        <div class="progress-tracker">
+            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">📈 Submission Progress</h3>
+            <div class="progress-steps">
+                <div class="progress-step active" id="step-1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Project Details</div>
+                </div>
+                <div class="progress-step" id="step-2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Cultural Integration</div>
+                </div>
+                <div class="progress-step" id="step-3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Files & Resources</div>
+                </div>
+                <div class="progress-step" id="step-4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Review & Submit</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="submission-message" class="message" style="display: none;"></div>
+
+        <form id="submission-form" class="submission-form">
+            <!-- Step 1: Project Details -->
+            <div class="form-section" id="section-1">
+                <h3><span>📝</span> Project Information</h3>
+                
+                <div class="form-group">
+                    <label for="project-title">Project Title:</label>
+                    <input type="text" id="project-title" name="title" required placeholder="e.g., 'Sustainable Aotearoa Society'">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-type">Project Type:</label>
+                        <select id="project-type" name="projectType" required>
+                            <option value="">Select project type...</option>
+                            <option value="society-design">Society Design (Year 8 Systems)</option>
+                            <option value="collaborative-project">General Collaborative Project</option>
+                            <option value="individual-research">Individual Research Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="due-date">Due Date:</label>
+                        <input type="date" id="due-date" name="dueDate" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-description">Project Description:</label>
+                    <textarea id="project-description" name="description" required placeholder="Describe your society design, its key features, governance system, and how it addresses modern challenges..."></textarea>
+                </div>
+
+                <div class="form-group" id="group-members-section">
+                    <label for="group-members">Group Members (if applicable):</label>
+                    <textarea id="group-members" name="groupMembers" placeholder="List your group members and their roles (e.g., Kaia - Design Leader, Tane - Research Coordinator...)"></textarea>
+                </div>
+            </div>
+
+            <!-- Step 2: Cultural Integration -->
+            <div class="form-section" id="section-2" style="display: none;">
+                <h3><span>🌺</span> Te Ao Māori Integration</h3>
+                
+                <div class="cultural-integration">
+                    <h4>Cultural Authenticity Check</h4>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Ensure your project respectfully incorporates Te Ao Māori perspectives and values:</p>
+                    
+                    <ul class="cultural-checklist">
+                        <li>
+                            <input type="checkbox" id="cultural-1" name="culturalElements" value="whakapapa">
+                            <label for="cultural-1">Includes connection to whakapapa (relationships and genealogy)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural-2" name="culturalElements" value="manaakitanga">
+                            <label for="cultural-2">Demonstrates manaakitanga (hospitality and care for others)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural-3" name="culturalElements" value="kaitiakitanga">
+                            <label for="cultural-3">Shows kaitiakitanga (environmental guardianship)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural-4" name="culturalElements" value="whakatohia">
+                            <label for="cultural-4">Incorporates whakatōhia (collective decision-making)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="cultural-5" name="culturalElements" value="te-reo">
+                            <label for="cultural-5">Uses Te Reo Māori appropriately and respectfully</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="cultural-reflection">Cultural Integration Reflection:</label>
+                    <textarea id="cultural-reflection" name="culturalReflection" required placeholder="Explain how your society design incorporates Te Ao Māori values and perspectives. How does it honor Indigenous knowledge and ways of being?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="community-impact">Community Impact:</label>
+                    <textarea id="community-impact" name="communityImpact" placeholder="How would your society benefit not just individuals, but the collective wellbeing of communities and future generations?"></textarea>
+                </div>
+            </div>
+
+            <!-- Step 3: Files & Resources -->
+            <div class="form-section" id="section-3" style="display: none;">
+                <h3><span>📎</span> Project Files & Resources</h3>
+                
+                <div class="form-group">
+                    <label>Upload Project Files:</label>
+                    <div class="file-upload-area" id="file-upload-area">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">Drop files here or click to browse</div>
+                        <div class="upload-hint">Supported: PDF, DOC, DOCX, Images, Presentations (Max 10MB each)</div>
+                        <input type="file" id="file-input" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.ppt,.pptx" style="display: none;">
+                    </div>
+                    <div class="file-list" id="file-list"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="additional-resources">Additional Resources or Links:</label>
+                    <textarea id="additional-resources" name="additionalResources" placeholder="Include any external links, research sources, or additional materials that support your project..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="presentation-notes">Presentation Notes:</label>
+                    <textarea id="presentation-notes" name="presentationNotes" placeholder="If you'll be presenting this project, include any speaking notes or key points you want to highlight..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 4: Review & Submit -->
+            <div class="form-section" id="section-4" style="display: none;">
+                <h3><span>✅</span> Review & Submit</h3>
+                
+                <div class="message info">
+                    <strong>Ready to Submit?</strong><br>
+                    Review your project details below, then submit for teacher review. You'll be able to make revisions if requested.
+                </div>
+
+                <div id="submission-summary" class="bg-cultural-light">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="submission-agreement" required>
+                        I confirm that this work represents my/our authentic effort and properly acknowledges all sources and cultural knowledge used.
+                    </label>
+                </div>
+            </div>
+
+            <div class="submission-buttons">
+                <button type="button" class="btn btn-outline" id="prev-button" onclick="previousStep()" style="display: none;">
+                    ← Previous
+                </button>
+                <button type="button" class="btn btn-secondary" id="next-button" onclick="nextStep()">
+                    Next →
+                </button>
+                <button type="button" class="btn btn-outline" id="save-draft-button" onclick="saveDraft()">
+                    Save Draft
+                </button>
+                <button type="submit" class="btn btn-primary" id="submit-button" style="display: none;">
+                    <div class="loading-spinner" id="submit-spinner"></div>
+                    <span id="submit-text">Submit Project</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+        let uploadedFiles = [];
+
+        // Authentication check
+        window.addEventListener('load', async () => {
+            const token = localStorage.getItem('teKeteAko_token');
+            const userStr = localStorage.getItem('teKeteAko_user');
+            
+            if (!token || !userStr) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            const user = JSON.parse(userStr);
+            
+            // Ensure this is accessible to students
+            if (user.role !== 'student') {
+                window.location.href = user.role === 'teacher' ? 'teacher-dashboard.html' : 'login.html';
+                return;
+            }
+            
+            // Update subtitle with user context
+            const subtitle = document.getElementById('submission-subtitle');
+            subtitle.textContent = `Welcome ${user.display_name || user.email.split('@')[0]} - Year ${user.year_level} Project Submission`;
+            
+            // Set default due date (2 weeks from now)
+            const dueDateInput = document.getElementById('due-date');
+            const defaultDate = new Date();
+            defaultDate.setDate(defaultDate.getDate() + 14);
+            dueDateInput.value = defaultDate.toISOString().split('T')[0];
+        });
+
+        // Step navigation
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    document.getElementById(`section-${currentStep}`).style.display = 'none';
+                    document.getElementById(`step-${currentStep}`).classList.remove('active');
+                    document.getElementById(`step-${currentStep}`).classList.add('completed');
+                    
+                    currentStep++;
+                    
+                    document.getElementById(`section-${currentStep}`).style.display = 'block';
+                    document.getElementById(`step-${currentStep}`).classList.add('active');
+                    
+                    updateNavigationButtons();
+                    
+                    if (currentStep === 4) {
+                        generateSummary();
+                    }
+                }
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById(`section-${currentStep}`).style.display = 'none';
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                
+                currentStep--;
+                
+                document.getElementById(`section-${currentStep}`).style.display = 'block';
+                document.getElementById(`step-${currentStep}`).classList.remove('completed');
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                
+                updateNavigationButtons();
+            }
+        }
+
+        function updateNavigationButtons() {
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const submitButton = document.getElementById('submit-button');
+            
+            prevButton.style.display = currentStep > 1 ? 'inline-flex' : 'none';
+            
+            if (currentStep === totalSteps) {
+                nextButton.style.display = 'none';
+                submitButton.style.display = 'inline-flex';
+            } else {
+                nextButton.style.display = 'inline-flex';
+                submitButton.style.display = 'none';
+            }
+        }
+
+        function validateCurrentStep() {
+            const section = document.getElementById(`section-${currentStep}`);
+            const requiredFields = section.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#e1e5e9';
+                }
+            });
+            
+            if (!isValid) {
+                showMessage('Please fill in all required fields before continuing.', 'error');
+            }
+            
+            return isValid;
+        }
+
+        // File upload handling
+        const fileUploadArea = document.getElementById('file-upload-area');
+        const fileInput = document.getElementById('file-input');
+        const fileList = document.getElementById('file-list');
+
+        fileUploadArea.addEventListener('click', () => fileInput.click());
+        fileUploadArea.addEventListener('dragover', handleDragOver);
+        fileUploadArea.addEventListener('dragleave', handleDragLeave);
+        fileUploadArea.addEventListener('drop', handleDrop);
+        fileInput.addEventListener('change', handleFileSelect);
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            fileUploadArea.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            processFiles(files);
+        }
+
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            processFiles(files);
+        }
+
+        function processFiles(files) {
+            Array.from(files).forEach(file => {
+                if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                    showMessage(`File "${file.name}" is too large. Maximum size is 10MB.`, 'error');
+                    return;
+                }
+                
+                const fileObj = {
+                    id: Date.now() + Math.random(),
+                    file: file,
+                    name: file.name,
+                    size: formatFileSize(file.size),
+                    type: file.type
+                };
+                
+                uploadedFiles.push(fileObj);
+                displayFile(fileObj);
+            });
+        }
+
+        function displayFile(fileObj) {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.innerHTML = `
+                <div class="file-info">
+                    <div class="file-icon">${getFileIcon(fileObj.type)}</div>
+                    <div class="file-details">
+                        <div class="file-name">${fileObj.name}</div>
+                        <div class="file-size">${fileObj.size}</div>
+                    </div>
+                </div>
+                <button type="button" class="remove-file" onclick="removeFile(${fileObj.id})">Remove</button>
+            `;
+            fileList.appendChild(fileItem);
+        }
+
+        function removeFile(fileId) {
+            uploadedFiles = uploadedFiles.filter(f => f.id !== fileId);
+            const fileItems = fileList.children;
+            for (let i = 0; i < fileItems.length; i++) {
+                const removeButton = fileItems[i].querySelector('.remove-file');
+                if (removeButton && removeButton.onclick.toString().includes(fileId)) {
+                    fileItems[i].remove();
+                    break;
+                }
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function getFileIcon(type) {
+            if (type.startsWith('image/')) return '🖼️';
+            if (type.includes('pdf')) return '📄';
+            if (type.includes('document') || type.includes('msword')) return '📝';
+            if (type.includes('presentation') || type.includes('powerpoint')) return '📊';
+            return '📁';
+        }
+
+        // Generate submission summary
+        function generateSummary() {
+            const formData = new FormData(document.getElementById('submission-form'));
+            const summary = document.getElementById('submission-summary');
+            
+            const culturalElements = Array.from(document.querySelectorAll('input[name="culturalElements"]:checked'))
+                .map(cb => cb.nextElementSibling.textContent);
+            
+            summary.innerHTML = `
+                <h4 style="color: var(--color-primary); margin-bottom: 1rem;">📋 Submission Summary</h4>
+                <p><strong>Title:</strong> ${formData.get('title') || 'Not specified'}</p>
+                <p><strong>Type:</strong> ${formData.get('projectType') || 'Not specified'}</p>
+                <p><strong>Due Date:</strong> ${formData.get('dueDate') || 'Not specified'}</p>
+                <p><strong>Group Members:</strong> ${formData.get('groupMembers') || 'Individual project'}</p>
+                <p><strong>Cultural Elements:</strong> ${culturalElements.length > 0 ? culturalElements.join(', ') : 'None selected'}</p>
+                <p><strong>Files Attached:</strong> ${uploadedFiles.length} file(s)</p>
+                <p><strong>Description:</strong> ${(formData.get('description') || '').substring(0, 100)}${formData.get('description')?.length > 100 ? '...' : ''}</p>
+            `;
+        }
+
+        // Save draft functionality
+        async function saveDraft() {
+            const formData = new FormData(document.getElementById('submission-form'));
+            const draftData = {
+                title: formData.get('title'),
+                projectType: formData.get('projectType'),
+                description: formData.get('description'),
+                groupMembers: formData.get('groupMembers'),
+                culturalReflection: formData.get('culturalReflection'),
+                communityImpact: formData.get('communityImpact'),
+                additionalResources: formData.get('additionalResources'),
+                presentationNotes: formData.get('presentationNotes'),
+                culturalElements: Array.from(document.querySelectorAll('input[name="culturalElements"]:checked')).map(cb => cb.value),
+                status: 'draft',
+                lastSaved: new Date().toISOString()
+            };
+            
+            // Save to localStorage for now (would be API call in real implementation)
+            localStorage.setItem('teKeteAko_projectDraft', JSON.stringify(draftData));
+            showMessage('Draft saved successfully! You can return to complete your submission later.', 'success');
+        }
+
+        // Load draft on page load
+        function loadDraft() {
+            const draftData = localStorage.getItem('teKeteAko_projectDraft');
+            if (draftData) {
+                const data = JSON.parse(draftData);
+                
+                // Populate form fields
+                Object.keys(data).forEach(key => {
+                    const field = document.querySelector(`[name="${key}"]`);
+                    if (field && data[key]) {
+                        field.value = data[key];
+                    }
+                });
+                
+                // Restore cultural element checkboxes
+                if (data.culturalElements) {
+                    data.culturalElements.forEach(value => {
+                        const checkbox = document.querySelector(`input[value="${value}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+                
+                showMessage('Draft loaded! Continue where you left off.', 'info');
+            }
+        }
+
+        // Form submission
+        document.getElementById('submission-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!document.getElementById('submission-agreement').checked) {
+                showMessage('Please confirm your submission agreement before submitting.', 'error');
+                return;
+            }
+            
+            const submitButton = document.getElementById('submit-button');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const submitText = document.getElementById('submit-text');
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitSpinner.style.display = 'inline-block';
+            submitText.textContent = 'Submitting...';
+            
+            try {
+                const formData = new FormData(e.target);
+                const user = JSON.parse(localStorage.getItem('teKeteAko_user'));
+                
+                const submissionData = {
+                    studentId: user.id,
+                    title: formData.get('title'),
+                    projectType: formData.get('projectType'),
+                    description: formData.get('description'),
+                    groupMembers: formData.get('groupMembers'),
+                    culturalReflection: formData.get('culturalReflection'),
+                    communityImpact: formData.get('communityImpact'),
+                    additionalResources: formData.get('additionalResources'),
+                    presentationNotes: formData.get('presentationNotes'),
+                    culturalElements: Array.from(document.querySelectorAll('input[name="culturalElements"]:checked')).map(cb => cb.value),
+                    dueDate: formData.get('dueDate'),
+                    files: uploadedFiles.map(f => ({ name: f.name, size: f.size, type: f.type })), // File metadata
+                    status: 'submitted',
+                    submissionDate: new Date().toISOString()
+                };
+                
+                // Submit to Netlify Functions API
+                const token = localStorage.getItem('teKeteAko_token');
+                const response = await fetch('/.netlify/functions/project-submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(submissionData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showMessage('🎉 Project submitted successfully! Your kaiako will review it and provide feedback soon.', 'success');
+                    
+                    // Clear draft
+                    localStorage.removeItem('teKeteAko_projectDraft');
+                    
+                    // Reset form and redirect
+                    setTimeout(() => {
+                        window.location.href = 'student-dashboard.html';
+                    }, 3000);
+                } else {
+                    showMessage(result.message || 'Submission failed. Please try again.', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                showMessage('An error occurred during submission. Please try again.', 'error');
+            } finally {
+                // Reset loading state
+                submitButton.disabled = false;
+                submitSpinner.style.display = 'none';
+                submitText.textContent = 'Submit Project';
+            }
+        });
+
+        // Utility functions
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('submission-message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            // Auto-hide after 5 seconds for success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Load draft on page load
+        window.addEventListener('load', loadDraft);
+    </script>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Authenticity Test - Te Reo Māori Wordle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-passed {
+            border-left: 4px solid #28a745;
+            background: #d4edda;
+        }
+        .test-failed {
+            border-left: 4px solid #dc3545;
+            background: #f8d7da;
+        }
+        .test-warning {
+            border-left: 4px solid #ffc107;
+            background: #fff3cd;
+        }
+        .word-test {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .word-test.authentic {
+            background: #d4edda;
+        }
+        .word-test.fake {
+            background: #f8d7da;
+        }
+        .test-result {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: white;
+        }
+        .pass { background: #28a745; }
+        .fail { background: #dc3545; }
+        h1 { color: #2c5f3f; }
+        h2 { color: #b8860b; }
+        .critical { color: #dc3545; font-weight: bold; }
+        .success { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Cultural Authenticity Test Suite</h1>
+    <p><strong>Testing Te Reo Māori Wordle fixes to prevent fake word acceptance</strong></p>
+    
+    <div class="test-container">
+        <h2>Test Environment Status</h2>
+        <div id="environment-status">Checking...</div>
+    </div>
+    
+    <div class="test-container">
+        <h2>🔍 Authentic Te Reo Māori Words (Should PASS)</h2>
+        <p>These genuine Māori words should be accepted:</p>
+        <div id="authentic-words"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>🚨 Fake "Māori-looking" Words (Should FAIL)</h2>
+        <p class="critical">These fake words that "look Māori" should be rejected:</p>
+        <div id="fake-words"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>📊 Test Results Summary</h2>
+        <div id="test-summary"></div>
+    </div>
+
+    <script src="js/maori-dictionary-api.js"></script>
+    <script>
+        // Test data
+        const authenticWords = [
+            'AROHA', 'WHARE', 'MAURI', 'TAIAO', 'RANGI', 'MOANA', 'MANA', 'WAIRUA',
+            'MATUA', 'WHAEA', 'HONGI', 'HANGI', 'KAURI', 'HAERE', 'NOHO', 'TAPU',
+            'KETE', 'KORU', 'RATA', 'RIMU', 'RURU', 'KIWI', 'TITI', 'KAKA'
+        ];
+        
+        const fakeWords = [
+            'MAORE', 'KIANO', 'WHAHE', 'TAIRI', 'NGANU', 'HAUHI', 'KORAI', 'WHUNGA',
+            'MOARI', 'KIWAH', 'NGARO', 'TAUKU', 'WHINU', 'KOHA', 'MAIRU', 'WAHOE'
+        ];
+        
+        let passedTests = 0;
+        let totalTests = 0;
+        
+        async function runTests() {
+            // Check environment
+            await checkEnvironment();
+            
+            // Test authentic words
+            await testWordList(authenticWords, 'authentic', true);
+            
+            // Test fake words  
+            await testWordList(fakeWords, 'fake', false);
+            
+            // Show summary
+            showSummary();
+        }
+        
+        async function checkEnvironment() {
+            const statusDiv = document.getElementById('environment-status');
+            
+            if (window.maoriDictionaryAPI) {
+                statusDiv.innerHTML = `
+                    <div class="success">✅ Māori Dictionary API loaded successfully</div>
+                    <div>Dictionary contains ${Object.keys(window.maoriDictionaryAPI.fallbackDictionary).length} authentic words</div>
+                `;
+            } else {
+                statusDiv.innerHTML = `<div class="critical">❌ Māori Dictionary API failed to load - Cultural safety compromised!</div>`;
+            }
+        }
+        
+        async function testWordList(words, type, shouldPass) {
+            const container = document.getElementById(`${type}-words`);
+            
+            for (const word of words) {
+                totalTests++;
+                const isValid = await testWord(word);
+                
+                const testPassed = (shouldPass && isValid) || (!shouldPass && !isValid);
+                if (testPassed) passedTests++;
+                
+                const wordDiv = document.createElement('div');
+                wordDiv.className = `word-test ${type}`;
+                wordDiv.innerHTML = `
+                    <span><strong>${word}</strong> - ${type === 'authentic' ? 'Authentic Māori' : 'Fake word'}</span>
+                    <span class="test-result ${testPassed ? 'pass' : 'fail'}">
+                        ${testPassed ? 'PASS' : 'FAIL'} (${isValid ? 'Accepted' : 'Rejected'})
+                    </span>
+                `;
+                container.appendChild(wordDiv);
+            }
+        }
+        
+        async function testWord(word) {
+            try {
+                if (!window.maoriDictionaryAPI) {
+                    return false;
+                }
+                return await window.maoriDictionaryAPI.validateMaoriWord(word);
+            } catch (error) {
+                console.error(`Error testing word ${word}:`, error);
+                return false;
+            }
+        }
+        
+        function showSummary() {
+            const summaryDiv = document.getElementById('test-summary');
+            const successRate = Math.round((passedTests / totalTests) * 100);
+            
+            let statusClass = 'test-passed';
+            let statusMessage = 'Cultural authenticity protected! ✅';
+            
+            if (successRate < 100) {
+                statusClass = 'test-failed';
+                statusMessage = 'Cultural authenticity issues detected! ❌';
+            }
+            
+            summaryDiv.innerHTML = `
+                <div class="${statusClass}">
+                    <h3>${statusMessage}</h3>
+                    <p><strong>Tests Passed:</strong> ${passedTests}/${totalTests} (${successRate}%)</p>
+                    ${successRate === 100 ? 
+                        '<p class="success">All tests passed! Te Reo Māori cultural integrity is protected.</p>' :
+                        '<p class="critical">Some tests failed! Cultural authenticity needs attention.</p>'
+                    }
+                </div>
+            `;
+        }
+        
+        // Wait for API to load then run tests
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Wait a moment for the API to initialize
+            setTimeout(runTests, 1000);
+        });
+    </script>
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-ui.js"></script>
+</body>
+</html>

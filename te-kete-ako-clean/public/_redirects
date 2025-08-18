@@ -1,0 +1,8 @@
+# Specific page redirects
+/curriculum /curriculum-alignment.html 301
+/maori-wordle /games/te-reo-wordle.html 301
+/activities /activities.html 301
+
+# Handle API routes and non-existent files only, not existing HTML files
+/api/* /index.html 200
+/404/* /index.html 200

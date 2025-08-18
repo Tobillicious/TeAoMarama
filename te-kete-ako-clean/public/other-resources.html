@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Resources | Te Kete Ako</title>
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+<body data-auto-init="true" data-current-page="other-resources">
+
+                        <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Today's Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-secondary);">"Poipoia te kakano kia puawai."</p>
+                <p style="font-size: var(--text-sm);">Nurture the seed and it will blossom.</p>
+            </div>
+        
+        
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Related Resources</h3>
+                <ul>
+                    <li><a href="/handouts/design-thinking-process-handout.html">Design Thinking</a></li>
+                    <li><a href="/handouts/digital-citizenship-handout.html">Digital Citizenship</a></li>
+                    <li><a href="/y8-systems-unit.html">Complete Unit Examples</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">Resource Categories</h3>
+                <ul>
+                    <li><a href="/other-resources.html?type=assessment">Assessment Tools (7)</a></li>
+                    <li><a href="/other-resources.html?type=project">Learning Projects (1)</a></li>
+                    <li><a href="/other-resources.html?type=templates">Templates (5)</a></li>
+                    <li><a href="/other-resources.html?type=external">External Links (8)</a></li>
+                    <li><a href="/other-resources.html?type=tools">Digital Tools (4)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <h1 style="font-size: 2rem; margin-bottom: 1rem;" class="wiley-hero-title">🧠 Other Resources</h1>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Additional educational resources powered by Project Kete Aronui GraphRAG intelligence. Assessment tools, templates, and platforms discoverable through semantic categorization.</p>
+            
+            <div class="filter-container">
+                <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">🎯 Intelligent Resource Discovery</h3>  
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-2);">Filter resources using GraphRAG-powered semantic analysis. Categories are determined by AI understanding of content relationships.</p>
+                <div class="resource-count" style="font-weight: 600; color: var(--color-secondary);">Loading resources...</div>
+                <!-- Filter navigation will be inserted here by JavaScript -->
+            </div>
+
+            <div class="filter-bar no-print">
+                <div class="filter-group">
+                    <label class="filter-label">Resource Type</label>
+                    <select class="filter-dropdown" id="type-filter">
+                        <option value="">All Types</option>
+                        <option value="assessment">Assessment Tools</option>
+                        <option value="project">Learning Projects</option>
+                        <option value="templates">Templates</option>
+                        <option value="external">External Links</option>
+                        <option value="tools">Digital Tools</option>
+                        <option value="research">Research Resources</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Subject Area (Kaiako Teams)</label>
+                    <select class="filter-dropdown" id="subject-filter">
+                        <option value="">All Subjects</option>
+                        <option value="humanities">Humanities</option>
+                        <option value="te-ao-maori">Te Ao Māori</option>
+                        <option value="english">English</option>
+                        <option value="stem">STEM</option>
+                        <option value="maths">Maths</option>
+                        <option value="lit-num">LIT/Num</option>
+                        <option value="arts">Arts</option>
+                        <option value="tech">Technology</option>
+                        <option value="general">General/Cross-curricular</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Year Level</label>
+                    <select class="filter-dropdown" id="year-filter">
+                        <option value="">All Year Levels</option>
+                        <option value="7">Year 7</option>
+                        <option value="8">Year 8</option>
+                        <option value="9">Year 9</option>
+                        <option value="10">Year 10</option>
+                        <option value="11">Year 11</option>
+                        <option value="12">Year 12</option>
+                        <option value="13">Year 13</option>
+                        <option value="all">All Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Assessment Tools Section -->
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Assessment Tools</h2>
+            <div class="resource-grid">
+                <a href="/decolonized-assessment-framework.html" class="resource-card" style="border-left: 4px solid var(--color-maori-red);">
+                    <h3 class="resource-card-title">🌟 Decolonized Assessment Framework</h3>
+                    <p class="resource-card-description">A framework for assessment that centers Māori values and ways of knowing. Essential for culturally responsive practice.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">Te Ao Māori</span>
+                    </div>
+                </a>
+                <a href="/english-literacy-progression-framework.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">📋 English Literacy Progression Framework</h3>
+                    <p class="resource-card-description">A framework for tracking and developing students' literacy skills in English, aligned with the NZ Curriculum.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">English</span>
+                    </div>
+                </a>
+                <a href="/social-sciences-progression-framework.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">📋 Social Sciences Progression Framework</h3>
+                    <p class="resource-card-description">A framework for tracking and developing students' skills in Social Sciences, aligned with the NZ Curriculum.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">Humanities</span>
+                    </div>
+                </a>
+                <a href="/assessment-rubric.html" class="resource-card" style="border-left: 4px solid var(--color-secondary);">
+                    <h3 class="resource-card-title">📋 Project Assessment Rubric</h3>
+                    <p class="resource-card-description">Comprehensive rubric for evaluating student projects across multiple criteria including research, analysis, presentation, and cultural understanding.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 8-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">✅ Peer Assessment Template</h3>
+                    <p class="resource-card-description">Structured template for students to provide constructive feedback to classmates on presentations and collaborative work.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">🎯 Self-Reflection Checklist</h3>
+                    <p class="resource-card-description">Metacognitive tool for students to reflect on their learning process, strengths, and areas for improvement.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">📊 Formative Assessment Exit Tickets</h3>
+                    <p class="resource-card-description">Collection of quick formative assessment templates to gauge student understanding at lesson's end.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Assessment</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialized Learning Projects Section -->
+            <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Specialized Learning Projects</h2>
+            <div class="resource-grid">
+                <a href="/living-whakapapa.html" class="resource-card" style="border-left: 4px solid var(--color-maori-red);">
+                    <h3 class="resource-card-title">🌟 Living Whakapapa Project</h3>
+                    <p class="resource-card-description">Revolutionary multimedia connection mapping system integrating traditional whakapapa concepts with modern relationship mapping and cross-curricular learning through specialized agent coordination.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Project</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">Te Ao Māori</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Templates Section -->
+            <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Templates</h2>
+            <div class="resource-grid">
+                <a href="/teacher-guide.html" class="resource-card" style="border-left: 4px solid var(--color-accent);">
+                    <h3 class="resource-card-title">📘 Teacher Guide Template</h3>
+                    <p class="resource-card-description">A template for creating comprehensive teacher guides for units and lessons.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Template</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+                <div class="resource-card" style="border-left: 4px solid var(--color-accent);">
+                    <h3 class="resource-card-title">📝 Lesson Plan Template</h3>
+                    <p class="resource-card-description">Standardized lesson plan template incorporating learning objectives, cultural connections, and differentiation strategies.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Template</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">🗂️ Unit Planning Template</h3>
+                    <p class="resource-card-description">Comprehensive template for designing multi-week units with clear progressions and assessment points.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Template</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">📄 Research Report Template</h3>
+                    <p class="resource-card-description">Student template for structured research reports including citations, analysis, and reflection sections.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Template</span>
+                        <span class="resource-tag">Years 9-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-card-title">🎤 Presentation Planning Template</h3>
+                    <p class="resource-card-description">Scaffolded template to help students plan engaging presentations with clear structure and visual aids.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Template</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Tools Section -->
+            <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Digital Tools</h2>
+            <div class="resource-grid">
+                <a href="https://kahoot.com" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">🎮 Kahoot!</h3>
+                    <p class="resource-card-description">Interactive quiz platform for engaging whole-class review and assessment activities.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Digital Tool</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+
+                <a href="https://padlet.com" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📌 Padlet</h3>
+                    <p class="resource-card-description">Digital bulletin board for collaborative brainstorming, sharing resources, and collecting student responses.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Digital Tool</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+
+                <a href="https://flipgrid.com" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📹 Flipgrid</h3>
+                    <p class="resource-card-description">Video discussion platform for students to share ideas, practice presentations, and engage in asynchronous discussions.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Digital Tool</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+
+                <a href="https://mentimeter.com" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📊 Mentimeter</h3>
+                    <p class="resource-card-description">Real-time polling and Q&A tool for gathering student feedback and facilitating interactive discussions.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">Digital Tool</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- External Links Section -->
+            <h2 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">External Links & Resources</h2>
+            <div class="resource-grid">
+                <a href="https://nzhistory.govt.nz" target="_blank" class="resource-card" style="border-left: 4px solid var(--color-maori-red);" rel="noopener">
+                    <h3 class="resource-card-title">🏛️ NZ History - Ministry for Culture & Heritage</h3>
+                    <p class="resource-card-description">Official New Zealand history website with articles, timelines, and resources covering all aspects of Aotearoa's past.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">Humanities</span>
+                    </div>
+                </a>
+
+                <a href="https://www.tki.org.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📚 Te Kete Ipurangi (TKI)</h3>
+                    <p class="resource-card-description">Ministry of Education's curriculum support site with teaching resources across all learning areas.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">All Years</span>
+                        <span class="resource-tag">General</span>
+                    </div>
+                </a>
+
+                <a href="https://natlib.govt.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📖 National Library of New Zealand</h3>
+                    <p class="resource-card-description">Digital collections, historical documents, and research resources for New Zealand studies.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 9-13</span>
+                        <span class="resource-tag">Research</span>
+                    </div>
+                </a>
+
+                <a href="https://www.maoritelevision.com/news" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📺 Māori Television News</h3>
+                    <p class="resource-card-description">Current events and news from a Māori perspective, excellent for media literacy and cultural understanding.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 9-13</span>
+                        <span class="resource-tag">Te Ao Māori</span>
+                    </div>
+                </a>
+
+                <a href="https://www.stats.govt.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">📊 Stats NZ</h3>
+                    <p class="resource-card-description">Official statistics and data about New Zealand, perfect for numeracy, research, and social studies.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 8-13</span>
+                        <span class="resource-tag">Maths</span>
+                    </div>
+                </a>
+
+                <a href="https://thespinoff.co.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">🌀 The Spinoff</h3>
+                    <p class="resource-card-description">Contemporary New Zealand media and culture analysis, great for media literacy and current events discussions.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 11-13</span>
+                        <span class="resource-tag">English</span>
+                    </div>
+                </a>
+
+                <a href="https://www.sciencelearn.org.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">🔬 Science Learning Hub</h3>
+                    <p class="resource-card-description">Interactive science resources with New Zealand contexts and real-world applications.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">STEM</span>
+                    </div>
+                </a>
+
+                <a href="https://creative.govt.nz" target="_blank" class="resource-card" rel="noopener">
+                    <h3 class="resource-card-title">🎨 Creative New Zealand</h3>
+                    <p class="resource-card-description">Arts resources, funding opportunities, and cultural content for creative learning experiences.</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">External</span>
+                        <span class="resource-tag">Years 7-13</span>
+                        <span class="resource-tag">Arts</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/filtering-system.js"></script>
+    <script src="js/shared-components.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/analytics-dashboard.js"></script>
+    <script src="js/advanced-analytics.js"></script>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GraphRAG-Powered Filtering System -->
+    <script src="js/other-resources-filtering.js"></script>
+<script>
+
+// Filtering functionality for other resources
+function filterResources(type) {
+    const resources = document.querySelectorAll('.resource-item');
+    resources.forEach(resource => {
+        const category = resource.dataset.type || '';
+        if (type === 'all' || category === type) {
+            resource.style.display = 'block';
+        } else {
+            resource.style.display = 'none';
+        }
+    });
+    
+    // Update active filter button
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="filterResources('${type}')"]`)?.classList.add('active');
+}
+
+// Initialize filtering on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterType = urlParams.get('type') || 'all';
+    filterResources(filterType);
+});
+
+</script>
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

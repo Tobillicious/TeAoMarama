@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth System Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Te Kete Ako Auth System Test</h1>
+    
+    <div id="test-results"></div>
+    
+    <button onclick="runTests()" style="padding: 10px 20px; font-size: 16px; margin: 20px 0;">🚀 Run Auth Tests</button>
+    
+    <!-- Load scripts in order -->
+    <script src="js/supabase.js"></script>
+    <script src="js/env-config.js"></script>
+    <script src="js/auth-enhanced.js"></script>
+    
+    <script>
+        function addResult(message, type = 'success') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.textContent = message;
+            document.getElementById('test-results').appendChild(div);
+        }
+        
+        function runTests() {
+            document.getElementById('test-results').innerHTML = '';
+            
+            addResult('🚀 Starting comprehensive auth system tests...', 'warning');
+            
+            // Test 1: Supabase Library
+            if (window.supabase) {
+                addResult('✅ Supabase library loaded successfully', 'success');
+                addResult(`   Version: ${window.supabase.createClient ? 'v2+' : 'Unknown'}`, 'success');
+            } else {
+                addResult('❌ Supabase library failed to load', 'error');
+                return;
+            }
+            
+            // Test 2: Environment Config
+            if (window.ENV) {
+                addResult('✅ Environment config loaded', 'success');
+                addResult(`   Supabase URL: ${window.ENV.SUPABASE_URL || 'Missing'}`, window.ENV.SUPABASE_URL ? 'success' : 'error');
+                addResult(`   Anon Key: ${window.ENV.SUPABASE_ANON_KEY ? 'Present' : 'Missing'}`, window.ENV.SUPABASE_ANON_KEY ? 'success' : 'error');
+            } else {
+                addResult('❌ Environment config not loaded', 'error');
+            }
+            
+            // Test 3: Auth Enhanced System
+            if (window.teKeteAuth) {
+                addResult('✅ teKeteAuth object exists', 'success');
+                addResult(`   Auth State: ${window.teKeteAuth.authState}`, 'warning');
+                addResult(`   Current User: ${window.teKeteAuth.currentUser ? 'Present' : 'None'}`, 'success');
+                
+                // Test methods
+                const methods = ['signIn', 'signOut', 'isSignedIn', 'getCurrentUser'];
+                methods.forEach(method => {
+                    if (typeof window.teKeteAuth[method] === 'function') {
+                        addResult(`   ✅ Method ${method}() available`, 'success');
+                    } else {
+                        addResult(`   ❌ Method ${method}() missing`, 'error');
+                    }
+                });
+            } else {
+                addResult('❌ teKeteAuth system not initialized', 'error');
+            }
+            
+            // Test 4: Manual Supabase Client Creation
+            if (window.supabase && window.ENV && window.ENV.SUPABASE_URL && window.ENV.SUPABASE_ANON_KEY) {
+                try {
+                    const testClient = window.supabase.createClient(
+                        window.ENV.SUPABASE_URL,
+                        window.ENV.SUPABASE_ANON_KEY
+                    );
+                    addResult('✅ Manual Supabase client creation successful', 'success');
+                } catch (error) {
+                    addResult(`❌ Manual client creation failed: ${error.message}`, 'error');
+                }
+            } else {
+                addResult('❌ Cannot test manual client - missing dependencies', 'error');
+            }
+            
+            // Test 5: Network connectivity to Supabase
+            if (window.ENV && window.ENV.SUPABASE_URL) {
+                fetch(window.ENV.SUPABASE_URL + '/rest/v1/', { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok || response.status === 401) { // 401 is expected without auth
+                            addResult('✅ Network connectivity to Supabase: OK', 'success');
+                        } else {
+                            addResult(`❌ Network connectivity issue: ${response.status}`, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        addResult(`❌ Network error: ${error.message}`, 'error');
+                    });
+            }
+            
+            addResult('📊 Tests complete!', 'warning');
+        }
+        
+        // Auto-run tests after 2 seconds
+        setTimeout(() => {
+            addResult('🔄 Auto-running tests in 2 seconds...', 'warning');
+            runTests();
+        }, 2000);
+    </script>
+</body>
+</html>

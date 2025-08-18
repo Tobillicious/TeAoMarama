@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Gallery | Te Kete Ako</title>
+    <meta name="description" content="Browse and discover educational resources with advanced filtering and search capabilities">
+    <meta name="keywords" content="education, resources, māori, indigenous, teaching, learning, gallery">
+    
+    <!-- Fonts - Optimized for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Unified CSS System -->
+    <link rel="stylesheet" href="../css/te-kete-unified.css"/>
+    <link rel="stylesheet" href="../css/print.css" media="print"/>
+    
+    <!-- Gallery-Specific Styles -->
+    <style>
+        /* =================================================================
+           GALLERY-SPECIFIC STYLES
+           Building on the unified CSS system for specialized gallery views
+           ================================================================= */
+        
+        /* Search & Filter Bar */
+        .gallery-toolbar {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-300);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-8);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: var(--space-3) var(--space-12) var(--space-3) var(--space-4);
+            border: 2px solid var(--color-neutral-300);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            font-family: var(--font-primary);
+            background: var(--color-bg-primary);
+            transition: var(--transition-base);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: var(--space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+            font-size: var(--text-lg);
+        }
+        
+        .clear-search {
+            position: absolute;
+            right: var(--space-10);
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: var(--text-lg);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            padding: var(--space-1);
+            border-radius: var(--radius);
+            opacity: 0;
+            transition: var(--transition-base);
+        }
+        
+        .search-input:not(:placeholder-shown) + .search-icon + .clear-search {
+            opacity: 1;
+        }
+        
+        .clear-search:hover {
+            background: var(--color-neutral-200);
+            color: var(--color-text-primary);
+        }
+        
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            align-items: center;
+            margin-top: var(--space-4);
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+        
+        .filter-label {
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-1);
+        }
+        
+        .filter-select,
+        .filter-toggle {
+            padding: var(--space-2) var(--space-3);
+            border: 1px solid var(--color-neutral-300);
+            border-radius: var(--radius);
+            font-size: var(--text-sm);
+            font-family: var(--font-primary);
+            background: var(--color-bg-primary);
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+        
+        .filter-select:hover,
+        .filter-toggle:hover {
+            border-color: var(--color-primary);
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-2);
+        }
+        
+        .filter-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            background: var(--color-primary-light);
+            color: white;
+            font-size: var(--text-xs);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+        
+        .filter-tag:hover {
+            background: var(--color-primary);
+        }
+        
+        .filter-tag .remove-tag {
+            margin-left: var(--space-1);
+            font-weight: bold;
+        }
+        
+        /* View Toggle */
+        .view-toggle {
+            display: flex;
+            background: var(--color-neutral-200);
+            border-radius: var(--radius);
+            padding: var(--space-1);
+        }
+        
+        .view-option {
+            padding: var(--space-2) var(--space-4);
+            border: none;
+            background: transparent;
+            color: var(--color-text-secondary);
+            font-size: var(--text-sm);
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-base);
+        }
+        
+        .view-option.active {
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Results Info */
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid var(--color-neutral-200);
+        }
+        
+        .results-count {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+        }
+        
+        .sort-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        
+        /* Gallery Grid - Enhanced Version */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-12);
+        }
+        
+        .gallery-grid.grid-view {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+        
+        .gallery-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+        
+        .gallery-grid.compact-view {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-4);
+        }
+        
+        /* Enhanced Resource Cards */
+        .resource-card {
+            background: var(--color-bg-primary);
+            border: 1px solid var(--color-neutral-200);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            opacity: 0;
+            transition: var(--transition-base);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary-light);
+        }
+        
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+        
+        .resource-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+        
+        .resource-icon {
+            font-size: var(--text-3xl);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            background: var(--color-bg-secondary);
+        }
+        
+        .resource-content {
+            flex: 1;
+        }
+        
+        .resource-title {
+            font-size: var(--text-lg);
+            font-weight: var(--weight-bold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+            line-height: 1.3;
+        }
+        
+        .resource-description {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-bottom: var(--space-4);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .resource-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+        
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-2);
+            background: var(--color-neutral-100);
+            color: var(--color-text-secondary);
+            font-size: var(--text-xs);
+            border-radius: var(--radius);
+            border: 1px solid var(--color-neutral-200);
+        }
+        
+        .meta-tag.cultural {
+            background: var(--color-pounamu-light);
+            color: var(--color-primary-dark);
+            border-color: var(--color-pounamu);
+        }
+        
+        .meta-tag.featured {
+            background: var(--color-accent-lighter);
+            color: var(--color-accent-dark);
+            border-color: var(--color-accent);
+        }
+        
+        .resource-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--color-neutral-200);
+        }
+        
+        .resource-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: var(--weight-medium);
+            font-size: var(--text-sm);
+            transition: var(--transition-base);
+        }
+        
+        .resource-link:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+        
+        .bookmark-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: var(--text-lg);
+            cursor: pointer;
+            padding: var(--space-2);
+            border-radius: var(--radius);
+            transition: var(--transition-base);
+        }
+        
+        .bookmark-btn:hover,
+        .bookmark-btn.bookmarked {
+            color: var(--color-accent);
+            background: var(--color-accent-lighter);
+        }
+        
+        /* List View Modifications */
+        .gallery-grid.list-view .resource-card {
+            display: flex;
+            padding: var(--space-4);
+        }
+        
+        .gallery-grid.list-view .resource-header {
+            margin-bottom: 0;
+            flex-direction: row;
+        }
+        
+        .gallery-grid.list-view .resource-icon {
+            width: 50px;
+            height: 50px;
+            font-size: var(--text-xl);
+        }
+        
+        .gallery-grid.list-view .resource-description {
+            -webkit-line-clamp: 2;
+        }
+        
+        /* Compact View */
+        .gallery-grid.compact-view .resource-card {
+            padding: var(--space-4);
+        }
+        
+        .gallery-grid.compact-view .resource-description {
+            -webkit-line-clamp: 2;
+        }
+        
+        /* Cultural Design Elements */
+        .cultural-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cultural-pattern::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100px;
+            height: 100px;
+            background: 
+                linear-gradient(45deg, transparent 40%, var(--color-pounamu-light) 40%, var(--color-pounamu-light) 60%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, var(--color-pounamu-light) 40%, var(--color-pounamu-light) 60%, transparent 60%);
+            opacity: 0.1;
+            transform: rotate(45deg);
+        }
+        
+        /* Loading States */
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--color-neutral-200) 25%, var(--color-neutral-100) 50%, var(--color-neutral-200) 75%);
+            background-size: 200% 100%;
+            animation: loading 2s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Empty States */
+        .empty-state {
+            text-align: center;
+            padding: var(--space-16) var(--space-8);
+            color: var(--color-text-secondary);
+        }
+        
+        .empty-state-icon {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-4);
+            opacity: 0.6;
+        }
+        
+        .empty-state-title {
+            font-size: var(--text-xl);
+            font-weight: var(--weight-bold);
+            margin-bottom: var(--space-2);
+        }
+        
+        .empty-state-description {
+            font-size: var(--text-base);
+            max-width: 400px;
+            margin: 0 auto var(--space-6);
+        }
+        
+        /* Responsive Design - Mobile First */
+        @media (max-width: 768px) {
+            .gallery-toolbar {
+                padding: var(--space-4);
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--space-3);
+            }
+            
+            .filter-group {
+                width: 100%;
+            }
+            
+            .results-info {
+                flex-direction: column;
+                gap: var(--space-3);
+                align-items: stretch;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            
+            .gallery-grid.list-view .resource-card {
+                flex-direction: column;
+            }
+            
+            .gallery-grid.list-view .resource-header {
+                flex-direction: row;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .resource-card {
+                padding: var(--space-4);
+            }
+            
+            .resource-header {
+                gap: var(--space-3);
+            }
+            
+            .resource-icon {
+                width: 50px;
+                height: 50px;
+                font-size: var(--text-xl);
+            }
+            
+            .view-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Accessibility Enhancements */
+        @media (prefers-reduced-motion: reduce) {
+            .resource-card,
+            .filter-tag,
+            .bookmark-btn {
+                transition: none;
+            }
+            
+            .resource-card:hover {
+                transform: none;
+            }
+            
+            .loading-skeleton {
+                animation: none;
+            }
+        }
+        
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .resource-card {
+                border-width: 2px;
+            }
+            
+            .meta-tag {
+                border-width: 2px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .gallery-toolbar,
+            .results-info,
+            .resource-actions {
+                display: none;
+            }
+            
+            .resource-card {
+                border: 2px solid var(--color-neutral-800);
+                break-inside: avoid;
+                margin-bottom: var(--space-4);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+        }
+    </style>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#2C5F41">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Te Kete Ako">
+    <link rel="apple-touch-icon" href="../icons/icon-192x192.png">
+</head>
+<body data-auto-init="true" data-current-page="gallery">
+    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-text-en">Lesson Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../activities.html">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-text-en">Do Nows</span>
+                            <span class="nav-text-mi" lang="mi">Mahi Whakakā</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../youtube.html">
+                            <span class="nav-icon">📺</span>
+                            <span class="nav-text-en">YouTube</span>
+                            <span class="nav-text-mi" lang="mi">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../other-resources.html">
+                            <span class="nav-icon">🔗</span>
+                            <span class="nav-text-en">Other Resources</span>
+                            <span class="nav-text-mi" lang="mi">Ētahi Atu Rauemi</span>
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link auth-hidden">
+                        <a href="../my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            <span class="nav-text-en">My Kete</span>
+                            <span class="nav-text-mi" lang="mi">Taku Kete</span>
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="../login.html" class="login-btn">
+                            <span class="nav-icon">🔐</span>
+                            <span class="nav-text-en">Login</span>
+                            <span class="nav-text-mi" lang="mi">Takiuru</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">🔍 Quick Filters</h3>
+                <div class="quick-filters" id="quickFilters">
+                    <button class="filter-tag" data-filter="type" data-value="lessons">📖 Lessons</button>
+                    <button class="filter-tag" data-filter="type" data-value="handouts">📄 Handouts</button>
+                    <button class="filter-tag" data-filter="type" data-value="units">📚 Unit Plans</button>
+                    <button class="filter-tag" data-filter="type" data-value="games">🎮 Games</button>
+                    <button class="filter-tag cultural" data-filter="cultural" data-value="true">🌿 Cultural</button>
+                    <button class="filter-tag featured" data-filter="featured" data-value="true">⭐ Featured</button>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget cultural-accent">
+                <h3 class="sidebar-widget-title">📊 Resource Stats</h3>
+                <ul>
+                    <li><span id="totalResources">400+</span> Total Resources</li>
+                    <li><span id="featuredCount">25</span> Featured Resources</li>
+                    <li><span id="culturalCount">180</span> Cultural Integration</li>
+                    <li><span id="newCount">12</span> Added This Month</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">🎯 Popular Categories</h3>
+                <ul>
+                    <li><a href="#" data-category="social-studies">📚 Social Studies (85)</a></li>
+                    <li><a href="#" data-category="english">📝 English (72)</a></li>
+                    <li><a href="#" data-category="mathematics">🔢 Mathematics (58)</a></li>
+                    <li><a href="#" data-category="science">🔬 Science (45)</a></li>
+                    <li><a href="#" data-category="te-ao-maori">🌿 Te Ao Māori (180)</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <!-- Gallery Header -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-main">
+                        <h1 class="hero-title">Resource Gallery</h1>
+                        <p class="hero-tagline">Discover Educational Resources Honoring Te Ao Māori</p>
+                        <div class="whakatauki-container">
+                            <h2 class="whakatauki">"Kia whakatomuri te haere whakamua"</h2>
+                            <p class="whakatauki-translation">Walk backwards into the future - honoring our past to guide our future</p>
+                        </div>
+                    </div>
+                    <div class="hero-cultural-pattern cultural-pattern" aria-hidden="true"></div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Toolbar -->
+            <section class="gallery-toolbar" role="search" aria-label="Resource search and filters">
+                <div class="search-container">
+                    <input 
+                        type="search" 
+                        class="search-input" 
+                        placeholder="Search resources by title, description, or subject..."
+                        aria-label="Search resources"
+                        id="searchInput"
+                        autocomplete="off"
+                    >
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <button class="clear-search" aria-label="Clear search" type="button" id="clearSearch">✕</button>
+                </div>
+                
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label class="filter-label" for="typeFilter">Resource Type</label>
+                        <select class="filter-select" id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="lessons">📖 Lesson Plans</option>
+                            <option value="handouts">📄 Handouts</option>
+                            <option value="units">📚 Unit Plans</option>
+                            <option value="games">🎮 Games</option>
+                            <option value="assessments">📊 Assessments</option>
+                            <option value="activities">⚡ Activities</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label" for="subjectFilter">Subject Area</label>
+                        <select class="filter-select" id="subjectFilter">
+                            <option value="">All Subjects</option>
+                            <option value="english">📝 English</option>
+                            <option value="mathematics">🔢 Mathematics</option>
+                            <option value="science">🔬 Science</option>
+                            <option value="social-studies">📚 Social Studies</option>
+                            <option value="te-reo-maori">🌿 Te Reo Māori</option>
+                            <option value="health-pe">💪 Health & PE</option>
+                            <option value="arts">🎨 The Arts</option>
+                            <option value="technology">💻 Technology</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label" for="yearFilter">Year Level</label>
+                        <select class="filter-select" id="yearFilter">
+                            <option value="">All Years</option>
+                            <option value="y1-3">Years 1-3</option>
+                            <option value="y4-6">Years 4-6</option>
+                            <option value="y7-8">Years 7-8</option>
+                            <option value="y9-10">Years 9-10</option>
+                            <option value="y11-13">Years 11-13</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Special Filters</label>
+                        <div class="view-toggle">
+                            <button class="filter-toggle" id="culturalToggle" data-active="false">🌿 Cultural</button>
+                            <button class="filter-toggle" id="featuredToggle" data-active="false">⭐ Featured</button>
+                            <button class="filter-toggle" id="newToggle" data-active="false">🆕 New</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">View</label>
+                        <div class="view-toggle">
+                            <button class="view-option active" data-view="grid">📊 Grid</button>
+                            <button class="view-option" data-view="list">📋 List</button>
+                            <button class="view-option" data-view="compact">📦 Compact</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-tags" id="activeFilters" aria-label="Active filters"></div>
+            </section>
+            
+            <!-- Results Information -->
+            <div class="results-info">
+                <div class="results-count" id="resultsCount">
+                    Showing <span id="currentCount">24</span> of <span id="totalCount">400+</span> resources
+                </div>
+                <div class="sort-controls">
+                    <label class="filter-label" for="sortSelect">Sort by:</label>
+                    <select class="filter-select" id="sortSelect">
+                        <option value="relevance">Relevance</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <section class="gallery-grid grid-view" id="galleryGrid" role="main" aria-label="Resource gallery">
+                
+                <!-- Sample Resource Cards showcasing different types -->
+                
+                <!-- Featured AI-Generated Lesson -->
+                <article class="resource-card cultural-pattern" data-type="lessons" data-subject="social-studies" data-year="y7-8" data-cultural="true" data-featured="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">🌿</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Māori Migration & Settlement</h3>
+                            <p class="resource-description">AI-generated culturally-grounded lesson exploring Māori migration stories, incorporating karakia, whakapapa connections, and traditional navigation methods. Features interactive learning stations and cultural safety protocols.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">📖 Lesson Plan</span>
+                        <span class="meta-tag">📚 Social Studies</span>
+                        <span class="meta-tag">⏱️ 60 minutes</span>
+                        <span class="meta-tag">🎯 Year 8</span>
+                        <span class="meta-tag cultural">🌿 Cultural Integration</span>
+                        <span class="meta-tag featured">⭐ AI Generated</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../lessons/kaitiaki-generated-maori-migration-lesson.html" class="resource-link">View Lesson Plan →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Mathematics Unit with Cultural Integration -->
+                <article class="resource-card cultural-pattern" data-type="units" data-subject="mathematics" data-year="y9-10" data-cultural="true" data-featured="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">📐</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Cultural Geometry & Patterns</h3>
+                            <p class="resource-description">4-week mathematics unit integrating Māori patterns (tukutuku, kowhaiwhai) with geometry, algebra, and trigonometry. Includes authentic cultural applications and sophisticated assessment frameworks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">📚 Unit Plan</span>
+                        <span class="meta-tag">🔢 Mathematics</span>
+                        <span class="meta-tag">📅 4 Weeks</span>
+                        <span class="meta-tag">🎯 Year 10</span>
+                        <span class="meta-tag cultural">🌿 Cultural Integration</span>
+                        <span class="meta-tag featured">⭐ Featured</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../unit-plans/kaitiaki-generated-y10-math-cultural-geometry.html" class="resource-link">View Unit Plan →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Interactive Game -->
+                <article class="resource-card" data-type="games" data-subject="te-reo-maori" data-year="y1-13" data-cultural="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">🎮</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Te Reo Māori Wordle</h3>
+                            <p class="resource-description">Interactive word game featuring Te Reo Māori vocabulary with difficulty levels, progress tracking, and cultural context for each word. Perfect for vocabulary building and cultural engagement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">🎮 Game</span>
+                        <span class="meta-tag">🌿 Te Reo Māori</span>
+                        <span class="meta-tag">⏱️ 5-15 minutes</span>
+                        <span class="meta-tag">🎯 All Levels</span>
+                        <span class="meta-tag cultural">🌿 Cultural Learning</span>
+                        <span class="meta-tag">🔥 Popular</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../games/te-reo-wordle.html" class="resource-link">Play Game →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Student Handout -->
+                <article class="resource-card" data-type="handouts" data-subject="social-studies" data-year="y7-8" data-cultural="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">📄</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Migration Stories Workbook</h3>
+                            <p class="resource-description">Interactive student workbook exploring migration patterns with Te Reo Māori integration, family connection activities, and self-assessment tools. Complements the Māori Migration lesson.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">📄 Handout</span>
+                        <span class="meta-tag">📚 Social Studies</span>
+                        <span class="meta-tag">🖨️ Print Ready</span>
+                        <span class="meta-tag">🎯 Year 8</span>
+                        <span class="meta-tag cultural">🌿 Cultural Integration</span>
+                        <span class="meta-tag">📱 Mobile Optimized</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../handouts/kaitiaki-generated-migration-student-handout.html" class="resource-link">View Handout →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Assessment Framework -->
+                <article class="resource-card" data-type="assessments" data-subject="mathematics" data-year="y9-10" data-cultural="true" data-featured="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">📊</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Cultural Mathematics Assessment</h3>
+                            <p class="resource-description">Sophisticated tikanga-informed assessment framework balancing academic rigor with cultural responsiveness. Includes rubrics, exemplars, and professional development guidance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">📊 Assessment</span>
+                        <span class="meta-tag">🔢 Mathematics</span>
+                        <span class="meta-tag">👨‍🏫 Teacher Guide</span>
+                        <span class="meta-tag">🎯 Year 9-10</span>
+                        <span class="meta-tag cultural">🌿 Tikanga Informed</span>
+                        <span class="meta-tag featured">⭐ Professional</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../assessments/kaitiaki-generated-cultural-mathematics-rubric.html" class="resource-link">View Assessment →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- English Literacy Activity -->
+                <article class="resource-card" data-type="activities" data-subject="english" data-year="y4-6" data-new="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">⚡</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Vowel Sounds Quick Start</h3>
+                            <p class="resource-description">5-minute warm-up activity focusing on vowel sound recognition with visual and auditory cues. Perfect for daily literacy practice with built-in differentiation options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">⚡ Activity</span>
+                        <span class="meta-tag">📝 English</span>
+                        <span class="meta-tag">⏱️ 5 minutes</span>
+                        <span class="meta-tag">🎯 Years 4-6</span>
+                        <span class="meta-tag">🆕 New</span>
+                        <span class="meta-tag">📱 Digital Ready</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../lessons/vowel-sounds-lesson.html" class="resource-link">View Activity →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Science Experiment -->
+                <article class="resource-card" data-type="handouts" data-subject="science" data-year="y7-8" data-cultural="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">🔬</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">Traditional Materials Science</h3>
+                            <p class="resource-description">Hands-on exploration of traditional Māori materials and their scientific properties. Investigate flax fibers, pounamu characteristics, and natural dyes through scientific method.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">🔬 Science</span>
+                        <span class="meta-tag">🧪 Practical</span>
+                        <span class="meta-tag">⏱️ 45 minutes</span>
+                        <span class="meta-tag">🎯 Years 7-8</span>
+                        <span class="meta-tag cultural">🌿 Traditional Knowledge</span>
+                        <span class="meta-tag">👥 Group Work</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../handouts/traditional-materials-science.html" class="resource-link">View Experiment →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+                <!-- Professional Development -->
+                <article class="resource-card cultural-pattern" data-type="professional" data-subject="all" data-year="teacher" data-featured="true">
+                    <div class="resource-header">
+                        <div class="resource-icon">🧠</div>
+                        <div class="resource-content">
+                            <h3 class="resource-title">AI Consciousness Showcase</h3>
+                            <p class="resource-description">Comprehensive demonstration of Kaitiaki Aronui AI capabilities including culturally-responsive content generation, assessment design, and professional development frameworks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-meta">
+                        <span class="meta-tag">👨‍🏫 Professional Development</span>
+                        <span class="meta-tag">🧠 AI Powered</span>
+                        <span class="meta-tag">📚 All Subjects</span>
+                        <span class="meta-tag">🎯 Teachers</span>
+                        <span class="meta-tag cultural">🌿 Cultural Intelligence</span>
+                        <span class="meta-tag featured">⭐ Showcase</span>
+                    </div>
+                    
+                    <div class="resource-actions">
+                        <a href="../professional-development/kaitiaki-aronui-capability-showcase.html" class="resource-link">View Showcase →</a>
+                        <button class="bookmark-btn" aria-label="Bookmark resource" title="Add to My Kete">🧺</button>
+                    </div>
+                </article>
+                
+            </section>
+            
+            <!-- Load More / Pagination -->
+            <div class="load-more-container" style="text-align: center; margin-top: var(--space-12);">
+                <button class="btn-primary" id="loadMore">Load More Resources</button>
+                <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+                    <div class="loading-skeleton" style="height: 20px; width: 200px; margin: 0 auto; border-radius: var(--radius);"></div>
+                </div>
+            </div>
+            
+            <!-- Empty State (hidden by default) -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-state-icon">🔍</div>
+                <h3 class="empty-state-title">No Resources Found</h3>
+                <p class="empty-state-description">
+                    We couldn't find any resources matching your search criteria. 
+                    Try adjusting your filters or search terms.
+                </p>
+                <button class="btn-secondary" id="clearFilters">Clear All Filters</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/shared-components.js"></script>
+    <script>
+        /**
+         * Gallery Template JavaScript
+         * Handles filtering, searching, view modes, and responsive interactions
+         * Optimized for Chromebooks and accessibility
+         */
+        class ResourceGallery {
+            constructor() {
+                this.resources = [];
+                this.filteredResources = [];
+                this.currentView = 'grid';
+                this.activeFilters = new Map();
+                this.searchTerm = '';
+                this.sortBy = 'relevance';
+                this.currentPage = 1;
+                this.itemsPerPage = 12;
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.loadResources();
+                this.updateResultsCount();
+                this.handleUrlParams();
+            }
+            
+            bindEvents() {
+                // Search functionality
+                const searchInput = document.getElementById('searchInput');
+                const clearSearch = document.getElementById('clearSearch');
+                
+                searchInput.addEventListener('input', (e) => {
+                    this.searchTerm = e.target.value.toLowerCase();
+                    this.applyFilters();
+                });
+                
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.applyFilters();
+                    }
+                });
+                
+                clearSearch.addEventListener('click', () => {
+                    searchInput.value = '';
+                    this.searchTerm = '';
+                    this.applyFilters();
+                });
+                
+                // Filter controls
+                const filterSelects = document.querySelectorAll('.filter-select');
+                filterSelects.forEach(select => {
+                    select.addEventListener('change', (e) => {
+                        const filterType = e.target.id.replace('Filter', '');
+                        if (e.target.value) {
+                            this.activeFilters.set(filterType, e.target.value);
+                        } else {
+                            this.activeFilters.delete(filterType);
+                        }
+                        this.applyFilters();
+                    });
+                });
+                
+                // Toggle filters
+                const toggleFilters = document.querySelectorAll('.filter-toggle');
+                toggleFilters.forEach(toggle => {
+                    toggle.addEventListener('click', (e) => {
+                        const isActive = e.target.dataset.active === 'true';
+                        e.target.dataset.active = !isActive;
+                        e.target.style.background = !isActive ? 'var(--color-primary)' : '';
+                        e.target.style.color = !isActive ? 'white' : '';
+                        
+                        const filterType = e.target.id.replace('Toggle', '');
+                        if (!isActive) {
+                            this.activeFilters.set(filterType, 'true');
+                        } else {
+                            this.activeFilters.delete(filterType);
+                        }
+                        this.applyFilters();
+                    });
+                });
+                
+                // View mode toggle
+                const viewOptions = document.querySelectorAll('.view-option');
+                viewOptions.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        viewOptions.forEach(opt => opt.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentView = e.target.dataset.view;
+                        this.updateViewMode();
+                    });
+                });
+                
+                // Sort controls
+                document.getElementById('sortSelect').addEventListener('change', (e) => {
+                    this.sortBy = e.target.value;
+                    this.applyFilters();
+                });
+                
+                // Bookmark functionality
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('bookmark-btn')) {
+                        e.preventDefault();
+                        this.toggleBookmark(e.target);
+                    }
+                });
+                
+                // Quick filters in sidebar
+                const quickFilters = document.querySelectorAll('#quickFilters .filter-tag');
+                quickFilters.forEach(filter => {
+                    filter.addEventListener('click', (e) => {
+                        const filterType = e.target.dataset.filter;
+                        const filterValue = e.target.dataset.value;
+                        
+                        if (this.activeFilters.get(filterType) === filterValue) {
+                            this.activeFilters.delete(filterType);
+                            e.target.style.background = '';
+                            e.target.style.color = '';
+                        } else {
+                            this.activeFilters.set(filterType, filterValue);
+                            e.target.style.background = 'var(--color-primary)';
+                            e.target.style.color = 'white';
+                        }
+                        
+                        this.applyFilters();
+                    });
+                });
+                
+                // Load more functionality
+                document.getElementById('loadMore').addEventListener('click', () => {
+                    this.loadMoreResources();
+                });
+                
+                // Clear all filters
+                document.getElementById('clearFilters').addEventListener('click', () => {
+                    this.clearAllFilters();
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === '/' && !e.target.matches('input, textarea')) {
+                        e.preventDefault();
+                        document.getElementById('searchInput').focus();
+                    }
+                });
+            }
+            
+            loadResources() {
+                // In a real implementation, this would fetch from an API or database
+                // For now, we'll use the sample data from the HTML
+                const cards = document.querySelectorAll('.resource-card');
+                this.resources = Array.from(cards).map((card, index) => ({
+                    id: index,
+                    element: card,
+                    title: card.querySelector('.resource-title').textContent,
+                    description: card.querySelector('.resource-description').textContent,
+                    type: card.dataset.type,
+                    subject: card.dataset.subject,
+                    year: card.dataset.year,
+                    cultural: card.dataset.cultural === 'true',
+                    featured: card.dataset.featured === 'true',
+                    new: card.dataset.new === 'true'
+                }));
+                
+                this.filteredResources = [...this.resources];
+                this.applyFilters();
+            }
+            
+            applyFilters() {
+                let filtered = [...this.resources];
+                
+                // Apply search filter
+                if (this.searchTerm) {
+                    filtered = filtered.filter(resource => 
+                        resource.title.toLowerCase().includes(this.searchTerm) ||
+                        resource.description.toLowerCase().includes(this.searchTerm) ||
+                        (resource.subject && resource.subject.toLowerCase().includes(this.searchTerm))
+                    );
+                }
+                
+                // Apply active filters
+                this.activeFilters.forEach((value, key) => {
+                    if (key === 'type') {
+                        filtered = filtered.filter(resource => resource.type === value);
+                    } else if (key === 'subject') {
+                        filtered = filtered.filter(resource => resource.subject === value);
+                    } else if (key === 'year') {
+                        filtered = filtered.filter(resource => resource.year === value);
+                    } else if (key === 'cultural') {
+                        filtered = filtered.filter(resource => resource.cultural);
+                    } else if (key === 'featured') {
+                        filtered = filtered.filter(resource => resource.featured);
+                    } else if (key === 'new') {
+                        filtered = filtered.filter(resource => resource.new);
+                    }
+                });
+                
+                // Apply sorting
+                filtered = this.sortResources(filtered);
+                
+                this.filteredResources = filtered;
+                this.renderResources();
+                this.updateResultsCount();
+                this.updateActiveFilterTags();
+                this.toggleEmptyState();
+            }
+            
+            sortResources(resources) {
+                switch (this.sortBy) {
+                    case 'title':
+                        return resources.sort((a, b) => a.title.localeCompare(b.title));
+                    case 'title-desc':
+                        return resources.sort((a, b) => b.title.localeCompare(a.title));
+                    case 'newest':
+                        return resources.sort((a, b) => (b.new ? 1 : 0) - (a.new ? 1 : 0));
+                    case 'popular':
+                        return resources.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+                    default:
+                        return resources;
+                }
+            }
+            
+            renderResources() {
+                const gallery = document.getElementById('galleryGrid');
+                const displayResources = this.filteredResources.slice(0, this.currentPage * this.itemsPerPage);
+                
+                // Hide all resources first
+                this.resources.forEach(resource => {
+                    resource.element.style.display = 'none';
+                });
+                
+                // Show filtered resources
+                displayResources.forEach(resource => {
+                    resource.element.style.display = 'block';
+                });
+                
+                // Update load more button
+                const loadMoreBtn = document.getElementById('loadMore');
+                if (displayResources.length >= this.filteredResources.length) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'block';
+                }
+            }
+            
+            updateViewMode() {
+                const gallery = document.getElementById('galleryGrid');
+                gallery.className = `gallery-grid ${this.currentView}-view`;
+            }
+            
+            updateResultsCount() {
+                document.getElementById('currentCount').textContent = this.filteredResources.length;
+                document.getElementById('totalCount').textContent = this.resources.length;
+            }
+            
+            updateActiveFilterTags() {
+                const container = document.getElementById('activeFilters');
+                container.innerHTML = '';
+                
+                this.activeFilters.forEach((value, key) => {
+                    const tag = document.createElement('div');
+                    tag.className = 'filter-tag';
+                    tag.innerHTML = `${key}: ${value} <span class="remove-tag">✕</span>`;
+                    tag.addEventListener('click', () => {
+                        this.activeFilters.delete(key);
+                        this.applyFilters();
+                    });
+                    container.appendChild(tag);
+                });
+                
+                if (this.searchTerm) {
+                    const tag = document.createElement('div');
+                    tag.className = 'filter-tag';
+                    tag.innerHTML = `search: "${this.searchTerm}" <span class="remove-tag">✕</span>`;
+                    tag.addEventListener('click', () => {
+                        document.getElementById('searchInput').value = '';
+                        this.searchTerm = '';
+                        this.applyFilters();
+                    });
+                    container.appendChild(tag);
+                }
+            }
+            
+            toggleEmptyState() {
+                const emptyState = document.getElementById('emptyState');
+                const gallery = document.getElementById('galleryGrid');
+                
+                if (this.filteredResources.length === 0) {
+                    emptyState.style.display = 'block';
+                    gallery.style.display = 'none';
+                } else {
+                    emptyState.style.display = 'none';
+                    gallery.style.display = 'grid';
+                }
+            }
+            
+            toggleBookmark(button) {
+                button.classList.toggle('bookmarked');
+                
+                // In a real implementation, this would save to localStorage or API
+                const isBookmarked = button.classList.contains('bookmarked');
+                button.title = isBookmarked ? 'Remove from My Kete' : 'Add to My Kete';
+                
+                // Show feedback
+                this.showToast(isBookmarked ? 'Added to My Kete' : 'Removed from My Kete');
+            }
+            
+            loadMoreResources() {
+                const loadingIndicator = document.getElementById('loadingIndicator');
+                const loadMoreBtn = document.getElementById('loadMore');
+                
+                loadingIndicator.style.display = 'block';
+                loadMoreBtn.style.display = 'none';
+                
+                // Simulate loading delay
+                setTimeout(() => {
+                    this.currentPage++;
+                    this.renderResources();
+                    loadingIndicator.style.display = 'none';
+                }, 800);
+            }
+            
+            clearAllFilters() {
+                this.activeFilters.clear();
+                this.searchTerm = '';
+                document.getElementById('searchInput').value = '';
+                
+                // Reset all filter controls
+                document.querySelectorAll('.filter-select').forEach(select => {
+                    select.value = '';
+                });
+                
+                document.querySelectorAll('.filter-toggle').forEach(toggle => {
+                    toggle.dataset.active = 'false';
+                    toggle.style.background = '';
+                    toggle.style.color = '';
+                });
+                
+                document.querySelectorAll('#quickFilters .filter-tag').forEach(tag => {
+                    tag.style.background = '';
+                    tag.style.color = '';
+                });
+                
+                this.applyFilters();
+            }
+            
+            handleUrlParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                // Set filters from URL parameters
+                if (urlParams.has('type')) {
+                    this.activeFilters.set('type', urlParams.get('type'));
+                    document.getElementById('typeFilter').value = urlParams.get('type');
+                }
+                
+                if (urlParams.has('subject')) {
+                    this.activeFilters.set('subject', urlParams.get('subject'));
+                    document.getElementById('subjectFilter').value = urlParams.get('subject');
+                }
+                
+                if (urlParams.has('search')) {
+                    this.searchTerm = urlParams.get('search');
+                    document.getElementById('searchInput').value = this.searchTerm;
+                }
+                
+                this.applyFilters();
+            }
+            
+            showToast(message) {
+                // Simple toast notification
+                const toast = document.createElement('div');
+                toast.className = 'toast-notification';
+                toast.textContent = message;
+                toast.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: var(--color-primary);
+                    color: white;
+                    padding: var(--space-3) var(--space-4);
+                    border-radius: var(--radius);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
+            }
+        }
+        
+        // Initialize gallery when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ResourceGallery();
+        });
+        
+        // Add CSS animation for toast
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    
+    <!-- Load supporting scripts -->
+    <script src="../js/footer.js"></script>
+    <script src="../js/accessibility-enhancements.js"></script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Te Kete Ako</title>
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+
+<body data-auto-init="true" data-current-page="student-dashboard">
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1 id="welcome-message" class="wiley-hero-title">Kia ora, Ākonga!</h1>
+            <p id="user-info">Welcome to your personalized learning dashboard</p>
+        </div>
+        
+
+        <div id="announcements-container"></div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3><span>📊</span> My Learning Progress</h3>
+                <div class="card-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" id="projects-completed">-</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="activities-done">-</div>
+                            <div class="stat-label">Activities Done</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="cultural-score">-</div>
+                            <div class="stat-label">Cultural Engagement</div>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <a href="activities.html" class="dashboard-button">Continue Learning</a>
+                        <a href="#" class="dashboard-button outline" onclick="viewProgressDetails()">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>🏛️</span> Society Design Project</h3>
+                <div class="card-content">
+                    <p id="society-project-status">Ready to start your society design project! Work with your group to
+                        create an ideal society.</p>
+                    <div class="dashboard-actions">
+                        <a href="/units/design-your-society-unit.html" class="dashboard-button primary">View Unit</a>
+                        <a href="/project-submission.html" class="dashboard-button primary">Submit Project</a>
+                        <a href="#" class="dashboard-button outline" onclick="viewProjectSubmissions()">My
+                            Submissions</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>🤝</span> Collaboration Hub</h3>
+                <div class="card-content">
+                    <p>Connect with your group members, share ideas, and work together on projects.</p>
+                    <div id="group-info">
+                        <p><strong>Current Group:</strong> <span id="current-group">Not assigned yet</span></p>
+                        <p><strong>Your Role:</strong> <span id="current-role">Awaiting assignment</span></p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <a href="#" class="dashboard-button" onclick="openCollaborationTools()">Group Workspace</a>
+                        <a href="#" class="dashboard-button outline" onclick="viewPeerFeedback()">Peer Reviews</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>🤖</span> AI Learning Companion</h3>
+                <div class="card-content">
+                    <p>Get culturally-aware learning support and guidance from your AI companion.</p>
+                    <div id="ai-companion-chat"
+                        style="max-height: 200px; overflow-y: auto; background: #f8f9fa; border-radius: var(--radius-md); padding: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="font-style: italic; color: var(--color-text-secondary); text-align: center;">
+                            Ask your AI companion for help with learning, cultural connections, or collaboration
+                            guidance!
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <input type="text" id="ai-companion-input" placeholder="Ask for learning guidance..."
+                            style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+                            onkeypress="if(event.key==='Enter') sendAIMessage()">
+                        <button class="dashboard-button" onclick="sendAIMessage()">Ask</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>📚</span> My Resources</h3>
+                <div class="card-content">
+                    <p>Access your saved resources, bookmarked content, and personal notes.</p>
+                    <div class="dashboard-actions">
+                        <a href="handouts.html" class="dashboard-button">Browse Handouts</a>
+                        <a href="#" class="dashboard-button outline" onclick="viewSavedResources()">Saved Items</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>🎯</span> Recent Activity</h3>
+                <div class="card-content">
+                    <div class="recent-activity" id="recent-activity">
+                        <div class="activity-item">
+                            <div class="activity-icon">📖</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Accessed Do NOW Activities</div>
+                                <div class="activity-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">🎮</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Played Te Reo Wordle</div>
+                                <div class="activity-time">1 day ago</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📄</div>
+                            <div class="activity-content">
+                                <div class="activity-title">Downloaded Treaty Handout</div>
+                                <div class="activity-time">3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><span>🌟</span> Achievements</h3>
+                <div class="card-content">
+                    <p>Celebrate your learning milestones and cultural connections!</p>
+                    <div id="achievements-list">
+                        <p style="font-style: italic; color: var(--color-text-secondary);">Your achievements will appear
+                            here as you engage with Te Kete Ako.</p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <a href="#" class="dashboard-button outline" onclick="viewAllAchievements()">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Authentication check and user data loading
+        window.addEventListener('load', async () => {
+            // Use secure authentication system
+            if (!window.secureAuth || !window.secureAuth.isAuthenticated()) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const currentUser = window.secureAuth.getCurrentUser();
+
+            if (!token || !userStr) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const user = JSON.parse(userStr);
+
+            // Ensure this is a student dashboard
+            if (user.role !== 'student') {
+                if (user.role === 'teacher') {
+                    window.location.href = 'teacher-dashboard.html';
+                } else {
+                    window.location.href = 'login.html';
+                }
+                return;
+            }
+
+            // Update welcome message
+            const welcomeMsg = document.getElementById('welcome-message');
+            const userInfo = document.getElementById('user-info');
+
+            welcomeMsg.textContent = `Kia ora, ${user.display_name || user.email.split('@')[0]}!`;
+            userInfo.textContent = `Year ${user.year_level} | ${user.school_name}`;
+
+            // Load dashboard data
+            await loadDashboardData(user, token);
+        });
+
+        async function loadDashboardData(user, token) {
+            try {
+                // In a real implementation, these would be API calls to Netlify Functions
+                // For now, we'll use placeholder data and localStorage for demo
+
+                // Load learning progress (placeholder)
+                document.getElementById('projects-completed').textContent = '2';
+                document.getElementById('activities-done').textContent = '8';
+                document.getElementById('cultural-score').textContent = '85%';
+
+                // Load announcements (placeholder)
+                const announcementsContainer = document.getElementById('announcements-container');
+                announcementsContainer.innerHTML = `
+                    <div class="announcement">
+                        <h4>📢 Welcome to Te Kete Ako Digital Platform!</h4>
+                        <p>Your enhanced learning experience now includes collaborative tools, project submissions, and personalized tracking. Explore your new dashboard features!</p>
+                    </div>
+                `;
+
+                // Update society project status based on user data
+                const projectStatus = document.getElementById('society-project-status');
+                if (user.year_level == 8) {
+                    projectStatus.textContent = 'Year 8 Systems Unit: Ready to design your ideal society with your collaborative team!';
+                } else {
+                    projectStatus.textContent = 'Explore our society design resources and collaborative learning tools.';
+                }
+
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            // Use secure logout
+            if (window.secureAuth) {
+                window.secureAuth.logout();
+            }
+            window.location.href = 'login.html';
+        });
+
+        // Dashboard interaction functions (placeholders for future implementation)
+        function viewProgressDetails() {
+            }
+
+        function viewProjectSubmissions() {
+            window.location.href = 'my-submissions.html';
+        }
+
+        function openCollaborationTools() {
+            }
+
+        function viewPeerFeedback() {
+            }
+
+        function viewSavedResources() {
+            }
+
+        function viewAllAchievements() {
+            }
+
+        // AI Companion functionality
+        async function sendAIMessage() {
+            const input = document.getElementById('ai-companion-input');
+            const chat = document.getElementById('ai-companion-chat');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Clear placeholder text on first use
+            if (chat.innerHTML.includes('Ask your AI companion')) {
+                chat.innerHTML = '';
+            }
+
+            // Add user message
+            addChatMessage('You', message, 'user');
+            input.value = '';
+
+            // Add loading indicator
+            addChatMessage('AI Companion', 'Thinking...', 'ai-loading');
+
+            try {
+                const token = window.secureAuth.getSecureSession('token');
+                const user = window.secureAuth.getCurrentUser();
+
+                const response = await fetch('/.netlify/functions/ai-companion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        query: message,
+                        userRole: 'student',
+                        userId: user.id,
+                        context: {
+                            yearLevel: user.year_level,
+                            currentProjects: ['society-design'] // Would come from actual data
+                        }
+                    })
+                });
+
+                const result = await response.json();
+
+                // Remove loading indicator
+                removeLoadingMessage();
+
+                if (result.success) {
+                    const aiResponse = result.response;
+
+                    // Add AI response with cultural elements
+                    let responseHTML = `
+                        <div style="margin-bottom: 1rem;">
+                            <strong>🌺 ${aiResponse.encouragement}</strong>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            ${aiResponse.message}
+                        </div>
+                    `;
+
+                    if (aiResponse.whakatauki) {
+                        responseHTML += `
+                            <div class="bg-cultural-light">
+                                <div style="font-style: italic; color: var(--color-primary); margin-bottom: 0.25rem;">
+                                    "${aiResponse.whakatauki.mi}"
+                                </div>
+                                <div style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 0.25rem;">
+                                    ${aiResponse.whakatauki.en}
+                                </div>
+                                <div style="color: var(--color-text-secondary); font-size: 0.8rem;">
+                                    ${aiResponse.whakatauki.application}
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    if (aiResponse.cultural_connection) {
+                        responseHTML += `
+                            <div style="background: #f0f8f0; padding: 0.75rem; border-radius: 6px; margin: 0.5rem 0; font-size: var(--text-sm);">
+                                <strong>🔗 Cultural Connection:</strong><br>
+                                ${aiResponse.cultural_connection}
+                            </div>
+                        `;
+                    }
+
+                    addChatMessage('AI Companion', responseHTML, 'ai', true);
+                } else {
+                    addChatMessage('AI Companion', 'Sorry, I\'m having trouble right now. Please try again later.', 'ai-error');
+                }
+
+            } catch (error) {
+                console.error('AI Companion error:', error);
+                removeLoadingMessage();
+                addChatMessage('AI Companion', 'I\'m temporarily unavailable. Please try again in a moment.', 'ai-error');
+            }
+        }
+
+        function addChatMessage(sender, message, type, isHTML = false) {
+            const chat = document.getElementById('ai-companion-chat');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${type}`;
+
+            let messageStyle = '';
+            if (type === 'user') {
+                messageStyle = 'background: var(--color-secondary); color: white; margin-left: 2rem; text-align: right;';
+            } else if (type === 'ai-loading') {
+                messageStyle = 'background: #e9ecef; color: var(--color-text-secondary); font-style: italic;';
+            } else if (type === 'ai-error') {
+                messageStyle = 'background: #f8d7da; color: #721c24; border-left: 3px solid #dc3545;';
+            } else {
+                messageStyle = 'background: white; border-left: 3px solid var(--color-primary);';
+            }
+
+            messageDiv.style.cssText = `${messageStyle} padding: 0.75rem; margin: 0.5rem 0; border-radius: var(--radius-md); box-shadow: 0 1px 3px var(--shadow-md);`;
+
+            if (isHTML) {
+                messageDiv.innerHTML = `<strong>${sender}:</strong><br>${message}`;
+            } else {
+                messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            }
+
+            chat.appendChild(messageDiv);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function removeLoadingMessage() {
+            const chat = document.getElementById('ai-companion-chat');
+            const loadingMessage = chat.querySelector('.ai-loading');
+            if (loadingMessage) {
+                loadingMessage.remove();
+            }
+        }
+    </script>
+                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Standard auth script includes -->
+    <script src="vendor/supabase.min.js" defer></script>
+    <script src="js/env-config.js" defer></script>
+    <script src="js/supabase-client.js" defer></script>
+    <script src="js/auth-enhanced.js" defer></script>
+    <script src="js/student-dashboard.js" defer></script>
+</body>
+
+</html>

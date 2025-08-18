@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: Whakatā Roro - Brain Break | Mangakōtukutuku College</title>
+    
+    
+    
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+</head>
+
+<body data-auto-init="true" data-current-page="lesson-page" data-breadcrumb-path="lesson">
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+
+
+
+    <div class="main-container">
+        <aside class="left-sidebar no-print">
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Unit Navigation</h3>
+                <ul>
+                    <li><a href="index.html">&larr; Home</a></li>
+                </ul>
+            </div>
+        
+            
+            <div class="sidebar-widget">
+                <h3 class="sidebar-widget-title">Today's Whakataukī</h3>
+                <p style="font-style: italic; color: var(--color-secondary);">"Whāia te mātauranga hei oranga mō koutou."</p>
+                <p style="font-size: var(--text-sm);">"Seek after learning for the sake of your wellbeing."</p>
+            </div>
+
+        </aside>
+
+        <main class="content-area">
+            <div class="mb-4">
+                <a href="index.html" class="breadcrumb">&larr; Back to Home</a>
+                <h1 class="page-title" class="wiley-hero-title">Whakatā Roro</h1>
+                <h2 class="page-subtitle" class="wiley-section-title">Brain Break</h2>
+                <p>Take a short break and find these phonics words in the word search below.</p>
+            </div>
+
+            <section class="mb-4">
+                <h2 class="section-title" class="wiley-section-title">Ngā Mahi - Lesson Activities</h2>
+                
+                <div id="activity-section" class="activity-block">
+                    <div class="activity-box">
+                        <div id="wordSearchWordsList" class="text-md font-semibold text-slate-800 text-center mb-4 flex flex-wrap justify-center gap-x-4">
+                            </div>
+                        <div id="wordSearchGridContainer" class="word-search-grid mx-auto">
+                            </div>
+                        <div id="wordSearchFeedback" class="text-center mt-4 font-semibold"></div>
+                        <div class="text-center mt-4">
+                            <button id="resetWordSearch" class="button button-secondary">Reset Game</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/shared-components.js"></script>
+    <script>
+        // Word Search Activity Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridContainer = document.getElementById('wordSearchGridContainer');
+            const wordsListContainer = document.getElementById('wordSearchWordsList');
+            const feedbackContainer = document.getElementById('wordSearchFeedback');
+            const resetButton = document.getElementById('resetWordSearch');
+
+            const words = ['BOAT', 'READ', 'PIE', 'TEAM', 'SLOW', 'RAIN', 'DAY', 'SEE', 'HAY', 'MOON'];
+            const gridSize = 10;
+            let grid = Array(gridSize).fill(null).map(() => Array(gridSize).fill(''));
+            let selectedCells = [];
+
+            function initializeWordSearch() {
+                // For simplicity, this is a pre-filled grid. 
+                // A full implementation would randomly place words.
+                const puzzle = [
+                    ['B', 'O', 'A', 'T', 'X', 'Y', 'Z', 'A', 'B', 'C'],
+                    ['R', 'X', 'P', 'I', 'E', 'Q', 'R', 'S', 'T', 'D'],
+                    ['E', 'A', 'D', 'W', 'V', 'U', 'L', 'M', 'N', 'E'],
+                    ['A', 'X', 'Y', 'Z', 'T', 'E', 'A', 'M', 'O', 'F'],
+                    ['D', 'C', 'B', 'A', 'Z', 'Y', 'X', 'W', 'V', 'G'],
+                    ['S', 'L', 'O', 'W', 'U', 'T', 'S', 'R', 'Q', 'H'],
+                    ['P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'I'],
+                    ['G', 'F', 'E', 'D', 'C', 'B', 'A', 'Z', 'Y', 'J'],
+                    ['X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'K'],
+                    ['M', 'O', 'O', 'N', 'H', 'A', 'Y', 'D', 'A', 'Y']
+                ];
+                grid = puzzle;
+
+                words.forEach(word => {
+                    const wordEl = document.createElement('span');
+                    wordEl.textContent = word;
+                    wordEl.id = 'word-' + word;
+                    wordsListContainer.appendChild(wordEl);
+                });
+
+                for (let i = 0; i < gridSize; i++) {
+                    for (let j = 0; j < gridSize; j++) {
+                        const cell = document.createElement('div');
+                        cell.className = 'grid-cell';
+                        cell.textContent = grid[i][j];
+                        cell.dataset.row = i;
+                        cell.dataset.col = j;
+                        cell.addEventListener('mousedown', () => startSelection(cell));
+                        cell.addEventListener('mouseover', () => continueSelection(cell));
+                        cell.addEventListener('mouseup', () => endSelection());
+                        gridContainer.appendChild(cell);
+                    }
+                }
+            }
+
+            function startSelection(cell) {
+                selectedCells.push(cell);
+                cell.classList.add('selected');
+            }
+
+            function continueSelection(cell) {
+                if (selectedCells.length > 0) {
+                    selectedCells.push(cell);
+                    cell.classList.add('selected');
+                }
+            }
+
+            function endSelection() {
+                const selectedWord = selectedCells.map(cell => cell.textContent).join('');
+                if (words.includes(selectedWord)) {
+                    feedbackContainer.textContent = `You found ${selectedWord}!`;
+                    document.getElementById('word-' + selectedWord).style.textDecoration = 'line-through';
+                    selectedCells.forEach(cell => cell.classList.add('found'));
+                }
+                selectedCells.forEach(cell => cell.classList.remove('selected'));
+                selectedCells = [];
+            }
+            
+            resetButton.addEventListener('click', () => {
+                wordsListContainer.innerHTML = '';
+                gridContainer.innerHTML = '';
+                feedbackContainer.textContent = '';
+                initializeWordSearch();
+            });
+
+            initializeWordSearch();
+        });
+    </script>
+    
+    <!-- External Resources Section - Added by Te Kete Ako Content Enrichment -->
+    <section class="external-resources-section no-print" style="border-left: 4px solid var(--color-maori-red, #CC0000); background: linear-gradient(135deg, #f0f8f4 0%, #e8f5e8 100%); padding: var(--space-6); margin: var(--space-8) 0; border-radius: var(--radius-lg);">
+        <h3 style="margin: 0 0 1rem 0; color: var(--color-primary, #2E8B57); display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">🌿</span>
+            Nga Rauemi Tauwehe - External Resources
+        </h3>
+        <p style="margin: 0 0 1.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm);">
+            High-quality resources from official New Zealand education sites to extend and enrich this learning content.
+        </p>
+        <div class="external-resources-list">
+            
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://www.sciencelearn.org.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Science Learning Hub
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Over 11,550 NZ science education resources for teachers, students and community
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 1-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            60% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
+                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
+                    <a href="https://tahurangi.education.govt.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                        Tāhūrangi - Te Reo Māori Education Hub
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
+                    Official NZ government hub for te reo Māori resources, guidance, and teaching support
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            Years: 7-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                            30% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
+                            Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.8rem; color: var(--color-text-muted, #888);">
+            <p style="margin: 0;">
+                🤖 <em>These resources were automatically curated by Te Kete Ako's AI system to complement this content. 
+                All external links lead to official New Zealand educational and government websites.</em>
+            </p>
+        </div>
+    </section>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

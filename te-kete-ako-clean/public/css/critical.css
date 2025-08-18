@@ -1,0 +1,171 @@
+/**
+ * Critical CSS for Te Kete Ako - Above-the-fold styles
+ * Optimized for Chromebook deployment with sub-2-second load times
+ * This file should be inlined in the <head> for fastest rendering
+ */
+
+:root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #00b0b9;
+    --color-accent: #f5a623;
+    --color-forest: #2C5F41;
+    --color-background: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #6c757d;
+    --color-border: #e5e7eb;
+    --color-pounamu: #059669;
+    --color-pounamu-light: #d1fae5;
+    --color-kahurangi: #0284c7;
+    --color-sunrise: #fef3c7;
+    --font-headings: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    --font-body: 'Lato', 'Helvetica', 'Arial', sans-serif;
+    --header-height: 72px;
+}
+
+/* Critical base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Critical header styles */
+.site-header {
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--header-height);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.nav-brand {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-forest);
+    text-decoration: none;
+}
+
+/* Critical mobile navigation */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-nav-icon span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-primary);
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle { display: block; }
+    .main-nav { display: none; }
+}
+
+/* Critical hero section */
+.hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f8f0 0%, #e8f4f8 100%);
+}
+
+.hero-title {
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    color: var(--color-forest);
+    margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+}
+
+.whakatauki {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.whakatauki-translation {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Critical layout */
+.main-container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-area {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .main-container { flex-direction: column; }
+}
+
+/* Progressive enhancement for non-critical elements */
+.features-banner { opacity: 1; }
+.ai-revolution-section { opacity: 1; }
+
+/* Loading indicator */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
+
+.loading.show {
+    display: block;
+}
+
+.loading::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--color-secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

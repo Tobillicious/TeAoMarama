@@ -1,0 +1,35 @@
+# Environment and secrets
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+.netlify/
+
+# Caches
+.cache/
+.firebase/
+.ruff_cache/
+node_modules/
+
+# Backups and logs
+/backups
+*.log
+*.backup_*.json
+*_updates_*.json
+
+# IDE files
+.vscode/
+.claude/
+*.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+src/brain/

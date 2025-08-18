@@ -1,0 +1,2743 @@
+{
+  "timestamp": "2025-08-10T00:54:12.845Z",
+  "agent": "Kaitiaki Haumaru",
+  "summary": {
+    "securityIssues": 6,
+    "performanceIssues": 0,
+    "fixesApplied": 536
+  },
+  "securityIssues": [
+    {
+      "type": "RLS_POLICIES",
+      "severity": "HIGH",
+      "description": "Unable to verify RLS policies",
+      "fix": "Review and implement proper RLS policies"
+    },
+    {
+      "type": "EXPOSED_CREDENTIALS",
+      "severity": "CRITICAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/env-config.js",
+      "description": "Found 2 potential credential exposure(s)",
+      "fix": "Remove or encrypt sensitive data"
+    },
+    {
+      "type": "EXPOSED_CREDENTIALS",
+      "severity": "CRITICAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase-auth.js",
+      "description": "Found 1 potential credential exposure(s)",
+      "fix": "Remove or encrypt sensitive data"
+    },
+    {
+      "type": "EXPOSED_CREDENTIALS",
+      "severity": "CRITICAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/login-simple.html",
+      "description": "Found 1 potential credential exposure(s)",
+      "fix": "Remove or encrypt sensitive data"
+    },
+    {
+      "type": "EXPOSED_CREDENTIALS",
+      "severity": "CRITICAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/my-kete.html",
+      "description": "Found 1 potential credential exposure(s)",
+      "fix": "Remove or encrypt sensitive data"
+    },
+    {
+      "type": "UNSAFE_INPUT",
+      "severity": "HIGH",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/categories.html",
+      "description": "Unsafe input handling detected",
+      "fix": "Use safe DOM manipulation methods"
+    }
+  ],
+  "performanceIssues": [],
+  "fixesApplied": [
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/404.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/about.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/activities.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/admin-youtube-library.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/ai-coordination-dashboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/ai-hub.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/assessment-rubric.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/auth-diagnostics.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/classroom-leaderboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/contact.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking/lessons/lesson-6.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/critical-thinking-unit.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-alignment.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-english.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-mathematics.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-science.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-social-sciences.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/curriculum-v2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/dashboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/decolonized-assessment-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/deepseek-graphrag-terminal.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/digital-purakau.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/educational-transformation-showcase.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/emergency-diagnostic.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/english-literacy-progression-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/english.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/exa-search.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/adaptive-pathways.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/cultural-assessment.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/digital-purakau.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/virtual-marae.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/forgot-password.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/categories.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/countdown-letters.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/english-wordle.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/spelling-bee.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-6-unlimited.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-6.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-unlimited.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/algebraic-thinking-in-traditional-māori-games.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/calculus-applications-in-environmental-modeling.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/chemistry-of-traditional-māori-medicine.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/chromebook-optimized-mobile-learning-guide.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/coding-projects-inspired-by-māori-patterns.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/cultural-safety-checklists-for-classroom-discussions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/data-visualization-of-cultural-demographics.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/financial-literacy-with-māori-economic-principles.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/food-security-through-traditional-knowledge-systems.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/geometric-patterns-in-māori-art-and-architecture.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/global-citizenship-with-tangata-whenua-perspective.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/information-literacy-in-the-digital-age.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/leadership-development-through-cultural-values.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/mathematical-modeling-of-ecological-systems.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/ncea-level-1-literacy-and-numeracy-must-knows.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/probability-and-chance-in-māori-games.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/public-speaking-with-cultural-confidence.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/social-media-and-cultural-identity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/statistical-analysis-of-treaty-settlement-data.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/sustainable-energy-solutions-from-traditional-knowledge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/te-reo-maths-glossary-key-terms-in-māori-and-english.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/visual-arts-analysis-with-cultural-context.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/workplace-readiness-with-cultural-competency.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/year-9-starter-pack-essential-skills-for-high-school-success.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/ai-ethics-through-māori-data-sovereignty.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/argumentative-writing-on-contemporary-māori-issues.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/climate-change-through-te-taiao-māori-lens.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/creative-problem-solving-with-design-thinking.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/creative-writing-inspired-by-whakataukī.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/critical-analysis-of-historical-documents.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/debate-skills-with-māori-oratory-traditions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/digital-storytelling-with-pūrākau-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/game-development-with-cultural-themes.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/health-and-wellbeing-te-whare-tapa-whā-model.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/media-literacy-analyzing-māori-representation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/physics-of-traditional-māori-instruments.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/poetry-analysis-through-māori-literary-traditions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/renewable-energy-and-māori-innovation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/research-skills-using-traditional-and-digital-sources.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/scientific-method-using-traditional-māori-practices.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/statistical-analysis-of-sports-performance.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/lessons/traditional-navigation-and-modern-gps-integration.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/graphrag-search.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/guided-inquiry-society-design.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-1-society-exploration.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-2-group-formation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-3-government-systems.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-4-rights-economy.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-5-culture-integration.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/lessons/lesson-6-presentations.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/cultural-lens-analysis-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/culture-society-integration-planner.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/government-component-analysis-worksheet.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/government-testing-scenarios.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/group-agreement-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/indigenous-wisdom-synthesis-worksheet.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/research-planning-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/society-exploration-gallery-walk-stations.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/society-exploration-graphic-organizer.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/materials/strengths-inventory-worksheet.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/society-design-tool.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/ai-art-ethics-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/ai-ethics-and-bias.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/ai-impact-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/arguments-of-tino-rangatiratanga-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/art-of-haka-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/authors-purpose-entertain-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/authors-purpose-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/authors-purpose-inform-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/authors-purpose-persuade-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/bar-graph-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/climate-change-aotearoa-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/climate-emergency-aotearoa-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/cognitive-biases-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/cultural-safety-classroom-checklists-alpha.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/data-sovereignty-maori.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/dawn-raids-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/decision-frameworks-comparison-guide.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/design-thinking-process-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/digital-citizenship-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/do-now-activities/panther-primary-source-do-now.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/do-now-activities/political-cartoon-analysis-do-now.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/do-now-activities/whakatauki-wisdom-do-now.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/economic-justice-deep-dive-comprehension.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/elements-of-art-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/enhanced/climate-science-traditional-knowledge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/enhanced/microplastics-matauranga-integration.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/enhanced/probability-matauranga-integration.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/enhanced/whakapapa-mathematical-thinking.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/environmental-literacy-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/environmental-text-analysis-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/figurative-language-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/film-scene-analysis-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/financial-literacy-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/future-of-tourism-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/genetic-modification-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/gig-economy-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/haka-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/housing-affordability-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/introduction-to-llms.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/land-wars-strategy.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/maori-astronomy-navigation-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/maori-battalion-legacy.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/maori-geometric-patterns-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/maori-navigation-wayfinding-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/media-literacy-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/media-literacy-comprehension-handout.v2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/microplastics-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/misleading-graphs-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/nz-housing-crisis-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/plate-tectonics-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/political-cartoon-analysis-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/pre-colonial-innovation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/primary-source-analysis-1975-memorial-of-right.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/probability-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/prompt-engineering-101.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/research-methods-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/science-of-sleep-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/scientific-method-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/shakespeare-soliloquy-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/speech-analysis-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/statistical-investigation-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/sustainable-technology-design-challenge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/te-reo-maori-greetings-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/te-reo-maths-glossary-bilingual-alpha.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/ted-power-yet-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/traditional-ecological-indicators-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/traditional-navigation-mathematics-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/treaty-of-waitangi-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-colonial-maori-perspective-comparison.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-fortification-engineering.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-innovation-domains-comparison.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-leadership-profiles-wars.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-maori-battalion-legacy.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-military-innovation-study.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-modern-applications-connection.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-pre-colonial-innovation-deep-dive.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-technology-definition-challenge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-traditional-science-primary-sources.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-urban-identity-formation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-urban-migration-stories.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/unit-2-wars-strategy-analysis.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/urban-maori-identity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/bastion-point-video-activity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/digital-sovereignty-multimedia-lab.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/economic-justice-documentary-analysis.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/maui-video-activity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/nz-wars-video-activity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/prompt-engineering-video-activity.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/video-activities/stem-matauranga-integration-lab.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/waitangi-tribunal-cases.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-analogy-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-conclusion-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-diction-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-fluency-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-hook-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-inform-structure-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-peel-argument-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-revision-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-rhetorical-devices-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-show-dont-tell-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-suspense-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/writers-toolkit-tone-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/year-9-starter-pack-alpha-build.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/year-9-starter-pack-essential-skills.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts/youth-vaping-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/handouts.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/index-new.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/interactive-learning-demo.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/interactive-literacy/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/learning-pathways.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lesson-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/advanced-critical-thinking-decision-making.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/brain-break-wordsearch-lesson.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/mathematics-science-interactive-toolkit/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/mathematics-science-interactive-toolkit/whakairo-geometry-lesson.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/podcast-series/lesson-1-treaty-of-waitangi.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/podcast-series/materials/worksheet-treaty-of-waitangi-podcast.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/unit-2-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/unit-2-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/vowel-sounds-lesson.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/analogy-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/cognitive-biases-comprehension-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/conclusion-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/diction-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/diction-tone-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/fluency-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/fluency-suspense-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/hook-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/inform-structure-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/peel-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/cognitive-writing-strategies.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/cultural-integration-templates.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/digital-writing-tools.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/interactive-writing-games.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/station-rotation-templates.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/writers-toolkit-assessment-rubric.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/writers-toolkit-implementation-guide.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/writers-toolkit-progress-tracker.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/revision-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/rhetorical-devices-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/show-dont-tell-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/suspense-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/tone-lesson-plan.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-analogy-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-conclusion-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-diction-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-fluency-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-hook-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-inform-structure-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-peel-argument-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-revision-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-rhetorical-devices-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-show-dont-tell-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-suspense-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/writers-toolkit-tone-handout.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/living-whakapapa.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/login-simple.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/login.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/my-kete.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/my-submissions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/offline.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/other-resources.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/performance-dashboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/platforms.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/privacy-policy.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/project-brief.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/project-submission.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/register-simple.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/register.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/reset-password.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/resource-connections.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/resource-hub.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/search.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/social-sciences-progression-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/social-studies.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/student-dashboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/subjects.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/te-ao-maori.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-ai-intelligence-hub.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-dashboard-ai.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-dashboard.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-guide.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/toolkit.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/tools.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/unit-plans.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/design-your-society-unit.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/systems-lesson-1-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/systems-lesson-2-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/systems-lesson-5-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-1-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-1-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-1-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-1-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-1-lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-2-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-2-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-2-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-2-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-2-lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-3-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-3-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-3-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-3-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-3-lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-4-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-4-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-4-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-4-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-4-lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-5-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-5-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-5-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-5-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-6-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-6-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-6-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-6-lesson-4.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-6-lesson-5.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-7-lesson-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-7-lesson-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/lessons/unit-7-lesson-3.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-1-assessment-portfolio-rubric.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-1-lesson-1-whakapapa-deep-dive-activities.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-1-lesson-1-whakapapa-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-1-lesson-2-tikanga-scenarios.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-1-lesson-3-matauranga-inquiry-cards.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/resources/unit-2-assessment-portfolio-rubric.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-1-te-ao-maori.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-2-decolonized-history.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-3-stem-matauranga.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-4-economic-justice.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-5-global-connections.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-6-future-rangatiratanga.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/unit-7-digital-tech-ai-ethics.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y10-physics-forces/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-digital-technology/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/assessment/summative-project-tukutuku-panel.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/lessons/lesson-1-patterns-and-sequences.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/lessons/lesson-2-the-mystery-of-x.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/lessons/lesson-3-building-with-algebra.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/lessons/lesson-4-balancing-act.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/lessons/lesson-5-the-two-step-shuffle.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/activity-1-pattern-machine.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/activity-2-algebraic-charades.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/activity-3-tukutuku-tile-challenge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/activity-4-equation-relay.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/activity-5-real-world-algebra.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/game-1-pattern-dominoes.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/handout-1-pattern-detectives.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/handout-2-variable-vocabulary.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/handout-3-kowhaiwhai-patterns.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/handout-4-equation-balancer.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/practice-1-sequence-drills.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/practice-2-translating-words-to-algebra.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/practice-3-rule-finder.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/practice-4-one-step-equation-gauntlet.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y7-maths-algebra/resources/practice-5-two-step-equation-marathon.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-1-introduction.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-2-bias-and-sources.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-3-logical-fallacies.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-4-ethics-decision-making.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-5-asking-right-questions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-6-evaluating-arguments.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-7-group-decision-making.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-8-critical-thinking-challenge.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/lesson-1-introduction-statistical-investigations.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/lesson-2-analysing-nz-sports-data.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/lesson-3-census-population-trends.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/lesson-4-probability-real-world-predictions.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-statistics/lesson-5-final-project-presentation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-1-what-is-an-ecosystem.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-2-biodiversity-endemism.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-3-field-study-rangahau-taiao.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-4-human-impact-conservation.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-5-restoration-kaitiakitanga.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/lessons/lesson-6-guardians-future.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/resources/field-data-sheet.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/resources/handout-1-ecosystem-audit.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y9-science-ecology/resources/handout-2-endemic-species-detective.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/verify-email.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/virtual-marae.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/welcome.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y7-introduction/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-1-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-1-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-2-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-2-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-3-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-3-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-4-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-4-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-5-1.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/lessons/lesson-5-2.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/colonization-timeline.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/decolonization-commitment-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/decolonization-today.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/decolonized-design-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/design-a-system-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/frayer-model-system.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/gallery-walk-statements.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/government-station-cards.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/index.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/indigenous-feedback-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/indigenous-governance-principles.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/indigenous-systems-examples.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-1-1-society-stations.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-1-2-draw-your-system-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-2-1-case-studies.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-2-2-power-cards.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-3-1-council-services-cards.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/lesson-3-2-campaign-plan-template.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/living-tiriti-examples.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/maori-governance-systems.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/maori-political-action.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/protest-case-studies.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/skate-park-campaign.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/society-design-assessment-rubric.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/society-design-collaboration-framework.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/system-sorting-cards.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/treaty-articles.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/treaty-two-texts.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems/resources/who-has-the-real-power-interactive.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/y8-systems-unit.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/youtube-library.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "CSP_HEADER",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/youtube.html",
+      "description": "Added Content Security Policy header"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/interactive-literacy/js/script.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/advanced-analytics.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/advanced-search.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/ai-teaching-assistant.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/analytics-dashboard.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/assessment-tools.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-enhanced.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-resilience.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-ui.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/content-hierarchy.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/content-recommendation-engine.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/curriculum-browser.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/curriculum-interactive.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/deepseek-graphrag-integration.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/digital-purakau.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/env-config.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/firebase-auth.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/games-hub.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/lazy-loading-optimizer.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/learning-analytics.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/mobile-revolution.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/performance-cache-manager.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/progress-tracker.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/secure-auth.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase-auth.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase-client.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/youtube-api.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "INPUT_SANITIZATION",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/sw.js",
+      "description": "Replaced unsafe innerHTML with textContent"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/admin-youtube-library.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/ai-coordination-dashboard.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/ai-hub.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/classroom-leaderboard.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/deepseek-graphrag-terminal.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/digital-purakau.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/digital-purakau.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/experiences/virtual-marae.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/categories.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-6-unlimited.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-6.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle-unlimited.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/games/te-reo-wordle.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/chromebook-optimized-mobile-learning-guide.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/geometric-patterns-in-māori-art-and-architecture.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/probability-and-chance-in-māori-games.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/generated-resources-alpha/handouts/year-9-starter-pack-essential-skills-for-high-school-success.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/graphrag-search.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/guided-inquiry-unit/society-design-tool.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/index.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/interactive-learning-demo.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/advanced-analytics.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/advanced-search.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/ai-teaching-assistant.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/analytics-dashboard.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-enhanced.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-resilience.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/auth-ui.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/content-recommendation-engine.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/env-config.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/firebase-auth.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/lazy-loading-optimizer.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/learning-analytics.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/mobile-revolution.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/performance-cache-manager.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/progress-tracker.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase-auth.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase-client.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/supabase.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/js/youtube-api.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/mathematics-science-interactive-toolkit/index.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/mathematics-science-interactive-toolkit/whakairo-geometry-lesson.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/diction-tone-lesson-plan.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/fluency-suspense-lesson-plan.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/cognitive-writing-strategies.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/digital-writing-tools.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/lessons/writers-toolkit/resources/interactive-writing-games.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/living-whakapapa.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/login.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/my-kete.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/my-submissions.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/offline.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/student-dashboard.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/sw.js",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-ai-intelligence-hub.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-dashboard-ai.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/teacher-dashboard.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y10-physics-forces/index.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-5-asking-right-questions.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-6-evaluating-arguments.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-7-group-decision-making.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/units/y8-critical-thinking/lesson-8-critical-thinking-challenge.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/verify-email.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/virtual-marae.html",
+      "description": "Removed debug statements"
+    },
+    {
+      "type": "DEBUG_REMOVAL",
+      "file": "/Users/admin/Documents/te-kete-ako-clean/public/youtube-library.html",
+      "description": "Removed debug statements"
+    }
+  ],
+  "recommendations": [
+    "Implement proper RLS policies for all tables",
+    "Add input validation on all forms",
+    "Enable Supabase Auth with proper session management",
+    "Implement rate limiting for API endpoints",
+    "Add comprehensive error handling",
+    "Enable Supabase Edge Functions for server-side validation"
+  ]
+}

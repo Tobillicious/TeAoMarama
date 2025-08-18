@@ -1,0 +1,14 @@
+{
+  "name": "te-kete-ako-scripts",
+  "version": "1.0.0",
+  "description": "Utility scripts for maintaining the Te Kete Ako project.",
+  "main": "catalog.js",
+  "type": "module",
+  "scripts": {
+    "catalog": "node catalog.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "glob": "^10.3.10"
+  }
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Reo Maths Glossary (Key Terms in Māori & English) - Te Kete Ako</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: #2E8B57; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .cultural-context { background: #f0f8f0; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .assessment { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Te Reo Maths Glossary (Key Terms in Māori & English)</h1>
+        <p><strong>Subject:</strong> mathematics | <strong>Year Level:</strong> Years 7-13</p>
+    </div>
+    <div class="cultural-context">
+        <h3>Cultural Context</h3>
+        <p>Bilingual mathematics education</p>
+    </div>
+    <div class="content">
+Here's a complete, classroom-ready HTML resource for a bilingual Te Reo Maths Glossary:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Reo Maths Glossary | Years 7-13</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #005BAA;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #005BAA;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        h2 {
+            border-bottom: 2px solid #005BAA;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .cultural-context {
+            background-color: #f0f7ff;
+            padding: 15px;
+            border-left: 4px solid #005BAA;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .glossary-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .glossary-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+        .glossary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .māori-term {
+            font-weight: bold;
+            color: #005BAA;
+            font-size: 1.1em;
+        }
+        .english-term {
+            font-style: italic;
+        }
+        .definition {
+            margin-top: 8px;
+        }
+        .example {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .assessment-rubric {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .assessment-rubric th, .assessment-rubric td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .assessment-rubric th {
+            background-color: #005BAA;
+            color: white;
+        }
+        .assessment-rubric tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .activity-box {
+            background-color: #e6f2ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .teacher-notes {
+            background-color: #fff8e6;
+            padding: 15px;
+            border-left: 4px solid #ffcc00;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .resource-link {
+            display: block;
+            margin: 5px 0;
+        }
+        @media (max-width: 600px) {
+            .glossary-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Te Reo Maths Glossary</h1>
+        <p>Key Mathematical Terms in Te Reo Māori and English</p>
+    </header>
+
+    <section>
+        <h2>Learning Objectives</h2>
+        <p>By using this resource, ākonga (students) will:</p>
+        <ul>
+            <li>Develop mathematical literacy in both Te Reo Māori and English</li>
+            <li>Understand key mathematical concepts through bilingual explanations</li>
+            <li>Build confidence using Te Reo Māori in mathematical contexts</li>
+            <li>Make connections between mathematical concepts and Te Ao Māori perspectives</li>
+            <li>Develop cultural competence in mathematical communication</li>
+        </ul>
+    </section>
+
+    <section class="cultural-context">
+        <h2>Cultural Context and Tikanga Considerations</h2>
+        <p>This resource acknowledges the mana (prestige, authority) of Te Reo Māori as an official language of Aotearoa New Zealand. The mathematical terms presented here reflect both traditional Māori knowledge systems and contemporary mathematical language.</p>
+        <p><strong>Tikanga Guidelines:</strong></p>
+        <ul>
+            <li>Pronounce Māori words correctly - ask for help if unsure</li>
+            <li>Respect that some terms may have deeper cultural meanings beyond mathematics</li>
+            <li>Recognize that Māori mathematical knowledge has its own rich history</li>
+            <li>Use this glossary to support equitable access to mathematics for Māori learners</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Te Reo Maths Glossary</h2>
+        <div class="glossary-container">
+            <!-- Number Concepts -->
+            <div class="glossary-card">
+                <div class="māori-term">Tau (Number)</div>
+                <div class="english-term">Number</div>
+                <div class="definition">A mathematical object used to count, measure, and label.</div>
+                <div class="example">He aha te tau e whai ake nei i te 5? (What number comes after 5?)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Tau ōrite (Even number)</div>
+                <div class="english-term">Even number</div>
+                <div class="definition">An integer divisible by 2 without remainder.</div>
+                <div class="example">Ko te 2, te 4, te 6 ngā tau ōrite. (2, 4, 6 are even numbers.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Tau hērite (Odd number)</div>
+                <div class="english-term">Odd number</div>
+                <div class="definition">An integer not divisible by 2 without remainder.</div>
+                <div class="example">Ko te 1, te 3, te 5 ngā tau hērite. (1, 3, 5 are odd numbers.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Tau maha (Multiple)</div>
+                <div class="english-term">Multiple</div>
+                <div class="definition">A number that can be divided by another number without a remainder.</div>
+                <div class="example">Ko te 12 he tau maha o te 3. (12 is a multiple of 3.)</div>
+            </div>
+
+            <!-- Operations -->
+            <div class="glossary-card">
+                <div class="māori-term">Tāpiri (Addition)</div>
+                <div class="english-term">Addition</div>
+                <div class="definition">The process of combining numbers to find their total.</div>
+                <div class="example">E hia te 5 me te 3? (How much is 5 plus 3?)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Tangohanga (Subtraction)</div>
+                <div class="english-term">Subtraction</div>
+                <div class="definition">The process of taking one number away from another.</div>
+                <div class="example">E hia te 5 tangohia te 3? (How much is 5 minus 3?)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Whakarea (Multiplication)</div>
+                <div class="english-term">Multiplication</div>
+                <div class="definition">Repeated addition of the same number.</div>
+                <div class="example">E hia te 5 whakareatia ki te 3? (How much is 5 multiplied by 3?)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Whakawehe (Division)</div>
+                <div class="english-term">Division</div>
+                <div class="definition">Splitting into equal parts or groups.</div>
+                <div class="example">E hia te 10 whakawehea ki te 2? (How much is 10 divided by 2?)</div>
+            </div>
+
+            <!-- Geometry -->
+            <div class="glossary-card">
+                <div class="māori-term">Tapatoru (Triangle)</div>
+                <div class="english-term">Triangle</div>
+                <div class="definition">A three-sided polygon.</div>
+                <div class="example">E toru ngā tapa o te tapatoru. (A triangle has three sides.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Tapawhā (Rectangle)</div>
+                <div class="english-term">Rectangle</div>
+                <div class="definition">A four-sided shape with four right angles.</div>
+                <div class="example">E whā ngā tapa ōrite o te tapawhā. (A rectangle has four equal sides.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Porowhita (Circle)</div>
+                <div class="english-term">Circle</div>
+                <div class="definition">A round shape where all points are equidistant from the center.</div>
+                <div class="example">He porowhita te āhua o te marama. (The moon is shaped like a circle.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Taurangi (Variable)</div>
+                <div class="english-term">Variable</div>
+                <div class="definition">A symbol (usually a letter) that represents an unknown value.</div>
+                <div class="example">Ko te x he taurangi. (x is a variable.)</div>
+            </div>
+
+            <!-- Algebra -->
+            <div class="glossary-card">
+                <div class="māori-term">Tātai (Equation)</div>
+                <div class="english-term">Equation</div>
+                <div class="definition">A mathematical statement that shows two expressions are equal.</div>
+                <div class="example">Ko te 2x + 3 = 7 he tātai. (2x + 3 = 7 is an equation.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Pānga (Function)</div>
+                <div class="english-term">Function</div>
+                <div class="definition">A relation that associates each element of one set to exactly one element of another set.</div>
+                <div class="example">Ko te f(x) = x² he pānga. (f(x) = x² is a function.)</div>
+            </div>
+
+            <!-- Measurement -->
+            <div class="glossary-card">
+                <div class="māori-term">Inenga (Measurement)</div>
+                <div class="english-term">Measurement</div>
+                <div class="definition">The process of determining the size, length, or amount of something.</div>
+                <div class="example">Me ine te roa o te tēpu. (We need to measure the length of the table.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Roa (Length)</div>
+                <div class="english-term">Length</div>
+                <div class="definition">The measurement of something from end to end.</div>
+                <div class="example">E hia te roa o te whare? (What is the length of the house?)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Horahanga (Area)</div>
+                <div class="english-term">Area</div>
+                <div class="definition">The amount of space inside a two-dimensional shape.</div>
+                <div class="example">Me tātai te horahanga o te tapawhā. (We need to calculate the area of the rectangle.)</div>
+            </div>
+
+            <div class="glossary-card">
+                <div class="māori-term">Pūmau (Constant)</div>
+                <div class="english-term">Constant</div>
+                <div class="definition">A value that does not change.</div>
+                <div class="example">Ko te π (pi) he pūmau. (π (pi) is a constant.)</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Assessment Rubric</h2>
+        <table class="assessment-rubric">
+            <tr>
+                <th>Criteria</th>
+                <th>Emerging (1-2)</th>
+                <th>Developing (3-4)</th>
+                <th>Proficient (5-6)</th>
+                <th>Advanced (7-8)</th>
+            </tr>
+            <tr>
+                <td>Terminology Knowledge</td>
+                <td>Can identify a few terms correctly</td>
+                <td>Can identify most terms correctly with some hesitation</td>
+                <td>Can identify all terms correctly and use them in simple sentences</td>
+                <td>Can use terms fluently in complex mathematical explanations</td>
+            </tr>
+            <tr>
+                <td>Cultural Understanding</td>
+                <td>Shows basic awareness of Māori mathematical terms</td>
+                <td>Demonstrates some understanding of cultural context</td>
+                <td>Shows good understanding of cultural context and appropriate use</td>
+                <td>Demonstrates deep cultural understanding and can explain connections</td>
+            </tr>
+            <tr>
+                <td>Application</td>
+                <td>Can use terms in simple contexts with support</td>
+                <td>Can apply terms in familiar contexts</td>
+                <td>Can apply terms in new contexts with some confidence</td>
+                <td>Can creatively apply terms in complex and unfamiliar contexts</td>
+            </tr>
+            <tr>
+                <td>Communication</td>
+                <td>Communicates mathematical ideas with limited clarity</td>
+                <td>Communicates mathematical ideas with some clarity</td>
+                <td>Communicates mathematical ideas clearly in both languages</td>
+                <td>Communicates mathematical ideas fluently and precisely in both languages</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Extension Activities</h2>
+        
+        <div class="activity-box">
+            <h3>1. Create Your Own Glossary Cards</h3>
+            <p>Choose 5 additional mathematical terms not included in this glossary. Research their Māori translations and create your own glossary cards with definitions and examples.</p>
+        </div>
+
+        <div class="activity-box">
+            <h3>2. Mathematical Whakataukī (Proverbs)</h3>
+            <p>Research traditional Māori whakataukī that relate to mathematical concepts (e.g., counting, patterns, symmetry). Analyze how they reflect mathematical thinking.</p>
+        </div>
+
+        <div class="activity-box">
+            <h3>3. Bilingual Problem Solving</h3>
+            <p>Write and solve 3 word problems using Māori mathematical terms. Present your problems and solutions to the class in both languages.</p>
+        </div>
+
+        <div class="activity-box">
+            <h3>4. Cultural Connections</h3>
+            <p>Investigate how traditional Māori knowledge systems (e.g., star navigation, weaving patterns, carving designs) incorporate mathematical concepts. Present your findings.</p>
+        </div>
+    </section>
+
+    <section class="teacher-notes">
+        <h2>Teacher Implementation Notes</h2>
+        <p><strong>Suggested Teaching Approaches:</strong></p>
+        <ul>
+            <li>Introduce 5-10 terms per week, building gradually</li>
+            <li>Use the terms consistently in classroom instruction</li>
+            <li>Create word walls with the Māori terms prominently displayed</li>
+            <li>Pair students to quiz each other on terms and definitions</li>
+            <li>Incorporate terms into your regular math problems and discussions</li>
+        </ul>
+
+        <p><strong>Differentiation Strategies:</strong></p>
+        <ul>
+            <li>For beginners: Focus on recognition and pronunciation</li>
+            <li>For intermediate: Practice using terms in simple sentences</li>
+            <li>For advanced: Create original problems using the terms</li>
+            <li>For fluent speakers: Explore deeper cultural connections</li>
+        </ul>
+
+        <p><strong>Assessment Ideas:</strong></p>
+        <ul>
+            <li>Oral quizzes where students define terms</li>
+            <li>Matching exercises (Māori to English terms)</li>
+            <li>Written explanations of concepts using both languages</li>
+            <li>Student-created presentations on mathematical concepts</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Additional Resources</h2>
+        <a href="https://tereomaori.tki.org.nz/Teacher-tools/Te-Whakaipurangi-Rauemi/Te-reo-Maori
+    </div>
+</body>
+</html>
