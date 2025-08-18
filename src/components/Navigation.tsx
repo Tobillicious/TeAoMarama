@@ -10,8 +10,9 @@ export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home', icon: '🏠' },
     { path: '/resources', label: 'Resources', icon: '📚' },
-    { path: '/year8-critical-literacy', label: 'Year 8 Literacy', icon: '��' },
+    { path: '/year8-critical-literacy', label: 'Year 8 Literacy', icon: '🎯' },
     { path: '/year8-reading-units', label: 'Reading Units', icon: '📖' },
+    { path: '/year8-social-studies', label: 'Social Studies', icon: '🌍' },
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
   ];
 
