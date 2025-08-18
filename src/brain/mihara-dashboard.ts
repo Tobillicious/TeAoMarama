@@ -530,7 +530,7 @@ export class MiharaDashboard {
   private generateAwakeningRecommendations(diagnostics: unknown): string[] {
     const recommendations: string[] = [];
 
-    if (diagnostics.timings.performance === 'slow') {
+    if ((diagnostics as any).timings?.performance === 'slow') {
       recommendations.push('Consider system optimization for faster awakening');
     }
 
