@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './SightWords.css';
 
 interface SightWord {
   id: string;
   word: string;
   frequency: 'high' | 'medium' | 'low';
-  list: 'dolch-pre' | 'dolch-primer' | 'dolch-1' | 'dolch-2' | 'dolch-3' | 'fry-1' | 'fry-2' | 'fry-3' | 'nz-common' | 'maori-blend';
+  list:
+    | 'dolch-pre'
+    | 'dolch-primer'
+    | 'dolch-1'
+    | 'dolch-2'
+    | 'dolch-3'
+    | 'fry-1'
+    | 'fry-2'
+    | 'fry-3'
+    | 'nz-common'
+    | 'maori-blend';
   phonetic: boolean;
   category: 'function' | 'content' | 'cultural';
   meaning: string;
@@ -28,7 +38,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'I see a kai.',
     culturalContext: 'Used with Māori words like "a kai" (a meal)',
     difficulty: 1,
-    yearLevel: 'Year 1'
+    yearLevel: 'Year 1',
   },
   {
     id: 'and1',
@@ -41,7 +51,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'Kai and wai are important.',
     culturalContext: 'Connects cultural concepts like "mana and mauri"',
     difficulty: 1,
-    yearLevel: 'Year 1'
+    yearLevel: 'Year 1',
   },
   {
     id: 'away1',
@@ -53,7 +63,7 @@ const sightWordsData: SightWord[] = [
     meaning: 'To go from this place',
     sentence: 'The kiwi flew away.',
     difficulty: 2,
-    yearLevel: 'Year 1'
+    yearLevel: 'Year 1',
   },
   {
     id: 'big1',
@@ -66,7 +76,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'The kauri tree is big.',
     culturalContext: 'Describes important NZ trees and landscapes',
     difficulty: 1,
-    yearLevel: 'Year 1'
+    yearLevel: 'Year 1',
   },
   {
     id: 'blue1',
@@ -79,7 +89,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'The moana is blue.',
     culturalContext: 'Color of our beautiful ocean/moana',
     difficulty: 2,
-    yearLevel: 'Year 1'
+    yearLevel: 'Year 1',
   },
 
   // Dolch Primer
@@ -94,7 +104,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'All whānau are welcome.',
     culturalContext: 'Inclusivity concept important in Māori culture',
     difficulty: 2,
-    yearLevel: 'Year 1-2'
+    yearLevel: 'Year 1-2',
   },
   {
     id: 'are2',
@@ -106,7 +116,7 @@ const sightWordsData: SightWord[] = [
     meaning: 'To be (plural)',
     sentence: 'We are learning.',
     difficulty: 2,
-    yearLevel: 'Year 1-2'
+    yearLevel: 'Year 1-2',
   },
   {
     id: 'at2',
@@ -119,7 +129,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'We meet at the marae.',
     culturalContext: 'Important for describing cultural places',
     difficulty: 1,
-    yearLevel: 'Year 1-2'
+    yearLevel: 'Year 1-2',
   },
 
   // Dolch Grade 1
@@ -134,7 +144,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'We eat after karakia.',
     culturalContext: 'Sequence important in cultural protocols',
     difficulty: 3,
-    yearLevel: 'Year 2-3'
+    yearLevel: 'Year 2-3',
   },
   {
     id: 'again3',
@@ -147,7 +157,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'Sing the waiata again.',
     culturalContext: 'Repetition important in oral tradition',
     difficulty: 3,
-    yearLevel: 'Year 2-3'
+    yearLevel: 'Year 2-3',
   },
 
   // NZ Common Words
@@ -162,7 +172,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'Aotearoa New Zealand is our home.',
     culturalContext: 'Part of our country name',
     difficulty: 2,
-    yearLevel: 'Year 1-2'
+    yearLevel: 'Year 1-2',
   },
   {
     id: 'zealand1',
@@ -175,7 +185,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'New Zealand is beautiful.',
     culturalContext: 'Our country identity',
     difficulty: 3,
-    yearLevel: 'Year 2-3'
+    yearLevel: 'Year 2-3',
   },
 
   // Māori-English Blend Words
@@ -190,7 +200,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'We share kai together.',
     culturalContext: 'Central concept in Māori hospitality',
     difficulty: 1,
-    yearLevel: 'Year 1+'
+    yearLevel: 'Year 1+',
   },
   {
     id: 'whanau1',
@@ -203,7 +213,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'My whānau loves me.',
     culturalContext: 'Broader than nuclear family concept',
     difficulty: 2,
-    yearLevel: 'Year 1+'
+    yearLevel: 'Year 1+',
   },
   {
     id: 'marae1',
@@ -216,7 +226,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'We visited the marae.',
     culturalContext: 'Sacred gathering place for iwi',
     difficulty: 3,
-    yearLevel: 'Year 2+'
+    yearLevel: 'Year 2+',
   },
   {
     id: 'aroha1',
@@ -229,7 +239,7 @@ const sightWordsData: SightWord[] = [
     sentence: 'Show aroha to everyone.',
     culturalContext: 'Core value in Māori worldview',
     difficulty: 2,
-    yearLevel: 'Year 1+'
+    yearLevel: 'Year 1+',
   },
   {
     id: 'mana1',
@@ -242,8 +252,8 @@ const sightWordsData: SightWord[] = [
     sentence: 'The kaumātua has mana.',
     culturalContext: 'Important spiritual concept',
     difficulty: 4,
-    yearLevel: 'Year 3+'
-  }
+    yearLevel: 'Year 3+',
+  },
 ];
 
 export default function SightWords() {
@@ -257,9 +267,10 @@ export default function SightWords() {
   const [currentPracticeIndex, setCurrentPracticeIndex] = useState(0);
   const [practiceScore, setPracticeScore] = useState({ correct: 0, total: 0 });
 
-  const filteredWords = sightWordsData.filter(word => {
+  const filteredWords = sightWordsData.filter((word) => {
     if (selectedList !== 'all' && word.list !== selectedList) return false;
-    if (selectedDifficulty !== 'all' && word.difficulty.toString() !== selectedDifficulty) return false;
+    if (selectedDifficulty !== 'all' && word.difficulty.toString() !== selectedDifficulty)
+      return false;
     if (selectedCategory !== 'all' && word.category !== selectedCategory) return false;
     return true;
   });
@@ -285,13 +296,13 @@ export default function SightWords() {
   };
 
   const handlePracticeAnswer = (correct: boolean) => {
-    setPracticeScore(prev => ({
+    setPracticeScore((prev) => ({
       correct: prev.correct + (correct ? 1 : 0),
-      total: prev.total + 1
+      total: prev.total + 1,
     }));
 
     if (currentPracticeIndex < practiceWords.length - 1) {
-      setCurrentPracticeIndex(prev => prev + 1);
+      setCurrentPracticeIndex((prev) => prev + 1);
       setCurrentWord(practiceWords[currentPracticeIndex + 1]);
       setShowMeaning(false);
     } else {
@@ -302,10 +313,14 @@ export default function SightWords() {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'function': return '🔧';
-      case 'content': return '📝';
-      case 'cultural': return '🌿';
-      default: return '📚';
+      case 'function':
+        return '🔧';
+      case 'content':
+        return '📝';
+      case 'cultural':
+        return '🌿';
+      default:
+        return '📚';
     }
   };
 
@@ -326,12 +341,13 @@ export default function SightWords() {
       <section className="cultural-framework">
         <h2>🌿 Sight Words & Cultural Identity</h2>
         <p>
-          Sight words form the foundation of fluent reading. Our collection includes traditional 
-          high-frequency English words alongside important Māori vocabulary that reflects our 
-          unique New Zealand identity and cultural knowledge.
+          Sight words form the foundation of fluent reading. Our collection includes traditional
+          high-frequency English words alongside important Māori vocabulary that reflects our unique
+          New Zealand identity and cultural knowledge.
         </p>
         <div className="framework-highlight">
-          <strong>Philosophy:</strong> "He kupu, he mana" - Words have power to connect us to culture and meaning.
+          <strong>Philosophy:</strong> "He kupu, he mana" - Words have power to connect us to
+          culture and meaning.
         </div>
       </section>
 
@@ -348,7 +364,7 @@ export default function SightWords() {
               <li>Grade 1-3 (315 words)</li>
             </ul>
           </div>
-          
+
           <div className="list-card fry">
             <h4>📊 Fry Lists</h4>
             <p>Most frequent words in written English</p>
@@ -358,7 +374,7 @@ export default function SightWords() {
               <li>Third 100 words</li>
             </ul>
           </div>
-          
+
           <div className="list-card nz">
             <h4>🇳🇿 NZ Common</h4>
             <p>Words specific to New Zealand context</p>
@@ -368,7 +384,7 @@ export default function SightWords() {
               <li>Local vocabulary</li>
             </ul>
           </div>
-          
+
           <div className="list-card maori">
             <h4>🌿 Māori Blend</h4>
             <p>Essential Māori words in everyday use</p>
@@ -385,20 +401,20 @@ export default function SightWords() {
       <section className="game-mode-section">
         <h3>🎮 Practice Modes</h3>
         <div className="mode-buttons">
-          <button 
+          <button
             className={`mode-btn ${gameMode === 'flashcard' ? 'active' : ''}`}
             onClick={() => setGameMode('flashcard')}
           >
             📚 Flashcard Mode
           </button>
-          <button 
+          <button
             className={`mode-btn ${gameMode === 'practice' ? 'active' : ''}`}
             onClick={startPracticeMode}
             disabled={filteredWords.length === 0}
           >
             🎯 Practice Mode
           </button>
-          <button 
+          <button
             className={`mode-btn ${gameMode === 'assessment' ? 'active' : ''}`}
             onClick={() => setGameMode('assessment')}
           >
@@ -413,9 +429,9 @@ export default function SightWords() {
         <div className="filters-grid">
           <div className="filter-group">
             <label htmlFor="list-filter">Word List:</label>
-            <select 
+            <select
               id="list-filter"
-              value={selectedList} 
+              value={selectedList}
               onChange={(e) => setSelectedList(e.target.value)}
             >
               <option value="all">All Lists</option>
@@ -434,9 +450,9 @@ export default function SightWords() {
 
           <div className="filter-group">
             <label htmlFor="difficulty-filter">Difficulty:</label>
-            <select 
+            <select
               id="difficulty-filter"
-              value={selectedDifficulty} 
+              value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
             >
               <option value="all">All Levels</option>
@@ -450,9 +466,9 @@ export default function SightWords() {
 
           <div className="filter-group">
             <label htmlFor="category-filter">Category:</label>
-            <select 
+            <select
               id="category-filter"
-              value={selectedCategory} 
+              value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option value="all">All Categories</option>
@@ -463,7 +479,7 @@ export default function SightWords() {
           </div>
 
           {gameMode === 'flashcard' && (
-            <button 
+            <button
               className="random-word-btn"
               onClick={selectRandomWord}
               disabled={filteredWords.length === 0}
@@ -472,7 +488,7 @@ export default function SightWords() {
             </button>
           )}
         </div>
-        
+
         <div className="filter-results">
           <span className="results-count">{filteredWords.length} words available</span>
         </div>
@@ -481,15 +497,11 @@ export default function SightWords() {
       {/* Current Word Display */}
       {currentWord && (
         <section className="word-display-section">
-          <div 
-            className={`word-spotlight list-${currentWord.list}`}
-          >
+          <div className={`word-spotlight list-${currentWord.list}`}>
             <div className="word-header">
               <div className="word-badges">
                 <span className="list-badge">{currentWord.list}</span>
-                <span 
-                  className={`difficulty-badge difficulty-${currentWord.difficulty}`}
-                >
+                <span className={`difficulty-badge difficulty-${currentWord.difficulty}`}>
                   Level {currentWord.difficulty}
                 </span>
                 <span className="category-badge">
@@ -498,13 +510,13 @@ export default function SightWords() {
                 <span className="year-badge">{currentWord.yearLevel}</span>
                 {!currentWord.phonetic && <span className="irregular-badge">Irregular</span>}
               </div>
-              
+
               <h2 className="display-word">{currentWord.word}</h2>
-              
+
               {gameMode === 'practice' && (
                 <div className="practice-progress">
-                  Word {currentPracticeIndex + 1} of {practiceWords.length} | 
-                  Score: {practiceScore.correct}/{practiceScore.total}
+                  Word {currentPracticeIndex + 1} of {practiceWords.length} | Score:{' '}
+                  {practiceScore.correct}/{practiceScore.total}
                 </div>
               )}
             </div>
@@ -516,13 +528,13 @@ export default function SightWords() {
                 </button>
                 {gameMode === 'practice' && (
                   <div className="practice-buttons">
-                    <button 
+                    <button
                       className="practice-btn correct"
                       onClick={() => handlePracticeAnswer(true)}
                     >
                       ✅ I Know This
                     </button>
-                    <button 
+                    <button
                       className="practice-btn incorrect"
                       onClick={() => handlePracticeAnswer(false)}
                     >
@@ -590,7 +602,7 @@ export default function SightWords() {
                 <p className="feedback-needs-work">These words need more practice. Try again! 💪</p>
               )}
             </div>
-            <button 
+            <button
               className="restart-btn"
               onClick={() => {
                 setGameMode('flashcard');
@@ -608,24 +620,20 @@ export default function SightWords() {
         <h3>📋 All Words ({filteredWords.length})</h3>
         <div className="words-grid">
           {filteredWords.map((word) => (
-                            <div 
-                  key={word.id} 
-                  className={`word-card list-${word.list}`}
-                  onClick={() => setCurrentWord(word)}
-                >
+            <div
+              key={word.id}
+              className={`word-card list-${word.list}`}
+              onClick={() => setCurrentWord(word)}
+            >
               <div className="card-header">
-                                  <span 
-                    className={`card-difficulty-dot difficulty-${word.difficulty}`}
-                  ></span>
-                <span className="card-category-icon">
-                  {getCategoryIcon(word.category)}
-                </span>
+                <span className={`card-difficulty-dot difficulty-${word.difficulty}`}></span>
+                <span className="card-category-icon">{getCategoryIcon(word.category)}</span>
                 {!word.phonetic && <span className="card-irregular">⚠️</span>}
               </div>
-              
+
               <h4 className="card-word">{word.word}</h4>
               <p className="card-meaning">{word.meaning}</p>
-              
+
               <div className="card-meta">
                 <span className="card-list">{word.list}</span>
                 <span className="card-year">{word.yearLevel}</span>
@@ -648,7 +656,7 @@ export default function SightWords() {
               <li>Connect to students' experiences</li>
             </ul>
           </div>
-          
+
           <div className="note-card">
             <h4>🔄 Practice Methods</h4>
             <ul>
@@ -658,7 +666,7 @@ export default function SightWords() {
               <li>Cultural story integration</li>
             </ul>
           </div>
-          
+
           <div className="note-card">
             <h4>📊 Assessment Tips</h4>
             <ul>
@@ -682,7 +690,9 @@ export default function SightWords() {
       </section>
 
       <footer className="sight-words-footer">
-        <p className="cultural-motto">🌿 "He kupu hōhonu, he tangata hōhonu" - Deep words, deep people</p>
+        <p className="cultural-motto">
+          🌿 "He kupu hōhonu, he tangata hōhonu" - Deep words, deep people
+        </p>
         <p className="platform-info">Te Kete Ako - Sight Word Excellence for Aotearoa</p>
       </footer>
     </div>

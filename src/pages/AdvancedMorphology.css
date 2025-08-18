@@ -285,15 +285,15 @@
   .morphemes-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .morpheme-spotlight {
     padding: 1.5rem;
   }
-  
+
   .morpheme-badges {
     flex-direction: column;
   }
-  
+
   .examples-grid,
   .domains-list,
   .family-list {
