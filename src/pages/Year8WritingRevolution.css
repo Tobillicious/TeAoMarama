@@ -1091,19 +1091,19 @@
   }
 }
 
-/* ERO Professional Enhancement Styles */
+/* 🌿 ERO Professional Enhancement Styles - Unified Design System */
 .ero-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  background: linear-gradient(45deg, #00b0b9, #2c5f41);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
   animation: pulse 2s infinite;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 176, 185, 0.3);
 }
 
 .ero-stats {
