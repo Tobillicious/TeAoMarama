@@ -1,0 +1,110 @@
+/* 🌿 RelatedResources Component - Unified Design System */
+
+/* Dynamic Resource Integration Styles */
+.related-resources-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.resource-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #00b0b9;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.priority-high {
+  background: #ef4444;
+  color: white;
+}
+
+.priority-medium {
+  background: #f59e0b;
+  color: #333;
+}
+
+.priority-low {
+  background: #3b82f6;
+  color: white;
+}
+
+.subject-badge {
+  background: #00b0b9;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.resource-title {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.resource-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.cultural-relevance {
+  background: #e8f5e8;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 3px solid #0f766e;
+}
+
+.resource-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.resource-stats {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 176, 185, 0.1);
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.resource-stats p {
+  margin: 0;
+  color: #00b0b9;
+  font-weight: 500;
+}

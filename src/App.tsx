@@ -29,6 +29,7 @@ const Year8ReadingUnits = lazy(() => import('./pages/Year8ReadingUnits'));
 const Year8WritingUnits = lazy(() => import('./pages/Year8WritingUnits'));
 const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
 const Year8SocialStudiesUnits = lazy(() => import('./pages/Year8SocialStudiesUnits'));
+const ScienceIntegration = lazy(() => import('./pages/ScienceIntegration'));
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
@@ -84,6 +85,7 @@ function App() {
       { path: '/year8-social-studies', element: <Year8SocialStudies /> },
       { path: '/year8-writing-units', element: <Year8WritingUnits /> },
       { path: '/year8-social-studies-units', element: <Year8SocialStudiesUnits /> },
+      { path: '/science-integration', element: <ScienceIntegration /> },
     ],
     [],
   );
