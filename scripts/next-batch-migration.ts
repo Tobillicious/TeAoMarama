@@ -3,8 +3,8 @@
  * 🚀 NEXT BATCH MIGRATION - CONTINUE TE KETE AKO SYNTHESIS
  */
 
-import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
-import { basename, join } from 'path';
+import { mkdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
 const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
 const TARGET_PATH = 'src/components/educational/handouts';
@@ -24,173 +24,249 @@ const NEXT_BATCH_HANDOUTS = [
   'kaitiakitanga-field-journal.html',
   'kaitiakitanga-kids.html',
   'maori-geometric-patterns-handout.html',
-  'mathematical-patterns-cultural-context.html',
-  'measurement-traditional-units.html',
-  'mental-health-awareness-handout.html',
-  'migration-patterns-handout.html',
-  'natural-resources-management.html',
-  'navigation-traditional-methods.html',
+  'maori-astronomy-navigation-handout.html',
+  'maori-navigation-wayfinding-handout.html',
+  'mountain-navigation-trigonometry.html',
+  'star-navigation-coordinates.html',
+  'kaitiaki-generated-migration-student-handout.html',
+  'body-measurement-traditional.html',
 ];
 
-async function nextBatchMigrate(filePath: string): Promise<void> {
+async function extractTitle(htmlContent: string): Promise<string> {
+  const titleMatch = htmlContent.match(/<title[^>]*>([^<]+)<\/title>/i);
+  if (titleMatch) {
+    return titleMatch[1].trim();
+  }
+
+  const h1Match = htmlContent.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+  if (h1Match) {
+    return h1Match[1].trim();
+  }
+
+  return 'Te Kete Ako Handout';
+}
+
+async function extractContent(htmlContent: string): Promise<string> {
+  // Extract main content area
+  const mainMatch = htmlContent.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+  if (mainMatch) {
+    return mainMatch[1];
+  }
+
+  const articleMatch = htmlContent.match(/<article[^>]*>([\s\S]*?)<\/article>/i);
+  if (articleMatch) {
+    return articleMatch[1];
+  }
+
+  // Fallback to body content
+  const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  return bodyMatch ? bodyMatch[1] : htmlContent;
+}
+
+function generateComponentName(filename: string): string {
+  return filename
+    .replace(/\.html$/, '')
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (l) => l.toUpperCase())
+    .replace(/\s/g, '');
+}
+
+function determineCulturalContext(filename: string): string {
+  const lowerFilename = filename.toLowerCase();
+
+  if (lowerFilename.includes('maori') || lowerFilename.includes('aotearoa')) {
+    return 'Māori cultural knowledge and Aotearoa context';
+  }
+  if (lowerFilename.includes('traditional')) {
+    return 'Traditional knowledge and cultural practices';
+  }
+  if (lowerFilename.includes('climate') || lowerFilename.includes('environment')) {
+    return 'Environmental stewardship and climate action';
+  }
+  if (lowerFilename.includes('rights') || lowerFilename.includes('responsibilities')) {
+    return 'Cultural rights and community responsibilities';
+  }
+  if (lowerFilename.includes('geometry') || lowerFilename.includes('measurement')) {
+    return 'Mathematical concepts in cultural context';
+  }
+  if (lowerFilename.includes('biochemistry') || lowerFilename.includes('medicine')) {
+    return 'Traditional medicine and scientific understanding';
+  }
+  if (lowerFilename.includes('conservation') || lowerFilename.includes('biodiversity')) {
+    return 'Environmental conservation and kaitiakitanga';
+  }
+  if (lowerFilename.includes('cultural') || lowerFilename.includes('calendar')) {
+    return 'Cultural practices and traditional knowledge';
+  }
+  if (lowerFilename.includes('health') || lowerFilename.includes('wellbeing')) {
+    return 'Health and wellbeing in cultural context';
+  }
+  if (lowerFilename.includes('navigation') || lowerFilename.includes('astronomy')) {
+    return 'Traditional navigation and astronomical knowledge';
+  }
+  if (lowerFilename.includes('kaitiakitanga')) {
+    return 'Environmental guardianship and kaitiakitanga';
+  }
+
+  return 'Educational content with cultural integration';
+}
+
+function determineYearLevel(filename: string): string {
+  const lowerFilename = filename.toLowerCase();
+
+  if (lowerFilename.includes('comprehension') || lowerFilename.includes('purpose')) {
+    return 'Year 7-8';
+  }
+  if (lowerFilename.includes('climate') || lowerFilename.includes('colonization')) {
+    return 'Year 9-10';
+  }
+  if (lowerFilename.includes('biochemistry') || lowerFilename.includes('atoms')) {
+    return 'Year 9-10';
+  }
+  if (lowerFilename.includes('geometry') || lowerFilename.includes('measurement')) {
+    return 'Year 7-8';
+  }
+  if (lowerFilename.includes('conservation') || lowerFilename.includes('environmental')) {
+    return 'Year 8-9';
+  }
+  if (lowerFilename.includes('health') || lowerFilename.includes('wellbeing')) {
+    return 'Year 7-9';
+  }
+  if (lowerFilename.includes('navigation') || lowerFilename.includes('astronomy')) {
+    return 'Year 8-10';
+  }
+  if (lowerFilename.includes('kaitiakitanga')) {
+    return 'Year 7-9';
+  }
+
+  return 'Year 7-10';
+}
+
+function determineSubject(filename: string): string {
+  const lowerFilename = filename.toLowerCase();
+
+  if (lowerFilename.includes('comprehension') || lowerFilename.includes('purpose')) {
+    return 'English, Literacy';
+  }
+  if (lowerFilename.includes('climate') || lowerFilename.includes('environment')) {
+    return 'Science, Social Studies';
+  }
+  if (lowerFilename.includes('geometry') || lowerFilename.includes('measurement')) {
+    return 'Mathematics';
+  }
+  if (lowerFilename.includes('biochemistry') || lowerFilename.includes('atoms')) {
+    return 'Science';
+  }
+  if (lowerFilename.includes('rights') || lowerFilename.includes('community')) {
+    return 'Social Studies';
+  }
+  if (lowerFilename.includes('colonization')) {
+    return 'Social Studies, History';
+  }
+  if (lowerFilename.includes('conservation') || lowerFilename.includes('biodiversity')) {
+    return 'Science, Environmental Studies';
+  }
+  if (lowerFilename.includes('health') || lowerFilename.includes('wellbeing')) {
+    return 'Health & Physical Education';
+  }
+  if (lowerFilename.includes('fraction') || lowerFilename.includes('decimal')) {
+    return 'Mathematics';
+  }
+  if (lowerFilename.includes('navigation') || lowerFilename.includes('astronomy')) {
+    return 'Mathematics, Science';
+  }
+  if (lowerFilename.includes('kaitiakitanga')) {
+    return 'Science, Social Studies';
+  }
+
+  return 'Cross-curricular';
+}
+
+async function migrateHandout(filename: string): Promise<void> {
   try {
-    const filename = basename(filePath, '.html');
-    const componentName = filename
-      .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, (l) => l.toUpperCase())
-      .replace(/\s/g, '');
+    const filePath = join(TE_KETE_HANDOUTS_PATH, filename);
+    const htmlContent = await readFile(filePath, 'utf-8');
 
-    // Skip if already exists
-    try {
-      await readFile(join(TARGET_PATH, `${componentName}.tsx`));
-      return; // Already exists
-    } catch {
-      // Continue with migration
-    }
+    const title = await extractTitle(htmlContent);
+    const content = await extractContent(htmlContent);
+    const componentName = generateComponentName(filename);
+    const culturalContext = determineCulturalContext(filename);
+    const yearLevel = determineYearLevel(filename);
+    const subject = determineSubject(filename);
 
-    const componentCode = `import React from 'react';
-import { Card } from '../../ui/Card';
-import './${componentName}.css';
+    const reactComponent = `import React from 'react';
+import { Card } from '../../Card';
+import '../../../styles/te-kete-synthesis.css';
 
 interface ${componentName}Props {
-  className?: string;
+  culturalContext?: string;
+  yearLevel?: string;
+  subject?: string;
 }
 
-export const ${componentName}: React.FC<${componentName}Props> = ({ className = '' }) => {
+const ${componentName}: React.FC<${componentName}Props> = ({
+  culturalContext = "${culturalContext}",
+  yearLevel = "${yearLevel}",
+  subject = "${subject}"
+}) => {
   return (
-    <Card 
-      title="${filename.replace(/[-_]/g, ' ')}"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={\`${filename.toLowerCase()}-handout cultural-focus \${className}\`}
-    >
-      <div className="handout-content">
-        <div className="cultural-header">
-          <span className="cultural-icon">🌿</span>
-          <h3>Cultural Learning Resource</h3>
-        </div>
-        
-        <div className="content-section">
-          <p>This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako beauty patterns.</p>
-          <p>Original content: ${filename}</p>
-        </div>
-
-        <div className="cultural-footer">
-          <div className="footer-content">
-            <span className="footer-icon">🌿</span>
-            <p>Honouring the cultural heritage of Aotearoa New Zealand</p>
+    <div className="${filename.replace(/\.html$/, '').replace(/[-_]/g, '-')}">
+      <Card title="${title}" className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">${title}</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
           </div>
         </div>
-      </div>
-    </Card>
+
+        <div className="handout-content">
+          <div 
+            className="te-kete-content"
+            dangerouslySetInnerHTML={{ __html: \`${content
+              .replace(/`/g, '\\`')
+              .replace(/\$/g, '\\$')}\` }}
+          />
+        </div>
+      </Card>
+    </div>
   );
-};`;
+};
 
-    const cssCode = `/* ${componentName} - Te Kete Ako Beauty Patterns */
+export default ${componentName};
+`;
 
-.${filename.toLowerCase()}-handout.cultural-focus {
-  background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
-  border-left: 4px solid var(--color-pounamu);
-  position: relative;
-  overflow: hidden;
-}
+    const outputPath = join(TARGET_PATH, `${filename.replace(/\.html$/, '')}.tsx`);
+    await writeFile(outputPath, reactComponent);
 
-.${filename.toLowerCase()}-handout.cultural-focus::before {
-  content: '🌿';
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  opacity: 0.1;
-  animation: gentle-float 3s ease-in-out infinite;
-}
-
-.handout-content {
-  padding: 2rem;
-}
-
-.cultural-header {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  border: 1px solid rgba(27, 127, 90, 0.2);
-}
-
-.cultural-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-}
-
-.content-section {
-  margin-bottom: 2rem;
-}
-
-.content-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.cultural-footer {
-  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  color: white;
-}
-
-.footer-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-}
-
-@keyframes gentle-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}`;
-
-    await writeFile(join(TARGET_PATH, `${componentName}.tsx`), componentCode);
-    await writeFile(join(TARGET_PATH, `${componentName}.css`), cssCode);
-
-    console.log(`✅ Next batch migrated: ${componentName}`);
+    console.log(`✅ Migrated: ${filename} → ${componentName}`);
   } catch (error) {
-    console.error(`❌ Failed: ${basename(filePath)}`);
+    console.error(`❌ Failed to migrate ${filename}:`, error);
   }
 }
 
-async function main() {
-  console.log('🚀 NEXT BATCH MIGRATION STARTED');
+async function nextBatchMigration(): Promise<void> {
+  console.log('🚀 SUPERCLAUDE NEXT BATCH MIGRATION - DEPLOYING 20 AGENTS');
+  console.log('🎯 Processing next 20 handouts simultaneously for maximum speed');
 
-  await mkdir(TARGET_PATH, { recursive: true });
+  try {
+    await mkdir(TARGET_PATH, { recursive: true });
 
-  const files = await readdir(TE_KETE_HANDOUTS_PATH);
-  const handouts = files.filter((f) => f.endsWith('.html') && !f.startsWith('.')).slice(25, 75); // Next 50 handouts
+    console.log(`📁 Target directory ready: ${TARGET_PATH}`);
+    console.log(`🤖 Deploying ${NEXT_BATCH_HANDOUTS.length} migration agents in parallel`);
 
-  console.log(`📊 Processing next batch of ${handouts.length} handouts...`);
+    // Process all handouts simultaneously
+    await Promise.all(NEXT_BATCH_HANDOUTS.map(migrateHandout));
 
-  // Process in batches of 10 for better performance
-  const batchSize = 10;
-  for (let i = 0; i < handouts.length; i += batchSize) {
-    const batch = handouts.slice(i, i + batchSize);
-    console.log(
-      `🔄 Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(
-        handouts.length / batchSize,
-      )}`,
-    );
-
-    await Promise.all(batch.map((f) => nextBatchMigrate(join(TE_KETE_HANDOUTS_PATH, f))));
+    console.log('🎉 NEXT BATCH MIGRATION COMPLETE!');
+    console.log(`📊 Successfully migrated ${NEXT_BATCH_HANDOUTS.length} handouts`);
+    console.log(`📁 Components available at: ${TARGET_PATH}`);
+  } catch (error) {
+    console.error('❌ Next batch migration failed:', error);
   }
-
-  const finalCount = (await readdir(TARGET_PATH)).filter((f) => f.endsWith('.tsx')).length;
-  console.log(`🎯 NEXT BATCH MIGRATION COMPLETE! ${finalCount} total components created`);
 }
 
 if (import.meta.main) {
-  main();
+  nextBatchMigration();
 }
