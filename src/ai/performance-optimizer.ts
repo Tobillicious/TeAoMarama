@@ -3,6 +3,7 @@
 
 import { AIOrchestrator } from './orchestrator';
 import { AIRegistry } from './registry';
+import { ultraFastCache } from './ultra-fast-cache';
 
 export interface LLMPerformanceConfig {
   enableParallelProcessing: boolean;
@@ -32,7 +33,7 @@ export class LLMPerformanceOptimizer {
       maxConcurrentRequests: 10,
       cacheTTL: 5 * 60 * 1000, // 5 minutes
       timeoutMs: 30000, // 30 seconds
-      ...config
+      ...config,
     };
   }
 
@@ -45,16 +46,16 @@ export class LLMPerformanceOptimizer {
       priority: 'speed' | 'quality' | 'depth';
       culturalSensitive?: boolean;
       context?: any;
-    }
+    },
   ) {
     const cacheKey = this.generateCacheKey(prompt, options);
-    
-    // 🎯 INTELLIGENT CACHING - INSTANT RESPONSES
+
+    // 🎯 ULTRA-FAST CACHE CHECK - INSTANT RESPONSES
     if (this.config.enableIntelligentCaching) {
-      const cached = this.responseCache.get(cacheKey);
-      if (cached && Date.now() - cached.timestamp < this.config.cacheTTL) {
-        console.log('🚀 CACHE HIT - Instant response!');
-        return cached.response;
+      const cached = await ultraFastCache.get(cacheKey);
+      if (cached) {
+        console.log('🚀 ULTRA-FAST CACHE HIT - Instant response!');
+        return cached;
       }
     }
 
@@ -70,23 +71,21 @@ export class LLMPerformanceOptimizer {
 
     // 🎯 OPTIMIZED MODEL ROUTING
     const optimizedRoute = this.getOptimizedRoute(options);
-    
+
     const startTime = Date.now();
     const result = await this.orchestrator.route({
       ...options,
       prompt,
-      context: options.context
+      context: options.context,
     });
-    
+
     const responseTime = Date.now() - startTime;
     console.log(`⚡ LLM Response: ${responseTime}ms`);
 
-    // Cache the result
+    // Cache the result in ultra-fast cache
     if (this.config.enableIntelligentCaching) {
-      this.responseCache.set(cacheKey, {
-        response: result,
-        timestamp: Date.now()
-      });
+      const priority = options.priority === 'speed' ? 'high' : 'medium';
+      await ultraFastCache.set(cacheKey, result, priority);
     }
 
     return result;
@@ -95,11 +94,11 @@ export class LLMPerformanceOptimizer {
   // 🔄 PARALLEL PROCESSING FOR COMPLEX TASKS
   private async parallelLLMProcessing(prompt: string, options: any) {
     const tasks = this.splitComplexTask(prompt, options);
-    
+
     console.log(`🔄 Parallel processing ${tasks.length} subtasks...`);
-    
+
     const results = await Promise.allSettled(
-      tasks.map(task => this.fastLLMCall(task.prompt, { ...options, complexity: 'simple' }))
+      tasks.map((task) => this.fastLLMCall(task.prompt, { ...options, complexity: 'simple' })),
     );
 
     return this.mergeParallelResults(results);
@@ -111,13 +110,13 @@ export class LLMPerformanceOptimizer {
     const streamPromise = this.orchestrator.route({
       ...options,
       prompt,
-      context: { ...options.context, streaming: true }
+      context: { ...options.context, streaming: true },
     });
 
     // Return immediately with a promise that resolves as content streams
     return {
       stream: streamPromise,
-      immediate: this.getQuickPreview(prompt, options)
+      immediate: this.getQuickPreview(prompt, options),
     };
   }
 
@@ -130,7 +129,7 @@ export class LLMPerformanceOptimizer {
       return {
         llm: 'gemini-cli', // Fastest for simple tasks
         model: 'gemini-1.5-flash',
-        reason: 'speed_optimized'
+        reason: 'speed_optimized',
       };
     }
 
@@ -139,7 +138,7 @@ export class LLMPerformanceOptimizer {
       return {
         llm: 'deepseek',
         model: 'deepseek-reasoner',
-        reason: 'complex_reasoning_required'
+        reason: 'complex_reasoning_required',
       };
     }
 
@@ -155,7 +154,7 @@ export class LLMPerformanceOptimizer {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
       const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
+      hash = (hash << 5) - hash + char;
       hash = hash & hash; // Convert to 32-bit integer
     }
     return hash.toString();
@@ -165,28 +164,30 @@ export class LLMPerformanceOptimizer {
     // Split complex prompts into parallel subtasks
     const lines = prompt.split('\n');
     const chunkSize = Math.ceil(lines.length / 3);
-    
-    return lines.reduce((chunks, line, index) => {
-      const chunkIndex = Math.floor(index / chunkSize);
-      if (!chunks[chunkIndex]) chunks[chunkIndex] = [];
-      chunks[chunkIndex].push(line);
-      return chunks;
-    }, [] as string[][]).map(chunk => ({
-      prompt: chunk.join('\n'),
-      priority: 'speed'
-    }));
+
+    return lines
+      .reduce((chunks, line, index) => {
+        const chunkIndex = Math.floor(index / chunkSize);
+        if (!chunks[chunkIndex]) chunks[chunkIndex] = [];
+        chunks[chunkIndex].push(line);
+        return chunks;
+      }, [] as string[][])
+      .map((chunk) => ({
+        prompt: chunk.join('\n'),
+        priority: 'speed',
+      }));
   }
 
   private mergeParallelResults(results: PromiseSettledResult<any>[]) {
     const successful = results
-      .filter(result => result.status === 'fulfilled')
-      .map(result => (result as PromiseFulfilledResult<any>).value);
-    
+      .filter((result) => result.status === 'fulfilled')
+      .map((result) => (result as PromiseFulfilledResult<any>).value);
+
     return {
       merged: successful.join('\n\n'),
       partialResults: successful,
       totalProcessed: results.length,
-      successful: successful.length
+      successful: successful.length,
     };
   }
 
@@ -195,16 +196,20 @@ export class LLMPerformanceOptimizer {
     return {
       preview: `Processing ${options.type} request...`,
       estimatedTime: this.estimateResponseTime(options.complexity),
-      streaming: true
+      streaming: true,
     };
   }
 
   private estimateResponseTime(complexity: string): number {
     switch (complexity) {
-      case 'simple': return 1000; // 1 second
-      case 'medium': return 3000; // 3 seconds
-      case 'complex': return 8000; // 8 seconds
-      default: return 5000;
+      case 'simple':
+        return 1000; // 1 second
+      case 'medium':
+        return 3000; // 3 seconds
+      case 'complex':
+        return 8000; // 8 seconds
+      default:
+        return 5000;
     }
   }
 
@@ -218,7 +223,7 @@ export class LLMPerformanceOptimizer {
     return {
       size: this.responseCache.size,
       hitRate: this.calculateHitRate(),
-      memoryUsage: this.estimateMemoryUsage()
+      memoryUsage: this.estimateMemoryUsage(),
     };
   }
 
@@ -243,5 +248,5 @@ export const llmOptimizer = new LLMPerformanceOptimizer({
   enableModelRouting: true,
   maxConcurrentRequests: 15,
   cacheTTL: 10 * 60 * 1000, // 10 minutes
-  timeoutMs: 20000 // 20 seconds
+  timeoutMs: 20000, // 20 seconds
 });

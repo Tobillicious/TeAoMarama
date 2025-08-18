@@ -1,0 +1,159 @@
+#!/usr/bin/env tsx
+
+// 🚀 LLM PERFORMANCE TEST SCRIPT
+// Tests the speed improvements of the optimized LLM system
+
+import { llmOptimizer } from '../src/ai/performance-optimizer';
+import { ultraFastCache } from '../src/ai/ultra-fast-cache';
+
+interface PerformanceTest {
+  name: string;
+  prompt: string;
+  complexity: 'simple' | 'medium' | 'complex';
+  priority: 'speed' | 'quality' | 'depth';
+  expectedTime: number;
+}
+
+const performanceTests: PerformanceTest[] = [
+  {
+    name: 'Simple Search Query',
+    prompt: 'Find math resources for Year 8 students',
+    complexity: 'simple',
+    priority: 'speed',
+    expectedTime: 1000,
+  },
+  {
+    name: 'Medium Complexity Lesson Plan',
+    prompt: 'Create a lesson plan for teaching fractions with Māori cultural context',
+    complexity: 'medium',
+    priority: 'quality',
+    expectedTime: 3000,
+  },
+  {
+    name: 'Complex Assessment Framework',
+    prompt:
+      'Design a comprehensive assessment framework for Year 8 social studies with cultural safety protocols',
+    complexity: 'complex',
+    priority: 'depth',
+    expectedTime: 8000,
+  },
+  {
+    name: 'Cached Response Test',
+    prompt: 'Find math resources for Year 8 students', // Same as first test
+    complexity: 'simple',
+    priority: 'speed',
+    expectedTime: 100, // Should be cached
+  },
+];
+
+async function runPerformanceTest(test: PerformanceTest): Promise<{
+  name: string;
+  actualTime: number;
+  expectedTime: number;
+  improvement: number;
+  cacheHit: boolean;
+}> {
+  console.log(`\n🧪 Running test: ${test.name}`);
+
+  const startTime = Date.now();
+
+  try {
+    const result = await llmOptimizer.fastLLMCall(test.prompt, {
+      type: 'performance_test',
+      complexity: test.complexity,
+      priority: test.priority,
+      culturalSensitive: test.prompt.includes('Māori'),
+      context: { test: true },
+    });
+
+    const actualTime = Date.now() - startTime;
+    const improvement = ((test.expectedTime - actualTime) / test.expectedTime) * 100;
+    const cacheHit = actualTime < 200; // Likely cached if under 200ms
+
+    console.log(`  ⏱️  Actual time: ${actualTime}ms`);
+    console.log(`  🎯 Expected time: ${test.expectedTime}ms`);
+    console.log(`  📈 Improvement: ${improvement.toFixed(1)}%`);
+    console.log(`  🚀 Cache hit: ${cacheHit ? 'YES' : 'NO'}`);
+
+    return {
+      name: test.name,
+      actualTime,
+      expectedTime: test.expectedTime,
+      improvement,
+      cacheHit,
+    };
+  } catch (error) {
+    console.error(`  ❌ Test failed: ${error}`);
+    return {
+      name: test.name,
+      actualTime: test.expectedTime * 2, // Penalty for failure
+      expectedTime: test.expectedTime,
+      improvement: -100,
+      cacheHit: false,
+    };
+  }
+}
+
+async function runAllTests() {
+  console.log('🚀 LLM PERFORMANCE TEST SUITE');
+  console.log('==============================');
+
+  const results = [];
+
+  for (const test of performanceTests) {
+    const result = await runPerformanceTest(test);
+    results.push(result);
+
+    // Small delay between tests
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+
+  // Calculate overall performance
+  const totalImprovement = results.reduce((sum, r) => sum + r.improvement, 0) / results.length;
+  const cacheHitRate = (results.filter((r) => r.cacheHit).length / results.length) * 100;
+  const averageTime = results.reduce((sum, r) => sum + r.actualTime, 0) / results.length;
+
+  console.log('\n📊 PERFORMANCE SUMMARY');
+  console.log('======================');
+  console.log(`🎯 Average Improvement: ${totalImprovement.toFixed(1)}%`);
+  console.log(`🚀 Cache Hit Rate: ${cacheHitRate.toFixed(1)}%`);
+  console.log(`⏱️  Average Response Time: ${averageTime.toFixed(0)}ms`);
+
+  // Performance assessment
+  if (totalImprovement > 50 && cacheHitRate > 60) {
+    console.log('✅ EXCELLENT PERFORMANCE - LLMs are running at WARP SPEED!');
+  } else if (totalImprovement > 20 && cacheHitRate > 30) {
+    console.log('⚡ GOOD PERFORMANCE - LLMs are much faster than before!');
+  } else {
+    console.log('🐌 NEEDS OPTIMIZATION - LLMs are still moving like snails');
+  }
+
+  // Cache statistics
+  const cacheStats = ultraFastCache.getStats();
+  console.log('\n🗄️  CACHE STATISTICS');
+  console.log('===================');
+  console.log(`📦 Cache Size: ${cacheStats.size} entries`);
+  console.log(`💾 Memory Usage: ${cacheStats.memoryUsage}`);
+  console.log(`🎯 Hit Rate: ${(cacheStats.hitRate * 100).toFixed(1)}%`);
+  console.log(`🧹 Evictions: ${cacheStats.evictions}`);
+
+  return {
+    totalImprovement,
+    cacheHitRate,
+    averageTime,
+    cacheStats,
+  };
+}
+
+// Run the performance test suite
+runAllTests()
+  .then(() => {
+    console.log('\n🎉 Performance testing complete!');
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error('❌ Performance testing failed:', error);
+    process.exit(1);
+  });
+
+export { performanceTests, runAllTests };

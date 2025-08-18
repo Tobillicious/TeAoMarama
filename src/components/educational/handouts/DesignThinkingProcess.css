@@ -1,0 +1,434 @@
+/* 🎨 Design Thinking Process - TeAoMarama Unified Design */
+
+.design-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 100%);
+  min-height: 100vh;
+}
+
+.design-header {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.design-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="design" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><path d="M5,5 L15,15 M15,5 L5,15" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23design)"/></svg>');
+  opacity: 0.3;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.95;
+  margin: 0 0 1.25rem 0;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.tabs {
+  margin-bottom: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.tab-button.active {
+  background: #8b5cf6;
+  border-color: #8b5cf6;
+  color: white;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.25);
+}
+
+.stages,
+.challenges,
+.cultural,
+.curriculum {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stages h2,
+.challenges h2,
+.cultural h2,
+.curriculum h2 {
+  color: #8b5cf6;
+  margin-bottom: 1.5rem;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stage-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.stage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stage-card.selected {
+  border-color: #8b5cf6;
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.2);
+}
+
+.stage-card.blue {
+  border-left: 4px solid #3b82f6;
+}
+
+.stage-card.green {
+  border-left: 4px solid #10b981;
+}
+
+.stage-card.purple {
+  border-left: 4px solid #8b5cf6;
+}
+
+.stage-card.orange {
+  border-left: 4px solid #f59e0b;
+}
+
+.stage-card.red {
+  border-left: 4px solid #ef4444;
+}
+
+.stage-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stage-title {
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stage-description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.stage-details {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.stage-details h3 {
+  color: #8b5cf6;
+  margin: 0 0 1rem 0;
+}
+
+.cultural-context {
+  color: #4b5563;
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.activities-section h4 {
+  color: #8b5cf6;
+  margin: 0 0 0.75rem 0;
+}
+
+.activities-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.activities-section li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.challenge-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.challenge-pill {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.challenge-pill:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+}
+
+.challenge-pill.active {
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.25);
+}
+
+.challenge-details h3 {
+  color: #8b5cf6;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.challenge-stages {
+  display: grid;
+  gap: 1rem;
+}
+
+.challenge-stage {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.challenge-stage h4 {
+  color: #8b5cf6;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.question {
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.hint {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.cultural-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cultural-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.cultural-section h3 {
+  color: #8b5cf6;
+  margin: 0 0 1rem 0;
+}
+
+.cultural-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.cultural-section li {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.curriculum-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.curriculum-section h3 {
+  color: #8b5cf6;
+  margin: 0 0 1rem 0;
+}
+
+.curriculum-section p {
+  margin: 0 0 0.75rem 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.curriculum-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.curriculum-section li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.motto {
+  color: #8b5cf6;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.platform {
+  color: #475569;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .design-container {
+    padding: 1rem;
+  }
+
+  .design-header {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .challenge-selector {
+    flex-direction: column;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stages,
+.challenges,
+.cultural,
+.curriculum {
+  animation: fadeUp 0.5s ease-out;
+}
