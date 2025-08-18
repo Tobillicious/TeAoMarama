@@ -1,0 +1,65 @@
+{
+  "name": "te-kete-ako-clean",
+  "version": "2.0.0",
+  "description": "Te Kete Ako - World's first culturally-integrated AI educational platform with Kaitiaki Aronui brain system",
+  "scripts": {
+    "deploy": "echo 'Deploying to Netlify...'",
+    "clean": "echo 'Clean deployment ready'",
+    "brain:extractor": "ts-node src/brain/extractor/kaitiaki-cortex.ts",
+    "brain:indexer": "ts-node src/brain/indexer/kaitiaki-memory.ts",
+    "brain:ingest": "ts-node src/brain/ingest/kaitiaki-cerebellum.ts",
+    "brain:migrate": "echo \"Please run this migration in Supabase: migrations/20250810_kaitiaki_aronui_brain.sql\"",
+    "brain:setup": "npm run brain:migrate && npm run brain:index-all",
+    "brain:index-all": "npm run brain:indexer .",
+    "brain:dev": "concurrently \"npm run brain:extractor\" \"echo Extractor running on http://localhost:3001\"",
+    "brain:health": "curl -s http://localhost:3001/health | jq .",
+    "brain:stats": "curl -s http://localhost:3001/stats | jq ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.54.0",
+    "async-retry": "^1.3.3",
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "fast-glob": "^3.3.3",
+    "front-matter": "^4.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.23",
+    "@types/node": "^20.19.10",
+    "@types/uuid": "^9.0.8",
+    "concurrently": "^8.2.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  },
+  "keywords": [
+    "education",
+    "maori",
+    "ai",
+    "cultural",
+    "te-ao-maori",
+    "learning",
+    "supabase",
+    "netlify",
+    "graphrag",
+    "kaitiaki",
+    "aronui"
+  ],
+  "author": "Tobillicious & Claude (Kaitiaki Aronui)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tobillicious/te-kete-ako-production.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

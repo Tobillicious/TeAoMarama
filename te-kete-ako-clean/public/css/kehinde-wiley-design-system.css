@@ -1,0 +1,461 @@
+/**
+ * TE KETE AKO DESIGN SYSTEM V4.0 
+ * KEHINDE WILEY AESTHETIC INSPIRATION
+ * 
+ * "Bold, Intentional, Culturally Resonant"
+ * Inspired by Kehinde Wiley's approach to:
+ * - Ornate, pattern-rich backgrounds
+ * - Bold, confident portraiture
+ * - Cultural reclamation through beauty
+ * - Juxtaposition of classical and contemporary
+ * - Rich, saturated color palettes
+ * - Intricate floral and botanical motifs
+ * - Regal, dignified presentation
+ */
+
+:root {
+    /* KEHINDE WILEY COLOR PALETTE - Inspired by his bold, saturated approach */
+    
+    /* Primary Palette - Rich & Bold */
+    --wiley-royal-blue: #003366;        /* Deep, regal blue */
+    --wiley-emerald: #006A4E;           /* Rich emerald green */
+    --wiley-gold: #FFD700;              /* Pure, confident gold */
+    --wiley-crimson: #DC143C;           /* Bold crimson red */
+    --wiley-deep-purple: #4B0082;       /* Royal purple */
+    
+    /* Māori Cultural Integration */
+    --maori-pounamu: #1B6B42;           /* Greenstone */
+    --maori-kōwhai: #F5D915;            /* Golden yellow */
+    --maori-moana: #006994;             /* Ocean blue */
+    --maori-whenua: #8B4513;            /* Earth brown */
+    --maori-ahi: #FF4500;               /* Fire orange */
+    
+    /* Floral & Natural Palette - Ornate backgrounds */
+    --wiley-rose-pink: #FF69B4;         /* Vibrant rose */
+    --wiley-sage: #9CAF88;              /* Sage green */
+    --wiley-ivory: #FFFFF0;             /* Rich ivory */
+    --wiley-charcoal: #36454F;          /* Deep charcoal */
+    --wiley-bronze: #CD7F32;            /* Warm bronze */
+    
+    /* Typography - Bold & Confident */
+    --font-wiley-display: 'Playfair Display', 'Times New Roman', serif;  /* For headlines - classical elegance */
+    --font-wiley-body: 'Inter', 'Helvetica Neue', sans-serif;           /* Clean, modern reading */
+    --font-wiley-accent: 'Crimson Text', Georgia, serif;                /* Cultural quotes & accents */
+    
+    /* Scale & Proportions - Bold presence */
+    --wiley-scale-hero: 4.5rem;         /* Commanding hero text */
+    --wiley-scale-h1: 3.5rem;           /* Bold section headers */
+    --wiley-scale-h2: 2.5rem;           /* Strong subheads */
+    --wiley-scale-h3: 1.8rem;           /* Confident labels */
+    --wiley-scale-body: 1.1rem;         /* Readable body text */
+    
+    /* Spacing - Generous & Intentional */
+    --wiley-space-xs: 0.5rem;
+    --wiley-space-sm: 1rem;
+    --wiley-space-md: 2rem;
+    --wiley-space-lg: 4rem;
+    --wiley-space-xl: 6rem;
+    --wiley-space-xxl: 10rem;
+    
+    /* Ornate Pattern Elements */
+    --wiley-pattern-opacity: 0.15;      /* Subtle background patterns */
+    --wiley-border-ornate: 3px;         /* Rich border treatments */
+    --wiley-radius-organic: 12px;       /* Natural, flowing corners */
+    --wiley-radius-frame: 20px;         /* Picture frame aesthetic */
+}
+
+/**
+ * KEHINDE WILEY TYPOGRAPHY SYSTEM
+ * Bold, confident, and culturally resonant
+ */
+
+.wiley-hero-title {
+    font-family: var(--font-wiley-display);
+    font-size: clamp(3rem, 8vw, var(--wiley-scale-hero));
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--wiley-gold);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: var(--wiley-space-md);
+}
+
+.wiley-section-title {
+    font-family: var(--font-wiley-display);
+    font-size: var(--wiley-scale-h1);
+    font-weight: 700;
+    color: var(--wiley-royal-blue);
+    margin-bottom: var(--wiley-space-lg);
+    position: relative;
+}
+
+/* Ornate underline treatment */
+.wiley-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--wiley-gold), var(--maori-kōwhai));
+    border-radius: 2px;
+}
+
+.wiley-cultural-quote {
+    font-family: var(--font-wiley-accent);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--wiley-deep-purple);
+    text-align: center;
+    padding: var(--wiley-space-md);
+    border-left: var(--wiley-border-ornate) solid var(--maori-pounamu);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 240, 0.8) 0%, 
+        rgba(156, 175, 136, 0.1) 100%);
+    border-radius: var(--wiley-radius-organic);
+    margin: var(--wiley-space-lg) 0;
+}
+
+/**
+ * ORNATE BACKGROUND PATTERNS
+ * Inspired by Wiley's rich, botanical backgrounds
+ */
+
+.wiley-pattern-hero {
+    background: linear-gradient(135deg, var(--wiley-royal-blue) 0%, var(--wiley-emerald) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floral pattern overlay */
+.wiley-pattern-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 105, 180, 0.08) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, 
+            rgba(156, 175, 136, 0.05) 0px, 
+            rgba(156, 175, 136, 0.05) 2px, 
+            transparent 2px, 
+            transparent 60px);
+    pointer-events: none;
+}
+
+/* Kehinde Wiley-inspired decorative elements */
+.wiley-ornate-border {
+    border: var(--wiley-border-ornate) solid var(--wiley-gold);
+    border-radius: var(--wiley-radius-frame);
+    padding: var(--wiley-space-lg);
+    background: linear-gradient(135deg, 
+        var(--wiley-ivory) 0%, 
+        rgba(255, 255, 240, 0.95) 100%);
+    position: relative;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Corner flourishes - botanical motifs */
+.wiley-ornate-border::before,
+.wiley-ornate-border::after {
+    content: '❋';
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--wiley-gold);
+    opacity: 0.7;
+}
+
+.wiley-ornate-border::before {
+    top: 15px;
+    left: 20px;
+}
+
+.wiley-ornate-border::after {
+    bottom: 15px;
+    right: 20px;
+}
+
+/**
+ * CULTURAL COMPONENTS
+ * Dignified presentation of Māori elements
+ */
+
+.wiley-cultural-card {
+    background: linear-gradient(135deg, 
+        var(--maori-pounamu) 0%, 
+        var(--wiley-emerald) 100%);
+    color: white;
+    padding: var(--wiley-space-lg);
+    border-radius: var(--wiley-radius-frame);
+    border: 2px solid var(--wiley-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Subtle pattern overlay for cultural cards */
+.wiley-cultural-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-conic-gradient(from 0deg at 50% 50%, 
+            rgba(255,255,255,0.03) 0deg, 
+            rgba(255,255,255,0.03) 30deg, 
+            transparent 30deg, 
+            transparent 60deg);
+    pointer-events: none;
+}
+
+.wiley-cultural-title {
+    font-family: var(--font-wiley-display);
+    font-size: var(--wiley-scale-h2);
+    font-weight: 700;
+    margin-bottom: var(--wiley-space-sm);
+    color: var(--wiley-gold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/**
+ * NAVIGATION - Bold & Confident
+ */
+
+.wiley-nav {
+    background: linear-gradient(135deg, 
+        var(--wiley-charcoal) 0%, 
+        var(--wiley-royal-blue) 100%);
+    border-bottom: 3px solid var(--wiley-gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.wiley-nav-brand {
+    font-family: var(--font-wiley-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--wiley-gold);
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.wiley-nav-link {
+    color: white;
+    font-weight: 600;
+    padding: var(--wiley-space-sm) var(--wiley-space-md);
+    border-radius: var(--wiley-radius-organic);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.wiley-nav-link:hover {
+    background: linear-gradient(135deg, var(--wiley-gold), var(--maori-kōwhai));
+    color: var(--wiley-royal-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/**
+ * CONTENT CARDS - Gallery-like presentation
+ */
+
+.wiley-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--wiley-space-lg);
+    padding: var(--wiley-space-xl) var(--wiley-space-md);
+}
+
+.wiley-content-card {
+    background: white;
+    border-radius: var(--wiley-radius-frame);
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.1),
+        0 1px 8px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.wiley-content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.15),
+        0 1px 8px rgba(0,0,0,0.1);
+}
+
+.wiley-card-header {
+    background: linear-gradient(135deg, var(--maori-moana), var(--wiley-royal-blue));
+    color: white;
+    padding: var(--wiley-space-md);
+    position: relative;
+}
+
+.wiley-card-title {
+    font-family: var(--font-wiley-display);
+    font-size: var(--wiley-scale-h3);
+    font-weight: 700;
+    margin: 0;
+}
+
+.wiley-card-body {
+    padding: var(--wiley-space-lg);
+    line-height: 1.7;
+    color: var(--wiley-charcoal);
+}
+
+/**
+ * BUTTONS - Confident & Action-Oriented
+ */
+
+.wiley-btn {
+    font-family: var(--font-wiley-body);
+    font-weight: 700;
+    padding: var(--wiley-space-sm) var(--wiley-space-lg);
+    border-radius: var(--wiley-radius-organic);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wiley-btn-primary {
+    background: linear-gradient(135deg, var(--wiley-gold), var(--maori-kōwhai));
+    color: var(--wiley-royal-blue);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+.wiley-btn-primary:hover {
+    background: linear-gradient(135deg, var(--maori-kōwhai), var(--wiley-gold));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.wiley-btn-secondary {
+    background: linear-gradient(135deg, var(--wiley-emerald), var(--maori-pounamu));
+    color: white;
+    box-shadow: 0 6px 20px rgba(27, 107, 66, 0.3);
+}
+
+.wiley-btn-secondary:hover {
+    background: linear-gradient(135deg, var(--maori-pounamu), var(--wiley-emerald));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(27, 107, 66, 0.4);
+}
+
+/**
+ * RESPONSIVE DESIGN
+ * Maintaining impact across all devices
+ */
+
+@media (max-width: 768px) {
+    .wiley-hero-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
+    .wiley-section-title {
+        font-size: 2.5rem;
+    }
+    
+    .wiley-content-grid {
+        grid-template-columns: 1fr;
+        gap: var(--wiley-space-md);
+        padding: var(--wiley-space-lg) var(--wiley-space-sm);
+    }
+    
+    .wiley-ornate-border {
+        padding: var(--wiley-space-md);
+    }
+}
+
+/**
+ * ANIMATIONS - Subtle & Elegant
+ */
+
+@keyframes wiley-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes wiley-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Apply entrance animation to cards */
+.wiley-content-card {
+    animation: wiley-entrance 0.8s ease-out;
+}
+
+/* Special glow effect for featured content */
+.wiley-featured {
+    animation: wiley-glow 3s ease-in-out infinite;
+}
+
+/**
+ * ACCESSIBILITY & CONTRAST
+ * Ensuring beautiful design remains usable
+ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .wiley-content-card {
+        border: 2px solid var(--wiley-charcoal);
+    }
+    
+    .wiley-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/**
+ * UTILITY CLASSES
+ * Quick application of Wiley aesthetic
+ */
+
+.wiley-text-gold { color: var(--wiley-gold); }
+.wiley-text-royal { color: var(--wiley-royal-blue); }
+.wiley-text-emerald { color: var(--wiley-emerald); }
+
+.wiley-bg-pattern {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(27, 107, 66, 0.1) 0%, transparent 50%);
+}
+
+.wiley-shadow-ornate {
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.1),
+        0 5px 15px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+}

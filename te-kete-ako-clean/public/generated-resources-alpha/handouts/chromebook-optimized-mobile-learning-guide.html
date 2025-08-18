@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromebook-Optimized Mobile Learning Guide | Digital Technology</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #005a9c;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #005a9c;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        h2 {
+            border-bottom: 2px solid #005a9c;
+            padding-bottom: 5px;
+        }
+        .cultural-context {
+            background-color: #f0f7ff;
+            padding: 15px;
+            border-left: 4px solid #005a9c;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .activity-box {
+            background-color: #e6f2ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .checklist {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "✓";
+            color: #005a9c;
+            position: absolute;
+            left: 0;
+        }
+        .rubric {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .rubric th, .rubric td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .rubric th {
+            background-color: #005a9c;
+            color: white;
+        }
+        .rubric tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .teacher-notes {
+            background-color: #fff8e6;
+            padding: 15px;
+            border-left: 4px solid #ffcc00;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #005a9c;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #003d66;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chromebook-Optimized Mobile Learning Guide</h1>
+        <p>Digital Technology | Years 7-10</p>
+    </header>
+
+    <section>
+        <h2>Learning Objectives</h2>
+        <p>By the end of this unit, students will be able to:</p>
+        <ul class="checklist">
+            <li>Understand digital equity and its importance in Aotearoa</li>
+            <li>Optimize Chromebook settings for effective learning</li>
+            <li>Apply tikanga Māori to digital spaces</li>
+            <li>Create accessible digital content</li>
+            <li>Troubleshoot common Chromebook issues</li>
+        </ul>
+    </section>
+
+    <section class="cultural-context">
+        <h2>Cultural Context: Digital Equity in Aotearoa</h2>
+        <p><strong>He whakataukī (proverb):</strong> "Ehara taku toa i te toa takitahi, engari he toa takitini" - My strength is not as an individual, but as a collective.</p>
+        <p>In te ao Māori, the concept of manaakitanga (hospitality, kindness) extends to digital spaces. We must ensure all learners have equitable access to technology and digital resources.</p>
+        <h3>Tikanga Considerations:</h3>
+        <ul>
+            <li><strong>Whanaungatanga:</strong> Build relationships in digital spaces as you would in person</li>
+            <li><strong>Kaitiakitanga:</strong> Be responsible guardians of digital tools and resources</li>
+            <li><strong>Wairuatanga:</strong> Consider the spiritual wellbeing of yourself and others online</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Chromebook Optimization Guide</h2>
+        
+        <div class="activity-box">
+            <h3>Activity 1: Setting Up Your Chromebook</h3>
+            <p>Follow these steps to optimize your Chromebook for learning:</p>
+            <ol>
+                <li>Click the time in the bottom right corner</li>
+                <li>Select the gear icon for Settings</li>
+                <li>Adjust display size for comfortable reading</li>
+                <li>Enable high contrast mode if needed</li>
+                <li>Set up multiple user accounts if sharing devices</li>
+            </ol>
+            <button class="btn" onclick="document.getElementById('settings-img').style.display='block'">Show Settings Screenshot</button>
+            <img id="settings-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlZWVlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSIgZmlsbD0iIzAwMDAwMCI+Q2hyb21lYm9vayBTZXR0aW5ncyBNZW51PC90ZXh0Pjwvc3ZnPg==" style="display:none; max-width:100%; margin-top:10px;" alt="Chromebook settings menu">
+        </div>
+
+        <div class="activity-box">
+            <h3>Activity 2: Digital Accessibility Features</h3>
+            <p>Explore these built-in accessibility tools:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <button class="btn" onclick="alert('Press Ctrl + Alt + Z to toggle ChromeVox screen reader')">Screen Reader</button>
+                <button class="btn" onclick="alert('Go to Settings > Advanced > Accessibility > Enable dictation')">Voice Typing</button>
+                <button class="btn" onclick="alert('Settings > Device > Keyboard > Change modifier keys')">Keyboard Shortcuts</button>
+            </div>
+            <p>Reflection: How could these tools help create more equitable learning experiences?</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Assessment Rubric</h2>
+        <table class="rubric">
+            <tr>
+                <th>Criteria</th>
+                <th>Emerging (1-2)</th>
+                <th>Developing (3-4)</th>
+                <th>Proficient (5-6)</th>
+            </tr>
+            <tr>
+                <td>Technical Setup</td>
+                <td>Basic settings configured with assistance</td>
+                <td>Most settings optimized independently</td>
+                <td>All settings optimized with personal adaptations</td>
+            </tr>
+            <tr>
+                <td>Cultural Understanding</td>
+                <td>Recognizes basic concepts of digital equity</td>
+                <td>Explains digital equity with Māori examples</td>
+                <td>Applies tikanga principles to digital practice</td>
+            </tr>
+            <tr>
+                <td>Accessibility Awareness</td>
+                <td>Identifies one accessibility feature</td>
+                <td>Uses multiple features appropriately</td>
+                <td>Adapts features for specific learning needs</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Extension Activities</h2>
+        <div class="activity-box">
+            <h3>Digital Whakapapa Project</h3>
+            <p>Create a digital family tree using Google Drawings or another Chromebook-compatible tool. Consider:</p>
+            <ul>
+                <li>How to represent relationships digitally</li>
+                <li>Including both biological and chosen family</li>
+                <li>Respecting privacy considerations</li>
+            </ul>
+        </div>
+
+        <div class="activity-box">
+            <h3>Community Tech Audit</h3>
+            <p>Research digital access in your local community:</p>
+            <ol>
+                <li>Identify places with free public WiFi</li>
+                <li>Find community tech support services</li>
+                <li>Create a resource map using Google My Maps</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="teacher-notes">
+        <h2>Teacher Implementation Notes</h2>
+        <h3>Prior Knowledge:</h3>
+        <p>Students should have basic Chromebook navigation skills. Pre-assessment could include a quick quiz on:</p>
+        <ul>
+            <li>Logging in/out</li>
+            <li>Opening apps</li>
+            <li>Basic keyboard shortcuts</li>
+        </ul>
+
+        <h3>Differentiation Strategies:</h3>
+        <ul>
+            <li><strong>Support:</strong> Provide printed step-by-step guides with screenshots</li>
+            <li><strong>Extension:</strong> Have students create tutorial videos for specific features</li>
+            <li><strong>Cultural:</strong> Invite local iwi digital experts to share perspectives</li>
+        </ul>
+
+        <h3>Assessment Options:</h3>
+        <ul>
+            <li>Observation during setup activities</li>
+            <li>Student-created "how to" guides</li>
+            <li>Reflection journals on digital equity</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Resources & References</h2>
+        <ul>
+            <li><a href="https://www.education.govt.nz/digital-technology" target="_blank">Ministry of Education - Digital Technology</a></li>
+            <li><a href="https://www.tki.org.nz/" target="_blank">Te Kete Ipurangi (TKI)</a></li>
+            <li><a href="https://www.digitalnz.org/maori" target="_blank">DigitalNZ Māori Resources</a></li>
+            <li><a href="https://edu.google.com/intl/ALL_nz/products/chromebooks/" target="_blank">Google for Education Chromebook Guides</a></li>
+        </ul>
+    </section>
+
+    <footer style="text-align: center; margin-top: 30px; padding: 15px; border-top: 1px solid #ddd;">
+        <p>© 2023 Te Kete Ako Digital Resources | Created for New Zealand Schools</p>
+    </footer>
+
+    <script>
+        // Simple interactivity that works on Chromebooks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.style.backgroundColor = '#003d66';
+            });
+        });
+    </script>
+</body>
+</html>

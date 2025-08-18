@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Integration Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gray-100 p-8">
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="../my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="../login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="../register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Video Integration Test Page</h1>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Test Categories:</h2>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✅ Plate Tectonics Videos</li>
+                    <li>✅ Probability Videos</li>
+                    <li>✅ Author's Purpose Videos</li>
+                    <li>✅ Treaty of Waitangi Videos</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Test Features:</h2>
+                <ul class="space-y-2 text-gray-700">
+                    <li>📱 Responsive Design</li>
+                    <li>🎯 Accessibility Features</li>
+                    <li>🖨️ Print-Friendly (videos hidden)</li>
+                    <li>📺 YouTube Privacy Mode</li>
+                    <li>📚 Curriculum Alignment</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-4">Test Instructions:</h2>
+            <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                <li>Open the enhanced handouts in a web browser</li>
+                <li>Scroll down to see the "Educational Videos" section</li>
+                <li>Test video playback by clicking play on any video</li>
+                <li>Try the print function - videos should be hidden</li>
+                <li>Test on mobile devices for responsiveness</li>
+                <li>Verify captions are available (CC button)</li>
+            </ol>
+        </div>
+        
+        <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <h3 class="text-lg font-semibold text-blue-800 mb-2">Enhanced Handouts:</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <a href="handouts/plate-tectonics-comprehension-handout.html" 
+                       class="block p-3 bg-white rounded border border-blue-300 hover:bg-blue-50 transition-colors">
+                        🌍 Plate Tectonics Handout
+                    </a>
+                </div>
+                <div>
+                    <a href="handouts/probability-handout.html" 
+                       class="block p-3 bg-white rounded border border-blue-300 hover:bg-blue-50 transition-colors">
+                        🎲 Probability Handout
+                    </a>
+                </div>
+                <div>
+                    <a href="handouts/authors-purpose-handout.html" 
+                       class="block p-3 bg-white rounded border border-blue-300 hover:bg-blue-50 transition-colors">
+                        ✍️ Author's Purpose Handout
+                    </a>
+                </div>
+                <div>
+                    <a href="handouts/treaty-of-waitangi-handout.html" 
+                       class="block p-3 bg-white rounded border border-blue-300 hover:bg-blue-50 transition-colors">
+                        📜 Treaty of Waitangi Handout
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+            <h3 class="text-lg font-semibold text-green-800 mb-2">Testing Checklist:</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <h4 class="font-semibold mb-2">Functionality:</h4>
+                    <ul class="space-y-1 text-gray-700">
+                        <li>□ Videos load properly</li>
+                        <li>□ Play/pause controls work</li>
+                        <li>□ Captions are available</li>
+                        <li>□ Fullscreen mode works</li>
+                        <li>□ Privacy mode enabled</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Design:</h4>
+                    <ul class="space-y-1 text-gray-700">
+                        <li>□ Responsive on mobile</li>
+                        <li>□ Videos hidden when printing</li>
+                        <li>□ Proper spacing and layout</li>
+                        <li>□ Difficulty badges visible</li>
+                        <li>□ Learning objectives clear</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple print test functionality
+        function testPrint() {
+            window.print();
+        }
+        
+        // Add print test button
+        document.addEventListener('DOMContentLoaded', function() {
+            const printTestButton = document.createElement('button');
+            printTestButton.textContent = 'Test Print Function';
+            printTestButton.className = 'mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors';
+            printTestButton.onclick = testPrint;
+            
+            const container = document.querySelector('.max-w-4xl');
+            container.appendChild(printTestButton);
+        });
+    </script>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../unit-plans.html">Unit Plans</a>
+                    <a href="../lessons.html">Lessons</a>
+                    <a href="../handouts.html">Handouts</a>
+                    <a href="../my-kete.html">My Kete</a>
+                    <a href="../sitemap.html">Sitemap</a>
+                    <a href="../orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-ui.js"></script>
+</body>
+</html>

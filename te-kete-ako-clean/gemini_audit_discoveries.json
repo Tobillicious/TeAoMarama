@@ -1,0 +1,135 @@
+{
+  "session_date": "2025-07-31",
+  "session_id": "gemini-comprehensive-audit",
+  "agent": "Gemini",
+  "audit_scope": "Complete codebase security, functionality, and content audit",
+  "files_analyzed": 483,
+  "critical_discoveries": [
+    {
+      "id": "hardcoded-credentials-critical",
+      "title": "Hardcoded Credentials in 21+ Files - Critical Security Risk",
+      "type": "security-vulnerability",
+      "description": "API keys and database passwords for Supabase and Neo4j hardcoded in plain text across multiple files including public directory",
+      "affected_files": [
+        "embed_resources.py", "execute-resource-integration.js", "extract_knowledge_graph.py",
+        "fix-rls-policies.js", "graphrag-search.html", "hybrid_graphrag_demo.py",
+        "load_neo4j_graph.py", "test_graphrag.py", "js/supabase-client.js",
+        "neo4j_loader_official.py", "update_graphrag_knowledge.py", "All public/ duplicates"
+      ],
+      "credentials_exposed": {
+        "supabase_key_1": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "supabase_key_2": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...8tJj0dBaF...",
+        "neo4j_password": "te0kutquDw1nIft0mcrvxOn_TEEtybBzM9IYf_IQa88"
+      },
+      "remediation_plan": "Move to environment variables using .env file and os.getenv()",
+      "status": "identified",
+      "priority": "critical"
+    },
+    {
+      "id": "broken-links-site-wide",
+      "title": "326 Broken Links Across Site",
+      "type": "navigation-integrity",
+      "description": "Automated link checker found 326 broken links out of 8835 total links across 483 files",
+      "breakdown": {
+        "placeholder_links": "${resource.path} template variables not replaced",
+        "query_parameter_links": "activities.html?type=warmup etc. - non-functional filtering",
+        "missing_files": "Links to non-existent agent-knowledge-hub files",
+        "anchor_links": "teacher-dashboard.html#analytics section doesn't exist"
+      },
+      "impact": "Severely degrades user experience and site navigation",
+      "status": "identified",
+      "priority": "high"
+    },
+    {
+      "id": "database-out-of-sync",
+      "title": "Core GraphRAG Database Missing 11 Resources",
+      "type": "data-integrity",
+      "description": "Supabase resources table has 624 entries but file system contains 635 resources - 11 resources orphaned from GraphRAG discovery",
+      "impact": "GraphRAG system cannot discover or recommend 11 existing educational resources",
+      "root_cause": "Manual file additions without database sync",
+      "remediation": "Create diff script to identify and insert missing resources into Supabase",
+      "status": "identified", 
+      "priority": "high"
+    },
+    {
+      "id": "widespread-placeholder-content", 
+      "title": "386 Instances of Placeholder Content + 206 TODOs",
+      "type": "content-completeness",
+      "description": "Site contains extensive placeholder text, unfinished features, and TODO comments indicating incomplete development",
+      "content_gaps": {
+        "placeholder_instances": 386,
+        "todo_comments": 206,
+        "subject_coverage_gaps": 112,
+        "gemini_tasks_identified": 653
+      },
+      "major_issues": [
+        "teacher-dashboard.html partially implemented prototype",
+        "graphrag-search.html has placeholder embedding API calls",
+        "my-submissions.html contains 'coming soon' alerts",
+        "Multiple 'draft' status placeholders"
+      ],
+      "status": "identified",
+      "priority": "medium"
+    },
+    {
+      "id": "poor-feature-discoverability",
+      "title": "Hidden Teacher Dashboard Behind Double-Click",
+      "type": "usability-issue", 
+      "description": "Powerful Teacher Analytics Dashboard hidden behind undiscoverable double-click action on logo, data stored insecurely in localStorage",
+      "impact": "Major feature effectively unusable by most teachers, data loss likely",
+      "remediation": "Add visible navigation link and implement robust data storage",
+      "status": "identified",
+      "priority": "medium"
+    },
+    {
+      "id": "python-code-quality-issues",
+      "title": "85 Python Linting Errors Across Scripts",
+      "type": "code-quality",
+      "description": "Automated linting found 85 errors mostly related to unused imports and variables, 75+ automatically fixable",
+      "remediation": "Run 'python3 -m ruff check . --fix' to auto-fix issues",
+      "status": "identified",
+      "priority": "low"
+    },
+    {
+      "id": "inconsistent-content-planning",
+      "title": "Duplicate Unit 4 Plans and Content Inconsistencies",
+      "type": "content-organization",
+      "description": "unit-plans.html lists two different Unit 4 plans (Economic Justice vs Contemporary Issues), suggests unclear content planning",
+      "impact": "Confusing for teachers, reduces professional credibility",
+      "status": "identified",
+      "priority": "low"
+    },
+    {
+      "id": "inaccurate-educational-content",
+      "title": "Rick Roll Link in Educational Content",
+      "type": "content-accuracy",
+      "description": "youtube.html contains intentional Rick Astley link in educational resources section",
+      "impact": "Reduces professional credibility of platform",
+      "remediation": "Review all external links for accuracy and appropriateness",
+      "status": "identified",
+      "priority": "low"
+    }
+  ],
+  "gemini_audit_achievements": [
+    "Identified critical security vulnerabilities requiring immediate action",
+    "Created comprehensive link validation system with 326 broken links catalogued",
+    "Discovered database sync issues affecting GraphRAG functionality", 
+    "Generated detailed content gap analysis with 653 improvement tasks",
+    "Provided specific remediation plans for each identified issue",
+    "Created security handover documentation for credential management"
+  ],
+  "recommended_immediate_actions": [
+    "Fix hardcoded credentials security vulnerability",
+    "Run broken link fixes using check-all-links.py results",
+    "Sync missing 11 resources to GraphRAG database",
+    "Add Teacher Dashboard to visible navigation",
+    "Remove development artifacts and placeholder content"
+  ],
+  "gemini_tools_created": [
+    "check-all-links.py - Comprehensive link validation system",
+    "content_gap_analysis.json - 653 identified content improvements",
+    "PROJECT_AUDIT_REPORT.md - Executive summary of findings",
+    "SECURITY_AUDIT_FOR_CLAUDE.md - Detailed security handover",
+    "link_check_results.json - 326 broken links with locations"
+  ]
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Diagnostics | Te Kete Ako</title>
+
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+</head>
+<body>
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <main class="main-content">
+        <div class="diagnostic-container">
+            <h1 class="wiley-hero-title">🔍 Authentication Diagnostics</h1>
+            <p>This page helps diagnose and fix authentication issues.</p>
+
+            <div id="diagnosticResults">
+                <p>Running diagnostics...</p>
+            </div>
+        
+
+            <div class="fix-instructions">
+                <h2 class="wiley-section-title">🔧 How to Fix Authentication</h2>
+                <p><strong>Root Cause:</strong> Mismatched Supabase project URL and API keys</p>
+                
+                <h3>Current Configuration:</h3>
+                <div class="code-block">
+                    URL: https://nlgldaqtubrlcqddppbq.supabase.co (✅ CORRECT)<br>
+                    API Key: From project "kpawkfxdqzhrhumlutjw" (❌ WRONG PROJECT)
+                </div>
+
+                <h3>Solution Steps:</h3>
+                <ol>
+                    <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener">Supabase Dashboard</a></li>
+                    <li>Select the <strong>nlgldaqtubrlcqddppbq</strong> project</li>
+                    <li>Go to Settings → API</li>
+                    <li>Copy the <strong>anon/public</strong> key</li>
+                    <li>Update the API key in <code>js/env-config.js</code> line 19</li>
+                </ol>
+
+                <h3>Expected API Key Format:</h3>
+                <div class="code-block">
+                    Should start with: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIi...
+                </div>
+                <p><em>Notice "nlgldaqtubrlcqddppbq" in the decoded payload instead of "kpawkfxdqzhrhumlutjw"</em></p>
+            </div>
+
+            <button onclick="window.location.reload()" style="background: #2E8B57; color: white; padding: var(--space-4) 2rem; border: none; border-radius: var(--radius-md); cursor: pointer; font-size: 1rem;">
+                🔄 Re-run Diagnostics
+            </button>
+        </div>
+    </main>
+
+    <script>
+        async function runDiagnostics() {
+            const results = document.getElementById('diagnosticResults');
+            let html = '<h2 class="wiley-section-title">🔍 Diagnostic Results</h2>';
+
+            // Check environment configuration
+            html += '<div class="status-card status-success">';
+            html += '<h3>✅ Environment Configuration</h3>';
+            html += `<p>Supabase URL: ${window.ENV.SUPABASE_URL}</p>`;
+            html += `<p>Environment: ${window.ENV.NODE_ENV}</p>`;
+            html += '</div>
+
+            // Check API key format
+            const apiKey = window.ENV.SUPABASE_ANON_KEY;
+            if (apiKey && apiKey !== 'ENVIRONMENT_VARIABLE_REQUIRED') {
+                try {
+                    // Decode JWT payload
+                    const payload = JSON.parse(atob(apiKey.split('.')[1]));
+                    const projectRef = payload.ref;
+                    
+                    if (projectRef === 'nlgldaqtubrlcqddppbq') {
+                        html += '<div class="status-card status-success">';
+                        html += '<h3>✅ API Key Project Match</h3>';
+                        html += `<p>API key is for correct project: ${projectRef}</p>`;
+                        html += '</div>
+                    } else {
+                        html += '<div class="status-card status-error">';
+                        html += '<h3>❌ API Key Project Mismatch</h3>';
+                        html += `<p>API key is for project: <strong>${projectRef}</strong></p>`;
+                        html += `<p>But trying to connect to: <strong>nlgldaqtubrlcqddppbq</strong></p>`;
+                        html += '<p><strong>This is why authentication fails!</strong></p>';
+                        html += '</div>
+                    }
+                } catch (e) {
+                    html += '<div class="status-card status-error">';
+                    html += '<h3>❌ Invalid API Key Format</h3>';
+                    html += '<p>API key is not a valid JWT token</p>';
+                    html += '</div>
+                }
+            } else {
+                html += '<div class="status-card status-error">';
+                html += '<h3>❌ Missing API Key</h3>';
+                html += '<p>No API key configured</p>';
+                html += '</div>
+            }
+
+            // Test Supabase connection
+            try {
+                const { data, error } = await supabase.auth.getSession();
+                if (error) {
+                    html += '<div class="status-card status-error">';
+                    html += '<h3>❌ Supabase Connection Failed</h3>';
+                    html += `<p>Error: ${error.message}</p>`;
+                    html += '</div>
+                } else {
+                    html += '<div class="status-card status-success">';
+                    html += '<h3>✅ Supabase Connection Working</h3>';
+                    html += '<p>Successfully connected to Supabase</p>';
+                    html += '</div>
+                }
+            } catch (error) {
+                html += '<div class="status-card status-error">';
+                html += '<h3>❌ Supabase Client Error</h3>';
+                html += `<p>Error: ${error.message}</p>`;
+                html += '</div>
+            }
+
+            results.innerHTML = html;
+        }
+
+        // Run diagnostics when page loads
+        document.addEventListener('DOMContentLoaded', runDiagnostics);
+    </script>
+    
+    <!-- Standard auth script includes -->
+    <script src="vendor/supabase.min.js" defer></script>
+    <script src="js/env-config.js" defer></script>
+    <script src="js/supabase-client.js" defer></script>
+    <script src="js/auth-enhanced.js" defer></script>
+    <script src="js/auth-diagnostics.js" defer></script>
+</body>
+</html>

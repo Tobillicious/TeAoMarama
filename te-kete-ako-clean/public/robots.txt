@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+# Educational Resources - Welcome crawlers
+Allow: /lessons/
+Allow: /handouts/
+Allow: /activities/
+Allow: /unit-plans/
+Allow: /guided-inquiry-unit/
+Allow: /y8-systems/
+Allow: /project/
+
+# Restrict sensitive areas
+Disallow: /my-kete.html
+Disallow: /my-submissions.html
+Disallow: /student-dashboard.html
+Disallow: /teacher-dashboard.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /reset-password.html
+
+# Restrict development and backup files
+Disallow: /js/
+Disallow: /css/
+Disallow: /*.json
+Disallow: /*.py
+Disallow: /*.sql
+Disallow: /*.md
+Disallow: /netlify/
+Disallow: /supabase/
+Disallow: /public_backup*/
+
+# Block AI training crawlers (Optional - preserves educational content integrity)
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Sitemap location
+Sitemap: https://tekete.netlify.app/sitemap.xml

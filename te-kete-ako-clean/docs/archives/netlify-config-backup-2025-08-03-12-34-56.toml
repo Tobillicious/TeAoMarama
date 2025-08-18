@@ -1,0 +1,53 @@
+# ARCHIVED NETLIFY CONFIGURATION - 2025-08-03 12:34:56
+# Original configuration preserved for potential future reference
+# Migration to Firebase hosting completed - all functionality preserved
+
+[build]
+  command = "echo 'BUILD TIMESTAMP:' $(date)"
+  publish = "."
+
+[[redirects]]
+  from = "/curriculum"
+  to = "/curriculum-alignment.html"
+  status = 301
+
+[[redirects]]
+  from = "/maori-wordle"
+  to = "/games/te-reo-wordle.html"
+  status = 301
+
+[[redirects]]
+  from = "/activities"
+  to = "/activities.html"
+  status = 301
+
+[[redirects]]
+  from = "/subjects"
+  to = "/subjects.html"
+  status = 200
+
+[[redirects]]  
+  from = "/unit-plans"
+  to = "/unit-plans.html"
+  status = 200
+
+[[redirects]]
+  from = "/lessons" 
+  to = "/lessons.html"
+  status = 200
+
+[[redirects]]
+  from = "/handouts"
+  to = "/handouts.html" 
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://nlgldaqtubrlcqddppbq.supabase.co https://api.exa.ai; frame-ancestors 'none'; base-uri 'self'; object-src 'none';"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

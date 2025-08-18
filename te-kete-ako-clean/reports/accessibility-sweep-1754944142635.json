@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-11T20:29:02.634Z",
+  "filesScanned": 706,
+  "filesFixed": 49,
+  "issues": {
+    "missingAlt": [],
+    "emptyLinks": [],
+    "multipleH1": [
+      "critical-thinking-unit.html: 2 h1 tags",
+      "emergency-diagnostic.html: 2 h1 tags",
+      "my-kete.html: 2 h1 tags",
+      "y8-systems-unit.html: 2 h1 tags"
+    ],
+    "missingLandmarks": [],
+    "poorContrast": [],
+    "malformedLinks": []
+  }
+}

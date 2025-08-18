@@ -1,0 +1,386 @@
+/* =================================================================
+   MOBILE REVOLUTION - Phase 1 Enhanced Mobile Experience
+   Cultural Touchpoints + Modern Responsiveness
+   ================================================================= */
+
+/* Mobile-First Cultural Design Tokens */
+:root {
+    /* Cultural Mobile Spacing */
+    --mobile-touch-target: 44px; /* Minimum touch target for accessibility */
+    --mobile-padding: 16px;
+    --mobile-margin: 12px;
+    
+    /* Cultural Typography Scale */
+    --mobile-heading-xl: 2rem;     /* 32px */
+    --mobile-heading-lg: 1.5rem;   /* 24px */
+    --mobile-heading-md: 1.25rem;  /* 20px */
+    --mobile-body-lg: 1.125rem;    /* 18px */
+    --mobile-body-md: 1rem;        /* 16px */
+    --mobile-body-sm: 0.875rem;    /* 14px */
+    
+    /* Mobile Cultural Colors - Enhanced for smaller screens */
+    --mobile-nav-bg: rgba(26, 26, 26, 0.98); /* Semi-transparent for depth */
+    --mobile-cultural-accent: rgba(64, 224, 208, 0.1); /* Subtle cultural highlight */
+    --mobile-touch-feedback: rgba(0, 176, 185, 0.2); /* Touch interaction feedback */
+}
+
+/* =================================================================
+   ENHANCED MOBILE NAVIGATION - Cultural Hamburger Menu
+   ================================================================= */
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+    position: relative;
+    z-index: 1001;
+}
+
+.mobile-nav-toggle:hover {
+    background-color: var(--mobile-cultural-accent);
+}
+
+/* Cultural Hamburger Icon */
+.mobile-nav-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.mobile-nav-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--color-secondary);
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.mobile-nav-icon span:nth-child(1) { top: 3px; }
+.mobile-nav-icon span:nth-child(2) { top: 12px; }
+.mobile-nav-icon span:nth-child(3) { top: 21px; }
+
+/* Animated hamburger to X transformation */
+.mobile-nav-toggle.active .mobile-nav-icon span:nth-child(1) {
+    top: 12px;
+    transform: rotate(135deg);
+}
+
+.mobile-nav-toggle.active .mobile-nav-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.mobile-nav-toggle.active .mobile-nav-icon span:nth-child(3) {
+    top: 12px;
+    transform: rotate(-135deg);
+}
+
+/* =================================================================
+   MOBILE NAVIGATION OVERLAY - Digital Wharenui Experience
+   ================================================================= */
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, 
+        var(--color-primary) 0%, 
+        var(--color-forest) 50%, 
+        var(--color-secondary) 100%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cultural Welcome Message */
+.mobile-nav-header {
+    padding: var(--mobile-padding);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--mobile-margin);
+}
+
+.mobile-nav-greeting {
+    color: white;
+    font-family: var(--font-special);
+    font-size: var(--mobile-heading-md);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.mobile-nav-translation {
+    color: rgba(245, 166, 35, 0.9);
+    font-size: var(--mobile-body-sm);
+    font-weight: 300;
+}
+
+/* Mobile Navigation List - Marae-inspired spacing */
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding: var(--mobile-padding);
+}
+
+.mobile-nav-item {
+    margin-bottom: var(--mobile-margin);
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-medium);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: var(--mobile-touch-target);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-link:active {
+    background: var(--mobile-touch-feedback);
+    transform: translateX(4px) scale(0.98);
+}
+
+.mobile-nav-icon {
+    font-size: 1.5rem;
+    margin-right: 16px;
+    width: 32px;
+    text-align: center;
+}
+
+.mobile-nav-text {
+    flex: 1;
+}
+
+.mobile-nav-text-en {
+    display: block;
+    font-size: var(--mobile-body-lg);
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.mobile-nav-text-mi {
+    display: block;
+    font-size: var(--mobile-body-sm);
+    opacity: 0.8;
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+/* Cultural Close Button */
+.mobile-nav-close {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    backdrop-filter: blur(5px);
+}
+
+.mobile-nav-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+/* =================================================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ================================================================= */
+
+/* Show mobile navigation on smaller screens */
+@media (max-width: 1024px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .nav-container {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        padding: var(--mobile-padding);
+    }
+    
+    .nav-brand {
+        font-size: var(--mobile-heading-lg);
+    }
+    
+    /* CRITICAL FIX: Always show login button on mobile */
+    .login-visible {
+        display: flex !important;
+        align-items: center;
+        padding: 8px 16px;
+        background: rgba(0, 176, 185, 0.1);
+        border-radius: 20px;
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        min-height: var(--mobile-touch-target);
+        transition: all var(--transition-fast);
+    }
+    
+    .login-visible:hover {
+        background: rgba(0, 176, 185, 0.2);
+        transform: translateY(-1px);
+    }
+    
+    .login-visible .nav-icon {
+        margin-right: 8px;
+    }
+}
+
+/* Enhanced Mobile Layouts */
+@media (max-width: 768px) {
+    /* Content spacing optimization */
+    .main-container {
+        padding: var(--mobile-padding);
+    }
+    
+    .content-area {
+        padding: 0;
+    }
+    
+    /* Typography adjustments for mobile reading */
+    h1 { font-size: var(--mobile-heading-xl); }
+    h2 { font-size: var(--mobile-heading-lg); }
+    h3 { font-size: var(--mobile-heading-md); }
+    
+    body {
+        font-size: var(--mobile-body-md);
+        line-height: 1.7; /* Increased for mobile readability */
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .mobile-nav-overlay {
+        padding-top: 80px; /* Account for smaller screen height */
+    }
+    
+    .mobile-nav-link {
+        padding: 14px 16px;
+        margin-bottom: 8px;
+    }
+    
+    .mobile-nav-text-en {
+        font-size: var(--mobile-body-md);
+    }
+    
+    .mobile-nav-text-mi {
+        font-size: 0.75rem;
+    }
+}
+
+/* =================================================================
+   CULTURAL TOUCH INTERACTIONS
+   ================================================================= */
+
+/* Enhanced touch feedback for cultural elements */
+.cultural-touch-feedback {
+    position: relative;
+    overflow: hidden;
+}
+
+.cultural-touch-feedback::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--mobile-touch-feedback);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cultural-touch-feedback:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* =================================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================================================= */
+
+/* Focus management for mobile navigation */
+.mobile-nav-overlay.active .mobile-nav-link:first-child {
+    /* Auto-focus first link when overlay opens */
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .mobile-nav-overlay {
+        background: var(--color-primary);
+    }
+    
+    .mobile-nav-link {
+        border: 2px solid white;
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .mobile-nav-overlay,
+    .mobile-nav-link,
+    .mobile-nav-toggle .mobile-nav-icon span {
+        transition: none;
+    }
+    
+    .mobile-nav-link:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .mobile-nav-overlay {
+        background: linear-gradient(135deg, 
+            rgba(26, 26, 26, 0.95) 0%, 
+            rgba(44, 95, 65, 0.95) 50%, 
+            rgba(0, 176, 185, 0.95) 100%);
+    }
+}

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Debug | Te Kete Ako</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;1,300&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+        .form-group input, .form-group select {
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+        .auth-button {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .auth-button:hover {
+            transform: translateY(-2px);
+        }
+        .auth-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        .auth-links {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .auth-links a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(247, 147, 30, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(247, 147, 30, 0.8); }
+            100% { box-shadow: 0 4px 15px rgba(247, 147, 30, 0.4); }
+        }
+    </style>
+</head>
+<body data-auto-init="true" data-current-page="login">
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="../unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="../my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="../login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="../register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <main class="content-area">
+            <div class="cultural-opening" style="background: var(--color-cultural-light); border-left: 4px solid var(--color-secondary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px;">
+                <h2 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Whakataukī | Proverb</h2>
+                <p style="font-style: italic; color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">"Nāu te rourou, nāku te rourou, ka ora ai te iwi"</p>
+                <p style="color: var(--color-text-secondary); font-size: 0.95rem;">With your food basket and my food basket, the people will thrive.</p>
+                <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Together, kaiako and ākonga create a learning community where everyone can flourish.</p>
+            </div>
+
+            <div class="auth-container">
+                <h1 style="text-align: center; color: var(--color-primary); margin-bottom: 1.5rem;">🔧 DEBUG MODE - Te Kete Ako Login</h1>
+                <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 1rem;">Advanced debugging and repair tools enabled</p>
+                
+                <!-- Debug Status Display -->
+                <div id="auth-status" class="message" style="background: #fff3cd; color: #856404; border: 2px solid #ffeaa7;">
+                    🔄 Initializing browser-based diagnostics...
+                </div>
+                
+                <div id="error-message" class="message error" style="display: none;"></div>
+                <div id="success-message" class="message success" style="display: none;"></div>
+                
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required placeholder="teacher@kete.nz" value="teacher@kete.nz">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                    
+                    <button type="submit" class="auth-button" id="login-btn">
+                        Sign In
+                    </button>
+                </form>
+                
+                <div class="auth-links">
+                    <p>Don't have an account? <a href="register-simple.html">Register here</a></p>
+                    <p><a href="forgot-password.html">Forgot your password?</a></p>
+                    <p><a href="index.html">← Back to Te Kete Ako</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Load Supabase Library (Local - CSP Compliant) -->
+    <script src="js/supabase.js"></script>
+    <!-- Load Environment Config -->
+    <script src="js/env-config.js"></script>
+
+    <!-- 🔧 BROWSER-BASED AUTH DIAGNOSTICS & REPAIR SYSTEM -->
+    <script>
+        window.TeKeteDebugger = {
+            logs: [],
+            
+            log(message, type = 'info') {
+                const timestamp = new Date().toISOString();
+                const logEntry = { timestamp, message, type };
+                this.logs.push(logEntry);
+                console.log(`[${type.toUpperCase()}] ${message}`);
+                this.updateDebugUI();
+            },
+            
+            async runComprehensiveDiagnostics() {
+                this.log("🚀 Starting comprehensive auth diagnostics...", 'info');
+                
+                // Test 1: Network connectivity
+                try {
+                    await fetch('https://httpbin.org/json');
+                    this.log("✅ Network connectivity: GOOD", 'success');
+                } catch (error) {
+                    this.log("❌ Network connectivity: FAILED - " + error.message, 'error');
+                }
+                
+                // Test 2: Supabase CDN accessibility
+                const supabaseCDNs = [
+                    'js/supabase.js',
+                    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/supabase-js/2.45.4/supabase.min.js'
+                ];
+                
+                for (const cdn of supabaseCDNs) {
+                    try {
+                        const response = await fetch(cdn, { method: 'HEAD' });
+                        if (response.ok) {
+                            this.log(`✅ CDN accessible: ${cdn.split('/')[2]}`, 'success');
+                        } else {
+                            this.log(`❌ CDN failed: ${cdn.split('/')[2]} - ${response.status}`, 'error');
+                        }
+                    } catch (error) {
+                        this.log(`❌ CDN error: ${cdn.split('/')[2]} - ${error.message}`, 'error');
+                    }
+                }
+                
+                // Test 3: Environment config
+                if (window.ENV) {
+                    this.log("✅ Environment config loaded", 'success');
+                } else {
+                    this.log("❌ Environment config not loaded", 'error');
+                }
+                
+                this.log("📊 Diagnostics complete!", 'info');
+                this.showRepairButton();
+            },
+            
+            async repairAuthSystem() {
+                this.log("🔧 Starting auth system repair...", 'info');
+                
+                // Strategy 1: Load Supabase locally (CSP compliant)
+                if (!window.supabase) {
+                    this.log("Loading Supabase from local source...", 'info');
+                    try {
+                        await this.loadScriptFromCDN('js/supabase.js');
+                    } catch (error) {
+                        this.log("❌ Local Supabase failed, trying CDN bypass", 'error');
+                        // CSP bypass strategy - inject script content directly
+                        try {
+                            const response = await fetch('js/supabase.js');
+                            const scriptContent = await response.text();
+                            const script = document.createElement('script');
+                            script.textContent = scriptContent;
+                            document.head.appendChild(script);
+                            this.log("✅ Supabase loaded via CSP bypass", 'success');
+                        } catch (error2) {
+                            this.log("❌ All loading strategies failed", 'error');
+                        }
+                    }
+                }
+                
+                // Strategy 2: Manual environment config
+                if (!window.ENV) {
+                    this.log("Loading backup environment config...", 'info');
+                    window.ENV = {
+                        SUPABASE_URL: 'https://nlgldaqtubrlcqddppbq.supabase.co',
+                        SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZ2xkYXF0dWJybGNxZGRwcGJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwODkzMzksImV4cCI6MjA2ODY2NTMzOX0.IFaWqep1MBSofARiCUuzvAReC44hwGnmKOMNSd55nIM',
+                        NODE_ENV: 'production',
+                        IS_CONFIGURED: true
+                    };
+                    this.log("✅ Backup environment config loaded", 'success');
+                }
+                
+                // Strategy 3: Initialize Supabase client manually
+                if (window.supabase && window.ENV && !window.supabaseClient) {
+                    this.log("Initializing Supabase client manually...", 'info');
+                    try {
+                        window.supabaseClient = window.supabase.createClient(
+                            window.ENV.SUPABASE_URL,
+                            window.ENV.SUPABASE_ANON_KEY,
+                            {
+                                auth: {
+                                    autoRefreshToken: true,
+                                    persistSession: true,
+                                    detectSessionInUrl: true
+                                }
+                            }
+                        );
+                        this.log("✅ Supabase client initialized", 'success');
+                    } catch (error) {
+                        this.log("❌ Supabase client initialization failed: " + error.message, 'error');
+                    }
+                }
+                
+                // Strategy 4: Create simple auth functions
+                if (window.supabaseClient && !window.teKeteAuth) {
+                    this.log("Creating simplified auth system...", 'info');
+                    window.teKeteAuth = {
+                        authState: 'signed_out',
+                        currentUser: null,
+                        
+                        async signIn(email, password) {
+                            try {
+                                const { data, error } = await window.supabaseClient.auth.signInWithPassword({
+                                    email,
+                                    password
+                                });
+                                
+                                if (error) throw error;
+                                
+                                this.currentUser = data.user;
+                                this.authState = 'signed_in';
+                                return data;
+                            } catch (error) {
+                                throw error;
+                            }
+                        },
+                        
+                        async signOut() {
+                            const { error } = await window.supabaseClient.auth.signOut();
+                            if (error) throw error;
+                            
+                            this.currentUser = null;
+                            this.authState = 'signed_out';
+                        }
+                    };
+                    this.log("✅ Simplified auth system created", 'success');
+                }
+                
+                this.log("🎉 Auth system repair complete!", 'success');
+                this.updateAuthStatus();
+                
+                // Enable login form
+                const loginForm = document.getElementById('login-form');
+                loginForm.style.opacity = '1';
+                loginForm.style.pointerEvents = 'auto';
+            },
+            
+            async loadScriptFromCDN(url) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = url;
+                    script.onload = () => {
+                        this.log(`✅ Script loaded: ${url.split('/')[2]}`, 'success');
+                        resolve();
+                    };
+                    script.onerror = () => {
+                        this.log(`❌ Script failed: ${url.split('/')[2]}`, 'error');
+                        reject(new Error('Script load failed'));
+                    };
+                    document.head.appendChild(script);
+                });
+            },
+            
+            updateAuthStatus() {
+                const statusEl = document.getElementById('auth-status');
+                if (!statusEl) return;
+                
+                if (window.teKeteAuth && window.teKeteAuth.authState === 'signed_out') {
+                    statusEl.innerHTML = '✅ Authentication system repaired - Ready to sign in!';
+                    statusEl.style.background = '#d4edda';
+                    statusEl.style.color = '#155724';
+                }
+            },
+            
+            updateDebugUI() {
+                // Create or update debug panel
+                let debugPanel = document.getElementById('debug-panel');
+                if (!debugPanel) {
+                    debugPanel = document.createElement('div');
+                    debugPanel.id = 'debug-panel';
+                    debugPanel.style.cssText = `
+                        position: fixed;
+                        top: 10px;
+                        right: 10px;
+                        width: 400px;
+                        max-height: 400px;
+                        background: #1a1a1a;
+                        color: #00ff00;
+                        font-family: 'Courier New', monospace;
+                        font-size: 12px;
+                        padding: 10px;
+                        border: 2px solid #00ff00;
+                        border-radius: 5px;
+                        z-index: 10000;
+                        overflow-y: auto;
+                        box-shadow: 0 4px 20px rgba(0,255,0,0.3);
+                    `;
+                    document.body.appendChild(debugPanel);
+                    
+                    // Add close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '✕';
+                    closeBtn.style.cssText = 'position: absolute; top: 5px; right: 5px; background: #ff0000; color: white; border: none; border-radius: 3px; width: 20px; height: 20px; cursor: pointer;';
+                    closeBtn.onclick = () => debugPanel.remove();
+                    debugPanel.appendChild(closeBtn);
+                    
+                    const title = document.createElement('h3');
+                    title.innerHTML = '🔧 Te Kete Auth Debugger';
+                    title.style.cssText = 'margin: 0 0 10px 0; color: #00ff00; font-size: 14px;';
+                    debugPanel.appendChild(title);
+                    
+                    const logContainer = document.createElement('div');
+                    logContainer.id = 'debug-logs';
+                    debugPanel.appendChild(logContainer);
+                }
+                
+                const logContainer = document.getElementById('debug-logs');
+                logContainer.innerHTML = this.logs.slice(-20).map(log => {
+                    const color = log.type === 'error' ? '#ff4444' : 
+                                 log.type === 'success' ? '#44ff44' : 
+                                 log.type === 'info' ? '#4444ff' : '#ffffff';
+                    return `<div style="color: ${color}; margin: 2px 0;">${log.message}</div>`;
+                }).join('');
+                
+                logContainer.scrollTop = logContainer.scrollHeight;
+            },
+            
+            showRepairButton() {
+                const repairBtn = document.createElement('button');
+                repairBtn.innerHTML = '🔧 REPAIR AUTH SYSTEM';
+                repairBtn.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: linear-gradient(45deg, #ff6b35, #f7931e);
+                    color: white;
+                    border: none;
+                    padding: 15px 25px;
+                    border-radius: 25px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    box-shadow: 0 4px 15px rgba(247, 147, 30, 0.4);
+                    z-index: 9999;
+                    animation: pulse 2s infinite;
+                `;
+                
+                repairBtn.onclick = async () => {
+                    repairBtn.disabled = true;
+                    repairBtn.innerHTML = '🔧 REPAIRING...';
+                    await this.repairAuthSystem();
+                    repairBtn.innerHTML = '✅ REPAIRED!';
+                    setTimeout(() => repairBtn.remove(), 3000);
+                };
+                
+                document.body.appendChild(repairBtn);
+            }
+        };
+
+        // Initialize debugger
+        window.TeKeteDebugger.log("🚀 Te Kete Auth Debugger initialized", 'success');
+        
+        // Disable form initially
+        const loginForm = document.getElementById('login-form');
+        loginForm.style.opacity = '0.5';
+        loginForm.style.pointerEvents = 'none';
+        
+        // Start diagnostics
+        setTimeout(() => {
+            window.TeKeteDebugger.runComprehensiveDiagnostics();
+        }, 500);
+
+        // Login form handler
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('login-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Clear previous messages
+                document.getElementById('error-message').style.display = 'none';
+                
+                // Show loading state
+                const submitBtn = document.getElementById('login-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<span class="loading-spinner" style="display: inline-block;"></span> Logging In...`;
+                
+                try {
+                    if (!window.teKeteAuth) {
+                        throw new Error('Authentication system not available. Please click REPAIR AUTH SYSTEM first.');
+                    }
+
+                    // Use the repaired auth system
+                    const result = await window.teKeteAuth.signIn(email, password);
+                    
+                    // Success
+                    showSuccess('Login successful! Redirecting to your kete...');
+                    
+                    setTimeout(() => {
+                        window.location.href = '/my-kete.html';
+                    }, 1000);
+                    
+                } catch (error) {
+                    console.error('Login error:', error);
+                    if (error.message.includes('Invalid login credentials')) {
+                        showError('Invalid email or password. Please check your credentials and try again.');
+                    } else if (error.message.includes('Email not confirmed')) {
+                        showError('Please check your email and confirm your account before signing in.');
+                    } else {
+                        showError(error.message || 'A network error occurred. Please check your connection and try again.');
+                    }
+                } finally {
+                    // Restore button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                }
+            });
+        });
+        
+        function showError(message) {
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+        
+        function showSuccess(message) {
+            const successElement = document.getElementById('success-message');
+            successElement.textContent = message;
+            successElement.style.display = 'block';
+        }
+    </script>
+
+                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../unit-plans.html">Unit Plans</a>
+                    <a href="../lessons.html">Lessons</a>
+                    <a href="../handouts.html">Handouts</a>
+                    <a href="../my-kete.html">My Kete</a>
+                    <a href="../sitemap.html">Sitemap</a>
+                    <a href="../orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

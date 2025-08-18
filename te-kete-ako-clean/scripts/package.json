@@ -1,0 +1,18 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "exa-lesson-enhancer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "enhance": "node exa-lesson-enhancer.js enhance",
+    "bulk": "node exa-lesson-enhancer.js bulk"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "exa-js": "^1.8.26"
+  }
+}

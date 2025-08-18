@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Hub | Te Kete Ako</title>
+
+
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+</head>
+<body>
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+
+
+    <div id="header-placeholder"></div>
+        
+
+    <div class="main-container">
+        <main class="content-area">
+            <h1 class="wiley-hero-title">Resource Hub</h1>
+            <p>Search, filter, and discover all 166 teaching and learning resources available on Te Kete Ako.</p>
+            
+            <div class="filter-bar">
+                <div class="filter-group" style="flex-grow: 2;">
+                    <label for="search-input" class="filter-label">Search</label>
+                    <input type="text" id="search-input" placeholder="Search by title, tag, or description..." style="padding: 10px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                </div>
+                <div class="filter-group">
+                    <label for="subject-filter" class="filter-label">Subject</label>
+                    <select id="subject-filter" class="filter-dropdown"></select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter" class="filter-label">Resource Type</label>
+                    <select id="type-filter" class="filter-dropdown"></select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter" class="filter-label">Year Level</label>
+                    <select id="year-filter" class="filter-dropdown"></select>
+                </div>
+            </div>
+
+            <div id="resource-count" style="margin-top: 1rem; color: var(--color-text-secondary); font-weight: bold;"></div>
+
+            <div id="resource-grid-container" class="resource-grid" style="margin-top: 1rem;">
+                <p id="loading-message">Loading resources...</p>
+                <!-- Resources will be dynamically injected here -->
+            </div>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/shared-components.js"></script>
+    <script type="module">
+        let allResources = []; // To store the master list of resources
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await fetchAndPopulateFilters();
+            setupEventListeners();
+        });
+
+        async function fetchAndPopulateFilters() {
+            const container = document.getElementById('resource-grid-container');
+            const loadingMessage = document.getElementById('loading-message');
+
+            try {
+                const response = await fetch('/.netlify/functions/get-resources');
+                if (!response.ok) throw new Error(`API request failed: ${response.status}`);
+                
+                const data = await response.json();
+                if (!data.success || !data.resources) throw new Error('Invalid data format from API');
+
+                allResources = data.resources;
+                
+                populateFilterDropdowns(allResources);
+                renderResources(allResources);
+                loadingMessage.style.display = 'none';
+
+            } catch (error) {
+                console.error('Failed to fetch resources:', error);
+                loadingMessage.textContent = 'Error loading resources. Please try again later.';
+                loadingMessage.style.color = 'red';
+            }
+        }
+
+        function populateFilterDropdowns(resources) {
+            const subjectFilter = document.getElementById('subject-filter');
+            const typeFilter = document.getElementById('type-filter');
+            const yearFilter = document.getElementById('year-filter');
+
+            const subjects = [...new Set(resources.map(r => r.subject).filter(Boolean))];
+            const types = [...new Set(resources.map(r => r.type).filter(Boolean))];
+            const years = [...new Set(resources.flatMap(r => r.year_levels || []))].sort((a, b) => a - b);
+
+            populateSelect(subjectFilter, subjects, 'All Subjects');
+            populateSelect(typeFilter, types, 'All Types');
+            populateSelect(yearFilter, years, 'All Years');
+        }
+
+        function populateSelect(selectElement, options, defaultOptionText) {
+            selectElement.innerHTML = `<option value="">${defaultOptionText}</option>`;
+            options.forEach(option => {
+                const optionElement = document.createElement('option');
+                optionElement.value = option;
+                optionElement.textContent = option;
+                selectElement.appendChild(optionElement);
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', filterAndRender);
+            document.getElementById('subject-filter').addEventListener('change', filterAndRender);
+            document.getElementById('type-filter').addEventListener('change', filterAndRender);
+            document.getElementById('year-filter').addEventListener('change', filterAndRender);
+        }
+
+        function filterAndRender() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const selectedSubject = document.getElementById('subject-filter').value;
+            const selectedType = document.getElementById('type-filter').value;
+            const selectedYear = document.getElementById('year-filter').value;
+
+            const filteredResources = allResources.filter(resource => {
+                const matchesSearch = searchTerm ? 
+                    (resource.title?.toLowerCase().includes(searchTerm) || 
+                     resource.description?.toLowerCase().includes(searchTerm) ||
+                     resource.tags?.join(' ').toLowerCase().includes(searchTerm))
+                    : true;
+
+                const matchesSubject = selectedSubject ? resource.subject === selectedSubject : true;
+                const matchesType = selectedType ? resource.type === selectedType : true;
+                const matchesYear = selectedYear ? resource.year_levels?.includes(parseInt(selectedYear)) : true;
+
+                return matchesSearch && matchesSubject && matchesType && matchesYear;
+            });
+
+            renderResources(filteredResources);
+        }
+
+        function renderResources(resources) {
+            const container = document.getElementById('resource-grid-container');
+            const countElement = document.getElementById('resource-count');
+            container.innerHTML = ''; // Clear previous results
+
+            countElement.textContent = `Showing ${resources.length} of ${allResources.length} resources.`;
+
+            if (resources.length === 0) {
+                container.innerHTML = '<p>No resources match your criteria.</p>';
+                return;
+            }
+
+            resources.forEach(resource => {
+                const card = document.createElement('a');
+                card.href = resource.path;
+                card.className = 'resource-card';
+
+                let tagsHTML = '';
+                if (resource.tags && resource.tags.length > 0) {
+                    tagsHTML = resource.tags.map(tag => `<span class="resource-tag">${tag}</span>`).join('');
+                }
+
+                card.innerHTML = `
+                    <h3 class="resource-card-title">${resource.title}</h3>
+                    <p class="resource-card-description">${resource.description || 'No description available.'}</p>
+                    <div class="resource-card-meta">
+                        <span class="resource-tag">${resource.subject || 'N/A'}</span>
+                        ${tagsHTML}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    </script>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/* Lesson Plan Stylesheet for Te Kete Ako */
+
+.lesson-plan {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.lesson-header {
+    background: linear-gradient(135deg, #2e8b57 0%, #45a066 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.lesson-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.lesson-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.lesson-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #2e8b57;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.meta-value {
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.lesson-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid #2e8b57;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 0 8px 8px 0;
+}
+
+.lesson-section h2 {
+    color: #2e8b57;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.lesson-section h3 {
+    color: #34495e;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.cultural-note {
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(218, 165, 32, 0.05));
+    border: 2px solid #daa520;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.cultural-note h4 {
+    color: #b8860b;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.cultural-note p {
+    margin: 0;
+    font-style: italic;
+}
+
+.objectives-list,
+.resources-list,
+.activities-list {
+    list-style: none;
+    padding: 0;
+}
+
+.objectives-list li,
+.resources-list li,
+.activities-list li {
+    background: #f8f9fa;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #2e8b57;
+    position: relative;
+}
+
+.objectives-list li::before {
+    content: "🎯";
+    margin-right: 0.5rem;
+}
+
+.resources-list li::before {
+    content: "📚";
+    margin-right: 0.5rem;
+}
+
+.activities-list li::before {
+    content: "⚡";
+    margin-right: 0.5rem;
+}
+
+.time-indicator {
+    background: #2e8b57;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.assessment-rubric {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.rubric-level {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.rubric-level:hover {
+    border-color: #2e8b57;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.1);
+}
+
+.rubric-level h5 {
+    color: #2e8b57;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.differentiation {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.differentiation h4 {
+    color: #e55a2b;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.extension-activities {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.extension-activities h4 {
+    color: #2980b9;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.reflection-questions {
+    background: #fff8e1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.reflection-questions h4 {
+    color: #f57f17;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.reflection-questions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reflection-questions li {
+    background: white;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border-left: 3px solid #fbc02d;
+}
+
+.reflection-questions li::before {
+    content: "💭";
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lesson-plan {
+        padding: 1rem;
+    }
+    
+    .lesson-title {
+        font-size: 1.5rem;
+    }
+    
+    .lesson-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .assessment-rubric {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .lesson-plan {
+        padding: 0;
+        max-width: none;
+    }
+    
+    .lesson-header {
+        background: #2e8b57 !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .lesson-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

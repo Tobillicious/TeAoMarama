@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Kete | Te Kete Ako</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#8B4513">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+
+
+
+</head>
+<body data-auto-init="true" data-current-page="my-kete">
+
+                        <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none;">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+                            My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+                            Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none;">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <div class="main-container">
+        <main class="content-area">
+            <!-- Authentication Required Message -->
+            <div id="auth-required-message" class="auth-required">
+                <h1 class="wiley-hero-title">🔐 Authentication Required</h1>
+                <p>You need to be logged in to access your personal kete.</p>
+                <div class="user-info" style="display: none; margin-bottom: 1rem;"></div>
+        
+                <div style="margin: var(--space-8) 0;">
+                    <a href="/index.html#auth" class="btn btn-primary" style="margin-right: 1rem;">Sign In</a>
+                    <a href="register.html" class="btn btn-secondary">Create Account</a>
+                </div>
+                <p><a href="index.html">← Back to Te Kete Ako</a></p>
+            </div>
+
+            <!-- Main Kete Content -->
+            <div id="kete-content" class="kete-content auth-content" style="display: none;">
+                <div class="cultural-opening">
+                    <h2 style="color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);" class="wiley-section-title">Whakataukī | Proverb</h2>
+                    <p style="font-style: italic; color: var(--color-primary); margin-bottom: var(--space-2); font-size: var(--text-lg);">"He kete kōrero, he kete mātauranga"</p>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">A basket of stories, a basket of knowledge.</p>
+                    <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-top: 0.5rem;">Your personal collection of teaching resources, carefully curated for your learning journey.</p>
+                </div>
+
+                <div class="kete-container">
+                    <div class="kete-header">
+                        <h2 class="wiley-hero-title">🧺 Tōku Kete | My Learning Collection</h1>
+                        <p>Your personally saved resources from Te Kete Ako</p>
+                        
+                        <!-- NEW: Professional Role Selection -->
+                        <div id="role-selection" class="bg-white">
+                            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🎯 Choose Your Learning Path</h3>
+                            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">Select your role to access specialized features and resources:</p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                                <a href="/teacher-dashboard.html" style="background: linear-gradient(135deg, #2E7D32, #4CAF50); color: white; padding: var(--space-6); border-radius: var(--radius-md); text-decoration: none; transition: transform 0.2s ease;">
+                                    <div class="flex">
+                                        <span style="font-size: 2rem; margin-right: 1rem;">👩‍🏫</span>
+                                        <h4 style="margin: 0; font-size: var(--text-xl);">Teacher Hub</h4>
+                                    </div>
+                                    <p style="margin: 0; font-size: var(--text-sm); opacity: 0.9;">Curriculum tools, assessment resources, lesson planning</p>
+                                </a>
+                                
+                                <a href="/student-dashboard.html" style="background: linear-gradient(135deg, #1976D2, #42A5F5); color: white; padding: var(--space-6); border-radius: var(--radius-md); text-decoration: none; transition: transform 0.2s ease;">
+                                    <div class="flex">
+                                        <span style="font-size: 2rem; margin-right: 1rem;">🎓</span>
+                                        <h4 style="margin: 0; font-size: var(--text-xl);">Student Hub</h4>
+                                    </div>
+                                    <p style="margin: 0; font-size: var(--text-sm); opacity: 0.9;">Learning activities, progress tracking, achievements</p>
+                                </a>
+                            </div>
+                            
+                            <div class="text-center">
+                                <small style="color: var(--color-text-secondary);">You can switch between roles anytime from the main navigation</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NEW: Interactive Learning Demo Link -->
+                    <div class="text-center">
+                        <a href="/interactive-learning-demo.html" class="interactive-demo-link">
+                            🚀 Try Interactive Learning Demo
+                        </a>
+                        <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-top: 0.5rem;">
+                            Experience agentic learning with real-time progress tracking and AI tips
+                        </p>
+                    </div>
+
+                    <!-- NEW: Progress Dashboard -->
+                    <div class="progress-dashboard" id="progress-dashboard" style="display: none;">
+                        <h2 style="color: var(--color-primary); margin-bottom: 1rem;" class="wiley-section-title">📊 Your Learning Journey</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="bg-white">
+                                <span style="font-size: 2rem; font-weight: bold; color: var(--color-secondary); display: block;" id="progress-total">0</span>
+                                <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Activities Started</span>
+                            </div>
+                            <div class="bg-white">
+                                <span style="font-size: 2rem; font-weight: bold; color: var(--color-secondary); display: block;" id="progress-completed">0</span>
+                                <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Completed</span>
+                            </div>
+                            <div class="bg-white">
+                                <span style="font-size: 2rem; font-weight: bold; color: var(--color-secondary); display: block;" id="progress-average">0%</span>
+                                <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Average Progress</span>
+                            </div>
+                            <div class="bg-white">
+                                <span style="font-size: 2rem; font-weight: bold; color: var(--color-secondary); display: block;" id="achievement-count">0</span>
+                                <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Achievements</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Progress -->
+                        <div id="recent-progress" style="margin-top: 1.5rem;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Recent Activity</h3>
+                            <div id="recent-activities" class="bg-white">
+                                <!-- Recent activities will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NEW: AI Recommendations -->
+                    <div class="ai-recommendations" id="ai-recommendations" style="display: none;">
+                        <h2 style="margin-bottom: 1rem;" class="wiley-section-title">🧠 Personalized Learning Recommendations</h2>
+                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">Based on your progress and learning patterns, here are resources tailored for you:</p>
+                        <div id="recommendations-container">
+                            <!-- Recommendations will be loaded here -->
+                        </div>
+                        <div class="text-center">
+                            <small style="opacity: 0.7;">Powered by GraphRAG + EXA.ai</small>
+                        </div>
+                    </div>
+
+                    <!-- NEW: Learning Achievements -->
+                    <div class="kete-section" id="achievements-section" style="display: none;">
+                        <h2 style="color: var(--color-primary); margin-bottom: 1rem;" class="wiley-section-title">🏆 Learning Achievements</h2>
+                        <div id="achievements-container">
+                            <!-- Achievements will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="kete-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" id="total-resources">0</span>
+                            <span class="stat-label">Total Resources</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="handouts-count">0</span>
+                            <span class="stat-label">Handouts</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="lessons-count">0</span>
+                            <span class="stat-label">Lessons</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="games-count">0</span>
+                            <span class="stat-label">Games</span>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="kete-loading" class="loading-message">
+                        <p>📚 Loading your saved resources...</p>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="kete-empty" class="empty-message" style="display: none;">
+                        <p>🧺 Your kete is empty!</p>
+                        <p>Start exploring <a href="index.html">Te Kete Ako</a> and save resources that interest you.</p>
+                        <p>Look for the "Save to Kete" buttons on resource pages.</p>
+                    </div>
+
+                    <!-- Saved Resources Grid -->
+                    <div id="saved-resources-grid" class="saved-resources-grid" style="display: none;">
+                        <!-- Resources will be loaded here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showAuthRequired() {
+            document.getElementById('auth-required-message').style.display = 'block';
+            document.getElementById('kete-content').style.display = 'none';
+        }
+
+        function showKeteContent() {
+            document.getElementById('auth-required-message').style.display = 'none';
+            document.getElementById('kete-content').style.display = 'block';
+        }
+
+        async function loadSavedResources() {
+            const loadingElement = document.getElementById('kete-loading');
+            const emptyElement = document.getElementById('kete-empty');
+            const gridElement = document.getElementById('saved-resources-grid');
+
+            try {
+                loadingElement.style.display = 'block';
+                emptyElement.style.display = 'none';
+                gridElement.style.display = 'none';
+
+                // Wait a moment for bookmarks system to be ready
+                setTimeout(() => {
+                    if (window.simpleBookmarks) {
+                        const bookmarks = window.simpleBookmarks.getBookmarks();
+                        const stats = window.simpleBookmarks.getBookmarkStats();
+
+                        // Update statistics
+                        document.getElementById('total-resources').textContent = stats.total;
+                        document.getElementById('handouts-count').textContent = (stats.byType.resource || []).filter(b => b.url.includes('handouts')).length;
+                        document.getElementById('lessons-count').textContent = (stats.byType.resource || []).filter(b => b.url.includes('lessons')).length;
+                        document.getElementById('games-count').textContent = (stats.byType.resource || []).filter(b => b.url.includes('games')).length;
+
+                        loadingElement.style.display = 'none';
+
+                        if (bookmarks.length === 0) {
+                            emptyElement.style.display = 'block';
+                        } else {
+                            renderBookmarkedResources(bookmarks);
+                            gridElement.style.display = 'grid';
+                        }
+                    } else {
+                        // Fallback if bookmarks system not ready
+                        loadingElement.style.display = 'none';
+                        emptyElement.style.display = 'block';
+                        document.getElementById('total-resources').textContent = '0';
+                        document.getElementById('handouts-count').textContent = '0';
+                        document.getElementById('lessons-count').textContent = '0';
+                        document.getElementById('games-count').textContent = '0';
+                    }
+                }, 500);
+
+                } catch (error) {
+                console.error('Error loading saved resources:', error);
+                loadingElement.innerHTML = `
+                    <p style="color: var(--color-error); text-align: center;">
+                        ❌ Error loading your saved resources. Please try refreshing the page.
+                    </p>
+                `;
+            }
+        }
+
+        function renderBookmarkedResources(bookmarks) {
+            const gridElement = document.getElementById('saved-resources-grid');
+            gridElement.innerHTML = '';
+
+            bookmarks.forEach(bookmark => {
+                const card = createBookmarkCard(bookmark);
+                gridElement.appendChild(card);
+            });
+        }
+
+        function createBookmarkCard(bookmark) {
+            const card = document.createElement('div');
+            card.className = 'resource-card';
+            card.style.cssText = `
+                background: white;
+                border: 1px solid #e1e5e9;
+                border-radius: var(--radius-lg);
+                padding: var(--space-6);
+                box-shadow: 0 2px 4px var(--shadow-md);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            `;
+
+            // Determine icon based on URL
+            let icon = '📄';
+            if (bookmark.url.includes('games')) icon = '🎮';
+            else if (bookmark.url.includes('lessons')) icon = '📖';
+            else if (bookmark.url.includes('activities')) icon = '⚡';
+            else if (bookmark.url.includes('handouts')) icon = '📄';
+            else if (bookmark.url.includes('unit-plans')) icon = '📚';
+
+            const savedDate = new Date(bookmark.savedAt).toLocaleDateString('en-NZ', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            card.innerHTML = `
+                <div class="flex">
+                    <h3 style="margin: 0; color: var(--color-primary); font-size: var(--text-lg);">
+                        ${icon} ${bookmark.title}
+                    </h3>
+                    <button type="button" class="remove-bookmark-btn" 
+                            data-url="${bookmark.url}"
+                            style="background: none; border: none; color: #dc3545; font-size: var(--text-xl); cursor: pointer; padding: 0.2rem;"
+                            title="Remove from kete">
+                        🗑️
+                    </button>
+                </div>
+                
+                ${bookmark.description ? `<p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.4; margin-bottom: 1rem;">${bookmark.description}</p>` : ''}
+                
+                <div class="flex">
+                    <a href="${bookmark.url}" 
+                       style="background: var(--color-primary); color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 500;">
+                        View Resource
+                    </a>
+                    <span style="font-size: 0.8rem; color: var(--color-text-secondary);">
+                        Saved ${savedDate}
+                    </span>
+                </div>
+            `;
+
+            // Add remove functionality
+            const removeBtn = card.querySelector('.remove-bookmark-btn');
+            removeBtn.addEventListener('click', () => {
+                if (confirm(`Remove "${bookmark.title}" from your kete?`)) {
+                    window.simpleBookmarks.removeBookmark(bookmark.url);
+                    loadSavedResources(); // Refresh the display
+                }
+            });
+
+            // Add hover effect
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 2px 4px var(--shadow-md)';
+            });
+
+            return card;
+        }
+
+        // NEW: Load progress data and agentic features
+        async function loadProgressData() {
+            try {
+                // Initialize progress tracker
+                if (window.TeKeteProgressTracker) {
+                    await window.TeKeteProgressTracker.initialize();
+                    
+                    // Load progress summary
+                    const summary = window.TeKeteProgressTracker.getProgressSummary();
+                    
+                    // Show progress dashboard if user has progress
+                    if (summary.total_resources > 0) {
+                        document.getElementById('progress-dashboard').style.display = 'block';
+                        updateProgressDashboard(summary);
+                    }
+                    
+                    // Load AI recommendations
+                    await loadAIRecommendations();
+                    
+                    // Load achievements
+                    loadAchievements(summary);
+                }
+            } catch (error) {
+                console.error('Error loading progress data:', error);
+            }
+        }
+
+        function updateProgressDashboard(summary) {
+            document.getElementById('progress-total').textContent = summary.total_resources;
+            document.getElementById('progress-completed').textContent = summary.completed_resources;
+            document.getElementById('progress-average').textContent = Math.round(summary.average_progress) + '%';
+            
+            // Calculate achievement count
+            let achievements = 0;
+            if (summary.completed_resources > 0) achievements++;
+            if (summary.completed_resources >= 5) achievements++;
+            if (summary.completed_resources >= 10) achievements++;
+            if (summary.average_progress >= 50) achievements++;
+            document.getElementById('achievement-count').textContent = achievements;
+            
+            // Show recent activities
+            const recentActivities = document.getElementById('recent-activities');
+            if (summary.recent_activity && summary.recent_activity.length > 0) {
+                recentActivities.innerHTML = summary.recent_activity.map(activity => `
+                    <div class="flex">
+                        <span>${activity.resource_title}</span>
+                        <div>
+                            <span style="color: var(--color-secondary); font-weight: bold;">${activity.progress_percentage}%</span>
+                            ${activity.completed ? '<span style="color: #4CAF50; margin-left: 0.5rem;">✓</span>' : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                recentActivities.innerHTML = '<p style="color: var(--color-text-secondary); text-align: center;">No recent activity</p>';
+            }
+        }
+
+        async function loadAIRecommendations() {
+            try {
+                // Get personalized recommendations based on user progress
+                const recommendations = await generatePersonalizedRecommendations();
+                
+                if (recommendations && recommendations.length > 0) {
+                    document.getElementById('ai-recommendations').style.display = 'block';
+                    
+                    const container = document.getElementById('recommendations-container');
+                    container.innerHTML = recommendations.map(rec => `
+                        <div class="recommendation-card">
+                            <h4 style="margin-bottom: var(--space-2); color: white;">${rec.title}</h4>
+                            <p style="margin-bottom: 1rem; opacity: 0.9;">${rec.description}</p>
+                            <a href="${rec.url}" style="background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                                Explore Resource →
+                            </a>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading AI recommendations:', error);
+            }
+        }
+
+        async function generatePersonalizedRecommendations() {
+            // Generate intelligent recommendations based on user progress and preferences
+            const fallbackRecommendations = [
+                {
+                    title: "🌿 Te Ao Māori Values in Teaching",
+                    description: "Deepen your understanding of incorporating Māori perspectives into your classroom practice.",
+                    url: "handouts.html"
+                },
+                {
+                    title: "🎮 Interactive Learning Games",
+                    description: "Engage students with educational games that make learning fun and memorable.",
+                    url: "games.html"
+                },
+                {
+                    title: "📖 Complete Unit Plans",
+                    description: "Ready-to-use comprehensive unit plans aligned with NZ Curriculum objectives.",
+                    url: "unit-plans.html"
+                }
+            ];
+
+            // In future, this would call GraphRAG for personalized recommendations
+            // For now, return contextual recommendations
+            return fallbackRecommendations;
+        }
+
+        function loadAchievements(summary) {
+            const achievements = [];
+            
+            // Define achievements based on progress
+            if (summary.completed_resources >= 1) {
+                achievements.push({
+                    title: "First Steps",
+                    description: "Completed your first learning activity",
+                    icon: "🎯",
+                    earned: true
+                });
+            }
+            
+            if (summary.completed_resources >= 5) {
+                achievements.push({
+                    title: "Learning Momentum",
+                    description: "Completed 5 learning activities",
+                    icon: "🚀",
+                    earned: true
+                });
+            }
+            
+            if (summary.completed_resources >= 10) {
+                achievements.push({
+                    title: "Dedicated Learner",
+                    description: "Completed 10 learning activities",
+                    icon: "🏆",
+                    earned: true
+                });
+            }
+            
+            if (summary.average_progress >= 75) {
+                achievements.push({
+                    title: "Excellence Pursuer",
+                    description: "Maintained high completion rates",
+                    icon: "⭐",
+                    earned: true
+                });
+            }
+
+            // Show achievements if any exist
+            if (achievements.length > 0) {
+                document.getElementById('achievements-section').style.display = 'block';
+                
+                const container = document.getElementById('achievements-container');
+                container.innerHTML = achievements.map(achievement => `
+                    <div class="achievement-badge" style="display: inline-block; margin: 0.5rem;">
+                        ${achievement.icon} ${achievement.title}
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Listen for auth state changes
+        document.addEventListener('authStateChanged', (event) => {
+            if (!event.detail.isLoggedIn) {
+                // Show login prompt instead of forcing redirect
+                showLoginPrompt();
+            } else if (event.detail.isLoggedIn && !currentUser) {
+                // User just signed in, reload the page
+                window.location.reload();
+            }
+        });
+
+        // Show login prompt without forcing navigation
+        function showLoginPrompt() {
+            showAuthRequired();
+        }
+
+        // Initialize page state on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication state immediately
+            if (window.supabaseClient && window.supabaseClient.auth) {
+                window.supabaseClient.auth.getUser().then(({ data: { user } }) => {
+                    if (user) {
+                        showKeteContent();
+                        loadSavedResources();
+                        loadProgressData();
+                    } else {
+                        showAuthRequired();
+                    }
+                }).catch(() => {
+                    showAuthRequired();
+                });
+            } else {
+                // If Supabase not ready yet, show auth required by default
+                showAuthRequired();
+                
+                // Wait for Supabase to load and try again
+                setTimeout(() => {
+                    if (window.supabaseClient && window.supabaseClient.auth) {
+                        window.supabaseClient.auth.getUser().then(({ data: { user } }) => {
+                            if (user) {
+                                showKeteContent();
+                                loadSavedResources();
+                                loadProgressData();
+                            }
+                        }).catch(() => {
+                            // Keep showing auth required
+                        });
+                    }
+                }, 1000);
+            }
+        });
+    </script>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <!-- Simplified Supabase-only auth -->
+    <script src="vendor/supabase.min.js" defer></script>
+    <script src="js/supabase-client.js" defer></script>
+    <script src="js/my-kete.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Te Kete Ako - Award-winning educational platform integrating mātauranga Māori with contemporary learning">
+    <meta name="keywords" content="education, māori, indigenous, ai, learning, new zealand">
+    <meta name="author" content="Te Kete Ako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Reo Wordle - Function Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: var(--space-8); }
+        .test-result { padding: 0.5rem; margin: 0.5rem 0; border-radius: 4px; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+    </style>
+
+
+
+
+
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css" media="print"/>
+    
+</head>
+<body>
+    <h1 class="wiley-hero-title">Te Reo Wordle - Function Tests</h1>
+    <div id="test-results"></div>
+    
+    <script>
+        // Core Māori words dictionary
+        const MAORI_WORDS = [
+            { word: 'AROHA', meaning: 'Love, compassion', category: 'emotions' },
+            { word: 'WHARE', meaning: 'House, dwelling', category: 'places' },
+            { word: 'MOANA', meaning: 'Ocean, sea', category: 'nature' },
+            { word: 'WHENUA', meaning: 'Land, country', category: 'nature' },
+            { word: 'TAONGA', meaning: 'Treasure', category: 'cultural' }
+        ];
+        
+        const VALID_WORDS = MAORI_WORDS.map(w => w.word);
+        
+        function normalizeMaoriText(text) {
+            if (!text) return '';
+            return text.toUpperCase()
+                .replace(/Ā/g, 'A')
+                .replace(/Ē/g, 'E')
+                .replace(/Ī/g, 'I')
+                .replace(/Ō/g, 'O')
+                .replace(/Ū/g, 'U');
+        }
+        
+        function isValidMaoriWord(word) {
+            const normalizedWord = normalizeMaoriText(word);
+            return VALID_WORDS.includes(normalizedWord);
+        }
+        
+        // Test functions
+        function runTests() {
+            const tests = [
+                {
+                    name: "Valid word test: AROHA",
+                    test: () => isValidMaoriWord('AROHA'),
+                    expected: true
+                },
+                {
+                    name: "Valid word test: WHARE", 
+                    test: () => isValidMaoriWord('WHARE'),
+                    expected: true
+                },
+                {
+                    name: "Invalid word test: ZZZZZ",
+                    test: () => isValidMaoriWord('ZZZZZ'),
+                    expected: false
+                },
+                {
+                    name: "Macron normalization: MĀORI → MAORI",
+                    test: () => normalizeMaoriText('MĀORI'),
+                    expected: 'MAORI'
+                },
+                {
+                    name: "Dictionary has words",
+                    test: () => MAORI_WORDS.length > 0,
+                    expected: true
+                },
+                {
+                    name: "Valid words array created",
+                    test: () => VALID_WORDS.includes('AROHA'),
+                    expected: true
+                }
+            ];
+            
+            const resultsDiv = document.getElementById('test-results');
+            let passCount = 0;
+            
+            tests.forEach(test => {
+                const result = test.test();
+                const passed = result === test.expected;
+                if (passed) passCount++;
+                
+                const resultDiv = document.createElement('div');
+                resultDiv.className = `test-result ${passed ? 'pass' : 'fail'}`;
+                resultDiv.innerHTML = `
+                    ${passed ? '✅' : '❌'} ${test.name}
+                    <br>Expected: ${test.expected}, Got: ${result}
+                `;
+                resultsDiv.appendChild(resultDiv);
+            });
+            
+            const summaryDiv = document.createElement('div');
+            summaryDiv.className = `test-result ${passCount === tests.length ? 'pass' : 'fail'}`;
+            summaryDiv.innerHTML = `<strong>Summary: ${passCount}/${tests.length} tests passed</strong>`;
+            resultsDiv.insertBefore(summaryDiv, resultsDiv.firstChild);
+        }
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>
