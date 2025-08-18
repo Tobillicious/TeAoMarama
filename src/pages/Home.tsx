@@ -48,7 +48,7 @@ export default function Home() {
         </div>
         <div className="hero-content">
           <div className="hero-badge">🌟 Mangakōtukutuku College</div>
-          <h1 className="hero-title">Te Kete Ako</h1>
+          <h1 className="hero-title">TeAoMarama</h1>
           <p className="hero-subtitle">
             Comprehensive Structured Literacy Platform for Aotearoa's Future Leaders
           </p>
