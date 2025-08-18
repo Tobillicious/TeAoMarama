@@ -341,7 +341,9 @@ export class MigrationOrchestrator {
       this.migrationState = 'migrating';
 
       // Simulate migration process with monitoring
-      const culturalMonitoring = await this.brain.monitorCulturalSafety([migrationPlan]);
+      const culturalMonitoring = await this.brain.monitorCulturalSafety([
+        migrationPlan as MigrationContent,
+      ]);
 
       if (!culturalMonitoring.safe) {
         return {
