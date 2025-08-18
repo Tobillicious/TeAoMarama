@@ -385,8 +385,7 @@ export default function Year8AcademicVocab() {
       {currentWord && (
         <section className="word-showcase">
           <div 
-            className="word-spotlight"
-            style={{ backgroundColor: getSubjectColor(currentWord.subjectArea) }}
+            className={`word-spotlight subject-${currentWord.subjectArea}`}
           >
             <div className="word-header">
               <div className="word-badges">
