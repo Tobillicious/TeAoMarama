@@ -1,7 +1,7 @@
 import { Suspense, lazy, memo, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navigation from './components/Navigation';
 import './App.css';
+import Navigation from './components/Navigation';
 
 // Lazy load components for code splitting with preloading
 const Home = lazy(() => import('./pages/Home'));
@@ -27,15 +27,10 @@ const Year8WritingRevolution = lazy(() => import('./pages/Year8WritingRevolution
 
 // Optimized loading component with React.memo
 const LoadingSpinner = memo(() => (
-  <div
-    className="min-h-screen flex items-center justify-center lcp-optimized"
-    style={{ backgroundColor: 'var(--color-bg)' }}
-  >
+  <div className="min-h-screen flex items-center justify-center lcp-optimized loading-spinner-container">
     <div className="text-center">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pounamu mx-auto mb-4"></div>
-      <p className="text-lg font-medium" style={{ color: 'var(--color-pounamu)' }}>
-        Loading Te Kete Ako...
-      </p>
+      <p className="text-lg font-medium loading-spinner-text">Loading Te Kete Ako...</p>
     </div>
   </div>
 ));
