@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Year8AcademicVocab.css';
 
 interface AcademicWord {
@@ -6,7 +6,14 @@ interface AcademicWord {
   word: string;
   morphemes: string[];
   definition: string;
-  subjectArea: 'english' | 'maths' | 'science' | 'social-studies' | 'arts' | 'health' | 'cross-curricular';
+  subjectArea:
+    | 'english'
+    | 'maths'
+    | 'science'
+    | 'social-studies'
+    | 'arts'
+    | 'health'
+    | 'cross-curricular';
   difficulty: 'foundation' | 'developing' | 'secure';
   synonyms: string[];
   contextSentence: string;
@@ -32,7 +39,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'When we analyse [text], we discover [meaning].',
     codeComponents: ['a-na-lyse', 'long a', 'silent e'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'interpret-eng',
@@ -47,7 +54,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'The author interprets [concept] through [technique].',
     codeComponents: ['in-ter-pret', 'consonant blends'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'perspective-eng',
@@ -59,13 +66,13 @@ const year8AcademicWords: AcademicWord[] = [
     synonyms: ['viewpoint', 'outlook', 'stance'],
     contextSentence: 'Each character offers a different perspective on colonisation.',
     culturalConnection: 'Acknowledging different iwi perspectives on historical events',
-    writingRevolutionPattern: 'From [character\'s] perspective, [event] represents [meaning].',
+    writingRevolutionPattern: "From [character's] perspective, [event] represents [meaning].",
     codeComponents: ['per-spec-tive', 'suffix -ive'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
 
-  // Science Academic Vocabulary  
+  // Science Academic Vocabulary
   {
     id: 'hypothesis-sci',
     word: 'hypothesis',
@@ -79,7 +86,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'If [condition], then [prediction] because [reasoning].',
     codeComponents: ['hy-po-the-sis', 'Greek origins'],
     nceaRelevance: true,
-    frequency: 'medium'
+    frequency: 'medium',
   },
   {
     id: 'variable-sci',
@@ -93,7 +100,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'The [type] variable in this experiment is [factor].',
     codeComponents: ['var-i-a-ble', 'suffix -able'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'ecosystem-sci',
@@ -108,7 +115,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'The [location] ecosystem contains [organisms] that [interaction].',
     codeComponents: ['e-co-sys-tem', 'compound word'],
     nceaRelevance: true,
-    frequency: 'medium'
+    frequency: 'medium',
   },
 
   // Mathematics Academic Vocabulary
@@ -125,7 +132,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'To calculate [measurement], we [method] because [reasoning].',
     codeComponents: ['cal-cu-late', 'suffix -ate'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'estimate-math',
@@ -139,7 +146,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'I estimate [quantity] because [reasoning].',
     codeComponents: ['es-ti-mate', 'suffix -ate'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
 
   // Social Studies Academic Vocabulary
@@ -156,7 +163,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'In [time/place] society, [group] were responsible for [role].',
     codeComponents: ['so-ci-e-ty', 'suffix -ety'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'democracy-ss',
@@ -171,7 +178,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'Democracy ensures that [people] can [participation] in [decisions].',
     codeComponents: ['de-moc-ra-cy', 'Greek roots'],
     nceaRelevance: true,
-    frequency: 'medium'
+    frequency: 'medium',
   },
 
   // Cross-curricular Academic Vocabulary
@@ -188,7 +195,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'The evidence shows [claim] because [support].',
     codeComponents: ['ev-i-dence', 'suffix -ence'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'compare-cross',
@@ -202,7 +209,7 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'When we compare [A] and [B], we notice [similarity/difference].',
     codeComponents: ['com-pare', 'prefix com-'],
     nceaRelevance: true,
-    frequency: 'high'
+    frequency: 'high',
   },
   {
     id: 'evaluate-cross',
@@ -216,8 +223,8 @@ const year8AcademicWords: AcademicWord[] = [
     writingRevolutionPattern: 'To evaluate [topic], we must consider [criteria].',
     codeComponents: ['e-val-u-ate', 'suffix -ate'],
     nceaRelevance: true,
-    frequency: 'high'
-  }
+    frequency: 'high',
+  },
 ];
 
 export default function Year8AcademicVocab() {
@@ -227,7 +234,7 @@ export default function Year8AcademicVocab() {
   const [showBreakdown, setShowBreakdown] = useState(false);
   const [practiceMode, setPracticeMode] = useState<'study' | 'sentence' | 'morpheme'>('study');
 
-  const filteredWords = year8AcademicWords.filter(word => {
+  const filteredWords = year8AcademicWords.filter((word) => {
     if (selectedSubject !== 'all' && word.subjectArea !== selectedSubject) return false;
     if (selectedDifficulty !== 'all' && word.difficulty !== selectedDifficulty) return false;
     return true;
@@ -243,35 +250,35 @@ export default function Year8AcademicVocab() {
 
   const getDifficultyColor = (difficulty: string) => {
     const colors = {
-      'foundation': '#4caf50',
-      'developing': '#ff9800',
-      'secure': '#2196f3'
+      foundation: '#4caf50',
+      developing: '#ff9800',
+      secure: '#2196f3',
     };
     return colors[difficulty as keyof typeof colors] || '#666';
   };
 
   const getSubjectColor = (subject: string) => {
     const colors = {
-      'english': '#e8f5e8',
-      'maths': '#fff3e0',
-      'science': '#e3f2fd',
+      english: '#e8f5e8',
+      maths: '#fff3e0',
+      science: '#e3f2fd',
       'social-studies': '#f3e5f5',
-      'arts': '#fce4ec',
-      'health': '#e0f2f1',
-      'cross-curricular': '#fff8e1'
+      arts: '#fce4ec',
+      health: '#e0f2f1',
+      'cross-curricular': '#fff8e1',
     };
     return colors[subject as keyof typeof colors] || '#f5f5f5';
   };
 
   const getSubjectIcon = (subject: string) => {
     const icons = {
-      'english': '📚',
-      'maths': '🧮',
-      'science': '🔬',
+      english: '📚',
+      maths: '🧮',
+      science: '🔬',
       'social-studies': '🌍',
-      'arts': '🎨',
-      'health': '💪',
-      'cross-curricular': '🎯'
+      arts: '🎨',
+      health: '💪',
+      'cross-curricular': '🎯',
     };
     return icons[subject as keyof typeof icons] || '📖';
   };
@@ -291,19 +298,31 @@ export default function Year8AcademicVocab() {
         <div className="focus-grid">
           <div className="focus-card">
             <h3>📈 Academic Transition</h3>
-            <p>Year 8 students encounter more complex academic texts across all subjects. Building vocabulary is essential for comprehension and expression.</p>
+            <p>
+              Year 8 students encounter more complex academic texts across all subjects. Building
+              vocabulary is essential for comprehension and expression.
+            </p>
           </div>
           <div className="focus-card">
             <h3>🔧 Morphological Awareness</h3>
-            <p>Understanding word parts helps students decode unfamiliar academic terms and build vocabulary systematically.</p>
+            <p>
+              Understanding word parts helps students decode unfamiliar academic terms and build
+              vocabulary systematically.
+            </p>
           </div>
           <div className="focus-card">
             <h3>✍️ Writing Development</h3>
-            <p>Academic vocabulary enables more sophisticated expression using Writing Revolution sentence patterns.</p>
+            <p>
+              Academic vocabulary enables more sophisticated expression using Writing Revolution
+              sentence patterns.
+            </p>
           </div>
           <div className="focus-card">
             <h3>🌿 Cultural Integration</h3>
-            <p>Connecting academic terms to Te Ao Māori concepts builds deeper understanding and cultural relevance.</p>
+            <p>
+              Connecting academic terms to Te Ao Māori concepts builds deeper understanding and
+              cultural relevance.
+            </p>
           </div>
         </div>
       </section>
@@ -312,19 +331,19 @@ export default function Year8AcademicVocab() {
       <section className="practice-mode-section">
         <h3>🎮 Practice Modes</h3>
         <div className="mode-buttons">
-          <button 
+          <button
             className={`mode-btn ${practiceMode === 'study' ? 'active' : ''}`}
             onClick={() => setPracticeMode('study')}
           >
             📚 Study Mode
           </button>
-          <button 
+          <button
             className={`mode-btn ${practiceMode === 'sentence' ? 'active' : ''}`}
             onClick={() => setPracticeMode('sentence')}
           >
             ✍️ Sentence Building
           </button>
-          <button 
+          <button
             className={`mode-btn ${practiceMode === 'morpheme' ? 'active' : ''}`}
             onClick={() => setPracticeMode('morpheme')}
           >
@@ -339,9 +358,9 @@ export default function Year8AcademicVocab() {
         <div className="filters-grid">
           <div className="filter-group">
             <label htmlFor="subject-filter">Subject Area:</label>
-            <select 
+            <select
               id="subject-filter"
-              value={selectedSubject} 
+              value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
             >
               <option value="all">All Subjects</option>
@@ -355,9 +374,9 @@ export default function Year8AcademicVocab() {
 
           <div className="filter-group">
             <label htmlFor="difficulty-filter">Difficulty Level:</label>
-            <select 
+            <select
               id="difficulty-filter"
-              value={selectedDifficulty} 
+              value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
             >
               <option value="all">All Levels</option>
@@ -367,7 +386,7 @@ export default function Year8AcademicVocab() {
             </select>
           </div>
 
-          <button 
+          <button
             className="random-word-btn"
             onClick={selectRandomWord}
             disabled={filteredWords.length === 0}
@@ -375,7 +394,7 @@ export default function Year8AcademicVocab() {
             🎲 Random Word
           </button>
         </div>
-        
+
         <div className="filter-results">
           <span className="results-count">{filteredWords.length} academic words available</span>
         </div>
@@ -384,25 +403,19 @@ export default function Year8AcademicVocab() {
       {/* Current Word Display */}
       {currentWord && (
         <section className="word-showcase">
-          <div 
-            className={`word-spotlight subject-${currentWord.subjectArea}`}
-          >
+          <div className={`word-spotlight subject-${currentWord.subjectArea}`}>
             <div className="word-header">
               <div className="word-badges">
                 <span className="subject-badge">
                   {getSubjectIcon(currentWord.subjectArea)} {currentWord.subjectArea}
                 </span>
-                <span 
-                  className={`difficulty-badge difficulty-${currentWord.difficulty}`}
-                >
+                <span className={`difficulty-badge difficulty-${currentWord.difficulty}`}>
                   {currentWord.difficulty}
                 </span>
-                {currentWord.nceaRelevance && (
-                  <span className="ncea-badge">NCEA Relevant</span>
-                )}
+                {currentWord.nceaRelevance && <span className="ncea-badge">NCEA Relevant</span>}
                 <span className="frequency-badge">{currentWord.frequency} frequency</span>
               </div>
-              
+
               <h2 className="featured-word">{currentWord.word}</h2>
               <p className="word-definition">"{currentWord.definition}"</p>
             </div>
@@ -425,15 +438,14 @@ export default function Year8AcademicVocab() {
                   <h4>🔗 Related Words</h4>
                   <div className="synonyms-list">
                     {currentWord.synonyms.map((synonym, index) => (
-                      <span key={index} className="synonym-tag">{synonym}</span>
+                      <span key={index} className="synonym-tag">
+                        {synonym}
+                      </span>
                     ))}
                   </div>
                 </div>
 
-                <button 
-                  className="breakdown-btn"
-                  onClick={() => setShowBreakdown(!showBreakdown)}
-                >
+                <button className="breakdown-btn" onClick={() => setShowBreakdown(!showBreakdown)}>
                   {showBreakdown ? '🔒 Hide Analysis' : '🔍 Show Word Analysis'}
                 </button>
 
@@ -443,7 +455,9 @@ export default function Year8AcademicVocab() {
                       <h4>🧩 Word Parts (Morphemes)</h4>
                       <div className="morphemes-display">
                         {currentWord.morphemes.map((morpheme, index) => (
-                          <span key={index} className="morpheme-part">{morpheme}</span>
+                          <span key={index} className="morpheme-part">
+                            {morpheme}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -452,7 +466,9 @@ export default function Year8AcademicVocab() {
                       <h4>🔤 Phonics Components</h4>
                       <div className="components-list">
                         {currentWord.codeComponents.map((component, index) => (
-                          <span key={index} className="code-component">{component}</span>
+                          <span key={index} className="code-component">
+                            {component}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -474,7 +490,7 @@ export default function Year8AcademicVocab() {
                 <div className="practice-prompt">
                   <h5>🎯 Your Turn:</h5>
                   <p>Use this pattern to write your own sentence with "{currentWord.word}"</p>
-                  <textarea 
+                  <textarea
                     className="sentence-input"
                     placeholder={`Try using the pattern: ${currentWord.writingRevolutionPattern}`}
                     rows={3}
@@ -494,10 +510,11 @@ export default function Year8AcademicVocab() {
                         <div key={index} className="morpheme-detail">
                           <span className="morpheme-part">{morpheme}</span>
                           <span className="morpheme-type">
-                            {morpheme.includes('-') ? 
-                              (morpheme.startsWith('-') ? 'suffix' : 'prefix') : 
-                              'root'
-                            }
+                            {morpheme.includes('-')
+                              ? morpheme.startsWith('-')
+                                ? 'suffix'
+                                : 'prefix'
+                              : 'root'}
                           </span>
                         </div>
                       ))}
@@ -508,7 +525,9 @@ export default function Year8AcademicVocab() {
                     <h5>Phonics Breakdown:</h5>
                     <div className="phonics-components">
                       {currentWord.codeComponents.map((component, index) => (
-                        <span key={index} className="phonics-part">{component}</span>
+                        <span key={index} className="phonics-part">
+                          {component}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -529,32 +548,31 @@ export default function Year8AcademicVocab() {
         <h3>📚 Year 8 Academic Word Bank ({filteredWords.length})</h3>
         <div className="academic-words-grid">
           {filteredWords.map((word) => (
-            <div 
-              key={word.id} 
-              className="academic-word-card"
-              style={{ backgroundColor: getSubjectColor(word.subjectArea) }}
-              onClick={() => setCurrentWord(word)}
-            >
+                            <div 
+                  key={word.id} 
+                  className={`academic-word-card subject-${word.subjectArea}`}
+                  onClick={() => setCurrentWord(word)}
+                >
               <div className="card-header">
-                <span className="card-subject-icon">
-                  {getSubjectIcon(word.subjectArea)}
-                </span>
-                <span 
+                <span className="card-subject-icon">{getSubjectIcon(word.subjectArea)}</span>
+                <span
                   className="card-difficulty-dot"
                   style={{ backgroundColor: getDifficultyColor(word.difficulty) }}
                 ></span>
                 {word.nceaRelevance && <span className="card-ncea">⭐</span>}
               </div>
-              
+
               <h4 className="card-word">{word.word}</h4>
               <p className="card-definition">{word.definition}</p>
-              
+
               <div className="card-morphemes">
                 {word.morphemes.slice(0, 3).map((morpheme, index) => (
-                  <span key={index} className="card-morpheme">{morpheme}</span>
+                  <span key={index} className="card-morpheme">
+                    {morpheme}
+                  </span>
                 ))}
               </div>
-              
+
               <div className="card-meta">
                 <span className="card-subject">{word.subjectArea}</span>
                 <span className="card-difficulty">{word.difficulty}</span>
@@ -577,7 +595,7 @@ export default function Year8AcademicVocab() {
               <li>Build word family networks</li>
             </ul>
           </div>
-          
+
           <div className="strategy-card">
             <h4>✍️ Writing Integration</h4>
             <ul>
@@ -587,7 +605,7 @@ export default function Year8AcademicVocab() {
               <li>Connect vocabulary to essay writing</li>
             </ul>
           </div>
-          
+
           <div className="strategy-card">
             <h4>📚 Cross-curricular Connections</h4>
             <ul>
@@ -611,7 +629,9 @@ export default function Year8AcademicVocab() {
       </section>
 
       <footer className="year8-vocab-footer">
-        <p className="cultural-motto">🌿 "He kupu ako, he tangata ako" - Learning words, learning people</p>
+        <p className="cultural-motto">
+          🌿 "He kupu ako, he tangata ako" - Learning words, learning people
+        </p>
         <p className="platform-info">Te Kete Ako - Year 8 Academic Excellence</p>
       </footer>
     </div>
