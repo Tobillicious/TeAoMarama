@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-18T09:45:06.842Z",
+  "timestamp": "2025-08-18T09:46:02.717Z",
   "agents": {
     "total": 10,
     "active": 10,
@@ -12,17 +12,17 @@
   },
   "platform": {
     "status": "operational",
-    "performance": 97.68753222074108,
+    "performance": 93,
     "resources": 3238
   },
   "coordination": {
     "crossPlatformSync": true,
-    "lastCheck": "2025-08-18T09:45:06.842Z",
-    "uptime": 719
+    "lastCheck": "2025-08-18T09:46:02.717Z",
+    "uptime": 1199
   },
   "huiReadiness": {
     "score": 100,
-    "nextCheck": "2025-08-18T10:00:06.842Z",
+    "nextCheck": "2025-08-18T10:01:02.717Z",
     "criticalAlerts": []
   }
 }
