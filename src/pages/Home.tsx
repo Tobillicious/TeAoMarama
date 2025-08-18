@@ -1,275 +1,243 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../services/useAuth';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
-interface ResourceIndexItem {
-  category: string;
+interface Achievement {
+  id: string;
+  title: string;
+  value: string;
+  description: string;
+  icon: string;
 }
 
-export default function Home() {
-  const { currentUser, logOut } = useAuth();
-  const navigate = useNavigate();
-  const [resourceCount, setResourceCount] = useState('Loading...');
-  const [categories, setCategories] = useState<string[]>([]);
+interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}
 
-  useEffect(() => {
-    // Load real resource data
-    fetch('/resources/index.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setResourceCount(data.items?.length?.toLocaleString() || '0');
-        const uniqueCategories = [
-          ...new Set(
-            (data.items as ResourceIndexItem[] | undefined)?.map((item) => item.category) || [],
-          ),
-        ];
-        setCategories(uniqueCategories);
-      })
-      .catch(() => setResourceCount('5,439')); // Fallback if fetch fails
-  }, []);
+const achievements: Achievement[] = [
+  {
+    id: 'resources',
+    title: 'Educational Resources',
+    value: '5,439+',
+    description: 'Comprehensive teaching materials across 8 subjects',
+    icon: '📚',
+  },
+  {
+    id: 'cultural',
+    title: 'Cultural Resources',
+    value: '3,372',
+    description: 'Authentic Māori integration and cultural content',
+    icon: '🌿',
+  },
+  {
+    id: 'priority',
+    title: 'High Priority',
+    value: '370',
+    description: 'Ready-to-use classroom resources',
+    icon: '⭐',
+  },
+  {
+    id: 'subjects',
+    title: 'Subject Areas',
+    value: '8',
+    description: 'English, Math, Science, Social Studies, PE, Arts, Technology, Te Reo Māori',
+    icon: '🎯',
+  },
+];
 
-  const handleLogout = async () => {
-    try {
-      await logOut();
-      navigate('/login');
-    } catch (error) {
-      console.error('Failed to log out', error);
-    }
-  };
+const features: Feature[] = [
+  {
+    id: 'year8-literacy',
+    title: 'Year 8 Critical Literacy',
+    description: 'Comprehensive literacy units with Liz Kane methodologies and cultural integration',
+    icon: '📖',
+    link: '/year8-critical-literacy',
+  },
+  {
+    id: 'reading-units',
+    title: 'Reading Units',
+    description: 'Structured literacy approach with "The Writing Revolution" and "The Code"',
+    icon: '🎯',
+    link: '/year8-reading-units',
+  },
+  {
+    id: 'resources',
+    title: 'Resource Bank',
+    description: '5,439+ searchable educational resources with cultural context',
+    icon: '📚',
+    link: '/resources',
+  },
+  {
+    id: 'dashboard',
+    title: 'Teacher Dashboard',
+    description: 'Professional tools for lesson planning and assessment',
+    icon: '📊',
+    link: '/dashboard',
+  },
+];
+
+const Home = () => {
+  const [activeFeature, setActiveFeature] = useState<string | null>(null);
 
   return (
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-background">
-          <div className="hero-pattern"></div>
-          <div className="hero-glow"></div>
-        </div>
         <div className="hero-content">
-          <div className="hero-badge">🌟 Mangakōtukutuku College</div>
-          <h1 className="hero-title">TeAoMarama</h1>
-          <p className="hero-subtitle">
-            Comprehensive Structured Literacy Platform for Aotearoa's Future Leaders
+          <h1 className="hero-title">
+            🌿 TeAoMarama
+            <span className="hero-subtitle">Educational Resources Platform</span>
+          </h1>
+          <p className="hero-description">
+            Comprehensive educational resources for New Zealand teachers and students, 
+            with deep cultural integration and curriculum alignment.
           </p>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-number">{resourceCount}</span>
-              <span className="stat-label">Resources</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Cultural Safety</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">🔥 {categories.length}</span>
-              <span className="stat-label">Categories</span>
-            </div>
+          <div className="hero-cta">
+            <Link to="/resources" className="cta-button primary">
+              Explore Resources
+            </Link>
+            <Link to="/year8-critical-literacy" className="cta-button secondary">
+              Year 8 Literacy
+            </Link>
           </div>
-          <div className="hero-actions">
-            <button className="btn-primary" onClick={() => navigate('/year8-writing-revolution')}>
-              🚀 Year 8 Structured Literacy
-            </button>
-            <button className="btn-secondary" onClick={() => navigate('/resources')}>
-              📊 Explore Resources
-            </button>
-          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="cultural-pattern"></div>
         </div>
       </section>
 
-      {/* Featured Gold Standard Unit */}
-      <section className="featured-unit-section">
+      {/* Achievements Section */}
+      <section className="achievements-section">
         <div className="container">
-          <h2 className="section-title">🌟 Featured Gold Standard Unit</h2>
-          <div className="gold-standard-card">
-            <div className="gold-badge">🏆 GOLD STANDARD</div>
-            <h3 className="unit-title">📝 Y8 Structured Literacy: Writing Revolution</h3>
-            <p className="unit-description">
-              Complete systematic literacy instruction combining The Writing Revolution methodology
-              with Te Ao Māori perspectives. Features comprehensive sentence-level instruction,
-              cultural integration, and NCEA preparation.
-            </p>
-            <div className="unit-metrics">
-              <div className="metric">
-                <span className="metric-number">15</span>
-                <span className="metric-label">Activities</span>
+          <h2 className="section-title">Platform Achievements</h2>
+          <div className="achievements-grid">
+            {achievements.map((achievement) => (
+              <div key={achievement.id} className="achievement-card">
+                <div className="achievement-icon">{achievement.icon}</div>
+                <div className="achievement-value">{achievement.value}</div>
+                <h3 className="achievement-title">{achievement.title}</h3>
+                <p className="achievement-description">{achievement.description}</p>
               </div>
-              <div className="metric">
-                <span className="metric-number">25+</span>
-                <span className="metric-label">Resources</span>
-              </div>
-              <div className="metric">
-                <span className="metric-number">8</span>
-                <span className="metric-label">Weeks</span>
-              </div>
-              <div className="metric">
-                <span className="metric-number">100%</span>
-                <span className="metric-label">Cultural Integration</span>
-              </div>
-            </div>
-            <button
-              className="explore-gold-btn"
-              onClick={() => navigate('/year8-writing-revolution')}
-            >
-              Explore Gold Standard Unit →
-            </button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Complete Units Directory */}
-      <section className="units-directory-section">
+      {/* Features Section */}
+      <section className="features-section">
         <div className="container">
-          <h2 className="section-title">📚 Complete Structured Literacy Units</h2>
-          <div className="units-grid">
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>🎵 Phonological Awareness</h3>
-              <p>
-                Foundation sound awareness through Te Ao Māori oral traditions and systematic skill
-                development.
-              </p>
-              <div className="unit-stats">
-                <span>📖 8 Activities</span>
-                <span>📋 20+ Resources</span>
-                <span>⏱️ 6 Weeks</span>
-              </div>
-              <button
-                onClick={() => navigate('/phonological-awareness')}
-                className="explore-unit-btn"
+          <h2 className="section-title">Key Features</h2>
+          <div className="features-grid">
+            {features.map((feature) => (
+              <Link
+                key={feature.id}
+                to={feature.link}
+                className={`feature-card ${activeFeature === feature.id ? 'active' : ''}`}
+                onMouseEnter={() => setActiveFeature(feature.id)}
+                onMouseLeave={() => setActiveFeature(null)}
               >
-                Explore Unit →
-              </button>
-            </div>
-
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>🔤 Systematic Phonics</h3>
-              <p>
-                Phases 1-6 phonics instruction with cultural connections and The Code methodology.
-              </p>
-              <div className="unit-stats">
-                <span>📖 6 Phases</span>
-                <span>📋 30+ Cards</span>
-                <span>⏱️ 12 Weeks</span>
-              </div>
-              <button onClick={() => navigate('/phonetics-cards')} className="explore-unit-btn">
-                Explore Unit →
-              </button>
-            </div>
-
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>👁️ Sight Word Mastery</h3>
-              <p>
-                High-frequency word recognition with Dolch, Fry, and Māori vocabulary integration.
-              </p>
-              <div className="unit-stats">
-                <span>📖 407+ Words</span>
-                <span>📋 3 Modes</span>
-                <span>⏱️ 8 Weeks</span>
-              </div>
-              <button onClick={() => navigate('/sight-words')} className="explore-unit-btn">
-                Explore Unit →
-              </button>
-            </div>
-
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>📖 Reading Strategies</h3>
-              <p>
-                Advanced comprehension techniques with cultural text analysis and critical thinking.
-              </p>
-              <div className="unit-stats">
-                <span>📖 12 Strategies</span>
-                <span>📋 25+ Resources</span>
-                <span>⏱️ 10 Weeks</span>
-              </div>
-              <button
-                onClick={() => navigate('/year8-reading-strategies')}
-                className="explore-unit-btn"
-              >
-                Explore Unit →
-              </button>
-            </div>
-
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>📚 Academic Vocabulary</h3>
-              <p>
-                Subject-specific academic words with morphological analysis and NCEA preparation.
-              </p>
-              <div className="unit-stats">
-                <span>📖 150+ Words</span>
-                <span>📋 8 Subjects</span>
-                <span>⏱️ 12 Weeks</span>
-              </div>
-              <button
-                onClick={() => navigate('/year8-academic-vocab')}
-                className="explore-unit-btn"
-              >
-                Explore Unit →
-              </button>
-            </div>
-
-            <div className="unit-card premium">
-              <div className="unit-badge">✨ PREMIUM</div>
-              <h3>🔬 Advanced Morphology</h3>
-              <p>
-                Latin, Greek, and Anglo-Saxon roots with Māori morphological patterns for secondary
-                success.
-              </p>
-              <div className="unit-stats">
-                <span>📖 200+ Morphemes</span>
-                <span>📋 6 Origins</span>
-                <span>⏱️ 15 Weeks</span>
-              </div>
-              <button onClick={() => navigate('/advanced-morphology')} className="explore-unit-btn">
-                Explore Unit →
-              </button>
-            </div>
+                <div className="feature-icon">{feature.icon}</div>
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
+                <div className="feature-arrow">→</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Platform Overview */}
-      <section className="platform-overview-section">
+      {/* Cultural Excellence Section */}
+      <section className="cultural-section">
         <div className="container">
-          <h2 className="section-title">📊 Platform Overview</h2>
-          <div className="overview-stats">
-            <div className="overview-stat">
-              <span className="overview-number">9+</span>
-              <span className="overview-label">Complete Units</span>
+          <h2 className="section-title">Cultural Excellence</h2>
+          <div className="cultural-content">
+            <div className="cultural-text">
+              <h3>Māori Integration & Cultural Safety</h3>
+              <ul className="cultural-list">
+                <li><strong>Tikanga:</strong> Cultural protocols and practices</li>
+                <li><strong>Te Reo Māori:</strong> Authentic language usage</li>
+                <li><strong>Mātauranga Māori:</strong> Traditional knowledge systems</li>
+                <li><strong>Ako:</strong> Reciprocal learning approaches</li>
+              </ul>
+              <p className="cultural-description">
+                Every resource includes cultural connections and is reviewed for cultural appropriateness, 
+                ensuring respectful representation of Māori knowledge and community consultation protocols.
+              </p>
             </div>
-            <div className="overview-stat">
-              <span className="overview-number">100+</span>
-              <span className="overview-label">Activities</span>
-            </div>
-            <div className="overview-stat">
-              <span className="overview-number">{resourceCount}</span>
-              <span className="overview-label">Resources</span>
-            </div>
-            <div className="overview-stat">
-              <span className="overview-number">100%</span>
-              <span className="overview-label">Cultural Integration</span>
+            <div className="cultural-visual">
+              <div className="cultural-symbols">
+                <span className="symbol">🌿</span>
+                <span className="symbol">🌊</span>
+                <span className="symbol">🏔️</span>
+                <span className="symbol">⭐</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* User Actions */}
-      {currentUser && (
-        <section className="user-section">
-          <div className="container">
-            <div className="user-card">
-              <p className="user-greeting">Welcome back, {currentUser.email}</p>
-              <button onClick={handleLogout} className="btn-logout">
-                Log Out
-              </button>
+      {/* NCEA Preparation Section */}
+      <section className="ncea-section">
+        <div className="container">
+          <h2 className="section-title">NCEA Level 1 Preparation</h2>
+          <div className="ncea-content">
+            <div className="ncea-standards">
+              <h3>English Standards Alignment</h3>
+              <div className="standards-grid">
+                <div className="standard-card">
+                  <h4>AS 90052</h4>
+                  <p>Produce creative writing</p>
+                </div>
+                <div className="standard-card">
+                  <h4>AS 90053</h4>
+                  <p>Produce formal writing</p>
+                </div>
+                <div className="standard-card">
+                  <h4>AS 90849</h4>
+                  <p>Show understanding of written texts</p>
+                </div>
+                <div className="standard-card">
+                  <h4>AS 90850</h4>
+                  <p>Show understanding of visual/oral texts</p>
+                </div>
+              </div>
+            </div>
+            <div className="ncea-cultural">
+              <h3>Cultural Competency</h3>
+              <ul className="cultural-competency-list">
+                <li><strong>Mana ōrite mo te mātauranga Māori:</strong> Equal status for Māori knowledge</li>
+                <li><strong>Te Tiriti o Waitangi:</strong> Treaty principles integration</li>
+                <li><strong>Cultural Safety:</strong> Respectful and appropriate content</li>
+              </ul>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <div className="container">
+          <h2 className="cta-title">Ready to Transform Your Teaching?</h2>
+          <p className="cta-description">
+            Join thousands of New Zealand teachers using TeAoMarama to deliver 
+            culturally responsive, curriculum-aligned education.
+          </p>
+          <div className="cta-buttons">
+            <Link to="/resources" className="cta-button primary large">
+              Start Exploring
+            </Link>
+            <Link to="/year8-critical-literacy" className="cta-button secondary large">
+              View Year 8 Units
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Home;
