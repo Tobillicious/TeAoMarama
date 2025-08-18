@@ -389,19 +389,19 @@
   .words-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .word-spotlight {
     padding: 1.5rem;
   }
-  
+
   .word-badges {
     flex-direction: column;
   }
-  
+
   .practice-buttons {
     flex-direction: column;
   }
-  
+
   .word-details {
     grid-template-columns: 1fr;
   }

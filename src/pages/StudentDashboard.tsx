@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../services/useAuth';
+import { BookOpen, Calendar, Clock, Download, Heart, Play, TrendingUp, Trophy } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { resourceService, type TeachingResource } from '../services/ResourceService';
-import { BookOpen, Play, Download, Heart, Clock, Trophy, TrendingUp, Calendar } from 'lucide-react';
+import { useAuth } from '../services/useAuth';
 import './StudentDashboard.css';
 
 interface StudentProgress {
@@ -29,7 +29,7 @@ const StudentDashboard: React.FC = () => {
     totalTimeSpent: 0,
     streakDays: 0,
     favoriteSubjects: [],
-    recentActivity: []
+    recentActivity: [],
   });
   const [loading, setLoading] = useState(true);
 
@@ -40,15 +40,21 @@ const StudentDashboard: React.FC = () => {
   const loadStudentData = async () => {
     try {
       // Get student-appropriate resources
-      const recentResult = await resourceService.searchResources({
-        sortBy: 'recent',
-        limit: 6
-      }, 'student');
+      const recentResult = await resourceService.searchResources(
+        {
+          sortBy: 'recent',
+          limit: 6,
+        },
+        'student',
+      );
 
-      const recommendedResult = await resourceService.searchResources({
-        sortBy: 'popular',
-        limit: 8
-      }, 'student');
+      const recommendedResult = await resourceService.searchResources(
+        {
+          sortBy: 'popular',
+          limit: 8,
+        },
+        'student',
+      );
 
       setRecentResources(recentResult.resources);
       setRecommendedResources(recommendedResult.resources);
@@ -65,21 +71,21 @@ const StudentDashboard: React.FC = () => {
             type: 'completed',
             resourceTitle: 'Photosynthesis Interactive Lab',
             timestamp: '2025-01-15T10:30:00Z',
-            timeSpent: 45
+            timeSpent: 45,
           },
           {
-            id: '2', 
+            id: '2',
             type: 'started',
             resourceTitle: 'Te Reo Māori Greetings',
-            timestamp: '2025-01-15T09:15:00Z'
+            timestamp: '2025-01-15T09:15:00Z',
           },
           {
             id: '3',
             type: 'liked',
             resourceTitle: 'Statistics Real-World Problems',
-            timestamp: '2025-01-14T14:20:00Z'
-          }
-        ]
+            timestamp: '2025-01-14T14:20:00Z',
+          },
+        ],
       });
 
       setLoading(false);
@@ -91,11 +97,16 @@ const StudentDashboard: React.FC = () => {
 
   const getActivityIcon = (type: string) => {
     switch (type) {
-      case 'completed': return <Trophy className="w-4 h-4 text-green-600" />;
-      case 'started': return <Play className="w-4 h-4 text-blue-600" />;
-      case 'liked': return <Heart className="w-4 h-4 text-red-600" />;
-      case 'downloaded': return <Download className="w-4 h-4 text-gray-600" />;
-      default: return <BookOpen className="w-4 h-4 text-gray-600" />;
+      case 'completed':
+        return <Trophy className="w-4 h-4 text-green-600" />;
+      case 'started':
+        return <Play className="w-4 h-4 text-blue-600" />;
+      case 'liked':
+        return <Heart className="w-4 h-4 text-red-600" />;
+      case 'downloaded':
+        return <Download className="w-4 h-4 text-gray-600" />;
+      default:
+        return <BookOpen className="w-4 h-4 text-gray-600" />;
     }
   };
 
@@ -103,16 +114,16 @@ const StudentDashboard: React.FC = () => {
     const date = new Date(timestamp);
     const now = new Date();
     const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
-    
+
     if (diffInHours < 1) return 'Just now';
     if (diffInHours < 24) return `${diffInHours}h ago`;
     return `${Math.floor(diffInHours / 24)}d ago`;
   };
 
-  const ProgressCard: React.FC<{ 
-    title: string; 
-    value: string | number; 
-    icon: React.ReactNode; 
+  const ProgressCard: React.FC<{
+    title: string;
+    value: string | number;
+    icon: React.ReactNode;
     color: string;
     subtitle?: string;
   }> = ({ title, value, icon, color, subtitle }) => (
@@ -123,15 +134,13 @@ const StudentDashboard: React.FC = () => {
           <p className="text-2xl font-bold text-gray-900 mt-1">{value}</p>
           {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
         </div>
-        <div className={`p-3 rounded-full ${color}`}>
-          {icon}
-        </div>
+        <div className={`p-3 rounded-full ${color}`}>{icon}</div>
       </div>
     </div>
   );
 
-  const ResourceCard: React.FC<{ 
-    resource: TeachingResource; 
+  const ResourceCard: React.FC<{
+    resource: TeachingResource;
     showProgress?: boolean;
     progressPercent?: number;
   }> = ({ resource, showProgress = false, progressPercent = 0 }) => (
@@ -162,10 +171,8 @@ const StudentDashboard: React.FC = () => {
       <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
         {resource.__title || resource.id || Math.random().toString() || 'Untitled Resource'}
       </h3>
-      
-      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-        {resource.description}
-      </p>
+
+      <p className="text-gray-600 text-sm mb-3 line-clamp-2">{resource.description}</p>
 
       {/* Progress Bar (if applicable) */}
       {showProgress && (
@@ -175,7 +182,7 @@ const StudentDashboard: React.FC = () => {
             <span>{progressPercent}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
+            <div
               className={`progress-bar-fill progress-bar-fill-${Math.round(progressPercent)}`}
             ></div>
           </div>
@@ -187,7 +194,13 @@ const StudentDashboard: React.FC = () => {
         <span>{(resource as any).subject || 'General'}</span>
         <div className="flex items-center space-x-1">
           <Clock className="w-3 h-3" />
-          <span>{(resource as any).content || resource.description || 'No content available'.duration || 30}min</span>
+          <span>
+            {(resource as any).content ||
+              resource.description ||
+              'No content available'.duration ||
+              30}
+            min
+          </span>
         </div>
       </div>
 
@@ -217,11 +230,9 @@ const StudentDashboard: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">
-                Welcome back, {currentUser?.email?.split('@')[0] || 'Student'}! 
+                Welcome back, {currentUser?.email?.split('@')[0] || 'Student'}!
               </h1>
-              <p className="text-gray-600 mt-1">
-                Ready to continue your learning journey?
-              </p>
+              <p className="text-gray-600 mt-1">Ready to continue your learning journey?</p>
             </div>
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-1">
@@ -277,11 +288,11 @@ const StudentDashboard: React.FC = () => {
                   View all →
                 </button>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {recentResources.slice(0, 4).map((resource, index) => (
-                  <ResourceCard 
-                    key={resource.id || Math.random().toString()} 
+                  <ResourceCard
+                    key={resource.id || Math.random().toString()}
                     resource={resource}
                     showProgress={index < 2}
                     progressPercent={index === 0 ? 65 : index === 1 ? 30 : 0}
@@ -298,9 +309,9 @@ const StudentDashboard: React.FC = () => {
                   See more →
                 </button>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {recommendedResources.slice(0, 4).map(resource => (
+                {recommendedResources.slice(0, 4).map((resource) => (
                   <ResourceCard key={resource.id || Math.random().toString()} resource={resource} />
                 ))}
               </div>
@@ -315,17 +326,13 @@ const StudentDashboard: React.FC = () => {
                 <Calendar className="w-5 h-5 mr-2 text-gray-500" />
                 Recent Activity
               </h3>
-              
+
               <div className="space-y-4">
-                {progress.recentActivity.map(activity => (
+                {progress.recentActivity.map((activity) => (
                   <div key={activity.id} className="flex items-start space-x-3">
-                    <div className="mt-1">
-                      {getActivityIcon(activity.type)}
-                    </div>
+                    <div className="mt-1">{getActivityIcon(activity.type)}</div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm text-gray-900 truncate">
-                        {activity.resourceTitle}
-                      </p>
+                      <p className="text-sm text-gray-900 truncate">{activity.resourceTitle}</p>
                       <div className="flex items-center space-x-2 text-xs text-gray-500">
                         <span className="capitalize">{activity.type}</span>
                         <span>•</span>
@@ -346,7 +353,7 @@ const StudentDashboard: React.FC = () => {
             {/* Subject Progress */}
             <div className="bg-white rounded-lg border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Subject Progress</h3>
-              
+
               <div className="space-y-4">
                 {progress.favoriteSubjects.map((subject, index) => (
                   <div key={subject}>
@@ -355,8 +362,10 @@ const StudentDashboard: React.FC = () => {
                       <span className="text-gray-500">{85 - index * 10}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className={`bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full skill-progress-${85 - index * 10}`}
+                      <div
+                        className={`bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full skill-progress-${
+                          85 - index * 10
+                        }`}
                       ></div>
                     </div>
                   </div>
