@@ -53,7 +53,7 @@ const writingActivities: WritingActivity[] = [
       'Further: Yesterday, the native tūī flew gracefully through the golden kōwhai tree in our school garden.',
     ],
     culturalApplication:
-      'Use Te Reo Māori vocabulary and cultural contexts in sentence expansion exercises',
+      '🌟 Use Te Reo Māori vocabulary and cultural contexts in sentence expansion exercises. Integrate Māori cultural concepts like whanaungatanga (relationships), manaakitanga (hospitality), and kaitiakitanga (guardianship) to create meaningful, culturally-rich sentences.',
     nceaRelevance: 'Builds foundation skills for detailed description and analysis in NCEA writing',
     timeRequired: '15-20 minutes',
     materials: ['Kernel sentence cards', 'Question prompts', 'Cultural vocabulary lists'],
@@ -77,7 +77,8 @@ const writingActivities: WritingActivity[] = [
       'Combined: The marae is sacred, so visitors must follow protocols.',
       'Complex: Because the marae is sacred, visitors must follow protocols.',
     ],
-    culturalApplication: 'Combine sentences about cultural practices and traditional knowledge',
+    culturalApplication:
+      '🌟 Combine sentences about cultural practices and traditional knowledge. Explore concepts like tikanga (customs), kōrero tuku iho (oral traditions), and pūrākau (stories) to create sophisticated cultural narratives.',
     nceaRelevance: 'Essential for creating sophisticated arguments and explanations in NCEA essays',
     timeRequired: '20-25 minutes',
     materials: ['Simple sentence pairs', 'Conjunction reference cards', 'Practice worksheets'],

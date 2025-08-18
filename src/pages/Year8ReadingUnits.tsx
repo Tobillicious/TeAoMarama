@@ -3,7 +3,15 @@ import './Year8ReadingUnits.css';
 
 interface TeachingResource {
   id: string;
-  type: 'slideshow' | 'handout' | 'card' | 'podcast' | 'news-story' | 'video' | 'worksheet' | 'assessment';
+  type:
+    | 'slideshow'
+    | 'handout'
+    | 'card'
+    | 'podcast'
+    | 'news-story'
+    | 'video'
+    | 'worksheet'
+    | 'assessment';
   title: string;
   description: string;
   url?: string;
@@ -721,8 +729,7 @@ const readingUnits: ReadingUnit[] = [
           'Digital mapping tools',
           'Interactive whiteboard',
         ],
-        culturalIntegration:
-          'Connects vocabulary to authentic cultural concepts and contexts.',
+        culturalIntegration: 'Connects vocabulary to authentic cultural concepts and contexts.',
         differentiation: [
           'Foundation: Simple concept maps',
           'Developing: Complex relationship networks',

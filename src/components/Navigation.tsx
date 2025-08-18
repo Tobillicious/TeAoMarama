@@ -10,11 +10,9 @@ export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home', icon: '🏠' },
     { path: '/resources', label: 'Resources', icon: '📚' },
-    { path: '/year8-critical-literacy', label: 'Year 8 Literacy', icon: '🎯' },
-    { path: '/structured-literacy-units', label: 'Structured Literacy', icon: '📝' },
-    { path: '/phonetics-cards', label: 'Phonics', icon: '🔤' },
+    { path: '/year8-critical-literacy', label: 'Year 8 Literacy', icon: '��' },
+    { path: '/year8-reading-units', label: 'Reading Units', icon: '📖' },
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
-    { path: '/mihara', label: 'Mihara AI', icon: '🧠' },
   ];
 
   const handleNavigation = (path: string) => {
