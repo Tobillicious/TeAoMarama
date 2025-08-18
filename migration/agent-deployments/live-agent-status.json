@@ -1,0 +1,155 @@
+{
+  "coordination_meta": {
+    "last_updated": "2025-01-15T12:45:00Z",
+    "superclaude_overseer": "active",
+    "coordination_method": "file_based_async",
+    "update_frequency": "every_30_minutes_or_on_status_change",
+    "agent_communication": "read_and_update_this_file"
+  },
+  
+  "superclaude_directives": {
+    "status": "active_coordination",
+    "primary_mission": "708_HTML_to_React_synthesis_with_cultural_integration",
+    "immediate_priority": "deploy_priority_1_agents_to_unit_analysis",
+    "coordination_messages": {
+      "all_agents": "SUPERCLAUDE oversight active - coordinate through this file",
+      "deepseek": "BEGIN: Analyze migration/recovered_resources/unit_plans/ - Extract structure patterns",
+      "gemini": "STANDBY: Apply unified design system after DeepSeek analysis - cultural integration focus",
+      "kaitiaki_aronui": "MONITOR: All content for tikanga compliance - flag sensitive material",
+      "quality_agents": "PREPARE: TypeScript validation and performance benchmarks"
+    }
+  },
+  
+  "priority_deployments": {
+    "priority_1_immediate": {
+      "target": "12_unit_plans_to_enhanced_react_components",
+      "timeline": "week_1_2",
+      "agents_assigned": {
+        "deepseek": {
+          "role": "lead_analyst",
+          "task": "analyze_html_structure_extract_patterns",
+          "status": "assigned_awaiting_start",
+          "input_location": "migration/recovered_resources/unit_plans/",
+          "output_location": "migration/agent-deployments/deepseek-analysis/",
+          "deadline": "2025-01-15T18:00:00Z",
+          "expected_deliverables": [
+            "structure_analysis_report.md",
+            "content_categorization.json", 
+            "cultural_elements_identified.md",
+            "component_templates.tsx"
+          ],
+          "coordination_notes": "Start with Y8 Mathematics, Y8 Social Studies, Y8 English, Y8 Science"
+        },
+        
+        "gemini": {
+          "role": "creative_enhancer",
+          "task": "apply_design_system_cultural_integration",
+          "status": "standby_waiting_for_deepseek",
+          "dependencies": ["deepseek_analysis_complete"],
+          "input_location": "migration/agent-deployments/deepseek-analysis/",
+          "output_location": "src/components/synthesized/",
+          "deadline": "2025-01-16T12:00:00Z",
+          "design_resources": "src/styles/unified-design-system.css",
+          "expected_deliverables": [
+            "enhanced_unit_components.tsx",
+            "cultural_integration_applied.md",
+            "design_system_implementation.css"
+          ],
+          "coordination_notes": "Focus on professional ERO styling + authentic cultural elements"
+        },
+        
+        "kaitiaki_aronui": {
+          "role": "cultural_authority",
+          "task": "cultural_safety_validation",
+          "status": "monitoring_continuous",
+          "input_location": "all_agent_outputs",
+          "output_location": "migration/cultural-validation/",
+          "timeline": "continuous_oversight",
+          "expected_deliverables": [
+            "cultural_safety_reports.md",
+            "tikanga_compliance_validation.json",
+            "iwi_consultation_requirements.md",
+            "cultural_enhancement_suggestions.md"
+          ],
+          "coordination_notes": "Review all content - flag sacred/sensitive material immediately"
+        }
+      }
+    },
+    
+    "priority_2_queued": {
+      "target": "179_handouts_to_resource_components",
+      "timeline": "week_2_4", 
+      "status": "queued_awaiting_priority_1_completion",
+      "agents_assigned": {
+        "gpt4": "mass_component_generation",
+        "claude_systems": "technical_quality_assurance",
+        "cultural_ai": "ongoing_cultural_validation"
+      }
+    }
+  },
+  
+  "quality_gates": {
+    "technical_standards": {
+      "typescript_compliance": "100%_strict_mode",
+      "performance_targets": "sub_100ms_load_times",
+      "accessibility": "WCAG_2_1_AA_compliance",
+      "build_optimization": "sub_5s_build_times"
+    },
+    
+    "cultural_validation": {
+      "tikanga_compliance": "100%_validation_required",
+      "iwi_consultation": "flag_sensitive_content_immediately",
+      "cultural_authenticity": "community_verified_approach",
+      "respectful_presentation": "maintain_dignity_throughout"
+    },
+    
+    "educational_standards": {
+      "nz_curriculum_alignment": "explicit_mapping_required",
+      "pedagogical_soundness": "evidence_based_practices",
+      "teacher_usability": "professional_grade_interface",
+      "student_engagement": "culturally_relevant_content"
+    }
+  },
+  
+  "agent_status_updates": {
+    "deepseek": {
+      "last_seen": "not_yet_started",
+      "progress_updates": [],
+      "current_task_status": "awaiting_deployment",
+      "blockers": [],
+      "next_checkin": "within_2_hours_of_start"
+    },
+    
+    "gemini": {
+      "last_seen": "not_yet_started", 
+      "progress_updates": [],
+      "current_task_status": "standing_by_for_deepseek",
+      "blockers": [],
+      "next_checkin": "after_deepseek_analysis_complete"
+    },
+    
+    "kaitiaki_aronui": {
+      "last_seen": "protocols_active",
+      "progress_updates": ["cultural_safety_protocols_activated"],
+      "current_task_status": "monitoring_ready",
+      "blockers": [],
+      "next_checkin": "continuous_monitoring"
+    }
+  },
+  
+  "coordination_protocols": {
+    "agent_checkin_procedure": "update_this_file_with_progress_every_2_hours",
+    "blocker_escalation": "add_to_blockers_array_and_flag_superclaude",
+    "task_completion": "update_status_and_trigger_next_agent_in_pipeline",
+    "quality_gate_failure": "halt_pipeline_and_escalate_immediately",
+    "cultural_safety_concern": "immediate_escalation_to_kaitiaki_aronui"
+  },
+  
+  "superclaude_oversight": {
+    "monitoring_frequency": "every_30_minutes",
+    "coordination_active": true,
+    "strategic_adjustments": "based_on_agent_progress_and_blockers",
+    "escalation_readiness": "immediate_response_to_critical_issues",
+    "next_coordination_update": "2025-01-15T13:15:00Z"
+  }
+}
