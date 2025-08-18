@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../services/useAuth';
 import { resourceService, type TeachingResource } from '../services/ResourceService';
 import { BookOpen, Play, Download, Heart, Clock, Trophy, TrendingUp, Calendar } from 'lucide-react';
+import './StudentDashboard.css';
 
 interface StudentProgress {
   resourcesCompleted: number;
@@ -175,8 +176,7 @@ const StudentDashboard: React.FC = () => {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-blue-500 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${progress}%` }}
+              className={`progress-bar-fill progress-bar-fill-${Math.round(progress)}`}
             ></div>
           </div>
         </div>
