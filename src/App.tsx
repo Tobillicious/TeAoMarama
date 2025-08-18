@@ -30,7 +30,7 @@ const LoadingSpinner = memo(() => (
   <div className="min-h-screen flex items-center justify-center lcp-optimized loading-spinner-container">
     <div className="text-center">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pounamu mx-auto mb-4"></div>
-      <p className="text-lg font-medium loading-spinner-text">Loading Te Kete Ako...</p>
+      <p className="text-lg font-medium loading-spinner-text">Loading TeAoMarama...</p>
     </div>
   </div>
 ));
