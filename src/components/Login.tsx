@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from '../services/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/useAuth';
 import { supabase } from '../supabaseClient';
 
 const Login: React.FC = () => {
@@ -23,8 +23,8 @@ const Login: React.FC = () => {
         navigate('/');
       }
     } catch (err) {
-        setError('Failed to log in');
-        console.error(err);
+      setError('Failed to log in');
+      console.error(err);
     }
   };
 
@@ -45,11 +45,11 @@ const Login: React.FC = () => {
         setResetMsg('Password reset email sent!');
       }
     } catch (err) {
-        if (err instanceof Error) {
-            setError(err.message);
-        } else {
-            setError('An unknown error occurred during password reset.');
-        }
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An unknown error occurred during password reset.');
+      }
     }
   };
 
@@ -59,12 +59,14 @@ const Login: React.FC = () => {
         <form onSubmit={handleLogin} className="auth-form">
           <h2 className="auth-title">Whakatōmuri TeAoMarama</h2>
           <p className="auth-subtitle">Welcome back to Te Ao Mārama</p>
-          
+
           {error && <div className="error-message">{error}</div>}
           {resetMsg && <div className="success-message">{resetMsg}</div>}
-          
+
           <div className="form-group">
-            <label htmlFor="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               id="email"
               type="email"
@@ -75,9 +77,11 @@ const Login: React.FC = () => {
               className="form-input"
             />
           </div>
-          
+
           <div className="form-group">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
               id="password"
               type="password"
@@ -88,29 +92,28 @@ const Login: React.FC = () => {
               className="form-input"
             />
           </div>
-          
+
           <button type="submit" className="form-button login-button">
             🌟 Sign In to Te Ao Mārama
           </button>
-          
-          <button 
-            type="button" 
-            onClick={handleReset} 
-            className="text-link forgot-link"
-          >
+
+          <button type="button" onClick={handleReset} className="text-link forgot-link">
             Forgot your password?
           </button>
-          
+
           <div className="auth-footer">
             <p>
-              Don't have an account? 
-              <Link to="/signup" className="text-link"> Create one here</Link>
+              Don't have an account?
+              <Link to="/signup" className="text-link">
+                {' '}
+                Create one here
+              </Link>
             </p>
           </div>
         </form>
       </div>
     </div>
   );
-}
+};
 
 export default Login;
