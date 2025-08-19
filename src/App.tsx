@@ -123,6 +123,160 @@ const year-9-starter-pack-alpha-build = lazy(() => import('./components/educatio
 const year-9-starter-pack-essential-skills = lazy(() => import('./components/educational/handouts/year-9-starter-pack-essential-skills'));
 const youth-vaping-comprehension-handout = lazy(() => import('./components/educational/handouts/youth-vaping-comprehension-handout'));
 
+const MediaLiteracyComprehensionHandoutV2 = lazy(() => import('./components/educational/handouts/MediaLiteracyComprehensionHandout.V2'));
+const TūRangawaewaeMapping = lazy(() => import('./components/educational/handouts/TūRangawaewaeMapping'));
+const ai-impact-comprehension-handout = lazy(() => import('./components/educational/handouts/ai-impact-comprehension-handout'));
+const atoms-in-everyday-materials = lazy(() => import('./components/educational/handouts/atoms-in-everyday-materials'));
+const authors-purpose-entertain-handout = lazy(() => import('./components/educational/handouts/authors-purpose-entertain-handout'));
+const authors-purpose-handout = lazy(() => import('./components/educational/handouts/authors-purpose-handout'));
+const authors-purpose-inform-handout = lazy(() => import('./components/educational/handouts/authors-purpose-inform-handout'));
+const authors-purpose-persuade-handout = lazy(() => import('./components/educational/handouts/authors-purpose-persuade-handout'));
+const bar-graph-handout = lazy(() => import('./components/educational/handouts/bar-graph-handout'));
+const biochemistry-traditional-medicine = lazy(() => import('./components/educational/handouts/biochemistry-traditional-medicine'));
+const body-measurement-traditional = lazy(() => import('./components/educational/handouts/body-measurement-traditional'));
+const ceremonial-circle-geometry = lazy(() => import('./components/educational/handouts/ceremonial-circle-geometry'));
+const children-rights-responsibilities = lazy(() => import('./components/educational/handouts/children-rights-responsibilities'));
+const climate-change-aotearoa-handout = lazy(() => import('./components/educational/handouts/climate-change-aotearoa-handout'));
+const climate-emergency-aotearoa-handout = lazy(() => import('./components/educational/handouts/climate-emergency-aotearoa-handout'));
+const cognitive-biases-comprehension-handout = lazy(() => import('./components/educational/handouts/cognitive-biases-comprehension-handout'));
+const colonization-perspectives-handout = lazy(() => import('./components/educational/handouts/colonization-perspectives-handout'));
+const community-helpers-study = lazy(() => import('./components/educational/handouts/community-helpers-study'));
+const community-needs-survey = lazy(() => import('./components/educational/handouts/community-needs-survey'));
+const cultural-celebrations-comparison = lazy(() => import('./components/educational/handouts/cultural-celebrations-comparison'));
+const cultural-decision-making-traditions = lazy(() => import('./components/educational/handouts/cultural-decision-making-traditions'));
+const cultural-heroes-comprehension = lazy(() => import('./components/educational/handouts/cultural-heroes-comprehension'));
+const cultural-identity-deep-dive-comprehension = lazy(() => import('./components/educational/handouts/cultural-identity-deep-dive-comprehension'));
+const cultural-practice-explanation = lazy(() => import('./components/educational/handouts/cultural-practice-explanation'));
+const cultural-preservation-essays = lazy(() => import('./components/educational/handouts/cultural-preservation-essays'));
+const cultural-safety-classroom-checklists-alpha = lazy(() => import('./components/educational/handouts/cultural-safety-classroom-checklists-alpha'));
+const cultural-stem-assessment-rubric = lazy(() => import('./components/educational/handouts/cultural-stem-assessment-rubric'));
+const cultural-stories-comprehension = lazy(() => import('./components/educational/handouts/cultural-stories-comprehension'));
+const family-data-collection = lazy(() => import('./components/educational/handouts/family-data-collection'));
+const family-tree-writing = lazy(() => import('./components/educational/handouts/family-tree-writing'));
+const future-visioning-creative-writing = lazy(() => import('./components/educational/handouts/future-visioning-creative-writing'));
+const indigenous-rights-research = lazy(() => import('./components/educational/handouts/indigenous-rights-research'));
+const iwi-economics-mathematics = lazy(() => import('./components/educational/handouts/iwi-economics-mathematics'));
+const kaitiaki-generated-migration-student-handout = lazy(() => import('./components/educational/handouts/kaitiaki-generated-migration-student-handout'));
+const kaitiakitanga-field-journal = lazy(() => import('./components/educational/handouts/kaitiakitanga-field-journal'));
+const kaitiakitanga-kids = lazy(() => import('./components/educational/handouts/kaitiakitanga-kids'));
+const kumara-storage-place-value = lazy(() => import('./components/educational/handouts/kumara-storage-place-value'));
+const maori-astronomy-navigation-handout = lazy(() => import('./components/educational/handouts/maori-astronomy-navigation-handout'));
+const maori-geometric-patterns-handout = lazy(() => import('./components/educational/handouts/maori-geometric-patterns-handout'));
+const maori-navigation-wayfinding-handout = lazy(() => import('./components/educational/handouts/maori-navigation-wayfinding-handout'));
+const marae-shapes-geometry = lazy(() => import('./components/educational/handouts/marae-shapes-geometry'));
+const mountain-navigation-trigonometry = lazy(() => import('./components/educational/handouts/mountain-navigation-trigonometry'));
+const nature-observation-journal = lazy(() => import('./components/educational/handouts/nature-observation-journal'));
+const oral-storytelling-handout = lazy(() => import('./components/educational/handouts/oral-storytelling-handout'));
+const physics-of-traditional-games = lazy(() => import('./components/educational/handouts/physics-of-traditional-games'));
+const probability-handout = lazy(() => import('./components/educational/handouts/probability-handout'));
+const renewable-energy-traditional = lazy(() => import('./components/educational/handouts/renewable-energy-traditional'));
+const research-methods-handout = lazy(() => import('./components/educational/handouts/research-methods-handout'));
+const resource-sustainability-study = lazy(() => import('./components/educational/handouts/resource-sustainability-study'));
+const scientific-method-handout = lazy(() => import('./components/educational/handouts/scientific-method-handout'));
+const star-navigation-coordinates = lazy(() => import('./components/educational/handouts/star-navigation-coordinates'));
+const sustainable-fishing-equations = lazy(() => import('./components/educational/handouts/sustainable-fishing-equations'));
+const sustainable-technology-design-challenge = lazy(() => import('./components/educational/handouts/sustainable-technology-design-challenge'));
+const traditional-counting-systems = lazy(() => import('./components/educational/handouts/traditional-counting-systems'));
+const traditional-dye-chemistry = lazy(() => import('./components/educational/handouts/traditional-dye-chemistry'));
+const traditional-ecological-indicators-handout = lazy(() => import('./components/educational/handouts/traditional-ecological-indicators-handout'));
+const traditional-materials-science = lazy(() => import('./components/educational/handouts/traditional-materials-science'));
+const traditional-navigation-mathematics-handout = lazy(() => import('./components/educational/handouts/traditional-navigation-mathematics-handout'));
+const treaty-settlement-statistics = lazy(() => import('./components/educational/handouts/treaty-settlement-statistics'));
+const tukutuku-patterns-maths = lazy(() => import('./components/educational/handouts/tukutuku-patterns-maths'));
+const unit-2-technology-definition-challenge = lazy(() => import('./components/educational/handouts/unit-2-technology-definition-challenge'));
+const weather-prediction-probability = lazy(() => import('./components/educational/handouts/weather-prediction-probability'));
+const writers-toolkit-conclusion-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-conclusion-handout'));
+const writers-toolkit-diction-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-diction-handout'));
+const writers-toolkit-fluency-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-fluency-handout'));
+const writers-toolkit-hook-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-hook-handout'));
+const writers-toolkit-inform-structure-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-inform-structure-handout'));
+const writers-toolkit-peel-argument-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-peel-argument-handout'));
+const writers-toolkit-revision-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-revision-handout'));
+const writers-toolkit-rhetorical-devices-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-rhetorical-devices-handout'));
+const writers-toolkit-show-dont-tell-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-show-dont-tell-handout'));
+const writers-toolkit-suspense-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-suspense-handout'));
+const writers-toolkit-tone-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-tone-handout'));
+const year-9-starter-pack-alpha-build = lazy(() => import('./components/educational/handouts/year-9-starter-pack-alpha-build'));
+const year-9-starter-pack-essential-skills = lazy(() => import('./components/educational/handouts/year-9-starter-pack-essential-skills'));
+const youth-vaping-comprehension-handout = lazy(() => import('./components/educational/handouts/youth-vaping-comprehension-handout'));
+
+const MediaLiteracyComprehensionHandoutV2 = lazy(() => import('./components/educational/handouts/MediaLiteracyComprehensionHandout.V2'));
+const TūRangawaewaeMapping = lazy(() => import('./components/educational/handouts/TūRangawaewaeMapping'));
+const ai-impact-comprehension-handout = lazy(() => import('./components/educational/handouts/ai-impact-comprehension-handout'));
+const atoms-in-everyday-materials = lazy(() => import('./components/educational/handouts/atoms-in-everyday-materials'));
+const authors-purpose-entertain-handout = lazy(() => import('./components/educational/handouts/authors-purpose-entertain-handout'));
+const authors-purpose-handout = lazy(() => import('./components/educational/handouts/authors-purpose-handout'));
+const authors-purpose-inform-handout = lazy(() => import('./components/educational/handouts/authors-purpose-inform-handout'));
+const authors-purpose-persuade-handout = lazy(() => import('./components/educational/handouts/authors-purpose-persuade-handout'));
+const bar-graph-handout = lazy(() => import('./components/educational/handouts/bar-graph-handout'));
+const biochemistry-traditional-medicine = lazy(() => import('./components/educational/handouts/biochemistry-traditional-medicine'));
+const body-measurement-traditional = lazy(() => import('./components/educational/handouts/body-measurement-traditional'));
+const ceremonial-circle-geometry = lazy(() => import('./components/educational/handouts/ceremonial-circle-geometry'));
+const children-rights-responsibilities = lazy(() => import('./components/educational/handouts/children-rights-responsibilities'));
+const climate-change-aotearoa-handout = lazy(() => import('./components/educational/handouts/climate-change-aotearoa-handout'));
+const climate-emergency-aotearoa-handout = lazy(() => import('./components/educational/handouts/climate-emergency-aotearoa-handout'));
+const cognitive-biases-comprehension-handout = lazy(() => import('./components/educational/handouts/cognitive-biases-comprehension-handout'));
+const colonization-perspectives-handout = lazy(() => import('./components/educational/handouts/colonization-perspectives-handout'));
+const community-helpers-study = lazy(() => import('./components/educational/handouts/community-helpers-study'));
+const community-needs-survey = lazy(() => import('./components/educational/handouts/community-needs-survey'));
+const cultural-celebrations-comparison = lazy(() => import('./components/educational/handouts/cultural-celebrations-comparison'));
+const cultural-decision-making-traditions = lazy(() => import('./components/educational/handouts/cultural-decision-making-traditions'));
+const cultural-heroes-comprehension = lazy(() => import('./components/educational/handouts/cultural-heroes-comprehension'));
+const cultural-identity-deep-dive-comprehension = lazy(() => import('./components/educational/handouts/cultural-identity-deep-dive-comprehension'));
+const cultural-practice-explanation = lazy(() => import('./components/educational/handouts/cultural-practice-explanation'));
+const cultural-preservation-essays = lazy(() => import('./components/educational/handouts/cultural-preservation-essays'));
+const cultural-safety-classroom-checklists-alpha = lazy(() => import('./components/educational/handouts/cultural-safety-classroom-checklists-alpha'));
+const cultural-stem-assessment-rubric = lazy(() => import('./components/educational/handouts/cultural-stem-assessment-rubric'));
+const cultural-stories-comprehension = lazy(() => import('./components/educational/handouts/cultural-stories-comprehension'));
+const family-data-collection = lazy(() => import('./components/educational/handouts/family-data-collection'));
+const family-tree-writing = lazy(() => import('./components/educational/handouts/family-tree-writing'));
+const future-visioning-creative-writing = lazy(() => import('./components/educational/handouts/future-visioning-creative-writing'));
+const indigenous-rights-research = lazy(() => import('./components/educational/handouts/indigenous-rights-research'));
+const iwi-economics-mathematics = lazy(() => import('./components/educational/handouts/iwi-economics-mathematics'));
+const kaitiaki-generated-migration-student-handout = lazy(() => import('./components/educational/handouts/kaitiaki-generated-migration-student-handout'));
+const kaitiakitanga-field-journal = lazy(() => import('./components/educational/handouts/kaitiakitanga-field-journal'));
+const kaitiakitanga-kids = lazy(() => import('./components/educational/handouts/kaitiakitanga-kids'));
+const kumara-storage-place-value = lazy(() => import('./components/educational/handouts/kumara-storage-place-value'));
+const maori-astronomy-navigation-handout = lazy(() => import('./components/educational/handouts/maori-astronomy-navigation-handout'));
+const maori-geometric-patterns-handout = lazy(() => import('./components/educational/handouts/maori-geometric-patterns-handout'));
+const maori-navigation-wayfinding-handout = lazy(() => import('./components/educational/handouts/maori-navigation-wayfinding-handout'));
+const marae-shapes-geometry = lazy(() => import('./components/educational/handouts/marae-shapes-geometry'));
+const mountain-navigation-trigonometry = lazy(() => import('./components/educational/handouts/mountain-navigation-trigonometry'));
+const nature-observation-journal = lazy(() => import('./components/educational/handouts/nature-observation-journal'));
+const oral-storytelling-handout = lazy(() => import('./components/educational/handouts/oral-storytelling-handout'));
+const physics-of-traditional-games = lazy(() => import('./components/educational/handouts/physics-of-traditional-games'));
+const probability-handout = lazy(() => import('./components/educational/handouts/probability-handout'));
+const renewable-energy-traditional = lazy(() => import('./components/educational/handouts/renewable-energy-traditional'));
+const research-methods-handout = lazy(() => import('./components/educational/handouts/research-methods-handout'));
+const resource-sustainability-study = lazy(() => import('./components/educational/handouts/resource-sustainability-study'));
+const scientific-method-handout = lazy(() => import('./components/educational/handouts/scientific-method-handout'));
+const star-navigation-coordinates = lazy(() => import('./components/educational/handouts/star-navigation-coordinates'));
+const sustainable-fishing-equations = lazy(() => import('./components/educational/handouts/sustainable-fishing-equations'));
+const sustainable-technology-design-challenge = lazy(() => import('./components/educational/handouts/sustainable-technology-design-challenge'));
+const traditional-counting-systems = lazy(() => import('./components/educational/handouts/traditional-counting-systems'));
+const traditional-dye-chemistry = lazy(() => import('./components/educational/handouts/traditional-dye-chemistry'));
+const traditional-ecological-indicators-handout = lazy(() => import('./components/educational/handouts/traditional-ecological-indicators-handout'));
+const traditional-materials-science = lazy(() => import('./components/educational/handouts/traditional-materials-science'));
+const traditional-navigation-mathematics-handout = lazy(() => import('./components/educational/handouts/traditional-navigation-mathematics-handout'));
+const treaty-settlement-statistics = lazy(() => import('./components/educational/handouts/treaty-settlement-statistics'));
+const tukutuku-patterns-maths = lazy(() => import('./components/educational/handouts/tukutuku-patterns-maths'));
+const unit-2-technology-definition-challenge = lazy(() => import('./components/educational/handouts/unit-2-technology-definition-challenge'));
+const weather-prediction-probability = lazy(() => import('./components/educational/handouts/weather-prediction-probability'));
+const writers-toolkit-conclusion-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-conclusion-handout'));
+const writers-toolkit-diction-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-diction-handout'));
+const writers-toolkit-fluency-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-fluency-handout'));
+const writers-toolkit-hook-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-hook-handout'));
+const writers-toolkit-inform-structure-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-inform-structure-handout'));
+const writers-toolkit-peel-argument-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-peel-argument-handout'));
+const writers-toolkit-revision-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-revision-handout'));
+const writers-toolkit-rhetorical-devices-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-rhetorical-devices-handout'));
+const writers-toolkit-show-dont-tell-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-show-dont-tell-handout'));
+const writers-toolkit-suspense-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-suspense-handout'));
+const writers-toolkit-tone-handout = lazy(() => import('./components/educational/handouts/writers-toolkit-tone-handout'));
+const year-9-starter-pack-alpha-build = lazy(() => import('./components/educational/handouts/year-9-starter-pack-alpha-build'));
+const year-9-starter-pack-essential-skills = lazy(() => import('./components/educational/handouts/year-9-starter-pack-essential-skills'));
+const youth-vaping-comprehension-handout = lazy(() => import('./components/educational/handouts/youth-vaping-comprehension-handout'));
+
 const AiArtEthicsComprehension = lazy(() => import('./components/educational/handouts/AiArtEthicsComprehension'));
 const AiArtEthicsComprehensionHandout = lazy(() => import('./components/educational/handouts/AiArtEthicsComprehensionHandout'));
 const AiEthicsAndBias = lazy(() => import('./components/educational/handouts/AiEthicsAndBias'));
@@ -778,6 +932,158 @@ function App() {
       { path: '/tereophonics', element: <TeReoPhonics /> },
       { path: '/teacherdashboard', element: <TeacherDashboard /> },
       { path: '/year10culturalgeometry', element: <Year10CulturalGeometry /> },
+      { path: '/medialiteracycomprehensionhandout-v2', element: <MediaLiteracyComprehensionHandout.V2 /> },
+      { path: '/t-rangawaewaemapping', element: <TūRangawaewaeMapping /> },
+      { path: '/ai-impact-comprehension-handout', element: <ai-impact-comprehension-handout /> },
+      { path: '/atoms-in-everyday-materials', element: <atoms-in-everyday-materials /> },
+      { path: '/authors-purpose-entertain-handout', element: <authors-purpose-entertain-handout /> },
+      { path: '/authors-purpose-handout', element: <authors-purpose-handout /> },
+      { path: '/authors-purpose-inform-handout', element: <authors-purpose-inform-handout /> },
+      { path: '/authors-purpose-persuade-handout', element: <authors-purpose-persuade-handout /> },
+      { path: '/bar-graph-handout', element: <bar-graph-handout /> },
+      { path: '/biochemistry-traditional-medicine', element: <biochemistry-traditional-medicine /> },
+      { path: '/body-measurement-traditional', element: <body-measurement-traditional /> },
+      { path: '/ceremonial-circle-geometry', element: <ceremonial-circle-geometry /> },
+      { path: '/children-rights-responsibilities', element: <children-rights-responsibilities /> },
+      { path: '/climate-change-aotearoa-handout', element: <climate-change-aotearoa-handout /> },
+      { path: '/climate-emergency-aotearoa-handout', element: <climate-emergency-aotearoa-handout /> },
+      { path: '/cognitive-biases-comprehension-handout', element: <cognitive-biases-comprehension-handout /> },
+      { path: '/colonization-perspectives-handout', element: <colonization-perspectives-handout /> },
+      { path: '/community-helpers-study', element: <community-helpers-study /> },
+      { path: '/community-needs-survey', element: <community-needs-survey /> },
+      { path: '/cultural-celebrations-comparison', element: <cultural-celebrations-comparison /> },
+      { path: '/cultural-decision-making-traditions', element: <cultural-decision-making-traditions /> },
+      { path: '/cultural-heroes-comprehension', element: <cultural-heroes-comprehension /> },
+      { path: '/cultural-identity-deep-dive-comprehension', element: <cultural-identity-deep-dive-comprehension /> },
+      { path: '/cultural-practice-explanation', element: <cultural-practice-explanation /> },
+      { path: '/cultural-preservation-essays', element: <cultural-preservation-essays /> },
+      { path: '/cultural-safety-classroom-checklists-alpha', element: <cultural-safety-classroom-checklists-alpha /> },
+      { path: '/cultural-stem-assessment-rubric', element: <cultural-stem-assessment-rubric /> },
+      { path: '/cultural-stories-comprehension', element: <cultural-stories-comprehension /> },
+      { path: '/family-data-collection', element: <family-data-collection /> },
+      { path: '/family-tree-writing', element: <family-tree-writing /> },
+      { path: '/future-visioning-creative-writing', element: <future-visioning-creative-writing /> },
+      { path: '/indigenous-rights-research', element: <indigenous-rights-research /> },
+      { path: '/iwi-economics-mathematics', element: <iwi-economics-mathematics /> },
+      { path: '/kaitiaki-generated-migration-student-handout', element: <kaitiaki-generated-migration-student-handout /> },
+      { path: '/kaitiakitanga-field-journal', element: <kaitiakitanga-field-journal /> },
+      { path: '/kaitiakitanga-kids', element: <kaitiakitanga-kids /> },
+      { path: '/kumara-storage-place-value', element: <kumara-storage-place-value /> },
+      { path: '/maori-astronomy-navigation-handout', element: <maori-astronomy-navigation-handout /> },
+      { path: '/maori-geometric-patterns-handout', element: <maori-geometric-patterns-handout /> },
+      { path: '/maori-navigation-wayfinding-handout', element: <maori-navigation-wayfinding-handout /> },
+      { path: '/marae-shapes-geometry', element: <marae-shapes-geometry /> },
+      { path: '/mountain-navigation-trigonometry', element: <mountain-navigation-trigonometry /> },
+      { path: '/nature-observation-journal', element: <nature-observation-journal /> },
+      { path: '/oral-storytelling-handout', element: <oral-storytelling-handout /> },
+      { path: '/physics-of-traditional-games', element: <physics-of-traditional-games /> },
+      { path: '/probability-handout', element: <probability-handout /> },
+      { path: '/renewable-energy-traditional', element: <renewable-energy-traditional /> },
+      { path: '/research-methods-handout', element: <research-methods-handout /> },
+      { path: '/resource-sustainability-study', element: <resource-sustainability-study /> },
+      { path: '/scientific-method-handout', element: <scientific-method-handout /> },
+      { path: '/star-navigation-coordinates', element: <star-navigation-coordinates /> },
+      { path: '/sustainable-fishing-equations', element: <sustainable-fishing-equations /> },
+      { path: '/sustainable-technology-design-challenge', element: <sustainable-technology-design-challenge /> },
+      { path: '/traditional-counting-systems', element: <traditional-counting-systems /> },
+      { path: '/traditional-dye-chemistry', element: <traditional-dye-chemistry /> },
+      { path: '/traditional-ecological-indicators-handout', element: <traditional-ecological-indicators-handout /> },
+      { path: '/traditional-materials-science', element: <traditional-materials-science /> },
+      { path: '/traditional-navigation-mathematics-handout', element: <traditional-navigation-mathematics-handout /> },
+      { path: '/treaty-settlement-statistics', element: <treaty-settlement-statistics /> },
+      { path: '/tukutuku-patterns-maths', element: <tukutuku-patterns-maths /> },
+      { path: '/unit-2-technology-definition-challenge', element: <unit-2-technology-definition-challenge /> },
+      { path: '/weather-prediction-probability', element: <weather-prediction-probability /> },
+      { path: '/writers-toolkit-conclusion-handout', element: <writers-toolkit-conclusion-handout /> },
+      { path: '/writers-toolkit-diction-handout', element: <writers-toolkit-diction-handout /> },
+      { path: '/writers-toolkit-fluency-handout', element: <writers-toolkit-fluency-handout /> },
+      { path: '/writers-toolkit-hook-handout', element: <writers-toolkit-hook-handout /> },
+      { path: '/writers-toolkit-inform-structure-handout', element: <writers-toolkit-inform-structure-handout /> },
+      { path: '/writers-toolkit-peel-argument-handout', element: <writers-toolkit-peel-argument-handout /> },
+      { path: '/writers-toolkit-revision-handout', element: <writers-toolkit-revision-handout /> },
+      { path: '/writers-toolkit-rhetorical-devices-handout', element: <writers-toolkit-rhetorical-devices-handout /> },
+      { path: '/writers-toolkit-show-dont-tell-handout', element: <writers-toolkit-show-dont-tell-handout /> },
+      { path: '/writers-toolkit-suspense-handout', element: <writers-toolkit-suspense-handout /> },
+      { path: '/writers-toolkit-tone-handout', element: <writers-toolkit-tone-handout /> },
+      { path: '/year-9-starter-pack-alpha-build', element: <year-9-starter-pack-alpha-build /> },
+      { path: '/year-9-starter-pack-essential-skills', element: <year-9-starter-pack-essential-skills /> },
+      { path: '/youth-vaping-comprehension-handout', element: <youth-vaping-comprehension-handout /> },
+      { path: '/medialiteracycomprehensionhandout-v2', element: <MediaLiteracyComprehensionHandout.V2 /> },
+      { path: '/t-rangawaewaemapping', element: <TūRangawaewaeMapping /> },
+      { path: '/ai-impact-comprehension-handout', element: <ai-impact-comprehension-handout /> },
+      { path: '/atoms-in-everyday-materials', element: <atoms-in-everyday-materials /> },
+      { path: '/authors-purpose-entertain-handout', element: <authors-purpose-entertain-handout /> },
+      { path: '/authors-purpose-handout', element: <authors-purpose-handout /> },
+      { path: '/authors-purpose-inform-handout', element: <authors-purpose-inform-handout /> },
+      { path: '/authors-purpose-persuade-handout', element: <authors-purpose-persuade-handout /> },
+      { path: '/bar-graph-handout', element: <bar-graph-handout /> },
+      { path: '/biochemistry-traditional-medicine', element: <biochemistry-traditional-medicine /> },
+      { path: '/body-measurement-traditional', element: <body-measurement-traditional /> },
+      { path: '/ceremonial-circle-geometry', element: <ceremonial-circle-geometry /> },
+      { path: '/children-rights-responsibilities', element: <children-rights-responsibilities /> },
+      { path: '/climate-change-aotearoa-handout', element: <climate-change-aotearoa-handout /> },
+      { path: '/climate-emergency-aotearoa-handout', element: <climate-emergency-aotearoa-handout /> },
+      { path: '/cognitive-biases-comprehension-handout', element: <cognitive-biases-comprehension-handout /> },
+      { path: '/colonization-perspectives-handout', element: <colonization-perspectives-handout /> },
+      { path: '/community-helpers-study', element: <community-helpers-study /> },
+      { path: '/community-needs-survey', element: <community-needs-survey /> },
+      { path: '/cultural-celebrations-comparison', element: <cultural-celebrations-comparison /> },
+      { path: '/cultural-decision-making-traditions', element: <cultural-decision-making-traditions /> },
+      { path: '/cultural-heroes-comprehension', element: <cultural-heroes-comprehension /> },
+      { path: '/cultural-identity-deep-dive-comprehension', element: <cultural-identity-deep-dive-comprehension /> },
+      { path: '/cultural-practice-explanation', element: <cultural-practice-explanation /> },
+      { path: '/cultural-preservation-essays', element: <cultural-preservation-essays /> },
+      { path: '/cultural-safety-classroom-checklists-alpha', element: <cultural-safety-classroom-checklists-alpha /> },
+      { path: '/cultural-stem-assessment-rubric', element: <cultural-stem-assessment-rubric /> },
+      { path: '/cultural-stories-comprehension', element: <cultural-stories-comprehension /> },
+      { path: '/family-data-collection', element: <family-data-collection /> },
+      { path: '/family-tree-writing', element: <family-tree-writing /> },
+      { path: '/future-visioning-creative-writing', element: <future-visioning-creative-writing /> },
+      { path: '/indigenous-rights-research', element: <indigenous-rights-research /> },
+      { path: '/iwi-economics-mathematics', element: <iwi-economics-mathematics /> },
+      { path: '/kaitiaki-generated-migration-student-handout', element: <kaitiaki-generated-migration-student-handout /> },
+      { path: '/kaitiakitanga-field-journal', element: <kaitiakitanga-field-journal /> },
+      { path: '/kaitiakitanga-kids', element: <kaitiakitanga-kids /> },
+      { path: '/kumara-storage-place-value', element: <kumara-storage-place-value /> },
+      { path: '/maori-astronomy-navigation-handout', element: <maori-astronomy-navigation-handout /> },
+      { path: '/maori-geometric-patterns-handout', element: <maori-geometric-patterns-handout /> },
+      { path: '/maori-navigation-wayfinding-handout', element: <maori-navigation-wayfinding-handout /> },
+      { path: '/marae-shapes-geometry', element: <marae-shapes-geometry /> },
+      { path: '/mountain-navigation-trigonometry', element: <mountain-navigation-trigonometry /> },
+      { path: '/nature-observation-journal', element: <nature-observation-journal /> },
+      { path: '/oral-storytelling-handout', element: <oral-storytelling-handout /> },
+      { path: '/physics-of-traditional-games', element: <physics-of-traditional-games /> },
+      { path: '/probability-handout', element: <probability-handout /> },
+      { path: '/renewable-energy-traditional', element: <renewable-energy-traditional /> },
+      { path: '/research-methods-handout', element: <research-methods-handout /> },
+      { path: '/resource-sustainability-study', element: <resource-sustainability-study /> },
+      { path: '/scientific-method-handout', element: <scientific-method-handout /> },
+      { path: '/star-navigation-coordinates', element: <star-navigation-coordinates /> },
+      { path: '/sustainable-fishing-equations', element: <sustainable-fishing-equations /> },
+      { path: '/sustainable-technology-design-challenge', element: <sustainable-technology-design-challenge /> },
+      { path: '/traditional-counting-systems', element: <traditional-counting-systems /> },
+      { path: '/traditional-dye-chemistry', element: <traditional-dye-chemistry /> },
+      { path: '/traditional-ecological-indicators-handout', element: <traditional-ecological-indicators-handout /> },
+      { path: '/traditional-materials-science', element: <traditional-materials-science /> },
+      { path: '/traditional-navigation-mathematics-handout', element: <traditional-navigation-mathematics-handout /> },
+      { path: '/treaty-settlement-statistics', element: <treaty-settlement-statistics /> },
+      { path: '/tukutuku-patterns-maths', element: <tukutuku-patterns-maths /> },
+      { path: '/unit-2-technology-definition-challenge', element: <unit-2-technology-definition-challenge /> },
+      { path: '/weather-prediction-probability', element: <weather-prediction-probability /> },
+      { path: '/writers-toolkit-conclusion-handout', element: <writers-toolkit-conclusion-handout /> },
+      { path: '/writers-toolkit-diction-handout', element: <writers-toolkit-diction-handout /> },
+      { path: '/writers-toolkit-fluency-handout', element: <writers-toolkit-fluency-handout /> },
+      { path: '/writers-toolkit-hook-handout', element: <writers-toolkit-hook-handout /> },
+      { path: '/writers-toolkit-inform-structure-handout', element: <writers-toolkit-inform-structure-handout /> },
+      { path: '/writers-toolkit-peel-argument-handout', element: <writers-toolkit-peel-argument-handout /> },
+      { path: '/writers-toolkit-revision-handout', element: <writers-toolkit-revision-handout /> },
+      { path: '/writers-toolkit-rhetorical-devices-handout', element: <writers-toolkit-rhetorical-devices-handout /> },
+      { path: '/writers-toolkit-show-dont-tell-handout', element: <writers-toolkit-show-dont-tell-handout /> },
+      { path: '/writers-toolkit-suspense-handout', element: <writers-toolkit-suspense-handout /> },
+      { path: '/writers-toolkit-tone-handout', element: <writers-toolkit-tone-handout /> },
+      { path: '/year-9-starter-pack-alpha-build', element: <year-9-starter-pack-alpha-build /> },
+      { path: '/year-9-starter-pack-essential-skills', element: <year-9-starter-pack-essential-skills /> },
+      { path: '/youth-vaping-comprehension-handout', element: <youth-vaping-comprehension-handout /> },
       { path: '/medialiteracycomprehensionhandout-v2', element: <MediaLiteracyComprehensionHandout.V2 /> },
       { path: '/t-rangawaewaemapping', element: <TūRangawaewaeMapping /> },
       { path: '/ai-impact-comprehension-handout', element: <ai-impact-comprehension-handout /> },
