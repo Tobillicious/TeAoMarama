@@ -64,10 +64,10 @@ export interface OrchestrationResult {
   success: boolean;
   orchestrationAction: string;
   aiAgentsCoordinated: string[];
-  learningIntelligence: any;
-  culturalIntegration: any;
+  learningIntelligence: unknown;
+  culturalIntegration: unknown;
   personalizationScore: number;
-  result: any;
+  result: unknown;
   realTimeRecommendations: string[];
   timestamp: string;
 }
@@ -176,7 +176,7 @@ export class AIOrchestrationService {
   async generateLearningPath(
     studentProfile: StudentProfile,
     learningObjective: string,
-    culturalPreferences?: any,
+    culturalPreferences?: unknown,
   ): Promise<LearningPath> {
     if (!this.isInitialized) {
       await this.initialize();
@@ -284,7 +284,7 @@ export class AIOrchestrationService {
    */
   async optimizeEngagement(
     studentProfile: StudentProfile,
-    currentContext: any,
+    currentContext: unknown,
   ): Promise<{ recommendations: string[]; engagementScore: number; interventions: string[] }> {
     if (!this.isInitialized) {
       await this.initialize();
@@ -338,7 +338,7 @@ export class AIOrchestrationService {
     studentProfile: StudentProfile,
     learningObjective: string,
     difficultyLevel: string = 'adaptive',
-  ): Promise<{ assessment: any; rubric: any; culturalElements: string[] }> {
+  ): Promise<{ assessment: unknown; rubric: unknown; culturalElements: string[] }> {
     if (!this.isInitialized) {
       await this.initialize();
     }
@@ -399,13 +399,13 @@ export class AIOrchestrationService {
   /**
    * Transform Te Kete Ako's AI result to TeAoMarama's LearningPath format
    */
-  private transformToLearningPath(aiResult: any, studentProfile: StudentProfile): LearningPath {
+  private transformToLearningPath(aiResult: unknown, studentProfile: StudentProfile): LearningPath {
     return {
       id: `path_${Date.now()}`,
       title: aiResult.title || 'Personalized Learning Path',
       objective: aiResult.objective || 'Achieve learning objectives',
       steps:
-        aiResult.steps?.map((step: any, index: number) => ({
+        aiResult.steps?.map((step: unknown, index: number) => ({
           id: `step_${index}`,
           title: step.title || `Step ${index + 1}`,
           description: step.description || '',

@@ -48,7 +48,7 @@ export class AIOrchestrator {
     };
   }
 
-  private async executeTask(task: TaskRequest, routing: any): Promise<string> {
+  private async executeTask(task: TaskRequest, routing: unknown): Promise<string> {
     try {
       const llm = this.registry.getProvider(routing.primary.llm);
       if (!llm || !llm.generate) {

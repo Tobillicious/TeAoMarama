@@ -79,7 +79,7 @@ export class IntelligentWorkflowPipeline {
   }
 
   private async assignOptimalAgent(task: WorkflowTask): Promise<void> {
-    let bestAgent: any = null;
+    let bestAgent: unknown = null;
     let bestScore = 0;
 
     for (const [agentId, agent] of this.agents) {
