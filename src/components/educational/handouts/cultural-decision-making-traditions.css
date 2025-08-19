@@ -1,0 +1,273 @@
+/* 🎨 cultural-decision-making-traditions - Te Kete Ako Beauty Patterns */
+/* Cultural design elements with modern React styling */
+
+.cultural-decision-making-traditions-container {
+  /* Te Kete Ako beauty patterns */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #28a745; /* Pounamu green */
+}
+
+.cultural-decision-making-traditions-header {
+  /* Cultural header styling */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  margin: -2rem -2rem 1.5rem -2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cultural-decision-making-traditions-header::before {
+  content: '🌿';
+  font-size: 1.5rem;
+}
+
+.cultural-decision-making-traditions-content {
+  /* Main content area */
+  line-height: 1.6;
+  color: #2c3e50;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.cultural-decision-making-traditions-section {
+  /* Section styling */
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.cultural-decision-making-traditions-section h2 {
+  color: #28a745;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.cultural-decision-making-traditions-section h3 {
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.cultural-decision-making-traditions-section p {
+  margin: 0.75rem 0;
+  color: #495057;
+}
+
+.cultural-decision-making-traditions-section ul,
+.cultural-decision-making-traditions-section ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.cultural-decision-making-traditions-section li {
+  margin: 0.25rem 0;
+  color: #495057;
+}
+
+.cultural-decision-making-traditions-highlight {
+  /* Highlight important content */
+  background: linear-gradient(90deg, #fff3cd 0%, #ffeaa7 100%);
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+.cultural-decision-making-traditions-cultural-note {
+  /* Cultural context notes */
+  background: linear-gradient(90deg, #d1ecf1 0%, #bee5eb 100%);
+  border-left: 4px solid #17a2b8;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.cultural-decision-making-traditions-cultural-note::before {
+  content: '🌿 Cultural Context: ';
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cultural-decision-making-traditions-activity {
+  /* Activity boxes */
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cultural-decision-making-traditions-activity h3 {
+  color: #155724;
+  margin-top: 0;
+}
+
+.cultural-decision-making-traditions-button {
+  /* Interactive buttons */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.cultural-decision-making-traditions-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.cultural-decision-making-traditions-button:active {
+  transform: translateY(0);
+}
+
+.cultural-decision-making-traditions-card {
+  /* Card layout */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.cultural-decision-making-traditions-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.cultural-decision-making-traditions-grid {
+  /* Grid layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cultural-decision-making-traditions-flex {
+  /* Flexbox layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cultural-decision-making-traditions-text-center {
+  text-align: center;
+}
+
+.cultural-decision-making-traditions-text-right {
+  text-align: right;
+}
+
+.cultural-decision-making-traditions-mb-1 { margin-bottom: 0.25rem; }
+.cultural-decision-making-traditions-mb-2 { margin-bottom: 0.5rem; }
+.cultural-decision-making-traditions-mb-3 { margin-bottom: 1rem; }
+.cultural-decision-making-traditions-mb-4 { margin-bottom: 1.5rem; }
+.cultural-decision-making-traditions-mb-5 { margin-bottom: 3rem; }
+
+.cultural-decision-making-traditions-mt-1 { margin-top: 0.25rem; }
+.cultural-decision-making-traditions-mt-2 { margin-top: 0.5rem; }
+.cultural-decision-making-traditions-mt-3 { margin-top: 1rem; }
+.cultural-decision-making-traditions-mt-4 { margin-top: 1.5rem; }
+.cultural-decision-making-traditions-mt-5 { margin-top: 3rem; }
+
+.cultural-decision-making-traditions-p-1 { padding: 0.25rem; }
+.cultural-decision-making-traditions-p-2 { padding: 0.5rem; }
+.cultural-decision-making-traditions-p-3 { padding: 1rem; }
+.cultural-decision-making-traditions-p-4 { padding: 1.5rem; }
+.cultural-decision-making-traditions-p-5 { padding: 3rem; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cultural-decision-making-traditions-container {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .cultural-decision-making-traditions-header {
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+  }
+  
+  .cultural-decision-making-traditions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cultural-decision-making-traditions-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Print styles */
+@media print {
+  .cultural-decision-making-traditions-container {
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+  
+  .cultural-decision-making-traditions-button {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+.cultural-decision-making-traditions-container:focus-within {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+.cultural-decision-making-traditions-button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .cultural-decision-making-traditions-container {
+    border: 2px solid #000;
+  }
+  
+  .cultural-decision-making-traditions-header {
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .cultural-decision-making-traditions-button,
+  .cultural-decision-making-traditions-card {
+    transition: none;
+  }
+  
+  .cultural-decision-making-traditions-button:hover {
+    transform: none;
+  }
+  
+  .cultural-decision-making-traditions-card:hover {
+    transform: none;
+  }
+}

@@ -2,11 +2,11 @@ import React from 'react';
 import { Card } from '../../ui/Card';
 import './MediaLiteracyComprehensionHandout.V2.css';
 
-interface MediaLiteracyComprehensionHandout.V2Props {
+interface MediaLiteracyComprehensionHandoutV2Props {
   className?: string;
 }
 
-export const MediaLiteracyComprehensionHandout.V2: React.FC<MediaLiteracyComprehensionHandout.V2Props> = ({ className = '' }) => {
+export const MediaLiteracyComprehensionHandoutV2: React.FC<MediaLiteracyComprehensionHandoutV2Props> = ({ className = '' }) => {
   return (
     <Card 
       title="media literacy comprehension handout.v2"

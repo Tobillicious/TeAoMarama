@@ -14,11 +14,9 @@ import {
   signOut,
   sendPasswordResetEmail,
   sendEmailVerification,
-  updateProfile,
-  User,
-  AuthError,
-  UserCredential
+  updateProfile
 } from 'firebase/auth';
+import type { User, AuthError, UserCredential } from 'firebase/auth';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, FirebaseService } from '../firebaseConfig';
 import { AuthContext } from './AuthContextObject.tsx';
