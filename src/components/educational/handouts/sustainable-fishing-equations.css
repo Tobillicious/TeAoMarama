@@ -1,0 +1,273 @@
+/* 🎨 sustainable-fishing-equations - Te Kete Ako Beauty Patterns */
+/* Cultural design elements with modern React styling */
+
+.sustainable-fishing-equations-container {
+  /* Te Kete Ako beauty patterns */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #28a745; /* Pounamu green */
+}
+
+.sustainable-fishing-equations-header {
+  /* Cultural header styling */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  margin: -2rem -2rem 1.5rem -2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sustainable-fishing-equations-header::before {
+  content: '🌿';
+  font-size: 1.5rem;
+}
+
+.sustainable-fishing-equations-content {
+  /* Main content area */
+  line-height: 1.6;
+  color: #2c3e50;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sustainable-fishing-equations-section {
+  /* Section styling */
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.sustainable-fishing-equations-section h2 {
+  color: #28a745;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.sustainable-fishing-equations-section h3 {
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.sustainable-fishing-equations-section p {
+  margin: 0.75rem 0;
+  color: #495057;
+}
+
+.sustainable-fishing-equations-section ul,
+.sustainable-fishing-equations-section ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.sustainable-fishing-equations-section li {
+  margin: 0.25rem 0;
+  color: #495057;
+}
+
+.sustainable-fishing-equations-highlight {
+  /* Highlight important content */
+  background: linear-gradient(90deg, #fff3cd 0%, #ffeaa7 100%);
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+.sustainable-fishing-equations-cultural-note {
+  /* Cultural context notes */
+  background: linear-gradient(90deg, #d1ecf1 0%, #bee5eb 100%);
+  border-left: 4px solid #17a2b8;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.sustainable-fishing-equations-cultural-note::before {
+  content: '🌿 Cultural Context: ';
+  font-weight: 600;
+  font-style: normal;
+}
+
+.sustainable-fishing-equations-activity {
+  /* Activity boxes */
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.sustainable-fishing-equations-activity h3 {
+  color: #155724;
+  margin-top: 0;
+}
+
+.sustainable-fishing-equations-button {
+  /* Interactive buttons */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sustainable-fishing-equations-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.sustainable-fishing-equations-button:active {
+  transform: translateY(0);
+}
+
+.sustainable-fishing-equations-card {
+  /* Card layout */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.sustainable-fishing-equations-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.sustainable-fishing-equations-grid {
+  /* Grid layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.sustainable-fishing-equations-flex {
+  /* Flexbox layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sustainable-fishing-equations-text-center {
+  text-align: center;
+}
+
+.sustainable-fishing-equations-text-right {
+  text-align: right;
+}
+
+.sustainable-fishing-equations-mb-1 { margin-bottom: 0.25rem; }
+.sustainable-fishing-equations-mb-2 { margin-bottom: 0.5rem; }
+.sustainable-fishing-equations-mb-3 { margin-bottom: 1rem; }
+.sustainable-fishing-equations-mb-4 { margin-bottom: 1.5rem; }
+.sustainable-fishing-equations-mb-5 { margin-bottom: 3rem; }
+
+.sustainable-fishing-equations-mt-1 { margin-top: 0.25rem; }
+.sustainable-fishing-equations-mt-2 { margin-top: 0.5rem; }
+.sustainable-fishing-equations-mt-3 { margin-top: 1rem; }
+.sustainable-fishing-equations-mt-4 { margin-top: 1.5rem; }
+.sustainable-fishing-equations-mt-5 { margin-top: 3rem; }
+
+.sustainable-fishing-equations-p-1 { padding: 0.25rem; }
+.sustainable-fishing-equations-p-2 { padding: 0.5rem; }
+.sustainable-fishing-equations-p-3 { padding: 1rem; }
+.sustainable-fishing-equations-p-4 { padding: 1.5rem; }
+.sustainable-fishing-equations-p-5 { padding: 3rem; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sustainable-fishing-equations-container {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .sustainable-fishing-equations-header {
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+  }
+  
+  .sustainable-fishing-equations-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .sustainable-fishing-equations-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sustainable-fishing-equations-container {
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+  
+  .sustainable-fishing-equations-button {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+.sustainable-fishing-equations-container:focus-within {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+.sustainable-fishing-equations-button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .sustainable-fishing-equations-container {
+    border: 2px solid #000;
+  }
+  
+  .sustainable-fishing-equations-header {
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .sustainable-fishing-equations-button,
+  .sustainable-fishing-equations-card {
+    transition: none;
+  }
+  
+  .sustainable-fishing-equations-button:hover {
+    transform: none;
+  }
+  
+  .sustainable-fishing-equations-card:hover {
+    transform: none;
+  }
+}

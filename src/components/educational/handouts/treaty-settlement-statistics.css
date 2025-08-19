@@ -1,0 +1,273 @@
+/* 🎨 treaty-settlement-statistics - Te Kete Ako Beauty Patterns */
+/* Cultural design elements with modern React styling */
+
+.treaty-settlement-statistics-container {
+  /* Te Kete Ako beauty patterns */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #28a745; /* Pounamu green */
+}
+
+.treaty-settlement-statistics-header {
+  /* Cultural header styling */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  margin: -2rem -2rem 1.5rem -2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.treaty-settlement-statistics-header::before {
+  content: '🌿';
+  font-size: 1.5rem;
+}
+
+.treaty-settlement-statistics-content {
+  /* Main content area */
+  line-height: 1.6;
+  color: #2c3e50;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.treaty-settlement-statistics-section {
+  /* Section styling */
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.treaty-settlement-statistics-section h2 {
+  color: #28a745;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.treaty-settlement-statistics-section h3 {
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.treaty-settlement-statistics-section p {
+  margin: 0.75rem 0;
+  color: #495057;
+}
+
+.treaty-settlement-statistics-section ul,
+.treaty-settlement-statistics-section ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.treaty-settlement-statistics-section li {
+  margin: 0.25rem 0;
+  color: #495057;
+}
+
+.treaty-settlement-statistics-highlight {
+  /* Highlight important content */
+  background: linear-gradient(90deg, #fff3cd 0%, #ffeaa7 100%);
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+.treaty-settlement-statistics-cultural-note {
+  /* Cultural context notes */
+  background: linear-gradient(90deg, #d1ecf1 0%, #bee5eb 100%);
+  border-left: 4px solid #17a2b8;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.treaty-settlement-statistics-cultural-note::before {
+  content: '🌿 Cultural Context: ';
+  font-weight: 600;
+  font-style: normal;
+}
+
+.treaty-settlement-statistics-activity {
+  /* Activity boxes */
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.treaty-settlement-statistics-activity h3 {
+  color: #155724;
+  margin-top: 0;
+}
+
+.treaty-settlement-statistics-button {
+  /* Interactive buttons */
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.treaty-settlement-statistics-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.treaty-settlement-statistics-button:active {
+  transform: translateY(0);
+}
+
+.treaty-settlement-statistics-card {
+  /* Card layout */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.treaty-settlement-statistics-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.treaty-settlement-statistics-grid {
+  /* Grid layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.treaty-settlement-statistics-flex {
+  /* Flexbox layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.treaty-settlement-statistics-text-center {
+  text-align: center;
+}
+
+.treaty-settlement-statistics-text-right {
+  text-align: right;
+}
+
+.treaty-settlement-statistics-mb-1 { margin-bottom: 0.25rem; }
+.treaty-settlement-statistics-mb-2 { margin-bottom: 0.5rem; }
+.treaty-settlement-statistics-mb-3 { margin-bottom: 1rem; }
+.treaty-settlement-statistics-mb-4 { margin-bottom: 1.5rem; }
+.treaty-settlement-statistics-mb-5 { margin-bottom: 3rem; }
+
+.treaty-settlement-statistics-mt-1 { margin-top: 0.25rem; }
+.treaty-settlement-statistics-mt-2 { margin-top: 0.5rem; }
+.treaty-settlement-statistics-mt-3 { margin-top: 1rem; }
+.treaty-settlement-statistics-mt-4 { margin-top: 1.5rem; }
+.treaty-settlement-statistics-mt-5 { margin-top: 3rem; }
+
+.treaty-settlement-statistics-p-1 { padding: 0.25rem; }
+.treaty-settlement-statistics-p-2 { padding: 0.5rem; }
+.treaty-settlement-statistics-p-3 { padding: 1rem; }
+.treaty-settlement-statistics-p-4 { padding: 1.5rem; }
+.treaty-settlement-statistics-p-5 { padding: 3rem; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .treaty-settlement-statistics-container {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .treaty-settlement-statistics-header {
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+  }
+  
+  .treaty-settlement-statistics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .treaty-settlement-statistics-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Print styles */
+@media print {
+  .treaty-settlement-statistics-container {
+    box-shadow: none;
+    border: 1px solid #dee2e6;
+  }
+  
+  .treaty-settlement-statistics-button {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+.treaty-settlement-statistics-container:focus-within {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+.treaty-settlement-statistics-button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .treaty-settlement-statistics-container {
+    border: 2px solid #000;
+  }
+  
+  .treaty-settlement-statistics-header {
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .treaty-settlement-statistics-button,
+  .treaty-settlement-statistics-card {
+    transition: none;
+  }
+  
+  .treaty-settlement-statistics-button:hover {
+    transform: none;
+  }
+  
+  .treaty-settlement-statistics-card:hover {
+    transform: none;
+  }
+}
