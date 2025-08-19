@@ -6,9 +6,11 @@ interface MediaLiteracyComprehensionHandoutV2Props {
   className?: string;
 }
 
-export const MediaLiteracyComprehensionHandoutV2: React.FC<MediaLiteracyComprehensionHandoutV2Props> = ({ className = '' }) => {
+export const MediaLiteracyComprehensionHandoutV2: React.FC<
+  MediaLiteracyComprehensionHandoutV2Props
+> = ({ className = '' }) => {
   return (
-    <Card 
+    <Card
       title="media literacy comprehension handout.v2"
       subtitle="Te Kete Ako - Cultural Education"
       className={`media-literacy-comprehension-handout.v2-handout cultural-focus ${className}`}
@@ -18,9 +20,12 @@ export const MediaLiteracyComprehensionHandoutV2: React.FC<MediaLiteracyComprehe
           <span className="cultural-icon">🌿</span>
           <h3>Cultural Learning Resource</h3>
         </div>
-        
+
         <div className="content-section">
-          <p>This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako beauty patterns.</p>
+          <p>
+            This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako
+            beauty patterns.
+          </p>
           <p>Original content: media-literacy-comprehension-handout.v2</p>
         </div>
 
