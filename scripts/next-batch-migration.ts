@@ -10,26 +10,26 @@ const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
 const TARGET_PATH = 'src/components/educational/handouts';
 
 const NEXT_BATCH_HANDOUTS = [
-  'community-needs-survey.html',
-  'cultural-celebrations-comparison.html',
-  'cultural-decision-making-traditions.html',
-  'cultural-heroes-comprehension.html',
-  'cultural-identity-deep-dive-comprehension.html',
-  'cultural-practice-explanation.html',
-  'cultural-preservation-essays.html',
-  'cultural-safety-classroom-checklists-alpha.html',
-  'cultural-stem-assessment-rubric.html',
-  'cultural-stories-comprehension.html',
-  'family-data-collection.html',
-  'kaitiakitanga-field-journal.html',
-  'kaitiakitanga-kids.html',
-  'maori-geometric-patterns-handout.html',
+  'writers-toolkit-conclusion-handout.html',
+  'writers-toolkit-diction-handout.html',
+  'writers-toolkit-fluency-handout.html',
+  'writers-toolkit-hook-handout.html',
+  'writers-toolkit-inform-structure-handout.html',
+  'writers-toolkit-peel-argument-handout.html',
+  'writers-toolkit-revision-handout.html',
+  'writers-toolkit-show-dont-tell-handout.html',
+  'writers-toolkit-suspense-handout.html',
+  'writers-toolkit-tone-handout.html',
+  'writers-toolkit-rhetorical-devices-handout.html',
+  'year-9-starter-pack-alpha-build.html',
+  'year-9-starter-pack-essential-skills.html',
+  'youth-vaping-comprehension-handout.html',
+  'sustainable-fishing-equations.html',
+  'renewable-energy-traditional.html',
+  'ceremonial-circle-geometry.html',
+  'iwi-economics-mathematics.html',
+  'marae-shapes-geometry.html',
   'maori-astronomy-navigation-handout.html',
-  'maori-navigation-wayfinding-handout.html',
-  'mountain-navigation-trigonometry.html',
-  'star-navigation-coordinates.html',
-  'kaitiaki-generated-migration-student-handout.html',
-  'body-measurement-traditional.html',
 ];
 
 async function extractTitle(htmlContent: string): Promise<string> {
@@ -267,6 +267,5 @@ async function nextBatchMigration(): Promise<void> {
   }
 }
 
-if (import.meta.main) {
-  nextBatchMigration();
-}
+// Run the migration
+nextBatchMigration();

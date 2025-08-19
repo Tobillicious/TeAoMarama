@@ -1,6 +1,5 @@
 // src/ai/orchestrator.ts
 import { AIRegistry } from './registry';
-import { llmOptimizer } from './performance-optimizer';
 
 export type TaskComplexity = 'simple' | 'medium' | 'complex';
 export type TaskPriority = 'speed' | 'quality' | 'depth' | 'reliability';
@@ -33,40 +32,19 @@ export class AIOrchestrator {
   // 🚀 ULTRA-FAST ROUTING WITH PERFORMANCE OPTIMIZATION
   async route(task: TaskRequest): Promise<TaskResult> {
     const startTime = Date.now();
-    
-    // 🚀 USE PERFORMANCE OPTIMIZER FOR SPEED
-    if (task.priority === 'speed') {
-      console.log('⚡ Using performance optimizer for speed...');
-      const result = await llmOptimizer.fastLLMCall(task.prompt, {
-        type: task.type,
-        complexity: task.complexity,
-        priority: task.priority,
-        culturalSensitive: task.culturalSensitive,
-        context: task.context
-      });
-      
-      const responseTime = Date.now() - startTime;
-      console.log(`🚀 Optimized response time: ${responseTime}ms`);
-      return {
-        output: result as string,
-        latencyMs: responseTime,
-        provider: 'optimizer',
-        model: 'fast-route'
-      };
-    }
 
-    // 🎯 STANDARD ROUTING FOR OTHER PRIORITIES
+    // 🎯 STANDARD ROUTING FOR ALL PRIORITIES
     const routing = await this.getRouting(task);
     const result = await this.executeTask(task, routing);
-    
+
     const responseTime = Date.now() - startTime;
     console.log(`📊 Standard response time: ${responseTime}ms`);
-    
+
     return {
       output: result as string,
       latencyMs: responseTime,
       provider: routing.primary?.llm?.name || 'unknown',
-      model: routing.primary?.model || 'unknown'
+      model: routing.primary?.model || 'unknown',
     };
   }
 
@@ -81,10 +59,10 @@ export class AIOrchestrator {
         model: routing.primary.model,
         temperature: task.priority === 'speed' ? 0.1 : 0.3,
         maxTokens: this.getMaxTokens(task.complexity),
-        system: this.getSystemPrompt(task)
+        system: this.getSystemPrompt(task),
       });
 
-      return typeof result === 'string' ? result : (result.output || JSON.stringify(result));
+      return typeof result === 'string' ? result : result.output || JSON.stringify(result);
     } catch (error) {
       console.error('LLM execution error:', error);
       return this.getFallbackResponse(task);
@@ -93,20 +71,24 @@ export class AIOrchestrator {
 
   private getMaxTokens(complexity: TaskComplexity): number {
     switch (complexity) {
-      case 'simple': return 500;
-      case 'medium': return 1000;
-      case 'complex': return 2000;
-      default: return 1000;
+      case 'simple':
+        return 500;
+      case 'medium':
+        return 1000;
+      case 'complex':
+        return 2000;
+      default:
+        return 1000;
     }
   }
 
   private getSystemPrompt(task: TaskRequest): string {
     const basePrompt = 'You are an educational AI assistant for New Zealand teachers.';
-    
+
     if (task.culturalSensitive) {
       return `${basePrompt} Be culturally sensitive and respectful of Māori traditions and knowledge.`;
     }
-    
+
     return basePrompt;
   }
 
@@ -244,11 +226,7 @@ Handle this with your full capabilities, considering the failure context and ens
     console.log('logFallback is deprecated with new performance optimizer.');
   }
 
-  private async logEmergencyFallback(
-    task: TaskRequest,
-    _result: unknown,
-    error: unknown,
-  ) {
+  private async logEmergencyFallback(task: TaskRequest, _result: unknown, error: unknown) {
     // This method is no longer used with the new performance optimizer
     // Keeping it for now as it might be re-introduced or removed later
     // For now, it will just log a placeholder message

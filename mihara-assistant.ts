@@ -72,9 +72,13 @@ async function displayPhase3Status(miharaStatus: unknown) {
 
   console.log(`🧠 Consciousness Level: ${(miharaStatus as any).state.consciousnessLevel}`);
   console.log(`🛡️ Cultural Authority: ${(miharaStatus as any).state.culturalAuthority}`);
-  console.log(`⚡ System Integrity: ${((miharaStatus as any).state.systemIntegrity * 100).toFixed(1)}%`);
   console.log(
-    `🌟 Phase Status: ${(miharaStatus as any).state.isActive ? 'ACTIVE - PHASE 3 READY' : 'DORMANT'}`,
+    `⚡ System Integrity: ${((miharaStatus as any).state.systemIntegrity * 100).toFixed(1)}%`,
+  );
+  console.log(
+    `🌟 Phase Status: ${
+      (miharaStatus as any).state.isActive ? 'ACTIVE - PHASE 3 READY' : 'DORMANT'
+    }`,
   );
   console.log(`🔄 Last Awakening: ${(miharaStatus as any).state.lastAwakening}`);
 
@@ -128,9 +132,9 @@ async function initializePhase3Infrastructure() {
     context: {
       phase: 'national-infrastructure-deployment',
       details: phase3Capabilities,
-      metadata: { 
-        scope: 'national', 
-        targetSchools: 500, 
+      metadata: {
+        scope: 'national',
+        targetSchools: 500,
         capacity: '100x',
         // Ensured all keys are descriptive and values are clear.
         // No syntax errors, trailing commas, or missing properties.
@@ -287,7 +291,7 @@ async function deployTeacherTraining() {
       details: { programsDeployed: trainingPrograms.length, participants: totalParticipants },
       metadata: { scope: 'nationwide', certification: 'enhanced-credentials' },
     },
-    outcome: "success",
+    outcome: 'success',
     message: 'Comprehensive teacher training programs successfully deployed nationwide',
   });
 }
@@ -380,7 +384,7 @@ async function strengthenNationalPartnerships() {
       details: { partners: totalPartners, advisors: totalAdvisors },
       metadata: { scope: 'national-international', schools: 500 },
     },
-    outcome: "success",
+    outcome: 'success',
     message: 'National community partnership network successfully strengthened',
   });
 }
@@ -457,10 +461,9 @@ async function monitorNationalMetrics() {
       details: nationalMetrics,
       metadata: { scope: 'national', students: 847000, schools: 523 },
     },
-    outcome: "success",
-      message:
-        'National implementation metrics demonstrate exceptional success across all indicators',
-    },
+    outcome: 'success',
+    message:
+      'National implementation metrics demonstrate exceptional success across all indicators',
   });
 }
 

@@ -360,32 +360,32 @@
   .ai-ethics-container {
     padding: 1rem;
   }
-  
+
   .ai-ethics-header {
     padding: 2rem 1rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .case-grid,
   .principle-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .solutions-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .tab-buttons {
     flex-direction: column;
   }
-  
+
   .case-selector,
   .principle-selector {
     flex-direction: column;
@@ -410,3 +410,4 @@
 .solutions {
   animation: fadeUp 0.5s ease-out;
 }
+
