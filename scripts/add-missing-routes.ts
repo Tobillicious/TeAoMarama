@@ -1,13 +1,13 @@
 #!/usr/bin/env tsx
 /**
  * 🛣️ ADD MISSING ROUTES SCRIPT
- * 
+ *
  * Adds routes for all the orphaned components that were migrated from Te Kete Ako
  * but don't have routes configured in App.tsx
  */
 
 import { readdir, readFile, writeFile } from 'fs/promises';
-import { join, extname, basename } from 'path';
+import { basename, extname } from 'path';
 
 interface RouteConfig {
   componentName: string;
@@ -26,10 +26,10 @@ class RouteManager {
     // Get all component files
     const componentFiles = await this.getComponentFiles();
     const existingRoutes = await this.getExistingRoutes();
-    
+
     // Find missing routes
-    const missingRoutes = componentFiles.filter(comp => 
-      !existingRoutes.includes(comp.componentName)
+    const missingRoutes = componentFiles.filter(
+      (comp) => !existingRoutes.includes(comp.componentName),
     );
 
     console.log(`📊 Found ${componentFiles.length} total components`);
@@ -58,11 +58,11 @@ class RouteManager {
           const componentName = basename(file, '.tsx');
           const importPath = `./components/educational/handouts/${componentName}`;
           const routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-          
+
           components.push({
             componentName,
             importPath,
-            routePath
+            routePath,
           });
         }
       }
@@ -74,11 +74,11 @@ class RouteManager {
           const componentName = basename(file, '.tsx');
           const importPath = `./pages/${componentName}`;
           const routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-          
+
           components.push({
             componentName,
             importPath,
-            routePath
+            routePath,
           });
         }
       }
@@ -113,44 +113,53 @@ class RouteManager {
       let appContent = await readFile(this.appTsxPath, 'utf8');
 
       // Add lazy imports for missing components
-      const lazyImports = missingRoutes.map(route => 
-        `const ${route.componentName} = lazy(() => import('${route.importPath}'));`
-      ).join('\n');
+      const lazyImports = missingRoutes
+        .map((route) => `const ${route.componentName} = lazy(() => import('${route.importPath}'));`)
+        .join('\n');
 
       // Find the position to insert new imports (after existing lazy imports)
-      const importEndIndex = appContent.lastIndexOf('// Newly migrated components from Te Kete Ako');
+      const importEndIndex = appContent.lastIndexOf(
+        '// Newly migrated components from Te Kete Ako',
+      );
       if (importEndIndex !== -1) {
         const insertPosition = appContent.indexOf('\n', importEndIndex) + 1;
-        appContent = appContent.slice(0, insertPosition) + 
-                    lazyImports + '\n\n' + 
-                    appContent.slice(insertPosition);
+        appContent =
+          appContent.slice(0, insertPosition) +
+          lazyImports +
+          '\n\n' +
+          appContent.slice(insertPosition);
       } else {
         // Fallback: insert before the LoadingSpinner
         const spinnerIndex = appContent.indexOf('// Optimized loading component');
         if (spinnerIndex !== -1) {
-          appContent = appContent.slice(0, spinnerIndex) + 
-                      lazyImports + '\n\n' + 
-                      appContent.slice(spinnerIndex);
+          appContent =
+            appContent.slice(0, spinnerIndex) +
+            lazyImports +
+            '\n\n' +
+            appContent.slice(spinnerIndex);
         }
       }
 
       // Add routes to the routes array
-      const routeEntries = missingRoutes.map(route => 
-        `      { path: '${route.routePath}', element: <${route.componentName} /> },`
-      ).join('\n');
+      const routeEntries = missingRoutes
+        .map(
+          (route) => `      { path: '${route.routePath}', element: <${route.componentName} /> },`,
+        )
+        .join('\n');
 
       // Find the routes array and add new routes
       const routesEndIndex = appContent.lastIndexOf('    ],');
       if (routesEndIndex !== -1) {
-        appContent = appContent.slice(0, routesEndIndex) + 
-                    routeEntries + '\n' + 
-                    appContent.slice(routesEndIndex);
+        appContent =
+          appContent.slice(0, routesEndIndex) +
+          routeEntries +
+          '\n' +
+          appContent.slice(routesEndIndex);
       }
 
       // Write the updated content
       await writeFile(this.appTsxPath, appContent, 'utf8');
       console.log('✅ Updated App.tsx with missing routes');
-
     } catch (error) {
       console.error('Error updating App.tsx:', error);
     }
@@ -159,7 +168,8 @@ class RouteManager {
 
 // Run the route manager
 const routeManager = new RouteManager();
-routeManager.addMissingRoutes()
+routeManager
+  .addMissingRoutes()
   .then(() => {
     console.log('\n🛣️ Route addition complete!');
     process.exit(0);

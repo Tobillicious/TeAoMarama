@@ -1,13 +1,13 @@
 #!/usr/bin/env tsx
 /**
  * 🎨 CREATE MISSING CSS SCRIPT
- * 
+ *
  * Creates CSS files for components that are missing styling
  * Uses Te Kete Ako beauty patterns and cultural design elements
  */
 
-import { readdir, writeFile, stat } from 'fs/promises';
-import { join, extname, basename } from 'path';
+import { readdir, stat, writeFile } from 'fs/promises';
+import { basename, extname, join } from 'path';
 
 interface ComponentInfo {
   name: string;
@@ -23,7 +23,7 @@ class CSSGenerator {
     console.log('🎨 Creating missing CSS files...\n');
 
     const components = await this.getComponents();
-    const missingCSS = components.filter(comp => !comp.hasCSS);
+    const missingCSS = components.filter((comp) => !comp.hasCSS);
 
     console.log(`📊 Found ${components.length} total components`);
     console.log(`📊 Found ${missingCSS.length} components missing CSS`);
@@ -52,11 +52,11 @@ class CSSGenerator {
           const componentName = basename(file, '.tsx');
           const componentPath = join(this.componentsDir, componentName);
           const cssPath = join(this.componentsDir, `${componentName}.css`);
-          
+
           components.push({
             name: componentName,
             path: componentPath,
-            hasCSS: await this.fileExists(cssPath)
+            hasCSS: await this.fileExists(cssPath),
           });
         }
       }
@@ -68,11 +68,11 @@ class CSSGenerator {
           const componentName = basename(file, '.tsx');
           const componentPath = join(this.pagesDir, componentName);
           const cssPath = join(this.pagesDir, `${componentName}.css`);
-          
+
           components.push({
             name: componentName,
             path: componentPath,
-            hasCSS: await this.fileExists(cssPath)
+            hasCSS: await this.fileExists(cssPath),
           });
         }
       }
@@ -105,8 +105,8 @@ class CSSGenerator {
   }
 
   private generateCSSContent(componentName: string): string {
-    const kebabName = componentName.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
-    
+    const kebabName = componentName.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+
     return `/* 🎨 ${componentName} - Te Kete Ako Beauty Patterns */
 /* Cultural design elements with modern React styling */
 
@@ -386,7 +386,8 @@ class CSSGenerator {
 
 // Run the CSS generator
 const cssGenerator = new CSSGenerator();
-cssGenerator.createMissingCSS()
+cssGenerator
+  .createMissingCSS()
   .then(() => {
     console.log('\n🎨 CSS generation complete!');
     process.exit(0);
