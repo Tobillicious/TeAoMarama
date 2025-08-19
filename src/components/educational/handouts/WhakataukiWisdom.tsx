@@ -20,36 +20,43 @@ const whakataukiCollection: Whakatauki[] = [
   {
     maori: 'Ehara taku toa i te toa takitahi, engari he toa takitini.',
     english: 'My strength is not as an individual, but as a collective.',
-    meaning: 'This proverb emphasizes the importance of community and collective effort over individual achievement.',
-    culturalContext: 'Reflects the Māori value of whanaungatanga (relationships) and the belief that we are stronger together.',
+    meaning:
+      'This proverb emphasizes the importance of community and collective effort over individual achievement.',
+    culturalContext:
+      'Reflects the Māori value of whanaungatanga (relationships) and the belief that we are stronger together.',
     themes: ['Community', 'Collaboration', 'Unity', 'Collective Strength'],
   },
   {
     maori: 'He kura te tangata.',
     english: 'People are treasures.',
     meaning: 'Every person has inherent value and should be treated with respect and care.',
-    culturalContext: 'Expresses the Māori worldview that all people are precious and deserving of manaakitanga (hospitality and care).',
+    culturalContext:
+      'Expresses the Māori worldview that all people are precious and deserving of manaakitanga (hospitality and care).',
     themes: ['Human Value', 'Respect', 'Manaakitanga', 'Dignity'],
   },
   {
     maori: 'Kia kaha, kia maia, kia manawanui.',
     english: 'Be strong, be brave, be steadfast.',
     meaning: 'Encourages resilience, courage, and determination in the face of challenges.',
-    culturalContext: 'Traditional encouragement that combines physical strength (kaha), bravery (maia), and mental fortitude (manawanui).',
+    culturalContext:
+      'Traditional encouragement that combines physical strength (kaha), bravery (maia), and mental fortitude (manawanui).',
     themes: ['Courage', 'Resilience', 'Determination', 'Strength'],
   },
   {
     maori: 'Ko te pūtake o te rākau, ko te wai.',
     english: 'The source of the tree is water.',
     meaning: 'Just as trees need water to grow, people need knowledge and wisdom to flourish.',
-    culturalContext: 'Metaphor for the importance of education and knowledge in personal and community growth.',
+    culturalContext:
+      'Metaphor for the importance of education and knowledge in personal and community growth.',
     themes: ['Education', 'Growth', 'Knowledge', 'Nurturing'],
   },
   {
     maori: 'He aha te mea nui o te ao? He tangata, he tangata, he tangata.',
-    english: 'What is the most important thing in the world? It is people, it is people, it is people.',
+    english:
+      'What is the most important thing in the world? It is people, it is people, it is people.',
     meaning: 'People are the most valuable resource and should be prioritized above all else.',
-    culturalContext: 'Emphasizes the central importance of human relationships and community in Māori culture.',
+    culturalContext:
+      'Emphasizes the central importance of human relationships and community in Māori culture.',
     themes: ['People', 'Relationships', 'Community', 'Human Value'],
   },
 ];
@@ -83,7 +90,9 @@ const analysisQuestions: AnalysisQuestion[] = [
 
 export default function WhakataukiWisdom() {
   const [selectedWhakatauki, setSelectedWhakatauki] = useState<Whakatauki>(whakataukiCollection[0]);
-  const [activeTab, setActiveTab] = useState<'proverbs' | 'analysis' | 'cultural' | 'activities'>('proverbs');
+  const [activeTab, setActiveTab] = useState<'proverbs' | 'analysis' | 'cultural' | 'activities'>(
+    'proverbs',
+  );
 
   return (
     <div className="whakatauki-container">
@@ -98,7 +107,8 @@ export default function WhakataukiWisdom() {
             <span className="meta-item">✅ Cultural Authenticity: 100%</span>
           </div>
           <p className="description">
-            Explore the profound wisdom of Māori proverbs and discover how traditional knowledge guides modern life through cultural understanding and critical thinking.
+            Explore the profound wisdom of Māori proverbs and discover how traditional knowledge
+            guides modern life through cultural understanding and critical thinking.
           </p>
         </div>
       </header>
@@ -135,12 +145,14 @@ export default function WhakataukiWisdom() {
       {activeTab === 'proverbs' && (
         <section className="proverbs">
           <h2>📜 Whakataukī Collection</h2>
-          
+
           <div className="proverb-selector">
             {whakataukiCollection.map((whakatauki, index) => (
               <button
                 key={index}
-                className={`proverb-pill ${selectedWhakatauki.maori === whakatauki.maori ? 'active' : ''}`}
+                className={`proverb-pill ${
+                  selectedWhakatauki.maori === whakatauki.maori ? 'active' : ''
+                }`}
                 onClick={() => setSelectedWhakatauki(whakatauki)}
               >
                 {whakatauki.english}
@@ -153,23 +165,25 @@ export default function WhakataukiWisdom() {
               <h3 className="proverb-maori">{selectedWhakatauki.maori}</h3>
               <p className="proverb-english">{selectedWhakatauki.english}</p>
             </div>
-            
+
             <div className="proverb-details">
               <div className="detail-section">
                 <h4>💭 Meaning</h4>
                 <p>{selectedWhakatauki.meaning}</p>
               </div>
-              
+
               <div className="detail-section">
                 <h4>🌿 Cultural Context</h4>
                 <p>{selectedWhakatauki.culturalContext}</p>
               </div>
-              
+
               <div className="detail-section">
                 <h4>🏷️ Themes</h4>
                 <div className="themes-grid">
                   {selectedWhakatauki.themes.map((theme, index) => (
-                    <span key={index} className="theme-tag">{theme}</span>
+                    <span key={index} className="theme-tag">
+                      {theme}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -181,7 +195,7 @@ export default function WhakataukiWisdom() {
       {activeTab === 'analysis' && (
         <section className="analysis">
           <h2>🔍 Analysis Questions</h2>
-          
+
           <div className="current-proverb">
             <h3>Analyzing: {selectedWhakatauki.english}</h3>
             <p className="proverb-text">{selectedWhakatauki.maori}</p>
@@ -199,7 +213,7 @@ export default function WhakataukiWisdom() {
                   <strong>🌿 Cultural Focus:</strong> {question.culturalFocus}
                 </div>
                 <div className="response-area">
-                  <textarea 
+                  <textarea
                     placeholder="Write your response here..."
                     rows={4}
                     className="response-input"
@@ -214,34 +228,57 @@ export default function WhakataukiWisdom() {
       {activeTab === 'cultural' && (
         <section className="cultural">
           <h2>🌿 Cultural Context</h2>
-          
+
           <div className="cultural-content">
             <div className="cultural-section">
               <h3>🌟 What is a Whakataukī?</h3>
               <p>
-                A whakataukī is a Māori proverb or saying that contains generations of wisdom. These short, clever statements offer guidance on how to live and provide insights into the Māori worldview. They are a powerful form of communication and a vital part of oral tradition.
+                A whakataukī is a Māori proverb or saying that contains generations of wisdom. These
+                short, clever statements offer guidance on how to live and provide insights into the
+                Māori worldview. They are a powerful form of communication and a vital part of oral
+                tradition.
               </p>
             </div>
 
             <div className="cultural-section">
               <h3>🎯 Cultural Significance</h3>
               <ul>
-                <li><strong>Oral Tradition:</strong> Passed down through generations by word of mouth</li>
-                <li><strong>Cultural Values:</strong> Express core Māori values and beliefs</li>
-                <li><strong>Guidance:</strong> Provide wisdom for daily living and decision-making</li>
-                <li><strong>Identity:</strong> Help maintain cultural identity and connection</li>
-                <li><strong>Education:</strong> Teach important life lessons and cultural knowledge</li>
+                <li>
+                  <strong>Oral Tradition:</strong> Passed down through generations by word of mouth
+                </li>
+                <li>
+                  <strong>Cultural Values:</strong> Express core Māori values and beliefs
+                </li>
+                <li>
+                  <strong>Guidance:</strong> Provide wisdom for daily living and decision-making
+                </li>
+                <li>
+                  <strong>Identity:</strong> Help maintain cultural identity and connection
+                </li>
+                <li>
+                  <strong>Education:</strong> Teach important life lessons and cultural knowledge
+                </li>
               </ul>
             </div>
 
             <div className="cultural-section">
               <h3>🔗 Te Ao Māori Worldview</h3>
               <ul>
-                <li><strong>Whanaungatanga:</strong> Emphasizes relationships and connections</li>
-                <li><strong>Manaakitanga:</strong> Focuses on hospitality and care for others</li>
-                <li><strong>Kaitiakitanga:</strong> Highlights guardianship and responsibility</li>
-                <li><strong>Rangatiratanga:</strong> Values leadership and self-determination</li>
-                <li><strong>Wairuatanga:</strong> Acknowledges spiritual dimensions</li>
+                <li>
+                  <strong>Whanaungatanga:</strong> Emphasizes relationships and connections
+                </li>
+                <li>
+                  <strong>Manaakitanga:</strong> Focuses on hospitality and care for others
+                </li>
+                <li>
+                  <strong>Kaitiakitanga:</strong> Highlights guardianship and responsibility
+                </li>
+                <li>
+                  <strong>Rangatiratanga:</strong> Values leadership and self-determination
+                </li>
+                <li>
+                  <strong>Wairuatanga:</strong> Acknowledges spiritual dimensions
+                </li>
               </ul>
             </div>
 
@@ -262,7 +299,7 @@ export default function WhakataukiWisdom() {
       {activeTab === 'activities' && (
         <section className="activities">
           <h2>🎯 Learning Activities</h2>
-          
+
           <div className="activities-grid">
             <div className="activity">
               <h3>📝 Whakataukī Journal</h3>
@@ -318,3 +355,4 @@ export default function WhakataukiWisdom() {
     </div>
   );
 }
+

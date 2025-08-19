@@ -1,0 +1,119 @@
+import React from 'react';
+import { Card } from '../../Card';
+import '../../../styles/te-kete-synthesis.css';
+
+interface YouthVapingComprehensionHandoutProps {
+  culturalContext?: string;
+  yearLevel?: string;
+  subject?: string;
+}
+
+const YouthVapingComprehensionHandout: React.FC<YouthVapingComprehensionHandoutProps> = ({
+  culturalContext = "Educational content with cultural integration",
+  yearLevel = "Year 7-8",
+  subject = "English, Literacy"
+}) => {
+  return (
+    <div className="youth-vaping-comprehension-handout">
+      <Card title="Youth Vaping Reading Comprehension | Mangakōtukutuku College" className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">Youth Vaping Reading Comprehension | Mangakōtukutuku College</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
+          </div>
+        </div>
+
+        <div className="handout-content">
+          <div 
+            className="te-kete-content"
+            dangerouslySetInnerHTML={{ __html: `
+            <div class="mb-4">
+                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <h1 class="page-title" class="wiley-hero-title">Reading Comprehension: The Vaping Dilemma</h1>
+                <p class="page-subtitle">asTTle-Style Analysis of a Modern Health Issue</p>
+            </div>
+
+            <article class="handout-content mb-4">
+                <h2 class="section-title" class="wiley-section-title">A Cloud Over Aotearoa's Youth</h2>
+                <p>
+                    Vaping, the act of inhaling an aerosol from an electronic device, was initially promoted as a less harmful alternative to smoking and a tool to help adults quit. However, it has exploded in popularity among young people who have never smoked, creating a new public health challenge. A 2021 survey by the Asthma and Respiratory Foundation NZ found that 27% of Year 10 students vaped regularly, a significant increase from previous years. The appeal is often driven by sleek marketing, a wide variety of sweet flavours like "cotton candy" and "gummy bear," and the perception that it is a harmless social activity.
+                </p>
+                <p>
+                    Despite being less harmful than traditional cigarettes, vaping is not without risks. Most vapes contain nicotine, a highly addictive substance that can harm the developing adolescent brain, affecting learning, memory, and attention. The long-term effects of inhaling the cocktail of chemicals found in vape liquids are still largely unknown, but respiratory specialists are concerned about the potential for future lung damage. Furthermore, there is a growing debate about whether vaping acts as a "gateway" to smoking cigarettes for young people, potentially reversing decades of progress in reducing smoking rates.
+                </p>
+                <p>
+                    In response to these rising concerns, the New Zealand government has introduced new regulations. As of 2023, new rules restrict the sale of most flavoured vapes to specialist stores and limit the number of vape shops near schools. The aim is to strike a balance: keeping vapes available as a tool for adult smokers wanting to quit, while making them less accessible and appealing to young people. This approach highlights the complexity of the issue. It's a public health dilemma that pits the goal of harm reduction for current smokers against the need to protect a new generation from the risks of nicotine addiction.
+                </p>
+            </article>
+
+            <section class="handout-questions mb-4">
+                <h2 class="section-title" class="wiley-section-title">Comprehension & Critical Thinking Questions</h2>
+                
+                <div class="space-y-4">
+                    <!-- Question 1 -->
+                    <div class="question-block">
+                        <p><strong>1. What was the original intended purpose of vaping products?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) As a new social trend for young people.</div>
+                            <div class="question-option">B) As a tool to help adult smokers quit cigarettes.</div>
+                            <div class="question-option">C) As a replacement for asthma inhalers.</div>
+                            <div class="question-option">D) As a way to consume sweet flavours.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-block">
+                        <p><strong>2. (Numeracy) According to the 2021 survey, if there were 200 Year 10 students in a group, how many would be expected to vape regularly?</p>
+                         <div class="answer-space">
+                            <p>Answer: </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-block">
+                        <p><strong>3. What is the main concern health experts have about the nicotine in vapes for young people?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) It can cause immediate lung damage.</div>
+                            <div class="question-option">B) It is not as effective as nicotine in cigarettes.</div>
+                            <div class="question-option">C) It can harm the developing adolescent brain.</div>
+                            <div class="question-option">D) It is less addictive than the other chemicals.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-block">
+                        <p><strong>4. (Critical Thinking) The text describes the government's approach as trying to "strike a balance." What two competing goals is the government trying to balance?</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-block">
+                        <p><strong>5. (Critical Thinking) The text mentions that the perception of vaping as a "harmless social activity" contributes to its popularity. Why is this perception inaccurate according to the text? Provide two reasons.</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="handout-footer">
+                <div class="curriculum-links-box">
+                    <h3>Further Reading & Viewing</h3>
+                    <ul>
+                        <li><a href="https://www.health.govt.nz/our-work/preventative-health-wellness/tobacco-control/vaping-smokefree-environments-and-regulated-products" target="_blank" rel="noopener noreferrer">Ministry of Health - Vaping</a></li>
+                        <li><a href="https://www.asthmafoundation.org.nz/your-health/vaping" target="_blank" rel="noopener noreferrer">Asthma and Respiratory Foundation NZ - Vaping</a></li>
+                    </ul>
+                </div>
+            </section>
+        ` }}
+          />
+        </div>
+      </Card>
+    </div>
+  );
+};
+
+export default YouthVapingComprehensionHandout;

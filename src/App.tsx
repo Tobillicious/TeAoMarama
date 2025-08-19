@@ -39,11 +39,66 @@ const HealthEducationCorrelation = lazy(
 const DesignThinkingProcess = lazy(
   () => import('./components/educational/handouts/DesignThinkingProcess'),
 );
-const WhakataukiWisdom = lazy(
-  () => import('./components/educational/handouts/WhakataukiWisdom'),
+const WhakataukiWisdom = lazy(() => import('./components/educational/handouts/WhakataukiWisdom'));
+const AIEthicsAndBias = lazy(() => import('./components/educational/handouts/AiEthicsAndBias'));
+const ScienceIntegration = lazy(() => import('./pages/ScienceIntegration'));
+const AssessmentFramework = lazy(() => import('./pages/AssessmentFramework'));
+const LessonsIntegration = lazy(() => import('./pages/LessonsIntegration'));
+
+// Newly migrated components from Te Kete Ako
+const CommunityNeedsSurvey = lazy(
+  () => import('./components/educational/handouts/community-needs-survey'),
 );
-const AIEthicsAndBias = lazy(
-  () => import('./components/educational/handouts/AIEthicsAndBias'),
+const CulturalIdentityDeepDiveComprehension = lazy(
+  () => import('./components/educational/handouts/cultural-identity-deep-dive-comprehension'),
+);
+const CulturalDecisionMakingTraditions = lazy(
+  () => import('./components/educational/handouts/cultural-decision-making-traditions'),
+);
+const CulturalPreservationEssays = lazy(
+  () => import('./components/educational/handouts/cultural-preservation-essays'),
+);
+const CulturalSafetyClassroomChecklistsAlpha = lazy(
+  () => import('./components/educational/handouts/cultural-safety-classroom-checklists-alpha'),
+);
+const CulturalPracticeExplanation = lazy(
+  () => import('./components/educational/handouts/cultural-practice-explanation'),
+);
+const KaitiakitangaKids = lazy(
+  () => import('./components/educational/handouts/kaitiakitanga-kids'),
+);
+const CulturalCelebrationsComparison = lazy(
+  () => import('./components/educational/handouts/cultural-celebrations-comparison'),
+);
+const CulturalStoriesComprehension = lazy(
+  () => import('./components/educational/handouts/cultural-stories-comprehension'),
+);
+const FamilyDataCollection = lazy(
+  () => import('./components/educational/handouts/family-data-collection'),
+);
+const CulturalHeroesComprehension = lazy(
+  () => import('./components/educational/handouts/cultural-heroes-comprehension'),
+);
+const KaitiakitangaFieldJournal = lazy(
+  () => import('./components/educational/handouts/kaitiakitanga-field-journal'),
+);
+const CulturalStemAssessmentRubric = lazy(
+  () => import('./components/educational/handouts/cultural-stem-assessment-rubric'),
+);
+const MountainNavigationTrigonometry = lazy(
+  () => import('./components/educational/handouts/mountain-navigation-trigonometry'),
+);
+const StarNavigationCoordinates = lazy(
+  () => import('./components/educational/handouts/star-navigation-coordinates'),
+);
+const MaoriNavigationWayfindingHandout = lazy(
+  () => import('./components/educational/handouts/maori-navigation-wayfinding-handout'),
+);
+const MaoriGeometricPatternsHandout = lazy(
+  () => import('./components/educational/handouts/maori-geometric-patterns-handout'),
+);
+const KaitiakiGeneratedMigrationStudentHandout = lazy(
+  () => import('./components/educational/handouts/kaitiaki-generated-migration-student-handout'),
 );
 
 // Optimized loading component with React.memo
@@ -108,6 +163,39 @@ function App() {
       { path: '/design-thinking-process', element: <DesignThinkingProcess /> },
       { path: '/whakatauki-wisdom', element: <WhakataukiWisdom /> },
       { path: '/ai-ethics-and-bias', element: <AIEthicsAndBias /> },
+      { path: '/community-needs-survey', element: <CommunityNeedsSurvey /> },
+      {
+        path: '/cultural-identity-deep-dive-comprehension',
+        element: <CulturalIdentityDeepDiveComprehension />,
+      },
+      {
+        path: '/cultural-decision-making-traditions',
+        element: <CulturalDecisionMakingTraditions />,
+      },
+      { path: '/cultural-preservation-essays', element: <CulturalPreservationEssays /> },
+      {
+        path: '/cultural-safety-classroom-checklists-alpha',
+        element: <CulturalSafetyClassroomChecklistsAlpha />,
+      },
+      { path: '/cultural-practice-explanation', element: <CulturalPracticeExplanation /> },
+      { path: '/kaitiakitanga-kids', element: <KaitiakitangaKids /> },
+      { path: '/cultural-celebrations-comparison', element: <CulturalCelebrationsComparison /> },
+      { path: '/cultural-stories-comprehension', element: <CulturalStoriesComprehension /> },
+      { path: '/family-data-collection', element: <FamilyDataCollection /> },
+      { path: '/cultural-heroes-comprehension', element: <CulturalHeroesComprehension /> },
+      { path: '/kaitiakitanga-field-journal', element: <KaitiakitangaFieldJournal /> },
+      { path: '/cultural-stem-assessment-rubric', element: <CulturalStemAssessmentRubric /> },
+      { path: '/mountain-navigation-trigonometry', element: <MountainNavigationTrigonometry /> },
+      { path: '/star-navigation-coordinates', element: <StarNavigationCoordinates /> },
+      {
+        path: '/maori-navigation-wayfinding-handout',
+        element: <MaoriNavigationWayfindingHandout />,
+      },
+      { path: '/maori-geometric-patterns-handout', element: <MaoriGeometricPatternsHandout /> },
+      {
+        path: '/kaitiaki-generated-migration-student-handout',
+        element: <KaitiakiGeneratedMigrationStudentHandout />,
+      },
     ],
     [],
   );
@@ -130,7 +218,6 @@ function App() {
             </Routes>
           </Suspense>
         </main>
-
       </div>
     </BrowserRouter>
   );

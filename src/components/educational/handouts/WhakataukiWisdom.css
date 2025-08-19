@@ -394,35 +394,35 @@
   .whakatauki-container {
     padding: 1rem;
   }
-  
+
   .whakatauki-header {
     padding: 2rem 1rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .proverb-details {
     grid-template-columns: 1fr;
   }
-  
+
   .activities-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .tab-buttons {
     flex-direction: column;
   }
-  
+
   .proverb-selector {
     flex-direction: column;
   }
-  
+
   .proverb-pill {
     max-width: none;
   }
@@ -446,3 +446,4 @@
 .activities {
   animation: fadeUp 0.5s ease-out;
 }
+
