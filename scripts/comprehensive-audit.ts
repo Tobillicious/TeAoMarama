@@ -11,6 +11,7 @@
  * - Build errors or missing dependencies
  */
 
+import { execSync } from 'child_process';
 import { readdir, readFile, stat } from 'fs/promises';
 import { basename, extname, join } from 'path';
 
@@ -54,7 +55,6 @@ class ComprehensiveAuditor {
     console.log('📋 Checking Git status...');
 
     try {
-      const { execSync } = require('child_process');
       const gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
 
       if (gitStatus.trim()) {
@@ -76,7 +76,7 @@ class ComprehensiveAuditor {
         category: 'Git Status',
         status: '❌',
         message: 'Git status check failed',
-        details: [error.message],
+        details: [error instanceof Error ? error.message : 'Unknown error'],
       });
     }
   }
@@ -85,7 +85,6 @@ class ComprehensiveAuditor {
     console.log('🔨 Checking build status...');
 
     try {
-      const { execSync } = require('child_process');
       execSync('npm run build', { stdio: 'pipe' });
 
       this.results.push({
@@ -98,7 +97,7 @@ class ComprehensiveAuditor {
         category: 'Build Status',
         status: '❌',
         message: 'Build failed',
-        details: [error.message],
+        details: [error instanceof Error ? error.message : 'Unknown error'],
       });
     }
   }
@@ -165,7 +164,7 @@ class ComprehensiveAuditor {
         category: 'Component Audit',
         status: '❌',
         message: 'Component audit failed',
-        details: [error.message],
+        details: [error instanceof Error ? error.message : 'Unknown error'],
       });
     }
   }
@@ -231,22 +230,32 @@ class ComprehensiveAuditor {
       const resourcesIndex = await readFile('public/resources/index.json', 'utf8');
       const resources = JSON.parse(resourcesIndex);
 
-      this.results.push({
-        category: 'Resource Migration',
-        status: '✅',
-        message: `${resources.length} resources available`,
-        details: [
-          `Total resources: ${resources.length}`,
-          `Cultural resources: ${resources.filter((r: any) => r.cultural).length}`,
-          `High priority: ${resources.filter((r: any) => r.priority === 'high').length}`,
-        ],
-      });
+      // Check if resources is an array
+      if (Array.isArray(resources)) {
+        this.results.push({
+          category: 'Resource Migration',
+          status: '✅',
+          message: `${resources.length} resources available`,
+          details: [
+            `Total resources: ${resources.length}`,
+            `Cultural resources: ${resources.filter((r: any) => r.cultural).length}`,
+            `High priority: ${resources.filter((r: any) => r.priority === 'high').length}`,
+          ],
+        });
+      } else {
+        this.results.push({
+          category: 'Resource Migration',
+          status: '⚠️',
+          message: 'Resources index is not an array',
+          details: [`Expected array, got: ${typeof resources}`],
+        });
+      }
     } catch (error) {
       this.results.push({
         category: 'Resource Migration',
         status: '❌',
         message: 'Resource migration check failed',
-        details: [error.message],
+        details: [error instanceof Error ? error.message : 'Unknown error'],
       });
     }
   }
