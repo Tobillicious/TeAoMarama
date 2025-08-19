@@ -46,7 +46,7 @@ const AssessmentFramework = lazy(() => import('./pages/AssessmentFramework'));
 const LessonsIntegration = lazy(() => import('./pages/LessonsIntegration'));
 
 // Newly migrated components from Te Kete Ako
-const MediaLiteracyComprehensionHandout.V2 = lazy(() => import('./components/educational/handouts/MediaLiteracyComprehensionHandout.V2'));
+const MediaLiteracyComprehensionHandoutV2 = lazy(() => import('./components/educational/handouts/MediaLiteracyComprehensionHandout.V2'));
 const TūRangawaewaeMapping = lazy(() => import('./components/educational/handouts/TūRangawaewaeMapping'));
 const ai-impact-comprehension-handout = lazy(() => import('./components/educational/handouts/ai-impact-comprehension-handout'));
 const atoms-in-everyday-materials = lazy(() => import('./components/educational/handouts/atoms-in-everyday-materials'));
