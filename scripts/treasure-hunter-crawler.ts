@@ -366,7 +366,7 @@ class TreasureHunterCrawler {
     ];
 
     // This would be implemented with glob patterns in a real implementation
-    console.log('✅ Cultural treasure hunt complete');
+    console.log('✅ Cultural treasure hunt complete with patterns:', culturalPatterns.length);
   }
 
   private async huntAssessmentTreasures(): Promise<void> {
@@ -380,7 +380,7 @@ class TreasureHunterCrawler {
       '**/template*.md',
     ];
 
-    console.log('✅ Assessment treasure hunt complete');
+    console.log('✅ Assessment treasure hunt complete with patterns:', assessmentPatterns.length);
   }
 
   private async huntTechnicalTreasures(): Promise<void> {
@@ -389,7 +389,7 @@ class TreasureHunterCrawler {
     // Look for technical and configuration files
     const technicalPatterns = ['**/script*.ts', '**/config*.ts', '**/util*.ts', '**/helper*.ts'];
 
-    console.log('✅ Technical treasure hunt complete');
+    console.log('✅ Technical treasure hunt complete with patterns:', technicalPatterns.length);
   }
 
   private generateTreasureMap(): TreasureMap {
