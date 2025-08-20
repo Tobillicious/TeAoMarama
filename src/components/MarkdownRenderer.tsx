@@ -31,7 +31,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         const htmlString = typeof rawHtml === 'string' ? rawHtml : String(rawHtml);
         
         // Sanitize the HTML
-        const cleanHtml = sanitizeHtml.default ? sanitizeHtml.default(htmlString, {
+        const sanitizeFn = sanitizeHtml.default || sanitizeHtml;
+        const cleanHtml = sanitizeFn(htmlString, {
           allowedTags: [
             'p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
             'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img',
@@ -42,7 +43,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
             'a': ['href', 'title'],
             'img': ['src', 'alt', 'title']
           },
-        }) : sanitizeHtml(htmlString);
+        });
 
         setRenderedContent(cleanHtml);
       } catch (error) {

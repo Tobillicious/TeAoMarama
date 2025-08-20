@@ -353,32 +353,18 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
         Continue with Google
       </button>
 
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: 'var(--space-4)',
-          color: 'var(--color-text-secondary)',
-          fontSize: 'var(--text-sm)',
-        }}
-      >
+      <div className="auth-divider">
         or
       </div>
 
       {/* Email Form Fields */}
-      <div style={{ marginBottom: 'var(--space-4)' }}>
+      <div className="auth-form-fields">
         <input
           type="email"
           placeholder="Email"
           value={formData.email}
           onChange={(e) => handleInputChange('email', e.target.value)}
-          style={{
-            width: '100%',
-            padding: 'var(--space-3)',
-            border: '1px solid var(--color-border)',
-            borderRadius: 'var(--radius-md)',
-            marginBottom: 'var(--space-3)',
-            fontSize: 'var(--text-sm)',
-          }}
+          className="auth-input"
         />
 
         <input
@@ -386,32 +372,19 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
           placeholder="Password"
           value={formData.password}
           onChange={(e) => handleInputChange('password', e.target.value)}
-          style={{
-            width: '100%',
-            padding: 'var(--space-3)',
-            border: '1px solid var(--color-border)',
-            borderRadius: 'var(--radius-md)',
-            fontSize: 'var(--text-sm)',
-          }}
+          className="auth-input"
         />
       </div>
 
       {/* Registration Additional Fields */}
       {authMode === 'register' && (
-        <div style={{ marginBottom: 'var(--space-4)' }}>
+        <div className="auth-form-fields">
           <input
             type="password"
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-            style={{
-              width: '100%',
-              padding: 'var(--space-3)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              marginBottom: 'var(--space-3)',
-              fontSize: 'var(--text-sm)',
-            }}
+            className="auth-input"
           />
 
           <input
@@ -419,14 +392,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
             placeholder="Display Name"
             value={formData.displayName}
             onChange={(e) => handleInputChange('displayName', e.target.value)}
-            style={{
-              width: '100%',
-              padding: 'var(--space-3)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              marginBottom: 'var(--space-3)',
-              fontSize: 'var(--text-sm)',
-            }}
+            className="auth-input"
           />
 
           <input
@@ -434,27 +400,14 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
             placeholder="School (optional)"
             value={formData.school}
             onChange={(e) => handleInputChange('school', e.target.value)}
-            style={{
-              width: '100%',
-              padding: 'var(--space-3)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              marginBottom: 'var(--space-3)',
-              fontSize: 'var(--text-sm)',
-            }}
+            className="auth-input"
           />
 
           <select
             value={formData.culturalAffiliation}
             onChange={(e) => handleInputChange('culturalAffiliation', e.target.value)}
             aria-label="Cultural Affiliation"
-            style={{
-              width: '100%',
-              padding: 'var(--space-3)',
-              border: '1px solid var(--color-border)',
-              borderRadius: 'var(--radius-md)',
-              fontSize: 'var(--text-sm)',
-            }}
+            className="auth-select"
           >
             <option value="">Cultural Affiliation (optional)</option>
             <option value="Māori">Māori</option>
@@ -471,19 +424,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       <button
         onClick={handleEmailAuth}
         disabled={loading}
-        style={{
-          width: '100%',
-          padding: 'var(--space-3)',
-          backgroundColor: 'var(--color-primary)',
-          color: 'white',
-          border: 'none',
-          borderRadius: 'var(--radius-md)',
-          cursor: loading ? 'not-allowed' : 'pointer',
-          opacity: loading ? 0.6 : 1,
-          marginBottom: 'var(--space-4)',
-          fontSize: 'var(--text-sm)',
-          fontWeight: 'bold',
-        }}
+        className="auth-submit-button"
       >
         {loading ? 'Loading...' : authMode === 'login' ? 'Sign In' : 'Create Account'}
       </button>
@@ -492,14 +433,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       <div style={{ textAlign: 'center' }}>
         <button
           onClick={() => setAuthMode(authMode === 'login' ? 'register' : 'login')}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--color-primary)',
-            cursor: 'pointer',
-            textDecoration: 'underline',
-            fontSize: 'var(--text-sm)',
-          }}
+          className="auth-toggle-button"
         >
           {authMode === 'login'
             ? "Don't have an account? Sign up"
@@ -508,20 +442,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       </div>
 
       {/* Error Display */}
-      {error && (
-        <div
-          style={{
-            marginTop: 'var(--space-4)',
-            padding: 'var(--space-3)',
-            backgroundColor: '#fee',
-            color: '#c33',
-            borderRadius: 'var(--radius-sm)',
-            fontSize: 'var(--text-sm)',
-          }}
-        >
-          {error}
-        </div>
-      )}
+      {error && <div className="auth-error">{error}</div>}
     </div>
   );
 };

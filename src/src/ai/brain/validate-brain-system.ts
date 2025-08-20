@@ -9,7 +9,6 @@ const logger = {
   warn: (message: string) => console.warn(`[AI Warning] ${message}`)
 };
 
-#!/usr/bin/env ts-node
 /**
  * Kaitiaki Aronui Brain System Validation
  * 
