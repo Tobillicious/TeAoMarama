@@ -71,8 +71,8 @@ class TreasureHunterCrawler {
           }
         }
       }
-    } catch {
-      console.log(`⚠️  Could not scan ${dirPath}`);
+    } catch (err) {
+      console.error('Error processing file:', err);
     }
   }
 
@@ -98,7 +98,7 @@ class TreasureHunterCrawler {
           // Skip inaccessible files
         }
       }
-    } catch (error) {
+    } catch {
       // Directory doesn't exist or is inaccessible
     }
 
