@@ -70,7 +70,7 @@ export class AIOrchestrator {
         system: this.getSystemPrompt(task),
       });
 
-      return typeof result === 'string' ? result : (result as any)?.output || (result as any)?.text || JSON.stringify(result);
+      return typeof result === 'string' ? result : (result as { output?: string; text?: string })?.output || (result as { output?: string; text?: string })?.text || JSON.stringify(result);
     } catch (error) {
       console.error('LLM execution error:', error);
       return this.getFallbackResponse(task);

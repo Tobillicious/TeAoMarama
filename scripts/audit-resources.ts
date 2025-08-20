@@ -24,7 +24,7 @@ async function auditResources(): Promise<void> {
     console.log(`📊 Migrated components: ${migratedComponents.length}`);
 
     // Check for unmigrated handouts
-    const unmigratedHandouts = [];
+    const unmigratedHandouts: string[] = [];
     for (const handout of teKeteHandouts) {
       const componentName = handout
         .replace(/\.html$/, '')
@@ -50,7 +50,7 @@ async function auditResources(): Promise<void> {
     }
 
     // Check for orphaned components (components without corresponding Te Kete Ako handout)
-    const orphanedComponents = [];
+    const orphanedComponents: string[] = [];
     for (const component of migratedComponents) {
       const baseName = component.replace(/\.tsx$/, '');
       const handoutName =

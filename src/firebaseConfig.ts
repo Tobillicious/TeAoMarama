@@ -1,24 +1,21 @@
-import { initializeApp, type FirebaseApp, type FirebaseOptions } from 'firebase/app';
-import { 
-  getAuth, 
-  type Auth, 
-  connectAuthEmulator,
-  browserSessionPersistence,
-  setPersistence
-} from 'firebase/auth';
-import { 
-  getFirestore, 
-  type Firestore, 
-  connectFirestoreEmulator,
-  enableNetwork,
-  disableNetwork
-} from 'firebase/firestore';
-import { 
-  getStorage, 
-  type FirebaseStorage 
-} from 'firebase/storage';
 import { getAnalytics, type Analytics } from 'firebase/analytics';
-import { getFunctions, type Functions, connectFunctionsEmulator } from 'firebase/functions';
+import { initializeApp, type FirebaseApp, type FirebaseOptions } from 'firebase/app';
+import {
+  browserSessionPersistence,
+  connectAuthEmulator,
+  getAuth,
+  setPersistence,
+  type Auth,
+} from 'firebase/auth';
+import {
+  connectFirestoreEmulator,
+  disableNetwork,
+  enableNetwork,
+  getFirestore,
+  type Firestore,
+} from 'firebase/firestore';
+import { connectFunctionsEmulator, getFunctions, type Functions } from 'firebase/functions';
+import { getStorage, type FirebaseStorage } from 'firebase/storage';
 import { writeEpisode } from './ai/provenance';
 
 // Enhanced Firebase Configuration with comprehensive types and validation
@@ -36,33 +33,38 @@ export interface EnhancedFirebaseConfig extends FirebaseOptions {
 // Configuration validation with fallback for ERO Hui demonstration
 class FirebaseConfigValidator {
   private static readonly REQUIRED_FIELDS: (keyof EnhancedFirebaseConfig)[] = [
-    'apiKey', 'authDomain', 'projectId', 'storageBucket', 'messagingSenderId', 'appId'
+    'apiKey',
+    'authDomain',
+    'projectId',
+    'storageBucket',
+    'messagingSenderId',
+    'appId',
   ];
 
   static validate(config: Partial<EnhancedFirebaseConfig>): EnhancedFirebaseConfig {
-    const missingFields = this.REQUIRED_FIELDS.filter(field => !config[field]);
-    
+    const missingFields = this.REQUIRED_FIELDS.filter((field) => !config[field]);
+
     if (missingFields.length > 0) {
       const errorMsg = `Missing required Firebase config fields: ${missingFields.join(', ')}`;
       console.warn('🔥 Firebase Configuration Warning:', errorMsg);
-      
+
       // For ERO Hui demonstration, provide fallback configuration
       if (import.meta.env.PROD || import.meta.env.VITE_ERO_DEMO_MODE === 'true') {
         console.log('🎯 ERO Hui Demo Mode: Using fallback Firebase configuration');
         return this.getFallbackConfig();
       }
-      
+
       // In development, provide helpful guidance
       if (import.meta.env.DEV) {
         console.log('\n📝 Firebase Setup Guide:');
         console.log('1. Create a .env file in your project root');
         console.log('2. Add the following environment variables:');
-        missingFields.forEach(field => {
+        missingFields.forEach((field) => {
           console.log(`   VITE_FIREBASE_${field.toUpperCase()}=your_${field}_here`);
         });
         console.log('3. Restart your development server\n');
       }
-      
+
       throw new Error(errorMsg);
     }
 
@@ -88,7 +90,7 @@ class FirebaseConfigValidator {
       storageBucket: 'teaomarama-demo.appspot.com',
       messagingSenderId: '123456789',
       appId: '1:123456789:web:demo-app-id',
-      measurementId: 'G-DEMO123'
+      measurementId: 'G-DEMO123',
     };
   }
 }
@@ -136,7 +138,7 @@ const serviceStatus: FirebaseServiceStatus = {
   app: { initialized: false },
   auth: { initialized: false, connected: false, persistenceSet: false },
   firestore: { initialized: false, connected: false, offline: false },
-  storage: { initialized: false }
+  storage: { initialized: false },
 };
 
 // Firebase configuration with environment variables and fallback
@@ -148,11 +150,12 @@ const firebaseConfig: EnhancedFirebaseConfig = FirebaseConfigValidator.validate(
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID, // For Analytics
-  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL // For Realtime Database
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL, // For Realtime Database
 });
 
 // Check if we're in demo mode
-const isDemoMode = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_ERO_DEMO_MODE === 'true';
+const isDemoMode =
+  !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_ERO_DEMO_MODE === 'true';
 
 // Initialize Firebase App with error handling
 let app: FirebaseApp;
@@ -161,13 +164,13 @@ try {
   app = initializeApp(firebaseConfig);
   serviceStatus.app.initialized = true;
   serviceStatus.app.demoMode = isDemoMode;
-  
+
   // Log successful initialization
   console.log('🔥 Firebase App initialized successfully');
   if (isDemoMode) {
     console.log('🎯 Running in ERO Hui Demo Mode');
   }
-  
+
   // Log to provenance system (only if not in demo mode)
   if (!isDemoMode) {
     writeEpisode('firebase-config', {
@@ -178,11 +181,10 @@ try {
         project_id: firebaseConfig.projectId,
         auth_domain: firebaseConfig.authDomain,
         environment: import.meta.env.MODE,
-        text: `Firebase app initialized for project: ${firebaseConfig.projectId}`
-      }
+        text: `Firebase app initialized for project: ${firebaseConfig.projectId}`,
+      },
     }).catch(console.error);
   }
-  
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
   serviceStatus.app.error = errorMessage;
@@ -197,7 +199,7 @@ try {
   auth = getAuth(app);
   serviceStatus.auth.initialized = true;
   serviceStatus.auth.demoMode = isDemoMode;
-  
+
   // Set persistence to session (survives tab refresh, not browser restart)
   setPersistence(auth, browserSessionPersistence)
     .then(() => {
@@ -221,7 +223,6 @@ try {
 
   serviceStatus.auth.connected = true;
   console.log('🔐 Firebase Auth initialized successfully');
-  
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
   serviceStatus.auth.error = errorMessage;
@@ -261,7 +262,6 @@ try {
     });
 
   console.log('💾 Firestore initialized successfully');
-  
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
   serviceStatus.firestore.error = errorMessage;
@@ -309,7 +309,7 @@ let functions: Functions | undefined;
 
 try {
   functions = getFunctions(app, 'australia-southeast1'); // Closer to NZ
-  
+
   // Connect to emulator in development
   if (import.meta.env.DEV && import.meta.env.VITE_FUNCTIONS_EMULATOR_HOST) {
     try {
@@ -320,7 +320,7 @@ try {
       console.warn('⚠️  Could not connect to Functions Emulator:', emulatorError);
     }
   }
-  
+
   serviceStatus.functions = { initialized: true, demoMode: isDemoMode };
   console.log('⚡ Cloud Functions initialized successfully');
 } catch (error) {
@@ -343,9 +343,11 @@ export const FirebaseService = {
    * Check if all required services are ready
    */
   isReady(): boolean {
-    return serviceStatus.app.initialized && 
-           serviceStatus.auth.initialized && 
-           serviceStatus.firestore.initialized;
+    return (
+      serviceStatus.app.initialized &&
+      serviceStatus.auth.initialized &&
+      serviceStatus.firestore.initialized
+    );
   },
 
   /**
@@ -367,7 +369,7 @@ export const FirebaseService = {
       return {
         status: 'demo',
         message: 'Running in ERO Hui Demo Mode - Firebase services available for demonstration',
-        details: serviceStatus
+        details: serviceStatus,
       };
     }
 
@@ -375,29 +377,29 @@ export const FirebaseService = {
       serviceStatus.app.error,
       serviceStatus.auth.error,
       serviceStatus.firestore.error,
-      serviceStatus.storage.error
+      serviceStatus.storage.error,
     ].filter(Boolean);
 
     if (errors.length > 2) {
       return {
         status: 'error',
         message: 'Multiple Firebase services failed to initialize',
-        details: serviceStatus
+        details: serviceStatus,
       };
     }
 
     if (errors.length > 0) {
       return {
-        status: 'degraded', 
+        status: 'degraded',
         message: `Some Firebase services have issues: ${errors.join(', ')}`,
-        details: serviceStatus
+        details: serviceStatus,
       };
     }
 
     return {
       status: 'healthy',
       message: 'All Firebase services operational',
-      details: serviceStatus
+      details: serviceStatus,
     };
   },
 
@@ -430,12 +432,12 @@ export const FirebaseService = {
     if (serviceStatus.analytics) console.log('Analytics:', serviceStatus.analytics);
     if (serviceStatus.functions) console.log('Functions:', serviceStatus.functions);
     console.groupEnd();
-  }
+  },
 };
 
 // Export Firebase services with proper typing
-export { app, auth, db, storage, analytics, functions };
-export type { Auth, Firestore, FirebaseStorage, Analytics, Functions };
+export { analytics, app, auth, db, functions, storage };
+export type { Analytics, Auth, FirebaseStorage, Firestore, Functions };
 
 // Development helper
 if (import.meta.env.DEV) {
@@ -447,9 +449,9 @@ if (import.meta.env.DEV) {
     storage,
     analytics,
     functions,
-    service: FirebaseService
+    service: FirebaseService,
   };
-  
+
   // Log initialization summary
   setTimeout(() => {
     console.log('\n🔥 Firebase Initialization Complete');
