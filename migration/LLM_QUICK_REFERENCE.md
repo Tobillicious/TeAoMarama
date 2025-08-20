@@ -2,13 +2,14 @@
 
 **Date**: August 19, 2025  
 **Version**: 2.0  
-**Status**: Active  
+**Status**: Active
 
 ---
 
 ## 🎯 QUICK COMMANDS
 
 ### **Development**
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
@@ -17,6 +18,7 @@ npm run test         # Run tests
 ```
 
 ### **Audit & Cleanup**
+
 ```bash
 node scripts/quick-audit.cjs    # Run comprehensive audit
 npm run performance:audit        # Performance audit
@@ -28,17 +30,20 @@ npm run performance:report       # Performance report
 ## 📁 KEY FILES & LOCATIONS
 
 ### **Core Application**
+
 - `src/App.tsx` - Main application component
 - `src/firebaseConfig.ts` - Firebase configuration
 - `src/components/auth/EnhancedFirebaseAuth.tsx` - Authentication
 - `src/styles/globals.css` - Global styles
 
 ### **Documentation**
+
 - `migration/AGENT_COORDINATION_BOARD.md` - Project coordination
 - `migration/agent_coordination/agent_sync_status.md` - Status tracking
 - `docs/FIREBASE_AUTHENTICATION_SETUP.md` - Auth setup guide
 
 ### **Scripts**
+
 - `scripts/quick-audit.cjs` - Codebase audit
 - `scripts/comprehensive-audit.ts` - Detailed audit
 - `scripts/next-batch-migration.ts` - Migration automation
@@ -48,6 +53,7 @@ npm run performance:report       # Performance report
 ## 🔧 COMMON TASKS
 
 ### **Add New Component**
+
 1. Create `src/components/ComponentName.tsx`
 2. Create `src/components/ComponentName.css`
 3. Import CSS in component
@@ -55,6 +61,7 @@ npm run performance:report       # Performance report
 5. Update navigation if needed
 
 ### **Fix Linting Issues**
+
 1. Run `npm run lint`
 2. Fix TypeScript errors first
 3. Remove inline styles (move to CSS)
@@ -62,6 +69,7 @@ npm run performance:report       # Performance report
 5. Ensure proper error handling
 
 ### **Update Context Files**
+
 1. Check `migration/LLM_UNIVERSAL_ONBOARDING.md`
 2. Update `migration/LLM_QUICK_REFERENCE.md`
 3. Update `migration/COMPLETE_SYNTHESIS_MISSION.md`
@@ -72,12 +80,14 @@ npm run performance:report       # Performance report
 ## 🌿 CULTURAL GUIDELINES
 
 ### **Content Creation**
+
 - Always respect Māori protocols
 - Use appropriate cultural language
 - Attribute traditional knowledge properly
 - Ensure cultural safety in all content
 
 ### **Language Use**
+
 - **Kaiako**: Teacher
 - **Ākonga**: Student
 - **Kaitiakitanga**: Environmental stewardship
@@ -89,18 +99,21 @@ npm run performance:report       # Performance report
 ## 🚨 TROUBLESHOOTING
 
 ### **Build Issues**
+
 - Check TypeScript errors
 - Verify all imports are correct
 - Ensure CSS files exist
 - Check Firebase configuration
 
 ### **Performance Issues**
+
 - Run performance audit
 - Check bundle size
 - Optimize images
 - Implement lazy loading
 
 ### **Authentication Issues**
+
 - Verify Firebase config
 - Check environment variables
 - Test auth flow
@@ -111,12 +124,14 @@ npm run performance:report       # Performance report
 ## 📊 CURRENT STATUS
 
 ### **System Health**
+
 - ✅ Build: Successful (30.455s)
 - ⚠️ Performance: Needs optimization
 - ⚠️ CSS Files: 20 missing
 - ⚠️ Orphaned Files: 1 found
 
 ### **Next Priorities**
+
 1. Optimize build performance
 2. Create missing CSS files
 3. Clean up orphaned files
