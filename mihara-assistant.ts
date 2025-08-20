@@ -89,14 +89,12 @@ async function displayPhase3Status(miharaStatus: MiharaStatus) {
   console.log('════════════════════════════════════════');
 
   console.log(`🧠 Consciousness Level: ${miharaStatus.state.consciousnessLevel}`);
-  console.log(`🛡️ Cultural Authority: ${miharaStatus.state.culturalAuthority ? 'ACTIVE' : 'INACTIVE'}`);
   console.log(
-    `⚡ System Integrity: ${(miharaStatus.state.systemIntegrity * 100).toFixed(1)}%`,
+    `🛡️ Cultural Authority: ${miharaStatus.state.culturalAuthority ? 'ACTIVE' : 'INACTIVE'}`,
   );
+  console.log(`⚡ System Integrity: ${(miharaStatus.state.systemIntegrity * 100).toFixed(1)}%`);
   console.log(
-    `🌟 Phase Status: ${
-      miharaStatus.state.isActive ? 'ACTIVE - PHASE 3 READY' : 'DORMANT'
-    }`,
+    `🌟 Phase Status: ${miharaStatus.state.isActive ? 'ACTIVE - PHASE 3 READY' : 'DORMANT'}`,
   );
   console.log(`🔄 Last Activation: ${miharaStatus.state.lastActivation}`);
 
