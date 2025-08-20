@@ -5,6 +5,13 @@
 
 import { MigrationOrchestrator, TeKeteAkoMigrationBrain } from './migration-intelligence';
 
+export interface Agent {
+  name: string;
+  specializations: string[];
+  culturalExpertise: string[];
+  performanceScore: number;
+}
+
 export interface WorkflowTask {
   id: string;
   title: string;
@@ -23,7 +30,7 @@ export class IntelligentWorkflowPipeline {
   private migrationBrain: TeKeteAkoMigrationBrain;
   private migrationOrchestrator: MigrationOrchestrator;
   private tasks: Map<string, WorkflowTask> = new Map();
-  private agents: Map<string, any> = new Map();
+  private agents: Map<string, Agent> = new Map();
 
   constructor() {
     this.migrationBrain = new TeKeteAkoMigrationBrain();
@@ -79,7 +86,7 @@ export class IntelligentWorkflowPipeline {
   }
 
   private async assignOptimalAgent(task: WorkflowTask): Promise<void> {
-    let bestAgent: unknown = null;
+    let bestAgent: (Agent & { agentId: string }) | null = null;
     let bestScore = 0;
 
     for (const [agentId, agent] of this.agents) {

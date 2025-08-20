@@ -154,8 +154,8 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
 
       setCurrentUser(authUser);
       onAuthSuccess?.(authUser);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -187,8 +187,8 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
 
       setCurrentUser(authUser);
       onAuthSuccess?.(authUser);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -210,8 +210,8 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       setCurrentUser(authUser);
       onAuthSuccess?.(authUser);
       setAuthMode('login');
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -221,8 +221,8 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
     try {
       await signOut(auth);
       setCurrentUser(null);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred');
     }
   };
 
