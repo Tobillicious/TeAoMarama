@@ -4,94 +4,138 @@ type: activity
 subject: Social Studies
 year_level: 10
 generated_by: deepseek-agent
-generated_at: 2025-08-18T13:33:49.646Z
+generated_at: 2025-08-20T03:04:12.676Z
 cultural_safety: pending_review
 status: draft
 ---
 
 ```markdown
-# Depth-Focused Activity: Economic Systems in Pre-Colonial Aotearoa  
-**Year 10 Social Studies**  
-*Understanding resource allocation through Te Ao Māori*  
+# DEPTH-FOCUSED ACTIVITY: Economic Systems in Pre-Colonial Aotearoa
+
+## Whakapapa of Learning: Previous Connections
+
+**Explicit Links to Prior Knowledge:**
+- Year 9: Basic Māori social structures (whānau, hapū, iwi)
+- Year 9: Introduction to sustainability concepts in Pacific cultures
+- Year 10 Term 1: Resource management in early civilizations
+- Year 10 English: Analysis of oral traditions and storytelling
+
+**Foundation Concepts to Reactivate:**
+- Utu (reciprocity/balance) in social relationships
+- Manaakitanga (hospitality) as economic exchange
+- Kaitiakitanga (guardianship) of resources
+- The concept of taonga (treasured possessions/resources)
 
 ---
 
-## Previous Learning Connections  
-*Explicit links to build on:*  
-1. **Year 9 Migration Studies**: How iwi adapted resource use to different environments (e.g., Ngāi Tahu’s seasonal mahinga kai cycles).  
-2. **Māori Social Organisation**: Roles of hapū in collective decision-making (link to economic distribution).  
-3. **Sustainability in Early Societies**: Compare Māori concepts of kaitiakitanga with European extractive models.  
+## Deep Investigation: Te Ōhanga o Neherā
 
-*Key Question:*  
-"How did tikanga Māori ensure both survival *and* sustainability in economic practices?"  
+### Core Concept: Economic systems as expressions of worldview
 
----
+**Phase 1: Foundations of Māori Economics** (2 lessons)
+*Analyze primary source: "He korero mō te taonga" (traditional narrative)*
+- Examine how resources moved through whānau/hapū networks
+- Map gift-exchange cycles showing utu in practice
+- Identify economic decision-makers and their responsibilities
 
-## Deep Investigation: The Whānau-Hapū Economy  
-**Core Activity 1: Case Study Analysis**  
-- **Task**: Examine 3 pre-colonial economic practices (e.g., hākari feasts, pātaka storage, tauhārua reciprocal gift-giving).  
-- **Depth Layers**:  
-  1. *Surface*: Describe how each system worked.  
-  2. *Patterns*: Identify common values (e.g., manaakitanga, utu).  
-  3. *Systems Thinking*: Map how these practices connected to environmental constraints (e.g., scarcity of moa post-1450).  
+**Phase 2: Systems Thinking** (3 lessons)
+*Create interactive resource flow models showing:*
+- Seasonal cycles of mahinga kai (food gathering)
+- Redistribution mechanisms for surplus
+- Specialization of skills across communities
+- Inter-hapū trade networks and negotiations
 
-**Core Activity 2: Role-Play "Hapū Resource Council"**  
-- Groups simulate deciding how to allocate a seasonal harvest (e.g., birds, kūmara). Must:  
-  - Apply tikanga principles (e.g., rahui, mana whenua rights).  
-  - Debate priorities: immediate needs vs. long-term storage (pātaka).  
-  - *Extension*: Introduce a crisis (drought) to test system resilience.  
+**Phase 3: Comparative Depth Study** (2 lessons)
+*Contrast with early European mercantilism:*
+- Worldview differences: reciprocity vs accumulation
+- Environmental relationships: kaitiakitanga vs extraction
+- Wealth measurement: community wellbeing vs individual riches
 
 ---
 
-## Transfer Challenges  
-*Apply concepts to other contexts:*  
-1. **Modern Parallels**: Compare pātaka systems to contemporary food banks—what values persist?  
-2. **Global Indigenous Contrast**: Research how Inuit or Aboriginal Australian systems addressed similar challenges.  
-3. **Hypothetical Redesign**: How could a school adopt a "reciprocity-based" economy (e.g., skill-sharing instead of money)?  
+## Cultural Wisdom Connections
+
+**Anchoring Concepts in Te Ao Māori:**
+- **Whakapapa economics**: Resources understood through genealogical connections
+- **Mana-based valuation**: Worth determined by spiritual/social significance, not scarcity
+- **Time concepts**: Economic activities aligned with maramataka (lunar calendar)
+- **Intergenerational thinking**: Economic decisions considered impacts 7 generations forward
+
+**Primary Source Analysis:**
+- Deconstruct whakataukī about resource use: "He kai kei aku ringaringa"
+- Examine archaeological evidence of pā economies
+- Analyze trade routes through waka traditions
 
 ---
 
-## Future Learning Pathways  
-*Spiral Curriculum Links:*  
-- **Year 11**: Colonial disruption of Māori economies (e.g., land confiscations’ impact).  
-- **Year 12**: Modern Māori enterprises (e.g., Treaty settlements, iwi-run fisheries).  
-- **Year 13**: Critiques of capitalism through indigenous economic philosophies.  
+## Transfer Challenges
+
+**Contextual Application:**
+1. **Modern Parallels**: Design a utu-based system for modern community sharing
+2. **Policy Critique**: Evaluate current resource management using kaitiakitanga lenses
+3. **Global Connections**: Compare with other indigenous economic systems (First Nations, Pacific)
+
+**Interdisciplinary Transfer:**
+- Science: Analyze sustainable harvesting techniques
+- Mathematics: Model resource distribution algorithms
+- English: Create economic narratives in Māori storytelling style
+- Technology: Design apps based on reciprocal exchange principles
 
 ---
 
-## Cultural Wisdom Connections  
-*Māori Concepts as Anchors:*  
-- **Utu**: Balanced reciprocity, not just "trade."  
-- **Manaakitanga**: Economics as relationship-building.  
-- **Kaitiakitanga**: Resource use with intergenerational responsibility.  
-- **Whanaungatanga**: Collective benefit over individual gain.  
+## Future Learning Pathways
 
-*Quote for Discussion:*  
-*"He kai kei aku ringa" (There is food at my hands)* — How does this whakataukī reflect economic self-reliance *and* interdependence?  
+**Year 11-13 Progressions:**
+- Level 1: Impact of colonization on Māori economic systems
+- Level 2: Modern Māori economic initiatives and tino rangatiratanga
+- Level 3: Comparative economic philosophies (Māori, Marxist, capitalist)
+- Scholarship: Indigenous economic sovereignty movements
+
+**Tertiary Connections:**
+- Māori studies: Contemporary tribal economies
+- Economics: Alternative economic models
+- Environmental science: Sustainable resource management
+- Law: Treaty settlements and economic redress
 
 ---
 
-## Assessment: Understanding Transfer  
-**Performance Task**:  
-Create a 2-minute *pecha kucha* presentation answering:  
-*"What could modern Aotearoa learn from pre-colonial Māori economic systems?"*  
-- **Criteria**:  
-  - Depth of tikanga application (e.g., cites specific practices).  
-  - Transfer to contemporary issues (e.g., sustainability, inequality).  
-  - Use of Te Reo Māori terms *correctly* (e.g., not translating "utu" as "revenge").  
+## Assessment of Understanding
 
-**Alternative Submission**: Design a infographic comparing pre-colonial and modern systems using Māori design principles (e.g., koru patterns showing cyclical exchange).  
+**Performance Task:**
+"Design an economic system for a new settlement that integrates mātauranga Māori economic principles with modern sustainability needs."
 
---- 
+**Criteria Focus:**
+- Depth of conceptual understanding (not fact recall)
+- Transfer of principles to novel contexts
+- Integration of cultural wisdom with contemporary needs
+- Systems thinking complexity
 
-**Design Notes for Teachers**:  
-- *Scaffolding*: Provide sentence starters for Year 10s analyzing primary sources (e.g., "This practice shows ______ because...").  
-- *Cultural Safety*: Partner with local iwi to share pūrākau about specific economic traditions. Flag any sensitive content (e.g., tapu around pātaka) for kaitiaki review.  
-- *Extension*: Have students interview kaumātua (with guidance) about whānau economic memories.  
-``` 
+**Evidence Collection:**
+- Annotated economic models showing decision rationales
+- Oral presentation defending philosophical choices
+- Written reflection connecting to pre-colonial practices
+- Peer feedback on cultural integrity of proposals
 
-This design avoids "Māori-as-history" framing by:  
-1. Centring living knowledge systems (e.g., modern applications).  
-2. Using active, participatory learning (role-play, interviews).  
-3. Prioritizing conceptual *transfer* over static facts.  
-4. Explicitly linking to future NCEA standards.
+---
+
+## Teacher Notes: Spiral Design Implementation
+
+**Scaffolding for Revisitation:**
+- Year 10: Focus on systems and relationships
+- Year 11: Add layer of colonial disruption
+- Year 12: Examine contemporary revitalization
+- Year 13: Synthesize into critical economic analysis
+
+**Differentiation:**
+- Foundation: Concrete examples of resource flows
+- Extension: Abstract economic philosophy comparisons
+- Cultural: Connections to own whakapapa where appropriate
+
+**Cultural Safety Protocols:**
+- Engage local iwi resource people where possible
+- Flag sensitive content for review
+- Present economic concepts as sophisticated systems, not "primitive" practices
+- Balance historical study with contemporary vitality
+```
+
+This depth-focused design emphasizes conceptual understanding over superficial coverage, creates multiple pathways for transfer, and anchors learning in authentic cultural frameworks while preparing students for increasingly sophisticated revisitation of these concepts throughout their educational journey.
