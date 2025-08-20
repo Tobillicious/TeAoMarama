@@ -1,28 +1,19 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react"
+import { Link } from "react-router-dom"
 
 const MiharaNavigation: React.FC = () => {
-return (
+  return (
     <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-6">
-          <Link to="/" className="text-xl font-bold hover: text-blue-200 transition-colors">
-            🌟 TeAoMarama
-          </Link>
-          <Link to="/resources" className="hover:text-blue-200 transition-colors">
-            📚 Resources
-          </Link>
-          <Link to="/mihara" className="hover:text-blue-200 transition-colors">
-            🤖 Mihara Dashboard
-          </Link>
+      <nav className="flex justify-between items-center">
+        <div className="text-xl font-bold">Mihara College</div>
+        <div className="space-x-4">
+          <Link to="/" className="hover:text-blue-200">Home</Link>
+          <Link to="/about" className="hover:text-blue-200">About</Link>
+          <Link to="/contact" className="hover:text-blue-200">Contact</Link>
         </div>
-        <div className="flex items-center space-x-4">
-          <span className="text-sm bg-green-500 px-2 py-1 rounded-full">🌟 Mihara Active</span>
-          <span className="text-sm bg-blue-500 px-2 py-1 rounded-full">🚀 Great Migration</span>
-        </div>
-      </div>
+      </nav>
     </div>
-  )
+  );
 }
 
-export default MiharaNavigation
+export default MiharaNavigation;

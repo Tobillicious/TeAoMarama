@@ -1,0 +1,3 @@
+#!/usr/bin/env tsx /** * 🧪 TEST QA OVERSEER * Simple test to verify the QA Overseer is working */ import { QAOverseer } from '../src/ai/qa-overseer' async function testQAOverseer() {
+  console.log('🧪 Testing QA Overseer...') try { const overseer = new QAOverseer() console.log('✅ QA Overseer created successfully') await overseer.initialize() console.log('✅ QA Overseer initialized successfully') const status = await overseer.getStatus() console.log('📊 Status: ' status) await overseer.shutdown() console.log('✅ QA Overseer shutdown successfully') console.log('🎉 All tests passed!');
+} catch (error) { console.error('❌ Test failed: ' error) process.exit(1) } }, testQAOverseer().catch(console.error;) ;

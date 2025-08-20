@@ -21,6 +21,7 @@
     "test:llm-performance": "tsx scripts/test-llm-performance.ts",
     "mihara": "tsx migration/simple-mihara.ts",
     "mihara:assist": "tsx migration/mihara-assistant.ts",
+    "fix:typescript": "tsx scripts/targeted-fix.ts",
     "doctor": "tsx migration/connection-diagnostic.ts",
     "agents": "tsx migration/run-agents.ts",
     "mig:pg:run": "tsx migration/pgvector_loader_example.ts --sample migration/sample_raw_exports.jsonl",

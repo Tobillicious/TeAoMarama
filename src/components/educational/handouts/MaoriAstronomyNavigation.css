@@ -1,332 +1,108 @@
-/* 🌌 Māori Astronomy Navigation - TeAoMarama Unified Design */
+/* MaoriAstronomyNavigation Component Styles */
 
-.astronomy-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  min-height: 100vh;
-  color: white;
-}
-
-.astronomy-header {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.35);
-  position: relative;
-  overflow: hidden;
-}
-
-.astronomy-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
-  opacity: 0.3;
-}
-
-.header-content {
-  position: relative;
-  z-index: 1;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
-}
-
-.title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-}
-
-.subtitle {
-  font-size: 1.4rem;
-  opacity: 0.95;
-  margin: 0 0 1.25rem 0;
-}
-
-.meta {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.meta-item {
-  background: rgba(255, 255, 255, 0.18);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
-}
-
-.description {
-  margin: 0;
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-.tabs {
-  margin-bottom: 1.5rem;
-}
-
-.tab-buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tab-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.7rem 1.2rem;
+.maori-astronomy-navigation {
+  /* Basic container styles */
+  padding: 1rem;
+  margin: 1rem 0;
   border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tab-button:hover {
-  border-color: #6366f1;
-  background: rgba(99, 102, 241, 0.2);
-  transform: translateY(-1px);
-}
-
-.tab-button.active {
-  background: #6366f1;
-  border-color: #6366f1;
-  color: white;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
-}
-
-.stars,
-.navigation,
-.cultural,
-.activities {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.stars h2,
-.navigation h2,
-.cultural h2,
-.activities h2 {
-  color: #6366f1;
-  margin-bottom: 1.5rem;
-}
-
-.star-selector,
-.technique-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.star-pill,
-.technique-pill {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-size: 0.9rem;
-  backdrop-filter: blur(10px);
-}
-
-.star-pill:hover,
-.technique-pill:hover {
-  border-color: #6366f1;
-  background: rgba(99, 102, 241, 0.2);
-}
-
-.star-pill.active,
-.technique-pill.active {
-  background: #6366f1;
-  color: white;
-  border-color: #6366f1;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
-}
-
-.star-details h3,
-.technique-details h3 {
-  color: #6366f1;
-  margin-bottom: 1rem;
-}
-
-.star-grid,
-.technique-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.star-section,
-.technique-section {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1.25rem;
-}
-
-.star-section h4,
-.technique-section h4 {
-  color: #6366f1;
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
-}
-
-.star-section p,
-.technique-section p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
-}
-
-.cultural-content {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.cultural-section {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.cultural-section h3 {
-  color: #6366f1;
-  margin: 0 0 1rem 0;
-}
-
-.cultural-section p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-}
-
-.activities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.activity {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.activity h3 {
-  color: #6366f1;
-  margin: 0 0 1rem 0;
-}
-
-.activity p {
-  margin: 0 0 1rem 0;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
-}
-
-.activity ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.activity li {
+.maori-astronomy-navigation h1,
+.maori-astronomy-navigation h2,
+.maori-astronomy-navigation h3,
+.maori-astronomy-navigation h4,
+.maori-astronomy-navigation h5,
+.maori-astronomy-navigation h6 {
+  color: #2c3e50;
   margin-bottom: 0.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.4;
 }
 
-.footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 1.5rem;
-}
-
-.motto {
-  color: #6366f1;
+.maori-astronomy-navigation h1 {
+  font-size: 1.8rem;
   font-weight: 600;
-  margin: 0 0 0.5rem 0;
 }
 
-.platform {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  font-size: 0.95rem;
+.maori-astronomy-navigation h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
+.maori-astronomy-navigation h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.maori-astronomy-navigation p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.maori-astronomy-navigation ul,
+.maori-astronomy-navigation ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.maori-astronomy-navigation li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.maori-astronomy-navigation .highlight {
+  background-color: #fff3cd;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.maori-astronomy-navigation .important {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.maori-astronomy-navigation .tip {
+  background-color: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.maori-astronomy-navigation .success {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .astronomy-container {
-    padding: 1rem;
+  .maori-astronomy-navigation {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
   }
   
-  .astronomy-header {
-    padding: 2rem 1rem;
+  .maori-astronomy-navigation h1 {
+    font-size: 1.5rem;
   }
   
-  .title {
-    font-size: 2rem;
+  .maori-astronomy-navigation h2 {
+    font-size: 1.3rem;
   }
   
-  .subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .star-grid,
-  .technique-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .activities-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .tab-buttons {
-    flex-direction: column;
-  }
-  
-  .star-selector,
-  .technique-selector {
-    flex-direction: column;
+  .maori-astronomy-navigation h3 {
+    font-size: 1.1rem;
   }
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
+/* Print styles */
+@media print {
+  .maori-astronomy-navigation {
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stars,
-.navigation,
-.cultural,
-.activities {
-  animation: fadeUp 0.5s ease-out;
 }

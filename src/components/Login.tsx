@@ -1,119 +1,115 @@
-import React, { useState } from 'react'
-import {Link, useNavigate} from 'react-router-dom'
-import {useAuth} from '../services/useAuth'
-import {supabase} from '../supabaseClient'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/useAuth';
+import { supabase } from '../supabaseClient';
 
 const Login: React.FC = () => {
-const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [resetMsg, setResetMsg] = useState('')
-  const { logIn } = useAuth()
-  const navigate = useNavigate()
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [resetMsg, setResetMsg] = useState('');
+  const auth = useAuth();
+  const navigate = useNavigate();
 
-const handleLogin = async (_e: React.FormEvent) => {
-e.preventDefault()
-    setError('')
-    setResetMsg('')
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setResetMsg('');
+
     try {
-const { error } = await logIn(email, password)
-      if (error) {
-setError(error.message)
+      if (auth && auth.logIn) {
+        const { error } = await auth.logIn(email, password);
+        if (error) {
+          setError(error.message);
+        } else {
+          navigate('/');
+        }
       } else {
-navigate('/')
+        setError('Authentication service not available');
       }
     } catch (err) {
-setError('Failed to log in')
-      console.error(err)
+      setError('Failed to log in');
+      console.error(err);
     }
-  }
+  };
 
-const handleReset = async () => {
-setResetMsg('')
-    setError('')
+  const handleReset = async () => {
+    setResetMsg('');
+    setError('');
+
     if (!email) {
-setError('Please enter your email to reset password.')
-      return
+      setError('Please enter your email to reset password.');
+      return;
     }
-try {
-const { error } = await supabase.auth.resetPasswordForEmail(email, {,
-redirectTo: window.location.origin + '/update-password',
-      })
+
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/update-password',
+      });
+
       if (error) {
-setError(error.message)
+        setError(error.message);
       } else {
-setResetMsg('Password reset email sent!')
+        setResetMsg('Password reset email sent!');
       }
     } catch (err) {
-if (err instanceof Error) {
-setError(err.message)
+      if (err instanceof Error) {
+        setError(err.message);
       } else {
-setError('An unknown error occurred during password reset.')
+        setError('An unknown error occurred during password reset.');
       }
     }
-  }
+  };
 
-return (
-_<div className="auth-container">
+  return (
+    <div className="auth-container">
       <div className="app-container">
-        <form onSubmit={handleLogin} className="auth-form">
-          <h2 className="auth-title">Whakatōmuri TeAoMarama</h2>
-          <p className="auth-subtitle">Welcome back to Te Ao Mārama</p>
+        <div className="auth-form-container">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin} className="auth-form">
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="form-input"
+              />
+            </div>
 
-          {error && <div className="error-message">{error}</div>}
-          {resetMsg && <div className="success-message">{resetMsg}</div>}
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="form-input"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">
-Email
-            </label>
-            <input
-id="email"
-type="email"
-placeholder="your.email@example.com"
-value={email}
-onChange={(e) => setEmail(e.target.value)}
-required
-className="form-input"
-            />
-          </div>
+            {error && <div className="error-message">{error}</div>}
+            {resetMsg && <div className="success-message">{resetMsg}</div>}
 
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">
-Password
-            </label>
-            <input
-id="password"
-type="password"
-placeholder="Your secure password"
-value={password}
-onChange={(_e) => setPassword(e.target.value)}
-required
-className="form-input"
-            />
-          </div>
+            <button type="submit" className="auth-button">
+              Login
+            </button>
+          </form>
 
-          <button type="submit" className="form-button login-button">
-            🌟 Sign In to Te Ao Mārama
+          <button onClick={handleReset} className="reset-button">
+            Reset Password
           </button>
 
-          <button type="button" onClick={handleReset} className="text-link forgot-link">
-Forgot your password?
-          </button>
-
-          <div className="auth-footer">
-            <p>
-Don't have an account?
-              <Link to="/signup" className="text-link">
-                {' '}
-Create one here
-              </Link>
-            </p>
-          </div>
-        </form>
+          <p className="auth-link">
+            Don't have an account? <Link to="/register">Register here</Link>
+          </p>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
