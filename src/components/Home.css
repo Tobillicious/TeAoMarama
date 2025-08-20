@@ -1,0 +1,35 @@
+/* Home Component Styles */
+
+.home {
+  /* Add your styles here */
+}
+
+.home-container {
+  /* Container styles */
+}
+
+.home-content {
+  /* Content styles */
+}
+
+.home-header {
+  /* Header styles */
+}
+
+.home-title {
+  /* Title styles */
+}
+
+.home-description {
+  /* Description styles */
+}
+
+.home-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .home {
+    /* Mobile styles */
+  }
+}

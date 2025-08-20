@@ -1,0 +1,35 @@
+/* BrainNavigation Component Styles */
+
+.brainnavigation {
+  /* Add your styles here */
+}
+
+.brainnavigation-container {
+  /* Container styles */
+}
+
+.brainnavigation-content {
+  /* Content styles */
+}
+
+.brainnavigation-header {
+  /* Header styles */
+}
+
+.brainnavigation-title {
+  /* Title styles */
+}
+
+.brainnavigation-description {
+  /* Description styles */
+}
+
+.brainnavigation-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .brainnavigation {
+    /* Mobile styles */
+  }
+}

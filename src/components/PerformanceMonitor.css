@@ -1,0 +1,35 @@
+/* PerformanceMonitor Component Styles */
+
+.performancemonitor {
+  /* Add your styles here */
+}
+
+.performancemonitor-container {
+  /* Container styles */
+}
+
+.performancemonitor-content {
+  /* Content styles */
+}
+
+.performancemonitor-header {
+  /* Header styles */
+}
+
+.performancemonitor-title {
+  /* Title styles */
+}
+
+.performancemonitor-description {
+  /* Description styles */
+}
+
+.performancemonitor-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .performancemonitor {
+    /* Mobile styles */
+  }
+}

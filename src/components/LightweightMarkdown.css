@@ -1,0 +1,42 @@
+/* LightweightMarkdown Component Styles */
+
+.lightweight-markdown {
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.lightweight-markdown h1,
+.lightweight-markdown h2,
+.lightweight-markdown h3 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.lightweight-markdown h1 { font-size: var(--text-xl); }
+.lightweight-markdown h2 { font-size: var(--text-lg); }
+.lightweight-markdown h3 { font-size: var(--text-base); }
+
+.lightweight-markdown p {
+  margin-bottom: var(--space-3);
+}
+
+.lightweight-markdown ul,
+.lightweight-markdown ol {
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-4);
+}
+
+.lightweight-markdown li {
+  margin-bottom: var(--space-1);
+}
+
+.lightweight-markdown a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.lightweight-markdown a:hover {
+  color: var(--color-primary-dark);
+}

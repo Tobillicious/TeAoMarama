@@ -1,0 +1,35 @@
+/* Login Component Styles */
+
+.login {
+  /* Add your styles here */
+}
+
+.login-container {
+  /* Container styles */
+}
+
+.login-content {
+  /* Content styles */
+}
+
+.login-header {
+  /* Header styles */
+}
+
+.login-title {
+  /* Title styles */
+}
+
+.login-description {
+  /* Description styles */
+}
+
+.login-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .login {
+    /* Mobile styles */
+  }
+}
