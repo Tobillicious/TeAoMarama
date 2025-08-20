@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '../Card';
+import { Card } from '../ui/card';
 
 const TE_REO_WORDS = [
   'AROHA', 'WHANAU', 'MAURI', 'TUHOE', 'NGATI', 
@@ -66,7 +66,7 @@ export const TeReoWordle: React.FC = () => {
   };
 
   return (
-    <Card className="te-reo-wordle">
+    <Card title="Te Reo Māori Wordle" className="te-reo-wordle">
       <div className="wordle-header">
         <h2>Te Reo Māori Wordle</h2>
         <p className="cultural-context">

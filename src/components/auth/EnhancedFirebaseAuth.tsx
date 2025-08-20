@@ -10,6 +10,7 @@ import {
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { auth, db } from '../../firebaseConfig';
+import './EnhancedFirebaseAuth.css';
 
 interface UserRole {
   role: 'student' | 'teacher' | 'admin';
@@ -228,37 +229,18 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
 
   if (currentUser) {
     return (
-      <div
-        className={`firebase-auth authenticated ${className}`}
-        style={{
-          padding: 'var(--space-4)',
-          backgroundColor: 'var(--color-background)',
-          borderRadius: 'var(--radius-md)',
-          border: '1px solid var(--color-border)',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+      <div className={`firebase-auth authenticated ${className}`}>
+        <div className="auth-user-info">
           <div>
-            <p style={{ fontWeight: 'bold', color: 'var(--color-primary)' }}>
+            <p className="auth-user-name">
               Kia ora, {currentUser.displayName || currentUser.email}!
             </p>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
+            <p className="auth-user-meta">
               {currentUser.role === 'teacher' ? '👩‍🏫 Kaiako' : '👨‍🎓 Ākonga'} •{' '}
               {currentUser.culturalContext}
             </p>
           </div>
-          <button
-            onClick={handleSignOut}
-            style={{
-              padding: 'var(--space-2) var(--space-3)',
-              backgroundColor: 'var(--color-secondary)',
-              color: 'white',
-              border: 'none',
-              borderRadius: 'var(--radius-sm)',
-              cursor: 'pointer',
-              fontSize: 'var(--text-sm)',
-            }}
-          >
+          <button onClick={handleSignOut} className="auth-signout-button">
             Sign Out
           </button>
         </div>
@@ -268,38 +250,21 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
 
   if (authMode === 'role-select') {
     return (
-      <div
-        className={`firebase-auth role-select ${className}`}
-        style={{
-          padding: 'var(--space-6)',
-          backgroundColor: 'var(--color-background)',
-          borderRadius: 'var(--radius-md)',
-          border: '1px solid var(--color-border)',
-          textAlign: 'center',
-        }}
-      >
-        <h3 style={{ color: 'var(--color-primary)', marginBottom: 'var(--space-4)' }}>
+      <div className={`firebase-auth role-select ${className}`}>
+        <h3 className="auth-title">
           Choose Your Role - Kōwhiri tō tūranga
         </h3>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)' }}>
+        <div className="auth-role-buttons">
           <button
             onClick={() => handleRoleSelection('student')}
             disabled={loading}
-            style={{
-              padding: 'var(--space-6)',
-              backgroundColor: 'var(--color-accent)',
-              color: 'white',
-              border: 'none',
-              borderRadius: 'var(--radius-md)',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.6 : 1,
-            }}
+            className="auth-role-button student"
           >
             <div>
-              <div style={{ fontSize: '2rem', marginBottom: 'var(--space-2)' }}>👨‍🎓</div>
-              <h4>Student / Ākonga</h4>
-              <p style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>
+              <div className="auth-role-icon">👨‍🎓</div>
+              <h4 className="auth-role-title">Student / Ākonga</h4>
+              <p className="auth-role-description">
                 Access learning materials and activities
               </p>
             </div>
@@ -308,110 +273,52 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
           <button
             onClick={() => handleRoleSelection('teacher')}
             disabled={loading}
-            style={{
-              padding: 'var(--space-6)',
-              backgroundColor: 'var(--color-primary)',
-              color: 'white',
-              border: 'none',
-              borderRadius: 'var(--radius-md)',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.6 : 1,
-            }}
+            className="auth-role-button teacher"
           >
             <div>
-              <div style={{ fontSize: '2rem', marginBottom: 'var(--space-2)' }}>👩‍🏫</div>
-              <h4>Teacher / Kaiako</h4>
-              <p style={{ fontSize: 'var(--text-sm)', opacity: 0.9 }}>
+              <div className="auth-role-icon">👩‍🏫</div>
+              <h4 className="auth-role-title">Teacher / Kaiako</h4>
+              <p className="auth-role-description">
                 Access teaching resources and planning tools
               </p>
             </div>
           </button>
         </div>
 
-        {error && (
-          <div
-            style={{
-              marginTop: 'var(--space-4)',
-              padding: 'var(--space-3)',
-              backgroundColor: '#fee',
-              color: '#c33',
-              borderRadius: 'var(--radius-sm)',
-              fontSize: 'var(--text-sm)',
-            }}
-          >
-            {error}
-          </div>
-        )}
+        {error && <div className="auth-error">{error}</div>}
       </div>
     );
   }
 
   return (
-    <div
-      className={`firebase-auth ${className}`}
-      style={{
-        padding: 'var(--space-6)',
-        backgroundColor: 'var(--color-background)',
-        borderRadius: 'var(--radius-md)',
-        border: '1px solid var(--color-border)',
-        maxWidth: '400px',
-      }}
-    >
-      <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
-        <h2 style={{ color: 'var(--color-primary)', marginBottom: 'var(--space-2)' }}>
+    <div className={`firebase-auth ${className}`}>
+      <div className="auth-header">
+        <h2 className="auth-title">
           🌿 TeAoMarama
         </h2>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--text-sm)' }}>
+        <p className="auth-subtitle">
           {authMode === 'login' ? 'Sign in to your account' : 'Create your account'}
         </p>
       </div>
 
       {/* User Type Selection for Registration */}
       {authMode === 'register' && (
-        <div style={{ marginBottom: 'var(--space-4)' }}>
-          <label
-            style={{
-              display: 'block',
-              marginBottom: 'var(--space-2)',
-              color: 'var(--color-text)',
-              fontSize: 'var(--text-sm)',
-              fontWeight: 'bold',
-            }}
-          >
+        <div className="auth-user-type-selection">
+          <label className="auth-user-type-label">
             I am a:
           </label>
-          <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
+          <div className="auth-user-type-buttons">
             <button
               type="button"
               onClick={() => setUserType('student')}
-              style={{
-                flex: 1,
-                padding: 'var(--space-2)',
-                backgroundColor:
-                  userType === 'student' ? 'var(--color-primary)' : 'var(--color-background)',
-                color: userType === 'student' ? 'white' : 'var(--color-text)',
-                border: '1px solid var(--color-border)',
-                borderRadius: 'var(--radius-sm)',
-                cursor: 'pointer',
-                fontSize: 'var(--text-sm)',
-              }}
+              className={`auth-user-type-button ${userType === 'student' ? 'active' : ''}`}
             >
               👨‍🎓 Student / Ākonga
             </button>
             <button
               type="button"
               onClick={() => setUserType('teacher')}
-              style={{
-                flex: 1,
-                padding: 'var(--space-2)',
-                backgroundColor:
-                  userType === 'teacher' ? 'var(--color-primary)' : 'var(--color-background)',
-                color: userType === 'teacher' ? 'white' : 'var(--color-text)',
-                border: '1px solid var(--color-border)',
-                borderRadius: 'var(--radius-sm)',
-                cursor: 'pointer',
-                fontSize: 'var(--text-sm)',
-              }}
+              className={`auth-user-type-button ${userType === 'teacher' ? 'active' : ''}`}
             >
               👩‍🏫 Teacher / Kaiako
             </button>
@@ -423,21 +330,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       <button
         onClick={handleGoogleAuth}
         disabled={loading}
-        style={{
-          width: '100%',
-          padding: 'var(--space-3)',
-          backgroundColor: 'white',
-          color: '#333',
-          border: '1px solid var(--color-border)',
-          borderRadius: 'var(--radius-md)',
-          cursor: loading ? 'not-allowed' : 'pointer',
-          opacity: loading ? 0.6 : 1,
-          marginBottom: 'var(--space-4)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 'var(--space-2)',
-        }}
+        className="auth-google-button"
       >
         <svg width="18" height="18" viewBox="0 0 24 24">
           <path
