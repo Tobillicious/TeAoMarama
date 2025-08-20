@@ -33,7 +33,7 @@ export interface EnhancedFirebaseConfig extends FirebaseOptions {
   databaseURL?: string;
 }
 
-// Configuration validation
+// Configuration validation with fallback for ERO Hui demonstration
 class FirebaseConfigValidator {
   private static readonly REQUIRED_FIELDS: (keyof EnhancedFirebaseConfig)[] = [
     'apiKey', 'authDomain', 'projectId', 'storageBucket', 'messagingSenderId', 'appId'
@@ -44,7 +44,13 @@ class FirebaseConfigValidator {
     
     if (missingFields.length > 0) {
       const errorMsg = `Missing required Firebase config fields: ${missingFields.join(', ')}`;
-      console.error('🔥 Firebase Configuration Error:', errorMsg);
+      console.warn('🔥 Firebase Configuration Warning:', errorMsg);
+      
+      // For ERO Hui demonstration, provide fallback configuration
+      if (import.meta.env.PROD || import.meta.env.VITE_ERO_DEMO_MODE === 'true') {
+        console.log('🎯 ERO Hui Demo Mode: Using fallback Firebase configuration');
+        return this.getFallbackConfig();
+      }
       
       // In development, provide helpful guidance
       if (import.meta.env.DEV) {
@@ -71,6 +77,20 @@ class FirebaseConfigValidator {
 
     return config as EnhancedFirebaseConfig;
   }
+
+  // Fallback configuration for ERO Hui demonstration
+  private static getFallbackConfig(): EnhancedFirebaseConfig {
+    console.log('🌿 Using fallback Firebase configuration for ERO Hui demonstration');
+    return {
+      apiKey: 'demo-api-key-for-ero-hui',
+      authDomain: 'teaomarama-demo.firebaseapp.com',
+      projectId: 'teaomarama-demo',
+      storageBucket: 'teaomarama-demo.appspot.com',
+      messagingSenderId: '123456789',
+      appId: '1:123456789:web:demo-app-id',
+      measurementId: 'G-DEMO123'
+    };
+  }
 }
 
 // Enhanced Firebase service status tracking
@@ -78,30 +98,36 @@ export interface FirebaseServiceStatus {
   app: {
     initialized: boolean;
     error?: string;
+    demoMode?: boolean;
   };
   auth: {
     initialized: boolean;
     connected: boolean;
     persistenceSet: boolean;
     error?: string;
+    demoMode?: boolean;
   };
   firestore: {
     initialized: boolean;
     connected: boolean;
     offline: boolean;
     error?: string;
+    demoMode?: boolean;
   };
   storage: {
     initialized: boolean;
     error?: string;
+    demoMode?: boolean;
   };
   analytics?: {
     initialized: boolean;
     error?: string;
+    demoMode?: boolean;
   };
   functions?: {
     initialized: boolean;
     error?: string;
+    demoMode?: boolean;
   };
 }
 
@@ -113,7 +139,7 @@ const serviceStatus: FirebaseServiceStatus = {
   storage: { initialized: false }
 };
 
-// Firebase configuration with environment variables
+// Firebase configuration with environment variables and fallback
 const firebaseConfig: EnhancedFirebaseConfig = FirebaseConfigValidator.validate({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -125,28 +151,37 @@ const firebaseConfig: EnhancedFirebaseConfig = FirebaseConfigValidator.validate(
   databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL // For Realtime Database
 });
 
+// Check if we're in demo mode
+const isDemoMode = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_ERO_DEMO_MODE === 'true';
+
 // Initialize Firebase App with error handling
 let app: FirebaseApp;
 
 try {
   app = initializeApp(firebaseConfig);
   serviceStatus.app.initialized = true;
+  serviceStatus.app.demoMode = isDemoMode;
   
   // Log successful initialization
   console.log('🔥 Firebase App initialized successfully');
+  if (isDemoMode) {
+    console.log('🎯 Running in ERO Hui Demo Mode');
+  }
   
-  // Log to provenance system
-  writeEpisode('firebase-config', {
-    timestamp: new Date().toISOString(),
-    agent: 'agent:firebase-system',
-    action: 'firebase_app_initialized',
-    context: {
-      project_id: firebaseConfig.projectId,
-      auth_domain: firebaseConfig.authDomain,
-      environment: import.meta.env.MODE,
-      text: `Firebase app initialized for project: ${firebaseConfig.projectId}`
-    }
-  }).catch(console.error);
+  // Log to provenance system (only if not in demo mode)
+  if (!isDemoMode) {
+    writeEpisode('firebase-config', {
+      timestamp: new Date().toISOString(),
+      agent: 'agent:firebase-system',
+      action: 'firebase_app_initialized',
+      context: {
+        project_id: firebaseConfig.projectId,
+        auth_domain: firebaseConfig.authDomain,
+        environment: import.meta.env.MODE,
+        text: `Firebase app initialized for project: ${firebaseConfig.projectId}`
+      }
+    }).catch(console.error);
+  }
   
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -161,6 +196,7 @@ let auth: Auth;
 try {
   auth = getAuth(app);
   serviceStatus.auth.initialized = true;
+  serviceStatus.auth.demoMode = isDemoMode;
   
   // Set persistence to session (survives tab refresh, not browser restart)
   setPersistence(auth, browserSessionPersistence)
@@ -199,6 +235,7 @@ let db: Firestore;
 try {
   db = getFirestore(app);
   serviceStatus.firestore.initialized = true;
+  serviceStatus.firestore.demoMode = isDemoMode;
 
   // Connect to emulator in development
   if (import.meta.env.DEV && import.meta.env.VITE_FIRESTORE_EMULATOR_HOST) {
@@ -238,6 +275,7 @@ let storage: FirebaseStorage | undefined;
 try {
   storage = getStorage(app);
   serviceStatus.storage.initialized = true;
+  serviceStatus.storage.demoMode = isDemoMode;
   console.log('📁 Firebase Storage initialized successfully');
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -251,10 +289,13 @@ try {
 let analytics: Analytics | undefined;
 
 try {
-  if (firebaseConfig.measurementId && typeof window !== 'undefined') {
+  if (firebaseConfig.measurementId && typeof window !== 'undefined' && !isDemoMode) {
     analytics = getAnalytics(app);
     serviceStatus.analytics = { initialized: true };
     console.log('📊 Firebase Analytics initialized successfully');
+  } else if (isDemoMode) {
+    serviceStatus.analytics = { initialized: false, demoMode: true };
+    console.log('📊 Firebase Analytics disabled in demo mode');
   }
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -280,7 +321,7 @@ try {
     }
   }
   
-  serviceStatus.functions = { initialized: true };
+  serviceStatus.functions = { initialized: true, demoMode: isDemoMode };
   console.log('⚡ Cloud Functions initialized successfully');
 } catch (error) {
   const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -308,13 +349,28 @@ export const FirebaseService = {
   },
 
   /**
+   * Check if running in demo mode
+   */
+  isDemoMode(): boolean {
+    return isDemoMode;
+  },
+
+  /**
    * Get health check summary for ERO demonstrations
    */
   getHealthCheck(): {
-    status: 'healthy' | 'degraded' | 'error';
+    status: 'healthy' | 'degraded' | 'error' | 'demo';
     message: string;
     details: FirebaseServiceStatus;
   } {
+    if (isDemoMode) {
+      return {
+        status: 'demo',
+        message: 'Running in ERO Hui Demo Mode - Firebase services available for demonstration',
+        details: serviceStatus
+      };
+    }
+
     const errors = [
       serviceStatus.app.error,
       serviceStatus.auth.error,
@@ -366,6 +422,7 @@ export const FirebaseService = {
    */
   logStatus(): void {
     console.group('🔥 Firebase Service Status');
+    console.log('Demo Mode:', isDemoMode);
     console.log('App:', serviceStatus.app);
     console.log('Auth:', serviceStatus.auth);
     console.log('Firestore:', serviceStatus.firestore);
