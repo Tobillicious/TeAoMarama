@@ -1,131 +1,226 @@
-/* TeacherDashboard Component Styles */
+/* TeacherDashboard.css - External styles for TeacherDashboard component */
 
-/* Loading States */
+/* Loading and Error States */
 .teacher-dashboard-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-porcelain);
 }
 
-.teacher-dashboard-loading-spinner {
-  border-color: var(--color-gold);
+.teacher-dashboard-error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-porcelain);
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  height: 3rem;
+  width: 3rem;
+  border-bottom: 2px solid var(--color-gold);
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Main Layout */
 .teacher-dashboard-container {
+  min-height: 100vh;
+  display: flex;
   background-color: var(--color-porcelain);
 }
 
-/* Sidebar */
-.teacher-dashboard-sidebar {
+/* Sidebar Styles */
+.teacher-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s;
   background-color: var(--color-royal-blue);
 }
 
-.teacher-dashboard-logo {
+.teacher-sidebar-collapsed {
+  width: 4rem;
+}
+
+.teacher-sidebar-expanded {
+  width: 18rem;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.sidebar-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-gold);
 }
 
-.teacher-dashboard-sidebar-border {
-  border-color: rgba(255, 215, 0, 0.2);
+.sidebar-profile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-/* Navigation Items */
-.teacher-dashboard-nav-active {
+.profile-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-gold);
 }
 
-/* Header */
-.teacher-dashboard-header {
-  border-color: var(--color-gold);
+/* Navigation Styles */
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
 }
 
-/* Progress Bars */
-.teacher-dashboard-progress-bar {
+.nav-item-active {
+  color: white;
   background-color: var(--color-gold);
 }
 
-/* Status Indicators */
-.teacher-dashboard-status-indicator {
-  background-color: var(--color-gold);
+.nav-item-inactive {
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Dynamic Status Colors */
-.status-active {
-  background-color: #10b981;
+.nav-item-inactive:hover {
+  color: white;
 }
 
-.status-pending {
-  background-color: #f59e0b;
+/* Main Content */
+.teacher-main-content {
+  transition: all 0.3s;
 }
 
-.status-completed {
-  background-color: #3b82f6;
+.teacher-main-content-collapsed {
+  margin-left: 4rem;
 }
 
-.status-overdue {
-  background-color: #ef4444;
+.teacher-main-content-expanded {
+  margin-left: 18rem;
 }
 
-/* Cultural Content */
-.cultural-content-card {
-  background-color: var(--color-porcelain);
+/* Header Styles */
+.teacher-header {
+  border-bottom: 1px solid var(--color-gold);
+  padding: 1.5rem;
 }
 
-.cultural-content-border {
-  border-color: var(--color-gold);
+.create-resource-button {
+  background-color: var(--color-pounamu);
+  color: white;
 }
 
-/* Assessment Tools */
-.assessment-tool-card {
-  background-color: var(--color-porcelain);
+/* Student Progress Styles */
+.student-progress-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.assessment-tool-border {
-  border-color: var(--color-gold);
+.student-progress-excellent {
+  background-color: var(--color-success);
 }
 
-/* Resource Library */
-.resource-library-card {
-  background-color: var(--color-porcelain);
+.student-progress-good {
+  background-color: var(--color-warning);
 }
 
-.resource-library-border {
-  border-color: var(--color-gold);
+.student-progress-needs-attention {
+  background-color: var(--color-error);
 }
 
-/* Student Progress */
-.student-progress-card {
-  background-color: var(--color-porcelain);
+.view-all-students-link {
+  text-align: center;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: colors 0.3s;
+  color: var(--color-pounamu);
+  background-color: rgba(27, 127, 90, 0.05);
 }
 
-.student-progress-border {
-  border-color: var(--color-gold);
+/* Stats Card Styles */
+.stats-card-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Dashboard Overview */
-.dashboard-overview-card {
-  background-color: var(--color-porcelain);
+/* Cultural Guidelines */
+.cultural-guideline-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 }
 
-.dashboard-overview-border {
-  border-color: var(--color-gold);
+.step-number {
+  color: #d97706;
 }
 
-/* Dynamic Color Classes */
-.color-gold-bg {
-  background-color: var(--color-gold);
+.step-number-complete {
+  color: #059669;
 }
 
-.color-royal-blue-bg {
-  background-color: var(--color-royal-blue);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-sidebar-expanded {
+    width: 16rem;
+  }
+
+  .teacher-main-content-expanded {
+    margin-left: 16rem;
+  }
 }
 
-.color-porcelain-bg {
-  background-color: var(--color-porcelain);
-}
+@media (max-width: 640px) {
+  .teacher-sidebar {
+    transform: translateX(-100%);
+  }
 
-.color-gold-border {
-  border-color: var(--color-gold);
-}
+  .teacher-sidebar-mobile-open {
+    transform: translateX(0);
+  }
 
-.color-gold-text {
-  color: var(--color-gold);
+  .teacher-main-content {
+    margin-left: 0;
+  }
 }

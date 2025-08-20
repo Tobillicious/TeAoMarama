@@ -262,15 +262,9 @@ export default function TeacherDashboard() {
 
   if (loading) {
     return (
-      <div
-        className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: 'var(--color-porcelain)' }}
-      >
+      <div className="teacher-dashboard-loading">
         <div className="text-center">
-          <div
-            className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto"
-            style={{ borderColor: 'var(--color-gold)' }}
-          ></div>
+          <div className="loading-spinner"></div>
           <p className="mt-4 text-lg">Loading your dashboard...</p>
         </div>
       </div>
