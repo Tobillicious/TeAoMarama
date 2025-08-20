@@ -1,7 +1,7 @@
 // src/ai/orchestrator.ts
 import { AIRegistry } from './registry';
 
-export type TaskComplexity = 'simple' | 'medium' | 'complex';
+export type TaskComplexity = 'simple' | 'medium' | 'complex' | 'critical';
 export type TaskPriority = 'speed' | 'quality' | 'depth' | 'reliability';
 
 export interface TaskRequest {
@@ -20,6 +20,14 @@ export interface TaskResult {
   latencyMs?: number;
   provider?: string;
   model?: string;
+}
+
+interface RoutingConfig {
+  primary: {
+    llm: unknown;
+    model: string;
+    reason: string;
+  };
 }
 
 export class AIOrchestrator {
@@ -48,7 +56,7 @@ export class AIOrchestrator {
     };
   }
 
-  private async executeTask(task: TaskRequest, routing: unknown): Promise<string> {
+  private async executeTask(task: TaskRequest, routing: RoutingConfig): Promise<string> {
     try {
       const llm = this.registry.getProvider(routing.primary.llm);
       if (!llm || !llm.generate) {
@@ -96,7 +104,7 @@ export class AIOrchestrator {
     return `I'm experiencing technical difficulties. Please try again or contact support for ${task.type} assistance.`;
   }
 
-  private async getRouting(task: TaskRequest) {
+  private async getRouting(task: TaskRequest): Promise<RoutingConfig> {
     // Gemini for multimodal content - images, videos, mixed media lesson plans
     if (
       task.type.includes('multimodal') ||
@@ -202,31 +210,21 @@ Handle this with your full capabilities, considering the failure context and ens
     `;
   }
 
-  private async logSuccess(
-    task: TaskRequest,
-    routing: { llm?: { name: string } },
-    result: unknown,
-  ) {
+  private async logSuccess() {
     // This method is no longer used with the new performance optimizer
     // Keeping it for now as it might be re-introduced or removed later
     // For now, it will just log a placeholder message
     console.log('logSuccess is deprecated with new performance optimizer.');
   }
 
-  private async logFallback(
-    task: TaskRequest,
-    failed: { llm?: { name: string } },
-    backup: { llm?: { name: string } },
-    result: unknown,
-    error: unknown,
-  ) {
+  private async logFallback() {
     // This method is no longer used with the new performance optimizer
     // Keeping it for now as it might be re-introduced or removed later
     // For now, it will just log a placeholder message
     console.log('logFallback is deprecated with new performance optimizer.');
   }
 
-  private async logEmergencyFallback(task: TaskRequest, _result: unknown, error: unknown) {
+  private async logEmergencyFallback() {
     // This method is no longer used with the new performance optimizer
     // Keeping it for now as it might be re-introduced or removed later
     // For now, it will just log a placeholder message

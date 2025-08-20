@@ -166,12 +166,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
             const profile = await userRoleService.getUserProfile(user);
 
             // Set cultural preferences based on profile
-            setCulturalContext((prev) => ({
-              ...prev,
-              preferredLanguage: profile.metadata.culturalAffiliation?.includes('Māori')
+            setCulturalContext({
+              preferredLanguage: (profile.metadata as any)?.culturalAffiliation?.includes('Māori')
                 ? 'both'
                 : 'en',
-            }));
+            });
 
             // Log successful authentication
             await writeEpisode('auth-provider', {
@@ -426,6 +425,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [authState.user],
   );
 
+  // Wrapper function for setCulturalContext to match interface
+  const setCulturalContextWrapper = useCallback((context: Partial<CulturalContext>) => {
+    setCulturalContext((prev) => ({ ...prev, ...context }));
+  }, []);
+
   // Memoized context value for performance
   const contextValue = useMemo(
     () => ({
@@ -437,7 +441,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isOnline: authState.isOnline,
       lastActivity: authState.lastActivity,
       culturalContext,
-      setCulturalContext,
+      setCulturalContext: setCulturalContextWrapper,
       signUp,
       logIn,
       signInWithGoogle,
@@ -462,6 +466,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     [
       authState,
       culturalContext,
+      setCulturalContextWrapper,
       signUp,
       logIn,
       signInWithGoogle,

@@ -554,6 +554,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
           <select
             value={formData.culturalAffiliation}
             onChange={(e) => handleInputChange('culturalAffiliation', e.target.value)}
+            aria-label="Cultural Affiliation"
             style={{
               width: '100%',
               padding: 'var(--space-3)',
