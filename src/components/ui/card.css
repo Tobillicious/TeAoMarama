@@ -1,0 +1,72 @@
+/* UI Card Component Styles */
+
+.ui-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.ui-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.ui-card-header {
+  margin-bottom: var(--space-4);
+}
+
+.ui-card-title {
+  font-size: var(--text-xl);
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.ui-card-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.ui-card-content {
+  margin-bottom: var(--space-4);
+}
+
+.ui-card-footer {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.ui-card.compact {
+  padding: var(--space-4);
+}
+
+.ui-card.compact .ui-card-title {
+  font-size: var(--text-lg);
+}
+
+.ui-card.elevated {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ui-card.bordered {
+  border-width: 2px;
+}
+
+@media (max-width: 768px) {
+  .ui-card {
+    padding: var(--space-4);
+  }
+  
+  .ui-card-title {
+    font-size: var(--text-lg);
+  }
+  
+  .ui-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

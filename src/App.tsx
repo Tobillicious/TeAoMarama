@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 // Lazy load components
@@ -270,10 +270,9 @@ const Year10CulturalGeometry = lazy(() => import('./pages/Year10CulturalGeometry
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
+    <div className="App">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
             <Route path="/aiartethicscomprehension" element={<AiArtEthicsComprehension />} />
             <Route
               path="/aiartethicscomprehensionhandout"
@@ -518,7 +517,6 @@ function App() {
           </Routes>
         </Suspense>
       </div>
-    </Router>
   );
 }
 

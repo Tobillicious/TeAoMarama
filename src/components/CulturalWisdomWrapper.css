@@ -1,0 +1,35 @@
+/* CulturalWisdomWrapper Component Styles */
+
+.culturalwisdomwrapper {
+  /* Add your styles here */
+}
+
+.culturalwisdomwrapper-container {
+  /* Container styles */
+}
+
+.culturalwisdomwrapper-content {
+  /* Content styles */
+}
+
+.culturalwisdomwrapper-header {
+  /* Header styles */
+}
+
+.culturalwisdomwrapper-title {
+  /* Title styles */
+}
+
+.culturalwisdomwrapper-description {
+  /* Description styles */
+}
+
+.culturalwisdomwrapper-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .culturalwisdomwrapper {
+    /* Mobile styles */
+  }
+}

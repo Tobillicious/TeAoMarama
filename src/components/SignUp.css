@@ -1,0 +1,35 @@
+/* SignUp Component Styles */
+
+.signup {
+  /* Add your styles here */
+}
+
+.signup-container {
+  /* Container styles */
+}
+
+.signup-content {
+  /* Content styles */
+}
+
+.signup-header {
+  /* Header styles */
+}
+
+.signup-title {
+  /* Title styles */
+}
+
+.signup-description {
+  /* Description styles */
+}
+
+.signup-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .signup {
+    /* Mobile styles */
+  }
+}

@@ -1,0 +1,35 @@
+/* StatusIndicator Component Styles */
+
+.statusindicator {
+  /* Add your styles here */
+}
+
+.statusindicator-container {
+  /* Container styles */
+}
+
+.statusindicator-content {
+  /* Content styles */
+}
+
+.statusindicator-header {
+  /* Header styles */
+}
+
+.statusindicator-title {
+  /* Title styles */
+}
+
+.statusindicator-description {
+  /* Description styles */
+}
+
+.statusindicator-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .statusindicator {
+    /* Mobile styles */
+  }
+}

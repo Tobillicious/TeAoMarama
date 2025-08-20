@@ -1,0 +1,35 @@
+/* MigrationDashboard Component Styles */
+
+.migrationdashboard {
+  /* Add your styles here */
+}
+
+.migrationdashboard-container {
+  /* Container styles */
+}
+
+.migrationdashboard-content {
+  /* Content styles */
+}
+
+.migrationdashboard-header {
+  /* Header styles */
+}
+
+.migrationdashboard-title {
+  /* Title styles */
+}
+
+.migrationdashboard-description {
+  /* Description styles */
+}
+
+.migrationdashboard-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .migrationdashboard {
+    /* Mobile styles */
+  }
+}

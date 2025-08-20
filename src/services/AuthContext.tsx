@@ -167,7 +167,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
             // Set cultural preferences based on profile
             setCulturalContext({
-              preferredLanguage: (profile.metadata as any)?.culturalAffiliation?.includes('Māori')
+              preferredLanguage: (
+                profile.metadata as { culturalAffiliation?: string }
+              )?.culturalAffiliation?.includes('Māori')
                 ? 'both'
                 : 'en',
             });

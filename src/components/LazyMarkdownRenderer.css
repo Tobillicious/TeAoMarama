@@ -1,0 +1,27 @@
+/* LazyMarkdownRenderer Component Styles */
+
+.lazy-markdown-renderer {
+  /* Container styles */
+}
+
+.lazy-markdown-renderer-content {
+  /* Content styles */
+}
+
+.lazy-markdown-renderer-loading {
+  /* Loading state styles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-8);
+  color: var(--color-text-secondary);
+}
+
+.lazy-markdown-renderer-error {
+  /* Error state styles */
+  color: var(--color-danger);
+  padding: var(--space-4);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  background-color: var(--color-danger-light);
+}

@@ -60,7 +60,9 @@ export class AIOrchestrator {
     try {
       const llm = this.registry.getProvider(routing.primary.llm?.name || 'unknown');
       if (!llm || !llm.generate) {
-        throw new Error(`LLM provider ${routing.primary.llm?.name || 'unknown'} not found or invalid`);
+        throw new Error(
+          `LLM provider ${routing.primary.llm?.name || 'unknown'} not found or invalid`,
+        );
       }
 
       const result = await llm.generate(task.prompt, {
@@ -70,7 +72,11 @@ export class AIOrchestrator {
         system: this.getSystemPrompt(task),
       });
 
-      return typeof result === 'string' ? result : (result as { output?: string; text?: string })?.output || (result as { output?: string; text?: string })?.text || JSON.stringify(result);
+      return typeof result === 'string'
+        ? result
+        : (result as { output?: string; text?: string })?.output ||
+            (result as { output?: string; text?: string })?.text ||
+            JSON.stringify(result);
     } catch (error) {
       console.error('LLM execution error:', error);
       return this.getFallbackResponse(task);

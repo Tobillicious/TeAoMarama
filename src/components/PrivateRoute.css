@@ -1,0 +1,35 @@
+/* PrivateRoute Component Styles */
+
+.privateroute {
+  /* Add your styles here */
+}
+
+.privateroute-container {
+  /* Container styles */
+}
+
+.privateroute-content {
+  /* Content styles */
+}
+
+.privateroute-header {
+  /* Header styles */
+}
+
+.privateroute-title {
+  /* Title styles */
+}
+
+.privateroute-description {
+  /* Description styles */
+}
+
+.privateroute-actions {
+  /* Action buttons/styles */
+}
+
+@media (max-width: 768px) {
+  .privateroute {
+    /* Mobile styles */
+  }
+}
