@@ -34,3 +34,5 @@ export const GardenPlotScience: React.FC<GardenPlotScienceProps> = ({ className 
     </Card>
   );
 };
+
+export default GardenPlotScience;

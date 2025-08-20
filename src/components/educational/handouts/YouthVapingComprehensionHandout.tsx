@@ -34,3 +34,5 @@ export const YouthVapingComprehensionHandout: React.FC<YouthVapingComprehensionH
     </Card>
   );
 };
+
+export default YouthVapingComprehensionHandout;

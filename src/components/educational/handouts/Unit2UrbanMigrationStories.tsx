@@ -34,3 +34,5 @@ export const Unit2UrbanMigrationStories: React.FC<Unit2UrbanMigrationStoriesProp
     </Card>
   );
 };
+
+export default Unit2UrbanMigrationStories;

@@ -34,3 +34,5 @@ export const LogicalFallaciesDetectionGuide: React.FC<LogicalFallaciesDetectionG
     </Card>
   );
 };
+
+export default LogicalFallaciesDetectionGuide;

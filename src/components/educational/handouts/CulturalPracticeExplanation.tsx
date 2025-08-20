@@ -34,3 +34,5 @@ export const CulturalPracticeExplanation: React.FC<CulturalPracticeExplanationPr
     </Card>
   );
 };
+
+export default CulturalPracticeExplanation;

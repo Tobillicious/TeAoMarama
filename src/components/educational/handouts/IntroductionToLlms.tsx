@@ -34,3 +34,5 @@ export const IntroductionToLlms: React.FC<IntroductionToLlmsProps> = ({ classNam
     </Card>
   );
 };
+
+export default IntroductionToLlms;

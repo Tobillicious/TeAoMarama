@@ -34,3 +34,5 @@ export const WakaPhysicsBasics: React.FC<WakaPhysicsBasicsProps> = ({ className 
     </Card>
   );
 };
+
+export default WakaPhysicsBasics;

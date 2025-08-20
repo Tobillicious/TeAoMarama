@@ -34,3 +34,5 @@ export const Unit2ModernApplicationsConnection: React.FC<Unit2ModernApplications
     </Card>
   );
 };
+
+export default Unit2ModernApplicationsConnection;

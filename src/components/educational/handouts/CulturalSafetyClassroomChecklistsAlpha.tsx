@@ -34,3 +34,5 @@ export const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClas
     </Card>
   );
 };
+
+export default CulturalSafetyClassroomChecklistsAlpha;

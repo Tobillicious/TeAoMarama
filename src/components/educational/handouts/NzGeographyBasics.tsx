@@ -34,3 +34,5 @@ export const NzGeographyBasics: React.FC<NzGeographyBasicsProps> = ({ className 
     </Card>
   );
 };
+
+export default NzGeographyBasics;

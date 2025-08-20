@@ -34,3 +34,5 @@ export const WaitangiTribunalCases: React.FC<WaitangiTribunalCasesProps> = ({ cl
     </Card>
   );
 };
+
+export default WaitangiTribunalCases;

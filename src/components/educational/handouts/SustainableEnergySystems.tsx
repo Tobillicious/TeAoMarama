@@ -34,3 +34,5 @@ export const SustainableEnergySystems: React.FC<SustainableEnergySystemsProps> =
     </Card>
   );
 };
+
+export default SustainableEnergySystems;

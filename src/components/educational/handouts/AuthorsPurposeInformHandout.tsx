@@ -34,3 +34,5 @@ export const AuthorsPurposeInformHandout: React.FC<AuthorsPurposeInformHandoutPr
     </Card>
   );
 };
+
+export default AuthorsPurposeInformHandout;

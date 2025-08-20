@@ -34,3 +34,5 @@ export const MisleadingGraphsComprehensionHandout: React.FC<MisleadingGraphsComp
     </Card>
   );
 };
+
+export default MisleadingGraphsComprehensionHandout;

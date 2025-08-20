@@ -34,3 +34,5 @@ export const LanguageRevitalizationGrowth: React.FC<LanguageRevitalizationGrowth
     </Card>
   );
 };
+
+export default LanguageRevitalizationGrowth;

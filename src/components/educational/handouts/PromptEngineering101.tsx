@@ -34,3 +34,5 @@ export const PromptEngineering101: React.FC<PromptEngineering101Props> = ({ clas
     </Card>
   );
 };
+
+export default PromptEngineering101;

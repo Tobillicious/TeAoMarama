@@ -34,3 +34,5 @@ export const PrimarySourceAnalysis1975MemorialOfRight: React.FC<PrimarySourceAna
     </Card>
   );
 };
+
+export default PrimarySourceAnalysis1975MemorialOfRight;

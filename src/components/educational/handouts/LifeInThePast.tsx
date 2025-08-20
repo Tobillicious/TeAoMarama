@@ -34,3 +34,5 @@ export const LifeInThePast: React.FC<LifeInThePastProps> = ({ className = '' }) 
     </Card>
   );
 };
+
+export default LifeInThePast;

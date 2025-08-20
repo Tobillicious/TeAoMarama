@@ -34,3 +34,5 @@ export const CulturalStoriesComprehension: React.FC<CulturalStoriesComprehension
     </Card>
   );
 };
+
+export default CulturalStoriesComprehension;

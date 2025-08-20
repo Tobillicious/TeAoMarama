@@ -34,3 +34,5 @@ export const FutureVisioningCreativeWriting: React.FC<FutureVisioningCreativeWri
     </Card>
   );
 };
+
+export default FutureVisioningCreativeWriting;

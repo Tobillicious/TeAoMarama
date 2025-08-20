@@ -34,3 +34,5 @@ export const DesignThinkingProcessHandout: React.FC<DesignThinkingProcessHandout
     </Card>
   );
 };
+
+export default DesignThinkingProcessHandout;

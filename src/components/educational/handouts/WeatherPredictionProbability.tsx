@@ -34,3 +34,5 @@ export const WeatherPredictionProbability: React.FC<WeatherPredictionProbability
     </Card>
   );
 };
+
+export default WeatherPredictionProbability;

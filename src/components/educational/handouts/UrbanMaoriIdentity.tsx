@@ -34,3 +34,5 @@ export const UrbanMaoriIdentity: React.FC<UrbanMaoriIdentityProps> = ({ classNam
     </Card>
   );
 };
+
+export default UrbanMaoriIdentity;

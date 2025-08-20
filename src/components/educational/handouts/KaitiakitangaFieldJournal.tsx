@@ -34,3 +34,5 @@ export const KaitiakitangaFieldJournal: React.FC<KaitiakitangaFieldJournalProps>
     </Card>
   );
 };
+
+export default KaitiakitangaFieldJournal;

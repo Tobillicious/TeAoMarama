@@ -34,3 +34,5 @@ export const CommunityNeedsSurvey: React.FC<CommunityNeedsSurveyProps> = ({ clas
     </Card>
   );
 };
+
+export default CommunityNeedsSurvey;

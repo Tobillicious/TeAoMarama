@@ -34,3 +34,5 @@ export const FamilyTreeExploration: React.FC<FamilyTreeExplorationProps> = ({ cl
     </Card>
   );
 };
+
+export default FamilyTreeExploration;

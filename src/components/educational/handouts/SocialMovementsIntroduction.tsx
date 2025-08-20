@@ -34,3 +34,5 @@ export const SocialMovementsIntroduction: React.FC<SocialMovementsIntroductionPr
     </Card>
   );
 };
+
+export default SocialMovementsIntroduction;

@@ -34,3 +34,5 @@ export const NativeBirdLifecycles: React.FC<NativeBirdLifecyclesProps> = ({ clas
     </Card>
   );
 };
+
+export default NativeBirdLifecycles;

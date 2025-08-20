@@ -34,3 +34,5 @@ export const CulturalDecisionMakingTraditions: React.FC<CulturalDecisionMakingTr
     </Card>
   );
 };
+
+export default CulturalDecisionMakingTraditions;

@@ -34,3 +34,5 @@ export const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesCompre
     </Card>
   );
 };
+
+export default CognitiveBiasesComprehensionHandout;

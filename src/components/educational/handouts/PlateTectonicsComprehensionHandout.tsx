@@ -34,3 +34,5 @@ export const PlateTectonicsComprehensionHandout: React.FC<PlateTectonicsComprehe
     </Card>
   );
 };
+
+export default PlateTectonicsComprehensionHandout;

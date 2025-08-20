@@ -34,3 +34,5 @@ export const EvidenceEvaluationFramework: React.FC<EvidenceEvaluationFrameworkPr
     </Card>
   );
 };
+
+export default EvidenceEvaluationFramework;

@@ -34,3 +34,5 @@ export const SpeechAnalysisHandout: React.FC<SpeechAnalysisHandoutProps> = ({ cl
     </Card>
   );
 };
+
+export default SpeechAnalysisHandout;

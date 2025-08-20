@@ -34,3 +34,5 @@ export const WakaConstructionGeometry: React.FC<WakaConstructionGeometryProps> =
     </Card>
   );
 };
+
+export default WakaConstructionGeometry;

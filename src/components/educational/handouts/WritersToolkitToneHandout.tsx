@@ -34,3 +34,5 @@ export const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps>
     </Card>
   );
 };
+
+export default WritersToolkitToneHandout;

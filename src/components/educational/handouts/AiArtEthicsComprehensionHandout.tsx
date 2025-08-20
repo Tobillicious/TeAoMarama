@@ -34,3 +34,5 @@ export const AiArtEthicsComprehensionHandout: React.FC<AiArtEthicsComprehensionH
     </Card>
   );
 };
+
+export default AiArtEthicsComprehensionHandout;

@@ -34,3 +34,5 @@ export const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssential
     </Card>
   );
 };
+
+export default Year9StarterPackEssentialSkills;

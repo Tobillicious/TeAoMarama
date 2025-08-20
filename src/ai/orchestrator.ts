@@ -24,7 +24,7 @@ export interface TaskResult {
 
 interface RoutingConfig {
   primary: {
-    llm: unknown;
+    llm: { name: string } | null;
     model: string;
     reason: string;
   };
@@ -58,9 +58,9 @@ export class AIOrchestrator {
 
   private async executeTask(task: TaskRequest, routing: RoutingConfig): Promise<string> {
     try {
-      const llm = this.registry.getProvider(routing.primary.llm);
+      const llm = this.registry.getProvider(routing.primary.llm?.name || 'unknown');
       if (!llm || !llm.generate) {
-        throw new Error(`LLM provider ${routing.primary.llm} not found or invalid`);
+        throw new Error(`LLM provider ${routing.primary.llm?.name || 'unknown'} not found or invalid`);
       }
 
       const result = await llm.generate(task.prompt, {
@@ -70,7 +70,7 @@ export class AIOrchestrator {
         system: this.getSystemPrompt(task),
       });
 
-      return typeof result === 'string' ? result : result.output || JSON.stringify(result);
+      return typeof result === 'string' ? result : (result as any)?.output || (result as any)?.text || JSON.stringify(result);
     } catch (error) {
       console.error('LLM execution error:', error);
       return this.getFallbackResponse(task);
@@ -113,7 +113,7 @@ export class AIOrchestrator {
     ) {
       return {
         primary: {
-          llm: this.registry.getProvider('gemini-cli'),
+          llm: this.registry.getProvider('gemini-cli') || null,
           model: 'gemini-1.5-flash',
           reason: 'multimodal_content',
         },
@@ -127,7 +127,7 @@ export class AIOrchestrator {
     ) {
       return {
         primary: {
-          llm: this.registry.getProvider('deepseek'),
+          llm: this.registry.getProvider('deepseek') || null,
           model: 'deepseek-reasoner',
           reason: 'complex_reasoning_required',
         },
@@ -142,7 +142,7 @@ export class AIOrchestrator {
     ) {
       return {
         primary: {
-          llm: this.registry.getProvider('gemini-cli'),
+          llm: this.registry.getProvider('gemini-cli') || null,
           model: 'gemini-1.5-flash',
           reason: 'creative_and_interactive_content',
         },
@@ -153,7 +153,7 @@ export class AIOrchestrator {
     if (task.complexity === 'simple' && task.priority === 'speed') {
       return {
         primary: {
-          llm: this.registry.getProvider('openai'),
+          llm: this.registry.getProvider('openai') || null,
           model: 'gpt-4o-mini',
           reason: 'speed_optimized',
         },
@@ -168,7 +168,7 @@ export class AIOrchestrator {
     ) {
       return {
         primary: {
-          llm: this.registry.getProvider('windsurf-claude'),
+          llm: this.registry.getProvider('windsurf-claude') || null,
           model: 'claude-3-5-sonnet-20241022',
           reason: 'cultural_safety_and_reliability',
         },
@@ -178,7 +178,7 @@ export class AIOrchestrator {
     // Default: Claude orchestrates everything else
     return {
       primary: {
-        llm: this.registry.getProvider('windsurf-claude'),
+        llm: this.registry.getProvider('windsurf-claude') || null,
         model: 'claude-3-5-sonnet-20241022',
         reason: 'default_orchestrator',
       },

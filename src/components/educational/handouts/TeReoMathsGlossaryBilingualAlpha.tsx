@@ -34,3 +34,5 @@ export const TeReoMathsGlossaryBilingualAlpha: React.FC<TeReoMathsGlossaryBiling
     </Card>
   );
 };
+
+export default TeReoMathsGlossaryBilingualAlpha;

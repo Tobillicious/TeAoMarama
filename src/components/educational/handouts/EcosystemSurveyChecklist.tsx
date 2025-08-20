@@ -34,3 +34,5 @@ export const EcosystemSurveyChecklist: React.FC<EcosystemSurveyChecklistProps> =
     </Card>
   );
 };
+
+export default EcosystemSurveyChecklist;

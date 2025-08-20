@@ -34,3 +34,5 @@ export const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = (
     </Card>
   );
 };
+
+export default IwiEconomicsMathematics;

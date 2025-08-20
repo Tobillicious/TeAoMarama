@@ -34,3 +34,5 @@ export const ArgumentsOfTinoRangatiratangaHandout: React.FC<ArgumentsOfTinoRanga
     </Card>
   );
 };
+
+export default ArgumentsOfTinoRangatiratangaHandout;

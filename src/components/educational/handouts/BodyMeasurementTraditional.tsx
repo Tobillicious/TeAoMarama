@@ -34,3 +34,5 @@ export const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProp
     </Card>
   );
 };
+
+export default BodyMeasurementTraditional;

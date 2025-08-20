@@ -34,3 +34,5 @@ export const WeatherCalendarGraphs: React.FC<WeatherCalendarGraphsProps> = ({ cl
     </Card>
   );
 };
+
+export default WeatherCalendarGraphs;

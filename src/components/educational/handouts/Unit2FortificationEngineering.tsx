@@ -34,3 +34,5 @@ export const Unit2FortificationEngineering: React.FC<Unit2FortificationEngineeri
     </Card>
   );
 };
+
+export default Unit2FortificationEngineering;

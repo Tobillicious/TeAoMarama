@@ -34,3 +34,5 @@ export const HakaComprehensionHandout: React.FC<HakaComprehensionHandoutProps> =
     </Card>
   );
 };
+
+export default HakaComprehensionHandout;

@@ -34,3 +34,5 @@ export const SustainableFishingEquations: React.FC<SustainableFishingEquationsPr
     </Card>
   );
 };
+
+export default SustainableFishingEquations;

@@ -34,3 +34,5 @@ export const TraditionalMaterialsScience: React.FC<TraditionalMaterialsSciencePr
     </Card>
   );
 };
+
+export default TraditionalMaterialsScience;

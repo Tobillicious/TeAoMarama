@@ -34,3 +34,5 @@ export const MulticulturalNewZealand: React.FC<MulticulturalNewZealandProps> = (
     </Card>
   );
 };
+
+export default MulticulturalNewZealand;

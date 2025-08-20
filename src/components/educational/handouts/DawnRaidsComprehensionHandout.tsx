@@ -34,3 +34,5 @@ export const DawnRaidsComprehensionHandout: React.FC<DawnRaidsComprehensionHando
     </Card>
   );
 };
+
+export default DawnRaidsComprehensionHandout;

@@ -34,3 +34,5 @@ export const GeneticModificationComprehensionHandout: React.FC<GeneticModificati
     </Card>
   );
 };
+
+export default GeneticModificationComprehensionHandout;

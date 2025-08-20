@@ -34,3 +34,5 @@ export const Unit2TraditionalSciencePrimarySources: React.FC<Unit2TraditionalSci
     </Card>
   );
 };
+
+export default Unit2TraditionalSciencePrimarySources;

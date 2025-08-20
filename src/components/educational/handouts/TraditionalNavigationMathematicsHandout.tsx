@@ -34,3 +34,5 @@ export const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNaviga
     </Card>
   );
 };
+
+export default TraditionalNavigationMathematicsHandout;

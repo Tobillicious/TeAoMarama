@@ -3,83 +3,229 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 
 // Lazy load components
-const AiArtEthicsComprehension = lazy(() => import('./components/educational/handouts/AiArtEthicsComprehension'));
-const AiArtEthicsComprehensionHandout = lazy(() => import('./components/educational/handouts/AiArtEthicsComprehensionHandout'));
+const AiArtEthicsComprehension = lazy(
+  () => import('./components/educational/handouts/AiArtEthicsComprehension'),
+);
+const AiArtEthicsComprehensionHandout = lazy(
+  () => import('./components/educational/handouts/AiArtEthicsComprehensionHandout'),
+);
 const AiEthicsAndBias = lazy(() => import('./components/educational/handouts/AiEthicsAndBias'));
-const AiImpactComprehensionHandout = lazy(() => import('./components/educational/handouts/AiImpactComprehensionHandout'));
-const AtomsInEverydayMaterials = lazy(() => import('./components/educational/handouts/AtomsInEverydayMaterials'));
-const AuthorsPurposeEntertainHandout = lazy(() => import('./components/educational/handouts/AuthorsPurposeEntertainHandout'));
-const AuthorsPurposeHandout = lazy(() => import('./components/educational/handouts/AuthorsPurposeHandout'));
-const AuthorsPurposeInformHandout = lazy(() => import('./components/educational/handouts/AuthorsPurposeInformHandout'));
-const AuthorsPurposePersuadeHandout = lazy(() => import('./components/educational/handouts/AuthorsPurposePersuadeHandout'));
+const AiImpactComprehensionHandout = lazy(
+  () => import('./components/educational/handouts/AiImpactComprehensionHandout'),
+);
+const AtomsInEverydayMaterials = lazy(
+  () => import('./components/educational/handouts/AtomsInEverydayMaterials'),
+);
+const AuthorsPurposeEntertainHandout = lazy(
+  () => import('./components/educational/handouts/AuthorsPurposeEntertainHandout'),
+);
+const AuthorsPurposeHandout = lazy(
+  () => import('./components/educational/handouts/AuthorsPurposeHandout'),
+);
+const AuthorsPurposeInformHandout = lazy(
+  () => import('./components/educational/handouts/AuthorsPurposeInformHandout'),
+);
+const AuthorsPurposePersuadeHandout = lazy(
+  () => import('./components/educational/handouts/AuthorsPurposePersuadeHandout'),
+);
 const BarGraphHandout = lazy(() => import('./components/educational/handouts/BarGraphHandout'));
-const BiochemistryTraditionalMedicine = lazy(() => import('./components/educational/handouts/BiochemistryTraditionalMedicine'));
-const BodyMeasurementTraditional = lazy(() => import('./components/educational/handouts/BodyMeasurementTraditional'));
-const CeremonialCircleGeometry = lazy(() => import('./components/educational/handouts/CeremonialCircleGeometry'));
-const ChildrenRightsResponsibilities = lazy(() => import('./components/educational/handouts/ChildrenRightsResponsibilities'));
-const ClimateChangeAotearoaHandout = lazy(() => import('./components/educational/handouts/ClimateChangeAotearoaHandout'));
-const ClimateEmergencyAotearoaHandout = lazy(() => import('./components/educational/handouts/ClimateEmergencyAotearoaHandout'));
-const CognitiveBiasesComprehensionHandout = lazy(() => import('./components/educational/handouts/CognitiveBiasesComprehensionHandout'));
-const ColonizationPerspectivesHandout = lazy(() => import('./components/educational/handouts/ColonizationPerspectivesHandout'));
-const CommunityHelpersStudy = lazy(() => import('./components/educational/handouts/CommunityHelpersStudy'));
-const CommunityNeedsSurvey = lazy(() => import('./components/educational/handouts/CommunityNeedsSurvey'));
-const CulturalCelebrationsComparison = lazy(() => import('./components/educational/handouts/CulturalCelebrationsComparison'));
-const CulturalDecisionMakingTraditions = lazy(() => import('./components/educational/handouts/CulturalDecisionMakingTraditions'));
-const CulturalHeroesComprehension = lazy(() => import('./components/educational/handouts/CulturalHeroesComprehension'));
-const CulturalIdentityDeepDiveComprehension = lazy(() => import('./components/educational/handouts/CulturalIdentityDeepDiveComprehension'));
-const CulturalPracticeExplanation = lazy(() => import('./components/educational/handouts/CulturalPracticeExplanation'));
-const CulturalPreservationEssays = lazy(() => import('./components/educational/handouts/CulturalPreservationEssays'));
-const CulturalSafetyClassroomChecklistsAlpha = lazy(() => import('./components/educational/handouts/CulturalSafetyClassroomChecklistsAlpha'));
-const CulturalStemAssessmentRubric = lazy(() => import('./components/educational/handouts/CulturalStemAssessmentRubric'));
-const CulturalStoriesComprehension = lazy(() => import('./components/educational/handouts/CulturalStoriesComprehension'));
-const FamilyDataCollection = lazy(() => import('./components/educational/handouts/FamilyDataCollection'));
+const BiochemistryTraditionalMedicine = lazy(
+  () => import('./components/educational/handouts/BiochemistryTraditionalMedicine'),
+);
+const BodyMeasurementTraditional = lazy(
+  () => import('./components/educational/handouts/BodyMeasurementTraditional'),
+);
+const CeremonialCircleGeometry = lazy(
+  () => import('./components/educational/handouts/CeremonialCircleGeometry'),
+);
+const ChildrenRightsResponsibilities = lazy(
+  () => import('./components/educational/handouts/ChildrenRightsResponsibilities'),
+);
+const ClimateChangeAotearoaHandout = lazy(
+  () => import('./components/educational/handouts/ClimateChangeAotearoaHandout'),
+);
+const ClimateEmergencyAotearoaHandout = lazy(
+  () => import('./components/educational/handouts/ClimateEmergencyAotearoaHandout'),
+);
+const CognitiveBiasesComprehensionHandout = lazy(
+  () => import('./components/educational/handouts/CognitiveBiasesComprehensionHandout'),
+);
+const ColonizationPerspectivesHandout = lazy(
+  () => import('./components/educational/handouts/ColonizationPerspectivesHandout'),
+);
+const CommunityHelpersStudy = lazy(
+  () => import('./components/educational/handouts/CommunityHelpersStudy'),
+);
+const CommunityNeedsSurvey = lazy(
+  () => import('./components/educational/handouts/CommunityNeedsSurvey'),
+);
+const CulturalCelebrationsComparison = lazy(
+  () => import('./components/educational/handouts/CulturalCelebrationsComparison'),
+);
+const CulturalDecisionMakingTraditions = lazy(
+  () => import('./components/educational/handouts/CulturalDecisionMakingTraditions'),
+);
+const CulturalHeroesComprehension = lazy(
+  () => import('./components/educational/handouts/CulturalHeroesComprehension'),
+);
+const CulturalIdentityDeepDiveComprehension = lazy(
+  () => import('./components/educational/handouts/CulturalIdentityDeepDiveComprehension'),
+);
+const CulturalPracticeExplanation = lazy(
+  () => import('./components/educational/handouts/CulturalPracticeExplanation'),
+);
+const CulturalPreservationEssays = lazy(
+  () => import('./components/educational/handouts/CulturalPreservationEssays'),
+);
+const CulturalSafetyClassroomChecklistsAlpha = lazy(
+  () => import('./components/educational/handouts/CulturalSafetyClassroomChecklistsAlpha'),
+);
+const CulturalStemAssessmentRubric = lazy(
+  () => import('./components/educational/handouts/CulturalStemAssessmentRubric'),
+);
+const CulturalStoriesComprehension = lazy(
+  () => import('./components/educational/handouts/CulturalStoriesComprehension'),
+);
+const FamilyDataCollection = lazy(
+  () => import('./components/educational/handouts/FamilyDataCollection'),
+);
 const FamilyTreeWriting = lazy(() => import('./components/educational/handouts/FamilyTreeWriting'));
-const FutureVisioningCreativeWriting = lazy(() => import('./components/educational/handouts/FutureVisioningCreativeWriting'));
-const IndigenousRightsResearch = lazy(() => import('./components/educational/handouts/IndigenousRightsResearch'));
-const IwiEconomicsMathematics = lazy(() => import('./components/educational/handouts/IwiEconomicsMathematics'));
-const KaitiakiGeneratedMigrationStudentHandout = lazy(() => import('./components/educational/handouts/KaitiakiGeneratedMigrationStudentHandout'));
-const KaitiakitangaFieldJournal = lazy(() => import('./components/educational/handouts/KaitiakitangaFieldJournal'));
+const FutureVisioningCreativeWriting = lazy(
+  () => import('./components/educational/handouts/FutureVisioningCreativeWriting'),
+);
+const IndigenousRightsResearch = lazy(
+  () => import('./components/educational/handouts/IndigenousRightsResearch'),
+);
+const IwiEconomicsMathematics = lazy(
+  () => import('./components/educational/handouts/IwiEconomicsMathematics'),
+);
+const KaitiakiGeneratedMigrationStudentHandout = lazy(
+  () => import('./components/educational/handouts/KaitiakiGeneratedMigrationStudentHandout'),
+);
+const KaitiakitangaFieldJournal = lazy(
+  () => import('./components/educational/handouts/KaitiakitangaFieldJournal'),
+);
 const KaitiakitangaKids = lazy(() => import('./components/educational/handouts/KaitiakitangaKids'));
-const KumaraStoragePlaceValue = lazy(() => import('./components/educational/handouts/KumaraStoragePlaceValue'));
-const MaoriAstronomyNavigationHandout = lazy(() => import('./components/educational/handouts/MaoriAstronomyNavigationHandout'));
-const MaoriGeometricPatternsHandout = lazy(() => import('./components/educational/handouts/MaoriGeometricPatternsHandout'));
-const MaoriNavigationWayfindingHandout = lazy(() => import('./components/educational/handouts/MaoriNavigationWayfindingHandout'));
-const MaraeShapesGeometry = lazy(() => import('./components/educational/handouts/MaraeShapesGeometry'));
-const MountainNavigationTrigonometry = lazy(() => import('./components/educational/handouts/MountainNavigationTrigonometry'));
-const NatureObservationJournal = lazy(() => import('./components/educational/handouts/NatureObservationJournal'));
-const OralStorytellingHandout = lazy(() => import('./components/educational/handouts/OralStorytellingHandout'));
-const PhysicsOfTraditionalGames = lazy(() => import('./components/educational/handouts/PhysicsOfTraditionalGames'));
-const ProbabilityHandout = lazy(() => import('./components/educational/handouts/ProbabilityHandout'));
-const RenewableEnergyTraditional = lazy(() => import('./components/educational/handouts/RenewableEnergyTraditional'));
-const ResearchMethodsHandout = lazy(() => import('./components/educational/handouts/ResearchMethodsHandout'));
-const ResourceSustainabilityStudy = lazy(() => import('./components/educational/handouts/ResourceSustainabilityStudy'));
-const ScientificMethodHandout = lazy(() => import('./components/educational/handouts/ScientificMethodHandout'));
-const StarNavigationCoordinates = lazy(() => import('./components/educational/handouts/StarNavigationCoordinates'));
-const SustainableFishingEquations = lazy(() => import('./components/educational/handouts/SustainableFishingEquations'));
-const SustainableTechnologyDesignChallenge = lazy(() => import('./components/educational/handouts/SustainableTechnologyDesignChallenge'));
-const TraditionalCountingSystems = lazy(() => import('./components/educational/handouts/TraditionalCountingSystems'));
-const TraditionalDyeChemistry = lazy(() => import('./components/educational/handouts/TraditionalDyeChemistry'));
-const TraditionalEcologicalIndicatorsHandout = lazy(() => import('./components/educational/handouts/TraditionalEcologicalIndicatorsHandout'));
-const TraditionalMaterialsScience = lazy(() => import('./components/educational/handouts/TraditionalMaterialsScience'));
-const TraditionalNavigationMathematicsHandout = lazy(() => import('./components/educational/handouts/TraditionalNavigationMathematicsHandout'));
-const TreatySettlementStatistics = lazy(() => import('./components/educational/handouts/TreatySettlementStatistics'));
-const TukutukuPatternsMaths = lazy(() => import('./components/educational/handouts/TukutukuPatternsMaths'));
-const Unit2TechnologyDefinitionChallenge = lazy(() => import('./components/educational/handouts/Unit2TechnologyDefinitionChallenge'));
-const WeatherPredictionProbability = lazy(() => import('./components/educational/handouts/WeatherPredictionProbability'));
-const WritersToolkitConclusionHandout = lazy(() => import('./components/educational/handouts/WritersToolkitConclusionHandout'));
-const WritersToolkitDictionHandout = lazy(() => import('./components/educational/handouts/WritersToolkitDictionHandout'));
-const WritersToolkitFluencyHandout = lazy(() => import('./components/educational/handouts/WritersToolkitFluencyHandout'));
-const WritersToolkitHookHandout = lazy(() => import('./components/educational/handouts/WritersToolkitHookHandout'));
-const WritersToolkitInformStructureHandout = lazy(() => import('./components/educational/handouts/WritersToolkitInformStructureHandout'));
-const WritersToolkitPeelArgumentHandout = lazy(() => import('./components/educational/handouts/WritersToolkitPeelArgumentHandout'));
-const WritersToolkitRevisionHandout = lazy(() => import('./components/educational/handouts/WritersToolkitRevisionHandout'));
-const WritersToolkitRhetoricalDevicesHandout = lazy(() => import('./components/educational/handouts/WritersToolkitRhetoricalDevicesHandout'));
-const WritersToolkitShowDontTellHandout = lazy(() => import('./components/educational/handouts/WritersToolkitShowDontTellHandout'));
-const WritersToolkitSuspenseHandout = lazy(() => import('./components/educational/handouts/WritersToolkitSuspenseHandout'));
-const WritersToolkitToneHandout = lazy(() => import('./components/educational/handouts/WritersToolkitToneHandout'));
-const Year9StarterPackAlphaBuild = lazy(() => import('./components/educational/handouts/Year9StarterPackAlphaBuild'));
-const Year9StarterPackEssentialSkills = lazy(() => import('./components/educational/handouts/Year9StarterPackEssentialSkills'));
-const YouthVapingComprehensionHandout = lazy(() => import('./components/educational/handouts/YouthVapingComprehensionHandout'));
+const KumaraStoragePlaceValue = lazy(
+  () => import('./components/educational/handouts/KumaraStoragePlaceValue'),
+);
+const MaoriAstronomyNavigationHandout = lazy(
+  () => import('./components/educational/handouts/MaoriAstronomyNavigationHandout'),
+);
+const MaoriGeometricPatternsHandout = lazy(
+  () => import('./components/educational/handouts/MaoriGeometricPatternsHandout'),
+);
+const MaoriNavigationWayfindingHandout = lazy(
+  () => import('./components/educational/handouts/MaoriNavigationWayfindingHandout'),
+);
+const MaraeShapesGeometry = lazy(
+  () => import('./components/educational/handouts/MaraeShapesGeometry'),
+);
+const MountainNavigationTrigonometry = lazy(
+  () => import('./components/educational/handouts/MountainNavigationTrigonometry'),
+);
+const NatureObservationJournal = lazy(
+  () => import('./components/educational/handouts/NatureObservationJournal'),
+);
+const OralStorytellingHandout = lazy(
+  () => import('./components/educational/handouts/OralStorytellingHandout'),
+);
+const PhysicsOfTraditionalGames = lazy(
+  () => import('./components/educational/handouts/PhysicsOfTraditionalGames'),
+);
+const ProbabilityHandout = lazy(
+  () => import('./components/educational/handouts/ProbabilityHandout'),
+);
+const RenewableEnergyTraditional = lazy(
+  () => import('./components/educational/handouts/RenewableEnergyTraditional'),
+);
+const ResearchMethodsHandout = lazy(
+  () => import('./components/educational/handouts/ResearchMethodsHandout'),
+);
+const ResourceSustainabilityStudy = lazy(
+  () => import('./components/educational/handouts/ResourceSustainabilityStudy'),
+);
+const ScientificMethodHandout = lazy(
+  () => import('./components/educational/handouts/ScientificMethodHandout'),
+);
+const StarNavigationCoordinates = lazy(
+  () => import('./components/educational/handouts/StarNavigationCoordinates'),
+);
+const SustainableFishingEquations = lazy(
+  () => import('./components/educational/handouts/SustainableFishingEquations'),
+);
+const SustainableTechnologyDesignChallenge = lazy(
+  () => import('./components/educational/handouts/SustainableTechnologyDesignChallenge'),
+);
+const TraditionalCountingSystems = lazy(
+  () => import('./components/educational/handouts/TraditionalCountingSystems'),
+);
+const TraditionalDyeChemistry = lazy(
+  () => import('./components/educational/handouts/TraditionalDyeChemistry'),
+);
+const TraditionalEcologicalIndicatorsHandout = lazy(
+  () => import('./components/educational/handouts/TraditionalEcologicalIndicatorsHandout'),
+);
+const TraditionalMaterialsScience = lazy(
+  () => import('./components/educational/handouts/TraditionalMaterialsScience'),
+);
+const TraditionalNavigationMathematicsHandout = lazy(
+  () => import('./components/educational/handouts/TraditionalNavigationMathematicsHandout'),
+);
+const TreatySettlementStatistics = lazy(
+  () => import('./components/educational/handouts/TreatySettlementStatistics'),
+);
+const TukutukuPatternsMaths = lazy(
+  () => import('./components/educational/handouts/TukutukuPatternsMaths'),
+);
+const Unit2TechnologyDefinitionChallenge = lazy(
+  () => import('./components/educational/handouts/Unit2TechnologyDefinitionChallenge'),
+);
+const WeatherPredictionProbability = lazy(
+  () => import('./components/educational/handouts/WeatherPredictionProbability'),
+);
+const WritersToolkitConclusionHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitConclusionHandout'),
+);
+const WritersToolkitDictionHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitDictionHandout'),
+);
+const WritersToolkitFluencyHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitFluencyHandout'),
+);
+const WritersToolkitHookHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitHookHandout'),
+);
+const WritersToolkitInformStructureHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitInformStructureHandout'),
+);
+const WritersToolkitPeelArgumentHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitPeelArgumentHandout'),
+);
+const WritersToolkitRevisionHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitRevisionHandout'),
+);
+const WritersToolkitRhetoricalDevicesHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitRhetoricalDevicesHandout'),
+);
+const WritersToolkitShowDontTellHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitShowDontTellHandout'),
+);
+const WritersToolkitSuspenseHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitSuspenseHandout'),
+);
+const WritersToolkitToneHandout = lazy(
+  () => import('./components/educational/handouts/WritersToolkitToneHandout'),
+);
+const Year9StarterPackAlphaBuild = lazy(
+  () => import('./components/educational/handouts/Year9StarterPackAlphaBuild'),
+);
+const Year9StarterPackEssentialSkills = lazy(
+  () => import('./components/educational/handouts/Year9StarterPackEssentialSkills'),
+);
+const YouthVapingComprehensionHandout = lazy(
+  () => import('./components/educational/handouts/YouthVapingComprehensionHandout'),
+);
 const WhakataukiWisdom = lazy(() => import('./components/educational/handouts/WhakataukiWisdom'));
 const Home = lazy(() => import('./pages/Home'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
@@ -129,48 +275,114 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/aiartethicscomprehension" element={<AiArtEthicsComprehension />} />
-            <Route path="/aiartethicscomprehensionhandout" element={<AiArtEthicsComprehensionHandout />} />
+            <Route
+              path="/aiartethicscomprehensionhandout"
+              element={<AiArtEthicsComprehensionHandout />}
+            />
             <Route path="/aiethicsandbias" element={<AiEthicsAndBias />} />
-            <Route path="/aiimpactcomprehensionhandout" element={<AiImpactComprehensionHandout />} />
+            <Route
+              path="/aiimpactcomprehensionhandout"
+              element={<AiImpactComprehensionHandout />}
+            />
             <Route path="/atomsineverydaymaterials" element={<AtomsInEverydayMaterials />} />
-            <Route path="/authorspurposeentertainhandout" element={<AuthorsPurposeEntertainHandout />} />
+            <Route
+              path="/authorspurposeentertainhandout"
+              element={<AuthorsPurposeEntertainHandout />}
+            />
             <Route path="/authorspurposehandout" element={<AuthorsPurposeHandout />} />
             <Route path="/authorspurposeinformhandout" element={<AuthorsPurposeInformHandout />} />
-            <Route path="/authorspurposepersuadehandout" element={<AuthorsPurposePersuadeHandout />} />
+            <Route
+              path="/authorspurposepersuadehandout"
+              element={<AuthorsPurposePersuadeHandout />}
+            />
             <Route path="/bargraphhandout" element={<BarGraphHandout />} />
-            <Route path="/biochemistrytraditionalmedicine" element={<BiochemistryTraditionalMedicine />} />
+            <Route
+              path="/biochemistrytraditionalmedicine"
+              element={<BiochemistryTraditionalMedicine />}
+            />
             <Route path="/bodymeasurementtraditional" element={<BodyMeasurementTraditional />} />
             <Route path="/ceremonialcirclegeometry" element={<CeremonialCircleGeometry />} />
-            <Route path="/childrenrightsresponsibilities" element={<ChildrenRightsResponsibilities />} />
-            <Route path="/climatechangeaotearoahandout" element={<ClimateChangeAotearoaHandout />} />
-            <Route path="/climateemergencyaotearoahandout" element={<ClimateEmergencyAotearoaHandout />} />
-            <Route path="/cognitivebiasescomprehensionhandout" element={<CognitiveBiasesComprehensionHandout />} />
-            <Route path="/colonizationperspectiveshandout" element={<ColonizationPerspectivesHandout />} />
+            <Route
+              path="/childrenrightsresponsibilities"
+              element={<ChildrenRightsResponsibilities />}
+            />
+            <Route
+              path="/climatechangeaotearoahandout"
+              element={<ClimateChangeAotearoaHandout />}
+            />
+            <Route
+              path="/climateemergencyaotearoahandout"
+              element={<ClimateEmergencyAotearoaHandout />}
+            />
+            <Route
+              path="/cognitivebiasescomprehensionhandout"
+              element={<CognitiveBiasesComprehensionHandout />}
+            />
+            <Route
+              path="/colonizationperspectiveshandout"
+              element={<ColonizationPerspectivesHandout />}
+            />
             <Route path="/communityhelpersstudy" element={<CommunityHelpersStudy />} />
             <Route path="/communityneedssurvey" element={<CommunityNeedsSurvey />} />
-            <Route path="/culturalcelebrationscomparison" element={<CulturalCelebrationsComparison />} />
-            <Route path="/culturaldecisionmakingtraditions" element={<CulturalDecisionMakingTraditions />} />
+            <Route
+              path="/culturalcelebrationscomparison"
+              element={<CulturalCelebrationsComparison />}
+            />
+            <Route
+              path="/culturaldecisionmakingtraditions"
+              element={<CulturalDecisionMakingTraditions />}
+            />
             <Route path="/culturalheroescomprehension" element={<CulturalHeroesComprehension />} />
-            <Route path="/culturalidentitydeepdivecomprehension" element={<CulturalIdentityDeepDiveComprehension />} />
+            <Route
+              path="/culturalidentitydeepdivecomprehension"
+              element={<CulturalIdentityDeepDiveComprehension />}
+            />
             <Route path="/culturalpracticeexplanation" element={<CulturalPracticeExplanation />} />
             <Route path="/culturalpreservationessays" element={<CulturalPreservationEssays />} />
-            <Route path="/culturalsafetyclassroomchecklistsalpha" element={<CulturalSafetyClassroomChecklistsAlpha />} />
-            <Route path="/culturalstemassessmentrubric" element={<CulturalStemAssessmentRubric />} />
-            <Route path="/culturalstoriescomprehension" element={<CulturalStoriesComprehension />} />
+            <Route
+              path="/culturalsafetyclassroomchecklistsalpha"
+              element={<CulturalSafetyClassroomChecklistsAlpha />}
+            />
+            <Route
+              path="/culturalstemassessmentrubric"
+              element={<CulturalStemAssessmentRubric />}
+            />
+            <Route
+              path="/culturalstoriescomprehension"
+              element={<CulturalStoriesComprehension />}
+            />
             <Route path="/familydatacollection" element={<FamilyDataCollection />} />
             <Route path="/familytreewriting" element={<FamilyTreeWriting />} />
-            <Route path="/futurevisioningcreativewriting" element={<FutureVisioningCreativeWriting />} />
+            <Route
+              path="/futurevisioningcreativewriting"
+              element={<FutureVisioningCreativeWriting />}
+            />
             <Route path="/indigenousrightsresearch" element={<IndigenousRightsResearch />} />
             <Route path="/iwieconomicsmathematics" element={<IwiEconomicsMathematics />} />
-            <Route path="/kaitiakigeneratedmigrationstudenthandout" element={<KaitiakiGeneratedMigrationStudentHandout />} />
+            <Route
+              path="/kaitiakigeneratedmigrationstudenthandout"
+              element={<KaitiakiGeneratedMigrationStudentHandout />}
+            />
             <Route path="/kaitiakitangafieldjournal" element={<KaitiakitangaFieldJournal />} />
             <Route path="/kaitiakitangakids" element={<KaitiakitangaKids />} />
             <Route path="/kumarastorageplacevalue" element={<KumaraStoragePlaceValue />} />
-            <Route path="/maoriastronomynavigationhandout" element={<MaoriAstronomyNavigationHandout />} />
-            <Route path="/maorigeometricpatternshandout" element={<MaoriGeometricPatternsHandout />} />
-            <Route path="/maorinavigationwayfindinghandout" element={<MaoriNavigationWayfindingHandout />} />
+            <Route
+              path="/maoriastronomynavigationhandout"
+              element={<MaoriAstronomyNavigationHandout />}
+            />
+            <Route
+              path="/maorigeometricpatternshandout"
+              element={<MaoriGeometricPatternsHandout />}
+            />
+            <Route
+              path="/maorinavigationwayfindinghandout"
+              element={<MaoriNavigationWayfindingHandout />}
+            />
             <Route path="/maraeshapesgeometry" element={<MaraeShapesGeometry />} />
-            <Route path="/mountainnavigationtrigonometry" element={<MountainNavigationTrigonometry />} />
+            <Route
+              path="/mountainnavigationtrigonometry"
+              element={<MountainNavigationTrigonometry />}
+            />
             <Route path="/natureobservationjournal" element={<NatureObservationJournal />} />
             <Route path="/oralstorytellinghandout" element={<OralStorytellingHandout />} />
             <Route path="/physicsoftraditionalgames" element={<PhysicsOfTraditionalGames />} />
@@ -181,30 +393,78 @@ function App() {
             <Route path="/scientificmethodhandout" element={<ScientificMethodHandout />} />
             <Route path="/starnavigationcoordinates" element={<StarNavigationCoordinates />} />
             <Route path="/sustainablefishingequations" element={<SustainableFishingEquations />} />
-            <Route path="/sustainabletechnologydesignchallenge" element={<SustainableTechnologyDesignChallenge />} />
+            <Route
+              path="/sustainabletechnologydesignchallenge"
+              element={<SustainableTechnologyDesignChallenge />}
+            />
             <Route path="/traditionalcountingsystems" element={<TraditionalCountingSystems />} />
             <Route path="/traditionaldyechemistry" element={<TraditionalDyeChemistry />} />
-            <Route path="/traditionalecologicalindicatorshandout" element={<TraditionalEcologicalIndicatorsHandout />} />
+            <Route
+              path="/traditionalecologicalindicatorshandout"
+              element={<TraditionalEcologicalIndicatorsHandout />}
+            />
             <Route path="/traditionalmaterialsscience" element={<TraditionalMaterialsScience />} />
-            <Route path="/traditionalnavigationmathematicshandout" element={<TraditionalNavigationMathematicsHandout />} />
+            <Route
+              path="/traditionalnavigationmathematicshandout"
+              element={<TraditionalNavigationMathematicsHandout />}
+            />
             <Route path="/treatysettlementstatistics" element={<TreatySettlementStatistics />} />
             <Route path="/tukutukupatternsmaths" element={<TukutukuPatternsMaths />} />
-            <Route path="/unit2technologydefinitionchallenge" element={<Unit2TechnologyDefinitionChallenge />} />
-            <Route path="/weatherpredictionprobability" element={<WeatherPredictionProbability />} />
-            <Route path="/writerstoolkitconclusionhandout" element={<WritersToolkitConclusionHandout />} />
-            <Route path="/writerstoolkitdictionhandout" element={<WritersToolkitDictionHandout />} />
-            <Route path="/writerstoolkitfluencyhandout" element={<WritersToolkitFluencyHandout />} />
+            <Route
+              path="/unit2technologydefinitionchallenge"
+              element={<Unit2TechnologyDefinitionChallenge />}
+            />
+            <Route
+              path="/weatherpredictionprobability"
+              element={<WeatherPredictionProbability />}
+            />
+            <Route
+              path="/writerstoolkitconclusionhandout"
+              element={<WritersToolkitConclusionHandout />}
+            />
+            <Route
+              path="/writerstoolkitdictionhandout"
+              element={<WritersToolkitDictionHandout />}
+            />
+            <Route
+              path="/writerstoolkitfluencyhandout"
+              element={<WritersToolkitFluencyHandout />}
+            />
             <Route path="/writerstoolkithookhandout" element={<WritersToolkitHookHandout />} />
-            <Route path="/writerstoolkitinformstructurehandout" element={<WritersToolkitInformStructureHandout />} />
-            <Route path="/writerstoolkitpeelargumenthandout" element={<WritersToolkitPeelArgumentHandout />} />
-            <Route path="/writerstoolkitrevisionhandout" element={<WritersToolkitRevisionHandout />} />
-            <Route path="/writerstoolkitrhetoricaldeviceshandout" element={<WritersToolkitRhetoricalDevicesHandout />} />
-            <Route path="/writerstoolkitshowdonttellhandout" element={<WritersToolkitShowDontTellHandout />} />
-            <Route path="/writerstoolkitsuspensehandout" element={<WritersToolkitSuspenseHandout />} />
+            <Route
+              path="/writerstoolkitinformstructurehandout"
+              element={<WritersToolkitInformStructureHandout />}
+            />
+            <Route
+              path="/writerstoolkitpeelargumenthandout"
+              element={<WritersToolkitPeelArgumentHandout />}
+            />
+            <Route
+              path="/writerstoolkitrevisionhandout"
+              element={<WritersToolkitRevisionHandout />}
+            />
+            <Route
+              path="/writerstoolkitrhetoricaldeviceshandout"
+              element={<WritersToolkitRhetoricalDevicesHandout />}
+            />
+            <Route
+              path="/writerstoolkitshowdonttellhandout"
+              element={<WritersToolkitShowDontTellHandout />}
+            />
+            <Route
+              path="/writerstoolkitsuspensehandout"
+              element={<WritersToolkitSuspenseHandout />}
+            />
             <Route path="/writerstoolkittonehandout" element={<WritersToolkitToneHandout />} />
             <Route path="/year9starterpackalphabuild" element={<Year9StarterPackAlphaBuild />} />
-            <Route path="/year9starterpackessentialskills" element={<Year9StarterPackEssentialSkills />} />
-            <Route path="/youthvapingcomprehensionhandout" element={<YouthVapingComprehensionHandout />} />
+            <Route
+              path="/year9starterpackessentialskills"
+              element={<Year9StarterPackEssentialSkills />}
+            />
+            <Route
+              path="/youthvapingcomprehensionhandout"
+              element={<YouthVapingComprehensionHandout />}
+            />
             <Route path="/whakataukiwisdom" element={<WhakataukiWisdom />} />
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />

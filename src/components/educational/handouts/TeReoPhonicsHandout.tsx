@@ -34,3 +34,5 @@ export const TeReoPhonicsHandout: React.FC<TeReoPhonicsHandoutProps> = ({ classN
     </Card>
   );
 };
+
+export default TeReoPhonicsHandout;

@@ -34,3 +34,5 @@ export const ThenAndNowComparison: React.FC<ThenAndNowComparisonProps> = ({ clas
     </Card>
   );
 };
+
+export default ThenAndNowComparison;

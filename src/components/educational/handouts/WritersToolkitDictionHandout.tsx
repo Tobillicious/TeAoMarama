@@ -34,3 +34,5 @@ export const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandout
     </Card>
   );
 };
+
+export default WritersToolkitDictionHandout;

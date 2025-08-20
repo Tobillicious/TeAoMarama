@@ -34,3 +34,5 @@ export const HousingAffordabilityComprehensionHandout: React.FC<HousingAffordabi
     </Card>
   );
 };
+
+export default HousingAffordabilityComprehensionHandout;

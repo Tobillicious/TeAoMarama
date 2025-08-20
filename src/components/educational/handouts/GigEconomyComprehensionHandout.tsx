@@ -34,3 +34,5 @@ export const GigEconomyComprehensionHandout: React.FC<GigEconomyComprehensionHan
     </Card>
   );
 };
+
+export default GigEconomyComprehensionHandout;

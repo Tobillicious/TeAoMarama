@@ -34,3 +34,5 @@ export const StoryToLifeConnections: React.FC<StoryToLifeConnectionsProps> = ({ 
     </Card>
   );
 };
+
+export default StoryToLifeConnections;

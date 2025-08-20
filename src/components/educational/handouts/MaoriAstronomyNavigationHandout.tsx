@@ -34,3 +34,5 @@ export const MaoriAstronomyNavigationHandout: React.FC<MaoriAstronomyNavigationH
     </Card>
   );
 };
+
+export default MaoriAstronomyNavigationHandout;

@@ -34,3 +34,5 @@ export const TreatyStoriesAnalysis: React.FC<TreatyStoriesAnalysisProps> = ({ cl
     </Card>
   );
 };
+
+export default TreatyStoriesAnalysis;

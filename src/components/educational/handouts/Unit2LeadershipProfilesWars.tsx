@@ -34,3 +34,5 @@ export const Unit2LeadershipProfilesWars: React.FC<Unit2LeadershipProfilesWarsPr
     </Card>
   );
 };
+
+export default Unit2LeadershipProfilesWars;

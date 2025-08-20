@@ -34,3 +34,5 @@ export const FigurativeLanguageHandout: React.FC<FigurativeLanguageHandoutProps>
     </Card>
   );
 };
+
+export default FigurativeLanguageHandout;

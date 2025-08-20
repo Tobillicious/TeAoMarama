@@ -34,3 +34,5 @@ export const AuthorsPurposePersuadeHandout: React.FC<AuthorsPurposePersuadeHando
     </Card>
   );
 };
+
+export default AuthorsPurposePersuadeHandout;

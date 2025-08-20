@@ -34,3 +34,5 @@ export const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProp
     </Card>
   );
 };
+
+export default RenewableEnergyTraditional;

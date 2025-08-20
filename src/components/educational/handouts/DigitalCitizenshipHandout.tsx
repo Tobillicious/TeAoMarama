@@ -34,3 +34,5 @@ export const DigitalCitizenshipHandout: React.FC<DigitalCitizenshipHandoutProps>
     </Card>
   );
 };
+
+export default DigitalCitizenshipHandout;

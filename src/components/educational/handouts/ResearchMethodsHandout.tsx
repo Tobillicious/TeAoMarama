@@ -34,3 +34,5 @@ export const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({ 
     </Card>
   );
 };
+
+export default ResearchMethodsHandout;

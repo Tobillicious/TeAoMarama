@@ -34,3 +34,5 @@ export const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHando
     </Card>
   );
 };
+
+export default WritersToolkitRevisionHandout;

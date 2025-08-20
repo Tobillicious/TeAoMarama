@@ -34,3 +34,5 @@ export const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps>
     </Card>
   );
 };
+
+export default WritersToolkitHookHandout;

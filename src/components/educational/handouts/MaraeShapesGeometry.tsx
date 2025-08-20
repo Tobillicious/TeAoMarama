@@ -34,3 +34,5 @@ export const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({ classN
     </Card>
   );
 };
+
+export default MaraeShapesGeometry;

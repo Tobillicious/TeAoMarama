@@ -34,3 +34,5 @@ export const FireMakingEnergy: React.FC<FireMakingEnergyProps> = ({ className = 
     </Card>
   );
 };
+
+export default FireMakingEnergy;

@@ -34,3 +34,5 @@ export const PlaceDescriptionHandout: React.FC<PlaceDescriptionHandoutProps> = (
     </Card>
   );
 };
+
+export default PlaceDescriptionHandout;

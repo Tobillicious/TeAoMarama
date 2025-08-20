@@ -34,3 +34,5 @@ export const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionH
     </Card>
   );
 };
+
+export default WritersToolkitConclusionHandout;

@@ -34,3 +34,5 @@ export const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinit
     </Card>
   );
 };
+
+export default Unit2TechnologyDefinitionChallenge;

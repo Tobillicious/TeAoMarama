@@ -34,3 +34,5 @@ export const MediaLiteracyComprehensionHandout: React.FC<MediaLiteracyComprehens
     </Card>
   );
 };
+
+export default MediaLiteracyComprehensionHandout;

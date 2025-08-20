@@ -34,3 +34,5 @@ export const CulturalPreservationEssays: React.FC<CulturalPreservationEssaysProp
     </Card>
   );
 };
+
+export default CulturalPreservationEssays;

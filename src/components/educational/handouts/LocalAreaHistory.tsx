@@ -34,3 +34,5 @@ export const LocalAreaHistory: React.FC<LocalAreaHistoryProps> = ({ className = 
     </Card>
   );
 };
+
+export default LocalAreaHistory;

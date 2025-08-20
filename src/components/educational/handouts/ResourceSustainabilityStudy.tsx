@@ -34,3 +34,5 @@ export const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyPr
     </Card>
   );
 };
+
+export default ResourceSustainabilityStudy;

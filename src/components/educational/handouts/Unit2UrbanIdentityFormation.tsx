@@ -34,3 +34,5 @@ export const Unit2UrbanIdentityFormation: React.FC<Unit2UrbanIdentityFormationPr
     </Card>
   );
 };
+
+export default Unit2UrbanIdentityFormation;

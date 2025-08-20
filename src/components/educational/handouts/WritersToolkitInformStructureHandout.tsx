@@ -34,3 +34,5 @@ export const WritersToolkitInformStructureHandout: React.FC<WritersToolkitInform
     </Card>
   );
 };
+
+export default WritersToolkitInformStructureHandout;

@@ -34,3 +34,5 @@ export const AiImpactComprehensionHandout: React.FC<AiImpactComprehensionHandout
     </Card>
   );
 };
+
+export default AiImpactComprehensionHandout;

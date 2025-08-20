@@ -34,3 +34,5 @@ export const PersonalTimelineActivity: React.FC<PersonalTimelineActivityProps> =
     </Card>
   );
 };
+
+export default PersonalTimelineActivity;

@@ -34,3 +34,5 @@ export const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindin
     </Card>
   );
 };
+
+export default MaoriNavigationWayfindingHandout;

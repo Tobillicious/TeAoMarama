@@ -34,3 +34,5 @@ export const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({ classNam
     </Card>
   );
 };
+
+export default ProbabilityHandout;

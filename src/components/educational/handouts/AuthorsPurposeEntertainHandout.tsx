@@ -34,3 +34,5 @@ export const AuthorsPurposeEntertainHandout: React.FC<AuthorsPurposeEntertainHan
     </Card>
   );
 };
+
+export default AuthorsPurposeEntertainHandout;

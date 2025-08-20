@@ -34,3 +34,5 @@ export const RecipeScalingMathematics: React.FC<RecipeScalingMathematicsProps> =
     </Card>
   );
 };
+
+export default RecipeScalingMathematics;

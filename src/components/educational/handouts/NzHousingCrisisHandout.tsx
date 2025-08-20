@@ -34,3 +34,5 @@ export const NzHousingCrisisHandout: React.FC<NzHousingCrisisHandoutProps> = ({ 
     </Card>
   );
 };
+
+export default NzHousingCrisisHandout;

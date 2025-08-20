@@ -34,3 +34,5 @@ export const WhakapapaMathematics: React.FC<WhakapapaMathematicsProps> = ({ clas
     </Card>
   );
 };
+
+export default WhakapapaMathematics;

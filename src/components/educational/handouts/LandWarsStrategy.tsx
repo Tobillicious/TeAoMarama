@@ -34,3 +34,5 @@ export const LandWarsStrategy: React.FC<LandWarsStrategyProps> = ({ className = 
     </Card>
   );
 };
+
+export default LandWarsStrategy;

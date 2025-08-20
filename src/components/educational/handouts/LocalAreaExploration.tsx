@@ -34,3 +34,5 @@ export const LocalAreaExploration: React.FC<LocalAreaExplorationProps> = ({ clas
     </Card>
   );
 };
+
+export default LocalAreaExploration;

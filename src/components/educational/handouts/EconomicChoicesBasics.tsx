@@ -34,3 +34,5 @@ export const EconomicChoicesBasics: React.FC<EconomicChoicesBasicsProps> = ({ cl
     </Card>
   );
 };
+
+export default EconomicChoicesBasics;

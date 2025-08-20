@@ -34,3 +34,5 @@ export const FilmSceneAnalysisHandout: React.FC<FilmSceneAnalysisHandoutProps> =
     </Card>
   );
 };
+
+export default FilmSceneAnalysisHandout;

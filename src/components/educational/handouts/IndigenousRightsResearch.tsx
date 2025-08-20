@@ -34,3 +34,5 @@ export const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> =
     </Card>
   );
 };
+
+export default IndigenousRightsResearch;

@@ -34,3 +34,5 @@ export const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionPr
     </Card>
   );
 };
+
+export default CulturalHeroesComprehension;

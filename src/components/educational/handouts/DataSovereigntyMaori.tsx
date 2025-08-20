@@ -34,3 +34,5 @@ export const DataSovereigntyMaori: React.FC<DataSovereigntyMaoriProps> = ({ clas
     </Card>
   );
 };
+
+export default DataSovereigntyMaori;

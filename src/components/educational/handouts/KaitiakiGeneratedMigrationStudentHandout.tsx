@@ -34,3 +34,5 @@ export const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGenerate
     </Card>
   );
 };
+
+export default KaitiakiGeneratedMigrationStudentHandout;

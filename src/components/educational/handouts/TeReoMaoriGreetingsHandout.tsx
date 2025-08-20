@@ -34,3 +34,5 @@ export const TeReoMaoriGreetingsHandout: React.FC<TeReoMaoriGreetingsHandoutProp
     </Card>
   );
 };
+
+export default TeReoMaoriGreetingsHandout;

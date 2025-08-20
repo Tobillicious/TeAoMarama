@@ -34,3 +34,5 @@ export const TukutukuPatternsMaths: React.FC<TukutukuPatternsMathsProps> = ({ cl
     </Card>
   );
 };
+
+export default TukutukuPatternsMaths;

@@ -34,3 +34,5 @@ export const IwiPopulationGraphs: React.FC<IwiPopulationGraphsProps> = ({ classN
     </Card>
   );
 };
+
+export default IwiPopulationGraphs;

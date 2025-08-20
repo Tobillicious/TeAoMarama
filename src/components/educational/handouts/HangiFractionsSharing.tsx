@@ -34,3 +34,5 @@ export const HangiFractionsSharing: React.FC<HangiFractionsSharingProps> = ({ cl
     </Card>
   );
 };
+
+export default HangiFractionsSharing;

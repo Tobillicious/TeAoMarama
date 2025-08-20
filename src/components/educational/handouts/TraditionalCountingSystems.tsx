@@ -34,3 +34,5 @@ export const TraditionalCountingSystems: React.FC<TraditionalCountingSystemsProp
     </Card>
   );
 };
+
+export default TraditionalCountingSystems;

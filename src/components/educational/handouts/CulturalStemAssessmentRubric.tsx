@@ -34,3 +34,5 @@ export const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubric
     </Card>
   );
 };
+
+export default CulturalStemAssessmentRubric;
