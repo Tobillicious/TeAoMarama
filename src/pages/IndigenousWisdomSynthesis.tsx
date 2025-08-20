@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './TeKeteHandout.css';
+import './IndigenousWisdomSynthesis.css';
 
 // TypeScript interfaces for cultural education
 interface IndigenousGovernanceSystem {

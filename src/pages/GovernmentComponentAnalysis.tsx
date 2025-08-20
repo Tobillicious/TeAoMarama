@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './TeKeteHandout.css';
+import './GovernmentComponentAnalysis.css';
 
 // TypeScript interfaces for government analysis
 interface GovernmentSystem {
@@ -51,38 +51,44 @@ const governmentComponents = [
     id: 'authority',
     icon: '👑',
     name: 'Authority Structure',
-    description: 'Who has power and how is it gained/maintained? (Single leader, council, democratic election, inheritance, etc.)'
+    description:
+      'Who has power and how is it gained/maintained? (Single leader, council, democratic election, inheritance, etc.)',
   },
   {
     id: 'decision-making',
     icon: '🗳️',
     name: 'Decision-Making Process',
-    description: 'How are important choices made? (Consensus, majority vote, expert panels, leader decree, etc.)'
+    description:
+      'How are important choices made? (Consensus, majority vote, expert panels, leader decree, etc.)',
   },
   {
     id: 'representation',
     icon: '🎤',
     name: 'Representation System',
-    description: 'How are different groups\' voices included? (Direct democracy, representatives, councils, etc.)'
+    description:
+      "How are different groups' voices included? (Direct democracy, representatives, councils, etc.)",
   },
   {
     id: 'accountability',
     icon: '⚖️',
     name: 'Accountability Mechanisms',
-    description: 'How are leaders held responsible? (Elections, impeachment, community oversight, traditional protocols, etc.)'
+    description:
+      'How are leaders held responsible? (Elections, impeachment, community oversight, traditional protocols, etc.)',
   },
   {
     id: 'conflict-resolution',
     icon: '🤝',
     name: 'Conflict Resolution',
-    description: 'How are disputes and disagreements handled? (Courts, mediation, traditional justice, restorative practices, etc.)'
+    description:
+      'How are disputes and disagreements handled? (Courts, mediation, traditional justice, restorative practices, etc.)',
   },
   {
     id: 'power-distribution',
     icon: '🌐',
     name: 'Power Distribution',
-    description: 'How is authority spread across different levels/groups? (Federal, unitary, confederate, tribal councils, etc.)'
-  }
+    description:
+      'How is authority spread across different levels/groups? (Federal, unitary, confederate, tribal councils, etc.)',
+  },
 ];
 
 export default function GovernmentComponentAnalysis() {
@@ -94,83 +100,87 @@ export default function GovernmentComponentAnalysis() {
       majorDifferences: '',
       sharedStrengths: '',
       commonProblems: '',
-      preferredSystem: ''
+      preferredSystem: '',
     },
     culturalInsights: {
       culturalInfluence: '',
       indigenousLearnings: '',
-      maoriPrinciples: ''
+      maoriPrinciples: '',
     },
     societyApplication: {
       authorityStructure: '',
       decisionProcess: '',
       representationAccountability: '',
-      uniqueFeatures: ''
+      uniqueFeatures: '',
     },
-    unifiedPurposeReflection: ''
+    unifiedPurposeReflection: '',
   });
   const [studentInfo, setStudentInfo] = useState({
     groupNames: '',
     date: new Date().toLocaleDateString('en-NZ'),
-    period: ''
+    period: '',
   });
 
   const updateSystemData = (systemKey: 'system1' | 'system2', field: string, value: string) => {
-    setAnalysisData(prev => ({
+    setAnalysisData((prev) => ({
       ...prev,
       [systemKey]: {
         ...prev[systemKey],
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
-  const updateSystemComponent = (systemKey: 'system1' | 'system2', component: string, value: string) => {
-    setAnalysisData(prev => ({
+  const updateSystemComponent = (
+    systemKey: 'system1' | 'system2',
+    component: string,
+    value: string,
+  ) => {
+    setAnalysisData((prev) => ({
       ...prev,
       [systemKey]: {
         ...prev[systemKey],
         components: {
           ...prev[systemKey].components,
-          [component]: value
-        }
-      }
+          [component]: value,
+        },
+      },
     }));
   };
 
   const updateComparison = (field: string, value: string) => {
-    setAnalysisData(prev => ({
+    setAnalysisData((prev) => ({
       ...prev,
       comparison: {
         ...prev.comparison,
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
   const updateCulturalInsights = (field: string, value: string) => {
-    setAnalysisData(prev => ({
+    setAnalysisData((prev) => ({
       ...prev,
       culturalInsights: {
         ...prev.culturalInsights,
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
   const updateSocietyApplication = (field: string, value: string) => {
-    setAnalysisData(prev => ({
+    setAnalysisData((prev) => ({
       ...prev,
       societyApplication: {
         ...prev.societyApplication,
-        [field]: value
-      }
+        [field]: value,
+      },
     }));
   };
 
   const renderPageNavigation = () => (
     <div className="page-navigation">
-      {[1, 2, 3, 4].map(pageNum => (
+      {[1, 2, 3, 4].map((pageNum) => (
         <button
           key={pageNum}
           className={`page-nav-btn ${currentPage === pageNum ? 'active' : ''}`}
@@ -192,7 +202,7 @@ export default function GovernmentComponentAnalysis() {
             <input
               type="text"
               value={studentInfo.groupNames}
-              onChange={(e) => setStudentInfo(prev => ({...prev, groupNames: e.target.value}))}
+              onChange={(e) => setStudentInfo((prev) => ({ ...prev, groupNames: e.target.value }))}
               placeholder="Enter group member names"
             />
           </div>
@@ -201,7 +211,7 @@ export default function GovernmentComponentAnalysis() {
             <input
               type="text"
               value={studentInfo.date}
-              onChange={(e) => setStudentInfo(prev => ({...prev, date: e.target.value}))}
+              onChange={(e) => setStudentInfo((prev) => ({ ...prev, date: e.target.value }))}
             />
           </div>
           <div className="info-field">
@@ -209,7 +219,7 @@ export default function GovernmentComponentAnalysis() {
             <input
               type="text"
               value={studentInfo.period}
-              onChange={(e) => setStudentInfo(prev => ({...prev, period: e.target.value}))}
+              onChange={(e) => setStudentInfo((prev) => ({ ...prev, period: e.target.value }))}
               placeholder="Class period"
             />
           </div>
@@ -218,18 +228,20 @@ export default function GovernmentComponentAnalysis() {
 
       <div className="cultural-element">
         <h3>Whakataukī | Proverb</h3>
-        <p><em>"Kia kotahi te hoe, kia ū ki te rau"</em></p>
+        <p>
+          <em>"Kia kotahi te hoe, kia ū ki te rau"</em>
+        </p>
         <p>Paddle as one, hold fast to the purpose.</p>
       </div>
 
       <div className="instruction-box">
         <h3>🎯 Analysis Purpose</h3>
         <p>
-          Understanding how different governance systems work helps you design thoughtful, effective 
-          government structures for your society. This worksheet guides you through analyzing two 
+          Understanding how different governance systems work helps you design thoughtful, effective
+          government structures for your society. This worksheet guides you through analyzing two
           contrasting systems to identify their strengths, challenges, and key components.
         </p>
-        
+
         <h4>Your Task:</h4>
         <ol>
           <li>Choose two governance systems from your research that interest your group</li>
@@ -241,9 +253,9 @@ export default function GovernmentComponentAnalysis() {
 
       <div className="analysis-section">
         <div className="section-title">🔍 Government System Components Framework</div>
-        
+
         <div className="component-grid">
-          {governmentComponents.map(component => (
+          {governmentComponents.map((component) => (
             <div key={component.id} className="component-box">
               <div className="component-header">
                 {component.icon} {component.name}
@@ -256,7 +268,7 @@ export default function GovernmentComponentAnalysis() {
 
       <div className="analysis-section">
         <div className="section-title">📝 System Selection</div>
-        
+
         <div className="system-selection">
           <h4>System 1 (That interests you for your society design):</h4>
           <div className="selection-fields">
@@ -311,24 +323,29 @@ export default function GovernmentComponentAnalysis() {
   const renderSystemAnalysisPage = (systemKey: 'system1' | 'system2', pageNumber: number) => {
     const system = analysisData[systemKey];
     const systemTitle = systemKey === 'system1' ? 'Your Preferred System' : 'Contrasting System';
-    
+
     return (
       <div className="worksheet-page">
         <div className="worksheet-header">
           <h2>🏛️ Government Component Analysis - Page {pageNumber}</h2>
-          <p><strong>Group Names:</strong> {studentInfo.groupNames || '__________________________'}</p>
+          <p>
+            <strong>Group Names:</strong> {studentInfo.groupNames || '__________________________'}
+          </p>
         </div>
 
         <div className="system-analysis">
           <div className="system-title">
-            {systemKey === 'system1' ? 'System 1' : 'System 2'}: {system.name || '_______________________'} ({systemTitle})
+            {systemKey === 'system1' ? 'System 1' : 'System 2'}:{' '}
+            {system.name || '_______________________'} ({systemTitle})
           </div>
-          
+
           <div className="analysis-table">
-            {governmentComponents.map(component => (
+            {governmentComponents.map((component) => (
               <div key={component.id} className="component-analysis-row">
                 <div className="component-label">
-                  <strong>{component.icon} {component.name}</strong>
+                  <strong>
+                    {component.icon} {component.name}
+                  </strong>
                 </div>
                 <textarea
                   className="component-response"
@@ -340,34 +357,49 @@ export default function GovernmentComponentAnalysis() {
               </div>
             ))}
           </div>
-          
+
           <div className="system-evaluation">
             <div className="evaluation-question">
-              <label><strong>What are the main benefits/strengths of this system?</strong></label>
+              <label>
+                <strong>What are the main benefits/strengths of this system?</strong>
+              </label>
               <textarea
                 className="large-response-box"
                 value={system.strengths?.join('\n') || ''}
-                onChange={(e) => updateSystemData(systemKey, 'strengths', e.target.value.split('\n'))}
+                onChange={(e) =>
+                  updateSystemData(systemKey, 'strengths', e.target.value.split('\n'))
+                }
                 rows={4}
               />
             </div>
-            
+
             <div className="evaluation-question">
-              <label><strong>What are the main challenges/weaknesses of this system?</strong></label>
+              <label>
+                <strong>What are the main challenges/weaknesses of this system?</strong>
+              </label>
               <textarea
                 className="large-response-box"
                 value={system.challenges?.join('\n') || ''}
-                onChange={(e) => updateSystemData(systemKey, 'challenges', e.target.value.split('\n'))}
+                onChange={(e) =>
+                  updateSystemData(systemKey, 'challenges', e.target.value.split('\n'))
+                }
                 rows={4}
               />
             </div>
-            
+
             <div className="evaluation-question">
-              <label><strong>What makes this system unique or distinctive?</strong></label>
+              <label>
+                <strong>What makes this system unique or distinctive?</strong>
+              </label>
               <textarea
                 className="response-box"
                 value={system.uniqueFeatures?.slice(1).join('\n') || ''}
-                onChange={(e) => updateSystemData(systemKey, 'uniqueFeatures', [system.uniqueFeatures?.[0] || '', ...e.target.value.split('\n')])}
+                onChange={(e) =>
+                  updateSystemData(systemKey, 'uniqueFeatures', [
+                    system.uniqueFeatures?.[0] || '',
+                    ...e.target.value.split('\n'),
+                  ])
+                }
                 rows={3}
               />
             </div>
@@ -381,15 +413,19 @@ export default function GovernmentComponentAnalysis() {
     <div className="worksheet-page">
       <div className="worksheet-header">
         <h2>🏛️ Government Component Analysis - Page 4</h2>
-        <p><strong>Group Names:</strong> {studentInfo.groupNames || '__________________________'}</p>
+        <p>
+          <strong>Group Names:</strong> {studentInfo.groupNames || '__________________________'}
+        </p>
       </div>
 
       <div className="analysis-section">
         <div className="section-title">⚖️ System Comparison</div>
-        
+
         <div className="comparison-questions">
           <div className="question-section">
-            <label><strong>What are the biggest differences between these two systems?</strong></label>
+            <label>
+              <strong>What are the biggest differences between these two systems?</strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.comparison.majorDifferences}
@@ -397,9 +433,13 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>What do both systems do well that you might want to include in your society?</strong></label>
+            <label>
+              <strong>
+                What do both systems do well that you might want to include in your society?
+              </strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.comparison.sharedStrengths}
@@ -407,9 +447,13 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>What problems do both systems face? How might your society avoid these issues?</strong></label>
+            <label>
+              <strong>
+                What problems do both systems face? How might your society avoid these issues?
+              </strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.comparison.commonProblems}
@@ -417,9 +461,13 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>Which system better matches your group's values and society goals? Why?</strong></label>
+            <label>
+              <strong>
+                Which system better matches your group's values and society goals? Why?
+              </strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.comparison.preferredSystem}
@@ -432,10 +480,12 @@ export default function GovernmentComponentAnalysis() {
 
       <div className="analysis-section">
         <div className="section-title">🌺 Cultural Context & Indigenous Perspectives</div>
-        
+
         <div className="cultural-questions">
           <div className="question-section">
-            <label><strong>How do cultural values and traditions influence each system's design?</strong></label>
+            <label>
+              <strong>How do cultural values and traditions influence each system's design?</strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.culturalInsights.culturalInfluence}
@@ -443,9 +493,14 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>If you studied any Indigenous governance systems, what did you learn about different approaches to authority and decision-making?</strong></label>
+            <label>
+              <strong>
+                If you studied any Indigenous governance systems, what did you learn about different
+                approaches to authority and decision-making?
+              </strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.culturalInsights.indigenousLearnings}
@@ -453,9 +508,14 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>How might traditional Māori governance principles (like rangatiratanga) inform your society design?</strong></label>
+            <label>
+              <strong>
+                How might traditional Māori governance principles (like rangatiratanga) inform your
+                society design?
+              </strong>
+            </label>
             <textarea
               className="large-response-box"
               value={analysisData.culturalInsights.maoriPrinciples}
@@ -468,10 +528,15 @@ export default function GovernmentComponentAnalysis() {
 
       <div className="synthesis-section">
         <h3>🏗️ Applying Analysis to Your Society Design</h3>
-        
+
         <div className="application-questions">
           <div className="question-section">
-            <label><strong>Based on this analysis, what type of authority structure might work best for your society?</strong></label>
+            <label>
+              <strong>
+                Based on this analysis, what type of authority structure might work best for your
+                society?
+              </strong>
+            </label>
             <textarea
               className="response-box"
               value={analysisData.societyApplication.authorityStructure}
@@ -479,9 +544,11 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>What decision-making process will you likely use, and why?</strong></label>
+            <label>
+              <strong>What decision-making process will you likely use, and why?</strong>
+            </label>
             <textarea
               className="response-box"
               value={analysisData.societyApplication.decisionProcess}
@@ -489,19 +556,29 @@ export default function GovernmentComponentAnalysis() {
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>How will you ensure different voices are represented and leaders are accountable?</strong></label>
+            <label>
+              <strong>
+                How will you ensure different voices are represented and leaders are accountable?
+              </strong>
+            </label>
             <textarea
               className="response-box"
               value={analysisData.societyApplication.representationAccountability}
-              onChange={(e) => updateSocietyApplication('representationAccountability', e.target.value)}
+              onChange={(e) =>
+                updateSocietyApplication('representationAccountability', e.target.value)
+              }
               rows={4}
             />
           </div>
-          
+
           <div className="question-section">
-            <label><strong>What unique features from your analysis might you adapt for your society?</strong></label>
+            <label>
+              <strong>
+                What unique features from your analysis might you adapt for your society?
+              </strong>
+            </label>
             <textarea
               className="response-box"
               value={analysisData.societyApplication.uniqueFeatures}
@@ -515,11 +592,18 @@ export default function GovernmentComponentAnalysis() {
       <div className="cultural-element">
         <h4>🌿 Reflection on Unified Purpose</h4>
         <div className="question-section">
-          <label><strong>How does "Kia kotahi te hoe, kia ū ki te rau" (paddle as one, hold fast to the purpose) relate to effective governance systems?</strong></label>
+          <label>
+            <strong>
+              How does "Kia kotahi te hoe, kia ū ki te rau" (paddle as one, hold fast to the
+              purpose) relate to effective governance systems?
+            </strong>
+          </label>
           <textarea
             className="response-box"
             value={analysisData.unifiedPurposeReflection}
-            onChange={(e) => setAnalysisData(prev => ({...prev, unifiedPurposeReflection: e.target.value}))}
+            onChange={(e) =>
+              setAnalysisData((prev) => ({ ...prev, unifiedPurposeReflection: e.target.value }))
+            }
             rows={4}
           />
         </div>
@@ -557,8 +641,13 @@ export default function GovernmentComponentAnalysis() {
               <span className="subject-badge">Social Studies</span>
             </div>
             <h4>Governance Systems Analysis - NZ Curriculum</h4>
-            <p>Official resources for understanding government structures and democratic processes</p>
-            <p><strong>🌿 Cultural Relevance:</strong> Includes Māori governance and rangatiratanga principles</p>
+            <p>
+              Official resources for understanding government structures and democratic processes
+            </p>
+            <p>
+              <strong>🌿 Cultural Relevance:</strong> Includes Māori governance and rangatiratanga
+              principles
+            </p>
             <div className="resource-meta">
               <span>Year 8-10 Social Studies</span>
               <span>Achievement Standards 2.1, 2.3</span>

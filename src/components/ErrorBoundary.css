@@ -1,0 +1,205 @@
+/* Error Boundary with Te Kete Ako Cultural Design Patterns */
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-pounamu) 0%,
+    var(--color-kowhai) 50%,
+    var(--color-moana) 100%
+  );
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 2rem;
+}
+
+.error-container {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-whenua);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--color-pounamu), var(--color-kowhai));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.error-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-whenua);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: var(--color-whenua);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+.error-details {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.error-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-pounamu);
+  padding: 1rem;
+  background: rgba(30, 64, 175, 0.1);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.error-details summary:hover {
+  background: rgba(30, 64, 175, 0.15);
+}
+
+.error-stack {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.error-stack h4 {
+  color: var(--color-pounamu);
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.error-stack pre {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #dc2626;
+}
+
+.error-retry-button {
+  background: linear-gradient(135deg, var(--color-pounamu), var(--color-kowhai));
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+  margin: 1rem 0;
+}
+
+.error-retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+.error-retry-button:active {
+  transform: translateY(0);
+}
+
+.error-help {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.error-help p {
+  margin: 0.5rem 0;
+  color: var(--color-whenua);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-boundary {
+    padding: 1rem;
+  }
+
+  .error-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .error-title {
+    font-size: 2rem;
+  }
+
+  .error-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+
+  .error-icon {
+    font-size: 3rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .error-container {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .error-title,
+  .error-subtitle,
+  .error-message,
+  .error-help p {
+    color: #f8fafc;
+  }
+
+  .error-stack {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .error-stack pre {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .error-help {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
