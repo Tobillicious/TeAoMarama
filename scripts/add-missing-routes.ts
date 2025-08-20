@@ -8,6 +8,7 @@
 
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { basename, extname } from 'path';
+
 interface RouteConfig {
   componentName: string;
   importPath: string;
@@ -23,11 +24,11 @@ class RouteManager {
     console.log('🛣️ Adding missing routes for orphaned components...\n');
 
     // Get all component files
-    const _componentFiles = await this.getComponentFiles();
-    const _existingRoutes = await this.getExistingRoutes();
+    const componentFiles = await this.getComponentFiles();
+    const existingRoutes = await this.getExistingRoutes();
 
     // Find missing routes
-    const _missingRoutes = componentFiles.filter(
+    const missingRoutes = componentFiles.filter(
       (comp) => !existingRoutes.includes(comp.componentName),
     );
 
@@ -51,12 +52,12 @@ class RouteManager {
 
     try {
       // Get educational components
-      const _componentFiles = await readdir(this.componentsDir);
+      const componentFiles = await readdir(this.componentsDir);
       for (const file of componentFiles) {
         if (extname(file) === '.tsx') {
-          const _componentName = basename(file, '.tsx');
-          const _importPath = `./components/educational/handouts/${componentName}`;
-          const _routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+          const componentName = basename(file, '.tsx');
+          const importPath = `./components/educational/handouts/${componentName}`;
+          const routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
 
           components.push({
             componentName,
@@ -67,12 +68,12 @@ class RouteManager {
       }
 
       // Get pages
-      const _pageFiles = await readdir(this.pagesDir);
+      const pageFiles = await readdir(this.pagesDir);
       for (const file of pageFiles) {
         if (extname(file) === '.tsx') {
-          const _componentName = basename(file, '.tsx');
-          const _importPath = `./pages/${componentName}`;
-          const _routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+          const componentName = basename(file, '.tsx');
+          const importPath = `./pages/${componentName}`;
+          const routePath = `/${componentName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
 
           components.push({
             componentName,
@@ -90,11 +91,11 @@ class RouteManager {
 
   private async getExistingRoutes(): Promise<string[]> {
     try {
-      const _appContent = await readFile(this.appTsxPath, 'utf8');
+      const appContent = await readFile(this.appTsxPath, 'utf8');
       const existingRoutes: string[] = [];
 
       // Extract component names from lazy imports
-      const _lazyImportRegex = /const (\w+) = lazy(/g;
+      const lazyImportRegex = /const (\w+) = lazy\(/g;
       let match;
       while ((match = lazyImportRegex.exec(appContent)) !== null) {
         existingRoutes.push(match[1]);
@@ -112,16 +113,16 @@ class RouteManager {
       let appContent = await readFile(this.appTsxPath, 'utf8');
 
       // Add lazy imports for missing components
-      const _lazyImports = missingRoutes
+      const lazyImports = missingRoutes
         .map((route) => `const ${route.componentName} = lazy(() => import('${route.importPath}'));`)
         .join('\n');
 
       // Find the position to insert new imports (after existing lazy imports)
-      const _importEndIndex = appContent.lastIndexOf(
+      const importEndIndex = appContent.lastIndexOf(
         '// Newly migrated components from Te Kete Ako',
       );
       if (importEndIndex !== -1) {
-        const _insertPosition = appContent.indexOf('\n', importEndIndex) + 1;
+        const insertPosition = appContent.indexOf('\n', importEndIndex) + 1;
         appContent =
           appContent.slice(0, insertPosition) +
           lazyImports +
@@ -129,7 +130,7 @@ class RouteManager {
           appContent.slice(insertPosition);
       } else {
         // Fallback: insert before the LoadingSpinner
-        const _spinnerIndex = appContent.indexOf('// Optimized loading component');
+        const spinnerIndex = appContent.indexOf('// Optimized loading component');
         if (spinnerIndex !== -1) {
           appContent =
             appContent.slice(0, spinnerIndex) +
@@ -140,14 +141,14 @@ class RouteManager {
       }
 
       // Add routes to the routes array
-      const _routeEntries = missingRoutes
+      const routeEntries = missingRoutes
         .map(
           (route) => `      { path: '${route.routePath}', element: <${route.componentName} /> },`,
         )
         .join('\n');
 
       // Find the routes array and add new routes
-      const _routesEndIndex = appContent.lastIndexOf('    ],');
+      const routesEndIndex = appContent.lastIndexOf('    ],');
       if (routesEndIndex !== -1) {
         appContent =
           appContent.slice(0, routesEndIndex) +
@@ -166,7 +167,7 @@ class RouteManager {
 }
 
 // Run the route manager
-const _routeManager = new RouteManager();
+const routeManager = new RouteManager();
 routeManager
   .addMissingRoutes()
   .then(() => {
