@@ -251,9 +251,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
   if (authMode === 'role-select') {
     return (
       <div className={`firebase-auth role-select ${className}`}>
-        <h3 className="auth-title">
-          Choose Your Role - Kōwhiri tō tūranga
-        </h3>
+        <h3 className="auth-title">Choose Your Role - Kōwhiri tō tūranga</h3>
 
         <div className="auth-role-buttons">
           <button
@@ -264,9 +262,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
             <div>
               <div className="auth-role-icon">👨‍🎓</div>
               <h4 className="auth-role-title">Student / Ākonga</h4>
-              <p className="auth-role-description">
-                Access learning materials and activities
-              </p>
+              <p className="auth-role-description">Access learning materials and activities</p>
             </div>
           </button>
 
@@ -278,9 +274,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
             <div>
               <div className="auth-role-icon">👩‍🏫</div>
               <h4 className="auth-role-title">Teacher / Kaiako</h4>
-              <p className="auth-role-description">
-                Access teaching resources and planning tools
-              </p>
+              <p className="auth-role-description">Access teaching resources and planning tools</p>
             </div>
           </button>
         </div>
@@ -293,9 +287,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
   return (
     <div className={`firebase-auth ${className}`}>
       <div className="auth-header">
-        <h2 className="auth-title">
-          🌿 TeAoMarama
-        </h2>
+        <h2 className="auth-title">🌿 TeAoMarama</h2>
         <p className="auth-subtitle">
           {authMode === 'login' ? 'Sign in to your account' : 'Create your account'}
         </p>
@@ -304,9 +296,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       {/* User Type Selection for Registration */}
       {authMode === 'register' && (
         <div className="auth-user-type-selection">
-          <label className="auth-user-type-label">
-            I am a:
-          </label>
+          <label className="auth-user-type-label">I am a:</label>
           <div className="auth-user-type-buttons">
             <button
               type="button"
@@ -327,11 +317,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       )}
 
       {/* Google Sign In */}
-      <button
-        onClick={handleGoogleAuth}
-        disabled={loading}
-        className="auth-google-button"
-      >
+      <button onClick={handleGoogleAuth} disabled={loading} className="auth-google-button">
         <svg width="18" height="18" viewBox="0 0 24 24">
           <path
             fill="#4285F4"
@@ -353,9 +339,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
         Continue with Google
       </button>
 
-      <div className="auth-divider">
-        or
-      </div>
+      <div className="auth-divider">or</div>
 
       {/* Email Form Fields */}
       <div className="auth-form-fields">
@@ -421,11 +405,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       )}
 
       {/* Submit Button */}
-      <button
-        onClick={handleEmailAuth}
-        disabled={loading}
-        className="auth-submit-button"
-      >
+      <button onClick={handleEmailAuth} disabled={loading} className="auth-submit-button">
         {loading ? 'Loading...' : authMode === 'login' ? 'Sign In' : 'Create Account'}
       </button>
 
