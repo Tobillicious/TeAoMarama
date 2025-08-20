@@ -17,13 +17,13 @@ interface FixPattern {
 const FIX_PATTERNS: FixPattern[] = [
   // Property name mismatches
   {
-    pattern: 'resource\\.title\\.toLowerCase\\(\\)',
+    pattern: 'resource\\.title\\.toLowerCase\(\)',
     replacement: 'resource.__title.toLowerCase()',
     description: 'Fix title property name mismatch',
     files: ['src/services/RealResourceLoader.ts', 'migration/weaviate_loader_example.ts'],
   },
   {
-    pattern: 'resource\\.subject\\.toLowerCase\\(\\)',
+    pattern: 'resource\\.subject\\.toLowerCase\(\)',
     replacement: 'resource._____subject.toLowerCase()',
     description: 'Fix subject property name mismatch',
     files: ['src/services/RealResourceLoader.ts', 'src/services/ResourceService.ts'],
@@ -45,39 +45,39 @@ const FIX_PATTERNS: FixPattern[] = [
 
   // Unknown type issues
   {
-    pattern: '\\(s: unknown\\) => s\\.id',
-    replacement: '(s: any) => s.id',
+    pattern: '\(s: unknown\) => s\\.id',
+    replacement: '(s: unknown) => s.id',
     description: 'Fix unknown type access',
     files: ['migration/content-validation-pipeline.ts'],
   },
 
   // Method signature mismatches
   {
-    pattern: 'this\\.hasExplicitProgressions\\(item\\.content\\)',
+    pattern: 'this\\.hasExplicitProgressions\(item\\.content\)',
     replacement: 'this.hasExplicitProgressions()',
     description: 'Fix method signature mismatch',
     files: ['migration/content-validation-pipeline.ts'],
   },
   {
-    pattern: 'this\\.hasCulturalPerspectives\\(item\\.content\\)',
+    pattern: 'this\\.hasCulturalPerspectives\(item\\.content\)',
     replacement: 'this.hasCulturalPerspectives()',
     description: 'Fix method signature mismatch',
     files: ['migration/content-validation-pipeline.ts'],
   },
   {
-    pattern: 'this\\.hasAdequateScaffolding\\(item\\.content\\)',
+    pattern: 'this\\.hasAdequateScaffolding\(item\\.content\)',
     replacement: 'this.hasAdequateScaffolding()',
     description: 'Fix method signature mismatch',
     files: ['migration/content-validation-pipeline.ts'],
   },
   {
-    pattern: 'this\\.hasDifferentiation\\(item\\.content\\)',
+    pattern: 'this\\.hasDifferentiation\(item\\.content\)',
     replacement: 'this.hasDifferentiation()',
     description: 'Fix method signature mismatch',
     files: ['migration/content-validation-pipeline.ts'],
   },
   {
-    pattern: 'this\\.hasFormativeAssessment\\(item\\.content\\)',
+    pattern: 'this\\.hasFormativeAssessment\(item\\.content\)',
     replacement: 'this.hasFormativeAssessment()',
     description: 'Fix method signature mismatch',
     files: ['migration/content-validation-pipeline.ts'],
@@ -93,13 +93,13 @@ function applyFixes(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -119,11 +119,11 @@ function addMissingProperties(): void {
   console.log('\n🔧 Adding missing properties to interfaces...\n');
 
   // Add studentEngagement to RealResourceLoader
-  const realResourceLoaderPath = 'src/services/RealResourceLoader.ts';
+  const _realResourceLoaderPath = 'src/services/RealResourceLoader.ts';
   if (fs.existsSync(realResourceLoaderPath)) {
-    const content = fs.readFileSync(realResourceLoaderPath, 'utf8');
-    const newContent = content.replace(
-      /engagement: \{\s+downloads: Math\.floor\(Math\.random\(\) \* 1000\) \+ 100,\s+likes: Math\.floor\(Math\.random\(\) \* 500\) \+ 50,\s+teacherFeedback: Math\.floor\(Math\.random\(\) \* 100\) \+ 10,\s+\}/,
+    const _content = fs.readFileSync(realResourceLoaderPath, 'utf8');
+    const _newContent = content.replace(
+      /engagement: \{\s+downloads: Math\.floor(Math\.random() \* 1000) \+ 100,\s+likes: Math\.floor(Math\.random() \* 500) \+ 50,\s+teacherFeedback: Math\.floor(Math\.random() \* 100) \+ 10,\s+\}/,
       `engagement: {
         downloads: Math.floor(Math.random() * 1000) + 100,
         likes: Math.floor(Math.random() * 500) + 50,
@@ -139,10 +139,10 @@ function addMissingProperties(): void {
   }
 
   // Add sourceSystem to TeachingResource interface
-  const resourceServicePath = 'src/services/ResourceService.ts';
+  const _resourceServicePath = 'src/services/ResourceService.ts';
   if (fs.existsSync(resourceServicePath)) {
-    const content = fs.readFileSync(resourceServicePath, 'utf8');
-    const newContent = content.replace(
+    const _content = fs.readFileSync(resourceServicePath, 'utf8');
+    const _newContent = content.replace(
       /migration: \{\s+migrationId: string;\s+originalPath: string;\s+migrationDate: string;\s+qualityChecked: boolean;\s+\}/,
       `migration: {
     migrationId: string;

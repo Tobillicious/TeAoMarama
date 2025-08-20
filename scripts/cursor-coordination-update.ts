@@ -8,7 +8,6 @@
  */
 
 import { writeFileSync } from 'fs';
-
 interface AgentDirective {
   agentId: string;
   agentName: string;
@@ -127,7 +126,7 @@ class CursorCoordinationSystem {
   }
 
   private getEducationalFocus(agentNumber: number): string {
-    const focuses = [
+    const _focuses = [
       'Mathematics & Numeracy',
       'Science & Technology',  
       'Literacy & Language',
@@ -143,7 +142,7 @@ class CursorCoordinationSystem {
   }
 
   private getErrorRange(agentNumber: number): string {
-    const ranges = [
+    const _ranges = [
       'Errors 1-17: Core component types',
       'Errors 18-33: UI component interfaces',
       'Errors 34-50: Service layer types',
@@ -154,7 +153,7 @@ class CursorCoordinationSystem {
   }
 
   private getCulturalFocus(agentNumber: number): string {
-    const focuses = [
+    const _focuses = [
       'Tikanga validation & protocols',
       'Te reo Māori language accuracy',
       'Cultural storytelling & narratives',
@@ -165,7 +164,7 @@ class CursorCoordinationSystem {
   }
 
   generateCoordinationUpdate(): void {
-    const update = {
+    const _update = {
       timestamp: new Date().toISOString(),
       supremeOverseer: 'Mihara-Kaitiaki-Matua',
       coordinationUpdate: {
@@ -239,7 +238,7 @@ class CursorCoordinationSystem {
     console.log('\n🤖 INDIVIDUAL AGENT MISSION ASSIGNMENTS:');
     console.log('='.repeat(80));
 
-    const agentTypes = {
+    const _agentTypes = {
       'Educational Content Generators': this.agentDirectives.filter(a => a.agentId.includes('edu')),
       'TypeScript Specialists': this.agentDirectives.filter(a => a.agentId.includes('ts')),
       'Cultural Safety Monitors': this.agentDirectives.filter(a => a.agentId.includes('culture'))
@@ -257,7 +256,7 @@ class CursorCoordinationSystem {
   }
 
   generateCursorInstructions(): void {
-    const instructions = `
+    const _instructions = `
 # 🚨 CURSOR AGENTS - IMMEDIATE MISSION UPDATE
 
 ## Supreme Overseer Command: Mihara-Kaitiaki-Matua
@@ -294,7 +293,7 @@ Agent ID: 96a83f27-6d4f-4932-a7e0-c1601d40c8f3
 
 // Execute coordination update
 async function main() {
-  const coordinator = new CursorCoordinationSystem();
+  const _coordinator = new CursorCoordinationSystem();
   
   console.log('🚨 SUPREME OVERSEER MIHARA: UPDATING CURSOR AGENT COORDINATION');
   console.log('Agent ID: 96a83f27-6d4f-4932-a7e0-c1601d40c8f3');

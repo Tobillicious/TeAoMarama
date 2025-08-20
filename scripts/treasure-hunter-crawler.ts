@@ -8,7 +8,6 @@
 
 import { readdir, readFile, stat } from 'fs/promises';
 import { basename, extname, join } from 'path';
-
 interface Treasure {
   type: 'cultural' | 'educational' | 'technical' | 'historical' | 'assessment';
   path: string;
@@ -61,11 +60,11 @@ class TreasureHunterCrawler {
 
   private async scanDirectory(dirPath: string, category: string): Promise<void> {
     try {
-      const files = await this.scanDirectoryRecursive(dirPath);
+      const _files = await this.scanDirectoryRecursive(dirPath);
 
       for (const file of files) {
         if (this.isTreasureFile(file)) {
-          const treasure = await this.analyzeFile(file, category);
+          const _treasure = await this.analyzeFile(file, category);
           if (treasure) {
             this.treasures.push(treasure);
           }
@@ -80,16 +79,16 @@ class TreasureHunterCrawler {
     const files: string[] = [];
 
     try {
-      const items = await readdir(dirPath);
+      const _items = await readdir(dirPath);
 
       for (const item of items) {
-        const fullPath = join(dirPath, item);
+        const _fullPath = join(dirPath, item);
 
         try {
-          const stats = await stat(fullPath);
+          const _stats = await stat(fullPath);
 
           if (stats.isDirectory()) {
-            const subFiles = await this.scanDirectoryRecursive(fullPath);
+            const _subFiles = await this.scanDirectoryRecursive(fullPath);
             files.push(...subFiles);
           } else {
             files.push(fullPath);
@@ -106,8 +105,8 @@ class TreasureHunterCrawler {
   }
 
   private isTreasureFile(filePath: string): boolean {
-    const ext = extname(filePath).toLowerCase();
-    const name = basename(filePath).toLowerCase();
+    const _ext = extname(filePath).toLowerCase();
+    const _name = basename(filePath).toLowerCase();
 
     // Educational content files
     if (ext === '.md' || ext === '.html' || ext === '.tsx' || ext === '.ts') {
@@ -143,13 +142,13 @@ class TreasureHunterCrawler {
 
   private async analyzeFile(filePath: string, category: string): Promise<Treasure | null> {
     try {
-      const content = await readFile(filePath, 'utf8');
-      const name = basename(filePath);
+      const _content = await readFile(filePath, 'utf8');
+      const _name = basename(filePath);
 
       // Determine treasure type and value
-      const treasureType = this.determineTreasureType(filePath, content);
-      const value = this.calculateTreasureValue(filePath, content);
-      const culturalRelevance = this.calculateCulturalRelevance(content);
+      const _treasureType = this.determineTreasureType(filePath, content);
+      const _value = this.calculateTreasureValue(filePath, content);
+      const _culturalRelevance = this.calculateCulturalRelevance(content);
 
       if (value < 10) return null; // Skip low-value items
 
@@ -171,8 +170,8 @@ class TreasureHunterCrawler {
   }
 
   private determineTreasureType(filePath: string, content: string): Treasure['type'] {
-    const path = filePath.toLowerCase();
-    const contentLower = content.toLowerCase();
+    const _path = filePath.toLowerCase();
+    const _contentLower = content.toLowerCase();
 
     // Cultural treasures
     if (
@@ -227,8 +226,8 @@ class TreasureHunterCrawler {
   private calculateTreasureValue(filePath: string, content: string): number {
     let value = 10; // Base value
 
-    const path = filePath.toLowerCase();
-    const contentLower = content.toLowerCase();
+    const _path = filePath.toLowerCase();
+    const _contentLower = content.toLowerCase();
 
     // Cultural content bonus
     if (contentLower.includes('whakatauki') || contentLower.includes('purakau')) value += 30;
@@ -256,11 +255,11 @@ class TreasureHunterCrawler {
   }
 
   private calculateCulturalRelevance(content: string): number {
-    const contentLower = content.toLowerCase();
+    const _contentLower = content.toLowerCase();
     let relevance = 0;
 
     // Cultural keywords
-    const culturalKeywords = [
+    const _culturalKeywords = [
       'whakatauki',
       'purakau',
       'tikanga',
@@ -283,7 +282,7 @@ class TreasureHunterCrawler {
     ];
 
     for (const keyword of culturalKeywords) {
-      const matches = (contentLower.match(new RegExp(keyword, 'g')) || []).length;
+      const _matches = (contentLower.match(new RegExp(keyword, 'g')) || []).length;
       relevance += matches * 5;
     }
 
@@ -291,8 +290,8 @@ class TreasureHunterCrawler {
   }
 
   private generateDescription(filePath: string, content: string): string {
-    const name = basename(filePath);
-    const contentLower = content.toLowerCase();
+    const _name = basename(filePath);
+    const _contentLower = content.toLowerCase();
 
     if (contentLower.includes('whakatauki')) {
       return `Cultural wisdom treasure containing whakataukī (Māori proverbs)`;
@@ -319,7 +318,7 @@ class TreasureHunterCrawler {
 
   private extractTags(filePath: string, content: string): string[] {
     const tags: string[] = [];
-    const contentLower = content.toLowerCase();
+    const _contentLower = content.toLowerCase();
 
     // Cultural tags
     if (contentLower.includes('whakatauki')) tags.push('whakatauki', 'cultural-wisdom');
@@ -340,7 +339,7 @@ class TreasureHunterCrawler {
   }
 
   private determineEducationalLevel(content: string): string {
-    const contentLower = content.toLowerCase();
+    const _contentLower = content.toLowerCase();
 
     if (contentLower.includes('year 8') || contentLower.includes('year8')) return 'Year 8';
     if (contentLower.includes('year 9') || contentLower.includes('year9')) return 'Year 9';
@@ -355,7 +354,7 @@ class TreasureHunterCrawler {
     console.log('🌿 Hunting for cultural treasures...');
 
     // Look for specific cultural content patterns
-    const culturalPatterns = [
+    const _culturalPatterns = [
       '**/whakatauki*.md',
       '**/purakau*.md',
       '**/tikanga*.md',
@@ -373,7 +372,7 @@ class TreasureHunterCrawler {
     console.log('📊 Hunting for assessment treasures...');
 
     // Look for assessment and evaluation content
-    const assessmentPatterns = [
+    const _assessmentPatterns = [
       '**/assessment*.md',
       '**/rubric*.md',
       '**/evaluation*.md',
@@ -387,22 +386,22 @@ class TreasureHunterCrawler {
     console.log('⚙️ Hunting for technical treasures...');
 
     // Look for technical and configuration files
-    const technicalPatterns = ['**/script*.ts', '**/config*.ts', '**/util*.ts', '**/helper*.ts'];
+    const _technicalPatterns = ['**/script*.ts', '**/config*.ts', '**/util*.ts', '**/helper*.ts'];
 
     console.log('✅ Technical treasure hunt complete with patterns:', technicalPatterns.length);
   }
 
   private generateTreasureMap(): TreasureMap {
-    const culturalTreasures = this.treasures.filter((t) => t.type === 'cultural');
-    const educationalTreasures = this.treasures.filter((t) => t.type === 'educational');
-    const technicalTreasures = this.treasures.filter((t) => t.type === 'technical');
-    const historicalTreasures = this.treasures.filter((t) => t.type === 'historical');
-    const assessmentTreasures = this.treasures.filter((t) => t.type === 'assessment');
+    const _culturalTreasures = this.treasures.filter((t) => t.type === 'cultural');
+    const _educationalTreasures = this.treasures.filter((t) => t.type === 'educational');
+    const _technicalTreasures = this.treasures.filter((t) => t.type === 'technical');
+    const _historicalTreasures = this.treasures.filter((t) => t.type === 'historical');
+    const _assessmentTreasures = this.treasures.filter((t) => t.type === 'assessment');
 
-    const highValueTreasures = this.treasures.filter((t) => t.value >= 50);
-    const culturalTreasuresHighValue = culturalTreasures.filter((t) => t.value >= 50);
+    const _highValueTreasures = this.treasures.filter((t) => t.value >= 50);
+    const _culturalTreasuresHighValue = culturalTreasures.filter((t) => t.value >= 50);
 
-    const recommendations = [
+    const _recommendations = [
       `Prioritize integration of ${culturalTreasuresHighValue.length} high-value cultural treasures`,
       `Migrate ${highValueTreasures.length} high-value treasures to active components`,
       `Create cultural wisdom integration for ${culturalTreasures.length} cultural resources`,
@@ -424,7 +423,7 @@ class TreasureHunterCrawler {
 }
 
 // Run the treasure hunter
-const treasureHunter = new TreasureHunterCrawler();
+const _treasureHunter = new TreasureHunterCrawler();
 treasureHunter
   .huntForTreasures()
   .then(async (treasureMap) => {

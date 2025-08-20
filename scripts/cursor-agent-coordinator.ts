@@ -6,7 +6,6 @@
 
 import { writeFile, readFile } from 'fs/promises';
 import { join } from 'path';
-
 interface AgentStatus {
   id: string;
   name: string;
@@ -82,12 +81,12 @@ const AGENTS: AgentStatus[] = [
 ];
 
 async function generateCoordinationDashboard(): Promise<void> {
-  const totalProgress = AGENTS.reduce((sum, agent) => sum + agent.progress, 0) / AGENTS.length;
-  const activeAgents = AGENTS.filter(a => a.status === 'active').length;
-  const completedAgents = AGENTS.filter(a => a.status === 'completed').length;
-  const blockedAgents = AGENTS.filter(a => a.status === 'blocked').length;
+  const _totalProgress = AGENTS.reduce((sum, agent) => sum + agent.progress, 0) / AGENTS.length;
+  const _activeAgents = AGENTS.filter(a => a.status === 'active').length;
+  const _completedAgents = AGENTS.filter(a => a.status === 'completed').length;
+  const _blockedAgents = AGENTS.filter(a => a.status === 'blocked').length;
   
-  const dashboard = `# 🤖 CURSOR AGENT COORDINATION DASHBOARD
+  const _dashboard = `# 🤖 CURSOR AGENT COORDINATION DASHBOARD
 
 ## 📊 OVERALL SYNTHESIS STATUS
 

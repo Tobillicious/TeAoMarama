@@ -6,7 +6,6 @@
  */
 
 import { readFile, writeFile } from 'fs/promises';
-
 class ComponentNameFixer {
   private appTsxPath = 'src/App.tsx';
 
@@ -39,7 +38,7 @@ class ComponentNameFixer {
 }
 
 // Run the component name fixer
-const fixer = new ComponentNameFixer();
+const _fixer = new ComponentNameFixer();
 fixer
   .fixComponentNames()
   .then(() => {

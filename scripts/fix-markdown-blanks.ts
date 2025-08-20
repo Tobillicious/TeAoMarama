@@ -6,16 +6,15 @@
  */
 
 import { readFile, writeFile } from 'fs/promises';
-
 async function fixMarkdownBlanks() {
   console.log('📝 FIXING MARKDOWN BLANK LINES...\n');
 
   try {
     // Read the treasure summary file
-    const content = await readFile('reports/treasure-summary.md', 'utf8');
+    const _content = await readFile('reports/treasure-summary.md', 'utf8');
 
     // Replace multiple consecutive blank lines with single blank lines
-    const fixedContent = content.replace(/\n\s*\n\s*\n/g, '\n\n');
+    const _fixedContent = content.replace(/\n\s*\n\s*\n/g, '\n\n');
 
     // Write back to file
     await writeFile('reports/treasure-summary.md', fixedContent, 'utf8');

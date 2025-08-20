@@ -76,7 +76,7 @@ class ContentMigrationPipeline {
     console.log('🚀 Starting Content Migration Pipeline...');
     console.log(`📊 Total Tasks: ${this.tasks.length}`);
 
-    const highPriorityTasks = this.tasks.filter((t) => t.priority === 'high');
+    const _highPriorityTasks = this.tasks.filter((t) => t.priority === 'high');
     console.log(`🎯 High Priority Tasks: ${highPriorityTasks.length}`);
 
     for (const task of highPriorityTasks) {
@@ -91,8 +91,8 @@ class ContentMigrationPipeline {
     task.status = 'in-progress';
 
     try {
-      const sourcePath = path.join(this.teKeteAkoPath, task.source);
-      const targetPath = path.join(this.targetPath, task.target);
+      const _sourcePath = path.join(this.teKeteAkoPath, task.source);
+      const _targetPath = path.join(this._targetPath, task.target);
 
       // Check if source exists
       if (!fs.existsSync(sourcePath)) {
@@ -134,11 +134,11 @@ class ContentMigrationPipeline {
     console.log(`📚 Migrating content from ${sourcePath} to ${targetPath}`);
 
     // Copy files with enhancement
-    const files = fs.readdirSync(sourcePath);
+    const _files = fs.readdirSync(sourcePath);
     for (const file of files) {
       if (file.endsWith('.html') || file.endsWith('.md')) {
-        const sourceFile = path.join(sourcePath, file);
-        const targetFile = path.join(targetPath, file);
+        const _sourceFile = path.join(sourcePath, file);
+        const _targetFile = path.join(targetPath, file);
 
         let content = fs.readFileSync(sourceFile, 'utf-8');
 
@@ -155,11 +155,11 @@ class ContentMigrationPipeline {
     console.log(`🤖 Migrating AI components from ${sourcePath} to ${targetPath}`);
 
     // Copy TypeScript/JavaScript files
-    const files = fs.readdirSync(sourcePath);
+    const _files = fs.readdirSync(sourcePath);
     for (const file of files) {
       if (file.endsWith('.ts') || file.endsWith('.js')) {
-        const sourceFile = path.join(sourcePath, file);
-        const targetFile = path.join(targetPath, file);
+        const _sourceFile = path.join(sourcePath, file);
+        const _targetFile = path.join(targetPath, file);
 
         let content = fs.readFileSync(sourceFile, 'utf-8');
 
@@ -180,10 +180,10 @@ class ContentMigrationPipeline {
     console.log(`🎮 Migrating interactive elements from ${sourcePath} to ${targetPath}`);
 
     // Copy interactive content
-    const files = fs.readdirSync(sourcePath);
+    const _files = fs.readdirSync(sourcePath);
     for (const file of files) {
-      const sourceFile = path.join(sourcePath, file);
-      const targetFile = path.join(targetPath, file);
+      const _sourceFile = path.join(sourcePath, file);
+      const _targetFile = path.join(targetPath, file);
 
       if (fs.statSync(sourceFile).isFile()) {
         fs.copyFileSync(sourceFile, targetFile);
@@ -204,14 +204,14 @@ class ContentMigrationPipeline {
     // Enhance with cultural safety and beauty
     content = this.enhanceCulturalContent(content);
 
-    const targetFile = path.join(targetPath, 'te-ao-maori-enhanced.html');
+    const _targetFile = path.join(targetPath, 'te-ao-maori-enhanced.html');
     fs.writeFileSync(targetFile, content);
     console.log(`  🌿 Enhanced: te-ao-maori-enhanced.html`);
   }
 
   private enhanceWithTeKeteAkoBeauty(content: string): string {
     // Add Te Kete Ako beauty patterns
-    const beautyEnhancements = `
+    const _beautyEnhancements = `
     <!-- Enhanced with Te Kete Ako Beauty -->
     <style>
       :root {
@@ -241,12 +241,11 @@ class ContentMigrationPipeline {
 
   private enhanceAIContent(content: string): string {
     // Add modern TypeScript patterns and error handling
-    const enhancedContent = `
+    const _enhancedContent = `
 // Enhanced with modern AI patterns
 import { createContext, useContext, useState, useEffect } from 'react';
-
 // Error handling and logging
-const logger = {
+const _logger = {
   info: (message: string) => console.log(\`[AI] \${message}\`),
   error: (message: string, error?: Error) => console.error(\`[AI Error] \${message}\`, error),
   warn: (message: string) => console.warn(\`[AI Warning] \${message}\`)
@@ -260,7 +259,7 @@ ${content}
 
   private enhanceCulturalContent(content: string): string {
     // Add cultural safety and Māori design patterns
-    const culturalEnhancements = `
+    const _culturalEnhancements = `
     <!-- Cultural Safety Enhanced -->
     <style>
       .cultural-content {
@@ -303,9 +302,9 @@ ${content}
     console.log('\n📊 Migration Pipeline Report:');
     console.log('=============================');
 
-    const completed = this.tasks.filter((t) => t.status === 'completed').length;
-    const failed = this.tasks.filter((t) => t.status === 'failed').length;
-    const pending = this.tasks.filter((t) => t.status === 'pending').length;
+    const _completed = this.tasks.filter((t) => t.status === '_completed').length;
+    const _failed = this.tasks.filter((t) => t.status === '_failed').length;
+    const _pending = this.tasks.filter((t) => t.status === '_pending').length;
 
     console.log(`✅ Completed: ${completed}`);
     console.log(`❌ Failed: ${failed}`);
@@ -315,12 +314,12 @@ ${content}
     this.tasks
       .filter((t) => t.priority === 'high')
       .forEach((task) => {
-        const status = task.status === 'completed' ? '✅' : task.status === 'failed' ? '❌' : '⏳';
+        const _status = task._status === 'completed' ? '✅' : task._status === 'failed' ? '❌' : '⏳';
         console.log(`${status} ${task.id} (${task.type})`);
       });
   }
 }
 
 // Execute migration
-const pipeline = new ContentMigrationPipeline();
+const _pipeline = new ContentMigrationPipeline();
 pipeline.startMigration().catch(console.error);

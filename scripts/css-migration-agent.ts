@@ -47,7 +47,7 @@ class CSSMigrationAgent {
     console.log('🎨 CSS MIGRATION AGENT ACTIVATING...');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     
-    const startTime = Date.now();
+    const _startTime = Date.now();
     const errors: string[] = [];
     let extractedTokens = 0;
     const culturalPatterns: string[] = [];
@@ -55,19 +55,19 @@ class CSSMigrationAgent {
     try {
       // Phase 1: Extract Cultural Design Tokens
       console.log('📖 Phase 1: Reading Te Kete Ako unified CSS...');
-      const sourceCSS = await this.readSourceCSS();
+      const _sourceCSS = await this.readSourceCSS();
       console.log(`   ✅ Loaded ${Math.round(sourceCSS.length / 1024)}KB of cultural excellence`);
 
       // Phase 2: Parse Cultural Patterns
       console.log('🎭 Phase 2: Extracting cultural design patterns...');
-      const extractionResult = this.extractCulturalPatterns(sourceCSS);
+      const _extractionResult = this.extractCulturalPatterns(sourceCSS);
       extractedTokens = extractionResult.tokenCount;
       culturalPatterns.push(...extractionResult.patterns);
       console.log(`   ✅ Extracted ${extractedTokens} cultural design tokens`);
 
       // Phase 3: Generate Cultural CSS
       console.log('🌟 Phase 3: Generating cultural excellence CSS...');
-      const culturalCSS = this.generateCulturalCSS();
+      const _culturalCSS = this.generateCulturalCSS();
       console.log(`   ✅ Generated ${Math.round(culturalCSS.length / 1024)}KB cultural enhancement`);
 
       // Phase 4: Safe Integration
@@ -77,10 +77,10 @@ class CSSMigrationAgent {
 
       // Phase 5: Performance Validation
       console.log('⚡ Phase 5: Performance impact validation...');
-      const performanceImpact = await this.validatePerformanceImpact();
+      const _performanceImpact = await this.validatePerformanceImpact();
       console.log(`   ✅ Performance impact: ${performanceImpact}`);
 
-      const duration = Date.now() - startTime;
+      const _duration = Date.now() - startTime;
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       console.log(`🎉 CSS MIGRATION AGENT SUCCESSFUL! (${duration}ms)`);
       console.log(`   🎨 Cultural patterns: ${culturalPatterns.length}`);
@@ -96,7 +96,7 @@ class CSSMigrationAgent {
       };
 
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      const _errorMessage = error instanceof Error ? error.message : 'Unknown error';
       errors.push(errorMessage);
       console.error('❌ CSS Migration Agent failed:', errorMessage);
       
@@ -134,9 +134,9 @@ class CSSMigrationAgent {
     });
 
     // Extract Cultural Animations
-    const animationMatches = css.match(/@keyframes\\s+[^{]+\\{[^}]+\\}/g) || [];
+    const _animationMatches = css.match(/@keyframes\\s+[^{]+\\{[^}]+\\}/g) || [];
     animationMatches.forEach(match => {
-      const animationName = match.match(/@keyframes\\s+([^\\s{]+)/)?.[1];
+      const _animationName = match.match(/@keyframes\\s+([^\\s{]+)/)?.[1];
       if (animationName && (animationName.includes('mauri') || 
                            animationName.includes('tukutuku') ||
                            animationName.includes('kowhaiwhai'))) {
@@ -296,7 +296,7 @@ ${Object.values(this.culturalTokens.animations).join('\\n\\n')}
     // Add import to unified system if not already present
     const importStatement = `@import url('./cultural-excellence.css');\\n`;
     if (!unifiedCSS.includes('cultural-excellence.css')) {
-      const updatedCSS = importStatement + unifiedCSS;
+      const _updatedCSS = importStatement + unifiedCSS;
       await fs.writeFile(this.unifiedDesignFile, updatedCSS, 'utf-8');
       console.log('   ✅ Cultural import added to unified design system');
     }
@@ -304,8 +304,8 @@ ${Object.values(this.culturalTokens.animations).join('\\n\\n')}
 
   private async validatePerformanceImpact(): Promise<string> {
     try {
-      const stats = await fs.stat(this.targetFile);
-      const sizeKB = Math.round(stats.size / 1024);
+      const _stats = await fs.stat(this.targetFile);
+      const _sizeKB = Math.round(stats.size / 1024);
       
       if (sizeKB < 10) {
         return `Excellent (${sizeKB}KB)`;
@@ -324,7 +324,7 @@ ${Object.values(this.culturalTokens.animations).join('\\n\\n')}
 
 // Agent Execution
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const agent = new CSSMigrationAgent();
+  const _agent = new CSSMigrationAgent();
   agent.execute()
     .then(result => {
       if (result.success) {

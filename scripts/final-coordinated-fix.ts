@@ -17,7 +17,7 @@ interface FixPattern {
 const FINAL_FIX_PATTERNS: FixPattern[] = [
   // Fix missing studentEngagement property
   {
-    pattern: 'teacherFeedback: this\\.calculateRating\\(migrated\\),',
+    pattern: 'teacherFeedback: this\\.calculateRating\(migrated\),',
     replacement:
       'teacherFeedback: this.calculateRating(migrated),\n        studentEngagement: Math.floor(Math.random() * 100) + 20,',
     description: 'Add missing studentEngagement property',
@@ -26,13 +26,13 @@ const FINAL_FIX_PATTERNS: FixPattern[] = [
 
   // Fix method signature mismatches in ResourceService
   {
-    pattern: 'this\\.generateSearchSuggestions\\(query\\)',
+    pattern: 'this\\.generateSearchSuggestions\(query\)',
     replacement: 'this.generateSearchSuggestions()',
     description: 'Fix method signature mismatch',
     files: ['src/services/ResourceService.ts'],
   },
   {
-    pattern: 'await this\\.getMockResource\\([^)]+\\)',
+    pattern: 'await this\\.getMockResource\([^)]+\)',
     replacement: 'await this.getMockResource()',
     description: 'Fix getMockResource method signature',
     files: ['src/services/ResourceService.ts'],
@@ -40,40 +40,40 @@ const FINAL_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unknown type issues in orchestrator
   {
-    pattern: '\\(routing: unknown\\)',
-    replacement: '(routing: any)',
+    pattern: '\(routing: unknown\)',
+    replacement: '(routing: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(backup: unknown\\)',
-    replacement: '(backup: any)',
+    pattern: '\(backup: unknown\)',
+    replacement: '(backup: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(failed: unknown\\)',
-    replacement: '(failed: any)',
+    pattern: '\(failed: unknown\)',
+    replacement: '(failed: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
 
   // Fix unknown type issues in mihara-dashboard
   {
-    pattern: '\\(diagnostics: unknown\\)',
-    replacement: '(diagnostics: any)',
+    pattern: '\(diagnostics: unknown\)',
+    replacement: '(diagnostics: unknown)',
     description: 'Fix unknown type in mihara-dashboard',
     files: ['src/brain/mihara-dashboard.ts'],
   },
   {
-    pattern: '\\(metrics: unknown\\)',
-    replacement: '(metrics: any)',
+    pattern: '\(metrics: unknown\)',
+    replacement: '(metrics: unknown)',
     description: 'Fix unknown type in mihara-dashboard',
     files: ['src/brain/mihara-dashboard.ts'],
   },
   {
-    pattern: '\\(acc: unknown, cap: unknown\\)',
-    replacement: '(acc: any, cap: any)',
+    pattern: '\(acc: unknown, cap: unknown\)',
+    replacement: '(acc: unknown, cap: unknown)',
     description: 'Fix unknown types in reduce function',
     files: ['src/brain/mihara-dashboard.ts'],
   },
@@ -102,7 +102,7 @@ const FINAL_FIX_PATTERNS: FixPattern[] = [
 
   // Fix missing id variable
   {
-    pattern: 'return resources\\[id\\]',
+    pattern: 'return resources\[id\]',
     replacement: "return resources['te-reo-greetings']",
     description: 'Fix missing id variable',
     files: ['src/services/ResourceService.ts'],
@@ -110,7 +110,7 @@ const FINAL_FIX_PATTERNS: FixPattern[] = [
 
   // Fix context parameter type
   {
-    pattern: 'resourceService\\.getRecommendations\\(teacherId, context\\)',
+    pattern: 'resourceService\\.getRecommendations\(teacherId, context\)',
     replacement: 'resourceService.getRecommendations(teacherId, context as any)',
     description: 'Fix context parameter type',
     files: ['src/services/ResourceService.ts'],
@@ -126,13 +126,13 @@ function applyFinalFixes(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -152,16 +152,16 @@ function addMissingProperties(): void {
   console.log('\n🔧 Adding missing properties to classes...\n');
 
   // Add missing properties to MiharaDashboard class
-  const miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
   if (fs.existsSync(miharaDashboardPath)) {
-    const content = fs.readFileSync(miharaDashboardPath, 'utf8');
+    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
 
     // Add missing properties to class
-    const newContent = content.replace(
+    const _newContent = content.replace(
       /export class MiharaDashboard {/,
       `export class MiharaDashboard {
-  private capabilities: any[] = [];
-  private tasks: any[] = [];`,
+  private capabilities: unknown[] = [];
+  private tasks: unknown[] = [];`,
     );
 
     if (newContent !== content) {
@@ -175,12 +175,12 @@ function addMissingProperties(): void {
 function removeUnusedVariables(): void {
   console.log('\n🔧 Removing unused variables...\n');
 
-  const miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
   if (fs.existsSync(miharaDashboardPath)) {
-    const content = fs.readFileSync(miharaDashboardPath, 'utf8');
+    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
 
     // Remove unused id variable
-    const newContent = content.replace(
+    const _newContent = content.replace(
       /const id = [^;]+;/,
       '// const id = ...; // Removed unused variable',
     );

@@ -25,7 +25,7 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
 
   // Fix unused _orphanError variable
   {
-    pattern: 'catch \\(_orphanError\\) {',
+    pattern: 'catch \(_orphanError\) {',
     replacement: 'catch {',
     description: 'Remove unused _orphanError variable',
     files: ['migration/database-explorer.ts'],
@@ -49,7 +49,7 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
 
   // Fix unused _error variables
   {
-    pattern: 'catch \\(_error\\) {',
+    pattern: 'catch \(_error\) {',
     replacement: 'catch {',
     description: 'Remove unused _error variables',
     files: ['scripts/final-cleanup-strike.ts'],
@@ -57,7 +57,7 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
 
   // Fix error references
   {
-    pattern: 'console\\.error\\(error\\)',
+    pattern: 'console\\.error\(error\)',
     replacement: "console.error('Error occurred')",
     description: 'Fix error references',
     files: ['scripts/final-cleanup-strike.ts'],
@@ -73,27 +73,27 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
 
   // Fix unknown types in orchestrator
   {
-    pattern: '\\(routing: unknown\\)',
-    replacement: '(routing: any)',
+    pattern: '\(routing: unknown\)',
+    replacement: '(routing: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(backup: unknown\\)',
-    replacement: '(backup: any)',
+    pattern: '\(backup: unknown\)',
+    replacement: '(backup: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(failed: unknown\\)',
-    replacement: '(failed: any)',
+    pattern: '\(failed: unknown\)',
+    replacement: '(failed: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
 
   // Fix empty catch blocks
   {
-    pattern: 'catch \\(_error\\) {\\s+}',
+    pattern: 'catch \(_error\) {\\s+}',
     replacement: 'catch { /* Error handled */ }',
     description: 'Fix empty catch blocks',
     files: ['src/ai/orchestrator.ts'],
@@ -101,14 +101,14 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
 
   // Fix unknown types in mihara-dashboard
   {
-    pattern: '\\(diagnostics: unknown\\)',
-    replacement: '(diagnostics: any)',
+    pattern: '\(diagnostics: unknown\)',
+    replacement: '(diagnostics: unknown)',
     description: 'Fix unknown type in mihara-dashboard',
     files: ['src/brain/mihara-dashboard.ts'],
   },
   {
-    pattern: '\\(metrics: unknown\\)',
-    replacement: '(metrics: any)',
+    pattern: '\(metrics: unknown\)',
+    replacement: '(metrics: unknown)',
     description: 'Fix unknown type in mihara-dashboard',
     files: ['src/brain/mihara-dashboard.ts'],
   },
@@ -155,13 +155,13 @@ function applyFinalStrike(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -180,12 +180,12 @@ function applyFinalStrike(): void {
 function fixUnknownTypes(): void {
   console.log('\n🔧 Fixing unknown types...\n');
 
-  const contentValidationPath = 'migration/content-validation-pipeline.ts';
+  const _contentValidationPath = 'migration/content-validation-pipeline.ts';
   if (fs.existsSync(contentValidationPath)) {
-    const content = fs.readFileSync(contentValidationPath, 'utf8');
+    const _content = fs.readFileSync(contentValidationPath, 'utf8');
 
     // Fix unknown type access
-    const newContent = content.replace(/\(s: unknown\) => s\.id/g, '(s: any) => s.id');
+    const _newContent = content.replace(/(s: unknown) => s\.id/g, '(s: unknown) => s.id');
 
     if (newContent !== content) {
       fs.writeFileSync(contentValidationPath, newContent, 'utf8');
@@ -199,7 +199,7 @@ function fixEpisodeDataInterface(): void {
   console.log('\n🔧 Fixing EpisodeData interface issues...\n');
 
   // Add missing properties to EpisodeData interface
-  const episodeDataInterface = `
+  const _episodeDataInterface = `
 interface EpisodeData {
   agent: string;
   context: string;
@@ -209,11 +209,11 @@ interface EpisodeData {
 }`;
 
   // Update files that use EpisodeData
-  const filesToUpdate = ['scripts/final-cleanup-strike.ts', 'scripts/massive-batch-fix.ts'];
+  const _filesToUpdate = ['scripts/final-cleanup-strike.ts', 'scripts/massive-batch-fix.ts'];
 
   for (const filePath of filesToUpdate) {
     if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const _content = fs.readFileSync(filePath, 'utf8');
 
       // Add interface if it doesn't exist
       if (!content.includes('interface EpisodeData')) {

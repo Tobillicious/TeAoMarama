@@ -9,7 +9,6 @@
 
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-
 interface CoordinationStatus {
   timestamp: string;
   agents: {
@@ -110,8 +109,8 @@ class HuiContinuousCoordinator {
   }
 
   private logStatus(): void {
-    const uptimeHours = Math.floor(this.status.coordination.uptime / 3600);
-    const uptimeMinutes = Math.floor((this.status.coordination.uptime % 3600) / 60);
+    const _uptimeHours = Math.floor(this.status.coordination.uptime / 3600);
+    const _uptimeMinutes = Math.floor((this.status.coordination.uptime % 3600) / 60);
 
     console.log(`\n📊 COORDINATION STATUS - ${new Date().toLocaleTimeString()}`);
     console.log('=====================================');
@@ -165,7 +164,7 @@ class HuiContinuousCoordinator {
 
   private coordinationHeartbeat(): void {
     // Simulate heartbeat to maintain coordination
-    const heartbeat = {
+    const _heartbeat = {
       timestamp: new Date().toISOString(),
       type: 'coordination_heartbeat',
       status: 'active',
@@ -217,7 +216,7 @@ class HuiContinuousCoordinator {
 
   private saveStatus(): void {
     try {
-      const statusPath = join(process.cwd(), 'reports', 'hui-continuous-coordination.json');
+      const _statusPath = join(process.cwd(), 'reports', 'hui-continuous-coordination.json');
       writeFileSync(statusPath, JSON.stringify(this.status, null, 2));
     } catch (error) {
       console.error('Error saving status:', error);
@@ -227,7 +226,7 @@ class HuiContinuousCoordinator {
 
 // Main execution
 async function main() {
-  const coordinator = new HuiContinuousCoordinator();
+  const _coordinator = new HuiContinuousCoordinator();
   await coordinator.startContinuousCoordination();
 }
 

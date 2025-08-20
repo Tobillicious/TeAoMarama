@@ -4,7 +4,6 @@
  */
 
 import { readdir, readFile, stat } from 'fs/promises';
-
 interface AuditResult {
   category: string;
   issues: string[];
@@ -20,17 +19,17 @@ async function comprehensiveAudit(): Promise<void> {
   try {
     // 1. Audit resource migration status
     console.log('\n📊 1. RESOURCE MIGRATION AUDIT');
-    const teKetePath = 'te-kete-ako-clean/public/handouts';
-    const targetPath = 'src/components/educational/handouts';
+    const _teKetePath = 'te-kete-ako-clean/public/handouts';
+    const _targetPath = 'src/components/educational/handouts';
 
     try {
-      const teKeteFiles = await readdir(teKetePath);
-      const teKeteHandouts = teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
+      const _teKeteFiles = await readdir(teKetePath);
+      const _teKeteHandouts = teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
 
-      const migratedFiles = await readdir(targetPath);
-      const migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx'));
+      const _migratedFiles = await readdir(targetPath);
+      const _migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx'));
 
-      const unmigratedCount = teKeteHandouts.length - migratedComponents.length;
+      const _unmigratedCount = teKeteHandouts.length - migratedComponents.length;
 
       results.push({
         category: 'Resource Migration',
@@ -49,11 +48,11 @@ async function comprehensiveAudit(): Promise<void> {
     console.log('\n📊 2. LINTING AUDIT');
     try {
       const { execSync } = await import('child_process');
-      const lintOutput = execSync('npm run lint 2>&1', { encoding: 'utf8' });
-      const errorLines = lintOutput.split('\n').filter((line) => line.includes('error'));
-      const warningLines = lintOutput.split('\n').filter((line) => line.includes('warning'));
+      const _lintOutput = execSync('npm run lint 2>&1', { encoding: 'utf8' });
+      const _errorLines = lintOutput.split('\n').filter((line) => line.includes('error'));
+      const _warningLines = lintOutput.split('\n').filter((line) => line.includes('warning'));
 
-      const criticalErrors = errorLines.filter(
+      const _criticalErrors = errorLines.filter(
         (line) =>
           !line.includes('te-kete-ako-clean') &&
           !line.includes('scripts/') &&
@@ -79,7 +78,7 @@ async function comprehensiveAudit(): Promise<void> {
     const missingFiles: string[] = [];
 
     // Check for orphaned files in various directories
-    const directoriesToCheck = [
+    const _directoriesToCheck = [
       'src/components',
       'src/pages',
       'src/services',
@@ -89,13 +88,13 @@ async function comprehensiveAudit(): Promise<void> {
 
     for (const dir of directoriesToCheck) {
       try {
-        const files = await readdir(dir);
-        const tsxFiles = files.filter((f) => f.endsWith('.tsx'));
-        const cssFiles = files.filter((f) => f.endsWith('.css'));
+        const _files = await readdir(dir);
+        const _tsxFiles = files.filter((f) => f.endsWith('.tsx'));
+        const _cssFiles = files.filter((f) => f.endsWith('.css'));
 
         // Check for orphaned CSS files
         for (const cssFile of cssFiles) {
-          const componentFile = cssFile.replace('.css', '.tsx');
+          const _componentFile = cssFile.replace('.css', '.tsx');
           if (!tsxFiles.includes(componentFile)) {
             orphanedFiles.push(`${dir}/${cssFile}`);
           }
@@ -103,7 +102,7 @@ async function comprehensiveAudit(): Promise<void> {
 
         // Check for components without CSS
         for (const tsxFile of tsxFiles) {
-          const cssFile = tsxFile.replace('.tsx', '.css');
+          const _cssFile = tsxFile.replace('.tsx', '.css');
           if (!cssFiles.includes(cssFile)) {
             missingFiles.push(`${dir}/${cssFile}`);
           }
@@ -126,9 +125,9 @@ async function comprehensiveAudit(): Promise<void> {
     console.log('\n📊 4. BUILD PERFORMANCE AUDIT');
     try {
       const { execSync } = await import('child_process');
-      const startTime = Date.now();
+      const _startTime = Date.now();
       execSync('npm run build', { stdio: 'pipe' });
-      const buildTime = (Date.now() - startTime) / 1000;
+      const _buildTime = (Date.now() - startTime) / 1000;
 
       results.push({
         category: 'Build Performance',
@@ -148,7 +147,7 @@ async function comprehensiveAudit(): Promise<void> {
 
     // 5. Audit documentation
     console.log('\n📊 5. DOCUMENTATION AUDIT');
-    const requiredDocs = [
+    const _requiredDocs = [
       'README.md',
       'migration/AGENT_COORDINATION_BOARD.md',
       'migration/agent_coordination/agent_sync_status.md',
@@ -177,7 +176,7 @@ async function comprehensiveAudit(): Promise<void> {
 
     // 6. Audit context files
     console.log('\n📊 6. CONTEXT FILES AUDIT');
-    const contextFiles = [
+    const _contextFiles = [
       'migration/LLM_UNIVERSAL_ONBOARDING.md',
       'migration/LLM_QUICK_REFERENCE.md',
       'migration/COMPLETE_SYNTHESIS_MISSION.md',
@@ -186,11 +185,11 @@ async function comprehensiveAudit(): Promise<void> {
     const outdatedContext: string[] = [];
     for (const file of contextFiles) {
       try {
-        const content = await readFile(file, 'utf8');
-        const lastUpdated = content.match(/Date.*(\d{4}-\d{2}-\d{2})/);
+        const _content = await readFile(file, 'utf8');
+        const _lastUpdated = content.match(/Date.*(\d{4}-\d{2}-\d{2})/);
         if (lastUpdated) {
-          const date = new Date(lastUpdated[1]);
-          const daysSinceUpdate = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
+          const _date = new Date(lastUpdated[1]);
+          const _daysSinceUpdate = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
           if (daysSinceUpdate > 7) {
             outdatedContext.push(`${file} (${Math.floor(daysSinceUpdate)} days old)`);
           }
@@ -216,10 +215,10 @@ async function comprehensiveAudit(): Promise<void> {
     console.log('📋 AUDIT SUMMARY');
     console.log('='.repeat(60));
 
-    const totalIssues = results.reduce((sum, result) => sum + result.count, 0);
+    const _totalIssues = results.reduce((sum, result) => sum + result.count, 0);
 
     results.forEach((result) => {
-      const status = result.count === 0 ? '✅' : '⚠️';
+      const _status = result.count === 0 ? '✅' : '⚠️';
       console.log(`${status} ${result.category}: ${result.count} issues`);
       if (result.issues.length > 0) {
         result.issues.forEach((issue) => console.log(`    - ${issue}`));

@@ -41,13 +41,13 @@ const TARGETED_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unused variables
   {
-    pattern: 'const setSidebarCollapsed = useState\\(false\\)\\[1\\];',
+    pattern: 'const setSidebarCollapsed = useState\(false\)\[1\];',
     replacement: 'const [sidebarCollapsed, setSidebarCollapsed] = useState(false);',
     description: 'Fix unused setSidebarCollapsed variable',
     files: ['src/pages/TeacherDashboard.tsx'],
   },
   {
-    pattern: 'catch \\(error\\) {',
+    pattern: 'catch \(error\) {',
     replacement: 'catch (_error) {',
     description: 'Fix unused error variable',
     files: ['src/pages/TeacherDashboard.tsx'],
@@ -69,13 +69,13 @@ function applyTargetedFixes(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -94,12 +94,12 @@ function applyTargetedFixes(): void {
 function addMissingInterfaceProperties(): void {
   console.log('\n🔧 Adding missing interface properties...\n');
 
-  const teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
+  const _teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
   if (fs.existsSync(teacherDashboardPath)) {
-    const content = fs.readFileSync(teacherDashboardPath, 'utf8');
+    const _content = fs.readFileSync(teacherDashboardPath, 'utf8');
 
     // Add missing properties to Assessment interface
-    const newContent = content.replace(
+    const _newContent = content.replace(
       /interface Assessment {/,
       `interface Assessment {
   id: string;
@@ -110,7 +110,7 @@ function addMissingInterfaceProperties(): void {
     );
 
     // Add missing properties to Resource interface
-    const newContent2 = newContent.replace(
+    const _newContent2 = newContent.replace(
       /interface Resource {/,
       `interface Resource {
   id: string;
@@ -118,7 +118,7 @@ function addMissingInterfaceProperties(): void {
     );
 
     // Add missing properties to CulturalContent interface
-    const newContent3 = newContent2.replace(
+    const _newContent3 = newContent2.replace(
       /interface CulturalContent {/,
       `interface CulturalContent {
   id: string;
@@ -129,7 +129,7 @@ function addMissingInterfaceProperties(): void {
     );
 
     // Add missing properties to StudentProgress interface
-    const newContent4 = newContent3.replace(
+    const _newContent4 = newContent3.replace(
       /interface StudentProgress {/,
       `interface StudentProgress {
   lastAssessment?: string;`,
@@ -146,12 +146,12 @@ function addMissingInterfaceProperties(): void {
 function removeUnusedComponents(): void {
   console.log('\n🔧 Removing unused components...\n');
 
-  const teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
+  const _teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
   if (fs.existsSync(teacherDashboardPath)) {
-    const content = fs.readFileSync(teacherDashboardPath, 'utf8');
+    const _content = fs.readFileSync(teacherDashboardPath, 'utf8');
 
     // Remove unused DashboardSkeleton component
-    const newContent = content.replace(
+    const _newContent = content.replace(
       /const DashboardSkeleton = [\s\S]*?};/,
       '// const DashboardSkeleton = ...; // Removed unused component',
     );

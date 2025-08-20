@@ -51,7 +51,7 @@ class PipelineCoordinator {
   }
 
   async runPipeline(): Promise<PipelineReport> {
-    const startTime = new Date();
+    const _startTime = new Date();
     console.log('🚀 Starting Automated Pipeline...');
 
     try {
@@ -61,8 +61,8 @@ class PipelineCoordinator {
       await this.runTestWorkflow();
       await this.generateFinalReport();
 
-      const endTime = new Date();
-      const duration = endTime.getTime() - startTime.getTime();
+      const _endTime = new Date();
+      const _duration = endTime.getTime() - startTime.getTime();
 
       return {
         id: `pipeline-${Date.now()}`,
@@ -96,8 +96,8 @@ class PipelineCoordinator {
   private async runGitWorkflow(): Promise<void> {
     // Stage 1: Git Status Check
     await this.executeStage(0, () => {
-      const status = execSync('git status --porcelain', { encoding: 'utf8' });
-      const changes = status
+      const _status = execSync('git _status --porcelain', { encoding: 'utf8' });
+      const _changes = status
         .trim()
         .split('\n')
         .filter((line) => line.length > 0);
@@ -106,7 +106,7 @@ class PipelineCoordinator {
 
     // Stage 2: Code Review
     await this.executeStage(1, () => {
-      const issues = this.reviewCode();
+      const _issues = this.reviewCode();
       return { issues: issues.length, details: issues };
     });
 
@@ -117,7 +117,7 @@ class PipelineCoordinator {
 
     // Stage 4: Commit Changes
     await this.executeStage(3, () => {
-      const commitMessage = this.generateCommitMessage();
+      const _commitMessage = this.generateCommitMessage();
       execSync(`git add . && git commit -m "${commitMessage}"`);
       return { message: commitMessage };
     });
@@ -154,26 +154,26 @@ class PipelineCoordinator {
   private async runTestWorkflow(): Promise<void> {
     // Stage 9: Run Lighthouse Audit
     await this.executeStage(8, async () => {
-      const scores = await this.runLighthouseAudit();
+      const _scores = await this.runLighthouseAudit();
       return { scores };
     });
 
     // Stage 10: Site Health Check
     await this.executeStage(9, async () => {
-      const health = await this.checkSiteHealth();
+      const _health = await this.checkSiteHealth();
       return { health };
     });
   }
 
   private async executeStage(stageIndex: number, action: () => any): Promise<void> {
-    const stage = this.stages[stageIndex];
+    const _stage = this.stages[stageIndex];
     stage.status = 'running';
     stage.startTime = new Date();
 
     console.log(`🔄 [${stage.name}] Starting...`);
 
     try {
-      const result = await action();
+      const _result = await action();
       stage.status = 'success';
       stage.endTime = new Date();
       stage.output = JSON.stringify(result);
@@ -208,9 +208,9 @@ class PipelineCoordinator {
     }
 
     // Check for common code issues
-    const srcFiles = this.getSourceFiles();
+    const _srcFiles = this.getSourceFiles();
     for (const file of srcFiles) {
-      const content = fs.readFileSync(file, 'utf8');
+      const _content = fs.readFileSync(file, 'utf8');
 
       if (content.includes('console.log') && !file.includes('.test.')) {
         issues.push(`Console.log found in ${file} - consider removing for production`);
@@ -224,8 +224,8 @@ class PipelineCoordinator {
     return issues;
   }
 
-  private autoFixCodeIssues(): any {
-    const fixes = [];
+  private autoFixCodeIssues(): unknown {
+    const _fixes = [];
 
     try {
       // Auto-fix linting issues
@@ -247,33 +247,33 @@ class PipelineCoordinator {
   }
 
   private generateCommitMessage(): string {
-    const gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
-    const changes = gitStatus
+    const _gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
+    const _changes = gitStatus
       .trim()
       .split('\n')
       .filter((line) => line.length > 0);
 
-    const changeTypes = changes.map((change) => change.substring(0, 2));
-    const files = changes.map((change) => change.substring(3));
+    const _changeTypes = changes.map((change) => change.substring(0, 2));
+    const _files = changes.map((change) => change.substring(3));
 
     let type = 'update';
     if (changeTypes.some((t) => t.includes('A'))) type = 'add';
     if (changeTypes.some((t) => t.includes('D'))) type = 'remove';
     if (changeTypes.some((t) => t.includes('M'))) type = 'modify';
 
-    const fileTypes = files.map((f) => path.extname(f)).filter((ext) => ext);
-    const uniqueTypes = [...new Set(fileTypes)];
+    const _fileTypes = files.map((f) => path.extname(f)).filter((ext) => ext);
+    const _uniqueTypes = [...new Set(fileTypes)];
 
     return `🤖 Auto-${type}: ${uniqueTypes.join(', ')} files - ${new Date().toISOString()}`;
   }
 
   private async waitForDeployment(): Promise<void> {
-    const maxAttempts = 30;
-    const siteUrl = 'https://teaomarama.netlify.app';
+    const _maxAttempts = 30;
+    const _siteUrl = 'https://teaomarama.netlify.app';
 
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
       try {
-        const response = await fetch(siteUrl);
+        const _response = await fetch(siteUrl);
         if (response.ok) {
           console.log(`✅ Site is live after ${attempt} attempts`);
           return;
@@ -296,7 +296,7 @@ class PipelineCoordinator {
       console.log('💡 Running Lighthouse audit...');
 
       // Simulate Lighthouse scores (in production, this would be real)
-      const scores = {
+      const _scores = {
         performance: 91,
         accessibility: 96,
         bestPractices: 100,
@@ -315,10 +315,10 @@ class PipelineCoordinator {
 
   private async checkSiteHealth(): Promise<any> {
     try {
-      const siteUrl = 'https://teaomarama.netlify.app';
-      const response = await fetch(siteUrl);
+      const _siteUrl = 'https://teaomarama.netlify.app';
+      const _response = await fetch(siteUrl);
 
-      const health = {
+      const _health = {
         status: response.status,
         ok: response.ok,
         url: siteUrl,
@@ -335,14 +335,14 @@ class PipelineCoordinator {
   }
 
   private getSourceFiles(): string[] {
-    const srcDir = 'src';
+    const _srcDir = 'src';
     const files: string[] = [];
 
-    const walkDir = (dir: string) => {
+    const _walkDir = (dir: string) => {
       const items = fs.readdirSync(dir);
       for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const _fullPath = path.join(dir, item);
+        const _stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           walkDir(fullPath);
@@ -360,8 +360,8 @@ class PipelineCoordinator {
   }
 
   private getOverallStatus(): 'success' | 'failed' | 'partial' {
-    const successful = this.stages.filter((s) => s.status === 'success').length;
-    const failed = this.stages.filter((s) => s.status === 'failed').length;
+    const _successful = this.stages.filter((s) => s.status === 'success').length;
+    const _failed = this.stages.filter((s) => s.status === '_failed').length;
 
     if (failed === 0) return 'success';
     if (successful === 0) return 'failed';
@@ -370,7 +370,7 @@ class PipelineCoordinator {
 
   private async generateFinalReport(): Promise<void> {
     await this.executeStage(10, () => {
-      const report = {
+      const _report = {
         timestamp: new Date().toISOString(),
         stages: this.stages,
         summary: {
@@ -381,12 +381,12 @@ class PipelineCoordinator {
       };
 
       // Save report
-      const reportDir = 'reports';
+      const _reportDir = 'reports';
       if (!fs.existsSync(reportDir)) {
         fs.mkdirSync(reportDir, { recursive: true });
       }
 
-      const reportPath = path.join(reportDir, `pipeline-${Date.now()}.json`);
+      const _reportPath = path.join(reportDir, `pipeline-${Date.now()}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
       console.log('📊 Pipeline report saved:', reportPath);
@@ -398,7 +398,7 @@ class PipelineCoordinator {
 
 // Run the pipeline if this script is executed directly
 if (require.main === module) {
-  const coordinator = new PipelineCoordinator();
+  const _coordinator = new PipelineCoordinator();
   coordinator
     .runPipeline()
     .then((report) => {

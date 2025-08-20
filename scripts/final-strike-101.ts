@@ -25,7 +25,7 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
   
   // Fix missing dependencies in useEffect
   {
-    pattern: 'useEffect\\([^,]+,\\s*\\[\\]\\)',
+    pattern: 'useEffect\([^,]+,\\s*\[\]\)',
     replacement: 'useEffect($1, [$2])',
     description: 'Add missing dependencies to useEffect',
     files: ['src/pages/TeacherDashboard.tsx', 'src/components/BrainNavigation.tsx'],
@@ -49,8 +49,8 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
   
   // Fix unknown types
   {
-    pattern: '\\([^)]*:\\s*unknown\\)',
-    replacement: '(...args: any[])',
+    pattern: '\([^)]*:\\s*unknown\)',
+    replacement: '(...args: unknown[])',
     description: 'Replace unknown types with any',
     files: ['migration/content-validation-pipeline.ts', 'src/ai/orchestrator.ts', 'src/brain/mihara-dashboard.ts'],
   },
@@ -81,7 +81,7 @@ const FINAL_STRIKE_PATTERNS: FixPattern[] = [
   
   // Fix missing CulturalContentFlag import
   {
-    pattern: 'cultural_flags:\\s*any\\[\\]',
+    pattern: 'cultural_flags:\\s*any\[\]',
     replacement: 'cultural_flags: CulturalContentFlag[]',
     description: 'Fix CulturalContentFlag type',
     files: ['migration/database-explorer.ts'],
@@ -105,13 +105,13 @@ function applyFinalStrike(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -130,12 +130,12 @@ function applyFinalStrike(): void {
 function fixJSXErrors(): void {
   console.log('\n🔧 Fixing JSX syntax errors...\n');
 
-  const teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
+  const _teacherDashboardPath = 'src/pages/TeacherDashboard.tsx';
   if (fs.existsSync(teacherDashboardPath)) {
     let content = fs.readFileSync(teacherDashboardPath, 'utf8');
     
     // Fix common JSX syntax errors
-    const fixes = [
+    const _fixes = [
       { pattern: 'className="([^"]*)"\\s*\\}', replacement: 'className="$1"' },
       { pattern: 'style=\\{([^}]*)\\}\\s*\\}', replacement: 'style={$1}' },
       { pattern: '\\}\\s*\\}\\s*\\}', replacement: '}}' },
@@ -143,7 +143,7 @@ function fixJSXErrors(): void {
     ];
 
     for (const fix of fixes) {
-      const regex = new RegExp(fix.pattern, 'g');
+      const _regex = new RegExp(fix.pattern, 'g');
       content = content.replace(regex, fix.replacement);
     }
 
@@ -156,7 +156,7 @@ function fixJSXErrors(): void {
 function fixInterfaceProperties(): void {
   console.log('\n🔧 Fixing interface properties...\n');
 
-  const resourceServicePath = 'src/services/ResourceService.ts';
+  const _resourceServicePath = 'src/services/ResourceService.ts';
   if (fs.existsSync(resourceServicePath)) {
     let content = fs.readFileSync(resourceServicePath, 'utf8');
     
@@ -175,7 +175,7 @@ function fixInterfaceProperties(): void {
 function fixUnknownTypes(): void {
   console.log('\n🔧 Fixing unknown types...\n');
 
-  const filesToFix = [
+  const _filesToFix = [
     'migration/content-validation-pipeline.ts',
     'src/ai/orchestrator.ts',
     'src/brain/mihara-dashboard.ts'
@@ -186,7 +186,7 @@ function fixUnknownTypes(): void {
       let content = fs.readFileSync(filePath, 'utf8');
       
       // Replace unknown types with any
-      content = content.replace(/:\s*unknown/g, ': any');
+      content = content.replace(/:\s*unknown/g, ': unknown');
       content = content.replace(/Object is of type 'unknown'/g, '// TODO: Fix unknown type');
       
       fs.writeFileSync(filePath, content, 'utf8');

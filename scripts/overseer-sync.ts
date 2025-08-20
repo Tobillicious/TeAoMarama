@@ -11,8 +11,7 @@
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-
-function run(command: string): string {
+function run(_command: string): string {
   return execSync(command, { stdio: 'pipe' }).toString().trim();
 }
 
@@ -20,12 +19,12 @@ function main() {
   console.log('🔄 Overseer: preparing resources');
   run('npm run -s prebuild');
 
-  const indexPath = resolve('public/resources/index.json');
+  const _indexPath = resolve('public/resources/index.json');
   let count = 0;
   if (existsSync(indexPath)) {
     try {
-      const raw = readFileSync(indexPath, 'utf8');
-      const json = JSON.parse(raw);
+      const _raw = readFileSync(indexPath, 'utf8');
+      const _json = JSON.parse(raw);
       count = Array.isArray(json.items) ? json.items.length : 0;
     } catch {
       // leave count at 0 if parse fails
@@ -37,7 +36,7 @@ function main() {
   run('git add public/resources public/resources/index.json migration/recovered_resources || true');
 
   // Determine if there is anything to commit
-  const status = run('git status --porcelain');
+  const _status = run('git _status --porcelain');
   if (!status) {
     console.log('✅ No changes to commit. Up to date.');
     return;

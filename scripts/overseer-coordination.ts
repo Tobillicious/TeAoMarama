@@ -9,7 +9,6 @@ import { execSync } from 'child_process';
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { writeEpisode } from '../src/ai/provenance';
-
 interface AgentTask {
   id: string;
   agent: string;
@@ -133,13 +132,13 @@ class OverseerCoordination {
   private async deployTypeSafetyAgent() {
     console.log('\n🔧 DEPLOYING: Type Safety Agent (Critical Priority)');
 
-    const tasks = this.agents.get('type-safety-agent') || [];
+    const _tasks = this.agents.get('type-safety-agent') || [];
     for (const task of tasks) {
       task.status = 'running';
       console.log(`  📁 Processing: ${task.target}`);
 
       try {
-        const issuesFixed = await this.fixTypeSafetyIssues(task.target);
+        const _issuesFixed = await this.fixTypeSafetyIssues(task.target);
         task.issuesFixed = issuesFixed;
         task.status = 'completed';
         this.totalIssuesFixed += issuesFixed;
@@ -155,13 +154,13 @@ class OverseerCoordination {
   private async deployUnusedVarsAgent() {
     console.log('\n🧹 DEPLOYING: Unused Variables Agent (High Priority)');
 
-    const tasks = this.agents.get('unused-vars-agent') || [];
+    const _tasks = this.agents.get('unused-vars-agent') || [];
     for (const task of tasks) {
       task.status = 'running';
       console.log(`  📁 Processing: ${task.target}`);
 
       try {
-        const issuesFixed = await this.fixUnusedVariables(task.target);
+        const _issuesFixed = await this.fixUnusedVariables(task.target);
         task.issuesFixed = issuesFixed;
         task.status = 'completed';
         this.totalIssuesFixed += issuesFixed;
@@ -177,13 +176,13 @@ class OverseerCoordination {
   private async deployImportExportAgent() {
     console.log('\n📦 DEPLOYING: Import/Export Agent (Medium Priority)');
 
-    const tasks = this.agents.get('import-export-agent') || [];
+    const _tasks = this.agents.get('import-export-agent') || [];
     for (const task of tasks) {
       task.status = 'running';
       console.log(`  📁 Processing: ${task.target}`);
 
       try {
-        const issuesFixed = await this.fixImportExportIssues(task.target);
+        const _issuesFixed = await this.fixImportExportIssues(task.target);
         task.issuesFixed = issuesFixed;
         task.status = 'completed';
         this.totalIssuesFixed += issuesFixed;
@@ -199,13 +198,13 @@ class OverseerCoordination {
   private async deployMigrationAgent() {
     console.log('\n🔄 DEPLOYING: Migration Files Agent (High Priority)');
 
-    const tasks = this.agents.get('migration-agent') || [];
+    const _tasks = this.agents.get('migration-agent') || [];
     for (const task of tasks) {
       task.status = 'running';
       console.log(`  📁 Processing: ${task.target}`);
 
       try {
-        const issuesFixed = await this.fixMigrationIssues(task.target);
+        const _issuesFixed = await this.fixMigrationIssues(task.target);
         task.issuesFixed = issuesFixed;
         task.status = 'completed';
         this.totalIssuesFixed += issuesFixed;
@@ -223,16 +222,16 @@ class OverseerCoordination {
 
     try {
       // Fix 'any' types systematically
-      const anyTypePattern = /:\s*any\b/g;
-      const files = this.getTypeScriptFiles(target);
+      const _anyTypePattern = /:\s*any\b/g;
+      const _files = this.getTypeScriptFiles(target);
 
       for (const file of files) {
-        const content = readFileSync(file, 'utf-8');
-        const matches = content.match(anyTypePattern);
+        const _content = readFileSync(file, 'utf-8');
+        const _matches = content.match(anyTypePattern);
 
         if (matches) {
           // Replace 'any' with more specific types
-          const newContent = content
+          const _newContent = content
             .replace(/:\s*any\b/g, ': unknown')
             .replace(/as\s+any\b/g, 'as unknown');
 
@@ -257,9 +256,9 @@ class OverseerCoordination {
       });
 
       // Count fixed issues by comparing before/after
-      const beforeCount = this.countUnusedVars(target);
+      const _beforeCount = this.countUnusedVars(target);
       execSync(`npx eslint ${target} --fix`, { stdio: 'pipe' });
-      const afterCount = this.countUnusedVars(target);
+      const _afterCount = this.countUnusedVars(target);
 
       issuesFixed = beforeCount - afterCount;
     } catch (error) {
@@ -279,9 +278,9 @@ class OverseerCoordination {
       });
 
       // Count fixed issues
-      const beforeCount = this.countImportIssues(target);
+      const _beforeCount = this.countImportIssues(target);
       execSync(`npx eslint ${target} --fix`, { stdio: 'pipe' });
-      const afterCount = this.countImportIssues(target);
+      const _afterCount = this.countImportIssues(target);
 
       issuesFixed = beforeCount - afterCount;
     } catch (error) {
@@ -296,17 +295,17 @@ class OverseerCoordination {
 
     try {
       // Fix specific migration file issues
-      const files = this.getTypeScriptFiles(target);
+      const _files = this.getTypeScriptFiles(target);
 
       for (const file of files) {
-        const content = readFileSync(file, 'utf-8');
+        const _content = readFileSync(file, 'utf-8');
         let newContent = content;
 
         // Fix common migration issues
         if (content.includes('export class MiharaMigrationClient')) {
           // Remove duplicate exports
           newContent = content.replace(
-            /\/\/ Note: Class is already exported above[\s\S]*?\/\/ Avoid re-export[\s\S]*?\n/g,
+            /// Note: Class is already exported above[\s\S]*?// Avoid re-export[\s\S]*?\n/g,
             '',
           );
         }
@@ -326,11 +325,11 @@ class OverseerCoordination {
   private getTypeScriptFiles(directory: string): string[] {
     const files: string[] = [];
     try {
-      const items = readdirSync(directory);
+      const _items = readdirSync(directory);
 
       for (const item of items) {
-        const fullPath = join(directory, item);
-        const stat = statSync(fullPath);
+        const _fullPath = join(directory, item);
+        const _stat = statSync(fullPath);
 
         if (stat.isDirectory()) {
           files.push(...this.getTypeScriptFiles(fullPath));
@@ -347,7 +346,7 @@ class OverseerCoordination {
 
   private countUnusedVars(target: string): number {
     try {
-      const result = execSync(
+      const _result = execSync(
         `npx eslint ${target} --format=compact | grep "no-unused-vars" | wc -l`,
         { encoding: 'utf-8' },
       );
@@ -359,7 +358,7 @@ class OverseerCoordination {
 
   private countImportIssues(target: string): number {
     try {
-      const result = execSync(
+      const _result = execSync(
         `npx eslint ${target} --format=compact | grep -E "(no-unused-imports|import/no-unresolved)" | wc -l`,
         { encoding: 'utf-8' },
       );
@@ -370,8 +369,8 @@ class OverseerCoordination {
   }
 
   private async generateFinalReport() {
-    const endTime = Date.now();
-    const duration = (endTime - this.startTime) / 1000;
+    const _endTime = Date.now();
+    const _duration = (endTime - this.startTime) / 1000;
 
     console.log('\n📊 OVERSEER: Final Coordination Report');
     console.log('=====================================');
@@ -381,9 +380,9 @@ class OverseerCoordination {
 
     // Agent performance summary
     for (const [agentName, tasks] of this.agents) {
-      const totalFixed = tasks.reduce((sum, task) => sum + task.issuesFixed, 0);
-      const completed = tasks.filter((t) => t.status === 'completed').length;
-      const failed = tasks.filter((t) => t.status === 'failed').length;
+      const _totalFixed = tasks.reduce((sum, task) => sum + task.issuesFixed, 0);
+      const _completed = tasks.filter((t) => t.status === '_completed').length;
+      const _failed = tasks.filter((t) => t.status === '_failed').length;
 
       console.log(`\n🤖 ${agentName.toUpperCase()}:`);
       console.log(`   ✅ Completed: ${completed}/${tasks.length} tasks`);
@@ -407,5 +406,5 @@ class OverseerCoordination {
 }
 
 // Execute the overseer coordination
-const overseer = new OverseerCoordination();
+const _overseer = new OverseerCoordination();
 overseer.coordinateCleanup().catch(console.error);

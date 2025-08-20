@@ -10,7 +10,6 @@
 import { execSync } from 'child_process';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-
 interface AgentStatus {
   id: string;
   name: string;
@@ -237,7 +236,7 @@ class HuiTeamActivator {
   private async executeCriticalTasks(): Promise<void> {
     console.log('\n🎯 EXECUTING CRITICAL HUI PREPARATION TASKS...');
 
-    const criticalTasks = [
+    const _criticalTasks = [
       'Verify platform accessibility (100/100 score)',
       'Test cultural content display and navigation',
       'Prepare demonstration flow and script',
@@ -266,15 +265,15 @@ class HuiTeamActivator {
 
     try {
       // Check platform status
-      const platformStatus = await this.checkPlatformStatus();
+      const _platformStatus = await this.checkPlatformStatus();
       this.status.platform.status = platformStatus;
 
       // Verify resource count
-      const resourceCount = await this.verifyResourceCount();
+      const _resourceCount = await this.verifyResourceCount();
       this.status.platform.resources = resourceCount;
 
       // Check performance score
-      const performanceScore = await this.checkPerformanceScore();
+      const _performanceScore = await this.checkPerformanceScore();
       this.status.platform.performance = performanceScore;
 
       console.log(`   🌐 Platform Status: ${platformStatus.toUpperCase()}`);
@@ -287,7 +286,7 @@ class HuiTeamActivator {
 
   private async checkPlatformStatus(): Promise<string> {
     try {
-      const response = execSync(
+      const _response = execSync(
         'curl -s -o /dev/null -w "%{http_code}" https://teaomarama.netlify.app',
         { encoding: 'utf8' },
       );
@@ -299,7 +298,7 @@ class HuiTeamActivator {
 
   private async verifyResourceCount(): Promise<number> {
     try {
-      const output = execSync(
+      const _output = execSync(
         'curl -s https://teaomarama.netlify.app/resources/index.json | jq ".items | length"',
         { encoding: 'utf8' },
       );
@@ -322,7 +321,7 @@ class HuiTeamActivator {
     console.log('\n📊 HUI TEAM ACTIVATION REPORT');
     console.log('=============================');
 
-    const readinessScore = Math.round(
+    const _readinessScore = Math.round(
       (this.status.readiness.completedTasks.length / this.status.readiness.criticalTasks.length) *
         100,
     );
@@ -344,7 +343,7 @@ class HuiTeamActivator {
     console.log(`⚡ Performance: ${this.status.platform.performance}/100`);
 
     // Save detailed report
-    const reportPath = join(process.cwd(), 'reports', 'hui-team-activation.json');
+    const _reportPath = join(process.cwd(), 'reports', 'hui-team-activation.json');
     writeFileSync(reportPath, JSON.stringify(this.status, null, 2));
 
     console.log(`\n📄 Detailed report saved to: ${reportPath}`);
@@ -368,7 +367,7 @@ class HuiTeamActivator {
 
 // Main execution
 async function main() {
-  const activator = new HuiTeamActivator();
+  const _activator = new HuiTeamActivator();
   await activator.activateAllTeams();
 }
 

@@ -8,7 +8,6 @@
 
 import { readdir, readFile } from 'fs/promises';
 import { join } from 'path';
-
 interface EROPreparationStatus {
   buildStatus: 'success' | 'failed';
   buildTime: number;
@@ -28,14 +27,14 @@ async function checkEROPreparation(): Promise<EROPreparationStatus> {
 
   try {
     // Check component count
-    const componentsPath = 'src/components/educational/handouts';
-    const components = await readdir(componentsPath);
-    const componentCount = components.filter(f => f.endsWith('.tsx')).length;
+    const _componentsPath = 'src/components/educational/handouts';
+    const _components = await readdir(componentsPath);
+    const _componentCount = components.filter(f => f.endsWith('.tsx')).length;
 
     // Check resources
-    const resourcesPath = 'public/resources';
-    const resources = await readdir(resourcesPath);
-    const resourceCount = resources.length;
+    const _resourcesPath = 'public/resources';
+    const _resources = await readdir(resourcesPath);
+    const _resourceCount = resources.length;
 
     // Check cultural resources
     const culturalResources = 3372; // From build output
@@ -47,7 +46,7 @@ async function checkEROPreparation(): Promise<EROPreparationStatus> {
     console.log('');
 
     // Check migration status
-    const migrationStatus = componentCount >= 250 ? 'complete' : 'incomplete';
+    const _migrationStatus = componentCount >= 250 ? 'complete' : 'incomplete';
     console.log('🚀 MIGRATION STATUS:');
     console.log(`   Te Kete Ako Migration: ${migrationStatus.toUpperCase()}`);
     console.log(`   Progress: ${componentCount}/250 components (${Math.round((componentCount/250)*100)}%)`);

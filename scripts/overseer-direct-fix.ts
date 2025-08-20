@@ -8,7 +8,6 @@
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
 import { writeEpisode } from '../src/ai/provenance';
-
 class OverseerDirectFix {
   private totalIssuesFixed = 0;
   private startTime = Date.now();
@@ -45,7 +44,7 @@ class OverseerDirectFix {
   private async fixCriticalAnyTypes() {
     console.log('\n🔧 PHASE 1: Fixing Critical "any" Types');
 
-    const criticalFiles = [
+    const _criticalFiles = [
       'src/brain/mihara-dashboard.ts',
       'src/brain/kaitiaki-protocol.ts',
       'src/ai/provenance.ts',
@@ -54,7 +53,7 @@ class OverseerDirectFix {
 
     for (const file of criticalFiles) {
       try {
-        const issuesFixed = await this.fixAnyTypesInFile(file);
+        const _issuesFixed = await this.fixAnyTypesInFile(file);
         this.totalIssuesFixed += issuesFixed;
         console.log(`  ✅ Fixed ${issuesFixed} "any" types in ${file}`);
       } catch (error) {
@@ -65,12 +64,12 @@ class OverseerDirectFix {
 
   private async fixAnyTypesInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Replace common 'any' patterns with more specific types
-      const replacements = [
+      const _replacements = [
         { from: /:\s*any\b/g, to: ': unknown' },
         { from: /as\s+any\b/g, to: 'as unknown' },
         { from: /Promise<any>/g, to: 'Promise<unknown>' },
@@ -79,7 +78,7 @@ class OverseerDirectFix {
       ];
 
       for (const replacement of replacements) {
-        const matches = newContent.match(replacement.from);
+        const _matches = newContent.match(replacement.from);
         if (matches) {
           newContent = newContent.replace(replacement.from, replacement.to);
           issuesFixed += matches.length;
@@ -138,13 +137,13 @@ class OverseerDirectFix {
 
     try {
       // Fix specific migration file issues
-      const migrationFile = 'migration/supabase-migration-client.ts';
-      const content = readFileSync(migrationFile, 'utf-8');
+      const _migrationFile = 'migration/supabase-migration-client.ts';
+      const _content = readFileSync(migrationFile, 'utf-8');
       let newContent = content;
 
       // Remove duplicate export comments
       newContent = newContent.replace(
-        /\/\/ Note: Class is already exported above[\s\S]*?\/\/ Avoid re-export[\s\S]*?\n/g,
+        /// Note: Class is already exported above[\s\S]*?// Avoid re-export[\s\S]*?\n/g,
         '',
       );
 
@@ -182,8 +181,8 @@ class OverseerDirectFix {
   }
 
   private async generateFinalReport() {
-    const endTime = Date.now();
-    const duration = (endTime - this.startTime) / 1000;
+    const _endTime = Date.now();
+    const _duration = (endTime - this.startTime) / 1000;
 
     console.log('\n📊 OVERSEER: Direct Fix Completion Report');
     console.log('========================================');
@@ -193,7 +192,7 @@ class OverseerDirectFix {
 
     // Check remaining issues
     try {
-      const remainingIssues = execSync('npx eslint . --ext .ts,.tsx --format=compact | wc -l', {
+      const _remainingIssues = execSync('npx eslint . --ext .ts,.tsx --format=compact | wc -l', {
         encoding: 'utf-8',
         stdio: 'pipe',
       });
@@ -215,5 +214,5 @@ class OverseerDirectFix {
 }
 
 // Execute the direct fix strategy
-const overseer = new OverseerDirectFix();
+const _overseer = new OverseerDirectFix();
 overseer.executeDirectFix().catch(console.error);

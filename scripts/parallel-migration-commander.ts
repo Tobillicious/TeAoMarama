@@ -7,9 +7,8 @@
 
 import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
-
-const TE_KETE_HANDOUTS_PATH = join(process.cwd(), 'te-kete-ako-clean/public/handouts');
-const TARGET_PATH = join(process.cwd(), 'src/components/educational/handouts');
+const _TE_KETE_HANDOUTS_PATH = join(process.cwd(), 'te-kete-ako-clean/public/handouts');
+const _TARGET_PATH = join(process.cwd(), 'src/components/educational/handouts');
 const BATCH_SIZE = 20; // Process 20 files per batch for speed
 
 interface MigrationTask {
@@ -33,8 +32,8 @@ class ParallelMigrationCommander {
     await mkdir(TARGET_PATH, { recursive: true });
 
     // Get all HTML files
-    const files = await readdir(TE_KETE_HANDOUTS_PATH);
-    const htmlFiles = files.filter((file) => file.endsWith('.html') && !file.startsWith('.'));
+    const _files = await readdir(TE_KETE_HANDOUTS_PATH);
+    const _htmlFiles = files.filter((file) => file.endsWith('.html') && !file.startsWith('.'));
 
     console.log(`📊 Found ${htmlFiles.length} HTML files to migrate`);
 
@@ -48,7 +47,7 @@ class ParallelMigrationCommander {
   }
 
   async processBatch(batch: MigrationTask[]) {
-    const batchPromises = batch.map(async (task) => {
+    const _batchPromises = batch.map(async (task) => {
       try {
         task.status = 'processing';
         task.startTime = Date.now();
@@ -58,7 +57,7 @@ class ParallelMigrationCommander {
         task.status = 'completed';
         task.endTime = Date.now();
 
-        const duration = task.endTime - task.startTime;
+        const _duration = task.endTime - task.startTime;
         console.log(`✅ ${task.filename} migrated in ${duration}ms`);
       } catch (error) {
         task.status = 'failed';
@@ -71,27 +70,27 @@ class ParallelMigrationCommander {
   }
 
   async migrateSingleFile(filename: string) {
-    const filePath = join(TE_KETE_HANDOUTS_PATH, filename);
-    const content = await readFile(filePath, 'utf-8');
+    const _filePath = join(TE_KETE_HANDOUTS_PATH, filename);
+    const _content = await readFile(filePath, 'utf-8');
 
     // Extract title from HTML
-    const titleMatch = content.match(/<title>([^<]+)<\/title>/);
-    const title = titleMatch ? titleMatch[1] : filename.replace('.html', '');
+    const _titleMatch = content.match(/<title>([^<]+)</title>/);
+    const _title = titleMatch ? titleMatch[1] : filename.replace('.html', '');
 
     // Create component name
-    const componentName = filename
+    const _componentName = filename
       .replace(/\.html$/, '')
       .replace(/[-_]/g, ' ')
       .replace(/\b\w/g, (l) => l.toUpperCase())
       .replace(/\s/g, '');
 
     // Generate React component
-    const componentContent = this.generateReactComponent(componentName, title, content);
-    const cssContent = this.generateCSS(componentName);
+    const _componentContent = this.generateReactComponent(componentName, title, content);
+    const _cssContent = this.generateCSS(componentName);
 
     // Write files
-    const componentPath = join(TARGET_PATH, `${componentName}.tsx`);
-    const cssPath = join(TARGET_PATH, `${componentName}.css`);
+    const _componentPath = join(TARGET_PATH, `${componentName}.tsx`);
+    const _cssPath = join(TARGET_PATH, `${componentName}.css`);
 
     await writeFile(componentPath, componentContent);
     await writeFile(cssPath, cssContent);
@@ -313,14 +312,14 @@ export default ${componentName};
 
   extractMainContent(htmlContent: string): string {
     // Extract main content from HTML, removing header/footer
-    const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    const _bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)</body>/i);
     if (bodyMatch) {
       let content = bodyMatch[1];
 
       // Remove navigation and header elements
-      content = content.replace(/<header[^>]*>[\s\S]*?<\/header>/gi, '');
-      content = content.replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, '');
-      content = content.replace(/<aside[^>]*>[\s\S]*?<\/aside>/gi, '');
+      content = content.replace(/<header[^>]*>[\s\S]*?</header>/gi, '');
+      content = content.replace(/<nav[^>]*>[\s\S]*?</nav>/gi, '');
+      content = content.replace(/<aside[^>]*>[\s\S]*?</aside>/gi, '');
 
       // Clean up extra whitespace
       content = content.replace(/\s+/g, ' ').trim();
@@ -337,7 +336,7 @@ export default ${componentName};
 
     // Process in batches
     for (let i = 0; i < this.tasks.length; i += BATCH_SIZE) {
-      const batch = this.tasks.slice(i, i + BATCH_SIZE);
+      const _batch = this.tasks.slice(i, i + BATCH_SIZE);
       console.log(
         `🔄 Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(
           this.tasks.length / BATCH_SIZE,
@@ -351,8 +350,8 @@ export default ${componentName};
     }
 
     // Generate summary
-    const completed = this.tasks.filter((t) => t.status === 'completed').length;
-    const failed = this.tasks.filter((t) => t.status === 'failed').length;
+    const _completed = this.tasks.filter((t) => t.status === '_completed').length;
+    const _failed = this.tasks.filter((t) => t.status === '_failed').length;
 
     console.log('🎯 MIGRATION COMPLETE!');
     console.log(`✅ Completed: ${completed}`);
@@ -363,6 +362,6 @@ export default ${componentName};
 
 // Execute if run directly
 if (import.meta.main) {
-  const commander = new ParallelMigrationCommander();
+  const _commander = new ParallelMigrationCommander();
   commander.execute().catch(console.error);
 }

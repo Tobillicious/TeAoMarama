@@ -8,9 +8,8 @@
  */
 
 import { readdir } from 'fs/promises';
-
-const HANDOUTS_PATH = 'src/components/educational/handouts';
-const TE_KETE_PATH = 'te-kete-ako-clean/public/handouts';
+const _HANDOUTS_PATH = 'src/components/educational/handouts';
+const _TE_KETE_PATH = 'te-kete-ako-clean/public/handouts';
 
 async function celebrateMigration(): Promise<void> {
   console.log('🎉 GREAT MIGRATION COMPLETION CELEBRATION! 🎉');
@@ -19,12 +18,12 @@ async function celebrateMigration(): Promise<void> {
 
   try {
     // Count migrated components
-    const migratedFiles = await readdir(HANDOUTS_PATH);
-    const migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx')).length;
+    const _migratedFiles = await readdir(HANDOUTS_PATH);
+    const _migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx')).length;
 
     // Count original handouts
-    const originalFiles = await readdir(TE_KETE_PATH);
-    const originalHandouts = originalFiles.filter((f) => f.endsWith('.html')).length;
+    const _originalFiles = await readdir(TE_KETE_PATH);
+    const _originalHandouts = originalFiles.filter((f) => f.endsWith('.html')).length;
 
     console.log('📊 MIGRATION STATISTICS:');
     console.log(`   Original Te Kete Ako Handouts: ${originalHandouts}`);

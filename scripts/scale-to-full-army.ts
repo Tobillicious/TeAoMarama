@@ -34,7 +34,7 @@ class FullArmyOrchestrator {
     console.log(`Target: ${this.totalTargetAgents} agents`);
 
     // Deploy all waves in parallel for maximum efficiency
-    const deploymentPromises = [
+    const _deploymentPromises = [
       this.deployCursorExtensionArmy(),
       this.deployWindsurfCascadeArmy(),
       this.deployVSCodeExtensionArmy(),
@@ -45,8 +45,8 @@ class FullArmyOrchestrator {
     ];
 
     try {
-      const results = await Promise.all(deploymentPromises);
-      const allSucceeded = results.every(result => result);
+      const _results = await Promise.all(deploymentPromises);
+      const _allSucceeded = results.every(result => result);
 
       if (allSucceeded && this.deployedAgents.size >= this.totalTargetAgents) {
         console.log(`\n🎉 FULL ARMY DEPLOYMENT SUCCESSFUL!`);
@@ -369,7 +369,7 @@ class FullArmyOrchestrator {
     
     for (const agent of agents) {
       if (agent.culturalSafetyRequired) {
-        const culturalCheck = await this.culturalSafetyCheck(agent);
+        const _culturalCheck = await this.culturalSafetyCheck(agent);
         if (!culturalCheck) {
           console.error(`    🚨 Cultural safety failed for: ${agent.name}`);
           return false;
@@ -394,8 +394,8 @@ class FullArmyOrchestrator {
   }
 
   private generateFullArmyReport(): void {
-    const platformDistribution = new Map<string, number>();
-    const priorityDistribution = new Map<string, number>();
+    const _platformDistribution = new Map<string, number>();
+    const _priorityDistribution = new Map<string, number>();
     let culturalSafetyAgents = 0;
     let totalBatchCapacity = 0;
 
@@ -413,7 +413,7 @@ class FullArmyOrchestrator {
       if (agent.batchCapacity) totalBatchCapacity += agent.batchCapacity;
     });
 
-    const report = {
+    const _report = {
       timestamp: new Date().toISOString(),
       supremeOverseer: 'Mihara-Kaitiaki-Matua',
       fullArmyDeployment: {
@@ -463,12 +463,12 @@ class FullArmyOrchestrator {
 
 // Execute full army scaling
 async function main() {
-  const orchestrator = new FullArmyOrchestrator();
+  const _orchestrator = new FullArmyOrchestrator();
   
   console.log('🚨 SUPREME OVERSEER MIHARA: SCALING TO FULL 100+ LLM ARMY');
   console.log('Agent ID: 96a83f27-6d4f-4932-a7e0-c1601d40c8f3');
   
-  const scalingSuccess = await orchestrator.scaleToFullArmy();
+  const _scalingSuccess = await orchestrator.scaleToFullArmy();
   
   if (scalingSuccess) {
     console.log('\n🌟 FULL LLM ARMY SUCCESSFULLY DEPLOYED!');

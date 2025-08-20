@@ -8,7 +8,6 @@
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
 import { writeEpisode } from '../src/ai/provenance';
-
 class MassiveBatchFix {
   private totalIssuesFixed = 0;
 
@@ -44,7 +43,7 @@ class MassiveBatchFix {
   private async fixAllAnyTypes() {
     console.log('\n🔧 PHASE 1: Fixing ALL "any" Types');
 
-    const files = [
+    const _files = [
       'continuous-mihara-support.ts',
       'gemini-react-app/src/ai/provenance.ts',
       'gemini-react-app/src/brain/kaitiaki-protocol.ts',
@@ -77,7 +76,7 @@ class MassiveBatchFix {
 
     for (const file of files) {
       try {
-        const issuesFixed = await this.fixAnyTypesInFile(file);
+        const _issuesFixed = await this.fixAnyTypesInFile(file);
         this.totalIssuesFixed += issuesFixed;
         if (issuesFixed > 0) {
           console.log(`  ✅ Fixed ${issuesFixed} "any" types in ${file}`);
@@ -90,12 +89,12 @@ class MassiveBatchFix {
 
   private async fixAnyTypesInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Replace all 'any' patterns with more specific types
-      const replacements = [
+      const _replacements = [
         { from: /:\s*any\b/g, to: ': unknown' },
         { from: /as\s+any\b/g, to: 'as unknown' },
         { from: /Promise<any>/g, to: 'Promise<unknown>' },
@@ -106,7 +105,7 @@ class MassiveBatchFix {
       ];
 
       for (const replacement of replacements) {
-        const matches = newContent.match(replacement.from);
+        const _matches = newContent.match(replacement.from);
         if (matches) {
           newContent = newContent.replace(replacement.from, replacement.to);
           issuesFixed += matches.length;
@@ -126,7 +125,7 @@ class MassiveBatchFix {
   private async fixUnusedVariables() {
     console.log('\n🧹 PHASE 2: Fixing Unused Variables');
 
-    const files = [
+    const _files = [
       'gemini-react-app/src/brain/migration-intelligence.ts',
       'gemini-react-app/src/brain/mihara-awakening.ts',
       'gemini-react-app/src/components/MiharaDashboard.tsx',
@@ -165,7 +164,7 @@ class MassiveBatchFix {
 
     for (const file of files) {
       try {
-        const issuesFixed = await this.fixUnusedVarsInFile(file);
+        const _issuesFixed = await this.fixUnusedVarsInFile(file);
         this.totalIssuesFixed += issuesFixed;
         if (issuesFixed > 0) {
           console.log(`  ✅ Fixed ${issuesFixed} unused variables in ${file}`);
@@ -178,12 +177,12 @@ class MassiveBatchFix {
 
   private async fixUnusedVarsInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Fix unused parameters by prefixing with underscore
-      const unusedParamPatterns = [
+      const _unusedParamPatterns = [
         /yearLevel:\s*string/g,
         /index:\s*number/g,
         /event:\s*[^,)]+/g,
@@ -195,7 +194,7 @@ class MassiveBatchFix {
       ];
 
       for (const pattern of unusedParamPatterns) {
-        const matches = newContent.match(pattern);
+        const _matches = newContent.match(pattern);
         if (matches) {
           newContent = newContent.replace(pattern, (match) => {
             if (match.includes(':')) {
@@ -209,7 +208,7 @@ class MassiveBatchFix {
       }
 
       // Remove unused imports
-      const unusedImports = [
+      const _unusedImports = [
         'useEffect',
         'useCallback',
         'Calendar',
@@ -225,11 +224,11 @@ class MassiveBatchFix {
       ];
 
       for (const importName of unusedImports) {
-        const importPattern = new RegExp(
+        const _importPattern = new RegExp(
           `import\\s*{[^}]*\\b${importName}\\b[^}]*}\\s*from\\s*['"][^'"]+['"];?\\s*`,
           'g',
         );
-        const matches = newContent.match(importPattern);
+        const _matches = newContent.match(importPattern);
         if (matches) {
           newContent = newContent.replace(importPattern, '');
           issuesFixed += matches.length;
@@ -249,11 +248,11 @@ class MassiveBatchFix {
   private async fixEmptyBlocks() {
     console.log('\n🕳️ PHASE 3: Fixing Empty Block Statements');
 
-    const files = ['continuous-mihara-support.ts', 'migration/agent-background.ts'];
+    const _files = ['continuous-mihara-support.ts', 'migration/agent-background.ts'];
 
     for (const file of files) {
       try {
-        const issuesFixed = await this.fixEmptyBlocksInFile(file);
+        const _issuesFixed = await this.fixEmptyBlocksInFile(file);
         this.totalIssuesFixed += issuesFixed;
         if (issuesFixed > 0) {
           console.log(`  ✅ Fixed ${issuesFixed} empty blocks in ${file}`);
@@ -266,18 +265,18 @@ class MassiveBatchFix {
 
   private async fixEmptyBlocksInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Fix empty catch blocks
       newContent = newContent.replace(
-        /catch\s*\(\s*\)\s*\{\s*\}/g,
+        /catch\s*(\s*)\s*\{\s*\}/g,
         'catch (error) { console.error("Error:", error); }',
       );
 
       // Fix empty if blocks
-      newContent = newContent.replace(/if\s*\([^)]+\)\s*\{\s*\}/g, (match) => {
+      newContent = newContent.replace(/if\s*([^)]+)\s*\{\s*\}/g, (match) => {
         issuesFixed++;
         return match.replace(/\{\s*\}/, '{ /* TODO: Implement logic */ }');
       });
@@ -303,14 +302,14 @@ class MassiveBatchFix {
 
   private async fixContinuousMiharaSupport() {
     try {
-      const filePath = 'continuous-mihara-support.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'continuous-mihara-support.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Fix unused 'index' parameter
       newContent = newContent.replace(
-        /forEach\(\(agent:\s*\{[^}]*\},\s*index:\s*number\)/g,
+        /forEach((agent:\s*\{[^}]*\},\s*index:\s*number)/g,
         'forEach((agent: { name: string; capability: string; status: string }, _index: number)',
       );
 
@@ -327,13 +326,13 @@ class MassiveBatchFix {
 
   private async fixProvenanceFile() {
     try {
-      const filePath = 'gemini-react-app/src/ai/provenance.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/ai/provenance.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
 
       // Fix the 'any' type that was reverted
       newContent = newContent.replace(
-        /return Array\.from\(\(manager as any\)\.chains\.values\(\)\);/g,
+        /return Array\.from((manager as any)\.chains\.values());/g,
         'return Array.from((manager as { chains: Map<string, unknown> }).chains.values());',
       );
 
@@ -349,8 +348,8 @@ class MassiveBatchFix {
 
   private async fixKaitiakiProtocol() {
     try {
-      const filePath = 'gemini-react-app/src/brain/kaitiaki-protocol.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/brain/kaitiaki-protocol.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
 
       // Fix the case declaration issue
@@ -407,7 +406,7 @@ class MassiveBatchFix {
 
     // Check remaining issues
     try {
-      const remainingIssues = execSync('npx eslint . --ext .ts,.tsx --max-warnings 0 | wc -l', {
+      const _remainingIssues = execSync('npx eslint . --ext .ts,.tsx --max-warnings 0 | wc -l', {
         encoding: 'utf-8',
         stdio: 'pipe',
       });
@@ -428,5 +427,5 @@ class MassiveBatchFix {
 }
 
 // Execute the massive batch fix
-const batchFix = new MassiveBatchFix();
+const _batchFix = new MassiveBatchFix();
 batchFix.executeMassiveBatchFix().catch(console.error);

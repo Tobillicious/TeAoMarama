@@ -26,10 +26,10 @@ type ResourceIndexEntry = {
   tags?: string[];
 };
 
-const PROJECT_ROOT = process.cwd();
-const SOURCE_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
-const PUBLIC_ROOT = path.join(PROJECT_ROOT, 'public');
-const DEST_ROOT = path.join(PUBLIC_ROOT, 'resources');
+const _PROJECT_ROOT = process.cwd();
+const _SOURCE_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
+const _PUBLIC_ROOT = path.join(PROJECT_ROOT, 'public');
+const _DEST_ROOT = path.join(PUBLIC_ROOT, 'resources');
 
 // Subject mapping patterns
 const SUBJECT_PATTERNS = {
@@ -98,7 +98,7 @@ async function ensureDir(dirPath: string): Promise<void> {
 function toId(input: string): string {
   return input
     .toLowerCase()
-    .replace(/[^a-z0-9\-\_]+/g, '-')
+    .replace(/[^a-z0-9\-_]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
 
@@ -124,7 +124,7 @@ function extractSubject(text: string): string | undefined {
   return undefined;
 }
 
-function extractYearLevel(text: string): string | undefined {
+function extractYearLevel(_text: string): string | undefined {
   for (const [yearLevel, pattern] of Object.entries(YEAR_LEVEL_PATTERNS)) {
     if (pattern.test(text)) {
       return yearLevel;
@@ -133,23 +133,23 @@ function extractYearLevel(text: string): string | undefined {
   return undefined;
 }
 
-function extractType(text: string): string | undefined {
-  for (const [type, pattern] of Object.entries(TYPE_PATTERNS)) {
-    if (pattern.test(text)) {
+function extractType(_text: string): string | undefined {
+  for (const [type, pattern] of Object.entries(_TYPE_PATTERNS)) {
+    if (pattern.test(_text)) {
       return type;
     }
   }
   return undefined;
 }
 
-function detectCulturalContent(text: string): boolean {
+function detectCulturalContent(_text: string): boolean {
   return CULTURAL_INDICATORS.some((pattern) => pattern.test(text));
 }
 
-function assessPriority(text: string, sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
-  const hasCultural = detectCulturalContent(text);
-  const isLarge = sizeBytes > 10000;
-  const hasUrgentKeywords = /urgent|critical|important|priority/i.test(text);
+function assessPriority(_text: string, _sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
+  const _hasCultural = detectCulturalContent(text);
+  const _isLarge = sizeBytes > 10000;
+  const _hasUrgentKeywords = /urgent|critical|important|priority/i.test(text);
 
   if (hasUrgentKeywords) return 'urgent';
   if (hasCultural && isLarge) return 'high';
@@ -157,9 +157,9 @@ function assessPriority(text: string, sizeBytes: number): 'low' | 'medium' | 'hi
   return 'low';
 }
 
-function extractDescription(content: string): string {
-  const lines = content.split(/\r?\n/);
-  const descriptionLines = lines
+function extractDescription(_content: string): string {
+  const _lines = content.split(/\r?\n/);
+  const _descriptionLines = lines
     .slice(0, 10) // Look at first 10 lines
     .filter((line) => line.trim() && !line.startsWith('#') && !line.startsWith('---'))
     .slice(0, 3); // Take first 3 non-empty lines
@@ -170,14 +170,14 @@ function extractDescription(content: string): string {
   );
 }
 
-function extractTags(content: string): string[] {
+function extractTags(_content: string): string[] {
   const tags: string[] = [];
-  const lines = content.split(/\r?\n/);
+  const _lines = content.split(/\r?\n/);
 
   // Look for tags in frontmatter or markdown
   for (const line of lines) {
     if (line.includes('tags:') || line.includes('keywords:')) {
-      const match = line.match(/tags?:\s*\[(.*?)\]/i) || line.match(/keywords?:\s*\[(.*?)\]/i);
+      const _match = line._match(/tags?:\s*[(.*?)]/i) || line._match(/keywords?:\s*[(.*?)]/i);
       if (match) {
         tags.push(...match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
       }
@@ -185,7 +185,7 @@ function extractTags(content: string): string[] {
   }
 
   // Extract common educational terms
-  const educationalTerms = [
+  const _educationalTerms = [
     'assessment',
     'activity',
     'lesson',
@@ -214,11 +214,11 @@ function extractTags(content: string): string[] {
   return tags.slice(0, 10); // Limit to 10 tags
 }
 
-async function extractTitleFromMarkdown(absFile: string): Promise<string> {
+async function extractTitleFromMarkdown(_absFile: string): Promise<string> {
   try {
-    const content = await readFile(absFile, 'utf-8');
-    const lines = content.split(/\r?\n/);
-    const heading = lines.find((l) => l.trim().startsWith('# '));
+    const _content = await readFile(absFile, 'utf-8');
+    const _lines = content.split(/\r?\n/);
+    const _heading = lines.find((l) => l.trim().startsWith('# '));
     return heading ? heading.replace(/^#\s+/, '').trim() : path.basename(absFile);
   } catch {
     return path.basename(absFile);

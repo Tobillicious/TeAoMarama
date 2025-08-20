@@ -17,8 +17,8 @@ interface FixPattern {
 const COMPREHENSIVE_FIX_PATTERNS: FixPattern[] = [
   // Fix missing CulturalContentFlag import
   {
-    pattern: 'cultural_flags: CulturalContentFlag\\[\\];',
-    replacement: 'cultural_flags: any[]; // TODO: Import CulturalContentFlag',
+    pattern: 'cultural_flags: CulturalContentFlag\[\];',
+    replacement: 'cultural_flags: unknown[]; // TODO: Import CulturalContentFlag',
     description: 'Fix missing CulturalContentFlag import',
     files: ['migration/database-explorer.ts'],
   },
@@ -41,7 +41,7 @@ const COMPREHENSIVE_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unused orphanError variable
   {
-    pattern: 'catch \\(orphanError\\) {',
+    pattern: 'catch \(orphanError\) {',
     replacement: 'catch (_orphanError) {',
     description: 'Fix unused orphanError variable',
     files: ['migration/database-explorer.ts'],
@@ -69,7 +69,7 @@ const COMPREHENSIVE_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unused error variable
   {
-    pattern: 'catch \\(error\\) {',
+    pattern: 'catch \(error\) {',
     replacement: 'catch (_error) {',
     description: 'Fix unused error variable',
     files: ['scripts/final-cleanup-strike.ts'],
@@ -91,20 +91,20 @@ const COMPREHENSIVE_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unknown types in orchestrator
   {
-    pattern: '\\(routing: unknown\\)',
-    replacement: '(routing: any)',
+    pattern: '\(routing: unknown\)',
+    replacement: '(routing: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(backup: unknown\\)',
-    replacement: '(backup: any)',
+    pattern: '\(backup: unknown\)',
+    replacement: '(backup: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
   {
-    pattern: '\\(failed: unknown\\)',
-    replacement: '(failed: any)',
+    pattern: '\(failed: unknown\)',
+    replacement: '(failed: unknown)',
     description: 'Fix unknown type in orchestrator',
     files: ['src/ai/orchestrator.ts'],
   },
@@ -143,7 +143,7 @@ const COMPREHENSIVE_FIX_PATTERNS: FixPattern[] = [
 
   // Fix unused _error variable
   {
-    pattern: 'catch \\(_error\\) {',
+    pattern: 'catch \(_error\) {',
     replacement: 'catch {',
     description: 'Remove unused _error variable',
     files: ['src/pages/TeacherDashboard.tsx'],
@@ -167,13 +167,13 @@ function applyComprehensiveFixes(): void {
     for (const filePath of fix.files) {
       if (fs.existsSync(filePath)) {
         try {
-          const content = fs.readFileSync(filePath, 'utf8');
-          const regex = new RegExp(fix.pattern, 'g');
-          const newContent = content.replace(regex, fix.replacement);
+          const _content = fs.readFileSync(filePath, 'utf8');
+          const _regex = new RegExp(fix.pattern, 'g');
+          const _newContent = content.replace(regex, fix.replacement);
 
           if (newContent !== content) {
             fs.writeFileSync(filePath, newContent, 'utf8');
-            const matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
+            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
             console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
             totalFixes += matches;
           }
@@ -192,18 +192,18 @@ function applyComprehensiveFixes(): void {
 function fixDuplicateProperties(): void {
   console.log('\n🔧 Fixing duplicate properties...\n');
 
-  const miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
   if (fs.existsSync(miharaDashboardPath)) {
-    const content = fs.readFileSync(miharaDashboardPath, 'utf8');
+    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
 
     // Remove the duplicate capabilities property we added
-    const newContent = content.replace(
-      /private capabilities: any\[\] = \[\];\s+private tasks: any\[\] = \[\];/,
-      'private tasks: any[] = [];',
+    const _newContent = content.replace(
+      /private capabilities: unknown[] = [];\s+private tasks: unknown[] = [];/,
+      'private tasks: unknown[] = [];',
     );
 
     // Fix capabilities property to be a Map instead of array
-    const newContent2 = newContent.replace(
+    const _newContent2 = newContent.replace(
       /private capabilities: Map<string, MiharaCapability>;/,
       'private capabilities: Map<string, MiharaCapability> = new Map();',
     );
@@ -219,18 +219,18 @@ function fixDuplicateProperties(): void {
 function fixUnknownTypes(): void {
   console.log('\n🔧 Fixing unknown types...\n');
 
-  const miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
   if (fs.existsSync(miharaDashboardPath)) {
-    const content = fs.readFileSync(miharaDashboardPath, 'utf8');
+    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
 
     // Fix unknown types
-    const newContent = content.replace(/\(diagnostics: unknown\)/g, '(diagnostics: any)');
+    const _newContent = content.replace(/(diagnostics: unknown)/g, '(diagnostics: unknown)');
 
-    const newContent2 = newContent.replace(/\(metrics: unknown\)/g, '(metrics: any)');
+    const _newContent2 = newContent.replace(/(metrics: unknown)/g, '(metrics: unknown)');
 
-    const newContent3 = newContent2.replace(
-      /\(acc: unknown, cap: unknown\)/g,
-      '(acc: any, cap: any)',
+    const _newContent3 = newContent2.replace(
+      /(acc: unknown, cap: unknown)/g,
+      '(acc: unknown, cap: unknown)',
     );
 
     if (newContent3 !== content) {
@@ -244,12 +244,12 @@ function fixUnknownTypes(): void {
 function removeUnusedVariables(): void {
   console.log('\n🔧 Removing unused variables...\n');
 
-  const miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
   if (fs.existsSync(miharaDashboardPath)) {
-    const content = fs.readFileSync(miharaDashboardPath, 'utf8');
+    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
 
     // Remove unused id variable
-    const newContent = content.replace(
+    const _newContent = content.replace(
       /const id = [^;]+;/,
       '// const id = ...; // Removed unused variable',
     );

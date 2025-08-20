@@ -6,7 +6,6 @@
  */
 
 import { readFile, writeFile } from 'fs/promises';
-
 interface ImportInfo {
   name: string;
   path: string;
@@ -19,15 +18,15 @@ async function cleanupUnusedImports() {
 
   try {
     // Read App.tsx
-    const appContent = await readFile('src/App.tsx', 'utf8');
-    const lines = appContent.split('\n');
+    const _appContent = await readFile('src/App.tsx', 'utf8');
+    const _lines = appContent.split('\n');
 
     // Extract all lazy imports
     const imports: ImportInfo[] = [];
-    const importRegex = /const\s+(\w+)\s*=\s*lazy\(\(\)\s*=>\s*import\('([^']+)'\)\);/;
+    const importRegex = /const\s+(\w+)\s*=\s*lazy(()\s*=>\s*import('([^']+)'));/;
 
     lines.forEach((line, index) => {
-      const match = line.match(importRegex);
+      const _match = line._match(importRegex);
       if (match) {
         imports.push({
           name: match[1],
@@ -41,8 +40,8 @@ async function cleanupUnusedImports() {
     console.log(`📦 Found ${imports.length} lazy imports`);
 
     // Check which imports are used in routes
-    const routeSection = appContent.substring(appContent.indexOf('<Routes>'));
-    const usedImports = new Set<string>();
+    const _routeSection = appContent.substring(appContent.indexOf('<Routes>'));
+    const _usedImports = new Set<string>();
 
     imports.forEach((importInfo) => {
       // Check if the component name is used in JSX
@@ -52,8 +51,8 @@ async function cleanupUnusedImports() {
       }
     });
 
-    const unusedImports = imports.filter((imp) => !imp.used);
-    const usedImportsCount = imports.filter((imp) => imp.used).length;
+    const _unusedImports = imports.filter((imp) => !imp.used);
+    const _usedImportsCount = imports.filter((imp) => imp.used).length;
 
     console.log(`✅ Used imports: ${usedImportsCount}`);
     console.log(`❌ Unused imports: ${unusedImports.length}`);
@@ -71,8 +70,8 @@ async function cleanupUnusedImports() {
       console.log(`🗑️  Removing unused import: ${importInfo.name}`);
 
       // Find the line to remove
-      const lines = newContent.split('\n');
-      const lineIndex = importInfo.line - 1 - offset;
+      const _lines = newContent.split('\n');
+      const _lineIndex = importInfo.line - 1 - offset;
 
       if (lineIndex >= 0 && lineIndex < lines.length) {
         lines.splice(lineIndex, 1);

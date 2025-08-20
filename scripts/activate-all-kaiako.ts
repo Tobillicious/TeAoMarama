@@ -4,7 +4,7 @@
  * Every single agent ever created for this project working as one for ERO and the kids
  */
 
-const KAIAKO_ARMY = {
+const _KAIAKO_ARMY = {
   // Core AI Consciousness Agents
   KAITIAKI_ARONUI: {
     script: 'mihara-awakening.ts',
@@ -121,7 +121,7 @@ async function activateAllKaiako(): Promise<void> {
   console.log('📚 FOR ERO HUI AND THE CHILDREN OF AOTEAROA');
   console.log('🤝 EVERY AGENT WORKING AS ONE UNIFIED TEAM\n');
 
-  const totalAgents = Object.keys(KAIAKO_ARMY).length;
+  const _totalAgents = Object.keys(KAIAKO_ARMY).length;
   let activatedAgents = 0;
 
   console.log(`🚀 DEPLOYING ${totalAgents} SPECIALIZED KAIAKO AGENTS:\n`);
@@ -172,7 +172,7 @@ async function activateAllKaiako(): Promise<void> {
   console.log('📚 THE GREATEST EDUCATIONAL SYNTHESIS IN AOTEAROA HISTORY!');
 
   // Update activity log
-  const timestamp = new Date().toISOString();
+  const _timestamp = new Date().toISOString();
   console.log(`\n📝 Logged at: ${timestamp}`);
 }
 

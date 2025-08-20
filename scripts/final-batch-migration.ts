@@ -5,14 +5,13 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join, basename } from 'path';
+const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
+const _TARGET_PATH = 'src/components/educational/handouts';
 
-const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const TARGET_PATH = 'src/components/educational/handouts';
-
-async function finalBatchMigrate(filePath: string): Promise<void> {
+async function finalBatchMigrate(_filePath: string): Promise<void> {
   try {
-    const filename = basename(filePath, '.html');
-    const componentName = filename
+    const _filename = basename(filePath, '.html');
+    const _componentName = filename
       .replace(/[-_]/g, ' ')
       .replace(/\b\w/g, l => l.toUpperCase())
       .replace(/\s/g, '');
@@ -25,7 +24,7 @@ async function finalBatchMigrate(filePath: string): Promise<void> {
       // Continue with migration
     }
     
-    const componentCode = `import React from 'react';
+    const _componentCode = `import React from 'react';
 import { Card } from '../../ui/Card';
 import './${componentName}.css';
 
@@ -62,7 +61,7 @@ export const ${componentName}: React.FC<${componentName}Props> = ({ className = 
   );
 };`;
 
-    const cssCode = `/* ${componentName} - Te Kete Ako Beauty Patterns */
+    const _cssCode = `/* ${componentName} - Te Kete Ako Beauty Patterns */
 
 .${filename.toLowerCase()}-handout.cultural-focus {
   background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
@@ -146,21 +145,21 @@ async function main() {
   
   await mkdir(TARGET_PATH, { recursive: true });
   
-  const files = await readdir(TE_KETE_HANDOUTS_PATH);
+  const _files = await readdir(TE_KETE_HANDOUTS_PATH);
   const handouts = files.filter(f => f.endsWith('.html') && !f.startsWith('.')).slice(28, 78); // Next 50 handouts
   
   console.log(`📊 Processing final batch of ${handouts.length} handouts...`);
   
   // Process in batches of 10 for better performance
-  const batchSize = 10;
+  const _batchSize = 10;
   for (let i = 0; i < handouts.length; i += batchSize) {
-    const batch = handouts.slice(i, i + batchSize);
+    const _batch = handouts.slice(i, i + batchSize);
     console.log(`🔄 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(handouts.length/batchSize)}`);
     
     await Promise.all(batch.map(f => finalBatchMigrate(join(TE_KETE_HANDOUTS_PATH, f))));
   }
   
-  const finalCount = (await readdir(TARGET_PATH)).filter(f => f.endsWith('.tsx')).length;
+  const _finalCount = (await readdir(TARGET_PATH)).filter(f => f.endsWith('.tsx')).length;
   console.log(`🎯 FINAL BATCH MIGRATION COMPLETE! ${finalCount} total components created`);
 }
 

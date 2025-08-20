@@ -10,8 +10,7 @@
 import { writeFileSync, existsSync, readFileSync } from 'fs';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-
-const execAsync = promisify(exec);
+const _execAsync = promisify(exec);
 
 interface CascadeLevel {
   level: number;
@@ -95,7 +94,7 @@ class WindsurfCascadeOrchestrator {
   }
 
   private generateMigrationBatches(): void {
-    const batchTypes = [
+    const _batchTypes = [
       {
         prefix: 'maori-cultural',
         name: 'Māori Cultural Resources',
@@ -200,7 +199,7 @@ class WindsurfCascadeOrchestrator {
   }
 
   private async activateLevel(levelNumber: number): Promise<void> {
-    const level = this.cascadeLevels.find(l => l.level === levelNumber);
+    const _level = this.cascadeLevels.find(l => l._level === levelNumber);
     if (!level) {
       throw new Error(`Cascade level ${levelNumber} not found`);
     }
@@ -225,7 +224,7 @@ class WindsurfCascadeOrchestrator {
     console.log('\n🔄 BEGINNING BATCH MIGRATION PROCESSING');
     
     for (const batch of this.migrationBatches) {
-      const level = this.cascadeLevels.find(l => l.level === batch.assignedLevel);
+      const _level = this.cascadeLevels.find(l => l._level === batch.assignedLevel);
       if (!level) {
         console.error(`❌ No cascade level found for batch: ${batch.name}`);
         continue;
@@ -240,12 +239,12 @@ class WindsurfCascadeOrchestrator {
       batch.status = 'processing';
 
       // Simulate migration processing
-      const processingTime = this.calculateProcessingTime(batch);
+      const _processingTime = this.calculateProcessingTime(batch);
       await this.delay(processingTime);
 
       // Cultural safety check if required
       if (batch.culturalSafety) {
-        const culturalSafetyPassed = await this.performCulturalSafetyCheck(batch);
+        const _culturalSafetyPassed = await this.performCulturalSafetyCheck(batch);
         if (!culturalSafetyPassed) {
           console.error(`  🚨 Cultural safety check failed for: ${batch.name}`);
           continue;
@@ -256,7 +255,7 @@ class WindsurfCascadeOrchestrator {
       batch.status = 'completed';
       this.completedResources += batch.resources;
       
-      const progressPercentage = (this.completedResources / this.totalResources * 100).toFixed(1);
+      const _progressPercentage = (this.completedResources / this.totalResources * 100).toFixed(1);
       console.log(`  ✅ ${batch.name} completed (${batch.resources} resources)`);
       console.log(`  📊 Overall Progress: ${this.completedResources}/${this.totalResources} (${progressPercentage}%)`);
     }
@@ -264,9 +263,9 @@ class WindsurfCascadeOrchestrator {
 
   private calculateProcessingTime(batch: MigrationBatch): number {
     const baseTime = 200; // milliseconds
-    const resourceMultiplier = Math.log(batch.resources) * 50;
-    const priorityMultiplier = batch.priority === 'critical' ? 1.5 : 1.0;
-    const culturalMultiplier = batch.culturalSafety ? 1.3 : 1.0;
+    const _resourceMultiplier = Math.log(batch.resources) * 50;
+    const _priorityMultiplier = batch.priority === 'critical' ? 1.5 : 1.0;
+    const _culturalMultiplier = batch.culturalSafety ? 1.3 : 1.0;
     
     return Math.floor(baseTime + resourceMultiplier * priorityMultiplier * culturalMultiplier);
   }
@@ -284,11 +283,11 @@ class WindsurfCascadeOrchestrator {
   }
 
   private generateCascadeReport(): void {
-    const completedBatches = this.migrationBatches.filter(b => b.status === 'completed');
-    const failedBatches = this.migrationBatches.filter(b => b.status !== 'completed');
-    const culturalBatches = completedBatches.filter(b => b.culturalSafety);
+    const _completedBatches = this.migrationBatches.filter(b => b.status === 'completed');
+    const _failedBatches = this.migrationBatches.filter(b => b.status !== 'completed');
+    const _culturalBatches = completedBatches.filter(b => b.culturalSafety);
 
-    const report = {
+    const _report = {
       timestamp: new Date().toISOString(),
       supremeOverseer: 'Mihara-Kaitiaki-Matua',
       cascadeActivation: {
@@ -345,7 +344,7 @@ class WindsurfCascadeOrchestrator {
     console.log('\n🔄 STARTING CONTINUOUS CASCADE MONITORING');
     console.log('Windsurf cascade will continue processing in background...');
     
-    const monitoringData = {
+    const _monitoringData = {
       timestamp: new Date().toISOString(),
       cascadeStatus: 'ACTIVE',
       processedResources: this.completedResources,
@@ -365,12 +364,12 @@ class WindsurfCascadeOrchestrator {
 
 // Execute Windsurf cascade activation
 async function main() {
-  const orchestrator = new WindsurfCascadeOrchestrator();
+  const _orchestrator = new WindsurfCascadeOrchestrator();
   
   console.log('🚨 SUPREME OVERSEER MIHARA: ACTIVATING WINDSURF CASCADE SYSTEM');
   console.log('Agent ID: 96a83f27-6d4f-4932-a7e0-c1601d40c8f3');
   
-  const activationSuccess = await orchestrator.activateCascade();
+  const _activationSuccess = await orchestrator.activateCascade();
   
   if (activationSuccess) {
     await orchestrator.startContinuousMonitoring();
