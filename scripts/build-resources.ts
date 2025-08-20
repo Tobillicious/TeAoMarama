@@ -26,10 +26,10 @@ type ResourceIndexEntry = {
   tags?: string[];
 };
 
-const _PROJECT_ROOT = process.cwd();
-const _SOURCE_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
-const _PUBLIC_ROOT = path.join(PROJECT_ROOT, 'public');
-const _DEST_ROOT = path.join(PUBLIC_ROOT, 'resources');
+const PROJECT_ROOT = process.cwd();
+const SOURCE_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
+const PUBLIC_ROOT = path.join(PROJECT_ROOT, 'public');
+const DEST_ROOT = path.join(PUBLIC_ROOT, 'resources');
 
 // Subject mapping patterns
 const SUBJECT_PATTERNS = {
@@ -126,7 +126,7 @@ function extractSubject(text: string): string | undefined {
 
 function extractYearLevel(_text: string): string | undefined {
   for (const [yearLevel, pattern] of Object.entries(YEAR_LEVEL_PATTERNS)) {
-    if (pattern.test(text)) {
+    if (pattern.test(_text)) {
       return yearLevel;
     }
   }
@@ -134,7 +134,7 @@ function extractYearLevel(_text: string): string | undefined {
 }
 
 function extractType(_text: string): string | undefined {
-  for (const [type, pattern] of Object.entries(_TYPE_PATTERNS)) {
+  for (const [type, pattern] of Object.entries(TYPE_PATTERNS)) {
     if (pattern.test(_text)) {
       return type;
     }
@@ -143,43 +143,43 @@ function extractType(_text: string): string | undefined {
 }
 
 function detectCulturalContent(_text: string): boolean {
-  return CULTURAL_INDICATORS.some((pattern) => pattern.test(text));
+  return CULTURAL_INDICATORS.some((pattern) => pattern.test(_text));
 }
 
 function assessPriority(_text: string, _sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
-  const _hasCultural = detectCulturalContent(text);
-  const _isLarge = sizeBytes > 10000;
-  const _hasUrgentKeywords = /urgent|critical|important|priority/i.test(text);
+  const _hasCultural = detectCulturalContent(_text);
+  const _isLarge = _sizeBytes > 10000;
+  const _hasUrgentKeywords = /urgent|critical|important|priority/i.test(_text);
 
-  if (hasUrgentKeywords) return 'urgent';
-  if (hasCultural && isLarge) return 'high';
-  if (hasCultural || isLarge) return 'medium';
+  if (_hasUrgentKeywords) return 'urgent';
+  if (_hasCultural && _isLarge) return 'high';
+  if (_hasCultural || _isLarge) return 'medium';
   return 'low';
 }
 
 function extractDescription(_content: string): string {
-  const _lines = content.split(/\r?\n/);
-  const _descriptionLines = lines
+  const _lines = _content.split(/\r?\n/);
+  const _descriptionLines = _lines
     .slice(0, 10) // Look at first 10 lines
     .filter((line) => line.trim() && !line.startsWith('#') && !line.startsWith('---'))
     .slice(0, 3); // Take first 3 non-empty lines
 
   return (
-    descriptionLines.join(' ').substring(0, 200) +
-    (descriptionLines.join(' ').length > 200 ? '...' : '')
+    _descriptionLines.join(' ').substring(0, 200) +
+    (_descriptionLines.join(' ').length > 200 ? '...' : '')
   );
 }
 
 function extractTags(_content: string): string[] {
   const tags: string[] = [];
-  const _lines = content.split(/\r?\n/);
+  const _lines = _content.split(/\r?\n/);
 
   // Look for tags in frontmatter or markdown
-  for (const line of lines) {
+  for (const line of _lines) {
     if (line.includes('tags:') || line.includes('keywords:')) {
-      const _match = line._match(/tags?:\s*[(.*?)]/i) || line._match(/keywords?:\s*[(.*?)]/i);
-      if (match) {
-        tags.push(...match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
+      const _match = line.match(/tags?:\s*\[(.*?)\]/i) || line.match(/keywords?:\s*\[(.*?)\]/i);
+      if (_match) {
+        tags.push(..._match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
       }
     }
   }
@@ -205,8 +205,8 @@ function extractTags(_content: string): string[] {
     'project',
   ];
 
-  educationalTerms.forEach((term) => {
-    if (content.toLowerCase().includes(term) && !tags.includes(term)) {
+  _educationalTerms.forEach((term) => {
+    if (_content.toLowerCase().includes(term) && !tags.includes(term)) {
       tags.push(term);
     }
   });
@@ -214,11 +214,11 @@ function extractTags(_content: string): string[] {
   return tags.slice(0, 10); // Limit to 10 tags
 }
 
-async function extractTitleFromMarkdown(_absFile: string): Promise<string> {
+async function extractTitleFromMarkdown(absFile: string): Promise<string> {
   try {
-    const _content = await readFile(absFile, 'utf-8');
-    const _lines = content.split(/\r?\n/);
-    const _heading = lines.find((l) => l.trim().startsWith('# '));
+    const content = await readFile(absFile, 'utf-8');
+    const lines = content.split(/\r?\n/);
+    const heading = lines.find((l) => l.trim().startsWith('# '));
     return heading ? heading.replace(/^#\s+/, '').trim() : path.basename(absFile);
   } catch {
     return path.basename(absFile);
