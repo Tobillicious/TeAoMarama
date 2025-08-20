@@ -410,7 +410,7 @@ const EnhancedFirebaseAuth: React.FC<EnhancedFirebaseAuthProps> = ({
       </button>
 
       {/* Toggle Auth Mode */}
-      <div style={{ textAlign: 'center' }}>
+      <div className="auth-toggle-container">
         <button
           onClick={() => setAuthMode(authMode === 'login' ? 'register' : 'login')}
           className="auth-toggle-button"

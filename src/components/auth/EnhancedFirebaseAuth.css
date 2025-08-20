@@ -219,6 +219,11 @@
   opacity: 0.6;
 }
 
+.auth-toggle-container {
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
 .auth-toggle-button {
   background: none;
   border: none;
