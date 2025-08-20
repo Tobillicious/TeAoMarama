@@ -71,8 +71,8 @@ class TreasureHunterCrawler {
           }
         }
       }
-    } catch (error) {
-      console.log(`⚠️  Could not scan ${dirPath}: ${error.message}`);
+    } catch {
+      console.log(`⚠️  Could not scan ${dirPath}`);
     }
   }
 
@@ -94,7 +94,7 @@ class TreasureHunterCrawler {
           } else {
             files.push(fullPath);
           }
-        } catch (error) {
+        } catch {
           // Skip inaccessible files
         }
       }
@@ -165,7 +165,7 @@ class TreasureHunterCrawler {
         educational_level: this.determineEducationalLevel(content),
         last_accessed: new Date().toISOString(),
       };
-    } catch (error) {
+    } catch {
       return null;
     }
   }
@@ -427,7 +427,7 @@ class TreasureHunterCrawler {
 const treasureHunter = new TreasureHunterCrawler();
 treasureHunter
   .huntForTreasures()
-  .then((treasureMap) => {
+  .then(async (treasureMap) => {
     console.log('\n🗺️ TREASURE HUNT COMPLETE!');
     console.log('='.repeat(50));
     console.log(`📦 Total Treasures Found: ${treasureMap.total_treasures}`);

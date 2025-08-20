@@ -31,6 +31,11 @@ interface ComponentAudit {
   issues: string[];
 }
 
+interface Resource {
+  cultural?: boolean;
+  priority?: string;
+}
+
 class ComprehensiveAuditor {
   private results: AuditResult[] = [];
   private components: ComponentAudit[] = [];
@@ -238,8 +243,8 @@ class ComprehensiveAuditor {
           message: `${resources.length} resources available`,
           details: [
             `Total resources: ${resources.length}`,
-            `Cultural resources: ${resources.filter((r: any) => r.cultural).length}`,
-            `High priority: ${resources.filter((r: any) => r.priority === 'high').length}`,
+            `Cultural resources: ${resources.filter((r: Resource) => r.cultural).length}`,
+            `High priority: ${resources.filter((r: Resource) => r.priority === 'high').length}`,
           ],
         });
       } else {
