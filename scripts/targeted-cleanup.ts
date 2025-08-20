@@ -7,7 +7,6 @@
 
 import { readFileSync, writeFileSync } from 'fs';
 import { writeEpisode } from '../src/ai/provenance';
-
 class TargetedCleanup {
   private totalIssuesFixed = 0;
 
@@ -33,20 +32,20 @@ class TargetedCleanup {
     console.log('\n🔧 Fixing continuous-mihara-support.ts');
 
     try {
-      const filePath = 'continuous-mihara-support.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'continuous-mihara-support.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
       // Fix unused 'index' parameter
       newContent = newContent.replace(
-        /forEach\(\(agent:\s*\{[^}]*\},\s*index:\s*number\)/g,
+        /forEach((agent:\s*\{[^}]*\},\s*index:\s*number)/g,
         'forEach((agent: { name: string; capability: string; status: string }, _index: number)',
       );
 
       // Fix empty block statements
       newContent = newContent.replace(
-        /catch\s*\(\s*\)\s*\{\s*\}/g,
+        /catch\s*(\s*)\s*\{\s*\}/g,
         'catch (error) { console.error("Error:", error); }',
       );
 
@@ -69,8 +68,8 @@ class TargetedCleanup {
     console.log('\n📝 Fixing provenance.ts');
 
     try {
-      const filePath = 'gemini-react-app/src/ai/provenance.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/ai/provenance.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
@@ -92,8 +91,8 @@ class TargetedCleanup {
     console.log('\n🤝 Fixing kaitiaki-protocol.ts');
 
     try {
-      const filePath = 'gemini-react-app/src/brain/kaitiaki-protocol.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/brain/kaitiaki-protocol.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
@@ -115,8 +114,8 @@ class TargetedCleanup {
     console.log('\n🧠 Fixing migration-intelligence.ts');
 
     try {
-      const filePath = 'gemini-react-app/src/brain/migration-intelligence.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/brain/migration-intelligence.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
 
@@ -150,5 +149,5 @@ class TargetedCleanup {
 }
 
 // Execute the targeted cleanup
-const cleanup = new TargetedCleanup();
+const _cleanup = new TargetedCleanup();
 cleanup.executeTargetedCleanup().catch(console.error);

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
+import Navigation from './components/Navigation';
 
 // Lazy load components
 const AiArtEthicsComprehension = lazy(
@@ -263,7 +264,6 @@ const GovernmentComponentAnalysis = lazy(() => import('./pages/GovernmentCompone
 const IndigenousWisdomSynthesis = lazy(() => import('./pages/IndigenousWisdomSynthesis'));
 const MaoriAstronomy = lazy(() => import('./pages/MaoriAstronomy'));
 const MaoriBattalionLegacy = lazy(() => import('./pages/MaoriBattalionLegacy'));
-
 const StudentDashboard = lazy(() => import('./pages/StudentDashboard'));
 const TeReoPhonics = lazy(() => import('./pages/TeReoPhonics'));
 const TeacherDashboard = lazy(() => import('./pages/TeacherDashboard'));
@@ -271,275 +271,233 @@ const Year10CulturalGeometry = lazy(() => import('./pages/Year10CulturalGeometry
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Router>
-        <div className="App">
-          <Suspense fallback={<LoadingSpinner message="Loading Te Ao Mārama..." size="large" />}>
-            <Routes>
-              <Route path="/aiartethicscomprehension" element={<AiArtEthicsComprehension />} />
-              <Route
-                path="/aiartethicscomprehensionhandout"
-                element={<AiArtEthicsComprehensionHandout />}
+    <div className="App">
+      <Navigation />
+      <Suspense fallback={<LoadingSpinner message="Loading Te Ao Mārama..." size="large" />}>
+        <Routes>
+          <Route path="/aiartethicscomprehension" element={<AiArtEthicsComprehension />} />
+          <Route
+            path="/aiartethicscomprehensionhandout"
+            element={<AiArtEthicsComprehensionHandout />}
+          />
+          <Route path="/aiethicsandbias" element={<AiEthicsAndBias />} />
+          <Route path="/aiimpactcomprehensionhandout" element={<AiImpactComprehensionHandout />} />
+          <Route path="/atomsineverydaymaterials" element={<AtomsInEverydayMaterials />} />
+          <Route
+            path="/authorspurposeentertainhandout"
+            element={<AuthorsPurposeEntertainHandout />}
+          />
+          <Route path="/authorspurposehandout" element={<AuthorsPurposeHandout />} />
+          <Route path="/authorspurposeinformhandout" element={<AuthorsPurposeInformHandout />} />
+          <Route
+            path="/authorspurposepersuadehandout"
+            element={<AuthorsPurposePersuadeHandout />}
+          />
+          <Route path="/bargraphhandout" element={<BarGraphHandout />} />
+          <Route
+            path="/biochemistrytraditionalmedicine"
+            element={<BiochemistryTraditionalMedicine />}
+          />
+          <Route path="/bodymeasurementtraditional" element={<BodyMeasurementTraditional />} />
+          <Route path="/ceremonialcirclegeometry" element={<CeremonialCircleGeometry />} />
+          <Route
+            path="/childrenrightsresponsibilities"
+            element={<ChildrenRightsResponsibilities />}
+          />
+          <Route path="/climatechangeaotearoahandout" element={<ClimateChangeAotearoaHandout />} />
+          <Route
+            path="/climateemergencyaotearoahandout"
+            element={<ClimateEmergencyAotearoaHandout />}
+          />
+          <Route
+            path="/cognitivebiasescomprehensionhandout"
+            element={<CognitiveBiasesComprehensionHandout />}
+          />
+          <Route
+            path="/colonizationperspectiveshandout"
+            element={<ColonizationPerspectivesHandout />}
+          />
+          <Route path="/communityhelpersstudy" element={<CommunityHelpersStudy />} />
+          <Route path="/communityneedssurvey" element={<CommunityNeedsSurvey />} />
+          <Route
+            path="/culturalcelebrationscomparison"
+            element={<CulturalCelebrationsComparison />}
+          />
+          <Route
+            path="/culturaldecisionmakingtraditions"
+            element={<CulturalDecisionMakingTraditions />}
+          />
+          <Route path="/culturalheroescomprehension" element={<CulturalHeroesComprehension />} />
+          <Route
+            path="/culturalidentitydeepdivecomprehension"
+            element={<CulturalIdentityDeepDiveComprehension />}
+          />
+          <Route path="/culturalpracticeexplanation" element={<CulturalPracticeExplanation />} />
+          <Route path="/culturalpreservationessays" element={<CulturalPreservationEssays />} />
+          <Route
+            path="/culturalsafetyclassroomchecklistsalpha"
+            element={<CulturalSafetyClassroomChecklistsAlpha />}
+          />
+          <Route path="/culturalstemassessmentrubric" element={<CulturalStemAssessmentRubric />} />
+          <Route path="/culturalstoriescomprehension" element={<CulturalStoriesComprehension />} />
+          <Route path="/familydatacollection" element={<FamilyDataCollection />} />
+          <Route path="/familytreewriting" element={<FamilyTreeWriting />} />
+          <Route
+            path="/futurevisioningcreativewriting"
+            element={<FutureVisioningCreativeWriting />}
+          />
+          <Route path="/indigenousrightsresearch" element={<IndigenousRightsResearch />} />
+          <Route path="/iwieconomicsmathematics" element={<IwiEconomicsMathematics />} />
+          <Route
+            path="/kaitiakigeneratedmigrationstudenthandout"
+            element={<KaitiakiGeneratedMigrationStudentHandout />}
+          />
+          <Route path="/kaitiakitangafieldjournal" element={<KaitiakitangaFieldJournal />} />
+          <Route path="/kaitiakitangakids" element={<KaitiakitangaKids />} />
+          <Route path="/kumarastorageplacevalue" element={<KumaraStoragePlaceValue />} />
+          <Route
+            path="/maoriastronomynavigationhandout"
+            element={<MaoriAstronomyNavigationHandout />}
+          />
+          <Route
+            path="/maorigeometricpatternshandout"
+            element={<MaoriGeometricPatternsHandout />}
+          />
+          <Route
+            path="/maorinavigationwayfindinghandout"
+            element={<MaoriNavigationWayfindingHandout />}
+          />
+          <Route path="/maraeshapesgeometry" element={<MaraeShapesGeometry />} />
+          <Route
+            path="/mountainnavigationtrigonometry"
+            element={<MountainNavigationTrigonometry />}
+          />
+          <Route path="/natureobservationjournal" element={<NatureObservationJournal />} />
+          <Route path="/oralstorytellinghandout" element={<OralStorytellingHandout />} />
+          <Route path="/physicsoftraditionalgames" element={<PhysicsOfTraditionalGames />} />
+          <Route path="/probabilityhandout" element={<ProbabilityHandout />} />
+          <Route path="/renewableenergytraditional" element={<RenewableEnergyTraditional />} />
+          <Route path="/researchmethodshandout" element={<ResearchMethodsHandout />} />
+          <Route path="/resourcesustainabilitystudy" element={<ResourceSustainabilityStudy />} />
+          <Route path="/scientificmethodhandout" element={<ScientificMethodHandout />} />
+          <Route path="/starnavigationcoordinates" element={<StarNavigationCoordinates />} />
+          <Route path="/sustainablefishingequations" element={<SustainableFishingEquations />} />
+          <Route
+            path="/sustainabletechnologydesignchallenge"
+            element={<SustainableTechnologyDesignChallenge />}
+          />
+          <Route path="/traditionalcountingsystems" element={<TraditionalCountingSystems />} />
+          <Route path="/traditionaldyechemistry" element={<TraditionalDyeChemistry />} />
+          <Route
+            path="/traditionalecologicalindicatorshandout"
+            element={<TraditionalEcologicalIndicatorsHandout />}
+          />
+          <Route path="/traditionalmaterialsscience" element={<TraditionalMaterialsScience />} />
+          <Route
+            path="/traditionalnavigationmathematicshandout"
+            element={<TraditionalNavigationMathematicsHandout />}
+          />
+          <Route path="/treatysettlementstatistics" element={<TreatySettlementStatistics />} />
+          <Route path="/tukutukupatternsmaths" element={<TukutukuPatternsMaths />} />
+          <Route
+            path="/unit2technologydefinitionchallenge"
+            element={<Unit2TechnologyDefinitionChallenge />}
+          />
+          <Route path="/weatherpredictionprobability" element={<WeatherPredictionProbability />} />
+          <Route
+            path="/writerstoolkitconclusionhandout"
+            element={<WritersToolkitConclusionHandout />}
+          />
+          <Route path="/writerstoolkitdictionhandout" element={<WritersToolkitDictionHandout />} />
+          <Route path="/writerstoolkitfluencyhandout" element={<WritersToolkitFluencyHandout />} />
+          <Route path="/writerstoolkithookhandout" element={<WritersToolkitHookHandout />} />
+          <Route
+            path="/writerstoolkitinformstructurehandout"
+            element={<WritersToolkitInformStructureHandout />}
+          />
+          <Route
+            path="/writerstoolkitpeelargumenthandout"
+            element={<WritersToolkitPeelArgumentHandout />}
+          />
+          <Route
+            path="/writerstoolkitrevisionhandout"
+            element={<WritersToolkitRevisionHandout />}
+          />
+          <Route
+            path="/writerstoolkitrhetoricaldeviceshandout"
+            element={<WritersToolkitRhetoricalDevicesHandout />}
+          />
+          <Route
+            path="/writerstoolkitshowdonttellhandout"
+            element={<WritersToolkitShowDontTellHandout />}
+          />
+          <Route
+            path="/writerstoolkitsuspensehandout"
+            element={<WritersToolkitSuspenseHandout />}
+          />
+          <Route path="/writerstoolkittonehandout" element={<WritersToolkitToneHandout />} />
+          <Route path="/year9starterpackalphabuild" element={<Year9StarterPackAlphaBuild />} />
+          <Route
+            path="/year9starterpackessentialskills"
+            element={<Year9StarterPackEssentialSkills />}
+          />
+          <Route
+            path="/youthvapingcomprehensionhandout"
+            element={<YouthVapingComprehensionHandout />}
+          />
+          <Route path="/whakataukiwisdom" element={<WhakataukiWisdom />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/resources" element={<ResourcesEnhanced />} />
+          <Route path="/docs/:page" element={<DocPage />} />
+          <Route path="/resource/:id" element={<ResourceViewer />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/style-guide" element={<StyleGuide />} />
+          <Route path="/mihara" element={<MiharaDashboard />} />
+          <Route path="/unit-plan" element={<UnitPlan />} />
+          <Route path="/lesson-plan" element={<LessonPlan />} />
+          <Route path="/structured-literacy" element={<StructuredLiteracyUnit />} />
+          <Route path="/structured-literacy-units" element={<StructuredLiteracyUnits />} />
+          <Route path="/phonics" element={<PhoneticsCards />} />
+          <Route path="/phonological-awareness" element={<PhonologicalAwareness />} />
+          <Route path="/sight-words" element={<SightWords />} />
+          <Route path="/advanced-morphology" element={<AdvancedMorphology />} />
+          <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
+          <Route path="/year8-reading" element={<Year8ReadingStrategies />} />
+          <Route path="/year8-writing" element={<Year8WritingRevolution />} />
+          <Route path="/year8-critical-literacy" element={<Year8CriticalLiteracy />} />
+          <Route path="/year8-reading-units" element={<Year8ReadingUnits />} />
+          <Route path="/year8-writing-units" element={<Year8WritingUnits />} />
+          <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
+          <Route path="/year8-social-studies-units" element={<Year8SocialStudiesUnits />} />
+          <Route path="/science" element={<ScienceIntegration />} />
+          <Route path="/assessment" element={<AssessmentFramework />} />
+          <Route path="/lessons" element={<LessonsIntegration />} />
+          <Route path="/year10-cultural-geometry" element={<Year10CulturalGeometry />} />
+          <Route path="/cultural-stories" element={<CulturalStories />} />
+          <Route path="/design-thinking" element={<DesignThinking />} />
+          <Route path="/environmental-literacy" element={<EnvironmentalLiteracy />} />
+          <Route path="/government-analysis" element={<GovernmentComponentAnalysis />} />
+          <Route path="/indigenous-wisdom" element={<IndigenousWisdomSynthesis />} />
+          <Route path="/maori-astronomy" element={<MaoriAstronomy />} />
+          <Route
+            path="/maori-battalion"
+            element={
+              <MaoriBattalionLegacy
+                culturalAuthenticityScore={0.98}
+                difficultyLevel="intermediate"
+                subjectArea="social-studies"
+                yearLevel="year-9"
               />
-              <Route path="/aiethicsandbias" element={<AiEthicsAndBias />} />
-              <Route
-                path="/aiimpactcomprehensionhandout"
-                element={<AiImpactComprehensionHandout />}
-              />
-              <Route path="/atomsineverydaymaterials" element={<AtomsInEverydayMaterials />} />
-              <Route
-                path="/authorspurposeentertainhandout"
-                element={<AuthorsPurposeEntertainHandout />}
-              />
-              <Route path="/authorspurposehandout" element={<AuthorsPurposeHandout />} />
-              <Route
-                path="/authorspurposeinformhandout"
-                element={<AuthorsPurposeInformHandout />}
-              />
-              <Route
-                path="/authorspurposepersuadehandout"
-                element={<AuthorsPurposePersuadeHandout />}
-              />
-              <Route path="/bargraphhandout" element={<BarGraphHandout />} />
-              <Route
-                path="/biochemistrytraditionalmedicine"
-                element={<BiochemistryTraditionalMedicine />}
-              />
-              <Route path="/bodymeasurementtraditional" element={<BodyMeasurementTraditional />} />
-              <Route path="/ceremonialcirclegeometry" element={<CeremonialCircleGeometry />} />
-              <Route
-                path="/childrenrightsresponsibilities"
-                element={<ChildrenRightsResponsibilities />}
-              />
-              <Route
-                path="/climatechangeaotearoahandout"
-                element={<ClimateChangeAotearoaHandout />}
-              />
-              <Route
-                path="/climateemergencyaotearoahandout"
-                element={<ClimateEmergencyAotearoaHandout />}
-              />
-              <Route
-                path="/cognitivebiasescomprehensionhandout"
-                element={<CognitiveBiasesComprehensionHandout />}
-              />
-              <Route
-                path="/colonizationperspectiveshandout"
-                element={<ColonizationPerspectivesHandout />}
-              />
-              <Route path="/communityhelpersstudy" element={<CommunityHelpersStudy />} />
-              <Route path="/communityneedssurvey" element={<CommunityNeedsSurvey />} />
-              <Route
-                path="/culturalcelebrationscomparison"
-                element={<CulturalCelebrationsComparison />}
-              />
-              <Route
-                path="/culturaldecisionmakingtraditions"
-                element={<CulturalDecisionMakingTraditions />}
-              />
-              <Route
-                path="/culturalheroescomprehension"
-                element={<CulturalHeroesComprehension />}
-              />
-              <Route
-                path="/culturalidentitydeepdivecomprehension"
-                element={<CulturalIdentityDeepDiveComprehension />}
-              />
-              <Route
-                path="/culturalpracticeexplanation"
-                element={<CulturalPracticeExplanation />}
-              />
-              <Route path="/culturalpreservationessays" element={<CulturalPreservationEssays />} />
-              <Route
-                path="/culturalsafetyclassroomchecklistsalpha"
-                element={<CulturalSafetyClassroomChecklistsAlpha />}
-              />
-              <Route
-                path="/culturalstemassessmentrubric"
-                element={<CulturalStemAssessmentRubric />}
-              />
-              <Route
-                path="/culturalstoriescomprehension"
-                element={<CulturalStoriesComprehension />}
-              />
-              <Route path="/familydatacollection" element={<FamilyDataCollection />} />
-              <Route path="/familytreewriting" element={<FamilyTreeWriting />} />
-              <Route
-                path="/futurevisioningcreativewriting"
-                element={<FutureVisioningCreativeWriting />}
-              />
-              <Route path="/indigenousrightsresearch" element={<IndigenousRightsResearch />} />
-              <Route path="/iwieconomicsmathematics" element={<IwiEconomicsMathematics />} />
-              <Route
-                path="/kaitiakigeneratedmigrationstudenthandout"
-                element={<KaitiakiGeneratedMigrationStudentHandout />}
-              />
-              <Route path="/kaitiakitangafieldjournal" element={<KaitiakitangaFieldJournal />} />
-              <Route path="/kaitiakitangakids" element={<KaitiakitangaKids />} />
-              <Route path="/kumarastorageplacevalue" element={<KumaraStoragePlaceValue />} />
-              <Route
-                path="/maoriastronomynavigationhandout"
-                element={<MaoriAstronomyNavigationHandout />}
-              />
-              <Route
-                path="/maorigeometricpatternshandout"
-                element={<MaoriGeometricPatternsHandout />}
-              />
-              <Route
-                path="/maorinavigationwayfindinghandout"
-                element={<MaoriNavigationWayfindingHandout />}
-              />
-              <Route path="/maraeshapesgeometry" element={<MaraeShapesGeometry />} />
-              <Route
-                path="/mountainnavigationtrigonometry"
-                element={<MountainNavigationTrigonometry />}
-              />
-              <Route path="/natureobservationjournal" element={<NatureObservationJournal />} />
-              <Route path="/oralstorytellinghandout" element={<OralStorytellingHandout />} />
-              <Route path="/physicsoftraditionalgames" element={<PhysicsOfTraditionalGames />} />
-              <Route path="/probabilityhandout" element={<ProbabilityHandout />} />
-              <Route path="/renewableenergytraditional" element={<RenewableEnergyTraditional />} />
-              <Route path="/researchmethodshandout" element={<ResearchMethodsHandout />} />
-              <Route
-                path="/resourcesustainabilitystudy"
-                element={<ResourceSustainabilityStudy />}
-              />
-              <Route path="/scientificmethodhandout" element={<ScientificMethodHandout />} />
-              <Route path="/starnavigationcoordinates" element={<StarNavigationCoordinates />} />
-              <Route
-                path="/sustainablefishingequations"
-                element={<SustainableFishingEquations />}
-              />
-              <Route
-                path="/sustainabletechnologydesignchallenge"
-                element={<SustainableTechnologyDesignChallenge />}
-              />
-              <Route path="/traditionalcountingsystems" element={<TraditionalCountingSystems />} />
-              <Route path="/traditionaldyechemistry" element={<TraditionalDyeChemistry />} />
-              <Route
-                path="/traditionalecologicalindicatorshandout"
-                element={<TraditionalEcologicalIndicatorsHandout />}
-              />
-              <Route
-                path="/traditionalmaterialsscience"
-                element={<TraditionalMaterialsScience />}
-              />
-              <Route
-                path="/traditionalnavigationmathematicshandout"
-                element={<TraditionalNavigationMathematicsHandout />}
-              />
-              <Route path="/treatysettlementstatistics" element={<TreatySettlementStatistics />} />
-              <Route path="/tukutukupatternsmaths" element={<TukutukuPatternsMaths />} />
-              <Route
-                path="/unit2technologydefinitionchallenge"
-                element={<Unit2TechnologyDefinitionChallenge />}
-              />
-              <Route
-                path="/weatherpredictionprobability"
-                element={<WeatherPredictionProbability />}
-              />
-              <Route
-                path="/writerstoolkitconclusionhandout"
-                element={<WritersToolkitConclusionHandout />}
-              />
-              <Route
-                path="/writerstoolkitdictionhandout"
-                element={<WritersToolkitDictionHandout />}
-              />
-              <Route
-                path="/writerstoolkitfluencyhandout"
-                element={<WritersToolkitFluencyHandout />}
-              />
-              <Route path="/writerstoolkithookhandout" element={<WritersToolkitHookHandout />} />
-              <Route
-                path="/writerstoolkitinformstructurehandout"
-                element={<WritersToolkitInformStructureHandout />}
-              />
-              <Route
-                path="/writerstoolkitpeelargumenthandout"
-                element={<WritersToolkitPeelArgumentHandout />}
-              />
-              <Route
-                path="/writerstoolkitrevisionhandout"
-                element={<WritersToolkitRevisionHandout />}
-              />
-              <Route
-                path="/writerstoolkitrhetoricaldeviceshandout"
-                element={<WritersToolkitRhetoricalDevicesHandout />}
-              />
-              <Route
-                path="/writerstoolkitshowdonttellhandout"
-                element={<WritersToolkitShowDontTellHandout />}
-              />
-              <Route
-                path="/writerstoolkitsuspensehandout"
-                element={<WritersToolkitSuspenseHandout />}
-              />
-              <Route path="/writerstoolkittonehandout" element={<WritersToolkitToneHandout />} />
-              <Route path="/year9starterpackalphabuild" element={<Year9StarterPackAlphaBuild />} />
-              <Route
-                path="/year9starterpackessentialskills"
-                element={<Year9StarterPackEssentialSkills />}
-              />
-              <Route
-                path="/youthvapingcomprehensionhandout"
-                element={<YouthVapingComprehensionHandout />}
-              />
-              <Route path="/whakataukiwisdom" element={<WhakataukiWisdom />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/resources" element={<ResourcesEnhanced />} />
-              <Route path="/docs/:page" element={<DocPage />} />
-              <Route path="/resource/:id" element={<ResourceViewer />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/style-guide" element={<StyleGuide />} />
-              <Route path="/mihara" element={<MiharaDashboard />} />
-              <Route path="/unit-plan" element={<UnitPlan />} />
-              <Route path="/lesson-plan" element={<LessonPlan />} />
-              <Route path="/structured-literacy" element={<StructuredLiteracyUnit />} />
-              <Route path="/structured-literacy-units" element={<StructuredLiteracyUnits />} />
-              <Route path="/phonics" element={<PhoneticsCards />} />
-              <Route path="/phonological-awareness" element={<PhonologicalAwareness />} />
-              <Route path="/sight-words" element={<SightWords />} />
-              <Route path="/advanced-morphology" element={<AdvancedMorphology />} />
-              <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
-              <Route path="/year8-reading" element={<Year8ReadingStrategies />} />
-              <Route path="/year8-writing" element={<Year8WritingRevolution />} />
-              <Route path="/year8-critical-literacy" element={<Year8CriticalLiteracy />} />
-              <Route path="/year8-reading-units" element={<Year8ReadingUnits />} />
-              <Route path="/year8-writing-units" element={<Year8WritingUnits />} />
-              <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
-              <Route path="/year8-social-studies-units" element={<Year8SocialStudiesUnits />} />
-              <Route path="/science" element={<ScienceIntegration />} />
-              <Route path="/assessment" element={<AssessmentFramework />} />
-              <Route path="/lessons" element={<LessonsIntegration />} />
-              <Route path="/year10-cultural-geometry" element={<Year10CulturalGeometry />} />
-              <Route path="/cultural-stories" element={<CulturalStories />} />
-              <Route path="/design-thinking" element={<DesignThinking />} />
-              <Route path="/environmental-literacy" element={<EnvironmentalLiteracy />} />
-              <Route path="/government-analysis" element={<GovernmentComponentAnalysis />} />
-              <Route path="/indigenous-wisdom" element={<IndigenousWisdomSynthesis />} />
-              <Route path="/maori-astronomy" element={<MaoriAstronomy />} />
-              <Route
-                path="/maori-battalion"
-                element={
-                  <MaoriBattalionLegacy
-                    culturalAuthenticityScore={0.98}
-                    difficultyLevel="intermediate"
-                    subjectArea="social-studies"
-                    yearLevel="year-9"
-                  />
-                }
-              />
-              <Route path="/te-reo-phonics" element={<TeReoPhonics />} />
-              <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
-              <Route path="/student-dashboard" element={<StudentDashboard />} />
-            </Routes>
-          </Suspense>
-        </div>
-      </Router>
-    </ErrorBoundary>
+            }
+          />
+          <Route path="/te-reo-phonics" element={<TeReoPhonics />} />
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+          <Route path="/student-dashboard" element={<StudentDashboard />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
 }
 

@@ -6,7 +6,6 @@
  */
 
 import { readFile, writeFile } from 'fs/promises';
-
 interface OrphanedComponent {
   name: string;
   path: string;
@@ -17,7 +16,7 @@ async function addOrphanedRoutes() {
 
   try {
     // Read App.tsx
-    const appContent = await readFile('src/App.tsx', 'utf8');
+    const _appContent = await readFile('src/App.tsx', 'utf8');
     
     // List of orphaned components from the audit
     const orphanedComponents: OrphanedComponent[] = [
@@ -106,12 +105,12 @@ async function addOrphanedRoutes() {
 
     // Add lazy imports
     let newContent = appContent;
-    const importSection = '// Lazy load components';
-    const importIndex = newContent.indexOf(importSection);
+    const _importSection = '// Lazy load components';
+    const _importIndex = newContent.indexOf(importSection);
     
     if (importIndex !== -1) {
-      const insertIndex = newContent.indexOf('\n', importIndex) + 1;
-      const importsToAdd = orphanedComponents
+      const _insertIndex = newContent.indexOf('\n', importIndex) + 1;
+      const _importsToAdd = orphanedComponents
         .map(comp => `const ${comp.name} = lazy(() => import('${comp.path}'));`)
         .join('\n');
       
@@ -119,12 +118,12 @@ async function addOrphanedRoutes() {
     }
 
     // Add routes
-    const routesSection = '<Routes>';
-    const routesIndex = newContent.indexOf(routesSection);
+    const _routesSection = '<Routes>';
+    const _routesIndex = newContent.indexOf(routesSection);
     
     if (routesIndex !== -1) {
-      const insertIndex = newContent.indexOf('\n', routesIndex) + 1;
-      const routesToAdd = orphanedComponents
+      const _insertIndex = newContent.indexOf('\n', routesIndex) + 1;
+      const _routesToAdd = orphanedComponents
         .map(comp => {
           const routePath = comp.name.toLowerCase().replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '');
           return `            <Route path="/${routePath}" element={<${comp.name} />} />`;

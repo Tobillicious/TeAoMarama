@@ -137,8 +137,8 @@ connection.
 import fs from 'fs';
 import path from 'path';
 
-const GAMES_PATH = 'te-kete-ako-clean/public/games';
-const COMPONENTS_PATH = 'src/components';
+const _GAMES_PATH = 'te-kete-ako-clean/public/games';
+const _COMPONENTS_PATH = 'src/components';
 
 interface StyleExtraction {
   filePath: string;
@@ -146,15 +146,15 @@ interface StyleExtraction {
   styles: string;
 }
 
-function extractInlineStyles(content: string, filePath: string): StyleExtraction[] {
+function extractInlineStyles(_content: string, _filePath: string): StyleExtraction[] {
   const extractions: StyleExtraction[] = [];
-  const styleRegex = /style\s*=\s*["']([^"']+)["']/g;
+  const _styleRegex = /style\s*=\s*["']([^"']+)["']/g;
   let match;
   let counter = 0;
 
   while ((match = styleRegex.exec(content)) !== null) {
-    const inlineStyles = match[1];
-    const className = `extracted-style-${path.basename(
+    const _inlineStyles = match[1];
+    const _className = `extracted-style-${path.basename(
       filePath,
       path.extname(filePath),
     )}-${counter}`;
@@ -171,14 +171,14 @@ function extractInlineStyles(content: string, filePath: string): StyleExtraction
   return extractions;
 }
 
-function createCSSFile(extractions: StyleExtraction[], outputPath: string): void {
+function createCSSFile(_extractions: StyleExtraction[], _outputPath: string): void {
   if (extractions.length === 0) return;
 
   let cssContent = `/* Extracted inline styles from ${extractions[0].filePath} */\n\n`;
 
   extractions.forEach(({ className, styles }) => {
     // Convert inline styles to CSS
-    const cssRules = styles
+    const _cssRules = styles
       .split(';')
       .filter((rule) => rule.trim())
       .map((rule) => {
@@ -198,7 +198,7 @@ function createCSSFile(extractions: StyleExtraction[], outputPath: string): void
   console.log(`✅ Created CSS file: ${outputPath}`);
 }
 
-function replaceInlineStyles(content: string, extractions: StyleExtraction[]): string {
+function replaceInlineStyles(_content: string, _extractions: StyleExtraction[]): string {
   let modifiedContent = content;
 
   extractions.forEach(({ className }) => {
@@ -214,28 +214,28 @@ async function fixInlineStyles(): Promise<void> {
 
   try {
     // Process HTML files in games directory
-    const gamesFiles = fs.readdirSync(GAMES_PATH);
-    const htmlFiles = gamesFiles.filter((file) => file.endsWith('.html'));
+    const _gamesFiles = fs.readdirSync(GAMES_PATH);
+    const _htmlFiles = gamesFiles.filter((file) => file.endsWith('.html'));
 
     for (const htmlFile of htmlFiles) {
-      const filePath = path.join(GAMES_PATH, htmlFile);
-      const content = fs.readFileSync(filePath, 'utf8');
+      const _filePath = path.join(GAMES_PATH, htmlFile);
+      const _content = fs.readFileSync(filePath, 'utf8');
 
-      const extractions = extractInlineStyles(content, filePath);
+      const _extractions = extractInlineStyles(content, filePath);
 
       if (extractions.length > 0) {
         console.log(`📁 Processing: ${htmlFile} (${extractions.length} inline styles found)`);
 
         // Create CSS file
-        const cssFileName = `${path.basename(htmlFile, '.html')}-extracted.css`;
-        const cssPath = path.join(GAMES_PATH, cssFileName);
+        const _cssFileName = `${path.basename(htmlFile, '.html')}-extracted.css`;
+        const _cssPath = path.join(GAMES_PATH, cssFileName);
         createCSSFile(extractions, cssPath);
 
         // Update HTML file
-        const updatedContent = replaceInlineStyles(content, extractions);
+        const _updatedContent = replaceInlineStyles(content, extractions);
 
         // Add CSS link if not present
-        const finalContent = updatedContent.includes('<link')
+        const _finalContent = updatedContent.includes('<link')
           ? updatedContent
           : updatedContent.replace(
               '</head>',
@@ -248,28 +248,28 @@ async function fixInlineStyles(): Promise<void> {
     }
 
     // Process React components
-    const componentFiles = fs.readdirSync(COMPONENTS_PATH, { recursive: true });
-    const tsxFiles = componentFiles.filter((file: string) => file.endsWith('.tsx'));
+    const _componentFiles = fs.readdirSync(COMPONENTS_PATH, { recursive: true });
+    const _tsxFiles = componentFiles.filter((file: string) => file.endsWith('.tsx'));
 
     for (const tsxFile of tsxFiles) {
-      const filePath = path.join(COMPONENTS_PATH, tsxFile);
-      const content = fs.readFileSync(filePath, 'utf8');
+      const _filePath = path.join(COMPONENTS_PATH, tsxFile);
+      const _content = fs.readFileSync(filePath, 'utf8');
 
-      const extractions = extractInlineStyles(content, filePath);
+      const _extractions = extractInlineStyles(content, filePath);
 
       if (extractions.length > 0) {
         console.log(`📁 Processing: ${tsxFile} (${extractions.length} inline styles found)`);
 
         // Create CSS file
-        const cssFileName = `${path.basename(tsxFile, '.tsx')}-extracted.css`;
-        const cssPath = path.join(path.dirname(filePath), cssFileName);
+        const _cssFileName = `${path.basename(tsxFile, '.tsx')}-extracted.css`;
+        const _cssPath = path.join(path.dirname(filePath), cssFileName);
         createCSSFile(extractions, cssPath);
 
         // Update TSX file
-        const updatedContent = replaceInlineStyles(content, extractions);
+        const _updatedContent = replaceInlineStyles(content, extractions);
 
         // Add CSS import if not present
-        const finalContent = updatedContent.includes('import.*css')
+        const _finalContent = updatedContent.includes('import.*css')
           ? updatedContent
           : updatedContent.replace(
               /import React.*from 'react'/,

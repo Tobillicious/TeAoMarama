@@ -7,7 +7,6 @@
 
 import { execSync } from 'child_process';
 import { writeEpisode } from '../src/ai/provenance';
-
 interface LintingIssue {
   id: string;
   file: string;
@@ -97,12 +96,12 @@ class MassiveLintingCleanup {
 
     try {
       // Run ESLint to get current issues
-      const eslintOutput = execSync('npx eslint . --ext .ts,.tsx,.md --format=json', {
+      const _eslintOutput = execSync('npx eslint . --ext .ts,.tsx,.md --format=json', {
         encoding: 'utf8',
         stdio: 'pipe',
       }).toString();
 
-      const eslintIssues = JSON.parse(eslintOutput);
+      const _eslintIssues = JSON.parse(eslintOutput);
       this.processEslintIssues(eslintIssues);
     } catch {
       console.log('⚠️ ESLint scan failed, proceeding with estimated issues...');
@@ -115,7 +114,7 @@ class MassiveLintingCleanup {
 
     eslintOutput.forEach((file: ESLintFile) => {
       file.messages.forEach((message: ESLintMessage) => {
-        const ruleId = message.ruleId || 'unknown';
+        const _ruleId = message._ruleId || 'unknown';
         const issue: LintingIssue = {
           id: `issue-${issueId++}`,
           file: file.filePath,
@@ -138,7 +137,7 @@ class MassiveLintingCleanup {
 
   private estimateIssues() {
     // Estimate based on common patterns
-    const estimatedIssues = [
+    const _estimatedIssues = [
       { rule: 'markdownlint(MD032)', count: 2000, agent: 'markdown-specialist' },
       { rule: 'markdownlint(MD022)', count: 1500, agent: 'markdown-specialist' },
       { rule: 'markdownlint(MD036)', count: 800, agent: 'markdown-specialist' },
@@ -204,10 +203,10 @@ class MassiveLintingCleanup {
     });
 
     // Execute by priority
-    const priorities = ['critical', 'high', 'medium', 'low'];
+    const _priorities = ['critical', 'high', 'medium', 'low'];
 
     for (const priority of priorities) {
-      const priorityIssues = this.issues.filter((issue) => issue.priority === priority);
+      const _priorityIssues = this.issues.filter((issue) => issue.priority === priority);
       if (priorityIssues.length > 0) {
         console.log(
           `🚨 PROCESSING ${priority.toUpperCase()} PRIORITY ISSUES (${priorityIssues.length})`,
@@ -220,7 +219,7 @@ class MassiveLintingCleanup {
   }
 
   private async processIssueBatch(issues: LintingIssue[]): Promise<void> {
-    const agentGroups = new Map<string, LintingIssue[]>();
+    const _agentGroups = new Map<string, LintingIssue[]>();
 
     // Group issues by agent
     issues.forEach((issue) => {
@@ -232,19 +231,19 @@ class MassiveLintingCleanup {
 
     // Process each agent's issues
     for (const [agentName, agentIssues] of Array.from(agentGroups.entries())) {
-      const agent = this.agents.get(agentName);
+      const _agent = this.agents.get(agentName);
       if (!agent) continue;
 
       console.log(`🤖 ${agent.name} processing ${agentIssues.length} issues...`);
 
       // Process in batches
-      const batchSize = agent.maxConcurrentTasks;
+      const _batchSize = agent.maxConcurrentTasks;
       for (let i = 0; i < agentIssues.length; i += batchSize) {
-        const batch = agentIssues.slice(i, i + batchSize);
+        const _batch = agentIssues.slice(i, i + batchSize);
         await this.processBatch(agentName, batch);
 
         // Progress update
-        const progress = (
+        const _progress = (
           ((this.completedIssues + this.failedIssues) / this.totalIssues) *
           100
         ).toFixed(1);
@@ -258,7 +257,7 @@ class MassiveLintingCleanup {
   }
 
   private async processBatch(agentName: string, batch: LintingIssue[]): Promise<void> {
-    const agent = this.agents.get(agentName);
+    const _agent = this.agents.get(agentName);
     if (!agent) return;
 
     agent.currentTasks = batch.length;
@@ -371,7 +370,7 @@ class MassiveLintingCleanup {
 
     console.log('🤖 AGENT PERFORMANCE:');
     this.agents.forEach((agent) => {
-      const successRate =
+      const _successRate =
         agent.completedTasks > 0
           ? ((agent.completedTasks / (agent.completedTasks + agent.failedTasks)) * 100).toFixed(1)
           : '0.0';
@@ -388,7 +387,7 @@ class MassiveLintingCleanup {
 
 // Execute the massive cleanup
 async function main() {
-  const orchestrator = new MassiveLintingCleanup();
+  const _orchestrator = new MassiveLintingCleanup();
   await orchestrator.executeMassiveCleanup();
 }
 

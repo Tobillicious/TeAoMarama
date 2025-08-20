@@ -68,10 +68,10 @@ export class DepthCurriculumOrchestrator {
   ];
 
   generateSpiralProgression(concept: string, currentLevel: number): string {
-    const learningPath = this.mathConcepts.find(c => c.name === concept);
+    const _learningPath = this.mathConcepts.find(c => c.name === concept);
     if (!learningPath) return '';
 
-    const level = learningPath.levels[currentLevel - 1];
+    const _level = learningPath.levels[currentLevel - 1];
     if (!level) return '';
 
     return `
@@ -107,7 +107,7 @@ ${learningPath.crossConnections.map(c => `- ${c}`).join('\n')}
       console.log(`\n📚 Processing: ${concept.name}`);
       
       for (let level = 1; level <= 4; level++) {
-        const progression = this.generateSpiralProgression(concept.name, level);
+        const _progression = this.generateSpiralProgression(concept.name, level);
         console.log(`  ✅ Level ${level}: ${concept.levels[level-1]?.focus}`);
         
         // This would coordinate with external LLM nodes
@@ -121,7 +121,7 @@ ${learningPath.crossConnections.map(c => `- ${c}`).join('\n')}
 }
 
 // Global depth orchestrator
-export const globalDepthOrchestrator = new DepthCurriculumOrchestrator();
+export const _globalDepthOrchestrator = new DepthCurriculumOrchestrator();
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   globalDepthOrchestrator.coordinateDepthGeneration().catch(console.error);

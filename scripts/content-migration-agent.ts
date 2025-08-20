@@ -14,7 +14,6 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { createHash } from 'crypto';
-
 interface HandoutMetadata {
   id: string;
   title: string;
@@ -65,28 +64,28 @@ class ContentMigrationAgent {
     console.log('📚 CONTENT MIGRATION AGENT ACTIVATING...');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     
-    const startTime = Date.now();
+    const _startTime = Date.now();
 
     try {
       // Phase 1: Discovery and Analysis
       console.log('🔍 Phase 1: Discovering educational resources...');
-      const handoutFiles = await this.discoverHandouts();
+      const _handoutFiles = await this.discoverHandouts();
       this.migrationStats.totalFiles = handoutFiles.length;
       console.log(`   ✅ Found ${handoutFiles.length} handout files`);
 
       // Phase 2: Quality Assessment and Triage
       console.log('📊 Phase 2: Quality assessment and triage...');
-      const prioritizedFiles = await this.assessAndPrioritize(handoutFiles);
+      const _prioritizedFiles = await this.assessAndPrioritize(handoutFiles);
       console.log(`   ✅ Identified ${prioritizedFiles.length} high-value resources`);
 
       // Phase 3: Content Extraction and Conversion
       console.log('⚙️ Phase 3: Content extraction and React conversion...');
-      const extractionResults = await this.extractAndConvert(prioritizedFiles);
+      const _extractionResults = await this.extractAndConvert(prioritizedFiles);
       console.log(`   ✅ Successfully converted ${extractionResults.length} resources`);
 
       // Phase 4: Cultural Validation
       console.log('🌺 Phase 4: Cultural authenticity validation...');
-      const validatedResults = await this.validateCulturalContent(extractionResults);
+      const _validatedResults = await this.validateCulturalContent(extractionResults);
       console.log(`   ✅ Validated ${validatedResults.culturalResources} culturally integrated resources`);
 
       // Phase 5: Integration and Indexing
@@ -99,7 +98,7 @@ class ContentMigrationAgent {
       this.migrationStats.performanceImpact = await this.assessPerformanceImpact();
       console.log(`   ✅ Performance impact: ${this.migrationStats.performanceImpact}`);
 
-      const duration = Date.now() - startTime;
+      const _duration = Date.now() - startTime;
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       console.log(`🎉 CONTENT MIGRATION AGENT SUCCESSFUL! (${duration}ms)`);
       console.log(`   📚 Total resources: ${this.migrationStats.totalFiles}`);
@@ -110,7 +109,7 @@ class ContentMigrationAgent {
       return this.migrationStats;
 
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      const _errorMessage = error instanceof Error ? error.message : 'Unknown error';
       this.migrationStats.errors.push(errorMessage);
       console.error('❌ Content Migration Agent failed:', errorMessage);
       
@@ -120,7 +119,7 @@ class ContentMigrationAgent {
 
   private async discoverHandouts(): Promise<string[]> {
     try {
-      const files = await fs.readdir(this.sourceDir);
+      const _files = await fs.readdir(this.sourceDir);
       return files.filter(file => file.endsWith('.html')).map(file => path.join(this.sourceDir, file));
     } catch (error) {
       throw new Error(`Failed to discover handouts: ${error}`);
@@ -132,7 +131,7 @@ class ContentMigrationAgent {
 
     for (const file of files.slice(0, 50)) { // Process first 50 for performance
       try {
-        const metadata = await this.analyzeHandout(file);
+        const _metadata = await this.analyzeHandout(file);
         assessments.push({ file, score: metadata.qualityScore, metadata });
         this.handoutRegistry.push(metadata);
       } catch (error) {
@@ -142,7 +141,7 @@ class ContentMigrationAgent {
 
     // Sort by quality score and select top 30
     assessments.sort((a, b) => b.score - a.score);
-    const topFiles = assessments.slice(0, 30).map(a => a.file);
+    const _topFiles = assessments.slice(0, 30).map(a => a.file);
     
     this.migrationStats.highQuality = topFiles.length;
     this.migrationStats.culturalContent = assessments.filter(a => a.metadata.culturalIntegration === 'High').length;
@@ -151,13 +150,13 @@ class ContentMigrationAgent {
   }
 
   private async analyzeHandout(filePath: string): Promise<HandoutMetadata> {
-    const content = await fs.readFile(filePath, 'utf-8');
-    const stats = await fs.stat(filePath);
-    const filename = path.basename(filePath, '.html');
+    const _content = await fs.readFile(filePath, 'utf-8');
+    const _stats = await fs.stat(filePath);
+    const _filename = path.basename(filePath, '.html');
     
     // Extract title
-    const titleMatch = content.match(/<title>([^<]+)</title>/);
-    const title = titleMatch ? titleMatch[1].replace(' | Te Kete Ako', '') : filename.replace(/-/g, ' ');
+    const _titleMatch = content.match(/<title>([^<]+)</title>/);
+    const _title = titleMatch ? titleMatch[1].replace(' | Te Kete Ako', '') : filename.replace(/-/g, ' ');
 
     // Analyze content for quality indicators
     let qualityScore = 0;
@@ -170,8 +169,8 @@ class ContentMigrationAgent {
     
     // Cultural integration indicators
     let culturalIntegration: 'High' | 'Medium' | 'Low' = 'Low';
-    const culturalKeywords = ['māori', 'maori', 'te reo', 'tikanga', 'whakapapa', 'iwi', 'whānau', 'cultural'];
-    const culturalMatches = culturalKeywords.filter(keyword => 
+    const _culturalKeywords = ['māori', 'maori', 'te reo', 'tikanga', 'whakapapa', 'iwi', 'whānau', 'cultural'];
+    const _culturalMatches = culturalKeywords.filter(keyword => 
       content.toLowerCase().includes(keyword)).length;
     
     if (culturalMatches >= 3) {
@@ -191,11 +190,11 @@ class ContentMigrationAgent {
     else if (culturalIntegration === 'High') subject = 'Cultural';
 
     // Year level detection
-    const yearMatch = content.match(/[Yy]ear\\s*(\\d+)/);
-    const yearLevel = yearMatch ? `Year ${yearMatch[1]}` : 'Mixed';
+    const _yearMatch = content.match(/[Yy]ear\\s*(\\d+)/);
+    const _yearLevel = yearMatch ? `Year ${yearMatch[1]}` : 'Mixed';
 
     // Print readiness check
-    const printReady = content.includes('page') || content.includes('print') || content.includes('A4');
+    const _printReady = content.includes('page') || content.includes('print') || content.includes('A4');
 
     return {
       id: createHash('md5').update(filePath).digest('hex').substring(0, 8),
@@ -213,7 +212,7 @@ class ContentMigrationAgent {
   }
 
   private extractCurriculumLinks(content: string): string[] {
-    const curriculumPatterns = [
+    const _curriculumPatterns = [
       /NZC[\\s-]*(\\d+[.\\d]*)/gi,
       /curriculum\\s+level\\s*(\\d+)/gi,
       /learning\\s+area[s]?:?\\s*([^<.]+)/gi
@@ -221,7 +220,7 @@ class ContentMigrationAgent {
 
     const links: string[] = [];
     curriculumPatterns.forEach(pattern => {
-      const matches = content.match(pattern);
+      const _matches = content.match(pattern);
       if (matches) links.push(...matches.map(m => m.trim()));
     });
 
@@ -230,16 +229,16 @@ class ContentMigrationAgent {
 
   private extractKeywords(content: string): string[] {
     // Extract from meta keywords and content analysis
-    const metaMatch = content.match(/<meta name="keywords" content="([^"]+)"/);
+    const _metaMatch = content.match(/<meta name="keywords" content="([^"]+)"/);
     if (metaMatch) {
       return metaMatch[1].split(',').map(k => k.trim()).slice(0, 10);
     }
 
     // Fallback: extract from headings and strong text
-    const headingMatches = content.match(/<h[1-6][^>]*>([^<]+)</h[1-6]>/gi) || [];
-    const strongMatches = content.match(/<strong[^>]*>([^<]+)</strong>/gi) || [];
+    const _headingMatches = content.match(/<h[1-6][^>]*>([^<]+)</h[1-6]>/gi) || [];
+    const _strongMatches = content.match(/<strong[^>]*>([^<]+)</strong>/gi) || [];
     
-    const keywords = [...headingMatches, ...strongMatches]
+    const _keywords = [...headingMatches, ...strongMatches]
       .map(match => match.replace(/<[^>]+>/g, '').trim())
       .filter(text => text.length > 3 && text.length < 30)
       .slice(0, 8);
@@ -252,13 +251,13 @@ class ContentMigrationAgent {
 
     for (const file of files) {
       try {
-        const content = await fs.readFile(file, 'utf-8');
-        const metadata = this.handoutRegistry.find(h => h.id === createHash('md5').update(file).digest('hex').substring(0, 8));
+        const _content = await fs.readFile(file, 'utf-8');
+        const _metadata = this.handoutRegistry.find(h => h.id === createHash('md5').update(file).digest('hex').substring(0, 8));
         
         if (!metadata) continue;
 
-        const culturalElements = this.extractCulturalElements(content);
-        const reactComponent = this.generateReactComponent(content, metadata);
+        const _culturalElements = this.extractCulturalElements(content);
+        const _reactComponent = this.generateReactComponent(content, metadata);
         
         results.push({
           content,
@@ -280,11 +279,11 @@ class ContentMigrationAgent {
     const elements: string[] = [];
     
     // Te Reo Māori text
-    const teReoMatches = content.match(/\\b[A-ZĀĒĪŌŪ][a-zāēīōūäëïöüÿ]*(?:\\s+[A-ZĀĒĪŌŪ][a-zāēīōūäëïöüÿ]*){0,5}\\b/g) || [];
+    const _teReoMatches = content.match(/\\b[A-ZĀĒĪŌŪ][a-zāēīōūäëïöüÿ]*(?:\\s+[A-ZĀĒĪŌŪ][a-zāēīōūäëïöüÿ]*){0,5}\\b/g) || [];
     elements.push(...teReoMatches.slice(0, 10));
 
     // Cultural concepts
-    const culturalConcepts = ['whakapapa', 'tikanga', 'mātauranga', 'whānau', 'iwi', 'hapū', 'marae', 'pōwhiri'];
+    const _culturalConcepts = ['whakapapa', 'tikanga', 'mātauranga', 'whānau', 'iwi', 'hapū', 'marae', 'pōwhiri'];
     culturalConcepts.forEach(concept => {
       if (content.toLowerCase().includes(concept)) {
         elements.push(concept);
@@ -295,8 +294,8 @@ class ContentMigrationAgent {
   }
 
   private generateReactComponent(content: string, metadata: HandoutMetadata): string {
-    const componentName = this.sanitizeComponentName(metadata.title);
-    const contentBody = this.extractContentBody(content);
+    const _componentName = this.sanitizeComponentName(metadata.title);
+    const _contentBody = this.extractContentBody(content);
     
     return `import React from 'react';
 import './MigratedHandout.css';
@@ -354,16 +353,16 @@ export const metadata = ${JSON.stringify(metadata, null, 2)};`;\n  }
 
   private extractContentBody(content: string): string {
     // Extract main content, removing navigation and footer
-    let body = content.replace(/<header[^>]*>.*?<\\/header>/gis, '');
-    body = body.replace(/<nav[^>]*>.*?<\\/nav>/gis, '');
-    body = body.replace(/<footer[^>]*>.*?<\\/footer>/gis, '');
-    body = body.replace(/<script[^>]*>.*?<\\/script>/gis, '');
+    let body = content.replace(/<header[^>]*>.*?<\/header>/gis, '');
+    body = body.replace(/<nav[^>]*>.*?<\/nav>/gis, '');
+    body = body.replace(/<footer[^>]*>.*?<\/footer>/gis, '');
+    body = body.replace(/<script[^>]*>.*?<\/script>/gis, '');
     body = body.replace(/<!--[\\s\\S]*?-->/g, '');
     
     // Extract just the main content area
-    const mainMatch = body.match(/<main[^>]*>(.*?)<\\/main>/is) || 
-                     body.match(/<div[^>]*class="[^"]*content[^"]*"[^>]*>(.*?)<\\/div>/is) ||
-                     body.match(/<body[^>]*>(.*?)<\\/body>/is);
+    const _mainMatch = body.match(/<main[^>]*>(.*?)<\/main>/is) || 
+                     body.match(/<div[^>]*class="[^"]*content[^"]*"[^>]*>(.*?)<\/div>/is) ||
+                     body.match(/<body[^>]*>(.*?)<\/body>/is);
     
     return mainMatch ? mainMatch[1].trim() : body;
   }
@@ -387,22 +386,22 @@ export const metadata = ${JSON.stringify(metadata, null, 2)};`;\n  }
 
     // Generate React components
     for (const result of results) {
-      const componentName = this.sanitizeComponentName(result.metadata.title);
-      const componentFile = path.join(this.targetDir, `${componentName}.tsx`);
+      const _componentName = this.sanitizeComponentName(result.metadata.title);
+      const _componentFile = path.join(this.targetDir, `${componentName}.tsx`);
       
       await fs.writeFile(componentFile, result.reactComponent, 'utf-8');
     }
 
     // Generate index file for lazy loading
-    const indexContent = this.generateIndexFile(results);
+    const _indexContent = this.generateIndexFile(results);
     await fs.writeFile(path.join(this.targetDir, 'index.ts'), indexContent, 'utf-8');
 
     // Generate CSS file
-    const cssContent = this.generateHandoutCSS();
+    const _cssContent = this.generateHandoutCSS();
     await fs.writeFile(path.join(this.targetDir, 'MigratedHandout.css'), cssContent, 'utf-8');
 
     // Update resource index
-    const resourceIndex = {
+    const _resourceIndex = {
       timestamp: new Date().toISOString(),
       totalResources: results.length,
       highQualityCount: this.migrationStats.highQuality,
@@ -415,12 +414,12 @@ export const metadata = ${JSON.stringify(metadata, null, 2)};`;\n  }
   }
 
   private generateIndexFile(results: ContentExtractionResult[]): string {
-    const imports = results.map(result => {
+    const _imports = results.map(result => {
       const componentName = this.sanitizeComponentName(result.metadata.title);
       return `const ${componentName} = React.lazy(() => import('./${componentName}'));`;
     });
 
-    const exports = results.map(result => {
+    const _exports = results.map(result => {
       const componentName = this.sanitizeComponentName(result.metadata.title);
       return `  '${result.metadata.id}': { component: ${componentName}, metadata: ${componentName}_metadata },`;
     });
@@ -430,15 +429,15 @@ ${imports.join('\\n')}
 
 // Import metadata
 ${results.map(result => {
-  const componentName = this.sanitizeComponentName(result.metadata.title);
+  const _componentName = this.sanitizeComponentName(result.metadata.title);
   return `import { metadata as ${componentName}_metadata } from './${componentName}';`;
 }).join('\\n')}
 
-export const MigratedHandouts = {
+export const _MigratedHandouts = {
 ${exports.join('\\n')}
 };
 
-export const HandoutIndex = [
+export const _HandoutIndex = [
 ${results.map(r => `  '${r.metadata.id}',`).join('\\n')}
 ];
 
@@ -581,7 +580,7 @@ export { default as MigratedHandoutViewer } from './MigratedHandoutViewer';`;\n 
 
   private async assessPerformanceImpact(): Promise<string> {
     try {
-      const targetStats = await fs.stat(this.targetDir);
+      const _targetStats = await fs.stat(this.targetDir);
       // This is a simplified assessment - in production you'd measure actual bundle impact
       return 'Optimized (Lazy-loaded components, zero initial bundle impact)';
     } catch (error) {
@@ -592,7 +591,7 @@ export { default as MigratedHandoutViewer } from './MigratedHandoutViewer';`;\n 
 
 // Agent Execution
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const agent = new ContentMigrationAgent();
+  const _agent = new ContentMigrationAgent();
   agent.execute()
     .then(stats => {
       if (stats.errors.length === 0) {

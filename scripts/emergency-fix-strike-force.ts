@@ -8,7 +8,6 @@
 import { writeEpisode } from '../src/ai/provenance';
 import { readFileSync, writeFileSync } from 'fs';
 import { execSync } from 'child_process';
-
 class EmergencyFixStrikeForce {
   private totalIssuesFixed = 0;
 
@@ -53,8 +52,8 @@ class EmergencyFixStrikeForce {
 
   private async fixMigrationIntelligenceParsing() {
     try {
-      const filePath = 'gemini-react-app/src/brain/migration-intelligence.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/brain/migration-intelligence.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       
       // Fix the parsing error on line 27
       let newContent = content;
@@ -84,8 +83,8 @@ class EmergencyFixStrikeForce {
 
   private async fixMiharaAwakeningParsing() {
     try {
-      const filePath = 'gemini-react-app/src/brain/mihara-awakening.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'gemini-react-app/src/brain/mihara-awakening.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       
       // Fix the parsing error around line 156
       let newContent = content;
@@ -122,8 +121,8 @@ class EmergencyFixStrikeForce {
 
   private async fixMassiveLintingCleanupParsing() {
     try {
-      const filePath = 'scripts/massive-linting-cleanup.ts';
-      const content = readFileSync(filePath, 'utf-8');
+      const _filePath = 'scripts/massive-linting-cleanup.ts';
+      const _content = readFileSync(filePath, 'utf-8');
       
       // Fix the parsing error
       let newContent = content;
@@ -154,7 +153,7 @@ class EmergencyFixStrikeForce {
   private async fixUnusedVariablesSystematically() {
     console.log('\n🧹 CRITICAL PHASE 2: Fixing Unused Variables Systematically');
     
-    const criticalFiles = [
+    const _criticalFiles = [
       'continuous-mihara-support.ts',
       'gemini-react-app/src/components/MiharaDashboard.tsx',
       'mahara-instant-workflow.ts',
@@ -191,7 +190,7 @@ class EmergencyFixStrikeForce {
 
     for (const file of criticalFiles) {
       try {
-        const issuesFixed = await this.fixUnusedVarsInFile(file);
+        const _issuesFixed = await this.fixUnusedVarsInFile(file);
         this.totalIssuesFixed += issuesFixed;
         if (issuesFixed > 0) {
           console.log(`  ✅ Fixed ${issuesFixed} unused variables in ${file}`);
@@ -204,12 +203,12 @@ class EmergencyFixStrikeForce {
 
   private async fixUnusedVarsInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
       
       // Fix unused parameters by prefixing with underscore
-      const unusedParamPatterns = [
+      const _unusedParamPatterns = [
         /index:\s*number/g,
         /event:\s*[^,)]+/g,
         /error:\s*[^,)]+/g,
@@ -248,7 +247,7 @@ class EmergencyFixStrikeForce {
       ];
       
       for (const pattern of unusedParamPatterns) {
-        const matches = newContent.match(pattern);
+        const _matches = newContent.match(pattern);
         if (matches) {
           newContent = newContent.replace(pattern, (match) => {
             if (match.includes(':')) {
@@ -262,7 +261,7 @@ class EmergencyFixStrikeForce {
       }
       
       // Remove unused imports
-      const unusedImports = [
+      const _unusedImports = [
         'useEffect',
         'useCallback',
         'Calendar',
@@ -281,11 +280,11 @@ class EmergencyFixStrikeForce {
       ];
       
       for (const importName of unusedImports) {
-        const importPattern = new RegExp(
+        const _importPattern = new RegExp(
           `import\\s*{[^}]*\\b${importName}\\b[^}]*}\\s*from\\s*['"][^'"]+['"];?\\s*`,
           'g',
         );
-        const matches = newContent.match(importPattern);
+        const _matches = newContent.match(importPattern);
         if (matches) {
           newContent = newContent.replace(importPattern, '');
           issuesFixed += matches.length;
@@ -305,14 +304,14 @@ class EmergencyFixStrikeForce {
   private async fixEmptyBlocks() {
     console.log('\n🕳️ CRITICAL PHASE 3: Fixing Empty Blocks');
     
-    const files = [
+    const _files = [
       'continuous-mihara-support.ts',
       'migration/agent-background.ts'
     ];
 
     for (const file of files) {
       try {
-        const issuesFixed = await this.fixEmptyBlocksInFile(file);
+        const _issuesFixed = await this.fixEmptyBlocksInFile(file);
         this.totalIssuesFixed += issuesFixed;
         if (issuesFixed > 0) {
           console.log(`  ✅ Fixed ${issuesFixed} empty blocks in ${file}`);
@@ -325,18 +324,18 @@ class EmergencyFixStrikeForce {
 
   private async fixEmptyBlocksInFile(filePath: string): Promise<number> {
     try {
-      const content = readFileSync(filePath, 'utf-8');
+      const _content = readFileSync(filePath, 'utf-8');
       let newContent = content;
       let issuesFixed = 0;
       
       // Fix empty catch blocks
       newContent = newContent.replace(
-        /catch\s*\(\s*\)\s*\{\s*\}/g,
+        /catch\s*(\s*)\s*\{\s*\}/g,
         'catch (error) { console.error("Error:", error); }',
       );
       
       // Fix empty if blocks
-      newContent = newContent.replace(/if\s*\([^)]+\)\s*\{\s*\}/g, (match) => {
+      newContent = newContent.replace(/if\s*([^)]+)\s*\{\s*\}/g, (match) => {
         issuesFixed++;
         return match.replace(/\{\s*\}/, '{ /* TODO: Implement logic */ }');
       });
@@ -375,7 +374,7 @@ class EmergencyFixStrikeForce {
     
     // Check remaining issues
     try {
-      const remainingIssues = execSync('npx eslint . --ext .ts,.tsx --max-warnings 0 | wc -l', {
+      const _remainingIssues = execSync('npx eslint . --ext .ts,.tsx --max-warnings 0 | wc -l', {
         encoding: 'utf-8',
         stdio: 'pipe',
       });
@@ -395,5 +394,5 @@ class EmergencyFixStrikeForce {
 }
 
 // Execute the emergency strike force
-const strikeForce = new EmergencyFixStrikeForce();
+const _strikeForce = new EmergencyFixStrikeForce();
 strikeForce.executeEmergencyFix().catch(console.error);

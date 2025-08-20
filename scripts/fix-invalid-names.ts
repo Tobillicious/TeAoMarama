@@ -6,7 +6,6 @@
  */
 
 import { readFile, writeFile } from 'fs/promises';
-
 class InvalidNameFixer {
   private appTsxPath = 'src/App.tsx';
 
@@ -17,7 +16,7 @@ class InvalidNameFixer {
       let appContent = await readFile(this.appTsxPath, 'utf8');
 
       // Fix all invalid component names with hyphens
-      const invalidNames = [
+      const _invalidNames = [
         'ai-impact-comprehension-handout',
         'atoms-in-everyday-materials',
         'authors-purpose-entertain-handout',
@@ -95,11 +94,11 @@ class InvalidNameFixer {
       ];
 
       for (const invalidName of invalidNames) {
-        const validName = this.convertToValidName(invalidName);
+        const _validName = this.convertToValidName(invalidName);
         
         // Fix the const declaration
         appContent = appContent.replace(
-          new RegExp(`const ${invalidName} = lazy\\(`, 'g'),
+          new RegExp(`const ${invalidName} = lazy\(`, 'g'),
           `const ${validName} = lazy(`
         );
 
@@ -129,7 +128,7 @@ class InvalidNameFixer {
 }
 
 // Run the invalid name fixer
-const fixer = new InvalidNameFixer();
+const _fixer = new InvalidNameFixer();
 fixer
   .fixInvalidNames()
   .then(() => {

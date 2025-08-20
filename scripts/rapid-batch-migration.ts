@@ -7,9 +7,8 @@
 import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
 import { basename, join } from 'path';
-
-const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const TARGET_PATH = 'src/components/educational/handouts';
+const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
+const _TARGET_PATH = 'src/components/educational/handouts';
 
 interface HandoutData {
   title: string;
@@ -20,23 +19,23 @@ interface HandoutData {
   yearLevel: string;
 }
 
-async function extractHandoutData(filePath: string): Promise<HandoutData> {
-  const html = await readFile(filePath, 'utf-8');
-  const dom = new JSDOM(html);
-  const document = dom.window.document;
+async function extractHandoutData(_filePath: string): Promise<HandoutData> {
+  const _html = await readFile(filePath, 'utf-8');
+  const _dom = new JSDOM(html);
+  const _document = dom.window._document;
 
   // Extract title
-  const titleElement = document.querySelector('h1, .page-title, title');
-  const title = titleElement?.textContent?.trim() || basename(filePath, '.html');
+  const _titleElement = document.querySelector('h1, .page-title, title');
+  const _title = titleElement?.textContent?.trim() || basename(filePath, '.html');
 
   // Extract main content
-  const contentArea = document.querySelector('.content-area, main, .main-content');
-  const content = contentArea?.textContent?.trim() || '';
+  const _contentArea = document.querySelector('.content-area, main, .main-content');
+  const _content = contentArea?.textContent?.trim() || '';
 
   // Determine cultural themes and subject
-  const culturalThemes = extractCulturalThemes(content, title);
-  const subject = determineSubject(content, title);
-  const yearLevel = determineYearLevel(content, title);
+  const _culturalThemes = extractCulturalThemes(content, title);
+  const _subject = determineSubject(content, title);
+  const _yearLevel = determineYearLevel(content, title);
 
   return {
     title,
@@ -48,9 +47,9 @@ async function extractHandoutData(filePath: string): Promise<HandoutData> {
   };
 }
 
-function extractCulturalThemes(content: string, title: string): string[] {
+function extractCulturalThemes(_content: string, _title: string): string[] {
   const themes: string[] = [];
-  const text = `${title} ${content}`.toLowerCase();
+  const _text = `${title} ${content}`.toLowerCase();
 
   if (text.includes('māori') || text.includes('maori')) themes.push('Māori Culture');
   if (text.includes('te reo') || text.includes('te reo māori')) themes.push('Te Reo Māori');
@@ -65,8 +64,8 @@ function extractCulturalThemes(content: string, title: string): string[] {
   return themes.length > 0 ? themes : ['Cultural Integration'];
 }
 
-function determineSubject(content: string, title: string): string {
-  const text = `${title} ${content}`.toLowerCase();
+function determineSubject(_content: string, _title: string): string {
+  const _text = `${title} ${content}`.toLowerCase();
 
   if (text.includes('math') || text.includes('algebra') || text.includes('geometry'))
     return 'Mathematics';
@@ -83,8 +82,8 @@ function determineSubject(content: string, title: string): string {
   return 'Cross-Curricular';
 }
 
-function determineYearLevel(content: string, title: string): string {
-  const text = `${title} ${content}`.toLowerCase();
+function determineYearLevel(_content: string, _title: string): string {
+  const _text = `${title} ${content}`.toLowerCase();
 
   if (text.includes('year 7') || text.includes('year7')) return 'Year 7';
   if (text.includes('year 8') || text.includes('year8')) return 'Year 8';
@@ -97,16 +96,16 @@ function determineYearLevel(content: string, title: string): string {
   return 'Year 8'; // Default for ERO Hui
 }
 
-function generateComponentName(filename: string): string {
+function generateComponentName(_filename: string): string {
   return filename
     .replace(/[-_]/g, ' ')
     .replace(/\b\w/g, (l) => l.toUpperCase())
     .replace(/\s/g, '');
 }
 
-function generateReactComponent(handout: HandoutData): string {
-  const componentName = generateComponentName(handout.filename);
-  const culturalClass = handout.culturalThemes.length > 0 ? 'cultural-focus' : '';
+function generateReactComponent(_handout: HandoutData): string {
+  const _componentName = generateComponentName(handout.filename);
+  const _culturalClass = handout.culturalThemes.length > 0 ? 'cultural-focus' : '';
 
   return `import React from 'react';
 import { Card } from '../../ui/Card';
@@ -166,9 +165,9 @@ export const ${componentName}: React.FC<${componentName}Props> = ({ className = 
 `;
 }
 
-function generateCSS(handout: HandoutData): string {
-  const componentName = generateComponentName(handout.filename);
-  const hasCulturalThemes = handout.culturalThemes.length > 0;
+function generateCSS(_handout: HandoutData): string {
+  const _componentName = generateComponentName(handout.filename);
+  const _hasCulturalThemes = handout.culturalThemes.length > 0;
 
   return `/* ${componentName} Handout - Te Kete Ako Beauty Patterns */
 
@@ -296,21 +295,21 @@ function generateCSS(handout: HandoutData): string {
 `;
 }
 
-async function migrateHandout(filePath: string): Promise<void> {
+async function migrateHandout(_filePath: string): Promise<void> {
   try {
     console.log(`🔄 Migrating: ${basename(filePath)}`);
 
-    const handout = await extractHandoutData(filePath);
-    const componentName = generateComponentName(handout.filename);
+    const _handout = await extractHandoutData(filePath);
+    const _componentName = generateComponentName(handout.filename);
 
     // Generate React component
-    const componentCode = generateReactComponent(handout);
-    const componentPath = join(TARGET_PATH, `${componentName}.tsx`);
+    const _componentCode = generateReactComponent(handout);
+    const _componentPath = join(TARGET_PATH, `${componentName}.tsx`);
     await writeFile(componentPath, componentCode);
 
     // Generate CSS
-    const cssCode = generateCSS(handout);
-    const cssPath = join(TARGET_PATH, `${componentName}.css`);
+    const _cssCode = generateCSS(handout);
+    const _cssPath = join(TARGET_PATH, `${componentName}.css`);
     await writeFile(cssPath, cssCode);
 
     console.log(`✅ Migrated: ${componentName} (${handout.culturalThemes.join(', ')})`);
@@ -327,8 +326,8 @@ async function main() {
     await mkdir(TARGET_PATH, { recursive: true });
 
     // Get first 20 handouts for rapid processing
-    const files = await readdir(TE_KETE_HANDOUTS_PATH);
-    const handoutFiles = files
+    const _files = await readdir(TE_KETE_HANDOUTS_PATH);
+    const _handoutFiles = files
       .filter((file) => file.endsWith('.html') && !file.startsWith('.'))
       .slice(0, 20);
 

@@ -8,7 +8,6 @@
 import axios from 'axios';
 import { writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
-
 interface DeepSeekRequest {
   model: string;
   messages: Array<{
@@ -62,7 +61,7 @@ Context: ${culturalContext}`
     };
 
     try {
-      const response = await axios.post(
+      const _response = await axios.post(
         `${this.baseUrl}/v1/chat/completions`,
         request,
         {
@@ -88,14 +87,14 @@ Context: ${culturalContext}`
   ): Promise<void> {
     console.log(`🎯 Generating ${type} for ${subject} Year ${yearLevel}: ${topic}`);
 
-    const culturalContext = `
+    const _culturalContext = `
 This content is for ${yearLevel} ${subject} students in Aotearoa New Zealand.
 Must align with New Zealand Curriculum.
 Include appropriate cultural connections to Te Ao Māori.
 Ensure content is culturally safe and authentic.
 `;
 
-    const prompt = `Create a DEPTH-FOCUSED ${type} for ${subject} Year ${yearLevel} on the topic: ${topic}
+    const _prompt = `Create a DEPTH-FOCUSED ${type} for ${subject} Year ${yearLevel} on the topic: ${topic}
 
 CRITICAL: IMPLEMENT DEPTH OVER BREADTH PARADIGM
 - Create DEEP understanding rather than surface coverage
@@ -125,19 +124,19 @@ Include:
 Format as markdown with depth-focused structure.`;
 
     try {
-      const content = await this.generateContent(prompt, culturalContext);
+      const _content = await this.generateContent(prompt, culturalContext);
       
       // Create directory if it doesn't exist
-      const baseDir = join(process.cwd(), 'migration', 'recovered_resources', 'deepseek-generated');
+      const _baseDir = join(process.cwd(), 'migration', 'recovered_resources', 'deepseek-generated');
       if (!existsSync(baseDir)) {
         mkdirSync(baseDir, { recursive: true });
       }
 
-      const filename = `${type}_${subject}_Y${yearLevel}_${topic.replace(/\s+/g, '_').toLowerCase()}.md`;
-      const filepath = join(baseDir, filename);
+      const _filename = `${type}_${subject}_Y${yearLevel}_${topic.replace(/\s+/g, '_').toLowerCase()}.md`;
+      const _filepath = join(baseDir, filename);
 
       // Add metadata header
-      const metadata = `---
+      const _metadata = `---
 title: "${topic} - Year ${yearLevel} ${subject}"
 type: ${type}
 subject: ${subject}
@@ -176,13 +175,13 @@ status: draft
 
 // Main execution
 async function main() {
-  const agent = new DeepSeekAgent();
+  const _agent = new DeepSeekAgent();
   
   console.log('🚀 DeepSeek Content Generator Starting...');
   console.log('🛡️ Cultural safety protocols active');
   
   // Generate a batch of educational content
-  const contentQueue = [
+  const _contentQueue = [
     { type: 'handout', subject: 'Mathematics', yearLevel: '8', topic: 'Ratios and Proportions in Traditional Māori Architecture' },
     { type: 'lesson', subject: 'Science', yearLevel: '9', topic: 'Native Plant Adaptation in Aotearoa Ecosystems' },
     { type: 'activity', subject: 'Social Studies', yearLevel: '10', topic: 'Economic Systems in Pre-Colonial Aotearoa' },

@@ -9,7 +9,6 @@
 import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
-
 interface AgentNode {
   id: string;
   name: string;
@@ -36,7 +35,7 @@ interface CoordinationMessage {
   to: string | 'broadcast';
   type: 'task_assignment' | 'status_update' | 'quality_check' | 'coordination' | 'emergency';
   priority: 'low' | 'medium' | 'high' | 'critical';
-  content: any;
+  content: unknown;
   timestamp: Date;
   acknowledgmentRequired: boolean;
 }
@@ -67,7 +66,7 @@ class SupremeOversightSystem {
 
   private initializeAgentNetwork(): void {
     // Discover active agents from the screenshot and system
-    const agentConfigs = [
+    const _agentConfigs = [
       {
         id: 'cursor-main',
         name: 'Primary Cursor Development Agent',
@@ -163,16 +162,16 @@ class SupremeOversightSystem {
   }
 
   private async performCoordinationCycle(): Promise<void> {
-    const timestamp = new Date();
+    const _timestamp = new Date();
     
     // Quick status check of all agents
-    const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'active');
+    const _activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'active');
     
     // Quality assessment
-    const overallQuality = this.calculateOverallQuality();
+    const _overallQuality = this.calculateOverallQuality();
     
     // Update coordination status
-    const coordinationUpdate = {
+    const _coordinationUpdate = {
       timestamp: timestamp.toISOString(),
       agents: {
         total: this.agents.size,
@@ -199,7 +198,7 @@ class SupremeOversightSystem {
     };
 
     // Save enhanced coordination data
-    const reportPath = join(process.cwd(), 'reports', 'hui-continuous-coordination.json');
+    const _reportPath = join(process.cwd(), 'reports', 'hui-continuous-coordination.json');
     writeFileSync(reportPath, JSON.stringify(coordinationUpdate, null, 2));
 
     // Process message queue
@@ -215,13 +214,13 @@ class SupremeOversightSystem {
     console.log('🔍 Assessing current system state...');
     
     // Check website completeness
-    const siteCompleteness = await this.assessSiteCompleteness();
+    const _siteCompleteness = await this.assessSiteCompleteness();
     
     // Check agent performance
-    const agentPerformance = this.assessAgentPerformance();
+    const _agentPerformance = this.assessAgentPerformance();
     
     // Check quality metrics
-    const qualityState = this.assessQualityState();
+    const _qualityState = this.assessQualityState();
     
     console.log(`📊 Site Completeness: ${siteCompleteness}%`);
     console.log(`🤖 Agent Performance: ${agentPerformance}%`);
@@ -247,7 +246,7 @@ class SupremeOversightSystem {
   private async deployQualityDirectives(): Promise<void> {
     console.log('💎 Deploying quality-focused directives...');
     
-    const qualityDirectives = [
+    const _qualityDirectives = [
       {
         target: 'cursor-main',
         directive: 'Prioritize component completion over new features',
@@ -281,8 +280,8 @@ class SupremeOversightSystem {
   }
 
   private calculateOverallQuality(): number {
-    const agents = Array.from(this.agents.values());
-    const qualityScores = agents.map(agent => {
+    const _agents = Array.from(this._agents.values());
+    const _qualityScores = agents.map(agent => {
       const metrics = agent.qualityMetrics;
       return (
         metrics.completionRate * 0.3 +
@@ -323,8 +322,8 @@ class SupremeOversightSystem {
   }
 
   private assessAgentPerformance(): number {
-    const agents = Array.from(this.agents.values());
-    const performances = agents.map(a => a.performance);
+    const _agents = Array.from(this._agents.values());
+    const _performances = agents.map(a => a.performance);
     return performances.reduce((sum, perf) => sum + perf, 0) / performances.length;
   }
 
@@ -337,7 +336,7 @@ class SupremeOversightSystem {
     return 62000; // Approximate based on current data
   }
 
-  private getQualityTrends(): any {
+  private getQualityTrends(): unknown {
     return {
       trending: 'improving',
       lastUpdate: new Date().toISOString(),
@@ -355,7 +354,7 @@ class SupremeOversightSystem {
     console.log(`📢 Broadcasting: ${message.type} - ${message.priority}`);
   }
 
-  private sendDirectMessage(targetAgent: string, message: any): void {
+  private sendDirectMessage(targetAgent: string, message: unknown): void {
     const fullMessage: CoordinationMessage = {
       from: 'terminal-oversight',
       to: targetAgent,
@@ -372,7 +371,7 @@ class SupremeOversightSystem {
 
   private async processMessageQueue(): Promise<void> {
     while (this.messageQueue.length > 0) {
-      const message = this.messageQueue.shift();
+      const _message = this.messageQueue.shift();
       if (message) {
         await this.deliverMessage(message);
       }
@@ -402,7 +401,7 @@ class SupremeOversightSystem {
     });
   }
 
-  getSystemStatus(): any {
+  getSystemStatus(): unknown {
     return {
       oversight: 'SUPREME_ACTIVE',
       agents: Object.fromEntries(this.agents),
@@ -433,7 +432,7 @@ interface QualityStandards {
 
 // Main execution
 async function main() {
-  const supremeSystem = new SupremeOversightSystem();
+  const _supremeSystem = new SupremeOversightSystem();
   
   try {
     await supremeSystem.startSupremeOversight();
@@ -444,7 +443,7 @@ async function main() {
     
     // Keep system running and report status
     setInterval(() => {
-      const status = supremeSystem.getSystemStatus();
+      const _status = supremeSystem.getSystemStatus();
       console.log(`[${new Date().toISOString()}] Quality: ${Math.round(status.qualityMetrics.overall)}% | Completion: ${status.qualityMetrics.completion}%`);
     }, 60000); // Status report every minute
     

@@ -19,13 +19,13 @@ interface Args {
 }
 
 function parseArgs(): Args {
-  const args = new Map<string, string>();
+  const _args = new Map<string, string>();
   for (let i = 2; i < process.argv.length; i += 1) {
     const [k, v] = process.argv[i].split('=');
     if (v === undefined) {
       // Support "--count 1000" style
-      const key = process.argv[i];
-      const next = process.argv[i + 1];
+      const _key = process.argv[i];
+      const _next = process.argv[i + 1];
       if (key.startsWith('--') && next && !next.startsWith('--')) {
         args.set(key.replace(/^--/, ''), next);
         i += 1;
@@ -37,14 +37,14 @@ function parseArgs(): Args {
     }
   }
 
-  const count = Number(args.get('count') ?? '1000');
-  const category = (args.get('category') as Args['category']) ?? 'handouts';
-  const outDir =
-    args.get('outDir') ?? path.join(process.cwd(), 'migration', 'recovered_resources', category);
+  const _count = Number(args.get('_count') ?? '1000');
+  const _category = (args.get('_category') as Args['_category']) ?? 'handouts';
+  const _outDir =
+    args.get('_outDir') ?? path.join(process.cwd(), 'migration', 'recovered_resources', category);
   return { count: Number.isFinite(count) && count > 0 ? count : 1000, outDir, category };
 }
 
-const SUBJECTS = [
+const _SUBJECTS = [
   {
     name: 'Mathematics',
     topics: ['Fractions', 'Statistics', 'Algebra', 'Proportions', 'Geometry', 'Measurement'],
@@ -77,22 +77,22 @@ const SUBJECTS = [
   },
 ] as const;
 
-const YEARS = [7, 8, 9] as const;
+const _YEARS = [7, 8, 9] as const;
 
-function pad(n: number, width = 4): string {
+function pad(_n: number, _width): string {
   return String(n).padStart(width, '0');
 }
-function sanitize(s: string): string {
+function sanitize(_s: string): string {
   return s.replace(/[^A-Za-z0-9_\-]+/g, '_');
 }
 
-function buildTitle(year: number, ___subject: string, topic: string, idx: number): string {
+function buildTitle(_year: number, ___subject: string, _topic: string, _idx: number): string {
   return `${subject} Y${year} - ${topic} in Aotearoa (${pad(idx, 4)})`;
 }
 
-function resourceBody(year: number, ___subject: string, topic: string, idx: number): string {
-  const duration = [30, 45, 60, 75][(year + idx) % 4];
-  const nzc =
+function resourceBody(_year: number, ___subject: string, _topic: string, _idx: number): string {
+  const _duration = [30, 45, 60, 75][(year + idx) % 4];
+  const _nzc =
     subject === 'Mathematics'
       ? 'Number & Algebra'
       : subject === 'Science'
@@ -100,7 +100,7 @@ function resourceBody(year: number, ___subject: string, topic: string, idx: numb
       : subject === 'English'
       ? 'Language & Literature'
       : 'Social Sciences';
-  const culturalFlag = topic.match(/Treaty|Aotearoa|Māori|Te Reo|Histories|Civics/i)
+  const _culturalFlag = topic.match(/Treaty|Aotearoa|Māori|Te Reo|Histories|Civics/i)
     ? 'CULTURAL_SAFETY_FLAG'
     : 'None';
 
@@ -191,14 +191,14 @@ async function main() {
         for (const topic of subj.topics) {
           if (created >= count) break;
           i += 1;
-          const title = buildTitle(year, subj.name, topic, i);
-          const fileName = `${sanitize(`Y${year}_${subj.name}_${topic}_${pad(i, 4)}`)}.md`;
-          const abs = path.join(outDir, fileName);
+          const _title = buildTitle(year, subj.name, topic, i);
+          const _fileName = `${sanitize(`Y${year}_${subj.name}_${topic}_${pad(i, 4)}`)}.md`;
+          const _abs = path.join(outDir, fileName);
           if (existsSync(abs)) {
             // Skip existing files to avoid overwrite
             continue;
           }
-          const body = resourceBody(year, subj.name, topic, i);
+          const _body = resourceBody(year, subj.name, topic, i);
           await writeFile(abs, body, 'utf-8');
           created += 1;
         }
@@ -206,7 +206,7 @@ async function main() {
     }
   }
 
-  const st = await stat(outDir);
+  const _st = await stat(outDir);
   console.log(
     `✅ Generated ${created} ${category} in ${outDir} (dir mtime: ${new Date(
       st.mtimeMs,

@@ -8,7 +8,6 @@
  */
 
 import { runRealContentMigratorValidationTests } from '../src/brain/real-content-migrator-validation.test';
-
 async function main() {
   console.log('🎯 RealContentMigrator Validation Test Runner');
   console.log('===============================================\n');

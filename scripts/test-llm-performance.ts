@@ -5,7 +5,6 @@
 
 import { llmOptimizer } from '../src/ai/performance-optimizer';
 import { ultraFastCache } from '../src/ai/ultra-fast-cache';
-
 interface PerformanceTest {
   name: string;
   prompt: string;
@@ -46,7 +45,7 @@ const performanceTests: PerformanceTest[] = [
   },
 ];
 
-async function runPerformanceTest(test: PerformanceTest): Promise<{
+async function runPerformanceTest(_test: PerformanceTest): Promise<{
   name: string;
   actualTime: number;
   expectedTime: number;
@@ -55,10 +54,10 @@ async function runPerformanceTest(test: PerformanceTest): Promise<{
 }> {
   console.log(`\n🧪 Running test: ${test.name}`);
 
-  const startTime = Date.now();
+  const _startTime = Date.now();
 
   try {
-    const result = await llmOptimizer.fastLLMCall(test.prompt, {
+    const _result = await llmOptimizer.fastLLMCall(test.prompt, {
       type: 'performance_test',
       complexity: test.complexity,
       priority: test.priority,
@@ -66,8 +65,8 @@ async function runPerformanceTest(test: PerformanceTest): Promise<{
       context: { test: true },
     });
 
-    const actualTime = Date.now() - startTime;
-    const improvement = ((test.expectedTime - actualTime) / test.expectedTime) * 100;
+    const _actualTime = Date.now() - startTime;
+    const _improvement = ((test.expectedTime - actualTime) / test.expectedTime) * 100;
     const cacheHit = actualTime < 200; // Likely cached if under 200ms
 
     console.log(`  ⏱️  Actual time: ${actualTime}ms`);
@@ -98,10 +97,10 @@ async function runAllTests() {
   console.log('🚀 LLM PERFORMANCE TEST SUITE');
   console.log('==============================');
 
-  const results = [];
+  const _results = [];
 
   for (const test of performanceTests) {
-    const result = await runPerformanceTest(test);
+    const _result = await runPerformanceTest(test);
     results.push(result);
 
     // Small delay between tests
@@ -109,9 +108,9 @@ async function runAllTests() {
   }
 
   // Calculate overall performance
-  const totalImprovement = results.reduce((sum, r) => sum + r.improvement, 0) / results.length;
-  const cacheHitRate = (results.filter((r) => r.cacheHit).length / results.length) * 100;
-  const averageTime = results.reduce((sum, r) => sum + r.actualTime, 0) / results.length;
+  const _totalImprovement = results.reduce((sum, r) => sum + r.improvement, 0) / results.length;
+  const _cacheHitRate = (results.filter((r) => r.cacheHit).length / results.length) * 100;
+  const _averageTime = results.reduce((sum, r) => sum + r.actualTime, 0) / results.length;
 
   console.log('\n📊 PERFORMANCE SUMMARY');
   console.log('======================');
@@ -129,7 +128,7 @@ async function runAllTests() {
   }
 
   // Cache statistics
-  const cacheStats = ultraFastCache.getStats();
+  const _cacheStats = ultraFastCache.getStats();
   console.log('\n🗄️  CACHE STATISTICS');
   console.log('===================');
   console.log(`📦 Cache Size: ${cacheStats.size} entries`);

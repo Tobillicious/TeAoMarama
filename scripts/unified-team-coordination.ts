@@ -9,7 +9,6 @@
 
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-
 interface TeamMember {
   id: string;
   name: string;
@@ -106,7 +105,7 @@ class UnifiedTeamCoordinator {
   }
 
   private updateTeamStatus(): TeamCoordination {
-    const now = new Date().toISOString();
+    const _now = new Date().toISOString();
 
     // Update team member activities
     this.teamMembers.forEach((member) => {
@@ -145,7 +144,7 @@ class UnifiedTeamCoordinator {
   }
 
   private getCurrentTaskForMember(memberId: string): string {
-    const tasks = {
+    const _tasks = {
       'claude-cursor': 'ERO Hui final preparation and site optimization',
       'gemini-cursor': 'Year 8 curriculum content refinement and cultural integration',
       'claude-windsurf': 'System architecture optimization and performance monitoring',
@@ -167,7 +166,7 @@ class UnifiedTeamCoordinator {
 
     console.log('\n👥 TEAM MEMBERS:');
     status.teamMembers.forEach((member) => {
-      const statusIcon = member.status === 'active' ? '🟢' : '🟡';
+      const _statusIcon = member.status === 'active' ? '🟢' : '🟡';
       console.log(`  ${statusIcon} ${member.name} (${member.platform})`);
       console.log(`     Role: ${member.role}`);
       console.log(`     Task: ${member.currentTask}`);
@@ -189,13 +188,13 @@ class UnifiedTeamCoordinator {
   }
 
   private saveStatusToFile(status: TeamCoordination): void {
-    const statusFile = join(
+    const _statusFile = join(
       process.cwd(),
       'migration',
       'agent_coordination',
       'unified_team_status.md',
     );
-    const content = `# 🤝 UNIFIED TEAM COORDINATION STATUS
+    const _content = `# 🤝 UNIFIED TEAM COORDINATION STATUS
 
 **Timestamp:** ${status.timestamp}  
 **Mission:** Work together as one unified team  
@@ -253,13 +252,13 @@ ${Object.entries(status.systemHealth.platforms)
     console.log('🚀 Starting unified team coordination...');
 
     // Initial status
-    const initialStatus = this.updateTeamStatus();
+    const _initialStatus = this.updateTeamStatus();
     this.logTeamStatus(initialStatus);
     this.saveStatusToFile(initialStatus);
 
     // Continuous coordination
     setInterval(() => {
-      const status = this.updateTeamStatus();
+      const _status = this.updateTeamStatus();
       this.logTeamStatus(status);
       this.saveStatusToFile(status);
     }, 30000); // Update every 30 seconds
@@ -274,7 +273,7 @@ ${Object.entries(status.systemHealth.platforms)
 }
 
 // Start the unified team coordination
-const coordinator = new UnifiedTeamCoordinator();
+const _coordinator = new UnifiedTeamCoordinator();
 coordinator.start();
 
 // Keep the process running

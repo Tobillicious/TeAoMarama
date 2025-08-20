@@ -4,21 +4,20 @@
  */
 
 import { readdir } from 'fs/promises';
-
-const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const TARGET_PATH = 'src/components/educational/handouts';
+const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
+const _TARGET_PATH = 'src/components/educational/handouts';
 
 async function auditResources(): Promise<void> {
   console.log('🔍 COMPREHENSIVE RESOURCE AUDIT STARTED');
 
   try {
     // Get all Te Kete Ako handouts
-    const teKeteFiles = await readdir(TE_KETE_HANDOUTS_PATH);
-    const teKeteHandouts = teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
+    const _teKeteFiles = await readdir(TE_KETE_HANDOUTS_PATH);
+    const _teKeteHandouts = teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
 
     // Get all migrated components
-    const migratedFiles = await readdir(TARGET_PATH);
-    const migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx'));
+    const _migratedFiles = await readdir(TARGET_PATH);
+    const _migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx'));
 
     console.log(`📊 Te Kete Ako handouts available: ${teKeteHandouts.length}`);
     console.log(`📊 Migrated components: ${migratedComponents.length}`);
@@ -26,13 +25,13 @@ async function auditResources(): Promise<void> {
     // Check for unmigrated handouts
     const unmigratedHandouts: string[] = [];
     for (const handout of teKeteHandouts) {
-      const componentName = handout
+      const _componentName = handout
         .replace(/\.html$/, '')
         .replace(/[-_]/g, ' ')
         .replace(/\b\w/g, (l) => l.toUpperCase())
         .replace(/\s/g, '');
 
-      const componentFile = `${componentName}.tsx`;
+      const _componentFile = `${componentName}.tsx`;
       if (!migratedComponents.includes(componentFile)) {
         unmigratedHandouts.push(handout);
       }
@@ -52,8 +51,8 @@ async function auditResources(): Promise<void> {
     // Check for orphaned components (components without corresponding Te Kete Ako handout)
     const orphanedComponents: string[] = [];
     for (const component of migratedComponents) {
-      const baseName = component.replace(/\.tsx$/, '');
-      const handoutName =
+      const _baseName = component.replace(/\.tsx$/, '');
+      const _handoutName =
         baseName
           .replace(/([A-Z])/g, '-$1')
           .toLowerCase()
@@ -76,8 +75,8 @@ async function auditResources(): Promise<void> {
     }
 
     // Check for missing CSS files
-    const cssFiles = migratedFiles.filter((f) => f.endsWith('.css'));
-    const componentsWithoutCSS = migratedComponents.filter((component) => {
+    const _cssFiles = migratedFiles.filter((f) => f.endsWith('.css'));
+    const _componentsWithoutCSS = migratedComponents.filter((component) => {
       const cssFile = component.replace('.tsx', '.css');
       return !cssFiles.includes(cssFile);
     });
@@ -94,7 +93,7 @@ async function auditResources(): Promise<void> {
     }
 
     // Check for orphaned CSS files
-    const orphanedCSS = cssFiles.filter((cssFile) => {
+    const _orphanedCSS = cssFiles.filter((cssFile) => {
       const componentFile = cssFile.replace('.css', '.tsx');
       return !migratedComponents.includes(componentFile);
     });

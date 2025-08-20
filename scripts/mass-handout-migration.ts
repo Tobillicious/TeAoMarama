@@ -6,7 +6,6 @@
 
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
 import { join, basename, extname } from 'path';
-
 interface HandoutData {
   filename: string;
   title: string;
@@ -16,17 +15,17 @@ interface HandoutData {
   subject?: string;
 }
 
-const TE_KETE_HANDOUTS_PATH = '/Users/admin/gemini-react-app/te-kete-ako-clean/public/handouts/';
-const TARGET_PATH = '/Users/admin/gemini-react-app/src/components/educational/handouts/';
+const _TE_KETE_HANDOUTS_PATH = '/Users/admin/gemini-react-app/te-kete-ako-clean/public/handouts/';
+const _TARGET_PATH = '/Users/admin/gemini-react-app/src/components/educational/handouts/';
 
-async function extractHandoutMetadata(htmlContent: string): Promise<Partial<HandoutData>> {
+async function extractHandoutMetadata(_htmlContent: string): Promise<Partial<HandoutData>> {
   // Extract title from h1 or h2 tags
-  const titleMatch = htmlContent.match(/<h[12][^>]*>([^<]+)<\/h[12]>/i);
-  const title = titleMatch ? titleMatch[1].trim() : '';
+  const _titleMatch = htmlContent.match(/<h[12][^>]*>([^<]+)</h[12]>/i);
+  const _title = titleMatch ? titleMatch[1].trim() : '';
 
   // Extract year level from content
-  const yearMatch = htmlContent.match(/Year?\s*(\d+)|Y(\d+)/i);
-  const yearLevel = yearMatch ? `Year ${yearMatch[1] || yearMatch[2]}` : undefined;
+  const _yearMatch = htmlContent.match(/Year?\s*(\d+)|Y(\d+)/i);
+  const _yearLevel = yearMatch ? `Year ${yearMatch[1] || yearMatch[2]}` : undefined;
 
   // Extract subject from filename or content
   let subject = '';
@@ -37,15 +36,15 @@ async function extractHandoutMetadata(htmlContent: string): Promise<Partial<Hand
   else if (htmlContent.includes('social')) subject = 'Social Studies';
 
   // Extract cultural context
-  const culturalContext = htmlContent.includes('māori') || htmlContent.includes('cultural') || htmlContent.includes('traditional')
+  const _culturalContext = htmlContent.includes('māori') || htmlContent.includes('cultural') || htmlContent.includes('traditional')
     ? 'Culturally responsive content with Te Ao Māori integration'
     : undefined;
 
   return { title, yearLevel, subject, culturalContext };
 }
 
-function generateReactComponent(handout: HandoutData): string {
-  const componentName = handout.filename
+function generateReactComponent(_handout: HandoutData): string {
+  const _componentName = handout.filename
     .replace(/\.html$/, '')
     .replace(/[-_]/g, ' ')
     .replace(/\b\w/g, l => l.toUpperCase())
@@ -53,7 +52,6 @@ function generateReactComponent(handout: HandoutData): string {
 
   return `import React from 'react';
 import { TeKeteHandout } from '../TeKeteHandout';
-
 export const ${componentName}: React.FC = () => {
   return (
     <TeKeteHandout
@@ -70,16 +68,16 @@ export default ${componentName};
 `;
 }
 
-async function migrateHandout(filename: string): Promise<void> {
+async function migrateHandout(_filename: string): Promise<void> {
   try {
-    const htmlPath = join(TE_KETE_HANDOUTS_PATH, filename);
-    const htmlContent = await readFile(htmlPath, 'utf-8');
+    const _htmlPath = join(TE_KETE_HANDOUTS_PATH, filename);
+    const _htmlContent = await readFile(htmlPath, 'utf-8');
     
     // Extract body content, removing HTML document structure
-    const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-    const content = bodyMatch ? bodyMatch[1].trim() : htmlContent;
+    const _bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)</body>/i);
+    const _content = bodyMatch ? bodyMatch[1].trim() : htmlContent;
     
-    const metadata = await extractHandoutMetadata(htmlContent);
+    const _metadata = await extractHandoutMetadata(htmlContent);
     
     const handout: HandoutData = {
       filename,
@@ -90,9 +88,9 @@ async function migrateHandout(filename: string): Promise<void> {
       subject: metadata.subject
     };
 
-    const reactComponent = generateReactComponent(handout);
-    const componentFilename = filename.replace(/\.html$/, '.tsx');
-    const outputPath = join(TARGET_PATH, componentFilename);
+    const _reactComponent = generateReactComponent(handout);
+    const _componentFilename = filename.replace(/\.html$/, '.tsx');
+    const _outputPath = join(TARGET_PATH, componentFilename);
     
     await writeFile(outputPath, reactComponent);
     console.log(`✅ Migrated: ${filename} → ${componentFilename}`);
@@ -111,8 +109,8 @@ async function deployMigrationArmy(): Promise<void> {
     console.log(`📁 Target directory created: ${TARGET_PATH}`);
     
     // Get all handout files
-    const files = await readdir(TE_KETE_HANDOUTS_PATH);
-    const handoutFiles = files.filter(file => file.endsWith('.html') && !file.startsWith('.'));
+    const _files = await readdir(TE_KETE_HANDOUTS_PATH);
+    const _handoutFiles = files.filter(file => file.endsWith('.html') && !file.startsWith('.'));
     
     console.log(`📊 Found ${handoutFiles.length} handouts to migrate`);
     
@@ -122,7 +120,7 @@ async function deployMigrationArmy(): Promise<void> {
     }
     
     // Deploy 40 parallel migration agents (simulate with Promise.all batching)
-    const batchSize = Math.max(1, Math.ceil(handoutFiles.length / 40));
+    const _batchSize = Math.max(1, Math.ceil(handoutFiles.length / 40));
     const batches: string[][] = [];
     
     for (let i = 0; i < handoutFiles.length; i += batchSize) {
@@ -140,7 +138,7 @@ async function deployMigrationArmy(): Promise<void> {
     );
     
     // Generate index file
-    const successfulMigrations = handoutFiles.filter(file => {
+    const _successfulMigrations = handoutFiles.filter(file => {
       try {
         const componentFilename = file.replace(/\.html$/, '.tsx');
         require('fs').statSync(join(TARGET_PATH, componentFilename));
@@ -150,14 +148,14 @@ async function deployMigrationArmy(): Promise<void> {
       }
     });
     
-    const indexContent = successfulMigrations
+    const _indexContent = successfulMigrations
       .map(file => {
         const componentName = file
           .replace(/\.html$/, '')
           .replace(/[-_]/g, ' ')
           .replace(/\b\w/g, l => l.toUpperCase())
           .replace(/\s/g, '');
-        const filename = file.replace(/\.html$/, '');
+        const _filename = file.replace(/\.html$/, '');
         return `export { default as ${componentName} } from './${filename}';`;
       })
       .join('\n');

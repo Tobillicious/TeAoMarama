@@ -8,7 +8,6 @@
  */
 
 import { readFileSync, existsSync } from 'fs';
-
 interface AutonomousStatus {
   startTime: string;
   runtime: number;
@@ -23,9 +22,9 @@ interface AutonomousStatus {
 
 interface HandoffReport {
   timestamp: string;
-  operationSummary: any;
-  achievements: any;
-  handoffStatus: any;
+  operationSummary: unknown;
+  achievements: unknown;
+  handoffStatus: unknown;
   nextSteps: string[];
 }
 
@@ -49,21 +48,21 @@ class SessionResumeOrchestrator {
     }
 
     // Step 2: Load autonomous operation status
-    const autonomousStatus = await this.loadAutonomousStatus();
+    const _autonomousStatus = await this.loadAutonomousStatus();
     if (!autonomousStatus) {
       console.error('❌ Failed to load autonomous status');
       return false;
     }
 
     // Step 3: Verify system health
-    const systemHealthy = await this.verifySystemHealth();
+    const _systemHealthy = await this.verifySystemHealth();
     if (!systemHealthy) {
       console.error('❌ System health check failed');
       return false;
     }
 
     // Step 4: Load handoff report
-    const handoffReport = await this.loadHandoffReport();
+    const _handoffReport = await this.loadHandoffReport();
     if (!handoffReport) {
       console.error('❌ Failed to load handoff report');
       return false;
@@ -73,7 +72,7 @@ class SessionResumeOrchestrator {
     this.displayOperationSummary(autonomousStatus, handoffReport);
 
     // Step 6: Verify agent army status
-    const armyStatus = await this.verifyArmyStatus();
+    const _armyStatus = await this.verifyArmyStatus();
     if (!armyStatus) {
       console.error('❌ Agent army verification failed');
       return false;
@@ -93,7 +92,7 @@ class SessionResumeOrchestrator {
       console.log('\n🚨 EMERGENCY INTERVENTION REQUIRED');
       
       try {
-        const emergencyInfo = JSON.parse(readFileSync(this.emergencyFlag, 'utf8'));
+        const _emergencyInfo = JSON.parse(readFileSync(this.emergencyFlag, 'utf8'));
         console.log(`Emergency Reason: ${emergencyInfo.reason}`);
         console.log(`Emergency Time: ${emergencyInfo.timestamp}`);
         console.log('Critical Alerts:');
@@ -152,15 +151,15 @@ class SessionResumeOrchestrator {
       // Check TypeScript
       const { exec } = await import('child_process');
       const { promisify } = await import('util');
-      const execAsync = promisify(exec);
+      const _execAsync = promisify(exec);
       
       const { stdout: tsOutput } = await execAsync('npm run typecheck --silent 2>&1 || echo "ERRORS"');
-      const tsHealthy = !tsOutput.includes('error') && !tsOutput.includes('ERRORS');
+      const _tsHealthy = !tsOutput.includes('error') && !tsOutput.includes('ERRORS');
       console.log(`  TypeScript: ${tsHealthy ? '✅ Clean' : '⚠️ Has Errors'}`);
 
       // Check build
       const { stdout: buildOutput } = await execAsync('npm run build --silent 2>&1 || echo "FAILED"');
-      const buildHealthy = !buildOutput.includes('FAILED') && !buildOutput.includes('error');
+      const _buildHealthy = !buildOutput.includes('FAILED') && !buildOutput.includes('error');
       console.log(`  Build: ${buildHealthy ? '✅ Success' : '❌ Failed'}`);
 
       // Check cultural safety (simulated)
@@ -182,15 +181,15 @@ class SessionResumeOrchestrator {
         return false;
       }
 
-      const coordination = JSON.parse(readFileSync('/Users/admin/gemini-react-app/reports/hui-continuous-coordination.json', 'utf8'));
-      const activeAgents = coordination.agents?.active || 0;
-      const totalAgents = coordination.agents?.total || 0;
+      const _coordination = JSON.parse(readFileSync('/Users/admin/gemini-react-app/reports/hui-continuous-_coordination.json', 'utf8'));
+      const _activeAgents = coordination.agents?.active || 0;
+      const _totalAgents = coordination.agents?.total || 0;
       
       console.log(`  Active Agents: ${activeAgents}/${totalAgents}`);
       console.log(`  Performance: ${coordination.platform?.performance?.toFixed(1)}%`);
       console.log(`  Uptime: ${Math.floor(coordination.coordination?.uptime / 60)} minutes`);
       
-      const armyHealthy = activeAgents >= 80 && coordination.platform?.performance > 80;
+      const _armyHealthy = activeAgents >= 80 && coordination.platform?.performance > 80;
       console.log(`  Army Status: ${armyHealthy ? '✅ Operational' : '⚠️ Degraded'}`);
       
       return armyHealthy;
@@ -247,7 +246,7 @@ class SessionResumeOrchestrator {
   }
 
   async generateResumeReport(): Promise<void> {
-    const resumeReport = {
+    const _resumeReport = {
       timestamp: new Date().toISOString(),
       sessionResume: {
         supremeOverseer: 'Mihara-Kaitiaki-Matua',
@@ -268,7 +267,7 @@ class SessionResumeOrchestrator {
       }
     };
 
-    const fs = await import('fs');
+    const _fs = await import('_fs');
     fs.writeFileSync('/Users/admin/gemini-react-app/reports/7pm-session-resume.json', 
                      JSON.stringify(resumeReport, null, 2));
 
@@ -278,9 +277,9 @@ class SessionResumeOrchestrator {
 
 // Execute session resume
 async function main() {
-  const orchestrator = new SessionResumeOrchestrator();
+  const _orchestrator = new SessionResumeOrchestrator();
   
-  const resumeSuccess = await orchestrator.resumeSupremeCoordination();
+  const _resumeSuccess = await orchestrator.resumeSupremeCoordination();
   
   if (resumeSuccess) {
     await orchestrator.generateResumeReport();

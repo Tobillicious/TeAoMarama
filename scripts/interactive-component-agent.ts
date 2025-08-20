@@ -14,7 +14,6 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { createHash } from 'crypto';
-
 interface GameMetadata {
   id: string;
   title: string;
@@ -67,28 +66,28 @@ class InteractiveComponentAgent {
     console.log('🎮 INTERACTIVE COMPONENT AGENT ACTIVATING...');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     
-    const startTime = Date.now();
+    const _startTime = Date.now();
 
     try {
       // Phase 1: Game Discovery
       console.log('🔍 Phase 1: Discovering interactive games...');
-      const gameFiles = await this.discoverGames();
+      const _gameFiles = await this.discoverGames();
       this.migrationStats.totalGames = gameFiles.length;
       console.log(`   ✅ Found ${gameFiles.length} interactive games`);
 
       // Phase 2: Game Analysis and Prioritization
       console.log('🎯 Phase 2: Analyzing game mechanics and value...');
-      const prioritizedGames = await this.analyzeAndPrioritize(gameFiles);
+      const _prioritizedGames = await this.analyzeAndPrioritize(gameFiles);
       console.log(`   ✅ Prioritized ${prioritizedGames.length} high-value games`);
 
       // Phase 3: React Conversion
       console.log('⚛️ Phase 3: Converting to React components...');
-      const conversions = await this.convertToReact(prioritizedGames);
+      const _conversions = await this.convertToReact(prioritizedGames);
       console.log(`   ✅ Successfully converted ${conversions.length} games`);
 
       // Phase 4: Educational Value Enhancement
       console.log('📚 Phase 4: Enhancing educational features...');
-      const enhancedGames = await this.enhanceEducationalValue(conversions);
+      const _enhancedGames = await this.enhanceEducationalValue(conversions);
       console.log(`   ✅ Enhanced ${enhancedGames.length} games with educational features`);
 
       // Phase 5: Integration and Optimization
@@ -101,7 +100,7 @@ class InteractiveComponentAgent {
       this.migrationStats.performanceImpact = await this.assessPerformanceImpact();
       console.log(`   ✅ Performance impact: ${this.migrationStats.performanceImpact}`);
 
-      const duration = Date.now() - startTime;
+      const _duration = Date.now() - startTime;
       console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       console.log(`🎉 INTERACTIVE COMPONENT AGENT SUCCESSFUL! (${duration}ms)`);
       console.log(`   🎮 Total games: ${this.migrationStats.totalGames}`);
@@ -112,7 +111,7 @@ class InteractiveComponentAgent {
       return this.migrationStats;
 
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      const _errorMessage = error instanceof Error ? error.message : 'Unknown error';
       this.migrationStats.errors.push(errorMessage);
       console.error('❌ Interactive Component Agent failed:', errorMessage);
       
@@ -122,7 +121,7 @@ class InteractiveComponentAgent {
 
   private async discoverGames(): Promise<string[]> {
     try {
-      const files = await fs.readdir(this.sourceDir);
+      const _files = await fs.readdir(this.sourceDir);
       return files.filter(file => file.endsWith('.html')).map(file => path.join(this.sourceDir, file));
     } catch (error) {
       throw new Error(`Failed to discover games: ${error}`);
@@ -134,8 +133,8 @@ class InteractiveComponentAgent {
 
     for (const file of files) {
       try {
-        const metadata = await this.analyzeGame(file);
-        const score = this.calculateGameScore(metadata);
+        const _metadata = await this.analyzeGame(file);
+        const _score = this.calculateGameScore(metadata);
         analyses.push({ file, score, metadata });
         this.gameRegistry.push(metadata);
       } catch (error) {
@@ -154,13 +153,13 @@ class InteractiveComponentAgent {
   }
 
   private async analyzeGame(filePath: string): Promise<GameMetadata> {
-    const content = await fs.readFile(filePath, 'utf-8');
-    const stats = await fs.stat(filePath);
-    const filename = path.basename(filePath, '.html');
+    const _content = await fs.readFile(filePath, 'utf-8');
+    const _stats = await fs.stat(filePath);
+    const _filename = path.basename(filePath, '.html');
     
     // Extract title
-    const titleMatch = content.match(/<title>([^<]+)</title>/);
-    const title = titleMatch ? titleMatch[1].replace(' | Te Kete Ako', '') : filename.replace(/-/g, ' ');
+    const _titleMatch = content.match(/<title>([^<]+)</title>/);
+    const _title = titleMatch ? titleMatch[1].replace(' | Te Kete Ako', '') : filename.replace(/-/g, ' ');
 
     // Determine game type
     let type: GameMetadata['type'] = 'quiz';
@@ -172,11 +171,11 @@ class InteractiveComponentAgent {
 
     // Analyze educational value
     let educationalValue: GameMetadata['educationalValue'] = 'Medium';
-    const educationalIndicators = [
+    const _educationalIndicators = [
       'learning', 'curriculum', 'assessment', 'progress', 'achievement',
       'skill', 'knowledge', 'understanding', 'application'
     ];
-    const educationalScore = educationalIndicators.filter(indicator => 
+    const _educationalScore = educationalIndicators.filter(indicator => 
       content.toLowerCase().includes(indicator)).length;
     
     if (educationalScore >= 4) educationalValue = 'High';
@@ -185,8 +184,8 @@ class InteractiveComponentAgent {
 
     // Analyze cultural integration
     let culturalIntegration: GameMetadata['culturalIntegration'] = 'Low';
-    const culturalKeywords = ['te reo', 'māori', 'maori', 'cultural', 'tikanga', 'whakapapa'];
-    const culturalMatches = culturalKeywords.filter(keyword => 
+    const _culturalKeywords = ['te reo', 'māori', 'maori', 'cultural', 'tikanga', 'whakapapa'];
+    const _culturalMatches = culturalKeywords.filter(keyword => 
       content.toLowerCase().includes(keyword)).length;
     
     if (culturalMatches >= 3) culturalIntegration = 'High';
@@ -194,8 +193,8 @@ class InteractiveComponentAgent {
 
     // Assess complexity
     let complexity: GameMetadata['complexity'] = 'Medium';
-    const jsComplexity = (content.match(/function/g) || []).length;
-    const domComplexity = (content.match(/getElementById|querySelector/g) || []).length;
+    const _jsComplexity = (content.match(/function/g) || []).length;
+    const _domComplexity = (content.match(/getElementById|querySelector/g) || []).length;
     
     if (jsComplexity > 20 || domComplexity > 15) complexity = 'Complex';
     else if (jsComplexity > 5 || domComplexity > 5) complexity = 'Medium';
@@ -203,20 +202,20 @@ class InteractiveComponentAgent {
 
     // Assess interactivity
     let interactivity: GameMetadata['interactivity'] = 'Interactive';
-    const interactiveElements = (content.match(/onclick|addEventListener|input|button/g) || []).length;
+    const _interactiveElements = (content.match(/onclick|addEventListener|input|button/g) || []).length;
     
     if (interactiveElements > 15) interactivity = 'Highly Interactive';
     else if (interactiveElements > 5) interactivity = 'Interactive';
     else interactivity = 'Static';
 
     // Check mobile readiness
-    const mobileReady = content.includes('viewport') && content.includes('mobile');
+    const _mobileReady = content.includes('viewport') && content.includes('mobile');
 
     // Simple accessibility score
-    const accessibilityFeatures = [
+    const _accessibilityFeatures = [
       /aria-[a-z]+/g, /alt="/g, /tabindex/g, /role="/g
     ];
-    const accessibilityScore = accessibilityFeatures.reduce((score, pattern) => 
+    const _accessibilityScore = accessibilityFeatures.reduce((score, pattern) => 
       score + (content.match(pattern) || []).length, 0);
 
     return {
@@ -266,12 +265,12 @@ class InteractiveComponentAgent {
 
     for (const file of files) {
       try {
-        const content = await fs.readFile(file, 'utf-8');
-        const metadata = this.gameRegistry.find(g => g.id === createHash('md5').update(file).digest('hex').substring(0, 8));
+        const _content = await fs.readFile(file, 'utf-8');
+        const _metadata = this.gameRegistry.find(g => g.id === createHash('md5').update(file).digest('hex').substring(0, 8));
         
         if (!metadata) continue;
 
-        const conversion = await this.generateReactConversion(content, metadata, file);
+        const _conversion = await this.generateReactConversion(content, metadata, file);
         conversions.push(conversion);
         this.migrationStats.converted++;
       } catch (error) {
@@ -283,13 +282,13 @@ class InteractiveComponentAgent {
   }
 
   private async generateReactConversion(content: string, metadata: GameMetadata, sourceFile: string): Promise<ComponentConversion> {
-    const componentName = this.sanitizeComponentName(metadata.title);
-    const gameLogic = this.extractGameLogic(content, metadata);
-    const hooks = this.identifyRequiredHooks(content, metadata);
-    const dependencies = this.identifyDependencies(content, metadata);
-    const styling = this.extractAndConvertStyling(content);
+    const _componentName = this.sanitizeComponentName(metadata.title);
+    const _gameLogic = this.extractGameLogic(content, metadata);
+    const _hooks = this.identifyRequiredHooks(content, metadata);
+    const _dependencies = this.identifyDependencies(content, metadata);
+    const _styling = this.extractAndConvertStyling(content);
 
-    const reactComponent = this.generateReactComponent(componentName, metadata, gameLogic, hooks, styling);
+    const _reactComponent = this.generateReactComponent(componentName, metadata, gameLogic, hooks, styling);
 
     return {
       sourceFile,
@@ -303,22 +302,22 @@ class InteractiveComponentAgent {
   }
 
   private extractGameLogic(content: string, metadata: GameMetadata): string {
-    const scriptMatches = content.match(/<script[^>]*>(.*?)<\\/script>/gis) || [];
+    const _scriptMatches = content.match(/<script[^>]*>(.*?)<\/script>/gis) || [];
     let gameLogic = scriptMatches.map(match => 
-      match.replace(/<\\/?script[^>]*>/gi, '')
+      match.replace(/<\/?script[^>]*>/gi, '')
     ).join('\\n\\n');
 
     // Clean up for React
     gameLogic = gameLogic
-      .replace(/document\\.getElementById\\([^)]+\\)/g, 'gameRef.current')
-      .replace(/document\\.querySelector\\([^)]+\\)/g, 'gameRef.current?.querySelector')
+      .replace(/document\\.getElementById\([^)]+\)/g, 'gameRef.current')
+      .replace(/document\\.querySelector\([^)]+\)/g, 'gameRef.current?.querySelector')
       .replace(/window\\.addEventListener/g, 'useEffect(() => {\\n  // Event listener logic');
 
     return gameLogic;
   }
 
   private identifyRequiredHooks(content: string, metadata: GameMetadata): string[] {
-    const hooks = ['useState', 'useEffect', 'useRef'];
+    const _hooks = ['useState', 'useEffect', 'useRef'];
     
     if (content.includes('localStorage')) hooks.push('useLocalStorage');
     if (content.includes('setInterval') || content.includes('setTimeout')) hooks.push('useCallback');
@@ -329,7 +328,7 @@ class InteractiveComponentAgent {
   }
 
   private identifyDependencies(content: string, metadata: GameMetadata): string[] {
-    const dependencies = [];
+    const _dependencies = [];
     
     if (content.includes('confetti')) dependencies.push('canvas-confetti');
     if (metadata.type === 'wordle') dependencies.push('react-simple-keyboard');
@@ -339,9 +338,9 @@ class InteractiveComponentAgent {
   }
 
   private extractAndConvertStyling(content: string): string {
-    const styleMatches = content.match(/<style[^>]*>(.*?)<\\/style>/gis) || [];
+    const _styleMatches = content.match(/<style[^>]*>(.*?)<\/style>/gis) || [];
     let styling = styleMatches.map(match => 
-      match.replace(/<\\/?style[^>]*>/gi, '')
+      match.replace(/<\/?style[^>]*>/gi, '')
     ).join('\\n\\n');
 
     // Convert to CSS modules compatible
@@ -369,7 +368,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
   difficulty = 'medium',
   culturalMode = ${metadata.culturalIntegration === 'High'}
 }) => {
-  const gameRef = useRef<HTMLDivElement>(null);
+  const _gameRef = useRef<HTMLDivElement>(null);
   const [gameState, setGameState] = useState({
     score: 0,
     level: 1,
@@ -385,13 +384,13 @@ const ${componentName}: React.FC<${componentName}Props> = ({
   }, []);
 
   // Game logic converted from original JavaScript
-  const initializeGame = useCallback(() => {
+  const _initializeGame = useCallback(() => {
     setGameState(prev => ({ ...prev, isPlaying: true, score: 0, level: 1 }));
     ${gameLogic.split('\\n').slice(0, 5).join('\\n    ')}
     // Additional game initialization logic...
   }, [difficulty]);
 
-  const handleGameAction = useCallback((action: string, data?: any) => {
+  const _handleGameAction = useCallback((action: string, data?: unknown) => {
     // Handle game interactions
     switch (action) {
       case 'start':
@@ -406,7 +405,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
     }
   }, [gameState.score, onComplete]);
 
-  const resetGame = useCallback(() => {
+  const _resetGame = useCallback(() => {
     setGameState({
       score: 0,
       level: 1,
@@ -489,7 +488,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
 export default ${componentName};
 
 // Component metadata
-export const gameMetadata = ${JSON.stringify(metadata, null, 2)};
+export const _gameMetadata = ${JSON.stringify(metadata, null, 2)};
 
 // Game-specific styling
 export const gameStyles = \\`${styling.slice(0, 500)}\\`;`; // Truncate for brevity
@@ -511,7 +510,7 @@ export const gameStyles = \\`${styling.slice(0, 500)}\\`;`; // Truncate for brev
         conversion.reactComponent += `
 
 // Educational enhancements
-export const educationalFeatures = {
+export const _educationalFeatures = {
   progressTracking: true,
   hintsAvailable: true,
   assessmentReady: true,
@@ -530,26 +529,26 @@ export const educationalFeatures = {
 
     // Generate React components
     for (const conversion of conversions) {
-      const componentName = this.sanitizeComponentName(conversion.metadata.title);
-      const componentFile = path.join(this.targetDir, `${componentName}.tsx`);
+      const _componentName = this.sanitizeComponentName(conversion.metadata.title);
+      const _componentFile = path.join(this.targetDir, `${componentName}.tsx`);
       
       await fs.writeFile(componentFile, conversion.reactComponent, 'utf-8');
     }
 
     // Generate main interactive CSS
-    const mainCSS = this.generateInteractiveCSS();
+    const _mainCSS = this.generateInteractiveCSS();
     await fs.writeFile(path.join(this.targetDir, 'InteractiveGame.css'), mainCSS, 'utf-8');
 
     // Generate game index
-    const indexContent = this.generateGameIndex(conversions);
+    const _indexContent = this.generateGameIndex(conversions);
     await fs.writeFile(path.join(this.targetDir, 'index.ts'), indexContent, 'utf-8');
 
     // Generate game hub component
-    const hubComponent = this.generateGameHub(conversions);
+    const _hubComponent = this.generateGameHub(conversions);
     await fs.writeFile(path.join(this.targetDir, 'GameHub.tsx'), hubComponent, 'utf-8');
 
     // Update resource index
-    const resourceIndex = {
+    const _resourceIndex = {
       timestamp: new Date().toISOString(),
       totalGames: conversions.length,
       highValueCount: this.migrationStats.highValue,
@@ -756,12 +755,12 @@ export const educationalFeatures = {
 }`;\n  }
 
   private generateGameIndex(conversions: ComponentConversion[]): string {
-    const imports = conversions.map(conv => {
+    const _imports = conversions.map(conv => {
       const componentName = this.sanitizeComponentName(conv.metadata.title);
       return `const ${componentName} = React.lazy(() => import('./${componentName}'));`;
     });
 
-    const exports = conversions.map(conv => {
+    const _exports = conversions.map(conv => {
       const componentName = this.sanitizeComponentName(conv.metadata.title);
       return `  '${conv.metadata.id}': { component: ${componentName}, metadata: ${componentName}_metadata },`;
     });
@@ -771,15 +770,15 @@ ${imports.join('\\n')}
 
 // Import metadata
 ${conversions.map(conv => {
-  const componentName = this.sanitizeComponentName(conv.metadata.title);
+  const _componentName = this.sanitizeComponentName(conv.metadata.title);
   return `import { gameMetadata as ${componentName}_metadata } from './${componentName}';`;
 }).join('\\n')}
 
-export const InteractiveGames = {
+export const _InteractiveGames = {
 ${exports.join('\\n')}
 };
 
-export const GameTypes = {
+export const _GameTypes = {
   wordle: 'Word Games',
   spelling: 'Spelling Games', 
   pattern: 'Pattern Games',
@@ -803,27 +802,27 @@ const GameHub: React.FC<GameHubProps> = ({ onGameComplete }) => {
   const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>('all');
 
-  const games = Object.entries(InteractiveGames);
-  const filteredGames = games.filter(([id, game]) => {
+  const _games = Object.entries(InteractiveGames);
+  const _filteredGames = games.filter(([id, game]) => {
     if (filter === 'all') return true;
     if (filter === 'cultural') return game.metadata.culturalIntegration === 'High';
     if (filter === 'high-value') return game.metadata.educationalValue === 'High';
     return game.metadata.type === filter;
   });
 
-  const handleGameSelect = (gameId: string) => {
+  const _handleGameSelect = (gameId: string) => {
     setSelectedGameId(gameId);
   };
 
-  const handleGameComplete = (score: number) => {
+  const _handleGameComplete = (score: number) => {
     if (selectedGameId) {
       onGameComplete?.(selectedGameId, score);
     }
   };
 
   if (selectedGameId) {
-    const selectedGame = InteractiveGames[selectedGameId];
-    const GameComponent = selectedGame.component;
+    const _selectedGame = InteractiveGames[selectedGameId];
+    const _GameComponent = selectedGame.component;
 
     return (
       <div className="game-hub">
@@ -916,7 +915,7 @@ export default GameHub;`;\n  }
 
   private async assessPerformanceImpact(): Promise<string> {
     try {
-      const targetStats = await fs.stat(this.targetDir);
+      const _targetStats = await fs.stat(this.targetDir);
       return 'Optimized (Dynamic imports, lazy-loaded components, zero initial bundle impact)';
     } catch (error) {
       return 'Assessment unavailable';
@@ -926,7 +925,7 @@ export default GameHub;`;\n  }
 
 // Agent Execution
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const agent = new InteractiveComponentAgent();
+  const _agent = new InteractiveComponentAgent();
   agent.execute()
     .then(stats => {
       if (stats.errors.length === 0) {

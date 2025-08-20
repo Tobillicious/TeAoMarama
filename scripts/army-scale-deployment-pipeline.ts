@@ -11,8 +11,7 @@
 import { promises as fs } from 'fs';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-
-const execAsync = promisify(exec);
+const _execAsync = promisify(exec);
 
 interface PipelineStage {
   name: string;
@@ -121,7 +120,7 @@ class ArmyDeploymentPipeline {
     await this.logMessage(`Agents Assigned: ${stage.agents}`);
     await this.logMessage(`Cultural Safety Check: ${stage.culturalSafetyCheck ? 'REQUIRED ✅' : 'NOT REQUIRED'}`);
     
-    const stageStart = Date.now();
+    const _stageStart = Date.now();
     
     try {
       // Cultural safety pre-check if required
@@ -134,7 +133,7 @@ class ArmyDeploymentPipeline {
         await this.executeCommand(command, stage.timeout);
       }
       
-      const stageDuration = Date.now() - stageStart;
+      const _stageDuration = Date.now() - stageStart;
       await this.logMessage(`✅ STAGE COMPLETED: ${stage.name} (${stageDuration}ms)`);
       
     } catch (error) {
@@ -160,7 +159,7 @@ class ArmyDeploymentPipeline {
       
       if (stdout) {
         // Log first few lines of output to avoid overwhelming logs
-        const lines = stdout.split('\n').slice(0, 5);
+        const _lines = stdout.split('\n').slice(0, 5);
         await this.logMessage(`✅ Output: ${lines.join(' | ')}`);
       }
       
@@ -175,7 +174,7 @@ class ArmyDeploymentPipeline {
     
     try {
       // Check for tikanga compliance
-      const complianceCheck = await execAsync(
+      const _complianceCheck = await execAsync(
         'find src/ -name "*.tsx" -o -name "*.ts" | head -10 | xargs grep -l "tikanga\\|Māori\\|cultural"',
         { cwd: '/Users/admin/gemini-react-app' }
       );
@@ -195,9 +194,9 @@ class ArmyDeploymentPipeline {
   }
 
   private async generateSuccessReport(): Promise<void> {
-    const duration = Date.now() - this.startTime.getTime();
+    const _duration = Date.now() - this.startTime.getTime();
     
-    const report = {
+    const _report = {
       timestamp: new Date().toISOString(),
       pipelineStatus: 'SUCCESS',
       totalDuration: `${duration}ms`,
@@ -223,8 +222,8 @@ class ArmyDeploymentPipeline {
     await this.logMessage(`📊 SUCCESS REPORT GENERATED`);
   }
 
-  private async handleDeploymentFailure(error: any): Promise<void> {
-    const failureReport = {
+  private async handleDeploymentFailure(error: unknown): Promise<void> {
+    const _failureReport = {
       timestamp: new Date().toISOString(),
       pipelineStatus: 'FAILED',
       error: error.toString(),
@@ -247,8 +246,8 @@ class ArmyDeploymentPipeline {
   }
 
   private async logMessage(message: string): Promise<void> {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] ${message}\n`;
+    const _timestamp = new Date().toISOString();
+    const _logEntry = `[${timestamp}] ${message}\n`;
     
     try {
       await fs.appendFile(this.logPath, logEntry, 'utf8');
@@ -261,7 +260,7 @@ class ArmyDeploymentPipeline {
 
 // Execute pipeline if called directly
 if (require.main === module) {
-  const pipeline = new ArmyDeploymentPipeline();
+  const _pipeline = new ArmyDeploymentPipeline();
   
   pipeline.execute()
     .then(() => {

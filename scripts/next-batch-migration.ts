@@ -5,11 +5,10 @@
 
 import { mkdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
+const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
+const _TARGET_PATH = 'src/components/educational/handouts';
 
-const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const TARGET_PATH = 'src/components/educational/handouts';
-
-const NEXT_BATCH_HANDOUTS = [
+const _NEXT_BATCH_HANDOUTS = [
   'writers-toolkit-conclusion-handout.html',
   'writers-toolkit-diction-handout.html',
   'writers-toolkit-fluency-handout.html',
@@ -32,13 +31,13 @@ const NEXT_BATCH_HANDOUTS = [
   'maori-astronomy-navigation-handout.html',
 ];
 
-async function extractTitle(htmlContent: string): Promise<string> {
-  const titleMatch = htmlContent.match(/<title[^>]*>([^<]+)<\/title>/i);
+async function extractTitle(_htmlContent: string): Promise<string> {
+  const _titleMatch = htmlContent.match(/<title[^>]*>([^<]+)</title>/i);
   if (titleMatch) {
     return titleMatch[1].trim();
   }
 
-  const h1Match = htmlContent.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+  const _h1Match = htmlContent.match(/<h1[^>]*>([^<]+)</h1>/i);
   if (h1Match) {
     return h1Match[1].trim();
   }
@@ -46,24 +45,24 @@ async function extractTitle(htmlContent: string): Promise<string> {
   return 'Te Kete Ako Handout';
 }
 
-async function extractContent(htmlContent: string): Promise<string> {
+async function extractContent(_htmlContent: string): Promise<string> {
   // Extract main content area
-  const mainMatch = htmlContent.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+  const _mainMatch = htmlContent.match(/<main[^>]*>([\s\S]*?)</main>/i);
   if (mainMatch) {
     return mainMatch[1];
   }
 
-  const articleMatch = htmlContent.match(/<article[^>]*>([\s\S]*?)<\/article>/i);
+  const _articleMatch = htmlContent.match(/<article[^>]*>([\s\S]*?)</article>/i);
   if (articleMatch) {
     return articleMatch[1];
   }
 
   // Fallback to body content
-  const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const _bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)</body>/i);
   return bodyMatch ? bodyMatch[1] : htmlContent;
 }
 
-function generateComponentName(filename: string): string {
+function generateComponentName(_filename: string): string {
   return filename
     .replace(/\.html$/, '')
     .replace(/[-_]/g, ' ')
@@ -71,8 +70,8 @@ function generateComponentName(filename: string): string {
     .replace(/\s/g, '');
 }
 
-function determineCulturalContext(filename: string): string {
-  const lowerFilename = filename.toLowerCase();
+function determineCulturalContext(_filename: string): string {
+  const _lowerFilename = filename.toLowerCase();
 
   if (lowerFilename.includes('maori') || lowerFilename.includes('aotearoa')) {
     return 'Māori cultural knowledge and Aotearoa context';
@@ -111,8 +110,8 @@ function determineCulturalContext(filename: string): string {
   return 'Educational content with cultural integration';
 }
 
-function determineYearLevel(filename: string): string {
-  const lowerFilename = filename.toLowerCase();
+function determineYearLevel(_filename: string): string {
+  const _lowerFilename = filename.toLowerCase();
 
   if (lowerFilename.includes('comprehension') || lowerFilename.includes('purpose')) {
     return 'Year 7-8';
@@ -142,8 +141,8 @@ function determineYearLevel(filename: string): string {
   return 'Year 7-10';
 }
 
-function determineSubject(filename: string): string {
-  const lowerFilename = filename.toLowerCase();
+function determineSubject(_filename: string): string {
+  const _lowerFilename = filename.toLowerCase();
 
   if (lowerFilename.includes('comprehension') || lowerFilename.includes('purpose')) {
     return 'English, Literacy';
@@ -182,19 +181,19 @@ function determineSubject(filename: string): string {
   return 'Cross-curricular';
 }
 
-async function migrateHandout(filename: string): Promise<void> {
+async function migrateHandout(_filename: string): Promise<void> {
   try {
-    const filePath = join(TE_KETE_HANDOUTS_PATH, filename);
-    const htmlContent = await readFile(filePath, 'utf-8');
+    const _filePath = join(TE_KETE_HANDOUTS_PATH, filename);
+    const _htmlContent = await readFile(filePath, 'utf-8');
 
-    const title = await extractTitle(htmlContent);
-    const content = await extractContent(htmlContent);
-    const componentName = generateComponentName(filename);
-    const culturalContext = determineCulturalContext(filename);
-    const yearLevel = determineYearLevel(filename);
-    const subject = determineSubject(filename);
+    const _title = await extractTitle(htmlContent);
+    const _content = await extractContent(htmlContent);
+    const _componentName = generateComponentName(filename);
+    const _culturalContext = determineCulturalContext(filename);
+    const _yearLevel = determineYearLevel(filename);
+    const _subject = determineSubject(filename);
 
-    const reactComponent = `import React from 'react';
+    const _reactComponent = `import React from 'react';
 import { Card } from '../../Card';
 import '../../../styles/te-kete-synthesis.css';
 
@@ -237,7 +236,7 @@ const ${componentName}: React.FC<${componentName}Props> = ({
 export default ${componentName};
 `;
 
-    const outputPath = join(TARGET_PATH, `${filename.replace(/\.html$/, '')}.tsx`);
+    const _outputPath = join(TARGET_PATH, `${filename.replace(/\.html$/, '')}.tsx`);
     await writeFile(outputPath, reactComponent);
 
     console.log(`✅ Migrated: ${filename} → ${componentName}`);

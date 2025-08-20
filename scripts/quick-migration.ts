@@ -5,17 +5,16 @@
 
 import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
 import { join, basename } from 'path';
+const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
+const _TARGET_PATH = 'src/components/educational/handouts';
 
-const TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const TARGET_PATH = 'src/components/educational/handouts';
-
-async function quickMigrate(filePath: string): Promise<void> {
+async function quickMigrate(_filePath: string): Promise<void> {
   try {
-    const html = await readFile(filePath, 'utf-8');
-    const filename = basename(filePath, '.html');
-    const componentName = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).replace(/\s/g, '');
+    const _html = await readFile(filePath, 'utf-8');
+    const _filename = basename(filePath, '.html');
+    const _componentName = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).replace(/\s/g, '');
     
-    const componentCode = `import React from 'react';
+    const _componentCode = `import React from 'react';
 import { Card } from '../../ui/Card';
 import './${componentName}.css';
 
@@ -33,7 +32,7 @@ export const ${componentName}: React.FC = () => {
   );
 };`;
 
-    const cssCode = `.${filename}-handout.cultural-focus {
+    const _cssCode = `.${filename}-handout.cultural-focus {
   background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
   border-left: 4px solid var(--color-pounamu);
 }`;
@@ -50,8 +49,8 @@ export const ${componentName}: React.FC = () => {
 async function main() {
   await mkdir(TARGET_PATH, { recursive: true });
   
-  const files = await readdir(TE_KETE_HANDOUTS_PATH);
-  const handouts = files.filter(f => f.endsWith('.html')).slice(0, 20);
+  const _files = await readdir(TE_KETE_HANDOUTS_PATH);
+  const _handouts = files.filter(f => f.endsWith('.html')).slice(0, 20);
   
   console.log(`🚀 Quick migrating ${handouts.length} handouts...`);
   

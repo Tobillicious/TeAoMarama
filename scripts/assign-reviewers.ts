@@ -12,8 +12,8 @@ type ReviewItem = {
   filePath: string;
 };
 
-function mapReviewer(subject: string): string {
-  const s = subject.trim();
+function mapReviewer(_subject: string): string {
+  const _s = subject.trim();
   switch (s) {
     case 'Social Studies':
       return 'Kaitiaki-Aronui';
@@ -30,21 +30,21 @@ function mapReviewer(subject: string): string {
   }
 }
 
-async function getLatestQueueFile(root: string): Promise<string | null> {
-  const dir = path.join(root, 'migration', 'cultural_review');
+async function getLatestQueueFile(_root: string): Promise<string | null> {
+  const _dir = path.join(root, 'migration', 'cultural_review');
   let entries: string[] = [];
   try {
     entries = await fs.readdir(dir);
   } catch {
     return null;
   }
-  const queues = entries.filter((f) => f.startsWith('review_queue_') && f.endsWith('.md'));
+  const _queues = entries.filter((f) => f.startsWith('review_queue_') && f.endsWith('.md'));
   if (queues.length === 0) return null;
   // Sort by mtime desc
-  const withTimes = await Promise.all(
+  const _withTimes = await Promise.all(
     queues.map(async (f) => {
       const abs = path.join(dir, f);
-      const st = await fs.stat(abs);
+      const _st = await fs.stat(abs);
       return { abs, mtime: st.mtimeMs };
     })
   );
@@ -52,21 +52,21 @@ async function getLatestQueueFile(root: string): Promise<string | null> {
   return withTimes[0].abs;
 }
 
-async function parseQueue(filePath: string): Promise<ReviewItem[]> {
-  const raw = await fs.readFile(filePath, 'utf-8');
-  const lines = raw.split(/\r?\n/);
+async function parseQueue(_filePath: string): Promise<ReviewItem[]> {
+  const _raw = await fs.readFile(filePath, 'utf-8');
+  const _lines = raw.split(/\r?\n/);
   const items: ReviewItem[] = [];
   for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i];
+    const _line = lines[i];
     // Example: - [ ] Social Studies Y9 - Civics in Aotearoa (Year: 9, Subject: Social Studies  )
-    const m = line.match(/^\- \[ \] (.+?) \(Year:\s*\d+\s*,\s*Subject:\s*([^\)]+)\)/);
+    const _m = line.match(/^\- [ ] (.+?) (Year:\s*\d+\s*,\s*Subject:\s*([^)]+))/);
     if (m) {
-      const title = m[1].trim();
-      const subject = m[2].trim();
+      const _title = m[1].trim();
+      const _subject = m[2].trim();
       // Next lines contain path line starting with "  - Path: "
       let filePathFound = '';
       for (let j = i + 1; j < Math.min(i + 6, lines.length); j += 1) {
-        const p = lines[j].trim();
+        const _p = lines[j].trim();
         if (p.startsWith('- Path:')) {
           filePathFound = p.replace(/^- Path:\s*/, '').trim();
           break;
@@ -80,23 +80,23 @@ async function parseQueue(filePath: string): Promise<ReviewItem[]> {
   return items;
 }
 
-async function writeAssignments(root: string, items: ReviewItem[]): Promise<string> {
-  const assignDir = path.join(root, 'migration', 'cultural_review', 'assignments');
+async function writeAssignments(_root: string, _items: ReviewItem[]): Promise<string> {
+  const _assignDir = path.join(root, 'migration', 'cultural_review', 'assignments');
   await fs.mkdir(assignDir, { recursive: true });
-  const ts = new Date().toISOString().replace(/[-:T.Z]/g, '').slice(0, 14);
+  const _ts = new Date().toISOString().replace(/[-:T.Z]/g, '').slice(0, 14);
 
-  const byReviewer = new Map<string, ReviewItem[]>();
+  const _byReviewer = new Map<string, ReviewItem[]>();
   for (const it of items) {
-    const reviewer = mapReviewer(it.subject);
+    const _reviewer = mapReviewer(it.subject);
     if (!byReviewer.has(reviewer)) byReviewer.set(reviewer, []);
     byReviewer.get(reviewer)!.push(it);
   }
 
-  const indexPath = path.join(assignDir, `index_${ts}.md`);
+  const _indexPath = path.join(assignDir, `index_${ts}.md`);
   let indexBody = `# Cultural Review Assignment Index\nGenerated: ${new Date().toUTCString()}\n\n`;
 
   for (const [reviewer, arr] of byReviewer.entries()) {
-    const file = path.join(assignDir, `${reviewer}_${ts}.md`);
+    const _file = path.join(assignDir, `${reviewer}_${ts}.md`);
     let body = `# Cultural Review Assignments - ${reviewer}\nGenerated: ${new Date().toUTCString()}\n\n`;
     for (const it of arr) {
       body += `- [ ] ${it.title}\n  - Path: ${it.filePath}\n  - Subject: ${it.subject}\n  - Notes:\n\n`;
@@ -110,18 +110,18 @@ async function writeAssignments(root: string, items: ReviewItem[]): Promise<stri
 }
 
 async function main() {
-  const root = process.cwd();
-  const latest = await getLatestQueueFile(root);
+  const _root = process.cwd();
+  const _latest = await getLatestQueueFile(root);
   if (!latest) {
     console.error('No review_queue_*.md found. Run the review queue generator first.');
     process.exit(1);
   }
-  const items = await parseQueue(latest);
+  const _items = await parseQueue(latest);
   if (items.length === 0) {
     console.log('No items parsed from latest queue:', latest);
     return;
   }
-  const indexFile = await writeAssignments(root, items);
+  const _indexFile = await writeAssignments(root, items);
   console.log('✅ Assignments generated. Index:', indexFile);
 }
 

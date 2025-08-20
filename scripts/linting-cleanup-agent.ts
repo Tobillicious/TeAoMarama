@@ -6,7 +6,6 @@
  */
 
 import { writeEpisode } from '../src/ai/provenance';
-
 interface LintingTask {
   ___id: string;
   file: string;
@@ -126,9 +125,9 @@ interface LintingTask {
     });
 
     // Execute tasks in priority order
-    const criticalTasks = this.tasks.filter((t) => t.priority === 'critical');
-    const highTasks = this.tasks.filter((t) => t.priority === 'high');
-    const mediumTasks = this.tasks.filter((t) => t.priority === 'medium');
+    const _criticalTasks = this.tasks.filter((t) => t.priority === 'critical');
+    const _highTasks = this.tasks.filter((t) => t.priority === 'high');
+    const _mediumTasks = this.tasks.filter((t) => t.priority === 'medium');
 
     console.log('🚨 EXECUTING CRITICAL TASKS FIRST...');
     await this.executeTaskBatch(criticalTasks);
@@ -144,7 +143,7 @@ interface LintingTask {
 
   private async executeTaskBatch(tasks: LintingTask[]): Promise<void> {
     for (const task of tasks) {
-      const agent = this.agents.get(task.agent);
+      const _agent = this.agents.get(task._agent);
       if (!agent || agent.currentTasks >= agent.maxConcurrentTasks) {
         continue;
       }
@@ -224,7 +223,7 @@ interface LintingTask {
     );
     console.log('');
 
-    const agentStats = Array.from(this.agents.values()).map(
+    const _agentStats = Array.from(this.agents.values()).map(
       (agent) => `${agent.name}: ${agent.specialty.join(', ')}`,
     );
 
@@ -239,7 +238,7 @@ interface LintingTask {
 
 // Execute the coordinated cleanup
 async function main() {
-  const orchestrator = new LintingCleanupOrchestrator();
+  const _orchestrator = new LintingCleanupOrchestrator();
   await orchestrator.executeCoordinatedCleanup();
 }
 

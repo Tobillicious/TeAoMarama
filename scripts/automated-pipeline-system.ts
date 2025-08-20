@@ -6,7 +6,6 @@ import lighthouse from 'lighthouse';
 import * as path from 'path';
 import * as puppeteer from 'puppeteer';
 import { URL } from 'url';
-
 interface PipelineStatus {
   stage: 'git-sync' | 'build' | 'deploy' | 'test' | 'monitor' | 'fix' | 'complete';
   status: 'pending' | 'running' | 'success' | 'failed' | 'retrying';
@@ -97,8 +96,8 @@ class AutomatedPipelineSystem {
 
     try {
       // Check for unstaged changes
-      const gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
-      const changes = gitStatus
+      const _gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
+      const _changes = gitStatus
         .trim()
         .split('\n')
         .filter((line) => line.length > 0);
@@ -107,7 +106,7 @@ class AutomatedPipelineSystem {
         console.log(`📝 Found ${changes.length} unstaged changes`);
 
         // Review changes for quality
-        const reviewResults = await this.reviewChanges(changes);
+        const _reviewResults = await this.reviewChanges(changes);
 
         if (reviewResults.needsAttention) {
           console.log('⚠️ Changes need attention before commit');
@@ -115,7 +114,7 @@ class AutomatedPipelineSystem {
         }
 
         // Commit changes with intelligent messages
-        const commitMessage = this.generateCommitMessage(changes);
+        const _commitMessage = this.generateCommitMessage(changes);
         execSync(`git add . && git commit -m "${commitMessage}"`);
         console.log('✅ Changes committed successfully');
       }
@@ -152,7 +151,7 @@ class AutomatedPipelineSystem {
 
       if (filePath.endsWith('.css')) {
         // Check for CSS issues
-        const cssContent = fs.readFileSync(filePath, 'utf8');
+        const _cssContent = fs.readFileSync(filePath, 'utf8');
         if (cssContent.includes('!important') && cssContent.split('!important').length > 5) {
           issues.push(`Too many !important declarations in ${filePath}`);
           needsAttention = true;
@@ -183,16 +182,16 @@ class AutomatedPipelineSystem {
   }
 
   private generateCommitMessage(changes: string[]): string {
-    const changeTypes = changes.map((change) => change.substring(0, 2));
-    const files = changes.map((change) => change.substring(3));
+    const _changeTypes = changes.map((change) => change.substring(0, 2));
+    const _files = changes.map((change) => change.substring(3));
 
     let type = 'update';
     if (changeTypes.some((t) => t.includes('A'))) type = 'add';
     if (changeTypes.some((t) => t.includes('D'))) type = 'remove';
     if (changeTypes.some((t) => t.includes('M'))) type = 'modify';
 
-    const fileTypes = files.map((f) => path.extname(f)).filter((ext) => ext);
-    const uniqueTypes = [...new Set(fileTypes)];
+    const _fileTypes = files.map((f) => path.extname(f)).filter((ext) => ext);
+    const _uniqueTypes = [...new Set(fileTypes)];
 
     return `🤖 Auto-${type}: ${uniqueTypes.join(', ')} files - ${new Date().toISOString()}`;
   }
@@ -260,11 +259,11 @@ class AutomatedPipelineSystem {
     console.log('⏳ Waiting for deployment to complete...');
 
     let attempts = 0;
-    const maxAttempts = 30;
+    const _maxAttempts = 30;
 
     while (attempts < maxAttempts) {
       try {
-        const response = await fetch(this.siteUrl);
+        const _response = await fetch(this.siteUrl);
         if (response.ok) {
           console.log('✅ Site is live and responding');
           return;
@@ -286,10 +285,10 @@ class AutomatedPipelineSystem {
 
     if (!this.browser) throw new Error('Browser not initialized');
 
-    const page = await this.browser.newPage();
+    const _page = await this.browser.newPage();
 
     // Test all navigation routes
-    const routes = await this.getNavigationRoutes();
+    const _routes = await this.getNavigationRoutes();
 
     for (const route of routes) {
       await this.testRoute(page, route);
@@ -306,10 +305,10 @@ class AutomatedPipelineSystem {
 
   private async getNavigationRoutes(): Promise<string[]> {
     // Extract routes from the navigation component
-    const navContent = fs.readFileSync('src/components/Navigation.tsx', 'utf8');
-    const routeMatches = navContent.match(/path:\s*['"`]([^'"`]+)['"`]/g);
+    const _navContent = fs.readFileSync('src/components/Navigation.tsx', 'utf8');
+    const _routeMatches = navContent.match(/path:\s*['"`]([^'"`]+)['"`]/g);
 
-    const routes =
+    const _routes =
       routeMatches
         ?.map((match) => {
           const path = match.match(/['"`]([^'"`]+)['"`]/)?.[1];
@@ -324,18 +323,18 @@ class AutomatedPipelineSystem {
     try {
       console.log(`🧪 Testing route: ${route}`);
 
-      const url = new URL(route, this.siteUrl).href;
+      const _url = new URL(route, this.siteUrl).href;
       await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
 
       // Check for basic page load
-      const title = await page.title();
+      const _title = await page._title();
       if (!title || title.includes('Error')) {
         throw new Error(`Page failed to load properly: ${title}`);
       }
 
       // Check for console errors
-      const consoleErrors = await page.evaluate(() => {
-        return (window as any).consoleErrors || [];
+      const _consoleErrors = await page.evaluate(() => {
+        return (window as any)._consoleErrors || [];
       });
 
       if (consoleErrors.length > 0) {
@@ -343,7 +342,7 @@ class AutomatedPipelineSystem {
       }
 
       // Check for broken images
-      const brokenImages = await page.evaluate(() => {
+      const _brokenImages = await page.evaluate(() => {
         const images = Array.from(document.querySelectorAll('img'));
         return images
           .filter((img) => !img.complete || img.naturalWidth === 0)
@@ -364,7 +363,7 @@ class AutomatedPipelineSystem {
   private async testResponsiveDesign(page: puppeteer.Page): Promise<void> {
     console.log('📱 Testing responsive design...');
 
-    const viewports = [
+    const _viewports = [
       { width: 1920, height: 1080, name: 'Desktop' },
       { width: 768, height: 1024, name: 'Tablet' },
       { width: 375, height: 667, name: 'Mobile' },
@@ -375,7 +374,7 @@ class AutomatedPipelineSystem {
       await page.goto(this.siteUrl, { waitUntil: 'networkidle2' });
 
       // Check for horizontal scrolling
-      const hasHorizontalScroll = await page.evaluate(() => {
+      const _hasHorizontalScroll = await page.evaluate(() => {
         return document.documentElement.scrollWidth > document.documentElement.clientWidth;
       });
 
@@ -384,7 +383,7 @@ class AutomatedPipelineSystem {
       }
 
       // Check for responsive navigation
-      const navVisible = await page.evaluate(() => {
+      const _navVisible = await page.evaluate(() => {
         const nav = document.querySelector('nav');
         return nav && nav.offsetWidth > 0 && nav.offsetHeight > 0;
       });
@@ -401,7 +400,7 @@ class AutomatedPipelineSystem {
     await page.goto(this.siteUrl, { waitUntil: 'networkidle2' });
 
     // Check for alt text on images
-    const imagesWithoutAlt = await page.evaluate(() => {
+    const _imagesWithoutAlt = await page.evaluate(() => {
       const images = Array.from(document.querySelectorAll('img'));
       return images.filter((img) => !img.alt).map((img) => img.src);
     });
@@ -411,7 +410,7 @@ class AutomatedPipelineSystem {
     }
 
     // Check for proper heading structure
-    const headingStructure = await page.evaluate(() => {
+    const _headingStructure = await page.evaluate(() => {
       const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'));
       return headings.map((h) => ({ level: parseInt(h.tagName[1]), text: h.textContent?.trim() }));
     });
@@ -426,7 +425,7 @@ class AutomatedPipelineSystem {
     }
 
     // Check for keyboard navigation
-    const focusableElements = await page.evaluate(() => {
+    const _focusableElements = await page.evaluate(() => {
       const focusable = document.querySelectorAll('button, a, input, select, textarea, [tabindex]');
       return Array.from(focusable).map((el) => ({
         tag: el.tagName,
@@ -450,7 +449,7 @@ class AutomatedPipelineSystem {
         onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo', 'pwa'],
       });
 
-      const scores = {
+      const _scores = {
         performance: Math.round(lhr.categories.performance.score * 100),
         accessibility: Math.round(lhr.categories.accessibility.score * 100),
         bestPractices: Math.round(lhr.categories['best-practices'].score * 100),
@@ -463,8 +462,8 @@ class AutomatedPipelineSystem {
       console.log('📊 Lighthouse Scores:', scores);
 
       // Check if scores meet targets
-      const targets = { performance: 80, accessibility: 90, bestPractices: 90, seo: 80, pwa: 80 };
-      const issues = Object.entries(scores).filter(
+      const _targets = { performance: 80, accessibility: 90, bestPractices: 90, seo: 80, pwa: 80 };
+      const _issues = Object.entries(scores).filter(
         ([key, score]) => score < targets[key as keyof typeof targets],
       );
 
@@ -491,27 +490,27 @@ class AutomatedPipelineSystem {
 
     if (!this.browser) throw new Error('Browser not initialized');
 
-    const page = await this.browser.newPage();
+    const _page = await this.browser.newPage();
 
     try {
       // Monitor for orphaned resources
-      const orphanedResources = await this.findOrphanedResources(page);
+      const _orphanedResources = await this.findOrphanedResources(page);
       healthReport.orphanedResources = orphanedResources;
 
       // Check for navigation errors
-      const navErrors = await this.checkNavigationErrors(page);
+      const _navErrors = await this.checkNavigationErrors(page);
       healthReport.navigationErrors = navErrors;
 
       // Monitor performance
-      const perfIssues = await this.checkPerformanceIssues(page);
+      const _perfIssues = await this.checkPerformanceIssues(page);
       healthReport.performanceIssues = perfIssues;
 
       // Check accessibility
-      const a11yIssues = await this.checkAccessibilityIssues(page);
+      const _a11yIssues = await this.checkAccessibilityIssues(page);
       healthReport.accessibilityIssues = a11yIssues;
 
       // Determine overall status
-      const totalIssues =
+      const _totalIssues =
         healthReport.issues.length +
         healthReport.navigationErrors.length +
         healthReport.orphanedResources.length +
@@ -536,11 +535,11 @@ class AutomatedPipelineSystem {
     const orphaned: string[] = [];
 
     // Check for broken internal links
-    const brokenLinks = await page.evaluate(() => {
+    const _brokenLinks = await page.evaluate(() => {
       const links = Array.from(document.querySelectorAll('a[href]'));
       return links
         .filter((link) => {
-          const href = link.getAttribute('href');
+          const _href = link.getAttribute('_href');
           return href && href.startsWith('/') && !href.includes('#');
         })
         .map((link) => link.getAttribute('href'));
@@ -549,7 +548,7 @@ class AutomatedPipelineSystem {
     // Check each internal link
     for (const link of brokenLinks) {
       try {
-        const response = await page.goto(new URL(link, this.siteUrl).href, {
+        const _response = await page.goto(new URL(link, this.siteUrl).href, {
           waitUntil: 'networkidle2',
           timeout: 10000,
         });
@@ -569,11 +568,11 @@ class AutomatedPipelineSystem {
     const errors: NavigationError[] = [];
 
     // Check if navigation elements are present and functional
-    const navElements = await page.evaluate(() => {
+    const _navElements = await page.evaluate(() => {
       const nav = document.querySelector('nav');
       if (!nav) return { error: 'Navigation element not found' };
 
-      const navItems = nav.querySelectorAll('a, button');
+      const _navItems = nav.querySelectorAll('a, button');
       return Array.from(navItems).map((item) => ({
         text: item.textContent?.trim(),
         href: item.getAttribute('href'),
@@ -589,7 +588,7 @@ class AutomatedPipelineSystem {
         error: navElements.error,
       });
     } else {
-      const invisibleItems = navElements.filter((item) => !item.visible);
+      const _invisibleItems = navElements.filter((item) => !item.visible);
       if (invisibleItems.length > 0) {
         errors.push({
           path: '/',
@@ -607,7 +606,7 @@ class AutomatedPipelineSystem {
     const issues: PerformanceIssue[] = [];
 
     // Measure page load time
-    const loadTime = await page.evaluate(() => {
+    const _loadTime = await page.evaluate(() => {
       return performance.timing.loadEventEnd - performance.timing.navigationStart;
     });
 
@@ -621,7 +620,7 @@ class AutomatedPipelineSystem {
     }
 
     // Check for large images
-    const largeImages = await page.evaluate(() => {
+    const _largeImages = await page.evaluate(() => {
       const images = Array.from(document.querySelectorAll('img'));
       return images
         .filter((img) => img.naturalWidth > 1920 || img.naturalHeight > 1080)
@@ -644,7 +643,7 @@ class AutomatedPipelineSystem {
     const issues: AccessibilityIssue[] = [];
 
     // Check for missing alt text
-    const imagesWithoutAlt = await page.evaluate(() => {
+    const _imagesWithoutAlt = await page.evaluate(() => {
       const images = Array.from(document.querySelectorAll('img'));
       return images.filter((img) => !img.alt).map((img) => img.src);
     });
@@ -659,14 +658,14 @@ class AutomatedPipelineSystem {
     });
 
     // Check for proper color contrast
-    const lowContrastElements = await page.evaluate(() => {
+    const _lowContrastElements = await page.evaluate(() => {
       // This is a simplified check - in production you'd use a proper contrast checker
       const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div');
       return Array.from(textElements)
         .filter((el) => {
-          const style = window.getComputedStyle(el);
-          const color = style.color;
-          const backgroundColor = style.backgroundColor;
+          const _style = window.getComputedStyle(el);
+          const _color = style._color;
+          const _backgroundColor = style._backgroundColor;
           // Simplified contrast check - in production use proper contrast calculation
           return color === backgroundColor;
         })
@@ -689,7 +688,7 @@ class AutomatedPipelineSystem {
     this.updateStatus('fix', 'running', 'Analyzing issues and applying fixes...');
 
     try {
-      const latestReport = this.healthReports[this.healthReports.length - 1];
+      const _latestReport = this.healthReports[this.healthReports.length - 1];
 
       if (latestReport && latestReport.status !== 'healthy') {
         console.log('🔧 Issues detected, applying fixes...');
@@ -739,7 +738,7 @@ class AutomatedPipelineSystem {
     for (const error of errors) {
       if (error.error === 'Navigation element not found') {
         // Check if Navigation component exists
-        const navPath = 'src/components/Navigation.tsx';
+        const _navPath = 'src/components/Navigation.tsx';
         if (!fs.existsSync(navPath)) {
           console.log('⚠️ Navigation component missing - this requires manual attention');
         }
@@ -752,8 +751,8 @@ class AutomatedPipelineSystem {
 
     for (const resource of resources) {
       // Check if the route exists in the routing configuration
-      const appContent = fs.readFileSync('src/App.tsx', 'utf8');
-      const routeExists = appContent.includes(`path: '${resource}'`);
+      const _appContent = fs.readFileSync('src/App.tsx', 'utf8');
+      const _routeExists = appContent.includes(`path: '${resource}'`);
 
       if (!routeExists) {
         console.log(`⚠️ Orphaned route ${resource} - consider adding to routing or removing link`);
@@ -784,19 +783,19 @@ class AutomatedPipelineSystem {
   private async generateReport(): Promise<void> {
     this.updateStatus('complete', 'success', 'Pipeline completed successfully');
 
-    const report = {
+    const _report = {
       timestamp: new Date().toISOString(),
       pipelineStatus: this.status,
       healthReports: this.healthReports,
       summary: {
         totalIssues: this.healthReports.reduce(
-          (sum, report) =>
+          (sum, _report) =>
             sum +
-            report.issues.length +
-            report.navigationErrors.length +
-            report.orphanedResources.length +
-            report.performanceIssues.length +
-            report.accessibilityIssues.length,
+            _report.issues.length +
+            _report.navigationErrors.length +
+            _report.orphanedResources.length +
+            _report.performanceIssues.length +
+            _report.accessibilityIssues.length,
           0,
         ),
         overallHealth: this.healthReports[this.healthReports.length - 1]?.status || 'unknown',
@@ -805,7 +804,7 @@ class AutomatedPipelineSystem {
     };
 
     // Save report to file
-    const reportPath = `reports/pipeline-${new Date().toISOString().split('T')[0]}.json`;
+    const _reportPath = `reports/pipeline-${new Date().toISOString().split('T')[0]}.json`;
     fs.mkdirSync('reports', { recursive: true });
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
@@ -822,14 +821,14 @@ class AutomatedPipelineSystem {
     console.log('🚨 Pipeline failure notification sent');
 
     // Generate failure report
-    const failureReport = {
+    const _failureReport = {
       timestamp: new Date().toISOString(),
       error: error.message,
       stack: error.stack,
       pipelineStatus: this.status,
     };
 
-    const failurePath = `reports/pipeline-failure-${new Date().toISOString().split('T')[0]}.json`;
+    const _failurePath = `reports/pipeline-failure-${new Date().toISOString().split('T')[0]}.json`;
     fs.mkdirSync('reports', { recursive: true });
     fs.writeFileSync(failurePath, JSON.stringify(failureReport, null, 2));
 
@@ -855,7 +854,7 @@ class AutomatedPipelineSystem {
 
 // Run the pipeline if this script is executed directly
 if (require.main === module) {
-  const pipeline = new AutomatedPipelineSystem();
+  const _pipeline = new AutomatedPipelineSystem();
   pipeline.runFullPipeline().catch(console.error);
 }
 

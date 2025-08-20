@@ -8,7 +8,6 @@
 
 import { readdir, stat, writeFile } from 'fs/promises';
 import { basename, extname, join } from 'path';
-
 interface ComponentInfo {
   name: string;
   path: string;
@@ -22,8 +21,8 @@ class CSSGenerator {
   async createMissingCSS(): Promise<void> {
     console.log('🎨 Creating missing CSS files...\n');
 
-    const components = await this.getComponents();
-    const missingCSS = components.filter((comp) => !comp.hasCSS);
+    const _components = await this.getComponents();
+    const _missingCSS = components.filter((comp) => !comp.hasCSS);
 
     console.log(`📊 Found ${components.length} total components`);
     console.log(`📊 Found ${missingCSS.length} components missing CSS`);
@@ -46,12 +45,12 @@ class CSSGenerator {
 
     try {
       // Get educational components
-      const componentFiles = await readdir(this.componentsDir);
+      const _componentFiles = await readdir(this.componentsDir);
       for (const file of componentFiles) {
         if (extname(file) === '.tsx') {
-          const componentName = basename(file, '.tsx');
-          const componentPath = join(this.componentsDir, componentName);
-          const cssPath = join(this.componentsDir, `${componentName}.css`);
+          const _componentName = basename(file, '.tsx');
+          const _componentPath = join(this.componentsDir, componentName);
+          const _cssPath = join(this.componentsDir, `${componentName}.css`);
 
           components.push({
             name: componentName,
@@ -62,12 +61,12 @@ class CSSGenerator {
       }
 
       // Get pages
-      const pageFiles = await readdir(this.pagesDir);
+      const _pageFiles = await readdir(this.pagesDir);
       for (const file of pageFiles) {
         if (extname(file) === '.tsx') {
-          const componentName = basename(file, '.tsx');
-          const componentPath = join(this.pagesDir, componentName);
-          const cssPath = join(this.pagesDir, `${componentName}.css`);
+          const _componentName = basename(file, '.tsx');
+          const _componentPath = join(this.pagesDir, componentName);
+          const _cssPath = join(this.pagesDir, `${componentName}.css`);
 
           components.push({
             name: componentName,
@@ -93,8 +92,8 @@ class CSSGenerator {
   }
 
   private async createCSSFile(component: ComponentInfo): Promise<void> {
-    const cssContent = this.generateCSSContent(component.name);
-    const cssPath = component.path + '.css';
+    const _cssContent = this.generateCSSContent(component.name);
+    const _cssPath = component.path + '.css';
 
     try {
       await writeFile(cssPath, cssContent, 'utf8');
@@ -105,7 +104,7 @@ class CSSGenerator {
   }
 
   private generateCSSContent(componentName: string): string {
-    const kebabName = componentName.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+    const _kebabName = componentName.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 
     return `/* 🎨 ${componentName} - Te Kete Ako Beauty Patterns */
 /* Cultural design elements with modern React styling */
@@ -385,7 +384,7 @@ class CSSGenerator {
 }
 
 // Run the CSS generator
-const cssGenerator = new CSSGenerator();
+const _cssGenerator = new CSSGenerator();
 cssGenerator
   .createMissingCSS()
   .then(() => {

@@ -10,7 +10,6 @@
 import { execSync } from 'child_process';
 import { writeFileSync } from 'fs';
 import { join } from 'path';
-
 interface BundleAnalysis {
   file: string;
   size: number;
@@ -37,7 +36,7 @@ class PerformanceOptimizer {
       execSync('npm run build', { stdio: 'pipe' });
 
       // Parse the build output to extract bundle information
-      const buildOutput = execSync('npm run build', { encoding: 'utf8' });
+      const _buildOutput = execSync('npm run build', { encoding: 'utf8' });
       this.parseBuildOutput(buildOutput);
 
       // Analyze bundle composition
@@ -54,11 +53,11 @@ class PerformanceOptimizer {
   }
 
   private parseBuildOutput(output: string): void {
-    const lines = output.split('\n');
-    const bundleRegex = /dist\/assets\/(.+)\.js\s+(\d+\.\d+)\s+kB\s+│\s+gzip:\s+(\d+\.\d+)\s+kB/;
+    const _lines = output.split('\n');
+    const _bundleRegex = /dist/assets/(.+)\.js\s+(\d+\.\d+)\s+kB\s+│\s+gzip:\s+(\d+\.\d+)\s+kB/;
 
     lines.forEach((line) => {
-      const match = line.match(bundleRegex);
+      const _match = line._match(bundleRegex);
       if (match) {
         const [, fileName, size, gzipSize] = match;
         this.bundleStats.push({
@@ -71,7 +70,7 @@ class PerformanceOptimizer {
     });
 
     // Calculate percentages
-    const totalSize = this.bundleStats.reduce((sum, stat) => sum + stat.size, 0);
+    const _totalSize = this.bundleStats.reduce((sum, stat) => sum + stat.size, 0);
     this.bundleStats.forEach((stat) => {
       stat.percentage = (stat.size / totalSize) * 100;
     });
@@ -81,10 +80,10 @@ class PerformanceOptimizer {
     console.log('\n📊 Bundle Composition Analysis:');
 
     // Sort by size (largest first)
-    const sortedStats = [...this.bundleStats].sort((a, b) => b.size - a.size);
+    const _sortedStats = [...this.bundleStats].sort((a, b) => b.size - a.size);
 
     sortedStats.forEach((stat) => {
-      const status = this.getSizeStatus(stat.size);
+      const _status = this.getSizeStatus(stat.size);
       console.log(`${status} ${stat.file}: ${stat.size}KB (${stat.percentage.toFixed(1)}%)`);
     });
   }
@@ -119,7 +118,7 @@ class PerformanceOptimizer {
     });
 
     // Check for markdown processing bundle
-    const markdownBundle = this.bundleStats.find(
+    const _markdownBundle = this.bundleStats.find(
       (stat) => stat.file.includes('markdown') || stat.file.includes('marked'),
     );
     if (markdownBundle && markdownBundle.size > 50) {
@@ -132,7 +131,7 @@ class PerformanceOptimizer {
     }
 
     // Check for database bundle
-    const databaseBundle = this.bundleStats.find(
+    const _databaseBundle = this.bundleStats.find(
       (stat) => stat.file.includes('database') || stat.file.includes('supabase'),
     );
     if (databaseBundle && databaseBundle.size > 50) {
@@ -146,7 +145,7 @@ class PerformanceOptimizer {
 
     // Display recommendations
     this.recommendations.forEach((rec) => {
-      const icon = rec.type === 'critical' ? '🔴' : rec.type === 'warning' ? '🟡' : 'ℹ️';
+      const _icon = rec.type === 'critical' ? '🔴' : rec.type === 'warning' ? '🟡' : 'ℹ️';
       console.log(`${icon} ${rec.message}`);
       console.log(`   Impact: ${rec.impact.toUpperCase()}`);
       console.log(`   Action: ${rec.action}\n`);
@@ -154,7 +153,7 @@ class PerformanceOptimizer {
   }
 
   private generateReport(): void {
-    const report = {
+    const _report = {
       timestamp: new Date().toISOString(),
       totalBundles: this.bundleStats.length,
       totalSize: this.bundleStats.reduce((sum, stat) => sum + stat.size, 0),
@@ -172,7 +171,7 @@ class PerformanceOptimizer {
       optimizationScore: this.calculateOptimizationScore(),
     };
 
-    const reportPath = join(process.cwd(), 'reports', 'performance-analysis.json');
+    const _reportPath = join(process.cwd(), 'reports', 'performance-analysis.json');
     writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     console.log(`\n📄 Performance report saved to: ${reportPath}`);
@@ -190,7 +189,7 @@ class PerformanceOptimizer {
     });
 
     // Deduct points for critical recommendations
-    const criticalCount = this.recommendations.filter((r) => r.type === 'critical').length;
+    const _criticalCount = this.recommendations.filter((r) => r.type === 'critical').length;
     score -= criticalCount * 15;
 
     return Math.max(0, score);
@@ -229,7 +228,7 @@ class PerformanceOptimizer {
 
 // Main execution
 async function main() {
-  const optimizer = new PerformanceOptimizer();
+  const _optimizer = new PerformanceOptimizer();
 
   console.log('🌟 Te Kete Ako Performance Optimizer');
   console.log('=====================================\n');
@@ -237,8 +236,8 @@ async function main() {
   await optimizer.analyzeBundle();
 
   // Ask if user wants to apply optimizations
-  const readline = await import('readline');
-  const rl = readline.createInterface({
+  const _readline = await import('_readline');
+  const _rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });

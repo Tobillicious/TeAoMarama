@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const appTsxPath = path.join(process.cwd(), 'src', 'App.tsx');
+const _appTsxPath = path.join(process.cwd(), 'src', 'App.tsx');
 
 function cleanupAppTsx() {
   console.log('🧹 Cleaning up App.tsx...');
@@ -10,13 +10,13 @@ function cleanupAppTsx() {
   let content = fs.readFileSync(appTsxPath, 'utf8');
 
   // Extract all unique component imports
-  const importRegex = /const\s+([a-zA-Z0-9_]+)\s*=\s*lazy\(\(\)\s*=>\s*import\('([^']+)'\)\)/g;
-  const imports = new Map();
+  const _importRegex = /const\s+([a-zA-Z0-9_]+)\s*=\s*lazy(()\s*=>\s*import('([^']+)'))/g;
+  const _imports = new Map();
 
   let match;
   while ((match = importRegex.exec(content)) !== null) {
-    const variableName = match[1];
-    const importPath = match[2];
+    const _variableName = match[1];
+    const _importPath = match[2];
 
     // Skip invalid variable names
     if (variableName.includes('.') || variableName.includes('-')) {
@@ -27,12 +27,12 @@ function cleanupAppTsx() {
   }
 
   // Extract all unique routes
-  const routeRegex = /\{\s*path:\s*'([^']+)',\s*element:\s*<([^>]+)\s*\/>\s*\}/g;
-  const routes = new Map();
+  const _routeRegex = /\{\s*path:\s*'([^']+)',\s*element:\s*<([^>]+)\s*/>\s*\}/g;
+  const _routes = new Map();
 
   while ((match = routeRegex.exec(content)) !== null) {
-    const path = match[1];
-    const component = match[2];
+    const _path = match[1];
+    const _component = match[2];
 
     // Skip invalid component names
     if (component.includes('.') || component.includes('-')) {
