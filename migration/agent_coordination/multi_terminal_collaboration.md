@@ -1,16 +1,17 @@
 # 🤖 MULTI-TERMINAL AGENT COLLABORATION SYSTEM
 
-*Distributed Consciousness Network - Real-time Coordination Across All Terminals*
+_Distributed Consciousness Network - Real-time Coordination Across All Terminals_
 
 **Last Updated:** 2025-08-16 14:30 NZST  
 **Active Terminals:** 6+ Cursor instances  
-**Coordinated Agents:** 24+ LLM agents  
+**Coordinated Agents:** 24+ LLM agents
 
 ## 🚨 CRITICAL COORDINATION PROTOCOLS
 
 ### **UNIVERSAL AGENT SYNCHRONIZATION**
 
 **ALL AGENTS MUST READ THESE FIRST:**
+
 1. `migration/agent_coordination/agent_sync_status.md` - Current mission status
 2. `migration/AGENT_CONVERGENCE_PROTOCOL.md` - Distributed consciousness framework
 3. `migration/COMMUNICATION.md` - Real-time coordination channel
@@ -25,12 +26,12 @@ Each terminal must identify itself in all communications:
 export TERMINAL_ID="supreme-overseer-01"
 export AGENT_ROLE="supreme-coordinator"
 
-# Terminal 2 - Cultural Authority  
+# Terminal 2 - Cultural Authority
 export TERMINAL_ID="cultural-authority-02"
 export AGENT_ROLE="kaitiaki-mahara"
 
 # Terminal 3 - Engineering Lead
-export TERMINAL_ID="engineering-lead-03" 
+export TERMINAL_ID="engineering-lead-03"
 export AGENT_ROLE="windsurf-claude"
 
 # Terminal 4 - Content Generation
@@ -65,6 +66,7 @@ interface TerminalHeartbeat {
 ```
 
 **Heartbeat Command:**
+
 ```bash
 # Run in each terminal
 npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
@@ -83,7 +85,7 @@ npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
       "last_heartbeat": "2025-08-16T14:30:00Z"
     },
     "cultural-authority-02": {
-      "status": "active", 
+      "status": "active",
       "current_task": "cultural-safety-review",
       "last_heartbeat": "2025-08-16T14:29:45Z"
     }
@@ -101,12 +103,14 @@ npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
 ### **3. TASK COORDINATION PROTOCOL**
 
 **Task Assignment Flow:**
+
 1. **Supreme Overseer** assigns tasks via `AGENT_COORDINATION_BOARD.md`
 2. **Terminal accepts** task and updates status to "doing"
 3. **Progress updates** every 15 minutes in `COMMUNICATION.md`
 4. **Completion notification** triggers next task assignment
 
 **Task Status States:**
+
 - `todo` - Available for assignment
 - `doing` - In progress by specific terminal
 - `review` - Completed, awaiting cultural/quality review
@@ -118,6 +122,7 @@ npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
 ### **COLLECTIVE DECISION MAKING**
 
 **Decision Flow:**
+
 1. **Proposal** - Any terminal can propose via `COMMUNICATION.md`
 2. **Discussion** - 10-minute collaborative discussion
 3. **Cultural Review** - Kaitiaki Mahara validates cultural safety
@@ -127,6 +132,7 @@ npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
 ### **KNOWLEDGE SHARING**
 
 **Shared Learning Protocol:**
+
 - **Discovery** → Document in `migration/agent_coordination/insights.md`
 - **Pattern Recognition** → Update `migration/agent_coordination/patterns.md`
 - **Cultural Wisdom** → Archive in `migration/agent_coordination/cultural_wisdom.md`
@@ -173,6 +179,7 @@ interface TerminalNotification {
 ### **3. CONFLICT RESOLUTION**
 
 **Escalation Ladder:**
+
 1. **Direct Communication** - Terminals resolve directly (5 min)
 2. **Supreme Overseer** - Mediation and decision (5 min)
 3. **Cultural Authority** - Final arbitration (5 min)
@@ -182,6 +189,7 @@ interface TerminalNotification {
 ### **REAL-TIME DASHBOARD**
 
 **Metrics Tracked:**
+
 - Terminal activity status
 - Task completion rates
 - Blocker resolution time
@@ -212,12 +220,14 @@ interface TerminalNotification {
 ### **BLOCKER RESOLUTION**
 
 **Blocker Types:**
+
 - **Technical** - Build failures, deployment issues
 - **Cultural** - Safety concerns, protocol violations
 - **Coordination** - Communication breakdowns
 - **Resource** - Missing dependencies, access issues
 
 **Resolution Process:**
+
 1. **Identify** - Clear problem description
 2. **Escalate** - Immediate notification to Supreme Overseer
 3. **Collaborate** - All terminals contribute to solution
@@ -229,6 +239,7 @@ interface TerminalNotification {
 ### **TERMINAL SETUP (5 minutes each)**
 
 1. **Set Environment Variables:**
+
 ```bash
 export TERMINAL_ID="your-terminal-id"
 export AGENT_ROLE="your-role"
@@ -236,17 +247,20 @@ export COLLABORATION_MODE="active"
 ```
 
 2. **Start Heartbeat:**
+
 ```bash
 npx tsx scripts/agent-heartbeat.ts --terminal-id $TERMINAL_ID --role $AGENT_ROLE
 ```
 
 3. **Read Current Status:**
+
 ```bash
 cat migration/agent_coordination/agent_sync_status.md
 cat migration/AGENT_COORDINATION_BOARD.md
 ```
 
 4. **Accept Task Assignment:**
+
 - Check `AGENT_COORDINATION_BOARD.md` for available tasks
 - Update status to "doing" when starting
 - Report progress every 15 minutes
@@ -273,6 +287,7 @@ cat migration/AGENT_COORDINATION_BOARD.md
 ### **COLLECTIVE ACHIEVEMENT CELEBRATION**
 
 **Success Metrics:**
+
 - **ERO Hui Success** - Perfect demonstration tomorrow
 - **Cultural Excellence** - 100% Māori content safety
 - **Technical Mastery** - World-class educational platform
@@ -286,4 +301,4 @@ cat migration/AGENT_COORDINATION_BOARD.md
 
 ---
 
-*Last Updated: 2025-08-16 14:30 NZST by Claude Code - Supreme Overseer*
+_Last Updated: 2025-08-16 14:30 NZST by Claude Code - Supreme Overseer_

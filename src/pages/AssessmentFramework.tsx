@@ -1,3 +1,3 @@
-import AssessmentFramework from '../components/AssessmentFramework'
-
-export default function AssessmentFrameworkPage() {return <AssessmentFramework />}
+import AssessmentFramework from '../components/AssessmentFramework' export default function AssessmentFrameworkPage() {
+  return <AssessmentFramework />;
+} ;

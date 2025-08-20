@@ -1,449 +1,108 @@
-/* 🌿 Whakataukī Wisdom - TeAoMarama Unified Design */
+/* WhakataukiWisdom Component Styles */
 
-.whakatauki-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 100%);
-  min-height: 100vh;
-}
-
-.whakatauki-header {
-  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(234, 88, 12, 0.35);
-  position: relative;
-  overflow: hidden;
-}
-
-.whakatauki-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="koru" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,10 Q15,5 20,10 Q15,15 10,10" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23koru)"/></svg>');
-  opacity: 0.3;
-}
-
-.header-content {
-  position: relative;
-  z-index: 1;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
-}
-
-.title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-}
-
-.subtitle {
-  font-size: 1.4rem;
-  opacity: 0.95;
-  margin: 0 0 1.25rem 0;
-}
-
-.meta {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.meta-item {
-  background: rgba(255, 255, 255, 0.18);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
-}
-
-.description {
-  margin: 0;
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-.tabs {
-  margin-bottom: 1.5rem;
-}
-
-.tab-buttons {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tab-button {
-  background: white;
-  border: 2px solid #e5e7eb;
-  color: #374151;
-  padding: 0.7rem 1.2rem;
+.whakatauki-wisdom {
+  /* Basic container styles */
+  padding: 1rem;
+  margin: 1rem 0;
   border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 500;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tab-button:hover {
-  border-color: #ea580c;
-  color: #ea580c;
-  transform: translateY(-1px);
+.whakatauki-wisdom h1,
+.whakatauki-wisdom h2,
+.whakatauki-wisdom h3,
+.whakatauki-wisdom h4,
+.whakatauki-wisdom h5,
+.whakatauki-wisdom h6 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
-.tab-button.active {
-  background: #ea580c;
-  border-color: #ea580c;
-  color: white;
-  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
-}
-
-.proverbs,
-.analysis,
-.cultural,
-.activities {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-}
-
-.proverbs h2,
-.analysis h2,
-.cultural h2,
-.activities h2 {
-  color: #ea580c;
-  margin-bottom: 1.5rem;
-}
-
-.proverb-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.proverb-pill {
-  background: #f3f4f6;
-  border: 2px solid #e5e7eb;
-  color: #374151;
-  padding: 0.6rem 1rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-size: 0.9rem;
-  max-width: 200px;
-  text-align: center;
-}
-
-.proverb-pill:hover {
-  border-color: #ea580c;
-  color: #ea580c;
-}
-
-.proverb-pill.active {
-  background: #ea580c;
-  color: white;
-  border-color: #ea580c;
-  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.25);
-}
-
-.proverb-display {
-  background: #fef7ed;
-  border: 1px solid #fed7aa;
-  border-radius: 12px;
-  padding: 2rem;
-}
-
-.proverb-main {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #fed7aa;
-}
-
-.proverb-maori {
+.whakatauki-wisdom h1 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #ea580c;
-  margin: 0 0 1rem 0;
-  line-height: 1.4;
 }
 
-.proverb-english {
-  font-size: 1.2rem;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0;
-}
-
-.proverb-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.detail-section {
-  background: white;
-  border: 1px solid #fed7aa;
-  border-radius: 8px;
-  padding: 1.25rem;
-}
-
-.detail-section h4 {
-  color: #ea580c;
-  margin: 0 0 0.75rem 0;
-  font-size: 1rem;
-}
-
-.detail-section p {
-  margin: 0;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-.themes-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.theme-tag {
-  background: #fed7aa;
-  color: #ea580c;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.current-proverb {
-  background: #fef7ed;
-  border: 1px solid #fed7aa;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.current-proverb h3 {
-  color: #ea580c;
-  margin: 0 0 0.5rem 0;
-}
-
-.proverb-text {
-  font-size: 1.1rem;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0;
-}
-
-.questions-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.question-card {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.question-card h4 {
-  color: #ea580c;
-  margin: 0 0 1rem 0;
-}
-
-.question-text {
-  color: #374151;
-  margin: 0 0 1rem 0;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.question-hint,
-.cultural-focus {
-  background: #fef7ed;
-  border: 1px solid #fed7aa;
-  border-radius: 6px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-.response-area {
-  margin-top: 1rem;
-}
-
-.response-input {
-  width: 100%;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 0.75rem;
-  font-family: inherit;
-  resize: vertical;
-  transition: border-color 0.25s ease;
-}
-
-.response-input:focus {
-  outline: none;
-  border-color: #ea580c;
-  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
-}
-
-.cultural-content {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.cultural-section {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.cultural-section h3 {
-  color: #ea580c;
-  margin: 0 0 1rem 0;
-}
-
-.cultural-section p {
-  margin: 0 0 1rem 0;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-.cultural-section ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.cultural-section li {
-  margin-bottom: 0.75rem;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-.activities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.activity {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1.5rem;
-}
-
-.activity h3 {
-  color: #ea580c;
-  margin: 0 0 1rem 0;
-}
-
-.activity p {
-  margin: 0 0 1rem 0;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-.activity ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.activity li {
-  margin-bottom: 0.5rem;
-  color: #6b7280;
-  line-height: 1.4;
-}
-
-.footer {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 1.5rem;
-}
-
-.motto {
-  color: #ea580c;
+.whakatauki-wisdom h2 {
+  font-size: 1.5rem;
   font-weight: 600;
-  margin: 0 0 0.5rem 0;
 }
 
-.platform {
-  color: #475569;
-  margin: 0;
-  font-size: 0.95rem;
+.whakatauki-wisdom h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
+.whakatauki-wisdom p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.whakatauki-wisdom ul,
+.whakatauki-wisdom ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.whakatauki-wisdom li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.whakatauki-wisdom .highlight {
+  background-color: #fff3cd;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.whakatauki-wisdom .important {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.whakatauki-wisdom .tip {
+  background-color: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.whakatauki-wisdom .success {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .whakatauki-container {
-    padding: 1rem;
+  .whakatauki-wisdom {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
   }
-
-  .whakatauki-header {
-    padding: 2rem 1rem;
+  
+  .whakatauki-wisdom h1 {
+    font-size: 1.5rem;
   }
-
-  .title {
-    font-size: 2rem;
+  
+  .whakatauki-wisdom h2 {
+    font-size: 1.3rem;
   }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .proverb-details {
-    grid-template-columns: 1fr;
-  }
-
-  .activities-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tab-buttons {
-    flex-direction: column;
-  }
-
-  .proverb-selector {
-    flex-direction: column;
-  }
-
-  .proverb-pill {
-    max-width: none;
+  
+  .whakatauki-wisdom h3 {
+    font-size: 1.1rem;
   }
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Print styles */
+@media print {
+  .whakatauki-wisdom {
+    box-shadow: none;
+    border: 1px solid #ddd;
   }
 }
-
-.proverbs,
-.analysis,
-.cultural,
-.activities {
-  animation: fadeUp 0.5s ease-out;
-}
-

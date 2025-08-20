@@ -13,16 +13,15 @@ const Home: React.FC = () => {
           <Link to="/contact" className="btn btn-secondary">Get Started</Link>
         </div>
       </header>
-      
       <section className="features-section">
         <div className="features-grid">
           <div className="feature-card">
             <h3>📚 Educational Resources</h3>
-            <p>5,439 curated educational materials</p>
+            <p>5439 curated educational materials</p>
           </div>
           <div className="feature-card">
             <h3>🌿 Cultural Integration</h3>
-            <p>3,372 culturally authentic Māori resources</p>
+            <p>3372 culturally authentic Māori resources</p>
           </div>
           <div className="feature-card">
             <h3>🎯 High Quality</h3>
