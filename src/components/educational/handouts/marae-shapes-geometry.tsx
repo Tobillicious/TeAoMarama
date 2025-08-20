@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface MaraeShapesGeometryProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({
-  culturalContext = "Mathematical concepts in cultural context",
-  yearLevel = "Year 7-8",
-  subject = "Mathematics"
+interface MaraeShapesGeometryProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = (_{
+culturalContext = "Mathematical concepts in cultural context", 
+_yearLevel = "Year 7-8", 
+_subject = "Mathematics"
 }) => {
-  return (
+return (
     <div className="marae-shapes-geometry">
       <Card title="Marae Shapes Geometry | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Marae Shapes Geometry</h1>
@@ -40,7 +37,7 @@ const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default MaraeShapesGeometry;
+export default MaraeShapesGeometry

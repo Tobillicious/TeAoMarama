@@ -1,110 +1,106 @@
-import React, { useState } from 'react';
-import './CulturalConsultationProtocol.css';
+import React, { useState } from 'react'
+import './CulturalConsultationProtocol.css'
 
-interface ConsultationStatus {
-  id: string;
-  iwi: string;
-  topic: string;
-  status: 'pending' | 'in-progress' | 'completed' | 'review';
-  lastUpdated: string;
-  kaumatua?: string;
-  feedback?: string;
-}
-
-interface CulturalConsultationProtocolProps {
-  className?: string;
-  variant?: 'full' | 'summary' | 'widget';
-}
+interface ConsultationStatus {,
+id: string,
+iwi: string,
+topic: string,
+status: 'pending' | 'in-progress' | 'completed' | 'review',
+lastUpdated: string
+  kaumatua?: string
+  feedback?: string}
+interface CulturalConsultationProtocolProps {className?: string
+  variant?: 'full' | 'summary' | 'widget'}
 
 // Mock data for demonstration
 const consultationData: ConsultationStatus[] = [
-  {
-    id: '001',
-    iwi: 'Ngāti Tuwharetoa',
-    topic: 'Traditional Mathematics Concepts',
-    status: 'completed',
-    lastUpdated: '2024-08-15',
-    kaumatua: 'Uncle Joe Tamaki',
-    feedback: 'Excellent integration of traditional counting systems with modern curriculum'
+  {,
+id: '001',,
+iwi: 'Ngāti Tuwharetoa',,
+topic: 'Traditional Mathematics Concepts',,
+status: 'completed',,
+lastUpdated: '2024-08-15',,
+kaumatua: 'Uncle Joe Tamaki',,
+feedback: 'Excellent integration of traditional counting systems with modern curriculum'
   },
-  {
-    id: '002',
-    iwi: 'Te Arawa',
-    topic: 'Geothermal Science Education',
-    status: 'in-progress',
-    lastUpdated: '2024-08-16',
-    kaumatua: 'Auntie Mary Te Rito'
+  {,
+id: '002',,
+iwi: 'Te Arawa',,
+topic: 'Geothermal Science Education',,
+status: 'in-progress',,
+lastUpdated: '2024-08-16',,
+kaumatua: 'Auntie Mary Te Rito'
   },
-  {
-    id: '003',
-    iwi: 'Waikato-Tainui',
-    topic: 'River Ecosystem Studies',
-    status: 'pending',
-    lastUpdated: '2024-08-17'
+  {,
+id: '003',,
+iwi: 'Waikato-Tainui',,
+topic: 'River Ecosystem Studies',,
+status: 'pending',,
+lastUpdated: '2024-08-17'
   }
-];
+]
 
 const postcolonialPrinciples = [
-  {
-    title: "Tino Rangatiratanga",
-    description: "Self-determination in educational content and delivery",
-    icon: "👑"
+  {,
+title: "Tino Rangatiratanga",,
+description: "Self-determination in educational content and delivery",,
+icon: "👑"
   },
-  {
-    title: "Mana Whenua",
-    description: "Recognition of territorial and cultural authority",
-    icon: "🌍"
+  {,
+title: "Mana Whenua",,
+description: "Recognition of territorial and cultural authority",,
+icon: "🌍"
   },
-  {
-    title: "Whakapapa",
-    description: "Genealogical connections to knowledge systems",
-    icon: "🌳"
+  {,
+title: "Whakapapa",,
+description: "Genealogical connections to knowledge systems",,
+icon: "🌳"
   },
-  {
-    title: "Tikanga Māori",
-    description: "Correct cultural protocols and practices",
-    icon: "⚖️"
+  {,
+title: "Tikanga Māori",,
+description: "Correct cultural protocols and practices",,
+icon: "⚖️"
   }
-];
+]
 
-export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocolProps> = ({
-  className = '',
-  variant = 'full'
+export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocolProps> = (_{
+className = '', 
+_variant = 'full'
 }) => {
-  const [activeTab, setActiveTab] = useState<'consultations' | 'principles' | 'guidelines'>('consultations');
+const [activeTab, setActiveTab] = useState<'consultations' | 'principles' | 'guidelines'>('consultations')
 
-  const getStatusColor = (status: ConsultationStatus['status']) => {
-    switch (status) {
-      case 'completed':
-        return 'var(--color-success)';
+const getStatusColor = (_status: ConsultationStatus['status']) => {
+switch (status) {
+case 'completed':
+return 'var(--color-success)'
       case 'in-progress':
-        return 'var(--color-primary)';
+return 'var(--color-primary)'
       case 'pending':
-        return 'var(--color-warning)';
+return 'var(--color-warning)'
       case 'review':
-        return 'var(--color-info)';
-      default:
-        return 'var(--color-neutral-500)';
+return 'var(--color-info)',
+default:
+return 'var(--color-neutral-500)'
     }
-  };
+  }
 
-  const getStatusText = (status: ConsultationStatus['status']) => {
-    switch (status) {
-      case 'completed':
-        return 'Completed';
+const getStatusText = (_status: ConsultationStatus['status']) => {
+switch (status) {
+case 'completed':
+return 'Completed'
       case 'in-progress':
-        return 'In Progress';
+return 'In Progress'
       case 'pending':
-        return 'Pending';
+return 'Pending'
       case 'review':
-        return 'Under Review';
-      default:
-        return 'Unknown';
+return 'Under Review',
+default:
+return 'Unknown'
     }
-  };
+  }
 
-  if (variant === 'widget') {
-    return (
+if (variant === 'widget') {
+return (
       <div className={`cultural-consultation-widget ${className}`}>
         <div className="widget-header">
           <div className="widget-icon">🤝</div>
@@ -115,17 +111,16 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
         </div>
         <div className="widget-progress">
           <div 
-            className="progress-bar"
-            style={{ 
-              width: `${(consultationData.filter(c => c.status === 'completed').length / consultationData.length) * 100}%` 
+className="progress-bar"
+style={{ ,
+width: `${(consultationData.filter(c => c.status === 'completed').length / consultationData.length) * 100}%` 
             }}
           />
         </div>
       </div>
-    );
+    )
   }
-
-  return (
+return (
     <div className={`cultural-consultation-protocol cultural-consultation-${variant} ${className}`}>
       <div className="consultation-header">
         <div className="header-content">
@@ -149,31 +144,31 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
 
       <div className="consultation-tabs">
         <button
-          className={`tab-button ${activeTab === 'consultations' ? 'active' : ''}`}
-          onClick={() => setActiveTab('consultations')}
+className={`tab-button ${activeTab === 'consultations' ? 'active' : ''}`}
+onClick={() => setActiveTab('consultations')}
         >
           <span className="tab-icon">📋</span>
-          Iwi Consultations
+Iwi Consultations
         </button>
         <button
-          className={`tab-button ${activeTab === 'principles' ? 'active' : ''}`}
-          onClick={() => setActiveTab('principles')}
+className={`tab-button ${activeTab === 'principles' ? 'active' : ''}`}
+onClick={() => setActiveTab('principles')}
         >
           <span className="tab-icon">🌱</span>
-          Postcolonial Principles
+Postcolonial Principles
         </button>
         <button
-          className={`tab-button ${activeTab === 'guidelines' ? 'active' : ''}`}
-          onClick={() => setActiveTab('guidelines')}
+className={`tab-button ${activeTab === 'guidelines' ? 'active' : ''}`}
+onClick={() => setActiveTab('guidelines')}
         >
           <span className="tab-icon">📖</span>
-          Guidelines
+Guidelines
         </button>
       </div>
 
       <div className="consultation-content">
         {activeTab === 'consultations' && (
-          <div className="consultations-list">
+_<div className="consultations-list">
             {consultationData.map((consultation) => (
               <div key={consultation.id} className="consultation-card">
                 <div className="consultation-header-card">
@@ -182,8 +177,8 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
                     <p className="consultation-topic">{consultation.topic}</p>
                   </div>
                   <div 
-                    className="consultation-status"
-                    style={{ backgroundColor: getStatusColor(consultation.status) }}
+className="consultation-status"
+style={{ backgroundColor: getStatusColor(consultation.status) }}
                   >
                     {getStatusText(consultation.status)}
                   </div>
@@ -212,8 +207,8 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
         )}
 
         {activeTab === 'principles' && (
-          <div className="principles-grid">
-            {postcolonialPrinciples.map((principle, index) => (
+_<div className="principles-grid">
+            {postcolonialPrinciples.map((principle,  _index) => (
               <div key={index} className="principle-card">
                 <div className="principle-icon">{principle.icon}</div>
                 <h3 className="principle-title">{principle.title}</h3>
@@ -238,7 +233,7 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
             <div className="guideline-section">
               <h3>🤝 Consultation Process</h3>
               <ol>
-                <li><strong>Initial Engagement:</strong> Contact appropriate iwi through proper channels</li>
+                <li><strong>Initial Engagement: </strong> Contact appropriate iwi through proper channels</li>
                 <li><strong>Hui Planning:</strong> Organize face-to-face meetings with cultural protocols</li>
                 <li><strong>Content Review:</strong> Collaborative review of educational materials</li>
                 <li><strong>Feedback Integration:</strong> Incorporate cultural insights and corrections</li>
@@ -260,7 +255,7 @@ export const CulturalConsultationProtocol: React.FC<CulturalConsultationProtocol
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalConsultationProtocol;
+export default CulturalConsultationProtocol

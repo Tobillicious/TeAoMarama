@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MountainNavigationTrigonometry.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MountainNavigationTrigonometry.css'
 
-interface MountainNavigationTrigonometryProps {
-  className?: string;
-}
-
-export const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryProps> = ({ className = '' }) => {
-  return (
+interface MountainNavigationTrigonometryProps {className?: string}
+export const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="mountain navigation trigonometry"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`mountain-navigation-trigonometry-handout cultural-focus ${className}`}
+title="mountain navigation trigonometry"
+subtitle="Te Kete Ako - Cultural Education"
+className={`mountain-navigation-trigonometry-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonom
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MountainNavigationTrigonometry;
+export default MountainNavigationTrigonometry

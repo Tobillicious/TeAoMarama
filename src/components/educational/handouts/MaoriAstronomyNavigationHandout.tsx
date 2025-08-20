@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaoriAstronomyNavigationHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaoriAstronomyNavigationHandout.css'
 
-interface MaoriAstronomyNavigationHandoutProps {
-  className?: string;
-}
-
-export const MaoriAstronomyNavigationHandout: React.FC<MaoriAstronomyNavigationHandoutProps> = ({ className = '' }) => {
-  return (
+interface MaoriAstronomyNavigationHandoutProps {className?: string}
+export const MaoriAstronomyNavigationHandout: React.FC<MaoriAstronomyNavigationHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="maori astronomy navigation handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`maori-astronomy-navigation-handout-handout cultural-focus ${className}`}
+title="maori astronomy navigation handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`maori-astronomy-navigation-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaoriAstronomyNavigationHandout: React.FC<MaoriAstronomyNavigationH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaoriAstronomyNavigationHandout;
+export default MaoriAstronomyNavigationHandout

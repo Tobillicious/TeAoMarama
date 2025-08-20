@@ -1,5 +1,3 @@
-import ScienceIntegration from '../components/ScienceIntegration';
+import ScienceIntegration from '../components/ScienceIntegration'
 
-export default function ScienceIntegrationPage() {
-  return <ScienceIntegration />;
-}
+export default function ScienceIntegrationPage() {return <ScienceIntegration />}

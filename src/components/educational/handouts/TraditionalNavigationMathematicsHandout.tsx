@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TraditionalNavigationMathematicsHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TraditionalNavigationMathematicsHandout.css'
 
-interface TraditionalNavigationMathematicsHandoutProps {
-  className?: string;
-}
-
-export const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMathematicsHandoutProps> = ({ className = '' }) => {
-  return (
+interface TraditionalNavigationMathematicsHandoutProps {className?: string}
+export const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMathematicsHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="traditional navigation mathematics handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`traditional-navigation-mathematics-handout-handout cultural-focus ${className}`}
+title="traditional navigation mathematics handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`traditional-navigation-mathematics-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNaviga
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TraditionalNavigationMathematicsHandout;
+export default TraditionalNavigationMathematicsHandout

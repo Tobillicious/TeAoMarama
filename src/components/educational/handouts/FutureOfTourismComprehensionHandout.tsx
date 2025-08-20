@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FutureOfTourismComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FutureOfTourismComprehensionHandout.css'
 
-interface FutureOfTourismComprehensionHandoutProps {
-  className?: string;
-}
-
-export const FutureOfTourismComprehensionHandout: React.FC<FutureOfTourismComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface FutureOfTourismComprehensionHandoutProps {className?: string}
+export const FutureOfTourismComprehensionHandout: React.FC<FutureOfTourismComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="future of tourism comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`future-of-tourism-comprehension-handout-handout cultural-focus ${className}`}
+title="future of tourism comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`future-of-tourism-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FutureOfTourismComprehensionHandout: React.FC<FutureOfTourismCompre
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FutureOfTourismComprehensionHandout;
+export default FutureOfTourismComprehensionHandout

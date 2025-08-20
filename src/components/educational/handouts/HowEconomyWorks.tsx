@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './HowEconomyWorks.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './HowEconomyWorks.css'
 
-interface HowEconomyWorksProps {
-  className?: string;
-}
-
-export const HowEconomyWorks: React.FC<HowEconomyWorksProps> = ({ className = '' }) => {
-  return (
+interface HowEconomyWorksProps {className?: string}
+export const HowEconomyWorks: React.FC<HowEconomyWorksProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="how economy works"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`how-economy-works-handout cultural-focus ${className}`}
+title="how economy works"
+subtitle="Te Kete Ako - Cultural Education"
+className={`how-economy-works-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const HowEconomyWorks: React.FC<HowEconomyWorksProps> = ({ className = ''
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default HowEconomyWorks;
+export default HowEconomyWorks

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface RenewableEnergyTraditionalProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface RenewableEnergyTraditionalProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="renewable-energy-traditional">
       <Card title="Renewable Energy Traditional | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Renewable Energy Traditional</h1>
@@ -40,7 +37,7 @@ const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default RenewableEnergyTraditional;
+export default RenewableEnergyTraditional

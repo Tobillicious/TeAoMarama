@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FamilyDataCollection.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FamilyDataCollection.css'
 
-interface FamilyDataCollectionProps {
-  className?: string;
-}
-
-export const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({ className = '' }) => {
-  return (
+interface FamilyDataCollectionProps {className?: string}
+export const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="family data collection"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`family-data-collection-handout cultural-focus ${className}`}
+title="family data collection"
+subtitle="Te Kete Ako - Cultural Education"
+className={`family-data-collection-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FamilyDataCollection;
+export default FamilyDataCollection

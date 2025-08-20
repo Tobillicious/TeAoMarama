@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MicroplasticsComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MicroplasticsComprehensionHandout.css'
 
-interface MicroplasticsComprehensionHandoutProps {
-  className?: string;
-}
-
-export const MicroplasticsComprehensionHandout: React.FC<MicroplasticsComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface MicroplasticsComprehensionHandoutProps {className?: string}
+export const MicroplasticsComprehensionHandout: React.FC<MicroplasticsComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="microplastics comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`microplastics-comprehension-handout-handout cultural-focus ${className}`}
+title="microplastics comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`microplastics-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MicroplasticsComprehensionHandout: React.FC<MicroplasticsComprehens
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MicroplasticsComprehensionHandout;
+export default MicroplasticsComprehensionHandout

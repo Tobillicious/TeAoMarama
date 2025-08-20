@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PlateTectonicsComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PlateTectonicsComprehensionHandout.css'
 
-interface PlateTectonicsComprehensionHandoutProps {
-  className?: string;
-}
-
-export const PlateTectonicsComprehensionHandout: React.FC<PlateTectonicsComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface PlateTectonicsComprehensionHandoutProps {className?: string}
+export const PlateTectonicsComprehensionHandout: React.FC<PlateTectonicsComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="plate tectonics comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`plate-tectonics-comprehension-handout-handout cultural-focus ${className}`}
+title="plate tectonics comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`plate-tectonics-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PlateTectonicsComprehensionHandout: React.FC<PlateTectonicsComprehe
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PlateTectonicsComprehensionHandout;
+export default PlateTectonicsComprehensionHandout

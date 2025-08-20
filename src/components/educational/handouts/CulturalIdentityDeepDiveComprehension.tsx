@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalIdentityDeepDiveComprehension.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalIdentityDeepDiveComprehension.css'
 
-interface CulturalIdentityDeepDiveComprehensionProps {
-  className?: string;
-}
-
-export const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveComprehensionProps> = ({ className = '' }) => {
-  return (
+interface CulturalIdentityDeepDiveComprehensionProps {className?: string}
+export const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveComprehensionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural identity deep dive comprehension"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-identity-deep-dive-comprehension-handout cultural-focus ${className}`}
+title="cultural identity deep dive comprehension"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-identity-deep-dive-comprehension-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDee
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalIdentityDeepDiveComprehension;
+export default CulturalIdentityDeepDiveComprehension

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './KaitiakitangaKids.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './KaitiakitangaKids.css'
 
-interface KaitiakitangaKidsProps {
-  className?: string;
-}
-
-export const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({ className = '' }) => {
-  return (
+interface KaitiakitangaKidsProps {className?: string}
+export const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="kaitiakitanga kids"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`kaitiakitanga-kids-handout cultural-focus ${className}`}
+title="kaitiakitanga kids"
+subtitle="Te Kete Ako - Cultural Education"
+className={`kaitiakitanga-kids-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({ className 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default KaitiakitangaKids;
+export default KaitiakitangaKids

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ColonizationPerspectivesHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ColonizationPerspectivesHandout.css'
 
-interface ColonizationPerspectivesHandoutProps {
-  className?: string;
-}
-
-export const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutProps> = ({ className = '' }) => {
-  return (
+interface ColonizationPerspectivesHandoutProps {className?: string}
+export const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="colonization perspectives handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`colonization-perspectives-handout-handout cultural-focus ${className}`}
+title="colonization perspectives handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`colonization-perspectives-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ColonizationPerspectivesHandout;
+export default ColonizationPerspectivesHandout

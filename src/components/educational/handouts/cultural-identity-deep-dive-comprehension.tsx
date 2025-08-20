@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CulturalIdentityDeepDiveComprehensionProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveComprehensionProps> = ({
-  culturalContext = "Cultural practices and traditional knowledge",
-  yearLevel = "Year 7-8",
-  subject = "English, Literacy"
+interface CulturalIdentityDeepDiveComprehensionProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveComprehensionProps> = (_{
+culturalContext = "Cultural practices and traditional knowledge", 
+_yearLevel = "Year 7-8", 
+_subject = "English,  _Literacy"
 }) => {
-  return (
+return (
     <div className="cultural-identity-deep-dive-comprehension">
       <Card title="Cultural Identity Deep Dive Comprehension | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveCo
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Cultural Identity Deep Dive Comprehension</h1>
@@ -40,7 +37,7 @@ const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDeepDiveCo
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalIdentityDeepDiveComprehension;
+export default CulturalIdentityDeepDiveComprehension

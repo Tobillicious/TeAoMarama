@@ -1,120 +1,113 @@
-import { useState } from 'react';
-import './Year10CulturalGeometry.css';
+import {useState} from 'react'
+import './Year10CulturalGeometry.css'
 
-interface LessonPlan {
-  id: string;
-  title: string;
-  focus: string;
-  mathematicalConcepts: string[];
-  culturalConnections: string[];
-  activities: string[];
-  assessment: string;
-  duration: number; // minutes
-  culturalAuthenticityScore: number; // 0-1
-  tikangaCompliance: string[];
-  whakapapaConnections: string[];
-}
-
-interface WeekPlan {
-  id: string;
-  title: string;
-  theme: string;
-  lessons: LessonPlan[];
-  culturalContext: string;
-  mathematicalObjectives: string[];
-  iwiConnections: string[];
-  traditionalKnowledge: string[];
-}
-
+interface LessonPlan {,
+id: string,
+title: string,
+focus: string,
+mathematicalConcepts: string[],
+culturalConnections: string[],
+activities: string[],
+assessment: string,
+duration: number // minutes,
+culturalAuthenticityScore: number // 0-1,
+tikangaCompliance: string[],
+whakapapaConnections: string[]}
+interface WeekPlan {,
+id: string,
+title: string,
+theme: string,
+lessons: LessonPlan[],
+culturalContext: string,
+mathematicalObjectives: string[],
+iwiConnections: string[],
+traditionalKnowledge: string[]}
 const weekPlans: WeekPlan[] = [
-  {
-    id: 'week1',
-    title: 'Ngā Taonga Tuku Iho',
-    theme: 'Traditional Pattern Analysis',
-    culturalContext:
-      'Exploring the mathematical principles embedded in traditional Māori art forms, connecting to ancestral knowledge and cultural wisdom',
-    mathematicalObjectives: [
+  {,
+id: 'week1',,
+title: 'Ngā Taonga Tuku Iho',,
+theme: 'Traditional Pattern Analysis',,
+culturalContext: 'Exploring the mathematical principles embedded in traditional Māori art forms, connecting to ancestral knowledge and cultural wisdom',,
+mathematicalObjectives: [
       'Identify line and rotational symmetry in traditional koru patterns',
       'Measure and classify angles in kowhaiwhai scroll work',
       'Analyze geometric transformations in pātiki designs',
       'Derive algebraic expressions for pattern growth sequences',
-    ],
-    iwiConnections: [
+    ],;,
+iwiConnections: [
       'Ngāti Kahungunu - Kowhaiwhai patterns and whakapapa',
       'Te Arawa - Koru symbolism and traditional art forms',
       'Ngāi Tahu - Pātiki designs and mahinga kai connections',
-    ],
-    traditionalKnowledge: [
+    ],;,
+traditionalKnowledge: [
       'Koru represents the unfurling fern frond - new life and growth',
       'Kowhaiwhai tells stories of ancestors and tribal history',
       'Pātiki (flounder) connects to traditional fishing and sustenance',
       'Mathematical patterns encode cultural knowledge and wisdom',
-    ],
-    lessons: [
-      {
-        id: 'lesson1-2',
-        title: 'Introduction to Cultural Geometry',
-        focus: 'Koru (spiral), Kowhaiwhai (scroll patterns), Pātiki (flounder)',
-        mathematicalConcepts: ['Symmetry types', 'Transformation geometry', 'Angle measurement'],
-        culturalConnections: [
+    ],;,
+lessons: [
+      {,
+id: 'lesson1-2',,
+title: 'Introduction to Cultural Geometry',,
+focus: 'Koru (spiral), Kowhaiwhai (scroll patterns), Pātiki (flounder)',,
+mathematicalConcepts: ['Symmetry types', 'Transformation geometry', 'Angle measurement'],;,
+culturalConnections: [
           'Koru represents new life and growth in Māori culture - the unfurling fern frond',
           'Kowhaiwhai patterns tell stories of ancestors and tribal history',
           'Pātiki designs connect to traditional fishing and sustenance (mahinga kai)',
           'Mathematical beauty reflects the harmony of Te Ao Māori',
-        ],
-        activities: [
+        ],;,
+activities: [
           'Analyze koru patterns for mathematical symmetry with cultural context',
           'Measure angles in traditional kowhaiwhai designs using protractors',
           'Create mathematical models of spiral growth with cultural significance',
           'Map traditional patterns using coordinate geometry and cultural mapping',
           'Connect mathematical patterns to whakapapa and tribal stories',
-        ],
-        assessment:
-          'Pattern analysis portfolio with mathematical documentation and cultural interpretation',
-        duration: 90,
-        culturalAuthenticityScore: 0.98,
-        tikangaCompliance: [
+        ],;,
+assessment: 'Pattern analysis portfolio with mathematical documentation and cultural interpretation',,
+duration: 90,,
+culturalAuthenticityScore: 0.98,,
+tikangaCompliance: [
           'Respect for traditional knowledge and cultural protocols',
           'Proper acknowledgment of iwi and tribal connections',
           'Cultural safety in mathematical interpretation',
           'Honoring of ancestral wisdom in pattern analysis',
-        ],
-        whakapapaConnections: [
+        ],;,
+whakapapaConnections: [
           'Connection to Tāne Mahuta through koru symbolism',
           'Link to tribal ancestors through kowhaiwhai patterns',
           'Relationship to Tangaroa through pātiki designs',
           'Mathematical patterns as expressions of whakapapa',
         ],
       },
-      {
-        id: 'lesson3-4',
-        title: 'Algebraic Pattern Modeling',
-        focus: 'Mathematical modeling of traditional patterns with cultural significance',
-        mathematicalConcepts: ['Algebraic expressions', 'Sequences', 'Coordinate geometry'],
-        culturalConnections: [
+      {,
+id: 'lesson3-4',,
+title: 'Algebraic Pattern Modeling',,
+focus: 'Mathematical modeling of traditional patterns with cultural significance',,
+mathematicalConcepts: ['Algebraic expressions', 'Sequences', 'Coordinate geometry'],;,
+culturalConnections: [
           'Traditional patterns follow mathematical principles embedded in cultural knowledge',
           'Cultural knowledge encoded in geometric relationships and proportions',
           'Mathematical beauty in cultural art forms reflects spiritual harmony',
           'Algebraic patterns connect to traditional counting systems and knowledge',
-        ],
-        activities: [
+        ],;,
+activities: [
           'Derive koru spiral equation: r = a × θ^b with cultural context',
           'Create kowhaiwhai sequence: T(n) = 4n + 2 representing traditional patterns',
           'Model pattern growth using algebraic expressions and cultural significance',
           'Use coordinate geometry to map traditional designs with cultural mapping',
           'Connect mathematical sequences to traditional knowledge systems',
-        ],
-        assessment:
-          'Mathematical modeling report with cultural context and traditional knowledge integration',
-        duration: 90,
-        culturalAuthenticityScore: 0.97,
-        tikangaCompliance: [
+        ],;,
+assessment: 'Mathematical modeling report with cultural context and traditional knowledge integration',,
+duration: 90,,
+culturalAuthenticityScore: 0.97,,
+tikangaCompliance: [
           'Respect for traditional mathematical knowledge',
           'Cultural protocols in mathematical interpretation',
           'Proper acknowledgment of cultural knowledge systems',
           'Honoring of traditional counting and measurement methods',
-        ],
-        whakapapaConnections: [
+        ],;,
+whakapapaConnections: [
           'Mathematical patterns as expressions of ancestral knowledge',
           'Algebraic relationships reflecting cultural wisdom',
           'Geometric sequences connecting to traditional knowledge',
@@ -123,98 +116,95 @@ const weekPlans: WeekPlan[] = [
       },
     ],
   },
-  {
-    id: 'week2',
-    title: 'Whare Tangata',
-    theme: 'Architectural Mathematics',
-    culturalContext:
-      'Traditional whare construction principles and proportional systems reflecting cultural values and spiritual harmony',
-    mathematicalObjectives: [
+  {,
+id: 'week2',,
+title: 'Whare Tangata',,
+theme: 'Architectural Mathematics',,
+culturalContext: 'Traditional whare construction principles and proportional systems reflecting cultural values and spiritual harmony',,
+mathematicalObjectives: [
       'Calculate optimal roof angles for traditional structures using trigonometry',
       'Use trigonometry to determine support beam placements with cultural significance',
       'Analyze proportional relationships in traditional architecture',
       'Model structural loads using mathematical principles and cultural knowledge',
-    ],
-    iwiConnections: [
+    ],;,
+iwiConnections: [
       'Ngāti Porou - Traditional whare construction and architectural wisdom',
       'Te Arawa - Sacred proportions and spiritual harmony in design',
       'Tainui - Structural integrity and cultural values in architecture',
-    ],
-    traditionalKnowledge: [
+    ],;,
+traditionalKnowledge: [
       'Whare represents the body of knowledge and community unity',
       'Traditional proportions reflect cultural values and spiritual harmony',
       'Structural integrity connects to spiritual strength and community resilience',
       'Mathematical beauty in architecture reflects the harmony of creation',
-    ],
-    lessons: [
-      {
-        id: 'lesson5-6',
-        title: 'Structural Geometry & Trigonometry',
-        focus: 'Traditional whare construction principles with cultural significance',
-        mathematicalConcepts: [
+    ],;,
+lessons: [
+      {,
+id: 'lesson5-6',,
+title: 'Structural Geometry & Trigonometry',,
+focus: 'Traditional whare construction principles with cultural significance',,
+mathematicalConcepts: [
           'Trigonometric ratios',
           'Structural load calculations',
           'Proportional relationships',
-        ],
-        culturalConnections: [
+        ],;,
+culturalConnections: [
           'Whare represents the body of knowledge and community unity',
           'Traditional proportions reflect cultural values and spiritual harmony',
           'Structural integrity connects to spiritual strength and community resilience',
           'Mathematical precision honors ancestral wisdom and cultural protocols',
-        ],
-        activities: [
+        ],;,
+activities: [
           'Calculate roof angles using trigonometry with cultural context',
           'Determine optimal beam placements with traditional knowledge',
           'Analyze traditional proportional systems with cultural significance',
           'Model structural loads mathematically while honoring cultural values',
           'Connect mathematical calculations to traditional construction wisdom',
-        ],
-        assessment:
-          'Architectural analysis with mathematical calculations and cultural interpretation',
-        duration: 90,
-        culturalAuthenticityScore: 0.99,
-        tikangaCompliance: [
+        ],;,
+assessment: 'Architectural analysis with mathematical calculations and cultural interpretation',,
+duration: 90,,
+culturalAuthenticityScore: 0.99,,
+tikangaCompliance: [
           'Respect for traditional construction knowledge and protocols',
           'Cultural safety in mathematical interpretation of sacred structures',
           'Proper acknowledgment of traditional architectural wisdom',
           'Honoring of cultural values in structural design',
-        ],
-        whakapapaConnections: [
+        ],;,
+whakapapaConnections: [
           'Connection to Tāne Mahuta through whare construction',
           'Link to ancestral knowledge through architectural wisdom',
           'Relationship to community unity through structural design',
           'Mathematical precision as expression of cultural values',
         ],
       },
-      {
-        id: 'lesson7-8',
-        title: 'Sacred Proportions & Golden Ratios',
-        focus: 'Traditional whare proportions and mathematical beauty with cultural significance',
-        mathematicalConcepts: ['Golden ratio (φ)', 'Proportional systems', 'Mathematical beauty'],
-        culturalConnections: [
+      {,
+id: 'lesson7-8',,
+title: 'Sacred Proportions & Golden Ratios',,
+focus: 'Traditional whare proportions and mathematical beauty with cultural significance',,
+mathematicalConcepts: ['Golden ratio (φ)', 'Proportional systems', 'Mathematical beauty'],;,
+culturalConnections: [
           'Traditional proportions: Height : Width : Length = 1 : 1.618 : 2.618',
           'Connection to φ (Golden Ratio) in cultural architecture reflecting harmony',
           'Mathematical beauty reflects spiritual harmony and cultural values',
           'Sacred proportions honor ancestral wisdom and traditional knowledge',
-        ],
-        activities: [
+        ],;,
+activities: [
           'Investigate golden ratio in traditional architecture with cultural context',
           'Analyze proportional relationships in whare design with cultural significance',
           'Create mathematical models of traditional proportions with cultural meaning',
           'Explore connections between mathematics and cultural beauty',
           'Connect mathematical beauty to spiritual harmony and cultural values',
-        ],
-        assessment:
-          'Proportional analysis with cultural interpretation and traditional knowledge integration',
-        duration: 90,
-        culturalAuthenticityScore: 0.98,
-        tikangaCompliance: [
+        ],;,
+assessment: 'Proportional analysis with cultural interpretation and traditional knowledge integration',,
+duration: 90,,
+culturalAuthenticityScore: 0.98,,
+tikangaCompliance: [
           'Respect for sacred proportions and cultural protocols',
           'Cultural safety in mathematical interpretation of sacred geometry',
           'Proper acknowledgment of traditional architectural wisdom',
           'Honoring of spiritual harmony in mathematical beauty',
-        ],
-        whakapapaConnections: [
+        ],;,
+whakapapaConnections: [
           'Sacred proportions as expressions of ancestral wisdom',
           'Golden ratio reflecting the harmony of creation',
           'Mathematical beauty connecting to spiritual values',
@@ -223,16 +213,15 @@ const weekPlans: WeekPlan[] = [
       },
     ],
   },
-];
+]
 
-export default function Year10CulturalGeometry() {
-  const [selectedWeek, setSelectedWeek] = useState<WeekPlan>(weekPlans[0]);
-  const [selectedLesson, setSelectedLesson] = useState<LessonPlan | null>(null);
+export default function Year10CulturalGeometry() {const [selectedWeek, setSelectedWeek] = useState<WeekPlan>(weekPlans[0])
+  const [selectedLesson, setSelectedLesson] = useState<LessonPlan | null>(null)
   const [activeTab, setActiveTab] = useState<
     'overview' | 'lessons' | 'resources' | 'assessment' | 'cultural'
-  >('overview');
+  >('overview')
 
-  return (
+return (
     <div className="cultural-geometry-container">
       <header className="unit-header">
         <div className="header-content">
@@ -246,8 +235,8 @@ export default function Year10CulturalGeometry() {
             <span className="meta-item">✅ Cultural Authenticity: 98%+</span>
           </div>
           <p className="unit-description">
-            Created by Kaitiaki Aronui - Demonstrating Advanced STEM-Cultural Integration with Deep
-            Cultural Intelligence
+Created by Kaitiaki Aronui - Demonstrating Advanced STEM-Cultural Integration with Deep
+Cultural Intelligence
           </p>
         </div>
       </header>
@@ -277,18 +266,18 @@ export default function Year10CulturalGeometry() {
         <div className="cultural-connection">
           <h3>🌿 Cultural Context - "Tahuhu Kōrero"</h3>
           <p>
-            <strong>Tahuhu</strong> (ridgepole of a whare) represents the backbone of knowledge,
-            while <strong>kōrero</strong> (patterns/discussions) represent the stories encoded in
-            traditional designs.
+            <strong>Tahuhu</strong> (ridgepole of a whare) represents the backbone of knowledge,;
+while <strong>kōrero</strong> (patterns/discussions) represent the stories encoded in
+traditional designs.
           </p>
           <p>
-            This unit explores how mathematical principles are embedded within traditional Māori art
-            forms, connecting ākonga to both cultural knowledge and advanced mathematical concepts.
+This unit explores how mathematical principles are embedded within traditional Māori art
+forms, connecting ākonga to both cultural knowledge and advanced mathematical concepts.
           </p>
           <div className="traditional-knowledge">
             <h4>📚 Traditional Knowledge Integration</h4>
             <ul>
-              {selectedWeek.traditionalKnowledge.map((knowledge, index) => (
+              {selectedWeek.traditionalKnowledge.map(_(knowledge,  _index) => (
                 <li key={index}>{knowledge}</li>
               ))}
             </ul>
@@ -298,7 +287,7 @@ export default function Year10CulturalGeometry() {
         <div className="iwi-connections">
           <h3>🏛️ Iwi Connections & Tribal Knowledge</h3>
           <ul>
-            {selectedWeek.iwiConnections.map((connection, index) => (
+            {selectedWeek.iwiConnections.map(_(connection,  _index) => (
               <li key={index}>{connection}</li>
             ))}
           </ul>
@@ -308,24 +297,24 @@ export default function Year10CulturalGeometry() {
           <h3>🔢 Mathematical Learning Objectives</h3>
           <ul>
             <li>
-              <strong>Geometric Transformations:</strong> Analyze rotations, reflections, and
-              translations in traditional patterns
+              <strong>Geometric Transformations: </strong> Analyze rotations, reflections, and
+translations in traditional patterns
             </li>
             <li>
-              <strong>Algebraic Modeling:</strong> Create equations to describe pattern sequences
-              and growth
+              <strong>Algebraic Modeling: </strong> Create equations to describe pattern sequences
+and growth
             </li>
             <li>
-              <strong>Trigonometry Applications:</strong> Calculate angles and proportions in
-              traditional designs
+              <strong>Trigonometry Applications: </strong> Calculate angles and proportions in
+traditional designs
             </li>
             <li>
-              <strong>Statistical Analysis:</strong> Investigate frequency and distribution in
-              cultural artifacts
+              <strong>Statistical Analysis: </strong> Investigate frequency and distribution in
+cultural artifacts
             </li>
             <li>
-              <strong>Complex Problem Solving:</strong> Design mathematically accurate cultural
-              artworks
+              <strong>Complex Problem Solving: </strong> Design mathematically accurate cultural
+artworks
             </li>
           </ul>
         </div>
@@ -334,19 +323,19 @@ export default function Year10CulturalGeometry() {
           <h3>📊 NZ Curriculum Alignment - Mathematics Level 5</h3>
           <ul>
             <li>
-              <strong>Geometry & Measurement:</strong> Deduce and use the angle properties of
-              polygons and circles
+              <strong>Geometry & Measurement: </strong> Deduce and use the angle properties of
+polygons and circles
             </li>
             <li>
-              <strong>Algebra:</strong> Relate graphs, tables, and equations to linear and simple
-              quadratic relationships
+              <strong>Algebra: </strong> Relate graphs, tables, and equations to linear and simple
+quadratic relationships
             </li>
             <li>
-              <strong>Statistics:</strong> Plan and conduct investigations using statistical methods
+              <strong>Statistics: </strong> Plan and conduct investigations using statistical methods
             </li>
             <li>
               <strong>Mathematical Processes:</strong> Use multiple representations and mathematical
-              modeling
+modeling
             </li>
           </ul>
         </div>
@@ -356,38 +345,38 @@ export default function Year10CulturalGeometry() {
       <section className="unit-navigation">
         <div className="tab-buttons">
           <button
-            className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
-            onClick={() => setActiveTab('overview')}
+className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
+onClick={() => setActiveTab('overview')}
           >
             📋 Overview
           </button>
           <button
-            className={`tab-button ${activeTab === 'lessons' ? 'active' : ''}`}
-            onClick={() => setActiveTab('lessons')}
+className={`tab-button ${activeTab === 'lessons' ? 'active' : ''}`}
+onClick={() => setActiveTab('lessons')}
           >
             📅 Lessons
           </button>
           <button
-            className={`tab-button ${activeTab === 'resources' ? 'active' : ''}`}
-            onClick={() => setActiveTab('resources')}
+className={`tab-button ${activeTab === 'resources' ? 'active' : ''}`}
+onClick={() => setActiveTab('resources')}
           >
             📚 Resources
           </button>
           <button
-            className={`tab-button ${activeTab === 'assessment' ? 'active' : ''}`}
-            onClick={() => setActiveTab('assessment')}
+className={`tab-button ${activeTab === 'assessment' ? 'active' : ''}`}
+onClick={() => setActiveTab('assessment')}
           >
             📊 Assessment
           </button>
           <button
-            className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cultural')}
+className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
+onClick={() => setActiveTab('cultural')}
           >
             🌿 Cultural
           </button>
           <button
-            className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cultural')}
+className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
+onClick={() => setActiveTab('cultural')}
           >
             🌿 Cultural
           </button>
@@ -396,15 +385,15 @@ export default function Year10CulturalGeometry() {
 
       {/* Tab Content */}
       {activeTab === 'lessons' && (
-        <section className="lessons-section">
+_<section className="lessons-section">
           <h2>🗓️ Week-by-Week Breakdown</h2>
 
           <div className="week-selector">
             {weekPlans.map((week) => (
-              <button
-                key={week.id}
-                className={`week-button ${selectedWeek.id === week.id ? 'active' : ''}`}
-                onClick={() => setSelectedWeek(week)}
+_<button
+key={week.id}
+className={`week-button ${selectedWeek.id === week.id ? 'active' : ''}`}
+onClick={() => setSelectedWeek(week)}
               >
                 {week.title}
               </button>
@@ -420,30 +409,30 @@ export default function Year10CulturalGeometry() {
             <div className="mathematical-objectives">
               <h4>🔢 Mathematical Objectives</h4>
               <ul>
-                {selectedWeek.mathematicalObjectives.map((objective, index) => (
+                {selectedWeek.mathematicalObjectives.map(_(objective,  _index) => (
                   <li key={index}>{objective}</li>
                 ))}
               </ul>
             </div>
 
             <div className="lessons-grid">
-              {selectedWeek.lessons.map((lesson) => (
-                <div
-                  key={lesson.id}
-                  className={`lesson-card ${selectedLesson?.id === lesson.id ? 'selected' : ''}`}
-                  onClick={() => setSelectedLesson(lesson)}
+              {selectedWeek.lessons.map(_(lesson) => (
+_<div
+key={lesson.id}
+className={`lesson-card ${selectedLesson?.id === lesson.id ? 'selected' : ''}`}
+onClick={() => setSelectedLesson(lesson)}
                 >
                   <div className="lesson-header">
                     <h4>{lesson.title}</h4>
                     <span className="lesson-duration">{lesson.duration}min</span>
                   </div>
                   <p className="lesson-focus">
-                    <strong>Focus:</strong> {lesson.focus}
+                    <strong>Focus: </strong> {lesson.focus}
                   </p>
                   <div className="lesson-concepts">
                     <strong>Mathematical Concepts:</strong>
                     <div className="concept-tags">
-                      {lesson.mathematicalConcepts.map((concept, index) => (
+                      {lesson.mathematicalConcepts.map(_(concept,  _index) => (
                         <span key={index} className="concept-tag">
                           {concept}
                         </span>
@@ -451,7 +440,7 @@ export default function Year10CulturalGeometry() {
                     </div>
                   </div>
                   <div className="cultural-authenticity">
-                    <strong>Cultural Authenticity:</strong>{' '}
+                    <strong>Cultural Authenticity: </strong>{' '}
                     {(lesson.culturalAuthenticityScore * 100).toFixed(0)}%
                   </div>
                 </div>
@@ -459,14 +448,14 @@ export default function Year10CulturalGeometry() {
             </div>
 
             {selectedLesson && (
-              <div className="lesson-details">
+_<div className="lesson-details">
                 <h4>📝 {selectedLesson.title}</h4>
 
                 <div className="lesson-sections">
                   <div className="section">
                     <h5>🌿 Cultural Connections</h5>
                     <ul>
-                      {selectedLesson.culturalConnections.map((connection, index) => (
+                      {selectedLesson.culturalConnections.map((connection,  _index) => (
                         <li key={index}>{connection}</li>
                       ))}
                     </ul>
@@ -475,7 +464,7 @@ export default function Year10CulturalGeometry() {
                   <div className="section">
                     <h5>🎯 Activities</h5>
                     <ul>
-                      {selectedLesson.activities.map((activity, index) => (
+                      {selectedLesson.activities.map(_(activity,  _index) => (
                         <li key={index}>{activity}</li>
                       ))}
                     </ul>
@@ -489,7 +478,7 @@ export default function Year10CulturalGeometry() {
                   <div className="section">
                     <h5>✅ Tikanga Compliance</h5>
                     <ul>
-                      {selectedLesson.tikangaCompliance.map((compliance, index) => (
+                      {selectedLesson.tikangaCompliance.map(_(compliance,  _index) => (
                         <li key={index}>{compliance}</li>
                       ))}
                     </ul>
@@ -498,7 +487,7 @@ export default function Year10CulturalGeometry() {
                   <div className="section">
                     <h5>🏛️ Whakapapa Connections</h5>
                     <ul>
-                      {selectedLesson.whakapapaConnections.map((connection, index) => (
+                      {selectedLesson.whakapapaConnections.map(_(connection,  _index) => (
                         <li key={index}>{connection}</li>
                       ))}
                     </ul>
@@ -511,14 +500,14 @@ export default function Year10CulturalGeometry() {
       )}
 
       {activeTab === 'cultural' && (
-        <section className="cultural-section">
+_<section className="cultural-section">
           <h2>🌿 Cultural Intelligence & Traditional Knowledge</h2>
 
           <div className="cultural-grid">
             <div className="cultural-card">
               <h3>🏛️ Iwi Connections</h3>
               <ul>
-                {selectedWeek.iwiConnections.map((connection, index) => (
+                {selectedWeek.iwiConnections.map((connection,  _index) => (
                   <li key={index}>{connection}</li>
                 ))}
               </ul>
@@ -527,7 +516,7 @@ export default function Year10CulturalGeometry() {
             <div className="cultural-card">
               <h3>📚 Traditional Knowledge</h3>
               <ul>
-                {selectedWeek.traditionalKnowledge.map((knowledge, index) => (
+                {selectedWeek.traditionalKnowledge.map(_(knowledge,  _index) => (
                   <li key={index}>{knowledge}</li>
                 ))}
               </ul>
@@ -558,14 +547,14 @@ export default function Year10CulturalGeometry() {
       )}
 
       {activeTab === 'cultural' && (
-        <section className="cultural-section">
+_<section className="cultural-section">
           <h2>🌿 Cultural Intelligence & Traditional Knowledge</h2>
 
           <div className="cultural-grid">
             <div className="cultural-card">
               <h3>🏛️ Iwi Connections</h3>
               <ul>
-                {selectedWeek.iwiConnections.map((connection, index) => (
+                {selectedWeek.iwiConnections.map((connection,  _index) => (
                   <li key={index}>{connection}</li>
                 ))}
               </ul>
@@ -574,7 +563,7 @@ export default function Year10CulturalGeometry() {
             <div className="cultural-card">
               <h3>📚 Traditional Knowledge</h3>
               <ul>
-                {selectedWeek.traditionalKnowledge.map((knowledge, index) => (
+                {selectedWeek.traditionalKnowledge.map(_(knowledge,  _index) => (
                   <li key={index}>{knowledge}</li>
                 ))}
               </ul>
@@ -683,13 +672,13 @@ export default function Year10CulturalGeometry() {
           🌿 "Tahuhu Kōrero" - The backbone of knowledge through patterns and stories
         </p>
         <p className="platform-info">
-          TeAoMarama - World's Best Teaching Bank with Cultural Excellence
+TeAoMarama - World's Best Teaching Bank with Cultural Excellence
         </p>
         <p className="cultural-authenticity">
           ✅ Cultural Authenticity: 98%+ | Tikanga Compliance: Active | Whakapapa Connections:
-          Preserved
+Preserved
         </p>
       </footer>
     </div>
-  );
+  )
 }

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './AuthorsPurposeEntertainHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './AuthorsPurposeEntertainHandout.css'
 
-interface AuthorsPurposeEntertainHandoutProps {
-  className?: string;
-}
-
-export const AuthorsPurposeEntertainHandout: React.FC<AuthorsPurposeEntertainHandoutProps> = ({ className = '' }) => {
-  return (
+interface AuthorsPurposeEntertainHandoutProps {className?: string}
+export const AuthorsPurposeEntertainHandout: React.FC<AuthorsPurposeEntertainHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="authors purpose entertain handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`authors-purpose-entertain-handout-handout cultural-focus ${className}`}
+title="authors purpose entertain handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`authors-purpose-entertain-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const AuthorsPurposeEntertainHandout: React.FC<AuthorsPurposeEntertainHan
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default AuthorsPurposeEntertainHandout;
+export default AuthorsPurposeEntertainHandout

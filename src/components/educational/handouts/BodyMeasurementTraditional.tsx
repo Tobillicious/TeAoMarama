@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './BodyMeasurementTraditional.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './BodyMeasurementTraditional.css'
 
-interface BodyMeasurementTraditionalProps {
-  className?: string;
-}
-
-export const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = ({ className = '' }) => {
-  return (
+interface BodyMeasurementTraditionalProps {className?: string}
+export const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="body measurement traditional"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`body-measurement-traditional-handout cultural-focus ${className}`}
+title="body measurement traditional"
+subtitle="Te Kete Ako - Cultural Education"
+className={`body-measurement-traditional-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default BodyMeasurementTraditional;
+export default BodyMeasurementTraditional

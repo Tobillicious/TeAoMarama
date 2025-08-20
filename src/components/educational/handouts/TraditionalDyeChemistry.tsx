@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TraditionalDyeChemistry.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TraditionalDyeChemistry.css'
 
-interface TraditionalDyeChemistryProps {
-  className?: string;
-}
-
-export const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = ({ className = '' }) => {
-  return (
+interface TraditionalDyeChemistryProps {className?: string}
+export const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="traditional dye chemistry"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`traditional-dye-chemistry-handout cultural-focus ${className}`}
+title="traditional dye chemistry"
+subtitle="Te Kete Ako - Cultural Education"
+className={`traditional-dye-chemistry-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TraditionalDyeChemistry;
+export default TraditionalDyeChemistry

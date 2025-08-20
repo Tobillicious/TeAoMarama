@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitRevisionHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitRevisionHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-revision-handout">
       <Card title="The Writer's Toolkit: The Revision Process" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,12 +24,12 @@ const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">Why is Revision Important?</h2>
                 <p class="text-justify">
-                    No writer gets it perfect on the first try. The first draft is just about getting your ideas down on paper. The real magic of writing happens during the revision process. Revision is not just about fixing spelling mistakes; it's about re-seeing your work. It involves making significant changes to your ideas, structure, and language to make your writing clearer, more powerful, and more effective. A good writer knows that revision is the difference between a mediocre piece and a great one.
+No writer gets it perfect on the first try. The first draft is just about getting your ideas down on paper. The real magic of writing happens during the revision process. Revision is not just about fixing spelling mistakes it's about re-seeing your work. It involves making significant changes to your ideas, structure, and language to make your writing clearer, more powerful, and more effective. A good writer knows that revision is the difference between a mediocre piece and a great one.
                 </p>
             </section>
 
@@ -88,7 +85,7 @@ const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps
             <!-- Curriculum Alignment Section -->
             <section class="mt-6 bg-gradient-to-r from-blue-50 to-green-50 p-4 rounded-xl border border-blue-200">
                 <h2 class="text-lg font-bold text-blue-800 mb-3 text-center" class="wiley-section-title">📚 NZ Curriculum Alignment</h2>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div class="grid md: grid-cols-2 gap-4 text-sm">
                     <div class="bg-white p-3 rounded-lg border border-blue-100">
                         <h3 class="font-semibold text-blue-700 mb-2">English - Writing</h3>
                         <p class="text-blue-600 mb-1"><strong>Achievement Objective:</strong> W4-5</p>
@@ -103,7 +100,7 @@ const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps
                     </div>
                 </div>
                 <div class="mt-3 text-center">
-                    <a href="curriculum-alignment.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                    <a href="curriculum-alignment.html" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover: bg-blue-700 transition-colors">
                         📋 View Full Curriculum Framework
                     </a>
                 </div>
@@ -113,7 +110,7 @@ const WritersToolkitRevisionHandout: React.FC<WritersToolkitRevisionHandoutProps
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitRevisionHandout;
+export default WritersToolkitRevisionHandout

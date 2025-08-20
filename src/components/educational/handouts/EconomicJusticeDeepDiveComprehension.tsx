@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EconomicJusticeDeepDiveComprehension.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EconomicJusticeDeepDiveComprehension.css'
 
-interface EconomicJusticeDeepDiveComprehensionProps {
-  className?: string;
-}
-
-export const EconomicJusticeDeepDiveComprehension: React.FC<EconomicJusticeDeepDiveComprehensionProps> = ({ className = '' }) => {
-  return (
+interface EconomicJusticeDeepDiveComprehensionProps {className?: string}
+export const EconomicJusticeDeepDiveComprehension: React.FC<EconomicJusticeDeepDiveComprehensionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="economic justice deep dive comprehension"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`economic-justice-deep-dive-comprehension-handout cultural-focus ${className}`}
+title="economic justice deep dive comprehension"
+subtitle="Te Kete Ako - Cultural Education"
+className={`economic-justice-deep-dive-comprehension-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EconomicJusticeDeepDiveComprehension: React.FC<EconomicJusticeDeepD
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EconomicJusticeDeepDiveComprehension;
+export default EconomicJusticeDeepDiveComprehension

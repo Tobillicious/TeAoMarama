@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CeremonialCircleGeometry.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CeremonialCircleGeometry.css'
 
-interface CeremonialCircleGeometryProps {
-  className?: string;
-}
-
-export const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = ({ className = '' }) => {
-  return (
+interface CeremonialCircleGeometryProps {className?: string}
+export const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="ceremonial circle geometry"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`ceremonial-circle-geometry-handout cultural-focus ${className}`}
+title="ceremonial circle geometry"
+subtitle="Te Kete Ako - Cultural Education"
+className={`ceremonial-circle-geometry-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CeremonialCircleGeometry;
+export default CeremonialCircleGeometry

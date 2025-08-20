@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitToneHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitToneHandout.css'
 
-interface WritersToolkitToneHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitToneHandoutProps {className?: string}
+export const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit tone handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-tone-handout-handout cultural-focus ${className}`}
+title="writers toolkit tone handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-tone-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitToneHandout;
+export default WritersToolkitToneHandout

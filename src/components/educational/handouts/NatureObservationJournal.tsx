@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NatureObservationJournal.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NatureObservationJournal.css'
 
-interface NatureObservationJournalProps {
-  className?: string;
-}
-
-export const NatureObservationJournal: React.FC<NatureObservationJournalProps> = ({ className = '' }) => {
-  return (
+interface NatureObservationJournalProps {className?: string}
+export const NatureObservationJournal: React.FC<NatureObservationJournalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="nature observation journal"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`nature-observation-journal-handout cultural-focus ${className}`}
+title="nature observation journal"
+subtitle="Te Kete Ako - Cultural Education"
+className={`nature-observation-journal-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NatureObservationJournal: React.FC<NatureObservationJournalProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NatureObservationJournal;
+export default NatureObservationJournal

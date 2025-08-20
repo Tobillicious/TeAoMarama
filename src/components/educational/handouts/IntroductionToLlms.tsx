@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './IntroductionToLlms.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './IntroductionToLlms.css'
 
-interface IntroductionToLlmsProps {
-  className?: string;
-}
-
-export const IntroductionToLlms: React.FC<IntroductionToLlmsProps> = ({ className = '' }) => {
-  return (
+interface IntroductionToLlmsProps {className?: string}
+export const IntroductionToLlms: React.FC<IntroductionToLlmsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="introduction to llms"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`introduction-to-llms-handout cultural-focus ${className}`}
+title="introduction to llms"
+subtitle="Te Kete Ako - Cultural Education"
+className={`introduction-to-llms-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const IntroductionToLlms: React.FC<IntroductionToLlmsProps> = ({ classNam
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default IntroductionToLlms;
+export default IntroductionToLlms

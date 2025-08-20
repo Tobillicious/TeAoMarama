@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CulturalStemAssessmentRubricProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> = ({
-  culturalContext = "Cultural practices and traditional knowledge",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface CulturalStemAssessmentRubricProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> = (_{
+culturalContext = "Cultural practices and traditional knowledge", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="cultural-stem-assessment-rubric">
       <Card title="Cultural STEM Assessment Rubric | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
         <div class="breadcrumb">
             <a href="index.html">Home</a> >
             <a href="handouts.html">Handouts</a> >
@@ -48,26 +45,26 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 <p>This rubric represents a revolutionary approach to STEM assessment that:</p>
 
                 <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: var(--space-8) 0;">
+style="display: grid grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) gap: 1.5rem margin: var(--space-8) 0">
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">🔬 Values Scientific Rigor</h4>
+                        <h4 style="color: var(--color-accent)">🔬 Values Scientific Rigor</h4>
                         <p>Maintains high standards for mathematical and scientific understanding</p>
                     </div>
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">🌿 Honors Cultural Knowledge</h4>
+                        <h4 style="color: var(--color-accent)">🌿 Honors Cultural Knowledge</h4>
                         <p>Recognizes indigenous knowledge systems as sophisticated and valid</p>
                     </div>
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">🔗 Assesses Integration</h4>
+                        <h4 style="color: var(--color-accent)">🔗 Assesses Integration</h4>
                         <p>Evaluates students' ability to connect scientific and cultural concepts</p>
                     </div>
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">👥 Promotes Community Connection</h4>
+                        <h4 style="color: var(--color-accent)">👥 Promotes Community Connection</h4>
                         <p>Recognizes learning that extends beyond individual achievement</p>
                     </div>
                 </div>
 
-                <p><strong>Applicable to:</strong> Y9 Mathematics (Geometry Through Māori Patterns), Y10 Physics
+                <p><strong>Applicable to: </strong> Y9 Mathematics (Geometry Through Māori Patterns), Y10 Physics
                     (Navigation & Ocean Sciences), and other culturally-integrated STEM units</p>
             </div>
         </section>
@@ -79,12 +76,12 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 <div class="score-level score-excellent">
                     <h3>Excellent (4)</h3>
                     <p>Demonstrates sophisticated understanding of both scientific concepts and cultural knowledge with
-                        innovative integration</p>
+innovative integration</p>
                 </div>
                 <div class="score-level score-proficient">
                     <h3>Proficient (3)</h3>
                     <p>Shows solid understanding of scientific concepts with respectful and accurate cultural
-                        connections</p>
+connections</p>
                 </div>
                 <div class="score-level score-developing">
                     <h3>Developing (2)</h3>
@@ -103,11 +100,11 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
             <table class="rubric-table">
                 <thead>
                     <tr>
-                        <th style="width: 20%;">Assessment Criterion</th>
-                        <th style="width: 20%;">Excellent (4)</th>
-                        <th style="width: 20%;">Proficient (3)</th>
-                        <th style="width: 20%;">Developing (2)</th>
-                        <th style="width: 20%;">Beginning (1)</th>
+                        <th style="width: 20%">Assessment Criterion</th>
+                        <th style="width: 20%">Excellent (4)</th>
+                        <th style="width: 20%">Proficient (3)</th>
+                        <th style="width: 20%">Developing (2)</th>
+                        <th style="width: 20%">Beginning (1)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -295,21 +292,21 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
 
                 <h3>Protocols for Respectful Assessment</h3>
                 <ul>
-                    <li><strong>Community Consultation:</strong> Involve cultural advisors in assessment design and
-                        implementation</li>
-                    <li><strong>Cultural Sensitivity:</strong> Ensure assessment methods respect cultural protocols and
-                        values</li>
-                    <li><strong>Multiple Ways of Knowing:</strong> Recognize that different cultures may express
-                        knowledge differently</li>
-                    <li><strong>Avoiding Appropriation:</strong> Assess appreciation and respect, not performance of
-                        cultural practices</li>
-                    <li><strong>Celebrating Diversity:</strong> Value different cultural perspectives students bring to
-                        learning</li>
+                    <li><strong>Community Consultation: </strong> Involve cultural advisors in assessment design and
+implementation</li>
+                    <li><strong>Cultural Sensitivity: </strong> Ensure assessment methods respect cultural protocols and
+values</li>
+                    <li><strong>Multiple Ways of Knowing: </strong> Recognize that different cultures may express
+knowledge differently</li>
+                    <li><strong>Avoiding Appropriation: </strong> Assess appreciation and respect, not performance of
+cultural practices</li>
+                    <li><strong>Celebrating Diversity: </strong> Value different cultural perspectives students bring to
+learning</li>
                 </ul>
 
                 <h3>🚫 What NOT to Assess</h3>
                 <div
-                    style="background: rgba(244, 67, 54, 0.1); padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid #f44336;">
+style="background: rgba(244, 67, 54, 0.1) padding: var(--space-4) border-radius: var(--radius-md) border-left: 4px solid #f44336">
                     <ul>
                         <li>Students' personal cultural identity or background</li>
                         <li>Pronunciation or performance of cultural practices they don't belong to</li>
@@ -321,7 +318,7 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
 
                 <h3>✅ What TO Assess</h3>
                 <div
-                    style="background: rgba(76, 175, 80, 0.1); padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid #4caf50;">
+style="background: rgba(76, 175, 80, 0.1) padding: var(--space-4) border-radius: var(--radius-md) border-left: 4px solid #4caf50">
                     <ul>
                         <li>Understanding of how traditional knowledge contains scientific principles</li>
                         <li>Respectful engagement with cultural learning opportunities</li>
@@ -340,9 +337,9 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 <h3>Using This Rubric Effectively</h3>
 
                 <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: var(--space-8) 0;">
+style="display: grid grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) gap: 1.5rem margin: var(--space-8) 0">
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">📋 Before Assessment</h4>
+                        <h4 style="color: var(--color-accent)">📋 Before Assessment</h4>
                         <ul>
                             <li>Share rubric with students at unit beginning</li>
                             <li>Discuss what each criterion means in practice</li>
@@ -352,7 +349,7 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                     </div>
 
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">📊 During Assessment</h4>
+                        <h4 style="color: var(--color-accent)">📊 During Assessment</h4>
                         <ul>
                             <li>Use multiple forms of evidence (written, oral, practical)</li>
                             <li>Observe students in cultural learning contexts</li>
@@ -362,7 +359,7 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                     </div>
 
                     <div class="bg-white">
-                        <h4 style="color: var(--color-accent);">💭 After Assessment</h4>
+                        <h4 style="color: var(--color-accent)">💭 After Assessment</h4>
                         <ul>
                             <li>Provide specific feedback aligned to criteria</li>
                             <li>Celebrate both scientific and cultural growth</li>
@@ -373,15 +370,15 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 </div>
 
                 <h3>Adaptation for Different Contexts</h3>
-                <p>This rubric can be adapted for:</p>
+                <p>This rubric can be adapted for: </p>
                 <ul>
                     <li><strong>Different Year Levels:</strong> Adjust expectations while maintaining core criteria</li>
                     <li><strong>Various Cultural Contexts:</strong> Replace Māori examples with locally relevant
-                        indigenous knowledge</li>
-                    <li><strong>Different STEM Subjects:</strong> Apply framework to chemistry, biology, engineering,
-                        etc.</li>
-                    <li><strong>Project-Based Learning:</strong> Use for long-term integrated projects and
-                        investigations</li>
+indigenous knowledge</li>
+                    <li><strong>Different STEM Subjects: </strong> Apply framework to chemistry, biology, engineering,;
+etc.</li>
+                    <li><strong>Project-Based Learning: </strong> Use for long-term integrated projects and
+investigations</li>
                 </ul>
             </div>
         </section>
@@ -393,12 +390,12 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 <h3>Sample Assessment Tasks</h3>
 
                 <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; margin: var(--space-8) 0;">
+style="display: grid grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) gap: 1.5rem margin: var(--space-8) 0">
                     <div class="bg-white">
                         <h4>📐 Mathematics: Tukutuku Pattern Analysis</h4>
                         <p><strong>Task:</strong> Create an original tukutuku pattern and write a mathematical analysis
-                            explaining the geometric transformations used.</p>
-                        <p><strong>Assessment Focus:</strong></p>
+explaining the geometric transformations used.</p>
+                        <p><strong>Assessment Focus: </strong></p>
                         <ul>
                             <li>Accurate application of transformation mathematics</li>
                             <li>Respectful representation of cultural design principles</li>
@@ -410,8 +407,8 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                     <div class="bg-white">
                         <h4>🌊 Physics: Navigation Challenge</h4>
                         <p><strong>Task:</strong> Plan a traditional navigation route between two Pacific islands using
-                            wave physics, celestial mechanics, and traditional knowledge.</p>
-                        <p><strong>Assessment Focus:</strong></p>
+wave physics, celestial mechanics, and traditional knowledge.</p>
+                        <p><strong>Assessment Focus: </strong></p>
                         <ul>
                             <li>Correct application of physics principles to navigation</li>
                             <li>Understanding of traditional navigation techniques</li>
@@ -426,15 +423,15 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                     <h4>🤔 Reflection Prompts for Students</h4>
                     <ul>
                         <li><strong>Scientific Understanding:</strong> "How has learning about traditional knowledge
-                            changed my understanding of mathematics/science?"</li>
-                        <li><strong>Cultural Appreciation:</strong> "What did I learn about the sophistication of
-                            traditional knowledge systems?"</li>
-                        <li><strong>Integration:</strong> "How do traditional practices demonstrate scientific
-                            principles I'm learning?"</li>
-                        <li><strong>Application:</strong> "How can I use this integrated knowledge to solve real-world
-                            problems?"</li>
-                        <li><strong>Future Learning:</strong> "What aspects of cultural science knowledge am I most
-                            interested in exploring further?"</li>
+changed my understanding of mathematics/science?"</li>
+                        <li><strong>Cultural Appreciation: </strong> "What did I learn about the sophistication of
+traditional knowledge systems?"</li>
+                        <li><strong>Integration: </strong> "How do traditional practices demonstrate scientific
+principles I'm learning?"</li>
+                        <li><strong>Application: </strong> "How can I use this integrated knowledge to solve real-world
+problems?"</li>
+                        <li><strong>Future Learning: </strong> "What aspects of cultural science knowledge am I most
+interested in exploring further?"</li>
                     </ul>
                 </div>
             </div>
@@ -445,11 +442,11 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                 <h2 class="wiley-section-title">📊 Quick Reference Scoring Sheet</h2>
 
                 <div
-                    class="bg-white">
+class="bg-white">
                     <h3>Student: _______________ Date: ___________ Task: ___________________</h3>
 
                     <div
-                        style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 1rem; margin: var(--space-4) 0; font-size: var(--text-sm);">
+style="display: grid grid-template-columns: 2fr 1fr 1fr 1fr 1fr gap: 1rem margin: var(--space-4) 0 font-size: var(--text-sm)">
                         <div><strong>Assessment Criteria</strong></div>
                         <div><strong>Excellent (4)</strong></div>
                         <div><strong>Proficient (3)</strong></div>
@@ -487,7 +484,7 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
                         <div class="text-center">☐</div>
                     </div>
 
-                    <p><strong>Overall Performance Level:</strong> ________________</p>
+                    <p><strong>Overall Performance Level: </strong> ________________</p>
                     <p><strong>Key Strengths:</strong> _________________________________________________</p>
                     <p><strong>Areas for Growth:</strong> _______________________________________________</p>
                     <p><strong>Next Steps:</strong> ____________________________________________________</p>
@@ -498,7 +495,7 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
         <div class="rubric-header">
             <h2 class="wiley-section-title">🎯 Impact of Culturally-Responsive Assessment</h2>
             <p>This rubric supports learning that is:</p>
-            <ul style="text-align: left; max-width: 700px; margin: 0 auto; font-size: var(--text-lg);">
+            <ul style="text-align: left max-width: 700px margin: 0 auto font-size: var(--text-lg)">
                 <li>🔬 <strong>Scientifically rigorous</strong> while culturally affirming</li>
                 <li>🌿 <strong>Respectful of diverse knowledge systems</strong> and ways of knowing</li>
                 <li>🔗 <strong>Integrative and holistic</strong> rather than compartmentalized</li>
@@ -507,19 +504,19 @@ const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> 
             </ul>
             <br>
             <p><em>"When we assess what we value, students learn that both scientific excellence and cultural wisdom
-                    matter."</em></p>
+matter."</em></p>
         </div>
 
         <div class="print-friendly-note">
-            <p><strong>Print-Friendly Version:</strong> This rubric prints clearly for easy classroom use and
-                professional development.</p>
+            <p><strong>Print-Friendly Version: </strong> This rubric prints clearly for easy classroom use and
+professional development.</p>
         </div>
     ` }}
           />
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalStemAssessmentRubric;
+export default CulturalStemAssessmentRubric

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalHeroesComprehension.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalHeroesComprehension.css'
 
-interface CulturalHeroesComprehensionProps {
-  className?: string;
-}
-
-export const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = ({ className = '' }) => {
-  return (
+interface CulturalHeroesComprehensionProps {className?: string}
+export const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural heroes comprehension"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-heroes-comprehension-handout cultural-focus ${className}`}
+title="cultural heroes comprehension"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-heroes-comprehension-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalHeroesComprehension;
+export default CulturalHeroesComprehension

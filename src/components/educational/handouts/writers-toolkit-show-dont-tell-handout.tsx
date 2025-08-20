@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitShowDontTellHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitShowDontTellHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-show-dont-tell-handout">
       <Card title="The Writer's Toolkit: Show, Don't Tell | Mangakōtukutuku College" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,10 +24,10 @@ const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHand
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">The Writer's Toolkit: Show, Don't Tell</h1>
                 <p class="page-subtitle">Crafting Vivid and Entertaining Descriptions</p>
             </div>
@@ -66,7 +63,7 @@ const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHand
                     <div class="question-block">
                         <p><strong>1. Deconstruction: Read the "Telling" sentence below. How could you "Show" this instead? Brainstorm sensory details (sight, sound, smell, touch, taste) and specific actions.</p>
                         <div class="technique-box mb-2">
-                            <h4 class="mb-2">Telling Sentence:</h4>
+                            <h4 class="mb-2">Telling Sentence: </h4>
                             <p class="text-italic text-secondary">The girl was nervous about her speech.</p>
                         </div>
                         <div class="answer-space answer-space-lg">
@@ -99,7 +96,7 @@ const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHand
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitShowDontTellHandout;
+export default WritersToolkitShowDontTellHandout

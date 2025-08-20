@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './HangiHeatTransfer.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './HangiHeatTransfer.css'
 
-interface HangiHeatTransferProps {
-  className?: string;
-}
-
-export const HangiHeatTransfer: React.FC<HangiHeatTransferProps> = ({ className = '' }) => {
-  return (
+interface HangiHeatTransferProps {className?: string}
+export const HangiHeatTransfer: React.FC<HangiHeatTransferProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="hangi heat transfer"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`hangi-heat-transfer-handout cultural-focus ${className}`}
+title="hangi heat transfer"
+subtitle="Te Kete Ako - Cultural Education"
+className={`hangi-heat-transfer-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const HangiHeatTransfer: React.FC<HangiHeatTransferProps> = ({ className 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default HangiHeatTransfer;
+export default HangiHeatTransfer

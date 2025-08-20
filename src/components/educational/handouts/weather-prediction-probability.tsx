@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WeatherPredictionProbabilityProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WeatherPredictionProbabilityProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="weather-prediction-probability">
       <Card title="Weather Prediction Probability | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Weather Prediction Probability</h1>
@@ -40,7 +37,7 @@ const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WeatherPredictionProbability;
+export default WeatherPredictionProbability

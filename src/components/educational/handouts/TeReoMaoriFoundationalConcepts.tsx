@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TeReoMaoriFoundationalConcepts.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TeReoMaoriFoundationalConcepts.css'
 
-interface TeReoMaoriFoundationalConceptsProps {
-  className?: string;
-}
-
-export const TeReoMaoriFoundationalConcepts: React.FC<TeReoMaoriFoundationalConceptsProps> = ({ className = '' }) => {
-  return (
+interface TeReoMaoriFoundationalConceptsProps {className?: string}
+export const TeReoMaoriFoundationalConcepts: React.FC<TeReoMaoriFoundationalConceptsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="te reo maori foundational concepts"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`te-reo-maori-foundational-concepts-handout cultural-focus ${className}`}
+title="te reo maori foundational concepts"
+subtitle="Te Kete Ako - Cultural Education"
+className={`te-reo-maori-foundational-concepts-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TeReoMaoriFoundationalConcepts: React.FC<TeReoMaoriFoundationalConc
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TeReoMaoriFoundationalConcepts;
+export default TeReoMaoriFoundationalConcepts

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2PreColonialInnovationDeepDive.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2PreColonialInnovationDeepDive.css'
 
-interface Unit2PreColonialInnovationDeepDiveProps {
-  className?: string;
-}
-
-export const Unit2PreColonialInnovationDeepDive: React.FC<Unit2PreColonialInnovationDeepDiveProps> = ({ className = '' }) => {
-  return (
+interface Unit2PreColonialInnovationDeepDiveProps {className?: string}
+export const Unit2PreColonialInnovationDeepDive: React.FC<Unit2PreColonialInnovationDeepDiveProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 pre colonial innovation deep dive"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-pre-colonial-innovation-deep-dive-handout cultural-focus ${className}`}
+title="unit 2 pre colonial innovation deep dive"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-pre-colonial-innovation-deep-dive-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2PreColonialInnovationDeepDive: React.FC<Unit2PreColonialInnova
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2PreColonialInnovationDeepDive;
+export default Unit2PreColonialInnovationDeepDive

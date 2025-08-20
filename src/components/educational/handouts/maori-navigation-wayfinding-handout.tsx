@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface MaoriNavigationWayfindingHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandoutProps> = ({
-  culturalContext = "Māori cultural knowledge and Aotearoa context",
-  yearLevel = "Year 8-10",
-  subject = "Mathematics, Science"
+interface MaoriNavigationWayfindingHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandoutProps> = (_{
+culturalContext = "Māori cultural knowledge and Aotearoa context", 
+_yearLevel = "Year 8-10", 
+_subject = "Mathematics,  _Science"
 }) => {
-  return (
+return (
     <div className="maori-navigation-wayfinding-handout">
       <Card title="Handout: Māori Navigation" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandou
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <div class="container">
         <h1 class="wiley-hero-title">Handout: Māori Navigation</h1>
         <p>This handout supports the video "The Art of Wayfinding".</p>
@@ -51,7 +48,7 @@ const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandou
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default MaoriNavigationWayfindingHandout;
+export default MaoriNavigationWayfindingHandout

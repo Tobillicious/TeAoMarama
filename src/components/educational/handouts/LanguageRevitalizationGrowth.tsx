@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LanguageRevitalizationGrowth.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LanguageRevitalizationGrowth.css'
 
-interface LanguageRevitalizationGrowthProps {
-  className?: string;
-}
-
-export const LanguageRevitalizationGrowth: React.FC<LanguageRevitalizationGrowthProps> = ({ className = '' }) => {
-  return (
+interface LanguageRevitalizationGrowthProps {className?: string}
+export const LanguageRevitalizationGrowth: React.FC<LanguageRevitalizationGrowthProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="language revitalization growth"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`language-revitalization-growth-handout cultural-focus ${className}`}
+title="language revitalization growth"
+subtitle="Te Kete Ako - Cultural Education"
+className={`language-revitalization-growth-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LanguageRevitalizationGrowth: React.FC<LanguageRevitalizationGrowth
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LanguageRevitalizationGrowth;
+export default LanguageRevitalizationGrowth

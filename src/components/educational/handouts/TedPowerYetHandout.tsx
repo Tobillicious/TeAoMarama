@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TedPowerYetHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TedPowerYetHandout.css'
 
-interface TedPowerYetHandoutProps {
-  className?: string;
-}
-
-export const TedPowerYetHandout: React.FC<TedPowerYetHandoutProps> = ({ className = '' }) => {
-  return (
+interface TedPowerYetHandoutProps {className?: string}
+export const TedPowerYetHandout: React.FC<TedPowerYetHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="ted power yet handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`ted-power-yet-handout-handout cultural-focus ${className}`}
+title="ted power yet handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`ted-power-yet-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TedPowerYetHandout: React.FC<TedPowerYetHandoutProps> = ({ classNam
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TedPowerYetHandout;
+export default TedPowerYetHandout

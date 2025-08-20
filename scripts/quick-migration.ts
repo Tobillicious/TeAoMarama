@@ -2,24 +2,23 @@
 /**
  * 🚀 QUICK MIGRATION - RAPID PROCESSING
  */
+import {readFile, writeFile, mkdir, readdir} from 'fs/promises'
+import {join, basename} from 'path'
+const __TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts'
+const __TARGET_PATH = 'src/components/educational/handouts'
 
-import { readFile, writeFile, mkdir, readdir } from 'fs/promises';
-import { join, basename } from 'path';
-const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const _TARGET_PATH = 'src/components/educational/handouts';
-
-async function quickMigrate(_filePath: string): Promise<void> {
-  try {
-    const _html = await readFile(filePath, 'utf-8');
-    const _filename = basename(filePath, '.html');
-    const _componentName = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).replace(/\s/g, '');
+async function quickMigrate(___filePath: string): Promise<void> {
+try {
+const __html = await readFile(filePath, 'utf-8')
+    const __filename = basename(filePath, '.html')
+    const __componentName = filename.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).replace(/\s/g, '')
     
-    const _componentCode = `import React from 'react';
-import { Card } from '../../ui/Card';
-import './${componentName}.css';
+const __componentCode = `import React from 'react'
+import {Card} from '../../ui/Card'
+import './${componentName}.css'
 
 export const ${componentName}: React.FC = () => {
-  return (
+return (
     <Card title="${filename.replace(/[-_]/g, ' ')}" className="${filename}-handout cultural-focus">
       <div className="handout-content">
         <p>Content from ${filename} - Te Kete Ako beauty patterns applied</p>
@@ -29,36 +28,33 @@ export const ${componentName}: React.FC = () => {
         </div>
       </div>
     </Card>
-  );
-};`;
+  )
+}`
 
-    const _cssCode = `.${filename}-handout.cultural-focus {
-  background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
-  border-left: 4px solid var(--color-pounamu);
-}`;
+const __cssCode = `.${filename}-handout.cultural-focus {,
+background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%)
+  border-left: 4px solid var(--color-pounamu)
+}`
 
-    await writeFile(join(TARGET_PATH, `${componentName}.tsx`), componentCode);
-    await writeFile(join(TARGET_PATH, `${componentName}.css`), cssCode);
+await writeFile(join(TARGET_PATH, `${componentName}.tsx`), componentCode)
+    await writeFile(join(TARGET_PATH, `${componentName}.css`), cssCode)
     
-    console.log(`✅ Quick migrated: ${componentName}`);
+console.log(`✅ Quick migrated: ${componentName}`)
   } catch (error) {
-    console.error(`❌ Failed: ${basename(filePath)}`);
+console.error(`❌ Failed: ${basename(filePath)}`)
   }
 }
-
-async function main() {
-  await mkdir(TARGET_PATH, { recursive: true });
+async function main() {await mkdir(TARGET_PATH, { recursive: true})
   
-  const _files = await readdir(TE_KETE_HANDOUTS_PATH);
-  const _handouts = files.filter(f => f.endsWith('.html')).slice(0, 20);
+const __files = await readdir(TE_KETE_HANDOUTS_PATH)
+  const __handouts = files.filter(f => f.endsWith('.html')).slice(0, 20)
   
-  console.log(`🚀 Quick migrating ${handouts.length} handouts...`);
+console.log(`🚀 Quick migrating ${handouts.length} handouts...`)
   
-  await Promise.all(handouts.map(f => quickMigrate(join(TE_KETE_HANDOUTS_PATH, f))));
+await Promise.all(handouts.map(f => quickMigrate(join(TE_KETE_HANDOUTS_PATH, f))))
   
-  console.log('🎯 Quick migration complete!');
+console.log('🎯 Quick migration complete!')
 }
-
 if (import.meta.main) {
-  main();
+main()
 }

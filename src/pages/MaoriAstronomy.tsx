@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-interface MaoriAstronomyProps {
-  className?: string;
-}
-
-export const MaoriAstronomy: React.FC<MaoriAstronomyProps> = ({ className = '' }) => {
-  return (
+interface MaoriAstronomyProps {className?: string}
+export const MaoriAstronomy: React.FC<MaoriAstronomyProps> = (_{ className = '' }) => {
+return (
     <div className={`maori-astronomy ${className}`}>
       <header className="astronomy-hero">
         <h1>Māori Astronomy & Navigation</h1>
@@ -43,7 +40,7 @@ export const MaoriAstronomy: React.FC<MaoriAstronomyProps> = ({ className = '' }
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default MaoriAstronomy;
+export default MaoriAstronomy

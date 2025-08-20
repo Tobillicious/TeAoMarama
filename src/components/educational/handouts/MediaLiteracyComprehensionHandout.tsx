@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MediaLiteracyComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MediaLiteracyComprehensionHandout.css'
 
-interface MediaLiteracyComprehensionHandoutProps {
-  className?: string;
-}
-
-export const MediaLiteracyComprehensionHandout: React.FC<MediaLiteracyComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface MediaLiteracyComprehensionHandoutProps {className?: string}
+export const MediaLiteracyComprehensionHandout: React.FC<MediaLiteracyComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="media literacy comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`media-literacy-comprehension-handout-handout cultural-focus ${className}`}
+title="media literacy comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`media-literacy-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MediaLiteracyComprehensionHandout: React.FC<MediaLiteracyComprehens
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MediaLiteracyComprehensionHandout;
+export default MediaLiteracyComprehensionHandout

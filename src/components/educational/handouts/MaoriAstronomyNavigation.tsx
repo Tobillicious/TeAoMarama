@@ -1,86 +1,81 @@
-import { useState } from 'react';
-import './MaoriAstronomyNavigation.css';
+import {useState} from 'react'
+import './MaoriAstronomyNavigation.css'
 
-interface StarSystem {
-  name: string;
-  maoriName: string;
-  description: string;
-  culturalSignificance: string;
-  navigationUse: string;
-}
-
-interface NavigationTechnique {
-  title: string;
-  description: string;
-  culturalContext: string;
-  modernApplication: string;
-}
-
+interface StarSystem {,
+name: string,
+maoriName: string,
+description: string,
+culturalSignificance: string,
+navigationUse: string}
+interface NavigationTechnique {,
+title: string,
+description: string,
+culturalContext: string,
+modernApplication: string}
 const starSystems: StarSystem[] = [
-  {
-    name: 'Matariki',
-    maoriName: 'Matariki',
-    description: 'The Pleiades star cluster, also known as the Seven Sisters',
-    culturalSignificance: 'Marks the Māori New Year and signals the time for planting and harvesting',
-    navigationUse: 'Used to determine the start of the new year and seasonal changes',
+  {,
+name: 'Matariki',,
+maoriName: 'Matariki',,
+description: 'The Pleiades star cluster, also known as the Seven Sisters',,
+culturalSignificance: 'Marks the Māori New Year and signals the time for planting and harvesting',,
+navigationUse: 'Used to determine the start of the new year and seasonal changes',
   },
-  {
-    name: 'Tautoru',
-    maoriName: 'Tautoru',
-    description: 'Orion\'s Belt - three bright stars in a line',
-    culturalSignificance: 'Associated with fishing and food gathering',
-    navigationUse: 'Helps determine direction and seasonal timing for fishing',
+  {,
+name: 'Tautoru',,
+maoriName: 'Tautoru',,
+description: 'Orion\'s Belt - three bright stars in a line',,
+culturalSignificance: 'Associated with fishing and food gathering',,
+navigationUse: 'Helps determine direction and seasonal timing for fishing',
   },
-  {
-    name: 'Puanga',
-    maoriName: 'Puanga',
-    description: 'Rigel, the brightest star in Orion',
-    culturalSignificance: 'Alternative marker for the Māori New Year in some regions',
-    navigationUse: 'Used for timing and direction finding',
+  {,
+name: 'Puanga',,
+maoriName: 'Puanga',,
+description: 'Rigel, the brightest star in Orion',,
+culturalSignificance: 'Alternative marker for the Māori New Year in some regions',,
+navigationUse: 'Used for timing and direction finding',
   },
-  {
-    name: 'Atutahi',
-    maoriName: 'Atutahi',
-    description: 'Canopus, the second brightest star in the night sky',
-    culturalSignificance: 'Important navigational star for long-distance voyaging',
-    navigationUse: 'Used as a reference point for navigation across the Pacific',
+  {,
+name: 'Atutahi',,
+maoriName: 'Atutahi',,
+description: 'Canopus, the second brightest star in the night sky',,
+culturalSignificance: 'Important navigational star for long-distance voyaging',,
+navigationUse: 'Used as a reference point for navigation across the Pacific',
   },
-];
+]
 
 const navigationTechniques: NavigationTechnique[] = [
-  {
-    title: 'Star Compass',
-    description: 'Using the rising and setting points of stars to determine direction',
-    culturalContext: 'Traditional knowledge passed down through generations of navigators',
-    modernApplication: 'Still used by some Pacific navigators and taught in cultural education',
+  {,
+title: 'Star Compass',,
+description: 'Using the rising and setting points of stars to determine direction',,
+culturalContext: 'Traditional knowledge passed down through generations of navigators',,
+modernApplication: 'Still used by some Pacific navigators and taught in cultural education',
   },
-  {
-    title: 'Ocean Currents',
-    description: 'Reading the patterns and directions of ocean currents',
-    culturalContext: 'Knowledge of currents essential for successful voyaging',
-    modernApplication: 'Marine biology and oceanography studies',
+  {,
+title: 'Ocean Currents',,
+description: 'Reading the patterns and directions of ocean currents',,
+culturalContext: 'Knowledge of currents essential for successful voyaging',,
+modernApplication: 'Marine biology and oceanography studies',
   },
-  {
-    title: 'Wave Patterns',
-    description: 'Understanding how islands affect wave patterns',
-    culturalContext: 'Traditional knowledge of wave behavior around land masses',
-    modernApplication: 'Coastal engineering and marine navigation',
+  {,
+title: 'Wave Patterns',,
+description: 'Understanding how islands affect wave patterns',,
+culturalContext: 'Traditional knowledge of wave behavior around land masses',,
+modernApplication: 'Coastal engineering and marine navigation',
   },
-  {
-    title: 'Bird Behavior',
-    description: 'Using bird flight patterns to locate land',
-    culturalContext: 'Traditional knowledge of bird migration and behavior',
-    modernApplication: 'Ornithology and environmental science',
+  {,
+title: 'Bird Behavior',,
+description: 'Using bird flight patterns to locate land',,
+culturalContext: 'Traditional knowledge of bird migration and behavior',,
+modernApplication: 'Ornithology and environmental science',
   },
-];
+]
 
-export default function MaoriAstronomyNavigation() {
-  const [selectedStar, setSelectedStar] = useState<StarSystem>(starSystems[0]);
-  const [selectedTechnique, setSelectedTechnique] = useState<NavigationTechnique>(navigationTechniques[0]);
-  const [activeTab, setActiveTab] = useState<'stars' | 'navigation' | 'cultural' | 'activities'>('stars');
+export default function MaoriAstronomyNavigation() {const [selectedStar, setSelectedStar] = useState<StarSystem>(starSystems[0])
+  const [selectedTechnique, setSelectedTechnique] = useState<NavigationTechnique>(navigationTechniques[0])
+  const [activeTab, setActiveTab] = useState<'stars' | 'navigation' | 'cultural' | 'activities'>('stars')
 
-  return (
-    <div className="astronomy-container">
+return (
+_<div className="astronomy-container">
       <header className="astronomy-header">
         <div className="header-content">
           <div className="badge">🌟 ERO DEMONSTRATION READY</div>
@@ -92,7 +87,7 @@ export default function MaoriAstronomyNavigation() {
             <span className="meta-item">✅ Cultural Authenticity: 99%</span>
           </div>
           <p className="description">
-            Explore the sophisticated astronomical knowledge and navigation techniques that enabled Polynesian voyagers to navigate vast distances across the Pacific Ocean.
+Explore the sophisticated astronomical knowledge and navigation techniques that enabled Polynesian voyagers to navigate vast distances across the Pacific Ocean.
           </p>
         </div>
       </header>
@@ -100,26 +95,26 @@ export default function MaoriAstronomyNavigation() {
       <section className="tabs">
         <div className="tab-buttons">
           <button
-            className={`tab-button ${activeTab === 'stars' ? 'active' : ''}`}
-            onClick={() => setActiveTab('stars')}
+className={`tab-button ${activeTab === 'stars' ? 'active' : ''}`}
+onClick={() => setActiveTab('stars')}
           >
             ⭐ Star Systems
           </button>
           <button
-            className={`tab-button ${activeTab === 'navigation' ? 'active' : ''}`}
-            onClick={() => setActiveTab('navigation')}
+className={`tab-button ${activeTab === 'navigation' ? 'active' : ''}`}
+onClick={() => setActiveTab('navigation')}
           >
             🧭 Navigation Techniques
           </button>
           <button
-            className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cultural')}
+className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
+onClick={() => setActiveTab('cultural')}
           >
             🌿 Cultural Context
           </button>
           <button
-            className={`tab-button ${activeTab === 'activities' ? 'active' : ''}`}
-            onClick={() => setActiveTab('activities')}
+className={`tab-button ${activeTab === 'activities' ? 'active' : ''}`}
+onClick={() => setActiveTab('activities')}
           >
             🎯 Learning Activities
           </button>
@@ -127,15 +122,15 @@ export default function MaoriAstronomyNavigation() {
       </section>
 
       {activeTab === 'stars' && (
-        <section className="stars">
+_<section className="stars">
           <h2>⭐ Star Systems - Kōrero Whetū</h2>
           
           <div className="star-selector">
             {starSystems.map((star) => (
-              <button
-                key={star.name}
-                className={`star-pill ${selectedStar.name === star.name ? 'active' : ''}`}
-                onClick={() => setSelectedStar(star)}
+_<button
+key={star.name}
+className={`star-pill ${selectedStar.name === star.name ? 'active' : ''}`}
+onClick={() => setSelectedStar(star)}
               >
                 {star.maoriName}
               </button>
@@ -166,15 +161,15 @@ export default function MaoriAstronomyNavigation() {
       )}
 
       {activeTab === 'navigation' && (
-        <section className="navigation">
+_<section className="navigation">
           <h2>🧭 Navigation Techniques - Tātai Arorangi</h2>
           
           <div className="technique-selector">
             {navigationTechniques.map((technique) => (
-              <button
-                key={technique.title}
-                className={`technique-pill ${selectedTechnique.title === technique.title ? 'active' : ''}`}
-                onClick={() => setSelectedTechnique(technique)}
+_<button
+key={technique.title}
+className={`technique-pill ${selectedTechnique.title === technique.title ? 'active' : ''}`}
+onClick={() => setSelectedTechnique(technique)}
               >
                 {technique.title}
               </button>
@@ -212,28 +207,28 @@ export default function MaoriAstronomyNavigation() {
             <div className="cultural-section">
               <h3>🌟 Traditional Knowledge</h3>
               <p>
-                Māori astronomy represents a sophisticated understanding of celestial patterns that was essential for survival, navigation, and cultural practices. This knowledge, known as <strong>kōrero whetū</strong> (star talk) and <strong>tātai arorangi</strong> (astronomical calculations), was passed down through generations.
+Māori astronomy represents a sophisticated understanding of celestial patterns that was essential for survival, navigation, and cultural practices. This knowledge, known as <strong>kōrero whetū</strong> (star talk) and <strong>tātai arorangi</strong> (astronomical calculations), was passed down through generations.
               </p>
             </div>
 
             <div className="cultural-section">
               <h3>🧭 Navigation Heritage</h3>
               <p>
-                The ability to navigate vast distances across the Pacific Ocean using only natural signs demonstrates the incredible depth of traditional knowledge. This navigation heritage connects Māori to their Polynesian ancestors and represents one of humanity's greatest achievements.
+The ability to navigate vast distances across the Pacific Ocean using only natural signs demonstrates the incredible depth of traditional knowledge. This navigation heritage connects Māori to their Polynesian ancestors and represents one of humanity's greatest achievements.
               </p>
             </div>
 
             <div className="cultural-section">
               <h3>🌿 Cultural Significance</h3>
               <p>
-                Astronomical knowledge was not just practical - it was deeply spiritual and cultural. Stars were seen as ancestors, and their movements guided important cultural events, planting seasons, and community activities.
+Astronomical knowledge was not just practical - it was deeply spiritual and cultural. Stars were seen as ancestors, and their movements guided important cultural events, planting seasons, and community activities.
               </p>
             </div>
 
             <div className="cultural-section">
               <h3>🔬 Modern Relevance</h3>
               <p>
-                This traditional knowledge continues to be relevant today, informing modern astronomy, navigation, and environmental science. It represents a valuable contribution to global scientific understanding.
+This traditional knowledge continues to be relevant today, informing modern astronomy, navigation, and environmental science. It represents a valuable contribution to global scientific understanding.
               </p>
             </div>
           </div>
@@ -293,5 +288,5 @@ export default function MaoriAstronomyNavigation() {
         <p className="platform">TeAoMarama — World's Best Teaching Bank with Cultural Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

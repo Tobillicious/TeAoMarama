@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WaitangiTribunalCases.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WaitangiTribunalCases.css'
 
-interface WaitangiTribunalCasesProps {
-  className?: string;
-}
-
-export const WaitangiTribunalCases: React.FC<WaitangiTribunalCasesProps> = ({ className = '' }) => {
-  return (
+interface WaitangiTribunalCasesProps {className?: string}
+export const WaitangiTribunalCases: React.FC<WaitangiTribunalCasesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="waitangi tribunal cases"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`waitangi-tribunal-cases-handout cultural-focus ${className}`}
+title="waitangi tribunal cases"
+subtitle="Te Kete Ako - Cultural Education"
+className={`waitangi-tribunal-cases-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WaitangiTribunalCases: React.FC<WaitangiTribunalCasesProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WaitangiTribunalCases;
+export default WaitangiTribunalCases

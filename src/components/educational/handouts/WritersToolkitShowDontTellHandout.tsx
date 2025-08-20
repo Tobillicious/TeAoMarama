@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitShowDontTellHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitShowDontTellHandout.css'
 
-interface WritersToolkitShowDontTellHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitShowDontTellHandoutProps {className?: string}
+export const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontTellHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit show dont tell handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-show-dont-tell-handout-handout cultural-focus ${className}`}
+title="writers toolkit show dont tell handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-show-dont-tell-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontT
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitShowDontTellHandout;
+export default WritersToolkitShowDontTellHandout

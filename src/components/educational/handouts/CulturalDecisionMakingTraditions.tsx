@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalDecisionMakingTraditions.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalDecisionMakingTraditions.css'
 
-interface CulturalDecisionMakingTraditionsProps {
-  className?: string;
-}
-
-export const CulturalDecisionMakingTraditions: React.FC<CulturalDecisionMakingTraditionsProps> = ({ className = '' }) => {
-  return (
+interface CulturalDecisionMakingTraditionsProps {className?: string}
+export const CulturalDecisionMakingTraditions: React.FC<CulturalDecisionMakingTraditionsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural decision making traditions"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-decision-making-traditions-handout cultural-focus ${className}`}
+title="cultural decision making traditions"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-decision-making-traditions-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalDecisionMakingTraditions: React.FC<CulturalDecisionMakingTr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalDecisionMakingTraditions;
+export default CulturalDecisionMakingTraditions

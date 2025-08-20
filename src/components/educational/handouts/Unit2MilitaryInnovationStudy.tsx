@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2MilitaryInnovationStudy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2MilitaryInnovationStudy.css'
 
-interface Unit2MilitaryInnovationStudyProps {
-  className?: string;
-}
-
-export const Unit2MilitaryInnovationStudy: React.FC<Unit2MilitaryInnovationStudyProps> = ({ className = '' }) => {
-  return (
+interface Unit2MilitaryInnovationStudyProps {className?: string}
+export const Unit2MilitaryInnovationStudy: React.FC<Unit2MilitaryInnovationStudyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 military innovation study"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-military-innovation-study-handout cultural-focus ${className}`}
+title="unit 2 military innovation study"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-military-innovation-study-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2MilitaryInnovationStudy: React.FC<Unit2MilitaryInnovationStudy
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2MilitaryInnovationStudy;
+export default Unit2MilitaryInnovationStudy

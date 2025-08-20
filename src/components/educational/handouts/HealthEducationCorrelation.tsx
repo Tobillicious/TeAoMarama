@@ -1,91 +1,86 @@
-import { useState } from 'react';
-import './HealthEducationCorrelation.css';
+import {useState} from 'react'
+import './HealthEducationCorrelation.css'
 
-interface HealthMetric {
-  category: string;
-  metric: string;
-  value: string;
-  trend: 'improving' | 'stable' | 'declining';
-  culturalContext: string;
-}
-
-interface WellnessPractice {
-  title: string;
-  description: string;
-  culturalOrigin: string;
-  modernApplication: string;
-  evidence: string;
-}
-
+interface HealthMetric {,
+category: string,
+metric: string,
+value: string,
+trend: 'improving' | 'stable' | 'declining',
+culturalContext: string}
+interface WellnessPractice {,
+title: string,
+description: string,
+culturalOrigin: string,
+modernApplication: string,
+evidence: string}
 const healthMetrics: HealthMetric[] = [
-  {
-    category: 'Physical Health',
-    metric: 'Youth Physical Activity',
-    value: '67% meet daily activity guidelines',
-    trend: 'improving',
-    culturalContext: 'Traditional Māori games and sports promote physical wellbeing',
+  {,
+category: 'Physical Health',,
+metric: 'Youth Physical Activity',,
+value: '67% meet daily activity guidelines',,
+trend: 'improving',,
+culturalContext: 'Traditional Māori games and sports promote physical wellbeing',
   },
-  {
-    category: 'Mental Health',
-    metric: 'Student Wellbeing',
-    value: '73% report positive mental health',
-    trend: 'stable',
-    culturalContext: 'Cultural identity and connection support mental resilience',
+  {,
+category: 'Mental Health',,
+metric: 'Student Wellbeing',,
+value: '73% report positive mental health',,
+trend: 'stable',,
+culturalContext: 'Cultural identity and connection support mental resilience',
   },
-  {
-    category: 'Nutrition',
-    metric: 'Healthy Eating',
-    value: '58% consume recommended daily servings',
-    trend: 'declining',
-    culturalContext: 'Traditional Māori foods provide balanced nutrition',
+  {,
+category: 'Nutrition',,
+metric: 'Healthy Eating',,
+value: '58% consume recommended daily servings',,
+trend: 'declining',,
+culturalContext: 'Traditional Māori foods provide balanced nutrition',
   },
-  {
-    category: 'Social Connection',
-    metric: 'Community Engagement',
-    value: '81% participate in cultural activities',
-    trend: 'improving',
-    culturalContext: 'Whanaungatanga (relationships) strengthen social bonds',
+  {,
+category: 'Social Connection',,
+metric: 'Community Engagement',,
+value: '81% participate in cultural activities',,
+trend: 'improving',,
+culturalContext: 'Whanaungatanga (relationships) strengthen social bonds',
   },
-];
+]
 
 const wellnessPractices: WellnessPractice[] = [
-  {
-    title: 'Hauora - Holistic Health',
-    description: 'The Māori model of health encompassing physical, mental, social, and spiritual wellbeing',
-    culturalOrigin: 'Traditional Māori health philosophy',
-    modernApplication: 'Integrated health education programs',
-    evidence: 'Research shows holistic approaches improve overall health outcomes',
+  {,
+title: 'Hauora - Holistic Health',,
+description: 'The Māori model of health encompassing physical, mental, social, and spiritual wellbeing',,
+culturalOrigin: 'Traditional Māori health philosophy',,
+modernApplication: 'Integrated health education programs',,
+evidence: 'Research shows holistic approaches improve overall health outcomes',
   },
-  {
-    title: 'Rongoā Māori - Traditional Medicine',
-    description: 'Traditional Māori healing practices using native plants and cultural knowledge',
-    culturalOrigin: 'Centuries of Māori healing knowledge',
-    modernApplication: 'Complementary health practices',
-    evidence: 'Growing recognition of traditional medicine in modern healthcare',
+  {,
+title: 'Rongoā Māori - Traditional Medicine',,
+description: 'Traditional Māori healing practices using native plants and cultural knowledge',,
+culturalOrigin: 'Centuries of Māori healing knowledge',,
+modernApplication: 'Complementary health practices',,
+evidence: 'Growing recognition of traditional medicine in modern healthcare',
   },
-  {
-    title: 'Kapa Haka - Cultural Performance',
-    description: 'Traditional Māori performing arts that promote physical and cultural fitness',
-    culturalOrigin: 'Māori cultural traditions',
-    modernApplication: 'School and community health programs',
-    evidence: 'Studies show cultural activities improve mental and physical health',
+  {,
+title: 'Kapa Haka - Cultural Performance',,
+description: 'Traditional Māori performing arts that promote physical and cultural fitness',,
+culturalOrigin: 'Māori cultural traditions',,
+modernApplication: 'School and community health programs',,
+evidence: 'Studies show cultural activities improve mental and physical health',
   },
-  {
-    title: 'Whānau Ora - Family Wellness',
-    description: 'Family-centered approach to health and wellbeing',
-    culturalOrigin: 'Māori family and community values',
-    modernApplication: 'Family health initiatives',
-    evidence: 'Family-centered care improves health outcomes across generations',
+  {,
+title: 'Whānau Ora - Family Wellness',,
+description: 'Family-centered approach to health and wellbeing',,
+culturalOrigin: 'Māori family and community values',,
+modernApplication: 'Family health initiatives',,
+evidence: 'Family-centered care improves health outcomes across generations',
   },
-];
+]
 
-export default function HealthEducationCorrelation() {
-  const [selectedMetric, setSelectedMetric] = useState<HealthMetric>(healthMetrics[0]);
-  const [selectedPractice, setSelectedPractice] = useState<WellnessPractice>(wellnessPractices[0]);
-  const [activeTab, setActiveTab] = useState<'metrics' | 'practices' | 'correlation' | 'activities'>('metrics');
+export default function HealthEducationCorrelation() {const [selectedMetric, setSelectedMetric] = useState<HealthMetric>(healthMetrics[0])
+  const [selectedPractice, setSelectedPractice] = useState<WellnessPractice>(wellnessPractices[0])
+  const [activeTab, setActiveTab] = useState<'metrics' | 'practices' | 'correlation' | 'activities'>('metrics')
 
-  return (
-    <div className="health-container">
+return (
+_<div className="health-container">
       <header className="health-header">
         <div className="header-content">
           <div className="badge">🌟 ERO DEMONSTRATION READY</div>
@@ -97,7 +92,7 @@ export default function HealthEducationCorrelation() {
             <span className="meta-item">✅ Cultural Authenticity: 98%</span>
           </div>
           <p className="description">
-            Explore the correlation between health education, cultural practices, and student wellbeing through the lens of Māori health philosophy.
+Explore the correlation between health education,  _cultural practices,  _and student wellbeing through the lens of Māori health philosophy.
           </p>
         </div>
       </header>
@@ -105,26 +100,26 @@ export default function HealthEducationCorrelation() {
       <section className="tabs">
         <div className="tab-buttons">
           <button
-            className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
-            onClick={() => setActiveTab('metrics')}
+className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
+onClick={() => setActiveTab('metrics')}
           >
             📊 Health Metrics
           </button>
           <button
-            className={`tab-button ${activeTab === 'practices' ? 'active' : ''}`}
-            onClick={() => setActiveTab('practices')}
+className={`tab-button ${activeTab === 'practices' ? 'active' : ''}`}
+onClick={() => setActiveTab('practices')}
           >
             🌿 Wellness Practices
           </button>
           <button
-            className={`tab-button ${activeTab === 'correlation' ? 'active' : ''}`}
-            onClick={() => setActiveTab('correlation')}
+className={`tab-button ${activeTab === 'correlation' ? 'active' : ''}`}
+onClick={() => setActiveTab('correlation')}
           >
             🔗 Correlation Analysis
           </button>
           <button
-            className={`tab-button ${activeTab === 'activities' ? 'active' : ''}`}
-            onClick={() => setActiveTab('activities')}
+className={`tab-button ${activeTab === 'activities' ? 'active' : ''}`}
+onClick={() => setActiveTab('activities')}
           >
             🎯 Learning Activities
           </button>
@@ -132,15 +127,15 @@ export default function HealthEducationCorrelation() {
       </section>
 
       {activeTab === 'metrics' && (
-        <section className="metrics">
+_<section className="metrics">
           <h2>📊 Health Metrics & Trends</h2>
           
           <div className="metric-selector">
             {healthMetrics.map((metric) => (
-              <button
-                key={metric.metric}
-                className={`metric-pill ${selectedMetric.metric === metric.metric ? 'active' : ''}`}
-                onClick={() => setSelectedMetric(metric)}
+_<button
+key={metric.metric}
+className={`metric-pill ${selectedMetric.metric === metric.metric ? 'active' : ''}`}
+onClick={() => setSelectedMetric(metric)}
               >
                 {metric.metric}
               </button>
@@ -173,15 +168,15 @@ export default function HealthEducationCorrelation() {
       )}
 
       {activeTab === 'practices' && (
-        <section className="practices">
+_<section className="practices">
           <h2>🌿 Cultural Wellness Practices</h2>
           
           <div className="practice-selector">
             {wellnessPractices.map((practice) => (
-              <button
-                key={practice.title}
-                className={`practice-pill ${selectedPractice.title === practice.title ? 'active' : ''}`}
-                onClick={() => setSelectedPractice(practice)}
+_<button
+key={practice.title}
+className={`practice-pill ${selectedPractice.title === practice.title ? 'active' : ''}`}
+onClick={() => setSelectedPractice(practice)}
               >
                 {practice.title}
               </button>
@@ -311,5 +306,5 @@ export default function HealthEducationCorrelation() {
         <p className="platform">TeAoMarama — World's Best Teaching Bank with Cultural Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

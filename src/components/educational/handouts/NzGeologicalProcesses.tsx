@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NzGeologicalProcesses.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NzGeologicalProcesses.css'
 
-interface NzGeologicalProcessesProps {
-  className?: string;
-}
-
-export const NzGeologicalProcesses: React.FC<NzGeologicalProcessesProps> = ({ className = '' }) => {
-  return (
+interface NzGeologicalProcessesProps {className?: string}
+export const NzGeologicalProcesses: React.FC<NzGeologicalProcessesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="nz geological processes"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`nz-geological-processes-handout cultural-focus ${className}`}
+title="nz geological processes"
+subtitle="Te Kete Ako - Cultural Education"
+className={`nz-geological-processes-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NzGeologicalProcesses: React.FC<NzGeologicalProcessesProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NzGeologicalProcesses;
+export default NzGeologicalProcesses

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitToneHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitToneHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-tone-handout">
       <Card title="The Writer's Toolkit: Formal vs. Informal Tone" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,18 +24,18 @@ const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">What is Tone?</h2>
                 <p class="text-justify">
-                    In writing, tone is the author's attitude toward the subject and the audience. It's conveyed through word choice (diction), sentence structure (syntax), and overall style. Just as you would change your tone of voice when speaking to your principal versus your best friend, a good writer must adapt their tone to suit their purpose and audience. The two most common tones are formal and informal. Mastering the difference is essential for effective communication in any context.
+In writing, tone is the author's attitude toward the subject and the audience. It's conveyed through word choice (diction), sentence structure (syntax), and overall style. Just as you would change your tone of voice when speaking to your principal versus your best friend, a good writer must adapt their tone to suit their purpose and audience. The two most common tones are formal and informal. Mastering the difference is essential for effective communication in any context.
                 </p>
             </section>
 
             <section class="mb-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-3">Formal vs. Informal Tone</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md: grid-cols-2 gap-4">
                     <div class="comparison-box">
                         <h4 class="font-bold text-gray-800 mb-2">Formal Tone 🧐</h4>
                         <p class="text-sm text-gray-600"><strong>Purpose:</strong> To inform, persuade, or present a serious argument. Used in academic essays, official reports, and professional emails.</p>
@@ -51,7 +48,7 @@ const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = ({
                     </div>
                     <div class="comparison-box">
                         <h4 class="font-bold text-gray-800 mb-2">Informal Tone 😎</h4>
-                        <p class="text-sm text-gray-600"><strong>Purpose:</strong> To entertain, connect personally, or express excitement. Used in friendly emails, blog posts, social media, and creative stories.</p>
+                        <p class="text-sm text-gray-600"><strong>Purpose: </strong> To entertain, connect personally, or express excitement. Used in friendly emails, blog posts, social media, and creative stories.</p>
                          <ul class="text-sm list-disc list-inside mt-2 space-y-1">
                             <li>Uses simpler, shorter sentences.</li>
                             <li>May include slang, contractions, and colloquialisms.</li>
@@ -107,7 +104,7 @@ const WritersToolkitToneHandout: React.FC<WritersToolkitToneHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitToneHandout;
+export default WritersToolkitToneHandout

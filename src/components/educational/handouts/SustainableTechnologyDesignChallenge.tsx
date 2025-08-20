@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './SustainableTechnologyDesignChallenge.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './SustainableTechnologyDesignChallenge.css'
 
-interface SustainableTechnologyDesignChallengeProps {
-  className?: string;
-}
-
-export const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesignChallengeProps> = ({ className = '' }) => {
-  return (
+interface SustainableTechnologyDesignChallengeProps {className?: string}
+export const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesignChallengeProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="sustainable technology design challenge"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`sustainable-technology-design-challenge-handout cultural-focus ${className}`}
+title="sustainable technology design challenge"
+subtitle="Te Kete Ako - Cultural Education"
+className={`sustainable-technology-design-challenge-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnolog
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default SustainableTechnologyDesignChallenge;
+export default SustainableTechnologyDesignChallenge

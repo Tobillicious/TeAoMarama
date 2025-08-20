@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TeReoMathsGlossaryBilingualAlpha.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TeReoMathsGlossaryBilingualAlpha.css'
 
-interface TeReoMathsGlossaryBilingualAlphaProps {
-  className?: string;
-}
-
-export const TeReoMathsGlossaryBilingualAlpha: React.FC<TeReoMathsGlossaryBilingualAlphaProps> = ({ className = '' }) => {
-  return (
+interface TeReoMathsGlossaryBilingualAlphaProps {className?: string}
+export const TeReoMathsGlossaryBilingualAlpha: React.FC<TeReoMathsGlossaryBilingualAlphaProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="te reo maths glossary bilingual alpha"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`te-reo-maths-glossary-bilingual-alpha-handout cultural-focus ${className}`}
+title="te reo maths glossary bilingual alpha"
+subtitle="Te Kete Ako - Cultural Education"
+className={`te-reo-maths-glossary-bilingual-alpha-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TeReoMathsGlossaryBilingualAlpha: React.FC<TeReoMathsGlossaryBiling
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TeReoMathsGlossaryBilingualAlpha;
+export default TeReoMathsGlossaryBilingualAlpha

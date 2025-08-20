@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface AuthorsPurposeHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-8",
-  subject = "English, Literacy"
+interface AuthorsPurposeHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-8", 
+_subject = "English,  _Literacy"
 }) => {
-  return (
+return (
     <div className="authors-purpose-handout">
       <Card title="Author's Purpose: The Art of Persuasion | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,26 +24,26 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">Author's Purpose: The Art of Persuasion</h1>
                 <p class="page-subtitle">Analysing a Persuasive Text</p>
             </div>
 
-            <section style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%); color: white; padding: var(--space-8); border-radius: var(--radius-lg); margin-bottom: 2rem;">
-                <h2 style="color: white; margin-bottom: 1rem;" class="wiley-section-title">Whakatūwhera - Cultural Opening</h2>
-                <p style="line-height: 1.7; margin-bottom: 1rem;">In Te Ao Māori, effective communication is not just about what we say, but how we say it and why we say it. The whakataukī "He kōrero te kai a te rangatira" reminds us that speech is the food of chiefs - our words have power and purpose. Today, we explore how authors use persuasive techniques to influence readers, examining both traditional Māori oratory traditions and contemporary persuasive writing strategies.</p>
-                <p style="font-style: italic; font-size: var(--text-lg);">"He kōrero te kai a te rangatira."</p>
+            <section style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%) color: white padding: var(--space-8) border-radius: var(--radius-lg) margin-bottom: 2rem">
+                <h2 style="color: white margin-bottom: 1rem" class="wiley-section-title">Whakatūwhera - Cultural Opening</h2>
+                <p style="line-height: 1.7 margin-bottom: 1rem">In Te Ao Māori, effective communication is not just about what we say, but how we say it and why we say it. The whakataukī "He kōrero te kai a te rangatira" reminds us that speech is the food of chiefs - our words have power and purpose. Today, we explore how authors use persuasive techniques to influence readers, examining both traditional Māori oratory traditions and contemporary persuasive writing strategies.</p>
+                <p style="font-style: italic font-size: var(--text-lg)">"He kōrero te kai a te rangatira."</p>
             </section>
 
-            <section style="margin-bottom: 2rem;">
-                <h2 style="color: var(--color-primary); border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Ngā Whāinga Ako - Learning Intentions</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+            <section style="margin-bottom: 2rem">
+                <h2 style="color: var(--color-primary) border-bottom: 2px solid var(--color-secondary) padding-bottom: 0.5rem" class="wiley-section-title">Ngā Whāinga Ako - Learning Intentions</h2>
+                <div style="display: grid grid-template-columns: 1fr 1fr gap: 2rem margin-top: 1rem">
                     <div>
-                        <h3 style="color: var(--color-secondary);">Students Will Learn</h3>
-                        <ul style="line-height: 1.8;">
+                        <h3 style="color: var(--color-secondary)">Students Will Learn</h3>
+                        <ul style="line-height: 1.8">
                             <li>How to identify author's purpose in persuasive texts</li>
                             <li>Common persuasive techniques and their effects</li>
                             <li>Cultural approaches to persuasive communication</li>
@@ -54,8 +51,8 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
                         </ul>
                     </div>
                     <div>
-                        <h3 style="color: var(--color-secondary);">Students Will Demonstrate</h3>
-                        <ul style="line-height: 1.8;">
+                        <h3 style="color: var(--color-secondary)">Students Will Demonstrate</h3>
+                        <ul style="line-height: 1.8">
                             <li>By analyzing persuasive techniques in multiple texts</li>
                             <li>By creating their own persuasive arguments</li>
                             <li>By evaluating cultural perspectives in communication</li>
@@ -65,43 +62,43 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
                 </div>
             </section>
 
-            <section style="margin-bottom: 2rem;">
-                <h2 style="color: var(--color-primary); border-bottom: 2px solid var(--color-secondary); padding-bottom: 0.5rem;" class="wiley-section-title">Persuasive Techniques Overview</h2>
+            <section style="margin-bottom: 2rem">
+                <h2 style="color: var(--color-primary) border-bottom: 2px solid var(--color-secondary) padding-bottom: 0.5rem" class="wiley-section-title">Persuasive Techniques Overview</h2>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); border-top: 4px solid var(--color-accent-1);">
-                        <h3 style="color: var(--color-accent-1); margin-bottom: 1rem;">🎯 Author's Purpose (PIE)</h3>
-                        <ul style="line-height: 1.6;">
-                            <li><strong>Persuade:</strong> Convince readers to think or act differently</li>
+                <div style="display: grid grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) gap: 1.5rem margin-top: 1.5rem">
+                    <div style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) border-top: 4px solid var(--color-accent-1)">
+                        <h3 style="color: var(--color-accent-1) margin-bottom: 1rem">🎯 Author's Purpose (PIE)</h3>
+                        <ul style="line-height: 1.6">
+                            <li><strong>Persuade: </strong> Convince readers to think or act differently</li>
                             <li><strong>Inform:</strong> Provide facts and information</li>
                             <li><strong>Entertain:</strong> Amuse or engage readers</li>
                         </ul>
                     </div>
                     
-                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); border-top: 4px solid var(--color-accent-2);">
-                        <h3 style="color: var(--color-accent-2); margin-bottom: 1rem;">💬 Rhetorical Devices</h3>
-                        <ul style="line-height: 1.6;">
-                            <li><strong>Rhetorical Questions:</strong> Questions that don't need answers</li>
+                    <div style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) border-top: 4px solid var(--color-accent-2)">
+                        <h3 style="color: var(--color-accent-2) margin-bottom: 1rem">💬 Rhetorical Devices</h3>
+                        <ul style="line-height: 1.6">
+                            <li><strong>Rhetorical Questions: </strong> Questions that don't need answers</li>
                             <li><strong>Repetition:</strong> Repeating words or phrases for emphasis</li>
                             <li><strong>Alliteration:</strong> Repetition of initial sounds</li>
                             <li><strong>Metaphor/Simile:</strong> Comparing things to create vivid images</li>
                         </ul>
                     </div>
                     
-                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); border-top: 4px solid var(--color-accent-3);">
-                        <h3 style="color: var(--color-accent-3); margin-bottom: 1rem;">📊 Evidence & Appeals</h3>
-                        <ul style="line-height: 1.6;">
-                            <li><strong>Logos:</strong> Logical arguments and evidence</li>
+                    <div style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) border-top: 4px solid var(--color-accent-3)">
+                        <h3 style="color: var(--color-accent-3) margin-bottom: 1rem">📊 Evidence & Appeals</h3>
+                        <ul style="line-height: 1.6">
+                            <li><strong>Logos: </strong> Logical arguments and evidence</li>
                             <li><strong>Pathos:</strong> Emotional appeals to feelings</li>
                             <li><strong>Ethos:</strong> Credibility and trustworthiness</li>
                             <li><strong>Statistics:</strong> Numbers and data to support claims</li>
                         </ul>
                     </div>
                     
-                    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); border-top: 4px solid var(--color-accent-4);">
-                        <h3 style="color: var(--color-accent-4); margin-bottom: 1rem;">🌿 Cultural Communication</h3>
-                        <ul style="line-height: 1.6;">
-                            <li><strong>Whakapapa:</strong> Connecting to ancestry and tradition</li>
+                    <div style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) border-top: 4px solid var(--color-accent-4)">
+                        <h3 style="color: var(--color-accent-4) margin-bottom: 1rem">🌿 Cultural Communication</h3>
+                        <ul style="line-height: 1.6">
+                            <li><strong>Whakapapa: </strong> Connecting to ancestry and tradition</li>
                             <li><strong>Kaitiakitanga:</strong> Environmental responsibility</li>
                             <li><strong>Manaakitanga:</strong> Hospitality and care for others</li>
                             <li><strong>Rangatiratanga:</strong> Leadership and self-determination</li>
@@ -110,26 +107,26 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
                 </div>
             </section>
 
-            <article class="handout-content mb-4" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); margin: var(--space-6) 0;">
-                <h2 class="section-title" style="color: var(--color-primary); margin-bottom: 1rem;" class="wiley-section-title">📝 Sample Text: "It's Time to Embrace the Four-Day School Week"</h2>
-                <p style="line-height: 1.7; margin-bottom: 1rem;"><strong>Context:</strong> This opinion piece argues for educational reform in New Zealand. As you read, identify the persuasive techniques used by the author.</p>
+            <article class="handout-content mb-4" style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) margin: var(--space-6) 0">
+                <h2 class="section-title" style="color: var(--color-primary) margin-bottom: 1rem" class="wiley-section-title">📝 Sample Text: "It's Time to Embrace the Four-Day School Week"</h2>
+                <p style="line-height: 1.7 margin-bottom: 1rem"><strong>Context: </strong> This opinion piece argues for educational reform in New Zealand. As you read, identify the persuasive techniques used by the author.</p>
                 
-                <div style="background-color: var(--color-background); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-4) 0;">
-                    <p style="line-height: 1.7; margin-bottom: 1rem;">The traditional five-day school week is an outdated relic from a bygone era. In a world that is rapidly changing, we are clinging to a rigid structure that no longer serves the best interests of our students or our teachers. It is time for New Zealand to seriously consider a revolutionary idea: the four-day school week. The evidence is clear—this is not about less education, but about a better, more effective, and more balanced education.</p>
+                <div style="background-color: var(--color-background) padding: var(--space-6) border-radius: var(--radius-md) margin: var(--space-4) 0">
+                    <p style="line-height: 1.7 margin-bottom: 1rem">The traditional five-day school week is an outdated relic from a bygone era. In a world that is rapidly changing, we are clinging to a rigid structure that no longer serves the best interests of our students or our teachers. It is time for New Zealand to seriously consider a revolutionary idea: the four-day school week. The evidence is clear—this is not about less education, but about a better, more effective, and more balanced education.</p>
                     
-                    <p style="line-height: 1.7; margin-bottom: 1rem;">Imagine a learning environment where both students and teachers are more rested, focused, and engaged. Trials overseas have shown that a four-day week can lead to a dramatic reduction in teacher burnout and a significant increase in student attendance. One district in Missouri, USA, reported a staggering 90% drop in teacher resignations after making the switch. With more time for planning and professional development, our exhausted educators would be revitalised. For students, a three-day weekend offers more time for family, sports, hobbies, and deep, uninterrupted study. Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?</p>
+                    <p style="line-height: 1.7 margin-bottom: 1rem">Imagine a learning environment where both students and teachers are more rested, focused, and engaged. Trials overseas have shown that a four-day week can lead to a dramatic reduction in teacher burnout and a significant increase in student attendance. One district in Missouri, USA, reported a staggering 90% drop in teacher resignations after making the switch. With more time for planning and professional development, our exhausted educators would be revitalised. For students, a three-day weekend offers more time for family, sports, hobbies, and deep, uninterrupted study. Are we really to believe that tired, overworked students crammed into a five-day schedule is the best we can do?</p>
                     
-                    <p style="line-height: 1.7; margin-bottom: 1rem;">Of course, there will be logistical hurdles. But we cannot let fear of change paralyse us. The benefits—improved student wellbeing, higher teacher retention, and a more modern approach to learning—are too compelling to ignore. This is a bold step, but it is a necessary one. We must have the courage to abandon a broken model and build a system that truly prepares our young people for the future. Let's not be the generation that was too afraid to innovate. Let's be the one that gave our students and teachers the gift of time.</p>
+                    <p style="line-height: 1.7 margin-bottom: 1rem">Of course, there will be logistical hurdles. But we cannot let fear of change paralyse us. The benefits—improved student wellbeing, higher teacher retention, and a more modern approach to learning—are too compelling to ignore. This is a bold step, but it is a necessary one. We must have the courage to abandon a broken model and build a system that truly prepares our young people for the future. Let's not be the generation that was too afraid to innovate. Let's be the one that gave our students and teachers the gift of time.</p>
                 </div>
             </article>
 
-            <section class="handout-questions mb-4" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-6); margin: var(--space-6) 0;">
-                <h2 class="section-title" style="color: var(--color-primary); margin-bottom: 1rem;" class="wiley-section-title">🔍 Analysis Activities</h2>
+            <section class="handout-questions mb-4" style="background-color: var(--color-surface) border: 1px solid var(--color-border) border-radius: var(--radius-md) padding: var(--space-6) margin: var(--space-6) 0">
+                <h2 class="section-title" style="color: var(--color-primary) margin-bottom: 1rem" class="wiley-section-title">🔍 Analysis Activities</h2>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-                    <div style="background-color: var(--color-background); padding: var(--space-6); border-radius: var(--radius-md);">
-                        <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Activity 1: Purpose & Audience</h3>
-                        <ol style="line-height: 1.6;">
+                <div style="display: grid grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) gap: 1.5rem margin-top: 1rem">
+                    <div style="background-color: var(--color-background) padding: var(--space-6) border-radius: var(--radius-md)">
+                        <h3 style="color: var(--color-secondary) margin-bottom: 1rem">Activity 1: Purpose & Audience</h3>
+                        <ol style="line-height: 1.6">
                             <li><strong>What is the author's primary purpose?</strong> (Persuade/Inform/Entertain)</li>
                             <li><strong>Who is the target audience?</strong> Consider age, role, interests</li>
                             <li><strong>What does the author want readers to do?</strong> Be specific</li>
@@ -137,9 +134,9 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
                         </ol>
                     </div>
                     
-                    <div style="background-color: var(--color-background); padding: var(--space-6); border-radius: var(--radius-md);">
-                        <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Activity 2: Persuasive Techniques</h3>
-                        <ol style="line-height: 1.6;">
+                    <div style="background-color: var(--color-background) padding: var(--space-6) border-radius: var(--radius-md)">
+                        <h3 style="color: var(--color-secondary) margin-bottom: 1rem">Activity 2: Persuasive Techniques</h3>
+                        <ol style="line-height: 1.6">
                             <li><strong>Find 3 examples of emotional appeals</strong> (Pathos)</li>
                             <li><strong>Identify logical arguments</strong> (Logos) - statistics, facts</li>
                             <li><strong>Spot rhetorical questions</strong> - underline them</li>
@@ -147,9 +144,9 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
                         </ol>
                     </div>
                     
-                    <div style="background-color: var(--color-background); padding: var(--space-6); border-radius: var(--radius-md);">
-                        <h3 style="color: var(--color-secondary); margin-bottom: 1rem;">Activity 3: Cultural Analysis</h3>
-                        <ol style="line-height: 1.6;">
+                    <div style="background-color: var(--color-background) padding: var(--space-6) border-radius: var(--radius-md)">
+                        <h3 style="color: var(--color-secondary) margin-bottom: 1rem">Activity 3: Cultural Analysis</h3>
+                        <ol style="line-height: 1.6">
                             <li><strong>How does this argument connect to Māori values?</strong></li>
                             <li><strong>What cultural perspectives might be missing?</strong></li>
                             <li><strong>How could this be made more culturally inclusive?</strong></li>
@@ -185,67 +182,67 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
             </section>
     
     <!-- External Resources Section - Added by Te Kete Ako Content Enrichment -->
-    <section class="external-resources-section no-print" style="border-left: 4px solid var(--color-maori-red, #CC0000); background: linear-gradient(135deg, #f0f8f4 0%, #e8f5e8 100%); padding: var(--space-6); margin: var(--space-8) 0; border-radius: var(--radius-lg);">
-        <h3 style="margin: 0 0 1rem 0; color: var(--color-primary, #2E8B57); display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.5rem;">🌿</span>
-            Nga Rauemi Tauwehe - External Resources
+    <section class="external-resources-section no-print" style="border-left: 4px solid var(--color-maori-red, #CC0000) background: linear-gradient(135deg, #f0f8f4 0%, #e8f5e8 100%) padding: var(--space-6) margin: var(--space-8) 0 border-radius: var(--radius-lg)">
+        <h3 style="margin: 0 0 1rem 0 color: var(--color-primary, #2E8B57) display: flex align-items: center gap: 0.5rem">
+            <span style="font-size: 1.5rem">🌿</span>
+Nga Rauemi Tauwehe - External Resources
         </h3>
-        <p style="margin: 0 0 1.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm);">
-            High-quality resources from official New Zealand education sites to extend and enrich this learning content.
+        <p style="margin: 0 0 1.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm)">
+High-quality resources from official New Zealand education sites to extend and enrich this learning content.
         </p>
         <div class="external-resources-list">
             
-            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
-                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
-                    <a href="https://www.sciencelearn.org.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-                        Science Learning Hub
+            <div class="external-resource-item" style="margin: var(--space-4) 0 padding: var(--space-4) background: white border-radius: var(--radius-md) box-shadow: 0 2px 4px var(--shadow-md)">
+                <h4 style="margin: 0 0 0.5rem 0 color: var(--color-primary, #2E8B57)">
+                    <a href="https: //www.sciencelearn.org.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none color: inherit">
+Science Learning Hub
                     </a>
                 </h4>
-                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
-                    Over 11,550 NZ science education resources for teachers, students and community
+                <p style="margin: 0.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm) line-height: 1.4">
+Over 11,550 NZ science education resources for teachers, students and community
                 </p>
                 <div class="flex">
                     <div class="flex">
-                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
-                            Years: 1-13
+                        <span style="background: var(--color-accent, #DAA520) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">,
+Years: 1-13
                         </span>
-                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                        <span style="background: var(--color-secondary, #FF6B35) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">
                             60% Match
                         </span>
-                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
-                            Official NZ Resource
+                        <span style="background: var(--color-primary, #2E8B57) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">  
+Official NZ Resource
                         </span>
                     </div>
                 </div>
             </div>
-            <div class="external-resource-item" style="margin: var(--space-4) 0; padding: var(--space-4); background: white; border-radius: var(--radius-md); box-shadow: 0 2px 4px var(--shadow-md);">
-                <h4 style="margin: 0 0 0.5rem 0; color: var(--color-primary, #2E8B57);">
-                    <a href="https://tahurangi.education.govt.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-                        Tāhūrangi - Te Reo Māori Education Hub
+            <div class="external-resource-item" style="margin: var(--space-4) 0 padding: var(--space-4) background: white border-radius: var(--radius-md) box-shadow: 0 2px 4px var(--shadow-md)">
+                <h4 style="margin: 0 0 0.5rem 0 color: var(--color-primary, #2E8B57)">
+                    <a href="https: //tahurangi.education.govt.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none color: inherit">
+Tāhūrangi - Te Reo Māori Education Hub
                     </a>
                 </h4>
-                <p style="margin: 0.5rem 0; color: var(--color-text-secondary, #666); font-size: var(--text-sm); line-height: 1.4;">
-                    Official NZ government hub for te reo Māori resources, guidance, and teaching support
+                <p style="margin: 0.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm) line-height: 1.4">
+Official NZ government hub for te reo Māori resources, guidance, and teaching support
                 </p>
                 <div class="flex">
                     <div class="flex">
-                        <span style="background: var(--color-accent, #DAA520); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
-                            Years: 7-13
+                        <span style="background: var(--color-accent, #DAA520) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">,
+Years: 7-13
                         </span>
-                        <span style="background: var(--color-secondary, #FF6B35); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">
+                        <span style="background: var(--color-secondary, #FF6B35) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">
                             30% Match
                         </span>
-                        <span style="background: var(--color-primary, #2E8B57); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-lg); font-size: 0.75rem;">  
-                            Official NZ Resource
+                        <span style="background: var(--color-primary, #2E8B57) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">  
+Official NZ Resource
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.8rem; color: var(--color-text-muted, #888);">
-            <p style="margin: 0;">
+        <div style="margin-top: 1rem padding-top: 1rem border-top: 1px solid #ddd font-size: 0.8rem color: var(--color-text-muted, #888)">
+            <p style="margin: 0">
                 🤖 <em>These resources were automatically curated by Te Kete Ako's AI system to complement this content. 
-                All external links lead to official New Zealand educational and government websites.</em>
+All external links lead to official New Zealand educational and government websites.</em>
             </p>
         </div>
     </section>
@@ -276,7 +273,7 @@ const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default AuthorsPurposeHandout;
+export default AuthorsPurposeHandout

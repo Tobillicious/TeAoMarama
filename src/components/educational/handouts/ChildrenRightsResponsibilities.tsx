@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ChildrenRightsResponsibilities.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ChildrenRightsResponsibilities.css'
 
-interface ChildrenRightsResponsibilitiesProps {
-  className?: string;
-}
-
-export const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesProps> = ({ className = '' }) => {
-  return (
+interface ChildrenRightsResponsibilitiesProps {className?: string}
+export const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="children rights responsibilities"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`children-rights-responsibilities-handout cultural-focus ${className}`}
+title="children rights responsibilities"
+subtitle="Te Kete Ako - Cultural Education"
+className={`children-rights-responsibilities-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibili
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ChildrenRightsResponsibilities;
+export default ChildrenRightsResponsibilities

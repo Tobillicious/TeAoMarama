@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2UrbanMigrationStories.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2UrbanMigrationStories.css'
 
-interface Unit2UrbanMigrationStoriesProps {
-  className?: string;
-}
-
-export const Unit2UrbanMigrationStories: React.FC<Unit2UrbanMigrationStoriesProps> = ({ className = '' }) => {
-  return (
+interface Unit2UrbanMigrationStoriesProps {className?: string}
+export const Unit2UrbanMigrationStories: React.FC<Unit2UrbanMigrationStoriesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 urban migration stories"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-urban-migration-stories-handout cultural-focus ${className}`}
+title="unit 2 urban migration stories"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-urban-migration-stories-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2UrbanMigrationStories: React.FC<Unit2UrbanMigrationStoriesProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2UrbanMigrationStories;
+export default Unit2UrbanMigrationStories

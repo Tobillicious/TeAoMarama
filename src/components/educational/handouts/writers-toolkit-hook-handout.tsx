@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitHookHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitHookHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-hook-handout">
       <Card title="The Writer's Toolkit: Crafting Hooks" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,18 +24,18 @@ const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">Why Your First Sentence Matters</h2>
                 <p class="text-justify">
-                    The first sentence of any piece of writing is the most important. It's the "hook" that grabs your reader's attention and makes them want to keep reading. A boring introduction signals a boring piece of writing, and you risk losing your audience before you've even made your point. A strong hook, on the other hand, creates curiosity, sets the tone, and makes a promise to the reader about the interesting content to come. Different hooks work best for different purposes.
+The first sentence of any piece of writing is the most important. It's the "hook" that grabs your reader's attention and makes them want to keep reading. A boring introduction signals a boring piece of writing, and you risk losing your audience before you've even made your point. A strong hook, on the other hand, creates curiosity, sets the tone, and makes a promise to the reader about the interesting content to come. Different hooks work best for different purposes.
                 </p>
             </section>
 
             <section class="mb-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-3">Types of Hooks</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md: grid-cols-2 gap-4">
                     <div class="technique-box">
                         <h4 class="font-bold text-teal-700 mb-1">1. The Surprising Fact</h4>
                         <p class="text-sm text-gray-600">Start with a shocking or little-known piece of information to make your reader curious.</p>
@@ -52,17 +49,17 @@ const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps> = ({
                     <div class="technique-box">
                         <h4 class="font-bold text-teal-700 mb-1">3. The Vivid Description</h4>
                         <p class="text-sm text-gray-600">Drop the reader directly into a scene. Use strong sensory details ("Show, Don't Tell").</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "The air was thick with the smell of salt and woodsmoke, and the only sound was the rhythmic sigh of the waves."</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "The air was thick with the smell of salt and woodsmoke, and the only sound was the rhythmic sigh of the waves."</p>
                     </div>
                     <div class="technique-box">
                         <h4 class="font-bold text-teal-700 mb-1">4. The Short, Personal Story (Anecdote)</h4>
                         <p class="text-sm text-gray-600">Begin with a very brief, relevant story to create a personal connection with the reader.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "I'll never forget the day my grandfather taught me how to fish. It wasn't about the fish; it was about the silence."</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "I'll never forget the day my grandfather taught me how to fish. It wasn't about the fish it was about the silence."</p>
                     </div>
                     <div class="technique-box">
                         <h4 class="font-bold text-teal-700 mb-1">5. The Bold Statement</h4>
                         <p class="text-sm text-gray-600">Start with a strong, and perhaps controversial, claim to grab the reader's attention immediately.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "Homework is a waste of time."</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "Homework is a waste of time."</p>
                     </div>
                 </div>
             </section>
@@ -83,7 +80,7 @@ const WritersToolkitHookHandout: React.FC<WritersToolkitHookHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitHookHandout;
+export default WritersToolkitHookHandout

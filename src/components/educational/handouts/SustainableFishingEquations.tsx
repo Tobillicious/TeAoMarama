@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './SustainableFishingEquations.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './SustainableFishingEquations.css'
 
-interface SustainableFishingEquationsProps {
-  className?: string;
-}
-
-export const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = ({ className = '' }) => {
-  return (
+interface SustainableFishingEquationsProps {className?: string}
+export const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="sustainable fishing equations"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`sustainable-fishing-equations-handout cultural-focus ${className}`}
+title="sustainable fishing equations"
+subtitle="Te Kete Ako - Cultural Education"
+className={`sustainable-fishing-equations-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const SustainableFishingEquations: React.FC<SustainableFishingEquationsPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default SustainableFishingEquations;
+export default SustainableFishingEquations

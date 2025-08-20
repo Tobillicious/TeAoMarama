@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NzHousingCrisisHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NzHousingCrisisHandout.css'
 
-interface NzHousingCrisisHandoutProps {
-  className?: string;
-}
-
-export const NzHousingCrisisHandout: React.FC<NzHousingCrisisHandoutProps> = ({ className = '' }) => {
-  return (
+interface NzHousingCrisisHandoutProps {className?: string}
+export const NzHousingCrisisHandout: React.FC<NzHousingCrisisHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="nz housing crisis handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`nz-housing-crisis-handout-handout cultural-focus ${className}`}
+title="nz housing crisis handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`nz-housing-crisis-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NzHousingCrisisHandout: React.FC<NzHousingCrisisHandoutProps> = ({ 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NzHousingCrisisHandout;
+export default NzHousingCrisisHandout

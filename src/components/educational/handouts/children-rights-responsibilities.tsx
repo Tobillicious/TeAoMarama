@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ChildrenRightsResponsibilitiesProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesProps> = ({
-  culturalContext = "Cultural rights and community responsibilities",
-  yearLevel = "Year 7-10",
-  subject = "Social Studies"
+interface ChildrenRightsResponsibilitiesProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesProps> = (_{
+culturalContext = "Cultural rights and community responsibilities", 
+_yearLevel = "Year 7-10", 
+_subject = "Social Studies"
 }) => {
-  return (
+return (
     <div className="children-rights-responsibilities">
       <Card title="Children Rights Responsibilities | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesPro
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Children Rights Responsibilities</h1>
@@ -40,7 +37,7 @@ const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibilitiesPro
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ChildrenRightsResponsibilities;
+export default ChildrenRightsResponsibilities

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaraeBlueprintScaling.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaraeBlueprintScaling.css'
 
-interface MaraeBlueprintScalingProps {
-  className?: string;
-}
-
-export const MaraeBlueprintScaling: React.FC<MaraeBlueprintScalingProps> = ({ className = '' }) => {
-  return (
+interface MaraeBlueprintScalingProps {className?: string}
+export const MaraeBlueprintScaling: React.FC<MaraeBlueprintScalingProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="marae blueprint scaling"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`marae-blueprint-scaling-handout cultural-focus ${className}`}
+title="marae blueprint scaling"
+subtitle="Te Kete Ako - Cultural Education"
+className={`marae-blueprint-scaling-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaraeBlueprintScaling: React.FC<MaraeBlueprintScalingProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaraeBlueprintScaling;
+export default MaraeBlueprintScaling

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './KumaraStoragePlaceValue.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './KumaraStoragePlaceValue.css'
 
-interface KumaraStoragePlaceValueProps {
-  className?: string;
-}
-
-export const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = ({ className = '' }) => {
-  return (
+interface KumaraStoragePlaceValueProps {className?: string}
+export const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="kumara storage place value"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`kumara-storage-place-value-handout cultural-focus ${className}`}
+title="kumara storage place value"
+subtitle="Te Kete Ako - Cultural Education"
+className={`kumara-storage-place-value-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default KumaraStoragePlaceValue;
+export default KumaraStoragePlaceValue

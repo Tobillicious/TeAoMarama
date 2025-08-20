@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './AiImpactComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './AiImpactComprehensionHandout.css'
 
-interface AiImpactComprehensionHandoutProps {
-  className?: string;
-}
-
-export const AiImpactComprehensionHandout: React.FC<AiImpactComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface AiImpactComprehensionHandoutProps {className?: string}
+export const AiImpactComprehensionHandout: React.FC<AiImpactComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="ai impact comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`ai-impact-comprehension-handout-handout cultural-focus ${className}`}
+title="ai impact comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`ai-impact-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const AiImpactComprehensionHandout: React.FC<AiImpactComprehensionHandout
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default AiImpactComprehensionHandout;
+export default AiImpactComprehensionHandout

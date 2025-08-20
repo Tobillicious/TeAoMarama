@@ -1,0 +1,231 @@
+#!/usr/bin/env tsx
+
+/**
+ * Update Shared State Script
+ *
+ * Maintains real-time coordination state across all terminals
+ * Part of the Multi-Terminal Agent Collaboration System
+ */
+
+import fs from 'fs'
+import path from 'path'
+
+interface TerminalState {status: 'active' | 'busy' | 'blocked' | 'completed'
+  current_task: string
+  last_heartbeat: string
+  agent_role: string
+  wellbeing: 'green' | 'amber' | 'red'
+  blockers: string[]}
+
+interface SharedState {active_terminals: Record<string, TerminalState>
+  mission_status: {
+    phase: string
+    priority: 'low' | 'medium' | 'high' | 'critical'
+    deadline: string}
+  blockers: string[]
+  achievements: string[]
+  last_updated: string
+}
+
+const SHARED_STATE_PATH = path.join(
+  process.cwd(),
+  'migration',
+  'agent_coordination',
+  'shared_state.json',
+)
+
+function loadSharedState(): SharedState {
+  try {
+    if (fs.existsSync(SHARED_STATE_PATH)) {
+      const content = fs.readFileSync(SHARED_STATE_PATH, 'utf-8')
+      return JSON.parse(content)
+    }
+  } catch (error) {
+    console.warn('Could not load existing shared state: ', error)
+  }
+
+  // Default state
+  return {
+    active_terminals: {},
+    mission_status: {
+      phase: 'ero-readiness',
+      priority: 'critical',
+      deadline: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(), // 24 hours from now
+    },
+    blockers: [],
+    achievements: [],
+    last_updated: new Date().toISOString(),
+  }
+}
+
+function saveSharedState(state: SharedState): void {
+  try {
+    // Ensure directory exists
+    const dir = path.dirname(SHARED_STATE_PATH)
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true })
+    }
+
+    state.last_updated = new Date().toISOString()
+    fs.writeFileSync(SHARED_STATE_PATH, JSON.stringify(state, null, 2))
+    console.log('✅ Shared state updated successfully')
+  } catch (error) {
+    console.error('❌ Failed to save shared state: ', error)
+  }
+}
+
+function updateTerminalState(terminalId: string, updates: Partial<TerminalState>): void {
+  const state = loadSharedState()
+
+  if (!state.active_terminals[terminalId]) {
+    state.active_terminals[terminalId] = {
+      status: 'active',
+      current_task: 'initializing',
+      last_heartbeat: new Date().toISOString(),
+      agent_role: 'unknown',
+      wellbeing: 'green',
+      blockers: [],
+    }
+  }
+
+  // Update terminal state
+  state.active_terminals[terminalId] = {
+    ...state.active_terminals[terminalId],
+    ...updates,
+    last_heartbeat: new Date().toISOString(),
+  }
+
+  saveSharedState(state)
+}
+
+function addBlocker(blocker: string): void {
+  const state = loadSharedState()
+  if (!state.blockers.includes(blocker)) {
+    state.blockers.push(blocker)
+    saveSharedState(state)
+    console.log(`🚨 Blocker added: ${blocker}`)
+  }
+}
+
+function removeBlocker(blocker: string): void {
+  const state = loadSharedState()
+  state.blockers = state.blockers.filter((b) => b !== blocker)
+  saveSharedState(state)
+  console.log(`✅ Blocker resolved: ${blocker}`)
+}
+
+function addAchievement(achievement: string): void {
+  const state = loadSharedState()
+  state.achievements.push(achievement)
+  saveSharedState(state)
+  console.log(`🎉 Achievement recorded: ${achievement}`)
+}
+
+function updateMissionStatus(updates: Partial<SharedState['mission_status']>): void {
+  const state = loadSharedState()
+  state.mission_status = { ...state.mission_status, ...updates }
+  saveSharedState(state)
+  console.log('📋 Mission status updated')
+}
+
+// CLI interface
+if (require.main === module) {
+  const args = process.argv.slice(2)
+  const command = args[0]
+
+  switch (command) {
+    case 'update-terminal': {
+      const terminalId = args[1]
+      const status = args[2] as TerminalState['status']
+      const task = args[3]
+      const role = args[4]
+
+      if (!terminalId) {
+        console.error('❌ Terminal ID required')
+        process.exit(1)
+      }
+
+      updateTerminalState(terminalId, {
+        status,
+        current_task: task || 'unknown',
+        agent_role: role || 'unknown',
+      })
+      break
+    }
+
+    case 'add-blocker': {
+      const blocker = args[1]
+      if (!blocker) {
+        console.error('❌ Blocker description required')
+        process.exit(1)
+      }
+      addBlocker(blocker)
+      break
+    }
+
+    case 'remove-blocker': {
+      const blockerToRemove = args[1]
+      if (!blockerToRemove) {
+        console.error('❌ Blocker description required')
+        process.exit(1)
+      }
+      removeBlocker(blockerToRemove)
+      break
+    }
+
+    case 'add-achievement': {
+      const achievement = args[1]
+      if (!achievement) {
+        console.error('❌ Achievement description required')
+        process.exit(1)
+      }
+      addAchievement(achievement)
+      break
+    }
+
+    case 'update-mission': {
+      const phase = args[1]
+      const priority = args[2] as SharedState['mission_status']['priority']
+
+      updateMissionStatus({
+        phase,
+        priority,
+      })
+      break
+    }
+
+    case 'status': {
+      const state = loadSharedState()
+      console.log('📊 Current Shared State: ')
+      console.log(JSON.stringify(state, null, 2))
+      break
+    }
+
+    default: console.log(`
+🤖 Multi-Terminal Collaboration - Shared State Manager
+
+Usage:
+  npx tsx scripts/update-shared-state.ts update-terminal <terminal-id> <status> <task> <role>
+  npx tsx scripts/update-shared-state.ts add-blocker <description>
+  npx tsx scripts/update-shared-state.ts remove-blocker <description>
+  npx tsx scripts/update-shared-state.ts add-achievement <description>
+  npx tsx scripts/update-shared-state.ts update-mission <phase> <priority>
+  npx tsx scripts/update-shared-state.ts status
+
+Examples:
+  npx tsx scripts/update-shared-state.ts update-terminal "supreme-overseer-01" "active" "coordinating" "supreme-coordinator"
+  npx tsx scripts/update-shared-state.ts add-blocker "Build system failing"
+  npx tsx scripts/update-shared-state.ts add-achievement "ERO demo components completed"
+      `)
+  }
+}
+
+export {addAchievement,
+  addBlocker,
+  loadSharedState,
+  removeBlocker,
+  saveSharedState,
+  updateMissionStatus,
+  updateTerminalState,
+  type SharedState,
+  type TerminalState,}

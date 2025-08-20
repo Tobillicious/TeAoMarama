@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TreatySettlementStatistics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TreatySettlementStatistics.css'
 
-interface TreatySettlementStatisticsProps {
-  className?: string;
-}
-
-export const TreatySettlementStatistics: React.FC<TreatySettlementStatisticsProps> = ({ className = '' }) => {
-  return (
+interface TreatySettlementStatisticsProps {className?: string}
+export const TreatySettlementStatistics: React.FC<TreatySettlementStatisticsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="treaty settlement statistics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`treaty-settlement-statistics-handout cultural-focus ${className}`}
+title="treaty settlement statistics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`treaty-settlement-statistics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TreatySettlementStatistics: React.FC<TreatySettlementStatisticsProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TreatySettlementStatistics;
+export default TreatySettlementStatistics

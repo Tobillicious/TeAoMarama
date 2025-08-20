@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './DataSovereigntyMaori.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './DataSovereigntyMaori.css'
 
-interface DataSovereigntyMaoriProps {
-  className?: string;
-}
-
-export const DataSovereigntyMaori: React.FC<DataSovereigntyMaoriProps> = ({ className = '' }) => {
-  return (
+interface DataSovereigntyMaoriProps {className?: string}
+export const DataSovereigntyMaori: React.FC<DataSovereigntyMaoriProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="data sovereignty maori"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`data-sovereignty-maori-handout cultural-focus ${className}`}
+title="data sovereignty maori"
+subtitle="Te Kete Ako - Cultural Education"
+className={`data-sovereignty-maori-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const DataSovereigntyMaori: React.FC<DataSovereigntyMaoriProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default DataSovereigntyMaori;
+export default DataSovereigntyMaori

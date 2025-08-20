@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalPracticeExplanation.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalPracticeExplanation.css'
 
-interface CulturalPracticeExplanationProps {
-  className?: string;
-}
-
-export const CulturalPracticeExplanation: React.FC<CulturalPracticeExplanationProps> = ({ className = '' }) => {
-  return (
+interface CulturalPracticeExplanationProps {className?: string}
+export const CulturalPracticeExplanation: React.FC<CulturalPracticeExplanationProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural practice explanation"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-practice-explanation-handout cultural-focus ${className}`}
+title="cultural practice explanation"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-practice-explanation-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalPracticeExplanation: React.FC<CulturalPracticeExplanationPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalPracticeExplanation;
+export default CulturalPracticeExplanation

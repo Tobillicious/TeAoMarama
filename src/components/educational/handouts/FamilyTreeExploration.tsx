@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FamilyTreeExploration.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FamilyTreeExploration.css'
 
-interface FamilyTreeExplorationProps {
-  className?: string;
-}
-
-export const FamilyTreeExploration: React.FC<FamilyTreeExplorationProps> = ({ className = '' }) => {
-  return (
+interface FamilyTreeExplorationProps {className?: string}
+export const FamilyTreeExploration: React.FC<FamilyTreeExplorationProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="family tree exploration"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`family-tree-exploration-handout cultural-focus ${className}`}
+title="family tree exploration"
+subtitle="Te Kete Ako - Cultural Education"
+className={`family-tree-exploration-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FamilyTreeExploration: React.FC<FamilyTreeExplorationProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FamilyTreeExploration;
+export default FamilyTreeExploration

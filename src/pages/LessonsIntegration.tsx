@@ -1,5 +1,3 @@
-import LessonsIntegration from '../components/LessonsIntegration';
+import LessonsIntegration from '../components/LessonsIntegration'
 
-export default function LessonsIntegrationPage() {
-  return <LessonsIntegration />;
-}
+export default function LessonsIntegrationPage() {return <LessonsIntegration />}

@@ -1,23 +1,21 @@
-import React from 'react';
+import React from 'react'
 
-interface StatusIndicatorProps {
-  resourcesCompleted: number;
-  totalResources: number;
-  culturalSafety: string;
-  systemStatus: string;
-  lastUpdated: string;
-}
-
-export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
-  resourcesCompleted,
-  totalResources,
-  culturalSafety,
-  systemStatus,
-  lastUpdated
+interface StatusIndicatorProps {,
+resourcesCompleted: number,
+totalResources: number,
+culturalSafety: string,
+systemStatus: string,
+lastUpdated: string}
+export const StatusIndicator: React.FC<StatusIndicatorProps> = (_{
+resourcesCompleted, 
+_totalResources, 
+_culturalSafety, 
+_systemStatus, 
+_lastUpdated
 }) => {
-  const progressPercentage = (resourcesCompleted / totalResources) * 100;
+const progressPercentage = (resourcesCompleted / totalResources) * 100
 
-  return (
+return (
     <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-800">
@@ -47,8 +45,8 @@ export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div 
-            className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-500"
-            style={{width: `${progressPercentage}%`}}
+className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-500"
+style={{width: `${progressPercentage}%`}}
           ></div>
         </div>
       </div>
@@ -66,11 +64,11 @@ export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
       
       <div className="mt-4 pt-4 border-t border-gray-200">
         <div className="text-xs text-gray-500">
-          Last updated: {lastUpdated}
+Last updated: {lastUpdated}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default StatusIndicator;
+export default StatusIndicator

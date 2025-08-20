@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './IndigenousRightsResearch.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './IndigenousRightsResearch.css'
 
-interface IndigenousRightsResearchProps {
-  className?: string;
-}
-
-export const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = ({ className = '' }) => {
-  return (
+interface IndigenousRightsResearchProps {className?: string}
+export const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="indigenous rights research"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`indigenous-rights-research-handout cultural-focus ${className}`}
+title="indigenous rights research"
+subtitle="Te Kete Ako - Cultural Education"
+className={`indigenous-rights-research-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default IndigenousRightsResearch;
+export default IndigenousRightsResearch

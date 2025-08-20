@@ -1,17 +1,16 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TūRangawaewaeMapping.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TūRangawaewaeMapping.css'
 
 interface TūRangawaewaeMappingProps {
-  className?: string;
+className?: string
 }
-
-export const TūRangawaewaeMapping: React.FC<TūRangawaewaeMappingProps> = ({ className = '' }) => {
-  return (
+export const TūRangawaewaeMapping: React.FC<TūRangawaewaeMappingProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="tūrangawaewae mapping"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`tūrangawaewae-mapping-handout cultural-focus ${className}`}
+title="tūrangawaewae mapping"
+subtitle="Te Kete Ako - Cultural Education"
+className={`tūrangawaewae-mapping-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,5 +31,5 @@ export const TūRangawaewaeMapping: React.FC<TūRangawaewaeMappingProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}

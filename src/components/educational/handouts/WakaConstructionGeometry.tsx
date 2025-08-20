@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WakaConstructionGeometry.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WakaConstructionGeometry.css'
 
-interface WakaConstructionGeometryProps {
-  className?: string;
-}
-
-export const WakaConstructionGeometry: React.FC<WakaConstructionGeometryProps> = ({ className = '' }) => {
-  return (
+interface WakaConstructionGeometryProps {className?: string}
+export const WakaConstructionGeometry: React.FC<WakaConstructionGeometryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="waka construction geometry"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`waka-construction-geometry-handout cultural-focus ${className}`}
+title="waka construction geometry"
+subtitle="Te Kete Ako - Cultural Education"
+className={`waka-construction-geometry-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WakaConstructionGeometry: React.FC<WakaConstructionGeometryProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WakaConstructionGeometry;
+export default WakaConstructionGeometry

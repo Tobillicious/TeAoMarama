@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitFluencyHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitFluencyHandout.css'
 
-interface WritersToolkitFluencyHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitFluencyHandoutProps {className?: string}
+export const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit fluency handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-fluency-handout-handout cultural-focus ${className}`}
+title="writers toolkit fluency handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-fluency-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandout
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitFluencyHandout;
+export default WritersToolkitFluencyHandout

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2TechnologyDefinitionChallenge.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2TechnologyDefinitionChallenge.css'
 
-interface Unit2TechnologyDefinitionChallengeProps {
-  className?: string;
-}
-
-export const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChallengeProps> = ({ className = '' }) => {
-  return (
+interface Unit2TechnologyDefinitionChallengeProps {className?: string}
+export const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChallengeProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 technology definition challenge"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-technology-definition-challenge-handout cultural-focus ${className}`}
+title="unit 2 technology definition challenge"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-technology-definition-challenge-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinit
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2TechnologyDefinitionChallenge;
+export default Unit2TechnologyDefinitionChallenge

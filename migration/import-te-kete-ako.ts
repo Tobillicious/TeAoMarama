@@ -1,80 +1,73 @@
 import { copyFile, mkdir, readdir, stat } from 'fs/promises';
 import path from 'path';
-
-async function ensureDir(dirPath: string): Promise<void> {
-  await mkdir(dirPath, { recursive: true });
-}
-
-async function* walk(dir: string, relative = ''): AsyncGenerator<{ abs: string; rel: string }> {
-  const entries = await readdir(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const abs = path.join(dir, entry.name);
+;
+async function ensureDir(__dirPath: string): Promise<void> {;
+await mkdir(dirPath, { recursive: true });
+};
+async function* walk(dir: string, relative = ''): AsyncGenerator<{ abs: string; rel: string }> {;
+const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {;
+const abs = path.join(dir, entry.name);
     const rel = path.join(relative, entry.name);
-    if (entry.isDirectory()) {
-      yield* walk(abs, rel);
-    } else {
-      yield { abs, rel };
+    if (entry.isDirectory()) {;
+yield* walk(abs, rel);
+    } else {;
+yield { abs, rel };
     }
   }
-}
-
-async function importTeKeteAko(
-  sourceRoot: string,
-  destRoot: string,
-): Promise<{ imported: number; skipped: number }> {
-  let imported = 0;
+};
+async function importTeKeteAko(_;, 
+__sourceRoot: string,  _;, 
+__destRoot: string,  
+): Promise<{ imported: number; skipped: number }> {;
+let imported = 0;
   let skipped = 0;
-
-  await ensureDir(destRoot);
-
-  for await (const file of walk(sourceRoot)) {
-    const lower = file.rel.toLowerCase();
-    if (!(lower.endsWith('.md') || lower.endsWith('.markdown'))) {
-      skipped++;
+;
+await ensureDir(destRoot);
+;
+for await (const file of walk(sourceRoot)) {;
+const lower = file.rel.toLowerCase();
+    if (!(lower.endsWith('.md') || lower.endsWith('.markdown'))) {;
+skipped++;
       continue;
-    }
-
-    const src = file.abs;
+    };
+const src = file.abs;
     const dst = path.join(destRoot, 'te-kete-ako-clean', file.rel);
     const dstDir = path.dirname(dst);
     await ensureDir(dstDir);
-    try {
-      await copyFile(src, dst);
+    try {;
+await copyFile(src, dst);
       imported++;
-    } catch {
-      console.log('Error processing file');
+    } catch {;
+console.log('Error processing file');
     }
-  }
-
-  return { imported, skipped };
-}
-
-async function main() {
-  const PROJECT_ROOT = process.cwd();
+  };
+return { imported, skipped };
+};
+async function main() {;
+const PROJECT_ROOT = process.cwd();
   const DEFAULT_SOURCE = '/Users/admin/Documents/te-kete-ako-clean';
   const DEST_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
-
-  const sourceIdx = process.argv.indexOf('--source');
+;
+const sourceIdx = process.argv.indexOf('--source');
   const sourceRoot = sourceIdx !== -1 ? path.resolve(process.argv[sourceIdx + 1]) : DEFAULT_SOURCE;
-
-  try {
-    const st = await stat(sourceRoot);
+;
+try {;
+const st = await stat(sourceRoot);
     if (!st.isDirectory()) throw new Error('Source path is not a directory');
-  } catch {
-    console.error('❌ Source folder not accessible:', sourceRoot);
+  } catch {;
+console.error('❌ Source folder not accessible:', sourceRoot);
     process.exit(1);
-  }
-
-  console.log('📥 Importing Te Kete Ako resources');
+  };
+console.log('📥 Importing Te Kete Ako resources');
   console.log('   Source:', sourceRoot);
   console.log('   Destination:', path.join(DEST_ROOT, 'te-kete-ako-clean'));
-
-  const { imported, skipped } = await importTeKeteAko(sourceRoot, DEST_ROOT);
+;
+const { imported, skipped } = await importTeKeteAko(sourceRoot, DEST_ROOT);
   console.log(`✅ Imported ${imported} markdown files (${skipped} skipped)`);
   console.log('ℹ️ Next: npm run prebuild  # to build public/resources and index.json');
-}
-
-main().catch((err) => {
-  console.error('💥 import-te-kete-ako failed:', err);
+};
+main().catch(_(err) => {;
+console.error('💥 import-te-kete-ako failed:', err);
   process.exit(1);
 });

@@ -1,272 +1,267 @@
-import { useState } from 'react';
-import './Year8AcademicVocab.css';
+import {useState} from 'react'
+import './Year8AcademicVocab.css'
 
-interface AcademicWord {
-  id: string;
-  word: string;
-  morphemes: string[];
-  definition: string;
-  subjectArea:
-    | 'english'
+interface AcademicWord {,
+id: string,
+word: string,
+morphemes: string[],
+definition: string,
+subjectArea: | 'english'
     | 'maths'
     | 'science'
     | 'social-studies'
     | 'arts'
     | 'health'
-    | 'cross-curricular';
-  difficulty: 'foundation' | 'developing' | 'secure';
-  synonyms: string[];
-  contextSentence: string;
-  culturalConnection?: string;
-  writingRevolutionPattern: string;
-  codeComponents: string[];
-  nceaRelevance: boolean;
-  frequency: 'high' | 'medium' | 'low';
-}
-
+    | 'cross-curricular',
+difficulty: 'foundation' | 'developing' | 'secure',
+synonyms: string[],
+contextSentence: string
+  culturalConnection?: string,
+writingRevolutionPattern: string,
+codeComponents: string[],
+nceaRelevance: boolean,
+frequency: 'high' | 'medium' | 'low'}
 const year8AcademicWords: AcademicWord[] = [
   // English/Literature Academic Vocabulary
-  {
-    id: 'analyse-eng',
-    word: 'analyse',
-    morphemes: ['ana-', 'lys', '-e'],
-    definition: 'To examine in detail to understand meaning or structure',
-    subjectArea: 'english',
-    difficulty: 'developing',
-    synonyms: ['examine', 'study', 'investigate'],
-    contextSentence: 'Students analyse the themes in traditional Māori pūrākau.',
-    culturalConnection: 'Similar to the way kaumātua examine whakapapa for connections',
-    writingRevolutionPattern: 'When we analyse [text], we discover [meaning].',
-    codeComponents: ['a-na-lyse', 'long a', 'silent e'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'analyse-eng',,
+word: 'analyse',,
+morphemes: ['ana-', 'lys', '-e'],;,
+definition: 'To examine in detail to understand meaning or structure',,
+subjectArea: 'english',,
+difficulty: 'developing',,
+synonyms: ['examine', 'study', 'investigate'],;,
+contextSentence: 'Students analyse the themes in traditional Māori pūrākau.',,
+culturalConnection: 'Similar to the way kaumātua examine whakapapa for connections',,
+writingRevolutionPattern: 'When we analyse [text], we discover [meaning].',,
+codeComponents: ['a-na-lyse', 'long a', 'silent e'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'interpret-eng',
-    word: 'interpret',
-    morphemes: ['inter-', 'pret'],
-    definition: 'To explain the meaning of something',
-    subjectArea: 'english',
-    difficulty: 'developing',
-    synonyms: ['explain', 'translate', 'decode'],
-    contextSentence: 'We interpret the symbolism in contemporary Māori poetry.',
-    culturalConnection: 'Like interpreting the meaning within whakataukī',
-    writingRevolutionPattern: 'The author interprets [concept] through [technique].',
-    codeComponents: ['in-ter-pret', 'consonant blends'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'interpret-eng',,
+word: 'interpret',,
+morphemes: ['inter-', 'pret'],;,
+definition: 'To explain the meaning of something',,
+subjectArea: 'english',,
+difficulty: 'developing',,
+synonyms: ['explain', 'translate', 'decode'],;,
+contextSentence: 'We interpret the symbolism in contemporary Māori poetry.',,
+culturalConnection: 'Like interpreting the meaning within whakataukī',,
+writingRevolutionPattern: 'The author interprets [concept] through [technique].',,
+codeComponents: ['in-ter-pret', 'consonant blends'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'perspective-eng',
-    word: 'perspective',
-    morphemes: ['per-', 'spect', '-ive'],
-    definition: 'A particular way of viewing or understanding something',
-    subjectArea: 'english',
-    difficulty: 'secure',
-    synonyms: ['viewpoint', 'outlook', 'stance'],
-    contextSentence: 'Each character offers a different perspective on colonisation.',
-    culturalConnection: 'Acknowledging different iwi perspectives on historical events',
-    writingRevolutionPattern: "From [character's] perspective, [event] represents [meaning].",
-    codeComponents: ['per-spec-tive', 'suffix -ive'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'perspective-eng',,
+word: 'perspective',,
+morphemes: ['per-', 'spect', '-ive'],;,
+definition: 'A particular way of viewing or understanding something',,
+subjectArea: 'english',,
+difficulty: 'secure',,
+synonyms: ['viewpoint', 'outlook', 'stance'],;,
+contextSentence: 'Each character offers a different perspective on colonisation.',,
+culturalConnection: 'Acknowledging different iwi perspectives on historical events',,
+writingRevolutionPattern: "From [character's] perspective, [event] represents [meaning].",,
+codeComponents: ['per-spec-tive', 'suffix -ive'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
 
   // Science Academic Vocabulary
-  {
-    id: 'hypothesis-sci',
-    word: 'hypothesis',
-    morphemes: ['hypo-', 'thesis'],
-    definition: 'A testable prediction about what will happen in an experiment',
-    subjectArea: 'science',
-    difficulty: 'developing',
-    synonyms: ['prediction', 'theory', 'proposition'],
-    contextSentence: 'Our hypothesis predicts that native plants grow faster in local soil.',
-    culturalConnection: 'Like traditional Māori observations about seasonal patterns',
-    writingRevolutionPattern: 'If [condition], then [prediction] because [reasoning].',
-    codeComponents: ['hy-po-the-sis', 'Greek origins'],
-    nceaRelevance: true,
-    frequency: 'medium',
+  {,
+id: 'hypothesis-sci',,
+word: 'hypothesis',,
+morphemes: ['hypo-', 'thesis'],;,
+definition: 'A testable prediction about what will happen in an experiment',,
+subjectArea: 'science',,
+difficulty: 'developing',,
+synonyms: ['prediction', 'theory', 'proposition'],;,
+contextSentence: 'Our hypothesis predicts that native plants grow faster in local soil.',,
+culturalConnection: 'Like traditional Māori observations about seasonal patterns',,
+writingRevolutionPattern: 'If [condition], then [prediction] because [reasoning].',,
+codeComponents: ['hy-po-the-sis', 'Greek origins'],;,
+nceaRelevance: true,,
+frequency: 'medium',
   },
-  {
-    id: 'variable-sci',
-    word: 'variable',
-    morphemes: ['vari-', '-able'],
-    definition: 'Something that can change in an experiment',
-    subjectArea: 'science',
-    difficulty: 'foundation',
-    synonyms: ['factor', 'element', 'component'],
-    contextSentence: 'Temperature is an important variable in plant growth experiments.',
-    writingRevolutionPattern: 'The [type] variable in this experiment is [factor].',
-    codeComponents: ['var-i-a-ble', 'suffix -able'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'variable-sci',,
+word: 'variable',,
+morphemes: ['vari-', '-able'],;,
+definition: 'Something that can change in an experiment',,
+subjectArea: 'science',,
+difficulty: 'foundation',,
+synonyms: ['factor', 'element', 'component'],;,
+contextSentence: 'Temperature is an important variable in plant growth experiments.',,
+writingRevolutionPattern: 'The [type] variable in this experiment is [factor].',,
+codeComponents: ['var-i-a-ble', 'suffix -able'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'ecosystem-sci',
-    word: 'ecosystem',
-    morphemes: ['eco-', 'system'],
-    definition: 'A community of living things and their environment',
-    subjectArea: 'science',
-    difficulty: 'developing',
-    synonyms: ['habitat', 'environment', 'biosphere'],
-    contextSentence: 'The wetland ecosystem supports many native bird species.',
-    culturalConnection: 'Reflects Māori understanding of taiao - the interconnected natural world',
-    writingRevolutionPattern: 'The [location] ecosystem contains [organisms] that [interaction].',
-    codeComponents: ['e-co-sys-tem', 'compound word'],
-    nceaRelevance: true,
-    frequency: 'medium',
+  {,
+id: 'ecosystem-sci',,
+word: 'ecosystem',,
+morphemes: ['eco-', 'system'],;,
+definition: 'A community of living things and their environment',,
+subjectArea: 'science',,
+difficulty: 'developing',,
+synonyms: ['habitat', 'environment', 'biosphere'],;,
+contextSentence: 'The wetland ecosystem supports many native bird species.',,
+culturalConnection: 'Reflects Māori understanding of taiao - the interconnected natural world',,
+writingRevolutionPattern: 'The [location] ecosystem contains [organisms] that [interaction].',,
+codeComponents: ['e-co-sys-tem', 'compound word'],;,
+nceaRelevance: true,,
+frequency: 'medium',
   },
 
   // Mathematics Academic Vocabulary
-  {
-    id: 'calculate-math',
-    word: 'calculate',
-    morphemes: ['calcul-', '-ate'],
-    definition: 'To work out using mathematics',
-    subjectArea: 'maths',
-    difficulty: 'foundation',
-    synonyms: ['compute', 'work out', 'determine'],
-    contextSentence: 'Calculate the area of the marae ātea for the building project.',
-    culturalConnection: 'Traditional Māori used calculations for waka construction',
-    writingRevolutionPattern: 'To calculate [measurement], we [method] because [reasoning].',
-    codeComponents: ['cal-cu-late', 'suffix -ate'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'calculate-math',,
+word: 'calculate',,
+morphemes: ['calcul-', '-ate'],;,
+definition: 'To work out using mathematics',,
+subjectArea: 'maths',,
+difficulty: 'foundation',,
+synonyms: ['compute', 'work out', 'determine'],;,
+contextSentence: 'Calculate the area of the marae ātea for the building project.',,
+culturalConnection: 'Traditional Māori used calculations for waka construction',,
+writingRevolutionPattern: 'To calculate [measurement], we [method] because [reasoning].',,
+codeComponents: ['cal-cu-late', 'suffix -ate'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'estimate-math',
-    word: 'estimate',
-    morphemes: ['estim-', '-ate'],
-    definition: 'To calculate approximately',
-    subjectArea: 'maths',
-    difficulty: 'foundation',
-    synonyms: ['approximate', 'guess', 'assess'],
-    contextSentence: 'Estimate how many people can fit in the wharenui.',
-    writingRevolutionPattern: 'I estimate [quantity] because [reasoning].',
-    codeComponents: ['es-ti-mate', 'suffix -ate'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'estimate-math',,
+word: 'estimate',,
+morphemes: ['estim-', '-ate'],;,
+definition: 'To calculate approximately',,
+subjectArea: 'maths',,
+difficulty: 'foundation',,
+synonyms: ['approximate', 'guess', 'assess'],;,
+contextSentence: 'Estimate how many people can fit in the wharenui.',,
+writingRevolutionPattern: 'I estimate [quantity] because [reasoning].',,
+codeComponents: ['es-ti-mate', 'suffix -ate'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
 
   // Social Studies Academic Vocabulary
-  {
-    id: 'society-ss',
-    word: 'society',
-    morphemes: ['soci-', '-ety'],
-    definition: 'A group of people living together in an organized community',
-    subjectArea: 'social-studies',
-    difficulty: 'developing',
-    synonyms: ['community', 'civilization', 'culture'],
-    contextSentence: 'Traditional Māori society was organized around iwi and hapū.',
-    culturalConnection: 'Understanding different forms of social organization in Te Ao Māori',
-    writingRevolutionPattern: 'In [time/place] society, [group] were responsible for [role].',
-    codeComponents: ['so-ci-e-ty', 'suffix -ety'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'society-ss',,
+word: 'society',,
+morphemes: ['soci-', '-ety'],;,
+definition: 'A group of people living together in an organized community',,
+subjectArea: 'social-studies',,
+difficulty: 'developing',,
+synonyms: ['community', 'civilization', 'culture'],;,
+contextSentence: 'Traditional Māori society was organized around iwi and hapū.',,
+culturalConnection: 'Understanding different forms of social organization in Te Ao Māori',,
+writingRevolutionPattern: 'In [time/place] society, [group] were responsible for [role].',,
+codeComponents: ['so-ci-e-ty', 'suffix -ety'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'democracy-ss',
-    word: 'democracy',
-    morphemes: ['demo-', 'cracy'],
-    definition: 'A system where people vote to choose their leaders',
-    subjectArea: 'social-studies',
-    difficulty: 'secure',
-    synonyms: ['self-government', 'representative government'],
-    contextSentence: 'New Zealand democracy includes Māori representation in Parliament.',
-    culturalConnection: 'Comparing with traditional Māori consensus decision-making processes',
-    writingRevolutionPattern: 'Democracy ensures that [people] can [participation] in [decisions].',
-    codeComponents: ['de-moc-ra-cy', 'Greek roots'],
-    nceaRelevance: true,
-    frequency: 'medium',
+  {,
+id: 'democracy-ss',,
+word: 'democracy',,
+morphemes: ['demo-', 'cracy'],;,
+definition: 'A system where people vote to choose their leaders',,
+subjectArea: 'social-studies',,
+difficulty: 'secure',,
+synonyms: ['self-government', 'representative government'],;,
+contextSentence: 'New Zealand democracy includes Māori representation in Parliament.',,
+culturalConnection: 'Comparing with traditional Māori consensus decision-making processes',,
+writingRevolutionPattern: 'Democracy ensures that [people] can [participation] in [decisions].',,
+codeComponents: ['de-moc-ra-cy', 'Greek roots'],;,
+nceaRelevance: true,,
+frequency: 'medium',
   },
 
   // Cross-curricular Academic Vocabulary
-  {
-    id: 'evidence-cross',
-    word: 'evidence',
-    morphemes: ['evid-', '-ence'],
-    definition: 'Information that proves something is true',
-    subjectArea: 'cross-curricular',
-    difficulty: 'developing',
-    synonyms: ['proof', 'data', 'facts'],
-    contextSentence: 'Archaeological evidence shows Māori settlement patterns.',
-    culturalConnection: 'Traditional knowledge passed down through whakapapa as evidence',
-    writingRevolutionPattern: 'The evidence shows [claim] because [support].',
-    codeComponents: ['ev-i-dence', 'suffix -ence'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'evidence-cross',,
+word: 'evidence',,
+morphemes: ['evid-', '-ence'],;,
+definition: 'Information that proves something is true',,
+subjectArea: 'cross-curricular',,
+difficulty: 'developing',,
+synonyms: ['proof', 'data', 'facts'],;,
+contextSentence: 'Archaeological evidence shows Māori settlement patterns.',,
+culturalConnection: 'Traditional knowledge passed down through whakapapa as evidence',,
+writingRevolutionPattern: 'The evidence shows [claim] because [support].',,
+codeComponents: ['ev-i-dence', 'suffix -ence'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'compare-cross',
-    word: 'compare',
-    morphemes: ['com-', 'pare'],
-    definition: 'To look at similarities and differences',
-    subjectArea: 'cross-curricular',
-    difficulty: 'foundation',
-    synonyms: ['contrast', 'examine', 'evaluate'],
-    contextSentence: 'Compare traditional and modern methods of food preservation.',
-    writingRevolutionPattern: 'When we compare [A] and [B], we notice [similarity/difference].',
-    codeComponents: ['com-pare', 'prefix com-'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'compare-cross',,
+word: 'compare',,
+morphemes: ['com-', 'pare'],;,
+definition: 'To look at similarities and differences',,
+subjectArea: 'cross-curricular',,
+difficulty: 'foundation',,
+synonyms: ['contrast', 'examine', 'evaluate'],;,
+contextSentence: 'Compare traditional and modern methods of food preservation.',,
+writingRevolutionPattern: 'When we compare [A] and [B], we notice [similarity/difference].',,
+codeComponents: ['com-pare', 'prefix com-'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-  {
-    id: 'evaluate-cross',
-    word: 'evaluate',
-    morphemes: ['e-', 'valu-', '-ate'],
-    definition: 'To judge the worth or importance of something',
-    subjectArea: 'cross-curricular',
-    difficulty: 'secure',
-    synonyms: ['assess', 'judge', 'appraise'],
-    contextSentence: 'Evaluate the effectiveness of different conservation strategies.',
-    writingRevolutionPattern: 'To evaluate [topic], we must consider [criteria].',
-    codeComponents: ['e-val-u-ate', 'suffix -ate'],
-    nceaRelevance: true,
-    frequency: 'high',
+  {,
+id: 'evaluate-cross',,
+word: 'evaluate',,
+morphemes: ['e-', 'valu-', '-ate'],;,
+definition: 'To judge the worth or importance of something',,
+subjectArea: 'cross-curricular',,
+difficulty: 'secure',,
+synonyms: ['assess', 'judge', 'appraise'],;,
+contextSentence: 'Evaluate the effectiveness of different conservation strategies.',,
+writingRevolutionPattern: 'To evaluate [topic], we must consider [criteria].',,
+codeComponents: ['e-val-u-ate', 'suffix -ate'],;,
+nceaRelevance: true,,
+frequency: 'high',
   },
-];
+]
 
-export default function Year8AcademicVocab() {
-  const [selectedSubject, setSelectedSubject] = useState<string>('all');
-  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
-  const [currentWord, setCurrentWord] = useState<AcademicWord | null>(null);
-  const [showBreakdown, setShowBreakdown] = useState(false);
-  const [practiceMode, setPracticeMode] = useState<'study' | 'sentence' | 'morpheme'>('study');
+export default function Year8AcademicVocab() {const [selectedSubject, setSelectedSubject] = useState<string>('all')
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all')
+  const [currentWord, setCurrentWord] = useState<AcademicWord | null>(null)
+  const [showBreakdown, setShowBreakdown] = useState(false)
+  const [practiceMode, setPracticeMode] = useState<'study' | 'sentence' | 'morpheme'>('study')
 
-  const filteredWords = year8AcademicWords.filter((word) => {
-    if (selectedSubject !== 'all' && word.subjectArea !== selectedSubject) return false;
-    if (selectedDifficulty !== 'all' && word.difficulty !== selectedDifficulty) return false;
-    return true;
-  });
+const filteredWords = year8AcademicWords.filter(_(word) => {
+if (selectedSubject !== 'all' && word.subjectArea !== selectedSubject) return false
+    if (selectedDifficulty !== 'all' && word.difficulty !== selectedDifficulty) return false
+    return true})
 
-  const selectRandomWord = () => {
-    if (filteredWords.length > 0) {
-      const randomIndex = Math.floor(Math.random() * filteredWords.length);
-      setCurrentWord(filteredWords[randomIndex]);
-      setShowBreakdown(false);
+const selectRandomWord = () => {
+if (filteredWords.length > 0) {
+const randomIndex = Math.floor(Math.random() * filteredWords.length)
+      setCurrentWord(filteredWords[randomIndex])
+      setShowBreakdown(false)
     }
-  };
+  }
 
-  const getSubjectIcon = (subject: string) => {
-    const icons = {
-      english: '📚',
-      maths: '🧮',
-      science: '🔬',
-      'social-studies': '🌍',
-      arts: '🎨',
-      health: '💪',
+const getSubjectIcon = (_subject: string) => {
+const icons = {,
+english: '📚',,
+maths: '🧮',,
+science: '🔬',
+      'social-studies': '🌍',,
+arts: '🎨',,
+health: '💪',
       'cross-curricular': '🎯',
-    };
-    return icons[subject as keyof typeof icons] || '📖';
-  };
+    }
+    return icons[subject as keyof typeof icons] || '📖'
+  }
 
-  return (
-    <div className="year8-vocab-container">
+return (
+_<div className="year8-vocab-container">
       <header className="year8-vocab-header">
         <h1 className="year8-vocab-title">📖 Year 8 Academic Vocabulary - Kupu Mātauranga</h1>
         <p className="year8-vocab-subtitle">
-          Essential academic vocabulary for Year 8 structured literacy and cross-curricular success
+Essential academic vocabulary for Year 8 structured literacy and cross-curricular success
         </p>
       </header>
 
@@ -277,29 +272,29 @@ export default function Year8AcademicVocab() {
           <div className="focus-card">
             <h3>📈 Academic Transition</h3>
             <p>
-              Year 8 students encounter more complex academic texts across all subjects. Building
-              vocabulary is essential for comprehension and expression.
+Year 8 students encounter more complex academic texts across all subjects. Building
+vocabulary is essential for comprehension and expression.
             </p>
           </div>
           <div className="focus-card">
             <h3>🔧 Morphological Awareness</h3>
             <p>
-              Understanding word parts helps students decode unfamiliar academic terms and build
-              vocabulary systematically.
+Understanding word parts helps students decode unfamiliar academic terms and build
+vocabulary systematically.
             </p>
           </div>
           <div className="focus-card">
             <h3>✍️ Writing Development</h3>
             <p>
-              Academic vocabulary enables more sophisticated expression using Writing Revolution
-              sentence patterns.
+Academic vocabulary enables more sophisticated expression using Writing Revolution
+sentence patterns.
             </p>
           </div>
           <div className="focus-card">
             <h3>🌿 Cultural Integration</h3>
             <p>
-              Connecting academic terms to Te Ao Māori concepts builds deeper understanding and
-              cultural relevance.
+Connecting academic terms to Te Ao Māori concepts builds deeper understanding and
+cultural relevance.
             </p>
           </div>
         </div>
@@ -310,20 +305,20 @@ export default function Year8AcademicVocab() {
         <h3>🎮 Practice Modes</h3>
         <div className="mode-buttons">
           <button
-            className={`mode-btn ${practiceMode === 'study' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('study')}
+className={`mode-btn ${practiceMode === 'study' ? 'active' : ''}`}
+onClick={() => setPracticeMode('study')}
           >
             📚 Study Mode
           </button>
           <button
-            className={`mode-btn ${practiceMode === 'sentence' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('sentence')}
+className={`mode-btn ${practiceMode === 'sentence' ? 'active' : ''}`}
+onClick={() => setPracticeMode('sentence')}
           >
             ✍️ Sentence Building
           </button>
           <button
-            className={`mode-btn ${practiceMode === 'morpheme' ? 'active' : ''}`}
-            onClick={() => setPracticeMode('morpheme')}
+className={`mode-btn ${practiceMode === 'morpheme' ? 'active' : ''}`}
+onClick={() => setPracticeMode('morpheme')}
           >
             🔬 Word Analysis
           </button>
@@ -335,11 +330,11 @@ export default function Year8AcademicVocab() {
         <h3>🔍 Filter Academic Words</h3>
         <div className="filters-grid">
           <div className="filter-group">
-            <label htmlFor="subject-filter">Subject Area:</label>
+            <label htmlFor="subject-filter">Subject Area: </label>
             <select
-              id="subject-filter"
-              value={selectedSubject}
-              onChange={(e) => setSelectedSubject(e.target.value)}
+id="subject-filter"
+value={selectedSubject}
+onChange={(_e) => setSelectedSubject(e.target.value)}
             >
               <option value="all">All Subjects</option>
               <option value="english">English</option>
@@ -351,11 +346,11 @@ export default function Year8AcademicVocab() {
           </div>
 
           <div className="filter-group">
-            <label htmlFor="difficulty-filter">Difficulty Level:</label>
+            <label htmlFor="difficulty-filter">Difficulty Level: </label>
             <select
-              id="difficulty-filter"
-              value={selectedDifficulty}
-              onChange={(e) => setSelectedDifficulty(e.target.value)}
+id="difficulty-filter"
+value={selectedDifficulty}
+onChange={(_e) => setSelectedDifficulty(e.target.value)}
             >
               <option value="all">All Levels</option>
               <option value="foundation">Foundation</option>
@@ -365,9 +360,9 @@ export default function Year8AcademicVocab() {
           </div>
 
           <button
-            className="random-word-btn"
-            onClick={selectRandomWord}
-            disabled={filteredWords.length === 0}
+className="random-word-btn"
+onClick={selectRandomWord}
+disabled={filteredWords.length === 0}
           >
             🎲 Random Word
           </button>
@@ -415,7 +410,7 @@ export default function Year8AcademicVocab() {
                 <div className="synonyms-section">
                   <h4>🔗 Related Words</h4>
                   <div className="synonyms-list">
-                    {currentWord.synonyms.map((synonym, index) => (
+                    {currentWord.synonyms.map(_(synonym,  _index) => (
                       <span key={index} className="synonym-tag">
                         {synonym}
                       </span>
@@ -432,7 +427,7 @@ export default function Year8AcademicVocab() {
                     <div className="morphemes-section">
                       <h4>🧩 Word Parts (Morphemes)</h4>
                       <div className="morphemes-display">
-                        {currentWord.morphemes.map((morpheme, index) => (
+                        {currentWord.morphemes.map(_(morpheme,  _index) => (
                           <span key={index} className="morpheme-part">
                             {morpheme}
                           </span>
@@ -443,7 +438,7 @@ export default function Year8AcademicVocab() {
                     <div className="code-components">
                       <h4>🔤 Phonics Components</h4>
                       <div className="components-list">
-                        {currentWord.codeComponents.map((component, index) => (
+                        {currentWord.codeComponents.map(_(component,  _index) => (
                           <span key={index} className="code-component">
                             {component}
                           </span>
@@ -462,29 +457,29 @@ export default function Year8AcademicVocab() {
                   <p className="sentence-pattern">{currentWord.writingRevolutionPattern}</p>
                 </div>
                 <div className="example-application">
-                  <h5>📝 Example Application:</h5>
+                  <h5>📝 Example Application: </h5>
                   <p className="pattern-example">"{currentWord.contextSentence}"</p>
                 </div>
                 <div className="practice-prompt">
                   <h5>🎯 Your Turn:</h5>
                   <p>Use this pattern to write your own sentence with "{currentWord.word}"</p>
                   <textarea
-                    className="sentence-input"
-                    placeholder={`Try using the pattern: ${currentWord.writingRevolutionPattern}`}
-                    rows={3}
+className="sentence-input"
+placeholder={`Try using the pattern: ${currentWord.writingRevolutionPattern}`}
+rows={3}
                   />
                 </div>
               </div>
             )}
 
             {practiceMode === 'morpheme' && (
-              <div className="morpheme-analysis">
+_<div className="morpheme-analysis">
                 <h4>🔬 Advanced Word Analysis</h4>
                 <div className="analysis-breakdown">
                   <div className="morpheme-details">
-                    <h5>Word Structure:</h5>
+                    <h5>Word Structure: </h5>
                     <div className="morpheme-display">
-                      {currentWord.morphemes.map((morpheme, index) => (
+                      {currentWord.morphemes.map((morpheme,  _index) => (
                         <div key={index} className="morpheme-detail">
                           <span className="morpheme-part">{morpheme}</span>
                           <span className="morpheme-type">
@@ -500,9 +495,9 @@ export default function Year8AcademicVocab() {
                   </div>
 
                   <div className="phonics-analysis">
-                    <h5>Phonics Breakdown:</h5>
+                    <h5>Phonics Breakdown: </h5>
                     <div className="phonics-components">
-                      {currentWord.codeComponents.map((component, index) => (
+                      {currentWord.codeComponents.map(_(component,  _index) => (
                         <span key={index} className="phonics-part">
                           {component}
                         </span>
@@ -511,7 +506,7 @@ export default function Year8AcademicVocab() {
                   </div>
 
                   <div className="word-family">
-                    <h5>Word Family Connections:</h5>
+                    <h5>Word Family Connections: </h5>
                     <p>Words with similar roots or patterns help build vocabulary networks.</p>
                   </div>
                 </div>
@@ -525,11 +520,11 @@ export default function Year8AcademicVocab() {
       <section className="words-grid-section">
         <h3>📚 Year 8 Academic Word Bank ({filteredWords.length})</h3>
         <div className="academic-words-grid">
-          {filteredWords.map((word) => (
-            <div
-              key={word.id}
-              className={`academic-word-card subject-${word.subjectArea}`}
-              onClick={() => setCurrentWord(word)}
+          {filteredWords.map(_(word) => (
+_<div
+key={word.id}
+className={`academic-word-card subject-${word.subjectArea}`}
+onClick={() => setCurrentWord(word)}
             >
               <div className="card-header">
                 <span className="card-subject-icon">{getSubjectIcon(word.subjectArea)}</span>
@@ -541,7 +536,7 @@ export default function Year8AcademicVocab() {
               <p className="card-definition">{word.definition}</p>
 
               <div className="card-morphemes">
-                {word.morphemes.slice(0, 3).map((morpheme, index) => (
+                {word.morphemes.slice(0, 3).map(_(morpheme,  _index) => (
                   <span key={index} className="card-morpheme">
                     {morpheme}
                   </span>
@@ -610,5 +605,5 @@ export default function Year8AcademicVocab() {
         <p className="platform-info">TeAoMarama - Year 8 Academic Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

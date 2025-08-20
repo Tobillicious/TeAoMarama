@@ -5,7 +5,6 @@
  * - Generates public/resources/index.json with enhanced metadata
  * - Provides cultural content detection and priority assessment
  */
-
 import { copyFile, mkdir, readdir, readFile, stat, writeFile } from 'fs/promises';
 import path from 'path';
 
@@ -25,7 +24,6 @@ type ResourceIndexEntry = {
   description?: string;
   tags?: string[];
 };
-
 const PROJECT_ROOT = process.cwd();
 const SOURCE_ROOT = path.join(PROJECT_ROOT, 'migration', 'recovered_resources');
 const PUBLIC_ROOT = path.join(PROJECT_ROOT, 'public');
@@ -124,68 +122,66 @@ function extractSubject(text: string): string | undefined {
   return undefined;
 }
 
-function extractYearLevel(_text: string): string | undefined {
+function extractYearLevel(text: string): string | undefined {
   for (const [yearLevel, pattern] of Object.entries(YEAR_LEVEL_PATTERNS)) {
-    if (pattern.test(_text)) {
+    if (pattern.test(text)) {
       return yearLevel;
     }
   }
   return undefined;
 }
-
-function extractType(_text: string): string | undefined {
+function extractType(text: string): string | undefined {
   for (const [type, pattern] of Object.entries(TYPE_PATTERNS)) {
-    if (pattern.test(_text)) {
+    if (pattern.test(text)) {
       return type;
     }
   }
   return undefined;
 }
 
-function detectCulturalContent(_text: string): boolean {
-  return CULTURAL_INDICATORS.some((pattern) => pattern.test(_text));
+function detectCulturalContent(text: string): boolean {
+  return CULTURAL_INDICATORS.some((pattern) => pattern.test(text));
 }
 
-function assessPriority(_text: string, _sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
-  const _hasCultural = detectCulturalContent(_text);
-  const _isLarge = _sizeBytes > 10000;
-  const _hasUrgentKeywords = /urgent|critical|important|priority/i.test(_text);
+function assessPriority(text: string, sizeBytes: number): 'low' | 'medium' | 'high' | 'urgent' {
+  const hasCultural = detectCulturalContent(text);
+  const isLarge = sizeBytes > 10000;
+  const hasUrgentKeywords = /urgent|critical|important|priority/i.test(text);
 
-  if (_hasUrgentKeywords) return 'urgent';
-  if (_hasCultural && _isLarge) return 'high';
-  if (_hasCultural || _isLarge) return 'medium';
+  if (hasUrgentKeywords) return 'urgent';
+  if (hasCultural && isLarge) return 'high';
+  if (hasCultural || isLarge) return 'medium';
   return 'low';
 }
 
-function extractDescription(_content: string): string {
-  const _lines = _content.split(/\r?\n/);
-  const _descriptionLines = _lines
+function extractDescription(content: string): string {
+  const lines = content.split(/\r?\n/);
+  const descriptionLines = lines
     .slice(0, 10) // Look at first 10 lines
     .filter((line) => line.trim() && !line.startsWith('#') && !line.startsWith('---'))
     .slice(0, 3); // Take first 3 non-empty lines
-
   return (
-    _descriptionLines.join(' ').substring(0, 200) +
-    (_descriptionLines.join(' ').length > 200 ? '...' : '')
+    descriptionLines.join(' ').substring(0, 200) +
+    (descriptionLines.join(' ').length > 200 ? '...' : '')
   );
 }
 
-function extractTags(_content: string): string[] {
+function extractTags(content: string): string[] {
   const tags: string[] = [];
-  const _lines = _content.split(/\r?\n/);
+  const lines = content.split(/\r?\n/);
 
   // Look for tags in frontmatter or markdown
-  for (const line of _lines) {
-    if (line.includes('tags:') || line.includes('keywords:')) {
-      const _match = line.match(/tags?:\s*\[(.*?)\]/i) || line.match(/keywords?:\s*\[(.*?)\]/i);
-      if (_match) {
-        tags.push(..._match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
+  for (const line of lines) {
+    if (line.includes('tags: ') || line.includes('keywords:')) {
+      const match = line.match(/tags?:\s*\[(.*?)\]/i) || line.match(/keywords?:\s*\[(.*?)\]/i);
+      if (match) {
+        tags.push(...match[1].split(',').map((t) => t.trim().replace(/['"]/g, '')));
       }
     }
   }
 
   // Extract common educational terms
-  const _educationalTerms = [
+  const educationalTerms = [
     'assessment',
     'activity',
     'lesson',
@@ -205,8 +201,8 @@ function extractTags(_content: string): string[] {
     'project',
   ];
 
-  _educationalTerms.forEach((term) => {
-    if (_content.toLowerCase().includes(term) && !tags.includes(term)) {
+  educationalTerms.forEach((term) => {
+    if (content.toLowerCase().includes(term) && !tags.includes(term)) {
       tags.push(term);
     }
   });
@@ -224,7 +220,6 @@ async function extractTitleFromMarkdown(absFile: string): Promise<string> {
     return path.basename(absFile);
   }
 }
-
 async function buildResources(): Promise<void> {
   await ensureDir(PUBLIC_ROOT);
   await ensureDir(DEST_ROOT);
@@ -275,7 +270,7 @@ async function buildResources(): Promise<void> {
       });
     }
   } catch (err) {
-    console.error('Error while scanning resources:', err);
+    console.error('Error while scanning resources: ', err);
     throw err;
   }
 
@@ -298,7 +293,7 @@ async function buildResources(): Promise<void> {
   console.log(
     `✅ Resources prepared: ${index.length} items -> ${path.relative(PROJECT_ROOT, indexFile)}`,
   );
-  console.log(`📊 Enhanced Metadata:`);
+  console.log(`📊 Enhanced Metadata: `);
   console.log(`   - Cultural Resources: ${culturalCount}`);
   console.log(`   - High Priority: ${highPriorityCount}`);
   console.log(`   - Subjects: ${subjects.length} (${subjects.join(', ')})`);
@@ -306,6 +301,6 @@ async function buildResources(): Promise<void> {
 }
 
 buildResources().catch((err) => {
-  console.error('❌ build-resources failed:', err);
+  console.error('❌ build-resources failed: ', err);
   process.exitCode = 1;
 });

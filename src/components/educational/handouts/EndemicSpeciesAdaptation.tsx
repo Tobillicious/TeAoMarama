@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EndemicSpeciesAdaptation.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EndemicSpeciesAdaptation.css'
 
-interface EndemicSpeciesAdaptationProps {
-  className?: string;
-}
-
-export const EndemicSpeciesAdaptation: React.FC<EndemicSpeciesAdaptationProps> = ({ className = '' }) => {
-  return (
+interface EndemicSpeciesAdaptationProps {className?: string}
+export const EndemicSpeciesAdaptation: React.FC<EndemicSpeciesAdaptationProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="endemic species adaptation"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`endemic-species-adaptation-handout cultural-focus ${className}`}
+title="endemic species adaptation"
+subtitle="Te Kete Ako - Cultural Education"
+className={`endemic-species-adaptation-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EndemicSpeciesAdaptation: React.FC<EndemicSpeciesAdaptationProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EndemicSpeciesAdaptation;
+export default EndemicSpeciesAdaptation

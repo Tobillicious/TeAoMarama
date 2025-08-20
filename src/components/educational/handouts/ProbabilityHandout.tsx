@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ProbabilityHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ProbabilityHandout.css'
 
-interface ProbabilityHandoutProps {
-  className?: string;
-}
-
-export const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({ className = '' }) => {
-  return (
+interface ProbabilityHandoutProps {className?: string}
+export const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="probability handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`probability-handout-handout cultural-focus ${className}`}
+title="probability handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`probability-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({ classNam
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ProbabilityHandout;
+export default ProbabilityHandout

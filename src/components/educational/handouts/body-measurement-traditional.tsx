@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface BodyMeasurementTraditionalProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 7-8",
-  subject = "Mathematics"
+interface BodyMeasurementTraditionalProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 7-8", 
+_subject = "Mathematics"
 }) => {
-  return (
+return (
     <div className="body-measurement-traditional">
       <Card title="Body Measurement Traditional | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Body Measurement Traditional</h1>
@@ -40,7 +37,7 @@ const BodyMeasurementTraditional: React.FC<BodyMeasurementTraditionalProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default BodyMeasurementTraditional;
+export default BodyMeasurementTraditional

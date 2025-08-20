@@ -1,23 +1,21 @@
-import React from 'react';
-import { Card } from '../ui/card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../ui/card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface TeKeteHandoutProps {
-  title: string;
-  content: string;
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-export const TeKeteHandout: React.FC<TeKeteHandoutProps> = ({
-  title,
-  content,
-  culturalContext,
-  yearLevel,
-  subject
+interface TeKeteHandoutProps {,
+title: string,
+content: string
+  culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+export const TeKeteHandout: React.FC<TeKeteHandoutProps> = (_{
+title, 
+_content, 
+_culturalContext, 
+_yearLevel, 
+_subject
 }) => {
-  return (
+return (
     <Card title={title} className="te-kete-handout">
       <div className="handout-header">
         <h2 className="handout-title">{title}</h2>
@@ -33,15 +31,15 @@ export const TeKeteHandout: React.FC<TeKeteHandoutProps> = ({
       )}
       
       <div 
-        className="handout-content"
-        dangerouslySetInnerHTML={{ __html: content }}
+className="handout-content"
+dangerouslySetInnerHTML={{ __html: content }}
       />
       
       <div className="handout-footer">
         <span className="te-kete-attribution">
-          Te Kete Ako - Whaowhia te kete mātauranga
+Te Kete Ako - Whaowhia te kete mātauranga
         </span>
       </div>
     </Card>
-  );
-};
+  )
+}

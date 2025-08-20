@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2MaoriBattalionLegacy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2MaoriBattalionLegacy.css'
 
-interface Unit2MaoriBattalionLegacyProps {
-  className?: string;
-}
-
-export const Unit2MaoriBattalionLegacy: React.FC<Unit2MaoriBattalionLegacyProps> = ({ className = '' }) => {
-  return (
+interface Unit2MaoriBattalionLegacyProps {className?: string}
+export const Unit2MaoriBattalionLegacy: React.FC<Unit2MaoriBattalionLegacyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 maori battalion legacy"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-maori-battalion-legacy-handout cultural-focus ${className}`}
+title="unit 2 maori battalion legacy"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-maori-battalion-legacy-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2MaoriBattalionLegacy: React.FC<Unit2MaoriBattalionLegacyProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2MaoriBattalionLegacy;
+export default Unit2MaoriBattalionLegacy

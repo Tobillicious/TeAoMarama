@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CommunityHelpersStudyProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CommunityHelpersStudy: React.FC<CommunityHelpersStudyProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Social Studies"
+interface CommunityHelpersStudyProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CommunityHelpersStudy: React.FC<CommunityHelpersStudyProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Social Studies"
 }) => {
-  return (
+return (
     <div className="community-helpers-study">
       <Card title="Community Helpers Study | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CommunityHelpersStudy: React.FC<CommunityHelpersStudyProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Community Helpers Study</h1>
@@ -40,7 +37,7 @@ const CommunityHelpersStudy: React.FC<CommunityHelpersStudyProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CommunityHelpersStudy;
+export default CommunityHelpersStudy

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WaterCycleCultural.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WaterCycleCultural.css'
 
-interface WaterCycleCulturalProps {
-  className?: string;
-}
-
-export const WaterCycleCultural: React.FC<WaterCycleCulturalProps> = ({ className = '' }) => {
-  return (
+interface WaterCycleCulturalProps {className?: string}
+export const WaterCycleCultural: React.FC<WaterCycleCulturalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="water cycle cultural"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`water-cycle-cultural-handout cultural-focus ${className}`}
+title="water cycle cultural"
+subtitle="Te Kete Ako - Cultural Education"
+className={`water-cycle-cultural-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WaterCycleCultural: React.FC<WaterCycleCulturalProps> = ({ classNam
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WaterCycleCultural;
+export default WaterCycleCultural

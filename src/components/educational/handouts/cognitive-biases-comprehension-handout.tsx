@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CognitiveBiasesComprehensionHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehensionHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-8",
-  subject = "English, Literacy"
+interface CognitiveBiasesComprehensionHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehensionHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-8", 
+_subject = "English,  _Literacy"
 }) => {
-  return (
+return (
     <div className="cognitive-biases-comprehension-handout">
       <Card title="Cognitive Biases | Critical Literacy Unit" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,18 +24,18 @@ const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehension
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <article class="mb-6 prose max-w-none">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">Why Your Brain Takes Shortcuts</h2>
                 <p class="text-justify">
-                    The human brain processes an incredible amount of information every second. To cope with this overload, it relies on mental shortcuts, or "heuristics," to make quick judgments and decisions. While these shortcuts are often useful, they can also lead to systematic errors in thinking known as cognitive biases. These biases are not a sign of low intelligence; they are a normal feature of how the human brain works. Understanding these biases is a key part of media literacy, as they can explain why we are often vulnerable to misinformation and flawed arguments.
+The human brain processes an incredible amount of information every second. To cope with this overload, it relies on mental shortcuts, or "heuristics," to make quick judgments and decisions. While these shortcuts are often useful, they can also lead to systematic errors in thinking known as cognitive biases. These biases are not a sign of low intelligence they are a normal feature of how the human brain works. Understanding these biases is a key part of media literacy, as they can explain why we are often vulnerable to misinformation and flawed arguments.
                 </p>
                 <p class="text-justify">
-                    One of the most common is **Confirmation Bias**, which is the tendency to search for, interpret, and recall information in a way that confirms our pre-existing beliefs. If you believe that a certain political party is untrustworthy, you are more likely to notice, remember, and share news stories that support that view, while ignoring stories that show the party in a positive light. Social media "echo chambers" greatly amplify this bias, as algorithms feed us a constant stream of content that validates our opinions.
+One of the most common is **Confirmation Bias**, which is the tendency to search for, interpret, and recall information in a way that confirms our pre-existing beliefs. If you believe that a certain political party is untrustworthy, you are more likely to notice, remember, and share news stories that support that view, while ignoring stories that show the party in a positive light. Social media "echo chambers" greatly amplify this bias, as algorithms feed us a constant stream of content that validates our opinions.
                 </p>
                 <p class="text-justify">
-                    Another powerful shortcut is the **Availability Heuristic**. This is where we overestimate the importance of information that is most easily recalled in our memory—which is often recent, shocking, or emotionally charged information. For example, after seeing several dramatic news reports about shark attacks, you might believe that shark attacks are far more common than they actually are, even though the statistical risk is incredibly low. The dramatic stories are more "available" in your mind than the boring statistics. Recognising these biases in ourselves and others is the first step toward becoming a more critical and rational thinker.
+Another powerful shortcut is the **Availability Heuristic**. This is where we overestimate the importance of information that is most easily recalled in our memory—which is often recent, shocking, or emotionally charged information. For example, after seeing several dramatic news reports about shark attacks, you might believe that shark attacks are far more common than they actually are, even though the statistical risk is incredibly low. The dramatic stories are more "available" in your mind than the boring statistics. Recognising these biases in ourselves and others is the first step toward becoming a more critical and rational thinker.
                 </p>
             </article>
 
@@ -49,7 +46,7 @@ const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehension
                     <!-- Question 1 -->
                     <div>
                         <p class="font-semibold mb-2">1. What is the primary reason the brain uses mental shortcuts?</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <div class="grid grid-cols-1 md: grid-cols-2 gap-2 text-sm">
                             <div class="question-option">A) To make us more emotional.</div>
                             <div class="question-option">B) To cope with information overload.</div>
                             <div class="question-option">C) To ensure all our decisions are perfectly logical.</div>
@@ -71,7 +68,7 @@ const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehension
                     <!-- Question 3 -->
                     <div>
                         <p class="font-semibold mb-2">3. A person sees a news report about a plane crash and becomes afraid of flying, even though flying is statistically very safe. Which bias is most likely at play?</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                        <div class="grid grid-cols-1 md: grid-cols-2 gap-2 text-sm">
                             <div class="question-option">A) Confirmation Bias</div>
                             <div class="question-option">B) The Availability Heuristic</div>
                             <div class="question-option">C) Both A and B</div>
@@ -101,7 +98,7 @@ const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehension
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CognitiveBiasesComprehensionHandout;
+export default CognitiveBiasesComprehensionHandout

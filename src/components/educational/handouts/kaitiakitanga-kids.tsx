@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface KaitiakitangaKidsProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({
-  culturalContext = "Environmental guardianship and kaitiakitanga",
-  yearLevel = "Year 7-9",
-  subject = "Science, Social Studies"
+interface KaitiakitangaKidsProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = (_{
+culturalContext = "Environmental guardianship and kaitiakitanga", 
+_yearLevel = "Year 7-9", 
+_subject = "Science,  _Social Studies"
 }) => {
-  return (
+return (
     <div className="kaitiakitanga-kids">
       <Card title="Kaitiakitanga Kids | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Kaitiakitanga Kids</h1>
@@ -40,7 +37,7 @@ const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default KaitiakitangaKids;
+export default KaitiakitangaKids

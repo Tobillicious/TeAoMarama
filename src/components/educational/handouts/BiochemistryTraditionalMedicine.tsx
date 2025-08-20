@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './BiochemistryTraditionalMedicine.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './BiochemistryTraditionalMedicine.css'
 
-interface BiochemistryTraditionalMedicineProps {
-  className?: string;
-}
-
-export const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineProps> = ({ className = '' }) => {
-  return (
+interface BiochemistryTraditionalMedicineProps {className?: string}
+export const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="biochemistry traditional medicine"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`biochemistry-traditional-medicine-handout cultural-focus ${className}`}
+title="biochemistry traditional medicine"
+subtitle="Te Kete Ako - Cultural Education"
+className={`biochemistry-traditional-medicine-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMe
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default BiochemistryTraditionalMedicine;
+export default BiochemistryTraditionalMedicine

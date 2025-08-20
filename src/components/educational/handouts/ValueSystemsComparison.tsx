@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ValueSystemsComparison.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ValueSystemsComparison.css'
 
-interface ValueSystemsComparisonProps {
-  className?: string;
-}
-
-export const ValueSystemsComparison: React.FC<ValueSystemsComparisonProps> = ({ className = '' }) => {
-  return (
+interface ValueSystemsComparisonProps {className?: string}
+export const ValueSystemsComparison: React.FC<ValueSystemsComparisonProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="value systems comparison"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`value-systems-comparison-handout cultural-focus ${className}`}
+title="value systems comparison"
+subtitle="Te Kete Ako - Cultural Education"
+className={`value-systems-comparison-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ValueSystemsComparison: React.FC<ValueSystemsComparisonProps> = ({ 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ValueSystemsComparison;
+export default ValueSystemsComparison

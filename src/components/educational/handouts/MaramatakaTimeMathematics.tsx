@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaramatakaTimeMathematics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaramatakaTimeMathematics.css'
 
-interface MaramatakaTimeMathematicsProps {
-  className?: string;
-}
-
-export const MaramatakaTimeMathematics: React.FC<MaramatakaTimeMathematicsProps> = ({ className = '' }) => {
-  return (
+interface MaramatakaTimeMathematicsProps {className?: string}
+export const MaramatakaTimeMathematics: React.FC<MaramatakaTimeMathematicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="maramataka time mathematics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`maramataka-time-mathematics-handout cultural-focus ${className}`}
+title="maramataka time mathematics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`maramataka-time-mathematics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaramatakaTimeMathematics: React.FC<MaramatakaTimeMathematicsProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaramatakaTimeMathematics;
+export default MaramatakaTimeMathematics

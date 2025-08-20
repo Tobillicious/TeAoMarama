@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './RenewableEnergyTraditional.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './RenewableEnergyTraditional.css'
 
-interface RenewableEnergyTraditionalProps {
-  className?: string;
-}
-
-export const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = ({ className = '' }) => {
-  return (
+interface RenewableEnergyTraditionalProps {className?: string}
+export const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="renewable energy traditional"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`renewable-energy-traditional-handout cultural-focus ${className}`}
+title="renewable energy traditional"
+subtitle="Te Kete Ako - Cultural Education"
+className={`renewable-energy-traditional-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const RenewableEnergyTraditional: React.FC<RenewableEnergyTraditionalProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default RenewableEnergyTraditional;
+export default RenewableEnergyTraditional

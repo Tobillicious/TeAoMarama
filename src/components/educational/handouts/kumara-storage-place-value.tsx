@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface KumaraStoragePlaceValueProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface KumaraStoragePlaceValueProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="kumara-storage-place-value">
       <Card title="Kumara Storage Place Value | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Kumara Storage Place Value</h1>
@@ -40,7 +37,7 @@ const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default KumaraStoragePlaceValue;
+export default KumaraStoragePlaceValue

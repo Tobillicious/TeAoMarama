@@ -50,7 +50,6 @@ export async function writeEpisode(chainId: string, episode: EpisodeData): Promi
   if (!manager.getChain(chainId)) {
     manager.createChain(chainId);
   }
-
   manager.addEpisode(chainId, episode);
 
   // In the future, could write to file or database

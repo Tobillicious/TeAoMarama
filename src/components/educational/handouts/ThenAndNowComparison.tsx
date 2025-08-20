@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ThenAndNowComparison.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ThenAndNowComparison.css'
 
-interface ThenAndNowComparisonProps {
-  className?: string;
-}
-
-export const ThenAndNowComparison: React.FC<ThenAndNowComparisonProps> = ({ className = '' }) => {
-  return (
+interface ThenAndNowComparisonProps {className?: string}
+export const ThenAndNowComparison: React.FC<ThenAndNowComparisonProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="then and now comparison"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`then-and-now-comparison-handout cultural-focus ${className}`}
+title="then and now comparison"
+subtitle="Te Kete Ako - Cultural Education"
+className={`then-and-now-comparison-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ThenAndNowComparison: React.FC<ThenAndNowComparisonProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ThenAndNowComparison;
+export default ThenAndNowComparison

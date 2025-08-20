@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './IwiPopulationGraphs.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './IwiPopulationGraphs.css'
 
-interface IwiPopulationGraphsProps {
-  className?: string;
-}
-
-export const IwiPopulationGraphs: React.FC<IwiPopulationGraphsProps> = ({ className = '' }) => {
-  return (
+interface IwiPopulationGraphsProps {className?: string}
+export const IwiPopulationGraphs: React.FC<IwiPopulationGraphsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="iwi population graphs"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`iwi-population-graphs-handout cultural-focus ${className}`}
+title="iwi population graphs"
+subtitle="Te Kete Ako - Cultural Education"
+className={`iwi-population-graphs-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const IwiPopulationGraphs: React.FC<IwiPopulationGraphsProps> = ({ classN
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default IwiPopulationGraphs;
+export default IwiPopulationGraphs

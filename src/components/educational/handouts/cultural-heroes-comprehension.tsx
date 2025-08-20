@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CulturalHeroesComprehensionProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = ({
-  culturalContext = "Cultural practices and traditional knowledge",
-  yearLevel = "Year 7-8",
-  subject = "English, Literacy"
+interface CulturalHeroesComprehensionProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = (_{
+culturalContext = "Cultural practices and traditional knowledge", 
+_yearLevel = "Year 7-8", 
+_subject = "English,  _Literacy"
 }) => {
-  return (
+return (
     <div className="cultural-heroes-comprehension">
       <Card title="Cultural Heroes Comprehension | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Cultural Heroes Comprehension</h1>
@@ -40,7 +37,7 @@ const CulturalHeroesComprehension: React.FC<CulturalHeroesComprehensionProps> = 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalHeroesComprehension;
+export default CulturalHeroesComprehension

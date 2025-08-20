@@ -1,62 +1,28 @@
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './Navigation.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import './Navigation.css'
 
-export default function Navigation() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navItems = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/resources', label: 'Resources', icon: '📚' },
-    { path: '/year8-critical-literacy', label: 'Year 8 Literacy', icon: '🎯' },
-    { path: '/year8-reading-units', label: 'Reading Units', icon: '📖' },
-    { path: '/year8-social-studies', label: 'Social Studies', icon: '🌍' },
-    { path: '/dashboard', label: 'Dashboard', icon: '📊' },
-  ];
-
-  const handleNavigation = (path: string) => {
-    navigate(path);
-    setIsMenuOpen(false);
-  };
-
-  const isCurrentPath = (path: string) => {
-    return location.pathname === path;
-  };
-
+const Navigation: React.FC = () => {
   return (
     <nav className="navigation-container">
       <div className="nav-brand">
-        <button type="button" onClick={() => navigate('/')} className="brand-button">
-          🌿 TeAoMarama
-        </button>
+        <Link to="/" className="nav-logo">
+          Te Kete Ako
+        </Link>
       </div>
-
-      {/* Mobile menu button */}
-      <button
-        type="button"
-        className="mobile-menu-button"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {isMenuOpen ? '✕' : '☰'}
-      </button>
-
-      {/* Navigation items */}
-      <div className={`nav-items ${isMenuOpen ? 'nav-items-open' : ''}`}>
-        {navItems.map((item) => (
-          <button
-            key={item.path}
-            type="button"
-            className={`nav-item ${isCurrentPath(item.path) ? 'nav-item-active' : ''}`}
-            onClick={() => handleNavigation(item.path)}
-          >
-            <span className="nav-icon">{item.icon}</span>
-            <span className="nav-label">{item.label}</span>
-          </button>
-        ))}
+      <div className="nav-links">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="/about" className="nav-link">
+          About
+        </Link>
+        <Link to="/contact" className="nav-link">
+          Contact
+        </Link>
       </div>
     </nav>
-  );
+  )
 }
+
+export default Navigation

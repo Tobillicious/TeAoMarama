@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2WarsStrategyAnalysis.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2WarsStrategyAnalysis.css'
 
-interface Unit2WarsStrategyAnalysisProps {
-  className?: string;
-}
-
-export const Unit2WarsStrategyAnalysis: React.FC<Unit2WarsStrategyAnalysisProps> = ({ className = '' }) => {
-  return (
+interface Unit2WarsStrategyAnalysisProps {className?: string}
+export const Unit2WarsStrategyAnalysis: React.FC<Unit2WarsStrategyAnalysisProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 wars strategy analysis"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-wars-strategy-analysis-handout cultural-focus ${className}`}
+title="unit 2 wars strategy analysis"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-wars-strategy-analysis-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2WarsStrategyAnalysis: React.FC<Unit2WarsStrategyAnalysisProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2WarsStrategyAnalysis;
+export default Unit2WarsStrategyAnalysis

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TraditionalCountingSystems.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TraditionalCountingSystems.css'
 
-interface TraditionalCountingSystemsProps {
-  className?: string;
-}
-
-export const TraditionalCountingSystems: React.FC<TraditionalCountingSystemsProps> = ({ className = '' }) => {
-  return (
+interface TraditionalCountingSystemsProps {className?: string}
+export const TraditionalCountingSystems: React.FC<TraditionalCountingSystemsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="traditional counting systems"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`traditional-counting-systems-handout cultural-focus ${className}`}
+title="traditional counting systems"
+subtitle="Te Kete Ako - Cultural Education"
+className={`traditional-counting-systems-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TraditionalCountingSystems: React.FC<TraditionalCountingSystemsProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TraditionalCountingSystems;
+export default TraditionalCountingSystems

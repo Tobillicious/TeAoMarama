@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './AuthorsPurposePersuadeHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './AuthorsPurposePersuadeHandout.css'
 
-interface AuthorsPurposePersuadeHandoutProps {
-  className?: string;
-}
-
-export const AuthorsPurposePersuadeHandout: React.FC<AuthorsPurposePersuadeHandoutProps> = ({ className = '' }) => {
-  return (
+interface AuthorsPurposePersuadeHandoutProps {className?: string}
+export const AuthorsPurposePersuadeHandout: React.FC<AuthorsPurposePersuadeHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="authors purpose persuade handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`authors-purpose-persuade-handout-handout cultural-focus ${className}`}
+title="authors purpose persuade handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`authors-purpose-persuade-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const AuthorsPurposePersuadeHandout: React.FC<AuthorsPurposePersuadeHando
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default AuthorsPurposePersuadeHandout;
+export default AuthorsPurposePersuadeHandout

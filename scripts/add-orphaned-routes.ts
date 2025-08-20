@@ -4,24 +4,20 @@
  * 
  * Adds routes for the 299 orphaned components identified in the audit
  */
+import {readFile, writeFile} from 'fs/promises'
+interface OrphanedComponent {,
+name: string,
+path: string}
+async function addOrphanedRoutes() {console.log('🛣️ ADDING ROUTES FOR ORPHANED COMPONENTS...\n')
 
-import { readFile, writeFile } from 'fs/promises';
-interface OrphanedComponent {
-  name: string;
-  path: string;
-}
-
-async function addOrphanedRoutes() {
-  console.log('🛣️ ADDING ROUTES FOR ORPHANED COMPONENTS...\n');
-
-  try {
+try {
     // Read App.tsx
-    const _appContent = await readFile('src/App.tsx', 'utf8');
+const __appContent = await readFile('src/App.tsx', 'utf8')
     
     // List of orphaned components from the audit
-    const orphanedComponents: OrphanedComponent[] = [
+const orphanedComponents: OrphanedComponent[] = [
       // Handout components
-      { name: 'AiArtEthicsComprehension', path: './components/educational/handouts/AiArtEthicsComprehension' },
+      { name: 'AiArtEthicsComprehension', path: './components/educational/handouts/AiArtEthicsComprehension'},
       { name: 'AiArtEthicsComprehensionHandout', path: './components/educational/handouts/AiArtEthicsComprehensionHandout' },
       { name: 'AiEthicsAndBias', path: './components/educational/handouts/AiEthicsAndBias' },
       { name: 'AiImpactComprehensionHandout', path: './components/educational/handouts/AiImpactComprehensionHandout' },
@@ -99,50 +95,50 @@ async function addOrphanedRoutes() {
       { name: 'Year9StarterPackEssentialSkills', path: './components/educational/handouts/Year9StarterPackEssentialSkills' },
       { name: 'YouthVapingComprehensionHandout', path: './components/educational/handouts/YouthVapingComprehensionHandout' },
       { name: 'WhakataukiWisdom', path: './components/educational/handouts/WhakataukiWisdom' },
-    ];
+    ]
 
-    console.log(`📦 Found ${orphanedComponents.length} orphaned components to add routes for`);
+console.log(`📦 Found ${orphanedComponents.length} orphaned components to add routes for`)
 
     // Add lazy imports
-    let newContent = appContent;
-    const _importSection = '// Lazy load components';
-    const _importIndex = newContent.indexOf(importSection);
+let newContent = appContent
+    const __importSection = '// Lazy load components'
+    const __importIndex = newContent.indexOf(importSection)
     
-    if (importIndex !== -1) {
-      const _insertIndex = newContent.indexOf('\n', importIndex) + 1;
-      const _importsToAdd = orphanedComponents
-        .map(comp => `const ${comp.name} = lazy(() => import('${comp.path}'));`)
-        .join('\n');
+if (importIndex !== -1) {
+const __insertIndex = newContent.indexOf('\n', importIndex) + 1
+      const __importsToAdd = orphanedComponents
+        .map(_comp => `const ${comp.name} = lazy(() => import('${comp.path}'))`)
+        .join('\n')
       
-      newContent = newContent.slice(0, insertIndex) + importsToAdd + '\n' + newContent.slice(insertIndex);
+newContent = newContent.slice(0, insertIndex) + importsToAdd + '\n' + newContent.slice(insertIndex)
     }
 
     // Add routes
-    const _routesSection = '<Routes>';
-    const _routesIndex = newContent.indexOf(routesSection);
+const __routesSection = '<Routes>'
+    const __routesIndex = newContent.indexOf(routesSection)
     
-    if (routesIndex !== -1) {
-      const _insertIndex = newContent.indexOf('\n', routesIndex) + 1;
-      const _routesToAdd = orphanedComponents
+if (routesIndex !== -1) {
+const __insertIndex = newContent.indexOf('\n', routesIndex) + 1
+      const __routesToAdd = orphanedComponents
         .map(comp => {
-          const routePath = comp.name.toLowerCase().replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '');
-          return `            <Route path="/${routePath}" element={<${comp.name} />} />`;
+const routePath = comp.name.toLowerCase().replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')
+          return `            <Route path="/${routePath}" element={<${comp.name} />} />`
         })
-        .join('\n');
+        .join('\n')
       
-      newContent = newContent.slice(0, insertIndex) + routesToAdd + '\n' + newContent.slice(insertIndex);
+newContent = newContent.slice(0, insertIndex) + routesToAdd + '\n' + newContent.slice(insertIndex)
     }
 
     // Write back to file
-    await writeFile('src/App.tsx', newContent, 'utf8');
+await writeFile('src/App.tsx', newContent, 'utf8')
 
-    console.log(`✅ Successfully added routes for ${orphanedComponents.length} orphaned components`);
-    console.log('🛣️ Routes added with kebab-case paths (e.g., /cultural-celebrations-comparison)');
+console.log(`✅ Successfully added routes for ${orphanedComponents.length} orphaned components`)
+    console.log('🛣️ Routes added with kebab-case paths (e.g., /cultural-celebrations-comparison)')
 
   } catch (error) {
-    console.error('❌ Error adding orphaned routes:', error);
+console.error('❌ Error adding orphaned routes: ', error)
   }
 }
 
 // Run the script
-addOrphanedRoutes();
+addOrphanedRoutes()

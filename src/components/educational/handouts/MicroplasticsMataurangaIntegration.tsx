@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React, { useState } from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface MicroplasticsMataurangaIntegrationProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegrationProps> = ({
-  culturalContext = "Environmental guardianship and kaitiakitanga",
-  yearLevel = "Year 9-10",
-  subject = "Science, Environmental Studies"
+interface MicroplasticsMataurangaIntegrationProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegrationProps> = (_{
+culturalContext = "Environmental guardianship and kaitiakitanga", 
+_yearLevel = "Year 9-10", 
+_subject = "Science,  _Environmental Studies"
 }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'investigation' | 'action'>('overview');
+const [activeTab, setActiveTab] = useState<'overview' | 'investigation' | 'action'>('overview')
 
-  return (
-    <div className="microplastics-matauranga-integration">
+return (
+_<div className="microplastics-matauranga-integration">
       <Card title="Ocean Health & Kaitiakitanga" className="handout-card cultural-focus">
         <div className="handout-header">
           <h1 className="handout-title">Ocean Health & Kaitiakitanga</h1>
@@ -31,20 +28,20 @@ const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegr
         {/* Interactive Tab Navigation */}
         <div className="interactive-tabs">
           <button 
-            className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
-            onClick={() => setActiveTab('overview')}
+className={`tab-button ${activeTab === 'overview' ? 'active' : ''}`}
+onClick={() => setActiveTab('overview')}
           >
             🌊 Overview
           </button>
           <button 
-            className={`tab-button ${activeTab === 'investigation' ? 'active' : ''}`}
-            onClick={() => setActiveTab('investigation')}
+className={`tab-button ${activeTab === 'investigation' ? 'active' : ''}`}
+onClick={() => setActiveTab('investigation')}
           >
             🔍 Investigation
           </button>
           <button 
-            className={`tab-button ${activeTab === 'action' ? 'active' : ''}`}
-            onClick={() => setActiveTab('action')}
+className={`tab-button ${activeTab === 'action' ? 'active' : ''}`}
+onClick={() => setActiveTab('action')}
           >
             ⚡ Action
           </button>
@@ -56,7 +53,7 @@ const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegr
             {activeTab === 'overview' && (
               <>
                 <p style={{color: 'var(--color-text-secondary)', fontSize: 'var(--text-lg)', marginBottom: '2rem'}}>
-                  Investigating ocean pollution using both traditional Māori environmental knowledge and contemporary scientific methods to understand our responsibilities as kaitiaki (guardians).
+Investigating ocean pollution using both traditional Māori environmental knowledge and contemporary scientific methods to understand our responsibilities as kaitiaki (guardians).
                 </p>
 
                 {/* Cultural Foundation */}
@@ -101,7 +98,7 @@ const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegr
                     <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem'}}>
                       <div style={{textAlign: 'center', padding: 'var(--space-4)'}}>
                         <div style={{fontSize: '3rem', marginBottom: '0.5rem'}}>🔬</div>
-                        <h4 style={{color: 'var(--color-secondary)'}}>Size: &lt; 5mm</h4>
+                        <h4 style={{color: 'var(--color-secondary)'}}>Size: &lt 5mm</h4>
                         <p style={{fontSize: 'var(--text-sm)'}}>Smaller than a grain of rice</p>
                       </div>
                       <div style={{textAlign: 'center', padding: 'var(--space-4)'}}>
@@ -225,7 +222,7 @@ const MicroplasticsMataurangaIntegration: React.FC<MicroplasticsMataurangaIntegr
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default MicroplasticsMataurangaIntegration;
+export default MicroplasticsMataurangaIntegration

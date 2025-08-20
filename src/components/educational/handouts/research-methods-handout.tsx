@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ResearchMethodsHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface ResearchMethodsHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="research-methods-handout">
       <Card title="Research Methods | Te Kete Ako Handout" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,13 +24,13 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
         <div class="handout-header">
             <h1 class="wiley-hero-title">🔍 Research Methods Handout</h1>
             <p class="handout-subtitle">Essential skills for gathering, evaluating, and presenting information</p>
             <div class="handout-meta">
-                <span class="meta-item"><strong>Subject:</strong> Cross-curricular</span>
+                <span class="meta-item"><strong>Subject: </strong> Cross-curricular</span>
                 <span class="meta-item"><strong>Level:</strong> Year 9-13</span>
                 <span class="meta-item"><strong>Duration:</strong> Reference guide</span>
                 <span class="meta-item"><strong>Cultural Level:</strong> Medium</span>
@@ -96,10 +93,10 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
                 <h3>Primary Research</h3>
                 <p>Original data collection through direct investigation.</p>
                 <ul>
-                    <li><strong>Surveys & Questionnaires:</strong> Gather quantitative and qualitative data from target groups</li>
+                    <li><strong>Surveys & Questionnaires: </strong> Gather quantitative and qualitative data from target groups</li>
                     <li><strong>Interviews:</strong> Conduct structured or open-ended conversations with experts or stakeholders</li>
                     <li><strong>Observations:</strong> Record behaviors, events, or phenomena directly</li>
-                    <li><strong>Experiments:</strong> Test hypotheses under controlled conditions</li>
+                    <li><strong>Experiments: </strong> Test hypotheses under controlled conditions</li>
                     <li><strong>Field Work:</strong> Study subjects in their natural environment</li>
                 </ul>
             </div>
@@ -112,7 +109,7 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
                     <li><strong>Books & Reports:</strong> Published research and expert analysis</li>
                     <li><strong>Government Data:</strong> Official statistics and policy documents</li>
                     <li><strong>Media Sources:</strong> News articles, documentaries, broadcasts</li>
-                    <li><strong>Online Databases:</strong> Digital libraries and research repositories</li>
+                    <li><strong>Online Databases: </strong> Digital libraries and research repositories</li>
                 </ul>
             </div>
         </section>
@@ -121,7 +118,7 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
             <h2 class="wiley-section-title">🌿 Cultural Research Considerations</h2>
             <div class="cultural-note">
                 <h4>Mātauranga Māori Research Principles</h4>
-                <p>When researching topics related to Māori culture or communities, consider these important principles:</p>
+                <p>When researching topics related to Māori culture or communities, consider these important principles: </p>
                 <ul>
                     <li><strong>Tino Rangatiratanga:</strong> Respect Māori authority and decision-making</li>
                     <li><strong>Taonga Tuku Iho:</strong> Acknowledge cultural treasures and knowledge systems</li>
@@ -192,15 +189,15 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
                     <p class="citation">Author, A. A. (Year). <em>Title of book</em>. Publisher.</p>
                 </div>
                 <div class="citation-type">
-                    <h4>Journal Article:</h4>
+                    <h4>Journal Article: </h4>
                     <p class="citation">Author, A. A. (Year). Title of article. <em>Journal Name</em>, <em>Volume</em>(Issue), pages.</p>
                 </div>
                 <div class="citation-type">
-                    <h4>Website:</h4>
+                    <h4>Website: </h4>
                     <p class="citation">Author, A. A. (Year, Month Date). Title of webpage. <em>Website Name</em>. URL</p>
                 </div>
                 <div class="citation-type">
-                    <h4>Government Document:</h4>
+                    <h4>Government Document: </h4>
                     <p class="citation">Government Agency. (Year). <em>Title of document</em>. Publisher.</p>
                 </div>
             </div>
@@ -258,7 +255,7 @@ const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ResearchMethodsHandout;
+export default ResearchMethodsHandout

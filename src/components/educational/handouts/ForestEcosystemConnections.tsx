@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ForestEcosystemConnections.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ForestEcosystemConnections.css'
 
-interface ForestEcosystemConnectionsProps {
-  className?: string;
-}
-
-export const ForestEcosystemConnections: React.FC<ForestEcosystemConnectionsProps> = ({ className = '' }) => {
-  return (
+interface ForestEcosystemConnectionsProps {className?: string}
+export const ForestEcosystemConnections: React.FC<ForestEcosystemConnectionsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="forest ecosystem connections"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`forest-ecosystem-connections-handout cultural-focus ${className}`}
+title="forest ecosystem connections"
+subtitle="Te Kete Ako - Cultural Education"
+className={`forest-ecosystem-connections-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ForestEcosystemConnections: React.FC<ForestEcosystemConnectionsProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ForestEcosystemConnections;
+export default ForestEcosystemConnections

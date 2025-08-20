@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './GardenPlotMeasurement.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './GardenPlotMeasurement.css'
 
-interface GardenPlotMeasurementProps {
-  className?: string;
-}
-
-export const GardenPlotMeasurement: React.FC<GardenPlotMeasurementProps> = ({ className = '' }) => {
-  return (
+interface GardenPlotMeasurementProps {className?: string}
+export const GardenPlotMeasurement: React.FC<GardenPlotMeasurementProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="garden plot measurement"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`garden-plot-measurement-handout cultural-focus ${className}`}
+title="garden plot measurement"
+subtitle="Te Kete Ako - Cultural Education"
+className={`garden-plot-measurement-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const GardenPlotMeasurement: React.FC<GardenPlotMeasurementProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default GardenPlotMeasurement;
+export default GardenPlotMeasurement

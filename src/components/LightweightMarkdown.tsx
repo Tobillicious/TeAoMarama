@@ -1,75 +1,71 @@
-import { marked } from 'marked';
-import sanitizeHtml from 'sanitize-html';
-import { useEffect, useState } from 'react';
+import {marked} from 'marked'
+import sanitizeHtml from 'sanitize-html'
+import {useEffect, useState} from 'react'
 
-interface LightweightMarkdownProps {
-  content: string;
-  className?: string;
-}
+interface LightweightMarkdownProps {,
+content: string
+  className?: string}
+export default function LightweightMarkdown(__{ content,   __className = '' }: LightweightMarkdownProps) {const [html, setHtml] = useState('')
 
-export default function LightweightMarkdown({ content, className = '' }: LightweightMarkdownProps) {
-  const [html, setHtml] = useState('');
-
-  useEffect(() => {
-    const processMarkdown = async () => {
+useEffect_(() => {
+const processMarkdown = async () => {
       // Configure marked options for better output
-      marked.setOptions({
-        gfm: true, // GitHub Flavored Markdown
-        breaks: true, // Convert line breaks to <br>
-      });
+marked.setOptions({,
+gfm: true, // GitHub Flavored Markdown,
+breaks: true, // Convert line breaks to <br>})
 
       // Convert markdown to HTML  
-      const rawHtml = await (typeof marked.parse === 'function' ? marked.parse(content) : marked(content));
-      const htmlString = typeof rawHtml === 'string' ? rawHtml : String(rawHtml);
+const rawHtml = await (typeof marked.parse === 'function' ? marked.parse(content) : marked(content))
+      const htmlString = typeof rawHtml === 'string' ? rawHtml : String(rawHtml)
       
       // Sanitize HTML for security
-      const sanitizedHtml = sanitizeHtml(htmlString, {
-      allowedTags: [
-        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'p', 'br', 'hr',
-        'ul', 'ol', 'li',
-        'strong', 'em', 'code', 'pre',
-        'blockquote',
-        'a', 'img',
-        'table', 'thead', 'tbody', 'tr', 'th', 'td',
-        'div', 'span'
-      ],
-      allowedAttributes: {
-        'a': ['href', 'title', 'target'],
-        'img': ['src', 'alt', 'title'],
-        'h1': ['id'], 'h2': ['id'], 'h3': ['id'], 'h4': ['id'], 'h5': ['id'], 'h6': ['id'],
-        'code': ['class'],
-        'pre': ['class']
-      },
-      allowedSchemes: ['http', 'https', 'mailto'],
-      transformTags: {
-        'a': (tagName, attribs) => {
+const sanitizedHtml = sanitizeHtml(htmlString,  _{,
+allowedTags: [
+        'h1',  _'h2',  _'h3',  _'h4',  _'h5',  _'h6', 
+_'p',  _'br',  _'hr', 
+_'ul',  _'ol',  _'li', 
+_'strong',  _'em',  _'code',  _'pre', 
+_'blockquote', 
+_'a',  _'img', 
+_'table',  _'thead',  _'tbody',  _'tr',  _'th',  _'td', 
+_'div',  _'span'
+      ], ,
+_allowedAttributes: {
+        'a': ['href',  _'title',  _'target'], 
+_'img': ['src',  _'alt',  _'title'], 
+_'h1': ['id'],  _'h2': ['id'],  _'h3': ['id'],  _'h4': ['id'],  _'h5': ['id'],  _'h6': ['id'], 
+_'code': ['class'], 
+_'pre': ['class']
+      }, ,
+_allowedSchemes: ['http',  _'https',  _'mailto'], ,
+_transformTags: {
+        'a': (tagName,  _attribs) => {
           // Add target="_blank" and rel="noopener noreferrer" to external links
-          if (attribs.href && attribs.href.startsWith('http')) {
-            return {
-              tagName,
-              attribs: {
-                ...attribs,
-                target: '_blank',
-                rel: 'noopener noreferrer'
+if (attribs.href && attribs.href.startsWith('http')) {
+return {
+tagName,;,
+attribs: {
+                ...attribs,;,
+target: '_blank',,
+rel: 'noopener noreferrer'
               }
-            };
+            }
           }
-          return { tagName, attribs };
+return { tagName, attribs }
         }
       }
-    });
+    })
 
-      setHtml(sanitizedHtml);
-    };
+setHtml(sanitizedHtml)
+    }
 
-    processMarkdown().catch(console.error);
-  }, [content]);
+processMarkdown().catch(console.error)
+  }, [content])
 
-  return (
+return (
     <div 
-      className={`prose max-w-none ${className}`}
-      dangerouslySetInnerHTML={{ __html: html }}
+className={`prose max-w-none ${className}`}
+dangerouslySetInnerHTML={{ __html: html }}
     />
-  );
+  )
 }

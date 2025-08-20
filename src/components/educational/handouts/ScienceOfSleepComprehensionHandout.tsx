@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ScienceOfSleepComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ScienceOfSleepComprehensionHandout.css'
 
-interface ScienceOfSleepComprehensionHandoutProps {
-  className?: string;
-}
-
-export const ScienceOfSleepComprehensionHandout: React.FC<ScienceOfSleepComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface ScienceOfSleepComprehensionHandoutProps {className?: string}
+export const ScienceOfSleepComprehensionHandout: React.FC<ScienceOfSleepComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="science of sleep comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`science-of-sleep-comprehension-handout-handout cultural-focus ${className}`}
+title="science of sleep comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`science-of-sleep-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ScienceOfSleepComprehensionHandout: React.FC<ScienceOfSleepComprehe
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ScienceOfSleepComprehensionHandout;
+export default ScienceOfSleepComprehensionHandout

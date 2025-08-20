@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface Year9StarterPackEssentialSkillsProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface Year9StarterPackEssentialSkillsProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="year-9-starter-pack-essential-skills">
       <Card title="Year 9 Starter Pack: Essential Skills for High School Success - Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
                     <header class="site-header no-print">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">Te Kete Ako</a>
@@ -69,22 +66,22 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
                             <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
                         </a>
                     </li>
-                    <li class="auth-nav my-kete-link" style="display: none;">
+                    <li class="auth-nav my-kete-link" style="display: none">
                         <a href="my-kete.html">
                             <span class="nav-icon">🧺</span>
-                            My Kete
+My Kete
                         </a>
                     </li>
                     <li class="auth-nav">
                         <a href="login.html" class="login-btn">
                             <span class="nav-icon">👤</span>
-                            Login
+Login
                         </a>
                     </li>
-                    <li class="auth-nav" style="display: none;">
+                    <li class="auth-nav" style="display: none">
                         <a href="register-simple.html" class="register-btn">
                             <span class="nav-icon">📝</span>
-                            Register
+Register
                         </a>
                     </li>
                 </ul>
@@ -97,7 +94,7 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
 
     <section>
         <h2 class="wiley-section-title">Learning Objectives</h2>
-        <p>By engaging with this resource, students will:</p>
+        <p>By engaging with this resource, students will: </p>
         <ul class="checklist">
             <li>Develop effective organizational strategies for high school</li>
             <li>Understand key tikanga (protocols) for school environments</li>
@@ -115,7 +112,7 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
         
         <h3>Tikanga for School Success</h3>
         <ul>
-            <li><span class="maori-term">Manaakitanga:</span> Show respect and care for others in your learning community</li>
+            <li><span class="maori-term">Manaakitanga: </span> Show respect and care for others in your learning community</li>
             <li><span class="maori-term">Whanaungatanga:</span> Build positive relationships with teachers and classmates</li>
             <li><span class="maori-term">Ako:</span> Embrace being both a learner and teacher in different situations</li>
             <li><span class="maori-term">Kaitiakitanga:</span> Take responsibility for your learning environment and resources</li>
@@ -183,7 +180,7 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
             </ul>
             
             <h4>Tech Scavenger Hunt</h4>
-            <p>Find and document these school tech resources:</p>
+            <p>Find and document these school tech resources: </p>
             <ol>
                 <li>Where is the IT help desk?</li>
                 <li>What's the school's WiFi network name?</li>
@@ -257,7 +254,7 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
         <h3>Suggested Timeline</h3>
         <ul>
             <li><strong>Week 1:</strong> Introduce resource, complete pepeha and organization activities</li>
-            <li><strong>Week 2:</strong> Focus on digital literacy and time management</li>
+            <li><strong>Week 2: </strong> Focus on digital literacy and time management</li>
             <li><strong>Week 3:</strong> Relationship building and support systems</li>
             <li><strong>Ongoing:</strong> Revisit sections as needed throughout term</li>
         </ul>
@@ -318,7 +315,7 @@ const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsP
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default Year9StarterPackEssentialSkills;
+export default Year9StarterPackEssentialSkills

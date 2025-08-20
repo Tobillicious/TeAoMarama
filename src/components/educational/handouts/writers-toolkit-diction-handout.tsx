@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitDictionHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitDictionHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-diction-handout">
       <Card title="The Writer's Toolkit: Word Choice (Diction)" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,18 +24,18 @@ const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandoutProps> 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">What is Diction?</h2>
                 <p class="text-justify">
-                    Diction simply means "word choice." While it sounds simple, it's one of the most important skills a writer can develop. The specific words you choose have a massive impact on your writing's clarity, tone, and overall effect. A strong writer doesn't just choose a word that is "correct"; they choose the word that is "perfect." This involves thinking about not just the literal meaning of a word, but also the feelings and ideas it suggests.
+Diction simply means "word choice." While it sounds simple, it's one of the most important skills a writer can develop. The specific words you choose have a massive impact on your writing's clarity, tone, and overall effect. A strong writer doesn't just choose a word that is "correct" they choose the word that is "perfect." This involves thinking about not just the literal meaning of a word, but also the feelings and ideas it suggests.
                 </p>
             </section>
 
             <section class="mb-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-3">Denotation vs. Connotation</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md: grid-cols-2 gap-4">
                     <div class="comparison-box">
                         <h4 class="font-bold text-green-700 mb-2">Denotation (The Dictionary Definition)</h4>
                         <p class="text-sm text-gray-600">This is the literal, dictionary definition of a word. It's the core meaning without any emotion attached.</p>
@@ -77,7 +74,7 @@ const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandoutProps> 
                              <p class="italic text-gray-600">"The person walked into the room."</p>
                         </div>
                         <div class="h-24 bg-gray-50 border border-gray-300 rounded-md p-2 text-sm">
-                            <p><strong class="text-green-700">Positive:</strong></p>
+                            <p><strong class="text-green-700">Positive: </strong></p>
                             
                             <p><strong class="text-red-700 pt-2">Negative:</strong></p>
                              
@@ -122,7 +119,7 @@ const WritersToolkitDictionHandout: React.FC<WritersToolkitDictionHandoutProps> 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitDictionHandout;
+export default WritersToolkitDictionHandout

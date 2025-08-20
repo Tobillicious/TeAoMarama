@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './KaitiakiGeneratedMigrationStudentHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './KaitiakiGeneratedMigrationStudentHandout.css'
 
-interface KaitiakiGeneratedMigrationStudentHandoutProps {
-  className?: string;
-}
-
-export const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrationStudentHandoutProps> = ({ className = '' }) => {
-  return (
+interface KaitiakiGeneratedMigrationStudentHandoutProps {className?: string}
+export const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrationStudentHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="kaitiaki generated migration student handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`kaitiaki-generated-migration-student-handout-handout cultural-focus ${className}`}
+title="kaitiaki generated migration student handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`kaitiaki-generated-migration-student-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGenerate
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default KaitiakiGeneratedMigrationStudentHandout;
+export default KaitiakiGeneratedMigrationStudentHandout

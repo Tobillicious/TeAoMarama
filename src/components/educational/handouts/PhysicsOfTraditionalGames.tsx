@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PhysicsOfTraditionalGames.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PhysicsOfTraditionalGames.css'
 
-interface PhysicsOfTraditionalGamesProps {
-  className?: string;
-}
-
-export const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = ({ className = '' }) => {
-  return (
+interface PhysicsOfTraditionalGamesProps {className?: string}
+export const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="physics of traditional games"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`physics-of-traditional-games-handout cultural-focus ${className}`}
+title="physics of traditional games"
+subtitle="Te Kete Ako - Cultural Education"
+className={`physics-of-traditional-games-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PhysicsOfTraditionalGames;
+export default PhysicsOfTraditionalGames

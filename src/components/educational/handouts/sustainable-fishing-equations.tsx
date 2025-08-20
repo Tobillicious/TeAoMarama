@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface SustainableFishingEquationsProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface SustainableFishingEquationsProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="sustainable-fishing-equations">
       <Card title="Sustainable Fishing Equations | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Sustainable Fishing Equations</h1>
@@ -40,7 +37,7 @@ const SustainableFishingEquations: React.FC<SustainableFishingEquationsProps> = 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default SustainableFishingEquations;
+export default SustainableFishingEquations

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitRhetoricalDevicesHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalDevicesHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitRhetoricalDevicesHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalDevicesHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-rhetorical-devices-handout">
       <Card title="The Writer's Toolkit: Rhetorical Devices" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,12 +24,12 @@ const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalD
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">What are Rhetorical Devices?</h2>
                 <p class="text-justify">
-                    Beyond a well-structured PEEL paragraph, skilled writers use specific techniques to make their arguments more compelling. These are called rhetorical devices. Over 2,000 years ago, the Greek philosopher Aristotle identified three primary modes of persuasion that are still incredibly relevant today: Ethos, Pathos, and Logos. Understanding these three "artistic proofs" allows you to both analyse persuasive texts more deeply and to make your own writing far more effective.
+Beyond a well-structured PEEL paragraph, skilled writers use specific techniques to make their arguments more compelling. These are called rhetorical devices. Over 2,000 years ago, the Greek philosopher Aristotle identified three primary modes of persuasion that are still incredibly relevant today: Ethos, Pathos, and Logos. Understanding these three "artistic proofs" allows you to both analyse persuasive texts more deeply and to make your own writing far more effective.
                 </p>
             </section>
 
@@ -42,20 +39,20 @@ const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalD
                     <div class="device-box">
                         <h4 class="font-bold text-purple-700 mb-1">ETHOS (Appeal to Authority & Credibility)</h4>
                         <p class="text-sm text-gray-600">This is about building trust with your audience. An author uses Ethos to convince the reader that they are a credible, trustworthy, and knowledgeable source. This makes the audience more likely to believe their argument.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Citing experts, using professional language, highlighting relevant personal experience, showing fairness and respect for opposing views.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "As a marine biologist with 20 years of experience studying the Hauraki Gulf, I can attest to the devastating impact of overfishing."</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done: </strong> Citing experts, using professional language, highlighting relevant personal experience, showing fairness and respect for opposing views.</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "As a marine biologist with 20 years of experience studying the Hauraki Gulf, I can attest to the devastating impact of overfishing."</p>
                     </div>
                     <div class="device-box">
                         <h4 class="font-bold text-purple-700 mb-1">PATHOS (Appeal to Emotion)</h4>
                         <p class="text-sm text-gray-600">This is about connecting with the reader's emotions. An author uses Pathos to evoke feelings like anger, sympathy, joy, or fear to make the audience feel personally connected to the issue.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Using vivid, emotionally charged language; telling personal stories (anecdotes); using figurative language like metaphors.</p>
-                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "Imagine the heartbreak of a family forced from their home, their belongings packed into a single suitcase, all because of a landlord's greedy rent increase."</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done: </strong> Using vivid, emotionally charged language telling personal stories (anecdotes) using figurative language like metaphors.</p>
+                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "Imagine the heartbreak of a family forced from their home, their belongings packed into a single suitcase, all because of a landlord's greedy rent increase."</p>
                     </div>
                     <div class="device-box">
                         <h4 class="font-bold text-purple-700 mb-1">LOGOS (Appeal to Logic & Reason)</h4>
                         <p class="text-sm text-gray-600">This is about appealing to the audience's intellect. An author uses Logos to present a logical, well-reasoned argument based on facts and evidence.</p>
-                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done:</strong> Presenting facts and statistics, using if/then statements, citing research, creating a clear, structured argument (like PEEL).</p>
-                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "The data is undeniable: over the past five years, communities that invested in youth programmes saw a 40% reduction in petty crime."</p>
+                        <p class="text-sm mt-1"><strong class="font-semibold">How it's done: </strong> Presenting facts and statistics, using if/then statements, citing research, creating a clear, structured argument (like PEEL).</p>
+                         <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "The data is undeniable: over the past five years, communities that invested in youth programmes saw a 40% reduction in petty crime."</p>
                     </div>
                 </div>
             </section>
@@ -97,7 +94,7 @@ const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalD
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitRhetoricalDevicesHandout;
+export default WritersToolkitRhetoricalDevicesHandout

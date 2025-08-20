@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './GigEconomyComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './GigEconomyComprehensionHandout.css'
 
-interface GigEconomyComprehensionHandoutProps {
-  className?: string;
-}
-
-export const GigEconomyComprehensionHandout: React.FC<GigEconomyComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface GigEconomyComprehensionHandoutProps {className?: string}
+export const GigEconomyComprehensionHandout: React.FC<GigEconomyComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="gig economy comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`gig-economy-comprehension-handout-handout cultural-focus ${className}`}
+title="gig economy comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`gig-economy-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const GigEconomyComprehensionHandout: React.FC<GigEconomyComprehensionHan
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default GigEconomyComprehensionHandout;
+export default GigEconomyComprehensionHandout

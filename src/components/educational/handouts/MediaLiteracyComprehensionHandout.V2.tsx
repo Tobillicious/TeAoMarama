@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MediaLiteracyComprehensionHandout.V2.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MediaLiteracyComprehensionHandout.V2.css'
 
-interface MediaLiteracyComprehensionHandoutV2Props {
-  className?: string;
-}
-
+interface MediaLiteracyComprehensionHandoutV2Props {className?: string}
 export const MediaLiteracyComprehensionHandoutV2: React.FC<
-  MediaLiteracyComprehensionHandoutV2Props
-> = ({ className = '' }) => {
-  return (
+MediaLiteracyComprehensionHandoutV2Props
+> = (_{ className = '' }) => {
+return (
     <Card
-      title="media literacy comprehension handout.v2"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`media-literacy-comprehension-handout.v2-handout cultural-focus ${className}`}
+title="media literacy comprehension handout.v2"
+subtitle="Te Kete Ako - Cultural Education"
+className={`media-literacy-comprehension-handout.v2-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -23,8 +20,8 @@ export const MediaLiteracyComprehensionHandoutV2: React.FC<
 
         <div className="content-section">
           <p>
-            This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako
-            beauty patterns.
+This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako
+beauty patterns.
           </p>
           <p>Original content: media-literacy-comprehension-handout.v2</p>
         </div>
@@ -37,8 +34,7 @@ export const MediaLiteracyComprehensionHandoutV2: React.FC<
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-
-export default MediaLiteracyComprehensionHandoutV2;
+export default MediaLiteracyComprehensionHandoutV2

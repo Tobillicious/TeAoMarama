@@ -4,19 +4,18 @@
  *
  * Fixes all invalid component names in App.tsx that contain hyphens or other invalid characters
  */
-
-import { readFile, writeFile } from 'fs/promises';
+import {readFile, writeFile} from 'fs/promises'
 class InvalidNameFixer {
-  private appTsxPath = 'src/App.tsx';
+private appTsxPath = 'src/App.tsx'
 
-  async fixInvalidNames(): Promise<void> {
-    console.log('🔧 Fixing invalid component names in App.tsx...\n');
+async fixInvalidNames(): Promise<void> {
+console.log('🔧 Fixing invalid component names in App.tsx...\n')
 
-    try {
-      let appContent = await readFile(this.appTsxPath, 'utf8');
+try {
+let appContent = await readFile(this.appTsxPath, 'utf8')
 
       // Fix all invalid component names with hyphens
-      const _invalidNames = [
+const __invalidNames = [
         'ai-impact-comprehension-handout',
         'atoms-in-everyday-materials',
         'authors-purpose-entertain-handout',
@@ -91,51 +90,50 @@ class InvalidNameFixer {
         'year-9-starter-pack-alpha-build',
         'year-9-starter-pack-essential-skills',
         'youth-vaping-comprehension-handout',
-      ];
+      ]
 
-      for (const invalidName of invalidNames) {
-        const _validName = this.convertToValidName(invalidName);
+for (const invalidName of invalidNames) {
+const __validName = this.convertToValidName(invalidName)
         
         // Fix the const declaration
-        appContent = appContent.replace(
-          new RegExp(`const ${invalidName} = lazy\(`, 'g'),
+appContent = appContent.replace(
+new RegExp(`const ${invalidName} = lazy\(`, 'g'),
           `const ${validName} = lazy(`
-        );
+        )
 
         // Fix the route element
-        appContent = appContent.replace(
-          new RegExp(`element: <${invalidName} />`, 'g'),
+appContent = appContent.replace(
+new RegExp(`element: <${invalidName} />`, 'g'),
           `element: <${validName} />`
-        );
+        )
       }
 
       // Write the fixed content
-      await writeFile(this.appTsxPath, appContent, 'utf8');
-      console.log('✅ Fixed all invalid component names in App.tsx');
+await writeFile(this.appTsxPath, appContent, 'utf8')
+      console.log('✅ Fixed all invalid component names in App.tsx')
 
     } catch (error) {
-      console.error('Error fixing component names:', error);
+console.error('Error fixing component names: ', error)
     }
   }
-
-  private convertToValidName(name: string): string {
+private convertToValidName(name: string): string {
     // Convert kebab-case to PascalCase
-    return name
+return name
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('');
+      .join('')
   }
 }
 
 // Run the invalid name fixer
-const _fixer = new InvalidNameFixer();
+const __fixer = new InvalidNameFixer()
 fixer
   .fixInvalidNames()
-  .then(() => {
-    console.log('\n🔧 Invalid name fixing complete!');
-    process.exit(0);
+  .then_(() => {
+console.log('\n🔧 Invalid name fixing complete!')
+    process.exit(0)
   })
-  .catch((error) => {
-    console.error('❌ Invalid name fixing failed:', error);
-    process.exit(1);
-  });
+  .catch(_(error) => {
+console.error('❌ Invalid name fixing failed: ', error)
+    process.exit(1)
+  })

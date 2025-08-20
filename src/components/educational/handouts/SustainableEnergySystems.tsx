@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './SustainableEnergySystems.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './SustainableEnergySystems.css'
 
-interface SustainableEnergySystemsProps {
-  className?: string;
-}
-
-export const SustainableEnergySystems: React.FC<SustainableEnergySystemsProps> = ({ className = '' }) => {
-  return (
+interface SustainableEnergySystemsProps {className?: string}
+export const SustainableEnergySystems: React.FC<SustainableEnergySystemsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="sustainable energy systems"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`sustainable-energy-systems-handout cultural-focus ${className}`}
+title="sustainable energy systems"
+subtitle="Te Kete Ako - Cultural Education"
+className={`sustainable-energy-systems-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const SustainableEnergySystems: React.FC<SustainableEnergySystemsProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default SustainableEnergySystems;
+export default SustainableEnergySystems

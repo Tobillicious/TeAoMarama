@@ -2,113 +2,106 @@
  * BrainNavigation - Intelligent navigation that learns from teacher behavior
  *
  * This component uses our episodic memory system to surface the most relevant
- * navigation items based on:
- * - Recent teacher activity
+ * navigation items based on: * - Recent teacher activity
  * - Current term/unit context
  * - Frequently accessed resources
  * - Time of day/week patterns
  * - Class-specific shortcuts
  */
+import React, { useCallback, useEffect, useState } from 'react'
+import {Link, useLocation} from 'react-router-dom'
 
-import React, { useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
-interface NavigationMemory {
-  recentPages: string[];
-  frequentPaths: { path: string; count: number; lastUsed: string }[];
-  contextualSuggestions: string[];
-  quickActions: QuickAction[];
+interface NavigationMemory {,
+recentPages: string[],
+frequentPaths: { path: string count: number lastUsed: string}[],
+contextualSuggestions: string[],
+quickActions: QuickAction[]
 }
+interface QuickAction {,
+id: string,
+label: string,
+path: string,
+icon: string,
+priority: number,
+confidence: number,
+reason: string}
+export default function BrainNavigation() {const location = useLocation()
+  const [memory, setMemory] = useState<NavigationMemory | null>(null)
+  const [isExpanded] = useState(false)
 
-interface QuickAction {
-  id: string;
-  label: string;
-  path: string;
-  icon: string;
-  priority: number;
-  confidence: number;
-  reason: string;
-}
-
-export default function BrainNavigation() {
-  const location = useLocation();
-  const [memory, setMemory] = useState<NavigationMemory | null>(null);
-  const [isExpanded] = useState(false);
-
-  const loadNavigationMemory = useCallback(async () => {
-    try {
+const loadNavigationMemory = useCallback(_async () => {
+try {
       // In practice, this would call our brain API
-      const response = await fetch('/brain/navigation-memory');
-      const memoryData = await response.json();
-      setMemory(memoryData);
-    } catch {
-      console.warn('Brain navigation memory unavailable, using static nav');
-      setMemory(getStaticNavigation());
+const response = await fetch('/brain/navigation-memory')
+      const memoryData = await response.json()
+      setMemory(memoryData)} catch {
+console.warn('Brain navigation memory unavailable, using static nav')
+      setMemory(getStaticNavigation())
     }
-  }, []);
+  }, [])
 
-  useEffect(() => {
+useEffect_(() => {
     // Record this page visit as an episodic event
-    recordPageVisit(location.pathname);
+recordPageVisit(location.pathname)
 
     // Load navigation memory
-    loadNavigationMemory();
-  }, [location, loadNavigationMemory]);
+loadNavigationMemory()
+  }, [location, loadNavigationMemory])
 
-  const recordPageVisit = async (path: string) => {
-    try {
-      await fetch('/brain/episode', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          who: 'teacher:current', // Would be actual teacher ID
-          kind: 'navigation',
-          text: `Visited ${path}`,
-          cues: {
-            path,
-            timestamp: new Date().toISOString(),
-            session_context: 'lesson_planning', // Could be inferred
+const _recordPageVisit = async (_path: string) => {
+try {
+await fetch('/brain/episode', {,
+method: 'POST',,
+headers: { 'Content-Type': 'application/json' },,
+body: JSON.stringify({,
+who: 'teacher:current', // Would be actual teacher ID,
+kind: 'navigation',,
+text: `Visited ${path}`,,
+cues: {
+path,;,
+timestamp: new Date().toISOString(),,
+session_context: 'lesson_planning', // Could be inferred
           },
         }),
-      });
+      })
     } catch {
       // Silent fail - navigation still works without brain
     }
-  };
+  }
 
-  const getStaticNavigation = (): NavigationMemory => ({
-    recentPages: ['/dashboard', '/lessons', '/assessments'],
-    frequentPaths: [
+const _getStaticNavigation = (): NavigationMemory => ({,
+recentPages: ['/dashboard', '/lessons', '/assessments'],;,
+frequentPaths: [
       { path: '/dashboard', count: 45, lastUsed: new Date().toISOString() },
       { path: '/lesson-planner', count: 32, lastUsed: new Date().toISOString() },
-    ],
-    contextualSuggestions: ['/nzc-browser', '/resource-library'],
-    quickActions: [
-      {
-        id: 'new_lesson',
-        label: 'New Lesson Plan',
-        path: '/lessons/new',
-        icon: '📝',
-        priority: 1,
-        confidence: 0.9,
-        reason: 'You create lessons most Tuesdays around this time',
+    ],;,
+contextualSuggestions: ['/nzc-browser', '/resource-library'],;,
+quickActions: [
+      {,
+id: 'new_lesson',,
+label: 'New Lesson Plan',,
+path: '/lessons/new',,
+icon: '📝',,
+priority: 1,,
+confidence: 0.9,,
+reason: 'You create lessons most Tuesdays around this time',
       },
-      {
-        id: 'this_weeks_plans',
-        label: "This Week's Plans",
-        path: '/dashboard/week',
-        icon: '📅',
-        priority: 2,
-        confidence: 0.85,
-        reason: 'Term 2 Week 6 - planning ahead',
+      {,
+id: 'this_weeks_plans',,
+label: "This Week's Plans",,
+path: '/dashboard/week',,
+icon: '📅',,
+priority: 2,,
+confidence: 0.85,,
+reason: 'Term 2 Week 6 - planning ahead',
       },
     ],
-  });
+  })
 
-  if (!memory) {
-    return (
+if (!memory) {
+return (
       <nav className="bg-surface border-b border-accent/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center space-x-8">
               <Link to="/" className="flex items-center space-x-2">
@@ -127,13 +120,12 @@ export default function BrainNavigation() {
           </div>
         </div>
       </nav>
-    );
+    )
   }
-
-  return (
+return (
     <nav className="bg-surface border-b border-accent/20">
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-8">
             {/* Logo */}
@@ -160,9 +152,9 @@ export default function BrainNavigation() {
             {/* Smart Search */}
             <div className="relative">
               <input
-                type="text"
-                placeholder="Search or ask the brain..."
-                className="w-64 px-4 py-2 rounded-lg border border-accent/30 focus:border-accent focus:ring-1 focus:ring-accent bg-white"
+type="text"
+placeholder="Search or ask the brain..."
+className="w-64 px-4 py-2 rounded-lg border border-accent/30 focus: border-accent focus:ring-1 focus:ring-accent bg-white"
               />
               <span className="absolute right-3 top-2.5 text-muted text-sm">🧠</span>
             </div>
@@ -187,38 +179,34 @@ export default function BrainNavigation() {
       {/* Smart Breadcrumbs with Context */}
       <SmartBreadcrumbs currentPath={location.pathname} />
     </nav>
-  );
-}
+  )
+}}
+function NavLink(__{ path,   __label }: { path: string label: string }) {const location = useLocation()
+  const isActive = location.pathname.startsWith(path)
 
-function NavLink({ path, label }: { path: string; label: string }) {
-  const location = useLocation();
-  const isActive = location.pathname.startsWith(path);
-
-  return (
+return (
     <Link
-      to={path}
-      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-        isActive ? 'bg-accent text-white' : 'text-text hover:text-accent hover:bg-accent/10'
+to={path}
+className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+isActive ? 'bg-accent text-white' : 'text-text hover: text-accent hover:bg-accent/10'
       }`}
     >
       {label}
     </Link>
-  );
-}
+  )
+}}
+function BrainQuickActions(__{ actions }: { actions: QuickAction[] }) {const [showTooltip, setShowTooltip] = useState<string | null>(null)
 
-function BrainQuickActions({ actions }: { actions: QuickAction[] }) {
-  const [showTooltip, setShowTooltip] = useState<string | null>(null);
-
-  return (
+return (
     <div className="flex items-center space-x-2">
-      <span className="text-xs text-muted font-medium">Quick:</span>
-      {actions.slice(0, 2).map((action) => (
-        <div key={action.id} className="relative">
+      <span className="text-xs text-muted font-medium">Quick: </span>
+      {actions.slice(0, 2).map(_(action) => (
+_<div key={action.id} className="relative">
           <Link
-            to={action.path}
-            className="flex items-center space-x-1 px-3 py-1.5 bg-accent/10 hover:bg-accent/20 rounded-md text-sm text-accent font-medium transition-colors"
-            onMouseEnter={() => setShowTooltip(action.id)}
-            onMouseLeave={() => setShowTooltip(null)}
+to={action.path}
+className="flex items-center space-x-1 px-3 py-1.5 bg-accent/10 hover: bg-accent/20 rounded-md text-sm text-accent font-medium transition-colors"
+onMouseEnter={() => setShowTooltip(action.id)}
+onMouseLeave={() => setShowTooltip(null)}
           >
             <span>{action.icon}</span>
             <span>{action.label}</span>
@@ -228,29 +216,27 @@ function BrainQuickActions({ actions }: { actions: QuickAction[] }) {
           {showTooltip === action.id && (
             <div className="absolute top-full mt-2 left-0 bg-text text-white text-xs rounded-md px-2 py-1 whitespace-nowrap z-10">
               {action.reason}
-              <div className="text-xs opacity-75">
-                Confidence: {(action.confidence * 100).toFixed(0)}%
+              <div className="text-xs opacity-75">,
+Confidence: {(action.confidence * 100).toFixed(0)}%
               </div>
             </div>
           )}
         </div>
       ))}
     </div>
-  );
-}
-
-function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  )
+}}
+function BrainSuggestions(__{ memory }: { memory: NavigationMemory }) {return (
+_<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Recent Activity */}
       <div>
         <h3 className="text-sm font-medium text-text mb-2">Recent Activity</h3>
         <div className="space-y-2">
           {memory.recentPages.map((path) => (
             <Link
-              key={path}
-              to={path}
-              className="block px-3 py-2 rounded-md bg-white hover:bg-accent/5 text-sm text-muted hover:text-text transition-colors"
+key={path}
+to={path}
+className="block px-3 py-2 rounded-md bg-white hover: bg-accent/5 text-sm text-muted hover:text-text transition-colors"
             >
               {formatPath(path)}
             </Link>
@@ -262,12 +248,12 @@ function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
       <div>
         <h3 className="text-sm font-medium text-text mb-2">Your Patterns</h3>
         <div className="space-y-2">
-          {memory.frequentPaths.map((item) => (
+          {memory.frequentPaths.map(_(item) => (
             <div
-              key={item.path}
-              className="flex items-center justify-between px-3 py-2 rounded-md bg-white"
+key={item.path}
+className="flex items-center justify-between px-3 py-2 rounded-md bg-white"
             >
-              <Link to={item.path} className="text-sm text-muted hover:text-text">
+              <Link to={item.path} className="text-sm text-muted hover: text-text">
                 {formatPath(item.path)}
               </Link>
               <span className="text-xs text-accent">{item.count}×</span>
@@ -280,11 +266,11 @@ function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
       <div>
         <h3 className="text-sm font-medium text-text mb-2">Brain Suggests</h3>
         <div className="space-y-2">
-          {memory.contextualSuggestions.map((path) => (
+          {memory.contextualSuggestions.map(_(path) => (
             <Link
-              key={path}
-              to={path}
-              className="flex items-center space-x-2 px-3 py-2 rounded-md bg-accent/5 hover:bg-accent/10 text-sm text-text transition-colors"
+key={path}
+to={path}
+className="flex items-center space-x-2 px-3 py-2 rounded-md bg-accent/5 hover: bg-accent/10 text-sm text-text transition-colors"
             >
               <span>🧠</span>
               <span>{formatPath(path)}</span>
@@ -293,35 +279,33 @@ function BrainSuggestions({ memory }: { memory: NavigationMemory }) {
         </div>
       </div>
     </div>
-  );
-}
+  )
+}}
+function SmartBreadcrumbs(__{ currentPath }: { currentPath: string }) {const pathParts = currentPath.split('/').filter(Boolean)
 
-function SmartBreadcrumbs({ currentPath }: { currentPath: string }) {
-  const pathParts = currentPath.split('/').filter(Boolean);
-
-  return (
-    <div className="bg-surface/50 border-b border-accent/10">
+return (
+_<div className="bg-surface/50 border-b border-accent/10">
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center space-x-2 text-sm">
           <Link to="/" className="text-muted hover:text-text">
-            Home
+Home
           </Link>
-          {pathParts.map((part, index) => {
-            const path = '/' + pathParts.slice(0, index + 1).join('/');
-            const isLast = index === pathParts.length - 1;
+          {pathParts.map((part,  _index) => {
+const path = '/' + pathParts.slice(0, index + 1).join('/')
+            const isLast = index === pathParts.length - 1
 
-            return (
+return (
               <React.Fragment key={path}>
                 <span className="text-muted">→</span>
                 {isLast ? (
                   <span className="text-text font-medium">{formatPath(part)}</span>
                 ) : (
-                  <Link to={path} className="text-muted hover:text-text">
+                  <Link to={path} className="text-muted hover: text-text">
                     {formatPath(part)}
                   </Link>
                 )}
               </React.Fragment>
-            );
+            )
           })}
 
           {/* Brain Context */}
@@ -331,9 +315,8 @@ function SmartBreadcrumbs({ currentPath }: { currentPath: string }) {
         </div>
       </div>
     </div>
-  );
-}
-
-function formatPath(path: string): string {
-  return path.replace(/[-_]/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+  )
+}}
+function formatPath(__path: string): string {
+return path.replace(/[-_]/g, ' ').replace(_/\b\w/g,  _(l) => l.toUpperCase())
 }

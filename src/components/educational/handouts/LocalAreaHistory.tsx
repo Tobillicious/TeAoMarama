@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LocalAreaHistory.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LocalAreaHistory.css'
 
-interface LocalAreaHistoryProps {
-  className?: string;
-}
-
-export const LocalAreaHistory: React.FC<LocalAreaHistoryProps> = ({ className = '' }) => {
-  return (
+interface LocalAreaHistoryProps {className?: string}
+export const LocalAreaHistory: React.FC<LocalAreaHistoryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="local area history"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`local-area-history-handout cultural-focus ${className}`}
+title="local area history"
+subtitle="Te Kete Ako - Cultural Education"
+className={`local-area-history-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LocalAreaHistory: React.FC<LocalAreaHistoryProps> = ({ className = 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LocalAreaHistory;
+export default LocalAreaHistory

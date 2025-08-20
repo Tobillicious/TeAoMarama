@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-interface EnvironmentalLiteracyProps {
-  className?: string;
-}
-
-export const EnvironmentalLiteracy: React.FC<EnvironmentalLiteracyProps> = ({ className = '' }) => {
-  return (
+interface EnvironmentalLiteracyProps {className?: string}
+export const EnvironmentalLiteracy: React.FC<EnvironmentalLiteracyProps> = (_{ className = '' }) => {
+return (
     <div className={`environmental-literacy ${className}`}>
       <header className="literacy-hero">
         <h1>Environmental Literacy Framework</h1>
@@ -28,7 +25,7 @@ export const EnvironmentalLiteracy: React.FC<EnvironmentalLiteracyProps> = ({ cl
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default EnvironmentalLiteracy;
+export default EnvironmentalLiteracy
