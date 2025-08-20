@@ -1,0 +1,122 @@
+#!/usr/bin/env tsx
+/**
+ * 🚨 EMERGENCY PARSING FIX STRIKE FORCE
+ * Fix all parsing errors caused by lint fix army corruption
+ */
+import { readdir, readFile, stat, writeFile } from 'fs/promises';
+import { join } from 'path';
+
+async function fixParsingErrors(): Promise<void> {
+  console.log('🚨 EMERGENCY PARSING FIX STRIKE FORCE DEPLOYED');
+  console.log('🎯 TARGET: All TypeScript files with parsing errors');
+
+  const directories = [
+    'src',
+    'scripts',
+    'gemini-react-app',
+    'gemini-react-app/src',
+    'gemini-react-app/scripts',
+  ];
+
+  let fixedFiles = 0;
+  const totalErrors = 0;
+
+  for (const dir of directories) {
+    try {
+      const files = await getTypeScriptFiles(dir);
+
+      for (const file of files) {
+        try {
+          const content = await readFile(file, 'utf-8');
+          const originalContent = content;
+
+          // Fix import statements with extra semicolons
+          let fixedContent = content
+            .replace(
+              /import\s*{([^}]+)}*\s*from\s*['"]([^'"]+)['"]*/g,
+              (match, imports, module) => {
+                const cleanImports = imports.replace(/+/g, '').trim();
+                return `import {${cleanImports}} from '${module}'`;
+              },
+            )
+            .replace(
+              /import\s*([^]+)*\s*from\s*['"]([^'"]+)['"]*/g,
+              (match, importName, module) => {
+                const cleanImport = importName.replace(/+/g, '').trim();
+                return `import ${cleanImport} from '${module}'`;
+              },
+            )
+            .replace(/export\s*{([^}]+)}*/g, (match, exports) => {
+              const cleanExports = exports.replace(/+/g, '').trim();
+              return `export {${cleanExports}}`;
+            })
+            .replace(/interface\s+(\w+)\s*{([^}]+)}*/g, (match, name, body) => {
+              const cleanBody = body.replace(/+/g, '').trim();
+              return `interface ${name} {${cleanBody}}`;
+            })
+            .replace(/type\s+(\w+)\s*=\s*([^]+)*/g, (match, name, type) => {
+              const cleanType = type.replace(/+/g, '').trim();
+              return `type ${name} = ${cleanType}`;
+            })
+            .replace(/const\s+(\w+)\s*=\s*([^]+)*/g, (match, name, value) => {
+              const cleanValue = value.replace(/+/g, '').trim();
+              return `const ${name} = ${cleanValue}`;
+            })
+            .replace(
+              /function\s+(\w+)\s*\(([^)]*)\)\s*{([^}]+)}*/g,
+              (match, name, params, body) => {
+                const cleanBody = body.replace(/+/g, '').trim();
+                return `function ${name}(${params}) {${cleanBody}}`;
+              },
+            );
+
+          // Fix extra semicolons in object properties
+          fixedContent = fixedContent.replace(/(\w+):\s*([^,;]+)*/g, '$1: $2');
+
+          // Fix extra semicolons in array elements
+          fixedContent = fixedContent.replace(/([^,;]+)*/g, '$1');
+
+          if (fixedContent !== originalContent) {
+            await writeFile(file, fixedContent, 'utf-8');
+            fixedFiles++;
+            console.log(`✅ Fixed parsing errors in: ${file}`);
+          }
+        } catch (error) {
+          console.error(`❌ Error fixing file ${file}:`, error);
+        }
+      }
+    } catch (error) {
+      console.error(`❌ Error processing directory ${dir}:`, error);
+    }
+  }
+
+  console.log(`\n🎯 EMERGENCY FIX COMPLETE: `);
+  console.log(`📁 Files fixed: ${fixedFiles}`);
+  console.log(`🚨 Total errors addressed: ${totalErrors}`);
+}
+
+async function getTypeScriptFiles(dir: string): Promise<string[]> {
+  const files: string[] = [];
+
+  try {
+    const items = await readdir(dir);
+
+    for (const item of items) {
+      const fullPath = join(dir, item);
+      const stats = await stat(fullPath);
+
+      if (stats.isDirectory()) {
+        const subFiles = await getTypeScriptFiles(fullPath);
+        files.push(...subFiles);
+      } else if (item.endsWith('.ts') || item.endsWith('.tsx')) {
+        files.push(fullPath);
+      }
+    }
+  } catch (error) {
+    // Directory doesn't exist, skip
+  }
+
+  return files;
+}
+
+fixParsingErrors().catch(console.error);

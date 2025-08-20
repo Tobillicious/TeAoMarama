@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FilmSceneAnalysisHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FilmSceneAnalysisHandout.css'
 
-interface FilmSceneAnalysisHandoutProps {
-  className?: string;
-}
-
-export const FilmSceneAnalysisHandout: React.FC<FilmSceneAnalysisHandoutProps> = ({ className = '' }) => {
-  return (
+interface FilmSceneAnalysisHandoutProps {className?: string}
+export const FilmSceneAnalysisHandout: React.FC<FilmSceneAnalysisHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="film scene analysis handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`film-scene-analysis-handout-handout cultural-focus ${className}`}
+title="film scene analysis handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`film-scene-analysis-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FilmSceneAnalysisHandout: React.FC<FilmSceneAnalysisHandoutProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FilmSceneAnalysisHandout;
+export default FilmSceneAnalysisHandout

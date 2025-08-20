@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './SpeechAnalysisHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './SpeechAnalysisHandout.css'
 
-interface SpeechAnalysisHandoutProps {
-  className?: string;
-}
-
-export const SpeechAnalysisHandout: React.FC<SpeechAnalysisHandoutProps> = ({ className = '' }) => {
-  return (
+interface SpeechAnalysisHandoutProps {className?: string}
+export const SpeechAnalysisHandout: React.FC<SpeechAnalysisHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="speech analysis handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`speech-analysis-handout-handout cultural-focus ${className}`}
+title="speech analysis handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`speech-analysis-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const SpeechAnalysisHandout: React.FC<SpeechAnalysisHandoutProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default SpeechAnalysisHandout;
+export default SpeechAnalysisHandout

@@ -1,6 +1,6 @@
-import React from "react";
-import Button from "./Button";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Button from './Button'
+import {Link} from 'react-router-dom'
 
 const Hero: React.FC = () => (
   <header className="min-h-screen flex items-center">
@@ -19,6 +19,6 @@ const Hero: React.FC = () => (
       </div>
     </div>
   </header>
-);
+)
 
-export default Hero;
+export default Hero

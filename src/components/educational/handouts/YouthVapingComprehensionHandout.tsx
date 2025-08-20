@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './YouthVapingComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './YouthVapingComprehensionHandout.css'
 
-interface YouthVapingComprehensionHandoutProps {
-  className?: string;
-}
-
-export const YouthVapingComprehensionHandout: React.FC<YouthVapingComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface YouthVapingComprehensionHandoutProps {className?: string}
+export const YouthVapingComprehensionHandout: React.FC<YouthVapingComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="youth vaping comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`youth-vaping-comprehension-handout-handout cultural-focus ${className}`}
+title="youth vaping comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`youth-vaping-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const YouthVapingComprehensionHandout: React.FC<YouthVapingComprehensionH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default YouthVapingComprehensionHandout;
+export default YouthVapingComprehensionHandout

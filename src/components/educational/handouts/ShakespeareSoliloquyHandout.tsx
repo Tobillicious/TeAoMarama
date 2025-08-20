@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ShakespeareSoliloquyHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ShakespeareSoliloquyHandout.css'
 
-interface ShakespeareSoliloquyHandoutProps {
-  className?: string;
-}
-
-export const ShakespeareSoliloquyHandout: React.FC<ShakespeareSoliloquyHandoutProps> = ({ className = '' }) => {
-  return (
+interface ShakespeareSoliloquyHandoutProps {className?: string}
+export const ShakespeareSoliloquyHandout: React.FC<ShakespeareSoliloquyHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="shakespeare soliloquy handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`shakespeare-soliloquy-handout-handout cultural-focus ${className}`}
+title="shakespeare soliloquy handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`shakespeare-soliloquy-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ShakespeareSoliloquyHandout: React.FC<ShakespeareSoliloquyHandoutPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ShakespeareSoliloquyHandout;
+export default ShakespeareSoliloquyHandout

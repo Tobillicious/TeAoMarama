@@ -1,17 +1,15 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react'
 
 // Lazy load the heavy markdown processing libraries
-const MarkdownRenderer = lazy(() => import('./MarkdownRenderer'));
+const MarkdownRenderer = lazy_(() => import('./MarkdownRenderer'))
 
-interface LazyMarkdownRendererProps {
-  content: string;
-  className?: string;
-}
-
-const LazyMarkdownRenderer: React.FC<LazyMarkdownRendererProps> = ({ content, className }) => {
-  return (
+interface LazyMarkdownRendererProps {,
+content: string
+  className?: string}
+const LazyMarkdownRenderer: React.FC<LazyMarkdownRendererProps> = (_{ content,  _className }) => {
+return (
     <Suspense 
-      fallback={
+fallback={
         <div className={`animate-pulse ${className}`}>
           <div className="h-4 bg-gray-200 rounded mb-2"></div>
           <div className="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
@@ -21,7 +19,7 @@ const LazyMarkdownRenderer: React.FC<LazyMarkdownRendererProps> = ({ content, cl
     >
       <MarkdownRenderer content={content} className={className} />
     </Suspense>
-  );
-};
+  )
+}
 
-export default LazyMarkdownRenderer;
+export default LazyMarkdownRenderer

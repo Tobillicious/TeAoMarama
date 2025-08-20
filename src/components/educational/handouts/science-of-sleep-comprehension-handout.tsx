@@ -1,0 +1,107 @@
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
+
+interface ScienceOfSleepComprehensionHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ScienceOfSleepComprehensionHandout: React.FC<ScienceOfSleepComprehensionHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-8", 
+_subject = "English,  _Literacy"
+}) => {
+return (
+    <div className="science-of-sleep-comprehension-handout">
+      <Card title="The Science of Sleep Reading Comprehension | Mangakōtukutuku College" className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">The Science of Sleep Reading Comprehension | Mangakōtukutuku College</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
+          </div>
+        </div>
+
+        <div className="handout-content">
+          <div 
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
+            <div class="mb-4">
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
+                <h1 class="page-title" class="wiley-hero-title">Reading Comprehension: The Science of Sleep</h1>
+                <p class="page-subtitle">asTTle-Style Analysis of a Vital Biological Process</p>
+            </div>
+
+            <article class="handout-content mb-4">
+                <h2 class="section-title" class="wiley-section-title">The Brain's Nightly Housekeeper</h2>
+                <p>
+For centuries, sleep was considered a passive state of rest. We now know that it is an active and essential biological process, as vital for our survival as breathing or eating. During sleep, the brain is hard at work performing critical maintenance tasks. One of its key jobs is memory consolidation. While you sleep, the brain sorts through the day's experiences, transferring important information from your short-term memory to your long-term memory. This is why a good night's sleep after studying can significantly improve your recall during a test.
+                </p>
+                <p>
+Another crucial function is the brain's "glymphatic system," which acts like a waste-disposal unit. During the day, the brain's metabolic processes produce toxic by-products that accumulate. While you are asleep, the glymphatic system becomes 10 times more active, flushing out these toxins. This nightly cleaning process is thought to be vital for long-term brain health. For teenagers, sleep is particularly important. The adolescent brain is undergoing massive development, and sleep is when much of this growth and reorganisation occurs. Furthermore, the body's internal clock, or circadian rhythm, naturally shifts during adolescence, making teenagers feel tired later at night and want to wake up later in the morning.
+                </p>
+                <p>
+Most teenagers require between 8 to 10 hours of sleep per night for optimal health. However, studies show that a majority get far less, often due to a combination of early school start times, homework, and exposure to blue light from screens before bed, which can suppress the sleep-inducing hormone melatonin. Chronic sleep deprivation can lead to a host of problems, including difficulty concentrating, poor academic performance, mood swings, and a weakened immune system. Prioritising sleep is not a luxury it is a fundamental component of physical and mental wellbeing.
+                </p>
+            </article>
+
+            <section class="handout-questions mb-4">
+                <h2 class="section-title" class="wiley-section-title">Comprehension & Critical Thinking Questions</h2>
+                
+                <div class="space-y-4">
+                    <!-- Question 1 -->
+                    <div class="question-block">
+                        <p><strong>1. What is the primary function of the "glymphatic system"?</p>
+                        <div class="grid grid-cols-1 md: grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) To help you dream more vividly.</div>
+                            <div class="question-option">B) To transfer memories from short-term to long-term.</div>
+                            <div class="question-option">C) To remove toxic waste products from the brain.</div>
+                            <div class="question-option">D) To regulate the body's internal clock.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-block">
+                        <p><strong>2. (Numeracy) If a teenager needs 9 hours of sleep but only gets 6.5 hours, how many hours of sleep debt do they accumulate over a 5-day school week?</p>
+                         <div class="answer-space">
+                            <p>Answer: </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-block">
+                        <p><strong>3. According to the text, why do teenagers naturally feel tired later at night?</p>
+                        <div class="grid grid-cols-1 md: grid-cols-2 gap-2 text-sm">
+                            <div class="question-option">A) Because they are exposed to too much blue light.</div>
+                            <div class="question-option">B) Because their circadian rhythm shifts during adolescence.</div>
+                            <div class="question-option">C) Because they do not have enough homework to do.</div>
+                            <div class="question-option">D) Because their brains are less active than adults' brains.</div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-block">
+                        <p><strong>4. (Critical Thinking) The text describes sleep as the brain's "housekeeper." Explain why this is an effective analogy.</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question-block">
+                        <p><strong>5. (Critical Thinking) Based on the information in the text, propose two practical changes a school could make to better support the sleep needs of its teenage students.</p>
+                        <div class="answer-space answer-space-lg">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        ` }}
+          />
+        </div>
+      </Card>
+    </div>
+  )
+}
+
+export default ScienceOfSleepComprehensionHandout

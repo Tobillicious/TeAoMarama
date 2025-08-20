@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './GeneticModificationComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './GeneticModificationComprehensionHandout.css'
 
-interface GeneticModificationComprehensionHandoutProps {
-  className?: string;
-}
-
-export const GeneticModificationComprehensionHandout: React.FC<GeneticModificationComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface GeneticModificationComprehensionHandoutProps {className?: string}
+export const GeneticModificationComprehensionHandout: React.FC<GeneticModificationComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="genetic modification comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`genetic-modification-comprehension-handout-handout cultural-focus ${className}`}
+title="genetic modification comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`genetic-modification-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const GeneticModificationComprehensionHandout: React.FC<GeneticModificati
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default GeneticModificationComprehensionHandout;
+export default GeneticModificationComprehensionHandout

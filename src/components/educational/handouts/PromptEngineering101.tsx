@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PromptEngineering101.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PromptEngineering101.css'
 
-interface PromptEngineering101Props {
-  className?: string;
-}
-
-export const PromptEngineering101: React.FC<PromptEngineering101Props> = ({ className = '' }) => {
-  return (
+interface PromptEngineering101Props {className?: string}
+export const PromptEngineering101: React.FC<PromptEngineering101Props> = (_{ className = '' }) => {
+return (
     <Card 
-      title="prompt engineering 101"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`prompt-engineering-101-handout cultural-focus ${className}`}
+title="prompt engineering 101"
+subtitle="Te Kete Ako - Cultural Education"
+className={`prompt-engineering-101-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PromptEngineering101: React.FC<PromptEngineering101Props> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PromptEngineering101;
+export default PromptEngineering101

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TeReoPhonicsHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TeReoPhonicsHandout.css'
 
-interface TeReoPhonicsHandoutProps {
-  className?: string;
-}
-
-export const TeReoPhonicsHandout: React.FC<TeReoPhonicsHandoutProps> = ({ className = '' }) => {
-  return (
+interface TeReoPhonicsHandoutProps {className?: string}
+export const TeReoPhonicsHandout: React.FC<TeReoPhonicsHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="te reo phonics handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`te-reo-phonics-handout-handout cultural-focus ${className}`}
+title="te reo phonics handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`te-reo-phonics-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TeReoPhonicsHandout: React.FC<TeReoPhonicsHandoutProps> = ({ classN
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TeReoPhonicsHandout;
+export default TeReoPhonicsHandout

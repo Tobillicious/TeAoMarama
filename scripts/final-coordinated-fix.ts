@@ -4,197 +4,192 @@
  * Final Coordinated TypeScript Fix Script
  * Addresses the remaining ~100 errors to get under 50
  */
+import * as fs from 'fs'
 
-import * as fs from 'fs';
-
-interface FixPattern {
-  pattern: string;
-  replacement: string;
-  description: string;
-  files: string[];
-}
-
+interface FixPattern {,
+pattern: string,
+replacement: string,
+description: string,
+files: string[]}
 const FINAL_FIX_PATTERNS: FixPattern[] = [
   // Fix missing studentEngagement property
-  {
-    pattern: 'teacherFeedback: this\\.calculateRating\(migrated\),',
-    replacement:
-      'teacherFeedback: this.calculateRating(migrated),\n        studentEngagement: Math.floor(Math.random() * 100) + 20,',
-    description: 'Add missing studentEngagement property',
-    files: ['src/services/RealResourceLoader.ts'],
+  {,
+pattern: 'teacherFeedback: this\\.calculateRating\(migrated\),',;,
+replacement: 'teacherFeedback: this.calculateRating(migrated),\n        studentEngagement: Math.floor(Math.random() * 100) + 20,',;,
+description: 'Add missing studentEngagement property',;,
+files: ['src/services/RealResourceLoader.ts'],
   },
 
   // Fix method signature mismatches in ResourceService
-  {
-    pattern: 'this\\.generateSearchSuggestions\(query\)',
-    replacement: 'this.generateSearchSuggestions()',
-    description: 'Fix method signature mismatch',
-    files: ['src/services/ResourceService.ts'],
+  {,
+pattern: 'this\\.generateSearchSuggestions\(query\)',;,
+replacement: 'this.generateSearchSuggestions()',;,
+description: 'Fix method signature mismatch',;,
+files: ['src/services/ResourceService.ts'],
   },
-  {
-    pattern: 'await this\\.getMockResource\([^)]+\)',
-    replacement: 'await this.getMockResource()',
-    description: 'Fix getMockResource method signature',
-    files: ['src/services/ResourceService.ts'],
+  {,
+pattern: 'await this\\.getMockResource\([^)]+\)',;,
+replacement: 'await this.getMockResource()',;,
+description: 'Fix getMockResource method signature',;,
+files: ['src/services/ResourceService.ts'],
   },
 
   // Fix unknown type issues in orchestrator
-  {
-    pattern: '\(routing: unknown\)',
-    replacement: '(routing: unknown)',
-    description: 'Fix unknown type in orchestrator',
-    files: ['src/ai/orchestrator.ts'],
+  {,
+pattern: '\(routing: unknown\)',;,
+replacement: '(routing: unknown)',;,
+description: 'Fix unknown type in orchestrator',;,
+files: ['src/ai/orchestrator.ts'],
   },
-  {
-    pattern: '\(backup: unknown\)',
-    replacement: '(backup: unknown)',
-    description: 'Fix unknown type in orchestrator',
-    files: ['src/ai/orchestrator.ts'],
+  {,
+pattern: '\(backup: unknown\)',;,
+replacement: '(backup: unknown)',;,
+description: 'Fix unknown type in orchestrator',;,
+files: ['src/ai/orchestrator.ts'],
   },
-  {
-    pattern: '\(failed: unknown\)',
-    replacement: '(failed: unknown)',
-    description: 'Fix unknown type in orchestrator',
-    files: ['src/ai/orchestrator.ts'],
+  {,
+pattern: '\(failed: unknown\)',;,
+replacement: '(failed: unknown)',;,
+description: 'Fix unknown type in orchestrator',;,
+files: ['src/ai/orchestrator.ts'],
   },
 
   // Fix unknown type issues in mihara-dashboard
-  {
-    pattern: '\(diagnostics: unknown\)',
-    replacement: '(diagnostics: unknown)',
-    description: 'Fix unknown type in mihara-dashboard',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: '\(diagnostics: unknown\)',;,
+replacement: '(diagnostics: unknown)',;,
+description: 'Fix unknown type in mihara-dashboard',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
-  {
-    pattern: '\(metrics: unknown\)',
-    replacement: '(metrics: unknown)',
-    description: 'Fix unknown type in mihara-dashboard',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: '\(metrics: unknown\)',;,
+replacement: '(metrics: unknown)',;,
+description: 'Fix unknown type in mihara-dashboard',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
-  {
-    pattern: '\(acc: unknown, cap: unknown\)',
-    replacement: '(acc: unknown, cap: unknown)',
-    description: 'Fix unknown types in reduce function',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: '\(acc: unknown, cap: unknown\)',;,
+replacement: '(acc: unknown, cap: unknown)',;,
+description: 'Fix unknown types in reduce function',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
 
   // Fix missing properties in mihara-dashboard
-  {
-    pattern: 'this\\.capabilityRegistry',
-    replacement: 'this.capabilities',
-    description: 'Fix missing capabilityRegistry property',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: 'this\\.capabilityRegistry',;,
+replacement: 'this.capabilities',;,
+description: 'Fix missing capabilityRegistry property',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
-  {
-    pattern: 'this\\.taskHistory',
-    replacement: 'this.tasks',
-    description: 'Fix missing taskHistory property',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: 'this\\.taskHistory',;,
+replacement: 'this.tasks',;,
+description: 'Fix missing taskHistory property',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
 
   // Fix CulturalSafetyMetrics references
-  {
-    pattern: 'CulturalSafetyMetrics',
-    replacement: 'any',
-    description: 'Fix missing CulturalSafetyMetrics type',
-    files: ['src/brain/mihara-dashboard.ts'],
+  {,
+pattern: 'CulturalSafetyMetrics',;,
+replacement: 'any',;,
+description: 'Fix missing CulturalSafetyMetrics type',;,
+files: ['src/brain/mihara-dashboard.ts'],
   },
 
   // Fix missing id variable
-  {
-    pattern: 'return resources\[id\]',
-    replacement: "return resources['te-reo-greetings']",
-    description: 'Fix missing id variable',
-    files: ['src/services/ResourceService.ts'],
+  {,
+pattern: 'return resources\[id\]',;,
+replacement: "return resources['te-reo-greetings']",;,
+description: 'Fix missing id variable',;,
+files: ['src/services/ResourceService.ts'],
   },
 
   // Fix context parameter type
-  {
-    pattern: 'resourceService\\.getRecommendations\(teacherId, context\)',
-    replacement: 'resourceService.getRecommendations(teacherId, context as any)',
-    description: 'Fix context parameter type',
-    files: ['src/services/ResourceService.ts'],
+  {,
+pattern: 'resourceService\\.getRecommendations\(teacherId, context\)',;,
+replacement: 'resourceService.getRecommendations(teacherId, context as unknown)',;,
+description: 'Fix context parameter type',;,
+files: ['src/services/ResourceService.ts'],
   },
-];
-
+]
+}
 function applyFinalFixes(): void {
-  console.log('🔧 Applying final coordinated TypeScript fixes...\n');
+console.log('🔧 Applying final coordinated TypeScript fixes...\n')
 
-  let totalFixes = 0;
+let totalFixes = 0
 
-  for (const fix of FINAL_FIX_PATTERNS) {
-    for (const filePath of fix.files) {
-      if (fs.existsSync(filePath)) {
-        try {
-          const _content = fs.readFileSync(filePath, 'utf8');
-          const _regex = new RegExp(fix.pattern, 'g');
-          const _newContent = content.replace(regex, fix.replacement);
+for (const fix of FINAL_FIX_PATTERNS) {
+for (const filePath of fix.files) {
+if (fs.existsSync(filePath)) {
+try {
+const __content = fs.readFileSync(filePath, 'utf8')
+          const __regex = new RegExp(fix.pattern, 'g')
+          const __newContent = content.replace(regex, fix.replacement)
 
-          if (newContent !== content) {
-            fs.writeFileSync(filePath, newContent, 'utf8');
-            const _matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length;
-            console.log(`✅ ${filePath}: ${matches} ${fix.description}`);
-            totalFixes += matches;
+if (newContent !== content) {
+fs.writeFileSync(filePath, newContent, 'utf8')
+            const __matches = (content.match(new RegExp(fix.pattern, 'g')) || []).length
+            console.log(`✅ ${filePath}: ${matches} ${fix.description}`)
+            totalFixes += matches
           }
         } catch (error) {
-          console.error(`❌ Error processing ${filePath}:`, error);
+console.error(`❌ Error processing ${filePath}:`, error)
         }
       }
     }
   }
-
-  console.log(`\n🎯 Total fixes applied: ${totalFixes}`);
-  console.log('📊 Run "npm run typecheck" to see the improvement!');
+console.log(`\n🎯 Total fixes applied: ${totalFixes}`)
+  console.log('📊 Run "npm run typecheck" to see the improvement!')
 }
 
-// Add missing properties to classes
+// Add missing properties to classes}
 function addMissingProperties(): void {
-  console.log('\n🔧 Adding missing properties to classes...\n');
+console.log('\n🔧 Adding missing properties to classes...\n')
 
   // Add missing properties to MiharaDashboard class
-  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+const __miharaDashboardPath = 'src/brain/mihara-dashboard.ts'
   if (fs.existsSync(miharaDashboardPath)) {
-    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
+const __content = fs.readFileSync(miharaDashboardPath, 'utf8')
 
     // Add missing properties to class
-    const _newContent = content.replace(
+const __newContent = content.replace(
       /export class MiharaDashboard {/,
       `export class MiharaDashboard {
-  private capabilities: unknown[] = [];
-  private tasks: unknown[] = [];`,
-    );
+private capabilities: unknown[] = []
+  private tasks: unknown[] = []`,
+    )
 
-    if (newContent !== content) {
-      fs.writeFileSync(miharaDashboardPath, newContent, 'utf8');
-      console.log('✅ Added missing properties to MiharaDashboard class');
+if (newContent !== content) {
+fs.writeFileSync(miharaDashboardPath, newContent, 'utf8')
+      console.log('✅ Added missing properties to MiharaDashboard class')
     }
   }
 }
 
-// Remove unused variables
+// Remove unused variables}
 function removeUnusedVariables(): void {
-  console.log('\n🔧 Removing unused variables...\n');
+console.log('\n🔧 Removing unused variables...\n')
 
-  const _miharaDashboardPath = 'src/brain/mihara-dashboard.ts';
+const __miharaDashboardPath = 'src/brain/mihara-dashboard.ts'
   if (fs.existsSync(miharaDashboardPath)) {
-    const _content = fs.readFileSync(miharaDashboardPath, 'utf8');
+const __content = fs.readFileSync(miharaDashboardPath, 'utf8')
 
     // Remove unused id variable
-    const _newContent = content.replace(
-      /const id = [^;]+;/,
-      '// const id = ...; // Removed unused variable',
-    );
+const __newContent = content.replace(
+      /const id = [^]+/,
+      '// const id = ... // Removed unused variable',
+    )
 
-    if (newContent !== content) {
-      fs.writeFileSync(miharaDashboardPath, newContent, 'utf8');
-      console.log('✅ Removed unused id variable');
+if (newContent !== content) {
+fs.writeFileSync(miharaDashboardPath, newContent, 'utf8')
+      console.log('✅ Removed unused id variable')
     }
   }
 }
 
 // Run all fixes
-applyFinalFixes();
-addMissingProperties();
-removeUnusedVariables();
-console.log('\n🚀 Final coordinated fixes complete!');
-console.log('🎯 Target: Under 50 errors remaining');
+applyFinalFixes()
+addMissingProperties()
+removeUnusedVariables()
+console.log('\n🚀 Final coordinated fixes complete!')
+console.log('🎯 Target: Under 50 errors remaining')

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitConclusionHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitConclusionHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-conclusion-handout">
       <Card title="The Writer's Toolkit: Powerful Conclusions" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,12 +24,12 @@ const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutP
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <section class="mb-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-2" class="wiley-section-title">Why Your Last Sentence Matters</h2>
                 <p class="text-justify">
-                    Just as a strong hook grabs your reader's attention, a powerful conclusion leaves them with a lasting impression. The ending is your final chance to reinforce your message, make your reader think, or leave them with a particular emotion. A weak conclusion can make an entire piece of writing feel pointless or forgettable. A strong conclusion, however, makes the reader feel satisfied and gives your work a sense of completeness and purpose.
+Just as a strong hook grabs your reader's attention, a powerful conclusion leaves them with a lasting impression. The ending is your final chance to reinforce your message, make your reader think, or leave them with a particular emotion. A weak conclusion can make an entire piece of writing feel pointless or forgettable. A strong conclusion, however, makes the reader feel satisfied and gives your work a sense of completeness and purpose.
                 </p>
             </section>
 
@@ -42,7 +39,7 @@ const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutP
                     <div class="technique-box">
                         <h4 class="font-bold text-red-700 mb-1">1. The "Call to Action"</h4>
                         <p class="text-sm text-gray-600">This is a direct instruction to the reader, telling them what you want them to do, think, or feel. It's a classic technique for persuasive writing, turning your argument into a command.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "The evidence is clear and the time for debate is over. We must demand action from our leaders to protect our planet for future generations. Write to your MP today."</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "The evidence is clear and the time for debate is over. We must demand action from our leaders to protect our planet for future generations. Write to your MP today."</p>
                     </div>
                     <div class="technique-box">
                         <h4 class="font-bold text-red-700 mb-1">2. The "Echo" or "Full Circle"</h4>
@@ -52,7 +49,7 @@ const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutP
                     <div class="technique-box">
                         <h4 class="font-bold text-red-700 mb-1">3. The "Big Picture" or "Future Thought"</h4>
                         <p class="text-sm text-gray-600">This conclusion broadens the focus and encourages the reader to think about the wider implications of the topic. It answers the "So what?" question, explaining why the information is important in the grand scheme of things.</p>
-                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example:</strong> "Ultimately, the debate over genetic modification is not just about science; it's about the kind of future we want to create and the values we want to live by."</p>
+                        <p class="text-sm mt-1 italic"><strong class="font-semibold">Example: </strong> "Ultimately, the debate over genetic modification is not just about science it's about the kind of future we want to create and the values we want to live by."</p>
                     </div>
                 </div>
             </section>
@@ -86,7 +83,7 @@ const WritersToolkitConclusionHandout: React.FC<WritersToolkitConclusionHandoutP
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitConclusionHandout;
+export default WritersToolkitConclusionHandout

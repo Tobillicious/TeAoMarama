@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './HakaComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './HakaComprehensionHandout.css'
 
-interface HakaComprehensionHandoutProps {
-  className?: string;
-}
-
-export const HakaComprehensionHandout: React.FC<HakaComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface HakaComprehensionHandoutProps {className?: string}
+export const HakaComprehensionHandout: React.FC<HakaComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="haka comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`haka-comprehension-handout-handout cultural-focus ${className}`}
+title="haka comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`haka-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const HakaComprehensionHandout: React.FC<HakaComprehensionHandoutProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default HakaComprehensionHandout;
+export default HakaComprehensionHandout

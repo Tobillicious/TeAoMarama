@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EcosystemSurveyChecklist.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EcosystemSurveyChecklist.css'
 
-interface EcosystemSurveyChecklistProps {
-  className?: string;
-}
-
-export const EcosystemSurveyChecklist: React.FC<EcosystemSurveyChecklistProps> = ({ className = '' }) => {
-  return (
+interface EcosystemSurveyChecklistProps {className?: string}
+export const EcosystemSurveyChecklist: React.FC<EcosystemSurveyChecklistProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="ecosystem survey checklist"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`ecosystem-survey-checklist-handout cultural-focus ${className}`}
+title="ecosystem survey checklist"
+subtitle="Te Kete Ako - Cultural Education"
+className={`ecosystem-survey-checklist-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EcosystemSurveyChecklist: React.FC<EcosystemSurveyChecklistProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EcosystemSurveyChecklist;
+export default EcosystemSurveyChecklist

@@ -1,0 +1,327 @@
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
+
+interface Unit2PreColonialInnovationDeepDiveProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const Unit2PreColonialInnovationDeepDive: React.FC<Unit2PreColonialInnovationDeepDiveProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
+}) => {
+return (
+    <div className="unit-2-pre-colonial-innovation-deep-dive">
+      <Card title="Pre-Colonial Innovation Deep Dive - Understanding Māori Technology and Knowledge Systems | Te Kete Ako" className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">Pre-Colonial Innovation Deep Dive - Understanding Māori Technology and Knowledge Systems | Te Kete Ako</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
+          </div>
+        </div>
+
+        <div className="handout-content">
+          <div 
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
+            <div class="mb-4">
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
+                <h1 class="page-title" class="wiley-hero-title">Pre-Colonial Innovation Deep Dive</h1>
+                <p class="page-subtitle">Understanding Māori Technology and Knowledge Systems</p>
+            </div>
+
+            <section class="mb-4">
+                <div class="cultural-protocol-box">
+                    <h3>Learning Intentions - Ngā Whāinga Ako</h3>
+                    <ul>
+                        <li>Recognize the sophistication of pre-colonial Māori technology and innovation</li>
+                        <li>Challenge colonial myths about "primitive" pre-contact societies</li>
+                        <li>Understand how environmental knowledge drove technological development</li>
+                        <li>Appreciate the integration of spiritual, practical, and sustainable approaches</li>
+                    </ul>
+                </div>
+            </section>
+
+            <article class="handout-content mb-4">
+                <h2 class="section-title" class="wiley-section-title">Redefining Innovation - Māori Technological Excellence</h2>
+                <p>
+When we hear "innovation," what comes to mind? Silicon Valley? The Industrial Revolution? These colonial definitions of innovation ignore thousands of years of sophisticated Māori technological development that was sustainable, culturally integrated, and remarkably effective. This deep dive challenges you to expand your understanding of what innovation really means.
+                </p>
+            </article>
+
+            <!-- Innovation Domains Analysis -->
+            <section class="mb-4">
+                <h2 class="section-title" class="wiley-section-title">Innovation Domains - Ngā Rōpu Auaha</h2>
+                
+                <div class="innovation-grid">
+                    <div class="innovation-card marine-tech">
+                        <h3>🚤 Marine Technology - Waka Innovation</h3>
+                        <div class="tech-details">
+                            <h4>Technological Achievements: </h4>
+                            <ul>
+                                <li><strong>Ocean-going vessels:</strong> Waka hourua capable of 1000+ mile voyages</li>
+                                <li><strong>Advanced navigation:</strong> Star compass, wave pattern reading, bird behavior</li>
+                                <li><strong>Sustainable materials: </strong> Totara hull, harakeke sails, natural waterproofing</li>
+                                <li><strong>Multi-purpose design: </strong> Fishing, warfare, transport, ceremonial functions</li>
+                            </ul>
+                            
+                            <h4>Innovation Principles: </h4>
+                            <ul>
+                                <li>Form follows function AND cultural significance</li>
+                                <li>Materials sourced sustainably with karakia and tikanga</li>
+                                <li>Knowledge passed through generations via oral tradition</li>
+                                <li>Continuous refinement based on environmental conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="innovation-card agricultural-tech">
+                        <h3>🌱 Agricultural Technology - Māra Innovation</h3>
+                        <div class="tech-details">
+                            <h4>Technological Achievements:</h4>
+                            <ul>
+                                <li><strong>Terraced gardens:</strong> Sophisticated hillside farming systems</li>
+                                <li><strong>Drainage systems:</strong> Rua kumara storage with perfect temperature control</li>
+                                <li><strong>Crop selection:</strong> Breeding varieties adapted to local conditions</li>
+                                <li><strong>Companion planting:</strong> Integrated growing systems maximizing yield</li>
+                            </ul>
+                            
+                            <h4>Innovation Principles:</h4>
+                            <ul>
+                                <li>Working with natural ecosystems, not against them</li>
+                                <li>Long-term sustainability over short-term gains</li>
+                                <li>Spiritual relationship with food and land</li>
+                                <li>Knowledge embedded in cultural practices and seasons</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="innovation-card construction-tech">
+                        <h3>🏘️ Construction Technology - Whare Innovation</h3>
+                        <div class="tech-details">
+                            <h4>Technological Achievements: </h4>
+                            <ul>
+                                <li><strong>Earthquake-resistant design:</strong> Flexible pole and beam construction</li>
+                                <li><strong>Climate adaptation:</strong> Ventilation, insulation, weatherproofing</li>
+                                <li><strong>Modular construction: </strong> Easily assembled/disassembled structures</li>
+                                <li><strong>Artistic integration:</strong> Whakairo and tukutuku as structural elements</li>
+                            </ul>
+                            
+                            <h4>Innovation Principles:</h4>
+                            <ul>
+                                <li>Buildings as living cultural expressions</li>
+                                <li>Renewable materials with minimal environmental impact</li>
+                                <li>Community construction processes strengthening social bonds</li>
+                                <li>Spiritual significance embedded in every design element</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="innovation-card medical-tech">
+                        <h3>🌿 Medical Technology - Rongoā Innovation</h3>
+                        <div class="tech-details">
+                            <h4>Technological Achievements:</h4>
+                            <ul>
+                                <li><strong>Pharmaceutical knowledge:</strong> Hundreds of medicinal plants and applications</li>
+                                <li><strong>Surgical techniques:</strong> Bone setting, wound treatment, childbirth assistance</li>
+                                <li><strong>Preventive medicine: </strong> Diet, exercise, spiritual health integration</li>
+                                <li><strong>Holistic treatment: </strong> Addressing physical, mental, and spiritual causes</li>
+                            </ul>
+                            
+                            <h4>Innovation Principles: </h4>
+                            <ul>
+                                <li>Whole-person approach to health and wellbeing</li>
+                                <li>Deep ecological knowledge of plant properties</li>
+                                <li>Individualized treatment based on person and situation</li>
+                                <li>Healing as restoration of balance and harmony</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenging Colonial Myths -->
+            <section class="mb-4">
+                <h2 class="section-title" class="wiley-section-title">Myth-Busting - Decolonizing Innovation Narratives</h2>
+                
+                <div class="myth-buster-grid">
+                    <div class="myth-card">
+                        <h3 class="myth-title">❌ Colonial Myth</h3>
+                        <p class="myth-text">"Māori were primitive and hadn't invented the wheel"</p>
+                        
+                        <h3 class="reality-title">✅ Historical Reality</h3>
+                        <div class="reality-text">
+                            <p>Māori didn't need wheels because they developed superior technologies for their environment:</p>
+                            <ul>
+                                <li>Waka were faster and more efficient than wheeled transport over water</li>
+                                <li>Bush tracks and steep terrain made wheels impractical</li>
+                                <li>Rollers and sleds were used for moving heavy objects like waka and whare</li>
+                                <li>The wheel is only useful with flat roads and draft animals - neither present in pre-colonial Aotearoa</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="myth-card">
+                        <h3 class="myth-title">❌ Colonial Myth</h3>
+                        <p class="myth-text">"Māori had no metal tools or advanced technology"</p>
+                        
+                        <h3 class="reality-title">✅ Historical Reality</h3>
+                        <div class="reality-text">
+                            <p>Māori developed sophisticated alternatives that were often superior:</p>
+                            <ul>
+                                <li>Pounamu tools were sharper than metal and held edges longer</li>
+                                <li>Obsidian blades were sharper than modern surgical steel</li>
+                                <li>Sustainable materials meant tools could always be replaced</li>
+                                <li>Tool-making was integrated with spiritual and cultural practices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="myth-card">
+                        <h3 class="myth-title">❌ Colonial Myth</h3>
+                        <p class="myth-text">"Māori lived in small, scattered, isolated groups"</p>
+                        
+                        <h3 class="reality-title">✅ Historical Reality</h3>
+                        <div class="reality-text">
+                            <p>Māori had complex networks and large-scale coordination: </p>
+                            <ul>
+                                <li>Trade networks spanned the entire country</li>
+                                <li>Coordinated agricultural projects requiring hundreds of people</li>
+                                <li>Large pā defending communities of thousands</li>
+                                <li>Inter-iwi alliances for major projects and campaigns</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="myth-card">
+                        <h3 class="myth-title">❌ Colonial Myth</h3>
+                        <p class="myth-text">"Māori had no written language or record-keeping"</p>
+                        
+                        <h3 class="reality-title">✅ Historical Reality</h3>
+                        <div class="reality-text">
+                            <p>Māori had sophisticated information storage systems:</p>
+                            <ul>
+                                <li>Whakapapa recorded genealogies spanning centuries</li>
+                                <li>Kōrero and waiata preserved detailed historical accounts</li>
+                                <li>Whakairo encoded complex information in carvings</li>
+                                <li>Oral tradition was more reliable than written records (no copying errors)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Section -->
+            <section class="handout-questions mb-4">
+                <h2 class="section-title" class="wiley-section-title">Innovation Analysis Activities</h2>
+                
+                <div class="space-y-4">
+                    <div class="question-block">
+                        <h3>Activity 1: Redefining Innovation</h3>
+                        <p><strong>Consider the following definition:</strong> "Innovation is the practical application of ideas that result in improved processes, products, or services that meet the needs of a community while respecting environmental and cultural values."</p>
+                        
+                        <div class="answer-space">
+                            <p><strong>1. How does this definition change how we view pre-colonial Māori technology?</strong></p>
+                            <div class="answer-lines"></div>
+                            
+                            <p><strong>2. Give three examples of Māori innovations that meet this definition better than modern equivalents: </strong></p>
+                            <div class="answer-lines"></div>
+                            
+                            <p><strong>3. Why might colonial narratives have ignored or dismissed Māori innovation?</strong></p>
+                            <div class="answer-lines"></div>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>Activity 2: Innovation Comparison Chart</h3>
+                        <p>Compare a pre-colonial Māori innovation with a modern equivalent. Consider effectiveness, sustainability, cultural integration, and environmental impact.</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Factor</th>
+                                        <th>Māori Innovation: _______</th>
+                                        <th>Modern Equivalent: _______</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Effectiveness</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Environmental Impact</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cultural Integration</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sustainability</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Community Benefit</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="answer-space">
+                            <p><strong>Reflection: Which approach to innovation do you think is more beneficial for society? Why?</strong></p>
+                            <div class="answer-lines"></div>
+                        </div>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>Activity 3: Modern Applications</h3>
+                        <p>Choose one area of Māori innovation and explain how its principles could improve modern technology or practices.</p>
+                        
+                        <div class="answer-space">
+                            <p><strong>Chosen innovation area:</strong> ________________________</p>
+                            
+                            <p><strong>Key principles of this Māori innovation:</strong></p>
+                            <div class="answer-lines"></div>
+                            
+                            <p><strong>Modern problem it could help solve:</strong></p>
+                            <div class="answer-lines"></div>
+                            
+                            <p><strong>How would applying Māori principles improve the modern approach?</strong></p>
+                            <div class="answer-lines"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extension Resources -->
+            <section class="mb-4">
+                <div class="extension-box">
+                    <h3>Extension Learning - Deeper Investigation</h3>
+                    <ul>
+                        <li><strong>Research Project:</strong> Choose one innovation domain and research specific examples from your local area</li>
+                        <li><strong>Interview Activity:</strong> Talk to kaumātua or community members about traditional knowledge and practices</li>
+                        <li><strong>Modern Connection:</strong> Find a contemporary company or initiative using traditional Māori principles</li>
+                        <li><strong>Creative Response:</strong> Design a poster, presentation, or model showing how Māori innovation principles could improve modern life</li>
+                    </ul>
+                </div>
+            </section>
+
+        ` }}
+          />
+        </div>
+      </Card>
+    </div>
+  )
+}
+
+export default Unit2PreColonialInnovationDeepDive

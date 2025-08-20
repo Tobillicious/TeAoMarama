@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface BiochemistryTraditionalMedicineProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 9-10",
-  subject = "Science"
+interface BiochemistryTraditionalMedicineProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 9-10", 
+_subject = "Science"
 }) => {
-  return (
+return (
     <div className="biochemistry-traditional-medicine">
       <Card title="Biochemistry Traditional Medicine | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineP
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Biochemistry Traditional Medicine</h1>
@@ -40,7 +37,7 @@ const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMedicineP
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default BiochemistryTraditionalMedicine;
+export default BiochemistryTraditionalMedicine

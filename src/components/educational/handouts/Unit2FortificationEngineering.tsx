@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2FortificationEngineering.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2FortificationEngineering.css'
 
-interface Unit2FortificationEngineeringProps {
-  className?: string;
-}
-
-export const Unit2FortificationEngineering: React.FC<Unit2FortificationEngineeringProps> = ({ className = '' }) => {
-  return (
+interface Unit2FortificationEngineeringProps {className?: string}
+export const Unit2FortificationEngineering: React.FC<Unit2FortificationEngineeringProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 fortification engineering"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-fortification-engineering-handout cultural-focus ${className}`}
+title="unit 2 fortification engineering"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-fortification-engineering-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2FortificationEngineering: React.FC<Unit2FortificationEngineeri
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2FortificationEngineering;
+export default Unit2FortificationEngineering

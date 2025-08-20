@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitAnalogyHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitAnalogyHandout.css'
 
-interface WritersToolkitAnalogyHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitAnalogyHandout: React.FC<WritersToolkitAnalogyHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitAnalogyHandoutProps {className?: string}
+export const WritersToolkitAnalogyHandout: React.FC<WritersToolkitAnalogyHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit analogy handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-analogy-handout-handout cultural-focus ${className}`}
+title="writers toolkit analogy handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-analogy-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitAnalogyHandout: React.FC<WritersToolkitAnalogyHandout
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitAnalogyHandout;
+export default WritersToolkitAnalogyHandout

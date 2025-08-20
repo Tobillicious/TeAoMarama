@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EnvironmentalLiteracyFramework.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EnvironmentalLiteracyFramework.css'
 
-interface EnvironmentalLiteracyFrameworkProps {
-  className?: string;
-}
-
-export const EnvironmentalLiteracyFramework: React.FC<EnvironmentalLiteracyFrameworkProps> = ({ className = '' }) => {
-  return (
+interface EnvironmentalLiteracyFrameworkProps {className?: string}
+export const EnvironmentalLiteracyFramework: React.FC<EnvironmentalLiteracyFrameworkProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="environmental literacy framework"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`environmental-literacy-framework-handout cultural-focus ${className}`}
+title="environmental literacy framework"
+subtitle="Te Kete Ako - Cultural Education"
+className={`environmental-literacy-framework-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EnvironmentalLiteracyFramework: React.FC<EnvironmentalLiteracyFrame
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EnvironmentalLiteracyFramework;
+export default EnvironmentalLiteracyFramework

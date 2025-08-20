@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './StarNavigationCoordinates.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './StarNavigationCoordinates.css'
 
-interface StarNavigationCoordinatesProps {
-  className?: string;
-}
-
-export const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = ({ className = '' }) => {
-  return (
+interface StarNavigationCoordinatesProps {className?: string}
+export const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="star navigation coordinates"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`star-navigation-coordinates-handout cultural-focus ${className}`}
+title="star navigation coordinates"
+subtitle="Te Kete Ako - Cultural Education"
+className={`star-navigation-coordinates-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default StarNavigationCoordinates;
+export default StarNavigationCoordinates

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './AiArtEthicsComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './AiArtEthicsComprehensionHandout.css'
 
-interface AiArtEthicsComprehensionHandoutProps {
-  className?: string;
-}
-
-export const AiArtEthicsComprehensionHandout: React.FC<AiArtEthicsComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface AiArtEthicsComprehensionHandoutProps {className?: string}
+export const AiArtEthicsComprehensionHandout: React.FC<AiArtEthicsComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="ai art ethics comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`ai-art-ethics-comprehension-handout-handout cultural-focus ${className}`}
+title="ai art ethics comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`ai-art-ethics-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const AiArtEthicsComprehensionHandout: React.FC<AiArtEthicsComprehensionH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default AiArtEthicsComprehensionHandout;
+export default AiArtEthicsComprehensionHandout

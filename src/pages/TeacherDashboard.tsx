@@ -1,304 +1,275 @@
 /**
  * TeacherDashboard - Comprehensive dashboard for Te Kete Ako educators at Mangakotukutuku College
  *
- * Features:
- * - Modern teacher-focused layout with sidebar navigation
+ * Features: * - Modern teacher-focused layout with sidebar navigation
  * - Beautiful UI using Te Kete Ako design system (porcelain white, gold, royal blue)
  * - Student progress overview and management
  * - Resource library with cultural content curation
  * - Assessment tools and cultural approval workflow
  * - Professional interface ready for alpha testing
  *
- * Design Philosophy:
- * - Clean, sophisticated aesthetic for professional educators
+ * Design Philosophy: * - Clean, sophisticated aesthetic for professional educators
  * - Cultural safety and Māori perspectives embedded throughout
  * - Quick access to essential teaching tools
  * - Data-driven insights for improved student outcomes
  */
-
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import './TeacherDashboard.css';
+import {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
+import Button from '../components/Button'
+import {Card, CardContent, CardHeader, CardTitle} from '../components/ui/card'
+import './TeacherDashboard.css'
 
 // TypeScript interfaces for comprehensive dashboard data
-interface TeacherProfile {
-  ___id: string;
-  name: string;
-  email: string;
-  classes: ClassInfo[];
-  culturalCompetency: number;
-  yearsExperience: number;
-  subjects: string[];
-  yearLevels: number[];
-  currentTerm: number;
-  currentWeek: number;
-  school: string;
-  culturalBackground: string;
-}
-
-interface ClassInfo {
-  ___id: string;
-  name: string;
-  subject: string;
-  yearLevel: number;
-  studentCount: number;
-}
-
-interface DashboardData {
-  teacher: TeacherProfile;
-  recentActivities: Activity[];
-  upcomingDeadlines: Deadline[];
-  studentProgress: StudentProgress[];
-  recentResources: Resource[];
-  upcomingAssessments: Assessment[];
-  culturalContent: CulturalContent[];
-  quickStats: QuickStats;
-}
-
-interface Activity {
-  ___id: string;
-  type: string;
-  description: string;
-  timestamp: string;
-}
-
-interface Deadline {
-  ___id: string;
-  title: string;
-  date: string;
-  priority: 'high' | 'medium' | 'low';
-}
-
-interface StudentProgress {
-  lastAssessment?: string;
-  studentId: string;
-  name: string;
-  progress: number;
-  culturalEngagement: number;
-  id?: string;
-  studentName?: string;
-  yearLevel?: number;
-  subject?: string;
-  currentLevel?: string;
-  progressPercentage?: number;
-}
-
-interface Resource {
-  ___id: string;
-  __title: string;
-  title?: string;
-  type: string;
-  _____subject: string;
-  subject?: string;
-  yearLevel: number;
-  nzcCodes: string[];
-  culturalContext: boolean;
-  approvalStatus: string;
-  lastModified: string;
-  author: string;
-  id?: string;
-}
-
-interface Assessment {
-  ___id: string;
-  title: string;
-  type: string;
-  _____subject: string;
-  yearLevel: number;
-  dueDate: string;
-  status: string;
-  priority: 'high' | 'medium' | 'low';
-  id?: string;
-  subject?: string;
-  completionRate?: number;
-  averageScore?: number;
-  culturalAlignment?: boolean;
-}
-
-interface CulturalContent {
-  ___id: string;
-  title: string;
-  type: string;
-  culturalContext: string;
-  teReoContent: boolean;
-  approvalStatus: string;
-  lastModified: string;
-  id?: string;
-  iwi?: string;
-  region?: string;
-  reviewer?: string;
-  culturalAdvisor?: string;
-}
-
-interface QuickStats {
-  totalStudents: number;
-  activeResources: number;
-  pendingAssessments: number;
-  culturalEngagement: number;
-  resourcesCreated?: number;
-  assessmentsCompleted?: number;
-  culturalContentApproved?: number;
-}
-
-export default function TeacherDashboard() {
-  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
-  const [loading, setLoading] = useState(true);
+interface TeacherProfile {,
+___id: string,
+name: string,
+email: string,
+classes: ClassInfo[],
+culturalCompetency: number,
+yearsExperience: number,
+subjects: string[],
+yearLevels: number[],
+currentTerm: number,
+currentWeek: number,
+school: string,
+culturalBackground: string}
+interface ClassInfo {,
+___id: string,
+name: string,
+subject: string,
+yearLevel: number,
+studentCount: number}
+interface DashboardData {,
+teacher: TeacherProfile,
+recentActivities: Activity[],
+upcomingDeadlines: Deadline[],
+studentProgress: StudentProgress[],
+recentResources: Resource[],
+upcomingAssessments: Assessment[],
+culturalContent: CulturalContent[],
+quickStats: QuickStats}
+interface Activity {,
+___id: string,
+type: string,
+description: string,
+timestamp: string}
+interface Deadline {,
+___id: string,
+title: string,
+date: string,
+priority: 'high' | 'medium' | 'low'}
+interface StudentProgress {lastAssessment?: string,
+studentId: string,
+name: string,
+progress: number,
+culturalEngagement: number
+  id?: string
+  studentName?: string
+  yearLevel?: number
+  subject?: string
+  currentLevel?: string
+  progressPercentage?: number}
+interface Resource {,
+___id: string,
+__title: string
+  title?: string,
+type: string,
+_____subject: string
+  subject?: string,
+yearLevel: number,
+nzcCodes: string[],
+culturalContext: boolean,
+approvalStatus: string,
+lastModified: string,
+author: string
+  id?: string}
+interface Assessment {,
+___id: string,
+title: string,
+type: string,
+_____subject: string,
+yearLevel: number,
+dueDate: string,
+status: string,
+priority: 'high' | 'medium' | 'low'
+  id?: string
+  subject?: string
+  completionRate?: number
+  averageScore?: number
+  culturalAlignment?: boolean}
+interface CulturalContent {,
+___id: string,
+title: string,
+type: string,
+culturalContext: string,
+teReoContent: boolean,
+approvalStatus: string,
+lastModified: string
+  id?: string
+  iwi?: string
+  region?: string
+  reviewer?: string
+  culturalAdvisor?: string}
+interface QuickStats {,
+totalStudents: number,
+activeResources: number,
+pendingAssessments: number,
+culturalEngagement: number
+  resourcesCreated?: number
+  assessmentsCompleted?: number
+  culturalContentApproved?: number}
+export default function TeacherDashboard() {const [dashboardData, setDashboardData] = useState<DashboardData | null>(null)
+  const [loading, setLoading] = useState(true)
   const [selectedView, setSelectedView] = useState<
     'overview' | 'students' | 'resources' | 'assessments' | 'cultural'
-  >('overview');
-  const [sidebarCollapsed] = useState(false);
+  >('overview')
+  const [sidebarCollapsed] = useState(false)
 
-  useEffect(() => {
-    loadDashboardData();
-  }, []);
+useEffect_(() => {
+loadDashboardData()}, [])
 
-  const loadDashboardData = async () => {
-    try {
+const _loadDashboardData = async () => {
+try {
       // In production, this would fetch from your API
-      const response = await fetch('/api/teacher-dashboard');
-      const data = await response.json();
-      setDashboardData(data);
+const response = await fetch('/api/teacher-dashboard')
+      const data = await response.json()
+      setDashboardData(data)
     } catch {
-      console.warn('API unavailable, using sample data for alpha testing');
-      setDashboardData(getSampleDashboardData());
+console.warn('API unavailable, using sample data for alpha testing')
+      setDashboardData(getSampleDashboardData())
     }
-    setLoading(false);
-  };
+setLoading(false)
+  }
 
-  const getSampleDashboardData = (): DashboardData => ({
-    teacher: {
-      ___id: 'teacher_001',
-      name: 'Kaiako Sarah Thompson',
-      email: 'sarah.thompson@mangakotukutuku.ac.nz',
-      classes: [
-        {
-          ___id: 'class_001',
-          name: 'Year 8 Mathematics',
-          subject: 'Mathematics',
-          yearLevel: 8,
-          studentCount: 24,
+const _getSampleDashboardData = (): DashboardData => ({,
+teacher: {,
+___id: 'teacher_001',,
+name: 'Kaiako Sarah Thompson',,
+email: 'sarah.thompson@mangakotukutuku.ac.nz',,
+classes: [
+        {,
+___id: 'class_001',,
+name: 'Year 8 Mathematics',,
+subject: 'Mathematics',,
+yearLevel: 8,,
+studentCount: 24,
         },
-      ],
-      culturalCompetency: 85,
-      yearsExperience: 12,
-      subjects: ['Mathematics', 'Science', 'Te Reo Māori'],
-      yearLevels: [7, 8, 9],
-      currentTerm: 3,
-      currentWeek: 7,
-      school: 'Mangakotukutuku College',
-      culturalBackground: 'Ngāti Tūwharetoa',
+      ],;,
+culturalCompetency: 85,,
+yearsExperience: 12,,
+subjects: ['Mathematics', 'Science', 'Te Reo Māori'],;,
+yearLevels: [7, 8, 9],;,
+currentTerm: 3,,
+currentWeek: 7,,
+school: 'Mangakotukutuku College',,
+culturalBackground: 'Ngāti Tūwharetoa',
+    },,
+studentProgress: [
+      {,
+studentId: 'student_001',,
+name: 'Aroha Williams',,
+progress: 78,,
+culturalEngagement: 85,
+      },
+      {,
+studentId: 'student_002',,
+name: 'Tane Johnson',,
+progress: 65,,
+culturalEngagement: 70,
+      },
+      {,
+studentId: 'student_003',,
+name: 'Kaia Patel',,
+progress: 89,,
+culturalEngagement: 90,
+      },
+    ],;,
+recentResources: [
+      {,
+___id: 'resource_001',,
+__title: 'Y8 Fractions with Traditional Māori Games',,
+type: 'lesson',,
+_____subject: 'Mathematics',,
+yearLevel: 8,,
+nzcCodes: ['NA4-1', 'NA4-2'],;,
+culturalContext: true,,
+approvalStatus: 'approved',,
+lastModified: '2024-01-15',,
+author: 'Sarah Thompson',
+      },
+    ],;,
+upcomingAssessments: [
+      {,
+___id: 'assessment_001',,
+title: 'Y8 Fractions Assessment',,
+type: 'test',,
+_____subject: 'Mathematics',,
+yearLevel: 8,,
+dueDate: '2024-01-20',,
+status: 'pending',,
+priority: 'high',
+      },
+    ],;,
+culturalContent: [
+      {,
+___id: 'cultural_001',,
+title: 'Māori Number Systems',,
+type: 'resource',,
+culturalContext: 'Traditional counting methods',,
+teReoContent: true,,
+approvalStatus: 'pending',,
+lastModified: '2024-01-10',
+      },
+    ],;,
+recentActivities: [],;,
+upcomingDeadlines: [],;,
+quickStats: {,
+totalStudents: 72,,
+activeResources: 15,,
+pendingAssessments: 3,,
+culturalEngagement: 85,,
+resourcesCreated: 8,,
+assessmentsCompleted: 12,,
+culturalContentApproved: 5,
     },
-    studentProgress: [
-      {
-        studentId: 'student_001',
-        name: 'Aroha Williams',
-        progress: 78,
-        culturalEngagement: 85,
-      },
-      {
-        studentId: 'student_002',
-        name: 'Tane Johnson',
-        progress: 65,
-        culturalEngagement: 70,
-      },
-      {
-        studentId: 'student_003',
-        name: 'Kaia Patel',
-        progress: 89,
-        culturalEngagement: 90,
-      },
-    ],
-    recentResources: [
-      {
-        ___id: 'resource_001',
-        __title: 'Y8 Fractions with Traditional Māori Games',
-        type: 'lesson',
-        _____subject: 'Mathematics',
-        yearLevel: 8,
-        nzcCodes: ['NA4-1', 'NA4-2'],
-        culturalContext: true,
-        approvalStatus: 'approved',
-        lastModified: '2024-01-15',
-        author: 'Sarah Thompson',
-      },
-    ],
-    upcomingAssessments: [
-      {
-        ___id: 'assessment_001',
-        title: 'Y8 Fractions Assessment',
-        type: 'test',
-        _____subject: 'Mathematics',
-        yearLevel: 8,
-        dueDate: '2024-01-20',
-        status: 'pending',
-        priority: 'high',
-      },
-    ],
-    culturalContent: [
-      {
-        ___id: 'cultural_001',
-        title: 'Māori Number Systems',
-        type: 'resource',
-        culturalContext: 'Traditional counting methods',
-        teReoContent: true,
-        approvalStatus: 'pending',
-        lastModified: '2024-01-10',
-      },
-    ],
-    recentActivities: [],
-    upcomingDeadlines: [],
-    quickStats: {
-      totalStudents: 72,
-      activeResources: 15,
-      pendingAssessments: 3,
-      culturalEngagement: 85,
-      resourcesCreated: 8,
-      assessmentsCompleted: 12,
-      culturalContentApproved: 5,
-    },
-  });
+  })
 
-  if (loading) {
-    return (
+if (loading) {
+return (
       <div className="teacher-dashboard-loading">
         <div className="text-center">
           <div className="loading-spinner"></div>
           <p className="mt-4 text-lg">Loading your dashboard...</p>
         </div>
       </div>
-    );
+    )
   }
-
-  if (!dashboardData) {
-    return (
+if (!dashboardData) {
+return (
       <div
-        className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: 'var(--color-porcelain)' }}
+className="min-h-screen flex items-center justify-center"
+style={{ backgroundColor: 'var(--color-porcelain)' }}
       >
         <div className="text-center">
           <p className="text-lg text-red-600">Unable to load dashboard data</p>
         </div>
       </div>
-    );
+    )
   }
-
-  return (
-    <div className="min-h-screen flex" style={{ backgroundColor: 'var(--color-porcelain)' }}>
+return (
+    <div className="teacher-dashboard-container">
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-full transition-all duration-300 ${
-          sidebarCollapsed ? 'w-16' : 'w-72'
+className={`teacher-sidebar ${
+sidebarCollapsed ? 'teacher-sidebar-collapsed' : 'teacher-sidebar-expanded'
         }`}
-        style={{ backgroundColor: 'var(--color-royal-blue)' }}
       >
         <div className="flex flex-col h-full p-4">
           {/* Logo */}
           <div className="flex items-center gap-3 mb-8">
             <div
-              className="w-10 h-10 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: 'var(--color-gold)' }}
+className="w-10 h-10 rounded-lg flex items-center justify-center"
+style={{ backgroundColor: 'var(--color-gold)' }}
             >
               <span className="text-lg">🌿</span>
             </div>
@@ -318,12 +289,12 @@ export default function TeacherDashboard() {
               { ___id: 'resources', label: 'Resource Library', icon: '📚' },
               { ___id: 'assessments', label: 'Assessment Tools', icon: '📋' },
               { ___id: 'cultural', label: 'Cultural Content', icon: '🌿' },
-            ].map((item) => (
-              <button
-                key={item.___id}
-                onClick={() =>
-                  setSelectedView(
-                    item.___id as
+            ].map(_(item) => (
+_<button
+key={item.___id}
+onClick={() =>
+setSelectedView(
+item.___id as
                       | 'overview'
                       | 'students'
                       | 'resources'
@@ -331,12 +302,12 @@ export default function TeacherDashboard() {
                       | 'cultural',
                   )
                 }
-                className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
-                  selectedView === item.___id ? 'text-white' : 'text-white/70 hover:text-white'
+className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
+selectedView === item.___id ? 'text-white' : 'text-white/70 hover: text-white'
                 }`}
-                style={{
-                  backgroundColor:
-                    selectedView === item.___id ? 'var(--color-gold)' : 'transparent',
+style={{,
+backgroundColor:
+selectedView === item.___id ? 'var(--color-gold)' : 'transparent',
                 }}
               >
                 <span className="text-lg">{item.icon}</span>
@@ -349,13 +320,13 @@ export default function TeacherDashboard() {
         {/* Teacher Profile */}
         {!sidebarCollapsed && (
           <div
-            className="absolute bottom-0 left-0 right-0 p-6 border-t"
-            style={{ borderColor: 'rgba(255, 215, 0, 0.2)' }}
+className="absolute bottom-0 left-0 right-0 p-6 border-t"
+style={{ borderColor: 'rgba(255, 215, 0, 0.2)' }}
           >
             <div className="flex items-center gap-3">
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: 'var(--color-gold)' }}
+className="w-10 h-10 rounded-full flex items-center justify-center"
+style={{ backgroundColor: 'var(--color-gold)' }}
               >
                 <span className="text-lg">👩‍🏫</span>
               </div>
@@ -377,20 +348,20 @@ export default function TeacherDashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">
-                Kia ora, {dashboardData.teacher.name.split(' ')[1]} 👋
+Kia ora, {dashboardData.teacher.name.split(' ')[1]} 👋
               </h1>
               <p>
-                Term {dashboardData.teacher.currentTerm}, Week {dashboardData.teacher.currentWeek} •
-                Years {dashboardData.teacher.yearLevels.join(', ')} •
+Term {dashboardData.teacher.currentTerm}, Week {dashboardData.teacher.currentWeek} •
+Years {dashboardData.teacher.yearLevels.join(', ')} •
                 {dashboardData.teacher.subjects.join(' & ')}
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Button
-                variant="primary"
-                style={{
-                  backgroundColor: 'var(--color-pounamu)',
-                  color: 'white',
+variant="primary"
+style={{,
+backgroundColor: 'var(--color-pounamu)',,
+color: 'white',
                 }}
               >
                 📝 Create Resource
@@ -410,53 +381,52 @@ export default function TeacherDashboard() {
         </div>
       </main>
     </div>
-  );
+  )
 }
 
-// Dashboard Views
-function OverviewView({ data }: { data: DashboardData }) {
-  return (
+// Dashboard Views}
+function OverviewView(__{ data }: { data: DashboardData }) {return (
     <div className="space-y-6">
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatsCard
-          title="Students"
-          value={data.quickStats.totalStudents}
-          icon="👥"
-          color="var(--color-pounamu)"
+title="Students"
+value={data.quickStats.totalStudents}
+icon="👥"
+color="var(--color-pounamu)"
         />
         <StatsCard
-          title="Resources Created"
-          value={data.quickStats.resourcesCreated || 0}
-          icon="📚"
-          color="var(--color-kowhai)"
+title="Resources Created"
+value={data.quickStats.resourcesCreated || 0}
+icon="📚"
+color="var(--color-kowhai)"
         />
         <StatsCard
-          title="Assessments"
-          value={data.quickStats.assessmentsCompleted || 0}
-          icon="📋"
-          color="var(--color-moana)"
+title="Assessments"
+value={data.quickStats.assessmentsCompleted || 0}
+icon="📋"
+color="var(--color-moana)"
         />
         <StatsCard
-          title="Cultural Content"
-          value={data.quickStats.culturalContentApproved || 0}
-          icon="🌿"
-          color="var(--color-primary)"
+title="Cultural Content"
+value={data.quickStats.culturalContentApproved || 0}
+icon="🌿"
+color="var(--color-primary)"
         />
       </div>
 
       {/* Recent Activity & Quick Actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg: grid-cols-2 gap-6">
         {/* Recent Activity */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <span>⚡</span>
-              Recent Activity
+Recent Activity
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {data.recentResources.map((resource) => (
+            {data.recentResources.map(_(resource) => (
               <div key={resource.___id} className="flex items-center gap-3 p-3 rounded-lg">
                 <span className="text-2xl">📝</span>
                 <div className="flex-1">
@@ -467,8 +437,8 @@ function OverviewView({ data }: { data: DashboardData }) {
                   </p>
                 </div>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs ${
-                    resource.approvalStatus === 'approved'
+className={`px-2 py-1 rounded-full text-xs ${
+resource.approvalStatus === 'approved'
                       ? 'bg-green-100 text-green-800'
                       : resource.approvalStatus === 'pending'
                       ? 'bg-yellow-100 text-yellow-800'
@@ -480,14 +450,14 @@ function OverviewView({ data }: { data: DashboardData }) {
               </div>
             ))}
             <Link
-              to="/resources"
-              className="text-center block py-2 rounded-lg transition-colors"
-              style={{
-                color: 'var(--color-pounamu)',
-                backgroundColor: 'rgba(27, 127, 90, 0.05)',
+to="/resources"
+className="text-center block py-2 rounded-lg transition-colors"
+style={{,
+color: 'var(--color-pounamu)',,
+backgroundColor: 'rgba(27, 127, 90, 0.05)',
               }}
             >
-              View All Resources →
+View All Resources →
             </Link>
           </CardContent>
         </Card>
@@ -497,17 +467,17 @@ function OverviewView({ data }: { data: DashboardData }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <span>📈</span>
-              Student Progress Highlights
+Student Progress Highlights
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {data.studentProgress.slice(0, 3).map((student) => (
+            {data.studentProgress.slice(0, 3).map(_(student) => (
               <div key={student.studentId} className="flex items-center gap-3 p-3 rounded-lg">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor:
-                      student.culturalEngagement >= 80
+className="w-10 h-10 rounded-full flex items-center justify-center"
+style={{,
+backgroundColor:
+student.culturalEngagement >= 80
                         ? 'var(--color-success)'
                         : student.culturalEngagement >= 60
                         ? 'var(--color-warning)'
@@ -518,26 +488,26 @@ function OverviewView({ data }: { data: DashboardData }) {
                 </div>
                 <div className="flex-1">
                   <p className="font-medium">{student.name}</p>
-                  <p className="text-sm">
-                    Progress: {student.progress}% • Cultural: {student.culturalEngagement}%
+                  <p className="text-sm">,
+Progress: {student.progress}% • Cultural: {student.culturalEngagement}%
                   </p>
                 </div>
                 {student.culturalEngagement < 60 && (
                   <span className="px-2 py-1 rounded-full text-xs bg-orange-100 text-orange-800">
-                    Needs attention
+Needs attention
                   </span>
                 )}
               </div>
             ))}
             <Link
-              to="/students"
-              className="text-center block py-2 rounded-lg transition-colors"
-              style={{
-                color: 'var(--color-pounamu)',
-                backgroundColor: 'rgba(27, 127, 90, 0.05)',
+to="/students"
+className="text-center block py-2 rounded-lg transition-colors"
+style={{,
+color: 'var(--color-pounamu)',,
+backgroundColor: 'rgba(27, 127, 90, 0.05)',
               }}
             >
-              View All Students →
+View All Students →
             </Link>
           </CardContent>
         </Card>
@@ -548,12 +518,12 @@ function OverviewView({ data }: { data: DashboardData }) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <span>📅</span>
-            Upcoming Assessments
+Upcoming Assessments
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {data.upcomingAssessments.map((assessment) => (
+          <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
+            {data.upcomingAssessments.map(_(assessment) => (
               <div key={assessment.___id} className="p-4 rounded-lg border">
                 <h4 className="font-medium mb-2">{assessment.title}</h4>
                 <div className="space-y-2 text-sm">
@@ -574,12 +544,10 @@ function OverviewView({ data }: { data: DashboardData }) {
         </CardContent>
       </Card>
     </div>
-  );
-}
-
-function StudentsView({ data }: { data: DashboardData }) {
-  return (
-    <div className="space-y-6">
+  )
+}}
+function StudentsView(__{ data }: { data: DashboardData }) {return (
+_<div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Student Progress Management</h2>
         <Button variant="primary">📊 Generate Progress Report</Button>
@@ -591,10 +559,10 @@ function StudentsView({ data }: { data: DashboardData }) {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor:
-                      student.culturalEngagement >= 80
+className="w-12 h-12 rounded-full flex items-center justify-center"
+style={{,
+backgroundColor:
+student.culturalEngagement >= 80
                         ? 'var(--color-success)'
                         : student.culturalEngagement >= 60
                         ? 'var(--color-warning)'
@@ -606,21 +574,21 @@ function StudentsView({ data }: { data: DashboardData }) {
                 <div>
                   <h3 className="font-bold">{student.name}</h3>
                   <p className="text-sm">
-                    Year {student.yearLevel} • {student.subject}
+Year {student.yearLevel} • {student.subject}
                   </p>
                 </div>
               </div>
 
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span>Current Level:</span>
+                  <span>Current Level: </span>
                   <span className="font-medium">{student.currentLevel}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Cultural Engagement:</span>
                   <span
-                    className={`font-medium ${
-                      student.culturalEngagement >= 80
+className={`font-medium ${
+student.culturalEngagement >= 80
                         ? 'text-green-600'
                         : student.culturalEngagement >= 60
                         ? 'text-yellow-600'
@@ -631,7 +599,7 @@ function StudentsView({ data }: { data: DashboardData }) {
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Last Assessment:</span>
+                  <span>Last Assessment: </span>
                   <span className="font-medium">
                     {student.lastAssessment ? formatDate(student.lastAssessment) : 'No assessment'}
                   </span>
@@ -645,19 +613,17 @@ function StudentsView({ data }: { data: DashboardData }) {
               )}
 
               <Button variant="muted" className="w-full mt-4">
-                View Student Profile
+View Student Profile
               </Button>
             </CardContent>
           </Card>
         ))}
       </div>
     </div>
-  );
-}
-
-function ResourcesView({ data }: { data: DashboardData }) {
-  return (
-    <div className="space-y-6">
+  )
+}}
+function ResourcesView(__{ data }: { data: DashboardData }) {return (
+_<div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Resource Library</h2>
         <div className="flex gap-3">
@@ -683,8 +649,8 @@ function ResourcesView({ data }: { data: DashboardData }) {
                     : '🌿'}
                 </span>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs ${
-                    resource.approvalStatus === 'approved'
+className={`px-2 py-1 rounded-full text-xs ${
+resource.approvalStatus === 'approved'
                       ? 'bg-green-100 text-green-800'
                       : resource.approvalStatus === 'pending'
                       ? 'bg-yellow-100 text-yellow-800'
@@ -727,12 +693,10 @@ function ResourcesView({ data }: { data: DashboardData }) {
         ))}
       </div>
     </div>
-  );
-}
-
-function AssessmentsView({ data }: { data: DashboardData }) {
-  return (
-    <div className="space-y-6">
+  )
+}}
+function AssessmentsView(__{ data }: { data: DashboardData }) {return (
+_<div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Assessment Tools</h2>
         <Button variant="primary">📝 Create Assessment</Button>
@@ -745,8 +709,8 @@ function AssessmentsView({ data }: { data: DashboardData }) {
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-2xl">📋</span>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs ${
-                    assessment.type === 'summative'
+className={`px-2 py-1 rounded-full text-xs ${
+assessment.type === 'summative'
                       ? 'bg-blue-100 text-blue-800'
                       : assessment.type === 'formative'
                       ? 'bg-green-100 text-green-800'
@@ -789,12 +753,10 @@ function AssessmentsView({ data }: { data: DashboardData }) {
         ))}
       </div>
     </div>
-  );
-}
-
-function CulturalView({ data }: { data: DashboardData }) {
-  return (
-    <div className="space-y-6">
+  )
+}}
+function CulturalView(__{ data }: { data: DashboardData }) {return (
+_<div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Cultural Content Approval Workflow</h2>
         <Button variant="primary">🌿 Submit for Review</Button>
@@ -815,8 +777,8 @@ function CulturalView({ data }: { data: DashboardData }) {
                     : '📄'}
                 </span>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs ${
-                    content.approvalStatus === 'approved'
+className={`px-2 py-1 rounded-full text-xs ${
+content.approvalStatus === 'approved'
                       ? 'bg-green-100 text-green-800'
                       : content.approvalStatus === 'pending_review'
                       ? 'bg-yellow-100 text-yellow-800'
@@ -856,29 +818,29 @@ function CulturalView({ data }: { data: DashboardData }) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <span>📜</span>
-            Cultural Guidelines & Protocols
+Cultural Guidelines & Protocols
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
             <div>
               <h4 className="font-bold mb-3">Submission Requirements</h4>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
                   <span className="text-green-600">✓</span>
-                  Cultural context clearly identified
+Cultural context clearly identified
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-green-600">✓</span>
-                  Source attribution and permissions
+Source attribution and permissions
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-green-600">✓</span>
-                  Age-appropriate content verification
+Age-appropriate content verification
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-green-600">✓</span>
-                  Educational alignment documented
+Educational alignment documented
                 </li>
               </ul>
             </div>
@@ -904,28 +866,27 @@ function CulturalView({ data }: { data: DashboardData }) {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }
 
-// Utility Components
-function StatsCard({
-  title,
-  value,
-  icon,
-  color,
-}: {
-  title: string;
-  value: string | number;
-  icon: string;
-  color: string;
-}) {
-  return (
+// Utility Components}
+function StatsCard(__{
+title,  _
+_value,  _
+_icon,  _
+_color,  _
+_}: {, 
+_title: string, 
+_value: string | number, 
+_icon: string, 
+_color: string
+}) {return (
     <Card>
       <CardContent className="p-6">
         <div className="flex items-center gap-3">
           <div
-            className="w-12 h-12 rounded-lg flex items-center justify-center"
-            style={{ backgroundColor: color }}
+className="w-12 h-12 rounded-lg flex items-center justify-center"
+style={{ backgroundColor: color}}
           >
             <span className="text-2xl text-white">{icon}</span>
           </div>
@@ -936,14 +897,14 @@ function StatsCard({
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
-// Utility Functions
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-NZ', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-  });
+// Utility Functions}
+function formatDate(__dateString: string): string {
+return new Date(dateString).toLocaleDateString('en-NZ', {,
+weekday: 'short',,
+month: 'short',,
+day: 'numeric',
+  })
 }

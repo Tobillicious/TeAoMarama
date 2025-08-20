@@ -1,325 +1,317 @@
-import { useState } from 'react';
-import './AdvancedMorphology.css';
+import {useState} from 'react'
+import './AdvancedMorphology.css'
 
-interface MorphemeData {
-  id: string;
-  morpheme: string;
-  type: 'prefix' | 'suffix' | 'root' | 'combining-form';
-  meaning: string;
-  origin: 'latin' | 'greek' | 'anglo-saxon' | 'french' | 'maori' | 'other';
-  examples: string[];
-  difficulty: 'year7' | 'year8' | 'year9' | 'year10' | 'advanced';
-  academicDomain: string[];
-  culturalConnection?: string;
-  pronunciation: string;
-  wordFamily: string[];
-}
-
+interface MorphemeData {,
+id: string,
+morpheme: string,
+type: 'prefix' | 'suffix' | 'root' | 'combining-form',
+meaning: string,
+origin: 'latin' | 'greek' | 'anglo-saxon' | 'french' | 'maori' | 'other',
+examples: string[],
+difficulty: 'year7' | 'year8' | 'year9' | 'year10' | 'advanced',
+academicDomain: string[]
+  culturalConnection?: string,
+pronunciation: string,
+wordFamily: string[]}
 const morphologyData: MorphemeData[] = [
   // Year 7-8 Foundation Morphemes
-  {
-    id: 'un-prefix',
-    morpheme: 'un-',
-    type: 'prefix',
-    meaning: 'not, opposite of',
-    origin: 'anglo-saxon',
-    examples: ['unfair', 'undo', 'unwise', 'unclear'],
-    difficulty: 'year7',
-    academicDomain: ['General', 'Literature'],
-    pronunciation: '/ʌn/',
-    wordFamily: ['un-', 'in-', 'dis-', 'non-'],
+  {,
+id: 'un-prefix',,
+morpheme: 'un-',,
+type: 'prefix',,
+meaning: 'not, opposite of',,
+origin: 'anglo-saxon',,
+examples: ['unfair', 'undo', 'unwise', 'unclear'],;,
+difficulty: 'year7',,
+academicDomain: ['General', 'Literature'],;,
+pronunciation: '/ʌn/',,
+wordFamily: ['un-', 'in-', 'dis-', 'non-'],
   },
-  {
-    id: 're-prefix',
-    morpheme: 're-',
-    type: 'prefix',
-    meaning: 'again, back',
-    origin: 'latin',
-    examples: ['rebuild', 'return', 'revise', 'reconsider'],
-    difficulty: 'year7',
-    academicDomain: ['General', 'Science', 'Social Studies'],
-    pronunciation: '/riː/',
-    wordFamily: ['re-', 'retro-', 'redux'],
+  {,
+id: 're-prefix',,
+morpheme: 're-',,
+type: 'prefix',,
+meaning: 'again, back',,
+origin: 'latin',,
+examples: ['rebuild', 'return', 'revise', 'reconsider'],;,
+difficulty: 'year7',,
+academicDomain: ['General', 'Science', 'Social Studies'],;,
+pronunciation: '/riː/',,
+wordFamily: ['re-', 'retro-', 'redux'],
   },
-  {
-    id: '-tion-suffix',
-    morpheme: '-tion',
-    type: 'suffix',
-    meaning: 'action, state, result',
-    origin: 'latin',
-    examples: ['nation', 'education', 'creation', 'exploration'],
-    difficulty: 'year7',
-    academicDomain: ['Social Studies', 'Science', 'Literature'],
-    pronunciation: '/ʃən/',
-    wordFamily: ['-tion', '-sion', '-ation', '-ition'],
+  {,
+id: '-tion-suffix',,
+morpheme: '-tion',,
+type: 'suffix',,
+meaning: 'action, state, result',,
+origin: 'latin',,
+examples: ['nation', 'education', 'creation', 'exploration'],;,
+difficulty: 'year7',,
+academicDomain: ['Social Studies', 'Science', 'Literature'],;,
+pronunciation: '/ʃən/',,
+wordFamily: ['-tion', '-sion', '-ation', '-ition'],
   },
 
   // Year 8-9 Intermediate Morphemes
-  {
-    id: 'bio-root',
-    morpheme: 'bio-',
-    type: 'combining-form',
-    meaning: 'life',
-    origin: 'greek',
-    examples: ['biology', 'biography', 'biodiversity', 'biosphere'],
-    difficulty: 'year8',
-    academicDomain: ['Science', 'Geography'],
-    pronunciation: '/baɪoʊ/',
-    wordFamily: ['bio-', 'vita-', 'viv-'],
+  {,
+id: 'bio-root',,
+morpheme: 'bio-',,
+type: 'combining-form',,
+meaning: 'life',,
+origin: 'greek',,
+examples: ['biology', 'biography', 'biodiversity', 'biosphere'],;,
+difficulty: 'year8',,
+academicDomain: ['Science', 'Geography'],;,
+pronunciation: '/baɪoʊ/',,
+wordFamily: ['bio-', 'vita-', 'viv-'],
   },
-  {
-    id: 'geo-root',
-    morpheme: 'geo-',
-    type: 'combining-form',
-    meaning: 'earth',
-    origin: 'greek',
-    examples: ['geography', 'geology', 'geometry', 'geothermal'],
-    difficulty: 'year8',
-    academicDomain: ['Geography', 'Science', 'Mathematics'],
-    culturalConnection:
-      'Connected to Māori concepts of whenua (land) and Papatūānuku (Earth mother)',
-    pronunciation: '/dʒiːoʊ/',
-    wordFamily: ['geo-', 'terra-', 'telluric'],
+  {,
+id: 'geo-root',,
+morpheme: 'geo-',,
+type: 'combining-form',,
+meaning: 'earth',,
+origin: 'greek',,
+examples: ['geography', 'geology', 'geometry', 'geothermal'],;,
+difficulty: 'year8',,
+academicDomain: ['Geography', 'Science', 'Mathematics'],;,
+culturalConnection: 'Connected to Māori concepts of whenua (land) and Papatūānuku (Earth mother)',,
+pronunciation: '/dʒiːoʊ/',,
+wordFamily: ['geo-', 'terra-', 'telluric'],
   },
-  {
-    id: '-ology-suffix',
-    morpheme: '-ology',
-    type: 'suffix',
-    meaning: 'study of, science of',
-    origin: 'greek',
-    examples: ['biology', 'psychology', 'sociology', 'archaeology'],
-    difficulty: 'year8',
-    academicDomain: ['Science', 'Social Studies', 'Psychology'],
-    pronunciation: '/ɒlədʒi/',
-    wordFamily: ['-ology', '-ography', '-metry', '-sophy'],
+  {,
+id: '-ology-suffix',,
+morpheme: '-ology',,
+type: 'suffix',,
+meaning: 'study of, science of',,
+origin: 'greek',,
+examples: ['biology', 'psychology', 'sociology', 'archaeology'],;,
+difficulty: 'year8',,
+academicDomain: ['Science', 'Social Studies', 'Psychology'],;,
+pronunciation: '/ɒlədʒi/',,
+wordFamily: ['-ology', '-ography', '-metry', '-sophy'],
   },
 
   // Year 9-10 Advanced Morphemes
-  {
-    id: 'photo-root',
-    morpheme: 'photo-',
-    type: 'combining-form',
-    meaning: 'light',
-    origin: 'greek',
-    examples: ['photograph', 'photosynthesis', 'photon', 'photocopier'],
-    difficulty: 'year9',
-    academicDomain: ['Science', 'Technology', 'Art'],
-    pronunciation: '/foʊtoʊ/',
-    wordFamily: ['photo-', 'lumi-', 'lumin-'],
+  {,
+id: 'photo-root',,
+morpheme: 'photo-',,
+type: 'combining-form',,
+meaning: 'light',,
+origin: 'greek',,
+examples: ['photograph', 'photosynthesis', 'photon', 'photocopier'],;,
+difficulty: 'year9',,
+academicDomain: ['Science', 'Technology', 'Art'],;,
+pronunciation: '/foʊtoʊ/',,
+wordFamily: ['photo-', 'lumi-', 'lumin-'],
   },
-  {
-    id: 'micro-prefix',
-    morpheme: 'micro-',
-    type: 'prefix',
-    meaning: 'small, minute',
-    origin: 'greek',
-    examples: ['microscope', 'microorganism', 'microwave', 'microbiology'],
-    difficulty: 'year9',
-    academicDomain: ['Science', 'Technology'],
-    pronunciation: '/maɪkroʊ/',
-    wordFamily: ['micro-', 'mini-', 'nano-'],
+  {,
+id: 'micro-prefix',,
+morpheme: 'micro-',,
+type: 'prefix',,
+meaning: 'small, minute',,
+origin: 'greek',,
+examples: ['microscope', 'microorganism', 'microwave', 'microbiology'],;,
+difficulty: 'year9',,
+academicDomain: ['Science', 'Technology'],;,
+pronunciation: '/maɪkroʊ/',,
+wordFamily: ['micro-', 'mini-', 'nano-'],
   },
-  {
-    id: 'democracy-root',
-    morpheme: 'demo-',
-    type: 'combining-form',
-    meaning: 'people',
-    origin: 'greek',
-    examples: ['democracy', 'demographic', 'epidemic', 'endemic'],
-    difficulty: 'year9',
-    academicDomain: ['Social Studies', 'History', 'Politics'],
-    culturalConnection:
-      'Relates to Māori concepts of iwi (people/tribe) and collective decision-making',
-    pronunciation: '/diːmoʊ/',
-    wordFamily: ['demo-', 'pop-', 'ethno-'],
+  {,
+id: 'democracy-root',,
+morpheme: 'demo-',,
+type: 'combining-form',,
+meaning: 'people',,
+origin: 'greek',,
+examples: ['democracy', 'demographic', 'epidemic', 'endemic'],;,
+difficulty: 'year9',,
+academicDomain: ['Social Studies', 'History', 'Politics'],;,
+culturalConnection: 'Relates to Māori concepts of iwi (people/tribe) and collective decision-making',,
+pronunciation: '/diːmoʊ/',,
+wordFamily: ['demo-', 'pop-', 'ethno-'],
   },
 
   // Advanced/NCEA Level Morphemes
-  {
-    id: 'pseudo-prefix',
-    morpheme: 'pseudo-',
-    type: 'prefix',
-    meaning: 'false, fake',
-    origin: 'greek',
-    examples: ['pseudonym', 'pseudoscience', 'pseudo-intellectual', 'pseudopod'],
-    difficulty: 'year10',
-    academicDomain: ['Literature', 'Science', 'Critical Thinking'],
-    pronunciation: '/suːdoʊ/',
-    wordFamily: ['pseudo-', 'quasi-', 'semi-'],
+  {,
+id: 'pseudo-prefix',,
+morpheme: 'pseudo-',,
+type: 'prefix',,
+meaning: 'false, fake',,
+origin: 'greek',,
+examples: ['pseudonym', 'pseudoscience', 'pseudo-intellectual', 'pseudopod'],;,
+difficulty: 'year10',,
+academicDomain: ['Literature', 'Science', 'Critical Thinking'],;,
+pronunciation: '/suːdoʊ/',,
+wordFamily: ['pseudo-', 'quasi-', 'semi-'],
   },
-  {
-    id: 'meta-prefix',
-    morpheme: 'meta-',
-    type: 'prefix',
-    meaning: 'beyond, about, self-referential',
-    origin: 'greek',
-    examples: ['metaphor', 'metabolism', 'metacognition', 'metamorphosis'],
-    difficulty: 'year10',
-    academicDomain: ['Literature', 'Science', 'Philosophy', 'Psychology'],
-    pronunciation: '/metə/',
-    wordFamily: ['meta-', 'trans-', 'ultra-'],
+  {,
+id: 'meta-prefix',,
+morpheme: 'meta-',,
+type: 'prefix',,
+meaning: 'beyond, about, self-referential',,
+origin: 'greek',,
+examples: ['metaphor', 'metabolism', 'metacognition', 'metamorphosis'],;,
+difficulty: 'year10',,
+academicDomain: ['Literature', 'Science', 'Philosophy', 'Psychology'],;,
+pronunciation: '/metə/',,
+wordFamily: ['meta-', 'trans-', 'ultra-'],
   },
-  {
-    id: 'anthropo-root',
-    morpheme: 'anthropo-',
-    type: 'combining-form',
-    meaning: 'human',
-    origin: 'greek',
-    examples: ['anthropology', 'anthropomorphic', 'philanthropy', 'misanthropy'],
-    difficulty: 'year10',
-    academicDomain: ['Social Studies', 'History', 'Literature'],
-    culturalConnection: 'Connects to Māori concepts of tangata (people) and whakapapa (genealogy)',
-    pronunciation: '/ænθroʊpoʊ/',
-    wordFamily: ['anthropo-', 'homo-', 'human-'],
+  {,
+id: 'anthropo-root',,
+morpheme: 'anthropo-',,
+type: 'combining-form',,
+meaning: 'human',,
+origin: 'greek',,
+examples: ['anthropology', 'anthropomorphic', 'philanthropy', 'misanthropy'],;,
+difficulty: 'year10',,
+academicDomain: ['Social Studies', 'History', 'Literature'],;,
+culturalConnection: 'Connects to Māori concepts of tangata (people) and whakapapa (genealogy)',,
+pronunciation: '/ænθroʊpoʊ/',,
+wordFamily: ['anthropo-', 'homo-', 'human-'],
   },
 
   // Māori Morphology Integration
-  {
-    id: 'wha-prefix',
-    morpheme: 'wha-',
-    type: 'prefix',
-    meaning: 'to cause, to make',
-    origin: 'maori',
-    examples: ['whakatauki', 'whakapapa', 'whakatōhea', 'whakawhetai'],
-    difficulty: 'year8',
-    academicDomain: ['Cultural Studies', 'Te Reo Māori'],
-    culturalConnection: 'Causative prefix in Te Reo Māori - transforms verbs and adjectives',
-    pronunciation: '/faka/',
-    wordFamily: ['wha-', 'whaka-', 'causative markers'],
+  {,
+id: 'wha-prefix',,
+morpheme: 'wha-',,
+type: 'prefix',,
+meaning: 'to cause, to make',,
+origin: 'maori',,
+examples: ['whakatauki', 'whakapapa', 'whakatōhea', 'whakawhetai'],;,
+difficulty: 'year8',,
+academicDomain: ['Cultural Studies', 'Te Reo Māori'],;,
+culturalConnection: 'Causative prefix in Te Reo Māori - transforms verbs and adjectives',,
+pronunciation: '/faka/',,
+wordFamily: ['wha-', 'whaka-', 'causative markers'],
   },
-  {
-    id: '-tanga-suffix',
-    morpheme: '-tanga',
-    type: 'suffix',
-    meaning: 'state of being, condition',
-    origin: 'maori',
-    examples: ['rangatiratanga', 'whakatōheatanga', 'manaakitanga', 'kotahitanga'],
-    difficulty: 'year9',
-    academicDomain: ['Cultural Studies', 'Te Reo Māori', 'Social Studies'],
-    culturalConnection: 'Creates abstract nouns expressing cultural concepts and values',
-    pronunciation: '/taŋa/',
-    wordFamily: ['-tanga', '-nga', 'nominalizing suffixes'],
+  {,
+id: '-tanga-suffix',,
+morpheme: '-tanga',,
+type: 'suffix',,
+meaning: 'state of being, condition',,
+origin: 'maori',,
+examples: ['rangatiratanga', 'whakatōheatanga', 'manaakitanga', 'kotahitanga'],;,
+difficulty: 'year9',,
+academicDomain: ['Cultural Studies', 'Te Reo Māori', 'Social Studies'],;,
+culturalConnection: 'Creates abstract nouns expressing cultural concepts and values',,
+pronunciation: '/taŋa/',,
+wordFamily: ['-tanga', '-nga', 'nominalizing suffixes'],
   },
-];
+]
 
-interface WordAnalysis {
-  word: string;
-  morphemes: string[];
-  meaning: string;
-  example: string;
-  difficulty: string;
-}
-
+interface WordAnalysis {,
+word: string,
+morphemes: string[],
+meaning: string,
+example: string,
+difficulty: string}
 const complexWords: WordAnalysis[] = [
-  {
-    word: 'unprecedented',
-    morphemes: ['un-', 'pre-', 'cedent', '-ed'],
-    meaning: 'never done or known before',
-    example: 'The pandemic created unprecedented challenges for education.',
-    difficulty: 'year10',
+  {,
+word: 'unprecedented',,
+morphemes: ['un-', 'pre-', 'cedent', '-ed'],;,
+meaning: 'never done or known before',,
+example: 'The pandemic created unprecedented challenges for education.',,
+difficulty: 'year10',
   },
-  {
-    word: 'biodegradable',
-    morphemes: ['bio-', 'de-', 'grad', '-able'],
-    meaning: 'able to be broken down by living organisms',
-    example: 'We need more biodegradable packaging to protect our environment.',
-    difficulty: 'year9',
+  {,
+word: 'biodegradable',,
+morphemes: ['bio-', 'de-', 'grad', '-able'],;,
+meaning: 'able to be broken down by living organisms',,
+example: 'We need more biodegradable packaging to protect our environment.',,
+difficulty: 'year9',
   },
-  {
-    word: 'photosynthesis',
-    morphemes: ['photo-', 'syn-', 'thesis'],
-    meaning: 'process by which plants make food using light',
-    example: 'Photosynthesis is essential for life on Earth.',
-    difficulty: 'year8',
+  {,
+word: 'photosynthesis',,
+morphemes: ['photo-', 'syn-', 'thesis'],;,
+meaning: 'process by which plants make food using light',,
+example: 'Photosynthesis is essential for life on Earth.',,
+difficulty: 'year8',
   },
-  {
-    word: 'rangatiratanga',
-    morphemes: ['rangatira', '-tanga'],
-    meaning: 'chieftainship, sovereignty, self-determination',
-    example: 'Tino rangatiratanga is a fundamental principle in the Treaty of Waitangi.',
-    difficulty: 'year10',
+  {,
+word: 'rangatiratanga',,
+morphemes: ['rangatira', '-tanga'],;,
+meaning: 'chieftainship, sovereignty, self-determination',,
+example: 'Tino rangatiratanga is a fundamental principle in the Treaty of Waitangi.',,
+difficulty: 'year10',
   },
-];
+]
 
-export default function AdvancedMorphology() {
-  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
-  const [selectedType, setSelectedType] = useState<string>('all');
-  const [selectedDomain, setSelectedDomain] = useState<string>('all');
-  const [currentMorpheme, setCurrentMorpheme] = useState<MorphemeData | null>(null);
-  const [analyzeMode, setAnalyzeMode] = useState(false);
-  const [currentAnalysis, setCurrentAnalysis] = useState<WordAnalysis | null>(null);
-  const [studentInput, setStudentInput] = useState('');
-  const [analysisResults, setAnalysisResults] = useState<string[]>([]);
+export default function AdvancedMorphology() {const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all')
+  const [selectedType, setSelectedType] = useState<string>('all')
+  const [selectedDomain, setSelectedDomain] = useState<string>('all')
+  const [currentMorpheme, setCurrentMorpheme] = useState<MorphemeData | null>(null)
+  const [analyzeMode, setAnalyzeMode] = useState(false)
+  const [currentAnalysis, setCurrentAnalysis] = useState<WordAnalysis | null>(null)
+  const [studentInput, setStudentInput] = useState('')
+  const [analysisResults, setAnalysisResults] = useState<string[]>([])
 
-  const filteredMorphemes = morphologyData.filter((morpheme) => {
-    if (selectedDifficulty !== 'all' && morpheme.difficulty !== selectedDifficulty) return false;
-    if (selectedType !== 'all' && morpheme.type !== selectedType) return false;
-    if (selectedDomain !== 'all' && !morpheme.academicDomain.includes(selectedDomain)) return false;
-    return true;
-  });
+const filteredMorphemes = morphologyData.filter(_(morpheme) => {
+if (selectedDifficulty !== 'all' && morpheme.difficulty !== selectedDifficulty) return false
+    if (selectedType !== 'all' && morpheme.type !== selectedType) return false
+    if (selectedDomain !== 'all' && !morpheme.academicDomain.includes(selectedDomain)) return false
+    return true})
 
-  const selectRandomMorpheme = () => {
-    if (filteredMorphemes.length > 0) {
-      const randomIndex = Math.floor(Math.random() * filteredMorphemes.length);
-      setCurrentMorpheme(filteredMorphemes[randomIndex]);
+const selectRandomMorpheme = () => {
+if (filteredMorphemes.length > 0) {
+const randomIndex = Math.floor(Math.random() * filteredMorphemes.length)
+      setCurrentMorpheme(filteredMorphemes[randomIndex])
     }
-  };
+  }
 
-  const selectRandomAnalysis = () => {
-    const randomIndex = Math.floor(Math.random() * complexWords.length);
-    setCurrentAnalysis(complexWords[randomIndex]);
-    setStudentInput('');
-    setAnalysisResults([]);
-  };
+const selectRandomAnalysis = () => {
+const randomIndex = Math.floor(Math.random() * complexWords.length)
+    setCurrentAnalysis(complexWords[randomIndex])
+    setStudentInput('')
+    setAnalysisResults([])
+  }
 
-  const handleWordAnalysis = () => {
-    if (!currentAnalysis) return;
+const handleWordAnalysis = () => {
+if (!currentAnalysis) return
 
-    const inputWords = studentInput
+const inputWords = studentInput
       .toLowerCase()
       .split(/[\s,]+/)
-      .filter((word) => word.length > 0);
-    const correctMorphemes = currentAnalysis.morphemes.map((m) => m.toLowerCase());
+      .filter(_(word) => word.length > 0)
+    const correctMorphemes = currentAnalysis.morphemes.map(_(m) => m.toLowerCase())
 
-    const results = inputWords.map((word) => {
-      if (correctMorphemes.includes(word)) {
-        return `✅ ${word} - Correct!`;
+const results = inputWords.map(_(word) => {
+if (correctMorphemes.includes(word)) {
+return `✅ ${word} - Correct!`
       } else {
-        return `❌ ${word} - Not a morpheme in this word`;
+return `❌ ${word} - Not a morpheme in this word`
       }
-    });
+    })
 
-    setAnalysisResults(results);
-  };
+setAnalysisResults(results)
+  }
 
-  const getTypeIcon = (type: string) => {
-    const icons = {
-      prefix: '⬅️',
-      suffix: '➡️',
-      root: '🌳',
+const getTypeIcon = (_type: string) => {
+const icons = {,
+prefix: '⬅️',,
+suffix: '➡️',,
+root: '🌳',
       'combining-form': '🔗',
-    };
-    return icons[type as keyof typeof icons] || '📝';
-  };
+    }
+    return icons[type as keyof typeof icons] || '📝'
+  }
 
-  const getOriginFlag = (origin: string) => {
-    const flags = {
-      latin: '🏛️',
-      greek: '🏺',
-      'anglo-saxon': '⚔️',
-      french: '🇫🇷',
-      maori: '🌿',
-      other: '🌍',
-    };
-    return flags[origin as keyof typeof flags] || '📚';
-  };
+const getOriginFlag = (_origin: string) => {
+const flags = {,
+latin: '🏛️',,
+greek: '🏺',
+      'anglo-saxon': '⚔️',,
+french: '🇫🇷',,
+maori: '🌿',,
+other: '🌍',
+    }
+    return flags[origin as keyof typeof flags] || '📚'
+  }
 
-  return (
-    <div className="morphology-container">
+return (
+_<div className="morphology-container">
       <header className="morphology-header">
         <h1 className="morphology-title">🔬 Advanced Morphology - Te Taiao Kupu</h1>
         <p className="morphology-subtitle">
-          Master word structure and meaning for Years 7-10 academic success and NCEA preparation
+Master word structure and meaning for Years 7-10 academic success and NCEA preparation
         </p>
       </header>
 
@@ -331,28 +323,28 @@ export default function AdvancedMorphology() {
             <h3>📚 Academic Vocabulary</h3>
             <p>
               80% of academic words contain Greek or Latin roots. Understanding morphology unlocks
-              thousands of subject-specific terms across all learning areas.
+thousands of subject-specific terms across all learning areas.
             </p>
           </div>
           <div className="importance-card">
             <h3>📝 NCEA Success</h3>
             <p>
-              Strong morphological awareness improves reading comprehension, spelling accuracy, and
-              vocabulary development essential for NCEA assessments.
+Strong morphological awareness improves reading comprehension,  _spelling accuracy,  _and
+vocabulary development essential for NCEA assessments.
             </p>
           </div>
           <div className="importance-card">
             <h3>🧠 Critical Thinking</h3>
             <p>
-              Breaking down complex words develops analytical skills and helps students tackle
-              unfamiliar academic terminology with confidence.
+Breaking down complex words develops analytical skills and helps students tackle
+unfamiliar academic terminology with confidence.
             </p>
           </div>
           <div className="importance-card">
             <h3>🌿 Cultural Connections</h3>
             <p>
-              Understanding both English and Te Reo Māori morphology builds bicultural literacy and
-              deeper cultural understanding.
+Understanding both English and Te Reo Māori morphology builds bicultural literacy and
+deeper cultural understanding.
             </p>
           </div>
         </div>
@@ -363,14 +355,14 @@ export default function AdvancedMorphology() {
         <h3>🎯 Learning Modes</h3>
         <div className="mode-buttons">
           <button
-            className={`mode-btn ${!analyzeMode ? 'active' : ''}`}
-            onClick={() => setAnalyzeMode(false)}
+className={`mode-btn ${!analyzeMode ? 'active' : ''}`}
+onClick={() => setAnalyzeMode(false)}
           >
             📖 Study Morphemes
           </button>
           <button
-            className={`mode-btn ${analyzeMode ? 'active' : ''}`}
-            onClick={() => setAnalyzeMode(true)}
+className={`mode-btn ${analyzeMode ? 'active' : ''}`}
+onClick={() => setAnalyzeMode(true)}
           >
             🔍 Analyze Complex Words
           </button>
@@ -378,17 +370,17 @@ export default function AdvancedMorphology() {
       </section>
 
       {!analyzeMode ? (
-        <>
+_<>
           {/* Filters */}
           <section className="filters-section">
             <h3>🔍 Filter Morphemes</h3>
             <div className="filters-grid">
               <div className="filter-group">
-                <label htmlFor="difficulty-filter">Year Level:</label>
+                <label htmlFor="difficulty-filter">Year Level: </label>
                 <select
-                  id="difficulty-filter"
-                  value={selectedDifficulty}
-                  onChange={(e) => setSelectedDifficulty(e.target.value)}
+id="difficulty-filter"
+value={selectedDifficulty}
+onChange={(e) => setSelectedDifficulty(e.target.value)}
                 >
                   <option value="all">All Years</option>
                   <option value="year7">Year 7</option>
@@ -400,11 +392,11 @@ export default function AdvancedMorphology() {
               </div>
 
               <div className="filter-group">
-                <label htmlFor="type-filter">Morpheme Type:</label>
+                <label htmlFor="type-filter">Morpheme Type: </label>
                 <select
-                  id="type-filter"
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
+id="type-filter"
+value={selectedType}
+onChange={(_e) => setSelectedType(e.target.value)}
                 >
                   <option value="all">All Types</option>
                   <option value="prefix">Prefixes</option>
@@ -415,11 +407,11 @@ export default function AdvancedMorphology() {
               </div>
 
               <div className="filter-group">
-                <label htmlFor="domain-filter">Subject Area:</label>
+                <label htmlFor="domain-filter">Subject Area: </label>
                 <select
-                  id="domain-filter"
-                  value={selectedDomain}
-                  onChange={(e) => setSelectedDomain(e.target.value)}
+id="domain-filter"
+value={selectedDomain}
+onChange={(_e) => setSelectedDomain(e.target.value)}
                 >
                   <option value="all">All Subjects</option>
                   <option value="Science">Science</option>
@@ -432,9 +424,9 @@ export default function AdvancedMorphology() {
               </div>
 
               <button
-                className="random-morpheme-btn"
-                onClick={selectRandomMorpheme}
-                disabled={filteredMorphemes.length === 0}
+className="random-morpheme-btn"
+onClick={selectRandomMorpheme}
+disabled={filteredMorphemes.length === 0}
               >
                 🎲 Random Morpheme
               </button>
@@ -471,7 +463,7 @@ export default function AdvancedMorphology() {
                   <div className="examples-section">
                     <h4>📝 Examples in Words</h4>
                     <div className="examples-grid">
-                      {currentMorpheme.examples.map((example, index) => (
+                      {currentMorpheme.examples.map(_(example,  _index) => (
                         <span key={index} className="example-word">
                           {example}
                         </span>
@@ -482,7 +474,7 @@ export default function AdvancedMorphology() {
                   <div className="academic-domains">
                     <h4>📚 Academic Subjects</h4>
                     <div className="domains-list">
-                      {currentMorpheme.academicDomain.map((domain, index) => (
+                      {currentMorpheme.academicDomain.map(_(domain,  _index) => (
                         <span key={index} className="domain-tag">
                           {domain}
                         </span>
@@ -500,7 +492,7 @@ export default function AdvancedMorphology() {
                   <div className="word-family">
                     <h4>👥 Related Morphemes</h4>
                     <div className="family-list">
-                      {currentMorpheme.wordFamily.map((related, index) => (
+                      {currentMorpheme.wordFamily.map(_(related,  _index) => (
                         <span key={index} className="family-member">
                           {related}
                         </span>
@@ -516,17 +508,17 @@ export default function AdvancedMorphology() {
           <section className="morphemes-grid-section">
             <h3>📋 All Morphemes ({filteredMorphemes.length})</h3>
             <div className="morphemes-grid">
-              {filteredMorphemes.map((morpheme) => (
-                <div
-                  key={morpheme.id}
-                  className="morpheme-card"
-                  onClick={() => setCurrentMorpheme(morpheme)}
+              {filteredMorphemes.map(_(morpheme) => (
+_<div
+key={morpheme.id}
+className="morpheme-card"
+onClick={() => setCurrentMorpheme(morpheme)}
                 >
                   <div className="card-header">
                     <span className="card-type-icon">{getTypeIcon(morpheme.type)}</span>
                     <span className="card-origin-flag">{getOriginFlag(morpheme.origin)}</span>
                     <span
-                      className={`card-difficulty-dot difficulty-${morpheme.difficulty}`}
+className={`card-difficulty-dot difficulty-${morpheme.difficulty}`}
                     ></span>
                   </div>
 
@@ -534,7 +526,7 @@ export default function AdvancedMorphology() {
                   <p className="card-meaning">"{morpheme.meaning}"</p>
 
                   <div className="card-examples">
-                    {morpheme.examples.slice(0, 2).map((example, index) => (
+                    {morpheme.examples.slice(0, 2).map(_(example,  _index) => (
                       <span key={index} className="card-example">
                         {example}
                       </span>
@@ -572,29 +564,29 @@ export default function AdvancedMorphology() {
               <div className="analysis-input">
                 <h4>✏️ Break this word into its morphemes:</h4>
                 <p className="analysis-hint">
-                  Separate each meaningful part with commas (e.g., un-, happy, -ness)
+Separate each meaningful part with commas (e.g., un-, happy, -ness)
                 </p>
                 <input
-                  type="text"
-                  value={studentInput}
-                  onChange={(e) => setStudentInput(e.target.value)}
-                  placeholder="Enter morphemes separated by commas..."
-                  className="morpheme-input"
+type="text"
+value={studentInput}
+onChange={(_e) => setStudentInput(e.target.value)}
+placeholder="Enter morphemes separated by commas..."
+className="morpheme-input"
                 />
                 <button
-                  className="analyze-btn"
-                  onClick={handleWordAnalysis}
-                  disabled={!studentInput.trim()}
+className="analyze-btn"
+onClick={handleWordAnalysis}
+disabled={!studentInput.trim()}
                 >
                   🔍 Check Analysis
                 </button>
               </div>
 
               {analysisResults.length > 0 && (
-                <div className="analysis-results">
-                  <h4>📊 Your Analysis Results:</h4>
+_<div className="analysis-results">
+                  <h4>📊 Your Analysis Results: </h4>
                   <div className="results-list">
-                    {analysisResults.map((result, index) => (
+                    {analysisResults.map((result,  _index) => (
                       <div key={index} className="result-item">
                         {result}
                       </div>
@@ -602,9 +594,9 @@ export default function AdvancedMorphology() {
                   </div>
 
                   <div className="correct-answer">
-                    <h5>✅ Correct Breakdown:</h5>
+                    <h5>✅ Correct Breakdown: </h5>
                     <div className="correct-morphemes">
-                      {currentAnalysis.morphemes.map((morpheme, index) => (
+                      {currentAnalysis.morphemes.map(_(morpheme,  _index) => (
                         <span key={index} className="correct-morpheme">
                           {morpheme}
                         </span>
@@ -671,5 +663,5 @@ export default function AdvancedMorphology() {
         <p className="platform-info">Te Kete Ako - Advanced Morphology for Secondary Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ResearchMethodsHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ResearchMethodsHandout.css'
 
-interface ResearchMethodsHandoutProps {
-  className?: string;
-}
-
-export const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({ className = '' }) => {
-  return (
+interface ResearchMethodsHandoutProps {className?: string}
+export const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="research methods handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`research-methods-handout-handout cultural-focus ${className}`}
+title="research methods handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`research-methods-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ResearchMethodsHandout: React.FC<ResearchMethodsHandoutProps> = ({ 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ResearchMethodsHandout;
+export default ResearchMethodsHandout

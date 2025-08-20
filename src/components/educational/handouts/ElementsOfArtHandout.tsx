@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ElementsOfArtHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ElementsOfArtHandout.css'
 
-interface ElementsOfArtHandoutProps {
-  className?: string;
-}
-
-export const ElementsOfArtHandout: React.FC<ElementsOfArtHandoutProps> = ({ className = '' }) => {
-  return (
+interface ElementsOfArtHandoutProps {className?: string}
+export const ElementsOfArtHandout: React.FC<ElementsOfArtHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="elements of art handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`elements-of-art-handout-handout cultural-focus ${className}`}
+title="elements of art handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`elements-of-art-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ElementsOfArtHandout: React.FC<ElementsOfArtHandoutProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ElementsOfArtHandout;
+export default ElementsOfArtHandout

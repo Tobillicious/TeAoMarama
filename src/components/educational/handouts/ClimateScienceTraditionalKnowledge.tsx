@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ClimateScienceTraditionalKnowledgeProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ClimateScienceTraditionalKnowledge: React.FC<ClimateScienceTraditionalKnowledgeProps> = ({
-  culturalContext = "Environmental stewardship and climate action",
-  yearLevel = "Year 9-10",
-  subject = "Science, Social Studies"
+interface ClimateScienceTraditionalKnowledgeProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ClimateScienceTraditionalKnowledge: React.FC<ClimateScienceTraditionalKnowledgeProps> = (_{
+culturalContext = "Environmental stewardship and climate action", 
+_yearLevel = "Year 9-10", 
+_subject = "Science,  _Social Studies"
 }) => {
-  return (
+return (
     <div className="climate-science-traditional-knowledge">
       <Card title="Climate Science & Traditional Knowledge" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -70,7 +67,7 @@ const ClimateScienceTraditionalKnowledge: React.FC<ClimateScienceTraditionalKnow
               
               <div style={{backgroundColor: 'var(--color-accent)', color: 'white', padding: 'var(--space-4)', borderRadius: 'var(--radius-md)', marginTop: '1rem', textAlign: 'center'}}>
                 <h4 style={{color: 'white', marginBottom: 'var(--space-2)'}}>Integration Strength</h4>
-                <p style={{margin: 0}}>Traditional knowledge provides context, local detail, and long-term perspective; climate science provides global patterns, precise measurement, and predictive modeling. Together, they create more complete understanding than either alone.</p>
+                <p style={{margin: 0}}>Traditional knowledge provides context, local detail, and long-term perspective climate science provides global patterns, precise measurement, and predictive modeling. Together, they create more complete understanding than either alone.</p>
               </div>
             </section>
 
@@ -110,8 +107,7 @@ const ClimateScienceTraditionalKnowledge: React.FC<ClimateScienceTraditionalKnow
                 <ol style={{lineHeight: 1.8}}>
                   <li>Research a local environmental change (e.g., sea level rise, temperature change, species shifts)</li>
                   <li>Find both traditional Māori observations and modern scientific data about this change</li>
-                  <li>Create a comparison chart showing:
-                    <ul style={{marginTop: '0.5rem', paddingLeft: '1.5rem'}}>
+                  <li>Create a comparison chart showing: <ul style={{marginTop: '0.5rem', paddingLeft: '1.5rem'}}>
                       <li>What each knowledge system observes</li>
                       <li>How they measure or describe the change</li>
                       <li>What solutions each suggests</li>
@@ -135,7 +131,7 @@ const ClimateScienceTraditionalKnowledge: React.FC<ClimateScienceTraditionalKnow
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ClimateScienceTraditionalKnowledge;
+export default ClimateScienceTraditionalKnowledge

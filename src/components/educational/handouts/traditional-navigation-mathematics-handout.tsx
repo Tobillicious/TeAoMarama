@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface TraditionalNavigationMathematicsHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMathematicsHandoutProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 8-10",
-  subject = "Mathematics, Science"
+interface TraditionalNavigationMathematicsHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMathematicsHandoutProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 8-10", 
+_subject = "Mathematics,  _Science"
 }) => {
-  return (
+return (
     <div className="traditional-navigation-mathematics-handout">
       <Card title="Traditional Navigation & Mathematics | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,21 +24,21 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
-            <div style="margin-bottom: 2rem;">
-                <a href="handouts.html" style="color: var(--color-secondary); text-decoration: none;">&larr; Back to Handouts</a>
-                <h1 style="color: var(--color-primary); margin: var(--space-4) 0;" class="wiley-hero-title">Traditional Navigation & Mathematics</h1>
-                <h2 style="color: var(--color-secondary); margin: 0.5rem 0; font-weight: normal;" class="wiley-section-title">Exploring Polynesian Navigation Through Mathematical Thinking</h2>
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
+            <div style="margin-bottom: 2rem">
+                <a href="handouts.html" style="color: var(--color-secondary) text-decoration: none">&larr Back to Handouts</a>
+                <h1 style="color: var(--color-primary) margin: var(--space-4) 0" class="wiley-hero-title">Traditional Navigation & Mathematics</h1>
+                <h2 style="color: var(--color-secondary) margin: 0.5rem 0 font-weight: normal" class="wiley-section-title">Exploring Polynesian Navigation Through Mathematical Thinking</h2>
             </div>
 
             <!-- Cultural Opening -->
-            <section style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%); color: white; padding: var(--space-8); border-radius: var(--radius-lg); margin-bottom: 2rem;">
+            <section style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%) color: white padding: var(--space-8) border-radius: var(--radius-lg) margin-bottom: 2rem">
                 <div class="text-center">
-                    <p style="font-style: italic; font-size: var(--text-xl); margin-bottom: var(--space-2);">"Kia whakatōmuri te haere whakamua"</p>
-                    <p style="font-size: 1rem; opacity: 0.9;">I walk backwards into the future with my eyes fixed on my past</p>
+                    <p style="font-style: italic font-size: var(--text-xl) margin-bottom: var(--space-2)">"Kia whakatōmuri te haere whakamua"</p>
+                    <p style="font-size: 1rem opacity: 0.9">I walk backwards into the future with my eyes fixed on my past</p>
                 </div>
-                <p style="line-height: 1.7; margin-top: 1.5rem;">Traditional Polynesian navigation was one of humanity's greatest achievements in mathematics, astronomy, and environmental science. Navigators could sail thousands of kilometers across open ocean using only observations of stars, waves, and wildlife.</p>
+                <p style="line-height: 1.7 margin-top: 1.5rem">Traditional Polynesian navigation was one of humanity's greatest achievements in mathematics, astronomy, and environmental science. Navigators could sail thousands of kilometers across open ocean using only observations of stars, waves, and wildlife.</p>
             </section>
 
             <!-- Activity 1: Star Compass Mathematics -->
@@ -70,12 +67,12 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                         <p>If a navigator knows that a particular star rises at the 8th direction on their star compass, what angle is this from North?</p>
                         
                         <div class="step-by-step">
-                            <p><strong>Step 1:</strong> Each direction = <span class="answer-line">_____</span> degrees</p>
+                            <p><strong>Step 1: </strong> Each direction = <span class="answer-line">_____</span> degrees</p>
                             <p><strong>Step 2:</strong> 8th direction = 8 × <span class="answer-line">_____</span> = <span class="answer-line">_____</span> degrees from North</p>
                         </div>
                     </div>
 
-                    <p style="font-style: italic; font-size: var(--text-sm);">Use the grid above to draw a simple star compass showing North and the 8th direction.</p>
+                    <p style="font-style: italic font-size: var(--text-sm)">Use the grid above to draw a simple star compass showing North and the 8th direction.</p>
                 </div>
             </section>
 
@@ -89,29 +86,29 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                         <p>A traditional navigator plans a journey from Tahiti to Hawaii (approximately 4,000 km). Their voyaging canoe travels at an average speed of 8 km/hour when sailing.</p>
                     </div>
 
-                    <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+                    <table style="width: 100% border-collapse: collapse margin: var(--space-4) 0">
                         <thead>
-                            <tr style="background: var(--color-secondary); color: white;">
-                                <th style="padding: var(--space-4); border: 1px solid #ddd;">Journey Information</th>
-                                <th style="padding: var(--space-4); border: 1px solid #ddd;">Your Calculation</th>
-                                <th style="padding: var(--space-4); border: 1px solid #ddd;">Answer</th>
+                            <tr style="background: var(--color-secondary) color: white">
+                                <th style="padding: var(--space-4) border: 1px solid #ddd">Journey Information</th>
+                                <th style="padding: var(--space-4) border: 1px solid #ddd">Your Calculation</th>
+                                <th style="padding: var(--space-4) border: 1px solid #ddd">Answer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;">Total distance: 4,000 km<br>Canoe speed: 8 km/hour<br><strong>Calculate: Total sailing time</strong></td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd; min-height: 60px; background: #fafafa;"></td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;"><span class="answer-line">_____</span> hours</td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd">Total distance: 4,000 km<br>Canoe speed: 8 km/hour<br><strong>Calculate: Total sailing time</strong></td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd min-height: 60px background: #fafafa"></td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd"><span class="answer-line">_____</span> hours</td>
                             </tr>
                             <tr>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;"><strong>Convert to days:</strong><br>(Remember: 24 hours = 1 day)</td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd; min-height: 60px; background: #fafafa;"></td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;"><span class="answer-line">_____</span> days</td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd"><strong>Convert to days: </strong><br>(Remember: 24 hours = 1 day)</td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd min-height: 60px background: #fafafa"></td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd"><span class="answer-line">_____</span> days</td>
                             </tr>
                             <tr>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;"><strong>Food planning:</strong><br>If crew of 12 people each need 2 kg food per day, how much food needed?</td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd; min-height: 60px; background: #fafafa;"></td>
-                                <td style="padding: var(--space-4); border: 1px solid #ddd;"><span class="answer-line">_____</span> kg</td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd"><strong>Food planning: </strong><br>If crew of 12 people each need 2 kg food per day, how much food needed?</td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd min-height: 60px background: #fafafa"></td>
+                                <td style="padding: var(--space-4) border: 1px solid #ddd"><span class="answer-line">_____</span> kg</td>
                             </tr>
                         </tbody>
                     </table>
@@ -133,14 +130,14 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                         <p>Traditional navigators could detect land by reading wave patterns. When ocean swells hit an island, they create interference patterns that trained navigators could feel and interpret.</p>
                     </div>
 
-                    <p><strong>Wave Mathematics:</strong> Ocean swells travel in predictable patterns. If the main swell has a wavelength of 150 meters and travels at 15 meters per second, we can calculate wave frequency.</p>
+                    <p><strong>Wave Mathematics: </strong> Ocean swells travel in predictable patterns. If the main swell has a wavelength of 150 meters and travels at 15 meters per second, we can calculate wave frequency.</p>
 
                     <div class="math-formula">
-                        Wave frequency (Hz) = Wave speed ÷ Wavelength
+Wave frequency (Hz) = Wave speed ÷ Wavelength
                     </div>
 
                     <div class="calculation-space">
-                        <h5>Calculate the wave frequency:</h5>
+                        <h5>Calculate the wave frequency: </h5>
                         <p>Wave frequency = <span class="answer-line">_____</span> ÷ <span class="answer-line">_____</span> = <span class="answer-line">_____</span> Hz</p>
                         <p><strong>This means:</strong> <span class="answer-line">_____</span> waves pass a point every second</p>
                     </div>
@@ -150,7 +147,7 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                         <p>When waves hit an island, they reflect back. If you're 30 km from an island, and waves travel at 15 m/s, how long does it take for reflected waves to reach you?</p>
                         
                         <div class="step-by-step">
-                            <p><strong>Step 1:</strong> Convert distance to meters: 30 km = <span class="answer-line">_____</span> meters</p>
+                            <p><strong>Step 1: </strong> Convert distance to meters: 30 km = <span class="answer-line">_____</span> meters</p>
                             <p><strong>Step 2:</strong> Calculate time: Time = Distance ÷ Speed</p>
                             <p>Time = <span class="answer-line">_____</span> ÷ 15 = <span class="answer-line">_____</span> seconds = <span class="answer-line">_____</span> minutes</p>
                         </div>
@@ -180,14 +177,14 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                     <div class="practical-exercise">
                         <h5>Measurement Practice</h5>
                         <p>Use your hand to "measure" angles in the classroom:</p>
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li style="margin: var(--space-4) 0;">☐ Measure the angle from one corner of the room to the opposite corner using your fist.<br>
-                            Record: <span class="answer-line">_____</span> fists = <span class="answer-line">_____</span> degrees</li>
+                        <ul style="list-style: none padding-left: 0">
+                            <li style="margin: var(--space-4) 0">☐ Measure the angle from one corner of the room to the opposite corner using your fist.<br>,
+Record: <span class="answer-line">_____</span> fists = <span class="answer-line">_____</span> degrees</li>
                             
-                            <li style="margin: var(--space-4) 0;">☐ Measure the width of a window using finger widths.<br>
-                            Record: <span class="answer-line">_____</span> fingers = <span class="answer-line">_____</span> degrees</li>
+                            <li style="margin: var(--space-4) 0">☐ Measure the width of a window using finger widths.<br>,
+Record: <span class="answer-line">_____</span> fingers = <span class="answer-line">_____</span> degrees</li>
                             
-                            <li style="margin: var(--space-4) 0;">☐ Estimate the angle from floor to ceiling where you're sitting: <span class="answer-line">_____</span> degrees</li>
+                            <li style="margin: var(--space-4) 0">☐ Estimate the angle from floor to ceiling where you're sitting: <span class="answer-line">_____</span> degrees</li>
                         </ul>
                     </div>
 
@@ -219,27 +216,27 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                         <p>Compare traditional navigation methods with modern GPS technology. Consider accuracy, reliability, and what happens when technology fails.</p>
                     </div>
 
-                    <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
+                    <table style="width: 100% border-collapse: collapse margin: var(--space-4) 0">
                         <thead>
-                            <tr style="background: var(--color-secondary); color: white;">
-                                <th style="padding: 0.8rem; border: 1px solid #ddd;">Navigation Method</th>
-                                <th style="padding: 0.8rem; border: 1px solid #ddd;">Accuracy</th>
-                                <th style="padding: 0.8rem; border: 1px solid #ddd;">Advantages</th>
-                                <th style="padding: 0.8rem; border: 1px solid #ddd;">Disadvantages</th>
+                            <tr style="background: var(--color-secondary) color: white">
+                                <th style="padding: 0.8rem border: 1px solid #ddd">Navigation Method</th>
+                                <th style="padding: 0.8rem border: 1px solid #ddd">Accuracy</th>
+                                <th style="padding: 0.8rem border: 1px solid #ddd">Advantages</th>
+                                <th style="padding: 0.8rem border: 1px solid #ddd">Disadvantages</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd;"><strong>Traditional</strong><br>(Stars, waves, wildlife)</td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd;">±50-100 km</td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd; min-height: 80px; background: #fafafa;"></td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd; min-height: 80px; background: #fafafa;"></td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd"><strong>Traditional</strong><br>(Stars, waves, wildlife)</td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd">±50-100 km</td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd min-height: 80px background: #fafafa"></td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd min-height: 80px background: #fafafa"></td>
                             </tr>
                             <tr>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd;"><strong>Modern GPS</strong><br>(Satellite navigation)</td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd;">±3-5 meters</td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd; min-height: 80px; background: #fafafa;"></td>
-                                <td style="padding: 0.8rem; border: 1px solid #ddd; min-height: 80px; background: #fafafa;"></td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd"><strong>Modern GPS</strong><br>(Satellite navigation)</td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd">±3-5 meters</td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd min-height: 80px background: #fafafa"></td>
+                                <td style="padding: 0.8rem border: 1px solid #ddd min-height: 80px background: #fafafa"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -254,7 +251,7 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
 
             <!-- Reflection Section -->
             <section class="lesson-section" class="bg-cultural-light">
-                <h2 style="color: var(--color-secondary);" class="wiley-section-title">🤔 Reflection: Mathematics and Cultural Knowledge</h2>
+                <h2 style="color: var(--color-secondary)" class="wiley-section-title">🤔 Reflection: Mathematics and Cultural Knowledge</h2>
                 
                 <div class="reflection-questions">
                     <div class="reflection-item">
@@ -288,11 +285,11 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
                 <h2 class="wiley-section-title">🚀 Extension Activities (Optional)</h2>
                 
                 <div class="activity-box">
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin: var(--space-4) 0;">☐ <strong>Research Project:</strong> Investigate one specific traditional navigation technique and create a poster showing the mathematics involved</li>
-                        <li style="margin: var(--space-4) 0;">☐ <strong>Practical Application:</strong> Use traditional hand measurements to create a map of your school grounds</li>
-                        <li style="margin: var(--space-4) 0;">☐ <strong>Cultural Investigation:</strong> Interview family members about traditional knowledge of stars, weather, or directions</li>
-                        <li style="margin: var(--space-4) 0;">☐ <strong>Modern Connections:</strong> Research how modern sailing races now incorporate traditional navigation techniques</li>
+                    <ul style="list-style: none padding-left: 0">
+                        <li style="margin: var(--space-4) 0">☐ <strong>Research Project: </strong> Investigate one specific traditional navigation technique and create a poster showing the mathematics involved</li>
+                        <li style="margin: var(--space-4) 0">☐ <strong>Practical Application: </strong> Use traditional hand measurements to create a map of your school grounds</li>
+                        <li style="margin: var(--space-4) 0">☐ <strong>Cultural Investigation: </strong> Interview family members about traditional knowledge of stars, weather, or directions</li>
+                        <li style="margin: var(--space-4) 0">☐ <strong>Modern Connections: </strong> Research how modern sailing races now incorporate traditional navigation techniques</li>
                     </ul>
                 </div>
             </section>
@@ -301,7 +298,7 @@ const TraditionalNavigationMathematicsHandout: React.FC<TraditionalNavigationMat
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default TraditionalNavigationMathematicsHandout;
+export default TraditionalNavigationMathematicsHandout

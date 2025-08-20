@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WeatherCalendarGraphs.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WeatherCalendarGraphs.css'
 
-interface WeatherCalendarGraphsProps {
-  className?: string;
-}
-
-export const WeatherCalendarGraphs: React.FC<WeatherCalendarGraphsProps> = ({ className = '' }) => {
-  return (
+interface WeatherCalendarGraphsProps {className?: string}
+export const WeatherCalendarGraphs: React.FC<WeatherCalendarGraphsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="weather calendar graphs"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`weather-calendar-graphs-handout cultural-focus ${className}`}
+title="weather calendar graphs"
+subtitle="Te Kete Ako - Cultural Education"
+className={`weather-calendar-graphs-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WeatherCalendarGraphs: React.FC<WeatherCalendarGraphsProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WeatherCalendarGraphs;
+export default WeatherCalendarGraphs

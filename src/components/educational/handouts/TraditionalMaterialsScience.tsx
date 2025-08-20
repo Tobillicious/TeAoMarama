@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TraditionalMaterialsScience.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TraditionalMaterialsScience.css'
 
-interface TraditionalMaterialsScienceProps {
-  className?: string;
-}
-
-export const TraditionalMaterialsScience: React.FC<TraditionalMaterialsScienceProps> = ({ className = '' }) => {
-  return (
+interface TraditionalMaterialsScienceProps {className?: string}
+export const TraditionalMaterialsScience: React.FC<TraditionalMaterialsScienceProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="traditional materials science"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`traditional-materials-science-handout cultural-focus ${className}`}
+title="traditional materials science"
+subtitle="Te Kete Ako - Cultural Education"
+className={`traditional-materials-science-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TraditionalMaterialsScience: React.FC<TraditionalMaterialsSciencePr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TraditionalMaterialsScience;
+export default TraditionalMaterialsScience

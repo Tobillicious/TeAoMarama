@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './RecipeScalingMathematics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './RecipeScalingMathematics.css'
 
-interface RecipeScalingMathematicsProps {
-  className?: string;
-}
-
-export const RecipeScalingMathematics: React.FC<RecipeScalingMathematicsProps> = ({ className = '' }) => {
-  return (
+interface RecipeScalingMathematicsProps {className?: string}
+export const RecipeScalingMathematics: React.FC<RecipeScalingMathematicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="recipe scaling mathematics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`recipe-scaling-mathematics-handout cultural-focus ${className}`}
+title="recipe scaling mathematics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`recipe-scaling-mathematics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const RecipeScalingMathematics: React.FC<RecipeScalingMathematicsProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default RecipeScalingMathematics;
+export default RecipeScalingMathematics

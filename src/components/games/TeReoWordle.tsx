@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Card } from '../ui/card';
+import React, { useEffect, useState } from 'react'
+import {Card} from '../ui/card'
 
 // Enhanced Te Reo Māori word list with cultural authenticity
 const TE_REO_WORDS = [
@@ -41,137 +41,133 @@ const TE_REO_WORDS = [
   { word: 'NOA', meaning: 'Free from tapu, ordinary', category: 'spiritual' },
   { word: 'UTU', meaning: 'Reciprocity, balance, payment', category: 'cultural' },
   { word: 'MANAAKITANGA', meaning: 'Hospitality, kindness, care', category: 'cultural' },
-];
+]
 
-interface GuessResult {
-  letter: string;
-  status: 'correct' | 'present' | 'absent';
-}
-
+interface GuessResult {,
+letter: string,
+status: 'correct' | 'present' | 'absent'}
 export const TeReoWordle: React.FC = () => {
-  const [targetWord, setTargetWord] = useState('');
-  const [targetMeaning, setTargetMeaning] = useState('');
-  const [guesses, setGuesses] = useState<string[]>([]);
-  const [currentGuess, setCurrentGuess] = useState('');
-  const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');
-  const [showHint, setShowHint] = useState(false);
+const [targetWord, setTargetWord] = useState('')
+  const [targetMeaning, setTargetMeaning] = useState('')
+  const [guesses, setGuesses] = useState<string[]>([])
+  const [currentGuess, setCurrentGuess] = useState('')
+  const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing')
+  const [showHint, setShowHint] = useState(false)
 
-  useEffect(() => {
-    if (!targetWord) {
-      const randomWordData = TE_REO_WORDS[Math.floor(Math.random() * TE_REO_WORDS.length)];
-      setTargetWord(randomWordData.word);
-      setTargetMeaning(randomWordData.meaning);
+useEffect_(() => {
+if (!targetWord) {
+const randomWordData = TE_REO_WORDS[Math.floor(Math.random() * TE_REO_WORDS.length)]
+      setTargetWord(randomWordData.word)
+      setTargetMeaning(randomWordData.meaning)
     }
-  }, [targetWord]);
+  }, [targetWord])
 
-  const checkGuess = (guess: string): GuessResult[] => {
-    const target = targetWord.split('');
-    const result: GuessResult[] = [];
+const checkGuess = (guess: string): GuessResult[] => {
+const target = targetWord.split('')
+    const result: GuessResult[] = []
 
-    for (let i = 0; i < guess.length; i++) {
-      const letter = guess[i];
+for (let i = 0 i < guess.length i++) {
+const letter = guess[i]
       if (target[i] === letter) {
-        result.push({ letter, status: 'correct' });
+result.push({ letter, status: 'correct' })
       } else if (target.includes(letter)) {
-        result.push({ letter, status: 'present' });
+result.push({ letter, status: 'present' })
       } else {
-        result.push({ letter, status: 'absent' });
+result.push({ letter, status: 'absent' })
       }
     }
+return result
+  }
 
-    return result;
-  };
+const handleSubmitGuess = () => {
+if (currentGuess.length !== targetWord.length) return
 
-  const handleSubmitGuess = () => {
-    if (currentGuess.length !== targetWord.length) return;
+const newGuesses = [...guesses, currentGuess]
+    setGuesses(newGuesses)
 
-    const newGuesses = [...guesses, currentGuess];
-    setGuesses(newGuesses);
-
-    if (currentGuess === targetWord) {
-      setGameStatus('won');
+if (currentGuess === targetWord) {
+setGameStatus('won')
     } else if (newGuesses.length >= 6) {
-      setGameStatus('lost');
+setGameStatus('lost')
     }
+setCurrentGuess('')
+  }
 
-    setCurrentGuess('');
-  };
+const resetGame = () => {
+const randomWordData = TE_REO_WORDS[Math.floor(Math.random() * TE_REO_WORDS.length)]
+    setTargetWord(randomWordData.word)
+    setTargetMeaning(randomWordData.meaning)
+    setGuesses([])
+    setCurrentGuess('')
+    setGameStatus('playing')
+    setShowHint(false)
+  }
 
-  const resetGame = () => {
-    const randomWordData = TE_REO_WORDS[Math.floor(Math.random() * TE_REO_WORDS.length)];
-    setTargetWord(randomWordData.word);
-    setTargetMeaning(randomWordData.meaning);
-    setGuesses([]);
-    setCurrentGuess('');
-    setGameStatus('playing');
-    setShowHint(false);
-  };
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'correct':
-        return 'bg-green-500 text-white';
+const getStatusColor = (_status: string) => {
+switch (status) {
+case 'correct':
+return 'bg-green-500 text-white'
       case 'present':
-        return 'bg-yellow-500 text-white';
+return 'bg-yellow-500 text-white'
       case 'absent':
-        return 'bg-gray-500 text-white';
-      default:
-        return 'bg-gray-200 text-gray-800';
+return 'bg-gray-500 text-white',
+default:
+return 'bg-gray-200 text-gray-800'
     }
-  };
+  }
 
-  return (
-    <Card title="Te Reo Māori Wordle" className="te-reo-wordle">
+return (
+_<Card title="Te Reo Māori Wordle" className="te-reo-wordle">
       <div className="wordle-header text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Te Reo Māori Wordle</h2>
         <p className="text-gray-600">🌿 Ako i te reo rangatira - Learn the language of the land</p>
       </div>
 
       <div className="wordle-grid mb-6">
-        {Array.from({ length: 6 }, (_, rowIndex) => (
-          <div key={rowIndex} className="flex justify-center gap-2 mb-2">
-            {Array.from({ length: targetWord.length || 5 }, (_, colIndex) => {
-              const guess = guesses[rowIndex];
-              const letter = guess ? guess[colIndex] : '';
-              const result = guess ? checkGuess(guess)[colIndex] : null;
+        {Array.from({ length: 6 },  _(_,  _rowIndex) => (
+_<div key={rowIndex} className="flex justify-center gap-2 mb-2">
+            {Array.from({ length: targetWord.length || 5 },  _(_,  _colIndex) => {
+const guess = guesses[rowIndex]
+              const letter = guess ? guess[colIndex] : ''
+              const result = guess ? checkGuess(guess)[colIndex] : null
 
-              return (
+return (
                 <div
-                  key={colIndex}
-                  className={`w-12 h-12 border-2 border-gray-300 flex items-center justify-center text-xl font-bold uppercase ${getStatusColor(
-                    result?.status || '',
+key={colIndex}
+className={`w-12 h-12 border-2 border-gray-300 flex items-center justify-center text-xl font-bold uppercase ${getStatusColor(
+result?.status || '',
                   )}`}
                 >
                   {letter}
                 </div>
-              );
+              )
             })}
           </div>
         ))}
       </div>
 
       {gameStatus === 'playing' && (
-        <div className="wordle-input text-center mb-6">
+_<div className="wordle-input text-center mb-6">
           <div className="flex justify-center gap-2 mb-4">
             <input
-              type="text"
-              value={currentGuess}
-              onChange={(e) => setCurrentGuess(e.target.value.toUpperCase())}
-              onKeyDown={(e) => e.key === 'Enter' && handleSubmitGuess()}
-              maxLength={targetWord.length}
-              placeholder="Tāuru kupu..."
-              className="px-4 py-2 border border-gray-300 rounded-lg text-center text-lg uppercase"
+type="text"
+value={currentGuess}
+onChange={(e) => setCurrentGuess(e.target.value.toUpperCase())}
+onKeyDown={(_e) => e.key === 'Enter' && handleSubmitGuess()}
+maxLength={targetWord.length}
+placeholder="Tāuru kupu..."
+className="px-4 py-2 border border-gray-300 rounded-lg text-center text-lg uppercase"
             />
             <button
-              onClick={handleSubmitGuess}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+onClick={handleSubmitGuess}
+className="px-6 py-2 bg-blue-500 text-white rounded-lg hover: bg-blue-600"
             >
-              Whakaū
+Whakaū
             </button>
           </div>
           <button
-            onClick={() => setShowHint(!showHint)}
-            className="text-sm text-blue-600 hover:underline"
+onClick={() => setShowHint(!showHint)}
+className="text-sm text-blue-600 hover: underline"
           >
             {showHint ? 'Hide Hint' : 'Show Hint'}
           </button>
@@ -192,19 +188,19 @@ export const TeReoWordle: React.FC = () => {
           </h3>
           <p className="text-gray-600 mb-4">{targetMeaning}</p>
           <button
-            onClick={resetGame}
-            className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+onClick={resetGame}
+className="px-6 py-2 bg-green-500 text-white rounded-lg hover: bg-green-600"
           >
-            Tīmata anō
+Tīmata anō
           </button>
         </div>
       )}
 
       <div className="cultural-footer text-center p-4 bg-gray-50 rounded-lg">
         <p className="text-sm text-gray-600">
-          Ngā kupu:{' '}
+Ngā kupu: {' '}
           {TE_REO_WORDS.slice(0, 10)
-            .map((w) => w.word)
+            .map(_(w) => w.word)
             .join(' • ')}
         </p>
         <p className="text-xs text-gray-500 mt-2">
@@ -212,5 +208,5 @@ export const TeReoWordle: React.FC = () => {
         </p>
       </div>
     </Card>
-  );
-};
+  )
+}

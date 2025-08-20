@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2TraditionalSciencePrimarySources.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2TraditionalSciencePrimarySources.css'
 
-interface Unit2TraditionalSciencePrimarySourcesProps {
-  className?: string;
-}
-
-export const Unit2TraditionalSciencePrimarySources: React.FC<Unit2TraditionalSciencePrimarySourcesProps> = ({ className = '' }) => {
-  return (
+interface Unit2TraditionalSciencePrimarySourcesProps {className?: string}
+export const Unit2TraditionalSciencePrimarySources: React.FC<Unit2TraditionalSciencePrimarySourcesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 traditional science primary sources"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-traditional-science-primary-sources-handout cultural-focus ${className}`}
+title="unit 2 traditional science primary sources"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-traditional-science-primary-sources-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2TraditionalSciencePrimarySources: React.FC<Unit2TraditionalSci
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2TraditionalSciencePrimarySources;
+export default Unit2TraditionalSciencePrimarySources

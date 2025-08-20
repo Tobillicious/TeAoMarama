@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface MountainNavigationTrigonometryProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryProps> = ({
-  culturalContext = "Traditional navigation and astronomical knowledge",
-  yearLevel = "Year 8-10",
-  subject = "Mathematics, Science"
+interface MountainNavigationTrigonometryProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryProps> = (_{
+culturalContext = "Traditional navigation and astronomical knowledge", 
+_yearLevel = "Year 8-10", 
+_subject = "Mathematics,  _Science"
 }) => {
-  return (
+return (
     <div className="mountain-navigation-trigonometry">
       <Card title="Mountain Navigation Trigonometry | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryPro
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Mountain Navigation Trigonometry</h1>
@@ -40,7 +37,7 @@ const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonometryPro
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default MountainNavigationTrigonometry;
+export default MountainNavigationTrigonometry

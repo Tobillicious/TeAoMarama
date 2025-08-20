@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitSuspenseHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitSuspenseHandout.css'
 
-interface WritersToolkitSuspenseHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitSuspenseHandout: React.FC<WritersToolkitSuspenseHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitSuspenseHandoutProps {className?: string}
+export const WritersToolkitSuspenseHandout: React.FC<WritersToolkitSuspenseHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit suspense handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-suspense-handout-handout cultural-focus ${className}`}
+title="writers toolkit suspense handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-suspense-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitSuspenseHandout: React.FC<WritersToolkitSuspenseHando
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitSuspenseHandout;
+export default WritersToolkitSuspenseHandout

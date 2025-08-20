@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './IwiEconomicsMathematics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './IwiEconomicsMathematics.css'
 
-interface IwiEconomicsMathematicsProps {
-  className?: string;
-}
-
-export const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = ({ className = '' }) => {
-  return (
+interface IwiEconomicsMathematicsProps {className?: string}
+export const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="iwi economics mathematics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`iwi-economics-mathematics-handout cultural-focus ${className}`}
+title="iwi economics mathematics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`iwi-economics-mathematics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default IwiEconomicsMathematics;
+export default IwiEconomicsMathematics

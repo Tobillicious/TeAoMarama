@@ -1,10 +1,9 @@
 // ...existing code...
-import Button from '../components/Button';
-import Card from '../components/Card';
-import '../styles/styleguide.css';
+import Button from '../components/Button'
+import Card from '../components/Card'
+import '../styles/styleguide.css'
 
-export default function StyleGuide() {
-  return (
+export default function StyleGuide() {return (
     <div className="max-w-[960px] mx-auto px-6 py-12">
       <h1>Style Guide</h1>
       <section className="mt-6">
@@ -37,5 +36,4 @@ export default function StyleGuide() {
         </div>
       </section>
     </div>
-  );
-}
+  )}

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './GardenPlotScience.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './GardenPlotScience.css'
 
-interface GardenPlotScienceProps {
-  className?: string;
-}
-
-export const GardenPlotScience: React.FC<GardenPlotScienceProps> = ({ className = '' }) => {
-  return (
+interface GardenPlotScienceProps {className?: string}
+export const GardenPlotScience: React.FC<GardenPlotScienceProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="garden plot science"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`garden-plot-science-handout cultural-focus ${className}`}
+title="garden plot science"
+subtitle="Te Kete Ako - Cultural Education"
+className={`garden-plot-science-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const GardenPlotScience: React.FC<GardenPlotScienceProps> = ({ className 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default GardenPlotScience;
+export default GardenPlotScience

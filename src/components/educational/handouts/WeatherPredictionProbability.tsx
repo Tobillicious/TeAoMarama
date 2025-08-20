@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WeatherPredictionProbability.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WeatherPredictionProbability.css'
 
-interface WeatherPredictionProbabilityProps {
-  className?: string;
-}
-
-export const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> = ({ className = '' }) => {
-  return (
+interface WeatherPredictionProbabilityProps {className?: string}
+export const WeatherPredictionProbability: React.FC<WeatherPredictionProbabilityProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="weather prediction probability"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`weather-prediction-probability-handout cultural-focus ${className}`}
+title="weather prediction probability"
+subtitle="Te Kete Ako - Cultural Education"
+className={`weather-prediction-probability-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WeatherPredictionProbability: React.FC<WeatherPredictionProbability
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WeatherPredictionProbability;
+export default WeatherPredictionProbability

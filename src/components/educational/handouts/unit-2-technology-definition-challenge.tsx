@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface Unit2TechnologyDefinitionChallengeProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChallengeProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface Unit2TechnologyDefinitionChallengeProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChallengeProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="unit-2-technology-definition-challenge">
       <Card title="Technology Definition Challenge - Questioning Colonial Assumptions | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,10 +24,10 @@ const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChal
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">Technology Definition Challenge</h1>
                 <p class="page-subtitle">Questioning Colonial Assumptions About "Advanced" vs "Primitive"</p>
             </div>
@@ -38,7 +35,7 @@ const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChal
             <article class="handout-content mb-4">
                 <h2 class="section-title" class="wiley-section-title">The Problem with "Primitive" vs "Advanced"</h2>
                 <p>
-                    How do we decide if something is "advanced technology" or "primitive tools"? Who gets to make that decision? This activity challenges you to think critically about how colonial perspectives have shaped what we consider "technological progress" - and why that matters for understanding pre-colonial Māori society.
+How do we decide if something is "advanced technology" or "primitive tools"? Who gets to make that decision? This activity challenges you to think critically about how colonial perspectives have shaped what we consider "technological progress" - and why that matters for understanding pre-colonial Māori society.
                 </p>
             </article>
 
@@ -61,7 +58,7 @@ const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChal
                         </ul>
                         
                         <div class="def-reflection">
-                            <strong>Question:</strong> Whose interests does this definition serve?
+                            <strong>Question: </strong> Whose interests does this definition serve?
                         </div>
                     </div>
 
@@ -79,7 +76,7 @@ const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChal
                         </ul>
                         
                         <div class="def-reflection">
-                            <strong>Question:</strong> How would this definition change our view of pre-colonial societies?
+                            <strong>Question: </strong> How would this definition change our view of pre-colonial societies?
                         </div>
                     </div>
                 </div>
@@ -350,7 +347,7 @@ const Unit2TechnologyDefinitionChallenge: React.FC<Unit2TechnologyDefinitionChal
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default Unit2TechnologyDefinitionChallenge;
+export default Unit2TechnologyDefinitionChallenge

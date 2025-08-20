@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './HangiFractionsSharing.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './HangiFractionsSharing.css'
 
-interface HangiFractionsSharingProps {
-  className?: string;
-}
-
-export const HangiFractionsSharing: React.FC<HangiFractionsSharingProps> = ({ className = '' }) => {
-  return (
+interface HangiFractionsSharingProps {className?: string}
+export const HangiFractionsSharing: React.FC<HangiFractionsSharingProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="hangi fractions sharing"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`hangi-fractions-sharing-handout cultural-focus ${className}`}
+title="hangi fractions sharing"
+subtitle="Te Kete Ako - Cultural Education"
+className={`hangi-fractions-sharing-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const HangiFractionsSharing: React.FC<HangiFractionsSharingProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default HangiFractionsSharing;
+export default HangiFractionsSharing

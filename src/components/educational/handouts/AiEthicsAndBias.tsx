@@ -1,114 +1,109 @@
-import { useState } from 'react';
-import './AIEthicsAndBias.css';
+import {useState} from 'react'
+import './AIEthicsAndBias.css'
 
-interface BiasCase {
-  title: string;
-  description: string;
-  impact: string;
-  culturalContext: string;
-  solutions: string[];
-}
-
-interface EthicalPrinciple {
-  name: string;
-  description: string;
-  maoriPerspective: string;
-  examples: string[];
-}
-
+interface BiasCase {,
+title: string,
+description: string,
+impact: string,
+culturalContext: string,
+solutions: string[]}
+interface EthicalPrinciple {,
+name: string,
+description: string,
+maoriPerspective: string,
+examples: string[]}
 const biasCases: BiasCase[] = [
-  {
-    title: 'Biased Hiring Tool',
-    description: 'A major tech company created an AI tool to screen CVs, but it learned to prefer male candidates due to historical hiring data.',
-    impact: 'The AI penalized CVs with "women\'s" references and downgraded graduates from all-women\'s colleges.',
-    culturalContext: 'This reflects how technology can perpetuate existing inequalities and fail to honor diverse perspectives and experiences.',
-    solutions: [
+  {,
+title: 'Biased Hiring Tool',,
+description: 'A major tech company created an AI tool to screen CVs, but it learned to prefer male candidates due to historical hiring data.',,
+impact: 'The AI penalized CVs with "women\'s" references and downgraded graduates from all-women\'s colleges.',,
+culturalContext: 'This reflects how technology can perpetuate existing inequalities and fail to honor diverse perspectives and experiences.',,
+solutions: [
       'Diverse training data that represents all communities',
       'Regular bias audits and testing',
       'Cultural consultation in AI development',
       'Transparent decision-making processes',
     ],
   },
-  {
-    title: 'Facial Recognition Bias',
-    description: 'AI facial recognition systems have been shown to be less accurate for people with darker skin tones.',
-    impact: 'This can lead to wrongful identification and discrimination in law enforcement and security systems.',
-    culturalContext: 'Technology must respect and accurately represent all cultural and ethnic identities.',
-    solutions: [
+  {,
+title: 'Facial Recognition Bias',,
+description: 'AI facial recognition systems have been shown to be less accurate for people with darker skin tones.',,
+impact: 'This can lead to wrongful identification and discrimination in law enforcement and security systems.',,
+culturalContext: 'Technology must respect and accurately represent all cultural and ethnic identities.',,
+solutions: [
       'Inclusive training datasets',
       'Cultural sensitivity in algorithm design',
       'Community consultation and testing',
       'Regular accuracy audits across diverse populations',
     ],
   },
-  {
-    title: 'Language Model Bias',
-    description: 'Large language models can perpetuate stereotypes and biases present in their training data.',
-    impact: 'AI responses may reinforce harmful stereotypes about different cultures, genders, or communities.',
-    culturalContext: 'Language is deeply cultural - AI must understand and respect diverse worldviews and communication styles.',
-    solutions: [
+  {,
+title: 'Language Model Bias',,
+description: 'Large language models can perpetuate stereotypes and biases present in their training data.',,
+impact: 'AI responses may reinforce harmful stereotypes about different cultures, genders, or communities.',,
+culturalContext: 'Language is deeply cultural - AI must understand and respect diverse worldviews and communication styles.',,
+solutions: [
       'Cultural review of training data',
       'Diverse perspectives in model development',
       'Cultural safety protocols',
       'Ongoing monitoring and correction',
     ],
   },
-];
+]
 
 const ethicalPrinciples: EthicalPrinciple[] = [
-  {
-    name: 'Kaitiakitanga - Guardianship',
-    description: 'Taking responsibility for the care and protection of technology and its impacts on people and communities.',
-    maoriPerspective: 'Technology should serve and protect communities, not harm them. We must be guardians of ethical AI development.',
-    examples: [
+  {,
+name: 'Kaitiakitanga - Guardianship',,
+description: 'Taking responsibility for the care and protection of technology and its impacts on people and communities.',,
+maoriPerspective: 'Technology should serve and protect communities, not harm them. We must be guardians of ethical AI development.',,
+examples: [
       'Ensuring AI benefits all communities equally',
       'Protecting vulnerable populations from harm',
       'Considering long-term impacts of AI systems',
       'Respecting cultural knowledge and traditions',
     ],
   },
-  {
-    name: 'Manaakitanga - Hospitality & Care',
-    description: 'Ensuring AI systems treat all users with respect, dignity, and care.',
-    maoriPerspective: 'AI should welcome and serve all people with the same care and respect we show to guests.',
-    examples: [
+  {,
+name: 'Manaakitanga - Hospitality & Care',,
+description: 'Ensuring AI systems treat all users with respect, dignity, and care.',,
+maoriPerspective: 'AI should welcome and serve all people with the same care and respect we show to guests.',,
+examples: [
       'Designing inclusive user interfaces',
       'Providing accessible AI services',
       'Respecting user privacy and dignity',
       'Creating supportive and helpful AI interactions',
     ],
   },
-  {
-    name: 'Whanaungatanga - Relationships',
-    description: 'Building and maintaining positive relationships between AI systems and the communities they serve.',
-    maoriPerspective: 'AI should strengthen community connections and relationships, not weaken them.',
-    examples: [
+  {,
+name: 'Whanaungatanga - Relationships',,
+description: 'Building and maintaining positive relationships between AI systems and the communities they serve.',,
+maoriPerspective: 'AI should strengthen community connections and relationships, not weaken them.',,
+examples: [
       'Community consultation in AI development',
       'Building trust through transparency',
       'Supporting community decision-making',
       'Fostering connections between people',
     ],
   },
-  {
-    name: 'Tikanga - Cultural Protocols',
-    description: 'Following appropriate cultural protocols and practices in AI development and deployment.',
-    maoriPerspective: 'AI must respect and follow cultural protocols, just as people do in their interactions.',
-    examples: [
+  {,
+name: 'Tikanga - Cultural Protocols',,
+description: 'Following appropriate cultural protocols and practices in AI development and deployment.',,
+maoriPerspective: 'AI must respect and follow cultural protocols, just as people do in their interactions.',,
+examples: [
       'Cultural review of AI systems',
       'Respecting cultural knowledge and practices',
       'Following appropriate consultation processes',
       'Honoring cultural traditions and values',
     ],
   },
-];
+]
 
-export default function AIEthicsAndBias() {
-  const [selectedCase, setSelectedCase] = useState<BiasCase>(biasCases[0]);
-  const [selectedPrinciple, setSelectedPrinciple] = useState<EthicalPrinciple>(ethicalPrinciples[0]);
-  const [activeTab, setActiveTab] = useState<'bias' | 'ethics' | 'cultural' | 'solutions'>('bias');
+export default function AIEthicsAndBias() {const [selectedCase, setSelectedCase] = useState<BiasCase>(biasCases[0])
+  const [selectedPrinciple, setSelectedPrinciple] = useState<EthicalPrinciple>(ethicalPrinciples[0])
+  const [activeTab, setActiveTab] = useState<'bias' | 'ethics' | 'cultural' | 'solutions'>('bias')
 
-  return (
-    <div className="ai-ethics-container">
+return (
+_<div className="ai-ethics-container">
       <header className="ai-ethics-header">
         <div className="header-content">
           <div className="badge">🌟 ERO DEMONSTRATION READY</div>
@@ -120,7 +115,7 @@ export default function AIEthicsAndBias() {
             <span className="meta-item">✅ Cultural Authenticity: 98%</span>
           </div>
           <p className="description">
-            Explore the ethical challenges of artificial intelligence through the lens of cultural wisdom and community values.
+Explore the ethical challenges of artificial intelligence through the lens of cultural wisdom and community values.
           </p>
         </div>
       </header>
@@ -128,26 +123,26 @@ export default function AIEthicsAndBias() {
       <section className="tabs">
         <div className="tab-buttons">
           <button
-            className={`tab-button ${activeTab === 'bias' ? 'active' : ''}`}
-            onClick={() => setActiveTab('bias')}
+className={`tab-button ${activeTab === 'bias' ? 'active' : ''}`}
+onClick={() => setActiveTab('bias')}
           >
             ⚠️ Bias Cases
           </button>
           <button
-            className={`tab-button ${activeTab === 'ethics' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ethics')}
+className={`tab-button ${activeTab === 'ethics' ? 'active' : ''}`}
+onClick={() => setActiveTab('ethics')}
           >
             🌿 Ethical Principles
           </button>
           <button
-            className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cultural')}
+className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
+onClick={() => setActiveTab('cultural')}
           >
             🏛️ Cultural Context
           </button>
           <button
-            className={`tab-button ${activeTab === 'solutions' ? 'active' : ''}`}
-            onClick={() => setActiveTab('solutions')}
+className={`tab-button ${activeTab === 'solutions' ? 'active' : ''}`}
+onClick={() => setActiveTab('solutions')}
           >
             💡 Solutions
           </button>
@@ -155,24 +150,24 @@ export default function AIEthicsAndBias() {
       </section>
 
       {activeTab === 'bias' && (
-        <section className="bias">
+_<section className="bias">
           <h2>⚠️ The Problem of Bias</h2>
           
           <div className="bias-warning">
             <h3>🚨 Critical Issue</h3>
             <p>
-              An AI model is only as good as the data it's trained on. Because LLMs are trained on vast amounts of text from the internet, 
-              they learn the biases that are present in that text. If the data reflects historical inequalities or stereotypes, 
-              the AI will learn and can even amplify those biases.
+An AI model is only as good as the data it's trained on. Because LLMs are trained on vast amounts of text from the internet,  
+_they learn the biases that are present in that text. If the data reflects historical inequalities or stereotypes,  
+_the AI will learn and can even amplify those biases.
             </p>
           </div>
 
           <div className="case-selector">
             {biasCases.map((biasCase) => (
-              <button
-                key={biasCase.title}
-                className={`case-pill ${selectedCase.title === biasCase.title ? 'active' : ''}`}
-                onClick={() => setSelectedCase(biasCase)}
+_<button
+key={biasCase.title}
+className={`case-pill ${selectedCase.title === biasCase.title ? 'active' : ''}`}
+onClick={() => setSelectedCase(biasCase)}
               >
                 {biasCase.title}
               </button>
@@ -201,7 +196,7 @@ export default function AIEthicsAndBias() {
               <div className="case-section">
                 <h4>🔧 Potential Solutions</h4>
                 <ul>
-                  {selectedCase.solutions.map((solution, index) => (
+                  {selectedCase.solutions.map(_(solution,  _index) => (
                     <li key={index}>{solution}</li>
                   ))}
                 </ul>
@@ -212,15 +207,15 @@ export default function AIEthicsAndBias() {
       )}
 
       {activeTab === 'ethics' && (
-        <section className="ethics">
+_<section className="ethics">
           <h2>🌿 Ethical Principles - Te Ao Māori Perspectives</h2>
           
           <div className="principle-selector">
             {ethicalPrinciples.map((principle) => (
-              <button
-                key={principle.name}
-                className={`principle-pill ${selectedPrinciple.name === principle.name ? 'active' : ''}`}
-                onClick={() => setSelectedPrinciple(principle)}
+_<button
+key={principle.name}
+className={`principle-pill ${selectedPrinciple.name === principle.name ? 'active' : ''}`}
+onClick={() => setSelectedPrinciple(principle)}
               >
                 {principle.name}
               </button>
@@ -244,7 +239,7 @@ export default function AIEthicsAndBias() {
               <div className="principle-section">
                 <h4>💡 Examples in AI</h4>
                 <ul>
-                  {selectedPrinciple.examples.map((example, index) => (
+                  {selectedPrinciple.examples.map(_(example,  _index) => (
                     <li key={index}>{example}</li>
                   ))}
                 </ul>
@@ -265,15 +260,15 @@ export default function AIEthicsAndBias() {
                 <em>"Adorn the bird with feathers so it can fly."</em>
               </p>
               <p>
-                This proverb reminds us that technology, like feathers, should enable and empower people to reach their full potential. 
-                AI should lift people up, not hold them back or cause harm.
+This proverb reminds us that technology, like feathers, should enable and empower people to reach their full potential. 
+AI should lift people up, not hold them back or cause harm.
               </p>
             </div>
 
             <div className="cultural-section">
               <h3>🎯 Cultural Values in Technology</h3>
               <ul>
-                <li><strong>Kaitiakitanga:</strong> Technology should protect and care for communities</li>
+                <li><strong>Kaitiakitanga: </strong> Technology should protect and care for communities</li>
                 <li><strong>Manaakitanga:</strong> AI should serve all people with respect and care</li>
                 <li><strong>Whanaungatanga:</strong> Technology should strengthen relationships</li>
                 <li><strong>Tikanga:</strong> AI development should follow cultural protocols</li>
@@ -375,5 +370,5 @@ export default function AIEthicsAndBias() {
         <p className="platform">TeAoMarama — World's Best Teaching Bank with Cultural Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

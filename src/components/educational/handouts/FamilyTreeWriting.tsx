@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FamilyTreeWriting.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FamilyTreeWriting.css'
 
-interface FamilyTreeWritingProps {
-  className?: string;
-}
-
-export const FamilyTreeWriting: React.FC<FamilyTreeWritingProps> = ({ className = '' }) => {
-  return (
+interface FamilyTreeWritingProps {className?: string}
+export const FamilyTreeWriting: React.FC<FamilyTreeWritingProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="family tree writing"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`family-tree-writing-handout cultural-focus ${className}`}
+title="family tree writing"
+subtitle="Te Kete Ako - Cultural Education"
+className={`family-tree-writing-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FamilyTreeWriting: React.FC<FamilyTreeWritingProps> = ({ className 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FamilyTreeWriting;
+export default FamilyTreeWriting

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface IndigenousRightsResearchProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = ({
-  culturalContext = "Cultural rights and community responsibilities",
-  yearLevel = "Year 7-10",
-  subject = "Social Studies"
+interface IndigenousRightsResearchProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = (_{
+culturalContext = "Cultural rights and community responsibilities", 
+_yearLevel = "Year 7-10", 
+_subject = "Social Studies"
 }) => {
-  return (
+return (
     <div className="indigenous-rights-research">
       <Card title="Indigenous Rights Research | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Indigenous Rights Research</h1>
@@ -40,7 +37,7 @@ const IndigenousRightsResearch: React.FC<IndigenousRightsResearchProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default IndigenousRightsResearch;
+export default IndigenousRightsResearch

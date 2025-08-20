@@ -4,58 +4,52 @@
  * - Distributes across subjects and years (Y7-Y9)
  * - Outputs to migration/recovered_resources/{handouts|assessments|lesson_plans}
  *
- * Usage:
- *   npx tsx scripts/generate-bulk-resources.ts --count 1000
+ * Usage: *   npx tsx scripts/generate-bulk-resources.ts --count 1000
  */
+import {existsSync} from 'fs'
+import {mkdir, stat, writeFile} from 'fs/promises'
+import path from 'path'
 
-import { existsSync } from 'fs';
-import { mkdir, stat, writeFile } from 'fs/promises';
-import path from 'path';
-
-interface Args {
-  count: number;
-  outDir: string;
-  category: 'handouts' | 'assessments' | 'lesson_plans';
-}
-
+interface Args {,
+count: number,
+outDir: string,
+category: 'handouts' | 'assessments' | 'lesson_plans'}}
 function parseArgs(): Args {
-  const _args = new Map<string, string>();
-  for (let i = 2; i < process.argv.length; i += 1) {
-    const [k, v] = process.argv[i].split('=');
+const __args = new Map<string, string>()
+  for (let i = 2 i < process.argv.length i += 1) {
+const [k, v] = process.argv[i].split('=')
     if (v === undefined) {
       // Support "--count 1000" style
-      const _key = process.argv[i];
-      const _next = process.argv[i + 1];
+const __key = process.argv[i]
+      const __next = process.argv[i + 1]
       if (key.startsWith('--') && next && !next.startsWith('--')) {
-        args.set(key.replace(/^--/, ''), next);
-        i += 1;
+args.set(key.replace(/^--/, ''), next)
+        i += 1
       } else if (key.startsWith('--')) {
-        args.set(key.replace(/^--/, ''), 'true');
+args.set(key.replace(/^--/, ''), 'true')
       }
     } else {
-      args.set(k.replace(/^--/, ''), v);
+args.set(k.replace(/^--/, ''), v)
     }
   }
-
-  const _count = Number(args.get('_count') ?? '1000');
-  const _category = (args.get('_category') as Args['_category']) ?? 'handouts';
+const __count = Number(args.get('_count') ?? '1000')
+  const __category = (args.get('_category') as Args['_category']) ?? 'handouts'
   const _outDir =
-    args.get('_outDir') ?? path.join(process.cwd(), 'migration', 'recovered_resources', category);
-  return { count: Number.isFinite(count) && count > 0 ? count : 1000, outDir, category };
+args.get('_outDir') ?? path.join(process.cwd(), 'migration', 'recovered_resources', category)
+  return { count: Number.isFinite(count) && count > 0 ? count : 1000, outDir, category }
 }
-
-const _SUBJECTS = [
-  {
-    name: 'Mathematics',
-    topics: ['Fractions', 'Statistics', 'Algebra', 'Proportions', 'Geometry', 'Measurement'],
+const __SUBJECTS = [
+  {,
+name: 'Mathematics',;,
+topics: ['Fractions', 'Statistics', 'Algebra', 'Proportions', 'Geometry', 'Measurement'],
   },
-  {
-    name: 'Science',
-    topics: ['Ecosystems', 'Forces', 'Matter', 'Earth Systems', 'Energy', 'Climate'],
+  {,
+name: 'Science',;,
+topics: ['Ecosystems', 'Forces', 'Matter', 'Earth Systems', 'Energy', 'Climate'],
   },
-  {
-    name: 'English',
-    topics: [
+  {,
+name: 'English',;,
+topics: [
       'Poetry',
       'Narrative Writing',
       'Formal Writing',
@@ -64,9 +58,9 @@ const _SUBJECTS = [
       'Close Reading',
     ],
   },
-  {
-    name: 'Social Studies',
-    topics: [
+  {,
+name: 'Social Studies',;,
+topics: [
       'Aotearoa Histories',
       'Civics',
       'Migration',
@@ -75,36 +69,34 @@ const _SUBJECTS = [
       'Treaty of Waitangi',
     ],
   },
-] as const;
+] as const
 
-const _YEARS = [7, 8, 9] as const;
-
-function pad(_n: number, _width): string {
-  return String(n).padStart(width, '0');
+const __YEARS = [7, 8, 9] as const
 }
-function sanitize(_s: string): string {
-  return s.replace(/[^A-Za-z0-9_\-]+/g, '_');
-}
-
-function buildTitle(_year: number, ___subject: string, _topic: string, _idx: number): string {
-  return `${subject} Y${year} - ${topic} in Aotearoa (${pad(idx, 4)})`;
-}
-
-function resourceBody(_year: number, ___subject: string, _topic: string, _idx: number): string {
-  const _duration = [30, 45, 60, 75][(year + idx) % 4];
-  const _nzc =
-    subject === 'Mathematics'
+function pad(___n: number,   ___width): string {
+return String(n).padStart(width, '0')
+}}
+function sanitize(___s: string): string {
+return s.replace(/[^A-Za-z0-9_\-]+/g, '_')
+}}
+function buildTitle(___year: number,   _____subject: string,   ___topic: string,   ___idx: number): string {
+return `${subject} Y${year} - ${topic} in Aotearoa (${pad(idx, 4)})`
+}}
+function resourceBody(___year: number,   _____subject: string,   ___topic: string,   ___idx: number): string {
+const __duration = [30, 45, 60, 75][(year + idx) % 4]
+  const __nzc =
+subject === 'Mathematics'
       ? 'Number & Algebra'
       : subject === 'Science'
       ? 'Living World'
       : subject === 'English'
       ? 'Language & Literature'
-      : 'Social Sciences';
-  const _culturalFlag = topic.match(/Treaty|Aotearoa|Māori|Te Reo|Histories|Civics/i)
+      : 'Social Sciences'
+  const __culturalFlag = topic.match(/Treaty|Aotearoa|Māori|Te Reo|Histories|Civics/i)
     ? 'CULTURAL_SAFETY_FLAG'
-    : 'None';
+    : 'None'
 
-  return `# ${subject} Y${year} - ${topic} in Aotearoa
+return `# ${subject} Y${year} - ${topic} in Aotearoa
 *Te Kura o TeAoMarama - ${subject}*
 
 **Year Level**: ${year}
@@ -114,10 +106,10 @@ function resourceBody(_year: number, ___subject: string, _topic: string, _idx: n
 
 **Cultural Context**: ${culturalFlag}
 **Te Reo Integration**: ${
-    subject === 'English' ? 'greetings, whakataukī references' : 'basic kupu where appropriate'
+subject === 'English' ? 'greetings, whakataukī references' : 'basic kupu where appropriate'
   }
 **Tikanga Connection**: ${
-    subject === 'Social Studies' ? 'whanaungatanga, manaakitanga' : 'respectful classroom protocols'
+subject === 'Social Studies' ? 'whanaungatanga, manaakitanga' : 'respectful classroom protocols'
   }
 
 ---
@@ -175,46 +167,42 @@ A set of tiered practice prompts consolidates understanding and encourages exten
 ---
 
 *Template compliance: ✅ | Cultural safety review: Required*
-`;
+`
 }
+async function main() {const { count, outDir, category} = parseArgs()
+  await mkdir(outDir, { recursive: true })
 
-async function main() {
-  const { count, outDir, category } = parseArgs();
-  await mkdir(outDir, { recursive: true });
+let created = 0
+  let i = 0
 
-  let created = 0;
-  let i = 0;
-
-  while (created < count) {
-    for (const year of YEARS) {
-      for (const subj of SUBJECTS) {
-        for (const topic of subj.topics) {
-          if (created >= count) break;
-          i += 1;
-          const _title = buildTitle(year, subj.name, topic, i);
-          const _fileName = `${sanitize(`Y${year}_${subj.name}_${topic}_${pad(i, 4)}`)}.md`;
-          const _abs = path.join(outDir, fileName);
+while (created < count) {
+for (const year of YEARS) {
+for (const subj of SUBJECTS) {
+for (const topic of subj.topics) {
+if (created >= count) break
+          i += 1
+          const __title = buildTitle(year, subj.name, topic, i)
+          const __fileName = `${sanitize(`Y${year}_${subj.name}_${topic}_${pad(i, 4)}`)}.md`
+          const __abs = path.join(outDir, fileName)
           if (existsSync(abs)) {
             // Skip existing files to avoid overwrite
-            continue;
+continue
           }
-          const _body = resourceBody(year, subj.name, topic, i);
-          await writeFile(abs, body, 'utf-8');
-          created += 1;
+const __body = resourceBody(year, subj.name, topic, i)
+          await writeFile(abs, body, 'utf-8')
+          created += 1
         }
       }
     }
   }
-
-  const _st = await stat(outDir);
+const __st = await stat(outDir)
   console.log(
     `✅ Generated ${created} ${category} in ${outDir} (dir mtime: ${new Date(
-      st.mtimeMs,
+st.mtimeMs,
     ).toISOString()})`,
-  );
+  )
 }
-
-main().catch((err) => {
-  console.error('❌ generate-bulk-resources failed:', err);
-  process.exitCode = 1;
-});
+main().catch(_(err) => {
+console.error('❌ generate-bulk-resources failed: ', err)
+  process.exitCode = 1
+})

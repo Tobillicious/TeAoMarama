@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './UrbanMaoriIdentity.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './UrbanMaoriIdentity.css'
 
-interface UrbanMaoriIdentityProps {
-  className?: string;
-}
-
-export const UrbanMaoriIdentity: React.FC<UrbanMaoriIdentityProps> = ({ className = '' }) => {
-  return (
+interface UrbanMaoriIdentityProps {className?: string}
+export const UrbanMaoriIdentity: React.FC<UrbanMaoriIdentityProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="urban maori identity"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`urban-maori-identity-handout cultural-focus ${className}`}
+title="urban maori identity"
+subtitle="Te Kete Ako - Cultural Education"
+className={`urban-maori-identity-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const UrbanMaoriIdentity: React.FC<UrbanMaoriIdentityProps> = ({ classNam
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default UrbanMaoriIdentity;
+export default UrbanMaoriIdentity

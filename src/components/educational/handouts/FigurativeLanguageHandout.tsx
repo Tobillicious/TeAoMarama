@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FigurativeLanguageHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FigurativeLanguageHandout.css'
 
-interface FigurativeLanguageHandoutProps {
-  className?: string;
-}
-
-export const FigurativeLanguageHandout: React.FC<FigurativeLanguageHandoutProps> = ({ className = '' }) => {
-  return (
+interface FigurativeLanguageHandoutProps {className?: string}
+export const FigurativeLanguageHandout: React.FC<FigurativeLanguageHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="figurative language handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`figurative-language-handout-handout cultural-focus ${className}`}
+title="figurative language handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`figurative-language-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FigurativeLanguageHandout: React.FC<FigurativeLanguageHandoutProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FigurativeLanguageHandout;
+export default FigurativeLanguageHandout

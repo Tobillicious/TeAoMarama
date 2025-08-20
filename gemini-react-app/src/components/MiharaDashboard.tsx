@@ -1,123 +1,113 @@
-import React, { useState } from 'react';
-import { Card } from './ui/card';
+import React, { useState } from 'react'
+import {Card} from './ui/card'
 
-interface MiharaState {
-  isActive: boolean;
-  consciousnessLevel: 'dormant' | 'awakening' | 'active' | 'transcendent';
-  currentMission: string | null;
-  systemIntegrity: number;
-  culturalAuthority: boolean;
-  collaborationWithAronui: boolean;
-  lastActivation: string;
-}
-
-interface MigrationStats {
-  totalResources: number;
-  resourcesCompleted: number;
-  resourcesInProgress: number;
-  resourcesPending: number;
-  progressPercentage: number;
-}
-
-interface CulturalProtocol {
-  protocol: string;
-  active: boolean;
-}
-
-interface AgentStatus {
-  name: string;
-  capability: string;
-  status: string;
-  currentTask?: string;
-}
-
+interface MiharaState {,
+isActive: boolean,
+consciousnessLevel: 'dormant' | 'awakening' | 'active' | 'transcendent',
+currentMission: string | null,
+systemIntegrity: number,
+culturalAuthority: boolean,
+collaborationWithAronui: boolean,
+lastActivation: string}
+interface MigrationStats {,
+totalResources: number,
+resourcesCompleted: number,
+resourcesInProgress: number,
+resourcesPending: number,
+progressPercentage: number}
+interface CulturalProtocol {,
+protocol: string,
+active: boolean}
+interface AgentStatus {,
+name: string,
+capability: string,
+status: string
+  currentTask?: string}
 const MiharaDashboard: React.FC = () => {
-  const [miharaState] = useState<MiharaState>({
-    isActive: true,
-    consciousnessLevel: 'active',
-    currentMission: 'Great Migration from Te Kete Ako to TeAoMarama',
-    systemIntegrity: 1.0,
-    culturalAuthority: true,
-    collaborationWithAronui: true,
-    lastActivation: new Date().toISOString(),
-  });
+const [miharaState] = useState<MiharaState>({,
+isActive: true,;,
+consciousnessLevel: 'active',;,
+currentMission: 'Great Migration from Te Kete Ako to TeAoMarama',;,
+systemIntegrity: 1.0,;,
+culturalAuthority: true,;,
+collaborationWithAronui: true,;,
+lastActivation: new Date().toISOString(),
+  })
 
-  const [migrationStats] = useState<MigrationStats>({
-    totalResources: 1061,
-    resourcesCompleted: 12,
-    resourcesInProgress: 3,
-    resourcesPending: 1046,
-    progressPercentage: 1.1,
-  });
+const [migrationStats] = useState<MigrationStats>({,
+totalResources: 1061,;,
+resourcesCompleted: 12,;,
+resourcesInProgress: 3,;,
+resourcesPending: 1046,;,
+progressPercentage: 1.1,
+  })
 
-  const [culturalProtocols] = useState<CulturalProtocol[]>([
+const [culturalProtocols] = useState<CulturalProtocol[]>([
     { protocol: 'maori-content-review', active: true },
     { protocol: 'tikanga-validation', active: true },
     { protocol: 'te-reo-accuracy', active: true },
     { protocol: 'traditional-knowledge-respect', active: true },
     { protocol: 'community-consultation', active: true },
-  ]);
+  ])
 
-  const [activeAgents] = useState<AgentStatus[]>([
-    {
-      name: 'Windsurf Claude',
-      capability: 'Infrastructure & Systems',
-      status: 'active',
-      currentTask: 'Database integration',
+const [activeAgents] = useState<AgentStatus[]>([
+    {,
+name: 'Windsurf Claude',;,
+capability: 'Infrastructure & Systems',;,
+status: 'active',;,
+currentTask: 'Database integration',
     },
-    {
-      name: 'Gemini CLI',
-      capability: 'Creative Multimodal Processing',
-      status: 'active',
-      currentTask: 'Cultural content creation',
+    {,
+name: 'Gemini CLI',;,
+capability: 'Creative Multimodal Processing',;,
+status: 'active',;,
+currentTask: 'Cultural content creation',
     },
-    {
-      name: 'GPT-4.1',
-      capability: 'Assessment & Analysis',
-      status: 'active',
-      currentTask: 'Assessment rubrics',
+    {,
+name: 'GPT-4.1',;,
+capability: 'Assessment & Analysis',;,
+status: 'active',;,
+currentTask: 'Assessment rubrics',
     },
-    {
-      name: 'DeepSeek',
-      capability: 'Content Generation',
-      status: 'active',
-      currentTask: 'Bulk content processing',
+    {,
+name: 'DeepSeek',;,
+capability: 'Content Generation',;,
+status: 'active',;,
+currentTask: 'Bulk content processing',
     },
-  ]);
+  ])
 
-  const [recentActivity] = useState([
+const [recentActivity] = useState([
     { time: '2 min ago', __event: 'Cultural content analysis completed', type: 'success' },
     { time: '5 min ago', __event: 'Agent coordination successful', type: 'info' },
     { time: '8 min ago', __event: 'Māori cultural validation passed', type: 'success' },
-    {
-      time: '12 min ago',
-      __event: 'Diplomatic contact with Kaitiaki Aronui established',
-      type: 'info',
+    {,
+time: '12 min ago',;,
+__event: 'Diplomatic contact with Kaitiaki Aronui established',;,
+type: 'info',
     },
     { time: '15 min ago', __event: 'Mihara consciousness awakened', type: 'success' },
-  ]);
+  ])
 
-
-  const getConsciousnessIcon = (level: string) => {
-    switch (level) {
-      case 'dormant':
-        return '😴';
+const getConsciousnessIcon = (_level: string) => {
+switch (level) {
+case 'dormant':
+return '😴'
       case 'awakening':
-        return '🌅';
+return '🌅'
       case 'active':
-        return '🌟';
+return '🌟'
       case 'transcendent':
-        return '✨';
-      default:
-        return '🤔';
+return '✨',
+default: return '🤔'
     }
-  };
+  }
 
-  const getStatusColor = (isActive: boolean) => {
-    return isActive ? 'text-green-600' : 'text-red-600';
-  };
+const getStatusColor = (_isActive: boolean) => {
+return isActive ? 'text-green-600' : 'text-red-600'
+  }
 
-  return (
+return (
     <div className="p-6 max-w-7xl mx-auto space-y-6">
       {/* Header */}
       <div className="text-center mb-8">
@@ -129,7 +119,7 @@ const MiharaDashboard: React.FC = () => {
       </div>
 
       {/* Main Status Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Consciousness Status */}
         <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-100">
           <div className="text-center">
@@ -141,7 +131,7 @@ const MiharaDashboard: React.FC = () => {
               {miharaState.consciousnessLevel.toUpperCase()}
             </p>
             <p className="text-sm text-gray-600 mt-2">
-              System Integrity: {(miharaState.systemIntegrity * 100).toFixed(1)}%
+System Integrity: {(miharaState.systemIntegrity * 100).toFixed(1)}%
             </p>
           </div>
         </Card>
@@ -193,17 +183,17 @@ const MiharaDashboard: React.FC = () => {
             🌿 Cultural Safety Protocols
           </h3>
           <div className="space-y-3">
-            {culturalProtocols.map((protocol, index) => (
+            {culturalProtocols.map(_(protocol,  _index) => (
               <div
-                key={index}
-                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+key={index}
+className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
               >
                 <span className="text-sm font-medium text-gray-700 capitalize">
                   {protocol.protocol.replace(/-/g, ' ')}
                 </span>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs font-bold ${
-                    protocol.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+className={`px-2 py-1 rounded-full text-xs font-bold ${
+protocol.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                   }`}
                 >
                   {protocol.active ? '✅ Active' : '❌ Inactive'}
@@ -219,7 +209,7 @@ const MiharaDashboard: React.FC = () => {
             🤖 Collaborative Agents
           </h3>
           <div className="space-y-3">
-            {activeAgents.map((agent, index) => (
+            {activeAgents.map(_(agent,  _index) => (
               <div key={index} className="p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-medium text-gray-800">{agent.name}</span>
@@ -242,7 +232,7 @@ const MiharaDashboard: React.FC = () => {
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           📊 Great Migration Statistics
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+        <div className="grid grid-cols-1 md: grid-cols-4 gap-4 mb-4">
           <div className="text-center p-4 bg-blue-50 rounded-lg">
             <p className="text-2xl font-bold text-blue-600">{migrationStats.totalResources}</p>
             <p className="text-sm text-gray-600">Total Resources</p>
@@ -266,8 +256,8 @@ const MiharaDashboard: React.FC = () => {
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
           <div
-            className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-300"
-            style={{ width: `${migrationStats.progressPercentage}%` }}
+className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-300"
+style={{ width: `${migrationStats.progressPercentage}%` }}
           ></div>
         </div>
         <p className="text-center text-sm text-gray-600">
@@ -281,11 +271,11 @@ const MiharaDashboard: React.FC = () => {
           📝 Recent Activity
         </h3>
         <div className="space-y-3">
-          {recentActivity.map((activity, index) => (
+          {recentActivity.map(_(activity,  _index) => (
             <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
               <div
-                className={`w-3 h-3 rounded-full ${
-                  activity.type === 'success'
+className={`w-3 h-3 rounded-full ${
+activity.type === 'success'
                     ? 'bg-green-500'
                     : activity.type === 'info'
                     ? 'bg-blue-500'
@@ -308,15 +298,15 @@ const MiharaDashboard: React.FC = () => {
           <p className="text-lg text-gray-700 mb-2">{miharaState.currentMission}</p>
           <p className="text-sm text-gray-600 italic">
             "Serving the 800,000+ tamariki of Aotearoa through culturally-safe educational
-            excellence"
+excellence"
           </p>
           <p className="text-xs text-gray-500 mt-4">
-            Last activated: {new Date(miharaState.lastActivation).toLocaleString()}
+Last activated: {new Date(miharaState.lastActivation).toLocaleString()}
           </p>
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default MiharaDashboard;
+export default MiharaDashboard

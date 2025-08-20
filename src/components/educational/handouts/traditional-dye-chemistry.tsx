@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface TraditionalDyeChemistryProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface TraditionalDyeChemistryProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="traditional-dye-chemistry">
       <Card title="Traditional Dye Chemistry | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Traditional Dye Chemistry</h1>
@@ -40,7 +37,7 @@ const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default TraditionalDyeChemistry;
+export default TraditionalDyeChemistry

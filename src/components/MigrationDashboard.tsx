@@ -2,55 +2,50 @@
  * Migration Dashboard Component
  * Shows real-time migration progress and statistics
  */
+import React, { useEffect, useState } from 'react'
+import {migrationProgressTracker, type MigrationProgress} from '../services/MigrationProgressTracker'
 
-import React, { useEffect, useState } from 'react';
-import { migrationProgressTracker, type MigrationProgress } from '../services/MigrationProgressTracker';
+export default function MigrationDashboard() {const [progress, setProgress] = useState<MigrationProgress | null>(null)
+  const [statistics, setStatistics] = useState<any>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
-export default function MigrationDashboard() {
-  const [progress, setProgress] = useState<MigrationProgress | null>(null);
-  const [statistics, setStatistics] = useState<any>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = migrationProgressTracker.subscribe((newProgress) => {
-      setProgress(newProgress);
-      setStatistics(migrationProgressTracker.getStatistics());
-    });
+useEffect_(() => {
+const unsubscribe = migrationProgressTracker.subscribe(_(newProgress) => {
+setProgress(newProgress)
+      setStatistics(migrationProgressTracker.getStatistics())})
 
     // Initial load
-    setProgress(migrationProgressTracker.getProgress());
-    setStatistics(migrationProgressTracker.getStatistics());
+setProgress(migrationProgressTracker.getProgress())
+    setStatistics(migrationProgressTracker.getStatistics())
 
-    return unsubscribe;
-  }, []);
+return unsubscribe
+  }, [])
 
-  if (!progress || !statistics) {
-    return null;
+if (!progress || !statistics) {
+return null
   }
+const completionPercentage = (progress.processedResources / progress.totalResources) * 100
+  const timeRemaining = progress.estimatedCompletion.getTime() - Date.now()
+  const hoursRemaining = Math.max(0, Math.floor(timeRemaining / (1000 * 60 * 60)))
 
-  const completionPercentage = (progress.processedResources / progress.totalResources) * 100;
-  const timeRemaining = progress.estimatedCompletion.getTime() - Date.now();
-  const hoursRemaining = Math.max(0, Math.floor(timeRemaining / (1000 * 60 * 60)));
-
-  if (!isVisible) {
-    return (
-      <button
-        onClick={() => setIsVisible(true)}
-        className="fixed bottom-4 left-4 bg-green-500 text-white p-2 rounded-full shadow-lg hover:bg-green-600 transition-colors"
-        title="Show Migration Dashboard"
+if (!isVisible) {
+return (
+_<button
+onClick={() => setIsVisible(true)}
+className="fixed bottom-4 left-4 bg-green-500 text-white p-2 rounded-full shadow-lg hover: bg-green-600 transition-colors"
+title="Show Migration Dashboard"
       >
         📈
       </button>
-    );
+    )
   }
-
-  return (
-    <div className="fixed bottom-4 left-4 bg-white border rounded-lg shadow-lg p-4 w-96 z-50 max-h-96 overflow-y-auto">
+return (
+_<div className="fixed bottom-4 left-4 bg-white border rounded-lg shadow-lg p-4 w-96 z-50 max-h-96 overflow-y-auto">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-semibold text-gray-800">Migration Progress</h3>
         <button
-          onClick={() => setIsVisible(false)}
-          className="text-gray-500 hover:text-gray-700"
+onClick={() => setIsVisible(false)}
+className="text-gray-500 hover: text-gray-700"
         >
           ✕
         </button>
@@ -64,8 +59,8 @@ export default function MigrationDashboard() {
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div 
-            className="bg-green-500 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${completionPercentage}%` }}
+className="bg-green-500 h-2 rounded-full transition-all duration-300"
+style={{ width: `${completionPercentage}%` }}
           ></div>
         </div>
       </div>
@@ -125,22 +120,22 @@ export default function MigrationDashboard() {
       {/* Action Buttons */}
       <div className="mt-4 pt-3 border-t flex gap-2">
         <button
-          onClick={() => migrationProgressTracker.simulateBatchProcessing(50)}
-          className="flex-1 bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600 transition-colors"
+onClick={() => migrationProgressTracker.simulateBatchProcessing(50)}
+className="flex-1 bg-blue-500 text-white px-3 py-1 rounded text-sm hover: bg-blue-600 transition-colors"
         >
-          Process Batch
+Process Batch
         </button>
         <button
-          onClick={() => migrationProgressTracker.reset()}
-          className="flex-1 bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors"
+onClick={() => migrationProgressTracker.reset()}
+className="flex-1 bg-red-500 text-white px-3 py-1 rounded text-sm hover: bg-red-600 transition-colors"
         >
-          Reset
+Reset
         </button>
       </div>
 
       <div className="mt-2 text-xs text-gray-500 text-center">
-        Last updated: {progress.lastUpdated.toLocaleTimeString()}
+Last updated: {progress.lastUpdated.toLocaleTimeString()}
       </div>
     </div>
-  );
+  )
 }

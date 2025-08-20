@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TukutukuPatternsMaths.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TukutukuPatternsMaths.css'
 
-interface TukutukuPatternsMathsProps {
-  className?: string;
-}
-
-export const TukutukuPatternsMaths: React.FC<TukutukuPatternsMathsProps> = ({ className = '' }) => {
-  return (
+interface TukutukuPatternsMathsProps {className?: string}
+export const TukutukuPatternsMaths: React.FC<TukutukuPatternsMathsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="tukutuku patterns maths"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`tukutuku-patterns-maths-handout cultural-focus ${className}`}
+title="tukutuku patterns maths"
+subtitle="Te Kete Ako - Cultural Education"
+className={`tukutuku-patterns-maths-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TukutukuPatternsMaths: React.FC<TukutukuPatternsMathsProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TukutukuPatternsMaths;
+export default TukutukuPatternsMaths

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './SocialMovementsIntroduction.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './SocialMovementsIntroduction.css'
 
-interface SocialMovementsIntroductionProps {
-  className?: string;
-}
-
-export const SocialMovementsIntroduction: React.FC<SocialMovementsIntroductionProps> = ({ className = '' }) => {
-  return (
+interface SocialMovementsIntroductionProps {className?: string}
+export const SocialMovementsIntroduction: React.FC<SocialMovementsIntroductionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="social movements introduction"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`social-movements-introduction-handout cultural-focus ${className}`}
+title="social movements introduction"
+subtitle="Te Kete Ako - Cultural Education"
+className={`social-movements-introduction-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const SocialMovementsIntroduction: React.FC<SocialMovementsIntroductionPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default SocialMovementsIntroduction;
+export default SocialMovementsIntroduction

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2LeadershipProfilesWars.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2LeadershipProfilesWars.css'
 
-interface Unit2LeadershipProfilesWarsProps {
-  className?: string;
-}
-
-export const Unit2LeadershipProfilesWars: React.FC<Unit2LeadershipProfilesWarsProps> = ({ className = '' }) => {
-  return (
+interface Unit2LeadershipProfilesWarsProps {className?: string}
+export const Unit2LeadershipProfilesWars: React.FC<Unit2LeadershipProfilesWarsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 leadership profiles wars"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-leadership-profiles-wars-handout cultural-focus ${className}`}
+title="unit 2 leadership profiles wars"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-leadership-profiles-wars-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2LeadershipProfilesWars: React.FC<Unit2LeadershipProfilesWarsPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2LeadershipProfilesWars;
+export default Unit2LeadershipProfilesWars

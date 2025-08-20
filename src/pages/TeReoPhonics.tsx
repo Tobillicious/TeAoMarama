@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-interface TeReoPhonicsPros {
-  className?: string;
-}
-
-export const TeReoPhonics: React.FC<TeReoPhonicsPros> = ({ className = '' }) => {
-  return (
+interface TeReoPhonicsPros {className?: string}
+export const TeReoPhonics: React.FC<TeReoPhonicsPros> = (_{ className = '' }) => {
+return (
     <div className={`te-reo-phonics ${className}`}>
       <header className="phonics-hero">
         <h1>Te Reo Māori Phonics</h1>
@@ -54,7 +51,7 @@ export const TeReoPhonics: React.FC<TeReoPhonicsPros> = ({ className = '' }) => 
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default TeReoPhonics;
+export default TeReoPhonics

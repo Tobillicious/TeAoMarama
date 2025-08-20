@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CeremonialCircleGeometryProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = ({
-  culturalContext = "Mathematical concepts in cultural context",
-  yearLevel = "Year 7-8",
-  subject = "Mathematics"
+interface CeremonialCircleGeometryProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = (_{
+culturalContext = "Mathematical concepts in cultural context", 
+_yearLevel = "Year 7-8", 
+_subject = "Mathematics"
 }) => {
-  return (
+return (
     <div className="ceremonial-circle-geometry">
       <Card title="Ceremonial Circle Geometry | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Ceremonial Circle Geometry</h1>
@@ -40,7 +37,7 @@ const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CeremonialCircleGeometry;
+export default CeremonialCircleGeometry

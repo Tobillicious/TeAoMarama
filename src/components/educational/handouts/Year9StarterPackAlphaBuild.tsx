@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Year9StarterPackAlphaBuild.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Year9StarterPackAlphaBuild.css'
 
-interface Year9StarterPackAlphaBuildProps {
-  className?: string;
-}
-
-export const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({ className = '' }) => {
-  return (
+interface Year9StarterPackAlphaBuildProps {className?: string}
+export const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="year 9 starter pack alpha build"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`year-9-starter-pack-alpha-build-handout cultural-focus ${className}`}
+title="year 9 starter pack alpha build"
+subtitle="Te Kete Ako - Cultural Education"
+className={`year-9-starter-pack-alpha-build-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Year9StarterPackAlphaBuild;
+export default Year9StarterPackAlphaBuild

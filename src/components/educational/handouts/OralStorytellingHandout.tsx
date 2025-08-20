@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './OralStorytellingHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './OralStorytellingHandout.css'
 
-interface OralStorytellingHandoutProps {
-  className?: string;
-}
-
-export const OralStorytellingHandout: React.FC<OralStorytellingHandoutProps> = ({ className = '' }) => {
-  return (
+interface OralStorytellingHandoutProps {className?: string}
+export const OralStorytellingHandout: React.FC<OralStorytellingHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="oral storytelling handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`oral-storytelling-handout-handout cultural-focus ${className}`}
+title="oral storytelling handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`oral-storytelling-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const OralStorytellingHandout: React.FC<OralStorytellingHandoutProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default OralStorytellingHandout;
+export default OralStorytellingHandout

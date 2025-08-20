@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ResourceSustainabilityStudy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ResourceSustainabilityStudy.css'
 
-interface ResourceSustainabilityStudyProps {
-  className?: string;
-}
-
-export const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = ({ className = '' }) => {
-  return (
+interface ResourceSustainabilityStudyProps {className?: string}
+export const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="resource sustainability study"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`resource-sustainability-study-handout cultural-focus ${className}`}
+title="resource sustainability study"
+subtitle="Te Kete Ako - Cultural Education"
+className={`resource-sustainability-study-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ResourceSustainabilityStudy;
+export default ResourceSustainabilityStudy

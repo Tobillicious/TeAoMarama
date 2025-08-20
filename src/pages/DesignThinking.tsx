@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-interface DesignThinkingProps {
-  className?: string;
-}
-
-export const DesignThinking: React.FC<DesignThinkingProps> = ({ className = '' }) => {
-  return (
+interface DesignThinkingProps {className?: string}
+export const DesignThinking: React.FC<DesignThinkingProps> = (_{ className = '' }) => {
+return (
     <div className={`design-thinking ${className}`}>
       <header className="thinking-hero">
         <h1>Design Thinking Process</h1>
@@ -34,7 +31,7 @@ export const DesignThinking: React.FC<DesignThinkingProps> = ({ className = '' }
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default DesignThinking;
+export default DesignThinking

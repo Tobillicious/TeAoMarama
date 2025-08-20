@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FutureVisioningCreativeWriting.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FutureVisioningCreativeWriting.css'
 
-interface FutureVisioningCreativeWritingProps {
-  className?: string;
-}
-
-export const FutureVisioningCreativeWriting: React.FC<FutureVisioningCreativeWritingProps> = ({ className = '' }) => {
-  return (
+interface FutureVisioningCreativeWritingProps {className?: string}
+export const FutureVisioningCreativeWriting: React.FC<FutureVisioningCreativeWritingProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="future visioning creative writing"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`future-visioning-creative-writing-handout cultural-focus ${className}`}
+title="future visioning creative writing"
+subtitle="Te Kete Ako - Cultural Education"
+className={`future-visioning-creative-writing-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FutureVisioningCreativeWriting: React.FC<FutureVisioningCreativeWri
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FutureVisioningCreativeWriting;
+export default FutureVisioningCreativeWriting

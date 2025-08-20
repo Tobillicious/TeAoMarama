@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ProbabilityHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface ProbabilityHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="probability-handout">
       <Card title="Introduction to Probability Handout | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <!-- Probability Scale Section -->
             <section class="mb-4">
                 <h2 class="text-xl font-bold text-gray-800 text-center mb-3" class="wiley-section-title">The Probability Scale</h2>
@@ -129,7 +126,7 @@ const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({
             <!-- Curriculum Alignment Section -->
             <section class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-xl border border-green-200">
                 <h2 class="text-lg font-bold text-green-800 mb-3 text-center" class="wiley-section-title">📚 NZ Curriculum Alignment</h2>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div class="grid md: grid-cols-2 gap-4 text-sm">
                     <div class="bg-white p-3 rounded-lg border border-green-100">
                         <h3 class="font-semibold text-green-700 mb-2">Mathematics & Statistics</h3>
                         <p class="text-green-600 mb-1"><strong>Achievement Objective:</strong> S4-1</p>
@@ -155,7 +152,7 @@ const ProbabilityHandout: React.FC<ProbabilityHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ProbabilityHandout;
+export default ProbabilityHandout

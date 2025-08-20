@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './DigitalCitizenshipHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './DigitalCitizenshipHandout.css'
 
-interface DigitalCitizenshipHandoutProps {
-  className?: string;
-}
-
-export const DigitalCitizenshipHandout: React.FC<DigitalCitizenshipHandoutProps> = ({ className = '' }) => {
-  return (
+interface DigitalCitizenshipHandoutProps {className?: string}
+export const DigitalCitizenshipHandout: React.FC<DigitalCitizenshipHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="digital citizenship handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`digital-citizenship-handout-handout cultural-focus ${className}`}
+title="digital citizenship handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`digital-citizenship-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const DigitalCitizenshipHandout: React.FC<DigitalCitizenshipHandoutProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default DigitalCitizenshipHandout;
+export default DigitalCitizenshipHandout

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface AtomsInEverydayMaterialsProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 9-10",
-  subject = "Science"
+interface AtomsInEverydayMaterialsProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 9-10", 
+_subject = "Science"
 }) => {
-  return (
+return (
     <div className="atoms-in-everyday-materials">
       <Card title="Atoms In Everyday Materials | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Atoms In Everyday Materials</h1>
@@ -40,7 +37,7 @@ const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default AtomsInEverydayMaterials;
+export default AtomsInEverydayMaterials

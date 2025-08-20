@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalCelebrationsComparison.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalCelebrationsComparison.css'
 
-interface CulturalCelebrationsComparisonProps {
-  className?: string;
-}
-
-export const CulturalCelebrationsComparison: React.FC<CulturalCelebrationsComparisonProps> = ({ className = '' }) => {
-  return (
+interface CulturalCelebrationsComparisonProps {className?: string}
+export const CulturalCelebrationsComparison: React.FC<CulturalCelebrationsComparisonProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural celebrations comparison"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-celebrations-comparison-handout cultural-focus ${className}`}
+title="cultural celebrations comparison"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-celebrations-comparison-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalCelebrationsComparison: React.FC<CulturalCelebrationsCompar
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalCelebrationsComparison;
+export default CulturalCelebrationsComparison

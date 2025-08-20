@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LocalAreaExploration.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LocalAreaExploration.css'
 
-interface LocalAreaExplorationProps {
-  className?: string;
-}
-
-export const LocalAreaExploration: React.FC<LocalAreaExplorationProps> = ({ className = '' }) => {
-  return (
+interface LocalAreaExplorationProps {className?: string}
+export const LocalAreaExploration: React.FC<LocalAreaExplorationProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="local area exploration"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`local-area-exploration-handout cultural-focus ${className}`}
+title="local area exploration"
+subtitle="Te Kete Ako - Cultural Education"
+className={`local-area-exploration-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LocalAreaExploration: React.FC<LocalAreaExplorationProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LocalAreaExploration;
+export default LocalAreaExploration

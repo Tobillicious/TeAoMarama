@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WhakapapaMathematics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WhakapapaMathematics.css'
 
-interface WhakapapaMathematicsProps {
-  className?: string;
-}
-
-export const WhakapapaMathematics: React.FC<WhakapapaMathematicsProps> = ({ className = '' }) => {
-  return (
+interface WhakapapaMathematicsProps {className?: string}
+export const WhakapapaMathematics: React.FC<WhakapapaMathematicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="whakapapa mathematics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`whakapapa-mathematics-handout cultural-focus ${className}`}
+title="whakapapa mathematics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`whakapapa-mathematics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WhakapapaMathematics: React.FC<WhakapapaMathematicsProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WhakapapaMathematics;
+export default WhakapapaMathematics

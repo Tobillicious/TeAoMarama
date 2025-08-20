@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EvidenceEvaluationFramework.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EvidenceEvaluationFramework.css'
 
-interface EvidenceEvaluationFrameworkProps {
-  className?: string;
-}
-
-export const EvidenceEvaluationFramework: React.FC<EvidenceEvaluationFrameworkProps> = ({ className = '' }) => {
-  return (
+interface EvidenceEvaluationFrameworkProps {className?: string}
+export const EvidenceEvaluationFramework: React.FC<EvidenceEvaluationFrameworkProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="evidence evaluation framework"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`evidence-evaluation-framework-handout cultural-focus ${className}`}
+title="evidence evaluation framework"
+subtitle="Te Kete Ako - Cultural Education"
+className={`evidence-evaluation-framework-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EvidenceEvaluationFramework: React.FC<EvidenceEvaluationFrameworkPr
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EvidenceEvaluationFramework;
+export default EvidenceEvaluationFramework

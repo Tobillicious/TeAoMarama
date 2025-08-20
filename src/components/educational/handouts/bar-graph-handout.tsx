@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface BarGraphHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface BarGraphHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const BarGraphHandout: React.FC<BarGraphHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="bar-graph-handout">
       <Card title="Bar Graph Worksheet" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <!-- Instructions Section -->
             <section class="mb-4">
                 <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
@@ -46,7 +43,7 @@ const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
             <!-- Graph 1 Section -->
             <section class="mb-4">
                 <h2 class="text-lg font-bold text-gray-800 mb-2" class="wiley-section-title">🍕 Graph 1: Mangakōtukutuku College Students' Favourite
-                    Lunch Options</h2>
+Lunch Options</h2>
                 <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
                     <div class="chart-container">
                         <canvas id="homeworkChart" role="img" aria-label="Bar chart showing Mangakōtukutuku College students' favourite lunch options: Sandwiches 45 students, Pizza 32 students, Sushi 18 students, Pasta 25 students, and Salad 12 students. Sandwiches are the most popular choice."></canvas>
@@ -100,7 +97,7 @@ const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
             <!-- Graph 3 Section -->
             <section class="mb-4">
                 <h2 class="text-lg font-bold text-gray-800 mb-2" class="wiley-section-title">📚 Graph 3: Mangakōtukutuku College Library Book
-                    Borrowing (This Term)</h2>
+Borrowing (This Term)</h2>
                 <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mb-3">
                     <div class="chart-container">
                         <canvas id="sportsChart" role="img" aria-label="Bar chart showing Mangakōtukutuku College library book borrowing by genre this term: Fiction 156 books, Non-Fiction 89 books, Manga 67 books, Biography 43 books, and Science 34 books. Fiction books are borrowed most frequently with 389 total books borrowed."></canvas>
@@ -129,7 +126,7 @@ const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
                 <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
                     <h2 class="text-lg font-bold text-purple-800 mb-2" class="wiley-section-title">✏️ Level 4 Challenge</h2>
                     <p class="text-sm text-gray-700 mb-3">Write a question about our school data that could be answered
-                        by collecting more information:</p>
+by collecting more information: </p>
                     <div class="space-y-2">
 
                     </div>
@@ -140,7 +137,7 @@ const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default BarGraphHandout;
+export default BarGraphHandout

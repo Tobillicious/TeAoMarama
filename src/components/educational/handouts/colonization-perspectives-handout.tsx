@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ColonizationPerspectivesHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 9-10",
-  subject = "Social Studies, History"
+interface ColonizationPerspectivesHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 9-10", 
+_subject = "Social Studies,  _History"
 }) => {
-  return (
+return (
     <div className="colonization-perspectives-handout">
       <Card title="Colonization Perspectives Handout | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutP
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Colonization Perspectives Handout</h1>
@@ -40,7 +37,7 @@ const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesHandoutP
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ColonizationPerspectivesHandout;
+export default ColonizationPerspectivesHandout

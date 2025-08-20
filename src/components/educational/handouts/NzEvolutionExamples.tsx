@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NzEvolutionExamples.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NzEvolutionExamples.css'
 
-interface NzEvolutionExamplesProps {
-  className?: string;
-}
-
-export const NzEvolutionExamples: React.FC<NzEvolutionExamplesProps> = ({ className = '' }) => {
-  return (
+interface NzEvolutionExamplesProps {className?: string}
+export const NzEvolutionExamples: React.FC<NzEvolutionExamplesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="nz evolution examples"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`nz-evolution-examples-handout cultural-focus ${className}`}
+title="nz evolution examples"
+subtitle="Te Kete Ako - Cultural Education"
+className={`nz-evolution-examples-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NzEvolutionExamples: React.FC<NzEvolutionExamplesProps> = ({ classN
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NzEvolutionExamples;
+export default NzEvolutionExamples

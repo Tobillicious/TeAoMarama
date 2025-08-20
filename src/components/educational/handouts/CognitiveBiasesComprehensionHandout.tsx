@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CognitiveBiasesComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CognitiveBiasesComprehensionHandout.css'
 
-interface CognitiveBiasesComprehensionHandoutProps {
-  className?: string;
-}
-
-export const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface CognitiveBiasesComprehensionHandoutProps {className?: string}
+export const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cognitive biases comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cognitive-biases-comprehension-handout-handout cultural-focus ${className}`}
+title="cognitive biases comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cognitive-biases-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CognitiveBiasesComprehensionHandout: React.FC<CognitiveBiasesCompre
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CognitiveBiasesComprehensionHandout;
+export default CognitiveBiasesComprehensionHandout

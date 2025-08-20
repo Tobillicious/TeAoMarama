@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PopulationTrendsAnalysis.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PopulationTrendsAnalysis.css'
 
-interface PopulationTrendsAnalysisProps {
-  className?: string;
-}
-
-export const PopulationTrendsAnalysis: React.FC<PopulationTrendsAnalysisProps> = ({ className = '' }) => {
-  return (
+interface PopulationTrendsAnalysisProps {className?: string}
+export const PopulationTrendsAnalysis: React.FC<PopulationTrendsAnalysisProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="population trends analysis"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`population-trends-analysis-handout cultural-focus ${className}`}
+title="population trends analysis"
+subtitle="Te Kete Ako - Cultural Education"
+className={`population-trends-analysis-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PopulationTrendsAnalysis: React.FC<PopulationTrendsAnalysisProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PopulationTrendsAnalysis;
+export default PopulationTrendsAnalysis

@@ -1,194 +1,190 @@
-import React, { useState } from 'react';
-import './PhonologicalAwareness.css';
+import React, { useState } from 'react'
+import './PhonologicalAwareness.css'
 
-interface Activity {
-  id: string;
-  title: string;
-  type: 'rhyming' | 'syllables' | 'onset-rime' | 'phoneme' | 'blending' | 'segmenting';
-  level: 'foundation' | 'developing' | 'advanced';
-  description: string;
-  instructions: string;
-  culturalConnection: string;
-  materials: string[];
-  examples: string[];
-  targetSkills: string[];
-  ageRange: string;
-  duration: string;
-}
-
+interface Activity {,
+id: string,
+title: string,
+type: 'rhyming' | 'syllables' | 'onset-rime' | 'phoneme' | 'blending' | 'segmenting',
+level: 'foundation' | 'developing' | 'advanced',
+description: string,
+instructions: string,
+culturalConnection: string,
+materials: string[],
+examples: string[],
+targetSkills: string[],
+ageRange: string,
+duration: string}
 const phonologicalActivities: Activity[] = [
-  {
-    id: 'rhyming-waiata',
-    title: 'Waiata Rhyme Time',
-    type: 'rhyming',
-    level: 'foundation',
-    description: 'Traditional Māori songs and rhymes to develop rhyming awareness',
-    instructions: 'Sing traditional waiata and identify rhyming patterns. Students join in with familiar rhymes and create new ones.',
-    culturalConnection: 'Uses traditional waiata like "Pōkarekare Ana" and nursery rhymes in Te Reo Māori',
-    materials: ['Audio recordings of waiata', 'Picture cards', 'Rhythm instruments', 'Song sheets'],
-    examples: ['kai/wai', 'mana/hana', 'kite/bite', 'cat/hat'],
-    targetSkills: ['Rhyme recognition', 'Rhyme production', 'Rhythm awareness', 'Cultural songs'],
-    ageRange: '4-7 years',
-    duration: '15-20 minutes'
+  {,
+id: 'rhyming-waiata',,
+title: 'Waiata Rhyme Time',,
+type: 'rhyming',,
+level: 'foundation',,
+description: 'Traditional Māori songs and rhymes to develop rhyming awareness',,
+instructions: 'Sing traditional waiata and identify rhyming patterns. Students join in with familiar rhymes and create new ones.',,
+culturalConnection: 'Uses traditional waiata like "Pōkarekare Ana" and nursery rhymes in Te Reo Māori',,
+materials: ['Audio recordings of waiata', 'Picture cards', 'Rhythm instruments', 'Song sheets'],;,
+examples: ['kai/wai', 'mana/hana', 'kite/bite', 'cat/hat'],;,
+targetSkills: ['Rhyme recognition', 'Rhyme production', 'Rhythm awareness', 'Cultural songs'],;,
+ageRange: '4-7 years',,
+duration: '15-20 minutes'
   },
-  {
-    id: 'syllable-clapping',
-    title: 'Ngā Wehenga - Syllable Beats',
-    type: 'syllables',
-    level: 'foundation',
-    description: 'Clapping and counting syllables in Māori and English names and words',
-    instructions: 'Students clap each syllable in their names, whānau names, and familiar kupu. Use body percussion for engagement.',
-    culturalConnection: 'Practice with Māori place names like A-o-te-a-ro-a, Tau-ran-ga, Ro-to-ru-a',
-    materials: ['Name cards', 'Pictures of places', 'Drums or clapping sticks', 'Syllable counting mats'],
-    examples: ['Kai (1)', 'Whā-nau (2)', 'A-o-te-a-ro-a (6)', 'Wel-ling-ton (3)'],
-    targetSkills: ['Syllable awareness', 'Counting skills', 'Name recognition', 'Cultural vocabulary'],
-    ageRange: '4-8 years',
-    duration: '10-15 minutes'
+  {,
+id: 'syllable-clapping',,
+title: 'Ngā Wehenga - Syllable Beats',,
+type: 'syllables',,
+level: 'foundation',,
+description: 'Clapping and counting syllables in Māori and English names and words',,
+instructions: 'Students clap each syllable in their names, whānau names, and familiar kupu. Use body percussion for engagement.',,
+culturalConnection: 'Practice with Māori place names like A-o-te-a-ro-a, Tau-ran-ga, Ro-to-ru-a',,
+materials: ['Name cards', 'Pictures of places', 'Drums or clapping sticks', 'Syllable counting mats'],;,
+examples: ['Kai (1)', 'Whā-nau (2)', 'A-o-te-a-ro-a (6)', 'Wel-ling-ton (3)'],;,
+targetSkills: ['Syllable awareness', 'Counting skills', 'Name recognition', 'Cultural vocabulary'],;,
+ageRange: '4-8 years',,
+duration: '10-15 minutes'
   },
-  {
-    id: 'onset-rime-games',
-    title: 'Timatanga me te Mutunga - Beginning and End Sounds',
-    type: 'onset-rime',
-    level: 'developing',
-    description: 'Breaking words into onset (beginning) and rime (ending) patterns',
-    instructions: 'Use familiar words to separate initial sounds from word families. Build new words by changing onsets.',
-    culturalConnection: 'Focus on Māori consonants and vowel patterns, comparing with English sound structures',
-    materials: ['Onset-rime cards', 'Letter tiles', 'Picture sorting mats', 'Magnetic letters'],
-    examples: ['k-ai', 'wh-are', 'c-at', 'b-at', 'm-at'],
-    targetSkills: ['Sound segmentation', 'Word family recognition', 'Phonemic manipulation', 'Pattern awareness'],
-    ageRange: '5-8 years',
-    duration: '15-25 minutes'
+  {,
+id: 'onset-rime-games',,
+title: 'Timatanga me te Mutunga - Beginning and End Sounds',,
+type: 'onset-rime',,
+level: 'developing',,
+description: 'Breaking words into onset (beginning) and rime (ending) patterns',,
+instructions: 'Use familiar words to separate initial sounds from word families. Build new words by changing onsets.',,
+culturalConnection: 'Focus on Māori consonants and vowel patterns, comparing with English sound structures',,
+materials: ['Onset-rime cards', 'Letter tiles', 'Picture sorting mats', 'Magnetic letters'],;,
+examples: ['k-ai', 'wh-are', 'c-at', 'b-at', 'm-at'],;,
+targetSkills: ['Sound segmentation', 'Word family recognition', 'Phonemic manipulation', 'Pattern awareness'],;,
+ageRange: '5-8 years',,
+duration: '15-25 minutes'
   },
-  {
-    id: 'phoneme-isolation',
-    title: 'Oro Takitahi - Individual Sound Hunters',
-    type: 'phoneme',
-    level: 'developing',
-    description: 'Identifying individual sounds (phonemes) in beginning, middle, and end positions',
-    instructions: 'Students identify specific sounds in different word positions. Use Elkonin boxes for sound mapping.',
-    culturalConnection: 'Compare English phonemes with Te Reo Māori sounds, noting similarities and differences',
-    materials: ['Elkonin boxes', 'Sound cards', 'Picture cards', 'Counting tokens'],
-    examples: ['/k/ in kai', '/a/ in cat', '/t/ in mat', '/ng/ in ring'],
-    targetSkills: ['Phoneme isolation', 'Sound positioning', 'Auditory discrimination', 'Sound-symbol connection'],
-    ageRange: '6-9 years',
-    duration: '20-30 minutes'
+  {,
+id: 'phoneme-isolation',,
+title: 'Oro Takitahi - Individual Sound Hunters',,
+type: 'phoneme',,
+level: 'developing',,
+description: 'Identifying individual sounds (phonemes) in beginning, middle, and end positions',,
+instructions: 'Students identify specific sounds in different word positions. Use Elkonin boxes for sound mapping.',,
+culturalConnection: 'Compare English phonemes with Te Reo Māori sounds, noting similarities and differences',,
+materials: ['Elkonin boxes', 'Sound cards', 'Picture cards', 'Counting tokens'],;,
+examples: ['/k/ in kai', '/a/ in cat', '/t/ in mat', '/ng/ in ring'],;,
+targetSkills: ['Phoneme isolation', 'Sound positioning', 'Auditory discrimination', 'Sound-symbol connection'],;,
+ageRange: '6-9 years',,
+duration: '20-30 minutes'
   },
-  {
-    id: 'blending-practice',
-    title: 'Whakakotahi Oro - Sound Blending Magic',
-    type: 'blending',
-    level: 'developing',
-    description: 'Blending individual sounds together to form complete words',
-    instructions: 'Teacher says sounds separately, students blend to make words. Progress from simple to complex patterns.',
-    culturalConnection: 'Practice with both English and Māori sound patterns, noting different blending rules',
-    materials: ['Sound arrows', 'Blending slides', 'Picture-word cards', 'Audio recordings'],
-    examples: ['/k/-/a/-/i/ = kai', '/c/-/a/-/t/ = cat', '/wh/-/a/-/r/-/e/ = whare'],
-    targetSkills: ['Sound blending', 'Word formation', 'Listening skills', 'Phonemic synthesis'],
-    ageRange: '5-8 years',
-    duration: '15-20 minutes'
+  {,
+id: 'blending-practice',,
+title: 'Whakakotahi Oro - Sound Blending Magic',,
+type: 'blending',,
+level: 'developing',,
+description: 'Blending individual sounds together to form complete words',,
+instructions: 'Teacher says sounds separately, students blend to make words. Progress from simple to complex patterns.',,
+culturalConnection: 'Practice with both English and Māori sound patterns, noting different blending rules',,
+materials: ['Sound arrows', 'Blending slides', 'Picture-word cards', 'Audio recordings'],;,
+examples: ['/k/-/a/-/i/ = kai', '/c/-/a/-/t/ = cat', '/wh/-/a/-/r/-/e/ = whare'],;,
+targetSkills: ['Sound blending', 'Word formation', 'Listening skills', 'Phonemic synthesis'],;,
+ageRange: '5-8 years',,
+duration: '15-20 minutes'
   },
-  {
-    id: 'segmenting-sounds',
-    title: 'Whakatakoto Oro - Breaking Words Apart',
-    type: 'segmenting',
-    level: 'advanced',
-    description: 'Breaking words into individual sounds (phonemes) for spelling and writing',
-    instructions: 'Students stretch words like rubber bands, identifying each sound. Use sound boxes for visual support.',
-    culturalConnection: 'Analyze both English and Māori words to understand different phonemic structures',
-    materials: ['Sound stretching cards', 'Phoneme frames', 'Rubber bands', 'Writing materials'],
-    examples: ['cat = /c/-/a/-/t/', 'kai = /k/-/a/-/i/', 'tree = /t/-/r/-/ee/'],
-    targetSkills: ['Phoneme segmentation', 'Spelling preparation', 'Sound analysis', 'Writing readiness'],
-    ageRange: '6-10 years',
-    duration: '20-25 minutes'
+  {,
+id: 'segmenting-sounds',,
+title: 'Whakatakoto Oro - Breaking Words Apart',,
+type: 'segmenting',,
+level: 'advanced',,
+description: 'Breaking words into individual sounds (phonemes) for spelling and writing',,
+instructions: 'Students stretch words like rubber bands, identifying each sound. Use sound boxes for visual support.',,
+culturalConnection: 'Analyze both English and Māori words to understand different phonemic structures',,
+materials: ['Sound stretching cards', 'Phoneme frames', 'Rubber bands', 'Writing materials'],;,
+examples: ['cat = /c/-/a/-/t/', 'kai = /k/-/a/-/i/', 'tree = /t/-/r/-/ee/'],;,
+targetSkills: ['Phoneme segmentation', 'Spelling preparation', 'Sound analysis', 'Writing readiness'],;,
+ageRange: '6-10 years',,
+duration: '20-25 minutes'
   },
-  {
-    id: 'sound-substitution',
-    title: 'Whakakapi Oro - Sound Swapping Games',
-    type: 'phoneme',
-    level: 'advanced',
-    description: 'Changing one sound in a word to make a new word (phoneme manipulation)',
-    instructions: 'Start with a word, change one sound to make new words. Use physical manipulation with letter cards.',
-    culturalConnection: 'Explore how changing sounds affects meaning in both languages',
-    materials: ['Letter manipulation cards', 'Word family wheels', 'Sound substitution games', 'Writing boards'],
-    examples: ['cat → bat → hat', 'kai → kei → kau', 'run → sun → fun'],
-    targetSkills: ['Phoneme manipulation', 'Word building', 'Spelling patterns', 'Cognitive flexibility'],
-    ageRange: '7-11 years',
-    duration: '25-30 minutes'
+  {,
+id: 'sound-substitution',,
+title: 'Whakakapi Oro - Sound Swapping Games',,
+type: 'phoneme',,
+level: 'advanced',,
+description: 'Changing one sound in a word to make a new word (phoneme manipulation)',,
+instructions: 'Start with a word, change one sound to make new words. Use physical manipulation with letter cards.',,
+culturalConnection: 'Explore how changing sounds affects meaning in both languages',,
+materials: ['Letter manipulation cards', 'Word family wheels', 'Sound substitution games', 'Writing boards'],;,
+examples: ['cat → bat → hat', 'kai → kei → kau', 'run → sun → fun'],;,
+targetSkills: ['Phoneme manipulation', 'Word building', 'Spelling patterns', 'Cognitive flexibility'],;,
+ageRange: '7-11 years',,
+duration: '25-30 minutes'
   },
-  {
-    id: 'alliteration-play',
-    title: 'Oro Rite - Same Sound Stories',
-    type: 'phoneme',
-    level: 'foundation',
-    description: 'Creating sentences and stories with words that start with the same sound',
-    instructions: 'Students create alliterative sentences using their names and cultural vocabulary. Build group stories.',
-    culturalConnection: 'Use Māori and English alliteration, exploring cultural concepts and values',
-    materials: ['Name cards', 'Picture collections', 'Story templates', 'Cultural vocabulary cards'],
-    examples: ['Koro kai kai', 'Silly snakes slither', 'Māori mauri mana'],
-    targetSkills: ['Initial sound awareness', 'Vocabulary building', 'Creative expression', 'Cultural connections'],
-    ageRange: '4-8 years',
-    duration: '15-20 minutes'
+  {,
+id: 'alliteration-play',,
+title: 'Oro Rite - Same Sound Stories',,
+type: 'phoneme',,
+level: 'foundation',,
+description: 'Creating sentences and stories with words that start with the same sound',,
+instructions: 'Students create alliterative sentences using their names and cultural vocabulary. Build group stories.',,
+culturalConnection: 'Use Māori and English alliteration, exploring cultural concepts and values',,
+materials: ['Name cards', 'Picture collections', 'Story templates', 'Cultural vocabulary cards'],;,
+examples: ['Koro kai kai', 'Silly snakes slither', 'Māori mauri mana'],;,
+targetSkills: ['Initial sound awareness', 'Vocabulary building', 'Creative expression', 'Cultural connections'],;,
+ageRange: '4-8 years',,
+duration: '15-20 minutes'
   }
-];
+]
 
-export default function PhonologicalAwareness() {
-  const [selectedType, setSelectedType] = useState<string>('all');
-  const [selectedLevel, setSelectedLevel] = useState<string>('all');
-  const [currentActivity, setCurrentActivity] = useState<Activity | null>(null);
-  const [expandedActivity, setExpandedActivity] = useState<string | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+export default function PhonologicalAwareness() {const [selectedType, setSelectedType] = useState<string>('all')
+  const [selectedLevel, setSelectedLevel] = useState<string>('all')
+  const [currentActivity, setCurrentActivity] = useState<Activity | null>(null)
+  const [expandedActivity, setExpandedActivity] = useState<string | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
-  const filteredActivities = phonologicalActivities.filter(activity => {
-    if (selectedType !== 'all' && activity.type !== selectedType) return false;
-    if (selectedLevel !== 'all' && activity.level !== selectedLevel) return false;
-    return true;
-  });
+const filteredActivities = phonologicalActivities.filter(activity => {
+if (selectedType !== 'all' && activity.type !== selectedType) return false
+    if (selectedLevel !== 'all' && activity.level !== selectedLevel) return false
+    return true})
 
-  const selectRandomActivity = () => {
-    if (filteredActivities.length > 0) {
-      const randomIndex = Math.floor(Math.random() * filteredActivities.length);
-      setCurrentActivity(filteredActivities[randomIndex]);
-      setExpandedActivity(null);
+const selectRandomActivity = () => {
+if (filteredActivities.length > 0) {
+const randomIndex = Math.floor(Math.random() * filteredActivities.length)
+      setCurrentActivity(filteredActivities[randomIndex])
+      setExpandedActivity(null)
     }
-  };
+  }
 
-  const toggleActivity = (activityId: string) => {
-    setExpandedActivity(expandedActivity === activityId ? null : activityId);
-  };
+const toggleActivity = (_activityId: string) => {
+setExpandedActivity(expandedActivity === activityId ? null : activityId)
+  }
 
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case 'foundation': return '#4caf50';
-      case 'developing': return '#ff9800';
-      case 'advanced': return '#2196f3';
-      default: return '#666';
+const getLevelColor = (_level: string) => {
+switch (level) {
+case 'foundation': return '#4caf50'
+      case 'developing': return '#ff9800'
+      case 'advanced': return '#2196f3',
+default: return '#666'
     }
-  };
+  }
 
-  const getTypeColor = (type: string) => {
-    const colors = {
+const getTypeColor = (_type: string) => {
+const colors = {
       'rhyming': '#e8f5e8',
       'syllables': '#fff3e0',
       'onset-rime': '#e3f2fd',
       'phoneme': '#f3e5f5',
       'blending': '#fce4ec',
       'segmenting': '#e0f2f1'
-    };
-    return colors[type as keyof typeof colors] || '#f5f5f5';
-  };
+    }
+    return colors[type as keyof typeof colors] || '#f5f5f5'
+  }
 
-  const playDemo = () => {
+const playDemo = () => {
     // Placeholder for audio demo functionality
-    setIsPlaying(true);
-    setTimeout(() => setIsPlaying(false), 3000);
-  };
+setIsPlaying(true)
+    setTimeout_(() => setIsPlaying(false), 3000)
+  }
 
-  return (
-    <div className="phonological-container">
+return (
+_<div className="phonological-container">
       <header className="phonological-header">
         <h1 className="phonological-title">🎵 Phonological Awareness - Mataara Oro</h1>
         <p className="phonological-subtitle">
-          Building foundational sound awareness through culturally responsive activities and games
+Building foundational sound awareness through culturally responsive activities and games
         </p>
       </header>
 
@@ -196,12 +192,12 @@ export default function PhonologicalAwareness() {
       <section className="cultural-framework">
         <h2>🌿 Oral Tradition & Sound Awareness</h2>
         <p>
-          Phonological awareness builds on the rich oral traditions of Te Ao Māori, where sound, rhythm, 
-          and pattern have always been central to learning and cultural transmission. These activities 
-          honor both traditional ways of knowing and systematic skill development.
+Phonological awareness builds on the rich oral traditions of Te Ao Māori,  _where sound,  _rhythm,  
+_and pattern have always been central to learning and cultural transmission. These activities 
+honor both traditional ways of knowing and systematic skill development.
         </p>
         <div className="framework-highlight">
-          <strong>Whakatauki:</strong> "Ko te reo te mauri o te mana" - Language is the life force of spiritual power.
+          <strong>Whakatauki: </strong> "Ko te reo te mauri o te mana" - Language is the life force of spiritual power.
         </div>
       </section>
 
@@ -246,9 +242,9 @@ export default function PhonologicalAwareness() {
           <div className="filter-group">
             <label htmlFor="type-filter">Activity Type:</label>
             <select 
-              id="type-filter"
-              value={selectedType} 
-              onChange={(e) => setSelectedType(e.target.value)}
+id="type-filter"
+value={selectedType} 
+onChange={(e) => setSelectedType(e.target.value)}
             >
               <option value="all">All Types</option>
               <option value="rhyming">Rhyming</option>
@@ -261,11 +257,11 @@ export default function PhonologicalAwareness() {
           </div>
 
           <div className="filter-group">
-            <label htmlFor="level-filter">Skill Level:</label>
+            <label htmlFor="level-filter">Skill Level: </label>
             <select 
-              id="level-filter"
-              value={selectedLevel} 
-              onChange={(e) => setSelectedLevel(e.target.value)}
+id="level-filter"
+value={selectedLevel} 
+onChange={(_e) => setSelectedLevel(e.target.value)}
             >
               <option value="all">All Levels</option>
               <option value="foundation">Foundation</option>
@@ -275,9 +271,9 @@ export default function PhonologicalAwareness() {
           </div>
 
           <button 
-            className="random-activity-btn"
-            onClick={selectRandomActivity}
-            disabled={filteredActivities.length === 0}
+className="random-activity-btn"
+onClick={selectRandomActivity}
+disabled={filteredActivities.length === 0}
           >
             🎲 Random Activity
           </button>
@@ -292,15 +288,15 @@ export default function PhonologicalAwareness() {
       {currentActivity && (
         <section className="featured-activity">
           <div 
-            className="activity-spotlight"
-            style={{ backgroundColor: getTypeColor(currentActivity.type) }}
+className="activity-spotlight"
+style={{ backgroundColor: getTypeColor(currentActivity.type) }}
           >
             <div className="activity-header">
               <div className="activity-badges">
                 <span className="type-badge">{currentActivity.type}</span>
                 <span 
-                  className="level-badge"
-                  style={{ backgroundColor: getLevelColor(currentActivity.level) }}
+className="level-badge"
+style={{ backgroundColor: getLevelColor(currentActivity.level) }}
                 >
                   {currentActivity.level}
                 </span>
@@ -327,7 +323,7 @@ export default function PhonologicalAwareness() {
                 <div className="target-skills">
                   <h4>🎯 Target Skills</h4>
                   <div className="skills-tags">
-                    {currentActivity.targetSkills.map((skill, index) => (
+                    {currentActivity.targetSkills.map(_(skill,  _index) => (
                       <span key={index} className="skill-tag">{skill}</span>
                     ))}
                   </div>
@@ -336,7 +332,7 @@ export default function PhonologicalAwareness() {
                 <div className="materials-needed">
                   <h4>📋 Materials</h4>
                   <ul>
-                    {currentActivity.materials.map((material, index) => (
+                    {currentActivity.materials.map(_(material,  _index) => (
                       <li key={index}>{material}</li>
                     ))}
                   </ul>
@@ -345,7 +341,7 @@ export default function PhonologicalAwareness() {
                 <div className="examples-section">
                   <h4>💡 Examples</h4>
                   <div className="examples-grid">
-                    {currentActivity.examples.map((example, index) => (
+                    {currentActivity.examples.map(_(example,  _index) => (
                       <span key={index} className="example-item">{example}</span>
                     ))}
                   </div>
@@ -354,9 +350,9 @@ export default function PhonologicalAwareness() {
 
               <div className="activity-actions">
                 <button 
-                  className="demo-btn"
-                  onClick={() => playDemo(currentActivity.type)}
-                  disabled={isPlaying}
+className="demo-btn"
+onClick={() => playDemo(currentActivity.type)}
+disabled={isPlaying}
                 >
                   {isPlaying ? '🔊 Playing...' : '▶️ Audio Demo'}
                 </button>
@@ -372,21 +368,21 @@ export default function PhonologicalAwareness() {
       <section className="activities-grid-section">
         <h3>📚 All Activities ({filteredActivities.length})</h3>
         <div className="activities-grid">
-          {filteredActivities.map((activity) => (
+          {filteredActivities.map(_(activity) => (
             <div 
-              key={activity.id} 
-              className="activity-card"
-              style={{ backgroundColor: getTypeColor(activity.type) }}
+key={activity.id} 
+className="activity-card"
+style={{ backgroundColor: getTypeColor(activity.type) }}
             >
               <div 
-                className="activity-card-header"
-                onClick={() => toggleActivity(activity.id)}
+className="activity-card-header"
+onClick={() => toggleActivity(activity.id)}
               >
                 <div className="card-badges">
                   <span className="card-type-badge">{activity.type}</span>
                   <span 
-                    className="card-level-dot"
-                    style={{ backgroundColor: getLevelColor(activity.level) }}
+className="card-level-dot"
+style={{ backgroundColor: getLevelColor(activity.level) }}
                   ></span>
                 </div>
                 
@@ -404,9 +400,9 @@ export default function PhonologicalAwareness() {
               </div>
 
               {expandedActivity === activity.id && (
-                <div className="activity-card-details">
+_<div className="activity-card-details">
                   <div className="card-instructions">
-                    <h5>Instructions:</h5>
+                    <h5>Instructions: </h5>
                     <p>{activity.instructions}</p>
                   </div>
                   
@@ -417,8 +413,8 @@ export default function PhonologicalAwareness() {
 
                   <div className="card-actions">
                     <button 
-                      className="select-btn"
-                      onClick={() => setCurrentActivity(activity)}
+className="select-btn"
+onClick={() => setCurrentActivity(activity)}
                     >
                       ⭐ Feature This Activity
                     </button>
@@ -477,5 +473,5 @@ export default function PhonologicalAwareness() {
         <p className="platform-info">Te Kete Ako - Phonological Excellence for Aotearoa</p>
       </footer>
     </div>
-  );
+  )
 }

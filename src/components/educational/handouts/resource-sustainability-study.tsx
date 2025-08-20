@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ResourceSustainabilityStudyProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface ResourceSustainabilityStudyProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="resource-sustainability-study">
       <Card title="Resource Sustainability Study | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Resource Sustainability Study</h1>
@@ -40,7 +37,7 @@ const ResourceSustainabilityStudy: React.FC<ResourceSustainabilityStudyProps> = 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ResourceSustainabilityStudy;
+export default ResourceSustainabilityStudy

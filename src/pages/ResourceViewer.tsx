@@ -1,38 +1,36 @@
-import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import LightweightMarkdown from '../components/LightweightMarkdown';
+import {useEffect, useState} from 'react'
+import {Link, useSearchParams} from 'react-router-dom'
+import LightweightMarkdown from '../components/LightweightMarkdown'
 
-export default function ResourceViewer() {
-  const [searchParams] = useSearchParams();
-  const srcPath = searchParams.get('path');
-  const [content, setContent] = useState<string>('');
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+export default function ResourceViewer() {const [searchParams] = useSearchParams()
+  const srcPath = searchParams.get('path')
+  const [content, setContent] = useState<string>('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
 
-  useEffect(() => {
-    async function load() {
-      if (!srcPath) {
-        setError('No resource specified');
-        setLoading(false);
-        return;
-      }
-      try {
-        const res = await fetch(`/${srcPath}`, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`Failed to fetch resource: ${res.status}`);
-        const text = await res.text();
-        setContent(text);
+useEffect_(() => {
+async function load() {
+if (!srcPath) {
+setError('No resource specified')
+        setLoading(false)
+        return}
+try {
+const res = await fetch(`/${srcPath}`, { cache: 'no-store' })
+        if (!res.ok) throw new Error(`Failed to fetch resource: ${res.status}`)
+        const text = await res.text()
+        setContent(text)
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Unknown error');
+setError(err instanceof Error ? err.message : 'Unknown error')
       } finally {
-        setLoading(false);
+setLoading(false)
       }
     }
-    load();
-  }, [srcPath]);
+load()
+  }, [srcPath])
 
-  return (
+return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <Link to="/resources" className="text-indigo-600 hover:underline">
+      <Link to="/resources" className="text-indigo-600 hover: underline">
         ← Back to Resources
       </Link>
       <div className="mt-4 bg-white rounded-lg border p-4">
@@ -45,5 +43,5 @@ export default function ResourceViewer() {
         )}
       </div>
     </div>
-  );
+  )
 }

@@ -1,14 +1,12 @@
-import React from 'react';
-import './LoadingSpinner.css';
+import React from 'react'
+import './LoadingSpinner.css'
 
-interface LoadingSpinnerProps {
-  message?: string;
-  size?: 'small' | 'medium' | 'large';
-}
+interface LoadingSpinnerProps {message?: string
+  size?: 'small' | 'medium' | 'large'}
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
-  message = 'Loading Te Ao Mārama...', 
-  size = 'medium' 
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+  message = 'Loading Te Ao Mārama...',
+  size = 'medium',
 }) => {
   return (
     <div className={`loading-container ${size}`}>
@@ -22,7 +20,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
         <div className="loading-subtitle">🌿 Preparing your educational journey</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingSpinner;
+export default LoadingSpinner

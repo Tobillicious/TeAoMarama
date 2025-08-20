@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EnvironmentalImpactStudy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EnvironmentalImpactStudy.css'
 
-interface EnvironmentalImpactStudyProps {
-  className?: string;
-}
-
-export const EnvironmentalImpactStudy: React.FC<EnvironmentalImpactStudyProps> = ({ className = '' }) => {
-  return (
+interface EnvironmentalImpactStudyProps {className?: string}
+export const EnvironmentalImpactStudy: React.FC<EnvironmentalImpactStudyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="environmental impact study"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`environmental-impact-study-handout cultural-focus ${className}`}
+title="environmental impact study"
+subtitle="Te Kete Ako - Cultural Education"
+className={`environmental-impact-study-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EnvironmentalImpactStudy: React.FC<EnvironmentalImpactStudyProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EnvironmentalImpactStudy;
+export default EnvironmentalImpactStudy

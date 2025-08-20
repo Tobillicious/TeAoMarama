@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitRhetoricalDevicesHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitRhetoricalDevicesHandout.css'
 
-interface WritersToolkitRhetoricalDevicesHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalDevicesHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitRhetoricalDevicesHandoutProps {className?: string}
+export const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhetoricalDevicesHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit rhetorical devices handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-rhetorical-devices-handout-handout cultural-focus ${className}`}
+title="writers toolkit rhetorical devices handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-rhetorical-devices-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhet
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitRhetoricalDevicesHandout;
+export default WritersToolkitRhetoricalDevicesHandout

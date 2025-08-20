@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface KaitiakiGeneratedMigrationStudentHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrationStudentHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface KaitiakiGeneratedMigrationStudentHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrationStudentHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="kaitiaki-generated-migration-student-handout">
       <Card title="Student Handout - Māori Migration to Aotearoa | Kaitiaki Aronui Generated" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             
             <div class="handout-header">
                 <h1 class="wiley-hero-title">📜 Student Learning Handout</h1>
@@ -40,7 +37,7 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
 
             <div class="vocab-box printable">
                 <h3>🗣️ Kupu Hou - New Vocabulary</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="display: grid grid-template-columns: 1fr 1fr gap: 1rem">
                     <div>
                         <p><strong>Waka</strong> - /wah-kah/ - Traditional ocean-going canoe</p>
                         <p><strong>Hawaiki</strong> - /hah-why-kee/ - Spiritual homeland</p>
@@ -65,9 +62,9 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                 <div class="waka-diagram">
                     <h4>Major Waka and Their Routes</h4>
                     <p><strong>Te Arawa:</strong> Landed at Maketu, Bay of Plenty</p>
-                    <p><strong>Tainui:</strong> Crossed North Island to Kāwhia Harbour</p>
+                    <p><strong>Tainui: </strong> Crossed North Island to Kāwhia Harbour</p>
                     <p><strong>Horouta:</strong> Arrived at Gisborne, East Coast</p>
-                    <p><strong>Aotea:</strong> Landed on West Coast</p>
+                    <p><strong>Aotea: </strong> Landed on West Coast</p>
                     <p><strong>Kurahaupō:</strong> Multiple landings, Wellington region</p>
                 </div>
 
@@ -75,11 +72,11 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                     <li>Which waka landed closest to where you live? _______________________</li>
                     <li>Why do you think different waka landed in different places?</li>
                     <div class="reflection-space">
-                        Write your thoughts here...
+Write your thoughts here...
                     </div>
                     <li>What challenges would navigators face crossing Te Moana-nui-a-Kiwa?</li>
                     <div class="reflection-space">
-                        List at least 3 challenges...
+List at least 3 challenges...
                     </div>
                 </ol>
             </div>
@@ -97,7 +94,7 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
 
                 <div class="cultural-note">
                     <h4>🌙 Cultural Wisdom</h4>
-                    <p>Navigation wasn't just about getting from A to B. It was about:</p>
+                    <p>Navigation wasn't just about getting from A to B. It was about: </p>
                     <ul>
                         <li>Spiritual connection to Tangaroa (god of the sea)</li>
                         <li>Reading the mauri (life force) of the ocean</li>
@@ -106,15 +103,15 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                     </ul>
                 </div>
 
-                <p><strong>Star Navigation Challenge:</strong></p>
+                <p><strong>Star Navigation Challenge: </strong></p>
                 <ol>
                     <li>If Matariki rises in the east, which direction should you sail to reach Aotearoa from Hawaiki?</li>
-                    <div class="reflection-space">
-                        Circle: NORTH / SOUTH / EAST / WEST / SOUTHEAST
+                    <div class="reflection-space">,
+Circle: NORTH / SOUTH / EAST / WEST / SOUTHEAST
                     </div>
                     <li>What other natural signs might help navigators? (Think: birds, waves, clouds)</li>
                     <div class="reflection-space">
-                        List your ideas...
+List your ideas...
                     </div>
                 </ol>
             </div>
@@ -124,13 +121,13 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                 
                 <p>Write a short story (150-200 words) from the perspective of someone on the great migration. Choose your role:</p>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: var(--space-4) 0;">
-                    <div style="border: 1px solid #ddd; padding: var(--space-4); border-radius: var(--radius-md);">
+                <div style="display: grid grid-template-columns: 1fr 1fr gap: 1rem margin: var(--space-4) 0">
+                    <div style="border: 1px solid #ddd padding: var(--space-4) border-radius: var(--radius-md)">
                         <h4>🧭 Navigator</h4>
                         <p>You read the stars and guide the waka</p>
                         <p><em>Focus on: skills, responsibility, connection to nature</em></p>
                     </div>
-                    <div style="border: 1px solid #ddd; padding: var(--space-4); border-radius: var(--radius-md);">
+                    <div style="border: 1px solid #ddd padding: var(--space-4) border-radius: var(--radius-md)">
                         <h4>👨‍👩‍👧‍👦 Family Member</h4>
                         <p>You're leaving everything familiar behind</p>
                         <p><em>Focus on: emotions, hopes, fears, memories</em></p>
@@ -138,11 +135,11 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                 </div>
 
                 <div class="cultural-note">
-                    <p><strong>Remember:</strong> This is creative writing based on historical understanding. Real iwi stories belong to specific whānau and should be told by them.</p>
+                    <p><strong>Remember: </strong> This is creative writing based on historical understanding. Real iwi stories belong to specific whānau and should be told by them.</p>
                 </div>
 
-                <div class="reflection-space" style="min-height: 200px;">
-                    <p><strong>My Migration Pūrākau:</strong></p>
+                <div class="reflection-space" style="min-height: 200px">
+                    <p><strong>My Migration Pūrākau: </strong></p>
                     <p><em>Write your story here... Start with describing who you are and why you're on this journey.</em></p>
                 </div>
             </div>
@@ -153,31 +150,31 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                 <h4>Modern Migration</h4>
                 <p>Māori weren't the only people to migrate to new lands. Think about migration today:</p>
                 
-                <table style="width: 100%; border-collapse: collapse; margin: var(--space-4) 0;">
-                    <tr style="background: #f5f5f5;">
-                        <th style="border: 1px solid #ddd; padding: 8px;">Migration Aspect</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">1000+ Years Ago</th>
-                        <th style="border: 1px solid #ddd; padding: 8px;">Today</th>
+                <table style="width: 100% border-collapse: collapse margin: var(--space-4) 0">
+                    <tr style="background: #f5f5f5">
+                        <th style="border: 1px solid #ddd padding: 8px">Migration Aspect</th>
+                        <th style="border: 1px solid #ddd padding: 8px">1000+ Years Ago</th>
+                        <th style="border: 1px solid #ddd padding: 8px">Today</th>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Navigation</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">Stars, waves, birds</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">GPS, satellites, maps</td>
+                        <td style="border: 1px solid #ddd padding: 8px"><strong>Navigation</strong></td>
+                        <td style="border: 1px solid #ddd padding: 8px">Stars, waves, birds</td>
+                        <td style="border: 1px solid #ddd padding: 8px">GPS, satellites, maps</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Reasons to migrate</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px"><strong>Reasons to migrate</strong></td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>What people bring</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px"><strong>What people bring</strong></td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
                     </tr>
                     <tr>
-                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Challenges faced</strong></td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
-                        <td style="border: 1px solid #ddd; padding: 8px;">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px"><strong>Challenges faced</strong></td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
+                        <td style="border: 1px solid #ddd padding: 8px">_________________</td>
                     </tr>
                 </table>
             </div>
@@ -202,9 +199,9 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
             <div class="activity-section printable">
                 <h3>🎯 Self-Assessment Checklist</h3>
                 
-                <p>Before you finish, check off what you've learned:</p>
+                <p>Before you finish, check off what you've learned: </p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div style="display: grid grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) gap: 1rem">
                     <div>
                         <h4>📚 Knowledge</h4>
                         <p>☐ I can name at least 3 major waka</p>
@@ -222,7 +219,7 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
                 </div>
 
                 <div class="reflection-space">
-                    <p><strong>One thing that surprised me:</strong></p>
+                    <p><strong>One thing that surprised me: </strong></p>
                     <p><strong>One question I still have:</strong></p>
                     <p><strong>How this connects to my life:</strong></p>
                 </div>
@@ -233,7 +230,7 @@ const KaitiakiGeneratedMigrationStudentHandout: React.FC<KaitiakiGeneratedMigrat
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default KaitiakiGeneratedMigrationStudentHandout;
+export default KaitiakiGeneratedMigrationStudentHandout

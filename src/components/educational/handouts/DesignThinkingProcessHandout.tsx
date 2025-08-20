@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './DesignThinkingProcessHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './DesignThinkingProcessHandout.css'
 
-interface DesignThinkingProcessHandoutProps {
-  className?: string;
-}
-
-export const DesignThinkingProcessHandout: React.FC<DesignThinkingProcessHandoutProps> = ({ className = '' }) => {
-  return (
+interface DesignThinkingProcessHandoutProps {className?: string}
+export const DesignThinkingProcessHandout: React.FC<DesignThinkingProcessHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="design thinking process handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`design-thinking-process-handout-handout cultural-focus ${className}`}
+title="design thinking process handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`design-thinking-process-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const DesignThinkingProcessHandout: React.FC<DesignThinkingProcessHandout
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default DesignThinkingProcessHandout;
+export default DesignThinkingProcessHandout

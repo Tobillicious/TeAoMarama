@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PoliticalCartoonAnalysisHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PoliticalCartoonAnalysisHandout.css'
 
-interface PoliticalCartoonAnalysisHandoutProps {
-  className?: string;
-}
-
-export const PoliticalCartoonAnalysisHandout: React.FC<PoliticalCartoonAnalysisHandoutProps> = ({ className = '' }) => {
-  return (
+interface PoliticalCartoonAnalysisHandoutProps {className?: string}
+export const PoliticalCartoonAnalysisHandout: React.FC<PoliticalCartoonAnalysisHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="political cartoon analysis handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`political-cartoon-analysis-handout-handout cultural-focus ${className}`}
+title="political cartoon analysis handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`political-cartoon-analysis-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PoliticalCartoonAnalysisHandout: React.FC<PoliticalCartoonAnalysisH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PoliticalCartoonAnalysisHandout;
+export default PoliticalCartoonAnalysisHandout

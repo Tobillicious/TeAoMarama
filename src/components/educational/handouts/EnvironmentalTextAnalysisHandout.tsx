@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EnvironmentalTextAnalysisHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EnvironmentalTextAnalysisHandout.css'
 
-interface EnvironmentalTextAnalysisHandoutProps {
-  className?: string;
-}
-
-export const EnvironmentalTextAnalysisHandout: React.FC<EnvironmentalTextAnalysisHandoutProps> = ({ className = '' }) => {
-  return (
+interface EnvironmentalTextAnalysisHandoutProps {className?: string}
+export const EnvironmentalTextAnalysisHandout: React.FC<EnvironmentalTextAnalysisHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="environmental text analysis handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`environmental-text-analysis-handout-handout cultural-focus ${className}`}
+title="environmental text analysis handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`environmental-text-analysis-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EnvironmentalTextAnalysisHandout: React.FC<EnvironmentalTextAnalysi
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EnvironmentalTextAnalysisHandout;
+export default EnvironmentalTextAnalysisHandout

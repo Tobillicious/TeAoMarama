@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LifeInThePast.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LifeInThePast.css'
 
-interface LifeInThePastProps {
-  className?: string;
-}
-
-export const LifeInThePast: React.FC<LifeInThePastProps> = ({ className = '' }) => {
-  return (
+interface LifeInThePastProps {className?: string}
+export const LifeInThePast: React.FC<LifeInThePastProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="life in the past"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`life-in-the-past-handout cultural-focus ${className}`}
+title="life in the past"
+subtitle="Te Kete Ako - Cultural Education"
+className={`life-in-the-past-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LifeInThePast: React.FC<LifeInThePastProps> = ({ className = '' }) 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LifeInThePast;
+export default LifeInThePast

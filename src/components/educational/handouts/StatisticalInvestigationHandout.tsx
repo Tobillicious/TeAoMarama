@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './StatisticalInvestigationHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './StatisticalInvestigationHandout.css'
 
-interface StatisticalInvestigationHandoutProps {
-  className?: string;
-}
-
-export const StatisticalInvestigationHandout: React.FC<StatisticalInvestigationHandoutProps> = ({ className = '' }) => {
-  return (
+interface StatisticalInvestigationHandoutProps {className?: string}
+export const StatisticalInvestigationHandout: React.FC<StatisticalInvestigationHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="statistical investigation handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`statistical-investigation-handout-handout cultural-focus ${className}`}
+title="statistical investigation handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`statistical-investigation-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const StatisticalInvestigationHandout: React.FC<StatisticalInvestigationH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default StatisticalInvestigationHandout;
+export default StatisticalInvestigationHandout

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalPreservationEssays.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalPreservationEssays.css'
 
-interface CulturalPreservationEssaysProps {
-  className?: string;
-}
-
-export const CulturalPreservationEssays: React.FC<CulturalPreservationEssaysProps> = ({ className = '' }) => {
-  return (
+interface CulturalPreservationEssaysProps {className?: string}
+export const CulturalPreservationEssays: React.FC<CulturalPreservationEssaysProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural preservation essays"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-preservation-essays-handout cultural-focus ${className}`}
+title="cultural preservation essays"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-preservation-essays-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalPreservationEssays: React.FC<CulturalPreservationEssaysProp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalPreservationEssays;
+export default CulturalPreservationEssays

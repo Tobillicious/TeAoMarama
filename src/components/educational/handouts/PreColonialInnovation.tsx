@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PreColonialInnovation.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PreColonialInnovation.css'
 
-interface PreColonialInnovationProps {
-  className?: string;
-}
-
-export const PreColonialInnovation: React.FC<PreColonialInnovationProps> = ({ className = '' }) => {
-  return (
+interface PreColonialInnovationProps {className?: string}
+export const PreColonialInnovation: React.FC<PreColonialInnovationProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="pre colonial innovation"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`pre-colonial-innovation-handout cultural-focus ${className}`}
+title="pre colonial innovation"
+subtitle="Te Kete Ako - Cultural Education"
+className={`pre-colonial-innovation-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PreColonialInnovation: React.FC<PreColonialInnovationProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PreColonialInnovation;
+export default PreColonialInnovation

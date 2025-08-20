@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface PhysicsOfTraditionalGamesProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = ({
-  culturalContext = "Traditional knowledge and cultural practices",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface PhysicsOfTraditionalGamesProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = (_{
+culturalContext = "Traditional knowledge and cultural practices", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="physics-of-traditional-games">
       <Card title="Physics Of Traditional Games | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Physics Of Traditional Games</h1>
@@ -40,7 +37,7 @@ const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default PhysicsOfTraditionalGames;
+export default PhysicsOfTraditionalGames

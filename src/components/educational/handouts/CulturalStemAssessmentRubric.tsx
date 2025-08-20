@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalStemAssessmentRubric.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalStemAssessmentRubric.css'
 
-interface CulturalStemAssessmentRubricProps {
-  className?: string;
-}
-
-export const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> = ({ className = '' }) => {
-  return (
+interface CulturalStemAssessmentRubricProps {className?: string}
+export const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubricProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural stem assessment rubric"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-stem-assessment-rubric-handout cultural-focus ${className}`}
+title="cultural stem assessment rubric"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-stem-assessment-rubric-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalStemAssessmentRubric: React.FC<CulturalStemAssessmentRubric
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalStemAssessmentRubric;
+export default CulturalStemAssessmentRubric

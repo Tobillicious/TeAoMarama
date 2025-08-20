@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NzGeographyBasics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NzGeographyBasics.css'
 
-interface NzGeographyBasicsProps {
-  className?: string;
-}
-
-export const NzGeographyBasics: React.FC<NzGeographyBasicsProps> = ({ className = '' }) => {
-  return (
+interface NzGeographyBasicsProps {className?: string}
+export const NzGeographyBasics: React.FC<NzGeographyBasicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="nz geography basics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`nz-geography-basics-handout cultural-focus ${className}`}
+title="nz geography basics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`nz-geography-basics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NzGeographyBasics: React.FC<NzGeographyBasicsProps> = ({ className 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NzGeographyBasics;
+export default NzGeographyBasics

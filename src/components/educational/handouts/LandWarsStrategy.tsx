@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LandWarsStrategy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LandWarsStrategy.css'
 
-interface LandWarsStrategyProps {
-  className?: string;
-}
-
-export const LandWarsStrategy: React.FC<LandWarsStrategyProps> = ({ className = '' }) => {
-  return (
+interface LandWarsStrategyProps {className?: string}
+export const LandWarsStrategy: React.FC<LandWarsStrategyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="land wars strategy"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`land-wars-strategy-handout cultural-focus ${className}`}
+title="land wars strategy"
+subtitle="Te Kete Ako - Cultural Education"
+className={`land-wars-strategy-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LandWarsStrategy: React.FC<LandWarsStrategyProps> = ({ className = 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LandWarsStrategy;
+export default LandWarsStrategy

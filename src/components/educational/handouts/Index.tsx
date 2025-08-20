@@ -1,38 +1,203 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Index.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface IndexProps {
-  className?: string;
-}
-
-export const Index: React.FC<IndexProps> = ({ className = '' }) => {
-  return (
-    <Card 
-      title="index"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`index-handout cultural-focus ${className}`}
-    >
-      <div className="handout-content">
-        <div className="cultural-header">
-          <span className="cultural-icon">🌿</span>
-          <h3>Cultural Learning Resource</h3>
-        </div>
-        
-        <div className="content-section">
-          <p>This handout from Te Kete Ako has been migrated with cultural integrity and Te Kete Ako beauty patterns.</p>
-          <p>Original content: index</p>
-        </div>
-
-        <div className="cultural-footer">
-          <div className="footer-content">
-            <span className="footer-icon">🌿</span>
-            <p>Honouring the cultural heritage of Aotearoa New Zealand</p>
+interface IndexProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const Index: React.FC<IndexProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
+}) => {
+return (
+    <div className="index">
+      <Card title="Redirecting..." className="handout-card cultural-focus">
+        <div className="handout-header">
+          <h1 className="handout-title">Redirecting...</h1>
+          <div className="handout-meta">
+            <span className="year-level">{yearLevel}</span>
+            <span className="subject">{subject}</span>
+            <span className="cultural-context">🌿 {culturalContext}</span>
           </div>
         </div>
-      </div>
-    </Card>
-  );
-};
 
-export default Index;
+        <div className="handout-content">
+          <div 
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
+
+                    <header class="site-header no-print">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Te Kete Ako</a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="unit-plans.html">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text-en">Unit Plans</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Waehere</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers/index.html">
+                            <span class="nav-icon">🧑‍🏫</span>
+                            <span class="nav-text-en">Teachers</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kaiako</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html">
+                            <span class="nav-icon">🎓</span>
+                            <span class="nav-text-en">Lessons</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Akoranga</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="handouts.html">
+                            <span class="nav-icon">📄</span>
+                            <span class="nav-text-en">Handouts</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Rauemi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="games.html">
+                            <span class="nav-icon">🎮</span>
+                            <span class="nav-text-en">Games</span>
+                            <span class="nav-text-mi" lang="mi">Ngā Kēmu</span>  
+                        </a>
+                    </li>
+                    <li class="auth-nav my-kete-link" style="display: none">
+                        <a href="my-kete.html">
+                            <span class="nav-icon">🧺</span>
+My Kete
+                        </a>
+                    </li>
+                    <li class="auth-nav">
+                        <a href="login.html" class="login-btn">
+                            <span class="nav-icon">👤</span>
+Login
+                        </a>
+                    </li>
+                    <li class="auth-nav" style="display: none">
+                        <a href="register-simple.html" class="register-btn">
+                            <span class="nav-icon">📝</span>
+Register
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs no-print" aria-label="Breadcrumb">
+                <ol id="breadcrumbs" class="breadcrumbs-list"></ol>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+    <p>If you are not redirected automatically, follow this <a href="index.html">link to the homepage</a>.</p>
+    
+    <!-- External Resources Section - Added by Te Kete Ako Content Enrichment -->
+    <section class="external-resources-section no-print" style="border-left: 4px solid var(--color-maori-red, #CC0000) background: linear-gradient(135deg, #f0f8f4 0%, #e8f5e8 100%) padding: var(--space-6) margin: var(--space-8) 0 border-radius: var(--radius-lg)">
+        <h3 style="margin: 0 0 1rem 0 color: var(--color-primary, #2E8B57) display: flex align-items: center gap: 0.5rem">
+            <span style="font-size: 1.5rem">🌿</span>
+Nga Rauemi Tauwehe - External Resources
+        </h3>
+        <p style="margin: 0 0 1.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm)">
+High-quality resources from official New Zealand education sites to extend and enrich this learning content.
+        </p>
+        <div class="external-resources-list">
+            
+            <div class="external-resource-item" style="margin: var(--space-4) 0 padding: var(--space-4) background: white border-radius: var(--radius-md) box-shadow: 0 2px 4px var(--shadow-md)">
+                <h4 style="margin: 0 0 0.5rem 0 color: var(--color-primary, #2E8B57)">
+                    <a href="https: //www.sciencelearn.org.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none color: inherit">
+Science Learning Hub
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm) line-height: 1.4">
+Over 11,550 NZ science education resources for teachers, students and community
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">,
+Years: 1-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">
+                            60% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">  
+Official NZ Resource
+                        </span>
+                    </div>
+        
+                </div>
+            </div>
+            <div class="external-resource-item" style="margin: var(--space-4) 0 padding: var(--space-4) background: white border-radius: var(--radius-md) box-shadow: 0 2px 4px var(--shadow-md)">
+                <h4 style="margin: 0 0 0.5rem 0 color: var(--color-primary, #2E8B57)">
+                    <a href="https: //tahurangi.education.govt.nz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none color: inherit">
+Tāhūrangi - Te Reo Māori Education Hub
+                    </a>
+                </h4>
+                <p style="margin: 0.5rem 0 color: var(--color-text-secondary, #666) font-size: var(--text-sm) line-height: 1.4">
+Official NZ government hub for te reo Māori resources, guidance, and teaching support
+                </p>
+                <div class="flex">
+                    <div class="flex">
+                        <span style="background: var(--color-accent, #DAA520) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">,
+Years: 7-13
+                        </span>
+                        <span style="background: var(--color-secondary, #FF6B35) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">
+                            30% Match
+                        </span>
+                        <span style="background: var(--color-primary, #2E8B57) color: white padding: 0.25rem 0.5rem border-radius: var(--radius-lg) font-size: 0.75rem">  
+Official NZ Resource
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 1rem padding-top: 1rem border-top: 1px solid #ddd font-size: 0.8rem color: var(--color-text-muted, #888)">
+            <p style="margin: 0">
+                🤖 <em>These resources were automatically curated by Te Kete Ako's AI system to complement this content. 
+All external links lead to official New Zealand educational and government websites.</em>
+            </p>
+        </div>
+    </section>                    <footer class="site-footer no-print">
+        <div class="footer-content">
+            <div class="footer-simple">
+                <div class="footer-brand">
+                    <h3>🧺 Te Kete Ako</h3>
+                    <p>"Whaowhia te kete mātauranga" - Fill the basket of knowledge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="unit-plans.html">Unit Plans</a>
+                    <a href="lessons.html">Lessons</a>
+                    <a href="handouts.html">Handouts</a>
+                    <a href="my-kete.html">My Kete</a>
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="orphans.html">Discover</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Te Kete Ako - Educational resources for Aotearoa New Zealand</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Load Supabase Client -->
+    <script src="js/supabase-client.js"></script>
+    <!-- Load Auth UI -->
+    <script src="js/auth-enhanced.js"></script>
+    <!-- Core functionality -->
+    <script src="js/shared-components.js"></script>
+    <script src="js/mobile-revolution.js"></script>
+    <script src="js/pwa-registration.js"></script>
+` }}
+          />
+        </div>
+      </Card>
+    </div>
+  )
+}
+
+export default Index

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface StarNavigationCoordinatesProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = ({
-  culturalContext = "Traditional navigation and astronomical knowledge",
-  yearLevel = "Year 8-10",
-  subject = "Mathematics, Science"
+interface StarNavigationCoordinatesProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = (_{
+culturalContext = "Traditional navigation and astronomical knowledge", 
+_yearLevel = "Year 8-10", 
+_subject = "Mathematics,  _Science"
 }) => {
-  return (
+return (
     <div className="star-navigation-coordinates">
       <Card title="Star Navigation Coordinates | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Star Navigation Coordinates</h1>
@@ -40,7 +37,7 @@ const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default StarNavigationCoordinates;
+export default StarNavigationCoordinates

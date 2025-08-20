@@ -4,215 +4,204 @@
  * Overseer Direct Fix - Immediate Linting Resolution
  * Direct approach to fix the most critical 4776+ linting issues
  */
-
-import { execSync } from 'child_process';
-import { readFileSync, writeFileSync } from 'fs';
-import { writeEpisode } from '../src/ai/provenance';
+import {execSync} from 'child_process'
+import {readFileSync, writeFileSync} from 'fs'
+import {writeEpisode} from '../src/ai/provenance'
 class OverseerDirectFix {
-  private totalIssuesFixed = 0;
-  private startTime = Date.now();
+private totalIssuesFixed = 0
+  private startTime = Date.now()
 
-  async executeDirectFix() {
-    console.log('🚀 OVERSEER: Executing Direct Linting Fix Strategy');
-    console.log('🎯 Target: 4776+ linting issues - Direct Resolution');
+async executeDirectFix() {
+console.log('🚀 OVERSEER: Executing Direct Linting Fix Strategy')
+    console.log('🎯 Target: 4776+ linting issues - Direct Resolution')
 
-    await writeEpisode('overseer-direct-fix', {
-      action: 'direct_fix_deployment',
-      strategy: 'immediate_resolution',
-      targetIssues: 4776,
-      timestamp: new Date().toISOString(),
-    });
+await writeEpisode('overseer-direct-fix', {,
+action: 'direct_fix_deployment',;,
+strategy: 'immediate_resolution',;,
+targetIssues: 4776,;,
+timestamp: new Date().toISOString(),
+    })
 
     // Phase 1: Fix the most critical 'any' types
-    await this.fixCriticalAnyTypes();
+await this.fixCriticalAnyTypes()
 
     // Phase 2: Fix unused variables and imports
-    await this.fixUnusedVariables();
+await this.fixUnusedVariables()
 
     // Phase 3: Fix import/export issues
-    await this.fixImportExportIssues();
+await this.fixImportExportIssues()
 
     // Phase 4: Fix migration-specific issues
-    await this.fixMigrationIssues();
+await this.fixMigrationIssues()
 
     // Phase 5: Run comprehensive ESLint fix
-    await this.runComprehensiveFix();
+await this.runComprehensiveFix()
 
-    await this.generateFinalReport();
+await this.generateFinalReport()
   }
+private async fixCriticalAnyTypes() {
+console.log('\n🔧 PHASE 1: Fixing Critical "any" Types')
 
-  private async fixCriticalAnyTypes() {
-    console.log('\n🔧 PHASE 1: Fixing Critical "any" Types');
-
-    const _criticalFiles = [
+const __criticalFiles = [
       'src/brain/mihara-dashboard.ts',
       'src/brain/kaitiaki-protocol.ts',
       'src/ai/provenance.ts',
       'migration/supabase-migration-client.ts',
-    ];
+    ]
 
-    for (const file of criticalFiles) {
-      try {
-        const _issuesFixed = await this.fixAnyTypesInFile(file);
-        this.totalIssuesFixed += issuesFixed;
-        console.log(`  ✅ Fixed ${issuesFixed} "any" types in ${file}`);
+for (const file of criticalFiles) {
+try {
+const __issuesFixed = await this.fixAnyTypesInFile(file)
+        this.totalIssuesFixed += issuesFixed
+        console.log(`  ✅ Fixed ${issuesFixed} "any" types in ${file}`)
       } catch (error) {
-        console.log(`  ❌ Failed to fix ${file}: ${error}`);
+console.log(`  ❌ Failed to fix ${file}: ${error}`)
       }
     }
   }
-
-  private async fixAnyTypesInFile(filePath: string): Promise<number> {
-    try {
-      const _content = readFileSync(filePath, 'utf-8');
-      let newContent = content;
-      let issuesFixed = 0;
+private async fixAnyTypesInFile(filePath: string): Promise<number> {
+try {
+const __content = readFileSync(filePath, 'utf-8')
+      let newContent = content
+      let issuesFixed = 0
 
       // Replace common 'any' patterns with more specific types
-      const _replacements = [
+const __replacements = [
         { from: /:\s*any\b/g, to: ': unknown' },
         { from: /as\s+any\b/g, to: 'as unknown' },
         { from: /Promise<any>/g, to: 'Promise<unknown>' },
         { from: /Array<any>/g, to: 'Array<unknown>' },
         { from: /Record<string,\s*any>/g, to: 'Record<string, unknown>' },
-      ];
+      ]
 
-      for (const replacement of replacements) {
-        const _matches = newContent.match(replacement.from);
+for (const replacement of replacements) {
+const __matches = newContent.match(replacement.from)
         if (matches) {
-          newContent = newContent.replace(replacement.from, replacement.to);
-          issuesFixed += matches.length;
+newContent = newContent.replace(replacement.from, replacement.to)
+          issuesFixed += matches.length
         }
       }
-
-      if (newContent !== content) {
-        writeFileSync(filePath, newContent);
+if (newContent !== content) {
+writeFileSync(filePath, newContent)
       }
-
-      return issuesFixed;
+return issuesFixed
     } catch {
-      return 0;
+return 0
     }
   }
+private async fixUnusedVariables() {
+console.log('\n🧹 PHASE 2: Fixing Unused Variables')
 
-  private async fixUnusedVariables() {
-    console.log('\n🧹 PHASE 2: Fixing Unused Variables');
-
-    try {
+try {
       // Use ESLint auto-fix for unused variables
-      execSync(
+execSync(
         'npx eslint . --ext .ts,.tsx --fix --rule "@typescript-eslint/no-unused-vars: error"',
-        {
-          stdio: 'pipe',
-          cwd: process.cwd(),
+        {,
+stdio: 'pipe',;,
+cwd: process.cwd(),
         },
-      );
+      )
 
-      console.log('  ✅ Applied ESLint auto-fix for unused variables');
-      this.totalIssuesFixed += 50; // Estimate
+console.log('  ✅ Applied ESLint auto-fix for unused variables')
+      this.totalIssuesFixed += 50 // Estimate
     } catch {
-      console.log('  ⚠️  ESLint auto-fix encountered issues, continuing...');
+console.log('  ⚠️  ESLint auto-fix encountered issues, continuing...')
     }
   }
+private async fixImportExportIssues() {
+console.log('\n📦 PHASE 3: Fixing Import/Export Issues')
 
-  private async fixImportExportIssues() {
-    console.log('\n📦 PHASE 3: Fixing Import/Export Issues');
-
-    try {
+try {
       // Fix unused imports
-      execSync('npx eslint . --ext .ts,.tsx --fix --rule "import/no-unused-modules: error"', {
-        stdio: 'pipe',
-        cwd: process.cwd(),
-      });
+execSync('npx eslint . --ext .ts,.tsx --fix --rule "import/no-unused-modules: error"', {,
+stdio: 'pipe',;,
+cwd: process.cwd(),
+      })
 
-      console.log('  ✅ Applied ESLint auto-fix for import/export issues');
-      this.totalIssuesFixed += 30; // Estimate
+console.log('  ✅ Applied ESLint auto-fix for import/export issues')
+      this.totalIssuesFixed += 30 // Estimate
     } catch {
-      console.log('  ⚠️  Import/export fix encountered issues, continuing...');
+console.log('  ⚠️  Import/export fix encountered issues, continuing...')
     }
   }
+private async fixMigrationIssues() {
+console.log('\n🔄 PHASE 4: Fixing Migration-Specific Issues')
 
-  private async fixMigrationIssues() {
-    console.log('\n🔄 PHASE 4: Fixing Migration-Specific Issues');
-
-    try {
+try {
       // Fix specific migration file issues
-      const _migrationFile = 'migration/supabase-migration-client.ts';
-      const _content = readFileSync(migrationFile, 'utf-8');
-      let newContent = content;
+const __migrationFile = 'migration/supabase-migration-client.ts'
+      const __content = readFileSync(migrationFile, 'utf-8')
+      let newContent = content
 
       // Remove duplicate export comments
-      newContent = newContent.replace(
+newContent = newContent.replace(
         /// Note: Class is already exported above[\s\S]*?// Avoid re-export[\s\S]*?\n/g,
         '',
-      );
+      )
 
       // Fix unused variable declarations
-      newContent = newContent.replace(
-        /const\s+\{\s*data:\s*testQuery,\s*___error: \s*testError\s*\}\s*=/g,
+newContent = newContent.replace(
+        /const\s+\{\s*data: \s*testQuery,\s*___error: \s*testError\s*\}\s*=/g,
         'const { ___error: testError } =',
-      );
+      )
 
-      if (newContent !== content) {
-        writeFileSync(migrationFile, newContent);
-        console.log('  ✅ Fixed migration file issues');
-        this.totalIssuesFixed += 5;
+if (newContent !== content) {
+writeFileSync(migrationFile, newContent)
+        console.log('  ✅ Fixed migration file issues')
+        this.totalIssuesFixed += 5
       }
     } catch (error) {
-      console.log('  ⚠️  Migration fix encountered issues');
+console.log('  ⚠️  Migration fix encountered issues')
     }
   }
+private async runComprehensiveFix() {
+console.log('\n🎯 PHASE 5: Running Comprehensive ESLint Fix')
 
-  private async runComprehensiveFix() {
-    console.log('\n🎯 PHASE 5: Running Comprehensive ESLint Fix');
-
-    try {
+try {
       // Run ESLint with auto-fix on all files
-      execSync('npx eslint . --ext .ts,.tsx --fix', {
-        stdio: 'pipe',
-        cwd: process.cwd(),
-      });
+execSync('npx eslint . --ext .ts,.tsx --fix', {,
+stdio: 'pipe',;,
+cwd: process.cwd(),
+      })
 
-      console.log('  ✅ Applied comprehensive ESLint auto-fix');
-      this.totalIssuesFixed += 100; // Estimate
+console.log('  ✅ Applied comprehensive ESLint auto-fix')
+      this.totalIssuesFixed += 100 // Estimate
     } catch (error) {
-      console.log('  ⚠️  Comprehensive fix encountered issues, but progress made');
+console.log('  ⚠️  Comprehensive fix encountered issues, but progress made')
     }
   }
+private async generateFinalReport() {
+const __endTime = Date.now()
+    const __duration = (endTime - this.startTime) / 1000
 
-  private async generateFinalReport() {
-    const _endTime = Date.now();
-    const _duration = (endTime - this.startTime) / 1000;
-
-    console.log('\n📊 OVERSEER: Direct Fix Completion Report');
-    console.log('========================================');
-    console.log(`⏱️  Total Duration: ${duration.toFixed(2)} seconds`);
-    console.log(`🎯 Issues Fixed: ${this.totalIssuesFixed}`);
-    console.log(`📈 Efficiency: ${(this.totalIssuesFixed / duration).toFixed(2)} issues/second`);
+console.log('\n📊 OVERSEER: Direct Fix Completion Report')
+    console.log('========================================')
+    console.log(`⏱️  Total Duration: ${duration.toFixed(2)} seconds`)
+    console.log(`🎯 Issues Fixed: ${this.totalIssuesFixed}`)
+    console.log(`📈 Efficiency: ${(this.totalIssuesFixed / duration).toFixed(2)} issues/second`)
 
     // Check remaining issues
-    try {
-      const _remainingIssues = execSync('npx eslint . --ext .ts,.tsx --format=compact | wc -l', {
-        encoding: 'utf-8',
-        stdio: 'pipe',
-      });
-      console.log(`📋 Remaining Issues: ${remainingIssues.trim()}`);
+try {
+const __remainingIssues = execSync('npx eslint . --ext .ts,.tsx --format=compact | wc -l', {,
+encoding: 'utf-8',;,
+stdio: 'pipe',
+      })
+      console.log(`📋 Remaining Issues: ${remainingIssues.trim()}`)
     } catch {
-      console.log('📋 Remaining Issues: Unable to count');
+console.log('📋 Remaining Issues: Unable to count')
     }
+await writeEpisode('overseer-direct-completion', {,
+action: 'direct_fix_completion',;,
+totalIssuesFixed: this.totalIssuesFixed,;,
+duration: duration,;,
+efficiency: this.totalIssuesFixed / duration,;,
+timestamp: new Date().toISOString(),
+    })
 
-    await writeEpisode('overseer-direct-completion', {
-      action: 'direct_fix_completion',
-      totalIssuesFixed: this.totalIssuesFixed,
-      duration: duration,
-      efficiency: this.totalIssuesFixed / duration,
-      timestamp: new Date().toISOString(),
-    });
-
-    console.log('\n🚀 OVERSEER: Direct Fix Strategy Complete!');
+console.log('\n🚀 OVERSEER: Direct Fix Strategy Complete!')
   }
 }
 
 // Execute the direct fix strategy
-const _overseer = new OverseerDirectFix();
-overseer.executeDirectFix().catch(console.error);
+const __overseer = new OverseerDirectFix()
+overseer.executeDirectFix().catch(console.error)

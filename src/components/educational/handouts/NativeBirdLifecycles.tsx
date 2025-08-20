@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './NativeBirdLifecycles.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './NativeBirdLifecycles.css'
 
-interface NativeBirdLifecyclesProps {
-  className?: string;
-}
-
-export const NativeBirdLifecycles: React.FC<NativeBirdLifecyclesProps> = ({ className = '' }) => {
-  return (
+interface NativeBirdLifecyclesProps {className?: string}
+export const NativeBirdLifecycles: React.FC<NativeBirdLifecyclesProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="native bird lifecycles"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`native-bird-lifecycles-handout cultural-focus ${className}`}
+title="native bird lifecycles"
+subtitle="Te Kete Ako - Cultural Education"
+className={`native-bird-lifecycles-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const NativeBirdLifecycles: React.FC<NativeBirdLifecyclesProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default NativeBirdLifecycles;
+export default NativeBirdLifecycles

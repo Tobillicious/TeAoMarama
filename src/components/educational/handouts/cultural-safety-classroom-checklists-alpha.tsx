@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface CulturalSafetyClassroomChecklistsAlphaProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomChecklistsAlphaProps> = ({
-  culturalContext = "Cultural practices and traditional knowledge",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface CulturalSafetyClassroomChecklistsAlphaProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomChecklistsAlphaProps> = (_{
+culturalContext = "Cultural practices and traditional knowledge", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="cultural-safety-classroom-checklists-alpha">
       <Card title="Cultural Safety Checklists for Classroom Discussions - Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <div class="header">
         <h1 class="wiley-hero-title">Cultural Safety Checklists for Classroom Discussions</h1>
         <p><strong>Te Kete Ako</strong> | Social Sciences | Years 7-13 | Alpha Build Resource</p>
@@ -42,13 +39,13 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         <p><strong><span class="maori-term">Whakapapa</span> (Connections):</strong> Recognize that students bring rich cultural knowledge and experiences to learning.</p>
         
         <div class="warning-box">
-            <strong>⚠️ Critical Understanding:</strong> Cultural safety goes beyond cultural awareness. It means that no one is diminished, demotivated, or disempowered because of their cultural identity.
+            <strong>⚠️ Critical Understanding: </strong> Cultural safety goes beyond cultural awareness. It means that no one is diminished, demotivated, or disempowered because of their cultural identity.
         </div>
     </div>
 
     <div class="checklist-container print-friendly">
         <h3>📋 Pre-Discussion Planning Checklist</h3>
-        <p><strong>Complete before facilitating any cultural content discussion:</strong></p>
+        <p><strong>Complete before facilitating any cultural content discussion: </strong></p>
         
         <ul class="checklist">
             <li>Review topic for potential cultural sensitivities and biases</li>
@@ -64,7 +61,7 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         </ul>
         
         <div class="tip-box">
-            <strong>💡 Teacher Reflection:</strong> Ask yourself - "Would I feel comfortable if this discussion was about my own cultural background?" Use this as a guide for cultural sensitivity.
+            <strong>💡 Teacher Reflection: </strong> Ask yourself - "Would I feel comfortable if this discussion was about my own cultural background?" Use this as a guide for cultural sensitivity.
         </div>
     </div>
 
@@ -86,7 +83,7 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         </ul>
         
         <div class="scenario-box">
-            <strong>⚠️ Red Flag Situations:</strong>
+            <strong>⚠️ Red Flag Situations: </strong>
             <ul>
                 <li>Student becomes withdrawn or visibly upset</li>
                 <li>Inappropriate jokes or comments about cultural groups</li>
@@ -101,24 +98,24 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         <h3>🎯 Discussion Ground Rules - Student Version</h3>
         <p><strong>Share these with students before cultural discussions:</strong></p>
         
-        <div style="background: #e7f3ff; padding: 20px; border-radius: var(--radius-md); margin: 15px 0;">
+        <div style="background: #e7f3ff padding: 20px border-radius: var(--radius-md) margin: 15px 0">
             <h4>Our Classroom <span class="maori-term">Whakataukī</span> (Values):</h4>
             <ul class="checklist">
                 <li><strong>Respect (</strong><span class="maori-term">Whakatōhea</span><strong>):</strong> All cultures and perspectives are valued</li>
                 <li><strong>Listen (</strong><span class="maori-term">Whakarongo</span><strong>):</strong> Truly hear what others are sharing</li>
                 <li><strong>Learn (</strong><span class="maori-term">Ako</span><strong>):</strong> Be open to new understanding</li>
                 <li><strong>Support (</strong><span class="maori-term">Awhi</span><strong>):</strong> Help create safety for everyone</li>
-                <li><strong>Speak Thoughtfully:</strong> Consider impact before speaking</li>
+                <li><strong>Speak Thoughtfully: </strong> Consider impact before speaking</li>
                 <li><strong>Ask Respectfully:</strong> Questions should come from genuine curiosity</li>
                 <li><strong>Share Appropriately:</strong> Only share what feels safe and relevant</li>
-                <li><strong>Step Up, Step Back:</strong> Ensure everyone has space to participate</li>
+                <li><strong>Step Up, Step Back: </strong> Ensure everyone has space to participate</li>
             </ul>
         </div>
     </div>
 
     <div class="checklist-container print-friendly">
         <h3>🛡️ Intervention Strategies Checklist</h3>
-        <p><strong>When cultural safety is compromised, use these strategies:</strong></p>
+        <p><strong>When cultural safety is compromised, use these strategies: </strong></p>
         
         <table>
             <thead>
@@ -160,7 +157,7 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
 
     <div class="checklist-container print-friendly">
         <h3>✅ Post-Discussion Reflection Checklist</h3>
-        <p><strong>After each cultural discussion, reflect on:</strong></p>
+        <p><strong>After each cultural discussion, reflect on: </strong></p>
         
         <ul class="checklist">
             <li>Did all students appear comfortable and engaged?</li>
@@ -227,7 +224,7 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         <h3>🤝 Building Cultural Competence - Teacher Development</h3>
         
         <div class="tip-box">
-            <strong>Ongoing Professional Development:</strong>
+            <strong>Ongoing Professional Development: </strong>
             <ul>
                 <li>Engage in cultural competency training regularly</li>
                 <li>Build relationships with cultural communities</li>
@@ -309,7 +306,7 @@ const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomCh
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalSafetyClassroomChecklistsAlpha;
+export default CulturalSafetyClassroomChecklistsAlpha

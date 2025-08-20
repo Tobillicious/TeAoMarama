@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Year9StarterPackEssentialSkills.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Year9StarterPackEssentialSkills.css'
 
-interface Year9StarterPackEssentialSkillsProps {
-  className?: string;
-}
-
-export const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsProps> = ({ className = '' }) => {
-  return (
+interface Year9StarterPackEssentialSkillsProps {className?: string}
+export const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssentialSkillsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="year 9 starter pack essential skills"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`year-9-starter-pack-essential-skills-handout cultural-focus ${className}`}
+title="year 9 starter pack essential skills"
+subtitle="Te Kete Ako - Cultural Education"
+className={`year-9-starter-pack-essential-skills-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Year9StarterPackEssentialSkills: React.FC<Year9StarterPackEssential
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Year9StarterPackEssentialSkills;
+export default Year9StarterPackEssentialSkills

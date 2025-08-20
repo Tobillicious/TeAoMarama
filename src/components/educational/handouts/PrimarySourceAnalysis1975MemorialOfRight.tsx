@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PrimarySourceAnalysis1975MemorialOfRight.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PrimarySourceAnalysis1975MemorialOfRight.css'
 
-interface PrimarySourceAnalysis1975MemorialOfRightProps {
-  className?: string;
-}
-
-export const PrimarySourceAnalysis1975MemorialOfRight: React.FC<PrimarySourceAnalysis1975MemorialOfRightProps> = ({ className = '' }) => {
-  return (
+interface PrimarySourceAnalysis1975MemorialOfRightProps {className?: string}
+export const PrimarySourceAnalysis1975MemorialOfRight: React.FC<PrimarySourceAnalysis1975MemorialOfRightProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="primary source analysis 1975 memorial of right"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`primary-source-analysis-1975-memorial-of-right-handout cultural-focus ${className}`}
+title="primary source analysis 1975 memorial of right"
+subtitle="Te Kete Ako - Cultural Education"
+className={`primary-source-analysis-1975-memorial-of-right-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PrimarySourceAnalysis1975MemorialOfRight: React.FC<PrimarySourceAna
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PrimarySourceAnalysis1975MemorialOfRight;
+export default PrimarySourceAnalysis1975MemorialOfRight

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ScientificMethodHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface ScientificMethodHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="scientific-method-handout">
       <Card title="The Scientific Method Handout | Mangakōtukutuku College" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,10 +24,10 @@ const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">The Scientific Method</h1>
                 <p class="page-subtitle">A step-by-step process for discovery.</p>
             </div>
@@ -119,7 +116,7 @@ const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = ({
                 <h2 class="section-title" class="wiley-section-title">📖 Key Statistical Terms</h2>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="question-block">
-                        <p class="text-xs"><strong>Mode:</strong> Most common value</p>
+                        <p class="text-xs"><strong>Mode: </strong> Most common value</p>
                     </div>
                     <div class="question-block">
                         <p class="text-xs"><strong>Range:</strong> Difference between highest and lowest</p>
@@ -137,7 +134,7 @@ const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ScientificMethodHandout;
+export default ScientificMethodHandout

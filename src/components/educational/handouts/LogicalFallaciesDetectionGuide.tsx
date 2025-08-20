@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './LogicalFallaciesDetectionGuide.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './LogicalFallaciesDetectionGuide.css'
 
-interface LogicalFallaciesDetectionGuideProps {
-  className?: string;
-}
-
-export const LogicalFallaciesDetectionGuide: React.FC<LogicalFallaciesDetectionGuideProps> = ({ className = '' }) => {
-  return (
+interface LogicalFallaciesDetectionGuideProps {className?: string}
+export const LogicalFallaciesDetectionGuide: React.FC<LogicalFallaciesDetectionGuideProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="logical fallacies detection guide"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`logical-fallacies-detection-guide-handout cultural-focus ${className}`}
+title="logical fallacies detection guide"
+subtitle="Te Kete Ako - Cultural Education"
+className={`logical-fallacies-detection-guide-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const LogicalFallaciesDetectionGuide: React.FC<LogicalFallaciesDetectionG
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default LogicalFallaciesDetectionGuide;
+export default LogicalFallaciesDetectionGuide

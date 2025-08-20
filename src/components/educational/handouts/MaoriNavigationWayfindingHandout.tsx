@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaoriNavigationWayfindingHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaoriNavigationWayfindingHandout.css'
 
-interface MaoriNavigationWayfindingHandoutProps {
-  className?: string;
-}
-
-export const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandoutProps> = ({ className = '' }) => {
-  return (
+interface MaoriNavigationWayfindingHandoutProps {className?: string}
+export const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindingHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="maori navigation wayfinding handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`maori-navigation-wayfinding-handout-handout cultural-focus ${className}`}
+title="maori navigation wayfinding handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`maori-navigation-wayfinding-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaoriNavigationWayfindingHandout: React.FC<MaoriNavigationWayfindin
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaoriNavigationWayfindingHandout;
+export default MaoriNavigationWayfindingHandout

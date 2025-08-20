@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-interface CulturalStoriesProps {
-  className?: string;
-}
-
-export const CulturalStories: React.FC<CulturalStoriesProps> = ({ className = '' }) => {
-  return (
+interface CulturalStoriesProps {className?: string}
+export const CulturalStories: React.FC<CulturalStoriesProps> = (_{ className = '' }) => {
+return (
     <div className={`cultural-stories ${className}`}>
       <header className="stories-hero">
         <h1>Cultural Stories Comprehension</h1>
@@ -47,7 +44,7 @@ export const CulturalStories: React.FC<CulturalStoriesProps> = ({ className = ''
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default CulturalStories;
+export default CulturalStories

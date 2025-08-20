@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalSafetyClassroomChecklistsAlpha.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalSafetyClassroomChecklistsAlpha.css'
 
-interface CulturalSafetyClassroomChecklistsAlphaProps {
-  className?: string;
-}
-
-export const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomChecklistsAlphaProps> = ({ className = '' }) => {
-  return (
+interface CulturalSafetyClassroomChecklistsAlphaProps {className?: string}
+export const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClassroomChecklistsAlphaProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural safety classroom checklists alpha"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-safety-classroom-checklists-alpha-handout cultural-focus ${className}`}
+title="cultural safety classroom checklists alpha"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-safety-classroom-checklists-alpha-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalSafetyClassroomChecklistsAlpha: React.FC<CulturalSafetyClas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalSafetyClassroomChecklistsAlpha;
+export default CulturalSafetyClassroomChecklistsAlpha

@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React, { useState } from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WhakapapaMatematicalThinkingProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> = ({
-  culturalContext = "Mathematical concepts in cultural context",
-  yearLevel = "Year 9-10", 
-  subject = "Mathematics, Social Studies"
+interface WhakapapaMatematicalThinkingProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> = (_{
+culturalContext = "Mathematical concepts in cultural context", 
+_yearLevel = "Year 9-10",  
+_subject = "Mathematics,  _Social Studies"
 }) => {
-  const [activeView, setActiveView] = useState<'concept' | 'exploration' | 'application'>('concept');
+const [activeView, setActiveView] = useState<'concept' | 'exploration' | 'application'>('concept')
 
-  return (
-    <div className="whakapapa-mathematical-thinking">
+return (
+_<div className="whakapapa-mathematical-thinking">
       <Card title="Whakapapa & Mathematical Thinking" className="handout-card cultural-focus">
         <div className="handout-header">
           <h1 className="handout-title">Whakapapa & Mathematical Thinking</h1>
-          <h2 className="handout-subtitle">Genealogy, Networks & Exponential Growth | Mangakōtukutuku College</h2>
+          <h2 className="handout-subtitle">Genealogy,  _Networks & Exponential Growth | Mangakōtukutuku College</h2>
           <div className="handout-meta">
             <span className="year-level">{yearLevel}</span>
             <span className="subject">{subject}</span>
@@ -31,20 +28,20 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
         {/* Interactive Navigation */}
         <div className="interactive-tabs">
           <button 
-            className={`tab-button ${activeView === 'concept' ? 'active' : ''}`}
-            onClick={() => setActiveView('concept')}
+className={`tab-button ${activeView === 'concept' ? 'active' : ''}`}
+onClick={() => setActiveView('concept')}
           >
             🌿 Te Tiriti o Whakapapa
           </button>
           <button 
-            className={`tab-button ${activeView === 'exploration' ? 'active' : ''}`}
-            onClick={() => setActiveView('exploration')}
+className={`tab-button ${activeView === 'exploration' ? 'active' : ''}`}
+onClick={() => setActiveView('exploration')}
           >
             🔢 Mathematical Exploration
           </button>
           <button 
-            className={`tab-button ${activeView === 'application' ? 'active' : ''}`}
-            onClick={() => setActiveView('application')}
+className={`tab-button ${activeView === 'application' ? 'active' : ''}`}
+onClick={() => setActiveView('application')}
           >
             🎯 Real Applications
           </button>
@@ -56,14 +53,14 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
             {activeView === 'concept' && (
               <>
                 <p style={{color: 'var(--color-text-secondary)', fontSize: 'var(--text-lg)', marginBottom: '2rem'}}>
-                  Explore how whakapapa (genealogy) demonstrates fundamental mathematical concepts including exponential growth, network theory, and geometric sequences - connecting traditional knowledge with mathematical understanding.
+Explore how whakapapa (genealogy) demonstrates fundamental mathematical concepts including exponential growth, network theory, and geometric sequences - connecting traditional knowledge with mathematical understanding.
                 </p>
 
                 {/* Cultural Foundation */}
                 <section style={{background: 'linear-gradient(135deg, #8B4513 0%, var(--color-primary) 50%, #DAA520 100%)', color: 'white', padding: 'var(--space-8)', borderRadius: 'var(--radius-lg)', marginBottom: '2rem'}}>
                   <h2 style={{color: 'white', marginBottom: '1rem'}} className="wiley-section-title">Te Tiriti o Whakapapa - The Foundation of Connection</h2>
                   <p style={{lineHeight: 1.7, marginBottom: '1rem'}}>
-                    Whakapapa is more than genealogy - it is the fundamental structure that connects all things in Te Ao Māori. Every person, animal, plant, and natural feature has whakapapa that links them to all of creation. This web of relationships follows mathematical patterns that help us understand growth, connection, and interdependence.
+Whakapapa is more than genealogy - it is the fundamental structure that connects all things in Te Ao Māori. Every person, animal, plant, and natural feature has whakapapa that links them to all of creation. This web of relationships follows mathematical patterns that help us understand growth, connection, and interdependence.
                   </p>
                   <p style={{fontStyle: 'italic', fontSize: 'var(--text-lg)'}}>
                     <strong>"Ko wai koe?" "Who are you?"</strong> - Understanding identity through mathematical relationships
@@ -78,7 +75,7 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
                     <div style={{backgroundColor: 'var(--color-background)', padding: 'var(--space-6)', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-secondary)'}}>
                       <h3 style={{color: 'var(--color-secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center'}}>
                         <span style={{fontSize: '1.5rem', marginRight: '0.5rem'}}>📈</span>
-                        Exponential Growth
+Exponential Growth
                       </h3>
                       <p style={{lineHeight: 1.6, marginBottom: '1rem'}}>Each generation doubles the number of ancestors:</p>
                       <ul style={{lineHeight: 1.8, fontSize: 'var(--text-sm)'}}>
@@ -93,7 +90,7 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
                     <div style={{backgroundColor: 'var(--color-background)', padding: 'var(--space-6)', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-primary)'}}>
                       <h3 style={{color: 'var(--color-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center'}}>
                         <span style={{fontSize: '1.5rem', marginRight: '0.5rem'}}>🕸️</span>
-                        Network Theory
+Network Theory
                       </h3>
                       <p style={{lineHeight: 1.6, marginBottom: '1rem'}}>Whakapapa creates complex networks:</p>
                       <ul style={{lineHeight: 1.8, fontSize: 'var(--text-sm)'}}>
@@ -108,7 +105,7 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
                     <div style={{backgroundColor: 'var(--color-background)', padding: 'var(--space-6)', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--color-accent)'}}>
                       <h3 style={{color: 'var(--color-accent)', marginBottom: '1rem', display: 'flex', alignItems: 'center'}}>
                         <span style={{fontSize: '1.5rem', marginRight: '0.5rem'}}>🌳</span>
-                        Tree Structures
+Tree Structures
                       </h3>
                       <p style={{lineHeight: 1.6, marginBottom: '1rem'}}>Family trees show hierarchical organization:</p>
                       <ul style={{lineHeight: 1.8, fontSize: 'var(--text-sm)'}}>
@@ -127,14 +124,14 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
                   <h3 style={{color: 'var(--color-secondary)', marginBottom: '1rem'}}>Whakataukī: Mathematical Wisdom</h3>
                   <div style={{backgroundColor: 'var(--color-background)', padding: 'var(--space-4)', borderLeft: '4px solid var(--color-accent)', marginBottom: '1rem'}}>
                     <p style={{fontStyle: 'italic', color: 'var(--color-secondary)', fontSize: 'var(--text-lg)', marginBottom: '0.5rem'}}>
-                      "He tangata takitahi, he tangata kino; he tangata takitini, he tangata pai."
+                      "He tangata takitahi, he tangata kino he tangata takitini, he tangata pai."
                     </p>
                     <p style={{fontSize: 'var(--text-sm)'}}>
-                      A single person is bad; many people together are good.
+A single person is bad many people together are good.
                     </p>
                   </div>
                   <p style={{lineHeight: 1.7}}>
-                    This whakataukī reflects network effects - the mathematical principle that the value of a network increases exponentially with the number of connections. In whakapapa terms, our strength comes from our many relationships and connections to others.
+This whakataukī reflects network effects - the mathematical principle that the value of a network increases exponentially with the number of connections. In whakapapa terms, our strength comes from our many relationships and connections to others.
                   </p>
                 </section>
               </>
@@ -255,7 +252,7 @@ const WhakapapaMatematicalThinking: React.FC<WhakapapaMatematicalThinkingProps> 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WhakapapaMatematicalThinking;
+export default WhakapapaMatematicalThinking

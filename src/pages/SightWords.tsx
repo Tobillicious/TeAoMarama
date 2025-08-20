@@ -1,12 +1,11 @@
-import { useState } from 'react';
-import './SightWords.css';
+import {useState} from 'react'
+import './SightWords.css'
 
-interface SightWord {
-  id: string;
-  word: string;
-  frequency: 'high' | 'medium' | 'low';
-  list:
-    | 'dolch-pre'
+interface SightWord {,
+id: string,
+word: string,
+frequency: 'high' | 'medium' | 'low',
+list: | 'dolch-pre'
     | 'dolch-primer'
     | 'dolch-1'
     | 'dolch-2'
@@ -15,325 +14,322 @@ interface SightWord {
     | 'fry-2'
     | 'fry-3'
     | 'nz-common'
-    | 'maori-blend';
-  phonetic: boolean;
-  category: 'function' | 'content' | 'cultural';
-  meaning: string;
-  sentence: string;
-  culturalContext?: string;
-  difficulty: 1 | 2 | 3 | 4 | 5;
-  yearLevel: string;
-}
-
+    | 'maori-blend',
+phonetic: boolean,
+category: 'function' | 'content' | 'cultural',
+meaning: string,
+sentence: string
+  culturalContext?: string,
+difficulty: 1 | 2 | 3 | 4 | 5,
+yearLevel: string}
 const sightWordsData: SightWord[] = [
   // Dolch Pre-Primer (Foundation)
-  {
-    id: 'a1',
-    word: 'a',
-    frequency: 'high',
-    list: 'dolch-pre',
-    phonetic: true,
-    category: 'function',
-    meaning: 'One of something',
-    sentence: 'I see a kai.',
-    culturalContext: 'Used with Māori words like "a kai" (a meal)',
-    difficulty: 1,
-    yearLevel: 'Year 1',
+  {,
+id: 'a1',,
+word: 'a',,
+frequency: 'high',,
+list: 'dolch-pre',,
+phonetic: true,,
+category: 'function',,
+meaning: 'One of something',,
+sentence: 'I see a kai.',,
+culturalContext: 'Used with Māori words like "a kai" (a meal)',,
+difficulty: 1,,
+yearLevel: 'Year 1',
   },
-  {
-    id: 'and1',
-    word: 'and',
-    frequency: 'high',
-    list: 'dolch-pre',
-    phonetic: true,
-    category: 'function',
-    meaning: 'Joins two things together',
-    sentence: 'Kai and wai are important.',
-    culturalContext: 'Connects cultural concepts like "mana and mauri"',
-    difficulty: 1,
-    yearLevel: 'Year 1',
+  {,
+id: 'and1',,
+word: 'and',,
+frequency: 'high',,
+list: 'dolch-pre',,
+phonetic: true,,
+category: 'function',,
+meaning: 'Joins two things together',,
+sentence: 'Kai and wai are important.',,
+culturalContext: 'Connects cultural concepts like "mana and mauri"',,
+difficulty: 1,,
+yearLevel: 'Year 1',
   },
-  {
-    id: 'away1',
-    word: 'away',
-    frequency: 'high',
-    list: 'dolch-pre',
-    phonetic: true,
-    category: 'function',
-    meaning: 'To go from this place',
-    sentence: 'The kiwi flew away.',
-    difficulty: 2,
-    yearLevel: 'Year 1',
+  {,
+id: 'away1',,
+word: 'away',,
+frequency: 'high',,
+list: 'dolch-pre',,
+phonetic: true,,
+category: 'function',,
+meaning: 'To go from this place',,
+sentence: 'The kiwi flew away.',,
+difficulty: 2,,
+yearLevel: 'Year 1',
   },
-  {
-    id: 'big1',
-    word: 'big',
-    frequency: 'high',
-    list: 'dolch-pre',
-    phonetic: true,
-    category: 'content',
-    meaning: 'Large in size',
-    sentence: 'The kauri tree is big.',
-    culturalContext: 'Describes important NZ trees and landscapes',
-    difficulty: 1,
-    yearLevel: 'Year 1',
+  {,
+id: 'big1',,
+word: 'big',,
+frequency: 'high',,
+list: 'dolch-pre',,
+phonetic: true,,
+category: 'content',,
+meaning: 'Large in size',,
+sentence: 'The kauri tree is big.',,
+culturalContext: 'Describes important NZ trees and landscapes',,
+difficulty: 1,,
+yearLevel: 'Year 1',
   },
-  {
-    id: 'blue1',
-    word: 'blue',
-    frequency: 'medium',
-    list: 'dolch-pre',
-    phonetic: false,
-    category: 'content',
-    meaning: 'The color of the sky',
-    sentence: 'The moana is blue.',
-    culturalContext: 'Color of our beautiful ocean/moana',
-    difficulty: 2,
-    yearLevel: 'Year 1',
+  {,
+id: 'blue1',,
+word: 'blue',,
+frequency: 'medium',,
+list: 'dolch-pre',,
+phonetic: false,,
+category: 'content',,
+meaning: 'The color of the sky',,
+sentence: 'The moana is blue.',,
+culturalContext: 'Color of our beautiful ocean/moana',,
+difficulty: 2,,
+yearLevel: 'Year 1',
   },
 
   // Dolch Primer
-  {
-    id: 'all2',
-    word: 'all',
-    frequency: 'high',
-    list: 'dolch-primer',
-    phonetic: false,
-    category: 'function',
-    meaning: 'Every one',
-    sentence: 'All whānau are welcome.',
-    culturalContext: 'Inclusivity concept important in Māori culture',
-    difficulty: 2,
-    yearLevel: 'Year 1-2',
+  {,
+id: 'all2',,
+word: 'all',,
+frequency: 'high',,
+list: 'dolch-primer',,
+phonetic: false,,
+category: 'function',,
+meaning: 'Every one',,
+sentence: 'All whānau are welcome.',,
+culturalContext: 'Inclusivity concept important in Māori culture',,
+difficulty: 2,,
+yearLevel: 'Year 1-2',
   },
-  {
-    id: 'are2',
-    word: 'are',
-    frequency: 'high',
-    list: 'dolch-primer',
-    phonetic: false,
-    category: 'function',
-    meaning: 'To be (plural)',
-    sentence: 'We are learning.',
-    difficulty: 2,
-    yearLevel: 'Year 1-2',
+  {,
+id: 'are2',,
+word: 'are',,
+frequency: 'high',,
+list: 'dolch-primer',,
+phonetic: false,,
+category: 'function',,
+meaning: 'To be (plural)',,
+sentence: 'We are learning.',,
+difficulty: 2,,
+yearLevel: 'Year 1-2',
   },
-  {
-    id: 'at2',
-    word: 'at',
-    frequency: 'high',
-    list: 'dolch-primer',
-    phonetic: true,
-    category: 'function',
-    meaning: 'In the place of',
-    sentence: 'We meet at the marae.',
-    culturalContext: 'Important for describing cultural places',
-    difficulty: 1,
-    yearLevel: 'Year 1-2',
+  {,
+id: 'at2',,
+word: 'at',,
+frequency: 'high',,
+list: 'dolch-primer',,
+phonetic: true,,
+category: 'function',,
+meaning: 'In the place of',,
+sentence: 'We meet at the marae.',,
+culturalContext: 'Important for describing cultural places',,
+difficulty: 1,,
+yearLevel: 'Year 1-2',
   },
 
   // Dolch Grade 1
-  {
-    id: 'after3',
-    word: 'after',
-    frequency: 'high',
-    list: 'dolch-1',
-    phonetic: true,
-    category: 'function',
-    meaning: 'Following in time',
-    sentence: 'We eat after karakia.',
-    culturalContext: 'Sequence important in cultural protocols',
-    difficulty: 3,
-    yearLevel: 'Year 2-3',
+  {,
+id: 'after3',,
+word: 'after',,
+frequency: 'high',,
+list: 'dolch-1',,
+phonetic: true,,
+category: 'function',,
+meaning: 'Following in time',,
+sentence: 'We eat after karakia.',,
+culturalContext: 'Sequence important in cultural protocols',,
+difficulty: 3,,
+yearLevel: 'Year 2-3',
   },
-  {
-    id: 'again3',
-    word: 'again',
-    frequency: 'high',
-    list: 'dolch-1',
-    phonetic: false,
-    category: 'function',
-    meaning: 'One more time',
-    sentence: 'Sing the waiata again.',
-    culturalContext: 'Repetition important in oral tradition',
-    difficulty: 3,
-    yearLevel: 'Year 2-3',
+  {,
+id: 'again3',,
+word: 'again',,
+frequency: 'high',,
+list: 'dolch-1',,
+phonetic: false,,
+category: 'function',,
+meaning: 'One more time',,
+sentence: 'Sing the waiata again.',,
+culturalContext: 'Repetition important in oral tradition',,
+difficulty: 3,,
+yearLevel: 'Year 2-3',
   },
 
   // NZ Common Words
-  {
-    id: 'new-zealand1',
-    word: 'new',
-    frequency: 'high',
-    list: 'nz-common',
-    phonetic: false,
-    category: 'content',
-    meaning: 'Not old, recent',
-    sentence: 'Aotearoa New Zealand is our home.',
-    culturalContext: 'Part of our country name',
-    difficulty: 2,
-    yearLevel: 'Year 1-2',
+  {,
+id: 'new-zealand1',,
+word: 'new',,
+frequency: 'high',,
+list: 'nz-common',,
+phonetic: false,,
+category: 'content',,
+meaning: 'Not old, recent',,
+sentence: 'Aotearoa New Zealand is our home.',,
+culturalContext: 'Part of our country name',,
+difficulty: 2,,
+yearLevel: 'Year 1-2',
   },
-  {
-    id: 'zealand1',
-    word: 'zealand',
-    frequency: 'medium',
-    list: 'nz-common',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Part of our country name',
-    sentence: 'New Zealand is beautiful.',
-    culturalContext: 'Our country identity',
-    difficulty: 3,
-    yearLevel: 'Year 2-3',
+  {,
+id: 'zealand1',,
+word: 'zealand',,
+frequency: 'medium',,
+list: 'nz-common',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Part of our country name',,
+sentence: 'New Zealand is beautiful.',,
+culturalContext: 'Our country identity',,
+difficulty: 3,,
+yearLevel: 'Year 2-3',
   },
 
   // Māori-English Blend Words
-  {
-    id: 'kai1',
-    word: 'kai',
-    frequency: 'high',
-    list: 'maori-blend',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Food, meal',
-    sentence: 'We share kai together.',
-    culturalContext: 'Central concept in Māori hospitality',
-    difficulty: 1,
-    yearLevel: 'Year 1+',
+  {,
+id: 'kai1',,
+word: 'kai',,
+frequency: 'high',,
+list: 'maori-blend',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Food, meal',,
+sentence: 'We share kai together.',,
+culturalContext: 'Central concept in Māori hospitality',,
+difficulty: 1,,
+yearLevel: 'Year 1+',
   },
-  {
-    id: 'whanau1',
-    word: 'whānau',
-    frequency: 'high',
-    list: 'maori-blend',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Family, extended family',
-    sentence: 'My whānau loves me.',
-    culturalContext: 'Broader than nuclear family concept',
-    difficulty: 2,
-    yearLevel: 'Year 1+',
+  {,
+id: 'whanau1',,
+word: 'whānau',,
+frequency: 'high',,
+list: 'maori-blend',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Family, extended family',,
+sentence: 'My whānau loves me.',,
+culturalContext: 'Broader than nuclear family concept',,
+difficulty: 2,,
+yearLevel: 'Year 1+',
   },
-  {
-    id: 'marae1',
-    word: 'marae',
-    frequency: 'medium',
-    list: 'maori-blend',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Traditional meeting place',
-    sentence: 'We visited the marae.',
-    culturalContext: 'Sacred gathering place for iwi',
-    difficulty: 3,
-    yearLevel: 'Year 2+',
+  {,
+id: 'marae1',,
+word: 'marae',,
+frequency: 'medium',,
+list: 'maori-blend',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Traditional meeting place',,
+sentence: 'We visited the marae.',,
+culturalContext: 'Sacred gathering place for iwi',,
+difficulty: 3,,
+yearLevel: 'Year 2+',
   },
-  {
-    id: 'aroha1',
-    word: 'aroha',
-    frequency: 'high',
-    list: 'maori-blend',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Love, compassion, care',
-    sentence: 'Show aroha to everyone.',
-    culturalContext: 'Core value in Māori worldview',
-    difficulty: 2,
-    yearLevel: 'Year 1+',
+  {,
+id: 'aroha1',,
+word: 'aroha',,
+frequency: 'high',,
+list: 'maori-blend',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Love, compassion, care',,
+sentence: 'Show aroha to everyone.',,
+culturalContext: 'Core value in Māori worldview',,
+difficulty: 2,,
+yearLevel: 'Year 1+',
   },
-  {
-    id: 'mana1',
-    word: 'mana',
-    frequency: 'medium',
-    list: 'maori-blend',
-    phonetic: true,
-    category: 'cultural',
-    meaning: 'Spiritual power, authority',
-    sentence: 'The kaumātua has mana.',
-    culturalContext: 'Important spiritual concept',
-    difficulty: 4,
-    yearLevel: 'Year 3+',
+  {,
+id: 'mana1',,
+word: 'mana',,
+frequency: 'medium',,
+list: 'maori-blend',,
+phonetic: true,,
+category: 'cultural',,
+meaning: 'Spiritual power, authority',,
+sentence: 'The kaumātua has mana.',,
+culturalContext: 'Important spiritual concept',,
+difficulty: 4,,
+yearLevel: 'Year 3+',
   },
-];
+]
 
-export default function SightWords() {
-  const [selectedList, setSelectedList] = useState<string>('all');
-  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [currentWord, setCurrentWord] = useState<SightWord | null>(null);
-  const [showMeaning, setShowMeaning] = useState(false);
-  const [gameMode, setGameMode] = useState<'flashcard' | 'practice' | 'assessment'>('flashcard');
-  const [practiceWords, setPracticeWords] = useState<SightWord[]>([]);
-  const [currentPracticeIndex, setCurrentPracticeIndex] = useState(0);
-  const [practiceScore, setPracticeScore] = useState({ correct: 0, total: 0 });
+export default function SightWords() {const [selectedList, setSelectedList] = useState<string>('all')
+  const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all')
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [currentWord, setCurrentWord] = useState<SightWord | null>(null)
+  const [showMeaning, setShowMeaning] = useState(false)
+  const [gameMode, setGameMode] = useState<'flashcard' | 'practice' | 'assessment'>('flashcard')
+  const [practiceWords, setPracticeWords] = useState<SightWord[]>([])
+  const [currentPracticeIndex, setCurrentPracticeIndex] = useState(0)
+  const [practiceScore, setPracticeScore] = useState({ correct: 0, total: 0})
 
-  const filteredWords = sightWordsData.filter((word) => {
-    if (selectedList !== 'all' && word.list !== selectedList) return false;
+const filteredWords = sightWordsData.filter(_(word) => {
+if (selectedList !== 'all' && word.list !== selectedList) return false
     if (selectedDifficulty !== 'all' && word.difficulty.toString() !== selectedDifficulty)
-      return false;
-    if (selectedCategory !== 'all' && word.category !== selectedCategory) return false;
-    return true;
-  });
+return false
+    if (selectedCategory !== 'all' && word.category !== selectedCategory) return false
+    return true
+  })
 
-  const selectRandomWord = () => {
-    if (filteredWords.length > 0) {
-      const randomIndex = Math.floor(Math.random() * filteredWords.length);
-      setCurrentWord(filteredWords[randomIndex]);
-      setShowMeaning(false);
+const selectRandomWord = () => {
+if (filteredWords.length > 0) {
+const randomIndex = Math.floor(Math.random() * filteredWords.length)
+      setCurrentWord(filteredWords[randomIndex])
+      setShowMeaning(false)
     }
-  };
+  }
 
-  const startPracticeMode = () => {
-    if (filteredWords.length > 0) {
-      const shuffled = [...filteredWords].sort(() => Math.random() - 0.5);
-      setPracticeWords(shuffled.slice(0, 10)); // Take first 10 for practice
-      setCurrentPracticeIndex(0);
-      setPracticeScore({ correct: 0, total: 0 });
-      setGameMode('practice');
-      setCurrentWord(shuffled[0]);
-      setShowMeaning(false);
+const startPracticeMode = () => {
+if (filteredWords.length > 0) {
+const shuffled = [...filteredWords].sort_(() => Math.random() - 0.5)
+      setPracticeWords(shuffled.slice(0, 10)) // Take first 10 for practice
+setCurrentPracticeIndex(0)
+      setPracticeScore({ correct: 0, total: 0 })
+      setGameMode('practice')
+      setCurrentWord(shuffled[0])
+      setShowMeaning(false)
     }
-  };
+  }
 
-  const handlePracticeAnswer = (correct: boolean) => {
-    setPracticeScore((prev) => ({
-      correct: prev.correct + (correct ? 1 : 0),
-      total: prev.total + 1,
-    }));
+const handlePracticeAnswer = (_correct: boolean) => {
+setPracticeScore(_(prev) => ({,
+correct: prev.correct + (correct ? 1 : 0),,
+total: prev.total + 1,
+    }))
 
-    if (currentPracticeIndex < practiceWords.length - 1) {
-      setCurrentPracticeIndex((prev) => prev + 1);
-      setCurrentWord(practiceWords[currentPracticeIndex + 1]);
-      setShowMeaning(false);
+if (currentPracticeIndex < practiceWords.length - 1) {
+setCurrentPracticeIndex(_(prev) => prev + 1)
+      setCurrentWord(practiceWords[currentPracticeIndex + 1])
+      setShowMeaning(false)
     } else {
       // Practice completed
-      setGameMode('assessment');
+setGameMode('assessment')
     }
-  };
+  }
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'function':
-        return '🔧';
+const getCategoryIcon = (_category: string) => {
+switch (category) {
+case 'function':
+return '🔧'
       case 'content':
-        return '📝';
+return '📝'
       case 'cultural':
-        return '🌿';
-      default:
-        return '📚';
+return '🌿',
+default:
+return '📚'
     }
-  };
+  }
 
-  const toggleMeaning = () => {
-    setShowMeaning(!showMeaning);
-  };
+const toggleMeaning = () => {
+setShowMeaning(!showMeaning)
+  }
 
-  return (
+return (
     <div className="sight-words-container">
       <header className="sight-words-header">
         <h1 className="sight-words-title">👁️ Sight Words - Kupu Atahua</h1>
         <p className="sight-words-subtitle">
-          High-frequency words for fluent reading, including cultural vocabulary from Te Ao Māori
+High-frequency words for fluent reading, including cultural vocabulary from Te Ao Māori
         </p>
       </header>
 
@@ -341,13 +337,13 @@ export default function SightWords() {
       <section className="cultural-framework">
         <h2>🌿 Sight Words & Cultural Identity</h2>
         <p>
-          Sight words form the foundation of fluent reading. Our collection includes traditional
-          high-frequency English words alongside important Māori vocabulary that reflects our unique
-          New Zealand identity and cultural knowledge.
+Sight words form the foundation of fluent reading. Our collection includes traditional
+high-frequency English words alongside important Māori vocabulary that reflects our unique
+New Zealand identity and cultural knowledge.
         </p>
         <div className="framework-highlight">
-          <strong>Philosophy:</strong> "He kupu, he mana" - Words have power to connect us to
-          culture and meaning.
+          <strong>Philosophy: </strong> "He kupu, he mana" - Words have power to connect us to
+culture and meaning.
         </div>
       </section>
 
@@ -402,21 +398,21 @@ export default function SightWords() {
         <h3>🎮 Practice Modes</h3>
         <div className="mode-buttons">
           <button
-            className={`mode-btn ${gameMode === 'flashcard' ? 'active' : ''}`}
-            onClick={() => setGameMode('flashcard')}
+className={`mode-btn ${gameMode === 'flashcard' ? 'active' : ''}`}
+onClick={() => setGameMode('flashcard')}
           >
             📚 Flashcard Mode
           </button>
           <button
-            className={`mode-btn ${gameMode === 'practice' ? 'active' : ''}`}
-            onClick={startPracticeMode}
-            disabled={filteredWords.length === 0}
+className={`mode-btn ${gameMode === 'practice' ? 'active' : ''}`}
+onClick={startPracticeMode}
+disabled={filteredWords.length === 0}
           >
             🎯 Practice Mode
           </button>
           <button
-            className={`mode-btn ${gameMode === 'assessment' ? 'active' : ''}`}
-            onClick={() => setGameMode('assessment')}
+className={`mode-btn ${gameMode === 'assessment' ? 'active' : ''}`}
+onClick={() => setGameMode('assessment')}
           >
             📊 Assessment
           </button>
@@ -428,11 +424,11 @@ export default function SightWords() {
         <h3>🔍 Filter Words</h3>
         <div className="filters-grid">
           <div className="filter-group">
-            <label htmlFor="list-filter">Word List:</label>
+            <label htmlFor="list-filter">Word List: </label>
             <select
-              id="list-filter"
-              value={selectedList}
-              onChange={(e) => setSelectedList(e.target.value)}
+id="list-filter"
+value={selectedList}
+onChange={(_e) => setSelectedList(e.target.value)}
             >
               <option value="all">All Lists</option>
               <option value="dolch-pre">Dolch Pre-Primer</option>
@@ -449,11 +445,11 @@ export default function SightWords() {
           </div>
 
           <div className="filter-group">
-            <label htmlFor="difficulty-filter">Difficulty:</label>
+            <label htmlFor="difficulty-filter">Difficulty: </label>
             <select
-              id="difficulty-filter"
-              value={selectedDifficulty}
-              onChange={(e) => setSelectedDifficulty(e.target.value)}
+id="difficulty-filter"
+value={selectedDifficulty}
+onChange={(_e) => setSelectedDifficulty(e.target.value)}
             >
               <option value="all">All Levels</option>
               <option value="1">Level 1 (Easiest)</option>
@@ -465,11 +461,11 @@ export default function SightWords() {
           </div>
 
           <div className="filter-group">
-            <label htmlFor="category-filter">Category:</label>
+            <label htmlFor="category-filter">Category: </label>
             <select
-              id="category-filter"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
+id="category-filter"
+value={selectedCategory}
+onChange={(_e) => setSelectedCategory(e.target.value)}
             >
               <option value="all">All Categories</option>
               <option value="function">Function Words</option>
@@ -480,9 +476,9 @@ export default function SightWords() {
 
           {gameMode === 'flashcard' && (
             <button
-              className="random-word-btn"
-              onClick={selectRandomWord}
-              disabled={filteredWords.length === 0}
+className="random-word-btn"
+onClick={selectRandomWord}
+disabled={filteredWords.length === 0}
             >
               🎲 Random Word
             </button>
@@ -502,7 +498,7 @@ export default function SightWords() {
               <div className="word-badges">
                 <span className="list-badge">{currentWord.list}</span>
                 <span className={`difficulty-badge difficulty-${currentWord.difficulty}`}>
-                  Level {currentWord.difficulty}
+Level {currentWord.difficulty}
                 </span>
                 <span className="category-badge">
                   {getCategoryIcon(currentWord.category)} {currentWord.category}
@@ -515,28 +511,28 @@ export default function SightWords() {
 
               {gameMode === 'practice' && (
                 <div className="practice-progress">
-                  Word {currentPracticeIndex + 1} of {practiceWords.length} | Score:{' '}
+Word {currentPracticeIndex + 1} of {practiceWords.length} | Score: {' '}
                   {practiceScore.correct}/{practiceScore.total}
                 </div>
               )}
             </div>
 
             {!showMeaning ? (
-              <div className="word-front">
+_<div className="word-front">
                 <button className="reveal-btn" onClick={toggleMeaning}>
                   👁️ Show Meaning
                 </button>
                 {gameMode === 'practice' && (
                   <div className="practice-buttons">
                     <button
-                      className="practice-btn correct"
-                      onClick={() => handlePracticeAnswer(true)}
+className="practice-btn correct"
+onClick={() => handlePracticeAnswer(true)}
                     >
                       ✅ I Know This
                     </button>
                     <button
-                      className="practice-btn incorrect"
-                      onClick={() => handlePracticeAnswer(false)}
+className="practice-btn incorrect"
+onClick={() => handlePracticeAnswer(false)}
                     >
                       ❌ Need Practice
                     </button>
@@ -564,7 +560,7 @@ export default function SightWords() {
 
                 <div className="word-details">
                   <div className="detail-item">
-                    <strong>Frequency:</strong> {currentWord.frequency}
+                    <strong>Frequency: </strong> {currentWord.frequency}
                   </div>
                   <div className="detail-item">
                     <strong>Phonetic:</strong> {currentWord.phonetic ? 'Yes' : 'No (irregular)'}
@@ -603,10 +599,10 @@ export default function SightWords() {
               )}
             </div>
             <button
-              className="restart-btn"
-              onClick={() => {
-                setGameMode('flashcard');
-                setPracticeScore({ correct: 0, total: 0 });
+className="restart-btn"
+onClick={() => {
+setGameMode('flashcard')
+                setPracticeScore({ correct: 0, total: 0 })
               }}
             >
               🔄 Try Again
@@ -619,11 +615,11 @@ export default function SightWords() {
       <section className="words-grid-section">
         <h3>📋 All Words ({filteredWords.length})</h3>
         <div className="words-grid">
-          {filteredWords.map((word) => (
-            <div
-              key={word.id}
-              className={`word-card list-${word.list}`}
-              onClick={() => setCurrentWord(word)}
+          {filteredWords.map(_(word) => (
+_<div
+key={word.id}
+className={`word-card list-${word.list}`}
+onClick={() => setCurrentWord(word)}
             >
               <div className="card-header">
                 <span className={`card-difficulty-dot difficulty-${word.difficulty}`}></span>
@@ -696,5 +692,5 @@ export default function SightWords() {
         <p className="platform-info">Te Kete Ako - Sight Word Excellence for Aotearoa</p>
       </footer>
     </div>
-  );
+  )
 }

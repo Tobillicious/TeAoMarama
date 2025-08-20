@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CommunityNeedsSurvey.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CommunityNeedsSurvey.css'
 
-interface CommunityNeedsSurveyProps {
-  className?: string;
-}
-
-export const CommunityNeedsSurvey: React.FC<CommunityNeedsSurveyProps> = ({ className = '' }) => {
-  return (
+interface CommunityNeedsSurveyProps {className?: string}
+export const CommunityNeedsSurvey: React.FC<CommunityNeedsSurveyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="community needs survey"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`community-needs-survey-handout cultural-focus ${className}`}
+title="community needs survey"
+subtitle="Te Kete Ako - Cultural Education"
+className={`community-needs-survey-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CommunityNeedsSurvey: React.FC<CommunityNeedsSurveyProps> = ({ clas
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CommunityNeedsSurvey;
+export default CommunityNeedsSurvey

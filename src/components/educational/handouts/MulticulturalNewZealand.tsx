@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MulticulturalNewZealand.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MulticulturalNewZealand.css'
 
-interface MulticulturalNewZealandProps {
-  className?: string;
-}
-
-export const MulticulturalNewZealand: React.FC<MulticulturalNewZealandProps> = ({ className = '' }) => {
-  return (
+interface MulticulturalNewZealandProps {className?: string}
+export const MulticulturalNewZealand: React.FC<MulticulturalNewZealandProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="multicultural new zealand"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`multicultural-new-zealand-handout cultural-focus ${className}`}
+title="multicultural new zealand"
+subtitle="Te Kete Ako - Cultural Education"
+className={`multicultural-new-zealand-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MulticulturalNewZealand: React.FC<MulticulturalNewZealandProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MulticulturalNewZealand;
+export default MulticulturalNewZealand

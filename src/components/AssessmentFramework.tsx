@@ -1,68 +1,64 @@
-import { useState } from 'react';
-import './AssessmentFramework.css';
+import {useState} from 'react'
+import './AssessmentFramework.css'
 
-interface AssessmentLevel {
-  level: string;
-  maoriName: string;
-  description: string;
-  criteria: {
-    category: string;
-    western: string[];
-    cultural: string[];
-  }[];
+interface AssessmentLevel {,
+level: string,
+maoriName: string,
+description: string,
+criteria: {,
+category: string,
+western: string[],
+cultural: string[]}[]
 }
-
-interface InvestigationProject {
-  id: string;
-  title: string;
-  description: string;
-  researchQuestion: string;
-  dataCollection: string[];
-  analysisMethods: string[];
-  culturalConsiderations: string[];
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
-}
-
+interface InvestigationProject {,
+id: string,
+title: string,
+description: string,
+researchQuestion: string,
+dataCollection: string[],
+analysisMethods: string[],
+culturalConsiderations: string[],
+difficulty: 'beginner' | 'intermediate' | 'advanced'}
 const assessmentLevels: AssessmentLevel[] = [
-  {
-    level: 'Level 1',
-    maoriName: 'Kōwhao Timatanga',
-    description: 'Emerging Inquirer - Beginning to develop inquiry skills with support',
-    criteria: [
-      {
-        category: 'Question Formulation',
-        western: [
+  {,
+level: 'Level 1',,
+maoriName: 'Kōwhao Timatanga',,
+description: 'Emerging Inquirer - Beginning to develop inquiry skills with support',,
+criteria: [
+      {,
+category: 'Question Formulation',,
+western: [
           'Asks simple, concrete questions about observable phenomena',
           'Shows curiosity about immediate environment',
           'Requires scaffolding to develop questions',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'May ask questions through storytelling or whakataukī',
           'Questions may reflect home cultural contexts',
           'Shows wonder about spiritual or relational aspects',
         ],
       },
-      {
-        category: 'Investigation Skills',
-        western: [
+      {,
+category: 'Investigation Skills',,
+western: [
           'Uses basic tools and methods with guidance',
           'Observes and records simple data',
           'Follows prescribed investigation steps',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'May prefer collective investigation approaches',
           'Draws on traditional knowledge from home cultures',
           'Considers impact on whānau and community',
         ],
       },
-      {
-        category: 'Evidence Analysis',
-        western: [
+      {,
+category: 'Evidence Analysis',,
+western: [
           'Identifies obvious patterns with support',
           'Makes simple connections between cause and effect',
           'Describes what they observed',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'May interpret evidence through tikanga framework',
           'Connects findings to cultural knowledge systems',
           'Considers emotional and spiritual significance',
@@ -70,45 +66,45 @@ const assessmentLevels: AssessmentLevel[] = [
       },
     ],
   },
-  {
-    level: 'Level 2',
-    maoriName: 'Kōwhao Tipu',
-    description: 'Developing Inquirer - Building independent inquiry capabilities',
-    criteria: [
-      {
-        category: 'Question Formulation',
-        western: [
+  {,
+level: 'Level 2',,
+maoriName: 'Kōwhao Tipu',,
+description: 'Developing Inquirer - Building independent inquiry capabilities',,
+criteria: [
+      {,
+category: 'Question Formulation',,
+western: [
           'Develops questions that can be investigated',
           'Shows understanding of what makes a good research question',
           'Beginning to show independent questioning',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Incorporates whakataukī or traditional stories into questioning',
           'Questions reflect broader cultural perspectives',
           'Asks questions about social and spiritual dimensions',
         ],
       },
-      {
-        category: 'Investigation Skills',
-        western: [
+      {,
+category: 'Investigation Skills',,
+western: [
           'Selects appropriate methods for investigation',
           'Uses tools and technology effectively',
           "Adapts approach when initial method doesn't work",
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Seeks guidance from kaumātua or cultural experts',
           'Incorporates traditional research methods',
           'Considers multiple ways of gathering knowledge',
         ],
       },
-      {
-        category: 'Evidence Analysis',
-        western: [
+      {,
+category: 'Evidence Analysis',,
+western: [
           'Identifies patterns and trends in data',
           'Makes logical connections between evidence and conclusions',
           'Compares findings with predictions or hypotheses',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Analyzes through mātauranga Māori frameworks',
           'Compares findings across cultural knowledge systems',
           'Considers implications for relationships and community',
@@ -116,45 +112,45 @@ const assessmentLevels: AssessmentLevel[] = [
       },
     ],
   },
-  {
-    level: 'Level 3',
-    maoriName: 'Kōwhao Puawai',
-    description: 'Capable Inquirer - Demonstrating sophisticated inquiry skills',
-    criteria: [
-      {
-        category: 'Question Formulation',
-        western: [
+  {,
+level: 'Level 3',,
+maoriName: 'Kōwhao Puawai',,
+description: 'Capable Inquirer - Demonstrating sophisticated inquiry skills',,
+criteria: [
+      {,
+category: 'Question Formulation',,
+western: [
           'Develops complex, multi-faceted research questions',
           'Shows understanding of different types of inquiry',
           'Questions reflect deep curiosity and critical thinking',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Integrates multiple cultural perspectives in questioning',
           'Questions honor traditional knowledge systems',
           'Shows understanding of cultural protocols in inquiry',
         ],
       },
-      {
-        category: 'Investigation Skills',
-        western: [
+      {,
+category: 'Investigation Skills',,
+western: [
           'Designs sophisticated investigation methodologies',
           'Uses advanced tools and technology appropriately',
           'Adapts methods based on emerging findings',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Collaborates respectfully with cultural experts',
           'Balances traditional and modern research approaches',
           'Maintains cultural safety throughout investigation',
         ],
       },
-      {
-        category: 'Evidence Analysis',
-        western: [
+      {,
+category: 'Evidence Analysis',,
+western: [
           'Synthesizes complex data from multiple sources',
           'Identifies nuanced patterns and relationships',
           'Evaluates quality and reliability of evidence',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Integrates multiple knowledge systems in analysis',
           'Honors cultural protocols in data interpretation',
           'Considers broader community and environmental impacts',
@@ -162,45 +158,45 @@ const assessmentLevels: AssessmentLevel[] = [
       },
     ],
   },
-  {
-    level: 'Level 4',
-    maoriName: 'Rangatira',
-    description: 'Expert Inquirer - Leading inquiry with cultural wisdom',
-    criteria: [
-      {
-        category: 'Question Formulation',
-        western: [
+  {,
+level: 'Level 4',,
+maoriName: 'Rangatira',,
+description: 'Expert Inquirer - Leading inquiry with cultural wisdom',,
+criteria: [
+      {,
+category: 'Question Formulation',,
+western: [
           'Leads inquiry that addresses complex, real-world problems',
           'Develops questions that advance knowledge in the field',
           'Mentors others in developing effective research questions',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Leads inquiry that honors and advances cultural knowledge',
           'Develops questions that serve community needs',
           'Models cultural protocols in inquiry leadership',
         ],
       },
-      {
-        category: 'Investigation Skills',
-        western: [
+      {,
+category: 'Investigation Skills',,
+western: [
           'Creates innovative investigation methodologies',
           'Leads collaborative research teams effectively',
           'Adapts methods to address emerging challenges',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Leads culturally-grounded research initiatives',
           'Mentors others in cultural research protocols',
           'Bridges traditional and modern research approaches',
         ],
       },
-      {
-        category: 'Evidence Analysis',
-        western: [
+      {,
+category: 'Evidence Analysis',,
+western: [
           'Develops new analytical frameworks and approaches',
           'Leads synthesis of complex, multi-disciplinary evidence',
           'Advances understanding in the field through analysis',
-        ],
-        cultural: [
+        ],;,
+cultural: [
           'Develops culturally-responsive analytical frameworks',
           'Leads integration of multiple knowledge systems',
           'Advances cultural understanding through respectful inquiry',
@@ -208,95 +204,94 @@ const assessmentLevels: AssessmentLevel[] = [
       },
     ],
   },
-];
+]
 
 const investigationProjects: InvestigationProject[] = [
-  {
-    id: 'housing-affordability',
-    title: 'Housing Affordability Analysis',
-    description: 'Investigate housing affordability trends for young New Zealanders',
-    researchQuestion: 'Is housing becoming less affordable for young New Zealanders?',
-    dataCollection: [
+  {,
+id: 'housing-affordability',,
+title: 'Housing Affordability Analysis',,
+description: 'Investigate housing affordability trends for young New Zealanders',,
+researchQuestion: 'Is housing becoming less affordable for young New Zealanders?',,
+dataCollection: [
       'House prices, youth incomes, student debt levels (2018-2023)',
       'Calculate ratios: House price to income ratios for different age groups',
       'Regional comparison: How does affordability vary across New Zealand?',
       'Historical context: Compare current ratios to previous decades',
-    ],
-    analysisMethods: [
+    ],;,
+analysisMethods: [
       'Descriptive statistics: Mean, median, range for house price-to-income ratios',
       'Correlation analysis: Relationship between location and affordability',
       'Trend analysis: Changes over time using percentage change calculations',
       'Comparative analysis: New Zealand vs. other similar countries',
-    ],
-    culturalConsiderations: [
+    ],;,
+culturalConsiderations: [
       'Consider Māori perspectives on land and housing',
       'Include Pacific Island community housing needs',
       'Respect cultural connections to whenua (land)',
       'Acknowledge historical land dispossession impacts',
-    ],
-    difficulty: 'advanced',
+    ],;,
+difficulty: 'advanced',
   },
-  {
-    id: 'educational-outcomes',
-    title: 'Educational Outcomes Investigation',
-    description: 'Analyze how educational qualifications correlate with employment and income',
-    researchQuestion: 'How do educational qualifications correlate with employment and income?',
-    dataCollection: [
+  {,
+id: 'educational-outcomes',,
+title: 'Educational Outcomes Investigation',,
+description: 'Analyze how educational qualifications correlate with employment and income',,
+researchQuestion: 'How do educational qualifications correlate with employment and income?',,
+dataCollection: [
       'Employment rates by qualification level',
       'Income distributions by education level',
       'Regional variations in educational attainment',
       'Industry preferences by qualification type',
-    ],
-    analysisMethods: [
+    ],;,
+analysisMethods: [
       'Cross-tabulation: Education level vs. employment status',
       'Mean comparisons: Average income by qualification level',
       'Percentage analysis: What proportion of graduates work in their field?',
       'Scatter plot analysis: Is there a linear relationship between education and income?',
-    ],
-    culturalConsiderations: [
+    ],;,
+culturalConsiderations: [
       'Include Māori and Pacific educational achievement data',
       'Consider cultural factors in educational success',
       'Respect diverse pathways to learning and achievement',
       'Acknowledge systemic barriers and cultural strengths',
-    ],
-    difficulty: 'intermediate',
+    ],;,
+difficulty: 'intermediate',
   },
-  {
-    id: 'climate-change',
-    title: 'Climate Change Impact Assessment',
-    description: 'Investigate climate change effects on different regions of New Zealand',
-    researchQuestion: 'How is climate change affecting different regions of New Zealand?',
-    dataCollection: [
+  {,
+id: 'climate-change',,
+title: 'Climate Change Impact Assessment',,
+description: 'Investigate climate change effects on different regions of New Zealand',,
+researchQuestion: 'How is climate change affecting different regions of New Zealand?',,
+dataCollection: [
       'Temperature trends across major cities over 20+ years',
       'Rainfall pattern changes by region',
       'Extreme weather frequency analysis',
       'Sea level rise at different coastal locations',
-    ],
-    analysisMethods: [
+    ],;,
+analysisMethods: [
       'Time series analysis of temperature and rainfall data',
       'Statistical significance testing for climate trends',
       'Geographic comparison of regional impacts',
       'Predictive modeling for future climate scenarios',
-    ],
-    culturalConsiderations: [
+    ],;,
+culturalConsiderations: [
       'Include mātauranga Māori perspectives on environmental change',
       'Respect traditional knowledge of weather patterns',
       'Consider impacts on Māori communities and whenua',
       'Honor kaitiakitanga principles in environmental research',
-    ],
-    difficulty: 'advanced',
+    ],;,
+difficulty: 'advanced',
   },
-];
+]
 
-export default function AssessmentFramework() {
-  const [selectedLevel, setSelectedLevel] = useState<AssessmentLevel>(assessmentLevels[0]);
+export default function AssessmentFramework() {const [selectedLevel, setSelectedLevel] = useState<AssessmentLevel>(assessmentLevels[0])
   const [selectedProject, setSelectedProject] = useState<InvestigationProject>(
-    investigationProjects[0],
-  );
-  const [activeTab, setActiveTab] = useState<'rubric' | 'projects' | 'cultural'>('rubric');
+investigationProjects[0],
+  )
+  const [activeTab, setActiveTab] = useState<'rubric' | 'projects' | 'cultural'>('rubric')
 
-  return (
-    <div className="assessment-container">
+return (
+_<div className="assessment-container">
       <header className="assessment-header">
         <div className="header-content">
           <div className="badge">🎯 ERO DEMONSTRATION READY</div>
@@ -308,8 +303,8 @@ export default function AssessmentFramework() {
             <span className="meta-item">✅ Cultural Safety: 100%</span>
           </div>
           <p className="description">
-            Sophisticated assessment frameworks that honor diverse ways of knowing and being,
-            integrating Te Ao Māori with Western academic approaches.
+Sophisticated assessment frameworks that honor diverse ways of knowing and being, 
+_integrating Te Ao Māori with Western academic approaches.
           </p>
         </div>
       </header>
@@ -317,20 +312,20 @@ export default function AssessmentFramework() {
       <section className="tabs">
         <div className="tab-buttons">
           <button
-            className={`tab-button ${activeTab === 'rubric' ? 'active' : ''}`}
-            onClick={() => setActiveTab('rubric')}
+className={`tab-button ${activeTab === 'rubric' ? 'active' : ''}`}
+onClick={() => setActiveTab('rubric')}
           >
             📋 Inquiry Rubric
           </button>
           <button
-            className={`tab-button ${activeTab === 'projects' ? 'active' : ''}`}
-            onClick={() => setActiveTab('projects')}
+className={`tab-button ${activeTab === 'projects' ? 'active' : ''}`}
+onClick={() => setActiveTab('projects')}
           >
             🔬 Investigation Projects
           </button>
           <button
-            className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
-            onClick={() => setActiveTab('cultural')}
+className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
+onClick={() => setActiveTab('cultural')}
           >
             🌿 Cultural Framework
           </button>
@@ -338,15 +333,15 @@ export default function AssessmentFramework() {
       </section>
 
       {activeTab === 'rubric' && (
-        <section className="rubric">
+_<section className="rubric">
           <h2>🎯 Inquiry Learning Rubric: Te Ao Mārama Framework</h2>
 
           <div className="level-selector">
             {assessmentLevels.map((level) => (
-              <button
-                key={level.level}
-                className={`level-pill ${selectedLevel.level === level.level ? 'active' : ''}`}
-                onClick={() => setSelectedLevel(level)}
+_<button
+key={level.level}
+className={`level-pill ${selectedLevel.level === level.level ? 'active' : ''}`}
+onClick={() => setSelectedLevel(level)}
               >
                 {level.level} - {level.maoriName}
               </button>
@@ -360,15 +355,15 @@ export default function AssessmentFramework() {
             <p className="level-description">{selectedLevel.description}</p>
 
             <div className="criteria-grid">
-              {selectedLevel.criteria.map((criterion, index) => (
-                <div key={index} className="criterion-card">
+              {selectedLevel.criteria.map(_(criterion,  _index) => (
+_<div key={index} className="criterion-card">
                   <h4>{criterion.category}</h4>
 
                   <div className="approaches">
                     <div className="approach">
                       <h5>🔬 Western Academic</h5>
                       <ul>
-                        {criterion.western.map((item, i) => (
+                        {criterion.western.map((item,  i) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
@@ -377,7 +372,7 @@ export default function AssessmentFramework() {
                     <div className="approach">
                       <h5>🌿 Cultural Responsiveness</h5>
                       <ul>
-                        {criterion.cultural.map((item, i) => (
+                        {criterion.cultural.map(_(item,  i) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
@@ -391,15 +386,15 @@ export default function AssessmentFramework() {
       )}
 
       {activeTab === 'projects' && (
-        <section className="projects">
+_<section className="projects">
           <h2>🔬 Statistical Investigation Projects</h2>
 
           <div className="project-selector">
             {investigationProjects.map((project) => (
-              <button
-                key={project.id}
-                className={`project-pill ${selectedProject.id === project.id ? 'active' : ''}`}
-                onClick={() => setSelectedProject(project)}
+_<button
+key={project.id}
+className={`project-pill ${selectedProject.id === project.id ? 'active' : ''}`}
+onClick={() => setSelectedProject(project)}
               >
                 {project.title}
               </button>
@@ -410,10 +405,10 @@ export default function AssessmentFramework() {
             <h3>{selectedProject.title}</h3>
             <p className="project-description">{selectedProject.description}</p>
 
-            <div className="difficulty-badge">
-              Difficulty:{' '}
+            <div className="difficulty-badge">,
+Difficulty: {' '}
               {selectedProject.difficulty.charAt(0).toUpperCase() +
-                selectedProject.difficulty.slice(1)}
+selectedProject.difficulty.slice(1)}
             </div>
 
             <div className="project-grid">
@@ -425,7 +420,7 @@ export default function AssessmentFramework() {
               <div className="project-section">
                 <h4>📊 Data Collection</h4>
                 <ul>
-                  {selectedProject.dataCollection.map((item, index) => (
+                  {selectedProject.dataCollection.map(_(item,  _index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -434,7 +429,7 @@ export default function AssessmentFramework() {
               <div className="project-section">
                 <h4>📈 Analysis Methods</h4>
                 <ul>
-                  {selectedProject.analysisMethods.map((item, index) => (
+                  {selectedProject.analysisMethods.map(_(item,  _index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -443,7 +438,7 @@ export default function AssessmentFramework() {
               <div className="project-section">
                 <h4>🌿 Cultural Considerations</h4>
                 <ul>
-                  {selectedProject.culturalConsiderations.map((item, index) => (
+                  {selectedProject.culturalConsiderations.map(_(item,  _index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -460,14 +455,14 @@ export default function AssessmentFramework() {
           <div className="cultural-notice">
             <h3>🛡️ Cultural Safety Notice</h3>
             <p>
-              This rubric contains Te Ao Māori concepts and cultural elements. All cultural
-              assessments must be reviewed by appropriate kaitiaki before implementation.
+This rubric contains Te Ao Māori concepts and cultural elements. All cultural
+assessments must be reviewed by appropriate kaitiaki before implementation.
             </p>
           </div>
 
           <div className="cultural-principles">
             <h3>🌟 Cultural Foundation</h3>
-            <p>This framework honors diverse ways of knowing and being:</p>
+            <p>This framework honors diverse ways of knowing and being: </p>
 
             <div className="principles-grid">
               <div className="principle">
@@ -507,5 +502,5 @@ export default function AssessmentFramework() {
         <p className="platform">TeAoMarama — World's Best Teaching Bank with Cultural Excellence</p>
       </footer>
     </div>
-  );
+  )
 }

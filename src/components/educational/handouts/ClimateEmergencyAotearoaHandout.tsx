@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ClimateEmergencyAotearoaHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ClimateEmergencyAotearoaHandout.css'
 
-interface ClimateEmergencyAotearoaHandoutProps {
-  className?: string;
-}
-
-export const ClimateEmergencyAotearoaHandout: React.FC<ClimateEmergencyAotearoaHandoutProps> = ({ className = '' }) => {
-  return (
+interface ClimateEmergencyAotearoaHandoutProps {className?: string}
+export const ClimateEmergencyAotearoaHandout: React.FC<ClimateEmergencyAotearoaHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="climate emergency aotearoa handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`climate-emergency-aotearoa-handout-handout cultural-focus ${className}`}
+title="climate emergency aotearoa handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`climate-emergency-aotearoa-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ClimateEmergencyAotearoaHandout: React.FC<ClimateEmergencyAotearoaH
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ClimateEmergencyAotearoaHandout;
+export default ClimateEmergencyAotearoaHandout

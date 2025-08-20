@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MisleadingGraphsComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MisleadingGraphsComprehensionHandout.css'
 
-interface MisleadingGraphsComprehensionHandoutProps {
-  className?: string;
-}
-
-export const MisleadingGraphsComprehensionHandout: React.FC<MisleadingGraphsComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface MisleadingGraphsComprehensionHandoutProps {className?: string}
+export const MisleadingGraphsComprehensionHandout: React.FC<MisleadingGraphsComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="misleading graphs comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`misleading-graphs-comprehension-handout-handout cultural-focus ${className}`}
+title="misleading graphs comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`misleading-graphs-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MisleadingGraphsComprehensionHandout: React.FC<MisleadingGraphsComp
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MisleadingGraphsComprehensionHandout;
+export default MisleadingGraphsComprehensionHandout

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PlaceDescriptionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PlaceDescriptionHandout.css'
 
-interface PlaceDescriptionHandoutProps {
-  className?: string;
-}
-
-export const PlaceDescriptionHandout: React.FC<PlaceDescriptionHandoutProps> = ({ className = '' }) => {
-  return (
+interface PlaceDescriptionHandoutProps {className?: string}
+export const PlaceDescriptionHandout: React.FC<PlaceDescriptionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="place description handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`place-description-handout-handout cultural-focus ${className}`}
+title="place description handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`place-description-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PlaceDescriptionHandout: React.FC<PlaceDescriptionHandoutProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PlaceDescriptionHandout;
+export default PlaceDescriptionHandout

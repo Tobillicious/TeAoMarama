@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface SustainableTechnologyDesignChallengeProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesignChallengeProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface SustainableTechnologyDesignChallengeProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesignChallengeProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="sustainable-technology-design-challenge">
       <Card title="Sustainable Technology Design Challenge | Mangakōtukutuku College" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,10 +24,10 @@ const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesign
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">Sustainable Technology Design Challenge</h1>
                 <p class="page-subtitle">Innovating for a Better Future, Inspired by the Past</p>
             </div>
@@ -39,7 +36,7 @@ const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesign
                 <div class="question-block">
                     <h2 class="section-title" class="wiley-section-title">The Challenge: Design with Purpose</h2>
                     <p>
-                        Your challenge is to design a new piece of sustainable technology that addresses a local environmental issue. Your design must be inspired by the principles of <strong>kaitiakitanga</strong> (guardianship) and integrate ideas from both <strong>mātauranga Māori</strong> and <strong>modern science</strong>. This is not just about creating something new; it's about creating something that cares for the environment and the community.
+Your challenge is to design a new piece of sustainable technology that addresses a local environmental issue. Your design must be inspired by the principles of <strong>kaitiakitanga</strong> (guardianship) and integrate ideas from both <strong>mātauranga Māori</strong> and <strong>modern science</strong>. This is not just about creating something new it's about creating something that cares for the environment and the community.
                     </p>
                 </div>
             </section>
@@ -47,29 +44,29 @@ const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesign
             <section class="mb-4">
                 <h2 class="section-title" class="wiley-section-title">Design Challenge Options</h2>
                 <p class="text-secondary mb-4">Choose one of the following challenges, or propose your own with your teacher's approval.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md: grid-cols-2 gap-4">
                     <div class="technique-box">
                         <h3 class="mb-2">Challenge 1: The Smart Pā Tūhā</h3>
                         <p>
-                            Design a modern, small-scale composting or waste-sorting system for a school or community garden. It should be efficient, easy to use, and reflect Māori principles of returning nutrients to the soil.
+Design a modern, small-scale composting or waste-sorting system for a school or community garden. It should be efficient, easy to use, and reflect Māori principles of returning nutrients to the soil.
                         </p>
                     </div>
                     <div class="technique-box">
                         <h3 class="mb-2">Challenge 2: The Rainwater Guardian</h3>
                         <p>
-                            Design a system for collecting, filtering, and storing rainwater for use in gardens or for non-drinking purposes. Your design should consider traditional water-saving techniques and use modern, sustainable materials.
+Design a system for collecting, filtering, and storing rainwater for use in gardens or for non-drinking purposes. Your design should consider traditional water-saving techniques and use modern, sustainable materials.
                         </p>
                     </div>
                     <div class="technique-box">
                         <h3 class="mb-2">Challenge 3: The Pollinator Palace</h3>
                         <p>
-                            Design a habitat or "hotel" for native bees and other pollinators. Your design should use natural materials and be based on research into the specific needs of local insect species.
+Design a habitat or "hotel" for native bees and other pollinators. Your design should use natural materials and be based on research into the specific needs of local insect species.
                         </p>
                     </div>
                     <div class="technique-box">
                         <h3 class="mb-2">Challenge 4: The Greywater Gardener</h3>
                         <p>
-                           Design a simple system to filter and reuse "greywater" (from sinks or washing machines) for watering fruit trees or ornamental gardens, reducing overall water consumption.
+Design a simple system to filter and reuse "greywater" (from sinks or washing machines) for watering fruit trees or ornamental gardens, reducing overall water consumption.
                         </p>
                     </div>
                 </div>
@@ -106,7 +103,7 @@ const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesign
                 <div class="question-block">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <h3 class="mb-2">Environmental Issue:</h3>
+                            <h3 class="mb-2">Environmental Issue: </h3>
                             
                         </div>
                         <div>
@@ -130,7 +127,7 @@ const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnologyDesign
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default SustainableTechnologyDesignChallenge;
+export default SustainableTechnologyDesignChallenge

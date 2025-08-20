@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './FireMakingEnergy.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './FireMakingEnergy.css'
 
-interface FireMakingEnergyProps {
-  className?: string;
-}
-
-export const FireMakingEnergy: React.FC<FireMakingEnergyProps> = ({ className = '' }) => {
-  return (
+interface FireMakingEnergyProps {className?: string}
+export const FireMakingEnergy: React.FC<FireMakingEnergyProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="fire making energy"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`fire-making-energy-handout cultural-focus ${className}`}
+title="fire making energy"
+subtitle="Te Kete Ako - Cultural Education"
+className={`fire-making-energy-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const FireMakingEnergy: React.FC<FireMakingEnergyProps> = ({ className = 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default FireMakingEnergy;
+export default FireMakingEnergy

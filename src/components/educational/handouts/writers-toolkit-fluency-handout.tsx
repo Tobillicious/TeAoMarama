@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface WritersToolkitFluencyHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface WritersToolkitFluencyHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="writers-toolkit-fluency-handout">
       <Card title="The Writer's Toolkit: Sentence Fluency | Mangakōtukutuku College" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,10 +24,10 @@ const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
             <div class="mb-4">
-                <a href="handouts.html" class="breadcrumb">&larr; Back to Handouts</a>
+                <a href="handouts.html" class="breadcrumb">&larr Back to Handouts</a>
                 <h1 class="page-title" class="wiley-hero-title">The Writer's Toolkit: Sentence Fluency</h1>
                 <p class="page-subtitle">Creating Rhythm and Flow in Your Writing</p>
             </div>
@@ -38,7 +35,7 @@ const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> 
             <section class="mb-4">
                 <h2 class="section-title" class="wiley-section-title">What is Sentence Fluency?</h2>
                 <p>
-                    Sentence fluency is the rhythm and flow of the language. It's the way sentences work together to create a smooth, pleasant reading experience. Writing with good fluency is easy to read aloud; the sentences seem to glide effortlessly from one to the next. Poor fluency, on the other hand, can make writing feel choppy, repetitive, and difficult to read. The key to achieving fluency is variety. By using a mix of different sentence lengths and structures, you can make your writing more mature, engaging, and powerful.
+Sentence fluency is the rhythm and flow of the language. It's the way sentences work together to create a smooth, pleasant reading experience. Writing with good fluency is easy to read aloud the sentences seem to glide effortlessly from one to the next. Poor fluency, on the other hand, can make writing feel choppy, repetitive, and difficult to read. The key to achieving fluency is variety. By using a mix of different sentence lengths and structures, you can make your writing more mature, engaging, and powerful.
                 </p>
             </section>
 
@@ -98,7 +95,7 @@ const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandoutProps> 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default WritersToolkitFluencyHandout;
+export default WritersToolkitFluencyHandout

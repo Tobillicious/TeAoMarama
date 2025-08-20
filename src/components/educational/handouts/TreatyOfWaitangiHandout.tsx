@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './TreatyOfWaitangiHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './TreatyOfWaitangiHandout.css'
 
-interface TreatyOfWaitangiHandoutProps {
-  className?: string;
-}
-
-export const TreatyOfWaitangiHandout: React.FC<TreatyOfWaitangiHandoutProps> = ({ className = '' }) => {
-  return (
+interface TreatyOfWaitangiHandoutProps {className?: string}
+export const TreatyOfWaitangiHandout: React.FC<TreatyOfWaitangiHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="treaty of waitangi handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`treaty-of-waitangi-handout-handout cultural-focus ${className}`}
+title="treaty of waitangi handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`treaty-of-waitangi-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const TreatyOfWaitangiHandout: React.FC<TreatyOfWaitangiHandoutProps> = (
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default TreatyOfWaitangiHandout;
+export default TreatyOfWaitangiHandout

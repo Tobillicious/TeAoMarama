@@ -6,256 +6,239 @@
  * This script analyzes the application bundle and provides optimization recommendations
  * to reduce bundle size and improve loading performance.
  */
-
-import { execSync } from 'child_process';
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-interface BundleAnalysis {
-  file: string;
-  size: number;
-  gzipSize: number;
-  percentage: number;
-}
-
-interface OptimizationRecommendation {
-  type: 'critical' | 'warning' | 'info';
-  message: string;
-  impact: 'high' | 'medium' | 'low';
-  action: string;
-}
-
+import {execSync} from 'child_process'
+import {writeFileSync} from 'fs'
+import {join} from 'path'
+interface BundleAnalysis {,
+file: string,
+size: number,
+gzipSize: number,
+percentage: number}
+interface OptimizationRecommendation {,
+type: 'critical' | 'warning' | 'info',
+message: string,
+impact: 'high' | 'medium' | 'low',
+action: string}
 class PerformanceOptimizer {
-  private bundleStats: BundleAnalysis[] = [];
-  private recommendations: OptimizationRecommendation[] = [];
+private bundleStats: BundleAnalysis[] = []
+  private recommendations: OptimizationRecommendation[] = []
 
-  async analyzeBundle(): Promise<void> {
-    console.log('🔍 Analyzing bundle performance...');
+async analyzeBundle(): Promise<void> {
+console.log('🔍 Analyzing bundle performance...')
 
-    try {
+try {
       // Build the project to get current bundle stats
-      execSync('npm run build', { stdio: 'pipe' });
+execSync('npm run build', { stdio: 'pipe' })
 
       // Parse the build output to extract bundle information
-      const _buildOutput = execSync('npm run build', { encoding: 'utf8' });
-      this.parseBuildOutput(buildOutput);
+const __buildOutput = execSync('npm run build', { encoding: 'utf8' })
+      this.parseBuildOutput(buildOutput)
 
       // Analyze bundle composition
-      this.analyzeBundleComposition();
+this.analyzeBundleComposition()
 
       // Generate recommendations
-      this.generateRecommendations();
+this.generateRecommendations()
 
       // Generate report
-      this.generateReport();
+this.generateReport()
     } catch (error) {
-      console.error('❌ Error analyzing bundle:', error);
+console.error('❌ Error analyzing bundle: ', error)
     }
   }
+private parseBuildOutput(output: string): void {
+const __lines = output.split('\n')
+    const __bundleRegex = /dist/assets/(.+)\.js\s+(\d+\.\d+)\s+kB\s+│\s+gzip: \s+(\d+\.\d+)\s+kB/
 
-  private parseBuildOutput(output: string): void {
-    const _lines = output.split('\n');
-    const _bundleRegex = /dist/assets/(.+)\.js\s+(\d+\.\d+)\s+kB\s+│\s+gzip:\s+(\d+\.\d+)\s+kB/;
-
-    lines.forEach((line) => {
-      const _match = line._match(bundleRegex);
+lines.forEach(_(line) => {
+const __match = line._match(bundleRegex)
       if (match) {
-        const [, fileName, size, gzipSize] = match;
-        this.bundleStats.push({
-          file: fileName,
-          size: parseFloat(size),
-          gzipSize: parseFloat(gzipSize),
-          percentage: 0, // Will be calculated later
-        });
+const [, fileName, size, gzipSize] = match
+        this.bundleStats.push({,
+file: fileName,;,
+size: parseFloat(size),;,
+gzipSize: parseFloat(gzipSize),;,
+percentage: 0, // Will be calculated later
+        })
       }
-    });
+    })
 
     // Calculate percentages
-    const _totalSize = this.bundleStats.reduce((sum, stat) => sum + stat.size, 0);
-    this.bundleStats.forEach((stat) => {
-      stat.percentage = (stat.size / totalSize) * 100;
-    });
+const __totalSize = this.bundleStats.reduce(_(sum,  _stat) => sum + stat.size, 0)
+    this.bundleStats.forEach(_(stat) => {
+stat.percentage = (stat.size / totalSize) * 100
+    })
   }
-
-  private analyzeBundleComposition(): void {
-    console.log('\n📊 Bundle Composition Analysis:');
+private analyzeBundleComposition(): void {
+console.log('\n📊 Bundle Composition Analysis: ')
 
     // Sort by size (largest first)
-    const _sortedStats = [...this.bundleStats].sort((a, b) => b.size - a.size);
+const __sortedStats = [...this.bundleStats].sort(_(a,  _b) => b.size - a.size)
 
-    sortedStats.forEach((stat) => {
-      const _status = this.getSizeStatus(stat.size);
-      console.log(`${status} ${stat.file}: ${stat.size}KB (${stat.percentage.toFixed(1)}%)`);
-    });
+sortedStats.forEach(_(stat) => {
+const __status = this.getSizeStatus(stat.size)
+      console.log(`${status} ${stat.file}: ${stat.size}KB (${stat.percentage.toFixed(1)}%)`)
+    })
   }
-
-  private getSizeStatus(size: number): string {
-    if (size > 100) return '🔴';
-    if (size > 50) return '🟡';
-    if (size > 20) return '🟢';
-    return '✅';
+private getSizeStatus(size: number): string {
+if (size > 100) return '🔴'
+    if (size > 50) return '🟡'
+    if (size > 20) return '🟢'
+    return '✅'
   }
-
-  private generateRecommendations(): void {
-    console.log('\n💡 Performance Optimization Recommendations:');
+private generateRecommendations(): void {
+console.log('\n💡 Performance Optimization Recommendations: ')
 
     // Check for large bundles
-    this.bundleStats.forEach((stat) => {
-      if (stat.size > 100) {
-        this.recommendations.push({
-          type: 'critical',
-          message: `Large bundle detected: ${stat.file} (${stat.size}KB)`,
-          impact: 'high',
-          action: 'Consider code splitting or lazy loading for this module',
-        });
+this.bundleStats.forEach(_(stat) => {
+if (stat.size > 100) {
+this.recommendations.push({,
+type: 'critical',;,
+message: `Large bundle detected: ${stat.file} (${stat.size}KB)`,;,
+impact: 'high',;,
+action: 'Consider code splitting or lazy loading for this module',
+        })
       } else if (stat.size > 50) {
-        this.recommendations.push({
-          type: 'warning',
-          message: `Medium bundle detected: ${stat.file} (${stat.size}KB)`,
-          impact: 'medium',
-          action: 'Monitor and consider optimization if it grows larger',
-        });
+this.recommendations.push({,
+type: 'warning',;,
+message: `Medium bundle detected: ${stat.file} (${stat.size}KB)`,;,
+impact: 'medium',;,
+action: 'Monitor and consider optimization if it grows larger',
+        })
       }
-    });
+    })
 
     // Check for markdown processing bundle
-    const _markdownBundle = this.bundleStats.find(
-      (stat) => stat.file.includes('markdown') || stat.file.includes('marked'),
-    );
+const __markdownBundle = this.bundleStats.find(
+_(stat) => stat.file.includes('markdown') || stat.file.includes('marked'),
+    )
     if (markdownBundle && markdownBundle.size > 50) {
-      this.recommendations.push({
-        type: 'critical',
-        message: `Markdown processing bundle is large: ${markdownBundle.file} (${markdownBundle.size}KB)`,
-        impact: 'high',
-        action: 'Implement lazy loading for markdown processing - only load when needed',
-      });
+this.recommendations.push({,
+type: 'critical',;,
+message: `Markdown processing bundle is large: ${markdownBundle.file} (${markdownBundle.size}KB)`,;,
+impact: 'high',;,
+action: 'Implement lazy loading for markdown processing - only load when needed',
+      })
     }
 
     // Check for database bundle
-    const _databaseBundle = this.bundleStats.find(
-      (stat) => stat.file.includes('database') || stat.file.includes('supabase'),
-    );
+const __databaseBundle = this.bundleStats.find(
+_(stat) => stat.file.includes('database') || stat.file.includes('supabase'),
+    )
     if (databaseBundle && databaseBundle.size > 50) {
-      this.recommendations.push({
-        type: 'warning',
-        message: `Database bundle is large: ${databaseBundle.file} (${databaseBundle.size}KB)`,
-        impact: 'medium',
-        action: 'Consider lazy loading database operations',
-      });
+this.recommendations.push({,
+type: 'warning',;,
+message: `Database bundle is large: ${databaseBundle.file} (${databaseBundle.size}KB)`,;,
+impact: 'medium',;,
+action: 'Consider lazy loading database operations',
+      })
     }
 
     // Display recommendations
-    this.recommendations.forEach((rec) => {
-      const _icon = rec.type === 'critical' ? '🔴' : rec.type === 'warning' ? '🟡' : 'ℹ️';
-      console.log(`${icon} ${rec.message}`);
-      console.log(`   Impact: ${rec.impact.toUpperCase()}`);
-      console.log(`   Action: ${rec.action}\n`);
-    });
+this.recommendations.forEach(_(rec) => {
+const __icon = rec.type === 'critical' ? '🔴' : rec.type === 'warning' ? '🟡' : 'ℹ️'
+      console.log(`${icon} ${rec.message}`)
+      console.log(`   Impact: ${rec.impact.toUpperCase()}`)
+      console.log(`   Action: ${rec.action}\n`)
+    })
   }
-
-  private generateReport(): void {
-    const _report = {
-      timestamp: new Date().toISOString(),
-      totalBundles: this.bundleStats.length,
-      totalSize: this.bundleStats.reduce((sum, stat) => sum + stat.size, 0),
-      totalGzipSize: this.bundleStats.reduce((sum, stat) => sum + stat.gzipSize, 0),
-      largestBundles: this.bundleStats
-        .sort((a, b) => b.size - a.size)
+private generateReport(): void {
+const __report = {,
+timestamp: new Date().toISOString(),;,
+totalBundles: this.bundleStats.length,;,
+totalSize: this.bundleStats.reduce(_(sum,  _stat) => sum + stat.size, 0),;,
+totalGzipSize: this.bundleStats.reduce(_(sum,  _stat) => sum + stat.gzipSize, 0),;,
+largestBundles: this.bundleStats
+        .sort(_(a,  _b) => b.size - a.size)
         .slice(0, 5)
-        .map((stat) => ({
-          file: stat.file,
-          size: stat.size,
-          gzipSize: stat.gzipSize,
-          percentage: stat.percentage,
-        })),
-      recommendations: this.recommendations,
-      optimizationScore: this.calculateOptimizationScore(),
-    };
+        .map(_(stat) => ({,
+file: stat.file,;,
+size: stat.size,;,
+gzipSize: stat.gzipSize,;,
+percentage: stat.percentage,
+        })),;,
+recommendations: this.recommendations,;,
+optimizationScore: this.calculateOptimizationScore(),
+    }
 
-    const _reportPath = join(process.cwd(), 'reports', 'performance-analysis.json');
-    writeFileSync(reportPath, JSON.stringify(report, null, 2));
+const __reportPath = join(process.cwd(), 'reports', 'performance-analysis.json')
+    writeFileSync(reportPath, JSON.stringify(report, null, 2))
 
-    console.log(`\n📄 Performance report saved to: ${reportPath}`);
-    console.log(`🎯 Optimization Score: ${report.optimizationScore}/100`);
+console.log(`\n📄 Performance report saved to: ${reportPath}`)
+    console.log(`🎯 Optimization Score: ${report.optimizationScore}/100`)
   }
-
-  private calculateOptimizationScore(): number {
-    let score = 100;
+private calculateOptimizationScore(): number {
+let score = 100
 
     // Deduct points for large bundles
-    this.bundleStats.forEach((stat) => {
-      if (stat.size > 100) score -= 20;
-      else if (stat.size > 50) score -= 10;
-      else if (stat.size > 20) score -= 5;
-    });
+this.bundleStats.forEach(_(stat) => {
+if (stat.size > 100) score -= 20
+      else if (stat.size > 50) score -= 10
+      else if (stat.size > 20) score -= 5
+    })
 
     // Deduct points for critical recommendations
-    const _criticalCount = this.recommendations.filter((r) => r.type === 'critical').length;
-    score -= criticalCount * 15;
+const __criticalCount = this.recommendations.filter(_(r) => r.type === 'critical').length
+    score -= criticalCount * 15
 
-    return Math.max(0, score);
+return Math.max(0, score)
   }
-
-  async optimizeBundle(): Promise<void> {
-    console.log('\n🚀 Applying performance optimizations...');
+async optimizeBundle(): Promise<void> {
+console.log('\n🚀 Applying performance optimizations...')
 
     // Create optimized Vite config
-    this.createOptimizedViteConfig();
+this.createOptimizedViteConfig()
 
     // Create lazy loading components
-    this.createLazyLoadingComponents();
+this.createLazyLoadingComponents()
 
     // Update package.json with optimization scripts
-    this.updatePackageScripts();
+this.updatePackageScripts()
 
-    console.log('✅ Performance optimizations applied!');
+console.log('✅ Performance optimizations applied!')
   }
-
-  private createOptimizedViteConfig(): void {
-    console.log('📝 Creating optimized Vite configuration...');
+private createOptimizedViteConfig(): void {
+console.log('📝 Creating optimized Vite configuration...')
     // This would create an optimized vite.config.ts
   }
-
-  private createLazyLoadingComponents(): void {
-    console.log('🔄 Setting up lazy loading components...');
+private createLazyLoadingComponents(): void {
+console.log('🔄 Setting up lazy loading components...')
     // This would create lazy loading wrappers for heavy components
   }
-
-  private updatePackageScripts(): void {
-    console.log('📦 Updating package scripts...');
+private updatePackageScripts(): void {
+console.log('📦 Updating package scripts...')
     // This would add performance monitoring scripts to package.json
   }
 }
 
 // Main execution
-async function main() {
-  const _optimizer = new PerformanceOptimizer();
+async function main() {const __optimizer = new PerformanceOptimizer()
 
-  console.log('🌟 Te Kete Ako Performance Optimizer');
-  console.log('=====================================\n');
+console.log('🌟 Te Kete Ako Performance Optimizer')
+  console.log('=====================================\n')
 
-  await optimizer.analyzeBundle();
+await optimizer.analyzeBundle()
 
   // Ask if user wants to apply optimizations
-  const _readline = await import('_readline');
-  const _rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+const __readline = await import('_readline')
+  const __rl = readline.createInterface({,
+input: process.stdin,,
+output: process.stdout,})
 
-  rl.question(
-    '\nWould you like to apply performance optimizations? (y/N): ',
-    async (answer: string) => {
-      if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-        await optimizer.optimizeBundle();
+rl.question(
+    '\nWould you like to apply performance optimizations? (y/N): ',;
+async (_answer: string) => {
+if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
+await optimizer.optimizeBundle()
       } else {
-        console.log('Skipping optimizations. You can run this script again later.');
+console.log('Skipping optimizations. You can run this script again later.')
       }
-      rl.close();
+rl.close()
     },
-  );
+  )
 }
 
 // Run the main function
-main().catch(console.error);
+main().catch(console.error)
 
-export default PerformanceOptimizer;
+export default PerformanceOptimizer

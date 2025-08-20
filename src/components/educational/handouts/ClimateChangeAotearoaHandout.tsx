@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ClimateChangeAotearoaHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ClimateChangeAotearoaHandout.css'
 
-interface ClimateChangeAotearoaHandoutProps {
-  className?: string;
-}
-
-export const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> = ({ className = '' }) => {
-  return (
+interface ClimateChangeAotearoaHandoutProps {className?: string}
+export const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="climate change aotearoa handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`climate-change-aotearoa-handout-handout cultural-focus ${className}`}
+title="climate change aotearoa handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`climate-change-aotearoa-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandout
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ClimateChangeAotearoaHandout;
+export default ClimateChangeAotearoaHandout

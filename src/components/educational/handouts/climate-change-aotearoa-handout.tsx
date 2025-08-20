@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface ClimateChangeAotearoaHandoutProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> = ({
-  culturalContext = "Māori cultural knowledge and Aotearoa context",
-  yearLevel = "Year 9-10",
-  subject = "Science, Social Studies"
+interface ClimateChangeAotearoaHandoutProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> = (_{
+culturalContext = "Māori cultural knowledge and Aotearoa context", 
+_yearLevel = "Year 9-10", 
+_subject = "Science,  _Social Studies"
 }) => {
-  return (
+return (
     <div className="climate-change-aotearoa-handout">
       <Card title="Handout: Climate Change in Aotearoa" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> 
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <div class="container">
         <h1 class="wiley-hero-title">Handout: Climate Change in Aotearoa</h1>
         <p>This handout supports the video "Climate Change in Aotearoa".</p>
@@ -51,7 +48,7 @@ const ClimateChangeAotearoaHandout: React.FC<ClimateChangeAotearoaHandoutProps> 
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default ClimateChangeAotearoaHandout;
+export default ClimateChangeAotearoaHandout

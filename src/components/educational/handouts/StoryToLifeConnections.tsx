@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './StoryToLifeConnections.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './StoryToLifeConnections.css'
 
-interface StoryToLifeConnectionsProps {
-  className?: string;
-}
-
-export const StoryToLifeConnections: React.FC<StoryToLifeConnectionsProps> = ({ className = '' }) => {
-  return (
+interface StoryToLifeConnectionsProps {className?: string}
+export const StoryToLifeConnections: React.FC<StoryToLifeConnectionsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="story to life connections"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`story-to-life-connections-handout cultural-focus ${className}`}
+title="story to life connections"
+subtitle="Te Kete Ako - Cultural Education"
+className={`story-to-life-connections-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const StoryToLifeConnections: React.FC<StoryToLifeConnectionsProps> = ({ 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default StoryToLifeConnections;
+export default StoryToLifeConnections

@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface Year9StarterPackAlphaBuildProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface Year9StarterPackAlphaBuildProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="year-9-starter-pack-alpha-build">
       <Card title="Year 9 Starter Pack: Essential Skills for High School Success - Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <div class="header">
         <h1 class="wiley-hero-title">Year 9 Starter Pack: Essential Skills for High School Success</h1>
         <p><strong>Te Kete Ako</strong> | Cross-Curricular | Year 9 | Alpha Build Resource</p>
@@ -37,12 +34,12 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
     <div class="cultural-context">
         <h3>🌟 Cultural Context - <span class="maori-term">Te Ao Māori</span> Foundation</h3>
         <p>This resource honors the principle of <span class="maori-term">ako</span> (reciprocal learning) and <span class="maori-term">manaakitanga</span> (caring for others). As you begin your high school journey, remember that learning is a collective responsibility where everyone contributes to the success of the <span class="maori-term">whakapapa</span> (learning community).</p>
-        <p><strong>Tikanga Protocol:</strong> This resource should be used with respect for diverse learning styles and cultural backgrounds, ensuring all students feel valued and supported.</p>
+        <p><strong>Tikanga Protocol: </strong> This resource should be used with respect for diverse learning styles and cultural backgrounds, ensuring all students feel valued and supported.</p>
     </div>
 
     <div class="objectives">
         <h3>🎯 Learning Objectives</h3>
-        <p><strong>By using this starter pack, Year 9 students will:</strong></p>
+        <p><strong>By using this starter pack, Year 9 students will: </strong></p>
         <ul class="checklist">
             <li>Develop essential organizational and study skills for high school success</li>
             <li>Understand the importance of cultural identity in learning</li>
@@ -80,7 +77,7 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
     <div class="skill-card">
         <h3>🤝 Social Connection & Support</h3>
         <h4>Building Your <span class="maori-term">Whānau</span> Network</h4>
-        <p>In Māori culture, <span class="maori-term">whānau</span> extends beyond family to include your learning community. Build supportive relationships:</p>
+        <p>In Māori culture, <span class="maori-term">whānau</span> extends beyond family to include your learning community. Build supportive relationships: </p>
         
         <ul class="checklist">
             <li><strong>Study Buddies:</strong> Find reliable classmates in each subject</li>
@@ -99,8 +96,8 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
         <h4>Evidence-Based Learning Strategies</h4>
         
         <ul class="checklist">
-            <li><strong>Active Reading:</strong> Take notes, ask questions, summarize</li>
-            <li><strong>Spaced Repetition:</strong> Review material multiple times over days</li>
+            <li><strong>Active Reading: </strong> Take notes, ask questions, summarize</li>
+            <li><strong>Spaced Repetition: </strong> Review material multiple times over days</li>
             <li><strong>Practice Testing:</strong> Quiz yourself regularly</li>
             <li><strong>Teaching Others:</strong> Explain concepts to family/friends</li>
             <li><strong>Connection Making:</strong> Link new learning to what you know</li>
@@ -128,7 +125,7 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
         <div class="tip-box">
             <strong>💡 Whakataukī (Māori Proverb):</strong><br>
             <em><span class="maori-term">"He aha te mea nui o te ao? He tangata, he tangata, he tangata."</span></em><br>
-            What is the most important thing in the world? It is people, it is people, it is people.
+What is the most important thing in the world? It is people, it is people, it is people.
         </div>
     </div>
 
@@ -136,51 +133,51 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
         <h3>📋 Self-Assessment Checklist</h3>
         <p><strong>Rate yourself weekly (1-5 scale):</strong></p>
         
-        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+        <table style="width: 100% border-collapse: collapse margin: 15px 0">
             <thead>
-                <tr style="background: #007bff; color: white;">
-                    <th style="padding: 10px; text-align: left;">Skill Area</th>
-                    <th style="padding: 10px; text-align: center;">Week 1</th>
-                    <th style="padding: 10px; text-align: center;">Week 2</th>
-                    <th style="padding: 10px; text-align: center;">Week 3</th>
-                    <th style="padding: 10px; text-align: center;">Week 4</th>
+                <tr style="background: #007bff color: white">
+                    <th style="padding: 10px text-align: left">Skill Area</th>
+                    <th style="padding: 10px text-align: center">Week 1</th>
+                    <th style="padding: 10px text-align: center">Week 2</th>
+                    <th style="padding: 10px text-align: center">Week 3</th>
+                    <th style="padding: 10px text-align: center">Week 4</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Organization & Planning</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd">Organization & Planning</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Social Connections</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd">Social Connections</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Study Habits</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd">Study Habits</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Cultural Confidence</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd">Cultural Confidence</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Resilience & Growth</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd">Resilience & Growth</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
+                    <td style="padding: 10px border: 1px solid #ddd text-align: center">___</td>
                 </tr>
             </tbody>
         </table>
@@ -189,7 +186,7 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
     <div class="teacher-notes">
         <h3>👩‍🏫 Teacher Implementation Guide</h3>
         
-        <h4>Suggested Usage:</h4>
+        <h4>Suggested Usage: </h4>
         <ul>
             <li><strong>Orientation Week:</strong> Introduce during Year 9 transition program</li>
             <li><strong>Form Time:</strong> Use sections for weekly form class discussions</li>
@@ -268,7 +265,7 @@ const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default Year9StarterPackAlphaBuild;
+export default Year9StarterPackAlphaBuild

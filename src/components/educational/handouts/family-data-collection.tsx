@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface FamilyDataCollectionProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface FamilyDataCollectionProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="family-data-collection">
       <Card title="Family Data Collection | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Family Data Collection</h1>
@@ -40,7 +37,7 @@ const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default FamilyDataCollection;
+export default FamilyDataCollection

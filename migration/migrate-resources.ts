@@ -2,60 +2,56 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // This is a placeholder for the actual tool call.
-// In a real environment, you would import and use the 'replace' tool.
-async function replace(filePath: string, oldString: string, newString: string) {
-  console.log(`Replacing content in ${filePath}`);
+// In a real environment, you would import and use the 'replace' tool.;
+async function replace(__filePath: string,   __oldString: string,   __newString: string) {;
+console.log(`Replacing content in ${filePath}`);
   const content = await fs.readFile(filePath, 'utf-8');
   const updatedContent = content.replace(oldString, newString);
   await fs.writeFile(filePath, updatedContent);
   console.log(`Successfully updated ${filePath}`);
-}
-
-
-async function migrateResource(filePath: string) {
-  const filename = path.basename(filePath);
+};
+async function migrateResource(__filePath: string) {;
+const filename = path.basename(filePath);
   const category = getCategoryFromFilename(filename);
-
-  const oldContent = await fs.readFile(filePath, 'utf-8');
+;
+const oldContent = await fs.readFile(filePath, 'utf-8');
   let newContent = '';
-
-  switch (category) {
-    case 'Close Reading':
-      newContent = generateCloseReadingContent();
+;
+switch (category) {;
+case 'Close Reading':;
+newContent = generateCloseReadingContent();
       break;
-    case 'Narrative Writing':
-      newContent = generateNarrativeWritingContent();
-      break;
-    default:
-      console.log(`Skipping ${filename} - no template for category: ${category}`);
+    case 'Narrative Writing':;
+newContent = generateNarrativeWritingContent();
+      break;,
+default:;
+console.log(`Skipping ${filename} - no template for category: ${category}`);
       return;
   }
 
   // The 'old_string' in a real scenario would need to be the exact content
-  // of the template part of the file. For this example, we'll replace the whole file content.
-  await replace(filePath, oldContent, newContent);
-}
-
-function getCategoryFromFilename(filename: string): string | null {
-    if (filename.includes('Close_Reading')) {
-        return 'Close Reading';
-    }
-    if (filename.includes('Narrative_Writing')) {
-        return 'Narrative Writing';
-    }
-    if (filename.includes('Poetry')) {
-        return 'Poetry';
-    }
-    if (filename.includes('Formal_Writing')) {
-        return 'Formal Writing';
-    }
-    return null;
-}
-
+  // of the template part of the file. For this example, we'll replace the whole file content.;
+await replace(filePath, oldContent, newContent);
+};}
+function getCategoryFromFilename(__filename: string): string | null {;
+if (filename.includes('Close_Reading')) {;
+return 'Close Reading';
+    };
+if (filename.includes('Narrative_Writing')) {;
+return 'Narrative Writing';
+    };
+if (filename.includes('Poetry')) {;
+return 'Poetry';
+    };
+if (filename.includes('Formal_Writing')) {;
+return 'Formal Writing';
+    };
+return null;
+};}
 function generateCloseReadingContent(): string {
     // In a real scenario, this would generate dynamic content.
-    // For now, it returns a static template.
-    return `# English Y7 - Close Reading in Aotearoa
+    // For now, it returns a static template.;
+return `# English Y7 - Close Reading in Aotearoa
 *Te Kura o TeAoMarama - English*
 
 **Year Level**: 7
@@ -88,34 +84,33 @@ function generateCloseReadingContent(): string {
 
 ## 📚 Learning Content
 
-### Context
+### Context;
 This resource explores close reading through the poem "Sea Song" by the famous New Zealand writer Katherine Mansfield (1888-1923). The poem uses the sea as a powerful symbol to explore ideas about memory and the past.
 
-**Sea Song**
-By Katherine Mansfield
-
-I will think no more of the sea!
-Of the big green waves
-And the hollowed shore,
-Of the brown rock caves
-No more, no more
-Of the swell and the weed
-And the bubbling foam.
-Memory dwells in my far away home,
-She has nothing to do with me.
-She is old and bent
-With a pack
-On her back.
-Her tears all spent,
-Her voice, just a crack.
-With an old thorn stick
-She searches for something,
-Her withered claw
-Tumbles the seaweed.
-She is so old, she is so old,
+**Sea Song**;
+By Katherine Mansfield;
+I will think no more of the sea!;
+Of the big green waves;
+And the hollowed shore,;
+Of the brown rock caves;
+No more, no more;
+Of the swell and the weed;
+And the bubbling foam.;
+Memory dwells in my far away home,;
+She has nothing to do with me.;
+She is old and bent;
+With a pack;
+On her back.;
+Her tears all spent,;
+Her voice, just a crack.;
+With an old thorn stick;
+She searches for something,;
+Her withered claw;
+Tumbles the seaweed.;
+She is so old, she is so old,;
 I have forgotten her name.
 
-### Worked Example
+### Worked Example;
 Let's do a close reading of these lines:
 
 > Memory dwells in my far away home,
@@ -128,7 +123,7 @@ Let's do a close reading of these lines:
 2.  **Analyse the description**: Memory is described as "old and bent" with a "pack on her back". This creates an image of a weary old woman, burdened by the things she carries.
 3.  **Interpret the meaning**: This suggests that for the speaker, memory is not a happy thing. It is a heavy burden that has become old and tired. The speaker tries to distance themselves from it by saying "She has nothing to do with me."
 
-### Practice
+### Practice;
 Read the rest of the poem and think about these questions:
 - What other words does the poet use to describe Memory?
 - What is Memory doing on the shore?
@@ -164,12 +159,11 @@ Read the rest of the poem and think about these questions:
 
 *Template compliance: ✅ | Cultural safety review: Required*
 `;
-}
-
+};}
 function generateNarrativeWritingContent(): string {
     // In a real scenario, this would generate dynamic content.
-    // For now, it returns a static template.
-    return `# English Y7 - Narrative Writing in Aotearoa
+    // For now, it returns a static template.;
+return `# English Y7 - Narrative Writing in Aotearoa
 *Te Kura o TeAoMarama - English*
 
 **Year Level**: 7
@@ -202,10 +196,10 @@ function generateNarrativeWritingContent(): string {
 
 ## 📚 Learning Content
 
-### Context
+### Context;
 This resource helps you create interesting and believable characters for your stories. A good story needs a character that the reader can connect with, and we'll learn how to build one from the ground up, using examples from Aotearoa.
 
-### Worked Example
+### Worked Example;
 Let's create a character sketch for a young person living in a small town in the South Island.
 
 **Name**: Maia
@@ -221,11 +215,10 @@ Let's create a character sketch for a young person living in a small town in the
 - She's fiercely loyal to her friends and family.
 
 **Dialogue**:
-> "You reckon? Nah, that's not a kererū, the wings sound different. Too fast. It's just a regular old pigeon. Let's go deeper, the good birds are further in."
-
+> "You reckon? Nah, that's not a kererū, the wings sound different. Too fast. It's just a regular old pigeon. Let's go deeper, the good birds are further in.";
 This sketch gives us a good starting point for a story. We know what Maia looks like, what she loves to do, and how she speaks.
 
-### Practice
+### Practice;
 Now you try. Think of a character who might live in your town. What are they like?
 - What do they wear?
 - What do they do in their spare time?
@@ -264,20 +257,17 @@ Now you try. Think of a character who might live in your town. What are they lik
 
 *Template compliance: ✅ | Cultural safety review: Required*
 `;
-}
-
-async function main() {
-  const directoryPath = process.argv[2];
-  if (!directoryPath) {
-    console.error('Please provide a directory path.');
+};
+async function main() {;
+const directoryPath = process.argv[2];
+  if (!directoryPath) {;
+console.error('Please provide a directory path.');
     process.exit(1);
-  }
-
-  const files = await fs.readdir(directoryPath);
-  for (const file of files) {
-    const filePath = path.join(directoryPath, file);
+  };
+const files = await fs.readdir(directoryPath);
+  for (const file of files) {;
+const filePath = path.join(directoryPath, file);
     await migrateResource(filePath);
   }
-}
-
+};
 main().catch(console.error);

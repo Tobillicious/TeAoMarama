@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaoriGeometricPatternsHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaoriGeometricPatternsHandout.css'
 
-interface MaoriGeometricPatternsHandoutProps {
-  className?: string;
-}
-
-export const MaoriGeometricPatternsHandout: React.FC<MaoriGeometricPatternsHandoutProps> = ({ className = '' }) => {
-  return (
+interface MaoriGeometricPatternsHandoutProps {className?: string}
+export const MaoriGeometricPatternsHandout: React.FC<MaoriGeometricPatternsHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="maori geometric patterns handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`maori-geometric-patterns-handout-handout cultural-focus ${className}`}
+title="maori geometric patterns handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`maori-geometric-patterns-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaoriGeometricPatternsHandout: React.FC<MaoriGeometricPatternsHando
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaoriGeometricPatternsHandout;
+export default MaoriGeometricPatternsHandout

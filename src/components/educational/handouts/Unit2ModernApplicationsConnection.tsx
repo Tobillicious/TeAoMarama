@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2ModernApplicationsConnection.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2ModernApplicationsConnection.css'
 
-interface Unit2ModernApplicationsConnectionProps {
-  className?: string;
-}
-
-export const Unit2ModernApplicationsConnection: React.FC<Unit2ModernApplicationsConnectionProps> = ({ className = '' }) => {
-  return (
+interface Unit2ModernApplicationsConnectionProps {className?: string}
+export const Unit2ModernApplicationsConnection: React.FC<Unit2ModernApplicationsConnectionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 modern applications connection"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-modern-applications-connection-handout cultural-focus ${className}`}
+title="unit 2 modern applications connection"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-modern-applications-connection-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2ModernApplicationsConnection: React.FC<Unit2ModernApplications
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2ModernApplicationsConnection;
+export default Unit2ModernApplicationsConnection

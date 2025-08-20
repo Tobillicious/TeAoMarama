@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './KaitiakitangaFieldJournal.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './KaitiakitangaFieldJournal.css'
 
-interface KaitiakitangaFieldJournalProps {
-  className?: string;
-}
-
-export const KaitiakitangaFieldJournal: React.FC<KaitiakitangaFieldJournalProps> = ({ className = '' }) => {
-  return (
+interface KaitiakitangaFieldJournalProps {className?: string}
+export const KaitiakitangaFieldJournal: React.FC<KaitiakitangaFieldJournalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="kaitiakitanga field journal"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`kaitiakitanga-field-journal-handout cultural-focus ${className}`}
+title="kaitiakitanga field journal"
+subtitle="Te Kete Ako - Cultural Education"
+className={`kaitiakitanga-field-journal-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const KaitiakitangaFieldJournal: React.FC<KaitiakitangaFieldJournalProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default KaitiakitangaFieldJournal;
+export default KaitiakitangaFieldJournal

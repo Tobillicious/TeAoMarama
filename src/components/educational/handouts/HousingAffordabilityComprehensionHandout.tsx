@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './HousingAffordabilityComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './HousingAffordabilityComprehensionHandout.css'
 
-interface HousingAffordabilityComprehensionHandoutProps {
-  className?: string;
-}
-
-export const HousingAffordabilityComprehensionHandout: React.FC<HousingAffordabilityComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface HousingAffordabilityComprehensionHandoutProps {className?: string}
+export const HousingAffordabilityComprehensionHandout: React.FC<HousingAffordabilityComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="housing affordability comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`housing-affordability-comprehension-handout-handout cultural-focus ${className}`}
+title="housing affordability comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`housing-affordability-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const HousingAffordabilityComprehensionHandout: React.FC<HousingAffordabi
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default HousingAffordabilityComprehensionHandout;
+export default HousingAffordabilityComprehensionHandout

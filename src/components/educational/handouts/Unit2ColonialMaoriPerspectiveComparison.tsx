@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2ColonialMaoriPerspectiveComparison.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2ColonialMaoriPerspectiveComparison.css'
 
-interface Unit2ColonialMaoriPerspectiveComparisonProps {
-  className?: string;
-}
-
-export const Unit2ColonialMaoriPerspectiveComparison: React.FC<Unit2ColonialMaoriPerspectiveComparisonProps> = ({ className = '' }) => {
-  return (
+interface Unit2ColonialMaoriPerspectiveComparisonProps {className?: string}
+export const Unit2ColonialMaoriPerspectiveComparison: React.FC<Unit2ColonialMaoriPerspectiveComparisonProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 colonial maori perspective comparison"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-colonial-maori-perspective-comparison-handout cultural-focus ${className}`}
+title="unit 2 colonial maori perspective comparison"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-colonial-maori-perspective-comparison-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2ColonialMaoriPerspectiveComparison: React.FC<Unit2ColonialMaor
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2ColonialMaoriPerspectiveComparison;
+export default Unit2ColonialMaoriPerspectiveComparison

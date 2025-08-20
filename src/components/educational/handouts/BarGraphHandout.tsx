@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './BarGraphHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './BarGraphHandout.css'
 
-interface BarGraphHandoutProps {
-  className?: string;
-}
-
-export const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({ className = '' }) => {
-  return (
+interface BarGraphHandoutProps {className?: string}
+export const BarGraphHandout: React.FC<BarGraphHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="bar graph handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`bar-graph-handout-handout cultural-focus ${className}`}
+title="bar graph handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`bar-graph-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({ className = ''
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default BarGraphHandout;
+export default BarGraphHandout

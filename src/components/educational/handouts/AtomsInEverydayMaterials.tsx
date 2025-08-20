@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './AtomsInEverydayMaterials.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './AtomsInEverydayMaterials.css'
 
-interface AtomsInEverydayMaterialsProps {
-  className?: string;
-}
-
-export const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = ({ className = '' }) => {
-  return (
+interface AtomsInEverydayMaterialsProps {className?: string}
+export const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="atoms in everyday materials"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`atoms-in-everyday-materials-handout cultural-focus ${className}`}
+title="atoms in everyday materials"
+subtitle="Te Kete Ako - Cultural Education"
+className={`atoms-in-everyday-materials-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default AtomsInEverydayMaterials;
+export default AtomsInEverydayMaterials

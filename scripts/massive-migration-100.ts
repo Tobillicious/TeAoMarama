@@ -2,42 +2,39 @@
 /**
  * 🚀 MASSIVE MIGRATION - GET TO 100+ COMPONENTS FOR ERO HUI
  */
+import {mkdir, readdir, readFile, writeFile} from 'fs/promises'
+import {basename, join} from 'path'
+const __TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts'
+const __TARGET_PATH = 'src/components/educational/handouts'
 
-import { mkdir, readdir, readFile, writeFile } from 'fs/promises';
-import { basename, join } from 'path';
-const _TE_KETE_HANDOUTS_PATH = 'te-kete-ako-clean/public/handouts';
-const _TARGET_PATH = 'src/components/educational/handouts';
-
-async function massiveMigrate(_filePath: string): Promise<void> {
-  try {
-    const _filename = basename(filePath, '.html');
-    const _componentName = filename
+async function massiveMigrate(___filePath: string): Promise<void> {
+try {
+const __filename = basename(filePath, '.html')
+    const __componentName = filename
       .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, (l) => l.toUpperCase())
-      .replace(/\s/g, '');
+      .replace(_/\b\w/g,  _(l) => l.toUpperCase())
+      .replace(/\s/g, '')
 
     // Skip if already exists
-    try {
-      await readFile(join(TARGET_PATH, `${componentName}.tsx`));
-      return; // Already exists
+try {
+await readFile(join(TARGET_PATH, `${componentName}.tsx`))
+      return // Already exists
     } catch {
       // Continue with migration
     }
-
-    const _componentCode = `import React from 'react';
-import { Card } from '../../ui/Card';
-import './${componentName}.css';
+const __componentCode = `import React from 'react'
+import {Card} from '../../ui/Card'
+import './${componentName}.css'
 
 interface ${componentName}Props {
-  className?: string;
+className?: string
 }
-
-export const ${componentName}: React.FC<${componentName}Props> = ({ className = '' }) => {
-  return (
+export const ${componentName}: React.FC<${componentName}Props> = (_{ className = '' }) => {
+return (
     <Card 
-      title="${filename.replace(/[-_]/g, ' ')}"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={\`${filename.toLowerCase()}-handout cultural-focus \${className}\`}
+title="${filename.replace(/[-_]/g, ' ')}"
+subtitle="Te Kete Ako - Cultural Education"
+className={\`${filename.toLowerCase()}-handout cultural-focus \${className}\`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -58,114 +55,110 @@ export const ${componentName}: React.FC<${componentName}Props> = ({ className = 
         </div>
       </div>
     </Card>
-  );
-};`;
+  )
+}`
 
-    const _cssCode = `/* ${componentName} - Te Kete Ako Beauty Patterns */
+const __cssCode = `/* ${componentName} - Te Kete Ako Beauty Patterns */
 
-.${filename.toLowerCase()}-handout.cultural-focus {
-  background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%);
-  border-left: 4px solid var(--color-pounamu);
-  position: relative;
-  overflow: hidden;
+.${filename.toLowerCase()}-handout.cultural-focus {,
+background: linear-gradient(135deg, var(--color-pounamu-lighter) 0%, var(--color-pounamu-light) 100%)
+  border-left: 4px solid var(--color-pounamu),
+position: relative,
+overflow: hidden
 }
 
-.${filename.toLowerCase()}-handout.cultural-focus::before {
-  content: '🌿';
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  opacity: 0.1;
-  animation: gentle-float 3s ease-in-out infinite;
+.${filename.toLowerCase()}-handout.cultural-focus: :before {,
+content: '🌿',
+position: absolute,
+top: 1rem,
+right: 1rem
+  font-size: 2rem,
+opacity: 0.1,
+animation: gentle-float 3s ease-in-out infinite
 }
 
-.handout-content {
-  padding: 2rem;
+.handout-content {,
+padding: 2rem
 }
 
-.cultural-header {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  border: 1px solid rgba(27, 127, 90, 0.2);
+.cultural-header {,
+background: rgba(255, 255, 255, 0.9)
+  border-radius: 12px,
+padding: 1.5rem
+  margin-bottom: 2rem
+  text-align: center,
+border: 1px solid rgba(27, 127, 90, 0.2)
 }
 
 .cultural-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 1rem;
-  opacity: 0.8;
+font-size: 2rem,
+display: block
+  margin-bottom: 1rem,
+opacity: 0.8
 }
 
 .content-section {
-  margin-bottom: 2rem;
+margin-bottom: 2rem
 }
 
 .content-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1rem;
+font-size: 1.1rem
+  line-height: 1.7,
+color: #333
+  margin-bottom: 1rem
 }
 
-.cultural-footer {
-  background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  color: white;
+.cultural-footer {,
+background: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-moana) 100%)
+  border-radius: 12px,
+padding: 2rem
+  text-align: center,
+color: white
 }
 
 .footer-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 1rem;
-  opacity: 0.8;
+font-size: 2rem,
+display: block
+  margin-bottom: 1rem,
+opacity: 0.8
 }
 
 @keyframes gentle-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}`;
+  0%, 100% { transform: translateY(0px) }
+  50% { transform: translateY(-5px) }
+}`
 
-    await writeFile(join(TARGET_PATH, `${componentName}.tsx`), componentCode);
-    await writeFile(join(TARGET_PATH, `${componentName}.css`), cssCode);
+await writeFile(join(TARGET_PATH, `${componentName}.tsx`), componentCode)
+    await writeFile(join(TARGET_PATH, `${componentName}.css`), cssCode)
 
-    console.log(`✅ Massive migration: ${componentName}`);
+console.log(`✅ Massive migration: ${componentName}`)
   } catch {
-    console.error(`❌ Failed: ${basename(filePath)}`);
+console.error(`❌ Failed: ${basename(filePath)}`)
   }
 }
+async function main() {console.log('🚀 MASSIVE MIGRATION TO 100+ COMPONENTS STARTED')
 
-async function main() {
-  console.log('🚀 MASSIVE MIGRATION TO 100+ COMPONENTS STARTED');
+await mkdir(TARGET_PATH, { recursive: true})
 
-  await mkdir(TARGET_PATH, { recursive: true });
-
-  const _files = await readdir(TE_KETE_HANDOUTS_PATH);
-  const handouts = files.filter((f) => f.endsWith('.html') && !f.startsWith('.')).slice(62, 162); // Next 100 handouts
-
-  console.log(`📊 Processing massive batch of ${handouts.length} handouts...`);
+const __files = await readdir(TE_KETE_HANDOUTS_PATH)
+  const handouts = files.filter(_(f) => f.endsWith('.html') && !f.startsWith('.')).slice(62, 162) // Next 100 handouts
+console.log(`📊 Processing massive batch of ${handouts.length} handouts...`)
 
   // Process in batches of 20 for maximum speed
-  const _batchSize = 20;
-  for (let i = 0; i < handouts.length; i += batchSize) {
-    const _batch = handouts.slice(i, i + batchSize);
+const __batchSize = 20
+  for (let i = 0 i < handouts.length i += batchSize) {
+const __batch = handouts.slice(i, i + batchSize)
     console.log(
       `🔄 Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(
-        handouts.length / batchSize,
+handouts.length / batchSize,
       )}`,
-    );
+    )
 
-    await Promise.all(batch.map((f) => massiveMigrate(join(TE_KETE_HANDOUTS_PATH, f))));
+await Promise.all(_batch.map((f) => massiveMigrate(join(TE_KETE_HANDOUTS_PATH, f))))
   }
-
-  const _finalCount = (await readdir(TARGET_PATH)).filter((f) => f.endsWith('.tsx')).length;
-  console.log(`🎯 MASSIVE MIGRATION COMPLETE! ${finalCount} total components created`);
+const __finalCount = (await readdir(TARGET_PATH)).filter(_(f) => f.endsWith('.tsx')).length
+  console.log(`🎯 MASSIVE MIGRATION COMPLETE! ${finalCount} total components created`)
 }
 
 // Run the massive migration
-main();
+main()

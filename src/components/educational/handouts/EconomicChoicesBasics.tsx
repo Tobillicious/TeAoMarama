@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './EconomicChoicesBasics.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './EconomicChoicesBasics.css'
 
-interface EconomicChoicesBasicsProps {
-  className?: string;
-}
-
-export const EconomicChoicesBasics: React.FC<EconomicChoicesBasicsProps> = ({ className = '' }) => {
-  return (
+interface EconomicChoicesBasicsProps {className?: string}
+export const EconomicChoicesBasics: React.FC<EconomicChoicesBasicsProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="economic choices basics"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`economic-choices-basics-handout cultural-focus ${className}`}
+title="economic choices basics"
+subtitle="Te Kete Ako - Cultural Education"
+className={`economic-choices-basics-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const EconomicChoicesBasics: React.FC<EconomicChoicesBasicsProps> = ({ cl
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default EconomicChoicesBasics;
+export default EconomicChoicesBasics

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './Unit2InnovationDomainsComparison.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './Unit2InnovationDomainsComparison.css'
 
-interface Unit2InnovationDomainsComparisonProps {
-  className?: string;
-}
-
-export const Unit2InnovationDomainsComparison: React.FC<Unit2InnovationDomainsComparisonProps> = ({ className = '' }) => {
-  return (
+interface Unit2InnovationDomainsComparisonProps {className?: string}
+export const Unit2InnovationDomainsComparison: React.FC<Unit2InnovationDomainsComparisonProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="unit 2 innovation domains comparison"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`unit-2-innovation-domains-comparison-handout cultural-focus ${className}`}
+title="unit 2 innovation domains comparison"
+subtitle="Te Kete Ako - Cultural Education"
+className={`unit-2-innovation-domains-comparison-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const Unit2InnovationDomainsComparison: React.FC<Unit2InnovationDomainsCo
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default Unit2InnovationDomainsComparison;
+export default Unit2InnovationDomainsComparison

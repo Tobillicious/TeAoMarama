@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WritersToolkitPeelArgumentHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WritersToolkitPeelArgumentHandout.css'
 
-interface WritersToolkitPeelArgumentHandoutProps {
-  className?: string;
-}
-
-export const WritersToolkitPeelArgumentHandout: React.FC<WritersToolkitPeelArgumentHandoutProps> = ({ className = '' }) => {
-  return (
+interface WritersToolkitPeelArgumentHandoutProps {className?: string}
+export const WritersToolkitPeelArgumentHandout: React.FC<WritersToolkitPeelArgumentHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="writers toolkit peel argument handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`writers-toolkit-peel-argument-handout-handout cultural-focus ${className}`}
+title="writers toolkit peel argument handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`writers-toolkit-peel-argument-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WritersToolkitPeelArgumentHandout: React.FC<WritersToolkitPeelArgum
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WritersToolkitPeelArgumentHandout;
+export default WritersToolkitPeelArgumentHandout

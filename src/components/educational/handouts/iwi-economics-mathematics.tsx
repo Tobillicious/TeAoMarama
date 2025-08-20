@@ -1,19 +1,16 @@
-import React from 'react';
-import { Card } from '../../Card';
-import '../../../styles/te-kete-synthesis.css';
+import React from 'react'
+import {Card} from '../../Card'
+import '../../../styles/te-kete-synthesis.css'
 
-interface IwiEconomicsMathematicsProps {
-  culturalContext?: string;
-  yearLevel?: string;
-  subject?: string;
-}
-
-const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = ({
-  culturalContext = "Educational content with cultural integration",
-  yearLevel = "Year 7-10",
-  subject = "Cross-curricular"
+interface IwiEconomicsMathematicsProps {culturalContext?: string
+  yearLevel?: string
+  subject?: string}
+const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = (_{
+culturalContext = "Educational content with cultural integration", 
+_yearLevel = "Year 7-10", 
+_subject = "Cross-curricular"
 }) => {
-  return (
+return (
     <div className="iwi-economics-mathematics">
       <Card title="Iwi Economics Mathematics | Te Kete Ako" className="handout-card cultural-focus">
         <div className="handout-header">
@@ -27,8 +24,8 @@ const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = ({
 
         <div className="handout-content">
           <div 
-            className="te-kete-content"
-            dangerouslySetInnerHTML={{ __html: `
+className="te-kete-content"
+dangerouslySetInnerHTML={{ __html: `
     <section class="cultural-section">
       <div class="cultural-content">
         <h1 class="cultural-title" class="wiley-hero-title">Iwi Economics Mathematics</h1>
@@ -40,7 +37,7 @@ const IwiEconomicsMathematics: React.FC<IwiEconomicsMathematicsProps> = ({
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default IwiEconomicsMathematics;
+export default IwiEconomicsMathematics

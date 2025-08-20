@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './WeatherPredictionTraditional.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './WeatherPredictionTraditional.css'
 
-interface WeatherPredictionTraditionalProps {
-  className?: string;
-}
-
-export const WeatherPredictionTraditional: React.FC<WeatherPredictionTraditionalProps> = ({ className = '' }) => {
-  return (
+interface WeatherPredictionTraditionalProps {className?: string}
+export const WeatherPredictionTraditional: React.FC<WeatherPredictionTraditionalProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="weather prediction traditional"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`weather-prediction-traditional-handout cultural-focus ${className}`}
+title="weather prediction traditional"
+subtitle="Te Kete Ako - Cultural Education"
+className={`weather-prediction-traditional-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const WeatherPredictionTraditional: React.FC<WeatherPredictionTraditional
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default WeatherPredictionTraditional;
+export default WeatherPredictionTraditional

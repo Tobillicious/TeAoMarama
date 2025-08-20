@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './DecisionFrameworksComparisonGuide.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './DecisionFrameworksComparisonGuide.css'
 
-interface DecisionFrameworksComparisonGuideProps {
-  className?: string;
-}
-
-export const DecisionFrameworksComparisonGuide: React.FC<DecisionFrameworksComparisonGuideProps> = ({ className = '' }) => {
-  return (
+interface DecisionFrameworksComparisonGuideProps {className?: string}
+export const DecisionFrameworksComparisonGuide: React.FC<DecisionFrameworksComparisonGuideProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="decision frameworks comparison guide"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`decision-frameworks-comparison-guide-handout cultural-focus ${className}`}
+title="decision frameworks comparison guide"
+subtitle="Te Kete Ako - Cultural Education"
+className={`decision-frameworks-comparison-guide-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const DecisionFrameworksComparisonGuide: React.FC<DecisionFrameworksCompa
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default DecisionFrameworksComparisonGuide;
+export default DecisionFrameworksComparisonGuide

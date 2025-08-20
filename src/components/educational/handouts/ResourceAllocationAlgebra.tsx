@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ResourceAllocationAlgebra.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ResourceAllocationAlgebra.css'
 
-interface ResourceAllocationAlgebraProps {
-  className?: string;
-}
-
-export const ResourceAllocationAlgebra: React.FC<ResourceAllocationAlgebraProps> = ({ className = '' }) => {
-  return (
+interface ResourceAllocationAlgebraProps {className?: string}
+export const ResourceAllocationAlgebra: React.FC<ResourceAllocationAlgebraProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="resource allocation algebra"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`resource-allocation-algebra-handout cultural-focus ${className}`}
+title="resource allocation algebra"
+subtitle="Te Kete Ako - Cultural Education"
+className={`resource-allocation-algebra-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ResourceAllocationAlgebra: React.FC<ResourceAllocationAlgebraProps>
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ResourceAllocationAlgebra;
+export default ResourceAllocationAlgebra

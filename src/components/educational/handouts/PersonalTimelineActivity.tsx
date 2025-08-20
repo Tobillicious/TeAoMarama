@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './PersonalTimelineActivity.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './PersonalTimelineActivity.css'
 
-interface PersonalTimelineActivityProps {
-  className?: string;
-}
-
-export const PersonalTimelineActivity: React.FC<PersonalTimelineActivityProps> = ({ className = '' }) => {
-  return (
+interface PersonalTimelineActivityProps {className?: string}
+export const PersonalTimelineActivity: React.FC<PersonalTimelineActivityProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="personal timeline activity"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`personal-timeline-activity-handout cultural-focus ${className}`}
+title="personal timeline activity"
+subtitle="Te Kete Ako - Cultural Education"
+className={`personal-timeline-activity-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const PersonalTimelineActivity: React.FC<PersonalTimelineActivityProps> =
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default PersonalTimelineActivity;
+export default PersonalTimelineActivity

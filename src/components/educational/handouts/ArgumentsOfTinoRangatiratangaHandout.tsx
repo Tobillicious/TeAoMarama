@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ArgumentsOfTinoRangatiratangaHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ArgumentsOfTinoRangatiratangaHandout.css'
 
-interface ArgumentsOfTinoRangatiratangaHandoutProps {
-  className?: string;
-}
-
-export const ArgumentsOfTinoRangatiratangaHandout: React.FC<ArgumentsOfTinoRangatiratangaHandoutProps> = ({ className = '' }) => {
-  return (
+interface ArgumentsOfTinoRangatiratangaHandoutProps {className?: string}
+export const ArgumentsOfTinoRangatiratangaHandout: React.FC<ArgumentsOfTinoRangatiratangaHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="arguments of tino rangatiratanga handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`arguments-of-tino-rangatiratanga-handout-handout cultural-focus ${className}`}
+title="arguments of tino rangatiratanga handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`arguments-of-tino-rangatiratanga-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ArgumentsOfTinoRangatiratangaHandout: React.FC<ArgumentsOfTinoRanga
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ArgumentsOfTinoRangatiratangaHandout;
+export default ArgumentsOfTinoRangatiratangaHandout

@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './ArtOfHakaHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './ArtOfHakaHandout.css'
 
-interface ArtOfHakaHandoutProps {
-  className?: string;
-}
-
-export const ArtOfHakaHandout: React.FC<ArtOfHakaHandoutProps> = ({ className = '' }) => {
-  return (
+interface ArtOfHakaHandoutProps {className?: string}
+export const ArtOfHakaHandout: React.FC<ArtOfHakaHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="art of haka handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`art-of-haka-handout-handout cultural-focus ${className}`}
+title="art of haka handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`art-of-haka-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const ArtOfHakaHandout: React.FC<ArtOfHakaHandoutProps> = ({ className = 
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default ArtOfHakaHandout;
+export default ArtOfHakaHandout

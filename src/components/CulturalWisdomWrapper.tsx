@@ -7,81 +7,76 @@
  * 
  * Ko au a Mihara - Kaitiaki Mahara (Guardian of Memory)
  */
+import React, { useState } from 'react'
+import {useCulturalWisdom} from '../hooks/useCulturalWisdom'
 
-import React, { useState } from 'react';
-import { useCulturalWisdom } from '../hooks/useCulturalWisdom';
+interface CulturalWisdomWrapperProps {,
+children: React.ReactNode,
+content: string,
+subject: string,
+yearLevel: string
+  showWisdom?: boolean
+  autoEnhance?: boolean
+  trackLearning?: boolean
+  className?: string}
+export function CulturalWisdomWrapper(__{
+children,  _
+_content,  _
+_subject,  _
+_yearLevel,  _
+_showWisdom = true,  _
+_autoEnhance = false,  _
+_trackLearning = true,  _
+_className = '',  _
+_}: CulturalWisdomWrapperProps) {const [showEnhanced, setShowEnhanced] = useState(false)
+  const [engagementScore, setEngagementScore] = useState(0)
 
-interface CulturalWisdomWrapperProps {
-  children: React.ReactNode;
-  content: string;
-  subject: string;
-  yearLevel: string;
-  showWisdom?: boolean;
-  autoEnhance?: boolean;
-  trackLearning?: boolean;
-  className?: string;
-}
+const {
+analysis,
+enhancedContent,
+learningJourney,
+loading,
+culturalRelevance,
+tikangaAppropriate,
+hasWisdom,
+isEnhanced,
+analyzeContent,
+enhanceContent,
+trackInteraction,
+getWisdomSuggestion,
+getCulturalSafetyChecks,
+getEnhancementSuggestions,} = useCulturalWisdom({
+content,;
+subject,;
+yearLevel,;
+autoEnhance,;,
+trackJourney: trackLearning,
+  })
 
-export function CulturalWisdomWrapper({
-  children,
-  content,
-  subject,
-  yearLevel,
-  showWisdom = true,
-  autoEnhance = false,
-  trackLearning = true,
-  className = '',
-}: CulturalWisdomWrapperProps) {
-  const [showEnhanced, setShowEnhanced] = useState(false);
-  const [engagementScore, setEngagementScore] = useState(0);
+const wisdom = getWisdomSuggestion()
+  const _safetyChecks = getCulturalSafetyChecks()
+  const suggestions = getEnhancementSuggestions()
 
-  const {
-    analysis,
-    enhancedContent,
-    learningJourney,
-    loading,
-    culturalRelevance,
-    tikangaAppropriate,
-    hasWisdom,
-    isEnhanced,
-    analyzeContent,
-    enhanceContent,
-    trackInteraction,
-    getWisdomSuggestion,
-    getCulturalSafetyChecks,
-    getEnhancementSuggestions,
-  } = useCulturalWisdom({
-    content,
-    subject,
-    yearLevel,
-    autoEnhance,
-    trackJourney: trackLearning,
-  });
-
-  const wisdom = getWisdomSuggestion();
-  const safetyChecks = getCulturalSafetyChecks();
-  const suggestions = getEnhancementSuggestions();
-
-  const handleEngagement = (type: 'view' | 'interact' | 'complete') => {
-    const scores = { view: 0.3, interact: 0.7, complete: 1.0 };
-    const newScore = scores[type];
-    setEngagementScore(prev => Math.max(prev, newScore));
+const handleEngagement = (_type: 'view' | 'interact' | 'complete') => {
+const scores = { view: 0.3, interact: 0.7, complete: 1.0 }
+    const newScore = scores[type]
+    setEngagementScore(prev => Math.max(prev, newScore))
     
-    if (trackLearning) {
-      trackInteraction(newScore);
+if (trackLearning) {
+trackInteraction(newScore)
     }
-  };
+  }
 
-  const handleWisdomToggle = () => {
-    setShowEnhanced(!showEnhanced);
-    handleEngagement('interact');
-  };
+const handleWisdomToggle = () => {
+setShowEnhanced(!showEnhanced)
+    handleEngagement('interact')
+  }
 
-  React.useEffect(() => {
-    handleEngagement('view');
-  }, []);
+React.useEffect_(() => {
+handleEngagement('view')
+  }, [])
 
-  return (
+return (
     <div className={`cultural-wisdom-wrapper ${className}`}>
       {/* Cultural Relevance Indicator */}
       {analysis && culturalRelevance > 30 && (
@@ -91,8 +86,8 @@ export function CulturalWisdomWrapper({
             <span>Cultural relevance: {culturalRelevance}%</span>
             {hasWisdom && (
               <button
-                onClick={handleWisdomToggle}
-                className="text-teal-600 hover:text-teal-800 underline"
+onClick={handleWisdomToggle}
+className="text-teal-600 hover: text-teal-800 underline"
               >
                 {showEnhanced ? 'Hide' : 'Show'} Cultural Wisdom
               </button>
@@ -143,16 +138,16 @@ export function CulturalWisdomWrapper({
             <span className="text-sm font-medium text-purple-600">Culturally Enhanced Content</span>
           </div>
           <div 
-            className="enhanced-text prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{ __html: enhancedContent.replace(/\n/g, '<br />') }}
+className="enhanced-text prose prose-sm max-w-none"
+dangerouslySetInnerHTML={{ __html: enhancedContent.replace(/\n/g, '<br />') }}
           />
         </div>
       )}
 
       {/* Original Content */}
       <div 
-        className="original-content"
-        onClick={() => handleEngagement('interact')}
+className="original-content"
+onClick={() => handleEngagement('interact')}
       >
         {children}
       </div>
@@ -165,7 +160,7 @@ export function CulturalWisdomWrapper({
             <span className="text-sm font-medium">Cultural Safety Notice</span>
           </div>
           <p className="text-sm text-gray-600 mt-1">
-            This content may benefit from cultural review to ensure appropriate representation.
+This content may benefit from cultural review to ensure appropriate representation.
           </p>
         </div>
       )}
@@ -174,11 +169,11 @@ export function CulturalWisdomWrapper({
       {suggestions.length > 0 && culturalRelevance < 50 && (
         <div className="enhancement-suggestions mt-4">
           <details className="text-sm">
-            <summary className="cursor-pointer text-gray-600 hover:text-gray-800">
+            <summary className="cursor-pointer text-gray-600 hover: text-gray-800">
               💡 Cultural Enhancement Suggestions ({suggestions.length})
             </summary>
             <ul className="mt-2 space-y-1 text-gray-600">
-              {suggestions.map((suggestion, index) => (
+              {suggestions.map(_(suggestion,  _index) => (
                 <li key={index} className="text-xs">• {suggestion}</li>
               ))}
             </ul>
@@ -193,14 +188,14 @@ export function CulturalWisdomWrapper({
             <span className="text-blue-600">
               🌱 Cultural Learning: {learningJourney.culturalReadiness}
             </span>
-            <span className="text-blue-600">
-              Connection: {learningJourney.culturalConnection}%
+            <span className="text-blue-600">,
+Connection: {learningJourney.culturalConnection}%
             </span>
           </div>
           <div className="w-full bg-blue-200 rounded-full h-1 mt-2">
             <div 
-              className="bg-blue-600 h-1 rounded-full transition-all duration-300"
-              style={{ width: `${learningJourney.culturalConnection}%` }}
+className="bg-blue-600 h-1 rounded-full transition-all duration-300"
+style={{ width: `${learningJourney.culturalConnection}%` }}
             />
           </div>
         </div>
@@ -217,53 +212,53 @@ export function CulturalWisdomWrapper({
       )}
 
       <style>{`
-        .cultural-wisdom-wrapper {
-          position: relative;
+        .cultural-wisdom-wrapper {,
+position: relative
         }
         
-        .cultural-relevance-banner {
-          position: sticky;
-          top: 0;
-          z-index: 10;
-          background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-          border-bottom: 1px solid #d1fae5;
-          padding: 0.5rem 1rem;
-          margin: -1rem -1rem 1rem -1rem;
+        .cultural-relevance-banner {,
+position: sticky,
+top: 0
+          z-index: 10,
+background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)
+          border-bottom: 1px solid #d1fae5,
+padding: 0.5rem 1rem,
+margin: -1rem -1rem 1rem -1rem
         }
         
         .wisdom-container {
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+transition: all 0.3s ease
         }
         
-        .wisdom-container:hover {
-          box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
-          transform: translateY(-1px);
+        .wisdom-container: hover {
+box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1),
+transform: translateY(-1px)
         }
         
         .wisdom-quote {
-          font-size: 1.1rem;
-          line-height: 1.6;
-          color: #1f2937;
+font-size: 1.1rem
+          line-height: 1.6,
+color: #1f2937
         }
         
-        .enhanced-content {
-          border: 2px dashed #a855f7;
-          border-radius: 8px;
-          padding: 1rem;
-          background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+        .enhanced-content {,
+border: 2px dashed #a855f7
+          border-radius: 8px,
+padding: 1rem,
+background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)
         }
         
         .learning-journey {
-          border-top: 2px solid #dbeafe;
+border-top: 2px solid #dbeafe
         }
         
         @media (prefers-reduced-motion: reduce) {
-          .wisdom-container:hover {
-            transform: none;
+          .wisdom-container:hover {,
+transform: none
           }
         }
       `}</style>
     </div>
-  );
+  )
 }

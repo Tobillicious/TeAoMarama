@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './MaraeShapesGeometry.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './MaraeShapesGeometry.css'
 
-interface MaraeShapesGeometryProps {
-  className?: string;
-}
-
-export const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({ className = '' }) => {
-  return (
+interface MaraeShapesGeometryProps {className?: string}
+export const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="marae shapes geometry"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`marae-shapes-geometry-handout cultural-focus ${className}`}
+title="marae shapes geometry"
+subtitle="Te Kete Ako - Cultural Education"
+className={`marae-shapes-geometry-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const MaraeShapesGeometry: React.FC<MaraeShapesGeometryProps> = ({ classN
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default MaraeShapesGeometry;
+export default MaraeShapesGeometry

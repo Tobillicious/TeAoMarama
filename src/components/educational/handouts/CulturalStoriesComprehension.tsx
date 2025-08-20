@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './CulturalStoriesComprehension.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './CulturalStoriesComprehension.css'
 
-interface CulturalStoriesComprehensionProps {
-  className?: string;
-}
-
-export const CulturalStoriesComprehension: React.FC<CulturalStoriesComprehensionProps> = ({ className = '' }) => {
-  return (
+interface CulturalStoriesComprehensionProps {className?: string}
+export const CulturalStoriesComprehension: React.FC<CulturalStoriesComprehensionProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="cultural stories comprehension"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`cultural-stories-comprehension-handout cultural-focus ${className}`}
+title="cultural stories comprehension"
+subtitle="Te Kete Ako - Cultural Education"
+className={`cultural-stories-comprehension-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const CulturalStoriesComprehension: React.FC<CulturalStoriesComprehension
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default CulturalStoriesComprehension;
+export default CulturalStoriesComprehension

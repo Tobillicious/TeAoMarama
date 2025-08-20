@@ -1,20 +1,18 @@
-import React from 'react';
-import './MaoriBattalionLegacy.css';
+import React from 'react'
+import './MaoriBattalionLegacy.css'
 
-interface MaoriBattalionLegacyProps {
-  culturalAuthenticityScore: number; // 0-1
-  difficultyLevel: 'beginner' | 'intermediate' | 'advanced';
-  subjectArea: 'social-studies' | 'history' | 'cultural-studies';
-  yearLevel: 'year-8' | 'year-9' | 'year-10';
-}
-
-const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
-  culturalAuthenticityScore = 0.98,
-  difficultyLevel = 'intermediate',
-  subjectArea = 'social-studies',
-  yearLevel = 'year-9',
-}) => {
-  return (
+interface MaoriBattalionLegacyProps {,
+culturalAuthenticityScore: number // 0-1,
+difficultyLevel: 'beginner' | 'intermediate' | 'advanced',
+subjectArea: 'social-studies' | 'history' | 'cultural-studies',
+yearLevel: 'year-8' | 'year-9' | 'year-10'}
+const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = (_{
+culturalAuthenticityScore = 0.98, 
+_difficultyLevel = 'intermediate', 
+_subjectArea = 'social-studies', 
+_yearLevel = 'year-9', 
+_}) => {
+return (
     <div className="maori-battalion-legacy">
       {/* Cultural Header with Whakataukī */}
       <header className="cultural-header">
@@ -47,10 +45,10 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
           <section className="content-section">
             <h2 className="section-title">Introduction</h2>
             <p className="content-text">
-              The 28th (Māori) Battalion, also known as Te Hokowhitu-a-Tū, was one of the most
-              decorated units in the New Zealand Army during World War II. This handout explores the
-              battalion's formation, achievements, and lasting impact on Māori communities and New
-              Zealand society.
+The 28th (Māori) Battalion, also known as Te Hokowhitu-a-Tū, was one of the most
+decorated units in the New Zealand Army during World War II. This handout explores the
+battalion's formation, achievements, and lasting impact on Māori communities and New
+Zealand society.
             </p>
           </section>
 
@@ -82,8 +80,8 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
                 <div className="event-content">
                   <h4>World War II Begins</h4>
                   <p>
-                    New Zealand declares war on Germany, Māori leaders begin discussions about Māori
-                    participation
+New Zealand declares war on Germany, Māori leaders begin discussions about Māori
+participation
                   </p>
                 </div>
               </div>
@@ -92,8 +90,8 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
                 <div className="event-content">
                   <h4>Battalion Formation</h4>
                   <p>
-                    The 28th (Māori) Battalion is officially formed, drawing volunteers from across
-                    Aotearoa
+The 28th (Māori) Battalion is officially formed, drawing volunteers from across
+Aotearoa
                   </p>
                 </div>
               </div>
@@ -102,8 +100,8 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
                 <div className="event-content">
                   <h4>Active Service</h4>
                   <p>
-                    The battalion serves in Greece, Crete, North Africa, and Italy, earning numerous
-                    decorations
+The battalion serves in Greece, Crete, North Africa, and Italy, earning numerous
+decorations
                   </p>
                 </div>
               </div>
@@ -117,14 +115,14 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
               <div className="value-card">
                 <h3>Mana</h3>
                 <p>
-                  Honor and prestige - The battalion maintained the mana of their iwi and ancestors
+Honor and prestige - The battalion maintained the mana of their iwi and ancestors
                 </p>
               </div>
               <div className="value-card">
                 <h3>Whanaungatanga</h3>
                 <p>
-                  Relationships and kinship - Strong bonds between soldiers supported their
-                  effectiveness
+Relationships and kinship - Strong bonds between soldiers supported their
+effectiveness
                 </p>
               </div>
               <div className="value-card">
@@ -145,8 +143,8 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
               <div className="legacy-point">
                 <h3>Social Change</h3>
                 <p>
-                  The battalion's success challenged stereotypes and contributed to greater
-                  recognition of Māori capabilities
+The battalion's success challenged stereotypes and contributed to greater
+recognition of Māori capabilities
                 </p>
               </div>
               <div className="legacy-point">
@@ -156,8 +154,8 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
               <div className="legacy-point">
                 <h3>Political Influence</h3>
                 <p>
-                  Veterans became leaders in Māori communities and contributed to post-war social
-                  movements
+Veterans became leaders in Māori communities and contributed to post-war social
+movements
                 </p>
               </div>
             </div>
@@ -170,22 +168,22 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
               <div className="question-item">
                 <h3>Historical Analysis</h3>
                 <p>
-                  How did the Māori Battalion's experiences reflect both the challenges and
-                  opportunities of Māori participation in New Zealand society?
+How did the Māori Battalion's experiences reflect both the challenges and
+opportunities of Māori participation in New Zealand society?
                 </p>
               </div>
               <div className="question-item">
                 <h3>Cultural Understanding</h3>
                 <p>
-                  What cultural values do you think were most important to the battalion's success
-                  and cohesion?
+What cultural values do you think were most important to the battalion's success
+and cohesion?
                 </p>
               </div>
               <div className="question-item">
                 <h3>Contemporary Relevance</h3>
                 <p>
-                  How does the legacy of the Māori Battalion continue to influence New Zealand
-                  society today?
+How does the legacy of the Māori Battalion continue to influence New Zealand
+society today?
                 </p>
               </div>
             </div>
@@ -206,7 +204,7 @@ const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default MaoriBattalionLegacy;
+export default MaoriBattalionLegacy

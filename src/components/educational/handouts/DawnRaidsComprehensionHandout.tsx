@@ -1,17 +1,14 @@
-import React from 'react';
-import { Card } from '../../ui/card';
-import './DawnRaidsComprehensionHandout.css';
+import React from 'react'
+import {Card} from '../../ui/card'
+import './DawnRaidsComprehensionHandout.css'
 
-interface DawnRaidsComprehensionHandoutProps {
-  className?: string;
-}
-
-export const DawnRaidsComprehensionHandout: React.FC<DawnRaidsComprehensionHandoutProps> = ({ className = '' }) => {
-  return (
+interface DawnRaidsComprehensionHandoutProps {className?: string}
+export const DawnRaidsComprehensionHandout: React.FC<DawnRaidsComprehensionHandoutProps> = (_{ className = '' }) => {
+return (
     <Card 
-      title="dawn raids comprehension handout"
-      subtitle="Te Kete Ako - Cultural Education"
-      className={`dawn-raids-comprehension-handout-handout cultural-focus ${className}`}
+title="dawn raids comprehension handout"
+subtitle="Te Kete Ako - Cultural Education"
+className={`dawn-raids-comprehension-handout-handout cultural-focus ${className}`}
     >
       <div className="handout-content">
         <div className="cultural-header">
@@ -32,7 +29,7 @@ export const DawnRaidsComprehensionHandout: React.FC<DawnRaidsComprehensionHando
         </div>
       </div>
     </Card>
-  );
-};
+  )
+}
 
-export default DawnRaidsComprehensionHandout;
+export default DawnRaidsComprehensionHandout
