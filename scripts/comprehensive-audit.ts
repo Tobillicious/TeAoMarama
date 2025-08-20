@@ -23,23 +23,23 @@ async function comprehensiveAudit(): Promise<void> {
     const _targetPath = 'src/components/educational/handouts';
 
     try {
-      const _teKeteFiles = await readdir(teKetePath);
-      const _teKeteHandouts = teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
+      const _teKeteFiles = await readdir(_teKetePath);
+      const _teKeteHandouts = _teKeteFiles.filter((f) => f.endsWith('.html') && !f.startsWith('.'));
 
-      const _migratedFiles = await readdir(targetPath);
-      const _migratedComponents = migratedFiles.filter((f) => f.endsWith('.tsx'));
+      const _migratedFiles = await readdir(_targetPath);
+      const _migratedComponents = _migratedFiles.filter((f) => f.endsWith('.tsx'));
 
-      const _unmigratedCount = teKeteHandouts.length - migratedComponents.length;
+      const _unmigratedCount = _teKeteHandouts.length - _migratedComponents.length;
 
       results.push({
         category: 'Resource Migration',
-        issues: unmigratedCount > 0 ? [`${unmigratedCount} handouts not migrated`] : [],
-        count: unmigratedCount,
+        issues: _unmigratedCount > 0 ? [`${_unmigratedCount} handouts not migrated`] : [],
+        count: _unmigratedCount,
       });
 
-      console.log(`  ✅ Te Kete Ako handouts: ${teKeteHandouts.length}`);
-      console.log(`  ✅ Migrated components: ${migratedComponents.length}`);
-      console.log(`  ${unmigratedCount > 0 ? '⚠️' : '✅'} Unmigrated: ${unmigratedCount}`);
+      console.log(`  ✅ Te Kete Ako handouts: ${_teKeteHandouts.length}`);
+      console.log(`  ✅ Migrated components: ${_migratedComponents.length}`);
+      console.log(`  ${_unmigratedCount > 0 ? '⚠️' : '✅'} Unmigrated: ${_unmigratedCount}`);
     } catch {
       console.log('  ❌ Could not audit resource migration');
     }
@@ -49,10 +49,10 @@ async function comprehensiveAudit(): Promise<void> {
     try {
       const { execSync } = await import('child_process');
       const _lintOutput = execSync('npm run lint 2>&1', { encoding: 'utf8' });
-      const _errorLines = lintOutput.split('\n').filter((line) => line.includes('error'));
-      const _warningLines = lintOutput.split('\n').filter((line) => line.includes('warning'));
+      const _errorLines = _lintOutput.split('\n').filter((line) => line.includes('error'));
+      const _warningLines = _lintOutput.split('\n').filter((line) => line.includes('warning'));
 
-      const _criticalErrors = errorLines.filter(
+      const _criticalErrors = _errorLines.filter(
         (line) =>
           !line.includes('te-kete-ako-clean') &&
           !line.includes('scripts/') &&
@@ -61,13 +61,13 @@ async function comprehensiveAudit(): Promise<void> {
 
       results.push({
         category: 'Linting Issues',
-        issues: criticalErrors.slice(0, 5),
-        count: criticalErrors.length,
+        issues: _criticalErrors.slice(0, 5),
+        count: _criticalErrors.length,
       });
 
-      console.log(`  ⚠️ Total errors: ${errorLines.length}`);
-      console.log(`  ⚠️ Total warnings: ${warningLines.length}`);
-      console.log(`  ⚠️ Critical errors (src/): ${criticalErrors.length}`);
+      console.log(`  ⚠️ Total errors: ${_errorLines.length}`);
+      console.log(`  ⚠️ Total warnings: ${_warningLines.length}`);
+      console.log(`  ⚠️ Critical errors (src/): ${_criticalErrors.length}`);
     } catch {
       console.log('  ❌ Could not run linting audit');
     }
@@ -86,25 +86,25 @@ async function comprehensiveAudit(): Promise<void> {
       'scripts',
     ];
 
-    for (const dir of directoriesToCheck) {
+    for (const dir of _directoriesToCheck) {
       try {
         const _files = await readdir(dir);
-        const _tsxFiles = files.filter((f) => f.endsWith('.tsx'));
-        const _cssFiles = files.filter((f) => f.endsWith('.css'));
+        const _tsxFiles = _files.filter((f) => f.endsWith('.tsx'));
+        const _cssFiles = _files.filter((f) => f.endsWith('.css'));
 
         // Check for orphaned CSS files
-        for (const cssFile of cssFiles) {
+        for (const cssFile of _cssFiles) {
           const _componentFile = cssFile.replace('.css', '.tsx');
-          if (!tsxFiles.includes(componentFile)) {
+          if (!_tsxFiles.includes(_componentFile)) {
             orphanedFiles.push(`${dir}/${cssFile}`);
           }
         }
 
         // Check for components without CSS
-        for (const tsxFile of tsxFiles) {
+        for (const tsxFile of _tsxFiles) {
           const _cssFile = tsxFile.replace('.tsx', '.css');
-          if (!cssFiles.includes(cssFile)) {
-            missingFiles.push(`${dir}/${cssFile}`);
+          if (!_cssFiles.includes(_cssFile)) {
+            missingFiles.push(`${dir}/${_cssFile}`);
           }
         }
       } catch {
@@ -127,18 +127,18 @@ async function comprehensiveAudit(): Promise<void> {
       const { execSync } = await import('child_process');
       const _startTime = Date.now();
       execSync('npm run build', { stdio: 'pipe' });
-      const _buildTime = (Date.now() - startTime) / 1000;
+      const _buildTime = (Date.now() - _startTime) / 1000;
 
       results.push({
         category: 'Build Performance',
-        issues: buildTime > 20 ? [`Build time: ${buildTime}s (slow)`] : [],
-        count: buildTime > 20 ? 1 : 0,
+        issues: _buildTime > 20 ? [`Build time: ${_buildTime}s (slow)`] : [],
+        count: _buildTime > 20 ? 1 : 0,
       });
 
-      console.log(`  ✅ Build time: ${buildTime}s`);
+      console.log(`  ✅ Build time: ${_buildTime}s`);
       console.log(
-        `  ${buildTime > 20 ? '⚠️' : '✅'} Performance: ${
-          buildTime > 20 ? 'Needs optimization' : 'Good'
+        `  ${_buildTime > 20 ? '⚠️' : '✅'} Performance: ${
+          _buildTime > 20 ? 'Needs optimization' : 'Good'
         }`,
       );
     } catch {
@@ -155,7 +155,7 @@ async function comprehensiveAudit(): Promise<void> {
     ];
 
     const missingDocs: string[] = [];
-    for (const doc of requiredDocs) {
+    for (const doc of _requiredDocs) {
       try {
         await stat(doc);
       } catch {
@@ -183,15 +183,15 @@ async function comprehensiveAudit(): Promise<void> {
     ];
 
     const outdatedContext: string[] = [];
-    for (const file of contextFiles) {
+    for (const file of _contextFiles) {
       try {
         const _content = await readFile(file, 'utf8');
-        const _lastUpdated = content.match(/Date.*(\d{4}-\d{2}-\d{2})/);
-        if (lastUpdated) {
-          const _date = new Date(lastUpdated[1]);
-          const _daysSinceUpdate = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
-          if (daysSinceUpdate > 7) {
-            outdatedContext.push(`${file} (${Math.floor(daysSinceUpdate)} days old)`);
+        const _lastUpdated = _content.match(/Date.*(\d{4}-\d{2}-\d{2})/);
+        if (_lastUpdated) {
+          const _date = new Date(_lastUpdated[1]);
+          const _daysSinceUpdate = (Date.now() - _date.getTime()) / (1000 * 60 * 60 * 24);
+          if (_daysSinceUpdate > 7) {
+            outdatedContext.push(`${file} (${Math.floor(_daysSinceUpdate)} days old)`);
           }
         }
       } catch {
@@ -219,17 +219,17 @@ async function comprehensiveAudit(): Promise<void> {
 
     results.forEach((result) => {
       const _status = result.count === 0 ? '✅' : '⚠️';
-      console.log(`${status} ${result.category}: ${result.count} issues`);
+      console.log(`${_status} ${result.category}: ${result.count} issues`);
       if (result.issues.length > 0) {
         result.issues.forEach((issue) => console.log(`    - ${issue}`));
       }
     });
 
     console.log('\n' + '='.repeat(60));
-    console.log(`🎯 TOTAL ISSUES FOUND: ${totalIssues}`);
-    console.log(`📊 OVERALL STATUS: ${totalIssues === 0 ? '✅ EXCELLENT' : '⚠️ NEEDS ATTENTION'}`);
+    console.log(`🎯 TOTAL ISSUES FOUND: ${_totalIssues}`);
+    console.log(`📊 OVERALL STATUS: ${_totalIssues === 0 ? '✅ EXCELLENT' : '⚠️ NEEDS ATTENTION'}`);
 
-    if (totalIssues > 0) {
+    if (_totalIssues > 0) {
       console.log('\n🚀 RECOMMENDED NEXT STEPS:');
       console.log('1. Fix critical linting errors in src/ directory');
       console.log('2. Update outdated context documentation');
