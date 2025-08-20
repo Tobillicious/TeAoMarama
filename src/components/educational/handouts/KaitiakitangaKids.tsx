@@ -34,3 +34,5 @@ export const KaitiakitangaKids: React.FC<KaitiakitangaKidsProps> = ({ className 
     </Card>
   );
 };
+
+export default KaitiakitangaKids;

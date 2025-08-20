@@ -34,3 +34,5 @@ export const WritersToolkitAnalogyHandout: React.FC<WritersToolkitAnalogyHandout
     </Card>
   );
 };
+
+export default WritersToolkitAnalogyHandout;

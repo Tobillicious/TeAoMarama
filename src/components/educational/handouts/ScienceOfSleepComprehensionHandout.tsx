@@ -34,3 +34,5 @@ export const ScienceOfSleepComprehensionHandout: React.FC<ScienceOfSleepComprehe
     </Card>
   );
 };
+
+export default ScienceOfSleepComprehensionHandout;

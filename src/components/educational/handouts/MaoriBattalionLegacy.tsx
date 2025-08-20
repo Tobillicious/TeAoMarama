@@ -175,3 +175,6 @@ export const MaoriBattalionLegacy: React.FC<MaoriBattalionLegacyProps> = ({ clas
     </Card>
   );
 };
+
+
+export default MaoriBattalionLegacy;

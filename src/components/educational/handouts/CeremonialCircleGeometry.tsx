@@ -34,3 +34,5 @@ export const CeremonialCircleGeometry: React.FC<CeremonialCircleGeometryProps> =
     </Card>
   );
 };
+
+export default CeremonialCircleGeometry;

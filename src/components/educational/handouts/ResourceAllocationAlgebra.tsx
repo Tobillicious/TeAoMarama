@@ -34,3 +34,5 @@ export const ResourceAllocationAlgebra: React.FC<ResourceAllocationAlgebraProps>
     </Card>
   );
 };
+
+export default ResourceAllocationAlgebra;

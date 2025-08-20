@@ -34,3 +34,5 @@ export const Unit2PreColonialInnovationDeepDive: React.FC<Unit2PreColonialInnova
     </Card>
   );
 };
+
+export default Unit2PreColonialInnovationDeepDive;

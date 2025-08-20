@@ -34,3 +34,5 @@ export const FamilyTreeWriting: React.FC<FamilyTreeWritingProps> = ({ className 
     </Card>
   );
 };
+
+export default FamilyTreeWriting;

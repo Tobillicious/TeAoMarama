@@ -34,3 +34,5 @@ export const ClimateEmergencyAotearoaHandout: React.FC<ClimateEmergencyAotearoaH
     </Card>
   );
 };
+
+export default ClimateEmergencyAotearoaHandout;

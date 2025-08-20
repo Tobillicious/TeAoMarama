@@ -34,3 +34,5 @@ export const TreatyOfWaitangiHandout: React.FC<TreatyOfWaitangiHandoutProps> = (
     </Card>
   );
 };
+
+export default TreatyOfWaitangiHandout;

@@ -34,3 +34,5 @@ export const EnvironmentalImpactStudy: React.FC<EnvironmentalImpactStudyProps> =
     </Card>
   );
 };
+
+export default EnvironmentalImpactStudy;

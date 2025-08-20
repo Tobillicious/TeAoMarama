@@ -34,3 +34,5 @@ export const MountainNavigationTrigonometry: React.FC<MountainNavigationTrigonom
     </Card>
   );
 };
+
+export default MountainNavigationTrigonometry;

@@ -34,3 +34,5 @@ export const CulturalCelebrationsComparison: React.FC<CulturalCelebrationsCompar
     </Card>
   );
 };
+
+export default CulturalCelebrationsComparison;

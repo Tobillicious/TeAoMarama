@@ -34,3 +34,5 @@ export const MicroplasticsComprehensionHandout: React.FC<MicroplasticsComprehens
     </Card>
   );
 };
+
+export default MicroplasticsComprehensionHandout;

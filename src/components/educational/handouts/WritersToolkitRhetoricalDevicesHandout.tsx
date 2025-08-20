@@ -34,3 +34,5 @@ export const WritersToolkitRhetoricalDevicesHandout: React.FC<WritersToolkitRhet
     </Card>
   );
 };
+
+export default WritersToolkitRhetoricalDevicesHandout;

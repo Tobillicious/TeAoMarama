@@ -34,3 +34,5 @@ export const PopulationTrendsAnalysis: React.FC<PopulationTrendsAnalysisProps> =
     </Card>
   );
 };
+
+export default PopulationTrendsAnalysis;

@@ -34,3 +34,5 @@ export const Unit2MaoriBattalionLegacy: React.FC<Unit2MaoriBattalionLegacyProps>
     </Card>
   );
 };
+
+export default Unit2MaoriBattalionLegacy;

@@ -34,3 +34,5 @@ export const Unit2MilitaryInnovationStudy: React.FC<Unit2MilitaryInnovationStudy
     </Card>
   );
 };
+
+export default Unit2MilitaryInnovationStudy;

@@ -34,3 +34,5 @@ export const Year9StarterPackAlphaBuild: React.FC<Year9StarterPackAlphaBuildProp
     </Card>
   );
 };
+
+export default Year9StarterPackAlphaBuild;

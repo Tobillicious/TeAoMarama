@@ -34,3 +34,5 @@ export const AtomsInEverydayMaterials: React.FC<AtomsInEverydayMaterialsProps> =
     </Card>
   );
 };
+
+export default AtomsInEverydayMaterials;

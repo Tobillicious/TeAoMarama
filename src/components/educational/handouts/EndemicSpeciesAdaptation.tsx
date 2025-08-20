@@ -34,3 +34,5 @@ export const EndemicSpeciesAdaptation: React.FC<EndemicSpeciesAdaptationProps> =
     </Card>
   );
 };
+
+export default EndemicSpeciesAdaptation;

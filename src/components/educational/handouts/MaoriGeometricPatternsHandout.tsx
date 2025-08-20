@@ -34,3 +34,5 @@ export const MaoriGeometricPatternsHandout: React.FC<MaoriGeometricPatternsHando
     </Card>
   );
 };
+
+export default MaoriGeometricPatternsHandout;

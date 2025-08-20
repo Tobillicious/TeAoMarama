@@ -34,3 +34,5 @@ export const GardenPlotMeasurement: React.FC<GardenPlotMeasurementProps> = ({ cl
     </Card>
   );
 };
+
+export default GardenPlotMeasurement;

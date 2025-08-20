@@ -34,3 +34,5 @@ export const TraditionalEcologicalIndicatorsHandout: React.FC<TraditionalEcologi
     </Card>
   );
 };
+
+export default TraditionalEcologicalIndicatorsHandout;

@@ -34,3 +34,5 @@ export const EconomicJusticeDeepDiveComprehension: React.FC<EconomicJusticeDeepD
     </Card>
   );
 };
+
+export default EconomicJusticeDeepDiveComprehension;

@@ -34,3 +34,5 @@ export const Unit2InnovationDomainsComparison: React.FC<Unit2InnovationDomainsCo
     </Card>
   );
 };
+
+export default Unit2InnovationDomainsComparison;

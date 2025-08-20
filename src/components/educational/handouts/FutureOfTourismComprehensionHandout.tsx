@@ -34,3 +34,5 @@ export const FutureOfTourismComprehensionHandout: React.FC<FutureOfTourismCompre
     </Card>
   );
 };
+
+export default FutureOfTourismComprehensionHandout;

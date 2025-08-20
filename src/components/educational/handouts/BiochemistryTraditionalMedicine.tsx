@@ -34,3 +34,5 @@ export const BiochemistryTraditionalMedicine: React.FC<BiochemistryTraditionalMe
     </Card>
   );
 };
+
+export default BiochemistryTraditionalMedicine;

@@ -34,3 +34,5 @@ export const FamilyDataCollection: React.FC<FamilyDataCollectionProps> = ({ clas
     </Card>
   );
 };
+
+export default FamilyDataCollection;

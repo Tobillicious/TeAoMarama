@@ -34,3 +34,5 @@ export const HangiHeatTransfer: React.FC<HangiHeatTransferProps> = ({ className 
     </Card>
   );
 };
+
+export default HangiHeatTransfer;

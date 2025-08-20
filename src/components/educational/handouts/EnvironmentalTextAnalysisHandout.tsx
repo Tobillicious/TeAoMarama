@@ -34,3 +34,5 @@ export const EnvironmentalTextAnalysisHandout: React.FC<EnvironmentalTextAnalysi
     </Card>
   );
 };
+
+export default EnvironmentalTextAnalysisHandout;

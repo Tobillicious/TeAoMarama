@@ -34,3 +34,5 @@ export const PoliticalCartoonAnalysisHandout: React.FC<PoliticalCartoonAnalysisH
     </Card>
   );
 };
+
+export default PoliticalCartoonAnalysisHandout;

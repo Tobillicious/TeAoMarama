@@ -34,3 +34,5 @@ export const EnvironmentalLiteracyFramework: React.FC<EnvironmentalLiteracyFrame
     </Card>
   );
 };
+
+export default EnvironmentalLiteracyFramework;

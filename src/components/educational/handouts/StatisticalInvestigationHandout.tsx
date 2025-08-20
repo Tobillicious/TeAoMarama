@@ -34,3 +34,5 @@ export const StatisticalInvestigationHandout: React.FC<StatisticalInvestigationH
     </Card>
   );
 };
+
+export default StatisticalInvestigationHandout;

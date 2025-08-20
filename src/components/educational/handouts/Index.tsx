@@ -34,3 +34,5 @@ export const Index: React.FC<IndexProps> = ({ className = '' }) => {
     </Card>
   );
 };
+
+export default Index;

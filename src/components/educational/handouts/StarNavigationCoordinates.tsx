@@ -34,3 +34,5 @@ export const StarNavigationCoordinates: React.FC<StarNavigationCoordinatesProps>
     </Card>
   );
 };
+
+export default StarNavigationCoordinates;

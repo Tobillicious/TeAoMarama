@@ -34,3 +34,5 @@ export const SustainableTechnologyDesignChallenge: React.FC<SustainableTechnolog
     </Card>
   );
 };
+
+export default SustainableTechnologyDesignChallenge;

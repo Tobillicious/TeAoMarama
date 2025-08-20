@@ -34,3 +34,5 @@ export const WritersToolkitSuspenseHandout: React.FC<WritersToolkitSuspenseHando
     </Card>
   );
 };
+
+export default WritersToolkitSuspenseHandout;

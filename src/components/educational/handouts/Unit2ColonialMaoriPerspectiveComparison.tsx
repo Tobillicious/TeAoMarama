@@ -34,3 +34,5 @@ export const Unit2ColonialMaoriPerspectiveComparison: React.FC<Unit2ColonialMaor
     </Card>
   );
 };
+
+export default Unit2ColonialMaoriPerspectiveComparison;

@@ -34,3 +34,5 @@ export const FinancialLiteracyComprehensionHandout: React.FC<FinancialLiteracyCo
     </Card>
   );
 };
+
+export default FinancialLiteracyComprehensionHandout;

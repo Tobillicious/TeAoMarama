@@ -34,3 +34,5 @@ export const Unit2WarsStrategyAnalysis: React.FC<Unit2WarsStrategyAnalysisProps>
     </Card>
   );
 };
+
+export default Unit2WarsStrategyAnalysis;

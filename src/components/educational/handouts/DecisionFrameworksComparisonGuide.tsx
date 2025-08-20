@@ -34,3 +34,5 @@ export const DecisionFrameworksComparisonGuide: React.FC<DecisionFrameworksCompa
     </Card>
   );
 };
+
+export default DecisionFrameworksComparisonGuide;

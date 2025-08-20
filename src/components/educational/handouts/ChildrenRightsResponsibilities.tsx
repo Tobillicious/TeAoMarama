@@ -34,3 +34,5 @@ export const ChildrenRightsResponsibilities: React.FC<ChildrenRightsResponsibili
     </Card>
   );
 };
+
+export default ChildrenRightsResponsibilities;

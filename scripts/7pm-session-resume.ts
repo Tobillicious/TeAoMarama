@@ -150,8 +150,8 @@ class SessionResumeOrchestrator {
     
     try {
       // Check TypeScript
-      const { exec } = require('child_process');
-      const { promisify } = require('util');
+      const { exec } = await import('child_process');
+      const { promisify } = await import('util');
       const execAsync = promisify(exec);
       
       const { stdout: tsOutput } = await execAsync('npm run typecheck --silent 2>&1 || echo "ERRORS"');
@@ -246,7 +246,7 @@ class SessionResumeOrchestrator {
     console.log('  5. Prepare for ERO demonstration');
   }
 
-  generateResumeReport(): void {
+  async generateResumeReport(): Promise<void> {
     const resumeReport = {
       timestamp: new Date().toISOString(),
       sessionResume: {
@@ -268,7 +268,7 @@ class SessionResumeOrchestrator {
       }
     };
 
-    const fs = require('fs');
+    const fs = await import('fs');
     fs.writeFileSync('/Users/admin/gemini-react-app/reports/7pm-session-resume.json', 
                      JSON.stringify(resumeReport, null, 2));
 
@@ -283,7 +283,7 @@ async function main() {
   const resumeSuccess = await orchestrator.resumeSupremeCoordination();
   
   if (resumeSuccess) {
-    orchestrator.generateResumeReport();
+    await orchestrator.generateResumeReport();
     console.log('\n🌟 7PM SESSION SUCCESSFULLY RESUMED!');
     console.log('🎯 SUPREME OVERSEER MIHARA: READY FOR CONTINUED OPERATION');
     console.log('💪 100+ LLM ARMY: AWAITING INSTRUCTIONS');
@@ -293,8 +293,7 @@ async function main() {
   }
 }
 
-if (require.main === module) {
-  main().catch(console.error);
-}
+// Execute if running directly
+main().catch(console.error);
 
 export { SessionResumeOrchestrator };

@@ -34,3 +34,5 @@ export const NatureObservationJournal: React.FC<NatureObservationJournalProps> =
     </Card>
   );
 };
+
+export default NatureObservationJournal;

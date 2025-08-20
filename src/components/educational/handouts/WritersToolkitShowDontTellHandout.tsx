@@ -34,3 +34,5 @@ export const WritersToolkitShowDontTellHandout: React.FC<WritersToolkitShowDontT
     </Card>
   );
 };
+
+export default WritersToolkitShowDontTellHandout;

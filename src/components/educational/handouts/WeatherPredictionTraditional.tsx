@@ -34,3 +34,5 @@ export const WeatherPredictionTraditional: React.FC<WeatherPredictionTraditional
     </Card>
   );
 };
+
+export default WeatherPredictionTraditional;

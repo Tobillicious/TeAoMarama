@@ -34,3 +34,5 @@ export const NzEvolutionExamples: React.FC<NzEvolutionExamplesProps> = ({ classN
     </Card>
   );
 };
+
+export default NzEvolutionExamples;

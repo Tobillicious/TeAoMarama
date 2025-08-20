@@ -34,3 +34,5 @@ export const ShakespeareSoliloquyHandout: React.FC<ShakespeareSoliloquyHandoutPr
     </Card>
   );
 };
+
+export default ShakespeareSoliloquyHandout;

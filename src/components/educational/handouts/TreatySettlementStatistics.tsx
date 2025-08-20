@@ -34,3 +34,5 @@ export const TreatySettlementStatistics: React.FC<TreatySettlementStatisticsProp
     </Card>
   );
 };
+
+export default TreatySettlementStatistics;

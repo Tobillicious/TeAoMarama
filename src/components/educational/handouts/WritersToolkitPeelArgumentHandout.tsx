@@ -34,3 +34,5 @@ export const WritersToolkitPeelArgumentHandout: React.FC<WritersToolkitPeelArgum
     </Card>
   );
 };
+
+export default WritersToolkitPeelArgumentHandout;

@@ -34,3 +34,5 @@ export const ForestEcosystemConnections: React.FC<ForestEcosystemConnectionsProp
     </Card>
   );
 };
+
+export default ForestEcosystemConnections;

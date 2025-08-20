@@ -34,3 +34,5 @@ export const CulturalIdentityDeepDiveComprehension: React.FC<CulturalIdentityDee
     </Card>
   );
 };
+
+export default CulturalIdentityDeepDiveComprehension;

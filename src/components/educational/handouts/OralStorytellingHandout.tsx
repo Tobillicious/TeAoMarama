@@ -34,3 +34,5 @@ export const OralStorytellingHandout: React.FC<OralStorytellingHandoutProps> = (
     </Card>
   );
 };
+
+export default OralStorytellingHandout;

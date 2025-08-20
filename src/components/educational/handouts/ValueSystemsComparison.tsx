@@ -34,3 +34,5 @@ export const ValueSystemsComparison: React.FC<ValueSystemsComparisonProps> = ({ 
     </Card>
   );
 };
+
+export default ValueSystemsComparison;

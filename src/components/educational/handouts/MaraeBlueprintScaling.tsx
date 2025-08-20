@@ -34,3 +34,5 @@ export const MaraeBlueprintScaling: React.FC<MaraeBlueprintScalingProps> = ({ cl
     </Card>
   );
 };
+
+export default MaraeBlueprintScaling;

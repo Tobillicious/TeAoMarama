@@ -34,3 +34,5 @@ export const ColonizationPerspectivesHandout: React.FC<ColonizationPerspectivesH
     </Card>
   );
 };
+
+export default ColonizationPerspectivesHandout;

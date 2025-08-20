@@ -34,3 +34,5 @@ export const CommunityHelpersStudy: React.FC<CommunityHelpersStudyProps> = ({ cl
     </Card>
   );
 };
+
+export default CommunityHelpersStudy;

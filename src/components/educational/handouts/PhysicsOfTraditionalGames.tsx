@@ -34,3 +34,5 @@ export const PhysicsOfTraditionalGames: React.FC<PhysicsOfTraditionalGamesProps>
     </Card>
   );
 };
+
+export default PhysicsOfTraditionalGames;

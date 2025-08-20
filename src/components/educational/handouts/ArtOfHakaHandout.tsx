@@ -34,3 +34,5 @@ export const ArtOfHakaHandout: React.FC<ArtOfHakaHandoutProps> = ({ className = 
     </Card>
   );
 };
+
+export default ArtOfHakaHandout;

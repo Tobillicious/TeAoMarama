@@ -34,3 +34,5 @@ export const ScientificMethodHandout: React.FC<ScientificMethodHandoutProps> = (
     </Card>
   );
 };
+
+export default ScientificMethodHandout;

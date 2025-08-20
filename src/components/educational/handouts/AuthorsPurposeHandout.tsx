@@ -34,3 +34,5 @@ export const AuthorsPurposeHandout: React.FC<AuthorsPurposeHandoutProps> = ({ cl
     </Card>
   );
 };
+
+export default AuthorsPurposeHandout;

@@ -34,3 +34,5 @@ export const TeReoMaoriFoundationalConcepts: React.FC<TeReoMaoriFoundationalConc
     </Card>
   );
 };
+
+export default TeReoMaoriFoundationalConcepts;

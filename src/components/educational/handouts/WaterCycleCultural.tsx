@@ -34,3 +34,5 @@ export const WaterCycleCultural: React.FC<WaterCycleCulturalProps> = ({ classNam
     </Card>
   );
 };
+
+export default WaterCycleCultural;

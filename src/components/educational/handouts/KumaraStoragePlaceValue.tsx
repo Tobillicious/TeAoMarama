@@ -34,3 +34,5 @@ export const KumaraStoragePlaceValue: React.FC<KumaraStoragePlaceValueProps> = (
     </Card>
   );
 };
+
+export default KumaraStoragePlaceValue;

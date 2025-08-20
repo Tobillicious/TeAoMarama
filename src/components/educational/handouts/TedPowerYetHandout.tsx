@@ -34,3 +34,5 @@ export const TedPowerYetHandout: React.FC<TedPowerYetHandoutProps> = ({ classNam
     </Card>
   );
 };
+
+export default TedPowerYetHandout;

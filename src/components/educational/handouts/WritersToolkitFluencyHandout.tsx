@@ -34,3 +34,5 @@ export const WritersToolkitFluencyHandout: React.FC<WritersToolkitFluencyHandout
     </Card>
   );
 };
+
+export default WritersToolkitFluencyHandout;

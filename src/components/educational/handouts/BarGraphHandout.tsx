@@ -34,3 +34,5 @@ export const BarGraphHandout: React.FC<BarGraphHandoutProps> = ({ className = ''
     </Card>
   );
 };
+
+export default BarGraphHandout;

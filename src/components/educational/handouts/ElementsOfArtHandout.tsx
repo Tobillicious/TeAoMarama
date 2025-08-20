@@ -34,3 +34,5 @@ export const ElementsOfArtHandout: React.FC<ElementsOfArtHandoutProps> = ({ clas
     </Card>
   );
 };
+
+export default ElementsOfArtHandout;

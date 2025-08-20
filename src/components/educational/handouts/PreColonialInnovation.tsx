@@ -34,3 +34,5 @@ export const PreColonialInnovation: React.FC<PreColonialInnovationProps> = ({ cl
     </Card>
   );
 };
+
+export default PreColonialInnovation;

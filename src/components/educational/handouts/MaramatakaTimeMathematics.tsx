@@ -34,3 +34,5 @@ export const MaramatakaTimeMathematics: React.FC<MaramatakaTimeMathematicsProps>
     </Card>
   );
 };
+
+export default MaramatakaTimeMathematics;

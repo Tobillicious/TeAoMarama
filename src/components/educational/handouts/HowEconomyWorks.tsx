@@ -34,3 +34,5 @@ export const HowEconomyWorks: React.FC<HowEconomyWorksProps> = ({ className = ''
     </Card>
   );
 };
+
+export default HowEconomyWorks;

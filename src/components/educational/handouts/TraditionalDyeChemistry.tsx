@@ -34,3 +34,5 @@ export const TraditionalDyeChemistry: React.FC<TraditionalDyeChemistryProps> = (
     </Card>
   );
 };
+
+export default TraditionalDyeChemistry;

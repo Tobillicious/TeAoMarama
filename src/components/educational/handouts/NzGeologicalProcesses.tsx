@@ -34,3 +34,5 @@ export const NzGeologicalProcesses: React.FC<NzGeologicalProcessesProps> = ({ cl
     </Card>
   );
 };
+
+export default NzGeologicalProcesses;
