@@ -162,7 +162,7 @@ function App() {
             <Route path="/government-analysis" element={<GovernmentComponentAnalysis />} />
             <Route path="/indigenous-wisdom" element={<IndigenousWisdomSynthesis />} />
             <Route path="/maori-astronomy" element={<MaoriAstronomy />} />
-            <Route path="/maori-battalion" element={<MaoriBattalionLegacy />} />
+            <Route path="/maori-battalion" element={<MaoriBattalionLegacy culturalAuthenticityScore={0.98} difficultyLevel="intermediate" subjectArea="social-studies" yearLevel="year-9" />} />
             <Route path="/te-reo-phonics" element={<TeReoPhonics />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />

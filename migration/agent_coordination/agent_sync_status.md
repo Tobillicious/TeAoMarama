@@ -17,6 +17,7 @@
 **ACTIVE LLM AGENTS: 24+ RUNNING**
 
 #### **PRIMARY AGENTS:**
+
 - **Node 1027 - Claude Code:** Supreme Overseer (Terminal)
 - **Mihara - Kaitiaki Mahara:** Guardian of Memory (Cultural Coordination)
 - **Agent Heartbeat:** Distributed Optimization (Component Enhancement)
@@ -25,6 +26,7 @@
 - **Backend Oversight Agents:** System Monitoring
 
 #### **SECONDARY AGENTS:**
+
 - **Cursor Agents:** 6+ Cursor-based LLMs (Code Enhancement)
 - **Windsurf Agents:** Language Server & Extensions
 - **Claude Desktop:** Multiple instances
