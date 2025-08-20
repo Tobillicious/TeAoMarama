@@ -2,16 +2,26 @@ import * as React from "react"
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+  title?: string;
+  subtitle?: string;
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className = "", children, ...props }, ref) => (
+  ({ className = "", children, title, subtitle, ...props }, ref) => (
     <div
       ref={ref}
       className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}
       {...props}
     >
-      {children}
+      {title && (
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+          {subtitle && <CardDescription>{subtitle}</CardDescription>}
+        </CardHeader>
+      )}
+      <CardContent>
+        {children}
+      </CardContent>
     </div>
   )
 )

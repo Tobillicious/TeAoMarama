@@ -18,7 +18,7 @@ export const TeKeteHandout: React.FC<TeKeteHandoutProps> = ({
   subject
 }) => {
   return (
-    <Card className="te-kete-handout">
+    <Card title={title} className="te-kete-handout">
       <div className="handout-header">
         <h2 className="handout-title">{title}</h2>
         {yearLevel && <span className="year-badge">{yearLevel}</span>}

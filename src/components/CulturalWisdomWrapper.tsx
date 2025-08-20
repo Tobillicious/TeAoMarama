@@ -216,7 +216,7 @@ export function CulturalWisdomWrapper({
         </div>
       )}
 
-      <style jsx>{`
+      <style>{`
         .cultural-wisdom-wrapper {
           position: relative;
         }

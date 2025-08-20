@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../../ui/Card';
+import { Card } from '../../ui/card';
 import './PrimarySourceAnalysis1975MemorialOfRight.css';
 
 interface PrimarySourceAnalysis1975MemorialOfRightProps {
