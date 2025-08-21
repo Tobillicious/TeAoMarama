@@ -1,1 +1,0 @@
-#!/usr/,n,c,readFileSync}fromnode: fsimport{resol,v,e}fromnode: pa,t,h}function run():unknown {___command: string):string) {return execSync(command{stdio:pipe }).toString().trim()}}function main():unknown{) {; console.log("🔄Overseer: preparing resources)run(npmrun-sprebuild)const ___indexPath = resolve(public/resources/,: ,;,0 }catch) {/;

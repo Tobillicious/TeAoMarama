@@ -45,16 +45,15 @@ const MigrationDashboard: React.FC = () => {
           const progressData = await progressResponse.json();
           setProgress(progressData);
         }
-
+        
         // Fetch tasks data
         const tasksResponse = await fetch('/reports/migration-tasks.json');
         if (tasksResponse.ok) {
           const tasksData = await tasksResponse.json();
           setTasks(tasksData);
         }
-      } catch (err) {
+      } catch {
         setError('Failed to load migration data');
-        console.error('Error fetching migration data:', err);
       } finally {
         setLoading(false);
       }
@@ -158,23 +157,19 @@ const MigrationDashboard: React.FC = () => {
           <div className="stat-number">{progress.totalTasks.toLocaleString()}</div>
           <div className="stat-label">Total Resources</div>
         </div>
-
         <div className="stat-card completed">
           <div className="stat-number">{progress.completedTasks.toLocaleString()}</div>
           <div className="stat-label">Completed</div>
           <div className="stat-percentage">{successRate}%</div>
         </div>
-
         <div className="stat-card in-progress">
           <div className="stat-number">{progress.inProgressTasks.toLocaleString()}</div>
           <div className="stat-label">In Progress</div>
         </div>
-
         <div className="stat-card failed">
           <div className="stat-number">{progress.failedTasks.toLocaleString()}</div>
           <div className="stat-label">Failed</div>
         </div>
-
         <div className="stat-card cultural">
           <div className="stat-number">{progress.culturalReviewsCompleted.toLocaleString()}</div>
           <div className="stat-label">Cultural Reviews</div>

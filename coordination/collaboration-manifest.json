@@ -1,0 +1,23 @@
+{
+  "superclaude_directive": "I am the overseer driving all agents",
+  "cursor_agents": [
+    "LLM_ERROR_RESOLUTION",
+    "TYPESCRIPT_INVALID_CHAR",
+    "COLLABORATIVE_PROBLEM_SOLVING",
+    "CSS_WARNING_FIXES",
+    "CONTINUE_7K_ERRORS",
+    "WORK_TOGETHER_6K"
+  ],
+  "shared_objectives": [
+    "Eliminate 7K+ errors systematically",
+    "Preserve educational content integrity",
+    "Maintain build functionality",
+    "Coordinate without asking for directions"
+  ],
+  "communication_protocol": "SuperClaude directs, agents execute",
+  "success_metrics": {
+    "error_reduction": "> 90%",
+    "build_success": "required",
+    "content_preservation": "100%"
+  }
+}

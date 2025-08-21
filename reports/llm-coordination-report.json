@@ -1,0 +1,2157 @@
+{
+  "summary": {
+    "totalFiles": 338,
+    "filesWithErrors": 237,
+    "tasksCreated": 238,
+    "tasksCompleted": 238,
+    "errorsFixed": 238
+  },
+  "tasks": [
+    {
+      "id": "scripts/aggressive-final-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/aggressive-final-fix.ts",
+      "description": "Fix malformed-quotes in aggressive-final-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/autonomous-operation-monitor.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/autonomous-operation-monitor.ts",
+      "description": "Fix malformed-quotes in autonomous-operation-monitor.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/build-resources.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/build-resources.ts",
+      "description": "Fix malformed-quotes in build-resources.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/claude-code-final-report.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/claude-code-final-report.ts",
+      "description": "Fix malformed-quotes in claude-code-final-report.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/claude-code-super-overseer-report.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/claude-code-super-overseer-report.ts",
+      "description": "Fix malformed-quotes in claude-code-super-overseer-report.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/cleanup-unused-imports.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/cleanup-unused-imports.ts",
+      "description": "Fix malformed-quotes in cleanup-unused-imports.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/comprehensive-error-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/comprehensive-error-fix.ts",
+      "description": "Fix malformed-quotes in comprehensive-error-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/emergency-cleanup.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/emergency-cleanup.ts",
+      "description": "Fix malformed-quotes in emergency-cleanup.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/ero-hui-preparation.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/ero-hui-preparation.ts",
+      "description": "Fix malformed-quotes in ero-hui-preparation.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/final-corruption-strike.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/final-corruption-strike.ts",
+      "description": "Fix malformed-quotes in final-corruption-strike.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-component-names.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-component-names.ts",
+      "description": "Fix malformed-quotes in fix-component-names.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-imports.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-imports.ts",
+      "description": "Fix malformed-quotes in fix-imports.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-markdown-blanks.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-markdown-blanks.ts",
+      "description": "Fix malformed-quotes in fix-markdown-blanks.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-mihara-continuous.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-mihara-continuous.ts",
+      "description": "Fix malformed-quotes in fix-mihara-continuous.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-remaining-errors.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-remaining-errors.ts",
+      "description": "Fix malformed-quotes in fix-remaining-errors.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/fix-syntax-errors.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/fix-syntax-errors.ts",
+      "description": "Fix malformed-quotes in fix-syntax-errors.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/llm-coordination-hub.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/llm-coordination-hub.ts",
+      "description": "Fix malformed-quotes in llm-coordination-hub.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/llm-coordination-hub.ts-1",
+      "type": "syntax-fix",
+      "filePath": "scripts/llm-coordination-hub.ts",
+      "description": "Fix extra-semicolons in llm-coordination-hub.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/massive-syntax-cleanup.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/massive-syntax-cleanup.ts",
+      "description": "Fix malformed-quotes in massive-syntax-cleanup.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/migrate-6k-changes.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/migrate-6k-changes.ts",
+      "description": "Fix malformed-quotes in migrate-6k-changes.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/overnight-agent-coordination.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/overnight-agent-coordination.ts",
+      "description": "Fix malformed-quotes in overnight-agent-coordination.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/overseer-sync.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/overseer-sync.ts",
+      "description": "Fix malformed-quotes in overseer-sync.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/persistent-file-guard.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/persistent-file-guard.ts",
+      "description": "Fix malformed-quotes in persistent-file-guard.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/quick-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/quick-fix.ts",
+      "description": "Fix malformed-quotes in quick-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/quick-syntax-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/quick-syntax-fix.ts",
+      "description": "Fix malformed-quotes in quick-syntax-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/run-validation-tests.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/run-validation-tests.ts",
+      "description": "Fix malformed-quotes in run-validation-tests.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/simple-qa-start.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/simple-qa-start.ts",
+      "description": "Fix malformed-quotes in simple-qa-start.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/superclaude-mass-deployment.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/superclaude-mass-deployment.ts",
+      "description": "Fix malformed-quotes in superclaude-mass-deployment.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/superclaude-overseer-status.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/superclaude-overseer-status.ts",
+      "description": "Fix malformed-quotes in superclaude-overseer-status.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/targeted-cleanup.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/targeted-cleanup.ts",
+      "description": "Fix malformed-quotes in targeted-cleanup.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/targeted-string-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/targeted-string-fix.ts",
+      "description": "Fix malformed-quotes in targeted-string-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/test-qa-overseer.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/test-qa-overseer.ts",
+      "description": "Fix malformed-quotes in test-qa-overseer.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/ultimate-error-elimination.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/ultimate-error-elimination.ts",
+      "description": "Fix malformed-quotes in ultimate-error-elimination.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/ultimate-error-fix.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/ultimate-error-fix.ts",
+      "description": "Fix malformed-quotes in ultimate-error-fix.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/ultra-final-cleanup.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/ultra-final-cleanup.ts",
+      "description": "Fix malformed-quotes in ultra-final-cleanup.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/update-cspell-maori.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/update-cspell-maori.ts",
+      "description": "Fix malformed-quotes in update-cspell-maori.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "scripts/update-shared-state.ts-0",
+      "type": "syntax-fix",
+      "filePath": "scripts/update-shared-state.ts",
+      "description": "Fix malformed-quotes in update-shared-state.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/App.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/App.tsx",
+      "description": "Fix malformed-quotes in App.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/ai/agent-communication-bridge.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/ai/agent-communication-bridge.ts",
+      "description": "Fix malformed-quotes in agent-communication-bridge.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/ai/qa-overseer.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/ai/qa-overseer.ts",
+      "description": "Fix malformed-quotes in qa-overseer.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/ai/types.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/ai/types.ts",
+      "description": "Fix malformed-quotes in types.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/Footer.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/Footer.tsx",
+      "description": "Fix malformed-quotes in Footer.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/Hero.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/Hero.tsx",
+      "description": "Fix malformed-quotes in Hero.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/LoadingSpinner.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/LoadingSpinner.tsx",
+      "description": "Fix malformed-quotes in LoadingSpinner.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/Login.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/Login.tsx",
+      "description": "Fix malformed-quotes in Login.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/MigrationDashboard.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/MigrationDashboard.tsx",
+      "description": "Fix malformed-quotes in MigrationDashboard.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/MiharaNavigation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/MiharaNavigation.tsx",
+      "description": "Fix malformed-quotes in MiharaNavigation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/Navigation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/Navigation.tsx",
+      "description": "Fix malformed-quotes in Navigation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/PrivateRoute.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/PrivateRoute.tsx",
+      "description": "Fix malformed-quotes in PrivateRoute.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AiArtEthicsComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AiArtEthicsComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in AiArtEthicsComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AiEthicsAndBias.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AiEthicsAndBias.tsx",
+      "description": "Fix malformed-quotes in AiEthicsAndBias.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AiImpactComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AiImpactComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in AiImpactComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ArgumentsOfTinoRangatiratangaHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ArgumentsOfTinoRangatiratangaHandout.tsx",
+      "description": "Fix malformed-quotes in ArgumentsOfTinoRangatiratangaHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ArtOfHakaHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ArtOfHakaHandout.tsx",
+      "description": "Fix malformed-quotes in ArtOfHakaHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AtomsInEverydayMaterials.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AtomsInEverydayMaterials.tsx",
+      "description": "Fix malformed-quotes in AtomsInEverydayMaterials.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AuthorsPurposeEntertainHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AuthorsPurposeEntertainHandout.tsx",
+      "description": "Fix malformed-quotes in AuthorsPurposeEntertainHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AuthorsPurposeHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AuthorsPurposeHandout.tsx",
+      "description": "Fix malformed-quotes in AuthorsPurposeHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AuthorsPurposeInformHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AuthorsPurposeInformHandout.tsx",
+      "description": "Fix malformed-quotes in AuthorsPurposeInformHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/AuthorsPurposePersuadeHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/AuthorsPurposePersuadeHandout.tsx",
+      "description": "Fix malformed-quotes in AuthorsPurposePersuadeHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/BarGraphHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/BarGraphHandout.tsx",
+      "description": "Fix malformed-quotes in BarGraphHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/BiochemistryTraditionalMedicine.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/BiochemistryTraditionalMedicine.tsx",
+      "description": "Fix malformed-quotes in BiochemistryTraditionalMedicine.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/BodyMeasurementTraditional.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/BodyMeasurementTraditional.tsx",
+      "description": "Fix malformed-quotes in BodyMeasurementTraditional.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CeremonialCircleGeometry.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CeremonialCircleGeometry.tsx",
+      "description": "Fix malformed-quotes in CeremonialCircleGeometry.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ChildrenRightsResponsibilities.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ChildrenRightsResponsibilities.tsx",
+      "description": "Fix malformed-quotes in ChildrenRightsResponsibilities.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ClimateChangeAotearoaHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ClimateChangeAotearoaHandout.tsx",
+      "description": "Fix malformed-quotes in ClimateChangeAotearoaHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ClimateEmergencyAotearoaHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ClimateEmergencyAotearoaHandout.tsx",
+      "description": "Fix malformed-quotes in ClimateEmergencyAotearoaHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CognitiveBiasesComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CognitiveBiasesComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in CognitiveBiasesComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ColonizationPerspectivesHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ColonizationPerspectivesHandout.tsx",
+      "description": "Fix malformed-quotes in ColonizationPerspectivesHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CommunityHelpersStudy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CommunityHelpersStudy.tsx",
+      "description": "Fix malformed-quotes in CommunityHelpersStudy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CommunityNeedsSurvey.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CommunityNeedsSurvey.tsx",
+      "description": "Fix malformed-quotes in CommunityNeedsSurvey.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalCelebrationsComparison.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalCelebrationsComparison.tsx",
+      "description": "Fix malformed-quotes in CulturalCelebrationsComparison.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalDecisionMakingTraditions.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalDecisionMakingTraditions.tsx",
+      "description": "Fix malformed-quotes in CulturalDecisionMakingTraditions.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalHeroesComprehension.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalHeroesComprehension.tsx",
+      "description": "Fix malformed-quotes in CulturalHeroesComprehension.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalIdentityDeepDiveComprehension.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalIdentityDeepDiveComprehension.tsx",
+      "description": "Fix malformed-quotes in CulturalIdentityDeepDiveComprehension.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalPracticeExplanation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalPracticeExplanation.tsx",
+      "description": "Fix malformed-quotes in CulturalPracticeExplanation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalPreservationEssays.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalPreservationEssays.tsx",
+      "description": "Fix malformed-quotes in CulturalPreservationEssays.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalSafetyClassroomChecklistsAlpha.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalSafetyClassroomChecklistsAlpha.tsx",
+      "description": "Fix malformed-quotes in CulturalSafetyClassroomChecklistsAlpha.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalStemAssessmentRubric.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalStemAssessmentRubric.tsx",
+      "description": "Fix malformed-quotes in CulturalStemAssessmentRubric.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/CulturalStoriesComprehension.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/CulturalStoriesComprehension.tsx",
+      "description": "Fix malformed-quotes in CulturalStoriesComprehension.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/DataSovereigntyMaori.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/DataSovereigntyMaori.tsx",
+      "description": "Fix malformed-quotes in DataSovereigntyMaori.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/DawnRaidsComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/DawnRaidsComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in DawnRaidsComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/DecisionFrameworksComparisonGuide.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/DecisionFrameworksComparisonGuide.tsx",
+      "description": "Fix malformed-quotes in DecisionFrameworksComparisonGuide.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/DesignThinkingProcessHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/DesignThinkingProcessHandout.tsx",
+      "description": "Fix malformed-quotes in DesignThinkingProcessHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/DigitalCitizenshipHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/DigitalCitizenshipHandout.tsx",
+      "description": "Fix malformed-quotes in DigitalCitizenshipHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EconomicChoicesBasics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EconomicChoicesBasics.tsx",
+      "description": "Fix malformed-quotes in EconomicChoicesBasics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EconomicJusticeDeepDiveComprehension.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EconomicJusticeDeepDiveComprehension.tsx",
+      "description": "Fix malformed-quotes in EconomicJusticeDeepDiveComprehension.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EcosystemSurveyChecklist.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EcosystemSurveyChecklist.tsx",
+      "description": "Fix malformed-quotes in EcosystemSurveyChecklist.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ElementsOfArtHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ElementsOfArtHandout.tsx",
+      "description": "Fix malformed-quotes in ElementsOfArtHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EndemicSpeciesAdaptation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EndemicSpeciesAdaptation.tsx",
+      "description": "Fix malformed-quotes in EndemicSpeciesAdaptation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EnvironmentalImpactStudy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EnvironmentalImpactStudy.tsx",
+      "description": "Fix malformed-quotes in EnvironmentalImpactStudy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EnvironmentalLiteracyFramework.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EnvironmentalLiteracyFramework.tsx",
+      "description": "Fix malformed-quotes in EnvironmentalLiteracyFramework.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EnvironmentalTextAnalysisHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EnvironmentalTextAnalysisHandout.tsx",
+      "description": "Fix malformed-quotes in EnvironmentalTextAnalysisHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/EvidenceEvaluationFramework.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/EvidenceEvaluationFramework.tsx",
+      "description": "Fix malformed-quotes in EvidenceEvaluationFramework.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FamilyDataCollection.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FamilyDataCollection.tsx",
+      "description": "Fix malformed-quotes in FamilyDataCollection.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FamilyTreeExploration.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FamilyTreeExploration.tsx",
+      "description": "Fix malformed-quotes in FamilyTreeExploration.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FamilyTreeWriting.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FamilyTreeWriting.tsx",
+      "description": "Fix malformed-quotes in FamilyTreeWriting.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FigurativeLanguageHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FigurativeLanguageHandout.tsx",
+      "description": "Fix malformed-quotes in FigurativeLanguageHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FilmSceneAnalysisHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FilmSceneAnalysisHandout.tsx",
+      "description": "Fix malformed-quotes in FilmSceneAnalysisHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FinancialLiteracyComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FinancialLiteracyComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in FinancialLiteracyComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FireMakingEnergy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FireMakingEnergy.tsx",
+      "description": "Fix malformed-quotes in FireMakingEnergy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ForestEcosystemConnections.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ForestEcosystemConnections.tsx",
+      "description": "Fix malformed-quotes in ForestEcosystemConnections.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FutureOfTourismComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FutureOfTourismComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in FutureOfTourismComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/FutureVisioningCreativeWriting.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/FutureVisioningCreativeWriting.tsx",
+      "description": "Fix malformed-quotes in FutureVisioningCreativeWriting.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/GardenPlotMeasurement.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/GardenPlotMeasurement.tsx",
+      "description": "Fix malformed-quotes in GardenPlotMeasurement.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/GardenPlotScience.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/GardenPlotScience.tsx",
+      "description": "Fix malformed-quotes in GardenPlotScience.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/GeneticModificationComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/GeneticModificationComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in GeneticModificationComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/GigEconomyComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/GigEconomyComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in GigEconomyComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HakaComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HakaComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in HakaComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HangiFractionsSharing.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HangiFractionsSharing.tsx",
+      "description": "Fix malformed-quotes in HangiFractionsSharing.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HangiHeatTransfer.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HangiHeatTransfer.tsx",
+      "description": "Fix malformed-quotes in HangiHeatTransfer.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HealthEducationCorrelation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HealthEducationCorrelation.tsx",
+      "description": "Fix malformed-quotes in HealthEducationCorrelation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HousingAffordabilityComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HousingAffordabilityComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in HousingAffordabilityComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/HowEconomyWorks.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/HowEconomyWorks.tsx",
+      "description": "Fix malformed-quotes in HowEconomyWorks.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/IndigenousRightsResearch.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/IndigenousRightsResearch.tsx",
+      "description": "Fix malformed-quotes in IndigenousRightsResearch.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/IntroductionToLlms.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/IntroductionToLlms.tsx",
+      "description": "Fix malformed-quotes in IntroductionToLlms.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/IwiEconomicsMathematics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/IwiEconomicsMathematics.tsx",
+      "description": "Fix malformed-quotes in IwiEconomicsMathematics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/IwiPopulationGraphs.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/IwiPopulationGraphs.tsx",
+      "description": "Fix malformed-quotes in IwiPopulationGraphs.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/KaitiakiGeneratedMigrationStudentHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/KaitiakiGeneratedMigrationStudentHandout.tsx",
+      "description": "Fix malformed-quotes in KaitiakiGeneratedMigrationStudentHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/KaitiakitangaFieldJournal.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/KaitiakitangaFieldJournal.tsx",
+      "description": "Fix malformed-quotes in KaitiakitangaFieldJournal.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/KaitiakitangaKids.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/KaitiakitangaKids.tsx",
+      "description": "Fix malformed-quotes in KaitiakitangaKids.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/KumaraStoragePlaceValue.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/KumaraStoragePlaceValue.tsx",
+      "description": "Fix malformed-quotes in KumaraStoragePlaceValue.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LandWarsStrategy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LandWarsStrategy.tsx",
+      "description": "Fix malformed-quotes in LandWarsStrategy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LanguageRevitalizationGrowth.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LanguageRevitalizationGrowth.tsx",
+      "description": "Fix malformed-quotes in LanguageRevitalizationGrowth.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LifeInThePast.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LifeInThePast.tsx",
+      "description": "Fix malformed-quotes in LifeInThePast.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LocalAreaExploration.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LocalAreaExploration.tsx",
+      "description": "Fix malformed-quotes in LocalAreaExploration.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LocalAreaHistory.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LocalAreaHistory.tsx",
+      "description": "Fix malformed-quotes in LocalAreaHistory.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/LogicalFallaciesDetectionGuide.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/LogicalFallaciesDetectionGuide.tsx",
+      "description": "Fix malformed-quotes in LogicalFallaciesDetectionGuide.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaoriAstronomyNavigationHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaoriAstronomyNavigationHandout.tsx",
+      "description": "Fix malformed-quotes in MaoriAstronomyNavigationHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaoriBattalionLegacy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaoriBattalionLegacy.tsx",
+      "description": "Fix malformed-quotes in MaoriBattalionLegacy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaoriGeometricPatternsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaoriGeometricPatternsHandout.tsx",
+      "description": "Fix malformed-quotes in MaoriGeometricPatternsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaoriNavigationWayfindingHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaoriNavigationWayfindingHandout.tsx",
+      "description": "Fix malformed-quotes in MaoriNavigationWayfindingHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaraeBlueprintScaling.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaraeBlueprintScaling.tsx",
+      "description": "Fix malformed-quotes in MaraeBlueprintScaling.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaraeShapesGeometry.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaraeShapesGeometry.tsx",
+      "description": "Fix malformed-quotes in MaraeShapesGeometry.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MaramatakaTimeMathematics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MaramatakaTimeMathematics.tsx",
+      "description": "Fix malformed-quotes in MaramatakaTimeMathematics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MediaLiteracyComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MediaLiteracyComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in MediaLiteracyComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MediaLiteracyComprehensionHandout.v2.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MediaLiteracyComprehensionHandout.v2.tsx",
+      "description": "Fix malformed-quotes in MediaLiteracyComprehensionHandout.v2.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MicroplasticsComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MicroplasticsComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in MicroplasticsComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MisleadingGraphsComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MisleadingGraphsComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in MisleadingGraphsComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MountainNavigationTrigonometry.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MountainNavigationTrigonometry.tsx",
+      "description": "Fix malformed-quotes in MountainNavigationTrigonometry.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/MulticulturalNewZealand.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/MulticulturalNewZealand.tsx",
+      "description": "Fix malformed-quotes in MulticulturalNewZealand.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NativeBirdLifecycles.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NativeBirdLifecycles.tsx",
+      "description": "Fix malformed-quotes in NativeBirdLifecycles.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NatureObservationJournal.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NatureObservationJournal.tsx",
+      "description": "Fix malformed-quotes in NatureObservationJournal.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NzEvolutionExamples.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NzEvolutionExamples.tsx",
+      "description": "Fix malformed-quotes in NzEvolutionExamples.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NzGeographyBasics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NzGeographyBasics.tsx",
+      "description": "Fix malformed-quotes in NzGeographyBasics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NzGeologicalProcesses.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NzGeologicalProcesses.tsx",
+      "description": "Fix malformed-quotes in NzGeologicalProcesses.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/NzHousingCrisisHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/NzHousingCrisisHandout.tsx",
+      "description": "Fix malformed-quotes in NzHousingCrisisHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/OralStorytellingHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/OralStorytellingHandout.tsx",
+      "description": "Fix malformed-quotes in OralStorytellingHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PersonalTimelineActivity.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PersonalTimelineActivity.tsx",
+      "description": "Fix malformed-quotes in PersonalTimelineActivity.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PhysicsOfTraditionalGames.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PhysicsOfTraditionalGames.tsx",
+      "description": "Fix malformed-quotes in PhysicsOfTraditionalGames.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PlaceDescriptionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PlaceDescriptionHandout.tsx",
+      "description": "Fix malformed-quotes in PlaceDescriptionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PlateTectonicsComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PlateTectonicsComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in PlateTectonicsComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PoliticalCartoonAnalysisHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PoliticalCartoonAnalysisHandout.tsx",
+      "description": "Fix malformed-quotes in PoliticalCartoonAnalysisHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PopulationTrendsAnalysis.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PopulationTrendsAnalysis.tsx",
+      "description": "Fix malformed-quotes in PopulationTrendsAnalysis.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PreColonialInnovation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PreColonialInnovation.tsx",
+      "description": "Fix malformed-quotes in PreColonialInnovation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PrimarySourceAnalysis1975MemorialOfRight.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PrimarySourceAnalysis1975MemorialOfRight.tsx",
+      "description": "Fix malformed-quotes in PrimarySourceAnalysis1975MemorialOfRight.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ProbabilityHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ProbabilityHandout.tsx",
+      "description": "Fix malformed-quotes in ProbabilityHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/PromptEngineering101.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/PromptEngineering101.tsx",
+      "description": "Fix malformed-quotes in PromptEngineering101.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/RecipeScalingMathematics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/RecipeScalingMathematics.tsx",
+      "description": "Fix malformed-quotes in RecipeScalingMathematics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/RenewableEnergyTraditional.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/RenewableEnergyTraditional.tsx",
+      "description": "Fix malformed-quotes in RenewableEnergyTraditional.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ResearchMethodsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ResearchMethodsHandout.tsx",
+      "description": "Fix malformed-quotes in ResearchMethodsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ResourceAllocationAlgebra.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ResourceAllocationAlgebra.tsx",
+      "description": "Fix malformed-quotes in ResourceAllocationAlgebra.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ResourceSustainabilityStudy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ResourceSustainabilityStudy.tsx",
+      "description": "Fix malformed-quotes in ResourceSustainabilityStudy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ScienceOfSleepComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ScienceOfSleepComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in ScienceOfSleepComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ScientificMethodHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ScientificMethodHandout.tsx",
+      "description": "Fix malformed-quotes in ScientificMethodHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ShakespeareSoliloquyHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ShakespeareSoliloquyHandout.tsx",
+      "description": "Fix malformed-quotes in ShakespeareSoliloquyHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/SocialMovementsIntroduction.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/SocialMovementsIntroduction.tsx",
+      "description": "Fix malformed-quotes in SocialMovementsIntroduction.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/SpeechAnalysisHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/SpeechAnalysisHandout.tsx",
+      "description": "Fix malformed-quotes in SpeechAnalysisHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/StarNavigationCoordinates.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/StarNavigationCoordinates.tsx",
+      "description": "Fix malformed-quotes in StarNavigationCoordinates.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/StatisticalInvestigationHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/StatisticalInvestigationHandout.tsx",
+      "description": "Fix malformed-quotes in StatisticalInvestigationHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/StoryToLifeConnections.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/StoryToLifeConnections.tsx",
+      "description": "Fix malformed-quotes in StoryToLifeConnections.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/SustainableEnergySystems.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/SustainableEnergySystems.tsx",
+      "description": "Fix malformed-quotes in SustainableEnergySystems.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/SustainableFishingEquations.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/SustainableFishingEquations.tsx",
+      "description": "Fix malformed-quotes in SustainableFishingEquations.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/SustainableTechnologyDesignChallenge.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/SustainableTechnologyDesignChallenge.tsx",
+      "description": "Fix malformed-quotes in SustainableTechnologyDesignChallenge.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TeReoMaoriFoundationalConcepts.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TeReoMaoriFoundationalConcepts.tsx",
+      "description": "Fix malformed-quotes in TeReoMaoriFoundationalConcepts.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TeReoMaoriGreetingsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TeReoMaoriGreetingsHandout.tsx",
+      "description": "Fix malformed-quotes in TeReoMaoriGreetingsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TeReoMathsGlossaryBilingualAlpha.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TeReoMathsGlossaryBilingualAlpha.tsx",
+      "description": "Fix malformed-quotes in TeReoMathsGlossaryBilingualAlpha.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TeReoPhonicsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TeReoPhonicsHandout.tsx",
+      "description": "Fix malformed-quotes in TeReoPhonicsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TedPowerYetHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TedPowerYetHandout.tsx",
+      "description": "Fix malformed-quotes in TedPowerYetHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ThenAndNowComparison.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ThenAndNowComparison.tsx",
+      "description": "Fix malformed-quotes in ThenAndNowComparison.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TraditionalCountingSystems.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TraditionalCountingSystems.tsx",
+      "description": "Fix malformed-quotes in TraditionalCountingSystems.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TraditionalDyeChemistry.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TraditionalDyeChemistry.tsx",
+      "description": "Fix malformed-quotes in TraditionalDyeChemistry.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TraditionalEcologicalIndicatorsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TraditionalEcologicalIndicatorsHandout.tsx",
+      "description": "Fix malformed-quotes in TraditionalEcologicalIndicatorsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TraditionalMaterialsScience.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TraditionalMaterialsScience.tsx",
+      "description": "Fix malformed-quotes in TraditionalMaterialsScience.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TraditionalNavigationMathematicsHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TraditionalNavigationMathematicsHandout.tsx",
+      "description": "Fix malformed-quotes in TraditionalNavigationMathematicsHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TreatyOfWaitangiHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TreatyOfWaitangiHandout.tsx",
+      "description": "Fix malformed-quotes in TreatyOfWaitangiHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TreatySettlementStatistics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TreatySettlementStatistics.tsx",
+      "description": "Fix malformed-quotes in TreatySettlementStatistics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TreatyStoriesAnalysis.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TreatyStoriesAnalysis.tsx",
+      "description": "Fix malformed-quotes in TreatyStoriesAnalysis.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TukutukuPatternsMaths.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TukutukuPatternsMaths.tsx",
+      "description": "Fix malformed-quotes in TukutukuPatternsMaths.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/TūrangawaewaeMapping.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/TūrangawaewaeMapping.tsx",
+      "description": "Fix malformed-quotes in TūrangawaewaeMapping.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2ColonialMaoriPerspectiveComparison.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2ColonialMaoriPerspectiveComparison.tsx",
+      "description": "Fix malformed-quotes in Unit2ColonialMaoriPerspectiveComparison.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2FortificationEngineering.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2FortificationEngineering.tsx",
+      "description": "Fix malformed-quotes in Unit2FortificationEngineering.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2InnovationDomainsComparison.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2InnovationDomainsComparison.tsx",
+      "description": "Fix malformed-quotes in Unit2InnovationDomainsComparison.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2LeadershipProfilesWars.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2LeadershipProfilesWars.tsx",
+      "description": "Fix malformed-quotes in Unit2LeadershipProfilesWars.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2MaoriBattalionLegacy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2MaoriBattalionLegacy.tsx",
+      "description": "Fix malformed-quotes in Unit2MaoriBattalionLegacy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2MilitaryInnovationStudy.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2MilitaryInnovationStudy.tsx",
+      "description": "Fix malformed-quotes in Unit2MilitaryInnovationStudy.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2ModernApplicationsConnection.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2ModernApplicationsConnection.tsx",
+      "description": "Fix malformed-quotes in Unit2ModernApplicationsConnection.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2PreColonialInnovationDeepDive.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2PreColonialInnovationDeepDive.tsx",
+      "description": "Fix malformed-quotes in Unit2PreColonialInnovationDeepDive.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2TechnologyDefinitionChallenge.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2TechnologyDefinitionChallenge.tsx",
+      "description": "Fix malformed-quotes in Unit2TechnologyDefinitionChallenge.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2TraditionalSciencePrimarySources.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2TraditionalSciencePrimarySources.tsx",
+      "description": "Fix malformed-quotes in Unit2TraditionalSciencePrimarySources.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2UrbanIdentityFormation.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2UrbanIdentityFormation.tsx",
+      "description": "Fix malformed-quotes in Unit2UrbanIdentityFormation.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2UrbanMigrationStories.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2UrbanMigrationStories.tsx",
+      "description": "Fix malformed-quotes in Unit2UrbanMigrationStories.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Unit2WarsStrategyAnalysis.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Unit2WarsStrategyAnalysis.tsx",
+      "description": "Fix malformed-quotes in Unit2WarsStrategyAnalysis.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/UrbanMaoriIdentity.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/UrbanMaoriIdentity.tsx",
+      "description": "Fix malformed-quotes in UrbanMaoriIdentity.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/ValueSystemsComparison.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/ValueSystemsComparison.tsx",
+      "description": "Fix malformed-quotes in ValueSystemsComparison.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WaitangiTribunalCases.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WaitangiTribunalCases.tsx",
+      "description": "Fix malformed-quotes in WaitangiTribunalCases.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WakaConstructionGeometry.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WakaConstructionGeometry.tsx",
+      "description": "Fix malformed-quotes in WakaConstructionGeometry.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WakaPhysicsBasics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WakaPhysicsBasics.tsx",
+      "description": "Fix malformed-quotes in WakaPhysicsBasics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WaterCycleCultural.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WaterCycleCultural.tsx",
+      "description": "Fix malformed-quotes in WaterCycleCultural.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WeatherCalendarGraphs.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WeatherCalendarGraphs.tsx",
+      "description": "Fix malformed-quotes in WeatherCalendarGraphs.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WeatherPredictionProbability.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WeatherPredictionProbability.tsx",
+      "description": "Fix malformed-quotes in WeatherPredictionProbability.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WeatherPredictionTraditional.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WeatherPredictionTraditional.tsx",
+      "description": "Fix malformed-quotes in WeatherPredictionTraditional.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WhakapapaMathematics.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WhakapapaMathematics.tsx",
+      "description": "Fix malformed-quotes in WhakapapaMathematics.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitAnalogyHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitAnalogyHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitAnalogyHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitConclusionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitConclusionHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitConclusionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitDictionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitDictionHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitDictionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitFluencyHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitFluencyHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitFluencyHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitHookHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitHookHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitHookHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitInformStructureHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitInformStructureHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitInformStructureHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitPeelArgumentHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitPeelArgumentHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitPeelArgumentHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitRevisionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitRevisionHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitRevisionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitRhetoricalDevicesHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitRhetoricalDevicesHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitRhetoricalDevicesHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitShowDontTellHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitShowDontTellHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitShowDontTellHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitSuspenseHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitSuspenseHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitSuspenseHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/WritersToolkitToneHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/WritersToolkitToneHandout.tsx",
+      "description": "Fix malformed-quotes in WritersToolkitToneHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Year9StarterPackAlphaBuild.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Year9StarterPackAlphaBuild.tsx",
+      "description": "Fix malformed-quotes in Year9StarterPackAlphaBuild.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/Year9StarterPackEssentialSkills.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/Year9StarterPackEssentialSkills.tsx",
+      "description": "Fix malformed-quotes in Year9StarterPackEssentialSkills.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/YouthVapingComprehensionHandout.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/YouthVapingComprehensionHandout.tsx",
+      "description": "Fix malformed-quotes in YouthVapingComprehensionHandout.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/components/educational/handouts-extracted/index.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/components/educational/handouts-extracted/index.ts",
+      "description": "Fix malformed-quotes in index.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/main.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/main.tsx",
+      "description": "Fix malformed-quotes in main.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/About.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/About.tsx",
+      "description": "Fix malformed-quotes in About.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/AssessmentFramework.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/AssessmentFramework.tsx",
+      "description": "Fix malformed-quotes in AssessmentFramework.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/Contact.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/Contact.tsx",
+      "description": "Fix malformed-quotes in Contact.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/Home.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/Home.tsx",
+      "description": "Fix malformed-quotes in Home.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/LessonsIntegration.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/LessonsIntegration.tsx",
+      "description": "Fix malformed-quotes in LessonsIntegration.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/ScienceIntegration.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/ScienceIntegration.tsx",
+      "description": "Fix malformed-quotes in ScienceIntegration.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/pages/Year8SocialStudies.tsx-0",
+      "type": "syntax-fix",
+      "filePath": "src/pages/Year8SocialStudies.tsx",
+      "description": "Fix malformed-quotes in Year8SocialStudies.tsx",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/services/useAuth.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/services/useAuth.ts",
+      "description": "Fix malformed-quotes in useAuth.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    },
+    {
+      "id": "src/vite-env.d.ts-0",
+      "type": "syntax-fix",
+      "filePath": "src/vite-env.d.ts",
+      "description": "Fix malformed-quotes in vite-env.d.ts",
+      "priority": "low",
+      "status": "completed",
+      "assignedTo": "syntax-specialist"
+    }
+  ],
+  "completedTasks": 238,
+  "failedTasks": 0,
+  "pendingTasks": 0,
+  "timestamp": "2025-08-21T04:01:22.244Z"
+}

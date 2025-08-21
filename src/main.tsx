@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './index.css';
 
 // Simple performance monitoring
 const performanceMonitor = {
@@ -12,17 +12,16 @@ const performanceMonitor = {
     fid: 0,
     cls: 0,
     ttfb: 0,
-    fmp: 0
-  })
-}
+    fmp: 0,
+  }),
+};
 
 // Performance analytics setup
 if (typeof window !== 'undefined') {
   // Send initial performance data
   window.addEventListener('load', () => {
     setTimeout(() => {
-      const metrics = performanceMonitor.getMetrics();
-      console.log('🚀 Initial Performance Metrics:', metrics);
+      performanceMonitor.getMetrics();
     }, 1000);
   });
 }
@@ -33,22 +32,20 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js')
       .then((registration) => {
-        console.log('✅ Service Worker registered successfully:', registration);
         // Check for updates
         registration.addEventListener('updatefound', () => {
           const newWorker = registration.installing;
           if (newWorker) {
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                console.log('🔄 New version available');
                 // You can show a notification to the user here
               }
             });
           }
         });
       })
-      .catch((error) => {
-        console.error('❌ Service Worker registration failed:', error);
+      .catch(() => {
+        // Service worker registration failed
       });
   });
 }
@@ -58,5 +55,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
