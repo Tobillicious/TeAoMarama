@@ -1,5 +1,11 @@
+<<<<<<< Current (Your changes)
 import type { ReactNode } from 'react';
 import React, { useEffect, useState } from 'react';
+=======
+import React, { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useAuth } from '../services/useAuth';
+>>>>>>> Incoming (Background Agent changes)
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../services/useAuth';
 
