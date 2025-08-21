@@ -76,7 +76,7 @@ class DeepSeekEnhancedAIEngine {
 
   private async performSecurityAudit(): Promise<SecurityAuditResult> {
     console.log('🔒 PHASE 1: Security Audit with AI Analysis');
-    console.log('-' .repeat(40));
+    console.log('-'.repeat(40));
 
     // Based on the Supabase security dashboard screenshot
     const securityIssues = [
@@ -759,7 +759,7 @@ export const useCulturalPermissions = () => {
 
   private async implementAIContentGeneration(): Promise<void> {
     console.log('🤖 PHASE 2: AI-Powered Content Generation');
-    console.log('-' .repeat(40));
+    console.log('-'.repeat(40));
 
     const aiContentGenerator = `
 // AI Content Generator - Powered by DeepSeek
@@ -882,7 +882,7 @@ export const aiContentGenerator = new AIContentGenerator();
 
   private async createCulturalValidationSystem(): Promise<void> {
     console.log('🌿 PHASE 3: Intelligent Cultural Validation');
-    console.log('-' .repeat(40));
+    console.log('-'.repeat(40));
 
     this.aiEnhancements.push({
       feature: 'Cultural Validation AI',
@@ -897,7 +897,7 @@ export const aiContentGenerator = new AIContentGenerator();
 
   private async implementEducationalAI(): Promise<void> {
     console.log('📚 PHASE 4: Advanced Educational Intelligence');
-    console.log('-' .repeat(40));
+    console.log('-'.repeat(40));
 
     this.aiEnhancements.push({
       feature: 'Educational AI Assistant',
@@ -912,7 +912,7 @@ export const aiContentGenerator = new AIContentGenerator();
 
   private async createAutonomousOptimizer(): Promise<void> {
     console.log('⚡ PHASE 5: Autonomous Platform Optimization');
-    console.log('-' .repeat(40));
+    console.log('-'.repeat(40));
 
     this.aiEnhancements.push({
       feature: 'Autonomous Platform Optimizer',
