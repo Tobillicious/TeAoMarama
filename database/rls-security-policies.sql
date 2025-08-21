@@ -1,0 +1,100 @@
+-- Row Level Security Policies for Te Kura o TeAoMarama
+-- Addresses security vulnerabilities from audit
+
+-- Enable RLS on resource_embeddings table
+ALTER TABLE public.resource_embeddings ENABLE ROW LEVEL SECURITY;
+
+-- Policy for authenticated users to read educational resources
+CREATE POLICY "authenticated_users_read_resources" ON public.resource_embeddings
+  FOR SELECT
+  TO authenticated
+  USING (true);
+
+-- Policy for educators to manage resources
+CREATE POLICY "educators_manage_resources" ON public.resource_embeddings
+  FOR ALL
+  TO authenticated
+  USING (
+    auth.jwt() ->> 'role' = 'educator' 
+    OR auth.jwt() ->> 'role' = 'admin'
+    OR auth.jwt() ->> 'cultural_role' = 'kaitiaki'
+  );
+
+-- Cultural content protection policy
+CREATE POLICY "cultural_content_protection" ON public.resource_embeddings
+  FOR ALL
+  TO authenticated
+  USING (
+    CASE 
+      WHEN metadata->>'cultural_sensitivity' = 'high' THEN
+        auth.jwt() ->> 'cultural_clearance' = 'approved'
+      ELSE true
+    END
+  );
+
+-- Enable RLS on user_kete_view
+ALTER TABLE IF EXISTS public.user_kete_view ENABLE ROW LEVEL SECURITY;
+
+-- User can only see their own kete
+CREATE POLICY "users_own_kete" ON public.user_kete_view
+  FOR SELECT
+  TO authenticated
+  USING (user_id = auth.uid());
+
+-- Enable RLS on featured_resources
+ALTER TABLE IF EXISTS public.featured_resources ENABLE ROW LEVEL SECURITY;
+
+-- Everyone can read featured resources, only admins can modify
+CREATE POLICY "public_read_featured" ON public.featured_resources
+  FOR SELECT
+  TO anon, authenticated
+  USING (is_published = true);
+
+CREATE POLICY "admin_manage_featured" ON public.featured_resources
+  FOR ALL
+  TO authenticated
+  USING (auth.jwt() ->> 'role' = 'admin');
+
+-- Create security audit log table
+CREATE TABLE IF NOT EXISTS public.security_audit_log (
+  id SERIAL PRIMARY KEY,
+  user_id UUID REFERENCES auth.users(id),
+  action TEXT NOT NULL,
+  resource_type TEXT,
+  resource_id TEXT,
+  ip_address INET,
+  user_agent TEXT,
+  cultural_sensitivity_level TEXT,
+  timestamp TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS on audit log
+ALTER TABLE public.security_audit_log ENABLE ROW LEVEL SECURITY;
+
+-- Only admins can read audit logs
+CREATE POLICY "admin_read_audit_log" ON public.security_audit_log
+  FOR SELECT
+  TO authenticated
+  USING (auth.jwt() ->> 'role' = 'admin');
+
+-- Function to log security events
+CREATE OR REPLACE FUNCTION public.log_security_event(
+  p_action TEXT,
+  p_resource_type TEXT DEFAULT NULL,
+  p_resource_id TEXT DEFAULT NULL,
+  p_cultural_sensitivity TEXT DEFAULT NULL
+) RETURNS void AS $$
+BEGIN
+  INSERT INTO public.security_audit_log (
+    user_id, action, resource_type, resource_id, 
+    cultural_sensitivity_level, ip_address
+  ) VALUES (
+    auth.uid(),
+    p_action,
+    p_resource_type,
+    p_resource_id,
+    p_cultural_sensitivity,
+    inet_client_addr()
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;

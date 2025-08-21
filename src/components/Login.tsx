@@ -69,7 +69,7 @@ const Login: React.FC = () => {
       <div className="app-container">
         <div className="auth-form-container">
           <h2>Login</h2>
-          <form onSubmit={handleLogin} className="auth-form">
+          <form onSubmit={handleLogin} onKeyDown={handleKeyDown} className="auth-form">
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
