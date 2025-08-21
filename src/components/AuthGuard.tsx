@@ -1,4 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import { useAuth } from '../services/useAuth';
 import { Navigate, useLocation } from 'react-router-dom';
 
