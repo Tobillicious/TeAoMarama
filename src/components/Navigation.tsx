@@ -6,12 +6,13 @@ const Navigation: React.FC = () => {
   return (
     <nav className="navigation-container">
       <div className="nav-brand">
-        <Link to="/" className="nav-logo">Te Kete Ako</Link>
+        <Link to="/" className="nav-logo">🧠 Te Kura o TeAoMarama</Link>
       </div>
       <div className="nav-links">
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/about" className="nav-link">About</Link>
         <Link to="/contact" className="nav-link">Contact</Link>
+        <Link to="/superintelligence" className="nav-link">🤖 AI Dashboard</Link>
       </div>
     </nav>
   );

@@ -183,7 +183,8 @@ function main() {
     if (supabaseUrl) env = upsertEnv(env, 'VITE_SUPABASE_URL', supabaseUrl);
     if (supabaseAnonKey) env = upsertEnv(env, 'VITE_SUPABASE_ANON_KEY', supabaseAnonKey);
     if (supabaseDbPassword) env = upsertEnv(env, 'VITE_SUPABASE_DB_PASSWORD', supabaseDbPassword);
-    if (supabaseDatabaseUrl) env = upsertEnv(env, 'VITE_SUPABASE_DATABASE_URL', supabaseDatabaseUrl);
+    if (supabaseDatabaseUrl)
+      env = upsertEnv(env, 'VITE_SUPABASE_DATABASE_URL', supabaseDatabaseUrl);
   }
 
   writeFileSync(envPath, env, 'utf8');
