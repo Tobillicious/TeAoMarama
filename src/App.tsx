@@ -18,14 +18,12 @@ function App() {
         <Navigation />
         <main className="main-content">
           <Suspense fallback={<LoadingSpinner />}>
-            <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
+            <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/migration-dashboard" element={<MigrationDashboard />} />
-                    </Routes>
-      </Suspense>
+            </Routes>
           </Suspense>
         </main>
       </div>
