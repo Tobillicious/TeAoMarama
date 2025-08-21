@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
+const MigrationDashboard = lazy(() => import('./components/MigrationDashboard'));
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/migration-dashboard" element={<MigrationDashboard />} />
           </Routes>
         </Suspense>
       </main>
