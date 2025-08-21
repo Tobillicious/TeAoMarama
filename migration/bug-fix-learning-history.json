@@ -1,0 +1,223 @@
+{
+  "learningHistory": [
+    {
+      "file": "src/App.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.810Z"
+    },
+    {
+      "file": "src/App.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.812Z"
+    },
+    {
+      "file": "src/ai/agent-communication-bridge.ts",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.814Z"
+    },
+    {
+      "file": "src/ai/agent-communication-bridge.ts",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.815Z"
+    },
+    {
+      "file": "src/ai/mihara-overseer.ts",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.816Z"
+    },
+    {
+      "file": "src/ai/mihara-overseer.ts",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.816Z"
+    },
+    {
+      "file": "src/ai/qa-overseer.ts",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.817Z"
+    },
+    {
+      "file": "src/ai/qa-overseer.ts",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.817Z"
+    },
+    {
+      "file": "src/components/Button.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.818Z"
+    },
+    {
+      "file": "src/components/Button.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.818Z"
+    },
+    {
+      "file": "src/components/LoadingSpinner.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.818Z"
+    },
+    {
+      "file": "src/components/LoadingSpinner.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.818Z"
+    },
+    {
+      "file": "src/components/Login.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.819Z"
+    },
+    {
+      "file": "src/components/Login.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.819Z"
+    },
+    {
+      "file": "src/components/Navigation.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.820Z"
+    },
+    {
+      "file": "src/components/Navigation.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.820Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/TeReoWordleUnlimited.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.838Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/TeReoWordleUnlimited.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.838Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/components/WordleKeyboard.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.839Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/components/WordleKeyboard.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.839Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/components/WordleStats.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.840Z"
+    },
+    {
+      "file": "src/components/games/TeReoWordleUnlimited/components/WordleStats.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.840Z"
+    },
+    {
+      "file": "src/main.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.859Z"
+    },
+    {
+      "file": "src/main.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.859Z"
+    },
+    {
+      "file": "src/pages/About.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.860Z"
+    },
+    {
+      "file": "src/pages/About.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.860Z"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.861Z"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.861Z"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "pattern": "missing-semicolon-fix",
+      "successRate": 0.85,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.862Z"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "pattern": "double-semicolon-fix",
+      "successRate": 0.94,
+      "learned": false,
+      "timestamp": "2025-08-20T14:10:51.862Z"
+    }
+  ],
+  "successfulPatterns": [],
+  "errorPatterns": [],
+  "fixStats": {
+    "totalFixes": 15,
+    "successfulFixes": 15,
+    "failedFixes": 0,
+    "errorTypes": {}
+  },
+  "lastUpdated": "2025-08-20T14:10:51.864Z"
+}

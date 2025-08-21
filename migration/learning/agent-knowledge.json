@@ -1,0 +1,49 @@
+{
+  "patterns": [
+    {
+      "name": "double-comma-fix",
+      "pattern": ",\\s*,",
+      "replacement": ",",
+      "successRate": 0.92,
+      "useCount": 30,
+      "proven": true
+    },
+    {
+      "name": "malformed-jsx-return",
+      "pattern": "return\\s*\\(_<",
+      "replacement": "return (<",
+      "successRate": 0.88,
+      "useCount": 35,
+      "proven": true
+    },
+    {
+      "name": "import-type-fix",
+      "pattern": "importtype",
+      "replacement": "import type",
+      "successRate": 1,
+      "useCount": 1,
+      "learnedAt": "2025-08-20T13:35:52.098Z"
+    },
+    {
+      "name": "jsx-attribute-fix",
+      "pattern": "className=([^\"'\\s>]+)",
+      "replacement": "className=\"$1\"",
+      "successRate": 1,
+      "useCount": 1,
+      "learnedAt": "2025-08-20T13:35:52.099Z"
+    },
+    {
+      "name": "missing-semicolon",
+      "pattern": "import\\s+([^'\"]+)\\s+from\\s+['\"]([^'\"]+)['\"]",
+      "replacement": "import $1 from '$2';",
+      "successRate": 1,
+      "useCount": 1,
+      "learnedAt": "2025-08-20T13:35:52.099Z"
+    }
+  ],
+  "history": [],
+  "stats": {
+    "totalFixes": 0,
+    "successfulFixes": 0
+  }
+}

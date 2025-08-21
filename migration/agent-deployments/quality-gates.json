@@ -1,0 +1,13 @@
+{
+  "pre_merge": [
+    "build_success",
+    "test_pass",
+    "cultural_validation",
+    "performance_check"
+  ],
+  "continuous": [
+    "build_time_monitor",
+    "resource_count_validation",
+    "cultural_integrity_scan"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "totalTasks": 10892,
+    "completedTasks": 10892,
+    "failedTasks": 0,
+    "inProgressTasks": 0,
+    "pendingTasks": 0,
+    "culturalReviewsCompleted": 6739,
+    "culturalReviewsPending": 0,
+    "estimatedCompletionTime": "2025-08-21T02:41:00.843Z",
+    "lastUpdated": "2025-08-21T02:41:00.843Z"
+  },
+  "culturalContentAnalysis": {
+    "totalCulturalResources": 6739,
+    "culturalReviewsCompleted": 6739,
+    "culturalReviewsFailed": 0
+  },
+  "categoryBreakdown": {
+    "other": {
+      "total": 4750,
+      "completed": 4750,
+      "failed": 0
+    },
+    "games": {
+      "total": 2,
+      "completed": 2,
+      "failed": 0
+    },
+    "handouts": {
+      "total": 6126,
+      "completed": 6126,
+      "failed": 0
+    },
+    "templates": {
+      "total": 14,
+      "completed": 14,
+      "failed": 0
+    }
+  },
+  "priorityBreakdown": {
+    "high": {
+      "total": 6739,
+      "completed": 6739,
+      "failed": 0
+    },
+    "medium": {
+      "total": 4149,
+      "completed": 4149,
+      "failed": 0
+    },
+    "low": {
+      "total": 4,
+      "completed": 4,
+      "failed": 0
+    }
+  },
+  "agentPerformance": {
+    "cultural-reviewer": {
+      "assigned": 7780,
+      "completed": 7780,
+      "failed": 0
+    },
+    "quality-assurance": {
+      "assigned": 1070,
+      "completed": 1070,
+      "failed": 0
+    },
+    "content-processor": {
+      "assigned": 987,
+      "completed": 987,
+      "failed": 0
+    },
+    "mihara": {
+      "assigned": 1055,
+      "completed": 1055,
+      "failed": 0
+    }
+  },
+  "recommendations": [
+    "Implement automated quality checks for migrated content",
+    "Establish ongoing cultural review processes for new content"
+  ],
+  "generatedAt": "2025-08-21T02:41:01.876Z"
+}

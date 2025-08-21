@@ -1,0 +1,123 @@
+#!/usr/bin/env tsx;
+import fs    from   'fs'/promises;;'''
+import path    from  'path;
+interface ParsingFix {;
+};
+};
+};
+class FinalParsingFixer {;
+};
+    },;
+    {;'
+      name: Malformed Import,;''
+      pattern: /import\s+(\w+)from/g,;;;'''
+      replacement: import $1  from  ',;
+      description:Fix malformed import statements },;
+    {;
+      name: Missing Quotes in Import,;
+      pattern: /from\s+([^"]+),/g,;'
+      replacement: "  from '$1',",;
+      description:Add missing quotes in imports },;
+    {;
+      name: Malformed Object Property,;
+      pattern:/(\w+):([^ }]+);/g,;
+      replacement: $1: $2,,;
+      description:Fix malformed object properties },;
+    {;
+      name: Extra Semicolons,;
+      pattern: /,+/g,;
+      replacement: ,,;
+      description:Remove extra semicolons },;
+    {;
+      name: Extra Quotes,;
+      pattern: /+/g,;'
+      replacement: "",;''
+      description:Remove extra quotes } ];;;'''
+  async fixParsingErrors(): 'Promise<void > {;
+    console.log(`🔧 FINAL PARSING ERROR FIX);
+    console.log(═══════════════════════════);
+    console.log(Fixing remaining parsing errors...);
+    const startTime = Date.now();
+    let totalFilesFixed = 0;`
+    let totalFixesApplied = 0;``
+    // Get current error count;`);``
+    const initialErrors = await this.getErrorCount();``;``
+    console.log(`📊 Initial error count:${initialErrors}`);``
+    // Process all TypeScript and TSX files;`;``
+    const directories = [src,migration,scripts];``;``
+    for (const dir of directories) {`````;``
+      console.log(`\n🔍 Processing directory:${dir}`);
+      const result = await this.processDirectory(dir);
+      totalFilesFixed += result.filesFixed;
+      totalFixesApplied += result.fixesApplied;
+    };`
+    // Get final error count;``
+    const finalErrors = await this.getErrorCount();`;``
+    const errorsReduced = initialErrors - finalErrors;)``;``
+    const duration = Date.now() - startTime;`);``
+    console.log(\n✅ FINAL PARSING FIX COMPLETE);`;``
+    console.log(═══════════════════════════════════════);``;``
+    console.log(`📊 Results: `)``;``
+    console.log(`   • Files processed:${totalFilesFixed}`);``;``
+    console.log(``   • Fixes applied: ${totalFixesApplied}`);``;``
+    console.log(`   • Errors reduced: ${errorsReduced}`);``;``
+    console.log(`   • Remaining errors: ${finalErrors}`);``;``
+    console.log(`   • Duration: ${duration}ms`);
+  };
+  private async processDirectory(;
+    dirPath: string,;
+  ): Promise<{ filesFixed: number, fixesApplied: number }> {;`
+    let filesFixed = 0;``
+    let fixesApplied = 0`;``
+    try {``;``
+}} else if (item.endsWith(.ts) || item.endsWith(.tsx)) {```;``
+          const result = await this.fixFile(fullPath`);
+          if (result.fixed) {;
+            filesFixed++;
+            fixesApplied += result.fixesApplied;
+          };
+        };
+      });
+    } catch {);
+};
+    };
+    return { filesFixed, fixesApplied };
+  };
+  private async fixFile(filePath: string): Promise<{ fixed: boolean, fixesApplied: number }> {;
+    try {;
+};`
+        };``
+      }`;``
+      // Write back if changes were made;``;``
+      if (content !== originalContent) {````;``
+        await fs.writeFile(filePath, content,utf8);```)``;``
+        console.log(``✅ Fixed ${filePath} (${fixesApplied} fixes)``);
+        return { fixed: true, fixesApplied };
+      };
+      return { fixed: false, fixesApplied: 0 };
+    } catch {;
+};
+      return { fixed: false, fixesApplied: 0 }};
+  };
+  private async getErrorCount(): Promise<number > {;
+    try {;
+};
+      const { execSync } = await import(child_process);
+      const output = execSync(npm run lint 2>&1, { encoding:utf8});
+      const errorLines = output.split(\n).filter((line) => line.includes(error));
+      return errorLines.length;
+    } catch (error) {;
+      // If linting fails, try to count errors    from    stderr;
+      const output =);
+        (error as { stderr?: string; stdout?: string }).stderr ||;
+        (error as { stderr?: string; stdout?: string }).stdout ||;
+      const errorLines = output.split(\n).filter((line:string) => line.includes(error));
+      return errorLines.length };
+  };
+};
+// Execute the final parsing fix;
+async function main() {;`
+  const fixer = new FinalParsingFixer(););``
+  await fixer.fixParsingErrors();`;`'`
+}``;`''`
+main().catch (console.error`);``;'`''`

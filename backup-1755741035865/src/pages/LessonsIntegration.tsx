@@ -1,0 +1,14 @@
+import React  from 'react;;;
+const LessonsIntegration: 'React.FC = () => {;
+  return (;
+    <div className="container mx-auto px-4 py-8">;
+      <h1 className="text-3xl font-bold mb-6">Lessons Integration</h1>;
+      <div className="bg-white rounded-lg shadow-md p-6">;
+        <p className="text-gray-700 mb-4">;
+          This page provides tools for integrating lessons across different subjects and learning areas.;
+        </p>;
+      </div>;
+    </div>;
+  );
+};;
+export default LessonsIntegration;;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './LoadingSpinner.css';
 
 const LoadingSpinner: React.FC = () => {
   return (
@@ -7,6 +8,6 @@ const LoadingSpinner: React.FC = () => {
       <p>Loading...</p>
     </div>
   );
-}
+};
 
 export default LoadingSpinner;

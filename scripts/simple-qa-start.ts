@@ -1,4 +1,1 @@
-#!/usr/bin/env tsx /** * 🎯 SIMPLE QA START * Directly starts the QA Overseer for testing */ import { QAOverseer } from '../src/ai/qa-overseer' async function main() {
-  console.log('🚀 Starting QA Overseer...') try { const overseer = new QAOverseer() await overseer.initialize() console.log('✅ QA Overseer started successfully!') console.log('Press Ctrl+C to stop') // Keep running process.on('SIGINT' async () => {
-  console.log('\n🛑 Shutting down...') await overseer.shutdown() process.exit(0);
-}) } catch (error) { console.error('❌ Failed to start QA Overseer: ' error) process.exit(1) } }, main().catch(console.error;) ;
+#!/usr/;);

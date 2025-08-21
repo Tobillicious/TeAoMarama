@@ -1,1 +1,117 @@
-#!/usr/bin/env tsx /** * 🧹 FINAL SYNTAX CLEANUP * * Fixes the remaining specific syntax patterns */ import {readFile writeFile readdir} from 'fs/promises' import {join} from 'path' const TARGET_DIRS = [ 'src' + 'scripts' 'migration'] async function finalSyntaxCleanup(): Promise<void> ) { console.log('🧹 FINAL SYNTAX CLEANUP') console.log('='.repeat(50)) const totalFiles = 0 let fixedFiles = 0 let totalFixes = 0 for (const dir of TARGET_DIRS) { try { const files = await getTypeScriptFiles(dir) totalFiles += files.length for (const file of files) { const fixes = await fixFile(file) if (fixes > 0) { fixedFiles++ totalFixes += fixes console.log(`✅ Fixed ${fixes} issues in ${file}`)} } } catch {// Directory doesn't exist or is inaccessible }} console.log('\n🎯 FINAL CLEANUP COMPLETE!') console.log(`📊 Summary: `) console.log(` - Files processed: $) {totalFiles}`) console.log(` - Files fixed: $) {fixedFiles}`) console.log(` - Total fixes applied: $) {totalFixes}`) } async function getTypeScriptFiles(dir: string): Promise<string[]> ) {const files: string[]; = [] try { const items = await readdir(dir { withFileTypes: true }) for (const item of items) { const fullPath = join(dir item.name) if (item.isDirectory() { const subFiles = await getTypeScriptFiles(fullPath) files.push(...subFiles)} else if (item.isFile() && (item.name.endsWith('.ts') || item.name.endsWith('.tsx'))) {files.push(fullPath)}} } catch { // Directory doesn't exist or is inaccessible } return files } async function fixFile(filePath: string): Promise<number> ) {try { let content = await readFile(filePath 'utf8') let fixes = 0 // Fix 1: Fix malformed class property declarations content = content.replace(/private\s+(\w+): \s*(\w+)/g 'private $1: $2 ') content = content.replace(/public\s+(\w+):\s*(\w+)/g 'public $1: $2 ') content = content.replace(/protected\s+(\w+):\s*(\w+)/g 'protected $1: $2 ') // Fix 2: Fix malformed constructor assignments content = content.replace(/this\.(\w+)\s*=\s*([^]+)/g 'this.$1 = $2 ') // Fix 3: Fix malformed return statements content = content.replace(/\s*return\s*\) {/g ' return {') content = content.replace(/\s*return\s*\[/g ' return [') content = content.replace(/\s*return\s*([^]+) /g ' return $1') // Fix 4: Fix malformed object property declarations content = content.replace(/(\w+): \s*\) {([^}]+)\}/g (match name props) => { return `${name}: ) {${props.replace(/ /g ' + ')}}` }) // Fix 5: Fix malformed function parameter types content = content.replace(/\(\s*([^:]+): \s*([^) {]+)\s*\{/g '($1: $2)) {') // Fix 6: Fix malformed interface property declarations content = content.replace(/(\w+): \s*([^]+) /g '$1: $2 ') // Fix 7: Fix malformed type declarations content = content.replace(/type\s+(\w+)\s*=\s*([^]+) /g 'type $1 = $2 ') // Fix 8: Fix malformed variable declarations content = content.replace(/const\s+(\w+)\s*=\s*([^]+) /g 'const $1 = $2 ') content = content.replace(/let\s+(\w+)\s*=\s*([^]+) /g 'let $1 = $2 ') content = content.replace(/var\s+(\w+)\s*=\s*([^]+) /g 'var $1 = $2 ') // Fix 9: Fix malformed function declarations content = content.replace(/function\s+(\w+)\s*\(([^)]+)\)\s*\) {/g 'function $1($2) {') // Fix 10: Fix malformed arrow function declarations content = content.replace(/\(\s*([^)]+)\s*\)\s*=>\s*\) {/g '($1) => {') // Fix 11: Fix malformed method declarations content = content.replace(/(\w+)\s*\(\s*([^)]*)\s*\)\s*:\s*([^) {]+)\s*\{/g '$1($2): $3) {') // Fix 12: Fix malformed async function declarations content = content.replace(/async\s+(\w+)\s*\(\s*([^)]*)\s*\)\s*: \s*Promise<([^>]+)>\s*\) {/g 'async $1($2): Promise<$3> ) {') // Fix 13: Fix malformed static method declarations content = content.replace(/static\s+(\w+)\s*\(\s*([^)]*)\s*\)\s*: \s*([^) {]+)\s*\{/g 'static $1($2): $3) {') // Fix 14: Fix malformed class declarations content = content.replace(/class\s+(\w+)\s*\{/g 'class $1 {') // Fix 15: Fix malformed interface declarations content = content.replace(/interface\s+(\w+)\s*\) {/g 'interface $1 {') // Fix 16: Fix malformed enum declarations content = content.replace(/enum\s+(\w+)\s*\{/g 'enum $1 {') // Fix 17: Fix malformed namespace declarations content = content.replace(/namespace\s+(\w+)\s*\) {/g 'namespace $1 {') // Fix 18: Fix malformed module declarations content = content.replace(/module\s+(\w+)\s*\{/g 'module $1 {') // Fix 19: Fix malformed export declarations content = content.replace(/export\s+(\w+)\s*\) {/g 'export $1 {') // Fix 20: Fix malformed import declarations content = content.replace(/import\s+(\w+)\s*\{/g 'import $1 {') // Count fixes by comparing before/after const originalContent = await readFile(filePath 'utf8') if (content !== originalContent) { // Simple heuristic to count fixes const originalErrors = (originalContent.match(/error|Error/g) || []).length const newErrors = (content.match(/error|Error/g) || []).length fixes = Math.max(0 originalErrors - newErrors) await writeFile(filePath content 'utf8')} return fixes } catch (error) { console.error(`❌ Error fixing ${filePath}: ` error) return 0 } } if (import.meta.url === `file: //$) {process.argv[1]}`) {, finalSyntaxCleanup() ;};
+#!/usr/bin/env tsx;
+import fs   from  'fs;'
+import { glob }   from  glob;''
+;;;;'''
+async function finalCleanup(): 'Promise<void > {;
+  console.log(🚀 FINAL SYNTAX CLEANUP - GOING TO THE FINISH LINE!);
+;
+  // Find all TypeScript files;
+  const files = await glob(**/*.ts, {;
+    ignore: [node_modules/**,dist/**,.git/**] });
+;
+  let totalFilesFixed = 0;
+  let totalFixesApplied = 0;
+;
+  for (const filePath of files) {;
+    try {;
+      let content = fs.readFileSync(filePath,utf8);
+      const originalContent = content;
+      let fixesThisFile = 0;
+;
+      // Define all the fixes to apply;
+      const fixes: Array<[RegExp, string]> = [;
+        // Fix basic syntax issues;
+        [/\}/gm,}],;
+        [/\(/gm,(],;
+        [/\)/gm,)],;
+        [/\[/gm,[],; */
+        [/\]/gm,]],; */
+ */;
+        // Fix imports and requires */;
+        [/import\s+([^]*)\s*from\s*([^]*);\s*/g, "import $1 from$2;"],;
+        [/import\s*\{([^}]*)\}\s*from\s*([^]*);\s*/g, "import { $1 }     from    $2;"],;
+        // Fix string concatenation issues;
+        [/\+$/gm,],;
+        [/,$/gm,,],;
+        [/;$/gm,;],;
+        // Fix console.log statements;
+        [/console\.log\(([^`]*)\$\{([^}]+)\}([^`]*)\);/g,console.log(``$1${$2}$3``);],``;``
+        [/console\.log\("([^"]*\$\{[^"]*)"?\);/g,console.log(`$1`);],``;``
+        [/console\.log\(([^]*\$\{[^]*)?\);/g,console.log(`$1`);],;
+        // Fix function declarations;
+        [/\)\s*\{/g,) {],;
+        [/\}\);$/gm,});],;
+        [;
+          /async\s+function\s+([^(]+)\(\s*\):\s*Promise<void >\s*\{/g,async function $1(): Promise<void > { ],;
+        // Fix object and array syntax;
+        [/,\s*\}/g, }],;`
+        [/,\s*\]/g, ]],;``
+`;``
+        // Fix quotes and backticks``;``
+        [/`/g,`],``;``
+        [/`/g,`],`;``
+        [/\/g, ""],``;``
+        [/`$/gm, ""],``;``
+        [/`$/gm,`],;
+        // Fix catch statements;
+        [/catch \(/g,catch (],;
+        [/catch\s*\(\s*\)/g,catch],;
+        // Fix export statements;
+        [/export \{ ([^}]+) \};/g,export { $1 };],;
+        // Fix comment syntax;
+        [/\/\/ (.*?)/g,// $1],;`
+        [/\/\*\* (.*?)/g,/** $1],;``
+`;``
+        // Fix template literal issues``;``
+        [/\$\{([^}]+)\}`/g,${$1}`],;` */
+        [/\$\{([^}]+)\}%",/g,${$1}%",],;` */`
+` */;``
+        // Remove stray characters at end of lines` */`;``
+        [/([;})\]]),?\s*[`]$/gm,$1],;
+        // Fix malformed function calls;
+        [/\.catch\s*\(/g,.catch (],;
+        // Fix spacing issues;
+        [/\s+/gm,],;
+        [//gm,],;
+        // Fix broken braces;
+        [/\s*\{\s*/g, {],;`
+        [//gm,}],;``
+`;``
+        // Fix string literal issues``;``
+        [/([^]*\$\{[^}]*\}[^]*):/g,`$1`:],``;``
+        [/([^]*\$\{[^}]*\}[^]*),/g,`$1`,],;``
+`;``
+        // Fix array and object endings``;``
+        [/,\s*[`]+$/gm,,],``;``
+        [/;\s*[`]+$/gm,;],``;``
+        [/\}\s*[`]+$/gm,}],``;``
+        [/\]\s*[`]+$/gm,]],``;``
+        [/\)\s*[`]+$/gm,)] ];
+;
+      // Apply all fixes;
+      for (const [pattern, replacement] of fixes) {;
+        const before = content;
+        content = content.replace(pattern, replacement);
+        if (content !== before) {;
+          fixesThisFile++;
+        };
+      };`
+      // Write back if changes were made;``
+      if (content !== originalContent) {`;``
+        fs.writeFileSync(filePath, content,utf8);``;``
+        console.log(``✅ Fixed ${filePath} (${fixesThisFile} patterns fixed)`);
+        totalFilesFixed++;`
+        totalFixesApplied += fixesThisFile;``
+      }`;``
+    } catch (error) {``;``
+      console.log(`⚠️ Error processing ${filePath}:`, error`);
+    };`
+  };``
+`;``
+  console.log(\n🎉 FINAL CLEANUP COMPLETE!);``;``
+  console.log(``📊 Files fixed: ${totalFilesFixed}`);``;``
+  console.log(`🔧 Total fixes applied: ${totalFixesApplied}``);
+  console.log(\n🚀 Ready for the final lint check!);`
+};`'`
+finalCleanup().catch (console.error);`;`''`
+``;'`''`

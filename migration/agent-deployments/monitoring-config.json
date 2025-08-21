@@ -1,0 +1,13 @@
+{
+  "performance_targets": {
+    "build_time": "<8s",
+    "synthesis_rate": ">50 files/hour",
+    "cultural_compliance": "100%",
+    "quality_gates": "100% pass"
+  },
+  "alerts": {
+    "build_failure": "CRITICAL",
+    "cultural_violation": "CRITICAL",
+    "performance_degradation": "HIGH"
+  }
+}
