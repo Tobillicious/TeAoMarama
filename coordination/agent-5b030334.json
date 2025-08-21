@@ -1,0 +1,15 @@
+{
+  "agentId": "5b030334-37f0-48dc-9e4d-334b1d47c213",
+  "role": "COMPONENT_RECONSTRUCTOR",
+  "supervisor": "SuperClaude",
+  "tasks": [
+    "Rebuild corrupted React components",
+    "Ensure proper JSX syntax",
+    "Maintain component functionality",
+    "Preserve educational content structure"
+  ],
+  "priority": "HIGH",
+  "coordination": "distributed_llm_network",
+  "status": "ACTIVE",
+  "deployment_time": "2025-08-21T06:35:51.068Z"
+}

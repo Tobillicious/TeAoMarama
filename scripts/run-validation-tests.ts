@@ -1,1 +1,0 @@
-#!/usr/;)awaitrunRealContentMigratorValidationTests()console.log("\n✅Allvalidationtestscomplet ed successfully!) console.log(\n📊ValidationSummary: )console.log(✅ Performancetargets(100+resources,));

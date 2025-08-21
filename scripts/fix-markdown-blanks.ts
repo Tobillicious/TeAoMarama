@@ -1,1 +1,0 @@
-#!/usr/,writeFile}from 'fs'/promisesasyncfunction fixMarkdownBlanks():unknown{) {console.log(📝FIXINGMARKDOWNBLANKLINES.\n)try {/;)// Replacemultipleconsecutive blanklineswith singleblanklinesconst ___fixedContent =content.replace(/;,),; }catch (error) {console.error("❌Errorfixingmarkdown: " erro,r,)}};'''

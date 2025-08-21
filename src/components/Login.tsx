@@ -17,19 +17,19 @@ const Login: React.FC = () => {
     setResetMsg('');
 
     try {
-      if (auth && auth.logIn) {
-        const { error } = await auth.logIn(email, password);
+      if (auth && auth.login) {
+        const { error } = await auth.login(email, password);
         if (error) {
-          setError(error.message);
+          setError(error);
         } else {
           navigate('/');
         }
       } else {
         setError('Authentication service not available');
       }
-    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_err) {
       setError('Failed to log in');
-      console.error(err);
     }
   };
 
@@ -41,7 +41,7 @@ const Login: React.FC = () => {
       setError('Please enter your email to reset password.');
       return;
     }
-
+    
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: window.location.origin + '/update-password',
@@ -52,12 +52,9 @@ const Login: React.FC = () => {
       } else {
         setResetMsg('Password reset email sent!');
       }
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError('An unknown error occurred during password reset.');
-      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_err) {
+      setError('An unknown error occurred during password reset.');
     }
   };
 
@@ -78,7 +75,6 @@ const Login: React.FC = () => {
                 className="form-input"
               />
             </div>
-
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -90,19 +86,15 @@ const Login: React.FC = () => {
                 className="form-input"
               />
             </div>
-
             {error && <div className="error-message">{error}</div>}
             {resetMsg && <div className="success-message">{resetMsg}</div>}
-
-            <button type="submit" className="auth-button">
+            <button type="submit" className="auth-button" aria-label="Login button">
               Login
             </button>
           </form>
-
-          <button onClick={handleReset} className="reset-button">
+          <button onClick={handleReset} className="reset-button" aria-label="Reset password button">
             Reset Password
           </button>
-
           <p className="auth-link">
             Don't have an account? <Link to="/register">Register here</Link>
           </p>

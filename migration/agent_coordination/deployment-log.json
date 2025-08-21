@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-08-21T09:41:32.943Z",
+  "buildStatus": "SUCCESS",
+  "testStatus": "FAILING",
+  "deploymentStatus": "PENDING",
+  "performanceScore": 0,
+  "culturalSafetyStatus": "PENDING",
+  "netlifyUrl": "https://teaomarama.netlify.app",
+  "errors": [
+    "Tests failed: Command failed: npm run lint"
+  ]
+}

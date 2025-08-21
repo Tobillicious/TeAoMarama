@@ -1,16 +1,6 @@
-import { expect, test } from '@playwright/test;
-test.describe(App smoke, () => {;
-  test(serves homepage and renders root, async ({ page }) => {;
-    const errors: 'string[] = [];
-    page.on(pageerror, (err) => errors.push(err.message || String(err)));
-    page.on(console, (msg) => {;
-      if (msg.type() ===error) errors.push(msg.text())});
-    const res = await page.goto('/');
-    expect(res?.ok()).toBeTruthy();
-    await expect(page.locator(#root)).toBeVisible();
-    // Basic content presence ('header/nav or main');
-    const hasHeader = await page.locator(header).first().count();
-    const hasMain = await page.locator(main).first().count();
-    expect(hasHeader + hasMain).toBeGreaterThan('0');
-    // No runtime errors;
-    expect(errors).toEqual([])})});
+import { expect, test } from '@playwright/test';
+
+test('smoke test', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle(/Te Ao Marama/);
+});

@@ -1,1 +1,0 @@
-#!/usr/, writeFile }from 'fs'/promisesclass ComponentNameFixer { privateappTsxPath = src/;)//Fixthe specificproblematic component name appContent=appContent.replace(_"const MediaLiteracyComprehensionHandout.V2=lazy(() =>import(\./,/,;,> }+) {path: \/,>,; }")/;'''

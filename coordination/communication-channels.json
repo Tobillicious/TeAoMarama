@@ -1,0 +1,22 @@
+{
+  "superclaude_command": {
+    "type": "broadcast",
+    "agents": "all",
+    "purpose": "directive_distribution"
+  },
+  "agent_status_reports": {
+    "type": "feedback",
+    "frequency": "continuous",
+    "purpose": "progress_monitoring"
+  },
+  "inter_agent_coordination": {
+    "type": "peer_to_peer",
+    "agents": "specialized_pairs",
+    "purpose": "task_collaboration"
+  },
+  "emergency_escalation": {
+    "type": "priority_channel",
+    "trigger": "critical_issues",
+    "purpose": "immediate_attention"
+  }
+}

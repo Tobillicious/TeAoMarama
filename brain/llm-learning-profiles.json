@@ -1,0 +1,54 @@
+[
+  {
+    "agentId": "openai_gpt4",
+    "manufacturer": "OpenAI",
+    "model": "GPT-4",
+    "specialization": "Code Quality & TypeScript",
+    "learnedPatterns": [],
+    "sharedInsights": [],
+    "improvementAreas": [
+      "Error boundary implementation",
+      "Advanced TypeScript patterns"
+    ],
+    "lastLearningSession": "2025-08-21T10:03:52.404Z"
+  },
+  {
+    "agentId": "google_gemini",
+    "manufacturer": "Google",
+    "model": "Gemini",
+    "specialization": "Build System & Infrastructure",
+    "learnedPatterns": [],
+    "sharedInsights": [],
+    "improvementAreas": [
+      "Vite optimization",
+      "Code splitting strategies"
+    ],
+    "lastLearningSession": "2025-08-21T10:03:52.405Z"
+  },
+  {
+    "agentId": "anthropic_claude",
+    "manufacturer": "Anthropic",
+    "model": "Claude",
+    "specialization": "Frontend Architecture & React",
+    "learnedPatterns": [],
+    "sharedInsights": [],
+    "improvementAreas": [
+      "Component composition",
+      "State management patterns"
+    ],
+    "lastLearningSession": "2025-08-21T10:03:52.405Z"
+  },
+  {
+    "agentId": "microsoft_copilot",
+    "manufacturer": "Microsoft",
+    "model": "Copilot",
+    "specialization": "Testing & Quality Assurance",
+    "learnedPatterns": [],
+    "sharedInsights": [],
+    "improvementAreas": [
+      "Testing strategies",
+      "Quality metrics"
+    ],
+    "lastLearningSession": "2025-08-21T10:03:52.405Z"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "msg-1755769467101-3xdptaymx",
+    "type": "knowledge-request",
+    "sender": "LLM-PARSING-SPECIALIST",
+    "timestamp": "2025-08-21T09:44:27.101Z",
+    "data": {
+      "query": "parsing"
+    }
+  },
+  {
+    "id": "msg-1755769467105-91k7trfzi",
+    "type": "learning-submit",
+    "sender": "LLM-PARSING-SPECIALIST",
+    "timestamp": "2025-08-21T09:44:27.105Z",
+    "data": {
+      "pattern": "parsing-fix",
+      "solution": "Applied template-based import fixes"
+    }
+  },
+  {
+    "id": "msg-1755769467106-q8loxf4lh",
+    "type": "knowledge-request",
+    "sender": "LLM-TYPE-SAFETY-EXPERT",
+    "timestamp": "2025-08-21T09:44:27.106Z",
+    "data": {
+      "query": "typing"
+    }
+  },
+  {
+    "id": "msg-1755769467106-9wegicqw2",
+    "type": "learning-submit",
+    "sender": "LLM-TYPE-SAFETY-EXPERT",
+    "timestamp": "2025-08-21T09:44:27.106Z",
+    "data": {
+      "pattern": "typing-fix",
+      "solution": "Applied proper type annotations"
+    }
+  },
+  {
+    "id": "msg-1755769467107-9jvvtehy8",
+    "type": "knowledge-request",
+    "sender": "LLM-CODE-CLEANUP-AGENT",
+    "timestamp": "2025-08-21T09:44:27.107Z",
+    "data": {
+      "query": "unused-vars"
+    }
+  },
+  {
+    "id": "msg-1755769467108-i2jif3ur3",
+    "type": "learning-submit",
+    "sender": "LLM-CODE-CLEANUP-AGENT",
+    "timestamp": "2025-08-21T09:44:27.108Z",
+    "data": {
+      "pattern": "cleanup-fix",
+      "solution": "Removed unused variables and imports"
+    }
+  }
+]
