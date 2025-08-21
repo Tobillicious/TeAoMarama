@@ -22,7 +22,9 @@
 - **NEVER** "fix" cleanup scripts - they work as-is or get replaced entirely
 
 ### 4. **WORKFLOW SEQUENCING**
+
 ```
+
 1. Check current error count
 2. Identify specific files to fix
 3. Lock those files (one at a time)
@@ -30,6 +32,7 @@
 5. Verify fixes work
 6. Move to next file
 7. Repeat until errors are eliminated
+
 ```
 
 ### 5. **COMMUNICATION PROTOCOL**
@@ -41,21 +44,27 @@
 ## 🛡️ PROTECTION MECHANISMS
 
 ### File Modification Detection
+
 ```bash
 # Check if file was recently modified
 find . -name "*.ts" -mtime -0.01 -exec echo "RECENTLY MODIFIED: {}" \;
+
 ```
 
 ### Error Count Monitoring
+
 ```bash
 # Monitor error count changes
 npx tsc --noEmit 2>&1 | wc -l
+
 ```
 
 ### Cleanup Script Validation
+
 ```bash
 # Validate cleanup scripts before running
 grep -l "TODO" scripts/*.ts | head -5
+
 ```
 
 ## 🎯 CURRENT STATUS
