@@ -11,6 +11,12 @@ const Login: React.FC = () => {
   const auth = useAuth();
   const navigate = useNavigate();
 
+  
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleLogin(e);
+    }
+  };
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');

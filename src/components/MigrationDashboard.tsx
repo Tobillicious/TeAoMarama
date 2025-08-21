@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './MigrationDashboard.css';
 
 interface MigrationProgress {
@@ -33,6 +33,7 @@ const MigrationDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +46,7 @@ const MigrationDashboard: React.FC = () => {
           const progressData = await progressResponse.json();
           setProgress(progressData);
         }
-        
+
         // Fetch tasks data
         const tasksResponse = await fetch('/reports/migration-tasks.json');
         if (tasksResponse.ok) {
@@ -65,6 +66,13 @@ const MigrationDashboard: React.FC = () => {
     const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (progressRef.current && progress) {
+      const progressWidth = (progress.completedTasks / progress.totalTasks) * 100;
+      progressRef.current.style.width = `${progressWidth}%`;
+    }
+  }, [progress]);
 
   if (loading) {
     return (
@@ -110,36 +118,6 @@ const MigrationDashboard: React.FC = () => {
     return task.status === selectedFilter;
   });
 
-  const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case 'urgent':
-        return '#dc2626';
-      case 'high':
-        return '#ea580c';
-      case 'medium':
-        return '#d97706';
-      case 'low':
-        return '#059669';
-      default:
-        return '#6b7280';
-    }
-  };
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'completed':
-        return '#059669';
-      case 'in-progress':
-        return '#d97706';
-      case 'failed':
-        return '#dc2626';
-      case 'pending':
-        return '#6b7280';
-      default:
-        return '#6b7280';
-    }
-  };
-
   return (
     <div className="migration-dashboard">
       <div className="dashboard-header">
@@ -181,11 +159,8 @@ const MigrationDashboard: React.FC = () => {
         <h2>Migration Progress</h2>
         <div className="progress-bar">
           <div
-            className="progress-fill"
-            style={{
-              width: `${(progress.completedTasks / progress.totalTasks) * 100}%`,
-              backgroundColor: '#059669',
-            }}
+            ref={progressRef}
+            className={`progress-fill ${progress.completedTasks > 0 ? 'completed' : ''}`}
           />
         </div>
         <div className="progress-labels">
@@ -263,20 +238,12 @@ const MigrationDashboard: React.FC = () => {
                 <td>{task.resourceId}</td>
                 <td>{task.category}</td>
                 <td>
-                  <span
-                    className="priority-badge"
-                    style={{ backgroundColor: getPriorityColor(task.priority) }}
-                  >
+                  <span className={`priority-badge ${task.priority.toLowerCase()}`}>
                     {task.priority}
                   </span>
                 </td>
                 <td>
-                  <span
-                    className="status-badge"
-                    style={{ backgroundColor: getStatusColor(task.status) }}
-                  >
-                    {task.status}
-                  </span>
+                  <span className={`status-badge ${task.status}`}>{task.status}</span>
                 </td>
                 <td>{task.assignedAgent || '-'}</td>
                 <td>
