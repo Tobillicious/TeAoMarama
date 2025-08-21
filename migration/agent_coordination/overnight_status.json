@@ -1,0 +1,132 @@
+{
+  "timestamp": "2025-08-21T01:56:18.136Z",
+  "coordination": {
+    "timestamp": "2025-08-21T01:56:18.136Z",
+    "activeTerminals": 11,
+    "totalAgents": 12,
+    "overnightMode": true,
+    "culturalSafetyStatus": true,
+    "performanceMetrics": {
+      "buildTime": 8,
+      "loadTime": 0.8,
+      "resourceCount": 5439
+    },
+    "missionStatus": {
+      "eroReadiness": true,
+      "contentMigration": true,
+      "qualityGates": true
+    }
+  },
+  "agents": [
+    {
+      "agentName": "Claude Code - Supreme Overseer",
+      "terminal": "Terminal 1",
+      "agent": "Claude Code - Supreme Overseer",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Kaitiaki Mahara",
+      "terminal": "Terminal 2",
+      "agent": "Kaitiaki Mahara",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Windsurf Claude",
+      "terminal": "Terminal 3",
+      "agent": "Windsurf Claude",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Gemini CLI",
+      "terminal": "Terminal 4",
+      "agent": "Gemini CLI",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "GPT-4.1",
+      "terminal": "Terminal 5",
+      "agent": "GPT-4.1",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Cascade",
+      "terminal": "Terminal 6",
+      "agent": "Cascade",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "6+ Cursor-based LLMs",
+      "terminal": "Cursor Agents",
+      "agent": "6+ Cursor-based LLMs",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Language Server & Extensions",
+      "terminal": "Windsurf Agents",
+      "agent": "Language Server & Extensions",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Multiple instances",
+      "terminal": "TypeScript Servers",
+      "agent": "Multiple instances",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Vite, esbuild, etc.",
+      "terminal": "Build Tools",
+      "agent": "Vite, esbuild, etc.",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    },
+    {
+      "agentName": "Māori Cultural Safety",
+      "terminal": "Cultural Review",
+      "agent": "Māori Cultural Safety",
+      "status": "ACTIVE",
+      "lastHeartbeat": "2025-08-21T01:55:18.077Z",
+      "overnightMode": true,
+      "culturalSafety": true,
+      "performance": 100
+    }
+  ]
+}

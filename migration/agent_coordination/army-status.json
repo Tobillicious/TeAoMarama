@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-08-21T01:45:18.106Z",
+  "activeAgents": 0,
+  "totalAgents": 4,
+  "agents": [
+    {
+      "name": "Multi-Agent Coordinator",
+      "status": "stopped",
+      "restarts": 0,
+      "lastStart": "1970-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "Syntax Fixer",
+      "status": "stopped",
+      "restarts": 0,
+      "lastStart": "1970-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "Overnight Cleanup Mission",
+      "status": "stopped",
+      "restarts": 0,
+      "lastStart": "1970-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "Route Fixer",
+      "status": "stopped",
+      "restarts": 0,
+      "lastStart": "1970-01-01T00:00:00.000Z"
+    }
+  ]
+}

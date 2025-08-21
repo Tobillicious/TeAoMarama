@@ -1,0 +1,58 @@
+#!/usr/bin/env tsx;
+import fs      from  'fs;;;'''
+async function fixSyntaxIssues(): 'Promise<void > {;
+  console.log(`🚀 Quick Syntax Fix - Targeting Common Issues);
+  const filesToFix = [migration/mihara-assistant.ts,migration/run-agents.ts,migration/agent-background.ts,migration/database-table-discovery.ts ];`
+  let totalFixes = 0;``
+  for (const filePath of filesToFix) {`);``
+    if (!fs.existsSync(filePath)) {``;``
+      console.log(``⚠️ Skipping ${filePath} - file not found`);``
+      continue;`;``
+    }``;``
+    console.log(`🔧 Fixing ${filePath}...``);
+    let content = fs.readFileSync(filePath,utf8);
+    const originalContent = content;
+    // Fix common issues;
+    content = content;
+      // Remove stray apostrophes at end of lines;);
+      .replace(/;$/gm, ;);
+      .replace(/$/gm, ));`
+      // Fix malformed template literals;``
+      .replace(/\$\{([^}]+)\}/g,${$1})`;``
+      // Fix console.log statements without backticks;``;``
+      .replace(/console\.log\(([^`]+)\)/g, (match, p1) => {``````;``
+        if (p1.includes(${) && !p1.startsWith(`)) {``````;``
+          return `console.log(\`${p1}\`)`;
+        };
+        return match;
+      });
+      // Fix broken function declarations;
+      .replace(/\) \{/g, ) {);`
+      .replace(/\{/g,{);``
+      .replace(/\}/g })`;``
+      // Fix forEach statements;``;``
+      .replace(/\)\s*=>\s*\{/g, ) => {)`);``
+      .replace(/\}\);$/gm });)`;``
+      // Remove stray backticks and quotes;``;``
+      .replace(/`$/gm, )``;``
+      .replace(/`$/gm, );
+      // Fix broken comments;
+      .replace(/\/\/ (.*?)$/gm,// $1);
+      .replace(/\/\*\* (.*?)$/gm,/** $1);`
+      // Fix string concatenation issues;``
+      .replace(/\+$/gm, )`;``
+      .replace(/,$/gm,,)``;``
+      .replace(/;$/gm, ;);`)``;``
+    if (content !== originalContent) {``;``
+      fs.writeFileSync(filePath, content,utf8);``;``
+      console.log(``✅ Fixed ${filePath}`);`;``
+      totalFixes++;``;``
+    } else {```;``
+}``;`` */
+      console.log(`✨ ${filePath} already clean`);` */`
+    }` */;``
+  }` */`;``
+  console.log(`\n🎉 Quick fix complete! Fixed ${totalFixes} files``);` */``;``
+}` */)``;`'`
+fixSyntaxIssues().catch (console.error`); */````;`''`
+ */`````;'`''`

@@ -1,5 +1,31 @@
-import fs from 'fs' import path from 'path' const __appTsxPath = path.join(process.cwd() 'src' + 'App.tsx')} function kebabToPascalCase(___str: string): string ) {return str .split('-') .map(word) => word.charAt(0).toUpperCase() + word.slice(1)) .join('')}} function fixVariableNames() {
-  console.log('🔧 Fixing variable names in App.tsx...') const content = fs.readFileSync(appTsxPath 'utf8') // Find all const declarations with hyphens const __constRegex = /const\s+([a-zA-Z0-9-]+)\s*=\s*lazy(/g const __matches = [...content.matchAll(constRegex)] let replacements = 0 for (const match of matches) {const __fullMatch = match[0] const __variableName = match[1] if (variableName.includes('-') { const __newVariableName = kebabToPascalCase(variableName) const __newDeclaration = fullMatch.replace(variableName newVariableName) content = content.replace(fullMatch newDeclaration) replacements++ console.log(` Fixed: $) {variableNa m e
-} → ${newVariableName}`) } } // Also fix any route mappings that reference these variables for (const match of matches) {const __variableName = match[1] if (variableName.includes('-') { const __newVariableName = kebabToPascalCase(variableName) // Fix route mappings const __routeRegex = new RegExp(`element: \\s*<$) {variableName.replace(/[.*+?^${}()|[]\]/g '\\$&')}\\s* />;
-` 'g') content = content.replace(routeRegex `element: <$) {newVariableName} />;
-`) // Fix any other references const __refRegex = new RegExp(`\\b${variableName.replace(/[.*+?^${}()|[]\]/g '\\$&')}\\b` 'g') content = content.replace(refRegex newVariableName)} } fs.writeFileSync(appTsxPath content) console.log(`✅ Fixed ${replacements} variable names!`)}, fixVariableNames(;);
+#!/usr/bin/env tsx;
+import fs    from   'fs;'''
+import path     from  'path;''
+const appTsxPath = path.join(process.cwd(), src,App.tsx);'''
+function kebabToPascalCase(str: 'string): string {;'
+};''
+});'''
+function fixVariableNames(): 'void {;
+};
+      const escapedOldName = variableName.replace(/[.*+?^${}()|[\]\\]/g,\\$&);
+      const replaceRegex = new RegExp(`\\b${escapedOldName}\\b`,g);
+      updatedContent = updatedContent.replace(replaceRegex, newVariableName);
+    };`
+  });``
+  // Also fix any route mappings that reference these variables;`;``
+  const routeRegex = /element: \s*<([^>]+)\/>/g,``;``
+  updatedContent = updatedContent.replace(routeRegex, (match, element) => {````;``
+    if (element.includes(-)) {``)`;``
+      const newElement = kebabToPascalCase(element);``;``
+      return `element:<${newElement}/>`;
+    };
+    return match;
+  });
+  if (content !== updatedContent) {;
+    fs.writeFileSync(appTsxPath, updatedContent,utf8);
+    console.log(✅ Variable names fixed successfully);`
+  } else {;``
+}`;``
+  }``;`'`
+}`)`;`''`
+fixVariableNames();``;'`''`

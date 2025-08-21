@@ -1,0 +1,104 @@
+{
+  "errorPatterns": {},
+  "successfulFixes": [
+    {
+      "agent": "Syntax Specialist",
+      "patterns": [
+        {
+          "pattern": {},
+          "replacement": "import type"
+        },
+        {
+          "pattern": {},
+          "replacement": "import $1 from '$2';"
+        },
+        {
+          "pattern": {},
+          "replacement": ","
+        },
+        {
+          "pattern": {},
+          "replacement": ";"
+        }
+      ],
+      "fixed": 15,
+      "timestamp": "2025-08-20T14:08:54.528Z"
+    },
+    {
+      "agent": "JSX Specialist",
+      "patterns": [
+        {
+          "pattern": {},
+          "replacement": "className=\"$1\""
+        },
+        {
+          "pattern": {},
+          "replacement": "return (<"
+        },
+        {
+          "pattern": {},
+          "replacement": "href=\"$1\""
+        },
+        {
+          "pattern": {},
+          "replacement": "target=\"$1\""
+        }
+      ],
+      "fixed": 0,
+      "timestamp": "2025-08-20T14:08:54.544Z"
+    },
+    {
+      "agent": "Type Specialist",
+      "patterns": [
+        {
+          "pattern": {},
+          "replacement": "interface $1"
+        },
+        {
+          "pattern": {},
+          "replacement": "function $1"
+        },
+        {
+          "pattern": {},
+          "replacement": "const $1"
+        }
+      ],
+      "fixed": 1,
+      "timestamp": "2025-08-20T14:08:54.559Z"
+    },
+    {
+      "agent": "Import/Export Specialist",
+      "patterns": [
+        {
+          "pattern": {},
+          "replacement": "export $1;"
+        },
+        {
+          "pattern": {},
+          "replacement": "import $1 from '$2';"
+        }
+      ],
+      "fixed": 209,
+      "timestamp": "2025-08-20T14:08:54.606Z"
+    }
+  ],
+  "failedFixes": [],
+  "agentStats": {
+    "Syntax Specialist": {
+      "totalFixes": 15,
+      "lastActive": "2025-08-20T14:08:54.607Z"
+    },
+    "JSX Specialist": {
+      "totalFixes": 0,
+      "lastActive": "2025-08-20T14:08:54.607Z"
+    },
+    "Type Specialist": {
+      "totalFixes": 1,
+      "lastActive": "2025-08-20T14:08:54.607Z"
+    },
+    "Import/Export Specialist": {
+      "totalFixes": 209,
+      "lastActive": "2025-08-20T14:08:54.607Z"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+//GamesComponentsExportModule/,e,d} from./TeReoWordleUnlimited/,WordleGameState,SpellingBeeGameState, GameStats,MaoriWord,GameConfiguration}from./types/,normalizeMaoriText, getCulturalCategory,generateWhakataukiWisdom }from./utils/;
