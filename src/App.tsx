@@ -10,6 +10,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const MigrationDashboard = lazy(() => import('./components/MigrationDashboard'));
+const SuperintelligenceDashboard = lazy(() => import('./components/SuperintelligenceDashboard'));
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/migration-dashboard" element={<MigrationDashboard />} />
+              <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             </Routes>
           </Suspense>
         </main>

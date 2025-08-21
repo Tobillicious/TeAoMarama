@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
+import { initializeSuperintelligence } from './utils/superintelligence';
 
 // Simple performance monitoring
 const performanceMonitor = {
@@ -57,3 +58,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+
+// Initialize superintelligence after root mounts to avoid blocking first paint
+if (typeof window !== 'undefined') {
+  // Use env-driven defaults; override here as needed
+  initializeSuperintelligence();
+}
