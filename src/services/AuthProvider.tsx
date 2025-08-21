@@ -11,9 +11,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<{ email: string } | null>(null);
 
-  const login = async (email: string) => {
+  const login = async (email: string, password: string) => {
     // For now, just set authenticated to true
     // In a real implementation, you would validate credentials here
+    console.log('Login attempt for:', email, 'with password length:', password.length);
     setIsAuthenticated(true);
     setCurrentUser({ email });
     return { error: null };
