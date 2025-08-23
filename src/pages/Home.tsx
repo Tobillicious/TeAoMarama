@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ResourceCountDisplay } from '../components/ResourceCountDisplay';
 import { useAuth } from '../services/useAuth';
 import EducationalPlatform from './EducationalPlatform';
 import './Home.css';
@@ -40,8 +41,9 @@ const Home = React.memo(function Home() {
 
       {/* REAL EDUCATIONAL PLATFORM - Enhanced */}
       <div className="content-container">
+        <ResourceCountDisplay />
         <EducationalPlatform />
-        
+
         {/* Status Dashboard Grid */}
         <div className="dashboard-grid">
           {/* Educational Resources Status */}

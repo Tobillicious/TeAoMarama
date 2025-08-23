@@ -5,12 +5,16 @@ export const culturalUtils = {
    */
   hasCulturalContent(text: string): boolean {
     const culturalMarkers = [
-      'māori', 'maori', 'te reo', 'tikanga', 'whakataukī',
-      'kaitiakitanga', 'manaakitanga', 'whanaungatanga'
+      'māori',
+      'maori',
+      'te reo',
+      'tikanga',
+      'whakataukī',
+      'kaitiakitanga',
+      'manaakitanga',
+      'whanaungatanga',
     ];
-    return culturalMarkers.some(marker => 
-      text.toLowerCase().includes(marker)
-    );
+    return culturalMarkers.some((marker) => text.toLowerCase().includes(marker));
   },
 
   /**
@@ -45,9 +49,9 @@ export const culturalUtils = {
     return {
       isSafe: concerns.length === 0,
       concerns,
-      recommendations
+      recommendations,
     };
-  }
+  },
 };
 
 export const performanceUtils = {
@@ -56,7 +60,7 @@ export const performanceUtils = {
    */
   debounce<T extends (...args: any[]) => any>(
     func: T,
-    wait: number
+    wait: number,
   ): (...args: Parameters<T>) => void {
     let timeout: NodeJS.Timeout;
     return (...args: Parameters<T>) => {
@@ -70,7 +74,7 @@ export const performanceUtils = {
    */
   throttle<T extends (...args: any[]) => any>(
     func: T,
-    limit: number
+    limit: number,
   ): (...args: Parameters<T>) => void {
     let inThrottle: boolean;
     return (...args: Parameters<T>) => {
@@ -80,7 +84,7 @@ export const performanceUtils = {
         setTimeout(() => (inThrottle = false), limit);
       }
     };
-  }
+  },
 };
 
 export const educationalUtils = {
@@ -111,7 +115,7 @@ export const educationalUtils = {
     return [
       `Students will understand the key concepts of ${topic}`,
       `Students will be able to apply ${topic} knowledge in practical situations`,
-      `Students will appreciate the cultural significance of ${topic} in Te Ao Māori context`
+      `Students will appreciate the cultural significance of ${topic} in Te Ao Māori context`,
     ];
-  }
+  },
 };

@@ -13,7 +13,7 @@ class ComprehensiveCleanup {
 
   async executeCleanupSuite(): Promise<void> {
     console.log('🧹 COMPREHENSIVE CLEANUP SUITE ACTIVATED');
-    console.log('=' .repeat(60));
+    console.log('='.repeat(60));
     console.log('🎯 Mission: Clean up all linting errors and quality issues');
     console.log('🔧 Using DeepSeek API for superintelligent optimization');
     console.log('🌿 Cultural safety and educational excellence priority');
@@ -34,24 +34,27 @@ class ComprehensiveCleanup {
 
     // Fix unused variable in Login.tsx
     const loginPath = path.join(process.cwd(), 'src/components/Login.tsx');
-    
+
     try {
       let loginContent = fs.readFileSync(loginPath, 'utf8');
-      
+
       // Remove unused handleKeyDown function or add it to the JSX
-      if (loginContent.includes('handleKeyDown') && !loginContent.includes('onKeyDown={handleKeyDown}')) {
+      if (
+        loginContent.includes('handleKeyDown') &&
+        !loginContent.includes('onKeyDown={handleKeyDown}')
+      ) {
         // Add the keyboard handler to the form
         loginContent = loginContent.replace(
           '<form onSubmit={handleLogin}',
-          '<form onSubmit={handleLogin} onKeyDown={handleKeyDown}'
+          '<form onSubmit={handleLogin} onKeyDown={handleKeyDown}',
         );
-        
+
         fs.writeFileSync(loginPath, loginContent);
-        
+
         this.fixes.push({
           type: 'typescript',
           file: 'Login.tsx',
-          fix: 'Connected handleKeyDown to form onKeyDown event'
+          fix: 'Connected handleKeyDown to form onKeyDown event',
         });
       }
     } catch (error) {
@@ -64,27 +67,24 @@ class ComprehensiveCleanup {
   private async fixMarkdownLinting(): Promise<void> {
     console.log('📝 Fixing Markdown linting errors...');
 
-    const markdownFiles = [
-      'LLM_COORDINATION_PROTOCOL.md',
-      'LLM_SPECIALIZATION_TRAINING.md'
-    ];
+    const markdownFiles = ['LLM_COORDINATION_PROTOCOL.md', 'LLM_SPECIALIZATION_TRAINING.md'];
 
     for (const filename of markdownFiles) {
       const filePath = path.join(process.cwd(), filename);
-      
+
       try {
         let content = fs.readFileSync(filePath, 'utf8');
-        
+
         // Fix MD031: Add blank lines around fenced code blocks
         content = content.replace(/([^\n])\n```/g, '$1\n\n```');
         content = content.replace(/```\n([^\n])/g, '```\n\n$1');
-        
+
         fs.writeFileSync(filePath, content);
-        
+
         this.fixes.push({
           type: 'markdown',
           file: filename,
-          fix: 'Added blank lines around fenced code blocks (MD031)'
+          fix: 'Added blank lines around fenced code blocks (MD031)',
         });
       } catch (error) {
         console.warn(`Could not fix ${filename}:`, error);
@@ -346,7 +346,7 @@ export default AuthGuard;`;
     this.fixes.push({
       type: 'security',
       files: ['security.ts', 'AuthGuard.tsx'],
-      fix: 'Completed security middleware and authentication guards'
+      fix: 'Completed security middleware and authentication guards',
     });
 
     console.log('✅ Security hardening completed');
@@ -479,7 +479,7 @@ export const educationalUtils = {
     this.fixes.push({
       type: 'code_quality',
       file: 'platform-utils.ts',
-      fix: 'Added comprehensive utility functions for cultural safety, performance, and education'
+      fix: 'Added comprehensive utility functions for cultural safety, performance, and education',
     });
 
     console.log('✅ Code quality optimizations completed');
@@ -490,10 +490,10 @@ export const educationalUtils = {
       timestamp: new Date().toISOString(),
       totalFixes: this.fixes.length,
       categories: {
-        typescript: this.fixes.filter(f => f.type === 'typescript').length,
-        markdown: this.fixes.filter(f => f.type === 'markdown').length,
-        security: this.fixes.filter(f => f.type === 'security').length,
-        code_quality: this.fixes.filter(f => f.type === 'code_quality').length
+        typescript: this.fixes.filter((f) => f.type === 'typescript').length,
+        markdown: this.fixes.filter((f) => f.type === 'markdown').length,
+        security: this.fixes.filter((f) => f.type === 'security').length,
+        code_quality: this.fixes.filter((f) => f.type === 'code_quality').length,
       },
       fixes: this.fixes,
       accomplishments: [
@@ -502,15 +502,15 @@ export const educationalUtils = {
         'Completed comprehensive security hardening',
         'Implemented cultural safety utilities',
         'Added performance optimization utilities',
-        'Created educational content validation tools'
+        'Created educational content validation tools',
       ],
       nextSteps: [
         'Run full test suite to validate changes',
         'Deploy security policies to production database',
         'Implement cultural content review workflow',
         'Add performance monitoring dashboard',
-        'Create educator training documentation'
-      ]
+        'Create educator training documentation',
+      ],
     };
 
     const reportsDir = path.join(process.cwd(), 'reports');
