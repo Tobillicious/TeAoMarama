@@ -12,7 +12,7 @@ class SecurityHardening {
 
   async executeSecuritySuite(): Promise<void> {
     console.log('🛡️ SECURITY HARDENING SUITE ACTIVATED');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log('🎯 Mission: Fix all security vulnerabilities');
     console.log('🔍 Based on Supabase security audit findings');
     console.log('');
@@ -131,11 +131,11 @@ END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;`;
 
     fs.writeFileSync('./database/rls-security-policies.sql', rlsPolicies);
-    
+
     this.securityFixes.push({
       type: 'RLS_POLICIES',
       description: 'Comprehensive Row Level Security policies implemented',
-      impact: 'Prevents unauthorized access to educational and cultural resources'
+      impact: 'Prevents unauthorized access to educational and cultural resources',
     });
 
     console.log('✅ RLS policies created');
@@ -256,11 +256,11 @@ export const securityMiddleware = new SecureAPIMiddleware();
 export type { SecurityContext };`;
 
     fs.writeFileSync('./src/middleware/security.ts', securityMiddleware);
-    
+
     this.securityFixes.push({
       type: 'API_SECURITY',
       description: 'Secure API middleware with cultural sensitivity',
-      impact: 'Protects against unauthorized access and cultural content misuse'
+      impact: 'Protects against unauthorized access and cultural content misuse',
     });
 
     console.log('✅ Security middleware created');
@@ -300,11 +300,11 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
 };`;
 
     fs.writeFileSync('./src/components/AuthGuard.tsx', authGuard);
-    
+
     this.securityFixes.push({
       type: 'AUTH_GUARDS',
       description: 'Cultural authentication guards implemented',
-      impact: 'Protects sensitive cultural content'
+      impact: 'Protects sensitive cultural content',
     });
 
     console.log('✅ Authentication guards implemented');
@@ -319,20 +319,20 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
         'Security definer views without proper validation',
         'Unrestricted access to cultural content',
         'Missing rate limiting',
-        'Insufficient authentication guards'
+        'Insufficient authentication guards',
       ],
       culturalProtections: [
         'Sacred content access restrictions',
         'Kaitiaki role validation',
         'Cultural sensitivity levels',
-        'Iwi permission requirements'
+        'Iwi permission requirements',
       ],
       nextSteps: [
         'Deploy RLS policies to Supabase',
         'Test cultural access controls',
         'Monitor security audit logs',
-        'Implement additional cultural validations'
-      ]
+        'Implement additional cultural validations',
+      ],
     };
 
     const reportsDir = path.join(process.cwd(), 'reports');

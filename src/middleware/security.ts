@@ -1,6 +1,6 @@
 // Enhanced Security Middleware - Te Kura o TeAoMarama
-import { supabase } from '../supabaseClient';
 import type { User } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 
 export interface SecurityContext {
   user: User | null;
@@ -15,15 +15,18 @@ export class SecureAPIMiddleware {
   async authenticateRequest(request: Request): Promise<SecurityContext> {
     const authHeader = request.headers.get('Authorization');
     const clientIP = this.getClientIP(request);
-    
+
     let user = null;
     let culturalClearance: SecurityContext['culturalClearance'] = 'none';
     let educatorStatus = false;
 
     if (authHeader) {
       const token = authHeader.replace('Bearer ', '');
-      const { data: { user: authUser }, error } = await supabase.auth.getUser(token);
-      
+      const {
+        data: { user: authUser },
+        error,
+      } = await supabase.auth.getUser(token);
+
       if (authUser && !error) {
         user = authUser;
         culturalClearance = await this.getCulturalClearance(user);
@@ -40,22 +43,22 @@ export class SecureAPIMiddleware {
       user,
       culturalClearance,
       educatorStatus,
-      rateLimitRemaining
+      rateLimitRemaining,
     };
   }
 
   async validateCulturalAccess(
     culturalSensitivity: 'low' | 'medium' | 'high' | 'sacred',
-    context: SecurityContext
+    context: SecurityContext,
   ): Promise<boolean> {
     if (culturalSensitivity === 'high' && context.culturalClearance === 'none') {
       return false;
     }
-    
+
     if (culturalSensitivity === 'sacred' && context.culturalClearance !== 'kaitiaki') {
       return false;
     }
-    
+
     return true;
   }
 
@@ -73,7 +76,7 @@ export class SecureAPIMiddleware {
     } catch (error) {
       console.error('Error getting cultural clearance:', error);
     }
-    
+
     return 'none';
   }
 
@@ -99,7 +102,7 @@ export class SecureAPIMiddleware {
     const windowMs = 60 * 60 * 1000;
 
     const rateLimitData = this.rateLimitMap.get(key);
-    
+
     if (!rateLimitData || now > rateLimitData.resetTime) {
       this.rateLimitMap.set(key, { count: 1, resetTime: now + windowMs });
       return limit - 1;
@@ -119,7 +122,7 @@ export class SecureAPIMiddleware {
         p_action: event,
         p_resource_type: 'api_request',
         p_resource_id: null,
-        p_cultural_sensitivity: null
+        p_cultural_sensitivity: null,
       });
     } catch (error) {
       console.error('Failed to log security event:', error);
@@ -127,9 +130,7 @@ export class SecureAPIMiddleware {
   }
 
   private getClientIP(request: Request): string {
-    return request.headers.get('x-forwarded-for') || 
-           request.headers.get('x-real-ip') || 
-           'unknown';
+    return request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
   }
 }
 
