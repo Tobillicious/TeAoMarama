@@ -55,8 +55,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .dashboard-tabs {
@@ -623,21 +628,21 @@
   .dashboard-title {
     font-size: 2rem;
   }
-  
+
   .dashboard-tabs {
     flex-wrap: wrap;
     gap: 0.25rem;
   }
-  
+
   .tab {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
-  
+
   .dashboard-content {
     padding: 1rem;
   }
-  
+
   .metrics-grid,
   .systems-grid,
   .enhancements-grid,
@@ -645,11 +650,11 @@
   .performance-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .summary-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .status-indicator {
     flex-direction: column;
     gap: 0.5rem;
@@ -660,15 +665,15 @@
   .dashboard-header {
     padding: 1.5rem 1rem;
   }
-  
+
   .dashboard-title {
     font-size: 1.75rem;
   }
-  
+
   .dashboard-subtitle {
     font-size: 1rem;
   }
-  
+
   .metric-value,
   .performance-value {
     font-size: 1.75rem;

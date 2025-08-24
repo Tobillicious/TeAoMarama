@@ -8,8 +8,6 @@ generated_at: 2025-08-20T07:33:41.116Z
 cultural_safety: pending_review
 status: draft
 ---
-
-
 # He Tātari Raraunga: Statistics Through Aotearoa Census Data
 *Year 9 Mathematics - Depth-Focused Assessment*
 

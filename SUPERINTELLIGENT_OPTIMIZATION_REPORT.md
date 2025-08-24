@@ -83,7 +83,7 @@ The Te Kura o TeAoMarama platform has been successfully optimized using advanced
 
 ### **Production Deployment**
 
-- **URL**: https://teaomarama.netlify.app ✅
+- **URL**: <https://teaomarama.netlify.app> ✅
 - **Status**: LIVE AND OPERATIONAL ✅
 - **Build Time**: 2.75s (optimized)
 - **Bundle Size**: Optimized with code splitting

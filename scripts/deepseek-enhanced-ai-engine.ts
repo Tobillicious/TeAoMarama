@@ -36,21 +36,21 @@ interface AIEnhancement {
 
 class DeepSeekEnhancedAIEngine {
   private config: DeepSeekConfig;
-  private securityFixes: any[] = [];
+  private securityFixes: Record<string, unknown>[] = [];
   private aiEnhancements: AIEnhancement[] = [];
 
   constructor() {
     this.config = {
       apiKey: process.env.DEEPSEEK_API_KEY || 'sk-0fbd7c9a3a074348a6c6bb08cc8d2a0a',
       baseUrl: 'https://api.deepseek.com',
-      model: 'deepseek-chat'
+      model: 'deepseek-chat',
     };
   }
 
   async executeAIEnhancementSuite(): Promise<void> {
     console.log('🤖 DEEPSEEK ENHANCED AI ENGINE ACTIVATED');
-    console.log('=' .repeat(60));
-    console.log(`🔑 API Key: ${this.config.apiKey.substring(0, 12)}...`);
+    console.log('='.repeat(60));
+    console.log('🔑 API Key: ' + this.config.apiKey.substring(0, 12) + '...');
     console.log('🎯 Mission: Security hardening + AI superintelligence');
     console.log('🌿 Cultural Context: Te Ao Māori educational platform');
     console.log('');
@@ -85,26 +85,26 @@ class DeepSeekEnhancedAIEngine {
         severity: 'high',
         description: 'Row Level Security (RLS) not enabled on tables in schemas exposed',
         fix: 'Enable RLS on public.resource_embeddings table',
-        implemented: false
+        implemented: false,
       },
       {
         type: 'SECURITY_DEFINER_VIEW',
         severity: 'medium',
         description: 'Views defined with SECURITY DEFINER property detected',
         fix: 'Review and validate security definer views for proper permissions',
-        implemented: false
+        implemented: false,
       },
       {
         type: 'PUBLIC_VIEW_PERMISSIONS',
         severity: 'medium',
         description: 'Public views with broad access permissions',
         fix: 'Implement granular permissions on public views',
-        implemented: false
-      }
+        implemented: false,
+      },
     ];
 
-    console.log(`🔍 Identified ${securityIssues.length} security issues`);
-    
+    console.log('🔍 Identified ' + securityIssues.length + ' security issues');
+
     return {
       securityLevel: 'high',
       issues: securityIssues,
@@ -112,8 +112,8 @@ class DeepSeekEnhancedAIEngine {
         'Enable Row Level Security (RLS) on all public tables',
         'Implement user-based access controls',
         'Add API rate limiting and authentication middleware',
-        'Create security monitoring and alerting system'
-      ]
+        'Create security monitoring and alerting system',
+      ],
     };
   }
 
@@ -122,10 +122,10 @@ class DeepSeekEnhancedAIEngine {
 
     // 1. Create RLS policies
     await this.createRowLevelSecurityPolicies();
-    
+
     // 2. Secure API endpoints
     await this.createSecureAPIMiddleware();
-    
+
     // 3. Add authentication guards
     await this.implementAuthenticationGuards();
 
@@ -240,11 +240,11 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 `;
 
     fs.writeFileSync('./database/rls-policies.sql', rlsPolicies);
-    
+
     this.securityFixes.push({
       type: 'RLS_POLICIES',
       description: 'Comprehensive Row Level Security policies with cultural sensitivity',
-      impact: 'High - Prevents unauthorized access to educational and cultural resources'
+      impact: 'High - Prevents unauthorized access to educational and cultural resources',
     });
   }
 
@@ -476,11 +476,11 @@ export type { SecurityContext, CulturalResource };
 `;
 
     fs.writeFileSync('./src/middleware/security.ts', secureMiddleware);
-    
+
     this.securityFixes.push({
       type: 'API_SECURITY',
       description: 'Comprehensive API security with cultural sensitivity and rate limiting',
-      impact: 'Critical - Protects against unauthorized access and cultural content misuse'
+      impact: 'Critical - Protects against unauthorized access and cultural content misuse',
     });
   }
 
@@ -749,11 +749,11 @@ export const useCulturalPermissions = () => {
 `;
 
     fs.writeFileSync('./src/components/AuthGuard.tsx', authGuards);
-    
+
     this.securityFixes.push({
       type: 'AUTH_GUARDS',
       description: 'Cultural-aware authentication guards with granular permissions',
-      impact: 'High - Protects sacred and sensitive cultural content from unauthorized access'
+      impact: 'High - Protects sacred and sensitive cultural content from unauthorized access',
     });
   }
 
@@ -865,7 +865,7 @@ Holistic assessment considering both academic understanding and cultural appreci
 }
 
 export const aiContentGenerator = new AIContentGenerator();
-\`;
+`;
 
     fs.writeFileSync('./src/utils/ai-content-generator.ts', aiContentGenerator);
 
@@ -874,7 +874,7 @@ export const aiContentGenerator = new AIContentGenerator();
       implementation: 'DeepSeek-powered culturally sensitive content creation',
       impact: 'Automated generation of educational content with cultural safety',
       culturalSensitivity: 9,
-      educationalValue: 8
+      educationalValue: 8,
     });
 
     console.log('✅ AI content generation system created\n');
@@ -889,7 +889,7 @@ export const aiContentGenerator = new AIContentGenerator();
       implementation: 'Automated tikanga compliance checking',
       impact: 'Prevents cultural misappropriation and ensures content safety',
       culturalSensitivity: 10,
-      educationalValue: 7
+      educationalValue: 7,
     });
 
     console.log('✅ Cultural validation system implemented\n');
@@ -904,7 +904,7 @@ export const aiContentGenerator = new AIContentGenerator();
       implementation: 'Personalized learning pathways with cultural integration',
       impact: 'Adaptive learning experiences tailored to individual students',
       culturalSensitivity: 8,
-      educationalValue: 10
+      educationalValue: 10,
     });
 
     console.log('✅ Educational AI systems deployed\n');
@@ -919,7 +919,7 @@ export const aiContentGenerator = new AIContentGenerator();
       implementation: 'Self-improving platform using ML feedback loops',
       impact: 'Continuous optimization based on user engagement and cultural metrics',
       culturalSensitivity: 7,
-      educationalValue: 9
+      educationalValue: 9,
     });
 
     console.log('✅ Autonomous optimization active\n');
@@ -931,22 +931,22 @@ export const aiContentGenerator = new AIContentGenerator();
       securityFixes: this.securityFixes.length,
       aiEnhancements: this.aiEnhancements.length,
       culturalSafetyScore: Math.round(
-        this.aiEnhancements.reduce((sum, e) => sum + e.culturalSensitivity, 0) / 
-        this.aiEnhancements.length
+        this.aiEnhancements.reduce((sum, e) => sum + e.culturalSensitivity, 0) /
+          this.aiEnhancements.length,
       ),
       educationalValueScore: Math.round(
-        this.aiEnhancements.reduce((sum, e) => sum + e.educationalValue, 0) / 
-        this.aiEnhancements.length
+        this.aiEnhancements.reduce((sum, e) => sum + e.educationalValue, 0) /
+          this.aiEnhancements.length,
       ),
       securityImprovements: this.securityFixes,
       aiFeatures: this.aiEnhancements,
       nextPhaseRecommendations: [
-        '🚀 Deploy real-time DeepSeek API integration',
-        '🌍 Implement multi-iwi cultural validation network',
-        '🎯 Create advanced learning analytics dashboard',
-        '🤝 Build collaborative AI teaching assistant',
-        '📊 Implement predictive student success modeling'
-      ]
+        'Deploy real-time DeepSeek API integration',
+        'Implement multi-iwi cultural validation network',
+        'Create advanced learning analytics dashboard',
+        'Build collaborative AI teaching assistant',
+        'Implement predictive student success modeling',
+      ],
     };
 
     const reportsDir = path.join(process.cwd(), 'reports');
@@ -954,27 +954,27 @@ export const aiContentGenerator = new AIContentGenerator();
       fs.mkdirSync(reportsDir, { recursive: true });
     }
 
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename = `deepseek-ai-enhancement-${timestamp}.json`;
+    const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\./g, '-');
+    const filename = 'deepseek_ai_enhancement_' + timestamp + '.json';
     const filepath = path.join(reportsDir, filename);
 
     fs.writeFileSync(filepath, JSON.stringify(report, null, 2));
 
-    console.log('\n🎯 DEEPSEEK AI ENHANCEMENT COMPLETE!');
-    console.log('=' .repeat(60));
-    console.log(`🔒 Security Fixes Applied: ${report.securityFixes}`);
-    console.log(`🤖 AI Enhancements: ${report.aiEnhancements}`);
-    console.log(`🌿 Cultural Safety Score: ${report.culturalSafetyScore}/10`);
-    console.log(`📚 Educational Value Score: ${report.educationalValueScore}/10`);
-    console.log(`\n📄 Full report saved: ${filepath}`);
-    
-    console.log('\n🚀 Next Phase Recommendations:');
+    console.log('\nDEEPSEEK AI ENHANCEMENT COMPLETE!');
+    console.log('='.repeat(60));
+    console.log('Security Fixes Applied: ' + report.securityFixes);
+    console.log('AI Enhancements: ' + report.aiEnhancements);
+    console.log('Cultural Safety Score: ' + report.culturalSafetyScore + '/10');
+    console.log('Educational Value Score: ' + report.educationalValueScore + '/10');
+    console.log('\nFull report saved: ' + filepath);
+
+    console.log('\nNext Phase Recommendations:');
     report.nextPhaseRecommendations.forEach((rec, i) => {
-      console.log(`${i + 1}. ${rec}`);
+      console.log(i + 1 + '. ' + rec);
     });
 
-    console.log('\n🎉 TE KURA O TEAOMARAMA IS NOW AI-ENHANCED!');
-    console.log('🧠 Superintelligent • 🔒 Secure • 🌿 Culturally Safe • 📚 Educationally Excellent');
+    console.log('\nTE KURA O TEAOMARAMA IS NOW AI-ENHANCED!');
+    console.log('Superintelligent • Secure • Culturally Safe • Educationally Excellent');
   }
 }
 

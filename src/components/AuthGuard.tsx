@@ -1,48 +1,136 @@
-import type { ReactNode } from 'react';
-import React, { useEffect, useState } from 'react';
+// Authentication Guards - Te Kura o TeAoMarama
+// Cultural sensitivity and educational access controls
+
+import { ReactNode, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../services/useAuth';
+import { supabase } from '../supabaseClient';
+import { useAuth } from './useAuth';
 
 interface AuthGuardProps {
   children: ReactNode;
   requireAuth?: boolean;
   requireEducator?: boolean;
+  requireCulturalClearance?: 'basic' | 'approved' | 'kaitiaki';
   culturalSensitivity?: 'low' | 'medium' | 'high' | 'sacred';
+}
+
+interface UserProfile {
+  role: string;
+  educator_status: boolean;
+  cultural_clearance: string;
+  cultural_roles: string[];
+  iwi_affiliations: string[];
 }
 
 export const AuthGuard: React.FC<AuthGuardProps> = ({
   children,
   requireAuth = true,
   requireEducator = false,
+  requireCulturalClearance,
   culturalSensitivity = 'low',
 }) => {
   const { isAuthenticated, currentUser } = useAuth();
   const location = useLocation();
-  const [hasAccess, setHasAccess] = useState(false);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [accessDenied, setAccessDenied] = useState(false);
 
   useEffect(() => {
-    checkAccess();
-  }, [currentUser, culturalSensitivity, requireEducator]);
-
-  const checkAccess = async () => {
-    if (requireAuth && !isAuthenticated) {
-      setHasAccess(false);
+    if (currentUser) {
+      loadUserProfile();
+    } else {
       setLoading(false);
-      return;
+    }
+  }, [currentUser]);
+
+  const loadUserProfile = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('user_profiles')
+        .select('role, educator_status, cultural_clearance, cultural_roles, iwi_affiliations')
+        .eq('user_id', currentUser?.id)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        console.error('Error loading user profile:', error);
+        setAccessDenied(true);
+      } else {
+        setUserProfile(data);
+
+        // Check access permissions
+        const hasAccess = await validateAccess(data);
+        setAccessDenied(!hasAccess);
+      }
+    } catch (error) {
+      console.error('Profile loading error:', error);
+      setAccessDenied(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const validateAccess = async (profile: UserProfile | null): Promise<boolean> => {
+    if (!profile && requireAuth) return false;
+
+    // Check educator requirement
+    if (requireEducator && !profile?.educator_status && profile?.role !== 'educator') {
+      await logAccessAttempt('EDUCATOR_REQUIRED', false);
+      return false;
     }
 
-    if (!requireAuth) {
-      setHasAccess(true);
-      setLoading(false);
-      return;
+    // Check cultural clearance
+    if (requireCulturalClearance) {
+      const clearanceLevel = getClearanceLevel(profile?.cultural_clearance);
+      const requiredLevel = getClearanceLevel(requireCulturalClearance);
+
+      if (clearanceLevel < requiredLevel) {
+        await logAccessAttempt('INSUFFICIENT_CULTURAL_CLEARANCE', false);
+        return false;
+      }
     }
 
-    // Additional checks for cultural sensitivity and educator status
-    // would be implemented here using the security middleware
+    // Check cultural sensitivity access
+    if (culturalSensitivity === 'sacred' && !profile?.cultural_roles?.includes('kaitiaki')) {
+      await logAccessAttempt('SACRED_CONTENT_ACCESS_DENIED', false);
+      return false;
+    }
 
-    setHasAccess(true);
-    setLoading(false);
+    if (
+      culturalSensitivity === 'high' &&
+      !['approved', 'kaitiaki'].includes(profile?.cultural_clearance || '')
+    ) {
+      await logAccessAttempt('HIGH_SENSITIVITY_ACCESS_DENIED', false);
+      return false;
+    }
+
+    await logAccessAttempt('ACCESS_GRANTED', true);
+    return true;
+  };
+
+  const getClearanceLevel = (clearance: string): number => {
+    switch (clearance) {
+      case 'kaitiaki':
+        return 4;
+      case 'approved':
+        return 3;
+      case 'basic':
+        return 2;
+      default:
+        return 1;
+    }
+  };
+
+  const logAccessAttempt = async (event: string, success: boolean) => {
+    try {
+      await supabase.rpc('log_security_event', {
+        p_action: event,
+        p_resource_type: 'page_access',
+        p_resource_id: location.pathname,
+        p_cultural_sensitivity: culturalSensitivity,
+      });
+    } catch (error) {
+      console.error('Failed to log access attempt:', error);
+    }
   };
 
   if (loading) {
@@ -60,7 +148,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  if (!hasAccess) {
+  if (accessDenied) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <div className="max-w-md p-6 bg-white rounded-lg shadow-lg text-center">
@@ -81,9 +169,33 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
               </svg>
             </div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Access Restricted</h2>
-            <p className="text-gray-600 mb-4">
-              🌿 This content requires special cultural clearance or educator permissions.
-            </p>
+
+            {requireCulturalClearance && (
+              <p className="text-gray-600 mb-4">
+                This content requires cultural clearance level:{' '}
+                <strong>{requireCulturalClearance}</strong>
+              </p>
+            )}
+
+            {culturalSensitivity === 'high' && (
+              <p className="text-gray-600 mb-4">
+                🌿 This content contains culturally sensitive material that requires special
+                permissions to access.
+              </p>
+            )}
+
+            {culturalSensitivity === 'sacred' && (
+              <p className="text-gray-600 mb-4">
+                🙏 This sacred content is restricted to authorized kaitiaki only. Please contact
+                your cultural advisor.
+              </p>
+            )}
+
+            {requireEducator && (
+              <p className="text-gray-600 mb-4">
+                👩‍🏫 This area is restricted to verified educators and teaching professionals.
+              </p>
+            )}
           </div>
 
           <div className="space-y-3">
@@ -98,7 +210,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
               href="/contact?subject=cultural-clearance"
               className="block w-full px-4 py-2 bg-pounamu text-white rounded-md hover:bg-pounamu-dark transition-colors"
             >
-              Request Access
+              Request Cultural Clearance
             </a>
           </div>
         </div>
@@ -109,4 +221,56 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
   return <>{children}</>;
 };
 
-export default AuthGuard;
+// Higher-order component for route protection
+export const withAuthGuard = (
+  Component: React.ComponentType,
+  options: Omit<AuthGuardProps, 'children'>,
+) => {
+  return (props: any) => (
+    <AuthGuard {...options}>
+      <Component {...props} />
+    </AuthGuard>
+  );
+};
+
+// Hook for checking cultural permissions in components
+export const useCulturalPermissions = () => {
+  const { currentUser } = useAuth();
+  const [permissions, setPermissions] = useState({
+    canAccessSacred: false,
+    canAccessHigh: false,
+    culturalClearance: 'none',
+    isKaitiaki: false,
+    isEducator: false,
+  });
+
+  useEffect(() => {
+    if (currentUser) {
+      loadPermissions();
+    }
+  }, [currentUser]);
+
+  const loadPermissions = async () => {
+    try {
+      const { data } = await supabase
+        .from('user_profiles')
+        .select('role, educator_status, cultural_clearance, cultural_roles')
+        .eq('user_id', currentUser?.id)
+        .single();
+
+      if (data) {
+        setPermissions({
+          canAccessSacred: data.cultural_roles?.includes('kaitiaki') || false,
+          canAccessHigh: ['approved', 'kaitiaki'].includes(data.cultural_clearance) || false,
+          culturalClearance: data.cultural_clearance || 'none',
+          isKaitiaki: data.cultural_roles?.includes('kaitiaki') || false,
+          isEducator: data.educator_status || data.role === 'educator',
+        });
+      }
+    } catch (error) {
+      console.error('Error loading cultural permissions:', error);
+    }
+  };
+
+  return permissions;
+};

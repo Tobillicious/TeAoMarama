@@ -8,7 +8,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 class SecurityHardening {
-  private securityFixes: any[] = [];
+  private securityFixes: Array<{
+    type: string;
+    description: string;
+    status: string;
+    impact?: string;
+  }> = [];
 
   async executeSecuritySuite(): Promise<void> {
     console.log('🛡️ SECURITY HARDENING SUITE ACTIVATED');
@@ -135,6 +140,7 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;`;
     this.securityFixes.push({
       type: 'RLS_POLICIES',
       description: 'Comprehensive Row Level Security policies implemented',
+      status: 'implemented',
       impact: 'Prevents unauthorized access to educational and cultural resources',
     });
 
@@ -260,6 +266,7 @@ export type { SecurityContext };`;
     this.securityFixes.push({
       type: 'API_SECURITY',
       description: 'Secure API middleware with cultural sensitivity',
+      status: 'implemented',
       impact: 'Protects against unauthorized access and cultural content misuse',
     });
 
@@ -304,6 +311,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
     this.securityFixes.push({
       type: 'AUTH_GUARDS',
       description: 'Cultural authentication guards implemented',
+      status: 'implemented',
       impact: 'Protects sensitive cultural content',
     });
 

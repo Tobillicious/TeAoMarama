@@ -1885,4 +1885,3 @@ CopyEdit
 If you want, I can **generate a cleaned folder structure \+ .gitignore \+ Netlify config** that sets you up for this **medium-term hybrid architecture** without leaking private files.
 
 Do you want me to **build that next as a repo cleanup plan**? It will make your migration painless.
-

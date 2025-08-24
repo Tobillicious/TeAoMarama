@@ -4,9 +4,9 @@
  * Analyzes our deployed website performance, content, and optimization opportunities
  */
 
+import { exec } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
@@ -43,22 +43,17 @@ class WebsiteAnalyzer {
 
   async analyzeWebsite(): Promise<SiteReport> {
     console.log('🌐 TE KURA o TEAOMARAMA WEBSITE ANALYZER');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`🎯 Target: ${this.baseUrl}`);
     console.log('🚀 Analyzing performance, cultural content, and educational resources');
     console.log('');
 
-    const pagesToAnalyze = [
-      '',
-      '/about',
-      '/contact',
-      '/migration-dashboard'
-    ];
+    const pagesToAnalyze = ['', '/about', '/contact', '/migration-dashboard'];
 
     for (const page of pagesToAnalyze) {
       const fullUrl = `${this.baseUrl}${page}`;
       console.log(`🔍 Analyzing: ${fullUrl}`);
-      
+
       try {
         const analysis = await this.analyzePage(fullUrl);
         this.pages.push(analysis);
@@ -72,11 +67,13 @@ class WebsiteAnalyzer {
 
   private async analyzePage(url: string): Promise<PageAnalysis> {
     const startTime = Date.now();
-    
+
     try {
       // Use curl to fetch page content and analyze response
-      const { stdout: responseData, stderr } = await execAsync(`curl -s -w "\\n---SEPARATOR---%{http_code},%{time_total}" "${url}"`);
-      
+      const { stdout: responseData, stderr } = await execAsync(
+        `curl -s -w "\\n---SEPARATOR---%{http_code},%{time_total}" "${url}"`,
+      );
+
       if (stderr) {
         console.warn(`Warning for ${url}:`, stderr);
       }
@@ -101,9 +98,8 @@ class WebsiteAnalyzer {
         educationalResources: this.identifyEducationalResources(content),
         performanceNotes: this.analyzePerformance(content, loadTime),
         accessibility: this.analyzeAccessibility(content),
-        recommendations: this.generatePageRecommendations(content, url)
+        recommendations: this.generatePageRecommendations(content, url),
       };
-
     } catch (error) {
       console.warn(`Failed to analyze ${url}:`, error);
       return {
@@ -116,27 +112,52 @@ class WebsiteAnalyzer {
         educationalResources: [],
         performanceNotes: ['❌ Failed to load page'],
         accessibility: [],
-        recommendations: ['🔧 Fix page loading issues']
+        recommendations: ['🔧 Fix page loading issues'],
       };
     }
   }
 
   private identifyCulturalContent(content: string): string[] {
     const culturalMarkers = [
-      'māori', 'maori', 'te reo', 'whakataukī', 'whakatauki', 
-      'tikanga', 'kaitiakitanga', 'manaakitanga', 'whanaungatanga',
-      'aotearoa', 'tamariki', 'kaitiaki', 'mihara', 'rangatiratanga',
-      'tino rangatiratanga', 'iwi', 'hapū', 'hapu', 'marae',
-      'whakapapa', 'karakia', 'haka', 'waiata', 'purakau'
+      'māori',
+      'maori',
+      'te reo',
+      'whakataukī',
+      'whakatauki',
+      'tikanga',
+      'kaitiakitanga',
+      'manaakitanga',
+      'whanaungatanga',
+      'aotearoa',
+      'tamariki',
+      'kaitiaki',
+      'mihara',
+      'rangatiratanga',
+      'tino rangatiratanga',
+      'iwi',
+      'hapū',
+      'hapu',
+      'marae',
+      'whakapapa',
+      'karakia',
+      'haka',
+      'waiata',
+      'purakau',
     ];
 
     const contentLower = content.toLowerCase();
     const found = culturalMarkers
-      .filter(marker => contentLower.includes(marker))
-      .map(marker => `🌿 ${marker.charAt(0).toUpperCase() + marker.slice(1)} integration detected`);
+      .filter((marker) => contentLower.includes(marker))
+      .map(
+        (marker) => `🌿 ${marker.charAt(0).toUpperCase() + marker.slice(1)} integration detected`,
+      );
 
     // Check for Māori language usage
-    if (contentLower.includes('te ') || contentLower.includes('ko ') || contentLower.includes('nga ')) {
+    if (
+      contentLower.includes('te ') ||
+      contentLower.includes('ko ') ||
+      contentLower.includes('nga ')
+    ) {
       found.push('🗣️ Te Reo Māori language usage detected');
     }
 
@@ -157,7 +178,7 @@ class WebsiteAnalyzer {
       { term: 'education', emoji: '🎓', description: 'Educational platform features' },
       { term: 'student', emoji: '👨‍🎓', description: 'Student-focused content' },
       { term: 'teacher', emoji: '👩‍🏫', description: 'Teacher resources' },
-      { term: 'lesson', emoji: '📖', description: 'Lesson materials' }
+      { term: 'lesson', emoji: '📖', description: 'Lesson materials' },
     ];
 
     educationalKeywords.forEach(({ term, emoji, description }) => {
@@ -235,8 +256,10 @@ class WebsiteAnalyzer {
     const contentLower = content.toLowerCase();
 
     if (url === this.baseUrl) {
-      recommendations.push('🏠 Homepage: Consider adding hero section with clear value proposition');
-      
+      recommendations.push(
+        '🏠 Homepage: Consider adding hero section with clear value proposition',
+      );
+
       if (!contentLower.includes('testimonial') && !contentLower.includes('review')) {
         recommendations.push('💬 Add user testimonials for social proof');
       }
@@ -262,24 +285,26 @@ class WebsiteAnalyzer {
     let educationalTotal = 0;
     let performanceTotal = 0;
 
-    this.pages.forEach(page => {
+    this.pages.forEach((page) => {
       culturalTotal += page.culturalContent.length * 15;
       educationalTotal += page.educationalResources.length * 12;
-      performanceTotal += page.performanceNotes.filter(note => 
-        note.includes('✅') || note.includes('⚡') || note.includes('🚀')
-      ).length * 25;
+      performanceTotal +=
+        page.performanceNotes.filter(
+          (note) => note.includes('✅') || note.includes('⚡') || note.includes('🚀'),
+        ).length * 25;
     });
 
     return {
       cultural: Math.min(100, culturalTotal),
       educational: Math.min(100, educationalTotal),
-      performance: Math.min(100, performanceTotal)
+      performance: Math.min(100, performanceTotal),
     };
   }
 
   private generateReport(): SiteReport {
     const scores = this.calculateScores();
-    const avgLoadTime = this.pages.reduce((sum, page) => sum + page.loadTime, 0) / this.pages.length;
+    const avgLoadTime =
+      this.pages.reduce((sum, page) => sum + page.loadTime, 0) / this.pages.length;
 
     const strategicRecommendations = [
       '🚀 Implement advanced analytics to track educational engagement metrics',
@@ -291,7 +316,7 @@ class WebsiteAnalyzer {
       '🎯 Develop personalized learning paths based on cultural context',
       '🌟 Integrate gamification elements aligned with Māori values',
       '📚 Implement offline-first approach for rural classroom connectivity',
-      '🏆 Add achievement system celebrating both academic and cultural milestones'
+      '🏆 Add achievement system celebrating both academic and cultural milestones',
     ];
 
     return {
@@ -303,8 +328,16 @@ class WebsiteAnalyzer {
       educationalContentScore: scores.educational,
       performanceScore: scores.performance,
       pages: this.pages,
-      summary: `Analyzed ${this.pages.length} pages of Te Kura o TeAoMarama educational platform. Cultural Integration: ${scores.cultural}%, Educational Content: ${scores.educational}%, Performance: ${scores.performance}%. Average load time: ${Math.round(avgLoadTime)}ms. Platform demonstrates strong cultural foundation with significant educational resource depth.`,
-      strategicRecommendations
+      summary: `Analyzed ${
+        this.pages.length
+      } pages of Te Kura o TeAoMarama educational platform. Cultural Integration: ${
+        scores.cultural
+      }%, Educational Content: ${scores.educational}%, Performance: ${
+        scores.performance
+      }%. Average load time: ${Math.round(
+        avgLoadTime,
+      )}ms. Platform demonstrates strong cultural foundation with significant educational resource depth.`,
+      strategicRecommendations,
     };
   }
 
@@ -328,37 +361,38 @@ async function main() {
   try {
     const analyzer = new WebsiteAnalyzer();
     const report = await analyzer.analyzeWebsite();
-    
+
     console.log('\n🎯 WEBSITE ANALYSIS COMPLETE!');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📊 Performance Score: ${report.performanceScore}%`);
     console.log(`🌿 Cultural Integration: ${report.culturalIntegrationScore}%`);
     console.log(`📚 Educational Content: ${report.educationalContentScore}%`);
     console.log(`⏱️  Average Load Time: ${report.averageLoadTime}ms`);
     console.log(`\n📋 Summary: ${report.summary}`);
-    
+
     console.log('\n🚀 Top Strategic Recommendations:');
     report.strategicRecommendations.slice(0, 5).forEach((rec, i) => {
       console.log(`${i + 1}. ${rec}`);
     });
 
     console.log('\n📖 Detailed Page Analysis:');
-    report.pages.forEach(page => {
+    report.pages.forEach((page) => {
       console.log(`\n🔗 ${page.url}`);
       console.log(`   Status: ${page.status} | Load: ${Math.round(page.loadTime)}ms`);
-      console.log(`   Cultural: ${page.culturalContent.length} markers | Educational: ${page.educationalResources.length} resources`);
-      
+      console.log(
+        `   Cultural: ${page.culturalContent.length} markers | Educational: ${page.educationalResources.length} resources`,
+      );
+
       if (page.culturalContent.length > 0) {
         console.log(`   🌿 Cultural: ${page.culturalContent.slice(0, 2).join(', ')}`);
       }
-      
+
       if (page.educationalResources.length > 0) {
         console.log(`   📚 Educational: ${page.educationalResources.slice(0, 2).join(', ')}`);
       }
     });
 
     await analyzer.saveReport(report);
-    
   } catch (error) {
     console.error('🚨 Analysis failed:', error);
     process.exit(1);

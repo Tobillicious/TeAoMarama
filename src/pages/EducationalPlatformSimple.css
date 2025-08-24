@@ -1,0 +1,132 @@
+/* Educational Platform Simple Styles */
+
+.resource-title {
+  margin: 0 0 10px 0;
+  color: #1e40af;
+}
+
+.resource-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.resource-description {
+  margin: 10px 0;
+  color: #4b5563;
+}
+
+.resource-cultural-section {
+  margin-top: 15px;
+}
+
+.cultural-safety-label {
+  color: #059669;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cultural-context {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.available-indicator {
+  color: #16a34a;
+  font-size: 12px;
+}
+
+.no-resources-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.platform-footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+/* Subject filter buttons */
+.subject-filter-btn {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subject-filter-btn.active {
+  background-color: #1e40af;
+  color: white;
+}
+
+.subject-filter-btn.inactive {
+  background-color: #f3f4f6;
+  color: black;
+}
+
+/* Resource grid */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Resource cards */
+.resource-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Subject badges */
+.subject-badge {
+  background-color: #059669;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.year-badge {
+  background-color: #ca8a04;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.type-badge {
+  background-color: #7c3aed;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* Resource footer */
+.resource-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.access-resource-btn {
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

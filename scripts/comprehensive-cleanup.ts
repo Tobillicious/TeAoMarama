@@ -9,7 +9,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 class ComprehensiveCleanup {
-  private fixes: any[] = [];
+  private fixes: Array<{ type: string; file: string; fix: string }> = [];
 
   async executeCleanupSuite(): Promise<void> {
     console.log('🧹 COMPREHENSIVE CLEANUP SUITE ACTIVATED');
@@ -345,7 +345,7 @@ export default AuthGuard;`;
 
     this.fixes.push({
       type: 'security',
-      files: ['security.ts', 'AuthGuard.tsx'],
+      file: 'security.ts',
       fix: 'Completed security middleware and authentication guards',
     });
 

@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "totalProblems": 297,
+    "lastUpdated": "2025-01-20T08:00:00Z",
+    "version": "1.0.0",
+    "status": "active"
+  },
+  "agents": {
+    "agent1_linting": {
+      "name": "Linting & Type Safety Specialist",
+      "assignedProblems": 65,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "critical"
+    },
+    "agent2_build": {
+      "name": "Build & Architecture Specialist", 
+      "assignedProblems": 15,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "critical"
+    },
+    "agent3_components": {
+      "name": "Component Integration Specialist",
+      "assignedProblems": 45,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "high"
+    },
+    "agent4_superintelligence": {
+      "name": "Superintelligence System Specialist",
+      "assignedProblems": 35,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "high"
+    },
+    "agent5_qa": {
+      "name": "Testing & Quality Assurance",
+      "assignedProblems": 40,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "medium"
+    },
+    "agent6_docs": {
+      "name": "Documentation & Knowledge Management",
+      "assignedProblems": 25,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "medium"
+    },
+    "agent7_performance": {
+      "name": "Performance & Optimization",
+      "assignedProblems": 30,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "high"
+    },
+    "agent8_cultural": {
+      "name": "Cultural Safety & Accessibility",
+      "assignedProblems": 20,
+      "solvedProblems": 0,
+      "status": "active",
+      "priority": "critical"
+    }
+  },
+  "problems": {
+    "linting_001": {
+      "id": "linting_001",
+      "agent": "agent1_linting",
+      "category": "TypeScript",
+      "priority": 1,
+      "description": "Unexpected any. Specify a different type",
+      "file": "src/components/SuperintelligenceDashboard.tsx",
+      "line": 12,
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "5m"
+    },
+    "linting_002": {
+      "id": "linting_002", 
+      "agent": "agent1_linting",
+      "category": "ESLint",
+      "priority": 2,
+      "description": "'coordinationReport' is assigned a value but never used",
+      "file": "src/utils/superintelligence.ts",
+      "line": 59,
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "2m"
+    },
+    "build_001": {
+      "id": "build_001",
+      "agent": "agent2_build", 
+      "category": "Build",
+      "priority": 1,
+      "description": "Parsing error: ',' expected",
+      "file": "src/components/SuperintelligenceDashboard.tsx",
+      "line": 958,
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "10m"
+    },
+    "component_001": {
+      "id": "component_001",
+      "agent": "agent3_components",
+      "category": "React",
+      "priority": 2,
+      "description": "React Hook useEffect has missing dependencies",
+      "file": "src/components/AuthGuard.tsx",
+      "line": 46,
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "8m"
+    },
+    "superintelligence_001": {
+      "id": "superintelligence_001",
+      "agent": "agent4_superintelligence",
+      "category": "Integration",
+      "priority": 1,
+      "description": "Superintelligence tool integration gaps",
+      "file": "src/utils/superintelligence.ts",
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "15m"
+    },
+    "performance_001": {
+      "id": "performance_001",
+      "agent": "agent7_performance",
+      "category": "Performance",
+      "priority": 2,
+      "description": "Bundle size optimization needed",
+      "file": "dist/",
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "20m"
+    },
+    "cultural_001": {
+      "id": "cultural_001",
+      "agent": "agent8_cultural",
+      "category": "Cultural Safety",
+      "priority": 1,
+      "description": "Māori cultural protocol validation",
+      "file": "src/components/",
+      "status": "open",
+      "assignedAt": "2025-01-20T08:00:00Z",
+      "estimatedTime": "25m"
+    }
+  },
+  "coordination": {
+    "heartbeatInterval": 30,
+    "progressSyncInterval": 300,
+    "lastHeartbeat": "2025-01-20T08:00:00Z",
+    "activeAgents": 8,
+    "totalProgress": 0,
+    "estimatedCompletion": "2025-01-20T12:00:00Z"
+  }
+}

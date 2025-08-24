@@ -44,6 +44,7 @@ Te Kura o TeAoMarama is now a **FULLY FUNCTIONAL, LIVE EDUCATIONAL PLATFORM** fo
 - **Subjects Covered**: Mathematics, Science, Social Studies, Language, Technology, Assessment
 
 #### **Key Educational Components**
+
 ```
 ✅ Y2 Visual Arts Patterns in Nature Māori Design
 ✅ Y5 Physical Education Traditional Māori Games  
@@ -89,6 +90,7 @@ Te Kura o TeAoMarama is now a **FULLY FUNCTIONAL, LIVE EDUCATIONAL PLATFORM** fo
 - **Caching Strategy**: Advanced cache-first implementation
 
 #### **Build Performance Metrics**
+
 ```
 ✓ Build Time: 2.97 seconds
 ✓ Modules Transformed: 129 optimized modules

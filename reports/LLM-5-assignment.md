@@ -3,8 +3,6 @@
 ## Role: Type Definition Creation
 
 ## Target Files:
-
-
 ## Commands to Run:
 `node scripts/create-missing-types.cjs`
 `npm run typecheck`

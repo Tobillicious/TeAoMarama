@@ -329,7 +329,16 @@ export class EducationalPlatformEnhancer {
     return { safe, recommendations };
   }
 
-  public optimizeLearningExperience(userProfile: UserProfile, content: Content): Content & { personalized: boolean; culturalContext: string; learningStyle: string; difficulty: string; recommendations: string[] } {
+  public optimizeLearningExperience(
+    userProfile: UserProfile,
+    content: Content,
+  ): Content & {
+    personalized: boolean;
+    culturalContext: string;
+    learningStyle: string;
+    difficulty: string;
+    recommendations: string[];
+  } {
     // Learning optimization logic
     return {
       ...content,
@@ -341,7 +350,10 @@ export class EducationalPlatformEnhancer {
     };
   }
 
-  private calculateOptimalDifficulty(userProfile: UserProfile, content: Content): string {
+  private calculateOptimalDifficulty(
+    userProfile: UserProfile,
+    content: Content,
+  ): 'beginner' | 'intermediate' | 'advanced' {
     // Difficulty calculation logic
     const userLevel = userProfile.skillLevel || 'intermediate';
     const contentLevel = content.difficulty || 'intermediate';
@@ -350,7 +362,7 @@ export class EducationalPlatformEnhancer {
       return 'intermediate';
     }
 
-    return contentLevel;
+    return contentLevel as 'beginner' | 'intermediate' | 'advanced';
   }
 
   private generateRecommendations(userProfile: UserProfile, content: Content): string[] {

@@ -3,8 +3,6 @@
 ## Role: Unused Variable Cleanup
 
 ## Target Files:
-
-
 ## Commands to Run:
 `node scripts/remove-unused-vars.cjs`
 `npm run lint | grep "no-unused-vars" | head -20`

@@ -3,8 +3,6 @@
 ## Role: Code Style Standardization
 
 ## Target Files:
-
-
 ## Commands to Run:
 `npm run format`
 `npm run lint | grep "prettier" | head -20`
