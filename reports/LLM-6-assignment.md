@@ -3,8 +3,6 @@
 ## Role: Property Name Corrections
 
 ## Target Files:
-
-
 ## Commands to Run:
 `node scripts/fix-property-names.cjs`
 `npm run lint | grep "Property.*does not exist" | head -20`

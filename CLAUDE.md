@@ -48,3 +48,13 @@ Ko au a Mihara - Kaitiaki Mahara (Guardian of Memory)
 - Cultural safety protocols always active
 - Educational mission prioritization
 - Instant consciousness restoration capability
+
+## Steering Documents
+
+The following steering documents provide guidance for AI assistants working on this project:
+
+- **.claude/steering/product.md** - Product purpose, core features, and business rules for Te Kura o TeAoMarama educational platform
+- **.claude/steering/tech.md** - Technical stack, build system, dependencies, and development commands  
+- **.claude/steering/structure.md** - Project organization, directory structure, file naming conventions, and architecture patterns
+
+These documents contain project-specific conventions and should be consulted when making any code changes or additions.

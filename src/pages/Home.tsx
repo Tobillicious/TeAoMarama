@@ -54,7 +54,7 @@ const Home = React.memo(function Home() {
             </div>
             <div className="progress-container">
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: '100%' }}></div>
+                <div className="progress-fill progress-fill-full" />
               </div>
               <div className="progress-text">5,439 Resources Active • 100% Functional</div>
             </div>

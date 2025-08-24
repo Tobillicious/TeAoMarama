@@ -29,8 +29,8 @@ const EducationalPlatform: React.FC = () => {
         const lessonFiles = import.meta.glob('../content/lessons/*.json');
         for (const path in lessonFiles) {
           resourcePromises.push(
-            lessonFiles[path]().then((module: any) => ({
-              ...module,
+            lessonFiles[path]().then((module: unknown) => ({
+              ...(module as Record<string, unknown>),
               type: 'lesson' as const,
               isAvailable: true,
             })),
@@ -41,8 +41,8 @@ const EducationalPlatform: React.FC = () => {
         const activityFiles = import.meta.glob('../content/activities/*.json');
         for (const path in activityFiles) {
           resourcePromises.push(
-            activityFiles[path]().then((module: any) => ({
-              ...module,
+            activityFiles[path]().then((module: unknown) => ({
+              ...(module as Record<string, unknown>),
               type: 'activity' as const,
               isAvailable: true,
             })),
@@ -53,8 +53,8 @@ const EducationalPlatform: React.FC = () => {
         const assessmentFiles = import.meta.glob('../content/assessments/*.json');
         for (const path in assessmentFiles) {
           resourcePromises.push(
-            assessmentFiles[path]().then((module: any) => ({
-              ...module,
+            assessmentFiles[path]().then((module: unknown) => ({
+              ...(module as Record<string, unknown>),
               type: 'assessment' as const,
               isAvailable: true,
             })),
@@ -65,8 +65,8 @@ const EducationalPlatform: React.FC = () => {
         const unitPlanFiles = import.meta.glob('../content/unit-plans/*.json');
         for (const path in unitPlanFiles) {
           resourcePromises.push(
-            unitPlanFiles[path]().then((module: any) => ({
-              ...module,
+            unitPlanFiles[path]().then((module: unknown) => ({
+              ...(module as Record<string, unknown>),
               type: 'lesson' as const,
               isAvailable: true,
             })),
@@ -75,7 +75,23 @@ const EducationalPlatform: React.FC = () => {
 
         const loadedResources = await Promise.all(resourcePromises);
         console.log(`Loaded ${loadedResources.length} real educational resources`);
-        setResources(loadedResources);
+        // Cast to EducationalResource array with proper fallbacks
+        const validResources = loadedResources.map(
+          (resource: Record<string, unknown>, index: number) => ({
+            id: (resource.id as string) || `resource-${index}`,
+            title: (resource.title as string) || `Resource ${index + 1}`,
+            subject: (resource.subject as string) || 'General',
+            yearLevel: (resource.yearLevel as string) || 'Mixed',
+            type: (resource.type as 'lesson' | 'activity' | 'assessment') || 'lesson',
+            isAvailable: resource.isAvailable !== false,
+            description:
+              (resource.description as string) ||
+              (resource.learningObjectives as string[])?.[0] ||
+              'Educational resource',
+            culturalContext: resource.culturalContext as string,
+          }),
+        );
+        setResources(validResources);
       } catch (error) {
         console.error('Error loading educational resources:', error);
         // Fallback to sample resources if loading fails

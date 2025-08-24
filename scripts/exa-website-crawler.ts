@@ -46,21 +46,16 @@ class ExaWebsiteCrawler {
   async crawlWebsite(): Promise<CrawlerReport> {
     console.log('🌐 EXA.AI WEBSITE CRAWLER ACTIVATED');
     console.log(`🎯 Target: ${this.baseUrl}`);
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
 
     try {
       // Primary pages to analyze
-      const pagesToCrawl = [
-        '',
-        '/about',
-        '/contact',
-        '/migration-dashboard'
-      ];
+      const pagesToCrawl = ['', '/about', '/contact', '/migration-dashboard'];
 
       for (const page of pagesToCrawl) {
         const fullUrl = `${this.baseUrl}${page}`;
         console.log(`🔍 Analyzing: ${fullUrl}`);
-        
+
         try {
           const analysis = await this.analyzePage(fullUrl);
           if (analysis) {
@@ -72,7 +67,6 @@ class ExaWebsiteCrawler {
       }
 
       return this.generateReport();
-
     } catch (error) {
       console.error('🚨 Crawler error:', error);
       throw error;
@@ -85,11 +79,11 @@ class ExaWebsiteCrawler {
       const searchResults = await this.exa.searchAndContents(
         `site:${url} educational platform Te Ao Marama`,
         {
-          type: "neural",
+          type: 'neural',
           useAutoprompt: true,
           numResults: 1,
-          includeDomains: [this.baseUrl]
-        }
+          includeDomains: [this.baseUrl],
+        },
       );
 
       if (!searchResults.results.length) {
@@ -108,10 +102,9 @@ class ExaWebsiteCrawler {
         cultural_content: this.identifyCulturalContent(content),
         educational_resources: this.identifyEducationalResources(content),
         accessibility_notes: this.analyzeAccessibility(content),
-        seo_insights: this.analyzeSEO(content, result.title),
-        recommendations: this.generatePageRecommendations(content, url)
+        seo_insights: this.analyzeSEO(content, result.title || ''),
+        recommendations: this.generatePageRecommendations(content, url),
       };
-
     } catch (error) {
       console.warn(`Failed to analyze ${url}:`, error);
       return null;
@@ -120,8 +113,9 @@ class ExaWebsiteCrawler {
 
   private extractLinks(content: string): string[] {
     const linkRegex = /https?:\/\/[^\s<>"']+/g;
-    return Array.from(content.match(linkRegex) || [])
-      .filter(link => link.includes('teaomarama') || link.includes('netlify'));
+    return Array.from(content.match(linkRegex) || []).filter(
+      (link) => link.includes('teaomarama') || link.includes('netlify'),
+    );
   }
 
   private analyzePerformance(content: string, url: string): string[] {
@@ -144,14 +138,24 @@ class ExaWebsiteCrawler {
 
   private identifyCulturalContent(content: string): string[] {
     const culturalMarkers = [
-      'māori', 'maori', 'te reo', 'whakataukī', 'whakatauki', 
-      'tikanga', 'kaitiakitanga', 'manaakitanga', 'whanaungatanga',
-      'aotearoa', 'tamariki', 'kaitiaki', 'mihara'
+      'māori',
+      'maori',
+      'te reo',
+      'whakataukī',
+      'whakatauki',
+      'tikanga',
+      'kaitiakitanga',
+      'manaakitanga',
+      'whanaungatanga',
+      'aotearoa',
+      'tamariki',
+      'kaitiaki',
+      'mihara',
     ];
 
-    return culturalMarkers.filter(marker => 
-      content.toLowerCase().includes(marker)
-    ).map(marker => `🌿 ${marker} integration detected`);
+    return culturalMarkers
+      .filter((marker) => content.toLowerCase().includes(marker))
+      .map((marker) => `🌿 ${marker} integration detected`);
   }
 
   private identifyEducationalResources(content: string): string[] {
@@ -209,7 +213,7 @@ class ExaWebsiteCrawler {
 
     if (url === this.baseUrl) {
       recommendations.push('🏠 Homepage: Consider adding more prominent CTA buttons');
-      
+
       if (!content.includes('testimonial') && !content.includes('review')) {
         recommendations.push('💬 Add user testimonials for social proof');
       }
@@ -231,7 +235,7 @@ class ExaWebsiteCrawler {
     let culturalTotal = 0;
     let educationalTotal = 0;
 
-    this.pages.forEach(page => {
+    this.pages.forEach((page) => {
       performanceTotal += page.performance_insights.length * 20;
       culturalTotal += page.cultural_content.length * 15;
       educationalTotal += page.educational_resources.length * 25;
@@ -240,13 +244,13 @@ class ExaWebsiteCrawler {
     return {
       performance: Math.min(100, performanceTotal),
       cultural: Math.min(100, culturalTotal),
-      educational: Math.min(100, educationalTotal)
+      educational: Math.min(100, educationalTotal),
     };
   }
 
   private generateReport(): CrawlerReport {
     const scores = this.calculateScores();
-    
+
     const strategicRecommendations = [
       '🚀 Implement advanced analytics to track educational engagement',
       '🌐 Create multi-language support starting with Te Reo Māori',
@@ -254,7 +258,7 @@ class ExaWebsiteCrawler {
       '🔍 Implement semantic search across educational resources',
       '🤝 Add social sharing features for educational content',
       '📊 Create teacher dashboard with progress analytics',
-      '🎯 Implement personalized learning paths based on cultural background'
+      '🎯 Implement personalized learning paths based on cultural background',
     ];
 
     return {
@@ -265,7 +269,7 @@ class ExaWebsiteCrawler {
       educational_content_score: scores.educational,
       pages: this.pages,
       summary: `Analyzed ${this.pages.length} pages of Te Kura o TeAoMarama. Performance: ${scores.performance}%, Cultural Integration: ${scores.cultural}%, Educational Content: ${scores.educational}%. Platform shows strong cultural foundation with room for enhanced user engagement features.`,
-      strategic_recommendations: strategicRecommendations
+      strategic_recommendations: strategicRecommendations,
     };
   }
 
@@ -289,21 +293,20 @@ async function main() {
   try {
     const crawler = new ExaWebsiteCrawler();
     const report = await crawler.crawlWebsite();
-    
+
     console.log('\n🎯 WEBSITE ANALYSIS COMPLETE!');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`📊 Performance Score: ${report.site_performance_score}%`);
     console.log(`🌿 Cultural Integration: ${report.cultural_integration_score}%`);
     console.log(`📚 Educational Content: ${report.educational_content_score}%`);
     console.log(`\n📋 Summary: ${report.summary}`);
-    
+
     console.log('\n🚀 Strategic Recommendations:');
     report.strategic_recommendations.forEach((rec, i) => {
       console.log(`${i + 1}. ${rec}`);
     });
 
     await crawler.saveReport(report);
-    
   } catch (error) {
     console.error('🚨 Crawler failed:', error);
     process.exit(1);

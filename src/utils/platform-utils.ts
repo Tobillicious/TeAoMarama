@@ -58,7 +58,7 @@ export const performanceUtils = {
   /**
    * Debounce function for performance optimization
    */
-  debounce<T extends (...args: any[]) => any>(
+  debounce<T extends (...args: unknown[]) => unknown>(
     func: T,
     wait: number,
   ): (...args: Parameters<T>) => void {
@@ -72,7 +72,7 @@ export const performanceUtils = {
   /**
    * Throttle function for performance optimization
    */
-  throttle<T extends (...args: any[]) => any>(
+  throttle<T extends (...args: unknown[]) => unknown>(
     func: T,
     limit: number,
   ): (...args: Parameters<T>) => void {
@@ -111,7 +111,7 @@ export const educationalUtils = {
   /**
    * Generate learning objectives
    */
-  generateLearningObjectives(topic: string, level: string): string[] {
+  generateLearningObjectives(topic: string): string[] {
     return [
       `Students will understand the key concepts of ${topic}`,
       `Students will be able to apply ${topic} knowledge in practical situations`,

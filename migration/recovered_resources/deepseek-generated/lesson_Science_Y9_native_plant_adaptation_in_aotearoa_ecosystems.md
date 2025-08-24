@@ -8,8 +8,6 @@ generated_at: 2025-08-20T07:29:58.641Z
 cultural_safety: pending_review
 status: draft
 ---
-
-
 # Year 9 Science: Native Plant Adaptation in Aotearoa Ecosystems
 
 ## Whakataukī (Proverb)

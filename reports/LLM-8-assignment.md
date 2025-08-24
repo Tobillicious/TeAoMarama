@@ -3,8 +3,6 @@
 ## Role: Type Safety Improvements
 
 ## Target Files:
-
-
 ## Commands to Run:
 `node scripts/fix-type-issues.cjs`
 `npm run lint | grep "is of type" | head -20`

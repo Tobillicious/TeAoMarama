@@ -75,7 +75,7 @@ class SuperintelligentOptimizer {
           try {
             const content = readFileSync(fullPath, 'utf8');
             components.push(content);
-          } catch (error) {
+          } catch {
             console.warn(`Could not read ${fullPath}`);
           }
         }

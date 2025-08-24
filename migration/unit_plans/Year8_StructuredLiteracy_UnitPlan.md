@@ -100,7 +100,7 @@ This unit integrates evidence-based structured literacy approaches with mātaura
 - Liz Kane Word Check assessments
 - Phonics pattern cards and activities
 - Sentence pattern templates
-- Academic vocabulary word walls
+- Academic vocabulary word walls ([See Year 8 Academic Vocabulary Resource](./Year8_Academic_Vocabulary.md))
 - Reading strategy graphic organizers
 
 ### SKILLS & KEY COMPETENCIES
@@ -179,7 +179,7 @@ This unit integrates evidence-based structured literacy approaches with mātaura
 
 **Week 1:**
 - Phonics: Single consonants and short vowels
-- Writing: Simple sentence construction
+- Writing: Simple sentence construction ([See Lesson Plan: Sentence Expansion with Cultural Context](./Year8_StructuredLiteracy_Lesson1.md))
 - Vocabulary: Foundation academic words
 - Cultural: Te reo Māori phonemes and basic vocabulary
 
@@ -197,7 +197,7 @@ This unit integrates evidence-based structured literacy approaches with mātaura
 
 **Week 4:**
 - Phonics: Multisyllabic word strategies
-- Writing: Appositive phrases and sentence expansion
+- Writing: Appositive phrases and sentence expansion ([See Lesson Plan: Enhancing Sentences with Appositives](./Year8_WritingRevolution_Lesson2.md))
 - Vocabulary: Context clues and inference strategies
 - Cultural: Pēpeha construction and cultural identity
 
@@ -205,7 +205,7 @@ This unit integrates evidence-based structured literacy approaches with mātaura
 **Learning Intention/s:** Application and Integration
 
 **Week 5:**
-- Reading: Comprehension strategies with cultural texts
+- Reading: Comprehension strategies with cultural texts ([See Lesson Plan: Reading Comprehension with a Pūrākau](./Year8_ReadingStrategies_Lesson.md))
 - Writing: Single paragraph outlines and construction
 - Vocabulary: Academic word families and relationships
 - Cultural: Contemporary Māori literature and perspectives
