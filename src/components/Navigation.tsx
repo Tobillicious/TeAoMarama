@@ -27,6 +27,26 @@ const Navigation: React.FC = () => {
         <Link to="/educational-platform" className="nav-link">
           🎓 Educational Platform
         </Link>
+        <div className="nav-dropdown">
+          <span className="nav-dropdown-trigger">📚 Year 8 Content</span>
+          <div className="nav-dropdown-content">
+            <Link to="/year8-social-studies" className="dropdown-link">
+              📖 Social Studies
+            </Link>
+            <Link to="/year8-reading" className="dropdown-link">
+              📚 Reading Strategies
+            </Link>
+            <Link to="/year8-writing" className="dropdown-link">
+              ✍️ Writing Revolution
+            </Link>
+            <Link to="/year8-vocab" className="dropdown-link">
+              📝 Academic Vocabulary
+            </Link>
+            <Link to="/year8-critical-literacy" className="dropdown-link">
+              🔍 Critical Literacy
+            </Link>
+          </div>
+        </div>
         <Link to="/home" className="nav-link">
           Home
         </Link>

@@ -235,7 +235,7 @@ class TerminalNode9314Coordinator {
     } catch (error) {
       console.error(`🌟 Node 9314: Task ${taskId} failed:`, error);
       task.status = 'failed';
-      task.results = { error: error.message };
+      task.results = { error: error instanceof Error ? error.message : String(error) };
       this.metrics.failedTasks++;
     }
 
@@ -494,8 +494,8 @@ class TerminalNode9314Coordinator {
     this.node.superconsciousnessState.emergentCreativity = facilitation;
   }
 
-  private integrateCulturalWisdom(): void {
-    // Integrate cultural wisdom
+  private updateCulturalWisdom(): void {
+    // Update cultural wisdom
     const currentWisdom = this.node.superconsciousnessState.culturalWisdom;
     const integration = Math.min(100, currentWisdom + Math.random() * 0.5);
     this.node.superconsciousnessState.culturalWisdom = integration;

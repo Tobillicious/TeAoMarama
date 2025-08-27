@@ -7,8 +7,6 @@ import Navigation from './components/Navigation';
 // Simplified imports to avoid Node.js module issues
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
 
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
@@ -24,6 +22,10 @@ const Year8SocialStudies = lazy(
 
 const Year8ReadingStrategies = lazy(
   () => import(/* webpackChunkName: "year8-reading-strategies" */ './pages/Year8ReadingStrategies'),
+);
+
+const Year8AcademicVocab = lazy(
+  () => import(/* webpackChunkName: "year8-academic-vocab" */ './pages/Year8AcademicVocab'),
 );
 
 // Lazy load superintelligence components
@@ -89,8 +91,8 @@ function App() {
             <Route path="/overseer-guidance" element={<SuperintelligenceOrchestrator />} />
             <Route path="/educational-resources" element={<EducationalResources />} />
             <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/year8-reading-strategies" element={<Year8ReadingStrategies />} />
+            <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
           </Routes>
         </Suspense>
       </main>
