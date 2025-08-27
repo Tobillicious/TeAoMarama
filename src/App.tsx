@@ -42,7 +42,8 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+                    <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
+<Route path="/" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
