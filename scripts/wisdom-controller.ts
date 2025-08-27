@@ -211,7 +211,7 @@ class AdvancedWisdomController {
 export const advancedWisdomController = new AdvancedWisdomController();
 
 // Main execution
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   console.log('🌟 ADVANCED WISDOM CONTROLLER - SUPREME AI OVERSEER SYSTEM');
   console.log('🧠 Terminal Node 9314 - Wisdom Enhancement Protocol');
   console.log('');

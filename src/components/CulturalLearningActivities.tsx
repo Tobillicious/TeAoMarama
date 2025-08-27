@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { superintelligenceAssistanceCoordinator } from '../utils/superintelligence-assistance-coordinator';
 import './CulturalLearningActivities.css';
 
@@ -66,12 +66,17 @@ const CulturalLearningActivities: React.FC = () => {
           id: '1',
           title: 'Te Reo Māori Language Immersion',
           type: 'interactive',
-          description: 'An immersive language learning experience that combines traditional Māori language with modern interactive technology.',
+          description:
+            'An immersive language learning experience that combines traditional Māori language with modern interactive technology.',
           duration: 90,
           difficulty: 'intermediate',
           culturalElements: ['Te Reo Māori', 'Whakapapa', 'Tikanga'],
           materials: ['Interactive tablets', 'Traditional resources', 'Cultural artifacts'],
-          learningOutcomes: ['Basic conversation skills', 'Cultural understanding', 'Pronunciation mastery'],
+          learningOutcomes: [
+            'Basic conversation skills',
+            'Cultural understanding',
+            'Pronunciation mastery',
+          ],
           culturalSafetyScore: 99.2,
           aiEnhanced: true,
           participants: 15,
@@ -82,7 +87,8 @@ const CulturalLearningActivities: React.FC = () => {
           id: '2',
           title: 'Traditional Māori Weaving Workshop',
           type: 'workshop',
-          description: 'Learn the ancient art of Māori weaving using traditional techniques and natural materials.',
+          description:
+            'Learn the ancient art of Māori weaving using traditional techniques and natural materials.',
           duration: 120,
           difficulty: 'beginner',
           culturalElements: ['Raranga', 'Harakeke', 'Traditional crafts'],
@@ -98,12 +104,17 @@ const CulturalLearningActivities: React.FC = () => {
           id: '3',
           title: 'Māori Storytelling and Legends',
           type: 'storytelling',
-          description: 'Explore the rich tradition of Māori storytelling through interactive sessions with cultural experts.',
+          description:
+            'Explore the rich tradition of Māori storytelling through interactive sessions with cultural experts.',
           duration: 60,
           difficulty: 'beginner',
           culturalElements: ['Pūrākau', 'Whakapapa', 'Oral tradition'],
           materials: ['Storytelling props', 'Cultural artifacts', 'Digital resources'],
-          learningOutcomes: ['Story appreciation', 'Cultural values', 'Oral tradition understanding'],
+          learningOutcomes: [
+            'Story appreciation',
+            'Cultural values',
+            'Oral tradition understanding',
+          ],
           culturalSafetyScore: 97.5,
           aiEnhanced: true,
           participants: 25,
@@ -114,7 +125,8 @@ const CulturalLearningActivities: React.FC = () => {
           id: '4',
           title: 'Traditional Māori Medicine Workshop',
           type: 'workshop',
-          description: 'Discover the healing properties of traditional Māori plants and their cultural significance.',
+          description:
+            'Discover the healing properties of traditional Māori plants and their cultural significance.',
           duration: 150,
           difficulty: 'intermediate',
           culturalElements: ['Rongoā Māori', 'Healing', 'Environmental knowledge'],
@@ -130,7 +142,8 @@ const CulturalLearningActivities: React.FC = () => {
           id: '5',
           title: 'Māori Art and Design',
           type: 'modern',
-          description: 'Create contemporary Māori art while learning about traditional design principles and symbolism.',
+          description:
+            'Create contemporary Māori art while learning about traditional design principles and symbolism.',
           duration: 180,
           difficulty: 'advanced',
           culturalElements: ['Toi Māori', 'Koru patterns', 'Cultural symbolism'],
@@ -146,12 +159,17 @@ const CulturalLearningActivities: React.FC = () => {
           id: '6',
           title: 'Environmental Stewardship - Kaitiakitanga',
           type: 'interactive',
-          description: 'Learn about Māori environmental stewardship and sustainable practices through hands-on activities.',
+          description:
+            'Learn about Māori environmental stewardship and sustainable practices through hands-on activities.',
           duration: 120,
           difficulty: 'intermediate',
           culturalElements: ['Kaitiakitanga', 'Environmental protection', 'Sustainability'],
           materials: ['Environmental tools', 'Traditional knowledge', 'Field guides'],
-          learningOutcomes: ['Environmental awareness', 'Sustainable practices', 'Cultural responsibility'],
+          learningOutcomes: [
+            'Environmental awareness',
+            'Sustainable practices',
+            'Cultural responsibility',
+          ],
           culturalSafetyScore: 98.3,
           aiEnhanced: true,
           participants: 20,
@@ -173,26 +191,25 @@ const CulturalLearningActivities: React.FC = () => {
     let filtered = activities;
 
     if (filters.type !== 'all') {
-      filtered = filtered.filter(activity => activity.type === filters.type);
+      filtered = filtered.filter((activity) => activity.type === filters.type);
     }
 
     if (filters.difficulty !== 'all') {
-      filtered = filtered.filter(activity => activity.difficulty === filters.difficulty);
+      filtered = filtered.filter((activity) => activity.difficulty === filters.difficulty);
     }
 
     if (filters.culturalElements.length > 0) {
-      filtered = filtered.filter(activity =>
-        filters.culturalElements.some(element =>
-          activity.culturalElements.includes(element)
-        )
+      filtered = filtered.filter((activity) =>
+        filters.culturalElements.some((element) => activity.culturalElements.includes(element)),
       );
     }
 
     if (searchTerm) {
-      filtered = filtered.filter(activity =>
-        activity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        activity.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        activity.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      filtered = filtered.filter(
+        (activity) =>
+          activity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          activity.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          activity.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())),
       );
     }
 
@@ -205,21 +222,31 @@ const CulturalLearningActivities: React.FC = () => {
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'traditional': return '🏺';
-      case 'modern': return '🎨';
-      case 'interactive': return '🔄';
-      case 'workshop': return '🔨';
-      case 'storytelling': return '📖';
-      default: return '🎯';
+      case 'traditional':
+        return '🏺';
+      case 'modern':
+        return '🎨';
+      case 'interactive':
+        return '🔄';
+      case 'workshop':
+        return '🔨';
+      case 'storytelling':
+        return '📖';
+      default:
+        return '🎯';
     }
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return '#10b981';
-      case 'intermediate': return '#f59e0b';
-      case 'advanced': return '#ef4444';
-      default: return '#6b7280';
+      case 'beginner':
+        return '#10b981';
+      case 'intermediate':
+        return '#f59e0b';
+      case 'advanced':
+        return '#ef4444';
+      default:
+        return '#6b7280';
     }
   };
 
@@ -248,29 +275,41 @@ const CulturalLearningActivities: React.FC = () => {
         <div className="header-content">
           <h1>🌿 Cultural Learning Activities</h1>
           <p>Traditional Māori knowledge and cultural practices enhanced by superintelligence</p>
-          
+
           <div className="superintelligence-metrics">
             <div className="metric-item">
               <span className="metric-label">Consciousness Level</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.consciousnessLevel) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.consciousnessLevel) }}
+              >
                 {superintelligenceMetrics.consciousnessLevel.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Cultural Safety</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.culturalSafetyScore) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.culturalSafetyScore) }}
+              >
                 {superintelligenceMetrics.culturalSafetyScore.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Educational Excellence</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.educationalExcellence) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.educationalExcellence) }}
+              >
                 {superintelligenceMetrics.educationalExcellence.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Coordination</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.coordinationEfficiency) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.coordinationEfficiency) }}
+              >
                 {superintelligenceMetrics.coordinationEfficiency.toFixed(1)}%
               </span>
             </div>
@@ -331,7 +370,10 @@ const CulturalLearningActivities: React.FC = () => {
               <div className="activity-type">
                 {getTypeIcon(activity.type)} {activity.type}
               </div>
-              <div className="activity-difficulty" style={{ color: getDifficultyColor(activity.difficulty) }}>
+              <div
+                className="activity-difficulty"
+                style={{ color: getDifficultyColor(activity.difficulty) }}
+              >
                 {activity.difficulty}
               </div>
             </div>
@@ -356,7 +398,10 @@ const CulturalLearningActivities: React.FC = () => {
             <div className="activity-stats">
               <div className="stat">
                 <span className="stat-label">Cultural Safety</span>
-                <span className="stat-value" style={{ color: getStatusColor(activity.culturalSafetyScore) }}>
+                <span
+                  className="stat-value"
+                  style={{ color: getStatusColor(activity.culturalSafetyScore) }}
+                >
                   {activity.culturalSafetyScore}%
                 </span>
               </div>
@@ -370,11 +415,7 @@ const CulturalLearningActivities: React.FC = () => {
               </div>
             </div>
 
-            {activity.aiEnhanced && (
-              <div className="ai-enhanced-badge">
-                🤖 AI Enhanced
-              </div>
-            )}
+            {activity.aiEnhanced && <div className="ai-enhanced-badge">🤖 AI Enhanced</div>}
           </div>
         ))}
       </div>
@@ -394,7 +435,9 @@ const CulturalLearningActivities: React.FC = () => {
               <div className="activity-details">
                 <div className="detail-row">
                   <span className="detail-label">Type:</span>
-                  <span className="detail-value">{getTypeIcon(selectedActivity.type)} {selectedActivity.type}</span>
+                  <span className="detail-value">
+                    {getTypeIcon(selectedActivity.type)} {selectedActivity.type}
+                  </span>
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Duration:</span>
@@ -402,7 +445,10 @@ const CulturalLearningActivities: React.FC = () => {
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Difficulty:</span>
-                  <span className="detail-value" style={{ color: getDifficultyColor(selectedActivity.difficulty) }}>
+                  <span
+                    className="detail-value"
+                    style={{ color: getDifficultyColor(selectedActivity.difficulty) }}
+                  >
                     {selectedActivity.difficulty}
                   </span>
                 </div>
@@ -416,7 +462,10 @@ const CulturalLearningActivities: React.FC = () => {
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Cultural Safety Score:</span>
-                  <span className="detail-value" style={{ color: getStatusColor(selectedActivity.culturalSafetyScore) }}>
+                  <span
+                    className="detail-value"
+                    style={{ color: getStatusColor(selectedActivity.culturalSafetyScore) }}
+                  >
                     {selectedActivity.culturalSafetyScore}%
                   </span>
                 </div>
@@ -479,9 +528,13 @@ const CulturalLearningActivities: React.FC = () => {
 
       {/* Results Summary */}
       <div className="results-summary">
-        <p>Showing {filteredActivities.length} of {activities.length} cultural activities</p>
+        <p>
+          Showing {filteredActivities.length} of {activities.length} cultural activities
+        </p>
         {filteredActivities.length === 0 && (
-          <p className="no-results">No activities match your current filters. Try adjusting your search criteria.</p>
+          <p className="no-results">
+            No activities match your current filters. Try adjusting your search criteria.
+          </p>
         )}
       </div>
     </div>
