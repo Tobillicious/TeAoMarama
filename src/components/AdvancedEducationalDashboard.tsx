@@ -245,7 +245,7 @@ const AdvancedEducationalDashboard: React.FC = () => {
     return matchesSearch && matchesYear && matchesSubject;
   });
 
-  const unreadNotifications = notifications.filter(n => !n.read).length;
+  const unreadNotifications = notifications.filter((n) => !n.read).length;
 
   const getProgressColor = (progress: number) => {
     if (progress >= 90) return '#10b981';
@@ -263,18 +263,21 @@ const AdvancedEducationalDashboard: React.FC = () => {
 
   const getNotificationIcon = (type: string) => {
     switch (type) {
-      case 'achievement': return '🏆';
-      case 'cultural': return '🌿';
-      case 'progress': return '📈';
-      case 'reminder': return '⏰';
-      default: return '📢';
+      case 'achievement':
+        return '🏆';
+      case 'cultural':
+        return '🌿';
+      case 'progress':
+        return '📈';
+      case 'reminder':
+        return '⏰';
+      default:
+        return '📢';
     }
   };
 
   const markNotificationAsRead = (id: string) => {
-    setNotifications(prev => 
-      prev.map(n => n.id === id ? { ...n, read: true } : n)
-    );
+    setNotifications((prev) => prev.map((n) => (n.id === id ? { ...n, read: true } : n)));
   };
 
   return (
@@ -286,7 +289,7 @@ const AdvancedEducationalDashboard: React.FC = () => {
             <p>Comprehensive educational management and cultural integration platform</p>
           </div>
           <div className="header-actions">
-            <button 
+            <button
               className="notification-btn"
               onClick={() => setShowNotifications(!showNotifications)}
             >
@@ -326,8 +329,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
           </div>
           <div className="notifications-list">
             {notifications.map((notification) => (
-              <div 
-                key={notification.id} 
+              <div
+                key={notification.id}
                 className={`notification-item ${!notification.read ? 'unread' : ''}`}
                 onClick={() => markNotificationAsRead(notification.id)}
               >
@@ -603,19 +606,27 @@ const AdvancedEducationalDashboard: React.FC = () => {
               <h3>🌿 Cultural Activities</h3>
               <div className="cultural-stats">
                 <div className="cultural-stat">
-                  <span className="cultural-number">{analytics.culturalInsights.totalCulturalActivities}</span>
+                  <span className="cultural-number">
+                    {analytics.culturalInsights.totalCulturalActivities}
+                  </span>
                   <span className="cultural-label">Total Activities</span>
                 </div>
                 <div className="cultural-stat">
-                  <span className="cultural-number">{analytics.culturalInsights.culturalAchievements}</span>
+                  <span className="cultural-number">
+                    {analytics.culturalInsights.culturalAchievements}
+                  </span>
                   <span className="cultural-label">Achievements</span>
                 </div>
                 <div className="cultural-stat">
-                  <span className="cultural-number">{analytics.culturalInsights.culturalMentors}</span>
+                  <span className="cultural-number">
+                    {analytics.culturalInsights.culturalMentors}
+                  </span>
                   <span className="cultural-label">Mentors</span>
                 </div>
                 <div className="cultural-stat">
-                  <span className="cultural-number">{analytics.culturalInsights.culturalEvents}</span>
+                  <span className="cultural-number">
+                    {analytics.culturalInsights.culturalEvents}
+                  </span>
                   <span className="cultural-label">Events</span>
                 </div>
               </div>

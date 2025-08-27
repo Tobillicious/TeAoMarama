@@ -1,0 +1,382 @@
+/* Cultural Learning Activities Styles */
+.cultural-learning-activities {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.activities-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.activities-header h1 {
+  color: #1a202c;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.activities-header p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.activities-filters {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-section {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-section {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: white;
+  transition: border-color 0.3s ease;
+  min-width: 150px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 25px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.activity-category,
+.activity-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.activity-content {
+  padding: 25px;
+}
+
+.activity-content h3 {
+  color: #1a202c;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.activity-description {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.activity-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 10px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  color: #718096;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.meta-value.difficulty {
+  font-weight: 700;
+}
+
+.activity-cultural-elements {
+  margin-bottom: 20px;
+}
+
+.activity-cultural-elements h4 {
+  color: #1a202c;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.cultural-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cultural-tag {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.activity-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.activity-actions {
+  padding: 20px 25px;
+  background: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.join-btn,
+.view-btn,
+.review-btn {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.join-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.join-btn:disabled {
+  background: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.review-btn {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+}
+
+.review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(107, 114, 128, 0.4);
+}
+
+.no-activities {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-activities h3 {
+  color: #1a202c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.no-activities p {
+  color: #4a5568;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cultural-learning-activities {
+    padding: 15px;
+  }
+
+  .activities-header h1 {
+    font-size: 2rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-details {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .detail-label {
+    min-width: auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activity-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Cultural Design Elements */
+.activity-card:nth-child(3n + 1) {
+  border-top: 4px solid #667eea;
+}
+
+.activity-card:nth-child(3n + 2) {
+  border-top: 4px solid #f093fb;
+}
+
+.activity-card:nth-child(3n + 3) {
+  border-top: 4px solid #43e97b;
+}

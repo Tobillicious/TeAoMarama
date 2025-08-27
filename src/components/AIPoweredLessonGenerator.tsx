@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './AIPoweredLessonGenerator.css';
 
 interface LessonTemplate {
@@ -36,7 +36,9 @@ const AIPoweredLessonGenerator: React.FC = () => {
   const [customSubject, setCustomSubject] = useState('');
   const [customYear, setCustomYear] = useState<number>(8);
   const [customDuration, setCustomDuration] = useState<number>(45);
-  const [customDifficulty, setCustomDifficulty] = useState<'beginner' | 'intermediate' | 'advanced'>('intermediate');
+  const [customDifficulty, setCustomDifficulty] = useState<
+    'beginner' | 'intermediate' | 'advanced'
+  >('intermediate');
   const [selectedCulturalElements, setSelectedCulturalElements] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedLesson, setGeneratedLesson] = useState<GeneratedLesson | null>(null);
@@ -51,9 +53,13 @@ const AIPoweredLessonGenerator: React.FC = () => {
       duration: 45,
       difficulty: 'beginner',
       culturalElements: ['Greetings', 'Basic Vocabulary', 'Cultural Context'],
-      learningObjectives: ['Learn basic greetings', 'Understand cultural significance', 'Practice pronunciation'],
+      learningObjectives: [
+        'Learn basic greetings',
+        'Understand cultural significance',
+        'Practice pronunciation',
+      ],
       prerequisites: ['None'],
-      estimatedTime: 45
+      estimatedTime: 45,
     },
     {
       id: 'math-patterns',
@@ -63,9 +69,13 @@ const AIPoweredLessonGenerator: React.FC = () => {
       duration: 60,
       difficulty: 'intermediate',
       culturalElements: ['Kowhaiwhai', 'Geometry', 'Symmetry', 'Traditional Patterns'],
-      learningObjectives: ['Identify geometric patterns', 'Understand symmetry', 'Connect math to culture'],
+      learningObjectives: [
+        'Identify geometric patterns',
+        'Understand symmetry',
+        'Connect math to culture',
+      ],
       prerequisites: ['Basic geometry', 'Understanding of symmetry'],
-      estimatedTime: 60
+      estimatedTime: 60,
     },
     {
       id: 'science-medicine',
@@ -75,9 +85,13 @@ const AIPoweredLessonGenerator: React.FC = () => {
       duration: 75,
       difficulty: 'advanced',
       culturalElements: ['Rongoā', 'Botany', 'Chemistry', 'Traditional Knowledge'],
-      learningObjectives: ['Understand traditional medicine', 'Learn about plant properties', 'Connect to modern science'],
+      learningObjectives: [
+        'Understand traditional medicine',
+        'Learn about plant properties',
+        'Connect to modern science',
+      ],
       prerequisites: ['Basic chemistry', 'Understanding of plants'],
-      estimatedTime: 75
+      estimatedTime: 75,
     },
     {
       id: 'social-studies',
@@ -87,9 +101,13 @@ const AIPoweredLessonGenerator: React.FC = () => {
       duration: 90,
       difficulty: 'intermediate',
       culturalElements: ['Whakapapa', 'Iwi History', 'Social Structures', 'Traditional Governance'],
-      learningObjectives: ['Understand Māori history', 'Learn about social structures', 'Connect past to present'],
+      learningObjectives: [
+        'Understand Māori history',
+        'Learn about social structures',
+        'Connect past to present',
+      ],
       prerequisites: ['Basic New Zealand history'],
-      estimatedTime: 90
+      estimatedTime: 90,
     },
     {
       id: 'art-culture',
@@ -99,10 +117,14 @@ const AIPoweredLessonGenerator: React.FC = () => {
       duration: 60,
       difficulty: 'intermediate',
       culturalElements: ['Carving', 'Weaving', 'Painting', 'Cultural Expression'],
-      learningObjectives: ['Learn about traditional arts', 'Understand cultural significance', 'Create cultural artwork'],
+      learningObjectives: [
+        'Learn about traditional arts',
+        'Understand cultural significance',
+        'Create cultural artwork',
+      ],
       prerequisites: ['Basic art skills'],
-      estimatedTime: 60
-    }
+      estimatedTime: 60,
+    },
   ];
 
   const culturalElements = [
@@ -121,7 +143,7 @@ const AIPoweredLessonGenerator: React.FC = () => {
     'Traditional Games and Sports',
     'Māori Astronomy',
     'Traditional Navigation',
-    'Māori Music and Dance'
+    'Māori Music and Dance',
   ];
 
   const generateLesson = async () => {
@@ -130,7 +152,7 @@ const AIPoweredLessonGenerator: React.FC = () => {
 
     // Simulate AI generation process
     const progressInterval = setInterval(() => {
-      setGenerationProgress(prev => {
+      setGenerationProgress((prev) => {
         if (prev >= 100) {
           clearInterval(progressInterval);
           return 100;
@@ -140,13 +162,15 @@ const AIPoweredLessonGenerator: React.FC = () => {
     }, 200);
 
     // Simulate AI processing time
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    const template = lessonTemplates.find(t => t.id === selectedTemplate);
-    
+    const template = lessonTemplates.find((t) => t.id === selectedTemplate);
+
     const generated: GeneratedLesson = {
       id: `lesson-${Date.now()}`,
-      title: template ? `${template.name} - Enhanced AI Version` : `${customSubject} - AI Generated Lesson`,
+      title: template
+        ? `${template.name} - Enhanced AI Version`
+        : `${customSubject} - AI Generated Lesson`,
       subject: template ? template.subject : customSubject,
       year: template ? template.year : customYear,
       content: generateLessonContent(template, customSubject),
@@ -158,7 +182,7 @@ const AIPoweredLessonGenerator: React.FC = () => {
       difficulty: template ? template.difficulty : customDifficulty,
       learningOutcomes: generateLearningOutcomes(template, customSubject),
       teReoIntegration: generateTeReoIntegration(template, customSubject),
-      tikangaElements: generateTikangaElements(template, customSubject)
+      tikangaElements: generateTikangaElements(template, customSubject),
     };
 
     setGeneratedLesson(generated);
@@ -166,9 +190,14 @@ const AIPoweredLessonGenerator: React.FC = () => {
     setGenerationProgress(100);
   };
 
-  const generateLessonContent = (template: LessonTemplate | undefined, customSubject: string): string => {
+  const generateLessonContent = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string => {
     if (template) {
-      return `This enhanced AI-generated lesson builds upon the traditional ${template.name} framework, incorporating advanced pedagogical techniques and deep cultural integration.
+      return `This enhanced AI-generated lesson builds upon the traditional ${
+        template.name
+      } framework, incorporating advanced pedagogical techniques and deep cultural integration.
 
 Key Learning Areas:
 • ${template.learningObjectives.join('\n• ')}
@@ -204,7 +233,10 @@ Advanced Pedagogical Features:
 • Community engagement opportunities`;
   };
 
-  const generateActivities = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateActivities = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     const baseActivities = [
       'Interactive Cultural Discussion',
       'Digital Storytelling Project',
@@ -213,7 +245,7 @@ Advanced Pedagogical Features:
       'Peer Teaching Session',
       'Reflection and Journaling',
       'Community Connection Activity',
-      'Technology Integration Task'
+      'Technology Integration Task',
     ];
 
     if (template) {
@@ -221,7 +253,7 @@ Advanced Pedagogical Features:
         ...baseActivities,
         `${template.subject} Specific Activity`,
         'Cultural Context Exploration',
-        'Traditional Knowledge Application'
+        'Traditional Knowledge Application',
       ];
     }
 
@@ -229,11 +261,14 @@ Advanced Pedagogical Features:
       ...baseActivities,
       `${customSubject} Focused Activity`,
       'Cross-Cultural Learning Experience',
-      'Modern Technology Integration'
+      'Modern Technology Integration',
     ];
   };
 
-  const generateAssessments = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateAssessments = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     return [
       'Formative Assessment: Cultural Understanding Check',
       'Summative Assessment: Knowledge Application',
@@ -241,11 +276,14 @@ Advanced Pedagogical Features:
       'Self-Assessment: Personal Growth Reflection',
       'Cultural Competency Evaluation',
       'Digital Literacy Assessment',
-      'Community Engagement Assessment'
+      'Community Engagement Assessment',
     ];
   };
 
-  const generateResources = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateResources = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     return [
       'Digital Learning Platform Access',
       'Cultural Resource Library',
@@ -253,11 +291,14 @@ Advanced Pedagogical Features:
       'Traditional Knowledge Database',
       'Community Expert Connections',
       'Assessment Tools and Rubrics',
-      'Professional Development Materials'
+      'Professional Development Materials',
     ];
   };
 
-  const generateLearningOutcomes = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateLearningOutcomes = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     return [
       'Demonstrate cultural understanding and respect',
       'Apply knowledge in real-world contexts',
@@ -265,37 +306,41 @@ Advanced Pedagogical Features:
       'Use technology for learning and communication',
       'Develop critical thinking and problem-solving skills',
       'Build cultural competency and awareness',
-      'Connect traditional and modern knowledge systems'
+      'Connect traditional and modern knowledge systems',
     ];
   };
 
-  const generateTeReoIntegration = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateTeReoIntegration = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     return [
       'Basic greetings and introductions',
       'Subject-specific vocabulary',
       'Cultural phrases and expressions',
       'Traditional sayings and proverbs',
       'Pronunciation and language patterns',
-      'Cultural context and usage'
+      'Cultural context and usage',
     ];
   };
 
-  const generateTikangaElements = (template: LessonTemplate | undefined, customSubject: string): string[] => {
+  const generateTikangaElements = (
+    template: LessonTemplate | undefined,
+    customSubject: string,
+  ): string[] => {
     return [
       'Respect for cultural protocols',
       'Understanding of traditional customs',
       'Recognition of cultural significance',
       'Application of cultural values',
       'Connection to community practices',
-      'Integration of traditional knowledge'
+      'Integration of traditional knowledge',
     ];
   };
 
   const handleCulturalElementToggle = (element: string) => {
-    setSelectedCulturalElements(prev => 
-      prev.includes(element) 
-        ? prev.filter(e => e !== element)
-        : [...prev, element]
+    setSelectedCulturalElements((prev) =>
+      prev.includes(element) ? prev.filter((e) => e !== element) : [...prev, element],
     );
   };
 
@@ -311,8 +356,8 @@ Advanced Pedagogical Features:
           <div className="template-selection">
             <h2>Choose Lesson Template</h2>
             <div className="template-grid">
-              {lessonTemplates.map(template => (
-                <div 
+              {lessonTemplates.map((template) => (
+                <div
                   key={template.id}
                   className={`template-card ${selectedTemplate === template.id ? 'selected' : ''}`}
                   onClick={() => setSelectedTemplate(template.id)}
@@ -322,11 +367,15 @@ Advanced Pedagogical Features:
                     <span className="subject">{template.subject}</span>
                     <span className="year">Year {template.year}</span>
                     <span className="duration">{template.duration} min</span>
-                    <span className={`difficulty ${template.difficulty}`}>{template.difficulty}</span>
+                    <span className={`difficulty ${template.difficulty}`}>
+                      {template.difficulty}
+                    </span>
                   </div>
                   <div className="cultural-elements">
-                    {template.culturalElements.map(element => (
-                      <span key={element} className="cultural-tag">{element}</span>
+                    {template.culturalElements.map((element) => (
+                      <span key={element} className="cultural-tag">
+                        {element}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -367,7 +416,10 @@ Advanced Pedagogical Features:
               </div>
               <div className="form-group">
                 <label>Difficulty:</label>
-                <select value={customDifficulty} onChange={(e) => setCustomDifficulty(e.target.value as any)}>
+                <select
+                  value={customDifficulty}
+                  onChange={(e) => setCustomDifficulty(e.target.value as any)}
+                >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
                   <option value="advanced">Advanced</option>
@@ -379,10 +431,12 @@ Advanced Pedagogical Features:
           <div className="cultural-elements-selection">
             <h2>Cultural Elements Integration</h2>
             <div className="cultural-elements-grid">
-              {culturalElements.map(element => (
-                <div 
+              {culturalElements.map((element) => (
+                <div
                   key={element}
-                  className={`cultural-element ${selectedCulturalElements.includes(element) ? 'selected' : ''}`}
+                  className={`cultural-element ${
+                    selectedCulturalElements.includes(element) ? 'selected' : ''
+                  }`}
                   onClick={() => handleCulturalElementToggle(element)}
                 >
                   {element}
@@ -391,7 +445,7 @@ Advanced Pedagogical Features:
             </div>
           </div>
 
-          <button 
+          <button
             className="generate-button"
             onClick={generateLesson}
             disabled={isGenerating || (!selectedTemplate && !customSubject)}
@@ -402,10 +456,7 @@ Advanced Pedagogical Features:
           {isGenerating && (
             <div className="generation-progress">
               <div className="progress-bar">
-                <div 
-                  className="progress-fill" 
-                  style={{ width: `${generationProgress}%` }}
-                ></div>
+                <div className="progress-fill" style={{ width: `${generationProgress}%` }}></div>
               </div>
               <span>{Math.round(generationProgress)}% Complete</span>
             </div>
@@ -415,14 +466,16 @@ Advanced Pedagogical Features:
         {generatedLesson && (
           <div className="generated-lesson">
             <h2>🌟 Generated AI Lesson</h2>
-            
+
             <div className="lesson-header">
               <h3>{generatedLesson.title}</h3>
               <div className="lesson-meta">
                 <span className="subject">{generatedLesson.subject}</span>
                 <span className="year">Year {generatedLesson.year}</span>
                 <span className="duration">{generatedLesson.estimatedDuration} min</span>
-                <span className={`difficulty ${generatedLesson.difficulty}`}>{generatedLesson.difficulty}</span>
+                <span className={`difficulty ${generatedLesson.difficulty}`}>
+                  {generatedLesson.difficulty}
+                </span>
               </div>
             </div>
 
@@ -454,7 +507,9 @@ Advanced Pedagogical Features:
                 <h4>Cultural Integration</h4>
                 <div className="cultural-tags">
                   {generatedLesson.culturalIntegration.map((element, index) => (
-                    <span key={index} className="cultural-tag">{element}</span>
+                    <span key={index} className="cultural-tag">
+                      {element}
+                    </span>
                   ))}
                 </div>
               </div>

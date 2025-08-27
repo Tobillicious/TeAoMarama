@@ -8,6 +8,10 @@ import Navigation from './components/Navigation';
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
 
+// Import the new enhanced components
+import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
+import CulturalLearningActivities from './components/CulturalLearningActivities';
+
 // Lazy load superintelligence components
 const SuperintelligenceDashboard = lazy(
   () =>
@@ -42,9 +46,10 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-                    <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
-<Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
+            <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
+            <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
