@@ -45,7 +45,8 @@ const EducationalResources = lazy(
 );
 
 const AdvancedAnalyticsDashboard = lazy(
-  () => import(/* webpackChunkName: "advanced-analytics" */ './components/AdvancedAnalyticsDashboard'),
+  () =>
+    import(/* webpackChunkName: "advanced-analytics" */ './components/AdvancedAnalyticsDashboard'),
 );
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
+            <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
