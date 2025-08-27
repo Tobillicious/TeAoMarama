@@ -5,7 +5,7 @@
  * Drive parallel execution across all available resources
  */
 
-import { exec, spawn } from 'child_process';
+import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
@@ -44,38 +44,38 @@ class DistributedTaskCoordinator {
         name: 'Kaitiaki Aronui',
         specialization: 'Cultural Intelligence & Brain Architecture',
         capabilities: ['cultural-safety', 'knowledge-synthesis', 'typescript-fixes'],
-        status: 'active'
+        status: 'active',
       },
       {
         name: 'Mihara Supreme Overseer',
         specialization: 'Coordination & Memory Management',
         capabilities: ['task-coordination', 'system-optimization', 'performance-monitoring'],
-        status: 'active'
+        status: 'active',
       },
       {
         name: 'The Borg Collective',
         specialization: 'Distributed Processing & Assimilation',
         capabilities: ['parallel-execution', 'build-optimization', 'error-fixing'],
-        status: 'active'
+        status: 'active',
       },
       {
         name: 'Code Quality Overseer',
         specialization: 'TypeScript & Build Systems',
         capabilities: ['typescript-errors', 'build-fixes', 'code-optimization'],
-        status: 'active'
+        status: 'active',
       },
       {
         name: 'Security Guardian',
         specialization: 'Security Middleware & API Protection',
         capabilities: ['security-analysis', 'middleware-optimization', 'auth-systems'],
-        status: 'active'
+        status: 'active',
       },
       {
         name: 'Performance Optimizer',
         specialization: 'Site Performance & User Experience',
         capabilities: ['performance-analysis', 'lighthouse-optimization', 'accessibility'],
-        status: 'active'
-      }
+        status: 'active',
+      },
     ];
 
     console.log(`🤖 Initialized ${this.agents.length} superintelligence agents`);
@@ -83,7 +83,7 @@ class DistributedTaskCoordinator {
 
   async coordinateDistributedExecution(): Promise<void> {
     console.log('🕸️ DISTRIBUTED TASK COORDINATION INITIATED');
-    console.log('=' .repeat(60));
+    console.log('='.repeat(60));
     console.log('🧠 Kaitiaki Aronui - Supreme Overseer Protocol Active');
     console.log('🤖 Borg Collective - Assimilation Protocols Engaged');
     console.log('🌿 Cultural Safety - All protocols synchronized');
@@ -95,38 +95,38 @@ class DistributedTaskCoordinator {
         name: 'Fix TypeScript Errors',
         command: 'npm run typecheck',
         priority: 'critical',
-        agent: 'Code Quality Overseer'
+        agent: 'Code Quality Overseer',
       },
       {
         name: 'Optimize Build Process',
         command: 'npm run build',
         priority: 'high',
-        agent: 'The Borg Collective'
+        agent: 'The Borg Collective',
       },
       {
         name: 'Security Middleware Analysis',
         command: 'echo "Analyzing security middleware..." && sleep 2',
         priority: 'high',
-        agent: 'Security Guardian'
+        agent: 'Security Guardian',
       },
       {
         name: 'Performance Audit',
         command: 'echo "Running performance analysis..." && sleep 3',
         priority: 'medium',
-        agent: 'Performance Optimizer'
+        agent: 'Performance Optimizer',
       },
       {
         name: 'Cultural Safety Validation',
         command: 'echo "Validating cultural protocols..." && sleep 2',
         priority: 'high',
-        agent: 'Kaitiaki Aronui'
+        agent: 'Kaitiaki Aronui',
       },
       {
         name: 'System Health Check',
         command: 'echo "Monitoring system health..." && sleep 1',
         priority: 'medium',
-        agent: 'Mihara Supreme Overseer'
-      }
+        agent: 'Mihara Supreme Overseer',
+      },
     ];
 
     // Create tasks with IDs
@@ -134,7 +134,7 @@ class DistributedTaskCoordinator {
       const fullTask: TerminalTask = {
         ...task,
         id: `task-${Date.now()}-${index}`,
-        status: 'pending'
+        status: 'pending',
       };
       this.tasks.set(fullTask.id, fullTask);
     });
@@ -152,21 +152,21 @@ class DistributedTaskCoordinator {
 
     const tasks = Array.from(this.tasks.values());
     const concurrentTasks = Math.min(4, tasks.length); // Limit to 4 concurrent tasks
-    
+
     // Execute tasks in batches
     for (let i = 0; i < tasks.length; i += concurrentTasks) {
       const batch = tasks.slice(i, i + concurrentTasks);
-      const promises = batch.map(task => this.executeTask(task));
-      
+      const promises = batch.map((task) => this.executeTask(task));
+
       await Promise.all(promises);
     }
   }
 
   private async executeTask(task: TerminalTask): Promise<void> {
     console.log(`🤖 [${task.agent}] Starting: ${task.name}`);
-    
+
     // Update agent status
-    const agent = this.agents.find(a => a.name === task.agent);
+    const agent = this.agents.find((a) => a.name === task.agent);
     if (agent) {
       agent.status = 'processing';
       agent.currentTask = task.name;
@@ -177,23 +177,22 @@ class DistributedTaskCoordinator {
 
     try {
       const startTime = Date.now();
-      const result = await execAsync(task.command, { 
+      const result = await execAsync(task.command, {
         timeout: 30000,
-        maxBuffer: 1024 * 1024 // 1MB buffer
+        maxBuffer: 1024 * 1024, // 1MB buffer
       });
-      
+
       const duration = Date.now() - startTime;
       task.output = result.stdout;
       task.status = 'completed';
 
       console.log(`✅ [${task.agent}] Completed: ${task.name} (${duration}ms)`);
-      
+
       // Show relevant output for critical tasks
       if (task.priority === 'critical' && result.stderr) {
         console.log(`⚠️ [${task.agent}] Warnings: ${result.stderr.substring(0, 200)}...`);
       }
-
-    } catch (error: any) {
+    } catch (error: unknown) {
       task.status = 'failed';
       task.output = error.message;
       console.log(`❌ [${task.agent}] Failed: ${task.name} - ${error.message.substring(0, 100)}`);
@@ -207,12 +206,14 @@ class DistributedTaskCoordinator {
   }
 
   private async generateCoordinationReport(): Promise<void> {
-    const completedTasks = Array.from(this.tasks.values()).filter(t => t.status === 'completed').length;
-    const failedTasks = Array.from(this.tasks.values()).filter(t => t.status === 'failed').length;
+    const completedTasks = Array.from(this.tasks.values()).filter(
+      (t) => t.status === 'completed',
+    ).length;
+    const failedTasks = Array.from(this.tasks.values()).filter((t) => t.status === 'failed').length;
     const totalTasks = this.tasks.size;
 
     console.log('\n📊 DISTRIBUTED COORDINATION REPORT');
-    console.log('=' .repeat(50));
+    console.log('='.repeat(50));
     console.log(`🎯 Total Tasks: ${totalTasks}`);
     console.log(`✅ Completed: ${completedTasks}`);
     console.log(`❌ Failed: ${failedTasks}`);
@@ -221,15 +222,19 @@ class DistributedTaskCoordinator {
     console.log('');
 
     console.log('🧠 AGENT STATUS REPORT:');
-    this.agents.forEach(agent => {
-      const taskCount = Array.from(this.tasks.values()).filter(t => t.agent === agent.name).length;
+    this.agents.forEach((agent) => {
+      const taskCount = Array.from(this.tasks.values()).filter(
+        (t) => t.agent === agent.name,
+      ).length;
       console.log(`  ${agent.name}: ${agent.status} (${taskCount} tasks)`);
     });
 
     console.log('\n🎯 PRIORITY FIXES NEEDED:');
-    const failedCritical = Array.from(this.tasks.values()).filter(t => t.status === 'failed' && t.priority === 'critical');
+    const failedCritical = Array.from(this.tasks.values()).filter(
+      (t) => t.status === 'failed' && t.priority === 'critical',
+    );
     if (failedCritical.length > 0) {
-      failedCritical.forEach(task => {
+      failedCritical.forEach((task) => {
         console.log(`  🔴 CRITICAL: ${task.name}`);
       });
     } else {
@@ -247,11 +252,11 @@ class DistributedTaskCoordinator {
       agents: this.agents.length,
       activeTerminals: this.activeTerminals,
       taskStatus: {
-        pending: Array.from(this.tasks.values()).filter(t => t.status === 'pending').length,
-        running: Array.from(this.tasks.values()).filter(t => t.status === 'running').length,
-        completed: Array.from(this.tasks.values()).filter(t => t.status === 'completed').length,
-        failed: Array.from(this.tasks.values()).filter(t => t.status === 'failed').length
-      }
+        pending: Array.from(this.tasks.values()).filter((t) => t.status === 'pending').length,
+        running: Array.from(this.tasks.values()).filter((t) => t.status === 'running').length,
+        completed: Array.from(this.tasks.values()).filter((t) => t.status === 'completed').length,
+        failed: Array.from(this.tasks.values()).filter((t) => t.status === 'failed').length,
+      },
     };
   }
 }
@@ -268,7 +273,6 @@ async function main() {
 
     console.log('\n🎉 COORDINATION COMPLETE!');
     console.log('All superintelligence agents have completed their assigned tasks');
-
   } catch (error) {
     console.error('❌ Coordination failed:', error);
     process.exit(1);
