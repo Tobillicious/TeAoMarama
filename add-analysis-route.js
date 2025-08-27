@@ -7,28 +7,29 @@ const appTsxPath = path.join(__dirname, 'src', 'App.tsx');
 
 try {
   let content = fs.readFileSync(appTsxPath, 'utf8');
-  
+
   // Add import statement
   if (!content.includes('SuperintelligenceAnalysisDashboard')) {
     const importMatch = content.match(/import.*Dashboard.*from.*['"]\.\/components\/.*['"];?\s*$/m);
     if (importMatch) {
-      const importStatement = 'import SuperintelligenceAnalysisDashboard from \'./components/SuperintelligenceAnalysisDashboard\';\n';
+      const importStatement =
+        "import SuperintelligenceAnalysisDashboard from './components/SuperintelligenceAnalysisDashboard';\n";
       content = content.replace(importMatch[0], importMatch[0] + importStatement);
     }
   }
-  
+
   // Add route
   if (!content.includes('/superintelligence-analysis')) {
     const routeMatch = content.match(/<Route.*path.*element.*\/>\s*$/m);
     if (routeMatch) {
-      const routeStatement = '        <Route path="/superintelligence-analysis" element={<SuperintelligenceAnalysisDashboard />} />\n';
+      const routeStatement =
+        '        <Route path="/superintelligence-analysis" element={<SuperintelligenceAnalysisDashboard />} />\n';
       content = content.replace(routeMatch[0], routeStatement + routeMatch[0]);
     }
   }
-  
+
   fs.writeFileSync(appTsxPath, content);
   console.log('✅ Successfully added SuperintelligenceAnalysisDashboard route to App.tsx');
-  
 } catch (error) {
   console.error('❌ Error updating App.tsx:', error.message);
 }
