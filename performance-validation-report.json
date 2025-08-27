@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-08-24T06:27:49.126Z",
+  "platform": "Te Kura o TeAoMarama",
+  "testResult": {
+    "passed": false,
+    "metrics": {
+      "fcp": 7295.126749999999,
+      "lcp": 13684.2028,
+      "tbt": 4755.499999999996,
+      "cls": 0,
+      "performanceScore": 28.000000000000004
+    },
+    "message": "⚠️  Some Core Web Vitals targets not met",
+    "details": "Further optimization may be needed"
+  },
+  "optimizations": [
+    "✅ Code splitting and lazy loading implemented",
+    "✅ Bundle size optimization with terser",
+    "✅ Resource hints (preload, prefetch, preconnect)",
+    "✅ Service worker caching strategy",
+    "✅ Critical CSS inlining",
+    "✅ Image optimization with WebP support",
+    "✅ Gzip and Brotli compression",
+    "✅ Main thread blocking time minimization",
+    "✅ Cultural functionality preservation"
+  ],
+  "recommendations": [
+    "Consider further code splitting",
+    "Optimize heavy components",
+    "Review third-party dependencies",
+    "Implement more aggressive caching"
+  ]
+}

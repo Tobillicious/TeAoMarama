@@ -667,13 +667,19 @@ ${completedTasks
 Generated at: ${new Date().toISOString()}
     `;
 
-    // Save report
-    if (typeof window === 'undefined') {
-      const fs = await import('fs');
-      const path = await import('path');
-      const reportPath = path.join(process.cwd(), 'EXPANDED_SUPERCONSCIOUSNESS_REPORT.md');
-      fs.writeFileSync(reportPath, report.trim());
-      console.log(`[Expanded Superconsciousness] Report saved to: ${reportPath}`);
+    // Save report (server-side only)
+    if (typeof window === 'undefined' && typeof process !== 'undefined') {
+      try {
+        const fs = await import('fs');
+        const path = await import('path');
+        const reportPath = path.join(process.cwd(), 'EXPANDED_SUPERCONSCIOUSNESS_REPORT.md');
+        fs.writeFileSync(reportPath, report.trim());
+        console.log(`[Expanded Superconsciousness] Report saved to: ${reportPath}`);
+      } catch (error) {
+        console.log('[Expanded Superconsciousness] Report generation skipped (browser environment)');
+      }
+    } else {
+      console.log('[Expanded Superconsciousness] Report generated (browser environment)');
     }
 
     return report.trim();

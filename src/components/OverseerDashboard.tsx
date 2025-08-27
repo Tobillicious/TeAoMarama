@@ -111,16 +111,20 @@ const OverseerDashboard: React.FC = () => {
     // Get terminal status
     const terminalStatus = terminalCoordination.getSystemStatus();
     const rawTerminals = terminalCoordination.getTerminals();
-    setTerminals(rawTerminals.map((terminal: Record<string, unknown>) => ({
-      id: terminal.id,
-      status: terminal.status,
+    setTerminals(rawTerminals.map((terminal: any) => ({
+      id: String(terminal.id || ''),
+      status: String(terminal.status || 'unknown'),
       lastHeartbeat: terminal.lastHeartbeat?.toISOString() || new Date().toISOString(),
-      name: terminal.name || `Terminal ${terminal.id}`,
-      role: terminal.role || 'Coordination Node',
-      performance: terminal.performance || { cpu: 0.75, memory: 0.65, responseTime: 0.12 },
-      currentTask: terminal.currentTask || null,
-      culturalContext: terminal.culturalContext || 'Cultural safety protocols active',
-      educationalFocus: terminal.educationalFocus || 'Educational content optimization'
+      name: String(terminal.name || `Terminal ${terminal.id}`),
+      role: String(terminal.role || 'Coordination Node'),
+      performance: {
+        cpu: Number((terminal.performance as any)?.cpu) || 75,
+        memory: Number((terminal.performance as any)?.memory) || 65,
+        responseTime: Number((terminal.performance as any)?.responseTime) || 120
+      },
+      currentTask: terminal.currentTask ? String(terminal.currentTask) : undefined,
+      culturalContext: String(terminal.culturalContext || 'Cultural safety protocols active'),
+      educationalFocus: String(terminal.educationalFocus || 'Educational content optimization')
     })));
     setSystemMetrics(terminalStatus);
 

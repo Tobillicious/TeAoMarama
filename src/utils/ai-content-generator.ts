@@ -7,7 +7,7 @@ class AIContentGenerator {
   private culturalGuidelines: Map<string, any>;
 
   constructor() {
-    this.apiKey = 'sk-0fbd7c9a3a074348a6c6bb08cc8d2a0a';
+    this.apiKey = 'sk-103cb83572a346e2aef89e2d2a4f7f89';
     this.culturalGuidelines = new Map([
       ['te-reo', { sensitivity: 'high', validation_required: true }],
       ['tikanga', { sensitivity: 'sacred', kaitiaki_approval: true }],
