@@ -21,8 +21,11 @@ const Navigation: React.FC = () => {
         <Link to="/cultural-activities" className="nav-link">
           🌿 Cultural Activities
         </Link>
+        <Link to="/educational-resources" className="nav-link">
+          📚 Educational Resources
+        </Link>
         <Link to="/educational-platform" className="nav-link">
-          📚 Educational Platform
+          🎓 Educational Platform
         </Link>
         <Link to="/home" className="nav-link">
           Home
