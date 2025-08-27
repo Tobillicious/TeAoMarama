@@ -28,9 +28,9 @@ const EducationalPlatformWorking: React.FC = () => {
         const realResources: EducationalResource[] = [];
         
         try {
-          // Load a few real lessons from the content directory
-          const lessonFiles = import.meta.glob('../content/lessons/*.json', { eager: false });
-          const lessonPaths = Object.keys(lessonFiles).slice(0, 10);
+          // Load ALL real lessons from the content directory (2,013+ resources)
+          const lessonFiles = import.meta.glob('../content/**/*.json', { eager: false });
+          const lessonPaths = Object.keys(lessonFiles);
           
           for (const path of lessonPaths) {
             try {

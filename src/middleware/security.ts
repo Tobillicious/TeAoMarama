@@ -1,8 +1,9 @@
+
 // Secure API Middleware - Te Kura o TeAoMarama
 // Enhanced with DeepSeek AI security intelligence
 
-import type { User } from '@supabase/supabase-js';
 import { supabase } from '../supabaseClient';
+import type { User } from '@supabase/supabase-js';
 
 interface SecurityContext {
   user: User | null;
@@ -26,27 +27,24 @@ class SecureAPIMiddleware {
     const authHeader = request.headers.get('Authorization');
     const userAgent = request.headers.get('User-Agent') || 'unknown';
     const clientIP = this.getClientIP(request);
-
+    
     let user = null;
     let culturalClearance: SecurityContext['culturalClearance'] = 'none';
     let educatorStatus = false;
 
     if (authHeader) {
       const token = authHeader.replace('Bearer ', '');
-      const {
-        data: { user: authUser },
-        error,
-      } = await supabase.auth.getUser(token);
-
+      const { data: { user: authUser }, error } = await supabase.auth.getUser(token);
+      
       if (authUser && !error) {
         user = authUser;
-
+        
         // Check cultural clearance level
         culturalClearance = await this.getCulturalClearance(user);
-
+        
         // Check educator status
         educatorStatus = await this.isEducator(user);
-
+        
         // Log authentication success
         await this.logSecurityEvent('AUTH_SUCCESS', user.id, clientIP, userAgent);
       } else {
@@ -62,13 +60,13 @@ class SecureAPIMiddleware {
       culturalClearance,
       educatorStatus,
       rateLimitRemaining,
-      requestId: this.generateRequestId(),
+      requestId: this.generateRequestId()
     };
   }
 
   async validateCulturalAccess(
-    resource: CulturalResource,
-    context: SecurityContext,
+    resource: CulturalResource, 
+    context: SecurityContext
   ): Promise<boolean> {
     // High sensitivity cultural content requires special permissions
     if (resource.sensitivity === 'high' || resource.sensitivity === 'sacred') {
@@ -126,7 +124,7 @@ class SecureAPIMiddleware {
     const windowMs = 60 * 60 * 1000; // 1 hour window
 
     const rateLimitData = this.rateLimitMap.get(key);
-
+    
     if (!rateLimitData || now > rateLimitData.resetTime) {
       this.rateLimitMap.set(key, { count: 1, resetTime: now + windowMs });
       return limit - 1;
@@ -141,27 +139,24 @@ class SecureAPIMiddleware {
   }
 
   private async logSecurityEvent(
-    event: string,
-    userId: string | null,
-    clientIP: string,
-    userAgent: string,
+    event: string, 
+    userId: string | null, 
+    clientIP: string, 
+    userAgent: string
   ): Promise<void> {
     try {
       await supabase.rpc('log_security_event', {
         p_action: event,
         p_resource_type: 'api_request',
         p_resource_id: null,
-        p_cultural_sensitivity: null,
+        p_cultural_sensitivity: null
       });
     } catch (error) {
       console.error('Failed to log security event:', error);
     }
   }
 
-  private async checkIwiPermission(
-    user: User | null,
-    resource: CulturalResource,
-  ): Promise<boolean> {
+  private async checkIwiPermission(user: User | null, resource: CulturalResource): Promise<boolean> {
     if (!user) return false;
 
     const { data } = await supabase
@@ -175,7 +170,9 @@ class SecureAPIMiddleware {
   }
 
   private getClientIP(request: Request): string {
-    return request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+    return request.headers.get('x-forwarded-for') || 
+           request.headers.get('x-real-ip') || 
+           'unknown';
   }
 
   private generateRequestId(): string {
@@ -184,26 +181,26 @@ class SecureAPIMiddleware {
 
   // Middleware function for API routes
   async secureEndpoint(
-    request: Request,
-    handler: (context: SecurityContext) => Promise<Response>,
+    request: Request, 
+    handler: (context: SecurityContext) => Promise<Response>
   ): Promise<Response> {
     try {
       const context = await this.authenticateRequest(request);
-
+      
       // Check rate limit
       if (context.rateLimitRemaining <= 0) {
-        return new Response('Rate limit exceeded', {
+        return new Response('Rate limit exceeded', { 
           status: 429,
           headers: {
             'X-RateLimit-Remaining': '0',
-            'X-Request-ID': context.requestId,
-          },
+            'X-Request-ID': context.requestId
+          }
         });
       }
 
       // Execute handler with security context
       const response = await handler(context);
-
+      
       // Add security headers
       response.headers.set('X-Content-Type-Options', 'nosniff');
       response.headers.set('X-Frame-Options', 'DENY');
@@ -213,6 +210,7 @@ class SecureAPIMiddleware {
       response.headers.set('X-RateLimit-Remaining', context.rateLimitRemaining.toString());
 
       return response;
+      
     } catch (error) {
       console.error('Security middleware error:', error);
       return new Response('Internal server error', { status: 500 });
@@ -221,4 +219,4 @@ class SecureAPIMiddleware {
 }
 
 export const securityMiddleware = new SecureAPIMiddleware();
-export type { CulturalResource, SecurityContext };
+export type { SecurityContext, CulturalResource };

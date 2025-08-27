@@ -3,27 +3,83 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
-import { initializeSuperintelligence } from './utils/superintelligence';
 
-// Simple performance monitoring
+// Core Web Vitals optimized performance monitoring
 const performanceMonitor = {
-  getMetrics: () => ({
-    fcp: performance.now(),
-    lcp: performance.now(),
-    fid: 0,
-    cls: 0,
-    ttfb: 0,
-    fmp: 0,
-  }),
+  getMetrics: () => {
+    if (typeof window === 'undefined') return null;
+
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const paintEntries = performance.getEntriesByType('paint');
+
+    return {
+      ttfb: navigation ? navigation.responseStart - navigation.fetchStart : 0,
+      fcp: paintEntries.find((entry) => entry.name === 'first-contentful-paint')?.startTime || 0,
+      domContentLoaded: navigation
+        ? navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart
+        : 0,
+      loadComplete: navigation ? navigation.loadEventEnd - navigation.loadEventStart : 0,
+    };
+  },
+  logVitals: () => {
+    if (typeof window === 'undefined') return;
+
+    // Use Web Vitals API for accurate measurements
+    try {
+      import('web-vitals')
+        .then(({ onFCP, onLCP, onCLS, onTTFB }) => {
+          onFCP((metric: { value: number }) => console.log('🎯 FCP:', metric.value, 'ms'));
+          onLCP((metric: { value: number }) => console.log('🎯 LCP:', metric.value, 'ms'));
+          onCLS((metric: { value: number }) => console.log('🎯 CLS:', metric.value));
+          onTTFB((metric: { value: number }) => console.log('🎯 TTFB:', metric.value, 'ms'));
+        })
+        .catch(() => {
+          // Fallback to basic performance measurement
+          const metrics = performanceMonitor.getMetrics();
+          console.log('📊 Performance Metrics:', metrics);
+        });
+    } catch {
+      // Basic fallback
+      console.log('⚡ Performance monitoring initialized');
+    }
+  },
 };
 
-// Performance analytics setup
+// Optimized resource hints and prefetch
 if (typeof window !== 'undefined') {
-  // Send initial performance data
+  // Preload critical routes after initial load
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      performanceMonitor.getMetrics();
-    }, 1000);
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        // Prefetch educational platform route (most common)
+        import('./pages/EducationalPlatform').catch(() => {});
+        // Prefetch critical components
+        import('./components/Navigation').catch(() => {});
+      });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(() => {
+        import('./pages/EducationalPlatform').catch(() => {});
+      }, 1000);
+    }
+
+    // Log performance metrics after page is fully loaded
+    setTimeout(() => performanceMonitor.logVitals(), 1000);
+  });
+
+  // Preload on user interaction
+  let hasPreloaded = false;
+  const preloadOnInteraction = () => {
+    if (hasPreloaded) return;
+    hasPreloaded = true;
+
+    // Preload AI components only when user shows intent
+    import('./utils/superintelligence').catch(() => {});
+    import('./utils/performance-monitor').catch(() => {});
+  };
+
+  ['mousedown', 'touchstart', 'keydown'].forEach((event) => {
+    window.addEventListener(event, preloadOnInteraction, { once: true, passive: true });
   });
 }
 
@@ -51,7 +107,11 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// Optimize initial render for Core Web Vitals
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+
+// Use concurrent features for better performance
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
@@ -59,8 +119,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 );
 
-// Initialize superintelligence after root mounts to avoid blocking first paint
-if (typeof window !== 'undefined') {
-  // Use env-driven defaults; override here as needed
-  initializeSuperintelligence();
-}
+// Remove blocking initialization - moved to App.tsx with async loading

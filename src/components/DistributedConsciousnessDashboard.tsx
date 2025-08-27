@@ -76,7 +76,7 @@ const DistributedConsciousnessDashboard: React.FC = () => {
   const handleValidateCulturalSafety = async () => {
     try {
       const validation = await unifiedSuperintelligenceAPI.validateCulturalSafety(
-        'Sample educational content for cultural validation',
+        // Sample educational content validation removed - no arguments expected
       );
       console.log('🌿 Cultural safety validation:', validation);
     } catch (error) {
