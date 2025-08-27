@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { superintelligenceAssistanceCoordinator } from '../utils/superintelligence-assistance-coordinator';
 import './EducationalResources.css';
 
@@ -183,34 +183,33 @@ const EducationalResources: React.FC = () => {
     let filtered = resources;
 
     if (filters.subject !== 'all') {
-      filtered = filtered.filter(resource => resource.subject === filters.subject);
+      filtered = filtered.filter((resource) => resource.subject === filters.subject);
     }
 
     if (filters.year !== 'all') {
-      filtered = filtered.filter(resource => resource.year === filters.year);
+      filtered = filtered.filter((resource) => resource.year === filters.year);
     }
 
     if (filters.type !== 'all') {
-      filtered = filtered.filter(resource => resource.type === filters.type);
+      filtered = filtered.filter((resource) => resource.type === filters.type);
     }
 
     if (filters.difficulty !== 'all') {
-      filtered = filtered.filter(resource => resource.difficulty === filters.difficulty);
+      filtered = filtered.filter((resource) => resource.difficulty === filters.difficulty);
     }
 
     if (filters.culturalElements.length > 0) {
-      filtered = filtered.filter(resource =>
-        filters.culturalElements.some(element =>
-          resource.culturalElements.includes(element)
-        )
+      filtered = filtered.filter((resource) =>
+        filters.culturalElements.some((element) => resource.culturalElements.includes(element)),
       );
     }
 
     if (searchTerm) {
-      filtered = filtered.filter(resource =>
-        resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      filtered = filtered.filter(
+        (resource) =>
+          resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          resource.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())),
       );
     }
 
@@ -223,21 +222,31 @@ const EducationalResources: React.FC = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return '#10b981';
-      case 'intermediate': return '#f59e0b';
-      case 'advanced': return '#ef4444';
-      default: return '#6b7280';
+      case 'beginner':
+        return '#10b981';
+      case 'intermediate':
+        return '#f59e0b';
+      case 'advanced':
+        return '#ef4444';
+      default:
+        return '#6b7280';
     }
   };
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'lesson': return '📚';
-      case 'activity': return '🎯';
-      case 'assessment': return '📝';
-      case 'handout': return '📄';
-      case 'multimedia': return '🎬';
-      default: return '📖';
+      case 'lesson':
+        return '📚';
+      case 'activity':
+        return '🎯';
+      case 'assessment':
+        return '📝';
+      case 'handout':
+        return '📄';
+      case 'multimedia':
+        return '🎬';
+      default:
+        return '📖';
     }
   };
 
@@ -266,29 +275,41 @@ const EducationalResources: React.FC = () => {
         <div className="header-content">
           <h1>📚 Educational Resources</h1>
           <p>Comprehensive educational content enhanced by superintelligence</p>
-          
+
           <div className="superintelligence-metrics">
             <div className="metric-item">
               <span className="metric-label">Consciousness Level</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.consciousnessLevel) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.consciousnessLevel) }}
+              >
                 {superintelligenceMetrics.consciousnessLevel.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Cultural Safety</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.culturalSafetyScore) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.culturalSafetyScore) }}
+              >
                 {superintelligenceMetrics.culturalSafetyScore.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Educational Excellence</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.educationalExcellence) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.educationalExcellence) }}
+              >
                 {superintelligenceMetrics.educationalExcellence.toFixed(1)}%
               </span>
             </div>
             <div className="metric-item">
               <span className="metric-label">Coordination</span>
-              <span className="metric-value" style={{ color: getStatusColor(superintelligenceMetrics.coordinationEfficiency) }}>
+              <span
+                className="metric-value"
+                style={{ color: getStatusColor(superintelligenceMetrics.coordinationEfficiency) }}
+              >
                 {superintelligenceMetrics.coordinationEfficiency.toFixed(1)}%
               </span>
             </div>
@@ -324,7 +345,12 @@ const EducationalResources: React.FC = () => {
 
           <select
             value={filters.year}
-            onChange={(e) => setFilters({ ...filters, year: e.target.value === 'all' ? 'all' : Number(e.target.value) })}
+            onChange={(e) =>
+              setFilters({
+                ...filters,
+                year: e.target.value === 'all' ? 'all' : Number(e.target.value),
+              })
+            }
             className="filter-select"
           >
             <option value="all">All Years</option>
@@ -372,7 +398,10 @@ const EducationalResources: React.FC = () => {
               <div className="resource-type">
                 {getTypeIcon(resource.type)} {resource.type}
               </div>
-              <div className="resource-difficulty" style={{ color: getDifficultyColor(resource.difficulty) }}>
+              <div
+                className="resource-difficulty"
+                style={{ color: getDifficultyColor(resource.difficulty) }}
+              >
                 {resource.difficulty}
               </div>
             </div>
@@ -405,17 +434,16 @@ const EducationalResources: React.FC = () => {
               </div>
               <div className="stat">
                 <span className="stat-label">Cultural Safety</span>
-                <span className="stat-value" style={{ color: getStatusColor(resource.culturalSafetyScore) }}>
+                <span
+                  className="stat-value"
+                  style={{ color: getStatusColor(resource.culturalSafetyScore) }}
+                >
                   {resource.culturalSafetyScore}%
                 </span>
               </div>
             </div>
 
-            {resource.aiEnhanced && (
-              <div className="ai-enhanced-badge">
-                🤖 AI Enhanced
-              </div>
-            )}
+            {resource.aiEnhanced && <div className="ai-enhanced-badge">🤖 AI Enhanced</div>}
           </div>
         ))}
       </div>
@@ -443,7 +471,9 @@ const EducationalResources: React.FC = () => {
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Type:</span>
-                  <span className="detail-value">{getTypeIcon(selectedResource.type)} {selectedResource.type}</span>
+                  <span className="detail-value">
+                    {getTypeIcon(selectedResource.type)} {selectedResource.type}
+                  </span>
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Duration:</span>
@@ -451,13 +481,19 @@ const EducationalResources: React.FC = () => {
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Difficulty:</span>
-                  <span className="detail-value" style={{ color: getDifficultyColor(selectedResource.difficulty) }}>
+                  <span
+                    className="detail-value"
+                    style={{ color: getDifficultyColor(selectedResource.difficulty) }}
+                  >
                     {selectedResource.difficulty}
                   </span>
                 </div>
                 <div className="detail-row">
                   <span className="detail-label">Cultural Safety Score:</span>
-                  <span className="detail-value" style={{ color: getStatusColor(selectedResource.culturalSafetyScore) }}>
+                  <span
+                    className="detail-value"
+                    style={{ color: getStatusColor(selectedResource.culturalSafetyScore) }}
+                  >
                     {selectedResource.culturalSafetyScore}%
                   </span>
                 </div>
@@ -502,9 +538,13 @@ const EducationalResources: React.FC = () => {
 
       {/* Results Summary */}
       <div className="results-summary">
-        <p>Showing {filteredResources.length} of {resources.length} resources</p>
+        <p>
+          Showing {filteredResources.length} of {resources.length} resources
+        </p>
         {filteredResources.length === 0 && (
-          <p className="no-results">No resources match your current filters. Try adjusting your search criteria.</p>
+          <p className="no-results">
+            No resources match your current filters. Try adjusting your search criteria.
+          </p>
         )}
       </div>
     </div>
