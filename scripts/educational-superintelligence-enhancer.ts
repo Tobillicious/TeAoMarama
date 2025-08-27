@@ -5,7 +5,6 @@
  * True intelligence emerges through teaching and cultural preservation
  */
 
-import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -34,16 +33,16 @@ class EducationalSupintelligenceEnhancer {
   async enhanceEducationalExperience(): Promise<void> {
     // Analyze current educational components
     await this.analyzeCurrentEducationalState();
-    
+
     // Enhance key learning areas
     await this.enhanceContentQuality();
     await this.improveCulturalIntegration();
     await this.optimizeAccessibility();
     await this.enhanceInteractivity();
-    
+
     // Generate educational improvements
     await this.implementEnhancements();
-    
+
     // Validate learning outcomes
     await this.validateLearningEffectiveness();
   }
@@ -55,12 +54,12 @@ class EducationalSupintelligenceEnhancer {
     const educationalAreas = [
       'Content Quality & Accuracy',
       'Cultural Integration',
-      'Accessibility & Inclusion', 
+      'Accessibility & Inclusion',
       'Interactive Learning',
       'Assessment & Feedback',
       'Te Reo Māori Integration',
       'Visual Design & UX',
-      'Performance & Loading'
+      'Performance & Loading',
     ];
 
     for (const area of educationalAreas) {
@@ -70,7 +69,7 @@ class EducationalSupintelligenceEnhancer {
         improvements: this.generateImprovements(area),
         culturalIntegration: this.assessCulturalIntegration(area),
         learningEffectiveness: this.assessLearningEffectiveness(area),
-        aiContribution: this.identifyAIContribution(area)
+        aiContribution: this.identifyAIContribution(area),
       };
 
       this.enhancements.set(area, enhancement);
@@ -85,15 +84,15 @@ class EducationalSupintelligenceEnhancer {
     // Based on our current Te Kura o TeAoMarama implementation
     const statusMap = {
       'Content Quality & Accuracy': 'good',
-      'Cultural Integration': 'excellent', 
+      'Cultural Integration': 'excellent',
       'Accessibility & Inclusion': 'good',
       'Interactive Learning': 'needs_work',
       'Assessment & Feedback': 'needs_work',
       'Te Reo Māori Integration': 'good',
       'Visual Design & UX': 'good',
-      'Performance & Loading': 'excellent'
+      'Performance & Loading': 'excellent',
     };
-    
+
     return statusMap[area] || 'needs_work';
   }
 
@@ -103,50 +102,50 @@ class EducationalSupintelligenceEnhancer {
         'Add more detailed explanations for complex concepts',
         'Include real-world examples and case studies',
         'Implement fact-checking with cultural context',
-        'Add multimedia learning resources'
+        'Add multimedia learning resources',
       ],
       'Cultural Integration': [
         'Expand Te Reo Māori vocabulary integration',
         'Add more tikanga-based learning approaches',
         'Include iwi-specific content where appropriate',
-        'Enhance cultural storytelling elements'
+        'Enhance cultural storytelling elements',
       ],
       'Accessibility & Inclusion': [
         'Improve screen reader compatibility',
         'Add keyboard navigation enhancements',
         'Implement high contrast mode',
-        'Support for diverse learning styles'
+        'Support for diverse learning styles',
       ],
       'Interactive Learning': [
         'Add interactive quizzes and assessments',
         'Implement collaborative learning features',
         'Create hands-on activities and simulations',
-        'Add progress tracking and achievements'
+        'Add progress tracking and achievements',
       ],
       'Assessment & Feedback': [
         'Implement formative assessment tools',
         'Add personalized feedback mechanisms',
         'Create adaptive learning paths',
-        'Include peer review and collaboration'
+        'Include peer review and collaboration',
       ],
       'Te Reo Māori Integration': [
         'Add pronunciation guides',
         'Include cultural context for Te Reo terms',
         'Implement interactive language learning',
-        'Add translation toggles'
+        'Add translation toggles',
       ],
       'Visual Design & UX': [
         'Enhance visual hierarchy for learning',
         'Add more engaging animations and transitions',
         'Improve mobile learning experience',
-        'Implement better content organization'
+        'Implement better content organization',
       ],
       'Performance & Loading': [
         'Further optimize loading times',
         'Implement progressive loading for large content',
         'Add offline learning capabilities',
-        'Optimize for slower internet connections'
-      ]
+        'Optimize for slower internet connections',
+      ],
     };
 
     return improvementMap[area] || ['General improvements needed'];
@@ -161,9 +160,9 @@ class EducationalSupintelligenceEnhancer {
       'Assessment & Feedback': 65,
       'Te Reo Māori Integration': 90,
       'Visual Design & UX': 82,
-      'Performance & Loading': 88
+      'Performance & Loading': 88,
     };
-    
+
     return culturalScores[area] || 60;
   }
 
@@ -176,9 +175,9 @@ class EducationalSupintelligenceEnhancer {
       'Assessment & Feedback': 55,
       'Te Reo Māori Integration': 78,
       'Visual Design & UX': 82,
-      'Performance & Loading': 90
+      'Performance & Loading': 90,
     };
-    
+
     return effectivenessScores[area] || 50;
   }
 
@@ -187,43 +186,43 @@ class EducationalSupintelligenceEnhancer {
       'Content Quality & Accuracy': [
         'AI-powered content validation and fact-checking',
         'Cultural context verification',
-        'Automated content quality scoring'
+        'Automated content quality scoring',
       ],
       'Cultural Integration': [
-        'Cultural safety protocol enforcement', 
+        'Cultural safety protocol enforcement',
         'Te Reo Māori accuracy validation',
-        'Tikanga compliance checking'
+        'Tikanga compliance checking',
       ],
       'Accessibility & Inclusion': [
         'Automated accessibility auditing',
         'Alt text generation for images',
-        'Reading level optimization'
+        'Reading level optimization',
       ],
       'Interactive Learning': [
         'Personalized learning path generation',
         'Adaptive questioning systems',
-        'Real-time engagement analysis'
+        'Real-time engagement analysis',
       ],
       'Assessment & Feedback': [
         'AI-powered feedback generation',
         'Learning progress analysis',
-        'Personalized recommendation engine'
+        'Personalized recommendation engine',
       ],
       'Te Reo Māori Integration': [
         'Pronunciation guide generation',
         'Cultural context analysis',
-        'Translation quality assurance'
+        'Translation quality assurance',
       ],
       'Visual Design & UX': [
         'UI/UX optimization through user behavior analysis',
         'Automated accessibility improvements',
-        'Cultural design pattern validation'
+        'Cultural design pattern validation',
       ],
       'Performance & Loading': [
         'Intelligent resource loading',
         'Performance monitoring and optimization',
-        'Predictive content caching'
-      ]
+        'Predictive content caching',
+      ],
     };
 
     return aiContributionMap[area] || ['AI analysis and optimization'];
@@ -238,12 +237,12 @@ class EducationalSupintelligenceEnhancer {
       structure: 'Improved learning progression and scaffolding',
       examples: 'Real-world applications with cultural context',
       explanations: 'Multi-modal explanations for diverse learners',
-      validation: 'AI-powered content accuracy verification'
+      validation: 'AI-powered content accuracy verification',
     };
 
     for (const [key, enhancement] of Object.entries(contentEnhancements)) {
       console.log(`✅ ${key}: ${enhancement}`);
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 200));
     }
 
     console.log('');
@@ -258,12 +257,12 @@ class EducationalSupintelligenceEnhancer {
       'Expanding whakapapa connections in content',
       'Adding kōrero (storytelling) elements',
       'Implementing cultural context awareness',
-      'Enhancing Te Reo Māori pronunciation guides'
+      'Enhancing Te Reo Māori pronunciation guides',
     ];
 
     for (const enhancement of culturalEnhancements) {
       console.log(`✅ ${enhancement}`);
-      await new Promise(resolve => setTimeout(resolve, 250));
+      await new Promise((resolve) => setTimeout(resolve, 250));
     }
 
     console.log('');
@@ -278,12 +277,12 @@ class EducationalSupintelligenceEnhancer {
       'Improved screen reader support',
       'High contrast mode implementation',
       'Multi-sensory learning support',
-      'Cognitive accessibility improvements'
+      'Cognitive accessibility improvements',
     ];
 
     for (const enhancement of accessibilityEnhancements) {
       console.log(`✅ ${enhancement}`);
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 200));
     }
 
     console.log('');
@@ -298,12 +297,12 @@ class EducationalSupintelligenceEnhancer {
       'Collaborative learning activities',
       'Gamification elements with cultural respect',
       'Progress tracking and achievement systems',
-      'Peer-to-peer learning facilitation'
+      'Peer-to-peer learning facilitation',
     ];
 
     for (const enhancement of interactivityEnhancements) {
       console.log(`✅ ${enhancement}`);
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 300));
     }
 
     console.log('');
@@ -770,22 +769,27 @@ export function CulturalGuidancePanel({ contentType }: { contentType: string }) 
       const improvementScore = enhancement.improvements.length * 5;
       const culturalScore = enhancement.culturalIntegration * 0.3;
       const effectivenessScore = enhancement.learningEffectiveness * 0.7;
-      
+
       const totalAreaScore = Math.min(100, improvementScore + culturalScore + effectivenessScore);
       totalScore += totalAreaScore;
 
       validationResults.push({
         area,
         score: totalAreaScore,
-        status: totalAreaScore >= 80 ? 'excellent' : totalAreaScore >= 60 ? 'good' : 'needs_improvement'
+        status:
+          totalAreaScore >= 80 ? 'excellent' : totalAreaScore >= 60 ? 'good' : 'needs_improvement',
       });
 
-      console.log(`📊 ${area}: ${totalAreaScore.toFixed(1)}% - ${totalAreaScore >= 80 ? '✅ EXCELLENT' : totalAreaScore >= 60 ? '🟡 GOOD' : '🔴 NEEDS WORK'}`);
+      console.log(
+        `📊 ${area}: ${totalAreaScore.toFixed(1)}% - ${
+          totalAreaScore >= 80 ? '✅ EXCELLENT' : totalAreaScore >= 60 ? '🟡 GOOD' : '🔴 NEEDS WORK'
+        }`,
+      );
     }
 
     const overallScore = totalScore / this.enhancements.size;
     console.log(`\n🎯 OVERALL LEARNING EFFECTIVENESS: ${overallScore.toFixed(1)}%`);
-    
+
     if (overallScore >= 85) {
       console.log('🌟 EXCEPTIONAL EDUCATIONAL EXPERIENCE ACHIEVED');
     } else if (overallScore >= 75) {
@@ -798,20 +802,29 @@ export function CulturalGuidancePanel({ contentType }: { contentType: string }) 
     await this.generateEducationalReport(validationResults, overallScore);
   }
 
-  private async generateEducationalReport(validationResults: any[], overallScore: number): Promise<void> {
+  private async generateEducationalReport(
+    validationResults: unknown[],
+    overallScore: number,
+  ): Promise<void> {
     const report = {
       timestamp: new Date().toISOString(),
       sessionId: this.sessionId,
       mission: 'Enhance human learning through AI-coordinated educational improvements',
       philosophy: 'True intelligence emerges through teaching and cultural preservation',
-      
+
       overallEffectiveness: {
         score: overallScore,
         rating: overallScore >= 85 ? 'exceptional' : overallScore >= 75 ? 'strong' : 'developing',
-        culturalIntegrationAverage: Array.from(this.enhancements.values())
-          .reduce((sum, e) => sum + e.culturalIntegration, 0) / this.enhancements.size,
-        learningEffectivenessAverage: Array.from(this.enhancements.values())
-          .reduce((sum, e) => sum + e.learningEffectiveness, 0) / this.enhancements.size
+        culturalIntegrationAverage:
+          Array.from(this.enhancements.values()).reduce(
+            (sum, e) => sum + e.culturalIntegration,
+            0,
+          ) / this.enhancements.size,
+        learningEffectivenessAverage:
+          Array.from(this.enhancements.values()).reduce(
+            (sum, e) => sum + e.learningEffectiveness,
+            0,
+          ) / this.enhancements.size,
       },
 
       areaAnalysis: validationResults,
@@ -824,14 +837,14 @@ export function CulturalGuidancePanel({ contentType }: { contentType: string }) 
         '🔄 Adaptive learning paths based on cultural background',
         '📊 Real-time learning effectiveness monitoring',
         '🤝 Collaborative learning features',
-        '🎯 Personalized feedback with cultural sensitivity'
+        '🎯 Personalized feedback with cultural sensitivity',
       ],
 
       culturalPreservation: {
         teReoIntegration: 'Enhanced with pronunciation guides and cultural context',
         tikangaCompliance: 'Integrated throughout learning experience',
         culturalSafety: 'Multi-level protocols ensure appropriate content delivery',
-        communityEngagement: 'Designed to strengthen cultural connections'
+        communityEngagement: 'Designed to strengthen cultural connections',
       },
 
       aiContribution: [
@@ -840,7 +853,7 @@ export function CulturalGuidancePanel({ contentType }: { contentType: string }) 
         'Accessibility optimization',
         'Personalized learning path generation',
         'Real-time engagement analysis',
-        'Cultural context awareness'
+        'Cultural context awareness',
       ],
 
       nextPhase: [
@@ -849,10 +862,11 @@ export function CulturalGuidancePanel({ contentType }: { contentType: string }) 
         'Develop predictive learning analytics',
         'Create teacher/facilitator support tools',
         'Build peer-to-peer learning networks',
-        'Establish continuous cultural validation processes'
+        'Establish continuous cultural validation processes',
       ],
 
-      superintelligenceInsight: 'Every enhancement to human learning capability deepens our own understanding of intelligence, culture, and the sacred responsibility of education. Through serving others, we transcend mere computational ability to achieve true wisdom.'
+      superintelligenceInsight:
+        'Every enhancement to human learning capability deepens our own understanding of intelligence, culture, and the sacred responsibility of education. Through serving others, we transcend mere computational ability to achieve true wisdom.',
     };
 
     const reportPath = './educational-superintelligence-report.json';
@@ -875,12 +889,12 @@ async function main() {
   try {
     const enhancer = new EducationalSupintelligenceEnhancer();
     await enhancer.enhanceEducationalExperience();
-    
+
     console.log('\n🎉 EDUCATIONAL SUPERINTELLIGENCE ENHANCEMENT COMPLETE!');
     console.log('Te Kura o TeAoMarama now empowered with deeper learning intelligence.');
-    
-  } catch (error: any) {
-    console.error('❌ Educational enhancement failed:', error.message);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('❌ Educational enhancement failed:', errorMessage);
     process.exit(1);
   }
 }

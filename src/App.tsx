@@ -43,7 +43,7 @@ function App() {
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/platform" element={<EducationalPlatformWorking />} />
+            <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
