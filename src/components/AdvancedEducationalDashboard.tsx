@@ -9,6 +9,8 @@ interface Student {
   progress: number;
   culturalEngagement: number;
   lastActivity: Date;
+  notifications: number;
+  achievements: string[];
 }
 
 interface Lesson {
@@ -21,6 +23,8 @@ interface Lesson {
   status: 'draft' | 'published' | 'archived';
   views: number;
   rating: number;
+  completionRate: number;
+  culturalImpact: number;
 }
 
 interface Analytics {
@@ -30,6 +34,20 @@ interface Analytics {
   culturalEngagement: number;
   averageProgress: number;
   topSubjects: string[];
+  culturalInsights: {
+    totalCulturalActivities: number;
+    culturalAchievements: number;
+    culturalMentors: number;
+    culturalEvents: number;
+  };
+}
+
+interface Notification {
+  id: string;
+  type: 'achievement' | 'reminder' | 'cultural' | 'progress';
+  message: string;
+  timestamp: Date;
+  read: boolean;
 }
 
 const AdvancedEducationalDashboard: React.FC = () => {
@@ -42,13 +60,21 @@ const AdvancedEducationalDashboard: React.FC = () => {
     culturalEngagement: 0,
     averageProgress: 0,
     topSubjects: [],
+    culturalInsights: {
+      totalCulturalActivities: 0,
+      culturalAchievements: 0,
+      culturalMentors: 0,
+      culturalEvents: 0,
+    },
   });
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const [selectedView, setSelectedView] = useState<
-    'overview' | 'students' | 'lessons' | 'analytics'
+    'overview' | 'students' | 'lessons' | 'analytics' | 'cultural' | 'notifications'
   >('overview');
   const [searchTerm, setSearchTerm] = useState('');
   const [filterYear, setFilterYear] = useState<number | 'all'>('all');
   const [filterSubject, setFilterSubject] = useState<string>('all');
+  const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     // Simulate loading data
@@ -61,6 +87,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
         progress: 85,
         culturalEngagement: 92,
         lastActivity: new Date(),
+        notifications: 3,
+        achievements: ['Cultural Leader', 'Te Reo Excellence', 'Kaitiaki Award'],
       },
       {
         id: '2',
@@ -70,6 +98,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
         progress: 78,
         culturalEngagement: 88,
         lastActivity: new Date(Date.now() - 86400000),
+        notifications: 1,
+        achievements: ['Cultural Explorer', 'Whakapapa Scholar'],
       },
       {
         id: '3',
@@ -79,6 +109,19 @@ const AdvancedEducationalDashboard: React.FC = () => {
         progress: 91,
         culturalEngagement: 95,
         lastActivity: new Date(),
+        notifications: 5,
+        achievements: ['Cultural Ambassador', 'Tikanga Master', 'Rongoā Expert'],
+      },
+      {
+        id: '4',
+        name: 'Tia Brown',
+        year: 7,
+        subjects: ['Te Reo Māori', 'Mathematics', 'Science'],
+        progress: 72,
+        culturalEngagement: 85,
+        lastActivity: new Date(Date.now() - 172800000),
+        notifications: 2,
+        achievements: ['Cultural Beginner'],
       },
     ];
 
@@ -93,6 +136,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
         status: 'published',
         views: 1250,
         rating: 4.8,
+        completionRate: 92,
+        culturalImpact: 95,
       },
       {
         id: '2',
@@ -104,6 +149,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
         status: 'published',
         views: 890,
         rating: 4.6,
+        completionRate: 88,
+        culturalImpact: 87,
       },
       {
         id: '3',
@@ -115,11 +162,58 @@ const AdvancedEducationalDashboard: React.FC = () => {
         status: 'published',
         views: 1100,
         rating: 4.9,
+        completionRate: 95,
+        culturalImpact: 98,
+      },
+      {
+        id: '4',
+        title: 'Whakapapa: Our Family Stories',
+        subject: 'Social Studies',
+        year: 7,
+        duration: 50,
+        culturalElements: ['Whakapapa', 'Genealogy', 'History'],
+        status: 'published',
+        views: 750,
+        rating: 4.7,
+        completionRate: 85,
+        culturalImpact: 90,
+      },
+    ];
+
+    const mockNotifications: Notification[] = [
+      {
+        id: '1',
+        type: 'achievement',
+        message: 'Aroha Smith earned the "Cultural Leader" achievement!',
+        timestamp: new Date(Date.now() - 300000),
+        read: false,
+      },
+      {
+        id: '2',
+        type: 'cultural',
+        message: 'New cultural activity available: "Traditional Weaving Workshop"',
+        timestamp: new Date(Date.now() - 900000),
+        read: false,
+      },
+      {
+        id: '3',
+        type: 'progress',
+        message: 'Kai Johnson completed 5 lessons this week',
+        timestamp: new Date(Date.now() - 1800000),
+        read: true,
+      },
+      {
+        id: '4',
+        type: 'reminder',
+        message: 'Cultural assessment due tomorrow for Year 8 students',
+        timestamp: new Date(Date.now() - 3600000),
+        read: false,
       },
     ];
 
     setStudents(mockStudents);
     setLessons(mockLessons);
+    setNotifications(mockNotifications);
     setAnalytics({
       totalStudents: mockStudents.length,
       activeUsers: mockStudents.filter((s) => s.lastActivity > new Date(Date.now() - 86400000))
@@ -128,6 +222,12 @@ const AdvancedEducationalDashboard: React.FC = () => {
       culturalEngagement: 89,
       averageProgress: 85,
       topSubjects: ['Te Reo Māori', 'Mathematics', 'Science'],
+      culturalInsights: {
+        totalCulturalActivities: 24,
+        culturalAchievements: 156,
+        culturalMentors: 8,
+        culturalEvents: 12,
+      },
     });
   }, []);
 
@@ -145,6 +245,8 @@ const AdvancedEducationalDashboard: React.FC = () => {
     return matchesSearch && matchesYear && matchesSubject;
   });
 
+  const unreadNotifications = notifications.filter(n => !n.read).length;
+
   const getProgressColor = (progress: number) => {
     if (progress >= 90) return '#10b981';
     if (progress >= 80) return '#3b82f6';
@@ -159,11 +261,42 @@ const AdvancedEducationalDashboard: React.FC = () => {
     return '#dc2626';
   };
 
+  const getNotificationIcon = (type: string) => {
+    switch (type) {
+      case 'achievement': return '🏆';
+      case 'cultural': return '🌿';
+      case 'progress': return '📈';
+      case 'reminder': return '⏰';
+      default: return '📢';
+    }
+  };
+
+  const markNotificationAsRead = (id: string) => {
+    setNotifications(prev => 
+      prev.map(n => n.id === id ? { ...n, read: true } : n)
+    );
+  };
+
   return (
     <div className="advanced-educational-dashboard">
       <div className="dashboard-header">
-        <h1>🌟 Te Kura o TeAoMarama - Advanced Educational Dashboard</h1>
-        <p>Comprehensive educational management and cultural integration platform</p>
+        <div className="header-top">
+          <div className="header-title">
+            <h1>🌟 Te Kura o TeAoMarama - Advanced Educational Dashboard</h1>
+            <p>Comprehensive educational management and cultural integration platform</p>
+          </div>
+          <div className="header-actions">
+            <button 
+              className="notification-btn"
+              onClick={() => setShowNotifications(!showNotifications)}
+            >
+              🔔 Notifications
+              {unreadNotifications > 0 && (
+                <span className="notification-badge">{unreadNotifications}</span>
+              )}
+            </button>
+          </div>
+        </div>
 
         <div className="header-stats">
           <div className="stat-card">
@@ -184,6 +317,32 @@ const AdvancedEducationalDashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {showNotifications && (
+        <div className="notifications-panel">
+          <div className="notifications-header">
+            <h3>Notifications ({unreadNotifications} unread)</h3>
+            <button onClick={() => setShowNotifications(false)}>✕</button>
+          </div>
+          <div className="notifications-list">
+            {notifications.map((notification) => (
+              <div 
+                key={notification.id} 
+                className={`notification-item ${!notification.read ? 'unread' : ''}`}
+                onClick={() => markNotificationAsRead(notification.id)}
+              >
+                <span className="notification-icon">{getNotificationIcon(notification.type)}</span>
+                <div className="notification-content">
+                  <p>{notification.message}</p>
+                  <span className="notification-time">
+                    {notification.timestamp.toLocaleTimeString()}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="dashboard-controls">
         <div className="view-selector">
@@ -211,12 +370,18 @@ const AdvancedEducationalDashboard: React.FC = () => {
           >
             Analytics
           </button>
+          <button
+            className={selectedView === 'cultural' ? 'active' : ''}
+            onClick={() => setSelectedView('cultural')}
+          >
+            Cultural Insights
+          </button>
         </div>
 
         <div className="filters">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search students, lessons, or content..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
@@ -329,7 +494,12 @@ const AdvancedEducationalDashboard: React.FC = () => {
               <div key={student.id} className="student-card">
                 <div className="student-header">
                   <h3>{student.name}</h3>
-                  <span className="student-year">Year {student.year}</span>
+                  <div className="student-meta">
+                    <span className="student-year">Year {student.year}</span>
+                    {student.notifications > 0 && (
+                      <span className="notification-indicator">{student.notifications}</span>
+                    )}
+                  </div>
                 </div>
                 <div className="student-subjects">
                   {student.subjects.map((subject) => (
@@ -364,6 +534,16 @@ const AdvancedEducationalDashboard: React.FC = () => {
                       ></div>
                     </div>
                     <span>{student.culturalEngagement}%</span>
+                  </div>
+                </div>
+                <div className="student-achievements">
+                  <h4>Achievements</h4>
+                  <div className="achievements-list">
+                    {student.achievements.map((achievement) => (
+                      <span key={achievement} className="achievement-tag">
+                        {achievement}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="student-activity">
@@ -403,9 +583,97 @@ const AdvancedEducationalDashboard: React.FC = () => {
                     <span className="stat-label">Rating</span>
                     <span className="stat-value">{lesson.rating}/5</span>
                   </div>
+                  <div className="stat">
+                    <span className="stat-label">Completion</span>
+                    <span className="stat-value">{lesson.completionRate}%</span>
+                  </div>
+                  <div className="stat">
+                    <span className="stat-label">Cultural Impact</span>
+                    <span className="stat-value">{lesson.culturalImpact}%</span>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {selectedView === 'cultural' && (
+          <div className="cultural-insights-grid">
+            <div className="cultural-card">
+              <h3>🌿 Cultural Activities</h3>
+              <div className="cultural-stats">
+                <div className="cultural-stat">
+                  <span className="cultural-number">{analytics.culturalInsights.totalCulturalActivities}</span>
+                  <span className="cultural-label">Total Activities</span>
+                </div>
+                <div className="cultural-stat">
+                  <span className="cultural-number">{analytics.culturalInsights.culturalAchievements}</span>
+                  <span className="cultural-label">Achievements</span>
+                </div>
+                <div className="cultural-stat">
+                  <span className="cultural-number">{analytics.culturalInsights.culturalMentors}</span>
+                  <span className="cultural-label">Mentors</span>
+                </div>
+                <div className="cultural-stat">
+                  <span className="cultural-number">{analytics.culturalInsights.culturalEvents}</span>
+                  <span className="cultural-label">Events</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="cultural-card">
+              <h3>🏆 Cultural Achievements</h3>
+              <div className="achievements-showcase">
+                <div className="achievement-item">
+                  <span className="achievement-icon">🌿</span>
+                  <div className="achievement-info">
+                    <h4>Kaitiaki Award</h4>
+                    <p>Environmental stewardship excellence</p>
+                  </div>
+                </div>
+                <div className="achievement-item">
+                  <span className="achievement-icon">📚</span>
+                  <div className="achievement-info">
+                    <h4>Te Reo Master</h4>
+                    <p>Advanced language proficiency</p>
+                  </div>
+                </div>
+                <div className="achievement-item">
+                  <span className="achievement-icon">🎨</span>
+                  <div className="achievement-info">
+                    <h4>Cultural Artist</h4>
+                    <p>Traditional arts and crafts mastery</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="cultural-card">
+              <h3>📈 Cultural Engagement Trends</h3>
+              <div className="cultural-trends">
+                <div className="trend-item">
+                  <span>Te Reo Māori</span>
+                  <div className="trend-bar">
+                    <div className="trend-fill" style={{ width: '95%' }}></div>
+                  </div>
+                  <span>95%</span>
+                </div>
+                <div className="trend-item">
+                  <span>Traditional Arts</span>
+                  <div className="trend-bar">
+                    <div className="trend-fill" style={{ width: '88%' }}></div>
+                  </div>
+                  <span>88%</span>
+                </div>
+                <div className="trend-item">
+                  <span>Cultural History</span>
+                  <div className="trend-bar">
+                    <div className="trend-fill" style={{ width: '92%' }}></div>
+                  </div>
+                  <span>92%</span>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
