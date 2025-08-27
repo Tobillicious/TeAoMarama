@@ -10,18 +10,18 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       react({
         // Enable Fast Refresh optimizations
-        fastRefresh: true,
+        // fastRefresh: true,
         // Optimize JSX for performance
         jsxRuntime: 'automatic',
       }),
       // Gzip compression
       compression({
-        algorithm: 'gzip',
+        algorithms: ['gzip'],
         threshold: 1024,
       }),
       // Brotli compression for better performance
       compression({
-        algorithm: 'brotliCompress',
+        algorithms: ['brotliCompress'],
         threshold: 1024,
         filename: '[path][base].br',
       }),
