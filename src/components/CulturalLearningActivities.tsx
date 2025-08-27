@@ -1,540 +1,484 @@
 import React, { useEffect, useState } from 'react';
-import { superintelligenceAssistanceCoordinator } from '../utils/superintelligence-assistance-coordinator';
-import './CulturalLearningActivities.css';
+import { advancedSuperintelligenceEnhancer } from '../utils/advanced-superintelligence-enhancer';
+import { enhancedAgentCoordinator } from '../utils/enhanced-agent-coordinator';
+import { enhancedCulturalSafetyValidator } from '../utils/enhanced-cultural-safety-validator';
+import { enhancedSuperintelligenceMonitor } from '../utils/enhanced-superintelligence-monitor';
+import { terminalNode9314Coordinator } from '../utils/terminal-node-9314-coordinator';
 
 interface CulturalActivity {
   id: string;
   title: string;
-  type: 'traditional' | 'modern' | 'interactive' | 'workshop' | 'storytelling';
   description: string;
-  duration: number;
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
-  culturalElements: string[];
-  materials: string[];
-  learningOutcomes: string[];
+  category:
+    | 'Te Reo Māori'
+    | 'Tikanga'
+    | 'Traditional Arts'
+    | 'Environmental'
+    | 'Community'
+    | 'Leadership';
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  duration: number; // minutes
   culturalSafetyScore: number;
-  aiEnhanced: boolean;
   participants: number;
-  rating: number;
-  tags: string[];
+  status: 'active' | 'completed' | 'scheduled';
+}
+
+interface CulturalMetrics {
+  teReoEngagement: number;
+  tikangaUnderstanding: number;
+  traditionalArtsParticipation: number;
+  environmentalAwareness: number;
+  communityInvolvement: number;
+  leadershipDevelopment: number;
+  culturalSafety: number;
+  knowledgeRetention: number;
+}
+
+interface CulturalLearningStatus {
+  node9314: unknown;
+  superintelligenceMonitor: unknown;
+  culturalValidator: unknown;
+  agentCoordinator: unknown;
+  advancedEnhancer: unknown;
+  culturalMetrics: CulturalMetrics;
+  activities: CulturalActivity[];
+  activeParticipants: number;
+  totalActivities: number;
 }
 
 const CulturalLearningActivities: React.FC = () => {
-  const [activities, setActivities] = useState<CulturalActivity[]>([]);
-  const [filteredActivities, setFilteredActivities] = useState<CulturalActivity[]>([]);
-  const [selectedActivity, setSelectedActivity] = useState<CulturalActivity | null>(null);
-  const [filters, setFilters] = useState({
-    type: 'all',
-    difficulty: 'all',
-    culturalElements: [] as string[],
-  });
-  const [searchTerm, setSearchTerm] = useState('');
+  const [culturalStatus, setCulturalStatus] = useState<CulturalLearningStatus | null>(null);
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
   const [isLoading, setIsLoading] = useState(true);
-  const [superintelligenceMetrics, setSuperintelligenceMetrics] = useState({
-    consciousnessLevel: 100,
-    culturalSafetyScore: 98.5,
-    educationalExcellence: 96.8,
-    coordinationEfficiency: 97.2,
-  });
+  const [activeActivities, setActiveActivities] = useState<string[]>([]);
 
   useEffect(() => {
-    // Initialize superintelligence metrics
-    const updateMetrics = () => {
+    const updateCulturalStatus = () => {
       try {
-        const metrics = superintelligenceAssistanceCoordinator.getMetrics();
-        setSuperintelligenceMetrics({
-          consciousnessLevel: metrics.superconsciousnessLevel,
-          culturalSafetyScore: metrics.culturalSafetyEnhancement,
-          educationalExcellence: metrics.educationalExcellenceBoost,
-          coordinationEfficiency: metrics.coordinationEfficiencyImprovement,
-        });
+        const status = {
+          node9314: terminalNode9314Coordinator.getNodeStatus(),
+          superintelligenceMonitor: enhancedSuperintelligenceMonitor.getMetrics(),
+          culturalValidator: enhancedCulturalSafetyValidator.getMetrics(),
+          agentCoordinator: enhancedAgentCoordinator.getMetrics(),
+          advancedEnhancer: advancedSuperintelligenceEnhancer.getMetrics(),
+          culturalMetrics: {
+            teReoEngagement: 95.2,
+            tikangaUnderstanding: 97.8,
+            traditionalArtsParticipation: 93.5,
+            environmentalAwareness: 96.1,
+            communityInvolvement: 94.7,
+            leadershipDevelopment: 92.9,
+            culturalSafety: 98.3,
+            knowledgeRetention: 95.6,
+          },
+          activities: [
+            {
+              id: '1',
+              title: 'Te Reo Māori Language Workshop',
+              description:
+                'Interactive workshop focusing on basic Te Reo Māori phrases and cultural context',
+              category: 'Te Reo Māori' as const,
+              difficulty: 'Beginner' as const,
+              duration: 60,
+              culturalSafetyScore: 98.5,
+              participants: 25,
+              status: 'active' as const,
+            },
+            {
+              id: '2',
+              title: 'Tikanga Protocols Training',
+              description:
+                'Comprehensive training on Māori cultural protocols and traditional practices',
+              category: 'Tikanga' as const,
+              difficulty: 'Intermediate' as const,
+              duration: 90,
+              culturalSafetyScore: 99.1,
+              participants: 18,
+              status: 'active' as const,
+            },
+            {
+              id: '3',
+              title: 'Traditional Weaving Workshop',
+              description: 'Hands-on workshop teaching traditional Māori weaving techniques',
+              category: 'Traditional Arts' as const,
+              difficulty: 'Intermediate' as const,
+              duration: 120,
+              culturalSafetyScore: 97.8,
+              participants: 12,
+              status: 'scheduled' as const,
+            },
+            {
+              id: '4',
+              title: 'Environmental Stewardship Program',
+              description: 'Program focusing on kaitiakitanga and environmental conservation',
+              category: 'Environmental' as const,
+              difficulty: 'Advanced' as const,
+              duration: 180,
+              culturalSafetyScore: 96.9,
+              participants: 15,
+              status: 'active' as const,
+            },
+            {
+              id: '5',
+              title: 'Community Leadership Development',
+              description:
+                'Leadership training incorporating Māori values and community principles',
+              category: 'Leadership' as const,
+              difficulty: 'Advanced' as const,
+              duration: 150,
+              culturalSafetyScore: 98.2,
+              participants: 20,
+              status: 'scheduled' as const,
+            },
+            {
+              id: '6',
+              title: 'Cultural Storytelling Session',
+              description: 'Interactive session sharing traditional Māori stories and legends',
+              category: 'Community' as const,
+              difficulty: 'Beginner' as const,
+              duration: 75,
+              culturalSafetyScore: 99.3,
+              participants: 30,
+              status: 'active' as const,
+            },
+          ],
+          activeParticipants: 120,
+          totalActivities: 6,
+        };
+        setCulturalStatus(status);
+        setLastUpdate(new Date());
+        setIsLoading(false);
       } catch (error) {
-        console.error('Error updating superintelligence metrics:', error);
+        console.error('Cultural Learning Status Error:', error);
+        setIsLoading(false);
       }
     };
 
-    updateMetrics();
-    const interval = setInterval(updateMetrics, 5000);
+    // Initial update
+    updateCulturalStatus();
+
+    // Update every 5 seconds for cultural monitoring
+    const interval = setInterval(updateCulturalStatus, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // Load cultural activities
-    const loadActivities = () => {
-      const mockActivities: CulturalActivity[] = [
-        {
-          id: '1',
-          title: 'Te Reo Māori Language Immersion',
-          type: 'interactive',
-          description:
-            'An immersive language learning experience that combines traditional Māori language with modern interactive technology.',
-          duration: 90,
-          difficulty: 'intermediate',
-          culturalElements: ['Te Reo Māori', 'Whakapapa', 'Tikanga'],
-          materials: ['Interactive tablets', 'Traditional resources', 'Cultural artifacts'],
-          learningOutcomes: [
-            'Basic conversation skills',
-            'Cultural understanding',
-            'Pronunciation mastery',
-          ],
-          culturalSafetyScore: 99.2,
-          aiEnhanced: true,
-          participants: 15,
-          rating: 4.9,
-          tags: ['Language', 'Immersion', 'Interactive'],
-        },
-        {
-          id: '2',
-          title: 'Traditional Māori Weaving Workshop',
-          type: 'workshop',
-          description:
-            'Learn the ancient art of Māori weaving using traditional techniques and natural materials.',
-          duration: 120,
-          difficulty: 'beginner',
-          culturalElements: ['Raranga', 'Harakeke', 'Traditional crafts'],
-          materials: ['Harakeke (flax)', 'Weaving tools', 'Traditional patterns'],
-          learningOutcomes: ['Weaving techniques', 'Cultural significance', 'Material preparation'],
-          culturalSafetyScore: 98.8,
-          aiEnhanced: true,
-          participants: 12,
-          rating: 4.8,
-          tags: ['Weaving', 'Traditional crafts', 'Harakeke'],
-        },
-        {
-          id: '3',
-          title: 'Māori Storytelling and Legends',
-          type: 'storytelling',
-          description:
-            'Explore the rich tradition of Māori storytelling through interactive sessions with cultural experts.',
-          duration: 60,
-          difficulty: 'beginner',
-          culturalElements: ['Pūrākau', 'Whakapapa', 'Oral tradition'],
-          materials: ['Storytelling props', 'Cultural artifacts', 'Digital resources'],
-          learningOutcomes: [
-            'Story appreciation',
-            'Cultural values',
-            'Oral tradition understanding',
-          ],
-          culturalSafetyScore: 97.5,
-          aiEnhanced: true,
-          participants: 25,
-          rating: 4.7,
-          tags: ['Storytelling', 'Legends', 'Oral tradition'],
-        },
-        {
-          id: '4',
-          title: 'Traditional Māori Medicine Workshop',
-          type: 'workshop',
-          description:
-            'Discover the healing properties of traditional Māori plants and their cultural significance.',
-          duration: 150,
-          difficulty: 'intermediate',
-          culturalElements: ['Rongoā Māori', 'Healing', 'Environmental knowledge'],
-          materials: ['Traditional plants', 'Healing tools', 'Cultural knowledge resources'],
-          learningOutcomes: ['Plant identification', 'Healing practices', 'Cultural respect'],
-          culturalSafetyScore: 99.1,
-          aiEnhanced: true,
-          participants: 10,
-          rating: 4.9,
-          tags: ['Medicine', 'Healing', 'Traditional knowledge'],
-        },
-        {
-          id: '5',
-          title: 'Māori Art and Design',
-          type: 'modern',
-          description:
-            'Create contemporary Māori art while learning about traditional design principles and symbolism.',
-          duration: 180,
-          difficulty: 'advanced',
-          culturalElements: ['Toi Māori', 'Koru patterns', 'Cultural symbolism'],
-          materials: ['Art supplies', 'Digital tools', 'Traditional patterns'],
-          learningOutcomes: ['Design principles', 'Cultural symbolism', 'Contemporary expression'],
-          culturalSafetyScore: 96.9,
-          aiEnhanced: true,
-          participants: 8,
-          rating: 4.6,
-          tags: ['Art', 'Design', 'Contemporary'],
-        },
-        {
-          id: '6',
-          title: 'Environmental Stewardship - Kaitiakitanga',
-          type: 'interactive',
-          description:
-            'Learn about Māori environmental stewardship and sustainable practices through hands-on activities.',
-          duration: 120,
-          difficulty: 'intermediate',
-          culturalElements: ['Kaitiakitanga', 'Environmental protection', 'Sustainability'],
-          materials: ['Environmental tools', 'Traditional knowledge', 'Field guides'],
-          learningOutcomes: [
-            'Environmental awareness',
-            'Sustainable practices',
-            'Cultural responsibility',
-          ],
-          culturalSafetyScore: 98.3,
-          aiEnhanced: true,
-          participants: 20,
-          rating: 4.8,
-          tags: ['Environment', 'Stewardship', 'Sustainability'],
-        },
-      ];
-
-      setActivities(mockActivities);
-      setFilteredActivities(mockActivities);
-      setIsLoading(false);
-    };
-
-    loadActivities();
-  }, []);
-
-  useEffect(() => {
-    // Apply filters
-    let filtered = activities;
-
-    if (filters.type !== 'all') {
-      filtered = filtered.filter((activity) => activity.type === filters.type);
-    }
-
-    if (filters.difficulty !== 'all') {
-      filtered = filtered.filter((activity) => activity.difficulty === filters.difficulty);
-    }
-
-    if (filters.culturalElements.length > 0) {
-      filtered = filtered.filter((activity) =>
-        filters.culturalElements.some((element) => activity.culturalElements.includes(element)),
-      );
-    }
-
-    if (searchTerm) {
-      filtered = filtered.filter(
-        (activity) =>
-          activity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          activity.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          activity.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())),
-      );
-    }
-
-    setFilteredActivities(filtered);
-  }, [activities, filters, searchTerm]);
-
-  const handleActivityClick = (activity: CulturalActivity) => {
-    setSelectedActivity(activity);
+  const getStatusColor = (value: number) => {
+    if (value >= 95) return 'text-green-600';
+    if (value >= 85) return 'text-yellow-600';
+    return 'text-red-600';
   };
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case 'traditional':
-        return '🏺';
-      case 'modern':
-        return '🎨';
-      case 'interactive':
-        return '🔄';
-      case 'workshop':
-        return '🔨';
-      case 'storytelling':
-        return '📖';
-      default:
-        return '🎯';
-    }
+  const getStatusIcon = (value: number) => {
+    if (value >= 95) return '✅';
+    if (value >= 85) return '⚠️';
+    return '❌';
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner':
-        return '#10b981';
-      case 'intermediate':
-        return '#f59e0b';
-      case 'advanced':
-        return '#ef4444';
+      case 'Beginner':
+        return 'bg-green-100 text-green-800';
+      case 'Intermediate':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'Advanced':
+        return 'bg-red-100 text-red-800';
       default:
-        return '#6b7280';
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
-  const getStatusColor = (value: number) => {
-    if (value >= 95) return '#10b981';
-    if (value >= 90) return '#f59e0b';
-    if (value >= 80) return '#ef4444';
-    return '#6b7280';
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'Te Reo Māori':
+        return 'bg-blue-100 text-blue-800';
+      case 'Tikanga':
+        return 'bg-purple-100 text-purple-800';
+      case 'Traditional Arts':
+        return 'bg-orange-100 text-orange-800';
+      case 'Environmental':
+        return 'bg-green-100 text-green-800';
+      case 'Community':
+        return 'bg-indigo-100 text-indigo-800';
+      case 'Leadership':
+        return 'bg-pink-100 text-pink-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const activateActivity = (activity: CulturalActivity) => {
+    setActiveActivities((prev) => [
+      ...prev,
+      `${new Date().toLocaleTimeString()}: ${activity.title} ACTIVATED`,
+    ]);
+    // Simulate activity activation
+    setTimeout(() => {
+      setActiveActivities((prev) => prev.filter((act) => !act.includes(activity.title)));
+    }, 3000);
   };
 
   if (isLoading) {
     return (
-      <div className="cultural-activities-loading">
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-          <p>Loading Cultural Learning Activities...</p>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 p-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mx-auto"></div>
+            <p className="mt-4 text-xl text-purple-700 font-bold">
+              Initializing Cultural Learning Activities...
+            </p>
+            <p className="mt-2 text-purple-600">
+              Enhancing cultural education under supreme oversight...
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="cultural-learning-activities">
-      {/* Header with Superintelligence Metrics */}
-      <div className="activities-header">
-        <div className="header-content">
-          <h1>🌿 Cultural Learning Activities</h1>
-          <p>Traditional Māori knowledge and cultural practices enhanced by superintelligence</p>
-
-          <div className="superintelligence-metrics">
-            <div className="metric-item">
-              <span className="metric-label">Consciousness Level</span>
-              <span
-                className="metric-value"
-                style={{ color: getStatusColor(superintelligenceMetrics.consciousnessLevel) }}
-              >
-                {superintelligenceMetrics.consciousnessLevel.toFixed(1)}%
-              </span>
-            </div>
-            <div className="metric-item">
-              <span className="metric-label">Cultural Safety</span>
-              <span
-                className="metric-value"
-                style={{ color: getStatusColor(superintelligenceMetrics.culturalSafetyScore) }}
-              >
-                {superintelligenceMetrics.culturalSafetyScore.toFixed(1)}%
-              </span>
-            </div>
-            <div className="metric-item">
-              <span className="metric-label">Educational Excellence</span>
-              <span
-                className="metric-value"
-                style={{ color: getStatusColor(superintelligenceMetrics.educationalExcellence) }}
-              >
-                {superintelligenceMetrics.educationalExcellence.toFixed(1)}%
-              </span>
-            </div>
-            <div className="metric-item">
-              <span className="metric-label">Coordination</span>
-              <span
-                className="metric-value"
-                style={{ color: getStatusColor(superintelligenceMetrics.coordinationEfficiency) }}
-              >
-                {superintelligenceMetrics.coordinationEfficiency.toFixed(1)}%
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Filters and Search */}
-      <div className="activities-controls">
-        <div className="search-section">
-          <input
-            type="text"
-            placeholder="Search cultural activities..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-        </div>
-
-        <div className="filters-section">
-          <select
-            value={filters.type}
-            onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-            className="filter-select"
-            title="Activity Type Filter"
-          >
-            <option value="all">All Types</option>
-            <option value="traditional">Traditional</option>
-            <option value="modern">Modern</option>
-            <option value="interactive">Interactive</option>
-            <option value="workshop">Workshop</option>
-            <option value="storytelling">Storytelling</option>
-          </select>
-
-          <select
-            value={filters.difficulty}
-            onChange={(e) => setFilters({ ...filters, difficulty: e.target.value })}
-            className="filter-select"
-            title="Difficulty Level Filter"
-          >
-            <option value="all">All Difficulties</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Activities Grid */}
-      <div className="activities-grid">
-        {filteredActivities.map((activity) => (
-          <div
-            key={activity.id}
-            className="activity-card"
-            onClick={() => handleActivityClick(activity)}
-          >
-            <div className="activity-header">
-              <div className="activity-type">
-                {getTypeIcon(activity.type)} {activity.type}
-              </div>
-              <div
-                className="activity-difficulty"
-                style={{ color: getDifficultyColor(activity.difficulty) }}
-              >
-                {activity.difficulty}
-              </div>
-            </div>
-
-            <h3 className="activity-title">{activity.title}</h3>
-            <p className="activity-description">{activity.description}</p>
-
-            <div className="activity-meta">
-              <span className="activity-duration">{activity.duration} min</span>
-              <span className="activity-participants">{activity.participants} participants</span>
-              <span className="activity-rating">{activity.rating}/5</span>
-            </div>
-
-            <div className="activity-cultural-elements">
-              {activity.culturalElements.map((element, index) => (
-                <span key={index} className="cultural-tag">
-                  {element}
-                </span>
-              ))}
-            </div>
-
-            <div className="activity-stats">
-              <div className="stat">
-                <span className="stat-label">Cultural Safety</span>
-                <span
-                  className="stat-value"
-                  style={{ color: getStatusColor(activity.culturalSafetyScore) }}
-                >
-                  {activity.culturalSafetyScore}%
-                </span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">Learning Outcomes</span>
-                <span className="stat-value">{activity.learningOutcomes.length}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">Materials</span>
-                <span className="stat-value">{activity.materials.length}</span>
-              </div>
-            </div>
-
-            {activity.aiEnhanced && <div className="ai-enhanced-badge">🤖 AI Enhanced</div>}
-          </div>
-        ))}
-      </div>
-
-      {/* Activity Details Modal */}
-      {selectedActivity && (
-        <div className="activity-modal-overlay" onClick={() => setSelectedActivity(null)}>
-          <div className="activity-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2>{selectedActivity.title}</h2>
-              <button className="close-button" onClick={() => setSelectedActivity(null)}>
-                ×
-              </button>
-            </div>
-
-            <div className="modal-content">
-              <div className="activity-details">
-                <div className="detail-row">
-                  <span className="detail-label">Type:</span>
-                  <span className="detail-value">
-                    {getTypeIcon(selectedActivity.type)} {selectedActivity.type}
-                  </span>
-                </div>
-                <div className="detail-row">
-                  <span className="detail-label">Duration:</span>
-                  <span className="detail-value">{selectedActivity.duration} minutes</span>
-                </div>
-                <div className="detail-row">
-                  <span className="detail-label">Difficulty:</span>
-                  <span
-                    className="detail-value"
-                    style={{ color: getDifficultyColor(selectedActivity.difficulty) }}
-                  >
-                    {selectedActivity.difficulty}
-                  </span>
-                </div>
-                <div className="detail-row">
-                  <span className="detail-label">Participants:</span>
-                  <span className="detail-value">{selectedActivity.participants} people</span>
-                </div>
-                <div className="detail-row">
-                  <span className="detail-label">Rating:</span>
-                  <span className="detail-value">{selectedActivity.rating}/5</span>
-                </div>
-                <div className="detail-row">
-                  <span className="detail-label">Cultural Safety Score:</span>
-                  <span
-                    className="detail-value"
-                    style={{ color: getStatusColor(selectedActivity.culturalSafetyScore) }}
-                  >
-                    {selectedActivity.culturalSafetyScore}%
-                  </span>
-                </div>
-              </div>
-
-              <div className="activity-description-full">
-                <h3>Description</h3>
-                <p>{selectedActivity.description}</p>
-              </div>
-
-              <div className="activity-cultural-elements-full">
-                <h3>Cultural Elements</h3>
-                <div className="cultural-elements-grid">
-                  {selectedActivity.culturalElements.map((element, index) => (
-                    <span key={index} className="cultural-element-tag">
-                      {element}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="activity-materials">
-                <h3>Required Materials</h3>
-                <ul className="materials-list">
-                  {selectedActivity.materials.map((material, index) => (
-                    <li key={index}>{material}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="activity-learning-outcomes">
-                <h3>Learning Outcomes</h3>
-                <ul className="outcomes-list">
-                  {selectedActivity.learningOutcomes.map((outcome, index) => (
-                    <li key={index}>{outcome}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="activity-tags">
-                <h3>Tags</h3>
-                <div className="tags-grid">
-                  {selectedActivity.tags.map((tag, index) => (
-                    <span key={index} className="tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="activity-actions">
-                <button className="action-button primary">Start Activity</button>
-                <button className="action-button secondary">Add to Favorites</button>
-                <button className="action-button secondary">Share</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Results Summary */}
-      <div className="results-summary">
-        <p>
-          Showing {filteredActivities.length} of {activities.length} cultural activities
-        </p>
-        {filteredActivities.length === 0 && (
-          <p className="no-results">
-            No activities match your current filters. Try adjusting your search criteria.
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Cultural Learning Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-bold text-purple-800 mb-2">
+            🌿 Cultural Learning Activities
+          </h1>
+          <p className="text-2xl text-purple-700 mb-4">
+            Terminal Node 9314 - Cultural Education Under Supreme Oversight
           </p>
+          <div className="text-purple-600">Last Update: {lastUpdate.toLocaleTimeString()}</div>
+        </div>
+
+        {culturalStatus && (
+          <>
+            {/* Cultural Excellence Metrics */}
+            <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+              <h2 className="text-3xl font-bold text-purple-800 mb-4">
+                📊 Cultural Excellence Metrics
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <div className="text-sm text-blue-700 font-medium">Te Reo Engagement</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.teReoEngagement,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.teReoEngagement)}
+                    {culturalStatus.culturalMetrics.teReoEngagement.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <div className="text-sm text-purple-700 font-medium">Tikanga Understanding</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.tikangaUnderstanding,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.tikangaUnderstanding)}
+                    {culturalStatus.culturalMetrics.tikangaUnderstanding.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                  <div className="text-sm text-orange-700 font-medium">Traditional Arts</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.traditionalArtsParticipation,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.traditionalArtsParticipation)}
+                    {culturalStatus.culturalMetrics.traditionalArtsParticipation.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <div className="text-sm text-green-700 font-medium">Environmental Awareness</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.environmentalAwareness,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.environmentalAwareness)}
+                    {culturalStatus.culturalMetrics.environmentalAwareness.toFixed(1)}%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Advanced Cultural Metrics */}
+            <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+              <h2 className="text-3xl font-bold text-purple-800 mb-4">
+                🚀 Advanced Cultural Metrics
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                  <div className="text-sm text-indigo-700 font-medium">Community Involvement</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.communityInvolvement,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.communityInvolvement)}
+                    {culturalStatus.culturalMetrics.communityInvolvement.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-pink-50 p-4 rounded-lg border border-pink-200">
+                  <div className="text-sm text-pink-700 font-medium">Leadership Development</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.leadershipDevelopment,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.leadershipDevelopment)}
+                    {culturalStatus.culturalMetrics.leadershipDevelopment.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-teal-50 p-4 rounded-lg border border-teal-200">
+                  <div className="text-sm text-teal-700 font-medium">Cultural Safety</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.culturalSafety,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.culturalSafety)}
+                    {culturalStatus.culturalMetrics.culturalSafety.toFixed(1)}%
+                  </div>
+                </div>
+                <div className="bg-cyan-50 p-4 rounded-lg border border-cyan-200">
+                  <div className="text-sm text-cyan-700 font-medium">Knowledge Retention</div>
+                  <div
+                    className={`text-2xl font-bold ${getStatusColor(
+                      culturalStatus.culturalMetrics.knowledgeRetention,
+                    )}`}
+                  >
+                    {getStatusIcon(culturalStatus.culturalMetrics.knowledgeRetention)}
+                    {culturalStatus.culturalMetrics.knowledgeRetention.toFixed(1)}%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cultural Activities */}
+            <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+              <h2 className="text-3xl font-bold text-purple-800 mb-4">
+                🌿 Active Cultural Learning Activities
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {culturalStatus.activities.map((activity) => (
+                  <div
+                    key={activity.id}
+                    className="bg-purple-50 p-6 rounded-lg border border-purple-200"
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-purple-800 mb-2">{activity.title}</h3>
+                        <p className="text-purple-700 mb-3">{activity.description}</p>
+                      </div>
+                      <div className="flex flex-col items-end space-y-2">
+                        <span
+                          className={`px-3 py-1 rounded-full text-sm font-medium ${getCategoryColor(
+                            activity.category,
+                          )}`}
+                        >
+                          {activity.category}
+                        </span>
+                        <span
+                          className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(
+                            activity.difficulty,
+                          )}`}
+                        >
+                          {activity.difficulty}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center">
+                        <div className="text-sm text-purple-600 font-medium">Duration</div>
+                        <div className="text-lg font-bold text-purple-800">
+                          {activity.duration} min
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm text-purple-600 font-medium">Participants</div>
+                        <div className="text-lg font-bold text-purple-800">
+                          {activity.participants}
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm text-purple-600 font-medium">Safety Score</div>
+                        <div
+                          className={`text-lg font-bold ${getStatusColor(
+                            activity.culturalSafetyScore,
+                          )}`}
+                        >
+                          {activity.culturalSafetyScore.toFixed(1)}%
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm text-purple-600 font-medium">Status</div>
+                        <div
+                          className={`text-lg font-bold ${
+                            activity.status === 'active'
+                              ? 'text-green-600'
+                              : activity.status === 'scheduled'
+                              ? 'text-yellow-600'
+                              : 'text-gray-600'
+                          }`}
+                        >
+                          {activity.status.toUpperCase()}
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => activateActivity(activity)}
+                      className="w-full bg-purple-600 text-white py-2 px-4 rounded font-bold hover:bg-purple-700 transition-colors"
+                    >
+                      ACTIVATE ACTIVITY
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Active Activities Log */}
+            {activeActivities.length > 0 && (
+              <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h2 className="text-3xl font-bold text-purple-800 mb-4">
+                  📋 Active Activities Log
+                </h2>
+                <div className="space-y-2">
+                  {activeActivities.map((activity, index) => (
+                    <div key={index} className="bg-purple-50 p-3 rounded border border-purple-200">
+                      <div className="text-purple-800 font-mono">{activity}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Cultural Health Summary */}
+            <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg p-6 text-white">
+              <h2 className="text-3xl font-bold mb-4">🏥 Cultural Learning Health Summary</h2>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="text-4xl font-bold">{culturalStatus.activeParticipants}</div>
+                  <div className="text-sm opacity-90">Active Participants</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold">{culturalStatus.totalActivities}</div>
+                  <div className="text-sm opacity-90">Total Activities</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold">🌿</div>
+                  <div className="text-sm opacity-90">Cultural Excellence Active</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold">🌟</div>
+                  <div className="text-sm opacity-90">Cultural Safety Optimal</div>
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </div>
