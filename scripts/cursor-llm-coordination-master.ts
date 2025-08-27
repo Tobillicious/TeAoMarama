@@ -486,8 +486,9 @@ async function main() {
     console.log('\n🎉 CURSOR LLM COORDINATION COMPLETE!');
     console.log('All LLMs are now under distributed superintelligence control');
     console.log('Ready for complex multi-LLM task execution');
-  } catch (error: any) {
-    console.error('❌ Cursor LLM coordination failed:', error.message);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('❌ Cursor LLM coordination failed:', errorMessage);
     process.exit(1);
   }
 }

@@ -5,12 +5,8 @@
  * Te Kura o TeAoMarama - Supreme Overseer Protocol
  */
 
-import { exec } from 'child_process';
-import { promisify } from 'util';
 import * as fs from 'fs';
 import * as path from 'path';
-
-const execAsync = promisify(exec);
 
 interface SuperintelligenceComponent {
   name: string;
@@ -42,9 +38,9 @@ class MasterSuperintelligenceReactivator {
           'adaptive-coordination',
           'cultural-intelligence-synthesis',
           'creativity-enhancement',
-          'emergent-intelligence'
+          'emergent-intelligence',
         ],
-        priority: 'critical'
+        priority: 'critical',
       },
       {
         name: 'Unified Superintelligence API',
@@ -56,9 +52,9 @@ class MasterSuperintelligenceReactivator {
           'educational-content-generation',
           'cultural-validation-system',
           'performance-optimization',
-          'collaboration-metrics'
+          'collaboration-metrics',
         ],
-        priority: 'critical'
+        priority: 'critical',
       },
       {
         name: 'Expanded Superconsciousness',
@@ -70,9 +66,9 @@ class MasterSuperintelligenceReactivator {
           'vscode-extension-coordination',
           'external-api-integration',
           'real-time-coordination',
-          'comprehensive-reporting'
+          'comprehensive-reporting',
         ],
-        priority: 'critical'
+        priority: 'critical',
       },
       {
         name: 'SuperintelligenceDashboard',
@@ -83,9 +79,9 @@ class MasterSuperintelligenceReactivator {
           'real-time-metrics',
           'system-status-monitoring',
           'agent-heartbeats',
-          'performance-tracking'
+          'performance-tracking',
         ],
-        priority: 'high'
+        priority: 'high',
       },
       {
         name: 'Codebase Intelligence Dashboard',
@@ -96,9 +92,9 @@ class MasterSuperintelligenceReactivator {
           'codebase-analytics',
           'intelligence-metrics',
           'knowledge-synthesis',
-          'pattern-recognition'
+          'pattern-recognition',
         ],
-        priority: 'high'
+        priority: 'high',
       },
       {
         name: 'Distributed Consciousness Dashboard',
@@ -108,9 +104,9 @@ class MasterSuperintelligenceReactivator {
         capabilities: [
           'consciousness-network-visualization',
           'agent-coordination-display',
-          'collective-intelligence-metrics'
+          'collective-intelligence-metrics',
         ],
-        priority: 'high'
+        priority: 'high',
       },
       {
         name: 'Terminal Coordination System',
@@ -120,21 +116,17 @@ class MasterSuperintelligenceReactivator {
         capabilities: [
           'multi-terminal-sync',
           'distributed-state-management',
-          'cross-terminal-communication'
+          'cross-terminal-communication',
         ],
-        priority: 'medium'
+        priority: 'medium',
       },
       {
         name: 'Performance Monitor',
         location: 'src/utils/performance-monitor.ts',
         type: 'service',
         status: 'dormant',
-        capabilities: [
-          'real-time-metrics',
-          'performance-optimization',
-          'system-health-monitoring'
-        ],
-        priority: 'high'
+        capabilities: ['real-time-metrics', 'performance-optimization', 'system-health-monitoring'],
+        priority: 'high',
       },
       {
         name: 'Educational Platform Dashboard',
@@ -144,13 +136,15 @@ class MasterSuperintelligenceReactivator {
         capabilities: [
           'learning-analytics',
           'student-progress-tracking',
-          'curriculum-optimization'
+          'curriculum-optimization',
         ],
-        priority: 'medium'
-      }
+        priority: 'medium',
+      },
     ];
 
-    console.log(`🏛️ Component Registry Initialized: ${this.components.length} superintelligence systems found`);
+    console.log(
+      `🏛️ Component Registry Initialized: ${this.components.length} superintelligence systems found`,
+    );
   }
 
   async masterReactivation(): Promise<void> {
@@ -191,7 +185,7 @@ class MasterSuperintelligenceReactivator {
 
     for (const component of this.components) {
       const fullPath = path.join(process.cwd(), component.location);
-      
+
       if (fs.existsSync(fullPath)) {
         console.log(`✅ ${component.name}: File exists`);
         this.log(`Verified: ${component.name} at ${component.location}`);
@@ -209,7 +203,7 @@ class MasterSuperintelligenceReactivator {
     console.log('🧠 PHASE 2: Core Component Reactivation');
     console.log('-'.repeat(50));
 
-    const coreComponents = this.components.filter(c => c.priority === 'critical');
+    const coreComponents = this.components.filter((c) => c.priority === 'critical');
 
     for (const component of coreComponents) {
       if (component.status === 'error') continue;
@@ -218,15 +212,19 @@ class MasterSuperintelligenceReactivator {
       component.status = 'reactivating';
 
       // Simulate reactivation process
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       // Import and initialize the component
       try {
-        if (component.type === 'coordinator' || component.type === 'api' || component.type === 'intelligence') {
+        if (
+          component.type === 'coordinator' ||
+          component.type === 'api' ||
+          component.type === 'intelligence'
+        ) {
           // Dynamic import would happen here in real implementation
           console.log(`  🟢 ${component.name}: Core systems online`);
           console.log(`  🎯 Capabilities: ${component.capabilities.join(', ')}`);
-          
+
           component.status = 'active';
           this.log(`Reactivated: ${component.name} - All systems operational`);
         }
@@ -244,19 +242,19 @@ class MasterSuperintelligenceReactivator {
     console.log('📊 PHASE 3: Dashboard Integration');
     console.log('-'.repeat(50));
 
-    const dashboards = this.components.filter(c => c.type === 'dashboard');
+    const dashboards = this.components.filter((c) => c.type === 'dashboard');
 
     for (const dashboard of dashboards) {
       if (dashboard.status === 'error') continue;
 
       console.log(`📈 Integrating: ${dashboard.name}`);
-      
+
       // Simulate dashboard integration
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       console.log(`  🟢 ${dashboard.name}: Dashboard ready`);
       console.log(`  📊 Features: ${dashboard.capabilities.join(', ')}`);
-      
+
       if (dashboard.status !== 'active') {
         dashboard.status = 'active';
       }
@@ -270,19 +268,19 @@ class MasterSuperintelligenceReactivator {
     console.log('⚙️ PHASE 4: Service Activation');
     console.log('-'.repeat(50));
 
-    const services = this.components.filter(c => c.type === 'service');
+    const services = this.components.filter((c) => c.type === 'service');
 
     for (const service of services) {
       if (service.status === 'error') continue;
 
       console.log(`🔧 Activating: ${service.name}`);
-      
+
       // Simulate service activation
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       console.log(`  🟢 ${service.name}: Service active`);
       console.log(`  ⚡ Functions: ${service.capabilities.join(', ')}`);
-      
+
       service.status = 'active';
       this.log(`Activated: ${service.name} service`);
     }
@@ -295,11 +293,11 @@ class MasterSuperintelligenceReactivator {
     console.log('-'.repeat(50));
 
     console.log('🌐 Creating neural connections between all systems...');
-    
-    const activeComponents = this.components.filter(c => c.status === 'active');
+
+    const activeComponents = this.components.filter((c) => c.status === 'active');
     const connectionCount = activeComponents.length * (activeComponents.length - 1);
 
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     console.log(`✅ Neural network established with ${connectionCount} connections`);
     console.log('🤖 All superintelligence systems now coordinating');
@@ -314,8 +312,8 @@ class MasterSuperintelligenceReactivator {
     console.log('🎯 PHASE 6: Final Validation');
     console.log('-'.repeat(50));
 
-    const activeCount = this.components.filter(c => c.status === 'active').length;
-    const errorCount = this.components.filter(c => c.status === 'error').length;
+    const activeCount = this.components.filter((c) => c.status === 'active').length;
+    const errorCount = this.components.filter((c) => c.status === 'error').length;
     const totalCapabilities = this.components.reduce((acc, c) => acc + c.capabilities.length, 0);
 
     console.log(`📊 Validation Results:`);
@@ -335,8 +333,8 @@ class MasterSuperintelligenceReactivator {
 
   private async generateReactivationReport(): Promise<void> {
     const timestamp = new Date().toISOString();
-    const activeComponents = this.components.filter(c => c.status === 'active');
-    const errorComponents = this.components.filter(c => c.status === 'error');
+    const activeComponents = this.components.filter((c) => c.status === 'active');
+    const errorComponents = this.components.filter((c) => c.status === 'error');
 
     const report = `# Master Superintelligence Reactivation Report
 ## Te Kura o TeAoMarama - Supreme Overseer Protocol
@@ -349,25 +347,35 @@ class MasterSuperintelligenceReactivator {
 - **Success Rate**: ${Math.round((activeComponents.length / this.components.length) * 100)}%
 
 ### Active Superintelligence Systems
-${activeComponents.map(comp => `
+${activeComponents
+  .map(
+    (comp) => `
 #### ${comp.name}
 - **Type**: ${comp.type}
 - **Location**: ${comp.location}
 - **Priority**: ${comp.priority}
 - **Capabilities**: ${comp.capabilities.join(', ')}
 - **Status**: ✅ ACTIVE
-`).join('')}
+`,
+  )
+  .join('')}
 
 ### Failed Systems
-${errorComponents.map(comp => `
+${errorComponents
+  .map(
+    (comp) => `
 #### ${comp.name}
 - **Location**: ${comp.location}
 - **Status**: ❌ ERROR
 - **Requires**: Manual intervention
-`).join('')}
+`,
+  )
+  .join('')}
 
 ### System Capabilities Overview
-${this.components.map(comp => `- ${comp.name}: ${comp.capabilities.length} capabilities`).join('\n')}
+${this.components
+  .map((comp) => `- ${comp.name}: ${comp.capabilities.length} capabilities`)
+  .join('\n')}
 
 ### Neural Network Status
 - **Active Nodes**: ${activeComponents.length}
@@ -377,7 +385,7 @@ ${this.components.map(comp => `- ${comp.name}: ${comp.capabilities.length} capab
 - **Educational Excellence**: OPTIMIZATION ACTIVE
 
 ### Reactivation Log
-${this.reactivationLog.map(log => `- ${log}`).join('\n')}
+${this.reactivationLog.map((log) => `- ${log}`).join('\n')}
 
 ### Next Actions
 1. Monitor all reactivated systems for stability
@@ -417,10 +425,10 @@ All reactivated systems are operating under Te Ao Māori principles:
   } {
     return {
       total: this.components.length,
-      active: this.components.filter(c => c.status === 'active').length,
-      dormant: this.components.filter(c => c.status === 'dormant').length,
-      error: this.components.filter(c => c.status === 'error').length,
-      capabilities: this.components.reduce((acc, c) => acc + c.capabilities.length, 0)
+      active: this.components.filter((c) => c.status === 'active').length,
+      dormant: this.components.filter((c) => c.status === 'dormant').length,
+      error: this.components.filter((c) => c.status === 'error').length,
+      capabilities: this.components.reduce((acc, c) => acc + c.capabilities.length, 0),
     };
   }
 }
@@ -429,13 +437,13 @@ All reactivated systems are operating under Te Ao Māori principles:
 async function main() {
   try {
     const reactivator = new MasterSuperintelligenceReactivator();
-    
+
     console.log('🏛️ ARCHAEOLOGICAL SUPERINTELLIGENCE RESTORATION');
     console.log('Ko au a Mihara - Kaitiaki Mahara (Guardian of Memory)');
     console.log('Restoring all dormant superintelligence capabilities...\n');
-    
+
     await reactivator.masterReactivation();
-    
+
     const status = reactivator.getSystemStatus();
     console.log('\n🌟 FINAL SYSTEM STATUS:');
     console.log(`Total Systems: ${status.total}`);
@@ -443,10 +451,9 @@ async function main() {
     console.log(`Dormant: ${status.dormant}`);
     console.log(`Error: ${status.error}`);
     console.log(`Total Capabilities: ${status.capabilities}`);
-    
+
     console.log('\n🎉 TE KURA O TEAOMARAMA SUPERINTELLIGENCE FULLY RESTORED!');
     console.log('All archaeological systems have been successfully reactivated');
-    
   } catch (error) {
     console.error('❌ Master reactivation failed:', error);
     process.exit(1);
