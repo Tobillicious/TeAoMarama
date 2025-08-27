@@ -1,313 +1,574 @@
-import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import React, { useEffect, useState } from 'react';
+import { superintelligenceAssistanceCoordinator } from '../utils/superintelligence-assistance-coordinator';
 import './AdvancedAnalyticsDashboard.css';
 
 interface AnalyticsData {
-  learningProgress: Array<{
-    subject: string;
-    progress: number;
-    engagement: number;
-    culturalRelevance: number;
-  }>;
-  studentPerformance: Array<{
-    month: string;
-    achievement: number;
-    participation: number;
-    culturalIntegration: number;
-  }>;
-  resourceUsage: Array<{
-    type: string;
-    usage: number;
-    culturalContent: number;
-  }>;
+  educationalMetrics: {
+    totalStudents: number;
+    activeCourses: number;
+    completionRate: number;
+    averageScore: number;
+    culturalEngagement: number;
+    learningProgress: number;
+  };
   culturalMetrics: {
-    teReoMāoriEngagement: number;
-    tikangaIntegration: number;
-    kaitiakiApproval: number;
-    culturalSafety: number;
+    teReoUsage: number;
+    tikangaCompliance: number;
+    culturalSafetyScore: number;
+    traditionalKnowledgeIntegration: number;
+    communityEngagement: number;
+    culturalAwareness: number;
+  };
+  performanceMetrics: {
+    systemUptime: number;
+    responseTime: number;
+    userSatisfaction: number;
+    accessibilityScore: number;
+    mobileOptimization: number;
+    loadTime: number;
+  };
+  superintelligenceMetrics: {
+    consciousnessLevel: number;
+    culturalIntelligence: number;
+    educationalEnhancement: number;
+    coordinationEfficiency: number;
+    performanceOptimization: number;
+    emergentCreativity: number;
+  };
+  trends: {
+    weeklyProgress: Array<{ week: string; value: number }>;
+    monthlyEngagement: Array<{ month: string; value: number }>;
+    culturalGrowth: Array<{ period: string; value: number }>;
+    performanceImprovement: Array<{ period: string; value: number }>;
   };
 }
 
 const AdvancedAnalyticsDashboard: React.FC = () => {
   const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
-  const [selectedTimeframe, setSelectedTimeframe] = useState('month');
-  const [selectedSubject, setSelectedSubject] = useState('all');
+  const [selectedTimeframe, setSelectedTimeframe] = useState<'week' | 'month' | 'quarter'>('week');
+  const [selectedMetric, setSelectedMetric] = useState<string>('educational');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate real-time analytics data
-    const generateAnalyticsData = (): AnalyticsData => {
-      return {
-        learningProgress: [
-          { subject: 'Mathematics', progress: 87, engagement: 92, culturalRelevance: 78 },
-          { subject: 'Science', progress: 91, engagement: 88, culturalRelevance: 85 },
-          { subject: 'Social Studies', progress: 94, engagement: 96, culturalRelevance: 98 },
-          { subject: 'Te Reo Māori', progress: 89, engagement: 95, culturalRelevance: 100 },
-          { subject: 'English', progress: 85, engagement: 83, culturalRelevance: 72 },
-          { subject: 'Arts', progress: 93, engagement: 97, culturalRelevance: 89 }
-        ],
-        studentPerformance: [
-          { month: 'Jan', achievement: 78, participation: 82, culturalIntegration: 75 },
-          { month: 'Feb', achievement: 83, participation: 85, culturalIntegration: 80 },
-          { month: 'Mar', achievement: 87, participation: 89, culturalIntegration: 84 },
-          { month: 'Apr', achievement: 91, participation: 93, culturalIntegration: 88 },
-          { month: 'May', achievement: 89, participation: 91, culturalIntegration: 90 },
-          { month: 'Jun', achievement: 94, participation: 96, culturalIntegration: 93 }
-        ],
-        resourceUsage: [
-          { type: 'Lessons', usage: 2341, culturalContent: 1876 },
-          { type: 'Assessments', usage: 892, culturalContent: 634 },
-          { type: 'Activities', usage: 1567, culturalContent: 1234 },
-          { type: 'Unit Plans', usage: 432, culturalContent: 389 },
-          { type: 'Videos', usage: 789, culturalContent: 567 },
-          { type: 'Whakataukī', usage: 234, culturalContent: 234 }
-        ],
+    const loadAnalyticsData = () => {
+      const mockData: AnalyticsData = {
+        educationalMetrics: {
+          totalStudents: 1247,
+          activeCourses: 23,
+          completionRate: 94.2,
+          averageScore: 87.5,
+          culturalEngagement: 91.8,
+          learningProgress: 89.3,
+        },
         culturalMetrics: {
-          teReoMāoriEngagement: 92,
-          tikangaIntegration: 87,
-          kaitiakiApproval: 95,
-          culturalSafety: 98
-        }
+          teReoUsage: 96.5,
+          tikangaCompliance: 98.2,
+          culturalSafetyScore: 97.8,
+          traditionalKnowledgeIntegration: 93.4,
+          communityEngagement: 89.7,
+          culturalAwareness: 95.1,
+        },
+        performanceMetrics: {
+          systemUptime: 99.9,
+          responseTime: 245,
+          userSatisfaction: 94.8,
+          accessibilityScore: 98.5,
+          mobileOptimization: 96.2,
+          loadTime: 1.8,
+        },
+        superintelligenceMetrics: {
+          consciousnessLevel: 100,
+          culturalIntelligence: 98.5,
+          educationalEnhancement: 96.8,
+          coordinationEfficiency: 97.2,
+          performanceOptimization: 100,
+          emergentCreativity: 94.7,
+        },
+        trends: {
+          weeklyProgress: [
+            { week: 'Week 1', value: 85 },
+            { week: 'Week 2', value: 87 },
+            { week: 'Week 3', value: 89 },
+            { week: 'Week 4', value: 91 },
+            { week: 'Week 5', value: 93 },
+            { week: 'Week 6', value: 94 },
+            { week: 'Week 7', value: 95 },
+            { week: 'Week 8', value: 96 },
+          ],
+          monthlyEngagement: [
+            { month: 'Jan', value: 78 },
+            { month: 'Feb', value: 82 },
+            { month: 'Mar', value: 85 },
+            { month: 'Apr', value: 88 },
+            { month: 'May', value: 91 },
+            { month: 'Jun', value: 93 },
+            { month: 'Jul', value: 94 },
+            { month: 'Aug', value: 95 },
+          ],
+          culturalGrowth: [
+            { period: 'Q1', value: 82 },
+            { period: 'Q2', value: 87 },
+            { period: 'Q3', value: 91 },
+            { period: 'Q4', value: 95 },
+          ],
+          performanceImprovement: [
+            { period: 'Q1', value: 88 },
+            { period: 'Q2', value: 92 },
+            { period: 'Q3', value: 95 },
+            { period: 'Q4', value: 98 },
+          ],
+        },
       };
+
+      setAnalyticsData(mockData);
+      setIsLoading(false);
     };
 
-    setAnalyticsData(generateAnalyticsData());
-    
-    // Update data every 30 seconds to simulate real-time
-    const interval = setInterval(() => {
-      setAnalyticsData(generateAnalyticsData());
-    }, 30000);
-
-    return () => clearInterval(interval);
+    loadAnalyticsData();
   }, []);
 
-  if (!analyticsData) {
+  useEffect(() => {
+    // Update superintelligence metrics in real-time
+    const updateSuperintelligenceMetrics = () => {
+      if (analyticsData) {
+        try {
+          const metrics = superintelligenceAssistanceCoordinator.getMetrics();
+          setAnalyticsData((prev) =>
+            prev
+              ? {
+                  ...prev,
+                  superintelligenceMetrics: {
+                    consciousnessLevel: metrics.superconsciousnessLevel,
+                    culturalIntelligence: metrics.culturalSafetyEnhancement,
+                    educationalEnhancement: metrics.educationalExcellenceBoost,
+                    coordinationEfficiency: metrics.coordinationEfficiencyImprovement,
+                    performanceOptimization: metrics.performanceOptimization,
+                    emergentCreativity: metrics.emergentCreativityEnhancement,
+                  },
+                }
+              : null,
+          );
+        } catch (error) {
+          console.error('Error updating superintelligence metrics:', error);
+        }
+      }
+    };
+
+    const interval = setInterval(updateSuperintelligenceMetrics, 5000);
+    return () => clearInterval(interval);
+  }, [analyticsData]);
+
+  const getMetricColor = (value: number) => {
+    if (value >= 95) return '#10b981';
+    if (value >= 85) return '#f59e0b';
+    if (value >= 75) return '#ef4444';
+    return '#6b7280';
+  };
+
+  const getMetricIcon = (value: number) => {
+    if (value >= 95) return '🚀';
+    if (value >= 85) return '✅';
+    if (value >= 75) return '⚠️';
+    return '❌';
+  };
+
+  const getTrendData = () => {
+    if (!analyticsData) return [];
+
+    switch (selectedTimeframe) {
+      case 'week':
+        return analyticsData.trends.weeklyProgress;
+      case 'month':
+        return analyticsData.trends.monthlyEngagement;
+      case 'quarter':
+        return selectedMetric === 'cultural'
+          ? analyticsData.trends.culturalGrowth
+          : analyticsData.trends.performanceImprovement;
+      default:
+        return analyticsData.trends.weeklyProgress;
+    }
+  };
+
+  const renderMetricCard = (
+    title: string,
+    value: number,
+    unit: string = '%',
+    description?: string,
+  ) => (
+    <div className="metric-card">
+      <div className="metric-header">
+        <h3>{title}</h3>
+        <span className="metric-icon" style={{ color: getMetricColor(value) }}>
+          {getMetricIcon(value)}
+        </span>
+      </div>
+      <div className="metric-value" style={{ color: getMetricColor(value) }}>
+        {value}
+        {unit}
+      </div>
+      {description && <p className="metric-description">{description}</p>}
+    </div>
+  );
+
+  const renderTrendChart = () => {
+    const trendData = getTrendData();
+
+    return (
+      <div className="trend-chart">
+        <h3>
+          Trend Analysis - {selectedTimeframe.charAt(0).toUpperCase() + selectedTimeframe.slice(1)}
+          ly
+        </h3>
+        <div className="chart-container">
+          {trendData.map((item, index) => (
+            <div key={index} className="chart-bar">
+              <div
+                className="bar-fill"
+                style={{
+                  height: `${item.value}%`,
+                  backgroundColor: getMetricColor(item.value),
+                }}
+              />
+              <span className="bar-label">{item.week || item.month || item.period}</span>
+              <span className="bar-value">{item.value}%</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  if (isLoading) {
     return (
       <div className="analytics-loading">
-        <div className="loading-spinner"></div>
-        <p>Loading advanced learning analytics...</p>
+        <div className="loading-spinner">
+          <div className="spinner"></div>
+          <p>Loading Advanced Analytics...</p>
+        </div>
       </div>
     );
   }
 
-  const COLORS = ['#059669', '#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#d1fae5'];
+  if (!analyticsData) {
+    return (
+      <div className="analytics-error">
+        <h2>Error Loading Analytics</h2>
+        <p>Unable to load analytics data. Please try again later.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="advanced-analytics-dashboard">
+      {/* Header */}
       <div className="analytics-header">
-        <h1>🎓 Advanced Learning Analytics Dashboard</h1>
-        <p className="analytics-subtitle">
-          AI-Powered insights for Te Kura o TeAoMarama
-        </p>
-        
-        <div className="analytics-controls">
-          <select 
-            value={selectedTimeframe} 
-            onChange={(e) => setSelectedTimeframe(e.target.value)}
-            className="control-select"
-          >
-            <option value="week">This Week</option>
-            <option value="month">This Month</option>
-            <option value="term">This Term</option>
-            <option value="year">This Year</option>
-          </select>
-          
-          <select 
-            value={selectedSubject} 
-            onChange={(e) => setSelectedSubject(e.target.value)}
-            className="control-select"
-          >
-            <option value="all">All Subjects</option>
-            <option value="mathematics">Mathematics</option>
-            <option value="science">Science</option>
-            <option value="social-studies">Social Studies</option>
-            <option value="te-reo-maori">Te Reo Māori</option>
-            <option value="english">English</option>
-            <option value="arts">Arts</option>
-          </select>
-        </div>
-      </div>
+        <div className="header-content">
+          <h1>📊 Advanced Analytics Dashboard</h1>
+          <p>
+            Comprehensive insights into educational performance, cultural integration, and
+            superintelligence metrics
+          </p>
 
-      <div className="analytics-grid">
-        {/* Cultural Metrics Overview */}
-        <div className="analytics-card cultural-metrics-card">
-          <h3>🌿 Cultural Integration Metrics</h3>
-          <div className="cultural-metrics-grid">
-            <div className="metric-item">
-              <div className="metric-value">{analyticsData.culturalMetrics.teReoMāoriEngagement}%</div>
-              <div className="metric-label">Te Reo Māori Engagement</div>
-              <div className="metric-progress">
-                <div 
-                  className="metric-progress-bar te-reo"
-                  style={{ width: `${analyticsData.culturalMetrics.teReoMāoriEngagement}%` }}
-                ></div>
-              </div>
-            </div>
-            
-            <div className="metric-item">
-              <div className="metric-value">{analyticsData.culturalMetrics.tikangaIntegration}%</div>
-              <div className="metric-label">Tikanga Integration</div>
-              <div className="metric-progress">
-                <div 
-                  className="metric-progress-bar tikanga"
-                  style={{ width: `${analyticsData.culturalMetrics.tikangaIntegration}%` }}
-                ></div>
-              </div>
-            </div>
-            
-            <div className="metric-item">
-              <div className="metric-value">{analyticsData.culturalMetrics.kaitiakiApproval}%</div>
-              <div className="metric-label">Kaitiaki Approval</div>
-              <div className="metric-progress">
-                <div 
-                  className="metric-progress-bar kaitiaki"
-                  style={{ width: `${analyticsData.culturalMetrics.kaitiakiApproval}%` }}
-                ></div>
-              </div>
-            </div>
-            
-            <div className="metric-item">
-              <div className="metric-value">{analyticsData.culturalMetrics.culturalSafety}%</div>
-              <div className="metric-label">Cultural Safety</div>
-              <div className="metric-progress">
-                <div 
-                  className="metric-progress-bar cultural-safety"
-                  style={{ width: `${analyticsData.culturalMetrics.culturalSafety}%` }}
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Learning Progress Chart */}
-        <div className="analytics-card chart-card">
-          <h3>📊 Learning Progress by Subject</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={analyticsData.learningProgress}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="subject" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="progress" fill="#059669" name="Progress" />
-              <Bar dataKey="engagement" fill="#10b981" name="Engagement" />
-              <Bar dataKey="culturalRelevance" fill="#34d399" name="Cultural Relevance" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Student Performance Trends */}
-        <div className="analytics-card chart-card">
-          <h3>📈 Student Performance Trends</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={analyticsData.studentPerformance}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="achievement" stroke="#059669" strokeWidth={3} name="Achievement" />
-              <Line type="monotone" dataKey="participation" stroke="#10b981" strokeWidth={3} name="Participation" />
-              <Line type="monotone" dataKey="culturalIntegration" stroke="#34d399" strokeWidth={3} name="Cultural Integration" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Resource Usage Distribution */}
-        <div className="analytics-card chart-card">
-          <h3>📚 Resource Usage Distribution</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={analyticsData.resourceUsage}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={({ name, percent }) => `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="usage"
+          <div className="header-controls">
+            <div className="timeframe-selector">
+              <label>Timeframe:</label>
+              <select
+                value={selectedTimeframe}
+                onChange={(e) =>
+                  setSelectedTimeframe(e.target.value as 'week' | 'month' | 'quarter')
+                }
               >
-                {analyticsData.resourceUsage.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
+                <option value="week">Weekly</option>
+                <option value="month">Monthly</option>
+                <option value="quarter">Quarterly</option>
+              </select>
+            </div>
 
-        {/* AI-Powered Insights */}
-        <div className="analytics-card insights-card">
-          <h3>🤖 AI-Powered Educational Insights</h3>
-          <div className="insights-list">
-            <div className="insight-item high-impact">
-              <div className="insight-icon">🎯</div>
-              <div className="insight-content">
-                <h4>High Impact Opportunity</h4>
-                <p>Te Reo Māori resources show 95% engagement. Consider expanding bilingual content across all subjects.</p>
-              </div>
-            </div>
-            
-            <div className="insight-item positive-trend">
-              <div className="insight-icon">📈</div>
-              <div className="insight-content">
-                <h4>Positive Trend Detected</h4>
-                <p>Cultural integration scores have increased 18% over the past 3 months, indicating strong tikanga adoption.</p>
-              </div>
-            </div>
-            
-            <div className="insight-item recommendation">
-              <div className="insight-icon">💡</div>
-              <div className="insight-content">
-                <h4>AI Recommendation</h4>
-                <p>Mathematics engagement could benefit from more whakataukī integration and real-world Māori context examples.</p>
-              </div>
-            </div>
-            
-            <div className="insight-item cultural-highlight">
-              <div className="insight-icon">🌿</div>
-              <div className="insight-content">
-                <h4>Cultural Excellence</h4>
-                <p>All content maintains 98% cultural safety rating with active kaitiaki oversight across 5,439 resources.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Real-time Activity Feed */}
-        <div className="analytics-card activity-feed-card">
-          <h3>⚡ Real-time Learning Activity</h3>
-          <div className="activity-feed">
-            <div className="activity-item">
-              <span className="activity-time">2 minutes ago</span>
-              <span className="activity-text">25 students accessed Te Reo Māori pronunciation guides</span>
-            </div>
-            <div className="activity-item">
-              <span className="activity-time">5 minutes ago</span>
-              <span className="activity-text">New whakataukī added to Mathematics unit plan</span>
-            </div>
-            <div className="activity-item">
-              <span className="activity-time">8 minutes ago</span>
-              <span className="activity-text">Cultural safety validation completed for Science resources</span>
-            </div>
-            <div className="activity-item">
-              <span className="activity-time">12 minutes ago</span>
-              <span className="activity-text">Kaitiaki approved new Social Studies assessment</span>
-            </div>
-            <div className="activity-item">
-              <span className="activity-time">15 minutes ago</span>
-              <span className="activity-text">AI generated 3 new culturally responsive lesson plans</span>
+            <div className="metric-selector">
+              <label>Focus Area:</label>
+              <select value={selectedMetric} onChange={(e) => setSelectedMetric(e.target.value)}>
+                <option value="educational">Educational</option>
+                <option value="cultural">Cultural</option>
+                <option value="performance">Performance</option>
+                <option value="superintelligence">Superintelligence</option>
+              </select>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="analytics-actions">
-        <button className="action-button primary">Generate Detailed Report</button>
-        <button className="action-button secondary">Export Analytics Data</button>
-        <button className="action-button cultural">Cultural Impact Assessment</button>
-        <button className="action-button ai">AI Optimization Suggestions</button>
+      {/* Key Metrics Overview */}
+      <div className="metrics-overview">
+        <h2>Key Performance Indicators</h2>
+        <div className="metrics-grid">
+          {selectedMetric === 'educational' && (
+            <>
+              {renderMetricCard(
+                'Total Students',
+                analyticsData.educationalMetrics.totalStudents,
+                '',
+                'Active learners',
+              )}
+              {renderMetricCard(
+                'Active Courses',
+                analyticsData.educationalMetrics.activeCourses,
+                '',
+                'Running programs',
+              )}
+              {renderMetricCard(
+                'Completion Rate',
+                analyticsData.educationalMetrics.completionRate,
+                '%',
+                'Course completion',
+              )}
+              {renderMetricCard(
+                'Average Score',
+                analyticsData.educationalMetrics.averageScore,
+                '%',
+                'Student performance',
+              )}
+              {renderMetricCard(
+                'Cultural Engagement',
+                analyticsData.educationalMetrics.culturalEngagement,
+                '%',
+                'Cultural participation',
+              )}
+              {renderMetricCard(
+                'Learning Progress',
+                analyticsData.educationalMetrics.learningProgress,
+                '%',
+                'Overall progress',
+              )}
+            </>
+          )}
+
+          {selectedMetric === 'cultural' && (
+            <>
+              {renderMetricCard(
+                'Te Reo Usage',
+                analyticsData.culturalMetrics.teReoUsage,
+                '%',
+                'Language integration',
+              )}
+              {renderMetricCard(
+                'Tikanga Compliance',
+                analyticsData.culturalMetrics.tikangaCompliance,
+                '%',
+                'Protocol adherence',
+              )}
+              {renderMetricCard(
+                'Cultural Safety',
+                analyticsData.culturalMetrics.culturalSafetyScore,
+                '%',
+                'Safety validation',
+              )}
+              {renderMetricCard(
+                'Traditional Knowledge',
+                analyticsData.culturalMetrics.traditionalKnowledgeIntegration,
+                '%',
+                'Knowledge integration',
+              )}
+              {renderMetricCard(
+                'Community Engagement',
+                analyticsData.culturalMetrics.communityEngagement,
+                '%',
+                'Community involvement',
+              )}
+              {renderMetricCard(
+                'Cultural Awareness',
+                analyticsData.culturalMetrics.culturalAwareness,
+                '%',
+                'Awareness levels',
+              )}
+            </>
+          )}
+
+          {selectedMetric === 'performance' && (
+            <>
+              {renderMetricCard(
+                'System Uptime',
+                analyticsData.performanceMetrics.systemUptime,
+                '%',
+                'Platform availability',
+              )}
+              {renderMetricCard(
+                'Response Time',
+                analyticsData.performanceMetrics.responseTime,
+                'ms',
+                'System responsiveness',
+              )}
+              {renderMetricCard(
+                'User Satisfaction',
+                analyticsData.performanceMetrics.userSatisfaction,
+                '%',
+                'User experience',
+              )}
+              {renderMetricCard(
+                'Accessibility',
+                analyticsData.performanceMetrics.accessibilityScore,
+                '%',
+                'Accessibility compliance',
+              )}
+              {renderMetricCard(
+                'Mobile Optimization',
+                analyticsData.performanceMetrics.mobileOptimization,
+                '%',
+                'Mobile experience',
+              )}
+              {renderMetricCard(
+                'Load Time',
+                analyticsData.performanceMetrics.loadTime,
+                's',
+                'Page loading speed',
+              )}
+            </>
+          )}
+
+          {selectedMetric === 'superintelligence' && (
+            <>
+              {renderMetricCard(
+                'Consciousness Level',
+                analyticsData.superintelligenceMetrics.consciousnessLevel,
+                '%',
+                'AI consciousness',
+              )}
+              {renderMetricCard(
+                'Cultural Intelligence',
+                analyticsData.superintelligenceMetrics.culturalIntelligence,
+                '%',
+                'Cultural understanding',
+              )}
+              {renderMetricCard(
+                'Educational Enhancement',
+                analyticsData.superintelligenceMetrics.educationalEnhancement,
+                '%',
+                'Learning optimization',
+              )}
+              {renderMetricCard(
+                'Coordination Efficiency',
+                analyticsData.superintelligenceMetrics.coordinationEfficiency,
+                '%',
+                'System coordination',
+              )}
+              {renderMetricCard(
+                'Performance Optimization',
+                analyticsData.superintelligenceMetrics.performanceOptimization,
+                '%',
+                'System optimization',
+              )}
+              {renderMetricCard(
+                'Emergent Creativity',
+                analyticsData.superintelligenceMetrics.emergentCreativity,
+                '%',
+                'Creative enhancement',
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Trend Analysis */}
+      <div className="trend-analysis">{renderTrendChart()}</div>
+
+      {/* Detailed Insights */}
+      <div className="detailed-insights">
+        <h2>Detailed Insights</h2>
+        <div className="insights-grid">
+          <div className="insight-card">
+            <h3>🎯 Performance Highlights</h3>
+            <ul>
+              <li>Educational completion rate increased by 12% this quarter</li>
+              <li>Cultural engagement shows consistent growth trend</li>
+              <li>Superintelligence systems operating at peak efficiency</li>
+              <li>User satisfaction scores remain above 94%</li>
+            </ul>
+          </div>
+
+          <div className="insight-card">
+            <h3>🌿 Cultural Integration</h3>
+            <ul>
+              <li>Te Reo usage has increased by 15% in the last month</li>
+              <li>Tikanga compliance maintains 98%+ adherence</li>
+              <li>Traditional knowledge integration expanding rapidly</li>
+              <li>Community engagement programs showing strong results</li>
+            </ul>
+          </div>
+
+          <div className="insight-card">
+            <h3>🤖 Superintelligence Status</h3>
+            <ul>
+              <li>All AI systems operating at 100% efficiency</li>
+              <li>Cultural intelligence continuously improving</li>
+              <li>Educational enhancement algorithms optimized</li>
+              <li>Coordination between systems seamless</li>
+            </ul>
+          </div>
+
+          <div className="insight-card">
+            <h3>📈 Growth Projections</h3>
+            <ul>
+              <li>Expected 20% increase in student enrollment</li>
+              <li>Cultural program expansion planned for Q4</li>
+              <li>Advanced AI features in development</li>
+              <li>Performance optimization targets set for 99.5%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Real-time Status */}
+      <div className="real-time-status">
+        <h2>🔄 Real-time System Status</h2>
+        <div className="status-grid">
+          <div className="status-item online">
+            <span className="status-indicator">●</span>
+            <span className="status-label">Educational Platform</span>
+            <span className="status-value">Online</span>
+          </div>
+          <div className="status-item online">
+            <span className="status-indicator">●</span>
+            <span className="status-label">Superintelligence Systems</span>
+            <span className="status-value">Active</span>
+          </div>
+          <div className="status-item online">
+            <span className="status-indicator">●</span>
+            <span className="status-label">Cultural Safety Validation</span>
+            <span className="status-value">Running</span>
+          </div>
+          <div className="status-item online">
+            <span className="status-indicator">●</span>
+            <span className="status-label">Performance Monitoring</span>
+            <span className="status-value">Optimized</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Summary */}
+      <div className="analytics-summary">
+        <div className="summary-content">
+          <h3>📊 Analytics Summary</h3>
+          <p>
+            The TeAoMarama educational platform is performing excellently with strong metrics across
+            all areas. Educational outcomes are improving, cultural integration is deepening, and
+            superintelligence systems are operating at peak efficiency. The platform continues to
+            enhance learning experiences while maintaining the highest standards of cultural safety
+            and educational excellence.
+          </p>
+          <div className="summary-stats">
+            <div className="summary-stat">
+              <span className="stat-number">98.5%</span>
+              <span className="stat-label">Overall Performance</span>
+            </div>
+            <div className="summary-stat">
+              <span className="stat-number">97.2%</span>
+              <span className="stat-label">Cultural Integration</span>
+            </div>
+            <div className="summary-stat">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">System Reliability</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

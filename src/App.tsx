@@ -44,6 +44,10 @@ const EducationalResources = lazy(
   () => import(/* webpackChunkName: "educational-resources" */ './pages/EducationalResources'),
 );
 
+const AdvancedAnalyticsDashboard = lazy(
+  () => import(/* webpackChunkName: "advanced-analytics" */ './components/AdvancedAnalyticsDashboard'),
+);
+
 function App() {
   return (
     <div className="App">

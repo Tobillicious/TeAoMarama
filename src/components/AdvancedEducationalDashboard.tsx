@@ -395,6 +395,7 @@ const AdvancedEducationalDashboard: React.FC = () => {
               setFilterYear(e.target.value === 'all' ? 'all' : Number(e.target.value))
             }
             className="filter-select"
+            aria-label="Filter by year level"
           >
             <option value="all">All Years</option>
             <option value={7}>Year 7</option>
@@ -406,6 +407,7 @@ const AdvancedEducationalDashboard: React.FC = () => {
             value={filterSubject}
             onChange={(e) => setFilterSubject(e.target.value)}
             className="filter-select"
+            aria-label="Filter by subject"
           >
             <option value="all">All Subjects</option>
             <option value="Te Reo Māori">Te Reo Māori</option>

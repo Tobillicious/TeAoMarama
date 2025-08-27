@@ -397,7 +397,11 @@ Advanced Pedagogical Features:
               </div>
               <div className="form-group">
                 <label>Year Level:</label>
-                <select value={customYear} onChange={(e) => setCustomYear(Number(e.target.value))}>
+                <select 
+                  value={customYear} 
+                  onChange={(e) => setCustomYear(Number(e.target.value))}
+                  aria-label="Select year level"
+                >
                   <option value={7}>Year 7</option>
                   <option value={8}>Year 8</option>
                   <option value={9}>Year 9</option>
@@ -412,6 +416,7 @@ Advanced Pedagogical Features:
                   onChange={(e) => setCustomDuration(Number(e.target.value))}
                   min="15"
                   max="120"
+                  aria-label="Enter lesson duration in minutes"
                 />
               </div>
               <div className="form-group">
@@ -419,6 +424,7 @@ Advanced Pedagogical Features:
                 <select
                   value={customDifficulty}
                   onChange={(e) => setCustomDifficulty(e.target.value as any)}
+                  aria-label="Select difficulty level"
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
