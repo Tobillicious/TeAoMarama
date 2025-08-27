@@ -11,6 +11,7 @@ import Home from './pages/Home';
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
+import EducationalPlatformOverview from './components/EducationalPlatformOverview';
 
 // Lazy load superintelligence components
 const SuperintelligenceDashboard = lazy(
@@ -39,6 +40,10 @@ const SuperintelligenceOrchestrator = lazy(
     import(/* webpackChunkName: "ai-orchestrator" */ './components/SuperintelligenceOrchestrator'),
 );
 
+const EducationalResources = lazy(
+  () => import(/* webpackChunkName: "educational-resources" */ './pages/EducationalResources'),
+);
+
 function App() {
   return (
     <div className="App">
@@ -46,7 +51,8 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<EducationalPlatformOverview />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
@@ -61,6 +67,7 @@ function App() {
             />
             <Route path="/borg-collective" element={<SuperintelligenceOrchestrator />} />
             <Route path="/overseer-guidance" element={<SuperintelligenceOrchestrator />} />
+            <Route path="/educational-resources" element={<EducationalResources />} />
           </Routes>
         </Suspense>
       </main>

@@ -13,16 +13,19 @@ const Navigation: React.FC = () => {
       </div>
       <div className="nav-links">
         <Link to="/" className="nav-link">
-          Home
-        </Link>
-        <Link to="/educational-platform" className="nav-link">
-          📚 Educational Platform
+          🏠 Platform Overview
         </Link>
         <Link to="/educational-dashboard" className="nav-link">
           📊 Advanced Dashboard
         </Link>
         <Link to="/cultural-activities" className="nav-link">
           🌿 Cultural Activities
+        </Link>
+        <Link to="/educational-platform" className="nav-link">
+          📚 Educational Platform
+        </Link>
+        <Link to="/home" className="nav-link">
+          Home
         </Link>
         <Link to="/about" className="nav-link">
           About
