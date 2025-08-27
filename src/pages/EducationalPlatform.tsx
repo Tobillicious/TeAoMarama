@@ -25,49 +25,40 @@ const EducationalPlatform: React.FC = () => {
         // Load resources from the actual content files
         const resourcePromises = [];
 
-        // Load lessons
-        const lessonFiles = import.meta.glob('../content/lessons/*.json');
-        for (const path in lessonFiles) {
+        // Load lessons - limit to first 20 for testing
+        const lessonFiles = import.meta.glob('../content/lessons/*.json', { eager: false });
+        const lessonPaths = Object.keys(lessonFiles).slice(0, 20);
+        for (const path of lessonPaths) {
           resourcePromises.push(
-            lessonFiles[path]().then((module: unknown) => ({
-              ...(module as Record<string, unknown>),
+            lessonFiles[path]().then((module: any) => ({
+              ...module.default || module,
               type: 'lesson' as const,
               isAvailable: true,
             })),
           );
         }
 
-        // Load activities
-        const activityFiles = import.meta.glob('../content/activities/*.json');
-        for (const path in activityFiles) {
+        // Load activities - limit to first 20 for testing
+        const activityFiles = import.meta.glob('../content/activities/*.json', { eager: false });
+        const activityPaths = Object.keys(activityFiles).slice(0, 20);
+        for (const path of activityPaths) {
           resourcePromises.push(
-            activityFiles[path]().then((module: unknown) => ({
-              ...(module as Record<string, unknown>),
+            activityFiles[path]().then((module: any) => ({
+              ...module.default || module,
               type: 'activity' as const,
               isAvailable: true,
             })),
           );
         }
 
-        // Load assessments
-        const assessmentFiles = import.meta.glob('../content/assessments/*.json');
-        for (const path in assessmentFiles) {
+        // Load assessments - limit to first 20 for testing
+        const assessmentFiles = import.meta.glob('../content/assessments/*.json', { eager: false });
+        const assessmentPaths = Object.keys(assessmentFiles).slice(0, 20);
+        for (const path of assessmentPaths) {
           resourcePromises.push(
-            assessmentFiles[path]().then((module: unknown) => ({
-              ...(module as Record<string, unknown>),
+            assessmentFiles[path]().then((module: any) => ({
+              ...module.default || module,
               type: 'assessment' as const,
-              isAvailable: true,
-            })),
-          );
-        }
-
-        // Load unit plans
-        const unitPlanFiles = import.meta.glob('../content/unit-plans/*.json');
-        for (const path in unitPlanFiles) {
-          resourcePromises.push(
-            unitPlanFiles[path]().then((module: unknown) => ({
-              ...(module as Record<string, unknown>),
-              type: 'lesson' as const,
               isAvailable: true,
             })),
           );
