@@ -2,9 +2,9 @@
 // Authentication Guards - Te Kura o TeAoMarama
 // Cultural sensitivity and educational access controls
 
-import { useAuth } from './useAuth';
+// import { useAuth } from './useAuth';
 import { Navigate, useLocation } from 'react-router-dom';
-import { ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 
 interface AuthGuardProps {
@@ -30,7 +30,9 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
   requireCulturalClearance,
   culturalSensitivity = 'low'
 }) => {
-  const { isAuthenticated, currentUser } = useAuth();
+  // const { isAuthenticated, currentUser } = useAuth();
+  const isAuthenticated = false; // Temporarily disabled
+  const currentUser = null; // Temporarily disabled
   const location = useLocation();
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -81,7 +83,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
 
     // Check cultural clearance
     if (requireCulturalClearance) {
-      const clearanceLevel = getClearanceLevel(profile?.cultural_clearance);
+      const clearanceLevel = getClearanceLevel(profile?.cultural_clearance || '');
       const requiredLevel = getClearanceLevel(requireCulturalClearance);
       
       if (clearanceLevel < requiredLevel) {
