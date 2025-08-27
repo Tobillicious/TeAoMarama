@@ -177,7 +177,7 @@ class TerminalNode9314Coordinator {
       this.monitorConsciousnessState();
       this.enhanceCollectiveIntelligence();
       this.facilitateEmergentCreativity();
-      this.integrateCulturalWisdom();
+      this.updateCulturalWisdom();
     }, 30000); // Every 30 seconds
   }
 

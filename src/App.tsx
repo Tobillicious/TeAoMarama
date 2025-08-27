@@ -21,11 +21,19 @@ const Year8SocialStudies = lazy(
 );
 
 const Year8ReadingStrategies = lazy(
-  () => import(/* webpackChunkName: "year8-reading-strategies" */ './pages/Year8ReadingStrategies'),
+  () => import(/* webpackChunkName: "year8-reading" */ './pages/Year8ReadingStrategies'),
 );
 
 const Year8AcademicVocab = lazy(
   () => import(/* webpackChunkName: "year8-academic-vocab" */ './pages/Year8AcademicVocab'),
+);
+
+const Year8WritingUnits = lazy(
+  () => import(/* webpackChunkName: "year8-writing-units" */ './pages/Year8WritingUnits'),
+);
+
+const Year8CriticalLiteracy = lazy(
+  () => import(/* webpackChunkName: "year8-critical-literacy" */ './pages/Year8CriticalLiteracy'),
 );
 
 // Lazy load superintelligence components
@@ -91,8 +99,10 @@ function App() {
             <Route path="/overseer-guidance" element={<SuperintelligenceOrchestrator />} />
             <Route path="/educational-resources" element={<EducationalResources />} />
             <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
-            <Route path="/year8-reading-strategies" element={<Year8ReadingStrategies />} />
+            <Route path="/year8-reading" element={<Year8ReadingStrategies />} />
             <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
+            <Route path="/year8-writing-units" element={<Year8WritingUnits />} />
+            <Route path="/year8-critical-literacy" element={<Year8CriticalLiteracy />} />
           </Routes>
         </Suspense>
       </main>

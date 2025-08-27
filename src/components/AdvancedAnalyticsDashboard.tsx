@@ -229,7 +229,9 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
                   backgroundColor: getMetricColor(item.value),
                 }}
               />
-              <span className="bar-label">{item.week || item.month || item.period}</span>
+              <span className="bar-label">
+                {'week' in item ? item.week : 'month' in item ? item.month : item.period}
+              </span>
               <span className="bar-value">{item.value}%</span>
             </div>
           ))}
@@ -277,6 +279,8 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
                 onChange={(e) =>
                   setSelectedTimeframe(e.target.value as 'week' | 'month' | 'quarter')
                 }
+                title="Select timeframe for analytics"
+                aria-label="Select timeframe for analytics"
               >
                 <option value="week">Weekly</option>
                 <option value="month">Monthly</option>
@@ -286,7 +290,12 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
 
             <div className="metric-selector">
               <label>Focus Area:</label>
-              <select value={selectedMetric} onChange={(e) => setSelectedMetric(e.target.value)}>
+              <select 
+                value={selectedMetric} 
+                onChange={(e) => setSelectedMetric(e.target.value)}
+                title="Select focus area for analytics"
+                aria-label="Select focus area for analytics"
+              >
                 <option value="educational">Educational</option>
                 <option value="cultural">Cultural</option>
                 <option value="performance">Performance</option>

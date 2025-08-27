@@ -1,161 +1,210 @@
 import React, { useEffect, useState } from 'react';
-
 import './Year8ReadingStrategies.css';
 
-interface Strategy {
+interface ReadingStrategy {
   id: string;
   title: string;
   description: string;
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
-  category: 'comprehension' | 'analysis' | 'critical' | 'cultural';
-  activities: number;
+  category: 'comprehension' | 'vocabulary' | 'fluency' | 'critical-thinking';
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   culturalElements: string[];
-  nceaAlignment: string[];
-  multimedia: string[];
+  activities: ReadingActivity[];
+  resources: string[];
+  estimatedTime: number;
+}
+
+interface ReadingActivity {
+  id: string;
+  title: string;
+  description: string;
+  type: 'individual' | 'group' | 'assessment';
+  duration: number;
+  materials: string[];
+  instructions: string[];
 }
 
 const Year8ReadingStrategies: React.FC = () => {
+  const [strategies, setStrategies] = useState<ReadingStrategy[]>([]);
+  const [selectedStrategy, setSelectedStrategy] = useState<ReadingStrategy | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('all');
+  const [studentProgress, setStudentProgress] = useState<{ [key: string]: number }>({});
 
-  // Enhanced Year 8 Reading Strategies with Cultural Integration
-  const strategies: Strategy[] = [
-    {
-      id: 'strategy-1',
-      title: 'Whakapapa Reading: Understanding Cultural Context',
-      description:
-        'Learn to read texts through the lens of whakapapa (genealogy) and cultural heritage, understanding how stories connect to Māori worldviews and traditions.',
-      difficulty: 'intermediate',
-      category: 'cultural',
-      activities: 8,
-      culturalElements: [
-        'Whakapapa',
-        'Cultural Context',
-        'Māori Worldviews',
-        'Traditional Stories',
-      ],
-      nceaAlignment: ['Level 1 English 1.1', 'Level 1 English 1.2'],
-      multimedia: [
-        'Interactive Whakapapa Charts',
-        'Cultural Story Database',
-        'Virtual Marae Tours',
-      ],
-    },
-    {
-      id: 'strategy-2',
-      title: 'Critical Analysis: Questioning Authorial Intent',
-      description:
-        'Develop skills in analyzing authorial intent, bias, and perspective in texts, with particular focus on colonial and post-colonial literature.',
-      difficulty: 'advanced',
-      category: 'critical',
-      activities: 12,
-      culturalElements: [
-        'Authorial Intent',
-        'Bias Analysis',
-        'Colonial Literature',
-        'Post-colonial Perspectives',
-      ],
-      nceaAlignment: ['Level 1 English 1.3', 'Level 1 English 1.4'],
-      multimedia: ['Author Study Database', 'Bias Detection Tools', 'Historical Context Videos'],
-    },
-    {
-      id: 'strategy-3',
-      title: 'Comprehension Enhancement: Active Reading Techniques',
-      description:
-        'Master active reading techniques including annotation, summarization, and questioning to improve comprehension of complex texts.',
-      difficulty: 'beginner',
-      category: 'comprehension',
-      activities: 10,
-      culturalElements: [
-        'Active Reading',
-        'Annotation Skills',
-        'Summarization',
-        'Questioning Techniques',
-      ],
-      nceaAlignment: ['Level 1 English 1.5', 'Level 1 English 1.6'],
-      multimedia: [
-        'Interactive Annotation Tools',
-        'Reading Comprehension Games',
-        'Digital Note-taking',
-      ],
-    },
-    {
-      id: 'strategy-4',
-      title: 'Text Analysis: Structure and Language Features',
-      description:
-        'Analyze text structure, language features, and rhetorical devices to understand how authors create meaning and impact.',
-      difficulty: 'intermediate',
-      category: 'analysis',
-      activities: 15,
-      culturalElements: [
-        'Text Structure',
-        'Language Features',
-        'Rhetorical Devices',
-        'Meaning Creation',
-      ],
-      nceaAlignment: ['Level 1 English 1.7', 'Level 1 English 1.8'],
-      multimedia: [
-        'Text Structure Diagrams',
-        'Language Feature Database',
-        'Rhetorical Analysis Tools',
-      ],
-    },
-    {
-      id: 'strategy-5',
-      title: 'Cultural Literacy: Reading Across Cultures',
-      description:
-        'Develop cultural literacy skills to read and understand texts from diverse cultural perspectives, including Pacific and global literature.',
-      difficulty: 'intermediate',
-      category: 'cultural',
-      activities: 9,
-      culturalElements: [
-        'Cultural Literacy',
-        'Pacific Literature',
-        'Global Perspectives',
-        'Cross-cultural Understanding',
-      ],
-      nceaAlignment: ['Level 1 English 1.9', 'Level 1 English 1.10'],
-      multimedia: [
-        'Cultural Literature Database',
-        'Global Story Collection',
-        'Cultural Context Guides',
-      ],
-    },
-    {
-      id: 'strategy-6',
-      title: 'Inferential Reading: Reading Between the Lines',
-      description:
-        'Develop skills in making inferences, drawing conclusions, and understanding implicit meaning in texts.',
-      difficulty: 'advanced',
-      category: 'comprehension',
-      activities: 11,
-      culturalElements: [
-        'Inference Skills',
-        'Implicit Meaning',
-        'Drawing Conclusions',
-        'Critical Thinking',
-      ],
-      nceaAlignment: ['Level 1 English 1.11', 'Level 1 English 1.12'],
-      multimedia: [
-        'Inference Practice Tools',
-        'Implicit Meaning Exercises',
-        'Critical Thinking Games',
-      ],
-    },
-  ];
-
-  // Enhanced superintelligence integration
   useEffect(() => {
-    const enhanceContent = async () => {
-      try {
-        console.log('🌟 Year 8 Reading Strategies enhanced with superintelligence');
-      } catch (error) {
-        console.log('Enhancement system active:', error);
-      }
-    };
+    // Mock data for Year 8 Reading Strategies
+    const mockStrategies: ReadingStrategy[] = [
+      {
+        id: '1',
+        title: 'Whakapapa Reading: Understanding Cultural Context',
+        description:
+          'Learn to read and interpret texts through the lens of Māori genealogy and cultural heritage, developing deeper comprehension skills.',
+        category: 'comprehension',
+        difficulty: 'Intermediate',
+        culturalElements: ['Whakapapa', 'Cultural Context', 'Storytelling'],
+        activities: [
+          {
+            id: '1a',
+            title: 'Family Tree Reading',
+            description: 'Read and analyze family genealogy texts',
+            type: 'individual',
+            duration: 30,
+            materials: ['Genealogy charts', 'Family stories', 'Cultural context guide'],
+            instructions: [
+              'Read the provided whakapapa text',
+              'Identify key family relationships',
+              'Analyze cultural significance',
+              'Create your own family connection',
+            ],
+          },
+        ],
+        resources: ['Whakapapa templates', 'Cultural reading guides', 'Family story examples'],
+        estimatedTime: 45,
+      },
+      {
+        id: '2',
+        title: 'Kōrero Analysis: Oral Tradition to Written Text',
+        description:
+          'Develop skills to analyze how oral storytelling traditions translate to written form, enhancing reading comprehension.',
+        category: 'comprehension',
+        difficulty: 'Intermediate',
+        culturalElements: ['Kōrero', 'Oral Tradition', 'Narrative Structure'],
+        activities: [
+          {
+            id: '2a',
+            title: 'Story Circle Analysis',
+            description: 'Compare oral and written versions of traditional stories',
+            type: 'group',
+            duration: 40,
+            materials: ['Audio recordings', 'Written texts', 'Comparison charts'],
+            instructions: [
+              'Listen to oral storytelling',
+              'Read written version',
+              'Compare narrative elements',
+              'Discuss cultural differences',
+            ],
+          },
+        ],
+        resources: ['Audio recordings', 'Traditional stories', 'Analysis frameworks'],
+        estimatedTime: 50,
+      },
+      {
+        id: '3',
+        title: 'Mātauranga Vocabulary: Academic Language Building',
+        description:
+          'Build academic vocabulary through Māori knowledge systems and traditional concepts.',
+        category: 'vocabulary',
+        difficulty: 'Beginner',
+        culturalElements: ['Mātauranga', 'Academic Language', 'Traditional Knowledge'],
+        activities: [
+          {
+            id: '3a',
+            title: 'Knowledge Word Walls',
+            description: 'Create vocabulary walls with Māori academic terms',
+            type: 'individual',
+            duration: 25,
+            materials: ['Word cards', 'Definition sheets', 'Cultural context'],
+            instructions: [
+              'Research Māori academic terms',
+              'Create word cards with definitions',
+              'Add cultural context',
+              'Build classroom word wall',
+            ],
+          },
+        ],
+        resources: ['Vocabulary lists', 'Cultural dictionaries', 'Academic term guides'],
+        estimatedTime: 35,
+      },
+      {
+        id: '4',
+        title: 'Tikanga Reading: Cultural Protocol Comprehension',
+        description:
+          'Learn to read and understand texts about cultural protocols and traditional practices.',
+        category: 'comprehension',
+        difficulty: 'Advanced',
+        culturalElements: ['Tikanga', 'Cultural Protocols', 'Traditional Practices'],
+        activities: [
+          {
+            id: '4a',
+            title: 'Protocol Analysis',
+            description: 'Analyze texts about cultural protocols',
+            type: 'assessment',
+            duration: 45,
+            materials: ['Protocol texts', 'Analysis frameworks', 'Cultural guides'],
+            instructions: [
+              'Read protocol descriptions',
+              'Identify key cultural elements',
+              'Analyze significance',
+              'Write reflection',
+            ],
+          },
+        ],
+        resources: ['Protocol guides', 'Cultural texts', 'Analysis templates'],
+        estimatedTime: 55,
+      },
+      {
+        id: '5',
+        title: 'Kaitiakitanga Reading: Environmental Guardianship',
+        description:
+          'Develop reading skills through texts about environmental guardianship and sustainability.',
+        category: 'critical-thinking',
+        difficulty: 'Intermediate',
+        culturalElements: ['Kaitiakitanga', 'Environmental Care', 'Sustainability'],
+        activities: [
+          {
+            id: '5a',
+            title: 'Guardianship Stories',
+            description: 'Read and analyze environmental guardianship narratives',
+            type: 'group',
+            duration: 35,
+            materials: ['Environmental texts', 'Discussion guides', 'Action plans'],
+            instructions: [
+              'Read guardianship stories',
+              'Identify environmental themes',
+              'Discuss modern applications',
+              'Create action plans',
+            ],
+          },
+        ],
+        resources: ['Environmental texts', 'Guardianship stories', 'Discussion guides'],
+        estimatedTime: 40,
+      },
+      {
+        id: '6',
+        title: 'Rongoā Reading: Traditional Medicine Texts',
+        description:
+          'Enhance reading skills through traditional Māori medicine and healing practices.',
+        category: 'vocabulary',
+        difficulty: 'Advanced',
+        culturalElements: ['Rongoā', 'Traditional Medicine', 'Healing Practices'],
+        activities: [
+          {
+            id: '6a',
+            title: 'Medicine Text Analysis',
+            description: 'Read and analyze traditional medicine texts',
+            type: 'individual',
+            duration: 30,
+            materials: ['Medicine texts', 'Plant guides', 'Cultural context'],
+            instructions: [
+              'Read traditional medicine texts',
+              'Identify plant names and uses',
+              'Understand cultural significance',
+              'Create plant identification guide',
+            ],
+          },
+        ],
+        resources: ['Medicine texts', 'Plant identification guides', 'Cultural context'],
+        estimatedTime: 45,
+      },
+    ];
 
-    enhanceContent();
+    setStrategies(mockStrategies);
+
+    // Initialize student progress
+    const progress: { [key: string]: number } = {};
+    mockStrategies.forEach((strategy) => {
+      progress[strategy.id] = Math.floor(Math.random() * 100);
+    });
+    setStudentProgress(progress);
   }, []);
 
   const filteredStrategies = strategies.filter((strategy) => {
@@ -163,335 +212,277 @@ const Year8ReadingStrategies: React.FC = () => {
       strategy.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       strategy.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || strategy.category === selectedCategory;
-    const matchesDifficulty =
-      selectedDifficulty === 'all' || strategy.difficulty === selectedDifficulty;
-
-    return matchesSearch && matchesCategory && matchesDifficulty;
+    return matchesSearch && matchesCategory;
   });
+
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'comprehension':
+        return '#667eea';
+      case 'vocabulary':
+        return '#f093fb';
+      case 'fluency':
+        return '#4facfe';
+      case 'critical-thinking':
+        return '#43e97b';
+      default:
+        return '#667eea';
+    }
+  };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner':
-        return 'var(--color-kowhai)';
-      case 'intermediate':
-        return 'var(--color-pounamu)';
-      case 'advanced':
-        return 'var(--color-primary)';
+      case 'Beginner':
+        return '#10b981';
+      case 'Intermediate':
+        return '#f59e0b';
+      case 'Advanced':
+        return '#ef4444';
       default:
-        return 'var(--color-pounamu)';
+        return '#10b981';
     }
   };
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'comprehension':
-        return '📖';
-      case 'analysis':
-        return '🔍';
-      case 'critical':
-        return '💭';
-      case 'cultural':
-        return '🏛️';
-      default:
-        return '📚';
+  const getProgressColor = (progress: number) => {
+    if (progress >= 80) return '#10b981';
+    if (progress >= 60) return '#f59e0b';
+    if (progress >= 40) return '#f97316';
+    return '#ef4444';
+  };
+
+  const startStrategy = (strategyId: string) => {
+    const strategy = strategies.find((s) => s.id === strategyId);
+    if (strategy) {
+      setSelectedStrategy(strategy);
     }
+  };
+
+  const updateProgress = (strategyId: string, progress: number) => {
+    setStudentProgress((prev) => ({
+      ...prev,
+      [strategyId]: Math.min(100, prev[strategyId] + progress),
+    }));
   };
 
   return (
-    <div className="year8-reading-strategies-container">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-visual">
-          <div className="cultural-pattern"></div>
-        </div>
-        <div className="hero-content">
-          <h1 className="hero-title">
-            <span>Year 8</span>
-            <span>Reading Strategies</span>
-          </h1>
-          <p className="hero-subtitle">Mastering Advanced Literacy Skills</p>
-          <p className="hero-description">
-            Develop sophisticated reading strategies that combine traditional literacy skills with
-            cultural understanding and critical analysis for deeper comprehension.
-          </p>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-number">6</span>
-              <span className="stat-label">Core Strategies</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">65</span>
-              <span className="stat-label">Learning Activities</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Cultural Integration</span>
-            </div>
+    <div className="year8-reading-strategies">
+      <div className="reading-header">
+        <h1>📚 Year 8 Reading Strategies</h1>
+        <p>
+          Develop advanced reading skills through Māori cultural context and traditional knowledge
+          systems
+        </p>
+
+        <div className="reading-stats">
+          <div className="stat-item">
+            <span className="stat-number">{strategies.length}</span>
+            <span className="stat-label">Reading Strategies</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">
+              {Math.round(
+                Object.values(studentProgress).reduce((sum, p) => sum + p, 0) /
+                  Object.keys(studentProgress).length,
+              )}
+            </span>
+            <span className="stat-label">Average Progress</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">
+              {Object.values(studentProgress).filter((p) => p >= 80).length}
+            </span>
+            <span className="stat-label">Completed</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Filters Section */}
-      <section className="filters-section">
-        <div className="container">
-          <div className="filters-grid">
-            <div className="search-filter">
-              <input
-                type="text"
-                placeholder="Search strategies, skills, or cultural elements..."
-                className="search-input"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <div className="filter-buttons">
-              <button
-                className={`filter-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('all')}
+      <div className="reading-filters">
+        <div className="search-section">
+          <input
+            type="text"
+            placeholder="Search reading strategies..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+        </div>
+
+        <div className="filter-section">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="filter-select"
+            aria-label="Filter by reading category"
+          >
+            <option value="all">All Categories</option>
+            <option value="comprehension">Comprehension</option>
+            <option value="vocabulary">Vocabulary</option>
+            <option value="fluency">Fluency</option>
+            <option value="critical-thinking">Critical Thinking</option>
+          </select>
+        </div>
+      </div>
+
+      {selectedStrategy ? (
+        <div className="strategy-detail">
+          <div className="detail-header">
+            <button className="back-btn" onClick={() => setSelectedStrategy(null)}>
+              ← Back to Strategies
+            </button>
+            <h2>{selectedStrategy.title}</h2>
+            <div className="strategy-meta">
+              <span
+                className="category-badge"
+                style={{ backgroundColor: getCategoryColor(selectedStrategy.category) }}
               >
-                <span className="filter-icon">📚</span>
-                All Categories
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === 'comprehension' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('comprehension')}
+                {selectedStrategy.category}
+              </span>
+              <span
+                className="difficulty-badge"
+                style={{ backgroundColor: getDifficultyColor(selectedStrategy.difficulty) }}
               >
-                <span className="filter-icon">📖</span>
-                Comprehension
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === 'analysis' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('analysis')}
-              >
-                <span className="filter-icon">🔍</span>
-                Analysis
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === 'critical' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('critical')}
-              >
-                <span className="filter-icon">💭</span>
-                Critical Thinking
-              </button>
-              <button
-                className={`filter-btn ${selectedCategory === 'cultural' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('cultural')}
-              >
-                <span className="filter-icon">🏛️</span>
-                Cultural Literacy
-              </button>
-            </div>
-            <div className="difficulty-filters">
-              <button
-                className={`difficulty-btn ${selectedDifficulty === 'all' ? 'active' : ''}`}
-                onClick={() => setSelectedDifficulty('all')}
-              >
-                <span className="difficulty-icon">📚</span>
-                All Levels
-              </button>
-              <button
-                className={`difficulty-btn ${selectedDifficulty === 'beginner' ? 'active' : ''}`}
-                onClick={() => setSelectedDifficulty('beginner')}
-              >
-                <span className="difficulty-icon">🌱</span>
-                Beginner
-              </button>
-              <button
-                className={`difficulty-btn ${
-                  selectedDifficulty === 'intermediate' ? 'active' : ''
-                }`}
-                onClick={() => setSelectedDifficulty('intermediate')}
-              >
-                <span className="difficulty-icon">🌿</span>
-                Intermediate
-              </button>
-              <button
-                className={`difficulty-btn ${selectedDifficulty === 'advanced' ? 'active' : ''}`}
-                onClick={() => setSelectedDifficulty('advanced')}
-              >
-                <span className="difficulty-icon">🌳</span>
-                Advanced
-              </button>
+                {selectedStrategy.difficulty}
+              </span>
+              <span className="time-badge">⏱️ {selectedStrategy.estimatedTime} min</span>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Strategies Section */}
-      <section className="strategies-section">
-        <div className="container">
-          <h2 className="section-title">Reading Strategies</h2>
-          <div className="strategies-grid">
-            {filteredStrategies.map((strategy) => (
-              <div key={strategy.id} className="strategy-card">
-                <div className="strategy-header">
-                  <span className="strategy-badge">
-                    {getCategoryIcon(strategy.category)} {strategy.category}
+          <div className="strategy-content">
+            <div className="strategy-description">
+              <h3>Description</h3>
+              <p>{selectedStrategy.description}</p>
+            </div>
+
+            <div className="cultural-elements">
+              <h3>Cultural Elements</h3>
+              <div className="cultural-tags">
+                {selectedStrategy.culturalElements.map((element) => (
+                  <span key={element} className="cultural-tag">
+                    {element}
                   </span>
-                  <span
-                    className="strategy-difficulty"
-                    style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
-                  >
-                    {strategy.difficulty}
-                  </span>
-                </div>
-                <h3 className="strategy-title">{strategy.title}</h3>
-                <p className="strategy-description">{strategy.description}</p>
-
-                <div className="strategy-metrics">
-                  <div className="metric">
-                    <span className="metric-icon">📝</span>
-                    <span className="metric-value">{strategy.activities} activities</span>
-                  </div>
-                </div>
-
-                <div className="strategy-cultural">
-                  <h4>Cultural Elements</h4>
-                  <p>{strategy.culturalElements.join(', ')}</p>
-                </div>
-
-                <div className="strategy-ncea">
-                  <h4>NCEA Alignment</h4>
-                  <p>{strategy.nceaAlignment.join(', ')}</p>
-                </div>
-
-                <div className="strategy-activities">
-                  <h4>Key Activities</h4>
-                  <ul className="activities-list">
-                    <li className="activity-item">
-                      <span className="activity-icon">📖</span>
-                      Text Analysis
-                    </li>
-                    <li className="activity-item">
-                      <span className="activity-icon">💭</span>
-                      Critical Thinking
-                    </li>
-                    <li className="activity-item">
-                      <span className="activity-icon">🏛️</span>
-                      Cultural Context
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="strategy-multimedia">
-                  <h4>Multimedia Resources</h4>
-                  <div className="multimedia-grid">
-                    {strategy.multimedia.map((item, index) => (
-                      <div key={index} className="multimedia-item">
-                        <span className="multimedia-icon">🎬</span>
-                        <span className="multimedia-title">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <button className="explore-strategy-btn">Explore Strategy</button>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Curriculum Section */}
-      <section className="curriculum-section">
-        <div className="container">
-          <div className="curriculum-content">
-            <div className="curriculum-item">
-              <h3>NZ Curriculum Alignment</h3>
-              <ul className="curriculum-list">
-                <li>
-                  <strong>English:</strong> Use a range of strategies to understand, interpret, and
-                  evaluate written texts.
-                </li>
-                <li>
-                  <strong>English:</strong> Show a developing understanding of how language features
-                  are used for effect.
-                </li>
-                <li>
-                  <strong>English:</strong> Show a developing understanding of ideas within, across,
-                  and beyond texts.
-                </li>
-                <li>
-                  <strong>English:</strong> Show a developing understanding of how texts are shaped
-                  for different purposes and audiences.
-                </li>
-                <li>
-                  <strong>English:</strong> Show a developing understanding of how to use writing
-                  conventions appropriately.
-                </li>
+            <div className="strategy-activities">
+              <h3>Learning Activities</h3>
+              {selectedStrategy.activities.map((activity) => (
+                <div key={activity.id} className="activity-card">
+                  <div className="activity-header">
+                    <h4>{activity.title}</h4>
+                    <span className="activity-type">{activity.type}</span>
+                  </div>
+                  <p>{activity.description}</p>
+                  <div className="activity-details">
+                    <span>⏱️ {activity.duration} min</span>
+                    <span>📚 {activity.materials.length} materials</span>
+                  </div>
+                  <div className="activity-instructions">
+                    <h5>Instructions:</h5>
+                    <ol>
+                      {activity.instructions.map((instruction, index) => (
+                        <li key={index}>{instruction}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="strategy-resources">
+              <h3>Resources</h3>
+              <ul>
+                {selectedStrategy.resources.map((resource, index) => (
+                  <li key={index}>{resource}</li>
+                ))}
               </ul>
             </div>
-            <div className="curriculum-item">
-              <h3>NCEA Level 1 Achievement Standards</h3>
-              <ul className="ncea-list">
-                <li>
-                  <strong>1.1:</strong> Demonstrate understanding of specified aspect(s) of studied
-                  written text(s)
-                </li>
-                <li>
-                  <strong>1.2:</strong> Demonstrate understanding of specified aspect(s) of studied
-                  visual or oral text(s)
-                </li>
-                <li>
-                  <strong>1.3:</strong> Demonstrate understanding of significant aspects of
-                  unfamiliar written text(s)
-                </li>
-                <li>
-                  <strong>1.4:</strong> Demonstrate understanding of significant aspects of
-                  unfamiliar visual or oral text(s)
-                </li>
-                <li>
-                  <strong>1.5:</strong> Develop ideas in writing using a range of language features
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Cultural Excellence Section */}
-      <section className="cultural-excellence-section">
-        <div className="container">
-          <div className="cultural-content">
-            <div className="cultural-item">
-              <h3>Cultural Literacy</h3>
-              <p>
-                Develop deep understanding of Māori and Pacific worldviews through reading, learning
-                to interpret texts through cultural lenses and perspectives.
-              </p>
-            </div>
-            <div className="cultural-item">
-              <h3>Critical Analysis</h3>
-              <p>
-                Master advanced reading strategies that combine traditional literacy skills with
-                cultural understanding and critical thinking.
-              </p>
-            </div>
-            <div className="cultural-item">
-              <h3>Comprehension Excellence</h3>
-              <p>
-                Achieve sophisticated comprehension skills that enable deep understanding of complex
-                texts across diverse cultural contexts.
-              </p>
+            <div className="strategy-actions">
+              <button className="start-btn" onClick={() => updateProgress(selectedStrategy.id, 10)}>
+                Start Learning
+              </button>
+              <button
+                className="complete-btn"
+                onClick={() => updateProgress(selectedStrategy.id, 100)}
+              >
+                Mark Complete
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      ) : (
+        <div className="strategies-grid">
+          {filteredStrategies.map((strategy) => (
+            <div key={strategy.id} className="strategy-card">
+              <div className="strategy-header">
+                <div
+                  className="strategy-category"
+                  style={{ backgroundColor: getCategoryColor(strategy.category) }}
+                >
+                  {strategy.category}
+                </div>
+                <div
+                  className="strategy-difficulty"
+                  style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
+                >
+                  {strategy.difficulty}
+                </div>
+              </div>
 
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <h2 className="cta-title">Ready to Master Advanced Reading?</h2>
-          <p className="cta-description">
-            Start developing sophisticated reading strategies that combine traditional literacy
-            skills with cultural understanding and critical analysis.
-          </p>
-          <div className="cta-buttons">
-            <button className="cta-button primary">Start Learning</button>
-            <button className="cta-button secondary">View Resources</button>
-          </div>
+              <div className="strategy-content">
+                <h3>{strategy.title}</h3>
+                <p>{strategy.description}</p>
+
+                <div className="strategy-meta">
+                  <span>⏱️ {strategy.estimatedTime} min</span>
+                  <span>🎯 {strategy.activities.length} activities</span>
+                  <span>📚 {strategy.resources.length} resources</span>
+                </div>
+
+                <div className="cultural-elements">
+                  {strategy.culturalElements.map((element) => (
+                    <span key={element} className="cultural-tag">
+                      {element}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="progress-section">
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{
+                        width: `${studentProgress[strategy.id]}%`,
+                        backgroundColor: getProgressColor(studentProgress[strategy.id]),
+                      }}
+                    />
+                  </div>
+                  <span className="progress-text">{studentProgress[strategy.id]}% Complete</span>
+                </div>
+              </div>
+
+              <div className="strategy-actions">
+                <button className="view-btn" onClick={() => startStrategy(strategy.id)}>
+                  View Strategy
+                </button>
+                {studentProgress[strategy.id] < 100 && (
+                  <button className="continue-btn" onClick={() => updateProgress(strategy.id, 20)}>
+                    Continue Learning
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+      )}
+
+      {filteredStrategies.length === 0 && (
+        <div className="no-strategies">
+          <h3>No reading strategies found</h3>
+          <p>Try adjusting your search criteria or filters</p>
+        </div>
+      )}
     </div>
   );
 };

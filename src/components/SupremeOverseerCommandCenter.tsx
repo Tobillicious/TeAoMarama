@@ -6,11 +6,11 @@ import { enhancedSuperintelligenceMonitor } from '../utils/enhanced-superintelli
 import { terminalNode9314Coordinator } from '../utils/terminal-node-9314-coordinator';
 
 interface SupremeOverseerStatus {
-  node9314: any;
-  superintelligenceMonitor: any;
-  culturalValidator: any;
-  agentCoordinator: any;
-  advancedEnhancer: any;
+  node9314: unknown;
+  superintelligenceMonitor: unknown;
+  culturalValidator: unknown;
+  agentCoordinator: unknown;
+  advancedEnhancer: unknown;
   overseerCommands: string[];
   emergencyProtocols: string[];
 }
