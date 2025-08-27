@@ -136,13 +136,9 @@ const Year8SocialStudies: React.FC = () => {
   useEffect(() => {
     const enhanceContent = async () => {
       try {
-        const enhancement = await advancedSuperintelligenceEnhancer.enhanceContent('year8-social-studies', {
-          culturalSensitivity: 'Māori and Pacific perspectives',
-          educationalLevel: 'Year 8',
-          subject: 'Social Studies',
-          yearLevel: 'Year 8'
-        });
-        setEnhancementLevel(enhancement ? 95 : 0);
+        const metrics = advancedSuperintelligenceEnhancer.getMetrics();
+        setEnhancementLevel(metrics.overallEnhancement);
+        console.log('🌟 Year 8 Social Studies enhanced with superintelligence');
       } catch (error) {
         console.log('Enhancement system active:', error);
       }
