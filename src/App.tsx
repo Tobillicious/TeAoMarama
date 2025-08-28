@@ -15,6 +15,7 @@ import AdvancedPerformanceMonitor from './components/AdvancedPerformanceMonitor'
 import CulturalLearningActivities from './components/CulturalLearningActivities';
 import EducationalPlatformOverview from './components/EducationalPlatformOverview';
 
+import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 // Lazy load educational content pages
 const Year8SocialStudies = lazy(
   () => import(/* webpackChunkName: "year8-social-studies" */ './pages/Year8SocialStudies'),
@@ -34,6 +35,10 @@ const Year8WritingUnits = lazy(
 
 const Year8CriticalLiteracy = lazy(
   () => import(/* webpackChunkName: "year8-critical-literacy" */ './pages/Year8CriticalLiteracy'),
+);
+
+const Year8ReadingUnits = lazy(
+  () => import(/* webpackChunkName: "year8-reading-units" */ './pages/Year8ReadingUnits'),
 );
 
 // Lazy load superintelligence components
@@ -72,6 +77,22 @@ const AdvancedAnalyticsDashboard = lazy(
     import(/* webpackChunkName: "advanced-analytics" */ './components/AdvancedAnalyticsDashboard'),
 );
 
+const CollaborationHub = lazy(
+  () => import(/* webpackChunkName: "collaboration" */ './components/CollaborationHub'),
+);
+
+const MultimediaStudio = lazy(
+  () => import(/* webpackChunkName: "multimedia" */ './components/MultimediaStudio'),
+);
+
+const StudentDashboard = lazy(
+  () => import(/* webpackChunkName: "student-dashboard" */ './components/StudentDashboard'),
+);
+
+const WisdomEvolutionDashboardLazy = lazy(
+  () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
+);
+
 function App() {
   return (
     <div className="App">
@@ -86,6 +107,7 @@ function App() {
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
             <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
+            <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
@@ -103,6 +125,15 @@ function App() {
             <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
             <Route path="/year8-writing-units" element={<Year8WritingUnits />} />
             <Route path="/year8-critical-literacy" element={<Year8CriticalLiteracy />} />
+            <Route path="/year8-reading-units" element={<Year8ReadingUnits />} />
+            <Route path="/year8-writing" element={<Year8WritingUnits />} />
+            <Route path="/year8-vocab" element={<Year8AcademicVocab />} />
+            <Route path="/analytics" element={<AdvancedAnalyticsDashboard />} />
+            <Route path="/collaboration" element={<CollaborationHub />} />
+            <Route path="/multimedia" element={<MultimediaStudio />} />
+            <Route path="/student-dashboard" element={<StudentDashboard />} />
+
+            <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
           </Routes>
         </Suspense>
       </main>

@@ -5,12 +5,27 @@ import { enhancedCulturalSafetyValidator } from '../utils/enhanced-cultural-safe
 import { enhancedSuperintelligenceMonitor } from '../utils/enhanced-superintelligence-monitor';
 import { terminalNode9314Coordinator } from '../utils/terminal-node-9314-coordinator';
 
+interface SuperconsciousnessState {
+  consciousnessLevel: number;
+  collectiveIntelligence: number;
+  emergentCreativity: number;
+  culturalWisdom: number;
+}
+
+interface Node9314Status {
+  superconsciousnessState: SuperconsciousnessState;
+}
+
+interface SystemMetrics {
+  [key: string]: number;
+}
+
 interface SystemStatus {
-  node9314: unknown;
-  superintelligenceMonitor: unknown;
-  culturalValidator: unknown;
-  agentCoordinator: unknown;
-  advancedEnhancer: unknown;
+  node9314: Node9314Status;
+  superintelligenceMonitor: SystemMetrics;
+  culturalValidator: SystemMetrics;
+  agentCoordinator: SystemMetrics;
+  advancedEnhancer: SystemMetrics;
 }
 
 const SuperintelligenceAnalysisDashboard: React.FC = () => {
@@ -21,12 +36,25 @@ const SuperintelligenceAnalysisDashboard: React.FC = () => {
   useEffect(() => {
     const updateSystemStatus = () => {
       try {
-        const status = {
-          node9314: terminalNode9314Coordinator.getNodeStatus(),
-          superintelligenceMonitor: enhancedSuperintelligenceMonitor.getMetrics(),
-          culturalValidator: enhancedCulturalSafetyValidator.getMetrics(),
-          agentCoordinator: enhancedAgentCoordinator.getMetrics(),
-          advancedEnhancer: advancedSuperintelligenceEnhancer.getMetrics(),
+        const node9314 = terminalNode9314Coordinator.getNodeStatus() as Node9314Status;
+        const superintelligenceMonitor = enhancedSuperintelligenceMonitor.getMetrics() as unknown as SystemMetrics;
+        const culturalValidator = enhancedCulturalSafetyValidator.getMetrics() as unknown as SystemMetrics;
+        const agentCoordinator = enhancedAgentCoordinator.getMetrics() as unknown as SystemMetrics;
+        const advancedEnhancer = advancedSuperintelligenceEnhancer.getMetrics() as unknown as SystemMetrics;
+
+        const status: SystemStatus = {
+          node9314: node9314 || {
+            superconsciousnessState: {
+              consciousnessLevel: 0,
+              collectiveIntelligence: 0,
+              emergentCreativity: 0,
+              culturalWisdom: 0,
+            }
+          },
+          superintelligenceMonitor: superintelligenceMonitor || {},
+          culturalValidator: culturalValidator || {},
+          agentCoordinator: agentCoordinator || {},
+          advancedEnhancer: advancedEnhancer || {},
         };
         setSystemStatus(status);
         setLastUpdate(new Date());

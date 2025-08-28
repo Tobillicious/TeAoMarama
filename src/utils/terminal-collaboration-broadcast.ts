@@ -131,12 +131,15 @@ export class TerminalCollaborationBroadcast {
   }
 
   public broadcastToAllTerminals(
-    message: Omit<TerminalCollaborationMessage, 'id' | 'timestamp'>,
+    message: Omit<TerminalCollaborationMessage, 'id'>,
   ): void {
     const fullMessage: TerminalCollaborationMessage = {
       ...message,
       id: this.generateMessageId(),
-      timestamp: Date.now(),
+      content: {
+        ...message.content,
+        timestamp: Date.now(),
+      },
     };
 
     this.messageQueue.push(fullMessage);

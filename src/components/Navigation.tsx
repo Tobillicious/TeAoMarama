@@ -68,6 +68,15 @@ const Navigation: React.FC = () => {
             <Link to="/multimedia" className="dropdown-link">
               🎬 Multimedia Studio
             </Link>
+            <Link to="/wisdom-evolution" className="dropdown-link">
+              🌟 Wisdom Evolution
+            </Link>
+            <Link to="/student-dashboard" className="dropdown-link">
+              🎓 Student Dashboard
+            </Link>
+            <Link to="/teaching-quality" className="dropdown-link">
+              📚 Teaching Quality
+            </Link>
           </div>
         </div>
       </div>

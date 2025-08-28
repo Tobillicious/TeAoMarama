@@ -261,6 +261,23 @@ const AdvancedEducationalDashboard: React.FC = () => {
     return '#dc2626';
   };
 
+  const getProgressColorClass = (progress: number): string => {
+    if (progress >= 90) return 'excellent';
+    if (progress >= 80) return 'good';
+    if (progress >= 70) return 'average';
+    return 'poor';
+  };
+
+  const getWidthClass = (percentage: number): string => {
+    const rounded = Math.round(percentage / 5) * 5;
+    return `width-${rounded}`;
+  };
+
+  const getHeightClass = (percentage: number): string => {
+    const rounded = Math.round(percentage / 10) * 10;
+    return `height-${rounded}`;
+  };
+
   const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'achievement':
@@ -429,11 +446,9 @@ const AdvancedEducationalDashboard: React.FC = () => {
                   <span>Average Progress</span>
                   <div className="progress-bar">
                     <div
-                      className="progress-fill"
-                      style={{
-                        width: `${analytics.averageProgress}%`,
-                        backgroundColor: getProgressColor(analytics.averageProgress),
-                      }}
+                      className={`progress-fill ${getProgressColorClass(
+                        analytics.averageProgress,
+                      )} ${getWidthClass(analytics.averageProgress)}`}
                     ></div>
                   </div>
                   <span>{analytics.averageProgress}%</span>
@@ -442,11 +457,9 @@ const AdvancedEducationalDashboard: React.FC = () => {
                   <span>Cultural Engagement</span>
                   <div className="progress-bar">
                     <div
-                      className="progress-fill"
-                      style={{
-                        width: `${analytics.culturalEngagement}%`,
-                        backgroundColor: getCulturalEngagementColor(analytics.culturalEngagement),
-                      }}
+                      className={`progress-fill ${getProgressColorClass(
+                        analytics.culturalEngagement,
+                      )} ${getWidthClass(analytics.culturalEngagement)}`}
                     ></div>
                   </div>
                   <span>{analytics.culturalEngagement}%</span>
@@ -518,11 +531,9 @@ const AdvancedEducationalDashboard: React.FC = () => {
                     <span>Progress</span>
                     <div className="progress-bar">
                       <div
-                        className="progress-fill"
-                        style={{
-                          width: `${student.progress}%`,
-                          backgroundColor: getProgressColor(student.progress),
-                        }}
+                        className={`progress-fill ${getProgressColorClass(
+                          student.progress,
+                        )} ${getWidthClass(student.progress)}`}
                       ></div>
                     </div>
                     <span>{student.progress}%</span>
@@ -531,11 +542,9 @@ const AdvancedEducationalDashboard: React.FC = () => {
                     <span>Cultural Engagement</span>
                     <div className="progress-bar">
                       <div
-                        className="progress-fill"
-                        style={{
-                          width: `${student.culturalEngagement}%`,
-                          backgroundColor: getCulturalEngagementColor(student.culturalEngagement),
-                        }}
+                        className={`progress-fill ${getProgressColorClass(
+                          student.culturalEngagement,
+                        )} ${getWidthClass(student.culturalEngagement)}`}
                       ></div>
                     </div>
                     <span>{student.culturalEngagement}%</span>
@@ -667,21 +676,21 @@ const AdvancedEducationalDashboard: React.FC = () => {
                 <div className="trend-item">
                   <span>Te Reo Māori</span>
                   <div className="trend-bar">
-                    <div className="trend-fill" style={{ width: '95%' }}></div>
+                    <div className="trend-fill width-95"></div>
                   </div>
                   <span>95%</span>
                 </div>
                 <div className="trend-item">
                   <span>Traditional Arts</span>
                   <div className="trend-bar">
-                    <div className="trend-fill" style={{ width: '88%' }}></div>
+                    <div className="trend-fill width-88"></div>
                   </div>
                   <span>88%</span>
                 </div>
                 <div className="trend-item">
                   <span>Cultural History</span>
                   <div className="trend-bar">
-                    <div className="trend-fill" style={{ width: '92%' }}></div>
+                    <div className="trend-fill width-92"></div>
                   </div>
                   <span>92%</span>
                 </div>
@@ -695,19 +704,19 @@ const AdvancedEducationalDashboard: React.FC = () => {
             <div className="analytics-card">
               <h3>Student Distribution by Year</h3>
               <div className="chart-placeholder">
-                <div className="chart-bar" style={{ height: '60%' }}>
+                <div className="chart-bar height-60">
                   <span>Year 7</span>
                   <span>25%</span>
                 </div>
-                <div className="chart-bar" style={{ height: '80%' }}>
+                <div className="chart-bar height-80">
                   <span>Year 8</span>
                   <span>35%</span>
                 </div>
-                <div className="chart-bar" style={{ height: '70%' }}>
+                <div className="chart-bar height-70">
                   <span>Year 9</span>
                   <span>25%</span>
                 </div>
-                <div className="chart-bar" style={{ height: '50%' }}>
+                <div className="chart-bar height-50">
                   <span>Year 10</span>
                   <span>15%</span>
                 </div>
@@ -720,21 +729,21 @@ const AdvancedEducationalDashboard: React.FC = () => {
                 <div className="performance-item">
                   <span>Te Reo Māori</span>
                   <div className="performance-bar">
-                    <div className="performance-fill" style={{ width: '95%' }}></div>
+                    <div className="performance-fill width-95"></div>
                   </div>
                   <span>95%</span>
                 </div>
                 <div className="performance-item">
                   <span>Mathematics</span>
                   <div className="performance-bar">
-                    <div className="performance-fill" style={{ width: '88%' }}></div>
+                    <div className="performance-fill width-88"></div>
                   </div>
                   <span>88%</span>
                 </div>
                 <div className="performance-item">
                   <span>Science</span>
                   <div className="performance-bar">
-                    <div className="performance-fill" style={{ width: '92%' }}></div>
+                    <div className="performance-fill width-92"></div>
                   </div>
                   <span>92%</span>
                 </div>
