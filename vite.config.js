@@ -146,8 +146,7 @@ export default defineConfig(function (_a) {
             port: 3003,
             host: true,
             open: false,
-            // Enable HTTP/2 for better performance
-            https: false,
+            // HTTP/2 disabled for local development
             cors: true,
             // Optimize HMR
             hmr: {

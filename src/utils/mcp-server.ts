@@ -234,7 +234,7 @@ export class MCPServer {
     }
   }
 
-  public async callTool(toolName: string): Promise<Record<string, unknown>> {
+  public async callTool(toolName: string, params?: Record<string, unknown>): Promise<Record<string, unknown>> {
     const tool = this.tools.get(toolName);
     if (!tool) {
       throw new Error(`Tool '${toolName}' not found`);
@@ -244,7 +244,7 @@ export class MCPServer {
 
     // Cultural safety validation
     if (this.config.culturalSafety && tool.culturalContext) {
-      const culturalValidation = await this.validateCulturalContext(tool.culturalContext, _params);
+      const culturalValidation = await this.validateCulturalContext(tool.culturalContext, params);
       if (!culturalValidation.valid) {
         throw new Error(`Cultural safety violation: ${culturalValidation.reason}`);
       }
@@ -403,12 +403,13 @@ export class MCPServer {
 
   private async validateCulturalContext(
     context: string,
+    params?: Record<string, unknown>,
   ): Promise<{ valid: boolean; reason?: string }> {
     const culturalKeywords = ['kaitiakitanga', 'mana', 'tapu', 'noa', 'whakapapa', 'te ao māori'];
     const hasCulturalElements = culturalKeywords.some(
       (keyword) =>
         context.toLowerCase().includes(keyword) ||
-        JSON.stringify(_params).toLowerCase().includes(keyword),
+        (params && JSON.stringify(params).toLowerCase().includes(keyword)),
     );
 
     if (!hasCulturalElements) {

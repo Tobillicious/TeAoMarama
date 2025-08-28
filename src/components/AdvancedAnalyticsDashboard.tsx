@@ -158,11 +158,11 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
     return () => clearInterval(interval);
   }, [analyticsData]);
 
-  const getMetricColor = (value: number) => {
-    if (value >= 95) return '#10b981';
-    if (value >= 85) return '#f59e0b';
-    if (value >= 75) return '#ef4444';
-    return '#6b7280';
+  const getMetricColorClass = (value: number): string => {
+    if (value >= 95) return 'excellent';
+    if (value >= 85) return 'good';
+    if (value >= 75) return 'average';
+    return 'poor';
   };
 
   const getMetricIcon = (value: number) => {
@@ -194,21 +194,22 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
     value: number,
     unit: string = '%',
     description?: string,
-  ) => (
-    <div className="metric-card">
-      <div className="metric-header">
-        <h3>{title}</h3>
-        <span className="metric-icon" style={{ color: getMetricColor(value) }}>
-          {getMetricIcon(value)}
-        </span>
+  ) => {
+    const colorClass = getMetricColorClass(value);
+    return (
+      <div className="metric-card">
+        <div className="metric-header">
+          <h3>{title}</h3>
+          <span className={`metric-icon ${colorClass}`}>{getMetricIcon(value)}</span>
+        </div>
+        <div className={`metric-value ${colorClass}`}>
+          {value}
+          {unit}
+        </div>
+        {description && <p className="metric-description">{description}</p>}
       </div>
-      <div className="metric-value" style={{ color: getMetricColor(value) }}>
-        {value}
-        {unit}
-      </div>
-      {description && <p className="metric-description">{description}</p>}
-    </div>
-  );
+    );
+  };
 
   const renderTrendChart = () => {
     const trendData = getTrendData();
@@ -223,11 +224,12 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
           {trendData.map((item, index) => (
             <div key={index} className="chart-bar">
               <div
-                className="bar-fill"
-                style={{
-                  height: `${item.value}%`,
-                  backgroundColor: getMetricColor(item.value),
-                }}
+                className={`bar-fill bar-fill-dynamic ${getMetricColorClass(item.value)}`}
+                style={
+                  {
+                    '--bar-height': `${item.value}%`,
+                  } as React.CSSProperties
+                }
               />
               <span className="bar-label">
                 {'week' in item ? item.week : 'month' in item ? item.month : item.period}
@@ -290,8 +292,8 @@ const AdvancedAnalyticsDashboard: React.FC = () => {
 
             <div className="metric-selector">
               <label>Focus Area:</label>
-              <select 
-                value={selectedMetric} 
+              <select
+                value={selectedMetric}
                 onChange={(e) => setSelectedMetric(e.target.value)}
                 title="Select focus area for analytics"
                 aria-label="Select focus area for analytics"

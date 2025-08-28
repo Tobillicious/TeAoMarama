@@ -1,7 +1,7 @@
 /* 🌟 ENHANCED SUPERINTELLIGENCE MONITORING SYSTEM */
 /* Node 68198: Advanced Performance & Coordination Analytics */
 
-import { CollaborationMetrics, SystemHealth } from './unified-superintelligence-api';
+import { type CollaborationMetrics, type SystemHealth } from './unified-superintelligence-api';
 
 interface EnhancedPerformanceMetrics {
   // Core System Metrics

@@ -1,7 +1,7 @@
 /* 🌿 ENHANCED CULTURAL SAFETY VALIDATION SYSTEM */
 /* Kaitiaki Mahara - Guardian of Cultural Memory */
 
-import { CulturalValidationResult } from './unified-superintelligence-api';
+import { type CulturalValidationResult } from './unified-superintelligence-api';
 
 interface CulturalContentAnalysis {
   teReoContent: string[];
@@ -226,7 +226,7 @@ class EnhancedCulturalSafetyValidator {
       const result: CulturalValidationResult = {
         isSafe: safetyScore >= 90,
         safetyScore,
-        concerns: validationResults.filter((r) => !r.isValid).map((r) => r.issue),
+        concerns: validationResults.filter((r) => !r.isValid && r.issue).map((r) => r.issue!),
         recommendations,
         culturalContext: analysis.culturalContext,
         validationTimestamp: new Date(),

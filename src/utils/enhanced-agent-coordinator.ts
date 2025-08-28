@@ -457,7 +457,7 @@ class EnhancedAgentCoordinator {
     );
   }
 
-  private logCoordination(action: string, agentId?: string, taskId?: string, result: string): void {
+  private logCoordination(action: string, agentId?: string, taskId?: string, result?: string): void {
     this.coordinationHistory.push({
       timestamp: new Date(),
       action,

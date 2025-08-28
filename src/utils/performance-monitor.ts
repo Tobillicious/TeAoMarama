@@ -230,7 +230,7 @@ class AdvancedPerformanceMonitor {
     // Intercept fetch requests to AI services
     const originalFetch = window.fetch;
     window.fetch = async (input, init) => {
-      const url = typeof input === 'string' ? input : input.url;
+      const url = typeof input === 'string' ? input : input instanceof Request ? input.url : input.toString();
       
       if (this.isAIRequest(url)) {
         const startTime = performance.now();
@@ -269,7 +269,7 @@ class AdvancedPerformanceMonitor {
     // Track cultural validation API calls
     const originalFetch = window.fetch;
     window.fetch = async (input, init) => {
-      const url = typeof input === 'string' ? input : input.url;
+      const url = typeof input === 'string' ? input : input instanceof Request ? input.url : input.toString();
       
       if (url.includes('cultural-validation') || url.includes('kaitiaki')) {
         const startTime = performance.now();
