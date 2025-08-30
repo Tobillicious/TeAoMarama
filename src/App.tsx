@@ -7,20 +7,22 @@ import Navigation from './components/Navigation';
 // Simplified imports to avoid Node.js module issues
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
+import './components/TestRoute.css';
 
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
 import AdvancedPerformanceMonitor from './components/AdvancedPerformanceMonitor';
+import CulturalLearningModules from './components/CulturalLearningModules';
 import EducationalDashboard from './components/EducationalDashboard';
 // const AuthenticationSystemLazy = lazy(
 //   () => import(/* webpackChunkName: "authentication-system" */ './components/AuthenticationSystem'),
 // );
 
-// import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
+import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
-// DemoAccessBanner component removed - not found
+import DemoAccessBanner from './components/DemoAccessBanner';
 import EducationalPlatformOverview from './components/EducationalPlatformOverview';
-// import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
+import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
@@ -105,9 +107,7 @@ const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
 );
 
-// const CommunityFeedbackSystemLazy = lazy(
-//   () => import(/* webpackChunkName: "community-feedback" */ './components/CommunityFeedbackSystem'),
-// );
+import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
 
 // WisdomEvolutionDashboard temporarily removed for build
 // const WisdomEvolutionDashboardLazy = lazy(
@@ -117,7 +117,7 @@ const AssessmentFramework = lazy(
 function App() {
   return (
     <div className="App">
-      {/* DemoAccessBanner removed - component not found */}
+      <DemoAccessBanner />
       <Navigation />
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
@@ -126,13 +126,7 @@ function App() {
             <Route
               path="/test"
               element={
-                <div
-                  style={{
-                    padding: '2rem',
-                    textAlign: 'center',
-                    background: '#f0f9ff',
-                    minHeight: '100vh',
-                  }}
+                <div className="test-route-container"
                 >
                   <h1>✅ System Test Passed</h1>
                   <p>App is running successfully!</p>
@@ -144,11 +138,12 @@ function App() {
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
             <Route path="/educational-dashboard-new" element={<EducationalDashboard />} />
+            <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
             <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
             {/* <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} /> */}
-            {/* <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} /> */}
-            {/* <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} /> */}
+            <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} />
+            <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
@@ -176,7 +171,7 @@ function App() {
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/assessment-framework" element={<AssessmentFramework />} />
             {/* <Route path="/authentication" element={<AuthenticationSystemLazy />} /> */}
-            {/* <Route path="/community-feedback" element={<CommunityFeedbackSystemLazy />} /> */}
+            <Route path="/community-feedback" element={<CommunityFeedbackSystem />} />
 
             <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
             <Route path="/database-integration" element={<DatabaseIntegrationSystem />} />
