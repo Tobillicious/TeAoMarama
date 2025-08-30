@@ -77,6 +77,9 @@ const Navigation: React.FC = () => {
             <Link to="/teaching-quality" className="dropdown-link">
               📚 Teaching Quality
             </Link>
+            <Link to="/database-integration" className="dropdown-link">
+              🗄️ Database Integration
+            </Link>
           </div>
         </div>
       </div>

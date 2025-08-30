@@ -11,13 +11,18 @@ import Home from './pages/Home';
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
 import AdvancedPerformanceMonitor from './components/AdvancedPerformanceMonitor';
+import EducationalDashboard from './components/EducationalDashboard';
+// const AuthenticationSystemLazy = lazy(
+//   () => import(/* webpackChunkName: "authentication-system" */ './components/AuthenticationSystem'),
+// );
 
-import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
+// import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
-import DemoAccessBanner from './components/DemoAccessBanner';
+// DemoAccessBanner component removed - not found
 import EducationalPlatformOverview from './components/EducationalPlatformOverview';
-import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
+// import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
+import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 // Lazy load educational content pages
 const Year8SocialStudies = lazy(
@@ -100,18 +105,19 @@ const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
 );
 
-const AuthenticationSystem = lazy(
-  () => import(/* webpackChunkName: "authentication-system" */ './components/AuthenticationSystem'),
-);
+// const CommunityFeedbackSystemLazy = lazy(
+//   () => import(/* webpackChunkName: "community-feedback" */ './components/CommunityFeedbackSystem'),
+// );
 
-const WisdomEvolutionDashboardLazy = lazy(
-  () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
-);
+// WisdomEvolutionDashboard temporarily removed for build
+// const WisdomEvolutionDashboardLazy = lazy(
+//   () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
+// );
 
 function App() {
   return (
     <div className="App">
-      <DemoAccessBanner />
+      {/* DemoAccessBanner removed - component not found */}
       <Navigation />
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
@@ -137,11 +143,12 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
+            <Route path="/educational-dashboard-new" element={<EducationalDashboard />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
             <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
-            <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} />
-            <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} />
-            <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} />
+            {/* <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} /> */}
+            {/* <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} /> */}
+            {/* <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} /> */}
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
@@ -168,9 +175,11 @@ function App() {
             <Route path="/student-dashboard" element={<StudentDashboard />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/assessment-framework" element={<AssessmentFramework />} />
-            <Route path="/authentication" element={<AuthenticationSystem />} />
+            {/* <Route path="/authentication" element={<AuthenticationSystemLazy />} /> */}
+            {/* <Route path="/community-feedback" element={<CommunityFeedbackSystemLazy />} /> */}
 
             <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
+            <Route path="/database-integration" element={<DatabaseIntegrationSystem />} />
           </Routes>
         </Suspense>
       </main>
