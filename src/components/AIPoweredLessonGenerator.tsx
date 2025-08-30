@@ -397,8 +397,8 @@ Advanced Pedagogical Features:
               </div>
               <div className="form-group">
                 <label>Year Level:</label>
-                <select 
-                  value={customYear} 
+                <select
+                  value={customYear}
                   onChange={(e) => setCustomYear(Number(e.target.value))}
                   aria-label="Select year level"
                 >
@@ -462,7 +462,10 @@ Advanced Pedagogical Features:
           {isGenerating && (
             <div className="generation-progress">
               <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${generationProgress}%` }}></div>
+                <div
+                  className="progress-fill progress-fill-dynamic"
+                  style={{ '--progress-width': `${generationProgress}%` } as React.CSSProperties}
+                ></div>
               </div>
               <span>{Math.round(generationProgress)}% Complete</span>
             </div>
