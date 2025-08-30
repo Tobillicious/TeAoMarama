@@ -55,6 +55,6 @@ console.log('🎯 Targeted fixes complete. Running typecheck...');
 try {
   execSync('npm run typecheck', { stdio: 'inherit' });
   console.log('✅ TypeScript errors resolved!');
-} catch (error) {
+} catch {
   console.log('⚠️  Some TypeScript errors remain. Manual fixes needed.');
 }

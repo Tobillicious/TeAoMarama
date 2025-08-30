@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './AdvancedStudentAnalytics.css';
 
 interface StudentAnalytics {
@@ -68,7 +68,7 @@ const AdvancedStudentAnalytics: React.FC = () => {
 
   useEffect(() => {
     updateSummary();
-  }, [analytics]);
+  }, [updateSummary]);
 
   const generateMockAnalytics = () => {
     const mockStudents: StudentAnalytics[] = [
@@ -262,7 +262,7 @@ const AdvancedStudentAnalytics: React.FC = () => {
     setAnalytics(mockStudents);
   };
 
-  const updateSummary = () => {
+  const updateSummary = useCallback(() => {
     if (analytics.length === 0) return;
 
     const totalStudents = analytics.length;
@@ -303,7 +303,7 @@ const AdvancedStudentAnalytics: React.FC = () => {
       needsSupport,
       culturalChampions,
     });
-  };
+  }, [analytics]);
 
   const getFilteredAndSortedAnalytics = () => {
     let filtered = [...analytics];

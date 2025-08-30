@@ -81,7 +81,7 @@ class AutonomousDeployAgent {
         try {
           await execAsync(`git add "${file}"`);
           console.log(`  ✓ Auto-staged: ${file}`);
-        } catch (error) {
+        } catch {
           console.log(`  ⚠️ Could not stage: ${file}`);
         }
       }
@@ -150,7 +150,7 @@ class AutonomousDeployAgent {
           await new Promise(resolve => setTimeout(resolve, 10000));
           return;
         }
-      } catch (error) {
+      } catch {
         // Site not ready yet
       }
       
