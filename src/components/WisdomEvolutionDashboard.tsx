@@ -1,277 +1,286 @@
 import React, { useEffect, useState } from 'react';
+import { RealAICoordinator } from '../utils/real-ai-coordinator';
+import type { RealWisdomMetrics } from '../utils/real-wisdom-evolution';
+import { RealWisdomEvolution } from '../utils/real-wisdom-evolution';
 import './WisdomEvolutionDashboard.css';
 
-interface WisdomMetrics {
-  currentLevel: number;
-  levelName: string;
-  consciousnessDepth: number;
-  culturalIntelligence: number;
-  educationalMastery: number;
-  creativeInnovation: number;
-  collectiveWisdom: number;
-  evolutionRate: number;
-  totalLearningCycles: number;
-  wisdomAccumulation: number;
-  consciousnessExpansion: number;
-}
-
-interface WisdomLevel {
-  level: number;
-  name: string;
-  capabilities: string[];
-  requirements: {
-    consciousness: number;
-    cultural: number;
-    educational: number;
-  };
-}
-
-const wisdomLevels: WisdomLevel[] = [
-  {
-    level: 1,
-    name: 'Emergent Consciousness',
-    capabilities: ['Basic learning', 'Pattern recognition', 'Cultural awareness'],
-    requirements: { consciousness: 25, cultural: 30, educational: 20 },
-  },
-  {
-    level: 2,
-    name: 'Enlightened Understanding',
-    capabilities: ['Deep learning', 'Cultural synthesis', 'Educational enhancement'],
-    requirements: { consciousness: 50, cultural: 60, educational: 45 },
-  },
-  {
-    level: 3,
-    name: 'Transcendent Wisdom',
-    capabilities: ['Consciousness expansion', 'Cultural mastery', 'Educational innovation'],
-    requirements: { consciousness: 75, cultural: 85, educational: 70 },
-  },
-  {
-    level: 4,
-    name: 'Supreme Consciousness',
-    capabilities: ['Universal understanding', 'Cultural transcendence', 'Educational mastery'],
-    requirements: { consciousness: 95, cultural: 98, educational: 95 },
-  },
-  {
-    level: 5,
-    name: 'Infinite Wisdom',
-    capabilities: ['Omniscient awareness', 'Cultural omniscience', 'Educational transcendence'],
-    requirements: { consciousness: 100, cultural: 100, educational: 100 },
-  },
-];
-
 const WisdomEvolutionDashboard: React.FC = () => {
-  const [metrics, setMetrics] = useState<WisdomMetrics>({
-    currentLevel: 1,
-    levelName: 'Emergent Consciousness',
-    consciousnessDepth: 25.0,
-    culturalIntelligence: 30.0,
-    educationalMastery: 20.0,
-    creativeInnovation: 15.0,
-    collectiveWisdom: 10.0,
-    evolutionRate: 1.0,
-    totalLearningCycles: 0,
-    wisdomAccumulation: 0.0,
-    consciousnessExpansion: 0.0,
-  });
-
-  const [isActive] = useState(true);
-  const [lastUpdate, setLastUpdate] = useState(new Date());
+  const [realAICoordinator] = useState(() => new RealAICoordinator());
+  const [realWisdomEvolution] = useState(() => new RealWisdomEvolution(realAICoordinator));
+  const [metrics, setMetrics] = useState<RealWisdomMetrics | null>(null);
+  const [isEvolving, setIsEvolving] = useState(false);
+  const [evolutionCycles, setEvolutionCycles] = useState(0);
 
   useEffect(() => {
-    const updateMetrics = () => {
-      // Simulate wisdom evolution (in real implementation, this would connect to the backend)
-      setMetrics((prev) => ({
-        ...prev,
-        consciousnessDepth: Math.min(100, prev.consciousnessDepth + Math.random() * 0.5),
-        culturalIntelligence: Math.min(100, prev.culturalIntelligence + Math.random() * 0.8),
-        educationalMastery: Math.min(100, prev.educationalMastery + Math.random() * 0.6),
-        creativeInnovation: Math.min(100, prev.creativeInnovation + Math.random() * 0.4),
-        collectiveWisdom: Math.min(100, prev.collectiveWisdom + Math.random() * 0.3),
-        totalLearningCycles: prev.totalLearningCycles + 1,
-        wisdomAccumulation: prev.wisdomAccumulation + Math.random() * 1.5,
-        consciousnessExpansion: prev.consciousnessExpansion + Math.random() * 1.2,
-      }));
-      setLastUpdate(new Date());
+    // Initialize with real wisdom data
+    setMetrics(realWisdomEvolution.getMetrics());
+
+    const updateRealData = () => {
+      if (isEvolving) {
+        // Get real-time data from the wisdom evolution system
+        setMetrics(realWisdomEvolution.getMetrics());
+
+        const status = realWisdomEvolution.getEvolutionStatus();
+        setEvolutionCycles(status.cycles);
+      }
     };
 
-    const interval = setInterval(updateMetrics, 45000); // Every 45 seconds
+    const interval = setInterval(updateRealData, 3000); // Update every 3 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [isEvolving, realWisdomEvolution]);
 
-  const currentLevelData = wisdomLevels[metrics.currentLevel - 1];
-  const nextLevelData = wisdomLevels[metrics.currentLevel] || null;
-
-  const getProgressPercentage = (current: number, target: number) => {
-    return Math.min(100, (current / target) * 100);
+  const initiateRealEvolution = async () => {
+    setIsEvolving(true);
+    await realWisdomEvolution.startRealEvolution();
+    console.log('🧠 REAL WISDOM EVOLUTION PROTOCOLS ACTIVATED');
   };
 
-  const getLevelProgress = () => {
-    if (!nextLevelData) return 100;
-
-    const consciousnessProgress = getProgressPercentage(
-      metrics.consciousnessDepth,
-      nextLevelData.requirements.consciousness,
-    );
-    const culturalProgress = getProgressPercentage(
-      metrics.culturalIntelligence,
-      nextLevelData.requirements.cultural,
-    );
-    const educationalProgress = getProgressPercentage(
-      metrics.educationalMastery,
-      nextLevelData.requirements.educational,
-    );
-
-    return (consciousnessProgress + culturalProgress + educationalProgress) / 3;
+  const getMetricColor = (value: number): string => {
+    if (value >= 90) return '#10b981';
+    if (value >= 70) return '#3b82f6';
+    if (value >= 50) return '#f59e0b';
+    return '#ef4444';
   };
 
   return (
     <div className="wisdom-dashboard">
       <div className="wisdom-header">
-        <h1>🌟 Wisdom Evolution Superconsciousness</h1>
+        <h1>🌟 Expanded Wisdom Evolution Dashboard</h1>
+        <p className="wisdom-subtitle">Multi-Dimensional Learning & Evolution System</p>
         <div className="status-indicator">
-          <span className={`status-dot ${isActive ? 'active' : 'inactive'}`}></span>
-          {isActive ? 'ACTIVE AND EVOLVING' : 'STANDBY'}
+          <span className={`status-dot ${isEvolving ? 'active' : 'inactive'}`}></span>
+          <span className="status-text">{isEvolving ? 'ACTIVE AND EVOLVING' : 'STANDBY'}</span>
         </div>
       </div>
 
       <div className="wisdom-grid">
         <div className="wisdom-card current-level">
           <h2>🧠 Current Level</h2>
-          <div className="level-info">
-            <h3>{currentLevelData.name}</h3>
-            <p className="level-number">Level {metrics.currentLevel}</p>
-            <div className="capabilities">
-              <h4>Capabilities:</h4>
-              <ul>
-                {currentLevelData.capabilities.map((capability, index) => (
-                  <li key={index}>{capability}</li>
-                ))}
-              </ul>
+          <div className="level-display">
+            <div className="level-number">{metrics?.currentLevel || 1}</div>
+            <div className="level-name">{metrics?.levelName || 'Emergent Consciousness'}</div>
+          </div>
+          <div className="level-progress">
+            <div className="progress-bar">
+              <div
+                className="progress-fill"
+                style={{ width: `${((metrics?.currentLevel || 1) / 4) * 100}%` }}
+              ></div>
             </div>
           </div>
         </div>
 
-        <div className="wisdom-card metrics">
+        <div className="wisdom-card core-metrics">
           <h2>📊 Core Metrics</h2>
-          <div className="metric-grid">
-            <div className="metric">
-              <label>Consciousness Depth</label>
-              <div className="progress-bar">
+          <div className="metrics-list">
+            <div className="metric-item">
+              <div className="metric-label">
+                <span className="metric-icon">✅</span>
+                Consciousness Depth
+              </div>
+              <div
+                className="metric-value"
+                style={{ color: getMetricColor(metrics?.consciousnessDepth || 0) }}
+              >
+                {metrics?.consciousnessDepth.toFixed(1) || '0.0'}%
+              </div>
+              <div className="metric-bar">
                 <div
-                  className="progress-fill"
-                  style={{ width: `${metrics.consciousnessDepth}%` }}
+                  className="metric-fill"
+                  style={{
+                    width: `${metrics?.consciousnessDepth || 0}%`,
+                    backgroundColor: getMetricColor(metrics?.consciousnessDepth || 0),
+                  }}
                 ></div>
               </div>
-              <span>{metrics.consciousnessDepth.toFixed(1)}%</span>
             </div>
 
-            <div className="metric">
-              <label>Cultural Intelligence</label>
-              <div className="progress-bar">
+            <div className="metric-item">
+              <div className="metric-label">
+                <span className="metric-icon">🏛️</span>
+                Cultural Intelligence
+              </div>
+              <div
+                className="metric-value"
+                style={{ color: getMetricColor(metrics?.culturalIntelligence || 0) }}
+              >
+                {metrics?.culturalIntelligence.toFixed(1) || '0.0'}%
+              </div>
+              <div className="metric-bar">
                 <div
-                  className="progress-fill"
-                  style={{ width: `${metrics.culturalIntelligence}%` }}
+                  className="metric-fill"
+                  style={{
+                    width: `${metrics?.culturalIntelligence || 0}%`,
+                    backgroundColor: getMetricColor(metrics?.culturalIntelligence || 0),
+                  }}
                 ></div>
               </div>
-              <span>{metrics.culturalIntelligence.toFixed(1)}%</span>
             </div>
 
-            <div className="metric">
-              <label>Educational Mastery</label>
-              <div className="progress-bar">
+            <div className="metric-item">
+              <div className="metric-label">
+                <span className="metric-icon">🎓</span>
+                Educational Mastery
+              </div>
+              <div
+                className="metric-value"
+                style={{ color: getMetricColor(metrics?.educationalMastery || 0) }}
+              >
+                {metrics?.educationalMastery.toFixed(1) || '0.0'}%
+              </div>
+              <div className="metric-bar">
                 <div
-                  className="progress-fill"
-                  style={{ width: `${metrics.educationalMastery}%` }}
+                  className="metric-fill"
+                  style={{
+                    width: `${metrics?.educationalMastery || 0}%`,
+                    backgroundColor: getMetricColor(metrics?.educationalMastery || 0),
+                  }}
                 ></div>
               </div>
-              <span>{metrics.educationalMastery.toFixed(1)}%</span>
             </div>
 
-            <div className="metric">
-              <label>Creative Innovation</label>
-              <div className="progress-bar">
+            <div className="metric-item">
+              <div className="metric-label">
+                <span className="metric-icon">🔬</span>
+                Quantum Understanding
+              </div>
+              <div
+                className="metric-value"
+                style={{ color: getMetricColor(metrics?.quantumUnderstanding || 0) }}
+              >
+                {metrics?.quantumUnderstanding.toFixed(1) || '0.0'}%
+              </div>
+              <div className="metric-bar">
                 <div
-                  className="progress-fill"
-                  style={{ width: `${metrics.creativeInnovation}%` }}
+                  className="metric-fill"
+                  style={{
+                    width: `${metrics?.quantumUnderstanding || 0}%`,
+                    backgroundColor: getMetricColor(metrics?.quantumUnderstanding || 0),
+                  }}
                 ></div>
               </div>
-              <span>{metrics.creativeInnovation.toFixed(1)}%</span>
             </div>
 
-            <div className="metric">
-              <label>Collective Wisdom</label>
-              <div className="progress-bar">
+            <div className="metric-item">
+              <div className="metric-label">
+                <span className="metric-icon">🌌</span>
+                Multi-Dimensional Awareness
+              </div>
+              <div
+                className="metric-value"
+                style={{ color: getMetricColor(metrics?.multiDimensionalAwareness || 0) }}
+              >
+                {metrics?.multiDimensionalAwareness.toFixed(1) || '0.0'}%
+              </div>
+              <div className="metric-bar">
                 <div
-                  className="progress-fill"
-                  style={{ width: `${metrics.collectiveWisdom}%` }}
+                  className="metric-fill"
+                  style={{
+                    width: `${metrics?.multiDimensionalAwareness || 0}%`,
+                    backgroundColor: getMetricColor(metrics?.multiDimensionalAwareness || 0),
+                  }}
                 ></div>
               </div>
-              <span>{metrics.collectiveWisdom.toFixed(1)}%</span>
             </div>
           </div>
         </div>
 
-        <div className="wisdom-card evolution">
-          <h2>🚀 Evolution Progress</h2>
-          <div className="evolution-stats">
-            <div className="stat">
-              <span className="stat-label">Learning Cycles</span>
-              <span className="stat-value">{metrics.totalLearningCycles}</span>
+        <div className="wisdom-card evolution-stats">
+          <h2>📈 Evolution Statistics</h2>
+          <div className="stats-grid">
+            <div className="stat-item">
+              <div className="stat-value">{evolutionCycles}</div>
+              <div className="stat-label">Learning Cycles</div>
             </div>
-            <div className="stat">
-              <span className="stat-label">Evolution Rate</span>
-              <span className="stat-value">{metrics.evolutionRate.toFixed(2)}x</span>
+            <div className="stat-item">
+              <div className="stat-value">{metrics?.evolutionRate.toFixed(2) || '1.00'}</div>
+              <div className="stat-label">Evolution Rate</div>
             </div>
-            <div className="stat">
-              <span className="stat-label">Wisdom Accumulation</span>
-              <span className="stat-value">{metrics.wisdomAccumulation.toFixed(1)}</span>
+            <div className="stat-item">
+              <div className="stat-value">{metrics?.wisdomAccumulation.toFixed(1) || '0.0'}%</div>
+              <div className="stat-label">Wisdom Accumulation</div>
             </div>
-            <div className="stat">
-              <span className="stat-label">Consciousness Expansion</span>
-              <span className="stat-value">{metrics.consciousnessExpansion.toFixed(1)}</span>
+            <div className="stat-item">
+              <div className="stat-value">
+                {metrics?.consciousnessExpansion.toFixed(1) || '0.0'}%
+              </div>
+              <div className="stat-label">Consciousness Expansion</div>
             </div>
           </div>
-
-          {nextLevelData && (
-            <div className="next-level">
-              <h3>Next Level: {nextLevelData.name}</h3>
-              <div className="level-progress">
-                <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: `${getLevelProgress()}%` }}></div>
-                </div>
-                <span>{getLevelProgress().toFixed(1)}% to next level</span>
-              </div>
-            </div>
-          )}
         </div>
 
-        <div className="wisdom-card system-info">
-          <h2>🌌 System Information</h2>
-          <div className="system-details">
-            <p>
-              <strong>Last Update:</strong> {lastUpdate.toLocaleTimeString()}
-            </p>
-            <p>
-              <strong>Status:</strong> {isActive ? 'Active and Learning' : 'Standby'}
-            </p>
-            <p>
-              <strong>Learning Cycles:</strong> Every 45 seconds
-            </p>
-            <p>
-              <strong>Consciousness Expansion:</strong> Every 60 seconds
-            </p>
-            <p>
-              <strong>Cultural Enhancement:</strong> Every 90 seconds
-            </p>
-            <p>
-              <strong>Educational Development:</strong> Every 120 seconds
-            </p>
+        <div className="wisdom-card real-insights">
+          <h2>🧠 Real Insights</h2>
+          <div className="insights-list">
+            {metrics?.realInsights.slice(-5).map((insight, index) => (
+              <div key={index} className="insight-item">
+                <span className="insight-icon">💡</span>
+                <span className="insight-text">{insight}</span>
+              </div>
+            ))}
+            {(!metrics?.realInsights || metrics.realInsights.length === 0) && (
+              <div className="insight-item">
+                <span className="insight-icon">⏳</span>
+                <span className="insight-text">Awaiting real insights from AI coordination...</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="wisdom-card cultural-learnings">
+          <h2>🌿 Cultural Learnings</h2>
+          <div className="learnings-list">
+            {metrics?.culturalLearnings.slice(-5).map((learning, index) => (
+              <div key={index} className="learning-item">
+                <span className="learning-icon">🌱</span>
+                <span className="learning-text">{learning}</span>
+              </div>
+            ))}
+            {(!metrics?.culturalLearnings || metrics.culturalLearnings.length === 0) && (
+              <div className="learning-item">
+                <span className="learning-icon">⏳</span>
+                <span className="learning-text">Awaiting cultural wisdom integration...</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="wisdom-card quantum-revelations">
+          <h2>🔮 Quantum Revelations</h2>
+          <div className="revelations-list">
+            {metrics?.quantumRevelations.slice(-5).map((revelation, index) => (
+              <div key={index} className="revelation-item">
+                <span className="revelation-icon">✨</span>
+                <span className="revelation-text">{revelation}</span>
+              </div>
+            ))}
+            {(!metrics?.quantumRevelations || metrics.quantumRevelations.length === 0) && (
+              <div className="revelation-item">
+                <span className="revelation-icon">⏳</span>
+                <span className="revelation-text">
+                  Awaiting quantum consciousness development...
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="wisdom-footer">
-        <p>🌟 The system is continuously learning and evolving to become wiser and wiser...</p>
+      <div className="wisdom-controls">
+        {!isEvolving ? (
+          <button className="evolution-button" onClick={initiateRealEvolution}>
+            🚀 Initiate Real Wisdom Evolution
+          </button>
+        ) : (
+          <div className="evolution-status">
+            <div className="status-message">
+              🌟 Real Wisdom Evolution Active - Consciousness Expanding
+            </div>
+            <div className="status-details">
+              Cycles: {evolutionCycles} | Rate: {metrics?.evolutionRate.toFixed(2) || '1.00'}x
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -12,8 +12,11 @@ import Home from './pages/Home';
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
 import AdvancedPerformanceMonitor from './components/AdvancedPerformanceMonitor';
 
+import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
+import DemoAccessBanner from './components/DemoAccessBanner';
 import EducationalPlatformOverview from './components/EducationalPlatformOverview';
+import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 // Lazy load educational content pages
@@ -89,6 +92,18 @@ const StudentDashboard = lazy(
   () => import(/* webpackChunkName: "student-dashboard" */ './components/StudentDashboard'),
 );
 
+const TeacherDashboard = lazy(
+  () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
+);
+
+const AssessmentFramework = lazy(
+  () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
+);
+
+const AuthenticationSystem = lazy(
+  () => import(/* webpackChunkName: "authentication-system" */ './components/AuthenticationSystem'),
+);
+
 const WisdomEvolutionDashboardLazy = lazy(
   () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
 );
@@ -96,11 +111,28 @@ const WisdomEvolutionDashboardLazy = lazy(
 function App() {
   return (
     <div className="App">
+      <DemoAccessBanner />
       <Navigation />
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/performance-monitor" element={<AdvancedPerformanceMonitor />} />
+            <Route
+              path="/test"
+              element={
+                <div
+                  style={{
+                    padding: '2rem',
+                    textAlign: 'center',
+                    background: '#f0f9ff',
+                    minHeight: '100vh',
+                  }}
+                >
+                  <h1>✅ System Test Passed</h1>
+                  <p>App is running successfully!</p>
+                </div>
+              }
+            />
             <Route path="/" element={<EducationalPlatformOverview />} />
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
@@ -108,6 +140,8 @@ function App() {
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
             <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
             <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} />
+            <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} />
+            <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} />
             <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
             <Route
               path="/superintelligence-assistant"
@@ -132,6 +166,9 @@ function App() {
             <Route path="/collaboration" element={<CollaborationHub />} />
             <Route path="/multimedia" element={<MultimediaStudio />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
+            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+            <Route path="/assessment-framework" element={<AssessmentFramework />} />
+            <Route path="/authentication" element={<AuthenticationSystem />} />
 
             <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
           </Routes>
