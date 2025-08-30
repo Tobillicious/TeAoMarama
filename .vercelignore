@@ -1,0 +1,51 @@
+# Development files
+node_modules
+.git
+.gitignore
+*.log
+
+# Build artifacts and cache
+.vite
+vite.config.ts.timestamp-*
+tsconfig.tsbuildinfo
+tsconfig.node.tsbuildinfo
+
+# Documentation and reports
+*.md
+reports/
+docs/
+brain/
+coordination/
+migration/
+scripts/
+backup-*/
+logs/
+
+# Test files
+tests/
+*.spec.ts
+*.test.tsx
+playwright.config.ts
+lighthouse-*.json
+performance-*.json
+
+# Configuration files
+eslint.config.js
+tsconfig.*.json
+postcss.config.*
+tailwind.config.js
+cspell.json
+*.backup
+
+# Database and migration files
+database/
+migrated-content/
+real-resources/
+
+# Temporary and generated files
+*.png
+*.pdf
+university-assignment-*.md
+supreme-*.json
+superintelligence-*.json
+*.cjs

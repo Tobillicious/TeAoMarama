@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TeAoMarama - Educational Resources Platform</title>
+    <meta
+      name="description"
+      content="TeAoMarama - Comprehensive educational resources platform for New Zealand teachers and students. 5,439+ resources across 8 subjects with cultural integration."
+    />
+    <!-- theme-color is not supported by Firefox but is supported by Chrome, Edge, and Safari -->
+    <meta name="theme-color" content="#1e40af" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TeAoMarama" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/vite.svg" />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical resources -->
+
+    <!-- Critical CSS for above-the-fold content - Warp 9 Performance Optimization -->
+    <style>
+      /* Critical CSS Variables */
+      :root {
+        --color-primary: #1e40af;
+        --color-pounamu: #059669;
+        --color-kowhai: #ca8a04;
+        --color-moana: #0891b2;
+        --color-kahurangi: #7c3aed;
+        --color-success: #16a34a;
+        --color-error: #dc2626;
+        --color-warning: #d97706;
+        --color-neutral-50: #f9fafb;
+        --color-neutral-100: #f3f4f6;
+        --color-neutral-500: #6b7280;
+        --color-neutral-600: #4b5563;
+        --color-neutral-700: #374151;
+        --color-neutral-800: #1f2937;
+        --color-neutral-900: #111827;
+        --color-bg: #f9fafb;
+        --color-pounamu-light: #10b981;
+        --color-deep-purple: #5b21b6;
+      }
+
+      /* Critical above-the-fold styles - Optimized for Warp 9 */
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--color-bg);
+        color: var(--color-neutral-800);
+        line-height: 1.6;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      /* Optimized loading spinner with GPU acceleration */
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .animate-spin {
+        animation: spin 1s linear infinite;
+        will-change: transform;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .h-12 {
+        height: 3rem;
+      }
+      .w-12 {
+        width: 3rem;
+      }
+      .border-b-2 {
+        border-bottom-width: 2px;
+      }
+      .border-pounamu {
+        border-color: var(--color-pounamu);
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      .font-medium {
+        font-weight: 500;
+      }
+
+      /* Critical App container with performance optimizations */
+      .App {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        contain: layout style paint;
+      }
+
+      /* Optimize for content-visibility */
+      .content-visibility-auto {
+        content-visibility: auto;
+        contain-intrinsic-size: 0 500px;
+      }
+
+      /* Reduce layout shifts */
+      img,
+      video,
+      canvas,
+      audio,
+      iframe,
+      embed,
+      object {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* Optimize for Core Web Vitals */
+      .lcp-optimized {
+        contain: layout style paint;
+        will-change: transform;
+      }
+
+      /* Font display optimization */
+      @font-face {
+        font-family: 'System Font';
+        src: local('Arial'), local('Helvetica'), local('sans-serif');
+        font-display: swap;
+      }
+
+      /* Critical button styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        text-decoration: none;
+      }
+
+      .btn:focus {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+      }
+
+      /* Optimize for mobile performance */
+      @media (max-width: 768px) {
+        body {
+          font-size: 14px;
+        }
+
+        .text-lg {
+          font-size: 1rem;
+        }
+      }
+
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .animate-spin {
+          animation: none;
+        }
+
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+
+    <!-- Preload critical resources with high priority -->
+    <noscript></noscript>
+
+    <!-- Preload fonts for better performance -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+    /></noscript>
+
+    <!-- Service Worker registration for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+
+    <!-- Performance monitoring -->
+    <script>
+      // Core Web Vitals monitoring
+      if ('PerformanceObserver' in window) {
+        try {
+          const observer = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              if (entry.entryType === 'largest-contentful-paint') {
+                console.log('LCP:', entry.startTime);
+              }
+              if (entry.entryType === 'first-input') {
+                console.log('FID:', entry.processingStart - entry.startTime);
+              }
+            }
+          });
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+        } catch (e) {
+          console.warn('Performance monitoring failed:', e);
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CPdprc7R.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-misc-BBQSIagU.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-D-ua1LSW.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-router-B7L4Gv8f.js">
+    <link rel="modulepreload" crossorigin href="/assets/educational-platform-B2z_xxPH.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-database-47BwdP1X.js">
+    <link rel="modulepreload" crossorigin href="/assets/app-core-DsGoFsQr.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-misc-YuOvRqXi.js">
+    <link rel="modulepreload" crossorigin href="/assets/ai-systems-DwVfdE4U.js">
+    <link rel="modulepreload" crossorigin href="/assets/components-misc-Bli-ACL9.js">
+    <link rel="modulepreload" crossorigin href="/assets/pages-D6xH7e38.js">
+    <link rel="modulepreload" crossorigin href="/assets/dashboard-misc-DPhv7fdg.js">
+    <link rel="modulepreload" crossorigin href="/assets/components-modals-BT7VNCSu.js">
+    <link rel="stylesheet" crossorigin href="/assets/educational-platform-CSkIR7Ny.css">
+    <link rel="stylesheet" crossorigin href="/assets/app-core-Cf9sz83W.css">
+    <link rel="stylesheet" crossorigin href="/assets/ai-systems-BQitIHiX.css">
+    <link rel="stylesheet" crossorigin href="/assets/components-misc-BBXjncEa.css">
+    <link rel="stylesheet" crossorigin href="/assets/pages-BiLSh8DX.css">
+    <link rel="stylesheet" crossorigin href="/assets/dashboard-misc-PGtBqCdZ.css">
+    <link rel="stylesheet" crossorigin href="/assets/components-modals-9z1vqEiH.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BuwwDV0d.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Optimized loading indicator -->
+    <div
+      id="loading-indicator"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-pounamu), var(--color-primary));
+        z-index: 9999;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      "
+    ></div>
+
+    <script>
+      // Show loading indicator
+      const loadingIndicator = document.getElementById('loading-indicator');
+      if (loadingIndicator) {
+        loadingIndicator.style.transform = 'translateX(0)';
+
+        // Hide after page load
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            loadingIndicator.style.transform = 'translateX(100%)';
+          }, 500);
+        });
+      }
+    </script>
+  </body>
+</html>
