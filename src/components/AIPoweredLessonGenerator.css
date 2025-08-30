@@ -262,6 +262,12 @@
   transition: width 0.3s ease;
 }
 
+/* Add CSS custom properties for dynamic progress bar width */
+.progress-fill-dynamic {
+  width: var(--progress-width, 0%);
+  transition: width 0.3s ease;
+}
+
 .generation-progress span {
   font-size: 0.9rem;
   color: #94a3b8;

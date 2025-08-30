@@ -192,6 +192,18 @@ export default defineConfig(({ command, mode }) => {
       __DEV__: command === 'serve',
       __PERFORMANCE_MODE__: JSON.stringify(env.PERFORMANCE_MODE || 'standard'),
     },
+
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './tests/setup.ts',
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/tests/smoke.spec.ts',
+        '**/backup-1755741035865/**',
+      ],
+    },
     
     // CSS optimization
     css: {
