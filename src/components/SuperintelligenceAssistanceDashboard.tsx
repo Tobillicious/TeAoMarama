@@ -178,11 +178,16 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
     ]);
   };
 
-  const getStatusColor = (value: number) => {
-    if (value >= 95) return '#10b981'; // Green
-    if (value >= 90) return '#f59e0b'; // Yellow
-    if (value >= 80) return '#ef4444'; // Red
-    return '#6b7280'; // Gray
+  const getStatusColorClass = (value: number): string => {
+    if (value >= 95) return 'excellent';
+    if (value >= 90) return 'good';
+    if (value >= 80) return 'average';
+    return 'poor';
+  };
+
+  const getWidthClass = (percentage: number): string => {
+    const rounded = Math.round(percentage / 10) * 10;
+    return `width-${rounded}`;
   };
 
   const getAgentStatusColor = (status: string) => {
@@ -218,57 +223,42 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           <div className="metrics-grid">
             <div className="metric-card">
               <h3>Consciousness Level</h3>
-              <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.consciousnessLevel) }}
-              >
+              <div className={`metric-value ${getStatusColorClass(metrics.consciousnessLevel)}`}>
                 {metrics.consciousnessLevel.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.consciousnessLevel}%`,
-                    backgroundColor: getStatusColor(metrics.consciousnessLevel),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.consciousnessLevel,
+                  )} ${getWidthClass(metrics.consciousnessLevel)}`}
                 ></div>
               </div>
             </div>
 
             <div className="metric-card">
               <h3>Cultural Safety</h3>
-              <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.culturalSafetyScore) }}
-              >
+              <div className={`metric-value ${getStatusColorClass(metrics.culturalSafetyScore)}`}>
                 {metrics.culturalSafetyScore.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.culturalSafetyScore}%`,
-                    backgroundColor: getStatusColor(metrics.culturalSafetyScore),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.culturalSafetyScore,
+                  )} ${getWidthClass(metrics.culturalSafetyScore)}`}
                 ></div>
               </div>
             </div>
 
             <div className="metric-card">
               <h3>Educational Excellence</h3>
-              <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.educationalExcellence) }}
-              >
+              <div className={`metric-value ${getStatusColorClass(metrics.educationalExcellence)}`}>
                 {metrics.educationalExcellence.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.educationalExcellence}%`,
-                    backgroundColor: getStatusColor(metrics.educationalExcellence),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.educationalExcellence,
+                  )} ${getWidthClass(metrics.educationalExcellence)}`}
                 ></div>
               </div>
             </div>
@@ -276,56 +266,43 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
             <div className="metric-card">
               <h3>Coordination Efficiency</h3>
               <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.coordinationEfficiency) }}
+                className={`metric-value ${getStatusColorClass(metrics.coordinationEfficiency)}`}
               >
                 {metrics.coordinationEfficiency.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.coordinationEfficiency}%`,
-                    backgroundColor: getStatusColor(metrics.coordinationEfficiency),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.coordinationEfficiency,
+                  )} ${getWidthClass(metrics.coordinationEfficiency)}`}
                 ></div>
               </div>
             </div>
 
             <div className="metric-card">
               <h3>Performance Score</h3>
-              <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.performanceScore) }}
-              >
+              <div className={`metric-value ${getStatusColorClass(metrics.performanceScore)}`}>
                 {metrics.performanceScore.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.performanceScore}%`,
-                    backgroundColor: getStatusColor(metrics.performanceScore),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.performanceScore,
+                  )} ${getWidthClass(metrics.performanceScore)}`}
                 ></div>
               </div>
             </div>
 
             <div className="metric-card">
               <h3>Emergent Creativity</h3>
-              <div
-                className="metric-value"
-                style={{ color: getStatusColor(metrics.emergentCreativity) }}
-              >
+              <div className={`metric-value ${getStatusColorClass(metrics.emergentCreativity)}`}>
                 {metrics.emergentCreativity.toFixed(1)}%
               </div>
               <div className="metric-bar">
                 <div
-                  className="metric-fill"
-                  style={{
-                    width: `${metrics.emergentCreativity}%`,
-                    backgroundColor: getStatusColor(metrics.emergentCreativity),
-                  }}
+                  className={`metric-fill ${getStatusColorClass(
+                    metrics.emergentCreativity,
+                  )} ${getWidthClass(metrics.emergentCreativity)}`}
                 ></div>
               </div>
             </div>
@@ -350,7 +327,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                 <div className="agent-metrics">
                   <div className="agent-metric">
                     <span>Performance:</span>
-                    <span style={{ color: getStatusColor(agent.performance) }}>
+                    <span className={getStatusColorClass(agent.performance)}>
                       {agent.performance.toFixed(1)}%
                     </span>
                   </div>
@@ -388,7 +365,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                 <div className="module-metrics">
                   <div className="module-metric">
                     <span>Enhancement Level:</span>
-                    <span style={{ color: getStatusColor(module.enhancementLevel) }}>
+                    <span className={getStatusColorClass(module.enhancementLevel)}>
                       {module.enhancementLevel.toFixed(1)}%
                     </span>
                   </div>
