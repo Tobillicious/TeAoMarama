@@ -265,10 +265,7 @@ Advanced Pedagogical Features:
     ];
   };
 
-  const generateAssessments = (
-    _template: LessonTemplate | undefined,
-    _customSubject: string,
-  ): string[] => {
+  const generateAssessments = (): string[] => {
     return [
       'Formative Assessment: Cultural Understanding Check',
       'Summative Assessment: Knowledge Application',
@@ -280,10 +277,7 @@ Advanced Pedagogical Features:
     ];
   };
 
-  const generateResources = (
-    _template: LessonTemplate | undefined,
-    _customSubject: string,
-  ): string[] => {
+  const generateResources = (): string[] => {
     return [
       'Digital Learning Platform Access',
       'Cultural Resource Library',
