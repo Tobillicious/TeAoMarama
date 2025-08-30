@@ -649,6 +649,19 @@
   }
 }
 
+/* Dynamic Difficulty Color Classes */
+.reading-difficulty.beginner {
+  background-color: #10b981 !important;
+}
+
+.reading-difficulty.intermediate {
+  background-color: #f59e0b !important;
+}
+
+.reading-difficulty.advanced {
+  background-color: #ef4444 !important;
+}
+
 @media (max-width: 480px) {
   .hero-section,
   .units-section,
