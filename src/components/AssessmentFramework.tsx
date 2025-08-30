@@ -97,7 +97,7 @@ const AssessmentFramework: React.FC = () => {
     assessmentsGraded: 156,
   });
 
-  const [culturalMetrics, _setCulturalMetrics] = useState<CulturalComplianceMetrics>({
+  const [culturalMetrics] = useState<CulturalComplianceMetrics>({
     teReoIntegration: 85,
     tikangaCompliance: 92,
     culturalRepresentation: 78,
@@ -105,7 +105,7 @@ const AssessmentFramework: React.FC = () => {
     overallCulturalScore: 85.8,
   });
 
-  const [realTimeAnalytics, _setRealTimeAnalytics] = useState<RealTimeAnalytics>({
+  const [realTimeAnalytics] = useState<RealTimeAnalytics>({
     totalAssessments: 24,
     activeAssessments: 8,
     averageScore: 87,

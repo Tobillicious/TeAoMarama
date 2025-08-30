@@ -1,0 +1,115 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 🌟
+    - generic [ref=e7]:
+      - strong [ref=e8]: TeAoMarama Educational Platform
+      - generic [ref=e9]: "- Advanced AI-Powered Learning System"
+    - generic [ref=e12]: All Systems Operational
+  - navigation [ref=e13]:
+    - link "🧠 Te Kura o TeAoMarama" [ref=e15] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e16]:
+      - link "🏠 Platform Overview" [ref=e17] [cursor=pointer]:
+        - /url: /
+      - link "📊 Advanced Dashboard" [ref=e18] [cursor=pointer]:
+        - /url: /educational-dashboard
+      - link "🌿 Cultural Activities" [ref=e19] [cursor=pointer]:
+        - /url: /cultural-activities
+      - link "📚 Educational Resources" [ref=e20] [cursor=pointer]:
+        - /url: /educational-resources
+      - link "🎓 Educational Platform" [ref=e21] [cursor=pointer]:
+        - /url: /educational-platform
+      - generic [ref=e23] [cursor=pointer]: 📚 Year 8 Content
+      - link "Home" [ref=e24] [cursor=pointer]:
+        - /url: /home
+      - link "About" [ref=e25] [cursor=pointer]:
+        - /url: /about
+      - link "Contact" [ref=e26] [cursor=pointer]:
+        - /url: /contact
+      - generic [ref=e28] [cursor=pointer]: 🔧 Tools
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - heading "🔐 Dual-Role Authentication System Test" [level=1] [ref=e32]
+        - paragraph [ref=e33]: Comprehensive testing of our authentication system and role-based features
+      - generic [ref=e34]:
+        - heading "Current System Status" [level=2] [ref=e35]
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - strong [ref=e38]: "Authentication:"
+            - text: ❌ Not Authenticated
+          - generic [ref=e39]:
+            - strong [ref=e40]: "User:"
+            - text: None
+          - generic [ref=e41]:
+            - strong [ref=e42]: "Role:"
+            - text: None
+          - generic [ref=e43]:
+            - strong [ref=e44]: "Cultural Clearance:"
+            - text: None
+      - generic [ref=e45]:
+        - heading "System Tests" [level=2] [ref=e46]
+        - generic [ref=e47]:
+          - button "🧪 Run All Tests" [ref=e48] [cursor=pointer]
+          - button "👩‍🏫 Test Teacher Login" [ref=e49] [cursor=pointer]
+          - button "👨‍🎓 Test Student Login" [ref=e50] [cursor=pointer]
+          - button "👋 Test Logout" [ref=e51] [cursor=pointer]
+        - generic [ref=e52]:
+          - strong [ref=e53]: "Overall Status:"
+          - text: ⏳ No Tests Run
+      - generic [ref=e54]:
+        - heading "Test Results" [level=2] [ref=e55]
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - strong [ref=e58]: "Auth Provider:"
+            - text: ⏳ Not Tested
+          - generic [ref=e59]:
+            - strong [ref=e60]: "Teacher Login:"
+            - text: ⏳ Not Tested
+          - generic [ref=e61]:
+            - strong [ref=e62]: "Student Login:"
+            - text: ⏳ Not Tested
+          - generic [ref=e63]:
+            - strong [ref=e64]: "Demo Mode:"
+            - text: ⏳ Not Tested
+          - generic [ref=e65]:
+            - strong [ref=e66]: "Logout:"
+            - text: ⏳ Not Tested
+      - generic [ref=e67]:
+        - heading "Navigation Tests" [level=2] [ref=e68]
+        - generic [ref=e69]:
+          - link "🔐 Login Page" [ref=e70] [cursor=pointer]:
+            - /url: /login
+          - link "👩‍🏫 Teacher Dashboard" [ref=e71] [cursor=pointer]:
+            - /url: /teacher-dashboard
+          - link "👨‍🎓 Student Dashboard" [ref=e72] [cursor=pointer]:
+            - /url: /student-dashboard
+          - link "🏠 Landing Page" [ref=e73] [cursor=pointer]:
+            - /url: /
+      - generic [ref=e74]:
+        - heading "System Information" [level=2] [ref=e75]
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - strong [ref=e78]: "Server:"
+            - text: localhost:3006
+          - generic [ref=e79]:
+            - strong [ref=e80]: "Build Status:"
+            - text: ✅ Successful
+          - generic [ref=e81]:
+            - strong [ref=e82]: "Auth Provider:"
+            - text: ✅ Integrated
+          - generic [ref=e83]:
+            - strong [ref=e84]: "Routes:"
+            - text: ✅ Configured
+      - generic [ref=e85]:
+        - heading "🧪 Testing Instructions" [level=3] [ref=e86]
+        - list [ref=e87]:
+          - listitem [ref=e88]: Click "Run All Tests" to test the complete system
+          - listitem [ref=e89]: Use individual test buttons to test specific features
+          - listitem [ref=e90]: Check browser console for detailed logs
+          - listitem [ref=e91]: Navigate to different pages to test routing
+          - listitem [ref=e92]: Verify authentication state persists across navigation
+```

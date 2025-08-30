@@ -1,0 +1,120 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 🌟
+    - generic [ref=e7]:
+      - strong [ref=e8]: TeAoMarama Educational Platform
+      - generic [ref=e9]: "- Advanced AI-Powered Learning System"
+    - generic [ref=e12]: All Systems Operational
+  - navigation [ref=e13]:
+    - link "🧠 Te Kura o TeAoMarama" [ref=e15] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e16]:
+      - link "🏠 Platform Overview" [ref=e17] [cursor=pointer]:
+        - /url: /
+      - link "📊 Advanced Dashboard" [ref=e18] [cursor=pointer]:
+        - /url: /educational-dashboard
+      - link "🌿 Cultural Activities" [ref=e19] [cursor=pointer]:
+        - /url: /cultural-activities
+      - link "📚 Educational Resources" [ref=e20] [cursor=pointer]:
+        - /url: /educational-resources
+      - link "🎓 Educational Platform" [ref=e21] [cursor=pointer]:
+        - /url: /educational-platform
+      - generic [ref=e23] [cursor=pointer]: 📚 Year 8 Content
+      - link "Home" [ref=e24] [cursor=pointer]:
+        - /url: /home
+      - link "About" [ref=e25] [cursor=pointer]:
+        - /url: /about
+      - link "Contact" [ref=e26] [cursor=pointer]:
+        - /url: /contact
+      - generic [ref=e28] [cursor=pointer]: 🔧 Tools
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - heading "📋 Assessment Framework" [level=1] [ref=e33]
+          - paragraph [ref=e34]: Comprehensive assessment tools with cultural integration and AI-powered grading assistance
+        - generic [ref=e35]:
+          - button "Create New Assessment" [ref=e36] [cursor=pointer]
+          - button "Import Template" [ref=e37] [cursor=pointer]
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: "24"
+          - generic [ref=e41]: Total Assessments
+        - generic [ref=e42]:
+          - generic [ref=e43]: "8"
+          - generic [ref=e44]: Active
+        - generic [ref=e45]:
+          - generic [ref=e46]: 87%
+          - generic [ref=e47]: Avg Score
+        - generic [ref=e48]:
+          - generic [ref=e49]: 92%
+          - generic [ref=e50]: Cultural Engagement
+        - generic [ref=e51]:
+          - generic [ref=e52]: 🧠 156
+          - generic [ref=e53]: AI Graded
+      - generic [ref=e54]:
+        - button "✏️ Create Assessment" [ref=e55] [cursor=pointer]
+        - button "📚 Manage Assessments" [ref=e56] [cursor=pointer]
+        - button "📊 Grade & Feedback" [ref=e57] [cursor=pointer]
+        - button "📈 Analytics" [ref=e58] [cursor=pointer]
+        - button "🌿 Cultural Insights" [ref=e59] [cursor=pointer]
+        - button "🧠 AI Assistant" [ref=e60] [cursor=pointer]
+      - generic [ref=e62]:
+        - heading "Create New Assessment" [level=2] [ref=e63]
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]: Assessment Title
+            - textbox "Enter assessment title" [ref=e67]
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]: Type
+              - combobox [ref=e71]:
+                - option "📝 Formative" [selected]
+                - option "📊 Summative"
+                - option "🌿 Cultural"
+                - option "🎯 Project"
+                - option "❓ Quiz"
+            - generic [ref=e72]:
+              - generic [ref=e73]: Subject
+              - combobox [ref=e74]:
+                - option "English" [selected]
+                - option "Social Studies"
+                - option "Te Reo Māori"
+                - option "Mathematics"
+                - option "Science"
+            - generic [ref=e75]:
+              - generic [ref=e76]: Year Level
+              - combobox [ref=e77]:
+                - option "Year 7" [selected]
+                - option "Year 8"
+                - option "Year 9"
+                - option "Year 10"
+          - generic [ref=e78]:
+            - generic [ref=e79]: Description
+            - textbox "Describe the assessment and its cultural elements" [ref=e80]
+          - generic [ref=e81]:
+            - generic [ref=e82]: Cultural Elements
+            - generic [ref=e83]:
+              - generic [ref=e84] [cursor=pointer]: Whakapapa
+              - generic [ref=e85] [cursor=pointer]: Tikanga
+              - generic [ref=e86] [cursor=pointer]: Te Reo Māori
+              - generic [ref=e87] [cursor=pointer]: Cultural Identity
+              - generic [ref=e88] [cursor=pointer]: Traditional Knowledge
+              - generic [ref=e89] [cursor=pointer]: Community Engagement
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]: Due Date
+              - textbox [ref=e93]
+            - generic [ref=e94]:
+              - generic [ref=e95]: Duration (minutes)
+              - spinbutton [ref=e96]
+            - generic [ref=e97]:
+              - generic [ref=e98]: Total Marks
+              - spinbutton [ref=e99]
+          - generic [ref=e100]:
+            - button "Save Draft" [ref=e101] [cursor=pointer]
+            - button "Create Assessment" [ref=e102] [cursor=pointer]
+```

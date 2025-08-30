@@ -1,0 +1,5 @@
+/* Add CSS custom properties for dynamic progress bar width */
+.progress-bar-dynamic {
+  width: var(--progress-width, 0%);
+  transition: width 0.3s ease;
+}
