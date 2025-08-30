@@ -1,0 +1,101 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 🌟
+    - generic [ref=e7]:
+      - strong [ref=e8]: TeAoMarama Educational Platform
+      - generic [ref=e9]: "- Advanced AI-Powered Learning System"
+    - generic [ref=e12]: All Systems Operational
+  - navigation [ref=e13]:
+    - link "🧠 Te Kura o TeAoMarama" [ref=e15] [cursor=pointer]:
+      - /url: /
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - heading "📋 Assessment Framework" [level=1] [ref=e20]
+          - paragraph [ref=e21]: Comprehensive assessment tools with cultural integration and AI-powered grading assistance
+        - generic [ref=e22]:
+          - button "Create New Assessment" [ref=e23] [cursor=pointer]
+          - button "Import Template" [ref=e24] [cursor=pointer]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: "24"
+          - generic [ref=e28]: Total Assessments
+        - generic [ref=e29]:
+          - generic [ref=e30]: "8"
+          - generic [ref=e31]: Active
+        - generic [ref=e32]:
+          - generic [ref=e33]: 87%
+          - generic [ref=e34]: Avg Score
+        - generic [ref=e35]:
+          - generic [ref=e36]: 92%
+          - generic [ref=e37]: Cultural Engagement
+        - generic [ref=e38]:
+          - generic [ref=e39]: 🧠 156
+          - generic [ref=e40]: AI Graded
+      - generic [ref=e41]:
+        - button "✏️ Create Assessment" [ref=e42] [cursor=pointer]
+        - button "📚 Manage Assessments" [ref=e43] [cursor=pointer]
+        - button "📊 Grade & Feedback" [ref=e44] [cursor=pointer]
+        - button "📈 Analytics" [ref=e45] [cursor=pointer]
+        - button "🌿 Cultural Insights" [ref=e46] [cursor=pointer]
+        - button "🧠 AI Assistant" [ref=e47] [cursor=pointer]
+      - generic [ref=e49]:
+        - heading "Create New Assessment" [level=2] [ref=e50]
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: Assessment Title
+            - textbox "Enter assessment title" [ref=e54]
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: Type
+              - combobox [ref=e58]:
+                - option "📝 Formative" [selected]
+                - option "📊 Summative"
+                - option "🌿 Cultural"
+                - option "🎯 Project"
+                - option "❓ Quiz"
+            - generic [ref=e59]:
+              - generic [ref=e60]: Subject
+              - combobox [ref=e61]:
+                - option "English" [selected]
+                - option "Social Studies"
+                - option "Te Reo Māori"
+                - option "Mathematics"
+                - option "Science"
+            - generic [ref=e62]:
+              - generic [ref=e63]: Year Level
+              - combobox [ref=e64]:
+                - option "Year 7" [selected]
+                - option "Year 8"
+                - option "Year 9"
+                - option "Year 10"
+          - generic [ref=e65]:
+            - generic [ref=e66]: Description
+            - textbox "Describe the assessment and its cultural elements" [ref=e67]
+          - generic [ref=e68]:
+            - generic [ref=e69]: Cultural Elements
+            - generic [ref=e70]:
+              - generic [ref=e71] [cursor=pointer]: Whakapapa
+              - generic [ref=e72] [cursor=pointer]: Tikanga
+              - generic [ref=e73] [cursor=pointer]: Te Reo Māori
+              - generic [ref=e74] [cursor=pointer]: Cultural Identity
+              - generic [ref=e75] [cursor=pointer]: Traditional Knowledge
+              - generic [ref=e76] [cursor=pointer]: Community Engagement
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - generic [ref=e79]: Due Date
+              - textbox [ref=e80]
+            - generic [ref=e81]:
+              - generic [ref=e82]: Duration (minutes)
+              - spinbutton [ref=e83]
+            - generic [ref=e84]:
+              - generic [ref=e85]: Total Marks
+              - spinbutton [ref=e86]
+          - generic [ref=e87]:
+            - button "Save Draft" [ref=e88] [cursor=pointer]
+            - button "Create Assessment" [ref=e89] [cursor=pointer]
+```

@@ -1,0 +1,174 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 🌟
+    - generic [ref=e7]:
+      - strong [ref=e8]: TeAoMarama Educational Platform
+      - generic [ref=e9]: "- Advanced AI-Powered Learning System"
+    - generic [ref=e12]: All Systems Operational
+  - navigation [ref=e13]:
+    - link "🧠 Te Kura o TeAoMarama" [ref=e15] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e16]:
+      - link "🏠 Platform Overview" [ref=e17] [cursor=pointer]:
+        - /url: /
+      - link "📊 Advanced Dashboard" [ref=e18] [cursor=pointer]:
+        - /url: /educational-dashboard
+      - link "🌿 Cultural Activities" [ref=e19] [cursor=pointer]:
+        - /url: /cultural-activities
+      - link "📚 Educational Resources" [ref=e20] [cursor=pointer]:
+        - /url: /educational-resources
+      - link "🎓 Educational Platform" [ref=e21] [cursor=pointer]:
+        - /url: /educational-platform
+      - generic [ref=e23] [cursor=pointer]: 📚 Year 8 Content
+      - link "Home" [ref=e24] [cursor=pointer]:
+        - /url: /home
+      - link "About" [ref=e25] [cursor=pointer]:
+        - /url: /about
+      - link "Contact" [ref=e26] [cursor=pointer]:
+        - /url: /contact
+      - generic [ref=e28] [cursor=pointer]: 🔧 Tools
+  - main [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: 🌿
+          - generic [ref=e35]: Te Kura o TeAoMarama
+        - navigation [ref=e36]:
+          - link "About" [ref=e37] [cursor=pointer]:
+            - /url: /about
+          - link "Sign In" [ref=e38] [cursor=pointer]:
+            - /url: /login
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Te Kura o TeAoMarama The School of Enlightenment" [level=1] [ref=e42]:
+            - text: Te Kura o TeAoMarama
+            - generic [ref=e43]: The School of Enlightenment
+          - paragraph [ref=e44]: An AI-powered educational platform that honors Te Ao Māori while delivering cutting-edge learning experiences for students and teachers.
+          - generic [ref=e45]:
+            - link "Sign In" [ref=e46] [cursor=pointer]:
+              - /url: /login
+              - img [ref=e47] [cursor=pointer]
+              - text: Sign In
+              - img [ref=e49] [cursor=pointer]
+            - link "Learn More" [ref=e51] [cursor=pointer]:
+              - /url: /about
+        - generic [ref=e54]:
+          - img [ref=e55]
+          - heading "AI-Powered Learning" [level=3] [ref=e63]
+          - heading "Te Ako Mātauranga" [level=4] [ref=e64]
+          - paragraph [ref=e65]: Personalized educational pathways enhanced by artificial intelligence
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: 1000+
+          - generic [ref=e71]: Educational Resources
+          - generic [ref=e72]: Rauemi Ako
+        - generic [ref=e73]:
+          - generic [ref=e74]: 95%
+          - generic [ref=e75]: Cultural Alignment
+          - generic [ref=e76]: Te Tautika Tikanga
+        - generic [ref=e77]:
+          - generic [ref=e78]: 81+
+          - generic [ref=e79]: AI Systems Coordinated
+          - generic [ref=e80]: Pūnaha Mātauranga
+        - generic [ref=e81]:
+          - generic [ref=e82]: 24/7
+          - generic [ref=e83]: Learning Support
+          - generic [ref=e84]: Tautoko Ako
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - heading "Platform Features" [level=2] [ref=e88]
+          - paragraph [ref=e89]: Ngā Āhuatanga o Te Pūnaha
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - img [ref=e93]
+            - heading "Student Dashboard" [level=3] [ref=e98]
+            - paragraph [ref=e99]: Personalized learning pathways with real-time progress tracking
+            - link "Explore Dashboard" [ref=e100] [cursor=pointer]:
+              - /url: /student-dashboard
+              - text: Explore Dashboard
+              - img [ref=e101] [cursor=pointer]
+          - generic [ref=e103]:
+            - img [ref=e105]
+            - heading "Teacher Resources" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Comprehensive teaching materials and assessment tools
+            - link "Access Resources" [ref=e109] [cursor=pointer]:
+              - /url: /teacher-dashboard
+              - text: Access Resources
+              - img [ref=e110] [cursor=pointer]
+          - generic [ref=e112]:
+            - img [ref=e114]
+            - heading "AI Lesson Generator" [level=3] [ref=e122]
+            - paragraph [ref=e123]: Create culturally-integrated lessons with AI assistance
+            - link "Generate Lessons" [ref=e124] [cursor=pointer]:
+              - /url: /lesson-generator
+              - text: Generate Lessons
+              - img [ref=e125] [cursor=pointer]
+          - generic [ref=e127]:
+            - img [ref=e129]
+            - heading "Assessment Framework" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Holistic assessment tools that honor cultural knowledge
+            - link "View Framework" [ref=e135] [cursor=pointer]:
+              - /url: /assessment-framework
+              - text: View Framework
+              - img [ref=e136] [cursor=pointer]
+      - generic [ref=e141]:
+        - heading "Te Ao Māori Integration" [level=2] [ref=e142]
+        - paragraph [ref=e143]: Te Whakaurunga o Te Ao Māori
+        - paragraph [ref=e144]: Our platform deeply integrates Te Ao Māori principles, ensuring that cultural wisdom and contemporary education work in harmony. Every feature is designed with respect for tikanga Māori and the preservation of traditional knowledge.
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - img [ref=e147]
+            - generic [ref=e149]:
+              - heading "Manaakitanga" [level=4] [ref=e150]
+              - paragraph [ref=e151]: Creating welcoming and inclusive learning environments
+          - generic [ref=e152]:
+            - img [ref=e153]
+            - generic [ref=e155]:
+              - heading "Kaitiakitanga" [level=4] [ref=e156]
+              - paragraph [ref=e157]: Caring for knowledge and ensuring its preservation
+      - generic [ref=e160]:
+        - heading "Ready to Begin Your Learning Journey?" [level=2] [ref=e161]
+        - paragraph [ref=e162]: Join thousands of students and teachers already using our platform
+        - generic [ref=e163]:
+          - link "Start Learning Today" [ref=e164] [cursor=pointer]:
+            - /url: /educational-dashboard
+            - img [ref=e165] [cursor=pointer]
+            - text: Start Learning Today
+            - img [ref=e167] [cursor=pointer]
+          - link "Contact Us" [ref=e169] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - heading "Te Kura o TeAoMarama" [level=3] [ref=e174]
+            - paragraph [ref=e175]: The School of Enlightenment
+            - paragraph [ref=e176]: AI-powered education with cultural wisdom
+          - generic [ref=e177]:
+            - heading "Quick Links" [level=4] [ref=e178]
+            - link "About Us" [ref=e179] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=e180] [cursor=pointer]:
+              - /url: /contact
+            - link "Resources" [ref=e181] [cursor=pointer]:
+              - /url: /educational-resources
+          - generic [ref=e182]:
+            - heading "Platform" [level=4] [ref=e183]
+            - link "Student Dashboard" [ref=e184] [cursor=pointer]:
+              - /url: /student-dashboard
+            - link "Teacher Dashboard" [ref=e185] [cursor=pointer]:
+              - /url: /teacher-dashboard
+            - link "Assessment" [ref=e186] [cursor=pointer]:
+              - /url: /assessment-framework
+          - generic [ref=e187]:
+            - heading "Support" [level=4] [ref=e188]
+            - link "Help Center" [ref=e189] [cursor=pointer]:
+              - /url: /help
+            - link "FAQ" [ref=e190] [cursor=pointer]:
+              - /url: /faq
+            - link "Contact Support" [ref=e191] [cursor=pointer]:
+              - /url: /contact
+        - paragraph [ref=e193]: © 2024 Te Kura o TeAoMarama. All rights reserved.
+```

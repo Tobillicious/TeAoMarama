@@ -1,4 +1,3 @@
-
 // AI Content Generator - Powered by DeepSeek
 // Culturally sensitive educational content creation
 
@@ -11,14 +10,14 @@ class AIContentGenerator {
     this.culturalGuidelines = new Map([
       ['te-reo', { sensitivity: 'high', validation_required: true }],
       ['tikanga', { sensitivity: 'sacred', kaitiaki_approval: true }],
-      ['whakataukī', { sensitivity: 'high', cultural_context: true }]
+      ['whakataukī', { sensitivity: 'high', cultural_context: true }],
     ]);
   }
 
   async generateCulturallySafeContent(
     topic: string,
     educationalLevel: string,
-    culturalContext: string
+    culturalContext: string,
   ): Promise<string> {
     const prompt = `
 Create educational content for "${topic}" suitable for ${educationalLevel} students in Aotearoa New Zealand.
@@ -83,8 +82,8 @@ Holistic assessment considering both academic understanding and cultural appreci
   async validateCulturalContent(content: string): Promise<boolean> {
     // AI-powered cultural validation
     const culturalMarkers = ['māori', 'tikanga', 'whakataukī', 'te reo'];
-    const hasculturalContent = culturalMarkers.some(marker => 
-      content.toLowerCase().includes(marker)
+    const hasculturalContent = culturalMarkers.some((marker) =>
+      content.toLowerCase().includes(marker),
     );
 
     if (hasculturalContent) {

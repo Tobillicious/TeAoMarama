@@ -1,0 +1,321 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: 🌟
+    - generic [ref=e7]:
+      - strong [ref=e8]: TeAoMarama Educational Platform
+      - generic [ref=e9]: "- Advanced AI-Powered Learning System"
+    - generic [ref=e12]: All Systems Operational
+  - navigation [ref=e13]:
+    - link "🧠 Te Kura o TeAoMarama" [ref=e15] [cursor=pointer]:
+      - /url: /
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "🌿 Cultural Learning Modules" [level=1] [ref=e20]
+        - paragraph [ref=e21]: Interactive cultural education with Te Ao Māori integration and modern learning approaches
+      - generic [ref=e22]:
+        - textbox "Search cultural learning modules" [ref=e24]
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]: "Category:"
+            - combobox "Filter by cultural category" [ref=e28] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Tikanga (Customs)"
+              - option "Te Reo (Language)"
+              - option "Whakapapa (Genealogy)"
+              - option "Manaakitanga (Hospitality)"
+              - option "Kaitiakitanga (Stewardship)"
+              - option "Rangatiratanga (Leadership)"
+          - generic [ref=e29]:
+            - generic [ref=e30]: "Difficulty:"
+            - combobox "Filter by difficulty level" [ref=e31] [cursor=pointer]:
+              - option "All Levels" [selected]
+              - option "Beginner"
+              - option "Intermediate"
+              - option "Advanced"
+        - generic [ref=e32]:
+          - button "Grid view" [ref=e33] [cursor=pointer]: 📊 Grid
+          - button "List view" [ref=e34] [cursor=pointer]: 📋 List
+      - generic [ref=e35]:
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38] [cursor=pointer]: 🏛️
+            - generic [ref=e39] [cursor=pointer]:
+              - heading "Tikanga Fundamentals" [level=3] [ref=e40] [cursor=pointer]
+              - heading "Ngā Tikanga Matua" [level=4] [ref=e41] [cursor=pointer]
+              - generic [ref=e42] [cursor=pointer]:
+                - generic [ref=e43] [cursor=pointer]: tikanga
+                - generic [ref=e44] [cursor=pointer]: beginner
+          - generic [ref=e45] [cursor=pointer]:
+            - paragraph [ref=e46] [cursor=pointer]: Learn the fundamental principles and protocols of Māori culture and customs
+            - generic [ref=e47] [cursor=pointer]:
+              - generic [ref=e48] [cursor=pointer]:
+                - generic [ref=e49] [cursor=pointer]: Duration
+                - generic [ref=e50] [cursor=pointer]: 45 min
+              - generic [ref=e51] [cursor=pointer]:
+                - generic [ref=e52] [cursor=pointer]: Completion
+                - generic [ref=e53] [cursor=pointer]: 87%
+              - generic [ref=e54] [cursor=pointer]:
+                - generic [ref=e55] [cursor=pointer]: Engagement
+                - generic [ref=e56] [cursor=pointer]: 92%
+            - generic [ref=e57] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e58] [cursor=pointer]
+              - list [ref=e59] [cursor=pointer]:
+                - listitem [ref=e60] [cursor=pointer]: • Understand basic tikanga principles
+                - listitem [ref=e61] [cursor=pointer]: • Recognize cultural protocols
+                - listitem [ref=e62] [cursor=pointer]: • +2 more
+            - generic [ref=e63] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e64] [cursor=pointer]
+              - generic [ref=e65] [cursor=pointer]:
+                - generic [ref=e66] [cursor=pointer]: Virtual marae visit
+                - generic [ref=e67] [cursor=pointer]: Cultural greeting practice
+                - generic [ref=e68] [cursor=pointer]: Protocol role-play
+                - generic [ref=e69] [cursor=pointer]: "+1"
+          - generic [ref=e70] [cursor=pointer]:
+            - generic [ref=e71] [cursor=pointer]: "Updated: 8/31/2025"
+            - button "Start Module" [ref=e72] [cursor=pointer]
+        - generic [ref=e73] [cursor=pointer]:
+          - generic [ref=e74] [cursor=pointer]:
+            - generic [ref=e75] [cursor=pointer]: 🗣️
+            - generic [ref=e76] [cursor=pointer]:
+              - heading "Te Reo Conversation Skills" [level=3] [ref=e77] [cursor=pointer]
+              - heading "Ngā Pūkenga Kōrero" [level=4] [ref=e78] [cursor=pointer]
+              - generic [ref=e79] [cursor=pointer]:
+                - generic [ref=e80] [cursor=pointer]: te-reo
+                - generic [ref=e81] [cursor=pointer]: intermediate
+          - generic [ref=e82] [cursor=pointer]:
+            - paragraph [ref=e83] [cursor=pointer]: Develop practical conversation skills in Te Reo Māori for everyday use
+            - generic [ref=e84] [cursor=pointer]:
+              - generic [ref=e85] [cursor=pointer]:
+                - generic [ref=e86] [cursor=pointer]: Duration
+                - generic [ref=e87] [cursor=pointer]: 60 min
+              - generic [ref=e88] [cursor=pointer]:
+                - generic [ref=e89] [cursor=pointer]: Completion
+                - generic [ref=e90] [cursor=pointer]: 78%
+              - generic [ref=e91] [cursor=pointer]:
+                - generic [ref=e92] [cursor=pointer]: Engagement
+                - generic [ref=e93] [cursor=pointer]: 89%
+            - generic [ref=e94] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e95] [cursor=pointer]
+              - list [ref=e96] [cursor=pointer]:
+                - listitem [ref=e97] [cursor=pointer]: • Hold basic conversations in Te Reo
+                - listitem [ref=e98] [cursor=pointer]: • Use appropriate greetings and farewells
+                - listitem [ref=e99] [cursor=pointer]: • +2 more
+            - generic [ref=e100] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e101] [cursor=pointer]
+              - generic [ref=e102] [cursor=pointer]:
+                - generic [ref=e103] [cursor=pointer]: Conversation practice
+                - generic [ref=e104] [cursor=pointer]: Role-playing scenarios
+                - generic [ref=e105] [cursor=pointer]: Vocabulary building games
+                - generic [ref=e106] [cursor=pointer]: "+1"
+          - generic [ref=e107] [cursor=pointer]:
+            - generic [ref=e108] [cursor=pointer]: "Updated: 8/30/2025"
+            - button "Start Module" [ref=e109] [cursor=pointer]
+        - generic [ref=e110] [cursor=pointer]:
+          - generic [ref=e111] [cursor=pointer]:
+            - generic [ref=e112] [cursor=pointer]: 🌳
+            - generic [ref=e113] [cursor=pointer]:
+              - heading "Whakapapa Exploration" [level=3] [ref=e114] [cursor=pointer]
+              - heading "Te Rangahau Whakapapa" [level=4] [ref=e115] [cursor=pointer]
+              - generic [ref=e116] [cursor=pointer]:
+                - generic [ref=e117] [cursor=pointer]: whakapapa
+                - generic [ref=e118] [cursor=pointer]: intermediate
+          - generic [ref=e119] [cursor=pointer]:
+            - paragraph [ref=e120] [cursor=pointer]: Discover the importance of genealogy and family connections in Māori culture
+            - generic [ref=e121] [cursor=pointer]:
+              - generic [ref=e122] [cursor=pointer]:
+                - generic [ref=e123] [cursor=pointer]: Duration
+                - generic [ref=e124] [cursor=pointer]: 90 min
+              - generic [ref=e125] [cursor=pointer]:
+                - generic [ref=e126] [cursor=pointer]: Completion
+                - generic [ref=e127] [cursor=pointer]: 82%
+              - generic [ref=e128] [cursor=pointer]:
+                - generic [ref=e129] [cursor=pointer]: Engagement
+                - generic [ref=e130] [cursor=pointer]: 85%
+            - generic [ref=e131] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e132] [cursor=pointer]
+              - list [ref=e133] [cursor=pointer]:
+                - listitem [ref=e134] [cursor=pointer]: • Understand whakapapa concepts
+                - listitem [ref=e135] [cursor=pointer]: • Create personal family tree
+                - listitem [ref=e136] [cursor=pointer]: • +2 more
+            - generic [ref=e137] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e138] [cursor=pointer]
+              - generic [ref=e139] [cursor=pointer]:
+                - generic [ref=e140] [cursor=pointer]: Family tree creation
+                - generic [ref=e141] [cursor=pointer]: Ancestral story research
+                - generic [ref=e142] [cursor=pointer]: Cultural identity reflection
+                - generic [ref=e143] [cursor=pointer]: "+1"
+          - generic [ref=e144] [cursor=pointer]:
+            - generic [ref=e145] [cursor=pointer]: "Updated: 8/29/2025"
+            - button "Start Module" [ref=e146] [cursor=pointer]
+        - generic [ref=e147] [cursor=pointer]:
+          - generic [ref=e148] [cursor=pointer]:
+            - generic [ref=e149] [cursor=pointer]: 🤝
+            - generic [ref=e150] [cursor=pointer]:
+              - heading "Manaakitanga in Practice" [level=3] [ref=e151] [cursor=pointer]
+              - heading "Te Mahi Manaakitanga" [level=4] [ref=e152] [cursor=pointer]
+              - generic [ref=e153] [cursor=pointer]:
+                - generic [ref=e154] [cursor=pointer]: manaakitanga
+                - generic [ref=e155] [cursor=pointer]: beginner
+          - generic [ref=e156] [cursor=pointer]:
+            - paragraph [ref=e157] [cursor=pointer]: Learn and practice the art of hospitality, kindness, and caring for others
+            - generic [ref=e158] [cursor=pointer]:
+              - generic [ref=e159] [cursor=pointer]:
+                - generic [ref=e160] [cursor=pointer]: Duration
+                - generic [ref=e161] [cursor=pointer]: 40 min
+              - generic [ref=e162] [cursor=pointer]:
+                - generic [ref=e163] [cursor=pointer]: Completion
+                - generic [ref=e164] [cursor=pointer]: 91%
+              - generic [ref=e165] [cursor=pointer]:
+                - generic [ref=e166] [cursor=pointer]: Engagement
+                - generic [ref=e167] [cursor=pointer]: 88%
+            - generic [ref=e168] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e169] [cursor=pointer]
+              - list [ref=e170] [cursor=pointer]:
+                - listitem [ref=e171] [cursor=pointer]: • Practice hospitality skills
+                - listitem [ref=e172] [cursor=pointer]: • Show kindness and care
+                - listitem [ref=e173] [cursor=pointer]: • +2 more
+            - generic [ref=e174] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e175] [cursor=pointer]
+              - generic [ref=e176] [cursor=pointer]:
+                - generic [ref=e177] [cursor=pointer]: Hospitality role-play
+                - generic [ref=e178] [cursor=pointer]: Community service projects
+                - generic [ref=e179] [cursor=pointer]: Kindness challenges
+                - generic [ref=e180] [cursor=pointer]: "+1"
+          - generic [ref=e181] [cursor=pointer]:
+            - generic [ref=e182] [cursor=pointer]: "Updated: 8/28/2025"
+            - button "Start Module" [ref=e183] [cursor=pointer]
+        - generic [ref=e184] [cursor=pointer]:
+          - generic [ref=e185] [cursor=pointer]:
+            - generic [ref=e186] [cursor=pointer]: 🌿
+            - generic [ref=e187] [cursor=pointer]:
+              - heading "Kaitiakitanga - Environmental Stewardship" [level=3] [ref=e188] [cursor=pointer]
+              - heading "Te Kaitiakitanga o te Taiao" [level=4] [ref=e189] [cursor=pointer]
+              - generic [ref=e190] [cursor=pointer]:
+                - generic [ref=e191] [cursor=pointer]: kaitiakitanga
+                - generic [ref=e192] [cursor=pointer]: advanced
+          - generic [ref=e193] [cursor=pointer]:
+            - paragraph [ref=e194] [cursor=pointer]: Understand and practice environmental guardianship and sustainability
+            - generic [ref=e195] [cursor=pointer]:
+              - generic [ref=e196] [cursor=pointer]:
+                - generic [ref=e197] [cursor=pointer]: Duration
+                - generic [ref=e198] [cursor=pointer]: 75 min
+              - generic [ref=e199] [cursor=pointer]:
+                - generic [ref=e200] [cursor=pointer]: Completion
+                - generic [ref=e201] [cursor=pointer]: 76%
+              - generic [ref=e202] [cursor=pointer]:
+                - generic [ref=e203] [cursor=pointer]: Engagement
+                - generic [ref=e204] [cursor=pointer]: 83%
+            - generic [ref=e205] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e206] [cursor=pointer]
+              - list [ref=e207] [cursor=pointer]:
+                - listitem [ref=e208] [cursor=pointer]: • Understand environmental guardianship
+                - listitem [ref=e209] [cursor=pointer]: • Practice sustainable living
+                - listitem [ref=e210] [cursor=pointer]: • +2 more
+            - generic [ref=e211] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e212] [cursor=pointer]
+              - generic [ref=e213] [cursor=pointer]:
+                - generic [ref=e214] [cursor=pointer]: Environmental projects
+                - generic [ref=e215] [cursor=pointer]: Sustainability challenges
+                - generic [ref=e216] [cursor=pointer]: Nature connection exercises
+                - generic [ref=e217] [cursor=pointer]: "+1"
+          - generic [ref=e218] [cursor=pointer]:
+            - generic [ref=e219] [cursor=pointer]: "Updated: 8/27/2025"
+            - button "Start Module" [ref=e220] [cursor=pointer]
+        - generic [ref=e221] [cursor=pointer]:
+          - generic [ref=e222] [cursor=pointer]:
+            - generic [ref=e223] [cursor=pointer]: 👑
+            - generic [ref=e224] [cursor=pointer]:
+              - heading "Rangatiratanga - Leadership and Self-Determination" [level=3] [ref=e225] [cursor=pointer]
+              - heading "Te Rangatiratanga me te Mana Motuhake" [level=4] [ref=e226] [cursor=pointer]
+              - generic [ref=e227] [cursor=pointer]:
+                - generic [ref=e228] [cursor=pointer]: rangatiratanga
+                - generic [ref=e229] [cursor=pointer]: advanced
+          - generic [ref=e230] [cursor=pointer]:
+            - paragraph [ref=e231] [cursor=pointer]: Develop leadership skills and understanding of self-determination principles
+            - generic [ref=e232] [cursor=pointer]:
+              - generic [ref=e233] [cursor=pointer]:
+                - generic [ref=e234] [cursor=pointer]: Duration
+                - generic [ref=e235] [cursor=pointer]: 80 min
+              - generic [ref=e236] [cursor=pointer]:
+                - generic [ref=e237] [cursor=pointer]: Completion
+                - generic [ref=e238] [cursor=pointer]: 71%
+              - generic [ref=e239] [cursor=pointer]:
+                - generic [ref=e240] [cursor=pointer]: Engagement
+                - generic [ref=e241] [cursor=pointer]: 87%
+            - generic [ref=e242] [cursor=pointer]:
+              - heading "Learning Outcomes:" [level=5] [ref=e243] [cursor=pointer]
+              - list [ref=e244] [cursor=pointer]:
+                - listitem [ref=e245] [cursor=pointer]: • Develop leadership qualities
+                - listitem [ref=e246] [cursor=pointer]: • Understand self-determination
+                - listitem [ref=e247] [cursor=pointer]: • +2 more
+            - generic [ref=e248] [cursor=pointer]:
+              - heading "Activities:" [level=5] [ref=e249] [cursor=pointer]
+              - generic [ref=e250] [cursor=pointer]:
+                - generic [ref=e251] [cursor=pointer]: Leadership development
+                - generic [ref=e252] [cursor=pointer]: Cultural leadership projects
+                - generic [ref=e253] [cursor=pointer]: Community initiatives
+                - generic [ref=e254] [cursor=pointer]: "+1"
+          - generic [ref=e255] [cursor=pointer]:
+            - generic [ref=e256] [cursor=pointer]: "Updated: 8/26/2025"
+            - button "Start Module" [ref=e257] [cursor=pointer]
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]: 🏛️
+            - generic [ref=e263]:
+              - heading "Tikanga Fundamentals" [level=2] [ref=e264]
+              - heading "Ngā Tikanga Matua" [level=3] [ref=e265]
+          - button "Close modal" [ref=e266] [cursor=pointer]: ✕
+        - generic [ref=e267]:
+          - paragraph [ref=e269]: Learn the fundamental principles and protocols of Māori culture and customs
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - generic [ref=e272]: "45"
+              - generic [ref=e273]: Minutes
+            - generic [ref=e274]:
+              - generic [ref=e275]: 87%
+              - generic [ref=e276]: Completion Rate
+            - generic [ref=e277]:
+              - generic [ref=e278]: 95%
+              - generic [ref=e279]: Cultural Accuracy
+            - generic [ref=e280]:
+              - generic [ref=e281]: 92%
+              - generic [ref=e282]: Student Engagement
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "Learning Outcomes" [level=4] [ref=e285]
+              - list [ref=e286]:
+                - listitem [ref=e287]: • Understand basic tikanga principles
+                - listitem [ref=e288]: • Recognize cultural protocols
+                - listitem [ref=e289]: • Apply respectful behavior in cultural contexts
+                - listitem [ref=e290]: • Develop cultural sensitivity
+            - generic [ref=e291]:
+              - heading "Cultural Elements" [level=4] [ref=e292]
+              - generic [ref=e293]:
+                - generic [ref=e294]: Marae protocols
+                - generic [ref=e295]: Whakatau and powhiri
+                - generic [ref=e296]: Cultural greetings
+                - generic [ref=e297]: Respectful behavior
+            - generic [ref=e298]:
+              - heading "Activities" [level=4] [ref=e299]
+              - list [ref=e300]:
+                - listitem [ref=e301]: • Virtual marae visit
+                - listitem [ref=e302]: • Cultural greeting practice
+                - listitem [ref=e303]: • Protocol role-play
+                - listitem [ref=e304]: • Reflection journal
+            - generic [ref=e305]:
+              - heading "Resources" [level=4] [ref=e306]
+              - list [ref=e307]:
+                - listitem [ref=e308]: • Video tutorials
+                - listitem [ref=e309]: • Interactive simulations
+                - listitem [ref=e310]: • Cultural expert interviews
+                - listitem [ref=e311]: • Traditional stories
+          - generic [ref=e312]:
+            - button "Start Learning" [ref=e313] [cursor=pointer]
+            - button "Preview Module" [ref=e314] [cursor=pointer]
+            - button "Download Resources" [ref=e315] [cursor=pointer]
+```
