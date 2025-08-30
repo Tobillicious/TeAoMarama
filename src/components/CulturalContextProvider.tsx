@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface CulturalContext {
   teReoMode: boolean;
@@ -19,9 +19,9 @@ const CulturalContextContext = createContext<{
   getCulturalGuidance: (contentType: string) => string[];
 } | null>(null);
 
-export function CulturalContextProvider({ 
-  children, 
-  defaultContext 
+export function CulturalContextProvider({
+  children,
+  defaultContext,
 }: CulturalContextProviderProps) {
   const [context, setContext] = useState<CulturalContext>({
     teReoMode: false,
@@ -29,14 +29,14 @@ export function CulturalContextProvider({
     preferredLearningStyle: 'mixed',
     culturalBackground: '',
     accessibilityNeeds: [],
-    ...defaultContext
+    ...defaultContext,
   });
 
   const updateContext = (updates: Partial<CulturalContext>) => {
-    setContext(prev => ({ ...prev, ...updates }));
+    setContext((prev) => ({ ...prev, ...updates }));
   };
 
-  const getCulturalGuidance = (contentType: string): string[] => {
+  const getCulturalGuidance = (): string[] => {
     const guidance: string[] = [];
 
     // Provide cultural guidance based on context
@@ -74,8 +74,8 @@ export function CulturalContextProvider({
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        setContext(prev => ({ ...prev, ...parsed }));
-      } catch (error) {
+        setContext((prev) => ({ ...prev, ...parsed }));
+      } catch {
         console.warn('Could not load saved cultural context');
       }
     }
@@ -87,11 +87,13 @@ export function CulturalContextProvider({
   }, [context]);
 
   return (
-    <CulturalContextContext.Provider value={{
-      context,
-      updateContext,
-      getCulturalGuidance
-    }}>
+    <CulturalContextContext.Provider
+      value={{
+        context,
+        updateContext,
+        getCulturalGuidance,
+      }}
+    >
       {children}
     </CulturalContextContext.Provider>
   );
@@ -105,9 +107,9 @@ export function useCulturalContext() {
   return contextValue;
 }
 
-export function CulturalGuidancePanel({ contentType }: { contentType: string }) {
+export function CulturalGuidancePanel() {
   const { context, getCulturalGuidance } = useCulturalContext();
-  const guidance = getCulturalGuidance(contentType);
+  const guidance = getCulturalGuidance();
 
   if (guidance.length === 0) return null;
 

@@ -48,9 +48,9 @@ const OverseerDashboard: React.FC = () => {
   });
 
   const [terminals, setTerminals] = useState<
-    Array<{ 
-      id: string; 
-      status: string; 
+    Array<{
+      id: string;
+      status: string;
       lastHeartbeat: string;
       name: string;
       role: string;
@@ -67,7 +67,7 @@ const OverseerDashboard: React.FC = () => {
   }>({
     systemHealth: 95,
     culturalCompliance: 98,
-    educationalQuality: 89
+    educationalQuality: 89,
   });
   const [lastUpdate, setLastUpdate] = useState(new Date());
 
@@ -111,21 +111,23 @@ const OverseerDashboard: React.FC = () => {
     // Get terminal status
     const terminalStatus = terminalCoordination.getSystemStatus();
     const rawTerminals = terminalCoordination.getTerminals();
-    setTerminals(rawTerminals.map((terminal: any) => ({
-      id: String(terminal.id || ''),
-      status: String(terminal.status || 'unknown'),
-      lastHeartbeat: terminal.lastHeartbeat?.toISOString() || new Date().toISOString(),
-      name: String(terminal.name || `Terminal ${terminal.id}`),
-      role: String(terminal.role || 'Coordination Node'),
-      performance: {
-        cpu: Number((terminal.performance as any)?.cpu) || 75,
-        memory: Number((terminal.performance as any)?.memory) || 65,
-        responseTime: Number((terminal.performance as any)?.responseTime) || 120
-      },
-      currentTask: terminal.currentTask ? String(terminal.currentTask) : undefined,
-      culturalContext: String(terminal.culturalContext || 'Cultural safety protocols active'),
-      educationalFocus: String(terminal.educationalFocus || 'Educational content optimization')
-    })));
+    setTerminals(
+      rawTerminals.map((terminal: any) => ({
+        id: String(terminal.id || ''),
+        status: String(terminal.status || 'unknown'),
+        lastHeartbeat: terminal.lastHeartbeat?.toISOString() || new Date().toISOString(),
+        name: String(terminal.name || `Terminal ${terminal.id}`),
+        role: String(terminal.role || 'Coordination Node'),
+        performance: {
+          cpu: Number((terminal.performance as any)?.cpu) || 75,
+          memory: Number((terminal.performance as any)?.memory) || 65,
+          responseTime: Number((terminal.performance as any)?.responseTime) || 120,
+        },
+        currentTask: terminal.currentTask ? String(terminal.currentTask) : undefined,
+        culturalContext: String(terminal.culturalContext || 'Cultural safety protocols active'),
+        educationalFocus: String(terminal.educationalFocus || 'Educational content optimization'),
+      })),
+    );
     setSystemMetrics(terminalStatus);
 
     // Update overseer status
@@ -200,8 +202,12 @@ const OverseerDashboard: React.FC = () => {
           <div className="mission-progress">
             <div className="progress-bar">
               <div
-                className="progress-fill"
-                style={{ width: `${overseerStatus.missionStatus.progress}%` }}
+                className="progress-fill progress-fill-dynamic"
+                style={
+                  {
+                    '--progress-width': `${overseerStatus.missionStatus.progress}%`,
+                  } as React.CSSProperties
+                }
               />
             </div>
             <span className="progress-text">{overseerStatus.missionStatus.progress}% Complete</span>

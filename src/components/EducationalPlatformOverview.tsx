@@ -63,10 +63,13 @@ const EducationalPlatformOverview: React.FC = () => {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="feature-card"
-              style={{ borderTopColor: feature.color }}
+              className="feature-card feature-card-dynamic"
+              style={{ '--feature-color': feature.color } as React.CSSProperties}
             >
-              <div className="feature-icon" style={{ backgroundColor: feature.color }}>
+              <div
+                className="feature-icon feature-icon-dynamic"
+                style={{ '--feature-color': feature.color } as React.CSSProperties}
+              >
                 {feature.icon}
               </div>
               <div className="feature-content">

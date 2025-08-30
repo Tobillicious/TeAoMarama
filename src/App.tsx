@@ -5,13 +5,13 @@ import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
 
 // Simplified imports to avoid Node.js module issues
+import './components/TestRoute.css';
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
-import './components/TestRoute.css';
+import LandingPage from './pages/LandingPage';
 
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
-import AdvancedPerformanceMonitor from './components/AdvancedPerformanceMonitor';
 import CulturalLearningModules from './components/CulturalLearningModules';
 import EducationalDashboard from './components/EducationalDashboard';
 // const AuthenticationSystemLazy = lazy(
@@ -21,7 +21,7 @@ import EducationalDashboard from './components/EducationalDashboard';
 import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
 import DemoAccessBanner from './components/DemoAccessBanner';
-import EducationalPlatformOverview from './components/EducationalPlatformOverview';
+import PerformanceDashboard from './components/PerformanceDashboard';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
@@ -108,11 +108,16 @@ const AssessmentFramework = lazy(
 );
 
 import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
+import ResourceUnlocker from './components/ResourceUnlocker';
 
 // WisdomEvolutionDashboard temporarily removed for build
 // const WisdomEvolutionDashboardLazy = lazy(
 //   () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
 // );
+
+// Import the new dual-role authentication components
+import SystemTest from './components/SystemTest';
+import WorkingLogin from './components/WorkingLogin';
 
 function App() {
   return (
@@ -122,18 +127,15 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/performance-monitor" element={<AdvancedPerformanceMonitor />} />
-            <Route
-              path="/test"
-              element={
-                <div className="test-route-container"
-                >
-                  <h1>✅ System Test Passed</h1>
-                  <p>App is running successfully!</p>
-                </div>
-              }
-            />
-            <Route path="/" element={<EducationalPlatformOverview />} />
+            <Route path="/login" element={<WorkingLogin />} />
+            <Route path="/login-old" element={<WorkingLogin />} />
+            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+            <Route path="/student-dashboard" element={<StudentDashboard />} />{' '}
+            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+            <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
+            <Route path="/test" element={<SystemTest />} />
+            <Route path="/basic-test" element={<SystemTest />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
@@ -167,14 +169,12 @@ function App() {
             <Route path="/analytics" element={<AdvancedAnalyticsDashboard />} />
             <Route path="/collaboration" element={<CollaborationHub />} />
             <Route path="/multimedia" element={<MultimediaStudio />} />
-            <Route path="/student-dashboard" element={<StudentDashboard />} />
-            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/assessment-framework" element={<AssessmentFramework />} />
             {/* <Route path="/authentication" element={<AuthenticationSystemLazy />} /> */}
             <Route path="/community-feedback" element={<CommunityFeedbackSystem />} />
-
             <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
             <Route path="/database-integration" element={<DatabaseIntegrationSystem />} />
+            <Route path="/resource-unlocker" element={<ResourceUnlocker />} />
           </Routes>
         </Suspense>
       </main>

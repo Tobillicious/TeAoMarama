@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, Brain, Heart, Star, Award, BookOpen, Volume2 } from 'lucide-react';
+import { Award, BookOpen, Brain, CheckCircle, Heart, Star, Volume2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface AssessmentQuestion {
   id: string;
@@ -39,7 +39,7 @@ export function EnhancedInteractiveAssessment({
   description,
   questions,
   onComplete,
-  showTeReo = false
+  showTeReo = false,
 }: AssessmentProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
@@ -59,8 +59,8 @@ export function EnhancedInteractiveAssessment({
 
   const handleAnswerSelect = (answer: string) => {
     if (currentQuestion.type === 'te-reo-matching') {
-      const newSelection = selectedAnswers.includes(answer) 
-        ? selectedAnswers.filter(a => a !== answer)
+      const newSelection = selectedAnswers.includes(answer)
+        ? selectedAnswers.filter((a) => a !== answer)
         : [...selectedAnswers, answer];
       setSelectedAnswers(newSelection);
     } else {
@@ -92,12 +92,12 @@ export function EnhancedInteractiveAssessment({
 
     questions.forEach((question) => {
       const userAnswer = answers[question.id];
-      const isCorrect = Array.isArray(question.correctAnswer) 
+      const isCorrect = Array.isArray(question.correctAnswer)
         ? JSON.stringify(userAnswer) === JSON.stringify(question.correctAnswer)
         : userAnswer === question.correctAnswer;
-      
+
       maxPoints += question.points;
-      
+
       if (isCorrect) {
         totalScore += question.points;
         if (question.category === 'tikanga' || question.category === 'values') {
@@ -135,7 +135,7 @@ export function EnhancedInteractiveAssessment({
       timeSpent,
       strengths: [...new Set(strengths)],
       improvements: [...new Set(improvements)],
-      nextRecommendations
+      nextRecommendations,
     };
 
     setAssessmentResults(results);
@@ -154,21 +154,31 @@ export function EnhancedInteractiveAssessment({
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return 'text-green-600 bg-green-100';
-      case 'intermediate': return 'text-yellow-600 bg-yellow-100';
-      case 'advanced': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
+      case 'beginner':
+        return 'text-green-600 bg-green-100';
+      case 'intermediate':
+        return 'text-yellow-600 bg-yellow-100';
+      case 'advanced':
+        return 'text-red-600 bg-red-100';
+      default:
+        return 'text-gray-600 bg-gray-100';
     }
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'tikanga': return <Heart className="w-4 h-4" />;
-      case 'te-reo': return <Volume2 className="w-4 h-4" />;
-      case 'history': return <BookOpen className="w-4 h-4" />;
-      case 'values': return <Star className="w-4 h-4" />;
-      case 'contemporary': return <Brain className="w-4 h-4" />;
-      default: return <Award className="w-4 h-4" />;
+      case 'tikanga':
+        return <Heart className="w-4 h-4" />;
+      case 'te-reo':
+        return <Volume2 className="w-4 h-4" />;
+      case 'history':
+        return <BookOpen className="w-4 h-4" />;
+      case 'values':
+        return <Star className="w-4 h-4" />;
+      case 'contemporary':
+        return <Brain className="w-4 h-4" />;
+      default:
+        return <Award className="w-4 h-4" />;
     }
   };
 
@@ -177,11 +187,16 @@ export function EnhancedInteractiveAssessment({
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
         <div className="text-center mb-8">
           <div className="text-6xl mb-4">
-            {assessmentResults.percentage >= 80 ? '🏆' : assessmentResults.percentage >= 60 ? '🌟' : '📚'}
+            {assessmentResults.percentage >= 80
+              ? '🏆'
+              : assessmentResults.percentage >= 60
+              ? '🌟'
+              : '📚'}
           </div>
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Assessment Complete!</h2>
           <div className="text-lg text-gray-600">
-            {showTeReo ? 'Kua oti tō aromatawai!' : 'You scored'} <span className="font-bold text-green-600">{assessmentResults.percentage}%</span>
+            {showTeReo ? 'Kua oti tō aromatawai!' : 'You scored'}{' '}
+            <span className="font-bold text-green-600">{assessmentResults.percentage}%</span>
           </div>
         </div>
 
@@ -189,13 +204,17 @@ export function EnhancedInteractiveAssessment({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="text-center p-6 bg-blue-50 rounded-lg border border-blue-200">
             <Brain className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-blue-800">{assessmentResults.score}/{assessmentResults.totalPoints}</div>
+            <div className="text-2xl font-bold text-blue-800">
+              {assessmentResults.score}/{assessmentResults.totalPoints}
+            </div>
             <div className="text-sm text-blue-600">Points Earned</div>
           </div>
 
           <div className="text-center p-6 bg-orange-50 rounded-lg border border-orange-200">
             <Heart className="w-8 h-8 text-orange-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-orange-800">{assessmentResults.culturalEngagement}%</div>
+            <div className="text-2xl font-bold text-orange-800">
+              {assessmentResults.culturalEngagement}%
+            </div>
             <div className="text-sm text-orange-600">Cultural Engagement</div>
           </div>
 
@@ -268,10 +287,9 @@ export function EnhancedInteractiveAssessment({
               Cultural Connection Achieved!
             </h3>
             <p className="text-orange-700 text-sm">
-              {showTeReo 
+              {showTeReo
                 ? 'Kua whakatōngia koe ki ngā tikanga Māori. He pai hoki tēnei!'
-                : 'You have demonstrated strong understanding of Māori culture and values. Ka pai!'
-              }
+                : 'You have demonstrated strong understanding of Māori culture and values. Ka pai!'}
             </p>
           </div>
         )}
@@ -290,11 +308,13 @@ export function EnhancedInteractiveAssessment({
       {/* Progress */}
       <div className="mb-8">
         <div className="flex justify-between text-sm text-gray-600 mb-2">
-          <span>Question {currentQuestionIndex + 1} of {questions.length}</span>
+          <span>
+            Question {currentQuestionIndex + 1} of {questions.length}
+          </span>
           <span>{Math.round(progress)}% Complete</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-3">
-          <div 
+          <div
             className="bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
@@ -306,17 +326,21 @@ export function EnhancedInteractiveAssessment({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <span className="text-gray-600">{getCategoryIcon(currentQuestion.category)}</span>
-            <span className={`px-3 py-1 text-sm rounded-full ${getDifficultyColor(currentQuestion.difficulty)}`}>
+            <span
+              className={`px-3 py-1 text-sm rounded-full ${getDifficultyColor(
+                currentQuestion.difficulty,
+              )}`}
+            >
               {currentQuestion.difficulty}
             </span>
           </div>
-          <div className="text-sm text-gray-600">
-            {currentQuestion.points} points
-          </div>
+          <div className="text-sm text-gray-600">{currentQuestion.points} points</div>
         </div>
 
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          {showTeReo && currentQuestion.questionTe ? currentQuestion.questionTe : currentQuestion.question}
+          {showTeReo && currentQuestion.questionTe
+            ? currentQuestion.questionTe
+            : currentQuestion.question}
         </h2>
 
         {currentQuestion.questionTe && (
@@ -327,6 +351,7 @@ export function EnhancedInteractiveAssessment({
             <button
               onClick={() => playPronunciation(currentQuestion.questionTe!)}
               className="text-orange-600 hover:text-orange-700 p-1 rounded-full hover:bg-orange-100"
+              aria-label="Play pronunciation"
             >
               <Volume2 className="w-4 h-4" />
             </button>
@@ -351,20 +376,27 @@ export function EnhancedInteractiveAssessment({
               onClick={() => handleAnswerSelect(option)}
               className={`w-full p-4 text-left border rounded-lg transition-all ${
                 (currentQuestion.type === 'te-reo-matching' && selectedAnswers.includes(option)) ||
-                (currentQuestion.type !== 'te-reo-matching' && answers[currentQuestion.id] === option)
+                (currentQuestion.type !== 'te-reo-matching' &&
+                  answers[currentQuestion.id] === option)
                   ? 'border-blue-500 bg-blue-50 text-blue-800'
                   : 'border-gray-300 hover:border-gray-400 hover:bg-gray-50'
               }`}
             >
               <div className="flex items-center gap-3">
-                <div className={`w-4 h-4 rounded-full border-2 ${
-                  (currentQuestion.type === 'te-reo-matching' && selectedAnswers.includes(option)) ||
-                  (currentQuestion.type !== 'te-reo-matching' && answers[currentQuestion.id] === option)
-                    ? 'border-blue-500 bg-blue-500'
-                    : 'border-gray-400'
-                }`}>
-                  {((currentQuestion.type === 'te-reo-matching' && selectedAnswers.includes(option)) ||
-                    (currentQuestion.type !== 'te-reo-matching' && answers[currentQuestion.id] === option)) && (
+                <div
+                  className={`w-4 h-4 rounded-full border-2 ${
+                    (currentQuestion.type === 'te-reo-matching' &&
+                      selectedAnswers.includes(option)) ||
+                    (currentQuestion.type !== 'te-reo-matching' &&
+                      answers[currentQuestion.id] === option)
+                      ? 'border-blue-500 bg-blue-500'
+                      : 'border-gray-400'
+                  }`}
+                >
+                  {((currentQuestion.type === 'te-reo-matching' &&
+                    selectedAnswers.includes(option)) ||
+                    (currentQuestion.type !== 'te-reo-matching' &&
+                      answers[currentQuestion.id] === option)) && (
                     <div className="w-full h-full rounded-full bg-white transform scale-50" />
                   )}
                 </div>

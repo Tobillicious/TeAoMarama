@@ -40,15 +40,6 @@ interface Assessment {
   }>;
 }
 
-interface Student {
-  id: string;
-  name: string;
-  yearLevel: number;
-  culturalBackground: string;
-  progress: number;
-  culturalEngagement: number;
-}
-
 // 🧠 Superintelligence Integration
 interface AIGradingAssistant {
   id: string;

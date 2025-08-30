@@ -175,14 +175,14 @@ const AIPoweredLessonGenerator: React.FC = () => {
       year: template ? template.year : customYear,
       content: generateLessonContent(template, customSubject),
       activities: generateActivities(template, customSubject),
-      assessments: generateAssessments(template, customSubject),
+      assessments: generateAssessments(),
       culturalIntegration: selectedCulturalElements,
-      resources: generateResources(template, customSubject),
+      resources: generateResources(),
       estimatedDuration: template ? template.estimatedTime : customDuration,
       difficulty: template ? template.difficulty : customDifficulty,
-      learningOutcomes: generateLearningOutcomes(template, customSubject),
-      teReoIntegration: generateTeReoIntegration(template, customSubject),
-      tikangaElements: generateTikangaElements(template, customSubject),
+      learningOutcomes: generateLearningOutcomes(),
+      teReoIntegration: generateTeReoIntegration(),
+      tikangaElements: generateTikangaElements(),
     };
 
     setGeneratedLesson(generated);
@@ -289,10 +289,7 @@ Advanced Pedagogical Features:
     ];
   };
 
-  const generateLearningOutcomes = (
-    _template: LessonTemplate | undefined,
-    _customSubject: string,
-  ): string[] => {
+  const generateLearningOutcomes = (): string[] => {
     return [
       'Demonstrate cultural understanding and respect',
       'Apply knowledge in real-world contexts',
@@ -304,10 +301,7 @@ Advanced Pedagogical Features:
     ];
   };
 
-  const generateTeReoIntegration = (
-    _template: LessonTemplate | undefined,
-    _customSubject: string,
-  ): string[] => {
+  const generateTeReoIntegration = (): string[] => {
     return [
       'Basic greetings and introductions',
       'Subject-specific vocabulary',
@@ -318,10 +312,7 @@ Advanced Pedagogical Features:
     ];
   };
 
-  const generateTikangaElements = (
-    _template: LessonTemplate | undefined,
-    _customSubject: string,
-  ): string[] => {
+  const generateTikangaElements = (): string[] => {
     return [
       'Respect for cultural protocols',
       'Understanding of traditional customs',
@@ -417,7 +408,9 @@ Advanced Pedagogical Features:
                 <label>Difficulty:</label>
                 <select
                   value={customDifficulty}
-                  onChange={(e) => setCustomDifficulty(e.target.value as 'beginner' | 'intermediate' | 'advanced')}
+                  onChange={(e) =>
+                    setCustomDifficulty(e.target.value as 'beginner' | 'intermediate' | 'advanced')
+                  }
                   aria-label="Select difficulty level"
                 >
                   <option value="beginner">Beginner</option>

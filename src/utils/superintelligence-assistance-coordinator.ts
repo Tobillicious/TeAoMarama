@@ -523,7 +523,7 @@ class SuperintelligenceAssistanceCoordinator {
       console.log('📊 Performing comprehensive monitoring...');
 
       // Monitor all modules
-      for (const [id, module] of this.modules) {
+      for (const [id] of this.modules) {
         this.monitorModule(id);
       }
 

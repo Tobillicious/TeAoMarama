@@ -1,527 +1,424 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/DualRoleAuthProvider';
 import './StudentDashboard.css';
 
-interface Student {
-  id: string;
-  name: string;
-  yearLevel: number;
-  culturalBackground: string;
-  avatar: string;
-  progress: {
-    overall: number;
-    reading: number;
-    writing: number;
-    vocabulary: number;
-    criticalLiteracy: number;
-    culturalEngagement: number;
-  };
-  achievements: Array<{
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    type: 'academic' | 'cultural' | 'leadership' | 'creativity';
-    icon: string;
-  }>;
-  currentCourses: Array<{
-    id: string;
-    title: string;
-    subject: string;
-    progress: number;
-    nextLesson: string;
-    culturalElements: string[];
-  }>;
-  upcomingTasks: Array<{
-    id: string;
-    title: string;
-    dueDate: string;
-    priority: 'high' | 'medium' | 'low';
-    type: 'assignment' | 'quiz' | 'project' | 'cultural';
-  }>;
-  culturalInsights: {
-    teReoProgress: number;
-    tikangaKnowledge: number;
-    culturalProjects: number;
-    communityEngagement: number;
-  };
-}
-
 const StudentDashboard: React.FC = () => {
-  const [student, setStudent] = useState<Student | null>(null);
-  const [selectedView, setSelectedView] = useState<
-    'overview' | 'courses' | 'achievements' | 'cultural' | 'tasks'
-  >('overview');
-  const [isLoading, setIsLoading] = useState(true);
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('overview');
+  const [progress, setProgress] = useState({
+    overallProgress: 78,
+    teReoProgress: 85,
+    mathProgress: 72,
+    scienceProgress: 81,
+    culturalEngagement: 89,
+  });
 
   useEffect(() => {
-    // Simulate loading student data
-    const loadStudentData = () => {
-      const mockStudent: Student = {
-        id: 'student-001',
-        name: 'Aria Tāne',
-        yearLevel: 8,
-        culturalBackground: 'Māori, Pacific',
-        avatar: '👩‍🎓',
-        progress: {
-          overall: 87,
-          reading: 92,
-          writing: 85,
-          vocabulary: 89,
-          criticalLiteracy: 91,
-          culturalEngagement: 94,
-        },
-        achievements: [
-          {
-            id: 'ach-001',
-            title: 'Te Reo Māori Excellence',
-            description: 'Completed advanced Te Reo Māori module with distinction',
-            date: '2024-01-15',
-            type: 'cultural',
-            icon: '🌿',
-          },
-          {
-            id: 'ach-002',
-            title: 'Reading Champion',
-            description: 'Read 50 books this term, including 15 Māori and Pacific texts',
-            date: '2024-01-10',
-            type: 'academic',
-            icon: '📚',
-          },
-          {
-            id: 'ach-003',
-            title: 'Cultural Leadership',
-            description: 'Led school cultural festival planning committee',
-            date: '2024-01-05',
-            type: 'leadership',
-            icon: '🏛️',
-          },
-          {
-            id: 'ach-004',
-            title: 'Creative Writing Award',
-            description: 'Won school creative writing competition with cultural story',
-            date: '2023-12-20',
-            type: 'creativity',
-            icon: '✍️',
-          },
-        ],
-        currentCourses: [
-          {
-            id: 'course-001',
-            title: 'Whakapapa: Māori Genealogy',
-            subject: 'Reading',
-            progress: 75,
-            nextLesson: 'Traditional Storytelling Methods',
-            culturalElements: ['Whakapapa', 'Māori Identity', 'Cultural Storytelling'],
-          },
-          {
-            id: 'course-002',
-            title: 'Contemporary NZ Literature',
-            subject: 'Writing',
-            progress: 60,
-            nextLesson: 'Identity and Belonging',
-            culturalElements: ['NZ Identity', 'Cultural Diversity', 'Modern Themes'],
-          },
-          {
-            id: 'course-003',
-            title: 'Academic Vocabulary Mastery',
-            subject: 'Vocabulary',
-            progress: 85,
-            nextLesson: 'Subject-Specific Terms',
-            culturalElements: ['Academic Language', 'Cultural Context', 'Subject Integration'],
-          },
-        ],
-        upcomingTasks: [
-          {
-            id: 'task-001',
-            title: 'Whakapapa Research Project',
-            dueDate: '2024-01-25',
-            priority: 'high',
-            type: 'project',
-          },
-          {
-            id: 'task-002',
-            title: 'Critical Literacy Quiz',
-            dueDate: '2024-01-22',
-            priority: 'medium',
-            type: 'quiz',
-          },
-          {
-            id: 'task-003',
-            title: 'Cultural Story Writing',
-            dueDate: '2024-01-28',
-            priority: 'high',
-            type: 'assignment',
-          },
-          {
-            id: 'task-004',
-            title: 'Community Cultural Event',
-            dueDate: '2024-02-01',
-            priority: 'medium',
-            type: 'cultural',
-          },
-        ],
-        culturalInsights: {
-          teReoProgress: 78,
-          tikangaKnowledge: 85,
-          culturalProjects: 92,
-          communityEngagement: 88,
-        },
-      };
-
-      setStudent(mockStudent);
-      setIsLoading(false);
-    };
-
-    loadStudentData();
-  }, []);
-
-  const getProgressColor = (progress: number) => {
-    if (progress >= 90) return '#10b981';
-    if (progress >= 80) return '#f59e0b';
-    if (progress >= 70) return '#ef4444';
-    return '#6b7280';
-  };
-
-  const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case 'high':
-        return '#ef4444';
-      case 'medium':
-        return '#f59e0b';
-      case 'low':
-        return '#10b981';
-      default:
-        return '#6b7280';
+    if (!currentUser || currentUser.role !== 'student') {
+      navigate('/login');
     }
+  }, [currentUser, navigate]);
+
+  const handleLogout = async () => {
+    await logout();
+    navigate('/login');
   };
 
-  const getAchievementIcon = (type: string) => {
-    switch (type) {
-      case 'academic':
-        return '📚';
-      case 'cultural':
-        return '🌿';
-      case 'leadership':
-        return '🏛️';
-      case 'creativity':
-        return '✍️';
-      default:
-        return '🏆';
-    }
-  };
+  const learningModules = [
+    {
+      title: 'Te Reo Māori - Greetings',
+      subject: 'Te Reo Māori',
+      progress: 85,
+      status: 'in-progress',
+      icon: '🌿',
+      color: '#38a169',
+    },
+    {
+      title: 'Algebra Basics',
+      subject: 'Mathematics',
+      progress: 72,
+      status: 'in-progress',
+      icon: '📐',
+      color: '#3182ce',
+    },
+    {
+      title: 'Ecosystems',
+      subject: 'Science',
+      progress: 81,
+      status: 'completed',
+      icon: '🌱',
+      color: '#38b2ac',
+    },
+    {
+      title: 'Pre-colonial Aotearoa',
+      subject: 'Social Studies',
+      progress: 65,
+      status: 'not-started',
+      icon: '🏛️',
+      color: '#d69e2e',
+    },
+  ];
 
-  if (isLoading) {
-    return (
-      <div className="student-dashboard-loading">
-        <div className="loading-spinner"></div>
-        <p>Loading your personalized dashboard...</p>
-      </div>
-    );
-  }
+  const culturalActivities = [
+    {
+      title: 'Whakapapa Research',
+      type: 'project',
+      dueDate: '2024-01-25',
+      status: 'in-progress',
+      culturalElement: 'Whakapapa',
+    },
+    {
+      title: 'Traditional Storytelling',
+      type: 'activity',
+      dueDate: '2024-01-22',
+      status: 'completed',
+      culturalElement: 'Pūrākau',
+    },
+    {
+      title: 'Māori Games Workshop',
+      type: 'workshop',
+      dueDate: '2024-01-28',
+      status: 'upcoming',
+      culturalElement: 'Ngā Taonga Tākaro',
+    },
+  ];
 
-  if (!student) {
-    return (
-      <div className="student-dashboard-error">
-        <h2>Error Loading Dashboard</h2>
-        <p>Unable to load your student information. Please try again.</p>
-      </div>
-    );
-  }
+  const achievements = [
+    {
+      title: 'Cultural Explorer',
+      description: 'Completed 10 cultural activities',
+      icon: '🏆',
+      earned: true,
+    },
+    {
+      title: 'Te Reo Champion',
+      description: 'Mastered 50 Te Reo phrases',
+      icon: '🌿',
+      earned: true,
+    },
+    {
+      title: 'Math Whiz',
+      description: 'Achieved 90% in mathematics',
+      icon: '📐',
+      earned: false,
+    },
+    {
+      title: 'Science Pioneer',
+      description: 'Completed 5 science experiments',
+      icon: '🔬',
+      earned: true,
+    },
+  ];
+
+  const quickActions = [
+    {
+      title: 'Continue Learning',
+      icon: '📖',
+      description: 'Resume your current lesson',
+      action: () => navigate('/my-learning'),
+      color: '#38b2ac',
+    },
+    {
+      title: 'Cultural Activities',
+      icon: '🌿',
+      description: 'Explore cultural learning',
+      action: () => navigate('/cultural-activities'),
+      color: '#38a169',
+    },
+    {
+      title: 'Interactive Games',
+      icon: '🎮',
+      description: 'Learn through play',
+      action: () => navigate('/games'),
+      color: '#805ad5',
+    },
+    {
+      title: 'Progress Tracker',
+      icon: '📈',
+      description: 'View your achievements',
+      action: () => navigate('/progress-tracker'),
+      color: '#3182ce',
+    },
+  ];
 
   return (
     <div className="student-dashboard">
-      {/* Header Section */}
-      <div className="dashboard-header">
-        <div className="student-info">
-          <div className="student-avatar">{student.avatar}</div>
-          <div className="student-details">
-            <h1>Kia ora, {student.name}!</h1>
-            <p>
-              Year {student.yearLevel} Student • {student.culturalBackground}
-            </p>
-            <div className="overall-progress">
-              <span className="progress-label">Overall Progress</span>
-              <div className="progress-bar">
-                <div
-                  className="progress-fill"
-                  style={{
-                    width: `${student.progress.overall}%`,
-                    backgroundColor: getProgressColor(student.progress.overall),
-                  }}
-                ></div>
-              </div>
-              <span className="progress-percentage">{student.progress.overall}%</span>
+      <header className="dashboard-header">
+        <div className="header-content">
+          <div className="user-info">
+            <div className="avatar">👨‍🎓</div>
+            <div className="user-details">
+              <h1>Kia ora, {currentUser?.name || 'Ākonga'}!</h1>
+              <p className="user-role">Ākonga (Student) • {currentUser?.grade}</p>
+              <p className="cultural-clearance">
+                Cultural Clearance: {currentUser?.culturalClearance}
+                {currentUser?.culturalClearance === 'approved' && ' 🌿'}
+              </p>
             </div>
           </div>
+          <div className="header-actions">
+            <button className="notification-btn">🔔</button>
+            <button className="settings-btn">⚙️</button>
+            <button className="logout-btn" onClick={handleLogout}>
+              👋 Logout
+            </button>
+          </div>
         </div>
-        <div className="dashboard-actions">
-          <button className="action-btn primary">Continue Learning</button>
-          <button className="action-btn secondary">View Resources</button>
-        </div>
-      </div>
+      </header>
 
-      {/* Navigation Tabs */}
-      <div className="dashboard-tabs">
+      <nav className="dashboard-nav">
         <button
-          className={`tab-btn ${selectedView === 'overview' ? 'active' : ''}`}
-          onClick={() => setSelectedView('overview')}
+          className={`nav-tab ${activeTab === 'overview' ? 'active' : ''}`}
+          onClick={() => setActiveTab('overview')}
         >
           📊 Overview
         </button>
         <button
-          className={`tab-btn ${selectedView === 'courses' ? 'active' : ''}`}
-          onClick={() => setSelectedView('courses')}
+          className={`nav-tab ${activeTab === 'learning' ? 'active' : ''}`}
+          onClick={() => setActiveTab('learning')}
         >
-          📚 My Courses
+          📖 My Learning
         </button>
         <button
-          className={`tab-btn ${selectedView === 'achievements' ? 'active' : ''}`}
-          onClick={() => setSelectedView('achievements')}
+          className={`nav-tab ${activeTab === 'cultural' ? 'active' : ''}`}
+          onClick={() => setActiveTab('cultural')}
         >
-          🏆 Achievements
+          🌿 Cultural
         </button>
         <button
-          className={`tab-btn ${selectedView === 'cultural' ? 'active' : ''}`}
-          onClick={() => setSelectedView('cultural')}
+          className={`nav-tab ${activeTab === 'games' ? 'active' : ''}`}
+          onClick={() => setActiveTab('games')}
         >
-          🌿 Cultural Journey
+          🎮 Games
         </button>
         <button
-          className={`tab-btn ${selectedView === 'tasks' ? 'active' : ''}`}
-          onClick={() => setSelectedView('tasks')}
+          className={`nav-tab ${activeTab === 'progress' ? 'active' : ''}`}
+          onClick={() => setActiveTab('progress')}
         >
-          📋 Tasks & Deadlines
+          📈 Progress
         </button>
-      </div>
+      </nav>
 
-      {/* Content Sections */}
-      <div className="dashboard-content">
-        {selectedView === 'overview' && (
-          <div className="overview-section">
-            <div className="progress-grid">
-              <div className="progress-card">
-                <h3>Reading Progress</h3>
+      <main className="dashboard-content">
+        {activeTab === 'overview' && (
+          <div className="overview-tab">
+            <div className="progress-overview">
+              <div className="overall-progress-card">
+                <h2>Overall Progress</h2>
                 <div className="progress-circle">
-                  <span className="progress-number">{student.progress.reading}%</span>
-                </div>
-                <p>Advanced comprehension skills</p>
-              </div>
-              <div className="progress-card">
-                <h3>Writing Progress</h3>
-                <div className="progress-circle">
-                  <span className="progress-number">{student.progress.writing}%</span>
-                </div>
-                <p>Creative and academic writing</p>
-              </div>
-              <div className="progress-card">
-                <h3>Vocabulary Mastery</h3>
-                <div className="progress-circle">
-                  <span className="progress-number">{student.progress.vocabulary}%</span>
-                </div>
-                <p>Academic and cultural terms</p>
-              </div>
-              <div className="progress-card">
-                <h3>Critical Literacy</h3>
-                <div className="progress-circle">
-                  <span className="progress-number">{student.progress.criticalLiteracy}%</span>
-                </div>
-                <p>Analytical thinking skills</p>
-              </div>
-            </div>
-
-            <div className="quick-actions">
-              <h3>Quick Actions</h3>
-              <div className="action-grid">
-                <button className="quick-action-btn">
-                  <span className="action-icon">📚</span>
-                  Continue Reading
-                </button>
-                <button className="quick-action-btn">
-                  <span className="action-icon">✍️</span>
-                  Start Writing
-                </button>
-                <button className="quick-action-btn">
-                  <span className="action-icon">🌿</span>
-                  Cultural Activity
-                </button>
-                <button className="quick-action-btn">
-                  <span className="action-icon">📋</span>
-                  View Tasks
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {selectedView === 'courses' && (
-          <div className="courses-section">
-            <h2>My Current Courses</h2>
-            <div className="courses-grid">
-              {student.currentCourses.map((course) => (
-                <div key={course.id} className="course-card">
-                  <div className="course-header">
-                    <h3>{course.title}</h3>
-                    <span className="course-subject">{course.subject}</span>
+                  <div className="progress-number">{progress.overallProgress}%</div>
+                  <div className="progress-ring">
+                    <svg viewBox="0 0 120 120">
+                      <circle cx="60" cy="60" r="50" fill="none" stroke="#e2e8f0" strokeWidth="8" />
+                      <circle
+                        cx="60"
+                        cy="60"
+                        r="50"
+                        fill="none"
+                        stroke="#38b2ac"
+                        strokeWidth="8"
+                        strokeDasharray={`${(progress.overallProgress / 100) * 314} 314`}
+                        strokeLinecap="round"
+                        transform="rotate(-90 60 60)"
+                      />
+                    </svg>
                   </div>
-                  <div className="course-progress">
-                    <div className="progress-bar">
+                </div>
+              </div>
+
+              <div className="subject-progress">
+                <h3>Subject Progress</h3>
+                <div className="subject-bars">
+                  <div className="subject-bar">
+                    <span>Te Reo Māori</span>
+                    <div className="bar-container">
                       <div
-                        className="progress-fill"
+                        className="bar-fill"
+                        style={{ width: `${progress.teReoProgress}%`, backgroundColor: '#38a169' }}
+                      ></div>
+                    </div>
+                    <span>{progress.teReoProgress}%</span>
+                  </div>
+                  <div className="subject-bar">
+                    <span>Mathematics</span>
+                    <div className="bar-container">
+                      <div
+                        className="bar-fill"
+                        style={{ width: `${progress.mathProgress}%`, backgroundColor: '#3182ce' }}
+                      ></div>
+                    </div>
+                    <span>{progress.mathProgress}%</span>
+                  </div>
+                  <div className="subject-bar">
+                    <span>Science</span>
+                    <div className="bar-container">
+                      <div
+                        className="bar-fill"
                         style={{
-                          width: `${course.progress}%`,
-                          backgroundColor: getProgressColor(course.progress),
+                          width: `${progress.scienceProgress}%`,
+                          backgroundColor: '#38b2ac',
                         }}
                       ></div>
                     </div>
-                    <span className="progress-text">{course.progress}% Complete</span>
+                    <span>{progress.scienceProgress}%</span>
                   </div>
-                  <div className="course-details">
-                    <p>
-                      <strong>Next Lesson:</strong> {course.nextLesson}
-                    </p>
-                    <div className="cultural-elements">
-                      <strong>Cultural Elements:</strong>
-                      <div className="element-tags">
-                        {course.culturalElements.map((element, index) => (
-                          <span key={index} className="element-tag">
-                            {element}
-                          </span>
-                        ))}
-                      </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="content-sections">
+              <section className="quick-actions-section">
+                <h2>Quick Actions</h2>
+                <div className="quick-actions-grid">
+                  {quickActions.map((action, index) => (
+                    <div
+                      key={index}
+                      className="quick-action-card"
+                      onClick={action.action}
+                      style={{ '--action-color': action.color } as React.CSSProperties}
+                    >
+                      <div className="action-icon">{action.icon}</div>
+                      <h3>{action.title}</h3>
+                      <p>{action.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="achievements-section">
+                <h2>Recent Achievements</h2>
+                <div className="achievements-grid">
+                  {achievements.slice(0, 4).map((achievement, index) => (
+                    <div
+                      key={index}
+                      className={`achievement-card ${achievement.earned ? 'earned' : 'locked'}`}
+                    >
+                      <div className="achievement-icon">{achievement.icon}</div>
+                      <h4>{achievement.title}</h4>
+                      <p>{achievement.description}</p>
+                      {achievement.earned && <div className="earned-badge">✓</div>}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'learning' && (
+          <div className="learning-tab">
+            <h2>My Learning Modules</h2>
+            <div className="learning-modules">
+              {learningModules.map((module, index) => (
+                <div key={index} className="learning-module-card">
+                  <div className="module-header">
+                    <div className="module-icon" style={{ color: module.color }}>
+                      {module.icon}
+                    </div>
+                    <div className="module-info">
+                      <h3>{module.title}</h3>
+                      <p className="module-subject">{module.subject}</p>
+                    </div>
+                    <div className={`module-status ${module.status}`}>
+                      {module.status === 'completed' && '✓'}
+                      {module.status === 'in-progress' && '⏳'}
+                      {module.status === 'not-started' && '⏸️'}
                     </div>
                   </div>
-                  <button className="continue-course-btn">Continue Course</button>
+                  <div className="module-progress">
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill"
+                        style={{ width: `${module.progress}%`, backgroundColor: module.color }}
+                      ></div>
+                    </div>
+                    <span className="progress-text">{module.progress}%</span>
+                  </div>
+                  <button className="module-action-btn">
+                    {module.status === 'completed' ? 'Review' : 'Continue'}
+                  </button>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        {selectedView === 'achievements' && (
-          <div className="achievements-section">
-            <h2>My Achievements</h2>
-            <div className="achievements-grid">
-              {student.achievements.map((achievement) => (
-                <div key={achievement.id} className="achievement-card">
-                  <div className="achievement-icon">{achievement.icon}</div>
-                  <div className="achievement-content">
-                    <h3>{achievement.title}</h3>
-                    <p>{achievement.description}</p>
-                    <span className="achievement-date">{achievement.date}</span>
-                    <span className={`achievement-type ${achievement.type}`}>
-                      {achievement.type.charAt(0).toUpperCase() + achievement.type.slice(1)}
-                    </span>
+        {activeTab === 'cultural' && (
+          <div className="cultural-tab">
+            <h2>Cultural Activities</h2>
+            <div className="cultural-activities">
+              {culturalActivities.map((activity, index) => (
+                <div key={index} className="cultural-activity-card">
+                  <div className="activity-header">
+                    <h3>{activity.title}</h3>
+                    <span className={`activity-status ${activity.status}`}>{activity.status}</span>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {selectedView === 'cultural' && (
-          <div className="cultural-section">
-            <h2>Cultural Journey</h2>
-            <div className="cultural-metrics">
-              <div className="cultural-card">
-                <h3>Te Reo Māori Progress</h3>
-                <div className="cultural-progress">
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${student.culturalInsights.teReoProgress}%`,
-                        backgroundColor: getProgressColor(student.culturalInsights.teReoProgress),
-                      }}
-                    ></div>
-                  </div>
-                  <span>{student.culturalInsights.teReoProgress}%</span>
-                </div>
-              </div>
-              <div className="cultural-card">
-                <h3>Tikanga Knowledge</h3>
-                <div className="cultural-progress">
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${student.culturalInsights.tikangaKnowledge}%`,
-                        backgroundColor: getProgressColor(
-                          student.culturalInsights.tikangaKnowledge,
-                        ),
-                      }}
-                    ></div>
-                  </div>
-                  <span>{student.culturalInsights.tikangaKnowledge}%</span>
-                </div>
-              </div>
-              <div className="cultural-card">
-                <h3>Cultural Projects</h3>
-                <div className="cultural-progress">
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${student.culturalInsights.culturalProjects}%`,
-                        backgroundColor: getProgressColor(
-                          student.culturalInsights.culturalProjects,
-                        ),
-                      }}
-                    ></div>
-                  </div>
-                  <span>{student.culturalInsights.culturalProjects}%</span>
-                </div>
-              </div>
-              <div className="cultural-card">
-                <h3>Community Engagement</h3>
-                <div className="cultural-progress">
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${student.culturalInsights.communityEngagement}%`,
-                        backgroundColor: getProgressColor(
-                          student.culturalInsights.communityEngagement,
-                        ),
-                      }}
-                    ></div>
-                  </div>
-                  <span>{student.culturalInsights.communityEngagement}%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {selectedView === 'tasks' && (
-          <div className="tasks-section">
-            <h2>Upcoming Tasks & Deadlines</h2>
-            <div className="tasks-grid">
-              {student.upcomingTasks.map((task) => (
-                <div key={task.id} className="task-card">
-                  <div className="task-header">
-                    <h3>{task.title}</h3>
-                    <span
-                      className={`priority-badge ${task.priority}`}
-                      style={{ backgroundColor: getPriorityColor(task.priority) }}
-                    >
-                      {task.priority.toUpperCase()}
-                    </span>
-                  </div>
-                  <div className="task-details">
+                  <div className="activity-details">
                     <p>
-                      <strong>Due:</strong> {task.dueDate}
+                      <strong>Type:</strong> {activity.type}
                     </p>
                     <p>
-                      <strong>Type:</strong> {task.type}
+                      <strong>Due:</strong> {activity.dueDate}
+                    </p>
+                    <p>
+                      <strong>Cultural Element:</strong> {activity.culturalElement}
                     </p>
                   </div>
-                  <button className="view-task-btn">View Task</button>
+                  <button className="activity-action-btn">
+                    {activity.status === 'completed' ? 'View' : 'Start'}
+                  </button>
                 </div>
               ))}
             </div>
           </div>
         )}
-      </div>
+
+        {activeTab === 'games' && (
+          <div className="games-tab">
+            <h2>Learning Games</h2>
+            <p>Interactive games to make learning fun and engaging!</p>
+            <div className="games-grid">
+              <div className="game-card">
+                <div className="game-icon">🌿</div>
+                <h3>Te Reo Wordle</h3>
+                <p>Learn Te Reo Māori through word puzzles</p>
+                <button className="game-btn">Play Now</button>
+              </div>
+              <div className="game-card">
+                <div className="game-icon">🏛️</div>
+                <h3>Cultural Quiz</h3>
+                <p>Test your knowledge of Māori culture</p>
+                <button className="game-btn">Play Now</button>
+              </div>
+              <div className="game-card">
+                <div className="game-icon">📐</div>
+                <h3>Math Challenges</h3>
+                <p>Fun mathematics problems and puzzles</p>
+                <button className="game-btn">Play Now</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'progress' && (
+          <div className="progress-tab">
+            <h2>Progress Tracker</h2>
+            <p>Track your learning journey and celebrate achievements.</p>
+            <div className="progress-features">
+              <h3>Available Features:</h3>
+              <ul>
+                <li>📊 Detailed Progress Reports</li>
+                <li>🏆 Achievement Badges</li>
+                <li>📈 Learning Analytics</li>
+                <li>🎯 Goal Setting</li>
+                <li>📝 Learning Journal</li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
