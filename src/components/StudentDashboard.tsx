@@ -7,7 +7,7 @@ const StudentDashboard: React.FC = () => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
-  const [progress, setProgress] = useState({
+  const [progress] = useState({
     overallProgress: 78,
     teReoProgress: 85,
     mathProgress: 72,

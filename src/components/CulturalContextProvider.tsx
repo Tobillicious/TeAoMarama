@@ -108,7 +108,7 @@ export function useCulturalContext() {
 }
 
 export function CulturalGuidancePanel() {
-  const { context, getCulturalGuidance } = useCulturalContext();
+  const { getCulturalGuidance } = useCulturalContext();
   const guidance = getCulturalGuidance();
 
   if (guidance.length === 0) return null;

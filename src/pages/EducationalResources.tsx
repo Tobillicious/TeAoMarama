@@ -28,6 +28,7 @@ const EducationalResources: React.FC = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<'title' | 'date' | 'rating' | 'views'>('date');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading educational resources
@@ -178,8 +179,10 @@ const EducationalResources: React.FC = () => {
       },
     ];
 
+    // Ensure data is properly set
     setResources(mockResources);
     setFilteredResources(mockResources);
+    console.log('📚 Loaded', mockResources.length, 'educational resources');
   }, []);
 
   useEffect(() => {
@@ -410,112 +413,124 @@ const EducationalResources: React.FC = () => {
       </div>
 
       <div className="resources-grid">
-        {filteredResources.map((resource) => (
-          <div key={resource.id} className="resource-card">
-            <div className="resource-header">
-              <div
-                className="resource-type"
-                style={{ backgroundColor: getTypeColor(resource.type) }}
-              >
-                {getTypeIcon(resource.type)} {resource.type}
-              </div>
-              <div
-                className="resource-status"
-                style={{
-                  backgroundColor:
-                    resource.status === 'published'
-                      ? '#10b981'
-                      : resource.status === 'draft'
-                      ? '#f59e0b'
-                      : '#6b7280',
-                }}
-              >
-                {resource.status}
-              </div>
-            </div>
-
-            <div className="resource-content">
-              <h3>{resource.title}</h3>
-              <p className="resource-description">{resource.description}</p>
-
-              <div className="resource-meta">
-                <div className="meta-item">
-                  <span className="meta-label">Subject:</span>
-                  <span className="meta-value">{resource.subject}</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Year:</span>
-                  <span className="meta-value">
-                    {resource.year === 0 ? 'PD' : `Year ${resource.year}`}
-                  </span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Duration:</span>
-                  <span className="meta-value">{resource.duration} min</span>
-                </div>
-                <div className="meta-item">
-                  <span className="meta-label">Difficulty:</span>
-                  <span
-                    className="meta-value difficulty"
-                    style={{ color: getDifficultyColor(resource.difficulty) }}
-                  >
-                    {resource.difficulty}
-                  </span>
-                </div>
-              </div>
-
-              <div className="resource-cultural-elements">
-                <h4>Cultural Elements:</h4>
-                <div className="cultural-tags">
-                  {resource.culturalElements.map((element) => (
-                    <span key={element} className="cultural-tag">
-                      {element}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="resource-tags">
-                <div className="tags-list">
-                  {resource.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="resource-stats">
-                <div className="stat">
-                  <span className="stat-label">Views</span>
-                  <span className="stat-value">{resource.views.toLocaleString()}</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-label">Rating</span>
-                  <span className="stat-value">{resource.rating}/5</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-label">Updated</span>
-                  <span className="stat-value">{formatDate(resource.lastUpdated)}</span>
-                </div>
-              </div>
-
-              <div className="resource-author">
-                <span className="author-label">By:</span>
-                <span className="author-name">{resource.author}</span>
-              </div>
-            </div>
-
-            <div className="resource-actions">
-              <button className="view-btn">View Resource</button>
-              <button className="download-btn">Download</button>
-              <button className="share-btn">Share</button>
-            </div>
+        {isLoading ? (
+          <div className="loading-state">
+            <p>Loading educational resources...</p>
+            <div className="spinner"></div>
           </div>
-        ))}
+        ) : filteredResources.length === 0 ? (
+          <div className="no-resources">
+            <h3>No resources found</h3>
+            <p>Try adjusting your search criteria or filters</p>
+          </div>
+        ) : (
+          filteredResources.map((resource) => (
+            <div key={resource.id} className="resource-card">
+              <div className="resource-header">
+                <div
+                  className="resource-type"
+                  style={{ backgroundColor: getTypeColor(resource.type) }}
+                >
+                  {getTypeIcon(resource.type)} {resource.type}
+                </div>
+                <div
+                  className="resource-status"
+                  style={{
+                    backgroundColor:
+                      resource.status === 'published'
+                        ? '#10b981'
+                        : resource.status === 'draft'
+                        ? '#f59e0b'
+                        : '#6b7280',
+                  }}
+                >
+                  {resource.status}
+                </div>
+              </div>
+
+              <div className="resource-content">
+                <h3>{resource.title}</h3>
+                <p className="resource-description">{resource.description}</p>
+
+                <div className="resource-meta">
+                  <div className="meta-item">
+                    <span className="meta-label">Subject:</span>
+                    <span className="meta-value">{resource.subject}</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Year:</span>
+                    <span className="meta-value">
+                      {resource.year === 0 ? 'PD' : `Year ${resource.year}`}
+                    </span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Duration:</span>
+                    <span className="meta-value">{resource.duration} min</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Difficulty:</span>
+                    <span
+                      className="meta-value difficulty"
+                      style={{ color: getDifficultyColor(resource.difficulty) }}
+                    >
+                      {resource.difficulty}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="resource-cultural-elements">
+                  <h4>Cultural Elements:</h4>
+                  <div className="cultural-tags">
+                    {resource.culturalElements.map((element) => (
+                      <span key={element} className="cultural-tag">
+                        {element}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="resource-tags">
+                  <div className="tags-list">
+                    {resource.tags.map((tag) => (
+                      <span key={tag} className="tag">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="resource-stats">
+                  <div className="stat">
+                    <span className="stat-label">Views</span>
+                    <span className="stat-value">{resource.views.toLocaleString()}</span>
+                  </div>
+                  <div className="stat">
+                    <span className="stat-label">Rating</span>
+                    <span className="stat-value">{resource.rating}/5</span>
+                  </div>
+                  <div className="stat">
+                    <span className="stat-label">Updated</span>
+                    <span className="stat-value">{formatDate(resource.lastUpdated)}</span>
+                  </div>
+                </div>
+
+                <div className="resource-author">
+                  <span className="author-label">By:</span>
+                  <span className="author-name">{resource.author}</span>
+                </div>
+              </div>
+
+              <div className="resource-actions">
+                <button className="view-btn">View Resource</button>
+                <button className="download-btn">Download</button>
+                <button className="share-btn">Share</button>
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
-      {filteredResources.length === 0 && (
+      {filteredResources.length === 0 && !isLoading && (
         <div className="no-resources">
           <h3>No resources found</h3>
           <p>Try adjusting your search criteria or filters</p>
