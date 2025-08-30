@@ -1,324 +1,624 @@
-import React, { useState, useEffect } from 'react';
-import { BookOpen, Brain, Zap, Users, Heart, Star, TrendingUp, Target } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import './AdvancedWisdomAccelerator.css';
 
-interface WisdomMetric {
-  id: string;
-  title: string;
-  value: number;
-  target: number;
-  unit: string;
-  trend: 'up' | 'down' | 'stable';
-  culturalContext: string;
-}
-
-interface LearningAccelerator {
+interface WisdomModule {
   id: string;
   name: string;
-  maoriName: string;
-  description: string;
-  progress: number;
-  impact: number;
-  culturalAlignment: number;
+  type: 'cultural' | 'academic' | 'spiritual' | 'leadership' | 'innovation';
+  status: 'active' | 'processing' | 'idle' | 'error';
+  efficiency: number;
+  culturalSensitivity: number;
+  knowledgeAccumulation: number;
+  currentTask: string;
+  lastActivity: Date;
+  priority: 'high' | 'medium' | 'low';
+}
+
+interface WisdomMetrics {
+  totalModules: number;
+  activeModules: number;
+  averageEfficiency: number;
+  culturalCompliance: number;
+  knowledgeGrowth: number;
+  wisdomLevel: number;
+  coordinationScore: number;
+  innovationIndex: number;
+}
+
+interface CulturalInsight {
+  id: string;
+  category: string;
+  insight: string;
+  impact: 'high' | 'medium' | 'low';
+  timestamp: Date;
+  source: string;
+  relevance: number;
 }
 
 const AdvancedWisdomAccelerator: React.FC = () => {
-  const [activeMode, setActiveMode] = useState<'overview' | 'cultural' | 'performance'>('overview');
-  const [wisdomMetrics, setWisdomMetrics] = useState<WisdomMetric[]>([]);
-  const [accelerators, setAccelerators] = useState<LearningAccelerator[]>([]);
+  const [modules, setModules] = useState<WisdomModule[]>([]);
+  const [metrics, setMetrics] = useState<WisdomMetrics>({
+    totalModules: 0,
+    activeModules: 0,
+    averageEfficiency: 0,
+    culturalCompliance: 0,
+    knowledgeGrowth: 0,
+    wisdomLevel: 0,
+    coordinationScore: 0,
+    innovationIndex: 0,
+  });
+  const [insights, setInsights] = useState<CulturalInsight[]>([]);
+  const [selectedModule, setSelectedModule] = useState<WisdomModule | null>(null);
+  const [filterType, setFilterType] = useState<
+    'all' | 'cultural' | 'academic' | 'spiritual' | 'leadership' | 'innovation'
+  >('all');
+  const [isAccelerating, setIsAccelerating] = useState(false);
 
   useEffect(() => {
-    // Initialize wisdom metrics with cultural context
-    const initialMetrics: WisdomMetric[] = [
-      {
-        id: 'cultural-integration',
-        title: 'Cultural Integration (Te Ao Māori)',
-        value: 94.2,
-        target: 95.0,
-        unit: '%',
-        trend: 'up',
-        culturalContext: 'Alignment with tikanga Māori principles'
-      },
-      {
-        id: 'learning-velocity',
-        title: 'Learning Velocity (Ako)',
-        value: 87.5,
-        target: 90.0,
-        unit: '%',
-        trend: 'up',
-        culturalContext: 'Student engagement and knowledge acquisition'
-      },
-      {
-        id: 'wisdom-synthesis',
-        title: 'Wisdom Synthesis (Mātauranga)',
-        value: 91.8,
-        target: 92.0,
-        unit: '%',
-        trend: 'up',
-        culturalContext: 'Integration of traditional and contemporary knowledge'
-      },
-      {
-        id: 'community-impact',
-        title: 'Community Impact (Whakawhanaungatanga)',
-        value: 89.3,
-        target: 85.0,
-        unit: '%',
-        trend: 'up',
-        culturalContext: 'Building relationships and community connections'
-      }
-    ];
-
-    const initialAccelerators: LearningAccelerator[] = [
-      {
-        id: 'te-reo-integration',
-        name: 'Te Reo Māori Integration',
-        maoriName: 'Te Whakaurunga Reo Māori',
-        description: 'Advanced language integration across all educational content',
-        progress: 92.5,
-        impact: 95.2,
-        culturalAlignment: 98.7
-      },
-      {
-        id: 'tikanga-learning',
-        name: 'Cultural Protocols Learning',
-        maoriName: 'Te Ako Tikanga',
-        description: 'Deep understanding of Māori cultural practices and protocols',
-        progress: 88.7,
-        impact: 91.4,
-        culturalAlignment: 96.8
-      },
-      {
-        id: 'whakatohinga-framework',
-        name: 'Holistic Assessment Framework',
-        maoriName: 'Te Anga Whakatohinga',
-        description: 'Comprehensive assessment that honors cultural knowledge systems',
-        progress: 85.3,
-        impact: 89.6,
-        culturalAlignment: 94.2
-      },
-      {
-        id: 'whakapapa-connections',
-        name: 'Knowledge Genealogy Mapping',
-        maoriName: 'Te Whakapapa Mātauranga',
-        description: 'Connecting contemporary learning to ancestral knowledge',
-        progress: 79.8,
-        impact: 87.1,
-        culturalAlignment: 92.5
-      }
-    ];
-
-    setWisdomMetrics(initialMetrics);
-    setAccelerators(initialAccelerators);
+    initializeWisdomModules();
+    generateCulturalInsights();
   }, []);
 
-  const getTrendIcon = (trend: string) => {
-    return trend === 'up' ? '↗' : trend === 'down' ? '↘' : '→';
+  useEffect(() => {
+    updateMetrics();
+  }, [modules]);
+
+  useEffect(() => {
+    if (isAccelerating) {
+      const interval = setInterval(accelerateWisdom, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [isAccelerating]);
+
+  const initializeWisdomModules = () => {
+    const initialModules: WisdomModule[] = [
+      {
+        id: 'kaitiaki-tikanga',
+        name: 'Kaitiaki Tikanga',
+        type: 'cultural',
+        status: 'active',
+        efficiency: 94,
+        culturalSensitivity: 98,
+        knowledgeAccumulation: 92,
+        currentTask: 'Cultural protocol optimization',
+        lastActivity: new Date(),
+        priority: 'high',
+      },
+      {
+        id: 'kaitiaki-matauranga',
+        name: 'Kaitiaki Mātauranga',
+        type: 'academic',
+        status: 'active',
+        efficiency: 91,
+        culturalSensitivity: 95,
+        knowledgeAccumulation: 89,
+        currentTask: 'Educational pathway enhancement',
+        lastActivity: new Date(),
+        priority: 'high',
+      },
+      {
+        id: 'kaitiaki-wairua',
+        name: 'Kaitiaki Wairua',
+        type: 'spiritual',
+        status: 'processing',
+        efficiency: 88,
+        culturalSensitivity: 99,
+        knowledgeAccumulation: 85,
+        currentTask: 'Spiritual wisdom integration',
+        lastActivity: new Date(),
+        priority: 'medium',
+      },
+      {
+        id: 'kaitiaki-rangatira',
+        name: 'Kaitiaki Rangatira',
+        type: 'leadership',
+        status: 'active',
+        efficiency: 93,
+        culturalSensitivity: 96,
+        knowledgeAccumulation: 90,
+        currentTask: 'Leadership development optimization',
+        lastActivity: new Date(),
+        priority: 'high',
+      },
+      {
+        id: 'kaitiaki-auahatanga',
+        name: 'Kaitiaki Auahatanga',
+        type: 'innovation',
+        status: 'active',
+        efficiency: 89,
+        culturalSensitivity: 92,
+        knowledgeAccumulation: 87,
+        currentTask: 'Innovation pathway creation',
+        lastActivity: new Date(),
+        priority: 'medium',
+      },
+      {
+        id: 'kaitiaki-whakapapa',
+        name: 'Kaitiaki Whakapapa',
+        type: 'cultural',
+        status: 'idle',
+        efficiency: 86,
+        culturalSensitivity: 97,
+        knowledgeAccumulation: 84,
+        currentTask: 'Genealogical knowledge preservation',
+        lastActivity: new Date(Date.now() - 3600000),
+        priority: 'low',
+      },
+    ];
+
+    setModules(initialModules);
   };
 
-  const getProgressColor = (progress: number) => {
-    if (progress >= 90) return 'text-green-600';
-    if (progress >= 75) return 'text-yellow-600';
-    return 'text-red-600';
+  const generateCulturalInsights = () => {
+    const mockInsights: CulturalInsight[] = [
+      {
+        id: '1',
+        category: 'Cultural Integration',
+        insight:
+          'Te Ao Māori principles enhance learning outcomes by 34% when integrated into core curriculum',
+        impact: 'high',
+        timestamp: new Date(),
+        source: 'Kaitiaki Tikanga',
+        relevance: 95,
+      },
+      {
+        id: '2',
+        category: 'Educational Excellence',
+        insight:
+          'Cultural context in mathematics improves problem-solving skills and student engagement',
+        impact: 'high',
+        timestamp: new Date(Date.now() - 1800000),
+        source: 'Kaitiaki Mātauranga',
+        relevance: 92,
+      },
+      {
+        id: '3',
+        category: 'Spiritual Development',
+        insight:
+          'Connection to ancestral wisdom strengthens student resilience and cultural identity',
+        impact: 'medium',
+        timestamp: new Date(Date.now() - 3600000),
+        source: 'Kaitiaki Wairua',
+        relevance: 88,
+      },
+      {
+        id: '4',
+        category: 'Leadership Growth',
+        insight:
+          'Cultural leadership models create more inclusive and effective learning environments',
+        impact: 'high',
+        timestamp: new Date(Date.now() - 5400000),
+        source: 'Kaitiaki Rangatira',
+        relevance: 90,
+      },
+      {
+        id: '5',
+        category: 'Innovation Pathways',
+        insight:
+          'Traditional knowledge combined with modern technology creates unique learning opportunities',
+        impact: 'medium',
+        timestamp: new Date(Date.now() - 7200000),
+        source: 'Kaitiaki Auahatanga',
+        relevance: 85,
+      },
+    ];
+
+    setInsights(mockInsights);
+  };
+
+  const updateMetrics = () => {
+    if (modules.length === 0) return;
+
+    const totalModules = modules.length;
+    const activeModules = modules.filter((m) => m.status === 'active').length;
+    const averageEfficiency = modules.reduce((sum, m) => sum + m.efficiency, 0) / totalModules;
+    const culturalCompliance =
+      modules.reduce((sum, m) => sum + m.culturalSensitivity, 0) / totalModules;
+    const knowledgeGrowth =
+      modules.reduce((sum, m) => sum + m.knowledgeAccumulation, 0) / totalModules;
+    const wisdomLevel = (averageEfficiency + culturalCompliance + knowledgeGrowth) / 3;
+    const coordinationScore = (activeModules / totalModules) * 100;
+    const innovationIndex =
+      modules.filter((m) => m.type === 'innovation').reduce((sum, m) => sum + m.efficiency, 0) /
+        modules.filter((m) => m.type === 'innovation').length || 0;
+
+    setMetrics({
+      totalModules,
+      activeModules,
+      averageEfficiency: Math.round(averageEfficiency),
+      culturalCompliance: Math.round(culturalCompliance),
+      knowledgeGrowth: Math.round(knowledgeGrowth),
+      wisdomLevel: Math.round(wisdomLevel),
+      coordinationScore: Math.round(coordinationScore),
+      innovationIndex: Math.round(innovationIndex),
+    });
+  };
+
+  const accelerateWisdom = () => {
+    setModules((prev) =>
+      prev.map((module) => ({
+        ...module,
+        efficiency: Math.min(100, module.efficiency + (Math.random() - 0.5) * 0.5),
+        culturalSensitivity: Math.min(
+          100,
+          module.culturalSensitivity + (Math.random() - 0.5) * 0.3,
+        ),
+        knowledgeAccumulation: Math.min(
+          100,
+          module.knowledgeAccumulation + (Math.random() - 0.5) * 0.4,
+        ),
+        lastActivity: new Date(),
+      })),
+    );
+  };
+
+  const getFilteredModules = () => {
+    if (filterType === 'all') return modules;
+    return modules.filter((module) => module.type === filterType);
+  };
+
+  const getModuleTypeIcon = (type: string) => {
+    switch (type) {
+      case 'cultural':
+        return '🌿';
+      case 'academic':
+        return '📚';
+      case 'spiritual':
+        return '✨';
+      case 'leadership':
+        return '👑';
+      case 'innovation':
+        return '🚀';
+      default:
+        return '🤖';
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'active':
+        return '#10b981';
+      case 'processing':
+        return '#3b82f6';
+      case 'idle':
+        return '#6b7280';
+      case 'error':
+        return '#ef4444';
+      default:
+        return '#6b7280';
+    }
+  };
+
+  const getPriorityColor = (priority: string) => {
+    switch (priority) {
+      case 'high':
+        return '#ef4444';
+      case 'medium':
+        return '#f59e0b';
+      case 'low':
+        return '#10b981';
+      default:
+        return '#6b7280';
+    }
+  };
+
+  const getImpactColor = (impact: string) => {
+    switch (impact) {
+      case 'high':
+        return '#ef4444';
+      case 'medium':
+        return '#f59e0b';
+      case 'low':
+        return '#10b981';
+      default:
+        return '#6b7280';
+    }
   };
 
   return (
     <div className="advanced-wisdom-accelerator">
-      <div className="wisdom-header">
-        <div className="header-content">
-          <Brain className="header-icon" />
-          <div>
-            <h1>Advanced Wisdom Accelerator</h1>
-            <h2 className="maori-title">Te Whakatere Mātauranga</h2>
-            <p>Intelligent learning acceleration with cultural excellence</p>
+      <div className="accelerator-container">
+        <div className="accelerator-header">
+          <h1>🧠 Advanced Wisdom Accelerator</h1>
+          <p>Superintelligent cultural knowledge enhancement and learning optimization system</p>
+        </div>
+
+        {/* Wisdom Metrics Dashboard */}
+        <div className="wisdom-metrics-grid">
+          <div className="metric-card">
+            <h3>Total Modules</h3>
+            <div className="metric-value">{metrics.totalModules}</div>
+            <div className="metric-label">Active wisdom systems</div>
+          </div>
+          <div className="metric-card">
+            <h3>Active Modules</h3>
+            <div className="metric-value">{metrics.activeModules}</div>
+            <div className="metric-label">Currently processing</div>
+          </div>
+          <div className="metric-card">
+            <h3>Average Efficiency</h3>
+            <div className="metric-value">{metrics.averageEfficiency}%</div>
+            <div className="metric-label">System performance</div>
+          </div>
+          <div className="metric-card">
+            <h3>Cultural Compliance</h3>
+            <div className="metric-value">{metrics.culturalCompliance}%</div>
+            <div className="metric-label">Cultural sensitivity</div>
+          </div>
+          <div className="metric-card">
+            <h3>Knowledge Growth</h3>
+            <div className="metric-value">{metrics.knowledgeGrowth}%</div>
+            <div className="metric-label">Learning accumulation</div>
+          </div>
+          <div className="metric-card">
+            <h3>Wisdom Level</h3>
+            <div className="metric-value">{metrics.wisdomLevel}%</div>
+            <div className="metric-label">Overall wisdom index</div>
+          </div>
+          <div className="metric-card">
+            <h3>Coordination Score</h3>
+            <div className="metric-value">{metrics.coordinationScore}%</div>
+            <div className="metric-label">System coordination</div>
+          </div>
+          <div className="metric-card">
+            <h3>Innovation Index</h3>
+            <div className="metric-value">{metrics.innovationIndex}%</div>
+            <div className="metric-label">Creative potential</div>
           </div>
         </div>
-        
-        <div className="mode-selector">
-          <button 
-            onClick={() => setActiveMode('overview')}
-            className={activeMode === 'overview' ? 'active' : ''}
-          >
-            <Target size={16} />
-            Overview
-          </button>
-          <button 
-            onClick={() => setActiveMode('cultural')}
-            className={activeMode === 'cultural' ? 'active' : ''}
-          >
-            <Heart size={16} />
-            Cultural
-          </button>
-          <button 
-            onClick={() => setActiveMode('performance')}
-            className={activeMode === 'performance' ? 'active' : ''}
-          >
-            <TrendingUp size={16} />
-            Performance
-          </button>
-        </div>
-      </div>
 
-      {activeMode === 'overview' && (
-        <div className="overview-section">
-          <div className="wisdom-metrics-grid">
-            {wisdomMetrics.map(metric => (
-              <div key={metric.id} className="wisdom-metric-card">
-                <div className="metric-header">
-                  <h3>{metric.title}</h3>
-                  <span className={`trend-indicator ${metric.trend}`}>
-                    {getTrendIcon(metric.trend)}
+        {/* Acceleration Controls */}
+        <div className="acceleration-controls">
+          <div className="control-section">
+            <button
+              className={`acceleration-btn ${isAccelerating ? 'active' : ''}`}
+              onClick={() => setIsAccelerating(!isAccelerating)}
+            >
+              {isAccelerating ? '🔄 Accelerating...' : '🚀 Start Acceleration'}
+            </button>
+            <p className="control-description">
+              {isAccelerating
+                ? 'Wisdom modules are actively enhancing cultural knowledge and learning optimization'
+                : 'Click to begin wisdom acceleration and cultural knowledge enhancement'}
+            </p>
+          </div>
+          <div className="filter-section">
+            <label htmlFor="module-filter">Filter by type:</label>
+            <select
+              id="module-filter"
+              value={filterType}
+              onChange={(e) =>
+                setFilterType(
+                  e.target.value as
+                    | 'all'
+                    | 'cultural'
+                    | 'academic'
+                    | 'spiritual'
+                    | 'leadership'
+                    | 'innovation',
+                )
+              }
+              aria-label="Filter wisdom modules by type"
+            >
+              <option value="all">All Modules</option>
+              <option value="cultural">Cultural</option>
+              <option value="academic">Academic</option>
+              <option value="spiritual">Spiritual</option>
+              <option value="leadership">Leadership</option>
+              <option value="innovation">Innovation</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Wisdom Modules Grid */}
+        <div className="wisdom-modules-grid">
+          {getFilteredModules().map((module) => (
+            <div key={module.id} className="module-card" onClick={() => setSelectedModule(module)}>
+              <div className="module-header">
+                <div className="module-info">
+                  <span className="module-icon">{getModuleTypeIcon(module.type)}</span>
+                  <h3>{module.name}</h3>
+                </div>
+                <div className="module-status">
+                  <span
+                    className="status-indicator"
+                    style={{ backgroundColor: getStatusColor(module.status) }}
+                  ></span>
+                  <span
+                    className="priority-badge"
+                    style={{ backgroundColor: getPriorityColor(module.priority) }}
+                  >
+                    {module.priority}
                   </span>
                 </div>
-                <div className="metric-value">
-                  <span className="value">{metric.value}</span>
-                  <span className="unit">{metric.unit}</span>
-                </div>
-                <div className="metric-progress">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill"
-                      style={{ width: `${(metric.value / metric.target) * 100}%` }}
-                    />
+              </div>
+
+              <div className="module-metrics">
+                <div className="metric-row">
+                  <span>Efficiency</span>
+                  <div className="metric-bar">
+                    <div
+                      className="metric-fill metric-fill-dynamic"
+                      style={{ '--progress-width': `${module.efficiency}%` } as React.CSSProperties}
+                    ></div>
                   </div>
-                  <span className="target">Target: {metric.target}{metric.unit}</span>
+                  <span className="metric-value">{Math.round(module.efficiency)}%</span>
                 </div>
-                <div className="cultural-context">
-                  <Heart size={14} />
-                  <span>{metric.culturalContext}</span>
+                <div className="metric-row">
+                  <span>Cultural Sensitivity</span>
+                  <div className="metric-bar">
+                    <div
+                      className="metric-fill cultural metric-fill-dynamic"
+                      style={
+                        {
+                          '--progress-width': `${module.culturalSensitivity}%`,
+                        } as React.CSSProperties
+                      }
+                    ></div>
+                  </div>
+                  <span className="metric-value">{Math.round(module.culturalSensitivity)}%</span>
                 </div>
+                <div className="metric-row">
+                  <span>Knowledge Accumulation</span>
+                  <div className="metric-bar">
+                    <div
+                      className="metric-fill knowledge metric-fill-dynamic"
+                      style={
+                        {
+                          '--progress-width': `${module.knowledgeAccumulation}%`,
+                        } as React.CSSProperties
+                      }
+                    ></div>
+                  </div>
+                  <span className="metric-value">{Math.round(module.knowledgeAccumulation)}%</span>
+                </div>
+              </div>
+
+              <div className="module-task">
+                <span className="task-label">Current Task:</span>
+                <span className="task-text">{module.currentTask}</span>
+              </div>
+
+              <div className="module-activity">
+                <span>Last active: {module.lastActivity.toLocaleTimeString()}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Cultural Insights Section */}
+        <div className="cultural-insights-section">
+          <h2>🌿 Cultural Wisdom Insights</h2>
+          <div className="insights-grid">
+            {insights.map((insight) => (
+              <div key={insight.id} className="insight-card">
+                <div className="insight-header">
+                  <span className="insight-category">{insight.category}</span>
+                  <span
+                    className="impact-badge"
+                    style={{ backgroundColor: getImpactColor(insight.impact) }}
+                  >
+                    {insight.impact}
+                  </span>
+                </div>
+                <p className="insight-text">{insight.insight}</p>
+                <div className="insight-footer">
+                  <span className="insight-source">Source: {insight.source}</span>
+                  <span className="insight-relevance">Relevance: {insight.relevance}%</span>
+                </div>
+                <div className="insight-timestamp">{insight.timestamp.toLocaleString()}</div>
               </div>
             ))}
           </div>
         </div>
-      )}
 
-      {activeMode === 'cultural' && (
-        <div className="cultural-section">
-          <div className="cultural-wisdom-panel">
-            <div className="section-header">
-              <Heart className="section-icon" />
-              <h2>Cultural Wisdom Integration</h2>
-              <p className="maori-subtitle">Te Whakaurunga Mātauranga Māori</p>
+        {/* Module Detail Modal */}
+        {selectedModule && (
+          <div className="module-modal-overlay" onClick={() => setSelectedModule(null)}>
+            <div className="module-modal" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2>{selectedModule.name} - Detailed Analysis</h2>
+                <button
+                  className="close-modal"
+                  onClick={() => setSelectedModule(null)}
+                  aria-label="Close modal"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="modal-content">
+                <div className="module-details">
+                  <div className="detail-section">
+                    <h3>Module Information</h3>
+                    <div className="detail-grid">
+                      <div className="detail-item">
+                        <span>Type:</span>
+                        <span className="detail-value">{selectedModule.type}</span>
+                      </div>
+                      <div className="detail-item">
+                        <span>Status:</span>
+                        <span className="detail-value">{selectedModule.status}</span>
+                      </div>
+                      <div className="detail-item">
+                        <span>Priority:</span>
+                        <span className="detail-value">{selectedModule.priority}</span>
+                      </div>
+                      <div className="detail-item">
+                        <span>Current Task:</span>
+                        <span className="detail-value">{selectedModule.currentTask}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="performance-section">
+                    <h3>Performance Metrics</h3>
+                    <div className="performance-metrics">
+                      <div className="performance-item">
+                        <span>Efficiency</span>
+                        <div className="performance-bar">
+                          <div
+                            className="performance-fill performance-fill-dynamic"
+                            style={
+                              {
+                                '--progress-width': `${selectedModule.efficiency}%`,
+                              } as React.CSSProperties
+                            }
+                          ></div>
+                        </div>
+                        <span className="performance-value">
+                          {Math.round(selectedModule.efficiency)}%
+                        </span>
+                      </div>
+                      <div className="performance-item">
+                        <span>Cultural Sensitivity</span>
+                        <div className="performance-bar">
+                          <div
+                            className="performance-fill cultural performance-fill-dynamic"
+                            style={
+                              {
+                                '--progress-width': `${selectedModule.culturalSensitivity}%`,
+                              } as React.CSSProperties
+                            }
+                          ></div>
+                        </div>
+                        <span className="performance-value">
+                          {Math.round(selectedModule.culturalSensitivity)}%
+                        </span>
+                      </div>
+                      <div className="performance-item">
+                        <span>Knowledge Accumulation</span>
+                        <div className="performance-bar">
+                          <div
+                            className="performance-fill knowledge performance-fill-dynamic"
+                            style={
+                              {
+                                '--progress-width': `${selectedModule.knowledgeAccumulation}%`,
+                              } as React.CSSProperties
+                            }
+                          ></div>
+                        </div>
+                        <span className="performance-value">
+                          {Math.round(selectedModule.knowledgeAccumulation)}%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="actions-section">
+                    <h3>Module Actions</h3>
+                    <div className="action-buttons">
+                      <button className="action-btn">Optimize Performance</button>
+                      <button className="action-btn">Update Task</button>
+                      <button className="action-btn">View Logs</button>
+                      <button className="action-btn">Configure Settings</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="cultural-metrics">
-              <div className="cultural-principle">
-                <div className="principle-header">
-                  <h3>Whakatōhea (Kinship)</h3>
-                  <span className="alignment-score">96.8%</span>
-                </div>
-                <p>Building connections and relationships within learning communities</p>
-                <div className="principle-progress">
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: '96.8%' }} />
-                  </div>
-                </div>
-              </div>
-              
-              <div className="cultural-principle">
-                <div className="principle-header">
-                  <h3>Manaakitanga (Hospitality)</h3>
-                  <span className="alignment-score">94.3%</span>
-                </div>
-                <p>Creating welcoming and inclusive learning environments</p>
-                <div className="principle-progress">
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: '94.3%' }} />
-                  </div>
-                </div>
-              </div>
-              
-              <div className="cultural-principle">
-                <div className="principle-header">
-                  <h3>Kaitiakitanga (Guardianship)</h3>
-                  <span className="alignment-score">92.7%</span>
-                </div>
-                <p>Caring for knowledge and ensuring its preservation for future generations</p>
-                <div className="principle-progress">
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: '92.7%' }} />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      )}
-
-      {activeMode === 'performance' && (
-        <div className="performance-section">
-          <div className="accelerators-grid">
-            {accelerators.map(accelerator => (
-              <div key={accelerator.id} className="accelerator-card">
-                <div className="accelerator-header">
-                  <Zap className="accelerator-icon" />
-                  <div>
-                    <h3>{accelerator.name}</h3>
-                    <h4 className="maori-name">{accelerator.maoriName}</h4>
-                  </div>
-                </div>
-                
-                <p className="accelerator-description">{accelerator.description}</p>
-                
-                <div className="accelerator-metrics">
-                  <div className="metric">
-                    <span className="metric-label">Progress</span>
-                    <span className={`metric-value ${getProgressColor(accelerator.progress)}`}>
-                      {accelerator.progress}%
-                    </span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-label">Impact</span>
-                    <span className={`metric-value ${getProgressColor(accelerator.impact)}`}>
-                      {accelerator.impact}%
-                    </span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-label">Cultural Alignment</span>
-                    <span className={`metric-value ${getProgressColor(accelerator.culturalAlignment)}`}>
-                      {accelerator.culturalAlignment}%
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="overall-progress">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill"
-                      style={{ width: `${accelerator.progress}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="wisdom-insights">
-        <div className="insight-card">
-          <BookOpen className="insight-icon" />
-          <div>
-            <h3>Continuous Learning Enhancement</h3>
-            <p>AI-powered optimization of educational pathways based on cultural principles and individual needs.</p>
-          </div>
-        </div>
-        
-        <div className="insight-card">
-          <Users className="insight-icon" />
-          <div>
-            <h3>Community-Driven Knowledge</h3>
-            <p>Fostering collaborative learning environments that honor both traditional wisdom and contemporary innovation.</p>
-          </div>
-        </div>
-        
-        <div className="insight-card">
-          <Star className="insight-icon" />
-          <div>
-            <h3>Excellence Through Balance</h3>
-            <p>Achieving educational excellence by maintaining harmony between cultural authenticity and academic rigor.</p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

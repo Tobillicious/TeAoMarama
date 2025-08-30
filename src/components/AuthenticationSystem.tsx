@@ -129,7 +129,7 @@ const AuthenticationSystem: React.FC = () => {
         isLoading: false,
         error: null,
       });
-    } catch (error) {
+    } catch {
       setAuthState((prev) => ({
         ...prev,
         isLoading: false,
@@ -179,7 +179,7 @@ const AuthenticationSystem: React.FC = () => {
         isLoading: false,
         error: null,
       });
-    } catch (error) {
+    } catch {
       setAuthState((prev) => ({
         ...prev,
         isLoading: false,

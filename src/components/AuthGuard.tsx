@@ -3,8 +3,8 @@
 
 import { type ReactNode, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { supabase } from '../supabaseClient';
 import { useAuth } from '../services/useAuth';
+import { supabase } from '../supabaseClient';
 
 interface AuthGuardProps {
   children: ReactNode;
@@ -31,7 +31,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
 }) => {
   const { isAuthenticated, currentUser } = useAuth();
   const location = useLocation();
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [accessDenied, setAccessDenied] = useState(false);
 
@@ -120,7 +120,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
     }
   };
 
-  const logAccessAttempt = async (event: string, success: boolean) => {
+  const logAccessAttempt = async (event: string, _success: boolean) => {
     try {
       await supabase.rpc('log_security_event', {
         p_action: event,

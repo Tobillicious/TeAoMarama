@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { CheckCircle, Clock, Award, BookOpen, Users, Heart } from 'lucide-react';
+import { Award, BookOpen, CheckCircle, Clock, Heart } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface LearningProgress {
   userId: string;
@@ -28,7 +28,7 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
     totalTimeSpent: 0,
     achievements: [],
     currentStreak: 0,
-    favoriteTopics: []
+    favoriteTopics: [],
   });
 
   const [showDetails, setShowDetails] = useState(false);
@@ -39,7 +39,7 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
     if (savedProgress) {
       try {
         setProgress(JSON.parse(savedProgress));
-      } catch (error) {
+      } catch {
         console.warn('Could not load learning progress');
       }
     }
@@ -62,7 +62,10 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
     const culturalProgress = (progress.culturalEngagement / 100) * culturalWeight;
     const teReoProgressWeighted = (progress.teReoProgress / 100) * teReoWeight;
 
-    return Math.min(100, lessonProgress + assessmentProgress + culturalProgress + teReoProgressWeighted);
+    return Math.min(
+      100,
+      lessonProgress + assessmentProgress + culturalProgress + teReoProgressWeighted,
+    );
   };
 
   const getNextMilestone = () => {
@@ -120,17 +123,13 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="text-center p-3 bg-green-50 rounded-lg">
           <CheckCircle className="w-6 h-6 text-green-600 mx-auto mb-1" />
-          <div className="text-lg font-bold text-green-800">
-            {progress.completedLessons.length}
-          </div>
+          <div className="text-lg font-bold text-green-800">{progress.completedLessons.length}</div>
           <div className="text-xs text-green-600">Lessons</div>
         </div>
 
         <div className="text-center p-3 bg-blue-50 rounded-lg">
           <Award className="w-6 h-6 text-blue-600 mx-auto mb-1" />
-          <div className="text-lg font-bold text-blue-800">
-            {progress.achievements.length}
-          </div>
+          <div className="text-lg font-bold text-blue-800">{progress.achievements.length}</div>
           <div className="text-xs text-blue-600">Achievements</div>
         </div>
 
@@ -144,9 +143,7 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
 
         <div className="text-center p-3 bg-red-50 rounded-lg">
           <Heart className="w-6 h-6 text-red-600 mx-auto mb-1" />
-          <div className="text-lg font-bold text-red-800">
-            {progress.currentStreak}
-          </div>
+          <div className="text-lg font-bold text-red-800">{progress.currentStreak}</div>
           <div className="text-xs text-red-600">Day Streak</div>
         </div>
       </div>
@@ -170,9 +167,7 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
 
         <div>
           <div className="flex justify-between items-center mb-1">
-            <span className="text-sm font-medium text-gray-700">
-              Te Reo Māori Progress
-            </span>
+            <span className="text-sm font-medium text-gray-700">Te Reo Māori Progress</span>
             <span className="text-sm text-gray-600">{progress.teReoProgress}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -187,7 +182,7 @@ export function LearningProgressTracker({ userId, onProgressUpdate }: ProgressTr
       {showDetails && (
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
           <h3 className="font-semibold text-gray-800 mb-3">Detailed Progress</h3>
-          
+
           {progress.achievements.length > 0 && (
             <div className="mb-4">
               <h4 className="text-sm font-medium text-gray-700 mb-2">Recent Achievements</h4>

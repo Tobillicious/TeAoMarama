@@ -52,10 +52,10 @@ export function InteractiveLearningWidget({ activity }: { activity: LearningActi
       </div>
 
       <div className="progress-indicator" role="progressbar" 
-           aria-valuenow={progress} aria-valuemax={100}>
+           aria-valuenow={Math.round(progress)} aria-valuemax={100}>
         <div 
-          className="progress-bar"
-          style={{ width: `${progress}%` }}
+          className="progress-bar progress-bar-dynamic"
+          style={{ '--progress-width': `${progress}%` } as React.CSSProperties}
         />
         <span className="sr-only">{progress}% complete</span>
       </div>

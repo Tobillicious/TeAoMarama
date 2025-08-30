@@ -321,7 +321,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
             : conn,
         ),
       );
-    } catch (err) {
+    } catch {
       setError('Connection test failed. Please check your credentials.');
     } finally {
       setIsLoading(false);
@@ -343,7 +343,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
             : migration,
         ),
       );
-    } catch (err) {
+    } catch {
       setError('Migration failed. Please check the SQL syntax.');
     } finally {
       setIsLoading(false);
@@ -363,7 +363,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
           job.id === syncJobId ? { ...job, status: 'running' as const, lastRun: new Date() } : job,
         ),
       );
-    } catch (err) {
+    } catch {
       setError('Failed to start sync job.');
     } finally {
       setIsLoading(false);

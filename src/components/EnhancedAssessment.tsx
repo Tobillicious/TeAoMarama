@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface AssessmentQuestion {
   id: string;
@@ -30,31 +30,30 @@ interface AssessmentResults {
   culturalInsights: string[];
 }
 
-export function EnhancedAssessment({ 
-  questions, 
-  onComplete, 
+export function EnhancedAssessment({
+  questions,
+  onComplete,
   culturalMode = false,
-  accessibilityMode = false 
 }: EnhancedAssessmentProps) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number>>({});
   const [showFeedback, setShowFeedback] = useState(false);
   const [culturalInsights, setCulturalInsights] = useState<string[]>([]);
 
   const handleAnswerSelect = (questionId: string, answerIndex: number) => {
-    setSelectedAnswers(prev => ({
+    setSelectedAnswers((prev) => ({
       ...prev,
-      [questionId]: answerIndex
+      [questionId]: answerIndex,
     }));
-    
+
     // Show immediate cultural context if relevant
-    const question = questions.find(q => q.id === questionId);
+    const question = questions.find((q) => q.id === questionId);
     const selectedOption = question?.options[answerIndex];
-    
+
     if (selectedOption?.culturalContext) {
-      setCulturalInsights(prev => [...prev, selectedOption.culturalContext!]);
+      setCulturalInsights((prev) => [...prev, selectedOption.culturalContext!]);
     }
-    
+
     setShowFeedback(true);
   };
 
@@ -62,16 +61,15 @@ export function EnhancedAssessment({
     let correct = 0;
     let culturalEngagement = 0;
     const recommendations: string[] = [];
-    const insights: string[] = [];
 
-    questions.forEach(question => {
+    questions.forEach((question) => {
       const selectedIndex = selectedAnswers[question.id];
       if (selectedIndex !== undefined) {
         const selectedOption = question.options[selectedIndex];
         if (selectedOption.correct) {
           correct++;
         }
-        
+
         if (question.culturalRelevance === 'high') {
           culturalEngagement += selectedOption.correct ? 20 : 10;
         }
@@ -94,19 +92,27 @@ export function EnhancedAssessment({
       totalQuestions: questions.length,
       culturalEngagement: Math.min(100, culturalEngagement),
       recommendations,
-      culturalInsights: [...new Set(culturalInsights)]
+      culturalInsights: [...new Set(culturalInsights)],
     };
   };
 
   return (
     <div className="enhanced-assessment" role="main" aria-label="Interactive Assessment">
-      <div className="assessment-progress" role="progressbar" 
-           aria-valuenow={currentQuestion + 1} 
-           aria-valuemax={questions.length}>
+      <div
+        className="assessment-progress"
+        role="progressbar"
+        aria-valuenow={currentQuestion + 1}
+        aria-valuemax={questions.length}
+        aria-valuetext={`Question ${currentQuestion + 1} of ${questions.length}`}
+      >
         <div className="progress-bar">
-          <div 
-            className="progress-fill"
-            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+          <div
+            className="progress-fill progress-fill-dynamic"
+            style={
+              {
+                '--progress-width': `${((currentQuestion + 1) / questions.length) * 100}%`,
+              } as React.CSSProperties
+            }
           />
         </div>
         <span className="progress-text">
@@ -117,12 +123,11 @@ export function EnhancedAssessment({
       {currentQuestion < questions.length ? (
         <div className="question-container">
           <h2 className="question-title">
-            {culturalMode 
-              ? questions[currentQuestion].questionTe 
-              : questions[currentQuestion].question
-            }
+            {culturalMode
+              ? questions[currentQuestion].questionTe
+              : questions[currentQuestion].question}
           </h2>
-          
+
           <div className="question-options" role="radiogroup">
             {questions[currentQuestion].options.map((option, index) => (
               <button
@@ -140,23 +145,24 @@ export function EnhancedAssessment({
 
           {showFeedback && (
             <div className="feedback-section" role="region" aria-label="Answer Feedback">
-              {questions[currentQuestion].options.map((option, index) => (
-                selectedAnswers[questions[currentQuestion].id] === index && (
-                  <div 
-                    key={index} 
-                    id={`feedback-${index}`}
-                    className={`feedback ${option.correct ? 'correct' : 'incorrect'}`}
-                  >
-                    <p>{option.explanation}</p>
-                    {option.culturalContext && (
-                      <div className="cultural-context">
-                        <h4>🌿 Cultural Context</h4>
-                        <p>{option.culturalContext}</p>
-                      </div>
-                    )}
-                  </div>
-                )
-              ))}
+              {questions[currentQuestion].options.map(
+                (option, index) =>
+                  selectedAnswers[questions[currentQuestion].id] === index && (
+                    <div
+                      key={index}
+                      id={`feedback-${index}`}
+                      className={`feedback ${option.correct ? 'correct' : 'incorrect'}`}
+                    >
+                      <p>{option.explanation}</p>
+                      {option.culturalContext && (
+                        <div className="cultural-context">
+                          <h4>🌿 Cultural Context</h4>
+                          <p>{option.culturalContext}</p>
+                        </div>
+                      )}
+                    </div>
+                  ),
+              )}
             </div>
           )}
         </div>
@@ -169,7 +175,9 @@ export function EnhancedAssessment({
               onComplete(results);
               return (
                 <div>
-                  <p>Score: {results.score}/{results.totalQuestions}</p>
+                  <p>
+                    Score: {results.score}/{results.totalQuestions}
+                  </p>
                   <p>Cultural Engagement: {results.culturalEngagement}%</p>
                   <div className="recommendations">
                     <h3>Recommendations:</h3>

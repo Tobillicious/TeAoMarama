@@ -286,3 +286,12 @@
 .feature-card:nth-child(4) {
   animation-delay: 0.4s;
 }
+
+/* Add CSS custom properties for dynamic colors */
+.feature-card-dynamic {
+  border-top-color: var(--feature-color, #43e97b);
+}
+
+.feature-icon-dynamic {
+  background-color: var(--feature-color, #43e97b);
+}

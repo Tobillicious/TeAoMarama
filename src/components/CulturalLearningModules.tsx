@@ -4,718 +4,608 @@ import './CulturalLearningModules.css';
 interface CulturalModule {
   id: string;
   title: string;
-  teReoTitle: string;
+  maoriTitle: string;
+  description: string;
   category:
-    | 'te-reo'
     | 'tikanga'
-    | 'traditional-knowledge'
-    | 'cultural-arts'
-    | 'history'
-    | 'environmental';
-  level: 'beginner' | 'intermediate' | 'advanced';
-  duration: number;
-  description: string;
-  teReoDescription: string;
-  culturalElements: string[];
-  learningObjectives: string[];
-  resources: string[];
-  culturalSignificance: string;
+    | 'te-reo'
+    | 'whakapapa'
+    | 'manaakitanga'
+    | 'kaitiakitanga'
+    | 'rangatiratanga';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  duration: number; // in minutes
   completionRate: number;
-  rating: number;
-  enrolledStudents: number;
-  culturalImpact: number;
-  facilitator: string;
-  prerequisites: string[];
-  culturalProtocols: string[];
-}
-
-interface StudentProgress {
-  studentId: string;
-  studentName: string;
-  moduleId: string;
-  progress: number;
-  completedLessons: number;
-  totalLessons: number;
-  culturalEngagement: number;
-  teReoUsage: number;
-  lastActivity: Date;
-  achievements: string[];
-}
-
-interface CulturalAchievement {
-  id: string;
-  title: string;
-  teReoTitle: string;
-  description: string;
-  category: string;
-  difficulty: number;
-  culturalValue: number;
-  unlockedBy: string[];
+  culturalAccuracy: number;
+  studentEngagement: number;
+  learningOutcomes: string[];
+  culturalElements: string[];
+  activities: string[];
+  resources: string[];
+  lastUpdated: Date;
+  isActive: boolean;
 }
 
 const CulturalLearningModules: React.FC = () => {
   const [modules, setModules] = useState<CulturalModule[]>([]);
-  const [studentProgress, setStudentProgress] = useState<StudentProgress[]>([]);
-  const [achievements, setAchievements] = useState<CulturalAchievement[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedLevel, setSelectedLevel] = useState<string>('all');
-  const [isLoading, setIsLoading] = useState(true);
+  const [selectedModule, setSelectedModule] = useState<CulturalModule | null>(null);
+  const [filterCategory, setFilterCategory] = useState<
+    'all' | 'tikanga' | 'te-reo' | 'whakapapa' | 'manaakitanga' | 'kaitiakitanga' | 'rangatiratanga'
+  >('all');
+  const [filterDifficulty, setFilterDifficulty] = useState<
+    'all' | 'beginner' | 'intermediate' | 'advanced'
+  >('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   useEffect(() => {
-    // Simulate loading cultural learning data
+    generateMockModules();
+  }, []);
+
+  const generateMockModules = () => {
     const mockModules: CulturalModule[] = [
       {
-        id: '1',
-        title: 'Te Reo Māori Fundamentals',
-        teReoTitle: 'Ngā Tīmatanga o Te Reo Māori',
-        category: 'te-reo',
-        level: 'beginner',
-        duration: 60,
-        description:
-          'Learn the basics of Te Reo Māori including greetings, numbers, and common phrases.',
-        teReoDescription:
-          'Ako i ngā tīmatanga o Te Reo Māori me ngā mihi, ngā tau, me ngā kīanga noa.',
-        culturalElements: ['Greetings', 'Numbers', 'Basic Phrases', 'Pronunciation'],
-        learningObjectives: [
-          'Master basic greetings and farewells',
-          'Count from 1-100 in Te Reo Māori',
-          'Use common everyday phrases',
-          'Understand proper pronunciation',
-        ],
-        resources: [
-          'Audio recordings',
-          'Interactive exercises',
-          'Cultural context videos',
-          'Practice worksheets',
-        ],
-        culturalSignificance:
-          'Te Reo Māori is the foundation of Māori culture and identity. Learning the language connects us to our ancestors and cultural heritage.',
-        completionRate: 85,
-        rating: 4.8,
-        enrolledStudents: 45,
-        culturalImpact: 92,
-        facilitator: 'Whaea Aroha',
-        prerequisites: [],
-        culturalProtocols: [
-          'Karakia before learning',
-          'Respect for the language',
-          'Cultural sensitivity',
-        ],
-      },
-      {
-        id: '2',
-        title: 'Tikanga - Cultural Protocols',
-        teReoTitle: 'Tikanga - Ngā Kawa o Te Ao Māori',
+        id: 'tikanga-basics',
+        title: 'Tikanga Fundamentals',
+        maoriTitle: 'Ngā Tikanga Matua',
+        description: 'Learn the fundamental principles and protocols of Māori culture and customs',
         category: 'tikanga',
-        level: 'intermediate',
-        duration: 90,
-        description:
-          'Learn about Māori customs, protocols, and cultural practices that guide daily life.',
-        teReoDescription:
-          'Ako i ngā tikanga, ngā kawa, me ngā mahi ahurea o Te Ao Māori e arahi ana i te ao o ia rā.',
+        difficulty: 'beginner',
+        duration: 45,
+        completionRate: 87,
+        culturalAccuracy: 95,
+        studentEngagement: 92,
+        learningOutcomes: [
+          'Understand basic tikanga principles',
+          'Recognize cultural protocols',
+          'Apply respectful behavior in cultural contexts',
+          'Develop cultural sensitivity',
+        ],
         culturalElements: [
           'Marae protocols',
-          'Cultural ceremonies',
-          'Respect and mana',
-          'Traditional customs',
+          'Whakatau and powhiri',
+          'Cultural greetings',
+          'Respectful behavior',
         ],
-        learningObjectives: [
-          'Understand marae protocols and etiquette',
-          'Learn about cultural ceremonies and their significance',
-          'Develop respect for cultural practices',
-          'Apply tikanga in daily life',
+        activities: [
+          'Virtual marae visit',
+          'Cultural greeting practice',
+          'Protocol role-play',
+          'Reflection journal',
         ],
         resources: [
-          'Marae visits',
-          'Cultural workshops',
+          'Video tutorials',
+          'Interactive simulations',
+          'Cultural expert interviews',
           'Traditional stories',
-          'Interactive scenarios',
         ],
-        culturalSignificance:
-          'Tikanga provides the framework for how we interact with each other and our environment, maintaining cultural integrity and respect.',
+        lastUpdated: new Date(),
+        isActive: true,
+      },
+      {
+        id: 'te-reo-conversation',
+        title: 'Te Reo Conversation Skills',
+        maoriTitle: 'Ngā Pūkenga Kōrero',
+        description: 'Develop practical conversation skills in Te Reo Māori for everyday use',
+        category: 'te-reo',
+        difficulty: 'intermediate',
+        duration: 60,
         completionRate: 78,
-        rating: 4.9,
-        enrolledStudents: 32,
-        culturalImpact: 96,
-        facilitator: 'Kaumātua Hone',
-        prerequisites: ['Basic Te Reo Māori understanding'],
-        culturalProtocols: ['Manaakitanga', 'Whanaungatanga', 'Kaitiakitanga', 'Rangatiratanga'],
-      },
-      {
-        id: '3',
-        title: 'Traditional Māori Arts',
-        teReoTitle: 'Ngā Toi Māori',
-        category: 'cultural-arts',
-        level: 'intermediate',
-        duration: 120,
-        description:
-          'Explore traditional Māori arts including weaving, carving, and traditional patterns.',
-        teReoDescription:
-          'Tūhura i ngā toi Māori tuku iho pērā i te raranga, te whakairo, me ngā tauira tuku iho.',
+        culturalAccuracy: 98,
+        studentEngagement: 89,
+        learningOutcomes: [
+          'Hold basic conversations in Te Reo',
+          'Use appropriate greetings and farewells',
+          'Ask and answer simple questions',
+          'Build vocabulary and confidence',
+        ],
         culturalElements: [
-          'Weaving techniques',
-          'Carving patterns',
-          'Traditional designs',
-          'Cultural symbolism',
-        ],
-        learningObjectives: [
-          'Learn basic weaving techniques',
-          'Understand carving patterns and meanings',
-          'Create traditional designs',
-          'Connect with cultural heritage through art',
-        ],
-        resources: [
-          'Traditional materials',
-          'Expert demonstrations',
-          'Cultural stories',
-          'Hands-on workshops',
-        ],
-        culturalSignificance:
-          'Traditional arts carry the stories, knowledge, and identity of our ancestors, preserving cultural heritage for future generations.',
-        completionRate: 72,
-        rating: 4.7,
-        enrolledStudents: 28,
-        culturalImpact: 94,
-        facilitator: 'Toi Artist Mana',
-        prerequisites: ['Cultural appreciation', 'Basic manual skills'],
-        culturalProtocols: [
-          'Respect for materials',
-          'Cultural permission',
-          'Traditional techniques',
-          'Story sharing',
-        ],
-      },
-      {
-        id: '4',
-        title: 'Māori History and Whakapapa',
-        teReoTitle: 'Te Hītori Māori me Te Whakapapa',
-        category: 'history',
-        level: 'advanced',
-        duration: 150,
-        description:
-          'Explore Māori history, genealogy, and the importance of whakapapa in cultural identity.',
-        teReoDescription:
-          'Tūhura i te hītori Māori, te whakapapa, me te hiranga o te whakapapa ki te tuakiri ahurea.',
-        culturalElements: ['Whakapapa', 'Tribal history', 'Migration stories', 'Cultural identity'],
-        learningObjectives: [
-          'Understand the concept of whakapapa',
-          'Learn about tribal histories and migrations',
-          'Explore cultural identity through genealogy',
-          'Connect personal history to cultural heritage',
-        ],
-        resources: [
-          'Genealogical records',
-          'Historical documents',
-          'Oral histories',
-          'Cultural maps',
-        ],
-        culturalSignificance:
-          'Whakapapa connects us to our ancestors, our land, and our cultural identity, providing a foundation for understanding who we are.',
-        completionRate: 68,
-        rating: 4.9,
-        enrolledStudents: 22,
-        culturalImpact: 98,
-        facilitator: 'Kaumātua Tama',
-        prerequisites: ['Intermediate Te Reo Māori', 'Cultural understanding'],
-        culturalProtocols: [
-          'Sacred knowledge protocols',
-          'Respect for ancestors',
-          'Cultural permission',
-          'Storytelling protocols',
-        ],
-      },
-      {
-        id: '5',
-        title: 'Environmental Kaitiakitanga',
-        teReoTitle: 'Te Kaitiakitanga o Te Taiao',
-        category: 'environmental',
-        level: 'intermediate',
-        duration: 100,
-        description: 'Learn about Māori environmental stewardship and sustainable practices.',
-        teReoDescription: 'Ako i te kaitiakitanga Māori me ngā mahi taiao e mau tonu ana.',
-        culturalElements: [
-          'Environmental care',
-          'Sustainable practices',
-          'Traditional knowledge',
-          'Land connection',
-        ],
-        learningObjectives: [
-          'Understand kaitiakitanga principles',
-          'Learn sustainable environmental practices',
-          'Connect with traditional environmental knowledge',
-          'Apply cultural environmental values',
-        ],
-        resources: [
-          'Field trips',
-          'Traditional knowledge sharing',
-          'Environmental projects',
-          'Cultural workshops',
-        ],
-        culturalSignificance:
-          'Kaitiakitanga embodies our responsibility to care for the environment, ensuring sustainability for future generations.',
-        completionRate: 81,
-        rating: 4.6,
-        enrolledStudents: 38,
-        culturalImpact: 89,
-        facilitator: 'Kaitiaki Aroha',
-        prerequisites: ['Basic cultural understanding'],
-        culturalProtocols: [
-          'Environmental respect',
-          'Sustainable practices',
-          'Cultural permission',
-          'Land connection',
-        ],
-      },
-      {
-        id: '6',
-        title: 'Advanced Te Reo Māori',
-        teReoTitle: 'Te Reo Māori Mātanga',
-        category: 'te-reo',
-        level: 'advanced',
-        duration: 180,
-        description:
-          'Advanced Te Reo Māori including complex grammar, traditional stories, and cultural expressions.',
-        teReoDescription:
-          'Te Reo Māori mātanga me te tātai reo, ngā kōrero tuku iho, me ngā kīanga ahurea.',
-        culturalElements: [
-          'Advanced grammar',
-          'Traditional stories',
+          'Greetings and farewells',
+          'Family relationships',
+          'Daily activities',
           'Cultural expressions',
-          'Poetry and song',
         ],
-        learningObjectives: [
-          'Master advanced Te Reo Māori grammar',
-          'Understand and tell traditional stories',
-          'Use cultural expressions and idioms',
-          'Appreciate Māori poetry and song',
+        activities: [
+          'Conversation practice',
+          'Role-playing scenarios',
+          'Vocabulary building games',
+          'Cultural immersion exercises',
         ],
         resources: [
-          'Traditional texts',
-          'Advanced exercises',
-          'Cultural immersion',
-          'Storytelling workshops',
+          'Audio pronunciation guides',
+          'Interactive conversation tools',
+          'Native speaker recordings',
+          'Cultural context videos',
         ],
-        culturalSignificance:
-          'Advanced Te Reo Māori connects us deeply to our cultural heritage and traditional knowledge systems.',
-        completionRate: 65,
-        rating: 4.8,
-        enrolledStudents: 18,
-        culturalImpact: 95,
-        facilitator: 'Kaiako Hine',
-        prerequisites: ['Intermediate Te Reo Māori', 'Cultural understanding'],
-        culturalProtocols: [
-          'Language respect',
-          'Cultural sensitivity',
-          'Traditional knowledge protocols',
-          'Storytelling respect',
+        lastUpdated: new Date(Date.now() - 86400000),
+        isActive: true,
+      },
+      {
+        id: 'whakapapa-exploration',
+        title: 'Whakapapa Exploration',
+        maoriTitle: 'Te Rangahau Whakapapa',
+        description: 'Discover the importance of genealogy and family connections in Māori culture',
+        category: 'whakapapa',
+        difficulty: 'intermediate',
+        duration: 90,
+        completionRate: 82,
+        culturalAccuracy: 96,
+        studentEngagement: 85,
+        learningOutcomes: [
+          'Understand whakapapa concepts',
+          'Create personal family tree',
+          'Connect to ancestral knowledge',
+          'Appreciate cultural heritage',
         ],
-      },
-    ];
-
-    const mockStudentProgress: StudentProgress[] = [
-      {
-        studentId: '1',
-        studentName: 'Aroha Smith',
-        moduleId: '1',
-        progress: 85,
-        completedLessons: 17,
-        totalLessons: 20,
-        culturalEngagement: 92,
-        teReoUsage: 88,
-        lastActivity: new Date(),
-        achievements: ['First Greeting', 'Number Master', 'Cultural Respect'],
-      },
-      {
-        studentId: '2',
-        studentName: 'Kai Johnson',
-        moduleId: '2',
-        progress: 78,
-        completedLessons: 14,
-        totalLessons: 18,
-        culturalEngagement: 87,
-        teReoUsage: 75,
-        lastActivity: new Date(Date.now() - 86400000),
-        achievements: ['Marae Protocol', 'Cultural Understanding'],
+        culturalElements: [
+          'Family genealogy',
+          'Ancestral connections',
+          'Cultural inheritance',
+          'Identity formation',
+        ],
+        activities: [
+          'Family tree creation',
+          'Ancestral story research',
+          'Cultural identity reflection',
+          'Community connection projects',
+        ],
+        resources: [
+          'Genealogy databases',
+          'Family history guides',
+          'Cultural expert consultations',
+          'Historical documents',
+        ],
+        lastUpdated: new Date(Date.now() - 172800000),
+        isActive: true,
       },
       {
-        studentId: '3',
-        studentName: 'Mana Williams',
-        moduleId: '3',
-        progress: 72,
-        completedLessons: 12,
-        totalLessons: 16,
-        culturalEngagement: 94,
-        teReoUsage: 82,
-        lastActivity: new Date(),
-        achievements: ['Weaving Beginner', 'Pattern Recognition', 'Cultural Artist'],
-      },
-    ];
-
-    const mockAchievements: CulturalAchievement[] = [
-      {
-        id: '1',
-        title: 'Te Reo Pioneer',
-        teReoTitle: 'Te Kaitiaki Reo',
-        description: 'Completed basic Te Reo Māori module with excellence',
-        category: 'te-reo',
-        difficulty: 1,
-        culturalValue: 85,
-        unlockedBy: ['Te Reo Māori Fundamentals'],
-      },
-      {
-        id: '2',
-        title: 'Tikanga Guardian',
-        teReoTitle: 'Te Kaitiaki Tikanga',
-        description: 'Demonstrated deep understanding of cultural protocols',
-        category: 'tikanga',
-        difficulty: 2,
-        culturalValue: 92,
-        unlockedBy: ['Tikanga - Cultural Protocols'],
-      },
-      {
-        id: '3',
-        title: 'Traditional Artist',
-        teReoTitle: 'Te Kaiwhakairo',
-        description: 'Created traditional Māori art with cultural authenticity',
-        category: 'cultural-arts',
-        difficulty: 2,
-        culturalValue: 88,
-        unlockedBy: ['Traditional Māori Arts'],
+        id: 'manaakitanga-practice',
+        title: 'Manaakitanga in Practice',
+        maoriTitle: 'Te Mahi Manaakitanga',
+        description: 'Learn and practice the art of hospitality, kindness, and caring for others',
+        category: 'manaakitanga',
+        difficulty: 'beginner',
+        duration: 40,
+        completionRate: 91,
+        culturalAccuracy: 94,
+        studentEngagement: 88,
+        learningOutcomes: [
+          'Practice hospitality skills',
+          'Show kindness and care',
+          'Create welcoming environments',
+          'Build community connections',
+        ],
+        culturalElements: [
+          'Hospitality protocols',
+          'Caring for visitors',
+          'Community support',
+          'Kindness practices',
+        ],
+        activities: [
+          'Hospitality role-play',
+          'Community service projects',
+          'Kindness challenges',
+          'Cultural sharing events',
+        ],
+        resources: [
+          'Hospitality guides',
+          'Community service resources',
+          'Cultural sharing templates',
+          'Reflection tools',
+        ],
+        lastUpdated: new Date(Date.now() - 259200000),
+        isActive: true,
       },
       {
-        id: '4',
-        title: 'Whakapapa Keeper',
-        teReoTitle: 'Te Kaitiaki Whakapapa',
-        description: 'Connected deeply with ancestral knowledge and genealogy',
-        category: 'history',
-        difficulty: 3,
-        culturalValue: 95,
-        unlockedBy: ['Māori History and Whakapapa'],
+        id: 'kaitiakitanga-stewardship',
+        title: 'Kaitiakitanga - Environmental Stewardship',
+        maoriTitle: 'Te Kaitiakitanga o te Taiao',
+        description: 'Understand and practice environmental guardianship and sustainability',
+        category: 'kaitiakitanga',
+        difficulty: 'advanced',
+        duration: 75,
+        completionRate: 76,
+        culturalAccuracy: 97,
+        studentEngagement: 83,
+        learningOutcomes: [
+          'Understand environmental guardianship',
+          'Practice sustainable living',
+          'Connect with natural world',
+          'Protect cultural resources',
+        ],
+        culturalElements: [
+          'Environmental protection',
+          'Sustainable practices',
+          'Natural resource management',
+          'Cultural preservation',
+        ],
+        activities: [
+          'Environmental projects',
+          'Sustainability challenges',
+          'Nature connection exercises',
+          'Cultural resource mapping',
+        ],
+        resources: [
+          'Environmental guides',
+          'Sustainability resources',
+          'Cultural preservation tools',
+          'Community project templates',
+        ],
+        lastUpdated: new Date(Date.now() - 345600000),
+        isActive: true,
       },
       {
-        id: '5',
-        title: 'Environmental Guardian',
-        teReoTitle: 'Te Kaitiaki Taiao',
-        description: 'Demonstrated commitment to environmental stewardship',
-        category: 'environmental',
-        difficulty: 2,
-        culturalValue: 90,
-        unlockedBy: ['Environmental Kaitiakitanga'],
+        id: 'rangatiratanga-leadership',
+        title: 'Rangatiratanga - Leadership and Self-Determination',
+        maoriTitle: 'Te Rangatiratanga me te Mana Motuhake',
+        description: 'Develop leadership skills and understanding of self-determination principles',
+        category: 'rangatiratanga',
+        difficulty: 'advanced',
+        duration: 80,
+        completionRate: 71,
+        culturalAccuracy: 93,
+        studentEngagement: 87,
+        learningOutcomes: [
+          'Develop leadership qualities',
+          'Understand self-determination',
+          'Build confidence and autonomy',
+          'Practice cultural leadership',
+        ],
+        culturalElements: [
+          'Leadership principles',
+          'Self-determination',
+          'Cultural autonomy',
+          'Community leadership',
+        ],
+        activities: [
+          'Leadership development',
+          'Cultural leadership projects',
+          'Community initiatives',
+          'Self-reflection exercises',
+        ],
+        resources: [
+          'Leadership guides',
+          'Cultural leadership models',
+          'Community project resources',
+          'Reflection and assessment tools',
+        ],
+        lastUpdated: new Date(Date.now() - 432000000),
+        isActive: true,
       },
     ];
 
     setModules(mockModules);
-    setStudentProgress(mockStudentProgress);
-    setAchievements(mockAchievements);
-    setIsLoading(false);
-  }, []);
+  };
+
+  const getFilteredModules = () => {
+    let filtered = [...modules];
+
+    // Apply category filter
+    if (filterCategory !== 'all') {
+      filtered = filtered.filter((module) => module.category === filterCategory);
+    }
+
+    // Apply difficulty filter
+    if (filterDifficulty !== 'all') {
+      filtered = filtered.filter((module) => module.difficulty === filterDifficulty);
+    }
+
+    // Apply search filter
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (module) =>
+          module.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          module.maoriTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          module.description.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    }
+
+    return filtered;
+  };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
+      case 'tikanga':
+        return '🏛️';
       case 'te-reo':
         return '🗣️';
-      case 'tikanga':
-        return '📜';
-      case 'traditional-knowledge':
+      case 'whakapapa':
+        return '🌳';
+      case 'manaakitanga':
+        return '🤝';
+      case 'kaitiakitanga':
         return '🌿';
-      case 'cultural-arts':
-        return '🎨';
-      case 'history':
-        return '📚';
-      case 'environmental':
-        return '🌍';
+      case 'rangatiratanga':
+        return '👑';
       default:
-        return '🌟';
+        return '📚';
     }
   };
 
-  const getLevelColor = (level: string) => {
-    switch (level) {
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
       case 'beginner':
         return '#10b981';
       case 'intermediate':
-        return '#3b82f6';
+        return '#f59e0b';
       case 'advanced':
-        return '#8b5cf6';
+        return '#ef4444';
       default:
         return '#6b7280';
     }
   };
 
-  const getProgressColor = (progress: number) => {
-    if (progress >= 90) return '#10b981';
-    if (progress >= 80) return '#3b82f6';
-    if (progress >= 70) return '#f59e0b';
-    return '#ef4444';
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'tikanga':
+        return '#8b5cf6';
+      case 'te-reo':
+        return '#3b82f6';
+      case 'whakapapa':
+        return '#10b981';
+      case 'manaakitanga':
+        return '#f59e0b';
+      case 'kaitiakitanga':
+        return '#059669';
+      case 'rangatiratanga':
+        return '#dc2626';
+      default:
+        return '#6b7280';
+    }
   };
-
-  const filteredModules = modules.filter((module) => {
-    const categoryMatch = selectedCategory === 'all' || module.category === selectedCategory;
-    const levelMatch = selectedLevel === 'all' || module.level === selectedLevel;
-    return categoryMatch && levelMatch;
-  });
-
-  if (isLoading) {
-    return (
-      <div className="cultural-learning-modules">
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <p>Loading Cultural Learning Modules...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="cultural-learning-modules">
-      <div className="modules-header">
-        <h1>🌿 Cultural Learning Modules - Ngā Akoranga Ahurea</h1>
-        <p>Comprehensive Te Reo Māori and cultural learning experiences</p>
-      </div>
-
-      <div className="modules-controls">
-        <div className="filter-section">
-          <div className="filter-group">
-            <label>Category:</label>
-            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-              <option value="all">All Categories</option>
-              <option value="te-reo">Te Reo Māori</option>
-              <option value="tikanga">Tikanga</option>
-              <option value="traditional-knowledge">Traditional Knowledge</option>
-              <option value="cultural-arts">Cultural Arts</option>
-              <option value="history">History</option>
-              <option value="environmental">Environmental</option>
-            </select>
-          </div>
-          <div className="filter-group">
-            <label>Level:</label>
-            <select value={selectedLevel} onChange={(e) => setSelectedLevel(e.target.value)}>
-              <option value="all">All Levels</option>
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-            </select>
-          </div>
+      <div className="modules-container">
+        <div className="modules-header">
+          <h1>🌿 Cultural Learning Modules</h1>
+          <p>
+            Interactive cultural education with Te Ao Māori integration and modern learning
+            approaches
+          </p>
         </div>
-      </div>
 
-      <div className="modules-overview">
-        <div className="overview-stats">
-          <div className="stat-card">
-            <h3>Total Modules</h3>
-            <span className="stat-value">{modules.length}</span>
+        {/* Filters and Controls */}
+        <div className="modules-controls">
+          <div className="search-section">
+            <input
+              type="text"
+              placeholder="Search modules..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+              aria-label="Search cultural learning modules"
+            />
           </div>
-          <div className="stat-card">
-            <h3>Active Students</h3>
-            <span className="stat-value">{studentProgress.length}</span>
-          </div>
-          <div className="stat-card">
-            <h3>Average Completion</h3>
-            <span className="stat-value">
-              {Math.round(
-                modules.reduce((sum, module) => sum + module.completionRate, 0) / modules.length,
-              )}
-              %
-            </span>
-          </div>
-          <div className="stat-card">
-            <h3>Cultural Impact</h3>
-            <span className="stat-value">
-              {Math.round(
-                modules.reduce((sum, module) => sum + module.culturalImpact, 0) / modules.length,
-              )}
-              %
-            </span>
-          </div>
-        </div>
-      </div>
 
-      <div className="modules-grid">
-        {filteredModules.map((module) => (
-          <div key={module.id} className="module-card">
-            <div className="module-header">
-              <span className="category-icon">{getCategoryIcon(module.category)}</span>
-              <h3>{module.title}</h3>
-              <span className="te-reo-title">{module.teReoTitle}</span>
-              <div className="module-badges">
-                <span
-                  className="level-badge"
-                  style={{ backgroundColor: getLevelColor(module.level) }}
-                >
-                  {module.level.toUpperCase()}
-                </span>
-                <span className="duration-badge">{module.duration} min</span>
-              </div>
+          <div className="filter-section">
+            <div className="filter-group">
+              <label htmlFor="category-filter">Category:</label>
+              <select
+                id="category-filter"
+                value={filterCategory}
+                onChange={(e) => setFilterCategory(e.target.value as any)}
+                aria-label="Filter by cultural category"
+              >
+                <option value="all">All Categories</option>
+                <option value="tikanga">Tikanga (Customs)</option>
+                <option value="te-reo">Te Reo (Language)</option>
+                <option value="whakapapa">Whakapapa (Genealogy)</option>
+                <option value="manaakitanga">Manaakitanga (Hospitality)</option>
+                <option value="kaitiakitanga">Kaitiakitanga (Stewardship)</option>
+                <option value="rangatiratanga">Rangatiratanga (Leadership)</option>
+              </select>
             </div>
 
-            <div className="module-content">
-              <div className="module-description">
-                <p>{module.description}</p>
-                <p className="te-reo-description">{module.teReoDescription}</p>
+            <div className="filter-group">
+              <label htmlFor="difficulty-filter">Difficulty:</label>
+              <select
+                id="difficulty-filter"
+                value={filterDifficulty}
+                onChange={(e) => setFilterDifficulty(e.target.value as any)}
+                aria-label="Filter by difficulty level"
+              >
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="view-toggle">
+            <button
+              className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
+              onClick={() => setViewMode('grid')}
+              aria-label="Grid view"
+            >
+              📊 Grid
+            </button>
+            <button
+              className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
+              onClick={() => setViewMode('list')}
+              aria-label="List view"
+            >
+              📋 List
+            </button>
+          </div>
+        </div>
+
+        {/* Modules Display */}
+        <div className={`modules-grid ${viewMode === 'list' ? 'list-view' : ''}`}>
+          {getFilteredModules().map((module) => (
+            <div key={module.id} className="module-card" onClick={() => setSelectedModule(module)}>
+              <div className="module-header">
+                <div className="module-icon">{getCategoryIcon(module.category)}</div>
+                <div className="module-info">
+                  <h3>{module.title}</h3>
+                  <h4 className="maori-title">{module.maoriTitle}</h4>
+                  <div className="module-meta">
+                    <span
+                      className="category-badge"
+                      style={{ backgroundColor: getCategoryColor(module.category) }}
+                    >
+                      {module.category}
+                    </span>
+                    <span
+                      className="difficulty-badge"
+                      style={{ backgroundColor: getDifficultyColor(module.difficulty) }}
+                    >
+                      {module.difficulty}
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <div className="module-metrics">
-                <div className="metric-row">
-                  <span>Completion Rate:</span>
-                  <span style={{ color: getProgressColor(module.completionRate) }}>
-                    {module.completionRate}%
-                  </span>
-                </div>
-                <div className="metric-row">
-                  <span>Rating:</span>
-                  <span>⭐ {module.rating}/5</span>
-                </div>
-                <div className="metric-row">
-                  <span>Enrolled Students:</span>
-                  <span>{module.enrolledStudents}</span>
-                </div>
-                <div className="metric-row">
-                  <span>Cultural Impact:</span>
-                  <span style={{ color: getProgressColor(module.culturalImpact) }}>
-                    {module.culturalImpact}%
-                  </span>
-                </div>
-              </div>
+              <div className="module-content">
+                <p className="module-description">{module.description}</p>
 
-              <div className="module-details">
-                <div className="detail-section">
-                  <h4>Learning Objectives</h4>
+                <div className="module-stats">
+                  <div className="stat-item">
+                    <span className="stat-label">Duration</span>
+                    <span className="stat-value">{module.duration} min</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">Completion</span>
+                    <span className="stat-value">{module.completionRate}%</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">Engagement</span>
+                    <span className="stat-value">{module.studentEngagement}%</span>
+                  </div>
+                </div>
+
+                <div className="module-outcomes">
+                  <h5>Learning Outcomes:</h5>
                   <ul>
-                    {module.learningObjectives.map((objective, index) => (
-                      <li key={index}>{objective}</li>
+                    {module.learningOutcomes.slice(0, 2).map((outcome, index) => (
+                      <li key={index}>{outcome}</li>
                     ))}
+                    {module.learningOutcomes.length > 2 && (
+                      <li className="more-outcomes">+{module.learningOutcomes.length - 2} more</li>
+                    )}
                   </ul>
                 </div>
 
-                <div className="detail-section">
-                  <h4>Cultural Elements</h4>
-                  <div className="cultural-elements">
-                    {module.culturalElements.map((element) => (
-                      <span key={element} className="cultural-element-tag">
-                        {element}
+                <div className="module-activities">
+                  <h5>Activities:</h5>
+                  <div className="activity-tags">
+                    {module.activities.slice(0, 3).map((activity, index) => (
+                      <span key={index} className="activity-tag">
+                        {activity}
                       </span>
                     ))}
-                  </div>
-                </div>
-
-                <div className="detail-section">
-                  <h4>Cultural Significance</h4>
-                  <p className="cultural-significance">{module.culturalSignificance}</p>
-                </div>
-
-                <div className="detail-section">
-                  <h4>Cultural Protocols</h4>
-                  <div className="cultural-protocols">
-                    {module.culturalProtocols.map((protocol) => (
-                      <span key={protocol} className="protocol-tag">
-                        {protocol}
-                      </span>
-                    ))}
+                    {module.activities.length > 3 && (
+                      <span className="more-activities">+{module.activities.length - 3}</span>
+                    )}
                   </div>
                 </div>
               </div>
 
-              <div className="module-actions">
-                <button className="action-btn primary">Enroll Now</button>
-                <button className="action-btn secondary">View Details</button>
-                <button className="action-btn secondary">Preview Module</button>
-              </div>
-
-              <div className="module-facilitator">
-                <span>Facilitated by: {module.facilitator}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="student-progress-section">
-        <h2>👥 Student Progress</h2>
-        <div className="progress-grid">
-          {studentProgress.map((progress) => {
-            const module = modules.find((m) => m.id === progress.moduleId);
-            return (
-              <div key={progress.studentId} className="progress-card">
-                <div className="progress-header">
-                  <h4>{progress.studentName}</h4>
-                  <span className="module-name">{module?.title}</span>
-                </div>
-                <div className="progress-metrics">
-                  <div className="progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{
-                        width: `${progress.progress}%`,
-                        backgroundColor: getProgressColor(progress.progress),
-                      }}
-                    ></div>
-                  </div>
-                  <span className="progress-text">{progress.progress}% Complete</span>
-                </div>
-                <div className="progress-details">
-                  <div className="detail-row">
-                    <span>Lessons:</span>
-                    <span>
-                      {progress.completedLessons}/{progress.totalLessons}
-                    </span>
-                  </div>
-                  <div className="detail-row">
-                    <span>Cultural Engagement:</span>
-                    <span style={{ color: getProgressColor(progress.culturalEngagement) }}>
-                      {progress.culturalEngagement}%
-                    </span>
-                  </div>
-                  <div className="detail-row">
-                    <span>Te Reo Usage:</span>
-                    <span style={{ color: getProgressColor(progress.teReoUsage) }}>
-                      {progress.teReoUsage}%
-                    </span>
-                  </div>
-                </div>
-                <div className="achievements-section">
-                  <h5>Achievements:</h5>
-                  <div className="achievements-list">
-                    {progress.achievements.map((achievement) => (
-                      <span key={achievement} className="achievement-tag">
-                        {achievement}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="achievements-section">
-        <h2>🏆 Cultural Achievements</h2>
-        <div className="achievements-grid">
-          {achievements.map((achievement) => (
-            <div key={achievement.id} className="achievement-card">
-              <div className="achievement-header">
-                <h4>{achievement.title}</h4>
-                <span className="te-reo-title">{achievement.teReoTitle}</span>
-              </div>
-              <p className="achievement-description">{achievement.description}</p>
-              <div className="achievement-metrics">
-                <div className="metric">
-                  <span>Difficulty:</span>
-                  <span className="difficulty-stars">{'⭐'.repeat(achievement.difficulty)}</span>
-                </div>
-                <div className="metric">
-                  <span>Cultural Value:</span>
-                  <span style={{ color: getProgressColor(achievement.culturalValue) }}>
-                    {achievement.culturalValue}%
-                  </span>
-                </div>
-              </div>
-              <div className="achievement-category">
-                <span className="category-tag">{achievement.category}</span>
+              <div className="module-footer">
+                <span className="last-updated">
+                  Updated: {module.lastUpdated.toLocaleDateString()}
+                </span>
+                <button className="start-module-btn">Start Module</button>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Module Detail Modal */}
+        {selectedModule && (
+          <div className="module-modal-overlay" onClick={() => setSelectedModule(null)}>
+            <div className="module-modal" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <div className="modal-title">
+                  <span className="modal-icon">{getCategoryIcon(selectedModule.category)}</span>
+                  <div>
+                    <h2>{selectedModule.title}</h2>
+                    <h3 className="modal-maori-title">{selectedModule.maoriTitle}</h3>
+                  </div>
+                </div>
+                <button
+                  className="close-modal"
+                  onClick={() => setSelectedModule(null)}
+                  aria-label="Close modal"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="modal-content">
+                <div className="modal-description">
+                  <p>{selectedModule.description}</p>
+                </div>
+
+                <div className="modal-stats">
+                  <div className="stat-card">
+                    <span className="stat-number">{selectedModule.duration}</span>
+                    <span className="stat-label">Minutes</span>
+                  </div>
+                  <div className="stat-card">
+                    <span className="stat-number">{selectedModule.completionRate}%</span>
+                    <span className="stat-label">Completion Rate</span>
+                  </div>
+                  <div className="stat-card">
+                    <span className="stat-number">{selectedModule.culturalAccuracy}%</span>
+                    <span className="stat-label">Cultural Accuracy</span>
+                  </div>
+                  <div className="stat-card">
+                    <span className="stat-number">{selectedModule.studentEngagement}%</span>
+                    <span className="stat-label">Student Engagement</span>
+                  </div>
+                </div>
+
+                <div className="modal-sections">
+                  <div className="section">
+                    <h4>Learning Outcomes</h4>
+                    <ul>
+                      {selectedModule.learningOutcomes.map((outcome, index) => (
+                        <li key={index}>{outcome}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="section">
+                    <h4>Cultural Elements</h4>
+                    <div className="element-tags">
+                      {selectedModule.culturalElements.map((element, index) => (
+                        <span key={index} className="element-tag">
+                          {element}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="section">
+                    <h4>Activities</h4>
+                    <ul>
+                      {selectedModule.activities.map((activity, index) => (
+                        <li key={index}>{activity}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="section">
+                    <h4>Resources</h4>
+                    <ul>
+                      {selectedModule.resources.map((resource, index) => (
+                        <li key={index}>{resource}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="modal-actions">
+                  <button className="primary-btn">Start Learning</button>
+                  <button className="secondary-btn">Preview Module</button>
+                  <button className="secondary-btn">Download Resources</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
