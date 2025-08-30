@@ -10,7 +10,7 @@
 
 import { execSync } from 'child_process';
 import * as fs from 'fs';
-import * as path from 'path';
+
 
 interface CulturalAssessment {
   overallRating: 'EXCELLENT' | 'GOOD' | 'REQUIRES_REVIEW' | 'CULTURAL_RISK' | 'BLOCKED';
@@ -127,7 +127,7 @@ class CulturalImpactAssessor {
           // Command failed, continue
         }
       }
-    } catch (error) {
+    } catch {
       console.warn('Warning: Could not get changed files for cultural assessment');
     }
 

@@ -8,7 +8,7 @@
  * Combines technical, cultural, and educational assessments for wise decision-making
  */
 
-import { execSync } from 'child_process';
+
 import { PredictiveDeploymentAgent } from './predictive-deployment-agent.js';
 import { CulturalImpactAssessor } from './cultural-impact-assessor.js';
 import { EducationOutcomeTracker } from './education-outcome-tracker.js';

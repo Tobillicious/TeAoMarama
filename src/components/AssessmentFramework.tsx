@@ -79,11 +79,11 @@ interface RealTimeAnalytics {
 
 const AssessmentFramework: React.FC = () => {
   const [assessments, setAssessments] = useState<Assessment[]>([]);
-  const [students, setStudents] = useState<Student[]>([]);
+  // const [students, setStudents] = useState<Student[]>([]);
   const [selectedView, setSelectedView] = useState<
     'create' | 'manage' | 'grade' | 'analytics' | 'cultural' | 'ai-assistant'
   >('create');
-  const [selectedAssessment, setSelectedAssessment] = useState<Assessment | null>(null);
+  // const [selectedAssessment, setSelectedAssessment] = useState<Assessment | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   // 🧠 Superintelligence State
@@ -97,7 +97,7 @@ const AssessmentFramework: React.FC = () => {
     assessmentsGraded: 156,
   });
 
-  const [culturalMetrics, setCulturalMetrics] = useState<CulturalComplianceMetrics>({
+  const [culturalMetrics, _setCulturalMetrics] = useState<CulturalComplianceMetrics>({
     teReoIntegration: 85,
     tikangaCompliance: 92,
     culturalRepresentation: 78,
@@ -105,7 +105,7 @@ const AssessmentFramework: React.FC = () => {
     overallCulturalScore: 85.8,
   });
 
-  const [realTimeAnalytics, setRealTimeAnalytics] = useState<RealTimeAnalytics>({
+  const [realTimeAnalytics, _setRealTimeAnalytics] = useState<RealTimeAnalytics>({
     totalAssessments: 24,
     activeAssessments: 8,
     averageScore: 87,

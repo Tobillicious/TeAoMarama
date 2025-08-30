@@ -266,8 +266,8 @@ Advanced Pedagogical Features:
   };
 
   const generateAssessments = (
-    template: LessonTemplate | undefined,
-    customSubject: string,
+    _template: LessonTemplate | undefined,
+    _customSubject: string,
   ): string[] => {
     return [
       'Formative Assessment: Cultural Understanding Check',
@@ -281,8 +281,8 @@ Advanced Pedagogical Features:
   };
 
   const generateResources = (
-    template: LessonTemplate | undefined,
-    customSubject: string,
+    _template: LessonTemplate | undefined,
+    _customSubject: string,
   ): string[] => {
     return [
       'Digital Learning Platform Access',
@@ -296,8 +296,8 @@ Advanced Pedagogical Features:
   };
 
   const generateLearningOutcomes = (
-    template: LessonTemplate | undefined,
-    customSubject: string,
+    _template: LessonTemplate | undefined,
+    _customSubject: string,
   ): string[] => {
     return [
       'Demonstrate cultural understanding and respect',
@@ -311,8 +311,8 @@ Advanced Pedagogical Features:
   };
 
   const generateTeReoIntegration = (
-    template: LessonTemplate | undefined,
-    customSubject: string,
+    _template: LessonTemplate | undefined,
+    _customSubject: string,
   ): string[] => {
     return [
       'Basic greetings and introductions',
@@ -325,8 +325,8 @@ Advanced Pedagogical Features:
   };
 
   const generateTikangaElements = (
-    template: LessonTemplate | undefined,
-    customSubject: string,
+    _template: LessonTemplate | undefined,
+    _customSubject: string,
   ): string[] => {
     return [
       'Respect for cultural protocols',
@@ -423,7 +423,7 @@ Advanced Pedagogical Features:
                 <label>Difficulty:</label>
                 <select
                   value={customDifficulty}
-                  onChange={(e) => setCustomDifficulty(e.target.value as any)}
+                  onChange={(e) => setCustomDifficulty(e.target.value as 'beginner' | 'intermediate' | 'advanced')}
                   aria-label="Select difficulty level"
                 >
                   <option value="beginner">Beginner</option>

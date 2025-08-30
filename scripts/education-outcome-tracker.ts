@@ -10,7 +10,7 @@
 
 import { execSync } from 'child_process';
 import * as fs from 'fs';
-import * as path from 'path';
+
 
 interface EducationalMetrics {
   learningOutcomeScore: number; // 0-100
@@ -125,7 +125,7 @@ class EducationOutcomeTracker {
           // Command failed, continue
         }
       }
-    } catch (error) {
+    } catch {
       console.warn('Warning: Could not get changed files for educational assessment');
     }
 

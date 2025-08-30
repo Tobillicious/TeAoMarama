@@ -83,7 +83,7 @@ class IntelligentStagingSystem {
           files.push(file);
         }
       });
-    } catch (error) {
+    } catch {
       console.warn('Warning: Could not get unstaged files');
     }
 
@@ -313,7 +313,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>`;
     try {
       execSync(`git commit -m "${fullMessage.replace(/"/g, '\\"')}"`, { stdio: 'inherit' });
       console.log('✅ Intelligent commit created successfully!');
-    } catch (error) {
+    } catch {
       console.log('⚠️  Note: Files staged but commit may require manual completion');
       console.log('Suggested commit message:');
       console.log(fullMessage);

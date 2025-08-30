@@ -248,7 +248,7 @@ class DeploymentProviderMigration {
       const fs = await import('fs');
       fs.writeFileSync('/Users/admin/gemini-react-app/vercel.json', JSON.stringify(vercelConfig, null, 2));
       console.log('✅ vercel.json created successfully');
-    } catch (error) {
+    } catch {
       console.log('⚠️  Note: vercel.json template prepared (manual creation needed)');
       console.log(JSON.stringify(vercelConfig, null, 2));
     }
@@ -256,7 +256,7 @@ class DeploymentProviderMigration {
   }
 
   private async generateGitHubPagesConfig(): Promise<void> {
-    const githubWorkflow = `name: Deploy to GitHub Pages
+    /* const githubWorkflow = `name: Deploy to GitHub Pages
 
 on:
   push:
@@ -288,7 +288,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: \${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist`;
+        publish_dir: ./dist`; */
 
     console.log('📄 GitHub Pages workflow configuration:');
     console.log('   File: .github/workflows/deploy.yml');

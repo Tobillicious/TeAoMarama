@@ -10,7 +10,7 @@
 
 import { execSync } from 'child_process';
 import * as fs from 'fs';
-import * as path from 'path';
+
 
 interface PredictionResult {
   riskLevel: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
@@ -231,7 +231,7 @@ class PredictiveDeploymentAgent {
           result.issues.push('⚙️  Build scripts modified - verify deployment process');
         }
       }
-    } catch (error) {
+    } catch {
       // No package.json changes or file doesn't exist
     }
   }
@@ -264,7 +264,7 @@ class PredictiveDeploymentAgent {
               `Kaitiaki check: Review ${file.filePath} for cultural appropriateness`
             );
           }
-        } catch (error) {
+        } catch {
           // Could not read file
         }
       }
