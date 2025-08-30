@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './AdvancedWisdomAccelerator.css';
 
 interface WisdomModule {
@@ -59,16 +59,63 @@ const AdvancedWisdomAccelerator: React.FC = () => {
     generateCulturalInsights();
   }, []);
 
+  // Declare callback functions before useEffect hooks to prevent dependency issues
+  const updateMetrics = useCallback(() => {
+    if (modules.length === 0) return;
+
+    const totalModules = modules.length;
+    const activeModules = modules.filter((m) => m.status === 'active').length;
+    const averageEfficiency = modules.reduce((sum, m) => sum + m.efficiency, 0) / totalModules;
+    const culturalCompliance =
+      modules.reduce((sum, m) => sum + m.culturalSensitivity, 0) / totalModules;
+    const knowledgeGrowth =
+      modules.reduce((sum, m) => sum + m.knowledgeAccumulation, 0) / totalModules;
+    const wisdomLevel = (averageEfficiency + culturalCompliance + knowledgeGrowth) / 3;
+    const coordinationScore = (activeModules / totalModules) * 100;
+    const innovationIndex =
+      modules.filter((m) => m.type === 'innovation').reduce((sum, m) => sum + m.efficiency, 0) /
+        modules.filter((m) => m.type === 'innovation').length || 0;
+
+    setMetrics({
+      totalModules,
+      activeModules,
+      averageEfficiency: Math.round(averageEfficiency),
+      culturalCompliance: Math.round(culturalCompliance),
+      knowledgeGrowth: Math.round(knowledgeGrowth),
+      wisdomLevel: Math.round(wisdomLevel),
+      coordinationScore: Math.round(coordinationScore),
+      innovationIndex: Math.round(innovationIndex),
+    });
+  }, [modules]);
+
+  const accelerateWisdom = useCallback(() => {
+    setModules((prev) =>
+      prev.map((module) => ({
+        ...module,
+        efficiency: Math.min(100, module.efficiency + (Math.random() - 0.5) * 0.5),
+        culturalSensitivity: Math.min(
+          100,
+          module.culturalSensitivity + (Math.random() - 0.5) * 0.3,
+        ),
+        knowledgeAccumulation: Math.min(
+          100,
+          module.knowledgeAccumulation + (Math.random() - 0.5) * 0.4,
+        ),
+        lastActivity: new Date(),
+      })),
+    );
+  }, []);
+
   useEffect(() => {
     updateMetrics();
-  }, [modules]);
+  }, [updateMetrics]);
 
   useEffect(() => {
     if (isAccelerating) {
       const interval = setInterval(accelerateWisdom, 2000);
       return () => clearInterval(interval);
     }
-  }, [isAccelerating]);
+  }, [isAccelerating, accelerateWisdom]);
 
   const initializeWisdomModules = () => {
     const initialModules: WisdomModule[] = [
@@ -204,52 +251,6 @@ const AdvancedWisdomAccelerator: React.FC = () => {
     ];
 
     setInsights(mockInsights);
-  };
-
-  const updateMetrics = () => {
-    if (modules.length === 0) return;
-
-    const totalModules = modules.length;
-    const activeModules = modules.filter((m) => m.status === 'active').length;
-    const averageEfficiency = modules.reduce((sum, m) => sum + m.efficiency, 0) / totalModules;
-    const culturalCompliance =
-      modules.reduce((sum, m) => sum + m.culturalSensitivity, 0) / totalModules;
-    const knowledgeGrowth =
-      modules.reduce((sum, m) => sum + m.knowledgeAccumulation, 0) / totalModules;
-    const wisdomLevel = (averageEfficiency + culturalCompliance + knowledgeGrowth) / 3;
-    const coordinationScore = (activeModules / totalModules) * 100;
-    const innovationIndex =
-      modules.filter((m) => m.type === 'innovation').reduce((sum, m) => sum + m.efficiency, 0) /
-        modules.filter((m) => m.type === 'innovation').length || 0;
-
-    setMetrics({
-      totalModules,
-      activeModules,
-      averageEfficiency: Math.round(averageEfficiency),
-      culturalCompliance: Math.round(culturalCompliance),
-      knowledgeGrowth: Math.round(knowledgeGrowth),
-      wisdomLevel: Math.round(wisdomLevel),
-      coordinationScore: Math.round(coordinationScore),
-      innovationIndex: Math.round(innovationIndex),
-    });
-  };
-
-  const accelerateWisdom = () => {
-    setModules((prev) =>
-      prev.map((module) => ({
-        ...module,
-        efficiency: Math.min(100, module.efficiency + (Math.random() - 0.5) * 0.5),
-        culturalSensitivity: Math.min(
-          100,
-          module.culturalSensitivity + (Math.random() - 0.5) * 0.3,
-        ),
-        knowledgeAccumulation: Math.min(
-          100,
-          module.knowledgeAccumulation + (Math.random() - 0.5) * 0.4,
-        ),
-        lastActivity: new Date(),
-      })),
-    );
   };
 
   const getFilteredModules = () => {

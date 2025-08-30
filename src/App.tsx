@@ -24,8 +24,12 @@ import DemoAccessBanner from './components/DemoAccessBanner';
 import PerformanceDashboard from './components/PerformanceDashboard';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
+import BasicTest from './components/BasicTest';
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
+import DualRoleLogin from './components/DualRoleLogin';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
+import WorkingLogin from './components/WorkingLogin';
+
 // Lazy load educational content pages
 const Year8SocialStudies = lazy(
   () => import(/* webpackChunkName: "year8-social-studies" */ './pages/Year8SocialStudies'),
@@ -117,7 +121,6 @@ import ResourceUnlocker from './components/ResourceUnlocker';
 
 // Import the new dual-role authentication components
 import SystemTest from './components/SystemTest';
-import WorkingLogin from './components/WorkingLogin';
 
 function App() {
   return (
@@ -127,14 +130,13 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/login" element={<WorkingLogin />} />
+            <Route path="/login" element={<DualRoleLogin />} />
             <Route path="/login-old" element={<WorkingLogin />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
-            <Route path="/student-dashboard" element={<StudentDashboard />} />{' '}
-            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+            <Route path="/student-dashboard" element={<StudentDashboard />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
             <Route path="/test" element={<SystemTest />} />
-            <Route path="/basic-test" element={<SystemTest />} />
+            <Route path="/basic-test" element={<BasicTest />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />

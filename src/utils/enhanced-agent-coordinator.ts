@@ -362,7 +362,7 @@ class EnhancedAgentCoordinator {
   }
 
   private updateAgentStatuses(): void {
-    for (const [agentId, agent] of this.agents) {
+    for (const [, agent] of this.agents) {
       // Simulate performance variations
       const performanceVariation = (Math.random() - 0.5) * 2; // ±1 point
       agent.performanceScore = Math.max(
@@ -457,7 +457,12 @@ class EnhancedAgentCoordinator {
     );
   }
 
-  private logCoordination(action: string, agentId?: string, taskId?: string, result?: string): void {
+  private logCoordination(
+    action: string,
+    agentId?: string,
+    taskId?: string,
+    result?: string,
+  ): void {
     this.coordinationHistory.push({
       timestamp: new Date(),
       action,

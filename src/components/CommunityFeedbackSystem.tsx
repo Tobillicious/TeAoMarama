@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, Users, Heart, Star, Send, ThumbsUp, Filter, Globe } from 'lucide-react';
+import { Filter, Globe, Heart, MessageCircle, Send, Star, ThumbsUp, Users } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import './CommunityFeedbackSystem.css';
 
 interface FeedbackItem {
@@ -44,7 +44,7 @@ const CommunityFeedbackSystem: React.FC = () => {
     title: '',
     description: '',
     priority: 'medium',
-    tags: []
+    tags: [],
   });
 
   useEffect(() => {
@@ -54,7 +54,8 @@ const CommunityFeedbackSystem: React.FC = () => {
         id: 'fb-001',
         type: 'cultural-review',
         title: 'Te Reo Māori pronunciation guides needed',
-        description: 'Kia ora! Would love to see more audio pronunciation guides for Te Reo Māori terms throughout the platform. This would help non-native speakers learn correct pronunciation and show respect for the language.',
+        description:
+          'Kia ora! Would love to see more audio pronunciation guides for Te Reo Māori terms throughout the platform. This would help non-native speakers learn correct pronunciation and show respect for the language.',
         author: 'Aroha Patel',
         authorRole: 'teacher',
         timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
@@ -66,19 +67,21 @@ const CommunityFeedbackSystem: React.FC = () => {
             id: 'resp-001',
             author: 'Māori Cultural Advisor',
             role: 'cultural-advisor',
-            message: 'This is an excellent suggestion. Proper pronunciation is crucial for cultural respect. We can work with local iwi to provide authentic audio recordings.',
+            message:
+              'This is an excellent suggestion. Proper pronunciation is crucial for cultural respect. We can work with local iwi to provide authentic audio recordings.',
             timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-            supportLevel: 98
-          }
+            supportLevel: 98,
+          },
         ],
         tags: ['te-reo-maori', 'pronunciation', 'cultural-respect', 'accessibility'],
-        status: 'in-review'
+        status: 'in-review',
       },
       {
         id: 'fb-002',
         type: 'educational-content',
         title: 'More hands-on science experiments for Year 5-8',
-        description: 'Students are really engaging with the current science content, but we need more practical experiments that can be done with everyday materials. Especially ones that connect to traditional Māori knowledge of the natural world.',
+        description:
+          'Students are really engaging with the current science content, but we need more practical experiments that can be done with everyday materials. Especially ones that connect to traditional Māori knowledge of the natural world.',
         author: 'James Wilson',
         authorRole: 'teacher',
         timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
@@ -87,13 +90,14 @@ const CommunityFeedbackSystem: React.FC = () => {
         communitySupport: 92,
         responses: [],
         tags: ['science', 'practical-learning', 'traditional-knowledge', 'year-5-8'],
-        status: 'open'
+        status: 'open',
       },
       {
         id: 'fb-003',
         type: 'platform-improvement',
         title: 'Mobile app for offline access in rural areas',
-        description: 'Many of our students in rural communities have limited internet access. A mobile app with offline capabilities would be transformative for ensuring equity in education access.',
+        description:
+          'Many of our students in rural communities have limited internet access. A mobile app with offline capabilities would be transformative for ensuring equity in education access.',
         author: 'Sarah Te Kanawa',
         authorRole: 'community',
         timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
@@ -105,14 +109,15 @@ const CommunityFeedbackSystem: React.FC = () => {
             id: 'resp-002',
             author: 'Technical Team',
             role: 'teacher',
-            message: 'We are actively developing offline capabilities. This is a priority for us to ensure educational equity across all communities.',
+            message:
+              'We are actively developing offline capabilities. This is a priority for us to ensure educational equity across all communities.',
             timestamp: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-            supportLevel: 94
-          }
+            supportLevel: 94,
+          },
         ],
         tags: ['mobile', 'offline', 'rural-access', 'equity'],
-        status: 'in-review'
-      }
+        status: 'in-review',
+      },
     ];
 
     setFeedback(initialFeedback);
@@ -123,62 +128,80 @@ const CommunityFeedbackSystem: React.FC = () => {
 
     const feedbackItem: FeedbackItem = {
       id: `fb-${Date.now()}`,
-      type: newFeedback.type as any,
+      type: newFeedback.type as
+        | 'cultural-review'
+        | 'educational-content'
+        | 'platform-improvement'
+        | 'community-suggestion',
       title: newFeedback.title,
       description: newFeedback.description,
       author: 'Current User',
       authorRole: 'community',
       timestamp: new Date(),
-      priority: newFeedback.priority as any,
+      priority: newFeedback.priority as 'critical' | 'high' | 'medium' | 'low',
       culturalSensitivity: 80,
       communitySupport: 75,
       responses: [],
       tags: newFeedback.tags,
-      status: 'open'
+      status: 'open',
     };
 
-    setFeedback(prev => [feedbackItem, ...prev]);
+    setFeedback((prev) => [feedbackItem, ...prev]);
     setNewFeedback({
       type: 'educational-content',
       title: '',
       description: '',
       priority: 'medium',
-      tags: []
+      tags: [],
     });
     setActiveTab('view');
   };
 
-  const filteredFeedback = filterType === 'all' 
-    ? feedback 
-    : feedback.filter(item => item.type === filterType);
+  const filteredFeedback =
+    filterType === 'all' ? feedback : feedback.filter((item) => item.type === filterType);
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'cultural-review': return <Heart className="type-icon cultural" />;
-      case 'educational-content': return <Star className="type-icon educational" />;
-      case 'platform-improvement': return <Globe className="type-icon platform" />;
-      case 'community-suggestion': return <Users className="type-icon community" />;
-      default: return <MessageCircle className="type-icon default" />;
+      case 'cultural-review':
+        return <Heart className="type-icon cultural" />;
+      case 'educational-content':
+        return <Star className="type-icon educational" />;
+      case 'platform-improvement':
+        return <Globe className="type-icon platform" />;
+      case 'community-suggestion':
+        return <Users className="type-icon community" />;
+      default:
+        return <MessageCircle className="type-icon default" />;
     }
   };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'critical': return 'priority-critical';
-      case 'high': return 'priority-high';
-      case 'medium': return 'priority-medium';
-      case 'low': return 'priority-low';
-      default: return 'priority-medium';
+      case 'critical':
+        return 'priority-critical';
+      case 'high':
+        return 'priority-high';
+      case 'medium':
+        return 'priority-medium';
+      case 'low':
+        return 'priority-low';
+      default:
+        return 'priority-medium';
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'implemented': return 'status-implemented';
-      case 'in-review': return 'status-in-review';
-      case 'declined': return 'status-declined';
-      case 'open': return 'status-open';
-      default: return 'status-open';
+      case 'implemented':
+        return 'status-implemented';
+      case 'in-review':
+        return 'status-in-review';
+      case 'declined':
+        return 'status-declined';
+      case 'open':
+        return 'status-open';
+      default:
+        return 'status-open';
     }
   };
 
@@ -195,7 +218,7 @@ const CommunityFeedbackSystem: React.FC = () => {
         </div>
 
         <div className="tab-navigation">
-          <button 
+          <button
             type="button"
             onClick={() => setActiveTab('view')}
             className={activeTab === 'view' ? 'active' : ''}
@@ -203,7 +226,7 @@ const CommunityFeedbackSystem: React.FC = () => {
             <MessageCircle size={16} />
             View Feedback
           </button>
-          <button 
+          <button
             type="button"
             onClick={() => setActiveTab('submit')}
             className={activeTab === 'submit' ? 'active' : ''}
@@ -211,7 +234,7 @@ const CommunityFeedbackSystem: React.FC = () => {
             <Send size={16} />
             Submit Feedback
           </button>
-          <button 
+          <button
             type="button"
             onClick={() => setActiveTab('cultural')}
             className={activeTab === 'cultural' ? 'active' : ''}
@@ -226,8 +249,8 @@ const CommunityFeedbackSystem: React.FC = () => {
         <div className="feedback-view">
           <div className="feedback-filters">
             <Filter className="filter-icon" />
-            <select 
-              value={filterType} 
+            <select
+              value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
               className="filter-select"
             >
@@ -240,13 +263,13 @@ const CommunityFeedbackSystem: React.FC = () => {
           </div>
 
           <div className="feedback-grid">
-            {filteredFeedback.map(item => (
+            {filteredFeedback.map((item) => (
               <div key={item.id} className="feedback-card">
                 <div className="feedback-header-section">
                   <div className="feedback-type">
                     {getTypeIcon(item.type)}
                     <span className="type-label">
-                      {item.type.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      {item.type.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
                     </span>
                   </div>
                   <div className={`priority-badge ${getPriorityColor(item.priority)}`}>
@@ -262,9 +285,7 @@ const CommunityFeedbackSystem: React.FC = () => {
                     <span className="author-name">{item.author}</span>
                     <span className="author-role">({item.authorRole.replace('-', ' ')})</span>
                   </div>
-                  <div className="timestamp">
-                    {item.timestamp.toLocaleDateString()}
-                  </div>
+                  <div className="timestamp">{item.timestamp.toLocaleDateString()}</div>
                 </div>
 
                 <div className="feedback-metrics">
@@ -279,19 +300,21 @@ const CommunityFeedbackSystem: React.FC = () => {
                 </div>
 
                 <div className="feedback-tags">
-                  {item.tags.map(tag => (
-                    <span key={tag} className="tag">{tag}</span>
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
                   ))}
                 </div>
 
                 <div className={`status-badge ${getStatusColor(item.status)}`}>
-                  {item.status.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  {item.status.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
                 </div>
 
                 {item.responses.length > 0 && (
                   <div className="responses-section">
                     <h4>Community Responses ({item.responses.length})</h4>
-                    {item.responses.map(response => (
+                    {item.responses.map((response) => (
                       <div key={response.id} className="response">
                         <div className="response-header">
                           <strong>{response.author}</strong>
@@ -319,15 +342,16 @@ const CommunityFeedbackSystem: React.FC = () => {
           <div className="submit-form">
             <h2>Submit New Feedback</h2>
             <p className="form-description">
-              Share your thoughts, suggestions, or concerns to help improve our educational platform.
+              Share your thoughts, suggestions, or concerns to help improve our educational
+              platform.
             </p>
 
             <div className="form-group">
               <label htmlFor="feedback-type">Feedback Type</label>
-              <select 
+              <select
                 id="feedback-type"
                 value={newFeedback.type}
-                onChange={(e) => setNewFeedback(prev => ({...prev, type: e.target.value}))}
+                onChange={(e) => setNewFeedback((prev) => ({ ...prev, type: e.target.value }))}
                 className="form-select"
               >
                 <option value="educational-content">Educational Content</option>
@@ -343,7 +367,7 @@ const CommunityFeedbackSystem: React.FC = () => {
                 type="text"
                 id="feedback-title"
                 value={newFeedback.title}
-                onChange={(e) => setNewFeedback(prev => ({...prev, title: e.target.value}))}
+                onChange={(e) => setNewFeedback((prev) => ({ ...prev, title: e.target.value }))}
                 placeholder="Brief summary of your feedback"
                 className="form-input"
               />
@@ -354,7 +378,9 @@ const CommunityFeedbackSystem: React.FC = () => {
               <textarea
                 id="feedback-description"
                 value={newFeedback.description}
-                onChange={(e) => setNewFeedback(prev => ({...prev, description: e.target.value}))}
+                onChange={(e) =>
+                  setNewFeedback((prev) => ({ ...prev, description: e.target.value }))
+                }
                 placeholder="Provide detailed information about your feedback, suggestions, or concerns"
                 rows={6}
                 className="form-textarea"
@@ -363,10 +389,10 @@ const CommunityFeedbackSystem: React.FC = () => {
 
             <div className="form-group">
               <label htmlFor="feedback-priority">Priority</label>
-              <select 
+              <select
                 id="feedback-priority"
                 value={newFeedback.priority}
-                onChange={(e) => setNewFeedback(prev => ({...prev, priority: e.target.value}))}
+                onChange={(e) => setNewFeedback((prev) => ({ ...prev, priority: e.target.value }))}
                 className="form-select"
               >
                 <option value="low">Low</option>
@@ -376,7 +402,7 @@ const CommunityFeedbackSystem: React.FC = () => {
               </select>
             </div>
 
-            <button 
+            <button
               type="button"
               onClick={handleSubmitFeedback}
               className="submit-button"
@@ -394,37 +420,51 @@ const CommunityFeedbackSystem: React.FC = () => {
           <div className="guidance-panel">
             <h2>Cultural Guidance</h2>
             <h3 className="maori-subtitle">Ngā Aratohu Ahurea</h3>
-            
+
             <div className="guidance-content">
               <div className="principle-card">
                 <Heart className="principle-icon" />
                 <h4>Manaakitanga - Hospitality & Care</h4>
-                <p>When providing feedback, approach with kindness and respect for all community members. Consider how your words might impact others and frame suggestions constructively.</p>
+                <p>
+                  When providing feedback, approach with kindness and respect for all community
+                  members. Consider how your words might impact others and frame suggestions
+                  constructively.
+                </p>
               </div>
-              
+
               <div className="principle-card">
                 <Users className="principle-icon" />
                 <h4>Whakatōhea - Building Relationships</h4>
-                <p>Remember that feedback is about strengthening our educational whānau. Focus on collaborative solutions that benefit the entire community.</p>
+                <p>
+                  Remember that feedback is about strengthening our educational whānau. Focus on
+                  collaborative solutions that benefit the entire community.
+                </p>
               </div>
-              
+
               <div className="principle-card">
                 <Star className="principle-icon" />
                 <h4>Kaitiakitanga - Guardianship</h4>
-                <p>We are all guardians of this educational platform. When suggesting improvements, consider the long-term impact on future learners and cultural preservation.</p>
+                <p>
+                  We are all guardians of this educational platform. When suggesting improvements,
+                  consider the long-term impact on future learners and cultural preservation.
+                </p>
               </div>
             </div>
-            
+
             <div className="cultural-review-process">
               <h4>Cultural Review Process</h4>
               <div className="process-steps">
                 <div className="step">
                   <span className="step-number">1</span>
-                  <span className="step-text">All cultural feedback is reviewed by our cultural advisory team</span>
+                  <span className="step-text">
+                    All cultural feedback is reviewed by our cultural advisory team
+                  </span>
                 </div>
                 <div className="step">
                   <span className="step-number">2</span>
-                  <span className="step-text">Community consultation for significant cultural matters</span>
+                  <span className="step-text">
+                    Community consultation for significant cultural matters
+                  </span>
                 </div>
                 <div className="step">
                   <span className="step-number">3</span>

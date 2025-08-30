@@ -199,7 +199,10 @@ const AuthenticationSystem: React.FC = () => {
   };
 
   const updateProfile = async (updates: Partial<User['profile']>) => {
-    if (!authState.currentUser) return;
+    if (!authState.currentUser) {
+      console.warn('Cannot update profile: no authenticated user');
+      return;
+    }
 
     setAuthState((prev) => ({
       ...prev,
@@ -213,7 +216,10 @@ const AuthenticationSystem: React.FC = () => {
   };
 
   const updateSecuritySettings = async (updates: Partial<User['securitySettings']>) => {
-    if (!authState.currentUser) return;
+    if (!authState.currentUser) {
+      console.warn('Cannot update security settings: no authenticated user');
+      return;
+    }
 
     setAuthState((prev) => ({
       ...prev,

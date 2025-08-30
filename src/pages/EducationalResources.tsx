@@ -182,6 +182,7 @@ const EducationalResources: React.FC = () => {
     // Ensure data is properly set
     setResources(mockResources);
     setFilteredResources(mockResources);
+    setIsLoading(false); // Set loading to false after data is loaded
     console.log('📚 Loaded', mockResources.length, 'educational resources');
   }, []);
 

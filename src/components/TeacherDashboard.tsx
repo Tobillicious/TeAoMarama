@@ -4,18 +4,16 @@ import { useAuth } from '../services/DualRoleAuthProvider';
 import './TeacherDashboard.css';
 
 const TeacherDashboard: React.FC = () => {
-  const { currentUser, logout, getRoleBasedFeatures } = useAuth();
+  const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
-  const [stats, setStats] = useState({
+  const [stats] = useState({
     totalStudents: 127,
     activeLessons: 8,
     pendingAssessments: 12,
     culturalResources: 3420,
     completedActivities: 89,
   });
-
-  const features = getRoleBasedFeatures();
 
   useEffect(() => {
     if (!currentUser || currentUser.role !== 'teacher') {

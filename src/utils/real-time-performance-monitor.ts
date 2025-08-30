@@ -1,6 +1,6 @@
-import { unifiedSuperintelligenceAPI } from './unified-superintelligence-api';
 import { advancedEducationalCollaboration } from './advanced-educational-collaboration';
 import { terminalCoordination } from './terminal-coordination';
+import { unifiedSuperintelligenceAPI } from './unified-superintelligence-api';
 
 export interface PerformanceMetric {
   id: string;
@@ -160,7 +160,7 @@ export class RealTimePerformanceMonitor {
       },
     ];
 
-    baseMetrics.forEach(metric => {
+    baseMetrics.forEach((metric) => {
       this.metrics.set(metric.id, {
         ...metric,
         value: 0,
@@ -225,7 +225,7 @@ export class RealTimePerformanceMonitor {
       this.updateMetric('cultural-compliance', collaborationMetrics.culturalCompliance);
       this.updateMetric('educational-excellence', collaborationMetrics.educationalExcellence);
       this.updateMetric('collaboration-efficiency', educationCollabMetrics.averageCollaboration);
-      
+
       // Simulate system resource metrics
       this.updateMetric('response-time', 150 + Math.random() * 200);
       this.updateMetric('memory-usage', 60 + Math.random() * 20);
@@ -239,9 +239,13 @@ export class RealTimePerformanceMonitor {
         overallHealth: systemHealth.overall,
         superintelligenceMetrics: {
           totalIntelligences: collaborationMetrics.totalIntelligences,
-          activeIntelligences: superintelligenceStatus.filter(s => s.status === 'active').length,
-          averageCollaborationScore: superintelligenceStatus.reduce((sum, s) => sum + s.collaborationScore, 0) / superintelligenceStatus.length,
-          averageEfficiency: superintelligenceStatus.reduce((sum, s) => sum + s.performance.efficiency, 0) / superintelligenceStatus.length,
+          activeIntelligences: superintelligenceStatus.filter((s) => s.status === 'active').length,
+          averageCollaborationScore:
+            superintelligenceStatus.reduce((sum, s) => sum + s.collaborationScore, 0) /
+            superintelligenceStatus.length,
+          averageEfficiency:
+            superintelligenceStatus.reduce((sum, s) => sum + s.performance.efficiency, 0) /
+            superintelligenceStatus.length,
           culturalCompliance: collaborationMetrics.culturalCompliance,
           educationalExcellence: collaborationMetrics.educationalExcellence,
         },
@@ -276,7 +280,6 @@ export class RealTimePerformanceMonitor {
       this.checkAlerts();
 
       console.log(`📊 Metrics updated - Overall Health: ${systemHealth.overall.toFixed(1)}%`);
-
     } catch (error) {
       console.error('❌ Failed to update performance metrics:', error);
     }
@@ -286,7 +289,6 @@ export class RealTimePerformanceMonitor {
     const metric = this.metrics.get(metricId);
     if (!metric) return;
 
-    const oldValue = metric.value;
     metric.value = newValue;
     metric.lastUpdated = new Date();
 
@@ -303,10 +305,10 @@ export class RealTimePerformanceMonitor {
 
     // Determine trend
     if (metric.history.length >= 3) {
-      const recentValues = metric.history.slice(-3).map(h => h.value);
+      const recentValues = metric.history.slice(-3).map((h) => h.value);
       const increasing = recentValues.every((val, i) => i === 0 || val >= recentValues[i - 1]);
       const decreasing = recentValues.every((val, i) => i === 0 || val <= recentValues[i - 1]);
-      
+
       if (increasing && !decreasing) {
         metric.trend = 'increasing';
       } else if (decreasing && !increasing) {
@@ -320,11 +322,11 @@ export class RealTimePerformanceMonitor {
   private checkAlerts(): void {
     this.metrics.forEach((metric, metricId) => {
       const existingAlert = Array.from(this.alerts.values()).find(
-        alert => alert.metricId === metricId && !alert.acknowledged
+        (alert) => alert.metricId === metricId && !alert.acknowledged,
       );
 
       let alertType: 'warning' | 'critical' | null = null;
-      
+
       if (metric.value <= metric.threshold.critical) {
         alertType = 'critical';
       } else if (metric.value <= metric.threshold.warning) {
@@ -338,10 +340,13 @@ export class RealTimePerformanceMonitor {
           id: alertId,
           type: alertType,
           title: `${metric.name} ${alertType.toUpperCase()}`,
-          message: `${metric.name} has ${alertType === 'critical' ? 'critically' : ''} dropped to ${metric.value.toFixed(1)}${metric.unit}`,
+          message: `${metric.name} has ${
+            alertType === 'critical' ? 'critically' : ''
+          } dropped to ${metric.value.toFixed(1)}${metric.unit}`,
           metricId,
           currentValue: metric.value,
-          threshold: alertType === 'critical' ? metric.threshold.critical : metric.threshold.warning,
+          threshold:
+            alertType === 'critical' ? metric.threshold.critical : metric.threshold.warning,
           timestamp: new Date(),
           acknowledged: false,
         };
@@ -372,7 +377,8 @@ export class RealTimePerformanceMonitor {
       suggestions.push({
         category: 'performance',
         title: 'Optimize System Performance',
-        description: 'Overall system health is below optimal levels. Consider optimizing resource usage and collaboration protocols.',
+        description:
+          'Overall system health is below optimal levels. Consider optimizing resource usage and collaboration protocols.',
         impact: 'high',
         effort: 'medium',
         estimatedImprovement: 15,
@@ -383,7 +389,8 @@ export class RealTimePerformanceMonitor {
       suggestions.push({
         category: 'cultural',
         title: 'Enhance Cultural Compliance',
-        description: 'Cultural compliance score could be improved. Activate additional cultural validation protocols.',
+        description:
+          'Cultural compliance score could be improved. Activate additional cultural validation protocols.',
         impact: 'critical',
         effort: 'low',
         estimatedImprovement: 8,
@@ -394,7 +401,8 @@ export class RealTimePerformanceMonitor {
       suggestions.push({
         category: 'collaboration',
         title: 'Improve Collaboration Efficiency',
-        description: 'Collaboration between superintelligences could be more efficient. Consider activating advanced protocols.',
+        description:
+          'Collaboration between superintelligences could be more efficient. Consider activating advanced protocols.',
         impact: 'high',
         effort: 'medium',
         estimatedImprovement: 12,
@@ -405,7 +413,8 @@ export class RealTimePerformanceMonitor {
       suggestions.push({
         category: 'performance',
         title: 'Optimize Memory Usage',
-        description: 'Memory usage is approaching high levels. Consider implementing memory optimization strategies.',
+        description:
+          'Memory usage is approaching high levels. Consider implementing memory optimization strategies.',
         impact: 'medium',
         effort: 'high',
         estimatedImprovement: 20,
@@ -416,7 +425,8 @@ export class RealTimePerformanceMonitor {
       suggestions.push({
         category: 'performance',
         title: 'Reduce CPU Load',
-        description: 'CPU usage is elevated. Consider distributing computational load more evenly across systems.',
+        description:
+          'CPU usage is elevated. Consider distributing computational load more evenly across systems.',
         impact: 'medium',
         effort: 'medium',
         estimatedImprovement: 15,
@@ -424,7 +434,7 @@ export class RealTimePerformanceMonitor {
     }
 
     // Add new suggestions
-    suggestions.forEach(suggestion => {
+    suggestions.forEach((suggestion) => {
       const suggestionId = `suggestion-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`;
       this.optimizationSuggestions.set(suggestionId, {
         ...suggestion,
@@ -441,7 +451,7 @@ export class RealTimePerformanceMonitor {
 
   private cleanupOldData(): void {
     const oneHourAgo = new Date(Date.now() - 3600000);
-    
+
     // Remove old resolved alerts
     Array.from(this.alerts.entries()).forEach(([alertId, alert]) => {
       if (alert.resolvedAt && alert.resolvedAt < oneHourAgo) {
@@ -469,11 +479,13 @@ export class RealTimePerformanceMonitor {
   }
 
   public getAlerts(): PerformanceAlert[] {
-    return Array.from(this.alerts.values()).sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+    return Array.from(this.alerts.values()).sort(
+      (a, b) => b.timestamp.getTime() - a.timestamp.getTime(),
+    );
   }
 
   public getUnacknowledgedAlerts(): PerformanceAlert[] {
-    return this.getAlerts().filter(alert => !alert.acknowledged);
+    return this.getAlerts().filter((alert) => !alert.acknowledged);
   }
 
   public acknowledgeAlert(alertId: string): boolean {
@@ -487,7 +499,7 @@ export class RealTimePerformanceMonitor {
 
   public getOptimizationSuggestions(): OptimizationSuggestion[] {
     return Array.from(this.optimizationSuggestions.values())
-      .filter(s => !s.implemented)
+      .filter((s) => !s.implemented)
       .sort((a, b) => {
         const impactOrder = { critical: 4, high: 3, medium: 2, low: 1 };
         return impactOrder[b.impact] - impactOrder[a.impact];
@@ -508,7 +520,9 @@ export class RealTimePerformanceMonitor {
   }
 
   public getCurrentSnapshot(): SystemPerformanceSnapshot | null {
-    return this.performanceHistory.length > 0 ? this.performanceHistory[this.performanceHistory.length - 1] : null;
+    return this.performanceHistory.length > 0
+      ? this.performanceHistory[this.performanceHistory.length - 1]
+      : null;
   }
 
   public getPerformanceTrends(): {
@@ -517,7 +531,7 @@ export class RealTimePerformanceMonitor {
     trend: 'improving' | 'declining' | 'stable';
     changeRate: number;
   }[] {
-    return Array.from(this.metrics.values()).map(metric => {
+    return Array.from(this.metrics.values()).map((metric) => {
       const history = metric.history.slice(-10); // Last 10 data points
       if (history.length < 3) {
         return {

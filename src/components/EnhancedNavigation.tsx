@@ -4,7 +4,7 @@ import { useAuth } from '../services/DualRoleAuthProvider';
 import '../styles/next-level-design-system.css';
 import './Navigation.css';
 
-const Navigation: React.FC = () => {
+const EnhancedNavigation: React.FC = () => {
   const { isAuthenticated, currentUser, logout, getRoleBasedFeatures } = useAuth();
   const location = useLocation();
 
@@ -192,4 +192,4 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
+export default EnhancedNavigation;
