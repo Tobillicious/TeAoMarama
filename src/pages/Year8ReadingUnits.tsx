@@ -152,8 +152,17 @@ const Year8ReadingUnits: React.FC = () => {
     return matchesSearch && matchesCategory && matchesDifficulty;
   });
 
-  const getDifficultyClass = (difficulty: string): string => {
-    return difficulty.toLowerCase();
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'beginner':
+        return 'var(--color-kowhai)';
+      case 'intermediate':
+        return 'var(--color-pounamu)';
+      case 'advanced':
+        return 'var(--color-primary)';
+      default:
+        return 'var(--color-pounamu)';
+    }
   };
 
   const getCategoryIcon = (category: string) => {
@@ -302,7 +311,10 @@ const Year8ReadingUnits: React.FC = () => {
                   <span className="reading-badge">
                     {getCategoryIcon(unit.category)} {unit.category}
                   </span>
-                  <span className={`reading-difficulty ${getDifficultyClass(unit.difficulty)}`}>
+                  <span
+                    className="reading-difficulty"
+                    style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                  >
                     {unit.difficulty}
                   </span>
                 </div>
