@@ -68,7 +68,7 @@ const AdvancedStudentAnalytics: React.FC = () => {
 
   useEffect(() => {
     updateSummary();
-  }, [updateSummary]);
+  }, [analytics]);
 
   const generateMockAnalytics = () => {
     const mockStudents: StudentAnalytics[] = [

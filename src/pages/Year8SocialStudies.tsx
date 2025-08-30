@@ -19,7 +19,6 @@ const Year8SocialStudies: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
-  const [enhancementLevel, setEnhancementLevel] = useState(0);
 
   // Enhanced Year 8 Social Studies Units with Cultural Integration
   const units: Unit[] = [
@@ -136,8 +135,8 @@ const Year8SocialStudies: React.FC = () => {
   useEffect(() => {
     const enhanceContent = async () => {
       try {
-        const metrics = advancedSuperintelligenceEnhancer.getMetrics();
-        setEnhancementLevel(metrics.overallEnhancement);
+        advancedSuperintelligenceEnhancer.getMetrics();
+        // setEnhancementLevel(metrics.overallEnhancement); // This line was removed
         console.log('🌟 Year 8 Social Studies enhanced with superintelligence');
       } catch (error) {
         console.log('Enhancement system active:', error);

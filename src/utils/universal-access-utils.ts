@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { UniversalAccessContext } from '../components/UniversalAccessProvider';
 
 export const useUniversalAccess = () => {
@@ -29,12 +29,12 @@ export const useAccessCheck = () => {
 
 // Higher-order component to wrap any component with universal access
 export const withUniversalAccess = <P extends object>(Component: React.ComponentType<P>) => {
-  return (props: P) => {
+  return (props: P): React.JSX.Element => {
     const { UniversalAccessProvider } = require('../components/UniversalAccessProvider');
-    return (
-      <UniversalAccessProvider>
-        <Component {...props} />
-      </UniversalAccessProvider>
+    return React.createElement(
+      UniversalAccessProvider,
+      null,
+      React.createElement(Component, props)
     );
   };
 };

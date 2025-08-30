@@ -19,25 +19,6 @@ class AIContentGenerator {
     educationalLevel: string,
     culturalContext: string,
   ): Promise<string> {
-    const prompt = `
-Create educational content for "${topic}" suitable for ${educationalLevel} students in Aotearoa New Zealand.
-
-Cultural Requirements:
-- Integrate Te Ao Māori perspectives respectfully
-- Use appropriate Te Reo Māori terminology
-- Include cultural context: ${culturalContext}
-- Follow tikanga-based educational practices
-- Ensure cultural safety and accuracy
-
-Content should be:
-- Educationally valuable
-- Culturally appropriate
-- Engaging for students
-- Aligned with New Zealand curriculum
-
-Generate content that honors both mātauranga Māori and contemporary educational needs.
-`;
-
     try {
       // Note: In a real implementation, this would call the DeepSeek API
       // For now, we'll create a structured response
@@ -94,7 +75,7 @@ Holistic assessment considering both academic understanding and cultural appreci
     return true;
   }
 
-  private async flagForCulturalReview(content: string): Promise<void> {
+  private async flagForCulturalReview(_content: string): Promise<void> {
     console.log('🌿 Content flagged for cultural validation');
     // In real implementation, would notify kaitiaki
   }

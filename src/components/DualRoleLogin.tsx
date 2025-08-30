@@ -121,7 +121,9 @@ const DualRoleLogin: React.FC = () => {
   };
 
   const handleLogin = async () => {
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      return;
+    }
 
     setIsLoading(true);
     setErrors([]);
@@ -132,68 +134,53 @@ const DualRoleLogin: React.FC = () => {
       setSecurityMetrics((prev) => ({
         ...prev,
         loginAttempts: prev.loginAttempts + 1,
-      }));
-
-      // Step 1: Cultural validation for Kaitiaki
-      if (form.role === 'kaitiaki') {
-        setSuccess('Validating cultural clearance...');
-        const culturalValid = await simulateCulturalValidation();
-
-        if (!culturalValid) {
-          setErrors(['Cultural clearance denied. Please contact your cultural advisor.']);
-          setSecurityMetrics((prev) => ({
-            ...prev,
-            failedAttempts: prev.failedAttempts + 1,
-          }));
-          setIsLoading(false);
-          return;
-        }
-      }
-
-      // Step 2: MFA verification
-      if (showMfa) {
-        setSuccess('Verifying MFA code...');
-        const mfaValid = await simulateMFA();
-
-        if (!mfaValid) {
-          setErrors(['Invalid MFA code. Please try again.']);
-          setSecurityMetrics((prev) => ({
-            ...prev,
-            failedAttempts: prev.failedAttempts + 1,
-          }));
-          setIsLoading(false);
-          return;
-        }
-      }
-
-      // Step 3: Final authentication
-      setSuccess('Authenticating...');
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Simulate authentication success
-      setSecurityMetrics((prev) => ({
-        ...prev,
         lastLoginTime: Date.now(),
       }));
 
-      setSuccess('Authentication successful! Redirecting...');
+      // Simulate cultural validation for Kaitiaki
+      if (form.role === 'kaitiaki') {
+        const culturalValidationStart = Date.now();
+        const culturalValid = await simulateCulturalValidation();
+        const culturalValidationTime = Date.now() - culturalValidationStart;
 
-      // Redirect based on role
-      setTimeout(() => {
-        switch (form.role) {
-          case 'student':
-            navigate('/student-dashboard');
-            break;
-          case 'teacher':
-            navigate('/teacher-dashboard');
-            break;
-          case 'kaitiaki':
-            navigate('/supreme-coordination');
-            break;
+        setSecurityMetrics((prev) => ({
+          ...prev,
+          culturalValidationTime,
+        }));
+
+        if (!culturalValid) {
+          setErrors(['Cultural validation failed. Please contact your cultural advisor.']);
+          return;
         }
-      }, 1500);
-    } catch {
-      setErrors(['Authentication failed. Please try again.']);
+      }
+
+      // Use Firebase authentication
+      const result = await login(form.email, form.password, form.role);
+
+      if (result.success) {
+        setSuccess('Authentication successful! Redirecting...');
+
+        // Update MFA success rate
+        setSecurityMetrics((prev) => ({
+          ...prev,
+          mfaSuccessRate: showMfa ? 95 : prev.mfaSuccessRate,
+        }));
+
+        // Role-based redirect with delay for better UX
+        setTimeout(() => {
+          const roleFeatures = getRoleBasedFeatures(form.role);
+          navigate(roleFeatures.dashboard);
+        }, 1500);
+      } else {
+        setErrors([result.error || 'Login failed. Please try again.']);
+        setSecurityMetrics((prev) => ({
+          ...prev,
+          failedAttempts: prev.failedAttempts + 1,
+        }));
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setErrors(['An unexpected error occurred. Please try again.']);
       setSecurityMetrics((prev) => ({
         ...prev,
         failedAttempts: prev.failedAttempts + 1,

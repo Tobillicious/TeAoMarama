@@ -286,9 +286,10 @@ export class AdvancedEducationalCollaboration {
         educationalQuality: Math.min(100, content.metadata.educationalQuality + 2),
         culturalSafety: Math.min(100, content.metadata.culturalSafety + 1),
         accessibility: Math.min(100, content.metadata.accessibility + 1),
+        engagement: content.metadata.engagement || 90,
       },
-      contributors: participants.map(p => `Enhanced by ${p}`),
-      reviewStatus: 'approved',
+      contributors: [...content.contributors, ...participants.map(p => `Enhanced by ${p}`)],
+      reviewStatus: 'approved' as const,
     };
 
     return enhancedContent;

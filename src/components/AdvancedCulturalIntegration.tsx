@@ -1,639 +1,412 @@
 import React, { useEffect, useState } from 'react';
 import './AdvancedCulturalIntegration.css';
 
-interface CulturalProtocol {
+interface CulturalSafetyProtocol {
   id: string;
   name: string;
   maoriName: string;
   description: string;
-  category: 'tikanga' | 'manaakitanga' | 'kaitiakitanga' | 'rangatiratanga' | 'whakapapa' | 'mana';
-  importance: 'critical' | 'high' | 'medium' | 'low';
-  implementationStatus: 'active' | 'pending' | 'review' | 'archived';
-  culturalAccuracy: number;
-  communityApproval: number;
-  lastUpdated: Date;
-  guidelines: string[];
-  examples: string[];
+  status: 'active' | 'pending' | 'review';
+  lastUpdated: string;
+  compliance: number;
+  riskLevel: 'low' | 'medium' | 'high';
 }
 
-interface CulturalSafety {
+interface CulturalProtocol {
   id: string;
-  aspect: string;
+  title: string;
+  category: string;
   description: string;
-  safetyLevel: 'excellent' | 'good' | 'warning' | 'critical';
-  riskFactors: string[];
-  mitigationStrategies: string[];
-  lastAssessment: Date;
-  nextReview: Date;
-}
-
-interface CommunityEngagement {
-  id: string;
-  initiative: string;
-  description: string;
-  status: 'active' | 'planned' | 'completed' | 'paused';
+  status: 'implemented' | 'draft' | 'review';
+  importance: number;
+  lastUpdated: string;
   participants: number;
-  impact: 'high' | 'medium' | 'low';
-  culturalValue: number;
-  startDate: Date;
-  endDate?: Date;
-  outcomes: string[];
+  effectiveness: number;
+}
+
+interface IntegrationModule {
+  id: string;
+  name: string;
+  description: string;
+  progress: number;
+  status: 'active' | 'development' | 'planned';
+  culturalAlignment: number;
+  lastUpdated: string;
+}
+
+interface CommunityActivity {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  participants: number;
+  type: 'workshop' | 'ceremony' | 'discussion' | 'celebration';
+  status: 'upcoming' | 'ongoing' | 'completed';
 }
 
 const AdvancedCulturalIntegration: React.FC = () => {
-  const [protocols, setProtocols] = useState<CulturalProtocol[]>([]);
-  const [safetyMeasures, setSafetyMeasures] = useState<CulturalSafety[]>([]);
-  const [communityInitiatives, setCommunityInitiatives] = useState<CommunityEngagement[]>([]);
-  const [selectedView, setSelectedView] = useState<
-    'protocols' | 'safety' | 'community' | 'overview'
-  >('overview');
-  const [filterCategory, setFilterCategory] = useState<
-    'all' | 'tikanga' | 'manaakitanga' | 'kaitiakitanga' | 'rangatiratanga' | 'whakapapa' | 'mana'
-  >('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState('safety');
+  const [safetyProtocols, setSafetyProtocols] = useState<CulturalSafetyProtocol[]>([]);
+  const [culturalProtocols, setCulturalProtocols] = useState<CulturalProtocol[]>([]);
+  const [integrationModules, setIntegrationModules] = useState<IntegrationModule[]>([]);
+  const [communityActivities, setCommunityActivities] = useState<CommunityActivity[]>([]);
+  const [engagementStats, setEngagementStats] = useState({
+    totalParticipants: 0,
+    activeProtocols: 0,
+    culturalEvents: 0,
+    communityGrowth: 0,
+  });
 
   useEffect(() => {
-    initializeCulturalData();
-  }, []);
-
-  const initializeCulturalData = () => {
-    // Initialize cultural protocols
-    const initialProtocols: CulturalProtocol[] = [
+    // Generate mock data
+    const generateMockSafetyProtocols = (): CulturalSafetyProtocol[] => [
       {
-        id: 'karakia-protocols',
-        name: 'Karakia and Prayer Protocols',
-        maoriName: 'Ngā Tikanga Karakia',
-        description: 'Guidelines for appropriate use of karakia in educational settings',
-        category: 'tikanga',
-        importance: 'critical',
-        implementationStatus: 'active',
-        culturalAccuracy: 98,
-        communityApproval: 95,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Always seek permission before using karakia',
-          'Understand the context and meaning',
-          'Respect the spiritual significance',
-          'Include appropriate cultural context',
-        ],
-        examples: [
-          'Opening karakia for meetings',
-          'Blessing of new facilities',
-          'Cultural ceremonies and events',
-        ],
-      },
-      {
-        id: 'manaakitanga-practices',
-        name: 'Manaakitanga Hospitality Practices',
-        maoriName: 'Ngā Tikanga Manaakitanga',
-        description: 'Comprehensive hospitality and care protocols',
-        category: 'manaakitanga',
-        importance: 'high',
-        implementationStatus: 'active',
-        culturalAccuracy: 96,
-        communityApproval: 92,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Create welcoming environments',
-          'Provide appropriate hospitality',
-          'Show respect and care for visitors',
-          'Maintain cultural protocols',
-        ],
-        examples: [
-          'Visitor welcome ceremonies',
-          'Food and refreshment protocols',
-          'Cultural accommodation practices',
-        ],
-      },
-      {
-        id: 'kaitiakitanga-stewardship',
-        name: 'Kaitiakitanga Environmental Stewardship',
-        maoriName: 'Ngā Tikanga Kaitiakitanga',
-        description: 'Environmental and resource stewardship protocols',
-        category: 'kaitiakitanga',
-        importance: 'high',
-        implementationStatus: 'active',
-        culturalAccuracy: 94,
-        communityApproval: 88,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Respect and protect natural resources',
-          'Practice sustainable resource use',
-          'Maintain environmental balance',
-          'Honor ancestral connections to land',
-        ],
-        examples: [
-          'Environmental education programs',
-          'Sustainable resource management',
-          'Cultural land use practices',
-        ],
-      },
-      {
-        id: 'rangatiratanga-leadership',
-        name: 'Rangatiratanga Leadership Principles',
-        maoriName: 'Ngā Tikanga Rangatiratanga',
-        description: 'Leadership and governance protocols',
-        category: 'rangatiratanga',
-        importance: 'high',
-        implementationStatus: 'active',
-        culturalAccuracy: 93,
-        communityApproval: 90,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Lead with cultural wisdom',
-          'Serve the community with integrity',
-          'Make decisions with cultural consideration',
-          'Maintain cultural authority',
-        ],
-        examples: [
-          'Cultural leadership development',
-          'Community decision-making processes',
-          'Cultural governance structures',
-        ],
-      },
-      {
-        id: 'whakapapa-connections',
-        name: 'Whakapapa Genealogical Connections',
-        maoriName: 'Ngā Tikanga Whakapapa',
-        description: 'Genealogical and ancestral connection protocols',
-        category: 'whakapapa',
-        importance: 'medium',
-        implementationStatus: 'active',
-        culturalAccuracy: 97,
-        communityApproval: 85,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Respect genealogical knowledge',
-          'Maintain family connections',
-          'Honor ancestral wisdom',
-          'Preserve cultural heritage',
-        ],
-        examples: [
-          'Family history research',
-          'Ancestral knowledge sharing',
-          'Cultural heritage preservation',
-        ],
-      },
-      {
-        id: 'mana-respect',
-        name: 'Mana and Cultural Respect',
-        maoriName: 'Ngā Tikanga Mana',
-        description: 'Protocols for maintaining and respecting mana',
-        category: 'mana',
-        importance: 'critical',
-        implementationStatus: 'active',
-        culturalAccuracy: 99,
-        communityApproval: 96,
-        lastUpdated: new Date(),
-        guidelines: [
-          'Always respect individual and collective mana',
-          'Maintain cultural dignity',
-          'Honor cultural authority',
-          'Practice cultural humility',
-        ],
-        examples: [
-          'Cultural respect training',
-          'Mana-enhancing practices',
-          'Cultural dignity protocols',
-        ],
-      },
-    ];
-
-    // Initialize cultural safety measures
-    const initialSafety: CulturalSafety[] = [
-      {
-        id: 'cultural-appropriation',
-        aspect: 'Cultural Appropriation Prevention',
+        id: '1',
+        name: 'Cultural Consultation Protocol',
+        maoriName: 'Tikanga Whakawhiti Kōrero',
         description:
-          'Measures to prevent cultural appropriation and ensure respectful use of cultural elements',
-        safetyLevel: 'excellent',
-        riskFactors: [
-          'Unauthorized use of cultural symbols',
-          'Misrepresentation of cultural practices',
-          'Commercial exploitation of cultural elements',
-        ],
-        mitigationStrategies: [
-          'Cultural consultation protocols',
-          'Permission-based usage systems',
-          'Cultural accuracy validation',
-          'Community feedback mechanisms',
-        ],
-        lastAssessment: new Date(),
-        nextReview: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+          'Ensures all educational content undergoes proper cultural consultation with local iwi and cultural experts.',
+        status: 'active',
+        lastUpdated: '2024-01-15',
+        compliance: 95,
+        riskLevel: 'low',
       },
       {
-        id: 'cultural-sensitivity',
-        aspect: 'Cultural Sensitivity Training',
-        description: 'Ongoing training and development for cultural sensitivity',
-        safetyLevel: 'good',
-        riskFactors: [
-          'Unconscious cultural bias',
-          'Lack of cultural understanding',
-          'Inappropriate cultural assumptions',
-        ],
-        mitigationStrategies: [
-          'Regular cultural competency training',
-          'Cultural awareness workshops',
-          'Ongoing cultural education',
-          'Cultural mentorship programs',
-        ],
-        lastAssessment: new Date(),
-        nextReview: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
+        id: '2',
+        name: 'Te Reo Māori Integration',
+        maoriName: 'Te Reo Māori Whakauru',
+        description:
+          'Systematic integration of Te Reo Māori throughout all educational materials and interactions.',
+        status: 'active',
+        lastUpdated: '2024-01-10',
+        compliance: 88,
+        riskLevel: 'medium',
       },
       {
-        id: 'community-consultation',
-        aspect: 'Community Consultation Protocols',
-        description: 'Ensuring proper community consultation and engagement',
-        safetyLevel: 'excellent',
-        riskFactors: [
-          'Insufficient community input',
-          'Token consultation practices',
-          'Lack of meaningful engagement',
-        ],
-        mitigationStrategies: [
-          'Structured consultation processes',
-          'Community partnership frameworks',
-          'Regular community feedback sessions',
-          'Cultural advisory committees',
-        ],
-        lastAssessment: new Date(),
-        nextReview: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
+        id: '3',
+        name: 'Cultural Safety Training',
+        maoriName: 'Whakangungu Haumaru Tikanga',
+        description:
+          'Comprehensive training program for all staff on cultural safety and Māori cultural practices.',
+        status: 'pending',
+        lastUpdated: '2024-01-08',
+        compliance: 72,
+        riskLevel: 'medium',
       },
       {
-        id: 'cultural-representation',
-        aspect: 'Cultural Representation Accuracy',
-        description: 'Ensuring accurate and respectful cultural representation',
-        safetyLevel: 'good',
-        riskFactors: [
-          'Stereotypical representations',
-          'Inaccurate cultural information',
-          'Misleading cultural portrayals',
-        ],
-        mitigationStrategies: [
-          'Cultural accuracy review processes',
-          'Expert cultural validation',
-          'Community representation guidelines',
-          'Cultural content standards',
-        ],
-        lastAssessment: new Date(),
-        nextReview: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+        id: '4',
+        name: 'Whakapapa Respect Protocol',
+        maoriName: 'Tikanga Whakapapa',
+        description:
+          'Ensures proper respect and understanding of whakapapa (genealogy) in all educational contexts.',
+        status: 'review',
+        lastUpdated: '2024-01-05',
+        compliance: 65,
+        riskLevel: 'high',
       },
     ];
 
-    // Initialize community engagement initiatives
-    const initialInitiatives: CommunityEngagement[] = [
+    const generateMockCulturalProtocols = (): CulturalProtocol[] => [
       {
-        id: 'cultural-education-program',
-        initiative: 'Cultural Education Enhancement Program',
-        description: 'Comprehensive cultural education program for students and staff',
-        status: 'active',
-        participants: 450,
-        impact: 'high',
-        culturalValue: 95,
-        startDate: new Date(Date.now() - 180 * 24 * 60 * 60 * 1000),
-        outcomes: [
-          'Increased cultural awareness among participants',
-          'Enhanced cultural competency skills',
-          'Improved cultural safety practices',
-          'Stronger community connections',
-        ],
+        id: '1',
+        title: 'Manaakitanga in Education',
+        category: 'Cultural Values',
+        description:
+          'Implementation of manaakitanga (hospitality, kindness) principles in all educational interactions.',
+        status: 'implemented',
+        importance: 95,
+        lastUpdated: '2024-01-15',
+        participants: 45,
+        effectiveness: 92,
       },
       {
-        id: 'community-partnership',
-        initiative: 'Community Partnership Development',
-        description: 'Building strong partnerships with local Māori communities',
+        id: '2',
+        title: 'Kaitiakitanga Learning',
+        category: 'Environmental',
+        description:
+          'Teaching and practicing kaitiakitanga (guardianship) of natural resources and cultural heritage.',
+        status: 'implemented',
+        importance: 88,
+        lastUpdated: '2024-01-12',
+        participants: 38,
+        effectiveness: 87,
+      },
+      {
+        id: '3',
+        title: 'Rangatiratanga Leadership',
+        category: 'Leadership',
+        description:
+          'Developing rangatiratanga (leadership) skills and principles in educational leadership.',
+        status: 'draft',
+        importance: 82,
+        lastUpdated: '2024-01-10',
+        participants: 25,
+        effectiveness: 75,
+      },
+      {
+        id: '4',
+        title: 'Whanaungatanga Building',
+        category: 'Relationships',
+        description:
+          'Strengthening whanaungatanga (relationships) between students, teachers, and community.',
+        status: 'review',
+        importance: 90,
+        lastUpdated: '2024-01-08',
+        participants: 52,
+        effectiveness: 85,
+      },
+    ];
+
+    const generateMockIntegrationModules = (): IntegrationModule[] => [
+      {
+        id: '1',
+        name: 'Te Reo Māori Curriculum',
+        description: 'Comprehensive Te Reo Māori curriculum integration across all subjects.',
+        progress: 85,
         status: 'active',
+        culturalAlignment: 92,
+        lastUpdated: '2024-01-15',
+      },
+      {
+        id: '2',
+        name: 'Cultural Assessment Framework',
+        description:
+          'Assessment framework that incorporates Māori cultural perspectives and values.',
+        progress: 72,
+        status: 'development',
+        culturalAlignment: 88,
+        lastUpdated: '2024-01-12',
+      },
+      {
+        id: '3',
+        name: 'Digital Cultural Resources',
+        description: 'Digital platform for accessing and sharing cultural resources and knowledge.',
+        progress: 60,
+        status: 'development',
+        culturalAlignment: 85,
+        lastUpdated: '2024-01-10',
+      },
+      {
+        id: '4',
+        name: 'Community Partnership Portal',
+        description: 'Portal for managing partnerships with local iwi and cultural organizations.',
+        progress: 45,
+        status: 'planned',
+        culturalAlignment: 90,
+        lastUpdated: '2024-01-08',
+      },
+    ];
+
+    const generateMockCommunityActivities = (): CommunityActivity[] => [
+      {
+        id: '1',
+        title: 'Te Reo Māori Workshop',
+        description:
+          'Interactive workshop for learning basic Te Reo Māori phrases and cultural context.',
+        date: '2024-01-20',
+        participants: 35,
+        type: 'workshop',
+        status: 'upcoming',
+      },
+      {
+        id: '2',
+        title: 'Matariki Celebration',
+        description:
+          'Community celebration of Matariki (Māori New Year) with traditional ceremonies.',
+        date: '2024-01-18',
         participants: 120,
-        impact: 'high',
-        culturalValue: 92,
-        startDate: new Date(Date.now() - 120 * 24 * 60 * 60 * 1000),
-        outcomes: [
-          'Established community advisory groups',
-          'Regular community consultation processes',
-          'Shared cultural knowledge exchange',
-          'Enhanced community relationships',
-        ],
+        type: 'celebration',
+        status: 'ongoing',
       },
       {
-        id: 'cultural-celebration',
-        initiative: 'Cultural Celebration Events',
-        description: 'Regular cultural celebration and recognition events',
-        status: 'active',
-        participants: 800,
-        impact: 'medium',
-        culturalValue: 88,
-        startDate: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
-        outcomes: [
-          'Increased cultural visibility',
-          'Enhanced cultural pride',
-          'Improved cultural understanding',
-          'Strengthened cultural identity',
-        ],
+        id: '3',
+        title: 'Cultural Safety Discussion',
+        description: 'Open discussion forum on cultural safety practices in education.',
+        date: '2024-01-15',
+        participants: 28,
+        type: 'discussion',
+        status: 'completed',
       },
       {
-        id: 'mentorship-program',
-        initiative: 'Cultural Mentorship Program',
-        description: 'Cultural mentorship and guidance program',
-        status: 'active',
-        participants: 60,
-        impact: 'high',
-        culturalValue: 94,
-        startDate: new Date(Date.now() - 150 * 24 * 60 * 60 * 1000),
-        outcomes: [
-          'Personal cultural development',
-          'Enhanced cultural leadership skills',
-          'Improved cultural knowledge transfer',
-          'Strengthened cultural networks',
-        ],
+        id: '4',
+        title: 'Whakapapa Ceremony',
+        description: 'Traditional ceremony honoring whakapapa and ancestral connections.',
+        date: '2024-01-12',
+        participants: 45,
+        type: 'ceremony',
+        status: 'completed',
       },
     ];
 
-    setProtocols(initialProtocols);
-    setSafetyMeasures(initialSafety);
-    setCommunityInitiatives(initialInitiatives);
-  };
+    setSafetyProtocols(generateMockSafetyProtocols());
+    setCulturalProtocols(generateMockCulturalProtocols());
+    setIntegrationModules(generateMockIntegrationModules());
+    setCommunityActivities(generateMockCommunityActivities());
 
-  const getFilteredProtocols = () => {
-    let filtered = [...protocols];
+    // Calculate engagement stats
+    const totalParticipants = communityActivities.reduce(
+      (sum, activity) => sum + activity.participants,
+      0,
+    );
+    const activeProtocols = safetyProtocols.filter((p) => p.status === 'active').length;
+    const culturalEvents = communityActivities.length;
+    const communityGrowth = Math.round((totalParticipants / 100) * 15); // Mock growth calculation
 
-    if (filterCategory !== 'all') {
-      filtered = filtered.filter((protocol) => protocol.category === filterCategory);
-    }
-
-    if (searchTerm) {
-      filtered = filtered.filter(
-        (protocol) =>
-          protocol.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          protocol.maoriName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          protocol.description.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-    }
-
-    return filtered;
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'tikanga':
-        return '🌿';
-      case 'manaakitanga':
-        return '🤝';
-      case 'kaitiakitanga':
-        return '🌱';
-      case 'rangatiratanga':
-        return '👑';
-      case 'whakapapa':
-        return '🌳';
-      case 'mana':
-        return '✨';
-      default:
-        return '⚙️';
-    }
-  };
-
-  const getImportanceColor = (importance: string) => {
-    switch (importance) {
-      case 'critical':
-        return '#ef4444';
-      case 'high':
-        return '#f59e0b';
-      case 'medium':
-        return '#3b82f6';
-      case 'low':
-        return '#10b981';
-      default:
-        return '#6b7280';
-    }
-  };
+    setEngagementStats({
+      totalParticipants,
+      activeProtocols,
+      culturalEvents,
+      communityGrowth,
+    });
+  }, []);
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-      case 'excellent':
-        return '#10b981';
-      case 'good':
-        return '#3b82f6';
-      case 'warning':
+      case 'implemented':
+        return 'active';
       case 'pending':
-        return '#f59e0b';
-      case 'critical':
+      case 'draft':
+        return 'pending';
       case 'review':
-        return '#ef4444';
+        return 'review';
       default:
-        return '#6b7280';
+        return 'pending';
+    }
+  };
+
+  const getRiskColor = (riskLevel: string) => {
+    switch (riskLevel) {
+      case 'low':
+        return '#4ecdc4';
+      case 'medium':
+        return '#ffa726';
+      case 'high':
+        return '#ff6b6b';
+      default:
+        return '#b0b0b0';
     }
   };
 
   return (
     <div className="advanced-cultural-integration">
-      <div className="integration-container">
-        <div className="integration-header">
-          <h1>🌿 Advanced Cultural Integration</h1>
-          <p>Comprehensive Te Ao Māori integration, cultural safety, and community engagement</p>
-        </div>
+      <div className="cultural-header">
+        <h1>Advanced Cultural Integration</h1>
+        <p>
+          Comprehensive cultural safety protocols, integration systems, and community engagement for
+          authentic Māori cultural integration in education
+        </p>
+      </div>
 
-        {/* Navigation Tabs */}
-        <div className="integration-tabs">
-          <button
-            className={`tab-btn ${selectedView === 'overview' ? 'active' : ''}`}
-            onClick={() => setSelectedView('overview')}
-          >
-            📊 Overview
-          </button>
-          <button
-            className={`tab-btn ${selectedView === 'protocols' ? 'active' : ''}`}
-            onClick={() => setSelectedView('protocols')}
-          >
-            📋 Cultural Protocols
-          </button>
-          <button
-            className={`tab-btn ${selectedView === 'safety' ? 'active' : ''}`}
-            onClick={() => setSelectedView('safety')}
-          >
-            🛡️ Cultural Safety
-          </button>
-          <button
-            className={`tab-btn ${selectedView === 'community' ? 'active' : ''}`}
-            onClick={() => setSelectedView('community')}
-          >
-            🤝 Community Engagement
-          </button>
-        </div>
+      <div className="cultural-tabs">
+        <button
+          className={`cultural-tab ${activeTab === 'safety' ? 'active' : ''}`}
+          onClick={() => setActiveTab('safety')}
+        >
+          🛡️ Cultural Safety
+        </button>
+        <button
+          className={`cultural-tab ${activeTab === 'protocols' ? 'active' : ''}`}
+          onClick={() => setActiveTab('protocols')}
+        >
+          📋 Cultural Protocols
+        </button>
+        <button
+          className={`cultural-tab ${activeTab === 'integration' ? 'active' : ''}`}
+          onClick={() => setActiveTab('integration')}
+        >
+          🔗 Integration Modules
+        </button>
+        <button
+          className={`cultural-tab ${activeTab === 'community' ? 'active' : ''}`}
+          onClick={() => setActiveTab('community')}
+        >
+          👥 Community Engagement
+        </button>
+      </div>
 
-        {/* Overview Section */}
-        {selectedView === 'overview' && (
-          <div className="overview-section">
-            <div className="overview-stats">
-              <div className="stat-card primary">
-                <h3>Cultural Integration Score</h3>
-                <div className="stat-value">96.2%</div>
-                <div className="stat-trend up">↗️ +2.1%</div>
-                <div className="stat-label">Overall Integration</div>
-              </div>
-              <div className="stat-card">
-                <h3>Active Protocols</h3>
-                <div className="stat-value">
-                  {protocols.filter((p) => p.implementationStatus === 'active').length}
+      <div className="cultural-content">
+        {activeTab === 'safety' && (
+          <div>
+            <h2>Cultural Safety Protocols</h2>
+            <div className="cultural-safety-grid">
+              {safetyProtocols.map((protocol) => (
+                <div key={protocol.id} className="safety-card">
+                  <h3>
+                    🛡️ {protocol.name}
+                    <span className={`safety-status ${getStatusColor(protocol.status)}`}>
+                      {protocol.status}
+                    </span>
+                  </h3>
+                  <p style={{ color: '#d0d0d0', marginBottom: '1rem', fontStyle: 'italic' }}>
+                    {protocol.maoriName}
+                  </p>
+                  <p style={{ color: '#b0b0b0', marginBottom: '1rem' }}>{protocol.description}</p>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <span style={{ color: '#b0b0b0', fontSize: '0.9rem' }}>
+                      Compliance: {protocol.compliance}%
+                    </span>
+                    <span
+                      style={{
+                        color: getRiskColor(protocol.riskLevel),
+                        fontSize: '0.9rem',
+                        fontWeight: '600',
+                      }}
+                    >
+                      Risk: {protocol.riskLevel}
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: '0.5rem',
+                      color: '#b0b0b0',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    Updated: {protocol.lastUpdated}
+                  </div>
                 </div>
-                <div className="stat-trend stable">→ {protocols.length} Total</div>
-                <div className="stat-label">Cultural Protocols</div>
-              </div>
-              <div className="stat-card">
-                <h3>Safety Level</h3>
-                <div className="stat-value">Excellent</div>
-                <div className="stat-trend up">↗️ 98%</div>
-                <div className="stat-label">Cultural Safety</div>
-              </div>
-              <div className="stat-card">
-                <h3>Community Engagement</h3>
-                <div className="stat-value">
-                  {communityInitiatives.filter((c) => c.status === 'active').length}
-                </div>
-                <div className="stat-trend up">↗️ Active</div>
-                <div className="stat-label">Initiatives</div>
-              </div>
-            </div>
-
-            <div className="overview-grid">
-              <div className="overview-card">
-                <h3>🎯 Cultural Excellence Highlights</h3>
-                <ul>
-                  <li>✅ 98% cultural accuracy in protocols</li>
-                  <li>✅ 96% community approval rating</li>
-                  <li>✅ Excellent cultural safety standards</li>
-                  <li>✅ Active community engagement</li>
-                  <li>✅ Comprehensive cultural integration</li>
-                </ul>
-              </div>
-              <div className="overview-card">
-                <h3>🌿 Cultural Categories</h3>
-                <div className="category-breakdown">
-                  {[
-                    'tikanga',
-                    'manaakitanga',
-                    'kaitiakitanga',
-                    'rangatiratanga',
-                    'whakapapa',
-                    'mana',
-                  ].map((category) => (
-                    <div key={category} className="category-item">
-                      <span className="category-icon">{getCategoryIcon(category)}</span>
-                      <span className="category-name">{category}</span>
-                      <span className="category-count">
-                        {protocols.filter((p) => p.category === category).length}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         )}
 
-        {/* Protocols Section */}
-        {selectedView === 'protocols' && (
-          <div className="protocols-section">
-            <div className="protocols-controls">
-              <div className="search-filter">
-                <input
-                  type="text"
-                  placeholder="Search protocols..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="search-input"
-                />
-              </div>
-              <div className="category-filter">
-                <select
-                  value={filterCategory}
-                  onChange={(e) =>
-                    setFilterCategory(
-                      e.target.value as
-                        | 'all'
-                        | 'tikanga'
-                        | 'manaakitanga'
-                        | 'kaitiakitanga'
-                        | 'rangatiratanga'
-                        | 'whakapapa'
-                        | 'mana',
-                    )
-                  }
-                  className="filter-select"
-                >
-                  <option value="all">All Categories</option>
-                  <option value="tikanga">Tikanga</option>
-                  <option value="manaakitanga">Manaakitanga</option>
-                  <option value="kaitiakitanga">Kaitiakitanga</option>
-                  <option value="rangatiratanga">Rangatiratanga</option>
-                  <option value="whakapapa">Whakapapa</option>
-                  <option value="mana">Mana</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="protocols-grid">
-              {getFilteredProtocols().map((protocol) => (
-                <div key={protocol.id} className="protocol-card">
+        {activeTab === 'protocols' && (
+          <div>
+            <h2>Cultural Protocols</h2>
+            <div className="protocols-list">
+              {culturalProtocols.map((protocol) => (
+                <div key={protocol.id} className="protocol-item">
                   <div className="protocol-header">
-                    <div className="protocol-icon">{getCategoryIcon(protocol.category)}</div>
-                    <div className="protocol-info">
-                      <h3>{protocol.name}</h3>
-                      <h4 className="maori-name">{protocol.maoriName}</h4>
-                      <div className="protocol-meta">
-                        <span
-                          className="importance-badge"
-                          style={{ backgroundColor: getImportanceColor(protocol.importance) }}
-                        >
-                          {protocol.importance}
-                        </span>
-                        <span
-                          className="status-badge"
-                          style={{ backgroundColor: getStatusColor(protocol.implementationStatus) }}
-                        >
-                          {protocol.implementationStatus}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="protocol-content">
-                    <p className="protocol-description">{protocol.description}</p>
-
-                    <div className="protocol-metrics">
-                      <div className="metric">
-                        <span>Cultural Accuracy</span>
-                        <span className="metric-value">{protocol.culturalAccuracy}%</span>
-                      </div>
-                      <div className="metric">
-                        <span>Community Approval</span>
-                        <span className="metric-value">{protocol.communityApproval}%</span>
-                      </div>
-                    </div>
-
-                    <div className="protocol-guidelines">
-                      <h4>Guidelines</h4>
-                      <ul>
-                        {protocol.guidelines.map((guideline, index) => (
-                          <li key={index}>{guideline}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="protocol-examples">
-                      <h4>Examples</h4>
-                      <ul>
-                        {protocol.examples.map((example, index) => (
-                          <li key={index}>{example}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="protocol-footer">
-                    <span className="last-updated">
-                      Last updated: {protocol.lastUpdated.toLocaleDateString()}
+                    <span className="protocol-title">{protocol.title}</span>
+                    <span className={`protocol-status ${getStatusColor(protocol.status)}`}>
+                      {protocol.status}
                     </span>
-                    <button className="view-details-btn">View Details</button>
+                  </div>
+                  <p className="protocol-description">{protocol.description}</p>
+                  <div className="protocol-metrics">
+                    <span className="protocol-metric">📊 Importance: {protocol.importance}%</span>
+                    <span className="protocol-metric">
+                      👥 Participants: {protocol.participants}
+                    </span>
+                    <span className="protocol-metric">
+                      ✅ Effectiveness: {protocol.effectiveness}%
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: '0.5rem',
+                      color: '#b0b0b0',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    Updated: {protocol.lastUpdated}
                   </div>
                 </div>
               ))}
@@ -641,60 +414,46 @@ const AdvancedCulturalIntegration: React.FC = () => {
           </div>
         )}
 
-        {/* Safety Section */}
-        {selectedView === 'safety' && (
-          <div className="safety-section">
-            <div className="safety-grid">
-              {safetyMeasures.map((safety) => (
-                <div key={safety.id} className="safety-card">
-                  <div className="safety-header">
-                    <h3>{safety.aspect}</h3>
+        {activeTab === 'integration' && (
+          <div>
+            <h2>Integration Modules</h2>
+            <div className="integration-grid">
+              {integrationModules.map((module) => (
+                <div key={module.id} className="integration-card">
+                  <div className="integration-icon">🔗</div>
+                  <h3 className="integration-title">{module.name}</h3>
+                  <p className="integration-description">{module.description}</p>
+                  <div className="integration-progress">
+                    <div className="progress-bar">
+                      <div className="progress-fill" style={{ width: `${module.progress}%` }}></div>
+                    </div>
+                    <div className="progress-text">{module.progress}% Complete</div>
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      marginTop: '1rem',
+                    }}
+                  >
                     <span
-                      className="safety-level"
-                      style={{ backgroundColor: getStatusColor(safety.safetyLevel) }}
+                      style={{
+                        color: '#4ecdc4',
+                        fontSize: '0.9rem',
+                        fontWeight: '600',
+                      }}
                     >
-                      {safety.safetyLevel}
+                      Cultural Alignment: {module.culturalAlignment}%
                     </span>
-                  </div>
-
-                  <div className="safety-content">
-                    <p className="safety-description">{safety.description}</p>
-
-                    <div className="safety-details">
-                      <div className="risk-factors">
-                        <h4>Risk Factors</h4>
-                        <ul>
-                          {safety.riskFactors.map((factor, index) => (
-                            <li key={index}>{factor}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mitigation-strategies">
-                        <h4>Mitigation Strategies</h4>
-                        <ul>
-                          {safety.mitigationStrategies.map((strategy, index) => (
-                            <li key={index}>{strategy}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="safety-timeline">
-                      <div className="timeline-item">
-                        <span>Last Assessment</span>
-                        <span>{safety.lastAssessment.toLocaleDateString()}</span>
-                      </div>
-                      <div className="timeline-item">
-                        <span>Next Review</span>
-                        <span>{safety.nextReview.toLocaleDateString()}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="safety-actions">
-                    <button className="action-btn">Update Assessment</button>
-                    <button className="action-btn">View Report</button>
+                    <span
+                      style={{
+                        color: '#b0b0b0',
+                        fontSize: '0.8rem',
+                      }}
+                    >
+                      {module.status}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -702,66 +461,38 @@ const AdvancedCulturalIntegration: React.FC = () => {
           </div>
         )}
 
-        {/* Community Section */}
-        {selectedView === 'community' && (
-          <div className="community-section">
-            <div className="community-grid">
-              {communityInitiatives.map((initiative) => (
-                <div key={initiative.id} className="community-card">
-                  <div className="community-header">
-                    <h3>{initiative.initiative}</h3>
-                    <span
-                      className="initiative-status"
-                      style={{ backgroundColor: getStatusColor(initiative.status) }}
-                    >
-                      {initiative.status}
-                    </span>
+        {activeTab === 'community' && (
+          <div>
+            <h2>Community Engagement</h2>
+            <div className="engagement-stats">
+              <div className="stat-card">
+                <div className="stat-number">{engagementStats.totalParticipants}</div>
+                <div className="stat-label">Total Participants</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">{engagementStats.activeProtocols}</div>
+                <div className="stat-label">Active Protocols</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">{engagementStats.culturalEvents}</div>
+                <div className="stat-label">Cultural Events</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">{engagementStats.communityGrowth}%</div>
+                <div className="stat-label">Community Growth</div>
+              </div>
+            </div>
+
+            <div className="engagement-activities">
+              {communityActivities.map((activity) => (
+                <div key={activity.id} className="activity-card">
+                  <div className="activity-header">
+                    <span className="activity-title">{activity.title}</span>
+                    <span className="activity-date">{activity.date}</span>
                   </div>
-
-                  <div className="community-content">
-                    <p className="initiative-description">{initiative.description}</p>
-
-                    <div className="initiative-metrics">
-                      <div className="metric">
-                        <span>Participants</span>
-                        <span className="metric-value">{initiative.participants}</span>
-                      </div>
-                      <div className="metric">
-                        <span>Impact Level</span>
-                        <span className="metric-value">{initiative.impact}</span>
-                      </div>
-                      <div className="metric">
-                        <span>Cultural Value</span>
-                        <span className="metric-value">{initiative.culturalValue}%</span>
-                      </div>
-                    </div>
-
-                    <div className="initiative-timeline">
-                      <div className="timeline-item">
-                        <span>Start Date</span>
-                        <span>{initiative.startDate.toLocaleDateString()}</span>
-                      </div>
-                      {initiative.endDate && (
-                        <div className="timeline-item">
-                          <span>End Date</span>
-                          <span>{initiative.endDate.toLocaleDateString()}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="initiative-outcomes">
-                      <h4>Outcomes</h4>
-                      <ul>
-                        {initiative.outcomes.map((outcome, index) => (
-                          <li key={index}>{outcome}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="community-actions">
-                    <button className="action-btn">View Details</button>
-                    <button className="action-btn">Update Progress</button>
+                  <p className="activity-description">{activity.description}</p>
+                  <div className="activity-participants">
+                    👥 {activity.participants} participants • {activity.type} • {activity.status}
                   </div>
                 </div>
               ))}

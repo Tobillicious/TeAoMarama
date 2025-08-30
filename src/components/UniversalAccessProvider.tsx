@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode } from 'react';
+import React, { createContext, ReactNode, useContext } from 'react';
 
 interface UniversalAccessContextType {
   hasAccess: boolean;
@@ -8,9 +8,16 @@ interface UniversalAccessContextType {
   unlockAllResources: () => void;
 }
 
-const UniversalAccessContext = createContext<UniversalAccessContextType | undefined>(undefined);
+export const UniversalAccessContext = createContext<UniversalAccessContextType | undefined>(undefined);
 
-// Moved to utils/universal-access-utils.ts to fix Fast Refresh
+// Hook to use UniversalAccess context
+export const useUniversalAccess = () => {
+  const context = useContext(UniversalAccessContext);
+  if (!context) {
+    throw new Error('useUniversalAccess must be used within UniversalAccessProvider');
+  }
+  return context;
+};
 
 interface UniversalAccessProviderProps {
   children: ReactNode;

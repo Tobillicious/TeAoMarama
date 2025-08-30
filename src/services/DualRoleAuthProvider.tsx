@@ -1,4 +1,13 @@
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  type User as FirebaseUser,
+  type UserCredential,
+} from 'firebase/auth';
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { auth } from '../firebaseConfig';
 
 // User roles and their capabilities
 export type UserRole = 'teacher' | 'student' | 'admin';
@@ -128,19 +137,28 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
 
   // Initialize auth state
   useEffect(() => {
-    const savedUser = localStorage.getItem('teaomarama_user');
-    if (savedUser) {
-      try {
-        const user = JSON.parse(savedUser);
-        setCurrentUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (user: FirebaseUser | null) => {
+      if (user) {
+        setCurrentUser({
+          id: user.uid,
+          email: user.email || '',
+          name: user.displayName || '',
+          role: 'student', // Default role, will be updated on login
+          culturalClearance: 'basic', // Default clearance, will be updated on login
+          createdAt: user.metadata.creationTime || '',
+          lastLogin: user.metadata.lastSignInTime || '',
+        });
         setIsAuthenticated(true);
-        console.log(`🌟 Welcome back, ${user.name} (${user.role})!`);
-      } catch (error) {
-        console.error('Failed to restore user session:', error);
-        localStorage.removeItem('teaomarama_user');
+        console.log(`🌟 Welcome back, ${user.displayName || user.email}!`);
+      } else {
+        setCurrentUser(null);
+        setIsAuthenticated(false);
+        console.log('👋 No user logged in.');
       }
-    }
-    setIsLoading(false);
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const login = async (
@@ -151,42 +169,37 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     setIsLoading(true);
 
     try {
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user: FirebaseUser = userCredential.user;
 
-      // Demo login logic - in real app, this would validate against backend
-      if (email.includes('demo') || email.includes('teaomarama')) {
-        const user = demoUsers[role];
-        if (user) {
-          setCurrentUser(user);
-          setIsAuthenticated(true);
-          localStorage.setItem('teaomarama_user', JSON.stringify(user));
-
-          console.log(`🎓 Login successful: ${user.name} (${user.role})`);
-          console.log(`🌿 Cultural clearance: ${user.culturalClearance}`);
-          console.log(
-            `📚 Access granted to ${
-              getRoleBasedFeatures(user.role).availablePages.length
-            } features`,
-          );
-
-          return { success: true };
-        }
+      if (user) {
+        setCurrentUser({
+          id: user.uid,
+          email: user.email || '',
+          name: user.displayName || '',
+          role: role, // Use the role passed to the function
+          culturalClearance: 'basic', // Default clearance, will be updated on login
+          createdAt: user.metadata.creationTime || '',
+          lastLogin: user.metadata.lastSignInTime || '',
+        });
+        setIsAuthenticated(true);
+        console.log(`🎓 Login successful: ${user.displayName || user.email} (${role})`);
+        return { success: true };
       }
-
-      // Real authentication would go here
-      return { success: false, error: 'Invalid credentials' };
-    } catch {
       return { success: false, error: 'Login failed' };
+    } catch (error: unknown) {
+      console.error('Login error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Login failed';
+      return { success: false, error: errorMessage };
     } finally {
       setIsLoading(false);
     }
   };
 
   const logout = async (): Promise<void> => {
+    await signOut(auth);
     setCurrentUser(null);
     setIsAuthenticated(false);
-    localStorage.removeItem('teaomarama_user');
     console.log('👋 Logged out successfully');
   };
 
@@ -194,30 +207,32 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     setIsLoading(true);
 
     try {
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const userCredential: UserCredential = await createUserWithEmailAndPassword(
+        auth,
+        userData.email,
+        userData.password,
+      );
+      const user: FirebaseUser = userCredential.user;
 
-      const newUser: User = {
-        id: `user-${Date.now()}`,
-        email: userData.email,
-        name: userData.name,
-        role: userData.role,
-        culturalClearance: userData.role === 'teacher' ? 'approved' : 'basic',
-        school: userData.school,
-        grade: userData.grade,
-        subjects: userData.subjects,
-        createdAt: new Date().toISOString(),
-        lastLogin: new Date().toISOString(),
-      };
-
-      setCurrentUser(newUser);
-      setIsAuthenticated(true);
-      localStorage.setItem('teaomarama_user', JSON.stringify(newUser));
-
-      console.log(`🎉 Account created: ${newUser.name} (${newUser.role})`);
-      return { success: true };
-    } catch {
+      if (user) {
+        setCurrentUser({
+          id: user.uid,
+          email: user.email || '',
+          name: user.displayName || '',
+          role: userData.role,
+          culturalClearance: userData.role === 'teacher' ? 'approved' : 'basic',
+          createdAt: user.metadata.creationTime || '',
+          lastLogin: user.metadata.lastSignInTime || '',
+        });
+        setIsAuthenticated(true);
+        console.log(`🎉 Account created: ${user.displayName || user.email} (${userData.role})`);
+        return { success: true };
+      }
       return { success: false, error: 'Sign up failed' };
+    } catch (error: unknown) {
+      console.error('Sign up error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Sign up failed';
+      return { success: false, error: errorMessage };
     } finally {
       setIsLoading(false);
     }
@@ -227,7 +242,6 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     const user = demoUsers.teacher; // Default to teacher demo
     setCurrentUser(user);
     setIsAuthenticated(true);
-    localStorage.setItem('teaomarama_user', JSON.stringify(user));
     console.log('🎭 Switched to demo mode');
   };
 
