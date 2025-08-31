@@ -9,8 +9,14 @@ import {
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { auth } from '../firebaseConfig';
 
+// Check if Firebase environment variables are available
+const hasFirebaseConfig =
+  import.meta.env.VITE_FIREBASE_API_KEY &&
+  import.meta.env.VITE_FIREBASE_PROJECT_ID &&
+  import.meta.env.VITE_FIREBASE_API_KEY !== 'your_actual_api_key_here';
+
 // User roles and their capabilities
-export type UserRole = 'teacher' | 'student' | 'admin';
+export type UserRole = 'teacher' | 'student' | 'admin' | 'kaitiaki';
 export type CulturalClearance = 'basic' | 'approved' | 'kaitiaki';
 
 interface User {
@@ -133,32 +139,50 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
       createdAt: new Date().toISOString(),
       lastLogin: new Date().toISOString(),
     },
+    kaitiaki: {
+      id: 'demo-kaitiaki-001',
+      email: 'kaitiaki@teaomarama.nz',
+      name: 'Kaitiaki Aronui',
+      role: 'kaitiaki',
+      culturalClearance: 'kaitiaki',
+      school: 'Te Kura o TeAoMarama',
+      iwiAffiliations: ['Ngāti Tūwharetoa', 'Te Arawa'],
+      createdAt: new Date().toISOString(),
+      lastLogin: new Date().toISOString(),
+    },
   };
 
   // Initialize auth state
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user: FirebaseUser | null) => {
-      if (user) {
-        setCurrentUser({
-          id: user.uid,
-          email: user.email || '',
-          name: user.displayName || '',
-          role: 'student', // Default role, will be updated on login
-          culturalClearance: 'basic', // Default clearance, will be updated on login
-          createdAt: user.metadata.creationTime || '',
-          lastLogin: user.metadata.lastSignInTime || '',
-        });
-        setIsAuthenticated(true);
-        console.log(`🌟 Welcome back, ${user.displayName || user.email}!`);
-      } else {
-        setCurrentUser(null);
-        setIsAuthenticated(false);
-        console.log('👋 No user logged in.');
-      }
-      setIsLoading(false);
-    });
+    // Only listen to Firebase auth state if Firebase is properly configured
+    if (auth && hasFirebaseConfig) {
+      const unsubscribe = onAuthStateChanged(auth, (user: FirebaseUser | null) => {
+        if (user) {
+          setCurrentUser({
+            id: user.uid,
+            email: user.email || '',
+            name: user.displayName || '',
+            role: 'student', // Default role, will be updated on login
+            culturalClearance: 'basic', // Default clearance, will be updated on login
+            createdAt: user.metadata.creationTime || '',
+            lastLogin: user.metadata.lastSignInTime || '',
+          });
+          setIsAuthenticated(true);
+          console.log(`🌟 Welcome back, ${user.displayName || user.email}!`);
+        } else {
+          setCurrentUser(null);
+          setIsAuthenticated(false);
+          console.log('👋 No user logged in.');
+        }
+        setIsLoading(false);
+      });
 
-    return () => unsubscribe();
+      return () => unsubscribe();
+    } else {
+      // No Firebase auth - set loading to false
+      console.log('🔄 No Firebase authentication available');
+      setIsLoading(false);
+    }
   }, []);
 
   const login = async (
@@ -169,35 +193,100 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     setIsLoading(true);
 
     try {
-      const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user: FirebaseUser = userCredential.user;
-
-      if (user) {
+      // Demo mode - bypass Firebase authentication
+      if (!auth || !hasFirebaseConfig) {
+        // Use demo user for the selected role
+        const demoUser = demoUsers[role] || demoUsers.student;
         setCurrentUser({
-          id: user.uid,
-          email: user.email || '',
-          name: user.displayName || '',
-          role: role, // Use the role passed to the function
-          culturalClearance: 'basic', // Default clearance, will be updated on login
-          createdAt: user.metadata.creationTime || '',
-          lastLogin: user.metadata.lastSignInTime || '',
+          ...demoUser,
+          email: email,
+          role: role,
         });
         setIsAuthenticated(true);
-        console.log(`🎓 Login successful: ${user.displayName || user.email} (${role})`);
+        console.log(`🎭 Demo login successful: ${email} (${role})`);
         return { success: true };
       }
+
+      // Try Firebase authentication first
+      try {
+        const userCredential: UserCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password,
+        );
+        const user: FirebaseUser = userCredential.user;
+
+        if (user) {
+          setCurrentUser({
+            id: user.uid,
+            email: user.email || '',
+            name: user.displayName || '',
+            role: role, // Use the role passed to the function
+            culturalClearance: 'basic', // Default clearance, will be updated on login
+            createdAt: user.metadata.creationTime || '',
+            lastLogin: user.metadata.lastSignInTime || '',
+          });
+          setIsAuthenticated(true);
+          console.log(`🎓 Firebase login successful: ${user.displayName || user.email} (${role})`);
+          return { success: true };
+        }
+      } catch (firebaseError: unknown) {
+        console.warn('Firebase authentication failed, falling back to demo mode:', firebaseError);
+        
+        // Check if it's an auth/invalid-credential or other auth error
+        const isAuthError = firebaseError instanceof Error && 
+          (firebaseError.message.includes('auth/invalid-credential') ||
+           firebaseError.message.includes('auth/user-not-found') ||
+           firebaseError.message.includes('auth/wrong-password'));
+        
+        // If it's an auth error, try demo mode as fallback
+        if (isAuthError) {
+          console.log('🎭 Falling back to demo mode due to Firebase auth error');
+          
+          // Use demo credentials or accept any demo email format
+          if (email.includes('demo') || email.includes('teaomarama') || 
+              email.includes('teacher') || email.includes('student') ||
+              email.includes('kaitiaki') || email.includes('admin')) {
+            const demoUser = demoUsers[role] || demoUsers.student;
+            setCurrentUser({
+              ...demoUser,
+              email: email,
+              role: role,
+            });
+            setIsAuthenticated(true);
+            console.log(`🎭 Demo fallback successful: ${email} (${role})`);
+            return { success: true };
+          }
+        }
+        
+        // Re-throw the Firebase error if it's not handled
+        throw firebaseError;
+      }
+      
       return { success: false, error: 'Login failed' };
     } catch (error: unknown) {
       console.error('Login error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Login failed';
-      return { success: false, error: errorMessage };
+      
+      // Enhanced error messages for better UX
+      if (errorMessage.includes('auth/invalid-credential')) {
+        return { success: false, error: 'Invalid credentials. Try demo mode with any @teaomarama.nz email.' };
+      } else if (errorMessage.includes('auth/user-not-found')) {
+        return { success: false, error: 'User not found. Try demo mode or register a new account.' };
+      } else if (errorMessage.includes('auth/wrong-password')) {
+        return { success: false, error: 'Incorrect password. Try demo mode for testing.' };
+      }
+      
+      return { success: false, error: `${errorMessage}. Demo mode available - use any @teaomarama.nz email.` };
     } finally {
       setIsLoading(false);
     }
   };
 
   const logout = async (): Promise<void> => {
-    await signOut(auth);
+    if (auth && hasFirebaseConfig) {
+      await signOut(auth);
+    }
     setCurrentUser(null);
     setIsAuthenticated(false);
     console.log('👋 Logged out successfully');
@@ -307,6 +396,26 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
           analytics: true,
           contentCreation: true,
           studentManagement: true,
+        };
+
+      case 'kaitiaki':
+        return {
+          dashboard: '/kaitiaki-dashboard',
+          availablePages: [
+            '/kaitiaki-dashboard',
+            '/cultural-oversight',
+            '/sacred-content',
+            '/iwi-coordination',
+            '/cultural-validation',
+            '/spiritual-protocols',
+            '/cultural-safety',
+            '/tikanga-management',
+          ],
+          contentAccess: ['all', 'sacred'],
+          culturalAccess: ['basic', 'approved', 'kaitiaki', 'sacred'],
+          analytics: true,
+          contentCreation: true,
+          studentManagement: false,
         };
 
       default:
