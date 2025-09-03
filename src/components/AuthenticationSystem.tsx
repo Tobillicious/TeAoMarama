@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AuthenticationSystem.css';
 
 interface User {
@@ -29,6 +29,7 @@ interface AuthState {
   currentUser: User | null;
   isLoading: boolean;
   error: string | null;
+  success: string | null;
 }
 
 const AuthenticationSystem: React.FC = () => {
@@ -37,6 +38,7 @@ const AuthenticationSystem: React.FC = () => {
     currentUser: null,
     isLoading: false,
     error: null,
+    success: null,
   });
 
   const [activeTab, setActiveTab] = useState<'login' | 'register' | 'profile' | 'security'>(
@@ -48,6 +50,21 @@ const AuthenticationSystem: React.FC = () => {
     confirmPassword: '',
     name: '',
     role: 'student' as User['role'],
+    teReoLevel: 'beginner' as User['culturalPreferences']['teReoLevel'],
+    culturalFocus: [] as string[],
+    learningStyle: 'mixed' as User['culturalPreferences']['learningStyle'],
+  });
+
+  // Profile form state
+  const [profileData, setProfileData] = useState({
+    name: '',
+    bio: '',
+    location: '',
+    whakapapapa: '',
+  });
+
+  // Cultural preferences state
+  const [culturalPreferences, setCulturalPreferences] = useState({
     teReoLevel: 'beginner' as User['culturalPreferences']['teReoLevel'],
     culturalFocus: [] as string[],
     learningStyle: 'mixed' as User['culturalPreferences']['learningStyle'],
@@ -78,13 +95,37 @@ const AuthenticationSystem: React.FC = () => {
     { value: 'fluent', label: 'Fluent - Kōrero tino pai', icon: '🌲' },
   ];
 
+  // Initialize profile data when user is authenticated
+  useEffect(() => {
+    if (authState.currentUser) {
+      setProfileData({
+        name: authState.currentUser.name,
+        bio: authState.currentUser.profile.bio,
+        location: authState.currentUser.profile.location,
+        whakapapapa: authState.currentUser.profile.whakapapa || '',
+      });
+      setCulturalPreferences({
+        teReoLevel: authState.currentUser.culturalPreferences.teReoLevel,
+        culturalFocus: [...authState.currentUser.culturalPreferences.culturalFocus],
+        learningStyle: authState.currentUser.culturalPreferences.learningStyle,
+      });
+    }
+  }, [authState.currentUser]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleProfileInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setProfileData((prev) => ({ ...prev, [name]: value }));
+  };
+
   const handleCulturalFocusChange = (focus: string) => {
-    setFormData((prev) => ({
+    setCulturalPreferences((prev) => ({
       ...prev,
       culturalFocus: prev.culturalFocus.includes(focus)
         ? prev.culturalFocus.filter((f) => f !== focus)
@@ -92,9 +133,53 @@ const AuthenticationSystem: React.FC = () => {
     }));
   };
 
+  const handleCulturalPreferenceChange = (
+    field: keyof User['culturalPreferences'],
+    value: User['culturalPreferences'][keyof User['culturalPreferences']],
+  ) => {
+    setCulturalPreferences((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const validateForm = () => {
+    if (!formData.email || !formData.password) {
+      setAuthState((prev) => ({ ...prev, error: 'Please fill in all required fields.' }));
+      return false;
+    }
+
+    if (formData.password.length < 8) {
+      setAuthState((prev) => ({ ...prev, error: 'Password must be at least 8 characters long.' }));
+      return false;
+    }
+
+    if (activeTab === 'register') {
+      if (!formData.name) {
+        setAuthState((prev) => ({ ...prev, error: 'Please enter your full name.' }));
+        return false;
+      }
+
+      if (formData.password !== formData.confirmPassword) {
+        setAuthState((prev) => ({ ...prev, error: 'Passwords do not match.' }));
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const clearMessages = () => {
+    setAuthState((prev) => ({ ...prev, error: null, success: null }));
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setAuthState((prev) => ({ ...prev, isLoading: true, error: null }));
+    clearMessages();
+
+    if (!validateForm()) return;
+
+    setAuthState((prev) => ({ ...prev, isLoading: true }));
 
     try {
       // Mock authentication logic
@@ -128,6 +213,7 @@ const AuthenticationSystem: React.FC = () => {
         currentUser: mockUser,
         isLoading: false,
         error: null,
+        success: 'Welcome back! You have been successfully logged in.',
       });
     } catch {
       setAuthState((prev) => ({
@@ -140,12 +226,11 @@ const AuthenticationSystem: React.FC = () => {
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      setAuthState((prev) => ({ ...prev, error: 'Passwords do not match' }));
-      return;
-    }
+    clearMessages();
 
-    setAuthState((prev) => ({ ...prev, isLoading: true, error: null }));
+    if (!validateForm()) return;
+
+    setAuthState((prev) => ({ ...prev, isLoading: true }));
 
     try {
       // Mock registration logic
@@ -178,6 +263,7 @@ const AuthenticationSystem: React.FC = () => {
         currentUser: mockUser,
         isLoading: false,
         error: null,
+        success: 'Account created successfully! Welcome to our Māori cultural learning platform.',
       });
     } catch {
       setAuthState((prev) => ({
@@ -194,42 +280,127 @@ const AuthenticationSystem: React.FC = () => {
       currentUser: null,
       isLoading: false,
       error: null,
+      success: 'You have been successfully logged out.',
     });
     setActiveTab('login');
+    setFormData({
+      email: '',
+      password: '',
+      confirmPassword: '',
+      name: '',
+      role: 'student',
+      teReoLevel: 'beginner',
+      culturalFocus: [],
+      learningStyle: 'mixed',
+    });
   };
 
-  const updateProfile = async (updates: Partial<User['profile']>) => {
+  const updateProfile = async () => {
     if (!authState.currentUser) {
-      console.warn('Cannot update profile: no authenticated user');
+      setAuthState((prev) => ({ ...prev, error: 'Cannot update profile: no authenticated user' }));
       return;
     }
 
-    setAuthState((prev) => ({
-      ...prev,
-      currentUser: prev.currentUser
-        ? {
-            ...prev.currentUser,
-            profile: { ...prev.currentUser.profile, ...updates },
-          }
-        : null,
-    }));
+    setAuthState((prev) => ({ ...prev, isLoading: true }));
+
+    try {
+      // Mock API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setAuthState((prev) => ({
+        ...prev,
+        currentUser: prev.currentUser
+          ? {
+              ...prev.currentUser,
+              name: profileData.name,
+              profile: {
+                ...prev.currentUser.profile,
+                bio: profileData.bio,
+                location: profileData.location,
+                whakapapa: profileData.whakapapapa,
+              },
+            }
+          : null,
+        isLoading: false,
+        success: 'Profile updated successfully!',
+      }));
+    } catch {
+      setAuthState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: 'Failed to update profile. Please try again.',
+      }));
+    }
+  };
+
+  const updateCulturalPreferences = async () => {
+    if (!authState.currentUser) {
+      setAuthState((prev) => ({
+        ...prev,
+        error: 'Cannot update preferences: no authenticated user',
+      }));
+      return;
+    }
+
+    setAuthState((prev) => ({ ...prev, isLoading: true }));
+
+    try {
+      // Mock API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setAuthState((prev) => ({
+        ...prev,
+        currentUser: prev.currentUser
+          ? {
+              ...prev.currentUser,
+              culturalPreferences: culturalPreferences,
+            }
+          : null,
+        isLoading: false,
+        success: 'Cultural preferences updated successfully!',
+      }));
+    } catch {
+      setAuthState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: 'Failed to update cultural preferences. Please try again.',
+      }));
+    }
   };
 
   const updateSecuritySettings = async (updates: Partial<User['securitySettings']>) => {
     if (!authState.currentUser) {
-      console.warn('Cannot update security settings: no authenticated user');
+      setAuthState((prev) => ({
+        ...prev,
+        error: 'Cannot update security settings: no authenticated user',
+      }));
       return;
     }
 
-    setAuthState((prev) => ({
-      ...prev,
-      currentUser: prev.currentUser
-        ? {
-            ...prev.currentUser,
-            securitySettings: { ...prev.currentUser.securitySettings, ...updates },
-          }
-        : null,
-    }));
+    setAuthState((prev) => ({ ...prev, isLoading: true }));
+
+    try {
+      // Mock API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setAuthState((prev) => ({
+        ...prev,
+        currentUser: prev.currentUser
+          ? {
+              ...prev.currentUser,
+              securitySettings: { ...prev.currentUser.securitySettings, ...updates },
+            }
+          : null,
+        isLoading: false,
+        success: 'Security settings updated successfully!',
+      }));
+    } catch {
+      setAuthState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: 'Failed to update security settings. Please try again.',
+      }));
+    }
   };
 
   if (authState.isAuthenticated && authState.currentUser) {
@@ -240,6 +411,18 @@ const AuthenticationSystem: React.FC = () => {
             <h1>🔐 User Profile & Settings</h1>
             <p>Manage your account and cultural preferences</p>
           </div>
+
+          {authState.error && (
+            <div className="auth-error">
+              <span>⚠️ {authState.error}</span>
+            </div>
+          )}
+
+          {authState.success && (
+            <div className="auth-success">
+              <span>✅ {authState.success}</span>
+            </div>
+          )}
 
           <div className="auth-tabs">
             <button
@@ -276,8 +459,9 @@ const AuthenticationSystem: React.FC = () => {
                       <input
                         type="text"
                         id="profile-name"
-                        value={authState.currentUser.name}
-                        onChange={(e) => updateProfile({ bio: e.target.value })}
+                        name="name"
+                        value={profileData.name}
+                        onChange={handleProfileInputChange}
                         aria-label="Full name"
                       />
                     </div>
@@ -285,8 +469,9 @@ const AuthenticationSystem: React.FC = () => {
                       <label htmlFor="profile-bio">Bio</label>
                       <textarea
                         id="profile-bio"
-                        value={authState.currentUser.profile.bio}
-                        onChange={(e) => updateProfile({ bio: e.target.value })}
+                        name="bio"
+                        value={profileData.bio}
+                        onChange={handleProfileInputChange}
                         rows={3}
                         aria-label="User bio"
                       />
@@ -296,11 +481,31 @@ const AuthenticationSystem: React.FC = () => {
                       <input
                         type="text"
                         id="profile-location"
-                        value={authState.currentUser.profile.location}
-                        onChange={(e) => updateProfile({ location: e.target.value })}
+                        name="location"
+                        value={profileData.location}
+                        onChange={handleProfileInputChange}
                         aria-label="Location"
                       />
                     </div>
+                    <div className="form-group">
+                      <label htmlFor="profile-whakapapa">Whakapapa (Optional)</label>
+                      <input
+                        type="text"
+                        id="profile-whakapapa"
+                        name="whakapapapa"
+                        value={profileData.whakapapapa}
+                        onChange={handleProfileInputChange}
+                        placeholder="e.g., Ngāti Kahungunu, Ngāti Porou"
+                        aria-label="Whakapapa"
+                      />
+                    </div>
+                    <button
+                      className="auth-submit-btn"
+                      onClick={updateProfile}
+                      disabled={authState.isLoading}
+                    >
+                      {authState.isLoading ? '🔄 Updating...' : '💾 Save Profile'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -312,12 +517,12 @@ const AuthenticationSystem: React.FC = () => {
                     <label htmlFor="te-reo-level">Te Reo Māori Level</label>
                     <select
                       id="te-reo-level"
-                      value={authState.currentUser.culturalPreferences.teReoLevel}
+                      value={culturalPreferences.teReoLevel}
                       onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          teReoLevel: e.target.value as User['culturalPreferences']['teReoLevel'],
-                        }))
+                        handleCulturalPreferenceChange(
+                          'teReoLevel',
+                          e.target.value as User['culturalPreferences']['teReoLevel'],
+                        )
                       }
                       aria-label="Te Reo Māori proficiency level"
                     >
@@ -336,9 +541,7 @@ const AuthenticationSystem: React.FC = () => {
                         <label key={focus} className="checkbox-item">
                           <input
                             type="checkbox"
-                            checked={authState.currentUser.culturalPreferences.culturalFocus.includes(
-                              focus,
-                            )}
+                            checked={culturalPreferences.culturalFocus.includes(focus)}
                             onChange={() => handleCulturalFocusChange(focus)}
                             aria-label={`Select ${focus} as cultural focus area`}
                           />
@@ -352,13 +555,12 @@ const AuthenticationSystem: React.FC = () => {
                     <label htmlFor="learning-style">Preferred Learning Style</label>
                     <select
                       id="learning-style"
-                      value={authState.currentUser.culturalPreferences.learningStyle}
+                      value={culturalPreferences.learningStyle}
                       onChange={(e) =>
-                        setFormData((prev) => ({
-                          ...prev,
-                          learningStyle: e.target
-                            .value as User['culturalPreferences']['learningStyle'],
-                        }))
+                        handleCulturalPreferenceChange(
+                          'learningStyle',
+                          e.target.value as User['culturalPreferences']['learningStyle'],
+                        )
                       }
                       aria-label="Preferred learning style"
                     >
@@ -369,6 +571,13 @@ const AuthenticationSystem: React.FC = () => {
                       ))}
                     </select>
                   </div>
+                  <button
+                    className="auth-submit-btn"
+                    onClick={updateCulturalPreferences}
+                    disabled={authState.isLoading}
+                  >
+                    {authState.isLoading ? '🔄 Updating...' : '💾 Save Preferences'}
+                  </button>
                 </div>
               </div>
             </div>
@@ -466,6 +675,12 @@ const AuthenticationSystem: React.FC = () => {
           </div>
         )}
 
+        {authState.success && (
+          <div className="auth-success">
+            <span>✅ {authState.success}</span>
+          </div>
+        )}
+
         {activeTab === 'login' && (
           <form onSubmit={handleLogin} className="auth-form">
             <div className="form-group">
@@ -490,6 +705,7 @@ const AuthenticationSystem: React.FC = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 required
+                minLength={8}
                 aria-label="Password for login"
               />
             </div>

@@ -359,9 +359,10 @@ const CulturalLearningModules: React.FC = () => {
       <div className="modules-container">
         <div className="modules-header">
           <h1>🌿 Cultural Learning Modules</h1>
+          <div className="maori-subtitle">Ngā Akoranga Ahurea - Te Kura o TeAoMarama</div>
           <p>
-            Interactive cultural education with Te Ao Māori integration and modern learning
-            approaches
+            Interactive cultural education with Te Ao Māori integration, tikanga protocols,
+            and modern pedagogical approaches designed for authentic cultural learning
           </p>
         </div>
 
@@ -384,7 +385,18 @@ const CulturalLearningModules: React.FC = () => {
               <select
                 id="category-filter"
                 value={filterCategory}
-                onChange={(e) => setFilterCategory(e.target.value as any)}
+                onChange={(e) =>
+                  setFilterCategory(
+                    e.target.value as
+                      | 'all'
+                      | 'tikanga'
+                      | 'te-reo'
+                      | 'whakapapa'
+                      | 'manaakitanga'
+                      | 'kaitiakitanga'
+                      | 'rangatiratanga',
+                  )
+                }
                 aria-label="Filter by cultural category"
               >
                 <option value="all">All Categories</option>
@@ -402,7 +414,11 @@ const CulturalLearningModules: React.FC = () => {
               <select
                 id="difficulty-filter"
                 value={filterDifficulty}
-                onChange={(e) => setFilterDifficulty(e.target.value as any)}
+                onChange={(e) =>
+                  setFilterDifficulty(
+                    e.target.value as 'all' | 'beginner' | 'intermediate' | 'advanced',
+                  )
+                }
                 aria-label="Filter by difficulty level"
               >
                 <option value="all">All Levels</option>

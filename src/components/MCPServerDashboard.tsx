@@ -23,6 +23,7 @@ const MCPServerDashboard: React.FC = () => {
   const [isExecutingTool, setIsExecutingTool] = useState(false);
 
   useEffect(() => {
+    console.log('Global MCP Server:', globalMCPServer);
     const updateStatus = () => {
       const status = globalMCPServer.getStatus();
       setServerStatus(status);

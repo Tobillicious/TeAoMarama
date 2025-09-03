@@ -499,13 +499,18 @@ const AssessmentFramework: React.FC = () => {
             <h2>Create New Assessment</h2>
             <div className="assessment-form">
               <div className="form-group">
-                <label>Assessment Title</label>
-                <input type="text" placeholder="Enter assessment title" />
+                <label htmlFor="assessment-title">Assessment Title</label>
+                <input
+                  id="assessment-title"
+                  type="text"
+                  placeholder="Enter assessment title"
+                  aria-label="Assessment title"
+                />
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Type</label>
-                  <select>
+                  <label htmlFor="assessment-type">Type</label>
+                  <select id="assessment-type" aria-label="Select assessment type">
                     <option value="formative">📝 Formative</option>
                     <option value="summative">📊 Summative</option>
                     <option value="cultural">🌿 Cultural</option>
@@ -514,8 +519,8 @@ const AssessmentFramework: React.FC = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Subject</label>
-                  <select>
+                  <label htmlFor="assessment-subject">Subject</label>
+                  <select id="assessment-subject" aria-label="Select subject">
                     <option value="english">English</option>
                     <option value="social-studies">Social Studies</option>
                     <option value="te-reo">Te Reo Māori</option>
@@ -524,8 +529,8 @@ const AssessmentFramework: React.FC = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Year Level</label>
-                  <select>
+                  <label htmlFor="assessment-year">Year Level</label>
+                  <select id="assessment-year" aria-label="Select year level">
                     <option value="7">Year 7</option>
                     <option value="8">Year 8</option>
                     <option value="9">Year 9</option>
@@ -534,8 +539,12 @@ const AssessmentFramework: React.FC = () => {
                 </div>
               </div>
               <div className="form-group">
-                <label>Description</label>
-                <textarea placeholder="Describe the assessment and its cultural elements"></textarea>
+                <label htmlFor="assessment-description">Description</label>
+                <textarea
+                  id="assessment-description"
+                  placeholder="Describe the assessment and its cultural elements"
+                  aria-label="Assessment description"
+                ></textarea>
               </div>
               <div className="form-group">
                 <label>Cultural Elements</label>
@@ -550,16 +559,28 @@ const AssessmentFramework: React.FC = () => {
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Due Date</label>
-                  <input type="date" />
+                  <label htmlFor="assessment-due-date">Due Date</label>
+                  <input id="assessment-due-date" type="date" aria-label="Assessment due date" />
                 </div>
                 <div className="form-group">
-                  <label>Duration (minutes)</label>
-                  <input type="number" min="15" max="180" />
+                  <label htmlFor="assessment-duration">Duration (minutes)</label>
+                  <input
+                    id="assessment-duration"
+                    type="number"
+                    min="15"
+                    max="180"
+                    aria-label="Assessment duration in minutes"
+                  />
                 </div>
                 <div className="form-group">
-                  <label>Total Marks</label>
-                  <input type="number" min="10" max="100" />
+                  <label htmlFor="assessment-marks">Total Marks</label>
+                  <input
+                    id="assessment-marks"
+                    type="number"
+                    min="10"
+                    max="100"
+                    aria-label="Total marks for assessment"
+                  />
                 </div>
               </div>
               <div className="form-actions">

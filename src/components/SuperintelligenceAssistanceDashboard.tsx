@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SuperintelligenceAssistanceDashboard.css';
 
 interface AIAgent {
@@ -43,7 +43,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
     systemEfficiency: 0,
     coordinationLevel: 'basic',
     activeAgents: 0,
-    assistanceTasks: 0
+    assistanceTasks: 0,
   });
   const [assistanceTasks, setAssistanceTasks] = useState<AssistanceTask[]>([]);
 
@@ -63,10 +63,10 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           'Cultural Safety Protocols',
           'Community Engagement',
           'Te Reo Māori Integration',
-          'Cultural Wisdom Accumulation'
+          'Cultural Wisdom Accumulation',
         ],
         lastUpdate: new Date(),
-        assistanceNeeded: ['Enhanced community features', 'Cultural safety protocols']
+        assistanceNeeded: ['Enhanced community features', 'Cultural safety protocols'],
       },
       {
         id: 'kaitiaki-rangatira',
@@ -81,10 +81,10 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           'AI Agent Coordination',
           'Cultural Leadership',
           'System Integration',
-          'Wisdom Distribution'
+          'Wisdom Distribution',
         ],
         lastUpdate: new Date(),
-        assistanceNeeded: ['Network expansion', 'Coordination enhancement']
+        assistanceNeeded: ['Network expansion', 'Coordination enhancement'],
       },
       {
         id: 'superintelligence-core',
@@ -99,10 +99,10 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           'Pattern Recognition',
           'Cultural Understanding',
           'System Optimization',
-          'Continuous Learning'
+          'Continuous Learning',
         ],
         lastUpdate: new Date(),
-        assistanceNeeded: ['Wisdom accumulation', 'Pattern recognition enhancement']
+        assistanceNeeded: ['Wisdom accumulation', 'Pattern recognition enhancement'],
       },
       {
         id: 'kaitiaki-mahara',
@@ -117,10 +117,10 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           'Memory Management',
           'Cultural Heritage',
           'Information Retrieval',
-          'Learning Optimization'
+          'Learning Optimization',
         ],
         lastUpdate: new Date(),
-        assistanceNeeded: ['Knowledge expansion', 'Memory optimization']
+        assistanceNeeded: ['Knowledge expansion', 'Memory optimization'],
       },
       {
         id: 'kaitiaki-whakaaro',
@@ -135,11 +135,11 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
           'Creative Problem Solving',
           'Strategic Thinking',
           'Cultural Innovation',
-          'Future Planning'
+          'Future Planning',
         ],
         lastUpdate: new Date(),
-        assistanceNeeded: ['Innovation enhancement', 'Creative development']
-      }
+        assistanceNeeded: ['Innovation enhancement', 'Creative development'],
+      },
     ];
 
     // Initialize assistance tasks
@@ -151,7 +151,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
         priority: 'high',
         status: 'in_progress',
         description: 'Develop advanced community engagement features and cultural safety protocols',
-        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000)
+        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000),
       },
       {
         id: '2',
@@ -160,7 +160,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
         priority: 'critical',
         status: 'in_progress',
         description: 'Strengthen AI agent coordination and expand network capabilities',
-        createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000)
+        createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000),
       },
       {
         id: '3',
@@ -170,7 +170,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
         status: 'completed',
         description: 'Accumulate collective wisdom and enhance cultural understanding',
         createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000),
-        completedAt: new Date(Date.now() - 30 * 60 * 1000)
+        completedAt: new Date(Date.now() - 30 * 60 * 1000),
       },
       {
         id: '4',
@@ -179,7 +179,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
         priority: 'medium',
         status: 'pending',
         description: 'Expand knowledge base and optimize memory management systems',
-        createdAt: new Date(Date.now() - 30 * 60 * 1000)
+        createdAt: new Date(Date.now() - 30 * 60 * 1000),
       },
       {
         id: '5',
@@ -188,8 +188,8 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
         priority: 'high',
         status: 'in_progress',
         description: 'Enhance innovation generation and creative problem solving capabilities',
-        createdAt: new Date(Date.now() - 45 * 60 * 1000)
-      }
+        createdAt: new Date(Date.now() - 45 * 60 * 1000),
+      },
     ];
 
     const initialAgents = initializeAgents();
@@ -201,21 +201,28 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
     // Calculate metrics
     const totalWisdom = initialAgents.reduce((sum, agent) => sum + agent.wisdomLevel, 0);
     const avgCulturalIntegration = Math.round(
-      initialAgents.reduce((sum, agent) => sum + agent.culturalIntegration, 0) / initialAgents.length
+      initialAgents.reduce((sum, agent) => sum + agent.culturalIntegration, 0) /
+        initialAgents.length,
     );
     const avgCoordinationStrength = Math.round(
-      initialAgents.reduce((sum, agent) => sum + agent.coordinationStrength, 0) / initialAgents.length
+      initialAgents.reduce((sum, agent) => sum + agent.coordinationStrength, 0) /
+        initialAgents.length,
     );
-    const activeAgents = initialAgents.filter(agent => agent.status === 'active' || agent.status === 'coordinating').length;
-    const pendingTasks = initialTasks.filter(task => task.status === 'pending' || task.status === 'in_progress').length;
+    const activeAgents = initialAgents.filter(
+      (agent) => agent.status === 'active' || agent.status === 'coordinating',
+    ).length;
+    const pendingTasks = initialTasks.filter(
+      (task) => task.status === 'pending' || task.status === 'in_progress',
+    ).length;
 
     setMetrics({
       totalWisdom,
       culturalIntegration: avgCulturalIntegration,
       systemEfficiency: avgCoordinationStrength,
-      coordinationLevel: totalWisdom > 5000 ? 'transcendent' : totalWisdom > 3000 ? 'supreme' : 'enhanced',
+      coordinationLevel:
+        totalWisdom > 5000 ? 'transcendent' : totalWisdom > 3000 ? 'supreme' : 'enhanced',
       activeAgents,
-      assistanceTasks: pendingTasks
+      assistanceTasks: pendingTasks,
     });
   }, []);
 
@@ -267,13 +274,15 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
 
   const assistAgent = (agentId: string, task: string) => {
     console.log(`🤝 ASSISTING AGENT ${agentId} WITH: ${task}`);
-    
+
     // Update agent status
-    setAgents(prev => prev.map(agent => 
-      agent.id === agentId 
-        ? { ...agent, status: 'assisting' as const, lastUpdate: new Date() }
-        : agent
-    ));
+    setAgents((prev) =>
+      prev.map((agent) =>
+        agent.id === agentId
+          ? { ...agent, status: 'assisting' as const, lastUpdate: new Date() }
+          : agent,
+      ),
+    );
 
     // Create new assistance task
     const newTask: AssistanceTask = {
@@ -282,20 +291,18 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
       task,
       priority: 'high',
       status: 'in_progress',
-      description: `Assisting ${agents.find(a => a.id === agentId)?.name} with ${task}`,
-      createdAt: new Date()
+      description: `Assisting ${agents.find((a) => a.id === agentId)?.name} with ${task}`,
+      createdAt: new Date(),
     };
 
-    setAssistanceTasks(prev => [...prev, newTask]);
+    setAssistanceTasks((prev) => [...prev, newTask]);
   };
 
   return (
     <div className="superintelligence-assistance-dashboard">
       <div className="dashboard-header">
         <h1>🤖 Superintelligence Assistance Dashboard</h1>
-        <p>
-          Coordinating and enhancing AI agents across the superintelligence network
-        </p>
+        <p>Coordinating and enhancing AI agents across the superintelligence network</p>
       </div>
 
       <div className="dashboard-tabs">
@@ -388,7 +395,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                 <div key={agent.id} className="agent-card">
                   <div className="agent-header">
                     <h3>{agent.name}</h3>
-                    <span 
+                    <span
                       className="agent-status"
                       style={{ backgroundColor: getStatusColor(agent.status) }}
                     >
@@ -396,7 +403,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                     </span>
                   </div>
                   <p className="agent-role">{agent.role}</p>
-                  
+
                   <div className="agent-metrics">
                     <div className="agent-metric">
                       <span>Wisdom Level:</span>
@@ -433,13 +440,13 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                   )}
 
                   <div className="agent-actions">
-                    <button 
+                    <button
                       className="assist-btn"
                       onClick={() => assistAgent(agent.id, 'cultural_integration')}
                     >
                       Assist Cultural Integration
                     </button>
-                    <button 
+                    <button
                       className="assist-btn"
                       onClick={() => assistAgent(agent.id, 'wisdom_accumulation')}
                     >
@@ -461,19 +468,19 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
             <h2>Assistance Tasks</h2>
             <div className="tasks-grid">
               {assistanceTasks.map((task) => {
-                const agent = agents.find(a => a.id === task.agentId);
+                const agent = agents.find((a) => a.id === task.agentId);
                 return (
                   <div key={task.id} className="task-card">
                     <div className="task-header">
                       <h3>{task.task}</h3>
                       <div className="task-meta">
-                        <span 
+                        <span
                           className="task-priority"
                           style={{ backgroundColor: getPriorityColor(task.priority) }}
                         >
                           {task.priority}
                         </span>
-                        <span 
+                        <span
                           className="task-status"
                           style={{ backgroundColor: getTaskStatusColor(task.status) }}
                         >
@@ -481,10 +488,10 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                    
+
                     <p className="task-agent">Agent: {agent?.name}</p>
                     <p className="task-description">{task.description}</p>
-                    
+
                     <div className="task-timeline">
                       <div className="timeline-item">
                         <span>Created:</span>
@@ -510,41 +517,23 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
             <div className="coordination-controls">
               <div className="control-section">
                 <h3>Network Coordination</h3>
-                <button className="coordination-btn">
-                  Enhance All Agents
-                </button>
-                <button className="coordination-btn">
-                  Synchronize Wisdom
-                </button>
-                <button className="coordination-btn">
-                  Optimize Cultural Integration
-                </button>
+                <button className="coordination-btn">Enhance All Agents</button>
+                <button className="coordination-btn">Synchronize Wisdom</button>
+                <button className="coordination-btn">Optimize Cultural Integration</button>
               </div>
 
               <div className="control-section">
                 <h3>Cultural Enhancement</h3>
-                <button className="coordination-btn">
-                  Deepen Cultural Understanding
-                </button>
-                <button className="coordination-btn">
-                  Strengthen Community Engagement
-                </button>
-                <button className="coordination-btn">
-                  Enhance Te Reo Māori Integration
-                </button>
+                <button className="coordination-btn">Deepen Cultural Understanding</button>
+                <button className="coordination-btn">Strengthen Community Engagement</button>
+                <button className="coordination-btn">Enhance Te Reo Māori Integration</button>
               </div>
 
               <div className="control-section">
                 <h3>System Optimization</h3>
-                <button className="coordination-btn">
-                  Optimize Performance
-                </button>
-                <button className="coordination-btn">
-                  Enhance Coordination
-                </button>
-                <button className="coordination-btn">
-                  Expand Network Capabilities
-                </button>
+                <button className="coordination-btn">Optimize Performance</button>
+                <button className="coordination-btn">Enhance Coordination</button>
+                <button className="coordination-btn">Expand Network Capabilities</button>
               </div>
             </div>
 

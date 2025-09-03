@@ -258,7 +258,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
       culturalEvents,
       communityGrowth,
     });
-  }, []);
+  }, [communityActivities, safetyProtocols]);
 
   const getStatusColor = (status: string) => {
     switch (status) {

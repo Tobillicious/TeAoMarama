@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../services/useAuth';
+import { useAuth } from '../services/DualRoleAuthProvider';
 import { supabase } from '../supabaseClient';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState<'teacher' | 'student' | 'admin' | 'kaitiaki'>('student');
   const [error, setError] = useState('');
   const [resetMsg, setResetMsg] = useState('');
-  const auth = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   
@@ -23,15 +24,11 @@ const Login: React.FC = () => {
     setResetMsg('');
 
     try {
-      if (auth && auth.login) {
-        const { error } = await auth.login(email, password);
-        if (error) {
-          setError(error);
-        } else {
-          navigate('/');
-        }
+      const result = await login(email, password, role);
+      if (result.error) {
+        setError(result.error);
       } else {
-        setError('Authentication service not available');
+        navigate('/');
       }
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_err) {
@@ -91,6 +88,20 @@ const Login: React.FC = () => {
                 required
                 className="form-input"
               />
+            </div>
+            <div className="form-group">
+              <label htmlFor="role">Role</label>
+              <select
+                id="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value as 'teacher' | 'student' | 'admin' | 'kaitiaki')}
+                className="form-input"
+              >
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+                <option value="kaitiaki">Kaitiaki</option>
+              </select>
             </div>
             {error && <div className="error-message">{error}</div>}
             {resetMsg && <div className="success-message">{resetMsg}</div>}

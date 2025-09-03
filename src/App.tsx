@@ -1,8 +1,13 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
+import {
+  performanceMonitor,
+  registerServiceWorker,
+  useMemoryOptimization,
+} from './utils/performance-optimizer';
 
 // Simplified imports to avoid Node.js module issues
 import './components/TestRoute.css';
@@ -24,10 +29,12 @@ import DemoAccessBanner from './components/DemoAccessBanner';
 import PerformanceDashboard from './components/PerformanceDashboard';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
+import AuthenticationTabs from './components/AuthenticationTabs';
 import BasicTest from './components/BasicTest';
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
-import DualRoleLogin from './components/DualRoleLogin';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
+import LessonManager from './components/LessonManager';
+import LessonViewer from './components/LessonViewer';
 import WorkingLogin from './components/WorkingLogin';
 
 // Lazy load educational content pages
@@ -122,7 +129,60 @@ import ResourceUnlocker from './components/ResourceUnlocker';
 // Import the new dual-role authentication components
 import SystemTest from './components/SystemTest';
 
+// Import enhanced educational components
+const EnhancedContentDiscovery = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "enhanced-content-discovery" */ './components/EnhancedContentDiscovery'
+    ),
+);
+
+const CulturalLearningPathNavigator = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "cultural-learning-navigator" */ './components/CulturalLearningPathNavigator'
+    ),
+);
+
+const InteractiveAssessmentSystem = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "interactive-assessment-system" */ './components/InteractiveAssessmentSystem'
+    ),
+);
+
+const UnitDetail = lazy(
+  () => import(/* webpackChunkName: "unit-detail" */ './components/UnitDetail'),
+);
+
 function App() {
+  // Performance optimization hooks
+  useMemoryOptimization();
+
+  useEffect(() => {
+    // Register service worker for offline functionality
+    registerServiceWorker();
+
+    // Performance monitoring
+    const measurePerformance = async () => {
+      try {
+        const lcp = await performanceMonitor.measureLCP();
+        const fid = await performanceMonitor.measureFID();
+        const cls = await performanceMonitor.measureCLS();
+
+        console.log('Performance Metrics:', {
+          LCP: `${lcp}ms`,
+          FID: `${fid}ms`,
+          CLS: cls,
+        });
+      } catch {
+        console.log('Performance monitoring not available in this browser');
+      }
+    };
+
+    setTimeout(measurePerformance, 2000);
+  }, []);
+
   return (
     <div className="App">
       <DemoAccessBanner />
@@ -130,7 +190,7 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/login" element={<DualRoleLogin />} />
+            <Route path="/login" element={<AuthenticationTabs />} />
             <Route path="/login-old" element={<WorkingLogin />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
@@ -144,6 +204,8 @@ function App() {
             <Route path="/educational-dashboard-new" element={<EducationalDashboard />} />
             <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
             <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
+            <Route path="/quality-lessons" element={<LessonManager />} />
+            <Route path="/lesson/:lessonId" element={<LessonViewer />} />
             <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
             {/* <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} /> */}
             <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} />
@@ -177,6 +239,23 @@ function App() {
             <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
             <Route path="/database-integration" element={<DatabaseIntegrationSystem />} />
             <Route path="/resource-unlocker" element={<ResourceUnlocker />} />
+            {/* Enhanced Educational Components */}
+            <Route path="/enhanced-content-discovery" element={<EnhancedContentDiscovery />} />
+            <Route path="/content-discovery" element={<EnhancedContentDiscovery />} />
+            <Route path="/cultural-learning-paths" element={<CulturalLearningPathNavigator />} />
+            <Route path="/learning-pathways" element={<CulturalLearningPathNavigator />} />
+            <Route path="/interactive-assessments" element={<InteractiveAssessmentSystem />} />
+            <Route path="/cultural-assessments" element={<InteractiveAssessmentSystem />} />
+            <Route path="/smart-search" element={<EnhancedContentDiscovery />} />
+            {/* Unit Detail Routes */}
+            <Route path="/unit/:unitId" element={<UnitDetail />} />
+            {/* Additional missing routes */}
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/dashboard" element={<StudentDashboard />} />
+            <Route path="/resources" element={<EducationalResources />} />
+            <Route path="/styleguide" element={<StyleGuide />} />
+            <Route path="/register" element={<AuthenticationTabs />} />
           </Routes>
         </Suspense>
       </main>

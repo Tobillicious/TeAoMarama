@@ -1,3 +1,4 @@
+
 // AI Content Generator - Powered by DeepSeek
 // Culturally sensitive educational content creation
 
@@ -6,19 +7,38 @@ class AIContentGenerator {
   private culturalGuidelines: Map<string, any>;
 
   constructor() {
-    this.apiKey = 'sk-103cb83572a346e2aef89e2d2a4f7f89';
+    this.apiKey = 'sk-0fbd7c9a3a074348a6c6bb08cc8d2a0a';
     this.culturalGuidelines = new Map([
       ['te-reo', { sensitivity: 'high', validation_required: true }],
       ['tikanga', { sensitivity: 'sacred', kaitiaki_approval: true }],
-      ['whakataukī', { sensitivity: 'high', cultural_context: true }],
+      ['whakataukī', { sensitivity: 'high', cultural_context: true }]
     ]);
   }
 
   async generateCulturallySafeContent(
     topic: string,
     educationalLevel: string,
-    culturalContext: string,
+    culturalContext: string
   ): Promise<string> {
+    const prompt = `
+Create educational content for "${topic}" suitable for ${educationalLevel} students in Aotearoa New Zealand.
+
+Cultural Requirements:
+- Integrate Te Ao Māori perspectives respectfully
+- Use appropriate Te Reo Māori terminology
+- Include cultural context: ${culturalContext}
+- Follow tikanga-based educational practices
+- Ensure cultural safety and accuracy
+
+Content should be:
+- Educationally valuable
+- Culturally appropriate
+- Engaging for students
+- Aligned with New Zealand curriculum
+
+Generate content that honors both mātauranga Māori and contemporary educational needs.
+`;
+
     try {
       // Note: In a real implementation, this would call the DeepSeek API
       // For now, we'll create a structured response
@@ -63,8 +83,8 @@ Holistic assessment considering both academic understanding and cultural appreci
   async validateCulturalContent(content: string): Promise<boolean> {
     // AI-powered cultural validation
     const culturalMarkers = ['māori', 'tikanga', 'whakataukī', 'te reo'];
-    const hasculturalContent = culturalMarkers.some((marker) =>
-      content.toLowerCase().includes(marker),
+    const hasculturalContent = culturalMarkers.some(marker => 
+      content.toLowerCase().includes(marker)
     );
 
     if (hasculturalContent) {
@@ -75,7 +95,7 @@ Holistic assessment considering both academic understanding and cultural appreci
     return true;
   }
 
-  private async flagForCulturalReview(_content: string): Promise<void> {
+  private async flagForCulturalReview(content: string): Promise<void> {
     console.log('🌿 Content flagged for cultural validation');
     // In real implementation, would notify kaitiaki
   }

@@ -253,6 +253,7 @@ const CommunityFeedbackSystem: React.FC = () => {
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
               className="filter-select"
+              aria-label="Filter feedback by type"
             >
               <option value="all">All Feedback</option>
               <option value="cultural-review">Cultural Reviews</option>

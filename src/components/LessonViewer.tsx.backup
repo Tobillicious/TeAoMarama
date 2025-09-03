@@ -1,0 +1,122 @@
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import './LessonViewer.css';
+
+interface LessonContent {
+  id: string;
+  title: string;
+  subject: string;
+  yearLevel: string;
+  fullContent: string;
+  metadata: {
+    duration: string;
+    difficulty: string;
+    culturalElements: string[];
+    learningObjectives: string[];
+    resources: string[];
+  };
+}
+
+const LessonViewer: React.FC = () => {
+  const { lessonId } = useParams<{ lessonId: string }>();
+  const [lesson, setLesson] = useState<LessonContent | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState('overview');
+
+  useEffect(() => {
+    if (lessonId) {
+      loadLessonContent(lessonId);
+    }
+  }, [lessonId]);
+
+  const loadLessonContent = async (id: string) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      await new Promise(resolve => setTimeout(resolve, 600));
+      
+      const lessonMap: Record<string, LessonContent> = {
+        'y7-treaty-waitangi': {
+          id: 'y7-treaty-waitangi',
+          title: 'Treaty of Waitangi Investigation',
+          subject: 'Social Studies',
+          yearLevel: 'Year 7',
+          fullContent: `# Treaty of Waitangi Investigation\n\nThis comprehensive unit explores the Treaty from multiple perspectives.`,
+          metadata: {
+            duration: '6 x 50 minute lessons',
+            difficulty: 'Intermediate to Advanced',
+            culturalElements: ['Māori perspectives', 'Treaty partnership'],
+            learningObjectives: ['Understand Treaty context', 'Analyze perspectives'],
+            resources: ['Treaty documents', 'Historical photographs']
+          }
+        }
+      };
+
+      const lessonContent = lessonMap[id];
+      if (lessonContent) {
+        setLesson(lessonContent);
+      } else {
+        throw new Error(`Lesson with id "${id}" not found`);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load lesson');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="lesson-viewer">
+        <div className="lesson-loading">
+          <div className="loading-spinner">📚</div>
+          <p>Loading lesson content...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !lesson) {
+    return (
+      <div className="lesson-viewer">
+        <div className="lesson-error">
+          <h2>❌ Lesson Not Found</h2>
+          <p>{error || 'This lesson is not available.'}</p>
+          <Link to="/quality-lessons" className="back-link">
+            ← Back to Quality Lessons
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="lesson-viewer">
+      <div className="lesson-header">
+        <h1>{lesson.title}</h1>
+        <div className="lesson-meta">
+          <span className="year-badge">{lesson.yearLevel}</span>
+          <span className="subject-badge">{lesson.subject}</span>
+        </div>
+      </div>
+
+      <div className="lesson-content">
+        <div className="content-section">
+          <div className="content-wrapper">
+            <pre className="lesson-markdown">{lesson.fullContent}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div className="lesson-actions">
+        <Link to="/quality-lessons" className="back-btn">
+          ← Back to Lessons
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default LessonViewer;

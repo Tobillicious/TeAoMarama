@@ -1,0 +1,233 @@
+/* Breadcrumb Navigation - Te Kura o TeAoMarama */
+
+.breadcrumbs {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: rgba(5, 150, 105, 0.05);
+  border: 1px solid transparent;
+}
+
+.breadcrumb-link:hover {
+  background: rgba(5, 150, 105, 0.1);
+  color: #047857;
+  transform: translateY(-1px);
+  border-color: rgba(5, 150, 105, 0.2);
+}
+
+.breadcrumb-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.breadcrumb-current {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 8px;
+  border: 1px solid #059669;
+}
+
+.breadcrumb-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.breadcrumb-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0.25rem;
+  user-select: none;
+}
+
+/* Breadcrumb Actions */
+.breadcrumb-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.breadcrumb-back-btn {
+  background: #f8fafc;
+  color: #6b7280;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumb-back-btn:hover {
+  background: #e2e8f0;
+  color: #374151;
+  transform: translateX(-2px);
+}
+
+.breadcrumb-back-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+/* Enhanced Visual States */
+.breadcrumb-link.has-children::after {
+  content: '▼';
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-left: 0.25rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .breadcrumb-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .breadcrumb-text {
+    max-width: 120px;
+  }
+
+  .breadcrumb-actions {
+    justify-content: center;
+  }
+
+  .breadcrumb-back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb-container {
+    padding: 0.5rem;
+  }
+
+  .breadcrumb-link,
+  .breadcrumb-current {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-text {
+    max-width: 80px;
+  }
+
+  .breadcrumb-icon {
+    font-size: 0.9rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .breadcrumbs {
+    position: static;
+    background: white;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb-actions {
+    display: none;
+  }
+
+  .breadcrumb-link,
+  .breadcrumb-current {
+    color: #000 !important;
+    background: white !important;
+  }
+}
+
+/* Animation for breadcrumb updates */
+@keyframes breadcrumbSlide {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.breadcrumb-item {
+  animation: breadcrumbSlide 0.3s ease;
+}
+
+/* Accessibility improvements */
+.breadcrumbs[aria-label] {
+  position: relative;
+}
+
+.breadcrumb-link:focus-visible,
+.breadcrumb-back-btn:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}

@@ -69,7 +69,11 @@ class PerformanceMonitor {
     await this.generatePerformanceReport();
   }
 
-  private async measurePagePerformance(page: any, url: string, pageName: string) {
+  private async measurePagePerformance(
+    page: import('playwright').Page,
+    url: string,
+    pageName: string,
+  ) {
     // Clear cache to get realistic measurements
     await page.goto('about:blank');
     await page.evaluate(() => {
@@ -116,7 +120,8 @@ class PerformanceMonitor {
                 const entries = list.getEntries();
                 entries.forEach((entry: PerformanceEntry) => {
                   if ('processingStart' in entry && 'startTime' in entry) {
-                    metrics.FID = (entry as any).processingStart - entry.startTime;
+                    metrics.FID =
+                      (entry as PerformanceEventTiming).processingStart - entry.startTime;
                   }
                 });
               });
@@ -125,16 +130,20 @@ class PerformanceMonitor {
               // Cumulative Layout Shift
               const clsObserver = new PerformanceObserver((list) => {
                 const entries = list.getEntries();
-                entries.forEach((entry: any) => {
-                  if (!entry.hadRecentInput) {
-                    metrics.CLS += entry.value;
-                  }
-                });
+                entries.forEach(
+                  (entry: PerformanceEntry & { hadRecentInput?: boolean; value?: number }) => {
+                    if (!entry.hadRecentInput) {
+                      metrics.CLS += entry.value || 0;
+                    }
+                  },
+                );
               });
               clsObserver.observe({ entryTypes: ['layout-shift'] });
 
               // TTFB from navigation timing
-              const navigation = performance.getEntriesByType('navigation')[0] as any;
+              const navigation = performance.getEntriesByType(
+                'navigation',
+              )[0] as PerformanceNavigationTiming;
               if (navigation) {
                 metrics.TTFB = navigation.responseStart - navigation.requestStart;
               }
@@ -149,10 +158,11 @@ class PerformanceMonitor {
       });
 
       // Record Web Vitals metrics
-      if (webVitals.LCP > 0) this.recordMetric(url, 'LCP', webVitals.LCP);
-      if (webVitals.FID > 0) this.recordMetric(url, 'FID', webVitals.FID);
-      if (webVitals.CLS > 0) this.recordMetric(url, 'CLS', webVitals.CLS * 1000); // Convert to ms for consistency
-      if (webVitals.TTFB > 0) this.recordMetric(url, 'TTFB', webVitals.TTFB);
+      const vitals = webVitals as { LCP: number; FID: number; CLS: number; TTFB: number };
+      if (vitals.LCP > 0) this.recordMetric(url, 'LCP', vitals.LCP);
+      if (vitals.FID > 0) this.recordMetric(url, 'FID', vitals.FID);
+      if (vitals.CLS > 0) this.recordMetric(url, 'CLS', vitals.CLS * 1000); // Convert to ms for consistency
+      if (vitals.TTFB > 0) this.recordMetric(url, 'TTFB', vitals.TTFB);
     } catch (error) {
       console.warn(`⚠️  Could not measure Web Vitals for ${pageName}:`, error);
     }

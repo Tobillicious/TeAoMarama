@@ -2,7 +2,7 @@
 
 /**
  * Runtime Error Monitoring System
- * 
+ *
  * Monitors production site for runtime errors and performance issues
  */
 
@@ -26,31 +26,31 @@ class RuntimeMonitor {
 
   async monitorSite() {
     console.log('🔍 Starting runtime monitoring...');
-    
+
     const browser = await chromium.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
 
     // Set up error monitoring
-    page.on('console', msg => {
+    page.on('console', (msg) => {
       if (msg.type() === 'error') {
         this.logError({
           timestamp: new Date().toISOString(),
           url: page.url(),
           errorType: 'console',
           message: msg.text(),
-          severity: this.categorizeError(msg.text())
+          severity: this.categorizeError(msg.text()),
         });
       }
     });
 
-    page.on('requestfailed', request => {
+    page.on('requestfailed', (request) => {
       this.logError({
         timestamp: new Date().toISOString(),
         url: request.url(),
         errorType: 'network',
         message: `Failed request: ${request.url()} - ${request.failure()?.errorText}`,
-        severity: 'high'
+        severity: 'high',
       });
     });
 
@@ -60,13 +60,13 @@ class RuntimeMonitor {
       '/test',
       '/cultural-learning-modules',
       '/assessment-framework',
-      '/educational-dashboard'
+      '/educational-dashboard',
     ];
 
     for (const pagePath of criticalPages) {
       try {
         console.log(`📊 Monitoring ${pagePath}...`);
-        
+
         const startTime = Date.now();
         await page.goto(`${this.baseUrl}${pagePath}`, { waitUntil: 'networkidle' });
         const loadTime = Date.now() - startTime;
@@ -78,59 +78,59 @@ class RuntimeMonitor {
             url: `${this.baseUrl}${pagePath}`,
             errorType: 'performance',
             message: `Slow page load: ${loadTime}ms`,
-            severity: loadTime > 10000 ? 'high' : 'medium'
+            severity: loadTime > 10000 ? 'high' : 'medium',
           });
         }
 
         // Wait for page to settle
         await page.waitForTimeout(2000);
-
       } catch (error) {
         this.logError({
           timestamp: new Date().toISOString(),
           url: `${this.baseUrl}${pagePath}`,
           errorType: 'console',
           message: `Page load failed: ${error}`,
-          severity: 'critical'
+          severity: 'critical',
         });
       }
     }
 
     await browser.close();
-    
+
     // Generate report
     this.generateReport();
   }
 
   private categorizeError(message: string): 'low' | 'medium' | 'high' | 'critical' {
     const lowerMessage = message.toLowerCase();
-    
-    if (lowerMessage.includes('failed to fetch') || 
-        lowerMessage.includes('network error') ||
-        lowerMessage.includes('uncaught')) {
+
+    if (
+      lowerMessage.includes('failed to fetch') ||
+      lowerMessage.includes('network error') ||
+      lowerMessage.includes('uncaught')
+    ) {
       return 'critical';
     }
-    
-    if (lowerMessage.includes('warning') || 
-        lowerMessage.includes('deprecated')) {
+
+    if (lowerMessage.includes('warning') || lowerMessage.includes('deprecated')) {
       return 'low';
     }
-    
+
     if (lowerMessage.includes('error')) {
       return 'high';
     }
-    
+
     return 'medium';
   }
 
   private logError(error: ErrorReport) {
     this.errors.push(error);
-    
+
     const severityEmoji = {
       low: '⚠️',
       medium: '🟡',
       high: '🔴',
-      critical: '💥'
+      critical: '💥',
     };
 
     console.log(`${severityEmoji[error.severity]} [${error.errorType}] ${error.message}`);
@@ -138,8 +138,8 @@ class RuntimeMonitor {
 
   private generateReport() {
     console.log('\n📋 Runtime Monitoring Report');
-    console.log('=' .repeat(50));
-    
+    console.log('='.repeat(50));
+
     if (this.errors.length === 0) {
       console.log('✅ No runtime errors detected!');
       return;
@@ -154,11 +154,11 @@ class RuntimeMonitor {
     }, {} as Record<string, ErrorReport[]>);
 
     const priorities = ['critical', 'high', 'medium', 'low'];
-    
+
     for (const severity of priorities) {
       if (groupedErrors[severity]) {
         console.log(`\n${severity.toUpperCase()} (${groupedErrors[severity].length}):`);
-        groupedErrors[severity].forEach(error => {
+        groupedErrors[severity].forEach((error) => {
           console.log(`  - ${error.message}`);
           console.log(`    URL: ${error.url}`);
           console.log(`    Time: ${error.timestamp}`);
@@ -168,16 +168,23 @@ class RuntimeMonitor {
 
     // Save report to file
     const reportPath = 'runtime-monitoring-report.json';
-    const fs = require('fs');
-    fs.writeFileSync(reportPath, JSON.stringify({
-      timestamp: new Date().toISOString(),
-      totalErrors: this.errors.length,
-      errorsBySeverity: Object.keys(groupedErrors).reduce((acc, key) => {
-        acc[key] = groupedErrors[key].length;
-        return acc;
-      }, {} as Record<string, number>),
-      errors: this.errors
-    }, null, 2));
+    const fs = await import('fs');
+    fs.writeFileSync(
+      reportPath,
+      JSON.stringify(
+        {
+          timestamp: new Date().toISOString(),
+          totalErrors: this.errors.length,
+          errorsBySeverity: Object.keys(groupedErrors).reduce((acc, key) => {
+            acc[key] = groupedErrors[key].length;
+            return acc;
+          }, {} as Record<string, number>),
+          errors: this.errors,
+        },
+        null,
+        2,
+      ),
+    );
 
     console.log(`\n💾 Full report saved to ${reportPath}`);
   }

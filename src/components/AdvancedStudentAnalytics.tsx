@@ -39,38 +39,17 @@ interface StudentAnalytics {
   lastUpdated: Date;
 }
 
-interface AnalyticsSummary {
-  totalStudents: number;
-  averageCulturalScore: number;
-  averageAcademicScore: number;
-  topPerformers: number;
-  needsSupport: number;
-  culturalChampions: number;
-}
-
 const AdvancedStudentAnalytics: React.FC = () => {
   const [analytics, setAnalytics] = useState<StudentAnalytics[]>([]);
-  const [summary, setSummary] = useState<AnalyticsSummary>({
-    totalStudents: 0,
-    averageCulturalScore: 0,
-    averageAcademicScore: 0,
-    topPerformers: 0,
-    needsSupport: 0,
-    culturalChampions: 0,
-  });
   const [selectedStudent, setSelectedStudent] = useState<StudentAnalytics | null>(null);
   const [filterType, setFilterType] = useState<'all' | 'cultural' | 'academic' | 'growth'>('all');
   const [sortBy, setSortBy] = useState<'name' | 'cultural' | 'academic' | 'growth'>('name');
 
   useEffect(() => {
-    generateMockAnalytics();
+    loadAnalytics();
   }, []);
 
-  useEffect(() => {
-    updateSummary();
-  }, [analytics]);
-
-  const generateMockAnalytics = () => {
+  const loadAnalytics = () => {
     const mockStudents: StudentAnalytics[] = [
       {
         id: '1',
@@ -264,46 +243,30 @@ const AdvancedStudentAnalytics: React.FC = () => {
 
   const updateSummary = useCallback(() => {
     if (analytics.length === 0) return;
-
-    const totalStudents = analytics.length;
-    const averageCulturalScore =
-      analytics.reduce((sum, student) => {
-        const culturalAvg = Object.values(student.culturalMetrics).reduce((a, b) => a + b, 0) / 6;
-        return sum + culturalAvg;
-      }, 0) / totalStudents;
-
-    const averageAcademicScore =
-      analytics.reduce((sum, student) => {
-        const academicAvg = Object.values(student.academicMetrics).reduce((a, b) => a + b, 0) / 6;
-        return sum + academicAvg;
-      }, 0) / totalStudents;
-
-    const topPerformers = analytics.filter((student) => {
-      const culturalAvg = Object.values(student.culturalMetrics).reduce((a, b) => a + b, 0) / 6;
-      const academicAvg = Object.values(student.academicMetrics).reduce((a, b) => a + b, 0) / 6;
-      return (culturalAvg + academicAvg) / 2 >= 90;
-    }).length;
-
-    const needsSupport = analytics.filter((student) => {
-      const culturalAvg = Object.values(student.culturalMetrics).reduce((a, b) => a + b, 0) / 6;
-      const academicAvg = Object.values(student.academicMetrics).reduce((a, b) => a + b, 0) / 6;
-      return (culturalAvg + academicAvg) / 2 < 75;
-    }).length;
-
-    const culturalChampions = analytics.filter((student) => {
-      const culturalAvg = Object.values(student.culturalMetrics).reduce((a, b) => a + b, 0) / 6;
-      return culturalAvg >= 90;
-    }).length;
-
-    setSummary({
-      totalStudents,
-      averageCulturalScore: Math.round(averageCulturalScore),
-      averageAcademicScore: Math.round(averageAcademicScore),
-      topPerformers,
-      needsSupport,
-      culturalChampions,
-    });
+    // Summary calculation logic can be added here if needed
   }, [analytics]);
+
+  const getCulturalScore = (student: StudentAnalytics): number => {
+    return Math.round(
+      Object.values(student.culturalMetrics).reduce((sum, val) => sum + val, 0) / 6,
+    );
+  };
+
+  const getAcademicScore = (student: StudentAnalytics): number => {
+    return Math.round(
+      Object.values(student.academicMetrics).reduce((sum, val) => sum + val, 0) / 6,
+    );
+  };
+
+  const getOverallScore = (student: StudentAnalytics): number => {
+    return Math.round((getCulturalScore(student) + getAcademicScore(student)) / 2);
+  };
+
+  useEffect(() => {
+    if (analytics.length > 0) {
+      updateSummary();
+    }
+  }, [analytics, updateSummary]);
 
   const getFilteredAndSortedAnalytics = () => {
     let filtered = [...analytics];
@@ -348,20 +311,6 @@ const AdvancedStudentAnalytics: React.FC = () => {
     return filtered;
   };
 
-  const getCulturalScore = (student: StudentAnalytics) => {
-    return Object.values(student.culturalMetrics).reduce((sum, val) => sum + val, 0) / 6;
-  };
-
-  const getAcademicScore = (student: StudentAnalytics) => {
-    return Object.values(student.academicMetrics).reduce((sum, val) => sum + val, 0) / 6;
-  };
-
-  const getOverallScore = (student: StudentAnalytics) => {
-    const cultural = getCulturalScore(student);
-    const academic = getAcademicScore(student);
-    return (cultural + academic) / 2;
-  };
-
   return (
     <div className="advanced-student-analytics">
       <div className="analytics-container">
@@ -374,32 +323,50 @@ const AdvancedStudentAnalytics: React.FC = () => {
         <div className="summary-grid">
           <div className="summary-card">
             <h3>Total Students</h3>
-            <div className="summary-value">{summary.totalStudents}</div>
+            <div className="summary-value">{analytics.length}</div>
             <div className="summary-label">Active learners</div>
           </div>
           <div className="summary-card">
             <h3>Cultural Excellence</h3>
-            <div className="summary-value">{summary.averageCulturalScore}%</div>
+            <div className="summary-value">
+              {Math.round(
+                analytics.reduce((sum, student) => sum + getCulturalScore(student), 0) /
+                  analytics.length,
+              )}
+              %
+            </div>
             <div className="summary-label">Average cultural score</div>
           </div>
           <div className="summary-card">
             <h3>Academic Excellence</h3>
-            <div className="summary-value">{summary.averageAcademicScore}%</div>
+            <div className="summary-value">
+              {Math.round(
+                analytics.reduce((sum, student) => sum + getAcademicScore(student), 0) /
+                  analytics.length,
+              )}
+              %
+            </div>
             <div className="summary-label">Average academic score</div>
           </div>
           <div className="summary-card">
             <h3>Top Performers</h3>
-            <div className="summary-value">{summary.topPerformers}</div>
+            <div className="summary-value">
+              {analytics.filter((student) => getOverallScore(student) >= 90).length}
+            </div>
             <div className="summary-label">90%+ overall score</div>
           </div>
           <div className="summary-card">
             <h3>Cultural Champions</h3>
-            <div className="summary-value">{summary.culturalChampions}</div>
+            <div className="summary-value">
+              {analytics.filter((student) => getCulturalScore(student) >= 90).length}
+            </div>
             <div className="summary-label">90%+ cultural score</div>
           </div>
           <div className="summary-card">
             <h3>Need Support</h3>
-            <div className="summary-value">{summary.needsSupport}</div>
+            <div className="summary-value">
+              {analytics.filter((student) => getOverallScore(student) < 75).length}
+            </div>
             <div className="summary-label">Below 75% overall</div>
           </div>
         </div>

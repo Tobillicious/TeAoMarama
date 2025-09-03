@@ -1,12 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-
-interface CulturalContext {
-  teReoMode: boolean;
-  culturalSafetyLevel: 'basic' | 'intermediate' | 'advanced';
-  preferredLearningStyle: 'visual' | 'auditory' | 'kinesthetic' | 'mixed';
-  culturalBackground: string;
-  accessibilityNeeds: string[];
-}
+import type { CulturalContext } from '../types/cultural';
+import { getCulturalGuidance } from '../utils/cultural-context-utils';
 
 interface CulturalContextProviderProps {
   children: React.ReactNode;
@@ -36,38 +30,6 @@ export function CulturalContextProvider({
     setContext((prev) => ({ ...prev, ...updates }));
   };
 
-  const getCulturalGuidance = (): string[] => {
-    const guidance: string[] = [];
-
-    // Provide cultural guidance based on context
-    if (context.culturalSafetyLevel === 'advanced') {
-      guidance.push('Content includes deep cultural protocols and tikanga');
-      guidance.push('Requires understanding of whakapapa and cultural connections');
-    }
-
-    if (context.teReoMode) {
-      guidance.push('Content presented with Te Reo Māori integration');
-      guidance.push('Cultural concepts explained in traditional context');
-    }
-
-    switch (context.preferredLearningStyle) {
-      case 'visual':
-        guidance.push('Visual representations and diagrams emphasized');
-        break;
-      case 'auditory':
-        guidance.push('Audio explanations and kōrero (storytelling) included');
-        break;
-      case 'kinesthetic':
-        guidance.push('Hands-on activities and interactive elements featured');
-        break;
-      case 'mixed':
-        guidance.push('Multi-modal approach for comprehensive learning');
-        break;
-    }
-
-    return guidance;
-  };
-
   // Load saved cultural preferences
   useEffect(() => {
     const saved = localStorage.getItem('culturalContext');
@@ -91,7 +53,7 @@ export function CulturalContextProvider({
       value={{
         context,
         updateContext,
-        getCulturalGuidance,
+        getCulturalGuidance: () => getCulturalGuidance(context),
       }}
     >
       {children}
@@ -109,7 +71,7 @@ export function useCulturalContext() {
 
 export function CulturalGuidancePanel() {
   const { getCulturalGuidance } = useCulturalContext();
-  const guidance = getCulturalGuidance();
+  const guidance = getCulturalGuidance('general');
 
   if (guidance.length === 0) return null;
 
