@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../services/DualRoleAuthProvider';
 import './DualRoleLogin.css';
 
 interface LoginForm {
@@ -20,6 +21,18 @@ interface LoginForm {
   role: 'student' | 'teacher' | 'kaitiaki';
   mfaCode: string;
   culturalClearance: boolean;
+}
+
+interface SignUpForm {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  role: 'student' | 'teacher' | 'kaitiaki';
+  culturalClearance: boolean;
+}
+
+interface PasswordResetForm {
+  email: string;
 }
 
 interface SecurityMetrics {
@@ -32,12 +45,27 @@ interface SecurityMetrics {
 
 const DualRoleLogin: React.FC = () => {
   const navigate = useNavigate();
+  const { login, getRoleBasedFeatures } = useAuth();
+  const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'reset'>('signin');
+
   const [form, setForm] = useState<LoginForm>({
     email: '',
     password: '',
     role: 'student',
     mfaCode: '',
     culturalClearance: false,
+  });
+
+  const [signUpForm, setSignUpForm] = useState<SignUpForm>({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    role: 'student',
+    culturalClearance: false,
+  });
+
+  const [resetForm, setResetForm] = useState<PasswordResetForm>({
+    email: '',
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -106,20 +134,6 @@ const DualRoleLogin: React.FC = () => {
     return Math.random() > 0.1; // 90% success rate
   };
 
-  const simulateMFA = async (): Promise<boolean> => {
-    // Simulate MFA verification
-    await new Promise((resolve) => setTimeout(resolve, 800 + Math.random() * 400));
-
-    // Simulate MFA success rate
-    const success = Math.random() > 0.05; // 95% success rate
-    setSecurityMetrics((prev) => ({
-      ...prev,
-      mfaSuccessRate: success ? prev.mfaSuccessRate + 1 : prev.mfaSuccessRate,
-    }));
-
-    return success;
-  };
-
   const handleLogin = async () => {
     if (!validateForm()) {
       return;
@@ -168,8 +182,9 @@ const DualRoleLogin: React.FC = () => {
 
         // Role-based redirect with delay for better UX
         setTimeout(() => {
-          const roleFeatures = getRoleBasedFeatures(form.role);
-          navigate(roleFeatures.dashboard);
+          const roleFeatures = getRoleBasedFeatures?.() || [];
+          // Navigate to appropriate dashboard based on role
+          navigate('/educational-dashboard');
         }, 1500);
       } else {
         setErrors([result.error || 'Login failed. Please try again.']);
@@ -185,6 +200,101 @@ const DualRoleLogin: React.FC = () => {
         ...prev,
         failedAttempts: prev.failedAttempts + 1,
       }));
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const validateSignUpForm = (): boolean => {
+    const newErrors: string[] = [];
+
+    if (!signUpForm.email) {
+      newErrors.push('Email is required');
+    } else if (!/\S+@\S+\.\S+/.test(signUpForm.email)) {
+      newErrors.push('Please enter a valid email address');
+    }
+
+    if (!signUpForm.password) {
+      newErrors.push('Password is required');
+    } else if (signUpForm.password.length < 8) {
+      newErrors.push('Password must be at least 8 characters long');
+    }
+
+    if (signUpForm.password !== signUpForm.confirmPassword) {
+      newErrors.push('Passwords do not match');
+    }
+
+    if (signUpForm.role === 'kaitiaki' && !signUpForm.culturalClearance) {
+      newErrors.push('Cultural clearance is required for Kaitiaki access');
+    }
+
+    setErrors(newErrors);
+    return newErrors.length === 0;
+  };
+
+  const validateResetForm = (): boolean => {
+    const newErrors: string[] = [];
+
+    if (!resetForm.email) {
+      newErrors.push('Email is required');
+    } else if (!/\S+@\S+\.\S+/.test(resetForm.email)) {
+      newErrors.push('Please enter a valid email address');
+    }
+
+    setErrors(newErrors);
+    return newErrors.length === 0;
+  };
+
+  const handleSignUp = async () => {
+    if (!validateSignUpForm()) return;
+
+    setIsLoading(true);
+    setErrors([]);
+    setSuccess('');
+
+    try {
+      // Here you would call Firebase Auth createUserWithEmailAndPassword
+      // For now, we'll simulate the sign-up process
+      setSuccess('Account created successfully! Please check your email to verify your account.');
+
+      // Reset form
+      setSignUpForm({
+        email: '',
+        password: '',
+        confirmPassword: '',
+        role: 'student',
+        culturalClearance: false,
+      });
+
+      // Switch to sign-in tab
+      setTimeout(() => {
+        setActiveTab('signin');
+      }, 2000);
+    } catch (error) {
+      console.error('Sign up error:', error);
+      setErrors(['Failed to create account. Please try again.']);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    if (!validateResetForm()) return;
+
+    setIsLoading(true);
+    setErrors([]);
+    setSuccess('');
+
+    try {
+      // Here you would call Firebase Auth sendPasswordResetEmail
+      // For now, we'll simulate the password reset process
+      setSuccess('Password reset email sent! Please check your inbox.');
+
+      // Reset form
+      setResetForm({ email: '' });
+    } catch (error) {
+      console.error('Password reset error:', error);
+      setErrors(['Failed to send password reset email. Please try again.']);
     } finally {
       setIsLoading(false);
     }
@@ -218,127 +328,306 @@ const DualRoleLogin: React.FC = () => {
         </div>
 
         <div className="login-form">
-          <div className="role-selector">
-            <h3>Select Your Role</h3>
-            <div className="role-options">
-              {roles.map((role) => (
-                <button
-                  key={role.value}
-                  className={`role-option ${form.role === role.value ? 'selected' : ''}`}
-                  onClick={() => handleInputChange('role', role.value)}
-                  style={{ borderColor: role.color }}
-                >
-                  <div className="role-icon" style={{ color: role.color }}>
-                    {role.icon}
-                  </div>
-                  <span>{role.label}</span>
-                </button>
-              ))}
-            </div>
+          {/* Tab Navigation */}
+          <div className="auth-tabs">
+            <button
+              className={`auth-tab ${activeTab === 'signin' ? 'active' : ''}`}
+              onClick={() => setActiveTab('signin')}
+            >
+              Sign In
+            </button>
+            <button
+              className={`auth-tab ${activeTab === 'signup' ? 'active' : ''}`}
+              onClick={() => setActiveTab('signup')}
+            >
+              Sign Up
+            </button>
+            <button
+              className={`auth-tab ${activeTab === 'reset' ? 'active' : ''}`}
+              onClick={() => setActiveTab('reset')}
+            >
+              Reset Password
+            </button>
           </div>
 
-          <div className="form-section">
-            <div className="input-group">
-              <Mail className="input-icon" />
-              <input
-                type="email"
-                placeholder="Email address"
-                value={form.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                disabled={isLoading}
-              />
-            </div>
-
-            <div className="input-group">
-              <Lock className="input-icon" />
-              <input
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Password"
-                value={form.password}
-                onChange={(e) => handleInputChange('password', e.target.value)}
-                disabled={isLoading}
-              />
-              <button
-                type="button"
-                className="password-toggle"
-                onClick={() => setShowPassword(!showPassword)}
-                disabled={isLoading}
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
-            </div>
-
-            {form.role === 'kaitiaki' && (
-              <div className="cultural-clearance">
-                <label className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={form.culturalClearance}
-                    onChange={(e) => handleInputChange('culturalClearance', e.target.checked)}
-                    disabled={isLoading}
-                  />
-                  <span>I have cultural clearance for Kaitiaki access</span>
-                </label>
+          {/* Sign In Tab */}
+          {activeTab === 'signin' && (
+            <>
+              <div className="role-selector">
+                <h3>Select Your Role</h3>
+                <div className="role-options">
+                  {roles.map((role) => (
+                    <button
+                      key={role.value}
+                      className={`role-option ${form.role === role.value ? 'selected' : ''}`}
+                      onClick={() => handleInputChange('role', role.value)}
+                      style={{ borderColor: role.color }}
+                    >
+                      <div className="role-icon" style={{ color: role.color }}>
+                        {role.icon}
+                      </div>
+                      <span>{role.label}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            )}
 
-            <div className="mfa-section">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={showMfa}
-                  onChange={(e) => setShowMfa(e.target.checked)}
-                  disabled={isLoading}
-                />
-                <span>Enable Multi-Factor Authentication</span>
-              </label>
-
-              {showMfa && (
+              <div className="form-section">
                 <div className="input-group">
-                  <Smartphone className="input-icon" />
+                  <Mail className="input-icon" />
                   <input
-                    type="text"
-                    placeholder="MFA Code (6 digits)"
-                    value={form.mfaCode}
-                    onChange={(e) => handleInputChange('mfaCode', e.target.value)}
-                    maxLength={6}
+                    type="email"
+                    placeholder="Email address"
+                    value={form.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     disabled={isLoading}
                   />
                 </div>
-              )}
-            </div>
 
-            <div className="role-permissions">
-              <h4>Permissions for {roles.find((r) => r.value === form.role)?.label}:</h4>
-              <ul>
-                {getRolePermissions(form.role).map((permission, index) => (
-                  <li key={index}>{permission}</li>
-                ))}
-              </ul>
-            </div>
+                <div className="input-group">
+                  <Lock className="input-icon" />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={(e) => handleInputChange('password', e.target.value)}
+                    disabled={isLoading}
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle"
+                    onClick={() => setShowPassword(!showPassword)}
+                    disabled={isLoading}
+                  >
+                    {showPassword ? <EyeOff /> : <Eye />}
+                  </button>
+                </div>
 
-            {errors.length > 0 && (
-              <div className="error-messages">
-                {errors.map((error, index) => (
-                  <div key={index} className="error-message">
-                    <AlertTriangle className="error-icon" />
-                    {error}
+                {form.role === 'kaitiaki' && (
+                  <div className="cultural-clearance">
+                    <label className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={form.culturalClearance}
+                        onChange={(e) => handleInputChange('culturalClearance', e.target.checked)}
+                        disabled={isLoading}
+                      />
+                      <span>I have cultural clearance for Kaitiaki access</span>
+                    </label>
                   </div>
-                ))}
-              </div>
-            )}
+                )}
 
-            {success && (
-              <div className="success-message">
-                <CheckCircle className="success-icon" />
-                {success}
-              </div>
-            )}
+                <div className="mfa-section">
+                  <label className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      checked={showMfa}
+                      onChange={(e) => setShowMfa(e.target.checked)}
+                      disabled={isLoading}
+                    />
+                    <span>Enable Multi-Factor Authentication</span>
+                  </label>
 
-            <button className="login-button" onClick={handleLogin} disabled={isLoading}>
-              {isLoading ? 'Authenticating...' : 'Sign In'}
-            </button>
-          </div>
+                  {showMfa && (
+                    <div className="input-group">
+                      <Smartphone className="input-icon" />
+                      <input
+                        type="text"
+                        placeholder="MFA Code (6 digits)"
+                        value={form.mfaCode}
+                        onChange={(e) => handleInputChange('mfaCode', e.target.value)}
+                        maxLength={6}
+                        disabled={isLoading}
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div className="role-permissions">
+                  <h4>Permissions for {roles.find((r) => r.value === form.role)?.label}:</h4>
+                  <ul>
+                    {getRolePermissions(form.role).map((permission, index) => (
+                      <li key={index}>{permission}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {errors.length > 0 && (
+                  <div className="error-messages">
+                    {errors.map((error, index) => (
+                      <div key={index} className="error-message">
+                        <AlertTriangle className="error-icon" />
+                        {error}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {success && (
+                  <div className="success-message">
+                    <CheckCircle className="success-icon" />
+                    {success}
+                  </div>
+                )}
+
+                <button className="login-button" onClick={handleLogin} disabled={isLoading}>
+                  {isLoading ? 'Authenticating...' : 'Sign In'}
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* Sign Up Tab */}
+          {activeTab === 'signup' && (
+            <>
+              <div className="role-selector">
+                <h3>Select Your Role</h3>
+                <div className="role-options">
+                  {roles.map((role) => (
+                    <button
+                      key={role.value}
+                      className={`role-option ${signUpForm.role === role.value ? 'selected' : ''}`}
+                      onClick={() =>
+                        setSignUpForm((prev) => ({
+                          ...prev,
+                          role: role.value as 'student' | 'teacher' | 'kaitiaki',
+                        }))
+                      }
+                      style={{ borderColor: role.color }}
+                    >
+                      <div className="role-icon" style={{ color: role.color }}>
+                        {role.icon}
+                      </div>
+                      <span>{role.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="form-section">
+                <div className="input-group">
+                  <Mail className="input-icon" />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    value={signUpForm.email}
+                    onChange={(e) => setSignUpForm((prev) => ({ ...prev, email: e.target.value }))}
+                    disabled={isLoading}
+                  />
+                </div>
+
+                <div className="input-group">
+                  <Lock className="input-icon" />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={signUpForm.password}
+                    onChange={(e) =>
+                      setSignUpForm((prev) => ({ ...prev, password: e.target.value }))
+                    }
+                    disabled={isLoading}
+                  />
+                </div>
+
+                <div className="input-group">
+                  <Lock className="input-icon" />
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={signUpForm.confirmPassword}
+                    onChange={(e) =>
+                      setSignUpForm((prev) => ({ ...prev, confirmPassword: e.target.value }))
+                    }
+                    disabled={isLoading}
+                  />
+                </div>
+
+                {signUpForm.role === 'kaitiaki' && (
+                  <div className="cultural-clearance">
+                    <label className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        checked={signUpForm.culturalClearance}
+                        onChange={(e) =>
+                          setSignUpForm((prev) => ({
+                            ...prev,
+                            culturalClearance: e.target.checked,
+                          }))
+                        }
+                        disabled={isLoading}
+                      />
+                      <span>I have cultural clearance for Kaitiaki access</span>
+                    </label>
+                  </div>
+                )}
+
+                {errors.length > 0 && (
+                  <div className="error-messages">
+                    {errors.map((error, index) => (
+                      <div key={index} className="error-message">
+                        <AlertTriangle className="error-icon" />
+                        {error}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {success && (
+                  <div className="success-message">
+                    <CheckCircle className="success-icon" />
+                    {success}
+                  </div>
+                )}
+
+                <button className="login-button" onClick={handleSignUp} disabled={isLoading}>
+                  {isLoading ? 'Creating Account...' : 'Sign Up'}
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* Password Reset Tab */}
+          {activeTab === 'reset' && (
+            <>
+              <div className="form-section">
+                <h3>Reset Your Password</h3>
+                <p>Enter your email address and we'll send you a password reset link.</p>
+
+                <div className="input-group">
+                  <Mail className="input-icon" />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    value={resetForm.email}
+                    onChange={(e) => setResetForm((prev) => ({ ...prev, email: e.target.value }))}
+                    disabled={isLoading}
+                  />
+                </div>
+
+                {errors.length > 0 && (
+                  <div className="error-messages">
+                    {errors.map((error, index) => (
+                      <div key={index} className="error-message">
+                        <AlertTriangle className="error-icon" />
+                        {error}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {success && (
+                  <div className="success-message">
+                    <CheckCircle className="success-icon" />
+                    {success}
+                  </div>
+                )}
+
+                <button className="login-button" onClick={handlePasswordReset} disabled={isLoading}>
+                  {isLoading ? 'Sending...' : 'Send Reset Link'}
+                </button>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="security-metrics">

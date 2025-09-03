@@ -126,11 +126,11 @@ const Navigation: React.FC = () => {
 
     if (isAuthenticated && currentUser) {
       tools.push(
-        { to: '/wisdom-evolution', label: '🌱 Wisdom Evolution', icon: '🌱' },
-        { to: '/enhanced-dashboard', label: '📊 Enhanced Dashboard', icon: '📊' },
-        { to: '/advanced-system', label: '⚙️ Advanced System', icon: '⚙️' },
-        { to: '/superintelligence-analysis', label: '🔬 AI Analysis', icon: '🔬' },
-        { to: '/advanced-cultural-integration', label: '🌍 Cultural Integration', icon: '🌍' },
+        { to: '/wisdom-evolution', label: '🌱 Wisdom Evolution', icon: '🌱', description: 'Advanced wisdom and learning evolution tools' },
+        { to: '/enhanced-dashboard', label: '📊 Enhanced Dashboard', icon: '📊', description: 'Advanced dashboard with comprehensive analytics' },
+        { to: '/advanced-system', label: '⚙️ Advanced System', icon: '⚙️', description: 'Advanced system configuration and management' },
+        { to: '/superintelligence-analysis', label: '🔬 AI Analysis', icon: '🔬', description: 'AI-powered analysis and intelligence tools' },
+        { to: '/advanced-cultural-integration', label: '🌍 Cultural Integration', icon: '🌍', description: 'Advanced cultural learning integration system' },
       );
     }
 
@@ -210,7 +210,7 @@ const Navigation: React.FC = () => {
       ];
 
       const results = allRoutes.filter(
-        (route) =>
+        (route: any) =>
           route.label.toLowerCase().includes(term.toLowerCase()) ||
           (route.description && route.description.toLowerCase().includes(term.toLowerCase())),
       );

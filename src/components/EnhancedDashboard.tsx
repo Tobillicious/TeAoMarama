@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  BookOpen, 
-  Users, 
-  TrendingUp, 
-  Award, 
-  Calendar, 
-  Clock, 
-  CheckCircle,
-  Play,
-  Pause,
-  RefreshCw,
+import { motion } from 'framer-motion';
+import {
+  Award,
   BarChart3,
-  Target,
-  Star,
-  Heart,
-  Zap,
-  Lightbulb,
+  Bell,
+  BookOpen,
+  CheckCircle,
+  Clock,
   Globe,
-  Shield,
+  Heart,
+  Play,
   Settings,
-  Bell
+  Shield,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
 } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import './EnhancedDashboard.css';
 
 interface EnhancedDashboardProps {
   userRole: 'teacher' | 'student' | 'admin';
@@ -29,21 +25,24 @@ interface EnhancedDashboardProps {
 }
 
 const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userName }) => {
-  const [activeTab, setActiveTab] = useState('overview');
-  const [isLoading, setIsLoading] = useState(false);
-  const [stats, setStats] = useState({
+  const [stats] = useState({
+    totalStudents: 1247,
+    activeCourses: 23,
+    completionRate: 87.5,
+    culturalEngagement: 92.3,
+    averageProgress: 78.9,
+    culturalValidationScore: 94.7,
     lessonsCompleted: 24,
     currentStreak: 7,
     totalPoints: 1250,
     achievements: 8,
+    accuracy: 92,
     timeSpent: 45,
-    accuracy: 92
   });
 
   useEffect(() => {
     // Simulate loading stats
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => {}, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -57,31 +56,59 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
             { label: 'Students', value: '32', icon: Users, color: 'blue' },
             { label: 'Lessons Created', value: '18', icon: BookOpen, color: 'green' },
             { label: 'Assessments', value: '12', icon: Award, color: 'purple' },
-            { label: 'Class Average', value: '87%', icon: TrendingUp, color: 'orange' }
+            { label: 'Class Average', value: '87%', icon: TrendingUp, color: 'orange' },
           ],
           quickActions: [
             { label: 'Create Lesson', icon: BookOpen, action: () => console.log('Create lesson') },
             { label: 'View Students', icon: Users, action: () => console.log('View students') },
             { label: 'Analytics', icon: BarChart3, action: () => console.log('Analytics') },
-            { label: 'Settings', icon: Settings, action: () => console.log('Settings') }
-          ]
+            { label: 'Settings', icon: Settings, action: () => console.log('Settings') },
+          ],
         };
       case 'student':
         return {
           title: 'Student Dashboard',
           subtitle: 'Track your learning progress and achievements',
           stats: [
-            { label: 'Lessons Completed', value: stats.lessonsCompleted.toString(), icon: CheckCircle, color: 'green' },
-            { label: 'Current Streak', value: stats.currentStreak.toString(), icon: Zap, color: 'orange' },
-            { label: 'Total Points', value: stats.totalPoints.toString(), icon: Star, color: 'yellow' },
-            { label: 'Achievements', value: stats.achievements.toString(), icon: Award, color: 'purple' }
+            {
+              label: 'Lessons Completed',
+              value: stats.lessonsCompleted.toString(),
+              icon: CheckCircle,
+              color: 'green',
+            },
+            {
+              label: 'Current Streak',
+              value: stats.currentStreak.toString(),
+              icon: Zap,
+              color: 'orange',
+            },
+            {
+              label: 'Total Points',
+              value: stats.totalPoints.toString(),
+              icon: Star,
+              color: 'yellow',
+            },
+            {
+              label: 'Achievements',
+              value: stats.achievements.toString(),
+              icon: Award,
+              color: 'purple',
+            },
           ],
           quickActions: [
-            { label: 'Continue Learning', icon: Play, action: () => console.log('Continue learning') },
-            { label: 'View Progress', icon: TrendingUp, action: () => console.log('View progress') },
+            {
+              label: 'Continue Learning',
+              icon: Play,
+              action: () => console.log('Continue learning'),
+            },
+            {
+              label: 'View Progress',
+              icon: TrendingUp,
+              action: () => console.log('View progress'),
+            },
             { label: 'Achievements', icon: Award, action: () => console.log('Achievements') },
-            { label: 'Study Timer', icon: Clock, action: () => console.log('Study timer') }
-          ]
+            { label: 'Study Timer', icon: Clock, action: () => console.log('Study timer') },
+          ],
         };
       default:
         return {
@@ -91,14 +118,22 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
             { label: 'Total Users', value: '1,247', icon: Users, color: 'blue' },
             { label: 'Active Sessions', value: '89', icon: Globe, color: 'green' },
             { label: 'System Health', value: '98%', icon: Shield, color: 'green' },
-            { label: 'Resources', value: '5,432', icon: BookOpen, color: 'purple' }
+            { label: 'Resources', value: '5,432', icon: BookOpen, color: 'purple' },
           ],
           quickActions: [
             { label: 'User Management', icon: Users, action: () => console.log('User management') },
-            { label: 'System Analytics', icon: BarChart3, action: () => console.log('System analytics') },
-            { label: 'Content Management', icon: BookOpen, action: () => console.log('Content management') },
-            { label: 'Security', icon: Shield, action: () => console.log('Security') }
-          ]
+            {
+              label: 'System Analytics',
+              icon: BarChart3,
+              action: () => console.log('System analytics'),
+            },
+            {
+              label: 'Content Management',
+              icon: BookOpen,
+              action: () => console.log('Content management'),
+            },
+            { label: 'Security', icon: Shield, action: () => console.log('Security') },
+          ],
         };
     }
   };
@@ -110,9 +145,9 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -121,9 +156,9 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -137,12 +172,8 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
         >
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                {content.title}
-              </h1>
-              <p className="text-gray-600 dark:text-gray-400 mt-2">
-                {content.subtitle}
-              </p>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{content.title}</h1>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">{content.subtitle}</p>
             </div>
             <div className="flex items-center space-x-4">
               <motion.button
@@ -170,7 +201,7 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
-          {content.stats.map((stat, index) => (
+          {content.stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
@@ -181,12 +212,12 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
                   <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </p>
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {stat.value}
-                  </p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
                 </div>
                 <div className={`p-3 rounded-lg bg-${stat.color}-100 dark:bg-${stat.color}-900`}>
-                  <stat.icon className={`w-6 h-6 text-${stat.color}-600 dark:text-${stat.color}-400`} />
+                  <stat.icon
+                    className={`w-6 h-6 text-${stat.color}-600 dark:text-${stat.color}-400`}
+                  />
                 </div>
               </div>
             </motion.div>
@@ -204,7 +235,7 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
             Quick Actions
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {content.quickActions.map((action, index) => (
+            {content.quickActions.map((action) => (
               <motion.button
                 key={action.label}
                 whileHover={{ scale: 1.05 }}
@@ -252,7 +283,9 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-600 dark:text-gray-400">Accuracy</span>
-                    <span className="text-gray-900 dark:text-white font-medium">{stats.accuracy}%</span>
+                    <span className="text-gray-900 dark:text-white font-medium">
+                      {stats.accuracy}%
+                    </span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <motion.div
@@ -276,7 +309,7 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
                   { action: 'Completed Lesson', time: '2 hours ago', icon: CheckCircle },
                   { action: 'Earned Achievement', time: '1 day ago', icon: Award },
                   { action: 'Started New Module', time: '2 days ago', icon: Play },
-                  { action: 'Reached Streak Goal', time: '3 days ago', icon: Zap }
+                  { action: 'Reached Streak Goal', time: '3 days ago', icon: Zap },
                 ].map((activity, index) => (
                   <motion.div
                     key={index}
@@ -290,9 +323,7 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
                       <p className="text-sm font-medium text-gray-900 dark:text-white">
                         {activity.action}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {activity.time}
-                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">{activity.time}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -313,9 +344,7 @@ const EnhancedDashboard: React.FC<EnhancedDashboardProps> = ({ userRole, userNam
               <Heart className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold">
-                Welcome back, {userName}! 👋
-              </h3>
+              <h3 className="text-lg font-semibold">Welcome back, {userName}! 👋</h3>
               <p className="text-blue-100">
                 Ready to continue your learning journey? Let's make today productive!
               </p>

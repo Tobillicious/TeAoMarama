@@ -3,17 +3,13 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
   type User as FirebaseUser,
   type UserCredential,
 } from 'firebase/auth';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { auth } from '../firebaseConfig';
-
-// Check if Firebase environment variables are available
-const hasFirebaseConfig =
-  import.meta.env.VITE_FIREBASE_API_KEY &&
-  import.meta.env.VITE_FIREBASE_PROJECT_ID &&
-  import.meta.env.VITE_FIREBASE_API_KEY !== 'your_actual_api_key_here';
+import { auth, db } from '../firebaseConfig';
 
 // User roles and their capabilities
 export type UserRole = 'teacher' | 'student' | 'admin' | 'kaitiaki';
@@ -33,6 +29,17 @@ interface User {
   lastLogin: string;
 }
 
+interface SignUpData {
+  email: string;
+  password: string;
+  name: string;
+  role: UserRole;
+  school?: string;
+  grade?: string;
+  subjects?: string[];
+  iwiAffiliations?: string[];
+}
+
 interface AuthContextType {
   // Authentication state
   isAuthenticated: boolean;
@@ -48,47 +55,22 @@ interface AuthContextType {
   logout: () => Promise<void>;
   signUp: (userData: SignUpData) => Promise<{ success: boolean; error?: string }>;
 
-  // Role-based access
-  isTeacher: boolean;
-  isStudent: boolean;
-  isAdmin: boolean;
-
-  // Cultural access
-  culturalClearance: CulturalClearance;
-  canAccessSacred: boolean;
-  canAccessHigh: boolean;
-
-  // Quick access methods
-  switchToDemoMode: () => void;
-  getRoleBasedFeatures: () => RoleFeatures;
+  // User management
+  updateUserProfile: (updates: Partial<User>) => Promise<{ success: boolean; error?: string }>;
+  getUserRole: () => UserRole | null;
+  hasPermission: (permission: string) => boolean;
+  
+  // Additional methods needed by components
+  switchToDemoMode?: () => void;
+  getRoleBasedFeatures?: () => string[];
 }
 
-interface SignUpData {
-  email: string;
-  password: string;
-  name: string;
-  role: UserRole;
-  school?: string;
-  grade?: string;
-  subjects?: string[];
-}
+const AuthContext = createContext<AuthContextType | null>(null);
 
-interface RoleFeatures {
-  dashboard: string;
-  availablePages: string[];
-  contentAccess: string[];
-  culturalAccess: string[];
-  analytics: boolean;
-  contentCreation: boolean;
-  studentManagement: boolean;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export const useAuth = () => {
+export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within DualRoleAuthProvider');
+    throw new Error('useAuth must be used within a DualRoleAuthProvider');
   }
   return context;
 };
@@ -97,92 +79,126 @@ interface DualRoleAuthProviderProps {
   children: ReactNode;
 }
 
+// Check if Firebase environment variables are available
+const hasFirebaseConfig =
+  import.meta.env.VITE_FIREBASE_API_KEY &&
+  import.meta.env.VITE_FIREBASE_PROJECT_ID &&
+  import.meta.env.VITE_FIREBASE_API_KEY !== 'your_actual_api_key_here';
+
 export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Demo users for testing
-  const demoUsers: Record<UserRole, User> = {
-    teacher: {
-      id: 'demo-teacher-001',
-      email: 'teacher@teaomarama.nz',
-      name: 'Whaea Sarah',
-      role: 'teacher',
-      culturalClearance: 'kaitiaki',
-      school: 'Te Kura o TeAoMarama',
-      subjects: ['Te Reo Māori', 'Social Studies', 'English'],
-      iwiAffiliations: ['Ngāti Porou', 'Te Arawa'],
-      createdAt: new Date().toISOString(),
-      lastLogin: new Date().toISOString(),
-    },
-    student: {
-      id: 'demo-student-001',
-      email: 'student@teaomarama.nz',
-      name: 'Tama James',
-      role: 'student',
-      culturalClearance: 'approved',
-      school: 'Te Kura o TeAoMarama',
-      grade: 'Year 8',
-      subjects: ['Te Reo Māori', 'Mathematics', 'Science'],
-      iwiAffiliations: ['Ngāti Kahungunu'],
-      createdAt: new Date().toISOString(),
-      lastLogin: new Date().toISOString(),
-    },
-    admin: {
-      id: 'demo-admin-001',
-      email: 'admin@teaomarama.nz',
-      name: 'Kaiwhakahaere',
-      role: 'admin',
-      culturalClearance: 'kaitiaki',
-      school: 'Te Kura o TeAoMarama',
-      createdAt: new Date().toISOString(),
-      lastLogin: new Date().toISOString(),
-    },
-    kaitiaki: {
-      id: 'demo-kaitiaki-001',
-      email: 'kaitiaki@teaomarama.nz',
-      name: 'Kaitiaki Aronui',
-      role: 'kaitiaki',
-      culturalClearance: 'kaitiaki',
-      school: 'Te Kura o TeAoMarama',
-      iwiAffiliations: ['Ngāti Tūwharetoa', 'Te Arawa'],
-      createdAt: new Date().toISOString(),
-      lastLogin: new Date().toISOString(),
-    },
+  // Helper function to get user profile from Firestore
+  const getUserProfile = async (uid: string): Promise<Partial<User> | null> => {
+    if (!db) return null;
+
+    try {
+      const userDoc = await getDoc(doc(db, 'users', uid));
+      if (userDoc.exists()) {
+        return userDoc.data() as Partial<User>;
+      }
+    } catch (error) {
+      console.warn(
+        '⚠️ Failed to get user profile from Firestore (continuing with local auth):',
+        error,
+      );
+    }
+    return null;
+  };
+
+  // Helper function to save user profile to Firestore
+  const saveUserProfile = async (uid: string, userData: Partial<User>): Promise<boolean> => {
+    if (!db) return false;
+
+    try {
+      await setDoc(
+        doc(db, 'users', uid),
+        {
+          ...userData,
+          updatedAt: new Date().toISOString(),
+        },
+        { merge: true },
+      );
+      return true;
+    } catch (error) {
+      console.warn(
+        '⚠️ Failed to save user profile to Firestore (continuing with local auth):',
+        error,
+      );
+      return false;
+    }
   };
 
   // Initialize auth state
   useEffect(() => {
-    // Only listen to Firebase auth state if Firebase is properly configured
-    if (auth && hasFirebaseConfig) {
-      const unsubscribe = onAuthStateChanged(auth, (user: FirebaseUser | null) => {
-        if (user) {
-          setCurrentUser({
-            id: user.uid,
-            email: user.email || '',
-            name: user.displayName || '',
-            role: 'student', // Default role, will be updated on login
-            culturalClearance: 'basic', // Default clearance, will be updated on login
-            createdAt: user.metadata.creationTime || '',
-            lastLogin: user.metadata.lastSignInTime || '',
-          });
-          setIsAuthenticated(true);
-          console.log(`🌟 Welcome back, ${user.displayName || user.email}!`);
-        } else {
-          setCurrentUser(null);
-          setIsAuthenticated(false);
-          console.log('👋 No user logged in.');
-        }
-        setIsLoading(false);
-      });
-
-      return () => unsubscribe();
-    } else {
-      // No Firebase auth - set loading to false
-      console.log('🔄 No Firebase authentication available');
+    if (!auth || !hasFirebaseConfig) {
+      console.warn('⚠️ Firebase Authentication is not properly configured - running in demo mode');
       setIsLoading(false);
+      return;
     }
+
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser: FirebaseUser | null) => {
+      if (firebaseUser) {
+        try {
+          // Get user profile from Firestore (optional)
+          const userProfile = await getUserProfile(firebaseUser.uid);
+
+          const user: User = {
+            id: firebaseUser.uid,
+            email: firebaseUser.email || '',
+            name:
+              firebaseUser.displayName ||
+              userProfile?.name ||
+              firebaseUser.email?.split('@')[0] ||
+              'User',
+            role: userProfile?.role || 'student',
+            culturalClearance: userProfile?.culturalClearance || 'basic',
+            school: userProfile?.school || '',
+            grade: userProfile?.grade || '',
+            subjects: userProfile?.subjects || [],
+            iwiAffiliations: userProfile?.iwiAffiliations || [],
+            createdAt:
+              userProfile?.createdAt ||
+              firebaseUser.metadata.creationTime ||
+              new Date().toISOString(),
+            lastLogin: new Date().toISOString(),
+          };
+
+          setCurrentUser(user);
+          setIsAuthenticated(true);
+
+          // Try to update last login (optional - don't fail if it doesn't work)
+          saveUserProfile(firebaseUser.uid, { lastLogin: new Date().toISOString() }).catch(() => {
+            // Silently continue if Firestore update fails
+          });
+
+          console.log(`🌟 Welcome back, ${user.name || user.email}! (${user.role})`);
+        } catch (error) {
+          console.warn('⚠️ Error setting up user profile (continuing with basic auth):', error);
+          // Fallback to basic user setup
+          const basicUser: User = {
+            id: firebaseUser.uid,
+            email: firebaseUser.email || '',
+            name: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'User',
+            role: 'student',
+            culturalClearance: 'basic',
+            createdAt: firebaseUser.metadata.creationTime || new Date().toISOString(),
+            lastLogin: new Date().toISOString(),
+          };
+          setCurrentUser(basicUser);
+          setIsAuthenticated(true);
+        }
+      } else {
+        setCurrentUser(null);
+        setIsAuthenticated(false);
+        console.log('👋 No user logged in.');
+      }
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const login = async (
@@ -193,91 +209,55 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     setIsLoading(true);
 
     try {
-      // Demo mode - bypass Firebase authentication
       if (!auth || !hasFirebaseConfig) {
-        // Use demo user for the selected role
-        const demoUser = demoUsers[role] || demoUsers.student;
-        setCurrentUser({
-          ...demoUser,
-          email: email,
+        throw new Error(
+          'Firebase Authentication is not properly configured. Please contact support.',
+        );
+      }
+
+      const userCredential: UserCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      const user: FirebaseUser = userCredential.user;
+
+      if (user) {
+        // Try to update user profile (optional - don't fail if it doesn't work)
+        saveUserProfile(user.uid, {
+          email: user.email || '',
+          name: user.displayName || email.split('@')[0],
           role: role,
+          lastLogin: new Date().toISOString(),
+        }).catch(() => {
+          // Silently continue if Firestore update fails
         });
-        setIsAuthenticated(true);
-        console.log(`🎭 Demo login successful: ${email} (${role})`);
+
+        console.log(`🎓 Login successful: ${user.displayName || user.email} (${role})`);
         return { success: true };
       }
 
-      // Try Firebase authentication first
-      try {
-        const userCredential: UserCredential = await signInWithEmailAndPassword(
-          auth,
-          email,
-          password,
-        );
-        const user: FirebaseUser = userCredential.user;
-
-        if (user) {
-          setCurrentUser({
-            id: user.uid,
-            email: user.email || '',
-            name: user.displayName || '',
-            role: role, // Use the role passed to the function
-            culturalClearance: 'basic', // Default clearance, will be updated on login
-            createdAt: user.metadata.creationTime || '',
-            lastLogin: user.metadata.lastSignInTime || '',
-          });
-          setIsAuthenticated(true);
-          console.log(`🎓 Firebase login successful: ${user.displayName || user.email} (${role})`);
-          return { success: true };
-        }
-      } catch (firebaseError: unknown) {
-        console.warn('Firebase authentication failed, falling back to demo mode:', firebaseError);
-        
-        // Check if it's an auth/invalid-credential or other auth error
-        const isAuthError = firebaseError instanceof Error && 
-          (firebaseError.message.includes('auth/invalid-credential') ||
-           firebaseError.message.includes('auth/user-not-found') ||
-           firebaseError.message.includes('auth/wrong-password'));
-        
-        // If it's an auth error, try demo mode as fallback
-        if (isAuthError) {
-          console.log('🎭 Falling back to demo mode due to Firebase auth error');
-          
-          // Use demo credentials or accept any demo email format
-          if (email.includes('demo') || email.includes('teaomarama') || 
-              email.includes('teacher') || email.includes('student') ||
-              email.includes('kaitiaki') || email.includes('admin')) {
-            const demoUser = demoUsers[role] || demoUsers.student;
-            setCurrentUser({
-              ...demoUser,
-              email: email,
-              role: role,
-            });
-            setIsAuthenticated(true);
-            console.log(`🎭 Demo fallback successful: ${email} (${role})`);
-            return { success: true };
-          }
-        }
-        
-        // Re-throw the Firebase error if it's not handled
-        throw firebaseError;
-      }
-      
-      return { success: false, error: 'Login failed' };
+      return { success: false, error: 'Login failed unexpectedly' };
     } catch (error: unknown) {
       console.error('Login error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Login failed';
-      
-      // Enhanced error messages for better UX
-      if (errorMessage.includes('auth/invalid-credential')) {
-        return { success: false, error: 'Invalid credentials. Try demo mode with any @teaomarama.nz email.' };
-      } else if (errorMessage.includes('auth/user-not-found')) {
-        return { success: false, error: 'User not found. Try demo mode or register a new account.' };
-      } else if (errorMessage.includes('auth/wrong-password')) {
-        return { success: false, error: 'Incorrect password. Try demo mode for testing.' };
+      let errorMessage = 'Login failed';
+
+      if (error instanceof Error) {
+        // Handle specific Firebase auth errors
+        if (error.message.includes('user-not-found')) {
+          errorMessage = 'No account found with this email address';
+        } else if (error.message.includes('wrong-password')) {
+          errorMessage = 'Incorrect password';
+        } else if (error.message.includes('invalid-email')) {
+          errorMessage = 'Invalid email address';
+        } else if (error.message.includes('too-many-requests')) {
+          errorMessage = 'Too many failed attempts. Please try again later';
+        } else {
+          errorMessage = error.message;
+        }
       }
-      
-      return { success: false, error: `${errorMessage}. Demo mode available - use any @teaomarama.nz email.` };
+
+      return { success: false, error: errorMessage };
     } finally {
       setIsLoading(false);
     }
@@ -296,6 +276,12 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     setIsLoading(true);
 
     try {
+      if (!auth || !hasFirebaseConfig) {
+        throw new Error(
+          'Firebase Authentication is not properly configured. Please contact support.',
+        );
+      }
+
       const userCredential: UserCredential = await createUserWithEmailAndPassword(
         auth,
         userData.email,
@@ -304,123 +290,129 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
       const user: FirebaseUser = userCredential.user;
 
       if (user) {
-        setCurrentUser({
+        // Update display name
+        await updateProfile(user, {
+          displayName: userData.name,
+        }).catch(() => {
+          // Silently continue if Firestore update fails
+        });
+
+        // Save complete user profile to Firestore
+        const userProfile: User = {
           id: user.uid,
           email: user.email || '',
-          name: user.displayName || '',
+          name: userData.name,
           role: userData.role,
           culturalClearance: userData.role === 'teacher' ? 'approved' : 'basic',
-          createdAt: user.metadata.creationTime || '',
-          lastLogin: user.metadata.lastSignInTime || '',
-        });
-        setIsAuthenticated(true);
-        console.log(`🎉 Account created: ${user.displayName || user.email} (${userData.role})`);
+          school: userData.school || '',
+          grade: userData.grade || '',
+          subjects: userData.subjects || [],
+          iwiAffiliations: userData.iwiAffiliations || [],
+          createdAt: new Date().toISOString(),
+          lastLogin: new Date().toISOString(),
+        };
+
+        await saveUserProfile(user.uid, userProfile);
+
+        console.log(`🎉 Account created successfully: ${userData.name} (${userData.role})`);
         return { success: true };
       }
-      return { success: false, error: 'Sign up failed' };
+
+      return { success: false, error: 'Account creation failed unexpectedly' };
     } catch (error: unknown) {
       console.error('Sign up error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Sign up failed';
+      let errorMessage = 'Account creation failed';
+
+      if (error instanceof Error) {
+        if (error.message.includes('email-already-in-use')) {
+          errorMessage = 'An account with this email already exists. Please sign in instead.';
+        } else if (error.message.includes('invalid-email')) {
+          errorMessage = 'Please enter a valid email address.';
+        } else if (error.message.includes('weak-password')) {
+          errorMessage = 'Password should be at least 6 characters long.';
+        } else if (error.message.includes('network-request-failed')) {
+          errorMessage = 'Network error. Please check your internet connection and try again.';
+        } else {
+          errorMessage = error.message;
+        }
+      }
+
       return { success: false, error: errorMessage };
     } finally {
       setIsLoading(false);
     }
   };
 
-  const switchToDemoMode = () => {
-    const user = demoUsers.teacher; // Default to teacher demo
-    setCurrentUser(user);
-    setIsAuthenticated(true);
-    console.log('🎭 Switched to demo mode');
+  const updateUserProfile = async (
+    updates: Partial<User>,
+  ): Promise<{ success: boolean; error?: string }> => {
+    if (!currentUser || !auth?.currentUser) {
+      return { success: false, error: 'No user logged in' };
+    }
+
+    try {
+      // Update Firebase profile if name is being updated
+      if (updates.name && updates.name !== currentUser.name) {
+        await updateProfile(auth.currentUser, {
+          displayName: updates.name,
+        }).catch(() => {
+          // Silently continue if Firestore update fails
+        });
+      }
+
+      // Update Firestore profile
+      await saveUserProfile(currentUser.id, updates);
+
+      // Update local state
+      setCurrentUser({
+        ...currentUser,
+        ...updates,
+      });
+
+      return { success: true };
+    } catch (error) {
+      console.error('Profile update error:', error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : 'Profile update failed',
+      };
+    }
   };
 
-  const getRoleBasedFeatures = (role: UserRole = currentUser?.role || 'student'): RoleFeatures => {
-    switch (role) {
-      case 'teacher':
-        return {
-          dashboard: '/teacher-dashboard',
-          availablePages: [
-            '/teacher-dashboard',
-            '/lesson-planner',
-            '/student-progress',
-            '/assessment-creator',
-            '/cultural-resources',
-            '/professional-development',
-            '/analytics',
-            '/content-library',
-            '/collaboration-hub',
-            '/multimedia-studio',
-          ],
-          contentAccess: ['all'],
-          culturalAccess: ['basic', 'approved', 'kaitiaki', 'sacred'],
-          analytics: true,
-          contentCreation: true,
-          studentManagement: true,
-        };
+  const getUserRole = (): UserRole | null => {
+    return currentUser?.role || null;
+  };
 
-      case 'student':
-        return {
-          dashboard: '/student-dashboard',
-          availablePages: [
-            '/student-dashboard',
-            '/my-learning',
-            '/assignments',
-            '/cultural-activities',
-            '/games',
-            '/progress-tracker',
-            '/resources',
-            '/peer-collaboration',
-          ],
-          contentAccess: ['assigned', 'public', 'cultural-basic'],
-          culturalAccess: ['basic', 'approved'],
-          analytics: false,
-          contentCreation: false,
-          studentManagement: false,
-        };
+  const hasPermission = (permission: string): boolean => {
+    if (!currentUser) return false;
 
-      case 'admin':
-        return {
-          dashboard: '/admin-dashboard',
-          availablePages: [
-            '/admin-dashboard',
-            '/user-management',
-            '/system-analytics',
-            '/content-moderation',
-            '/cultural-oversight',
-            '/platform-settings',
-            '/backup-restore',
-            '/audit-logs',
-          ],
-          contentAccess: ['all'],
-          culturalAccess: ['basic', 'approved', 'kaitiaki', 'sacred'],
-          analytics: true,
-          contentCreation: true,
-          studentManagement: true,
-        };
+    const rolePermissions: Record<UserRole, string[]> = {
+      student: ['read_content', 'take_assessments', 'view_progress'],
+      teacher: ['read_content', 'create_content', 'grade_assessments', 'manage_class'],
+      admin: ['read_content', 'create_content', 'manage_users', 'system_config'],
+      kaitiaki: ['all_permissions', 'cultural_oversight', 'content_approval'],
+    };
 
-      case 'kaitiaki':
-        return {
-          dashboard: '/kaitiaki-dashboard',
-          availablePages: [
-            '/kaitiaki-dashboard',
-            '/cultural-oversight',
-            '/sacred-content',
-            '/iwi-coordination',
-            '/cultural-validation',
-            '/spiritual-protocols',
-            '/cultural-safety',
-            '/tikanga-management',
-          ],
-          contentAccess: ['all', 'sacred'],
-          culturalAccess: ['basic', 'approved', 'kaitiaki', 'sacred'],
-          analytics: true,
-          contentCreation: true,
-          studentManagement: false,
-        };
+    const userPermissions = rolePermissions[currentUser.role] || [];
+    return userPermissions.includes(permission) || userPermissions.includes('all_permissions');
+  };
 
-      default:
-        return getRoleBasedFeatures('student');
-    }
+  const switchToDemoMode = (): void => {
+    console.log('🎯 Demo mode activated');
+    // Demo mode implementation - can be expanded as needed
+  };
+
+  const getRoleBasedFeatures = (): string[] => {
+    if (!currentUser) return [];
+    
+    const roleFeatures: Record<UserRole, string[]> = {
+      student: ['lessons', 'assessments', 'progress'],
+      teacher: ['create_lessons', 'grade_assessments', 'class_management', 'analytics'],
+      admin: ['user_management', 'system_config', 'reports', 'all_features'],
+      kaitiaki: ['cultural_oversight', 'content_approval', 'all_features'],
+    };
+
+    return roleFeatures[currentUser.role] || [];
   };
 
   const contextValue: AuthContextType = {
@@ -430,15 +422,14 @@ export const DualRoleAuthProvider: React.FC<DualRoleAuthProviderProps> = ({ chil
     login,
     logout,
     signUp,
-    isTeacher: currentUser?.role === 'teacher',
-    isStudent: currentUser?.role === 'student',
-    isAdmin: currentUser?.role === 'admin',
-    culturalClearance: currentUser?.culturalClearance || 'basic',
-    canAccessSacred: currentUser?.culturalClearance === 'kaitiaki',
-    canAccessHigh: ['approved', 'kaitiaki'].includes(currentUser?.culturalClearance || 'basic'),
+    updateUserProfile,
+    getUserRole,
+    hasPermission,
     switchToDemoMode,
     getRoleBasedFeatures,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
+
+export default DualRoleAuthProvider;

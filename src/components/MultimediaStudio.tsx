@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import './MultimediaStudio.css';
 
 interface MediaAsset {
@@ -42,56 +42,90 @@ const MultimediaStudio: React.FC = () => {
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   const creationTools: CreationTool[] = [
     {
       id: 'video-recorder',
       name: 'Cultural Video Creator',
       icon: '🎥',
-      description: 'Record educational videos with Te Reo Māori support and cultural context overlays',
-      culturalFeatures: ['Te Reo subtitles', 'Tikanga guidance', 'Cultural safety checks', 'Pronunciation guides'],
-      category: 'video'
+      description:
+        'Record educational videos with Te Reo Māori support and cultural context overlays',
+      culturalFeatures: [
+        'Te Reo subtitles',
+        'Tikanga guidance',
+        'Cultural safety checks',
+        'Pronunciation guides',
+      ],
+      category: 'video',
     },
     {
       id: 'audio-studio',
       name: 'Māori Audio Studio',
       icon: '🎵',
-      description: 'Create audio content with proper Te Reo pronunciation and traditional music integration',
-      culturalFeatures: ['Te Reo pronunciation', 'Traditional instruments', 'Waiata integration', 'Audio tikanga'],
-      category: 'audio'
+      description:
+        'Create audio content with proper Te Reo pronunciation and traditional music integration',
+      culturalFeatures: [
+        'Te Reo pronunciation',
+        'Traditional instruments',
+        'Waiata integration',
+        'Audio tikanga',
+      ],
+      category: 'audio',
     },
     {
       id: 'interactive-builder',
       name: 'Interactive Pūrākau Builder',
       icon: '🎮',
-      description: 'Build interactive storytelling experiences based on Māori legends and cultural narratives',
-      culturalFeatures: ['Pūrākau templates', 'Cultural storytelling', 'Interactive elements', 'Kaitiaki approval'],
-      category: 'interactive'
+      description:
+        'Build interactive storytelling experiences based on Māori legends and cultural narratives',
+      culturalFeatures: [
+        'Pūrākau templates',
+        'Cultural storytelling',
+        'Interactive elements',
+        'Kaitiaki approval',
+      ],
+      category: 'interactive',
     },
     {
       id: 'whakataukī-designer',
       name: 'Whakataukī Visual Designer',
       icon: '📜',
-      description: 'Create beautiful visual representations of Māori proverbs with cultural context',
-      culturalFeatures: ['Traditional patterns', 'Cultural symbols', 'Context explanations', 'Pronunciation audio'],
-      category: 'document'
+      description:
+        'Create beautiful visual representations of Māori proverbs with cultural context',
+      culturalFeatures: [
+        'Traditional patterns',
+        'Cultural symbols',
+        'Context explanations',
+        'Pronunciation audio',
+      ],
+      category: 'document',
     },
     {
       id: 'cultural-slideshow',
       name: 'Cultural Presentation Builder',
       icon: '📊',
       description: 'Design presentations that respectfully incorporate Māori cultural elements',
-      culturalFeatures: ['Cultural templates', 'Tikanga guidelines', 'Image permissions', 'Context validation'],
-      category: 'document'
+      culturalFeatures: [
+        'Cultural templates',
+        'Tikanga guidelines',
+        'Image permissions',
+        'Context validation',
+      ],
+      category: 'document',
     },
     {
       id: 'virtual-marae',
       name: 'Virtual Marae Experience',
       icon: '🏛️',
       description: 'Create immersive virtual marae experiences for cultural education',
-      culturalFeatures: ['3D marae models', 'Protocol guidance', 'Cultural navigation', 'Respectful interaction'],
-      category: 'interactive'
-    }
+      culturalFeatures: [
+        '3D marae models',
+        'Protocol guidance',
+        'Cultural navigation',
+        'Respectful interaction',
+      ],
+      category: 'interactive',
+    },
   ];
 
   const mockMediaAssets: MediaAsset[] = [
@@ -107,7 +141,7 @@ const MultimediaStudio: React.FC = () => {
         requiresKaitiakiApproval: true,
         culturalSensitivity: 'medium',
         tikangaCompliant: true,
-        teReoContent: true
+        teReoContent: true,
       },
       metadata: {
         uploadedBy: 'Aroha Thompson',
@@ -115,9 +149,9 @@ const MultimediaStudio: React.FC = () => {
         tags: ['te-reo', 'numbers', 'pronunciation', 'primary'],
         description: 'Educational video teaching Māori numbers 1-10 with proper pronunciation',
         educationalLevel: ['Primary', 'Intermediate'],
-        subjects: ['Te Reo Māori', 'Mathematics']
+        subjects: ['Te Reo Māori', 'Mathematics'],
       },
-      status: 'approved'
+      status: 'approved',
     },
     {
       id: '2',
@@ -129,17 +163,18 @@ const MultimediaStudio: React.FC = () => {
         requiresKaitiakiApproval: true,
         culturalSensitivity: 'high',
         tikangaCompliant: true,
-        teReoContent: false
+        teReoContent: false,
       },
       metadata: {
         uploadedBy: 'Mere Williams',
         uploadDate: new Date('2024-01-20'),
         tags: ['patterns', 'art', 'culture', 'interactive'],
-        description: 'Interactive exploration of traditional Māori geometric patterns and their meanings',
+        description:
+          'Interactive exploration of traditional Māori geometric patterns and their meanings',
         educationalLevel: ['Intermediate', 'Secondary'],
-        subjects: ['Arts', 'Social Studies', 'Cultural Studies']
+        subjects: ['Arts', 'Social Studies', 'Cultural Studies'],
       },
-      status: 'needs_review'
+      status: 'needs_review',
     },
     {
       id: '3',
@@ -152,18 +187,19 @@ const MultimediaStudio: React.FC = () => {
         requiresKaitiakiApproval: true,
         culturalSensitivity: 'medium',
         tikangaCompliant: true,
-        teReoContent: true
+        teReoContent: true,
       },
       metadata: {
         uploadedBy: 'David Kim',
         uploadDate: new Date('2024-01-25'),
         tags: ['whakataukī', 'pronunciation', 'wisdom', 'audio'],
-        description: 'Audio pronunciation guide for the whakataukī "Kia kaha" with cultural context',
+        description:
+          'Audio pronunciation guide for the whakataukī "Kia kaha" with cultural context',
         educationalLevel: ['All levels'],
-        subjects: ['Te Reo Māori', 'Cultural Studies']
+        subjects: ['Te Reo Māori', 'Cultural Studies'],
       },
-      status: 'approved'
-    }
+      status: 'approved',
+    },
   ];
 
   React.useEffect(() => {
@@ -179,7 +215,7 @@ const MultimediaStudio: React.FC = () => {
 
     // Simulate upload progress
     const interval = setInterval(() => {
-      setUploadProgress(prev => {
+      setUploadProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsUploading(false);
@@ -188,16 +224,20 @@ const MultimediaStudio: React.FC = () => {
           const newAsset: MediaAsset = {
             id: Date.now().toString(),
             name: file.name,
-            type: file.type.startsWith('video/') ? 'video' : 
-                  file.type.startsWith('audio/') ? 'audio' :
-                  file.type.startsWith('image/') ? 'image' : 'document',
+            type: file.type.startsWith('video/')
+              ? 'video'
+              : file.type.startsWith('audio/')
+              ? 'audio'
+              : file.type.startsWith('image/')
+              ? 'image'
+              : 'document',
             url: URL.createObjectURL(file),
             size: file.size,
             culturalContext: {
               requiresKaitiakiApproval: true,
               culturalSensitivity: 'medium',
               tikangaCompliant: false,
-              teReoContent: false
+              teReoContent: false,
             },
             metadata: {
               uploadedBy: 'Current User',
@@ -205,11 +245,11 @@ const MultimediaStudio: React.FC = () => {
               tags: [],
               description: '',
               educationalLevel: [],
-              subjects: []
+              subjects: [],
             },
-            status: 'processing'
+            status: 'processing',
           };
-          setMediaLibrary(prev => [newAsset, ...prev]);
+          setMediaLibrary((prev) => [newAsset, ...prev]);
           return 100;
         }
         return prev + Math.random() * 15;
@@ -240,11 +280,16 @@ const MultimediaStudio: React.FC = () => {
 
   const getStatusColor = (status: string): string => {
     switch (status) {
-      case 'approved': return '#059669';
-      case 'ready': return '#0891b2';
-      case 'needs_review': return '#f59e0b';
-      case 'processing': return '#6b7280';
-      default: return '#6b7280';
+      case 'approved':
+        return '#059669';
+      case 'ready':
+        return '#0891b2';
+      case 'needs_review':
+        return '#f59e0b';
+      case 'processing':
+        return '#6b7280';
+      default:
+        return '#6b7280';
     }
   };
 
@@ -253,27 +298,27 @@ const MultimediaStudio: React.FC = () => {
       <div className="studio-header">
         <h1>🎨 Multimedia Creation Studio</h1>
         <p>Create culturally responsive educational content with AI-powered tools</p>
-        
+
         <div className="studio-tabs">
-          <button 
+          <button
             className={`tab-button ${activeTab === 'create' ? 'active' : ''}`}
             onClick={() => setActiveTab('create')}
           >
             🎨 Create
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'library' ? 'active' : ''}`}
             onClick={() => setActiveTab('library')}
           >
             📚 Media Library
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'edit' ? 'active' : ''}`}
             onClick={() => setActiveTab('edit')}
           >
             ✏️ Edit & Enhance
           </button>
-          <button 
+          <button
             className={`tab-button ${activeTab === 'cultural' ? 'active' : ''}`}
             onClick={() => setActiveTab('cultural')}
           >
@@ -288,9 +333,9 @@ const MultimediaStudio: React.FC = () => {
             <div className="tools-section">
               <h3>🛠️ Creation Tools</h3>
               <div className="tools-grid">
-                {creationTools.map(tool => (
-                  <div 
-                    key={tool.id} 
+                {creationTools.map((tool) => (
+                  <div
+                    key={tool.id}
                     className={`tool-card ${selectedTool === tool.id ? 'selected' : ''}`}
                     onClick={() => setSelectedTool(tool.id)}
                   >
@@ -299,7 +344,7 @@ const MultimediaStudio: React.FC = () => {
                       <h4>{tool.name}</h4>
                       <p>{tool.description}</p>
                       <div className="cultural-features">
-                        {tool.culturalFeatures.map(feature => (
+                        {tool.culturalFeatures.map((feature) => (
                           <span key={feature} className="feature-tag">
                             {feature}
                           </span>
@@ -314,15 +359,14 @@ const MultimediaStudio: React.FC = () => {
 
             <div className="upload-section">
               <h3>📤 Upload Media</h3>
-              <div 
-                className="upload-area"
-                onClick={() => fileInputRef.current?.click()}
-              >
+              <div className="upload-area" onClick={() => fileInputRef.current?.click()}>
                 <div className="upload-content">
                   <div className="upload-icon">📁</div>
                   <p>Click to upload or drag and drop</p>
                   <span>Supports: Video, Audio, Images, Documents</span>
-                  <span className="cultural-note">🌿 All uploads will be reviewed for cultural appropriateness</span>
+                  <span className="cultural-note">
+                    🌿 All uploads will be reviewed for cultural appropriateness
+                  </span>
                 </div>
                 <input
                   type="file"
@@ -332,14 +376,11 @@ const MultimediaStudio: React.FC = () => {
                   style={{ display: 'none' }}
                 />
               </div>
-              
+
               {isUploading && (
                 <div className="upload-progress">
                   <div className="progress-bar">
-                    <div 
-                      className="progress-fill"
-                      style={{ width: `${uploadProgress}%` }}
-                    ></div>
+                    <div className="progress-fill" style={{ width: `${uploadProgress}%` }}></div>
                   </div>
                   <span>{Math.round(uploadProgress)}% uploaded</span>
                 </div>
@@ -353,7 +394,7 @@ const MultimediaStudio: React.FC = () => {
             <div className="library-header">
               <h3>📚 Media Library ({mediaLibrary.length} items)</h3>
               <div className="library-filters">
-                <select className="filter-select">
+                <select className="filter-select" aria-label="Filter by media type">
                   <option value="all">All Types</option>
                   <option value="video">Videos</option>
                   <option value="audio">Audio</option>
@@ -361,7 +402,7 @@ const MultimediaStudio: React.FC = () => {
                   <option value="interactive">Interactive</option>
                   <option value="document">Documents</option>
                 </select>
-                <select className="filter-select">
+                <select className="filter-select" aria-label="Filter by media status">
                   <option value="all">All Status</option>
                   <option value="approved">Approved</option>
                   <option value="needs_review">Needs Review</option>
@@ -371,7 +412,7 @@ const MultimediaStudio: React.FC = () => {
             </div>
 
             <div className="media-grid">
-              {mediaLibrary.map(asset => (
+              {mediaLibrary.map((asset) => (
                 <div key={asset.id} className={`media-card ${asset.type}`}>
                   <div className="media-preview">
                     <div className="media-type-icon">
@@ -381,7 +422,7 @@ const MultimediaStudio: React.FC = () => {
                       {asset.type === 'interactive' && '🎮'}
                       {asset.type === 'document' && '📄'}
                     </div>
-                    <div 
+                    <div
                       className="status-indicator"
                       style={{ backgroundColor: getStatusColor(asset.status) }}
                     ></div>
@@ -395,18 +436,16 @@ const MultimediaStudio: React.FC = () => {
                         <span className="duration">{formatDuration(asset.duration)}</span>
                       )}
                     </div>
-                    
+
                     <div className="cultural-info">
-                      <span className="cultural-badge">
-                        {getCulturalBadge(asset)}
-                      </span>
+                      <span className="cultural-badge">{getCulturalBadge(asset)}</span>
                       {asset.culturalContext.requiresKaitiakiApproval && (
                         <span className="kaitiaki-badge">🌿 Kaitiaki Review</span>
                       )}
                     </div>
 
                     <div className="media-tags">
-                      {asset.metadata.tags.slice(0, 3).map(tag => (
+                      {asset.metadata.tags.slice(0, 3).map((tag) => (
                         <span key={tag} className="tag">
                           {tag}
                         </span>
@@ -424,7 +463,8 @@ const MultimediaStudio: React.FC = () => {
 
                     <div className="upload-info">
                       <small>
-                        By {asset.metadata.uploadedBy} • {asset.metadata.uploadDate.toLocaleDateString('en-NZ')}
+                        By {asset.metadata.uploadedBy} •{' '}
+                        {asset.metadata.uploadDate.toLocaleDateString('en-NZ')}
                       </small>
                     </div>
                   </div>
@@ -437,7 +477,7 @@ const MultimediaStudio: React.FC = () => {
         {activeTab === 'edit' && (
           <div className="edit-workspace">
             <h3>✏️ Edit & Enhance</h3>
-            
+
             <div className="edit-tools">
               <div className="tool-category">
                 <h4>🎥 Video Tools</h4>
@@ -480,7 +520,7 @@ const MultimediaStudio: React.FC = () => {
                     <p>Automatically add appropriate cultural context to educational content</p>
                   </div>
                 </button>
-                
+
                 <button className="ai-tool">
                   <span className="ai-icon">🗣️</span>
                   <div>
@@ -488,7 +528,7 @@ const MultimediaStudio: React.FC = () => {
                     <p>Generate accurate Te Reo Māori pronunciation guides using AI</p>
                   </div>
                 </button>
-                
+
                 <button className="ai-tool">
                   <span className="ai-icon">🎨</span>
                   <div>
@@ -504,7 +544,7 @@ const MultimediaStudio: React.FC = () => {
         {activeTab === 'cultural' && (
           <div className="cultural-workspace">
             <h3>🌿 Cultural Validation Center</h3>
-            
+
             <div className="validation-dashboard">
               <div className="validation-stats">
                 <div className="stat-card">
@@ -538,7 +578,7 @@ const MultimediaStudio: React.FC = () => {
                       <span className="time-waiting">2 days waiting</span>
                     </div>
                   </div>
-                  
+
                   <div className="queue-item medium-priority">
                     <div className="item-info">
                       <strong>Whakataukī Collection</strong>
@@ -557,7 +597,9 @@ const MultimediaStudio: React.FC = () => {
                 <div className="guidelines-grid">
                   <div className="guideline-card">
                     <h5>🌿 Sacred Content</h5>
-                    <p>Content involving sacred Māori knowledge requires senior Kaitiaki approval</p>
+                    <p>
+                      Content involving sacred Māori knowledge requires senior Kaitiaki approval
+                    </p>
                   </div>
                   <div className="guideline-card">
                     <h5>🗣️ Te Reo Usage</h5>

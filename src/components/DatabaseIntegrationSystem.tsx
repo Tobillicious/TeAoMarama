@@ -52,7 +52,7 @@ interface DataField {
   name: string;
   type: 'string' | 'number' | 'boolean' | 'date' | 'json' | 'array';
   required: boolean;
-  defaultValue?: any;
+  defaultValue?: string | number | boolean | Date | Record<string, unknown> | unknown[];
   constraints?: string[];
 }
 

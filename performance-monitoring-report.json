@@ -1,22 +1,22 @@
 {
-  "timestamp": "2025-08-30T17:26:44.440Z",
+  "timestamp": "2025-09-03T03:42:22.871Z",
   "summary": {
     "totalMetrics": 11,
-    "good": 10,
-    "needsImprovement": 0,
+    "good": 9,
+    "needsImprovement": 1,
     "poor": 1
   },
   "metrics": [
     {
-      "timestamp": "2025-08-30T17:26:16.345Z",
+      "timestamp": "2025-09-03T03:41:53.772Z",
       "url": "https://teao-marama.web.app/",
       "metricType": "Load Time",
-      "value": 2141,
+      "value": 4530,
       "threshold": 5000,
-      "status": "good"
+      "status": "needs-improvement"
     },
     {
-      "timestamp": "2025-08-30T17:26:19.351Z",
+      "timestamp": "2025-09-03T03:41:56.777Z",
       "url": "https://teao-marama.web.app/",
       "metricType": "CLS",
       "value": 0.7028977076212565,
@@ -24,74 +24,74 @@
       "status": "poor"
     },
     {
-      "timestamp": "2025-08-30T17:26:19.351Z",
+      "timestamp": "2025-09-03T03:41:56.777Z",
       "url": "https://teao-marama.web.app/",
       "metricType": "TTFB",
-      "value": 10.099999994039536,
+      "value": 390.69999999925494,
       "threshold": 1800,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:22.126Z",
+      "timestamp": "2025-09-03T03:41:59.823Z",
       "url": "https://teao-marama.web.app/test",
       "metricType": "Load Time",
-      "value": 740,
+      "value": 1035,
       "threshold": 5000,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:25.131Z",
+      "timestamp": "2025-09-03T03:42:02.827Z",
       "url": "https://teao-marama.web.app/test",
       "metricType": "TTFB",
-      "value": 12.900000005960464,
+      "value": 361.59999999962747,
       "threshold": 1800,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:27.945Z",
+      "timestamp": "2025-09-03T03:42:05.738Z",
       "url": "https://teao-marama.web.app/cultural-learning-modules",
       "metricType": "Load Time",
-      "value": 735,
+      "value": 901,
       "threshold": 5000,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:30.950Z",
+      "timestamp": "2025-09-03T03:42:08.741Z",
       "url": "https://teao-marama.web.app/cultural-learning-modules",
       "metricType": "TTFB",
-      "value": 11.700000017881393,
+      "value": 203.2999999988824,
       "threshold": 1800,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:33.647Z",
+      "timestamp": "2025-09-03T03:42:11.769Z",
       "url": "https://teao-marama.web.app/assessment-framework",
       "metricType": "Load Time",
-      "value": 675,
+      "value": 1020,
       "threshold": 5000,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:36.651Z",
+      "timestamp": "2025-09-03T03:42:14.772Z",
       "url": "https://teao-marama.web.app/assessment-framework",
       "metricType": "TTFB",
-      "value": 13.800000011920929,
+      "value": 353.69999999925494,
       "threshold": 1800,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:39.344Z",
+      "timestamp": "2025-09-03T03:42:17.850Z",
       "url": "https://teao-marama.web.app/educational-dashboard",
       "metricType": "Load Time",
-      "value": 681,
+      "value": 1067,
       "threshold": 5000,
       "status": "good"
     },
     {
-      "timestamp": "2025-08-30T17:26:42.350Z",
+      "timestamp": "2025-09-03T03:42:20.853Z",
       "url": "https://teao-marama.web.app/educational-dashboard",
       "metricType": "TTFB",
-      "value": 12.199999988079071,
+      "value": 391.5,
       "threshold": 1800,
       "status": "good"
     }
@@ -99,27 +99,27 @@
   "averageLoadTimes": [
     {
       "url": "https://teao-marama.web.app/",
-      "averageLoadTime": 2141,
+      "averageLoadTime": 4530,
       "measurements": 1
     },
     {
       "url": "https://teao-marama.web.app/test",
-      "averageLoadTime": 740,
+      "averageLoadTime": 1035,
       "measurements": 1
     },
     {
       "url": "https://teao-marama.web.app/cultural-learning-modules",
-      "averageLoadTime": 735,
+      "averageLoadTime": 901,
       "measurements": 1
     },
     {
       "url": "https://teao-marama.web.app/assessment-framework",
-      "averageLoadTime": 675,
+      "averageLoadTime": 1020,
       "measurements": 1
     },
     {
       "url": "https://teao-marama.web.app/educational-dashboard",
-      "averageLoadTime": 681,
+      "averageLoadTime": 1067,
       "measurements": 1
     }
   ]

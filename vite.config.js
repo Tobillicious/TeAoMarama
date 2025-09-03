@@ -1,208 +1,111 @@
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig, loadEnv } from 'vite';
-import { visualizer } from 'rollup-plugin-visualizer';
-import { compression } from 'vite-plugin-compression2';
-export default defineConfig(function (_a) {
-    var command = _a.command, mode = _a.mode;
-    var env = loadEnv(mode, process.cwd(), '');
-    return {
-        plugins: [
-            react({
-                // Enable Fast Refresh optimizations
-                // fastRefresh: true,
-                // Optimize JSX for performance
-                jsxRuntime: 'automatic',
-            }),
-            // Gzip compression
-            compression({
-                algorithms: ['gzip'],
-                threshold: 1024,
-            }),
-            // Brotli compression for better performance
-            compression({
-                algorithms: ['brotliCompress'],
-                threshold: 1024,
-                filename: '[path][base].br',
-            }),
-            // Bundle analyzer (only in analyze mode)
-            mode === 'analyze' && visualizer({
-                filename: 'dist/stats.html',
-                open: true,
-                gzipSize: true,
-                brotliSize: true,
-            }),
-        ].filter(Boolean),
-        build: {
-            outDir: 'dist',
-            sourcemap: command === 'serve' ? true : false, // Only in dev
-            minify: 'terser',
-            target: 'es2020',
-            cssCodeSplit: true,
-            // Optimize chunk size
-            chunkSizeWarningLimit: 1000,
-            rollupOptions: {
-                output: {
-                    // More aggressive code splitting for Core Web Vitals
-                    manualChunks: function (id) {
-                        // Critical vendor chunks - smallest possible
-                        if (id.includes('node_modules')) {
-                            // React core - highest priority
-                            if (id.includes('react/') || id.includes('react-dom/')) {
-                                return 'vendor-react';
-                            }
-                            // Router - medium priority
-                            if (id.includes('react-router')) {
-                                return 'vendor-router';
-                            }
-                            // Large libraries - lazy load
-                            if (id.includes('firebase') || id.includes('supabase')) {
-                                return 'vendor-database';
-                            }
-                            if (id.includes('lucide-react')) {
-                                return 'vendor-icons';
-                            }
-                            if (id.includes('recharts')) {
-                                return 'vendor-charts';
-                            }
-                            if (id.includes('@radix-ui')) {
-                                return 'vendor-ui';
-                            }
-                            // Other vendors
-                            return 'vendor-misc';
-                        }
-                        // Core app components - immediate load
-                        if (id.includes('src/components/Navigation') ||
-                            id.includes('src/components/LoadingSpinner') ||
-                            id.includes('src/components/AuthGuard')) {
-                            return 'app-core';
-                        }
-                        // Educational platform - priority chunk
-                        if (id.includes('Educational') || id.includes('pages/EducationalPlatform')) {
-                            return 'educational-platform';
-                        }
-                        // AI/Superintelligence - lazy load only when needed
-                        if (id.includes('Superintelligence') ||
-                            id.includes('superintelligence') ||
-                            id.includes('AI') ||
-                            id.includes('Overseer') ||
-                            id.includes('Borg')) {
-                            return 'ai-systems';
-                        }
-                        // Dashboard components - group by functionality
-                        if (id.includes('Dashboard')) {
-                            if (id.includes('Human') || id.includes('Platform')) {
-                                return 'dashboard-core';
-                            }
-                            if (id.includes('Advanced') || id.includes('Analytics') || id.includes('MCP')) {
-                                return 'dashboard-advanced';
-                            }
-                            return 'dashboard-misc';
-                        }
-                        // Other components
-                        if (id.includes('components/')) {
-                            if (id.includes('Modal') || id.includes('Resource')) {
-                                return 'components-modals';
-                            }
-                            return 'components-misc';
-                        }
-                        // Pages
-                        if (id.includes('pages/')) {
-                            return 'pages';
-                        }
-                        // Utilities - split by usage frequency
-                        if (id.includes('utils/')) {
-                            if (id.includes('performance') || id.includes('platform-utils')) {
-                                return 'utils-core';
-                            }
-                            if (id.includes('superintelligence') || id.includes('ai-')) {
-                                return 'utils-ai';
-                            }
-                            return 'utils-misc';
-                        }
-                    },
-                    // Optimize file naming for caching
-                    entryFileNames: 'assets/[name]-[hash].js',
-                    chunkFileNames: 'assets/[name]-[hash].js',
-                    assetFileNames: function (assetInfo) {
-                        var _a;
-                        if ((_a = assetInfo.name) === null || _a === void 0 ? void 0 : _a.endsWith('.css')) {
-                            return 'assets/[name]-[hash].css';
-                        }
-                        return 'assets/[name]-[hash].[ext]';
-                    },
+import { resolve } from 'path';
+// Performance-optimized Vite configuration
+export default defineConfig({
+    plugins: [react()],
+    // Build optimizations
+    build: {
+        target: 'es2015',
+        outDir: 'dist',
+        assetsDir: 'assets',
+        sourcemap: false, // Disable in production for smaller bundle
+        minify: 'terser',
+        // Chunk size optimization
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    // Vendor chunks
+                    'vendor-react': ['react', 'react-dom'],
+                    'vendor-router': ['react-router-dom'],
+                    // Feature-based chunks
+                    'cultural-modules': [
+                        './src/components/CulturalLearningModules.tsx',
+                        './src/components/CulturalLearningPathNavigator.tsx'
+                    ],
+                    'assessment-system': [
+                        './src/components/AssessmentSystem.tsx',
+                        './src/components/InteractiveAssessmentSystem.tsx'
+                    ],
+                    'lesson-system': [
+                        './src/components/LessonManager.tsx',
+                        './src/components/LessonViewer.tsx'
+                    ],
+                    'download-utils': [
+                        './src/components/DownloadManager.tsx'
+                    ]
                 },
-            },
-            // Optimize build for performance
-            terserOptions: {
-                compress: {
-                    drop_console: command !== 'serve',
-                    drop_debugger: command !== 'serve',
-                    pure_funcs: ['console.log'],
+                // Asset naming strategy
+                chunkFileNames: function (chunkInfo) {
+                    var facadeModuleId = chunkInfo.facadeModuleId
+                        ? chunkInfo.facadeModuleId.split('/').pop().replace('.tsx', '').replace('.ts', '')
+                        : 'chunk';
+                    return "assets/".concat(facadeModuleId, ".[hash].js");
                 },
+                assetFileNames: function (assetInfo) {
+                    var info = assetInfo.name.split('.');
+                    var ext = info[info.length - 1];
+                    if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+                        return "assets/images/[name].[hash][extname]";
+                    }
+                    else if (/css/i.test(ext)) {
+                        return "assets/styles/[name].[hash][extname]";
+                    }
+                    return "assets/[name].[hash][extname]";
+                }
+            }
+        },
+        // Terser options for better minification
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+                pure_funcs: ['console.log', 'console.info', 'console.debug']
             },
-        },
-        // Optimize dev server for development
-        server: {
-            port: 3003,
-            host: true,
-            open: false,
-            // HTTP/2 disabled for local development
-            cors: true,
-            // Optimize HMR
-            hmr: {
-                overlay: true,
-            },
-        },
-        // Preview server config
-        preview: {
-            port: 3003,
-            host: true,
-        },
-        // Optimize dependencies
-        optimizeDeps: {
-            // Pre-bundle these for faster dev startup
-            include: [
-                'react',
-                'react-dom',
-                'react-router-dom',
-                'lucide-react',
-            ],
-            // Exclude heavy dependencies from pre-bundling
-            exclude: [
-                'firebase',
-                '@supabase/supabase-js',
-                'puppeteer',
-                'lighthouse',
-            ],
-        },
-        // Define environment variables
-        define: {
-            __DEV__: command === 'serve',
-            __PERFORMANCE_MODE__: JSON.stringify(env.PERFORMANCE_MODE || 'standard'),
-        },
-        test: {
-            globals: true,
-            environment: 'jsdom',
-            setupFiles: './tests/setup.ts',
-            exclude: [
-                '**/node_modules/**',
-                '**/dist/**',
-                '**/tests/smoke.spec.ts',
-                '**/backup-1755741035865/**',
-            ],
-        },
-        // CSS optimization
-        css: {
-            devSourcemap: command === 'serve',
-            postcss: {
-                plugins: [],
-            },
-        },
-        // Enable experimental features for performance
-        experimental: {
-            renderBuiltUrl: function (filename) {
-                return "/".concat(filename);
-            },
-        },
-    };
+            format: {
+                comments: false
+            }
+        }
+    },
+    // Server optimizations
+    server: {
+        hmr: {
+            overlay: false
+        }
+    },
+    // Resolve optimizations
+    resolve: {
+        alias: {
+            '@': resolve(__dirname, './src'),
+            '@components': resolve(__dirname, './src/components'),
+            '@utils': resolve(__dirname, './src/utils'),
+            '@styles': resolve(__dirname, './src/styles')
+        }
+    },
+    // CSS optimizations
+    css: {
+        devSourcemap: false,
+        preprocessorOptions: {
+            scss: {
+                charset: false
+            }
+        }
+    },
+    // Dependency optimization
+    optimizeDeps: {
+        include: [
+            'react',
+            'react-dom',
+            'react-router-dom'
+        ],
+        exclude: [
+        // Large dependencies that should be loaded separately
+        ]
+    },
+    // Define global constants
+    define: {
+        __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
+        __BUILD_DATE__: JSON.stringify(new Date().toISOString())
+    }
 });

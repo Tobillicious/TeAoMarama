@@ -1,17 +1,25 @@
 import { ArrowRight, BookOpen, Brain, Heart, Star, Target, Users, Zap } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getFirebaseHealth } from '../firebaseConfig';
 import './LandingPage.css';
 
 const LandingPage: React.FC = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [firebaseStatus, setFirebaseStatus] = useState<string>('Checking...');
 
   useEffect(() => {
     setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentFeature((prev) => (prev + 1) % 3);
     }, 4000);
+
+    // Check Firebase status
+    getFirebaseHealth().then((health: { status: string }) => {
+      setFirebaseStatus(health.status);
+    });
+
     return () => clearInterval(interval);
   }, []);
 
@@ -56,12 +64,16 @@ const LandingPage: React.FC = () => {
             <span className="logo-text">Te Kura o TeAoMarama</span>
           </div>
           <nav className="header-nav">
-            <Link to="/about" className="nav-link">
-              About
+            <Link to="/quality-lessons" className="nav-link">
+              Quality Lessons
+            </Link>
+            <Link to="/cultural-learning-modules" className="nav-link">
+              Cultural Learning
             </Link>
             <Link to="/login" className="nav-link login-btn">
               Sign In
             </Link>
+            <div className="firebase-status">Firebase: {firebaseStatus}</div>
           </nav>
         </div>
       </header>
@@ -82,22 +94,44 @@ const LandingPage: React.FC = () => {
               cutting-edge learning experiences for students and teachers.
             </p>
             <div className="hero-actions">
-              <Link to="/login" className="cta-button primary">
+              <Link to="/quality-lessons" className="cta-button primary">
                 <BookOpen size={20} />
-                Sign In
+                Explore Quality Lessons
                 <ArrowRight size={20} />
               </Link>
-              <Link to="/about" className="cta-button secondary">
-                Learn More
+              <Link to="/cultural-learning-modules" className="cta-button secondary">
+                Cultural Learning
               </Link>
+            </div>
+
+            {/* Quick Access to Educational Content */}
+            <div className="quick-access">
+              <h3>Quick Access to Year 8 Content</h3>
+              <div className="quick-access-buttons">
+                <Link to="/year8-social-studies" className="quick-access-btn">
+                  Social Studies
+                </Link>
+                <Link to="/year8-reading" className="quick-access-btn">
+                  Reading Strategies
+                </Link>
+                <Link to="/year8-academic-vocab" className="quick-access-btn">
+                  Academic Vocabulary
+                </Link>
+                <Link to="/year8-writing-units" className="quick-access-btn">
+                  Writing Units
+                </Link>
+                <Link to="/year8-critical-literacy" className="quick-access-btn">
+                  Critical Literacy
+                </Link>
+                <Link to="/year8-reading-units" className="quick-access-btn">
+                  Reading Units
+                </Link>
+              </div>
             </div>
           </div>
           <div className="hero-visual">
             <div className="feature-showcase">
-              <div
-                className="feature-card active"
-                style={{ '--feature-color': features[currentFeature].color } as React.CSSProperties}
-              >
+              <div className={`feature-card active feature-${currentFeature + 1}`}>
                 {features[currentFeature].icon}
                 <h3>{features[currentFeature].title}</h3>
                 <h4>{features[currentFeature].maoriTitle}</h4>
@@ -113,7 +147,7 @@ const LandingPage: React.FC = () => {
         <div className="container">
           <div className="stats-grid">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-card" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="stat-card">
                 <div className="stat-number">{stat.number}</div>
                 <div className="stat-label">{stat.label}</div>
                 <div className="stat-maori">{stat.maoriLabel}</div>
@@ -157,8 +191,8 @@ const LandingPage: React.FC = () => {
               </div>
               <h3>AI Lesson Generator</h3>
               <p>Create culturally-integrated lessons with AI assistance</p>
-              <Link to="/lesson-generator" className="feature-link">
-                Generate Lessons <ArrowRight size={16} />
+              <Link to="/educational-platform" className="feature-link">
+                View Educational Platform <ArrowRight size={16} />
               </Link>
             </div>
             <div className="feature-item">
@@ -218,13 +252,13 @@ const LandingPage: React.FC = () => {
             <h2>Ready to Begin Your Learning Journey?</h2>
             <p>Join thousands of students and teachers already using our platform</p>
             <div className="cta-actions">
-              <Link to="/educational-dashboard" className="cta-button primary large">
+              <Link to="/educational-platform" className="cta-button primary large">
                 <BookOpen size={24} />
                 Start Learning Today
                 <ArrowRight size={24} />
               </Link>
-              <Link to="/contact" className="cta-button secondary large">
-                Contact Us
+              <Link to="/login" className="cta-button secondary large">
+                Sign In
               </Link>
             </div>
           </div>
@@ -242,8 +276,8 @@ const LandingPage: React.FC = () => {
             </div>
             <div className="footer-section">
               <h4>Quick Links</h4>
-              <Link to="/about">About Us</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/quality-lessons">Quality Lessons</Link>
+              <Link to="/cultural-learning-modules">Cultural Learning</Link>
               <Link to="/educational-resources">Resources</Link>
             </div>
             <div className="footer-section">
@@ -253,10 +287,10 @@ const LandingPage: React.FC = () => {
               <Link to="/assessment-framework">Assessment</Link>
             </div>
             <div className="footer-section">
-              <h4>Support</h4>
-              <Link to="/help">Help Center</Link>
-              <Link to="/faq">FAQ</Link>
-              <Link to="/contact">Contact Support</Link>
+              <h4>Advanced Features</h4>
+              <Link to="/advanced-analytics">Analytics</Link>
+              <Link to="/multimedia">Multimedia Studio</Link>
+              <Link to="/collaboration">Collaboration Hub</Link>
             </div>
           </div>
           <div className="footer-bottom">

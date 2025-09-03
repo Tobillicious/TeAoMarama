@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navigation from '../components/Navigation';
+import { useAuth } from '../services/DualRoleAuthProvider';
 import { advancedSuperintelligenceEnhancer } from '../utils/advanced-superintelligence-enhancer';
 import './Year8SocialStudies.css';
 
@@ -16,6 +19,7 @@ interface Unit {
 }
 
 const Year8SocialStudies: React.FC = () => {
+  const { isAuthenticated, currentUser } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
@@ -176,6 +180,15 @@ const Year8SocialStudies: React.FC = () => {
 
   return (
     <div className="year8-social-studies-container">
+      <Navigation />
+      
+      {/* Authentication Notice */}
+      {!isAuthenticated && (
+        <div className="auth-notice">
+          <p>🔐 <Link to="/login">Sign in</Link> to access interactive features, track progress, and save your work!</p>
+        </div>
+      )}
+      
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-visual">
@@ -365,7 +378,26 @@ const Year8SocialStudies: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="explore-unit-btn">Explore Unit</button>
+                <div className="unit-actions">
+                  {isAuthenticated ? (
+                    <Link 
+                      to={`/unit/${unit.id}`} 
+                      className="explore-unit-btn primary"
+                    >
+                      📚 Start Unit
+                    </Link>
+                  ) : (
+                    <Link 
+                      to="/login" 
+                      className="explore-unit-btn secondary"
+                    >
+                      🔐 Sign in to Access
+                    </Link>
+                  )}
+                  <button className="preview-btn">
+                    👁️ Preview
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -470,8 +502,25 @@ const Year8SocialStudies: React.FC = () => {
             informed, culturally competent citizen of Aotearoa.
           </p>
           <div className="cta-buttons">
-            <button className="cta-button primary">Start Learning</button>
-            <button className="cta-button secondary">View Resources</button>
+            {isAuthenticated ? (
+              <>
+                <Link to="/dashboard" className="cta-button primary">
+                  🚀 Go to Dashboard
+                </Link>
+                <Link to="/resources" className="cta-button secondary">
+                  📚 Browse Resources
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="cta-button primary">
+                  🔐 Sign Up to Start Learning
+                </Link>
+                <Link to="/resources" className="cta-button secondary">
+                  👀 Preview Resources
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </section>
