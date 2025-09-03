@@ -1,17 +1,13 @@
 import {
-  AlertTriangle,
-  BookOpen,
-  CheckCircle,
-  Eye,
-  EyeOff,
-  GraduationCap,
-  Lock,
-  Mail,
-  Shield,
-} from 'lucide-react';
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { AlertTriangle, CheckCircle, Eye, EyeOff, Lock, Mail, Shield } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../services/DualRoleAuthProvider';
+import { auth, db } from '../firebaseConfig';
 import './AuthenticationTabs.css';
 
 interface LoginForm {
@@ -35,7 +31,7 @@ interface PasswordResetForm {
 
 const AuthenticationTabs: React.FC = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  // const { login } = useAuth(); // Not currently used
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'reset'>('signin');
 
   const [loginForm, setLoginForm] = useState<LoginForm>({
@@ -63,8 +59,8 @@ const AuthenticationTabs: React.FC = () => {
   const [success, setSuccess] = useState<string>('');
 
   const roles = [
-    { value: 'student', label: 'Ākonga (Student)', icon: <GraduationCap />, color: '#3b82f6' },
-    { value: 'teacher', label: 'Kaiako (Teacher)', icon: <BookOpen />, color: '#10b981' },
+    { value: 'student', label: 'Ākonga (Student)', icon: <Shield />, color: '#3b82f6' },
+    { value: 'teacher', label: 'Kaiako (Teacher)', icon: <Shield />, color: '#10b981' },
     { value: 'kaitiaki', label: 'Kaitiaki (Guardian)', icon: <Shield />, color: '#8b5cf6' },
   ];
 
@@ -79,18 +75,65 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      const result = await login(credentials.email, credentials.password, credentials.role);
-
-      if (result.success) {
-        setSuccess('Login successful! Redirecting...');
-        setTimeout(() => {
-          navigate('/teacher-dashboard');
-        }, 1500);
-      } else {
-        setErrors([result.error || 'Login failed. Please try again.']);
+      // Use Firebase Auth directly for immediate response
+      if (!auth) {
+        throw new Error('Firebase authentication not initialized');
       }
-    } catch (error) {
-      setErrors(['An unexpected error occurred. Please try again.']);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password,
+      );
+      const user = userCredential.user;
+
+      if (user) {
+        // Update user profile with role
+        if (db) {
+          await setDoc(
+            doc(db, 'users', user.uid),
+            {
+              email: user.email,
+              role: credentials.role,
+              lastLogin: new Date().toISOString(),
+            },
+            { merge: true },
+          );
+        }
+
+        setSuccess(
+          `Login successful! Welcome ${credentials.role === 'teacher' ? 'Kaiako' : 'Ākonga'}!`,
+        );
+
+        // Route based on role
+        setTimeout(() => {
+          if (credentials.role === 'teacher') {
+            navigate('/teacher-dashboard');
+          } else if (credentials.role === 'student') {
+            navigate('/student-dashboard');
+          } else {
+            navigate('/kaitiaki-dashboard');
+          }
+        }, 1500);
+      }
+    } catch (error: unknown) {
+      console.error('Login error:', error);
+
+      // Handle specific Firebase auth errors
+      let errorMessage = 'Login failed. Please try again.';
+      if (error && typeof error === 'object' && 'code' in error) {
+        const errorCode = (error as { code: string }).code;
+        if (errorCode === 'auth/invalid-credential') {
+          errorMessage = 'Invalid email or password. Please check your credentials.';
+        } else if (errorCode === 'auth/user-not-found') {
+          errorMessage = 'No account found with this email. Please sign up first.';
+        } else if (errorCode === 'auth/wrong-password') {
+          errorMessage = 'Incorrect password. Please try again.';
+        } else if (errorCode === 'auth/too-many-requests') {
+          errorMessage = 'Too many failed attempts. Please wait a moment.';
+        }
+      }
+
+      setErrors([errorMessage]);
     } finally {
       setIsLoading(false);
     }
@@ -117,7 +160,10 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      // Here you would call Firebase Auth createUserWithEmailAndPassword
+      if (!auth) {
+        throw new Error('Firebase authentication not initialized');
+      }
+      await createUserWithEmailAndPassword(auth, userData.email, userData.password);
       setSuccess('Account created successfully! Please check your email to verify your account.');
 
       // Reset form and switch to sign-in
@@ -133,6 +179,7 @@ const AuthenticationTabs: React.FC = () => {
         setActiveTab('signin');
       }, 2000);
     } catch (error) {
+      console.error('Sign up error:', error);
       setErrors(['Failed to create account. Please try again.']);
     } finally {
       setIsLoading(false);
@@ -150,10 +197,14 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      // Here you would call Firebase Auth sendPasswordResetEmail
+      if (!auth) {
+        throw new Error('Firebase authentication not initialized');
+      }
+      await sendPasswordResetEmail(auth, email);
       setSuccess('Password reset email sent! Please check your inbox.');
       setResetForm({ email: '' });
     } catch (error) {
+      console.error('Password reset error:', error);
       setErrors(['Failed to send password reset email. Please try again.']);
     } finally {
       setIsLoading(false);
@@ -255,9 +306,7 @@ const AuthenticationTabs: React.FC = () => {
                 <input
                   type="checkbox"
                   checked={loginForm.culturalClearance}
-                  onChange={(e) =>
-                    handleCulturalClearanceChange(e.target.checked)
-                  }
+                  onChange={(e) => handleCulturalClearanceChange(e.target.checked)}
                   disabled={isLoading}
                 />
                 <span>I have cultural clearance for Kaitiaki access</span>
@@ -283,22 +332,31 @@ const AuthenticationTabs: React.FC = () => {
             </div>
           )}
 
-          <button className="auth-button" onClick={() => handleLogin(loginForm)} disabled={isLoading}>
+          <button
+            className="auth-button"
+            onClick={() => handleLogin(loginForm)}
+            disabled={isLoading}
+          >
             {isLoading ? 'Authenticating...' : 'Sign In'}
           </button>
-          
+
           {/* Demo Mode Helper */}
-          <div className="demo-mode-helper" style={{ 
-            marginTop: '1rem', 
-            padding: '0.75rem', 
-            backgroundColor: '#fef3cd', 
-            border: '1px solid #facc15',
-            borderRadius: '8px',
-            fontSize: '0.875rem',
-            color: '#92400e'
-          }}>
-            <strong>🎭 Demo Mode Available:</strong><br/>
-            Use any email containing: @teaomarama.nz, demo, teacher, student, or kaitiaki<br/>
+          <div
+            className="demo-mode-helper"
+            style={{
+              marginTop: '1rem',
+              padding: '0.75rem',
+              backgroundColor: '#fef3cd',
+              border: '1px solid #facc15',
+              borderRadius: '8px',
+              fontSize: '0.875rem',
+              color: '#92400e',
+            }}
+          >
+            <strong>🎭 Demo Mode Available:</strong>
+            <br />
+            Use any email containing: @teaomarama.nz, demo, teacher, student, or kaitiaki
+            <br />
             <em>Password can be anything for demo users</em>
           </div>
         </div>
@@ -314,7 +372,12 @@ const AuthenticationTabs: React.FC = () => {
                 <button
                   key={role.value}
                   className={`role-option ${signUpForm.role === role.value ? 'selected' : ''}`}
-                  onClick={() => setSignUpForm((prev) => ({ ...prev, role: role.value as 'student' | 'teacher' | 'kaitiaki' }))}
+                  onClick={() =>
+                    setSignUpForm((prev) => ({
+                      ...prev,
+                      role: role.value as 'student' | 'teacher' | 'kaitiaki',
+                    }))
+                  }
                   style={{ borderColor: role.color }}
                 >
                   <div className="role-icon" style={{ color: role.color }}>
@@ -395,7 +458,11 @@ const AuthenticationTabs: React.FC = () => {
             </div>
           )}
 
-          <button className="auth-button" onClick={() => handleSignUp(signUpForm)} disabled={isLoading}>
+          <button
+            className="auth-button"
+            onClick={() => handleSignUp(signUpForm)}
+            disabled={isLoading}
+          >
             {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </div>
@@ -436,7 +503,11 @@ const AuthenticationTabs: React.FC = () => {
             </div>
           )}
 
-          <button className="auth-button" onClick={() => handlePasswordReset(resetForm.email)} disabled={isLoading}>
+          <button
+            className="auth-button"
+            onClick={() => handlePasswordReset(resetForm.email)}
+            disabled={isLoading}
+          >
             {isLoading ? 'Sending...' : 'Send Reset Link'}
           </button>
         </div>
