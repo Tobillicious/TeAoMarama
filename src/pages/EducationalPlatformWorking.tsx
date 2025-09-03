@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './EducationalPlatform.css';
 
 interface EducationalResource {
@@ -70,8 +71,10 @@ const sampleResources: EducationalResource[] = [
 ];
 
 const EducationalPlatformWorking: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
+  const [userKete, setUserKete] = useState<string[]>([]);
 
   const subjects = ['all', 'Mathematics', 'Science', 'English/Te Reo', 'Statistics', 'Technology/Mathematics', 'Geography/Science'];
   const types = ['all', 'lesson', 'unit', 'activity', 'project', 'multimedia', 'assessment'];
@@ -81,6 +84,33 @@ const EducationalPlatformWorking: React.FC = () => {
     const typeMatch = selectedType === 'all' || resource.type === selectedType;
     return subjectMatch && typeMatch;
   });
+
+  const handleViewResource = (resource: EducationalResource) => {
+    // Navigate to a detailed view or open the resource
+    if (resource.type === 'lesson') {
+      navigate(`/lesson/${resource.id}`);
+    } else if (resource.type === 'unit') {
+      navigate(`/unit/${resource.id}`);
+    } else {
+      // For other types, navigate to a general viewer
+      navigate(`/resource-viewer?id=${resource.id}&type=${resource.type}`);
+    }
+  };
+
+  const handleAddToKete = (resource: EducationalResource) => {
+    if (!userKete.includes(resource.id)) {
+      setUserKete(prev => [...prev, resource.id]);
+      // Show success feedback
+      alert(`✅ "${resource.title}" added to your kete!`);
+    } else {
+      alert(`📚 "${resource.title}" is already in your kete!`);
+    }
+  };
+
+  const handleLoadMore = () => {
+    // Navigate to full resource explorer or load more resources
+    navigate('/educational-resources');
+  };
 
   return (
     <div className="educational-platform" style={{ minHeight: '100vh', background: '#f8fafc', padding: '2rem' }}>
@@ -155,8 +185,18 @@ const EducationalPlatformWorking: React.FC = () => {
               </div>
             </div>
             <div className="resource-actions">
-              <button className="action-button primary">View Resource</button>
-              <button className="action-button secondary">Add to Kete</button>
+              <button 
+                className="action-button primary"
+                onClick={() => handleViewResource(resource)}
+              >
+                View Resource
+              </button>
+              <button 
+                className="action-button secondary"
+                onClick={() => handleAddToKete(resource)}
+              >
+                {userKete.includes(resource.id) ? '✅ In Kete' : 'Add to Kete'}
+              </button>
             </div>
           </div>
         ))}
@@ -168,7 +208,10 @@ const EducationalPlatformWorking: React.FC = () => {
           <br />
           <small>(Representing 2,013+ total resources available)</small>
         </p>
-        <button className="load-more-button">
+        <button 
+          className="load-more-button"
+          onClick={handleLoadMore}
+        >
           Load More Resources
         </button>
       </div>
