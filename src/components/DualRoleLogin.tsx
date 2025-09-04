@@ -45,7 +45,7 @@ interface SecurityMetrics {
 
 const DualRoleLogin: React.FC = () => {
   const navigate = useNavigate();
-  const { login, getRoleBasedFeatures } = useAuth();
+  const { login } = useAuth();
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'reset'>('signin');
 
   const [form, setForm] = useState<LoginForm>({
@@ -182,7 +182,6 @@ const DualRoleLogin: React.FC = () => {
 
         // Role-based redirect with delay for better UX
         setTimeout(() => {
-          const roleFeatures = getRoleBasedFeatures?.() || [];
           // Navigate to appropriate dashboard based on role
           navigate('/educational-dashboard');
         }, 1500);

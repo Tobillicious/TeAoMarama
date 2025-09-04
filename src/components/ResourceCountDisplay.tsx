@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { contentIndexOptimizer } from '../utils/content-index-optimizer';
 
 interface ResourceCounts {
   lessons: number;
@@ -15,23 +16,19 @@ export const ResourceCountDisplay: React.FC = () => {
   useEffect(() => {
     const loadResourceCounts = async () => {
       try {
-        // Count actual resources from the content directory
-        const lessonFiles = import.meta.glob('../content/lessons/*.json');
-        const activityFiles = import.meta.glob('../content/activities/*.json');
-        const assessmentFiles = import.meta.glob('../content/assessments/*.json');
-        const unitPlanFiles = import.meta.glob('../content/unit-plans/*.json');
-
-        const lessonCount = Object.keys(lessonFiles).length;
-        const activityCount = Object.keys(activityFiles).length;
-        const assessmentCount = Object.keys(assessmentFiles).length;
-        const unitPlanCount = Object.keys(unitPlanFiles).length;
+        // Use our optimized content index that prevents Vite build issues
+        const stats = await contentIndexOptimizer.getContentStats();
 
         setCounts({
-          lessons: lessonCount,
-          activities: activityCount,
-          assessments: assessmentCount,
-          unitPlans: unitPlanCount,
-          total: lessonCount + activityCount + assessmentCount + unitPlanCount,
+          lessons: stats.totalLessons,
+          activities: stats.totalActivities,
+          assessments: stats.totalAssessments,
+          unitPlans: stats.totalUnitPlans,
+          total:
+            stats.totalLessons +
+            stats.totalActivities +
+            stats.totalAssessments +
+            stats.totalUnitPlans,
         });
       } catch (error) {
         console.error('Error loading resource counts:', error);

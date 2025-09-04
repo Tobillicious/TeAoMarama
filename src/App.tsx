@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
@@ -11,6 +11,8 @@ import {
 
 // Simplified imports to avoid Node.js module issues
 import './components/TestRoute.css';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
 import LandingPage from './pages/LandingPage';
@@ -155,7 +157,22 @@ const UnitDetail = lazy(
   () => import(/* webpackChunkName: "unit-detail" */ './components/UnitDetail'),
 );
 
+const TeKeteAkoResourceExplorer = lazy(
+  () =>
+    import(/* webpackChunkName: "te-kete-ako-explorer" */ './components/TeKeteAkoResourceExplorer'),
+);
+
+const ProfessionalLessonTemplate = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "professional-lesson-template" */ './components/ProfessionalLessonTemplate'
+    ),
+);
+
 function App() {
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
+
   // Performance optimization hooks
   useMemoryOptimization();
 
@@ -185,8 +202,8 @@ function App() {
 
   return (
     <div className="App">
-      <DemoAccessBanner />
-      <Navigation />
+      {!isLandingPage && <DemoAccessBanner />}
+      {!isLandingPage && <Navigation />}
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
@@ -249,12 +266,18 @@ function App() {
             <Route path="/smart-search" element={<EnhancedContentDiscovery />} />
             {/* Unit Detail Routes */}
             <Route path="/unit/:unitId" element={<UnitDetail />} />
+            {/* TeKeteAko Resources */}
+            <Route path="/te-kete-ako-resources" element={<TeKeteAkoResourceExplorer />} />
+            <Route path="/resources/te-kete-ako" element={<TeKeteAkoResourceExplorer />} />
+            {/* Professional Lesson Templates */}
+            <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
+            <Route path="/lesson-templates" element={<ProfessionalLessonTemplate />} />
             {/* Additional missing routes */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dashboard" element={<StudentDashboard />} />
             <Route path="/resources" element={<EducationalResources />} />
-            <Route path="/styleguide" element={<StyleGuide />} />
+            {/* StyleGuide route removed - component doesn't exist */}
             <Route path="/register" element={<AuthenticationTabs />} />
           </Routes>
         </Suspense>

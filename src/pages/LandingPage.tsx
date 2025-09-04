@@ -1,27 +1,26 @@
-import { ArrowRight, BookOpen, Brain, Heart, Star, Target, Users, Zap } from 'lucide-react';
+import { ArrowRight, BookOpen, Brain, Heart, Zap } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getFirebaseHealth } from '../firebaseConfig';
 import './LandingPage.css';
 
+// Add Inter font for professional typography
 const LandingPage: React.FC = () => {
-  const [currentFeature, setCurrentFeature] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [firebaseStatus, setFirebaseStatus] = useState<string>('Checking...');
-
   useEffect(() => {
+    // Load Inter font for professional appearance
+    const link = document.createElement('link');
+    link.href =
+      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+
     setIsVisible(true);
-    const interval = setInterval(() => {
-      setCurrentFeature((prev) => (prev + 1) % 3);
-    }, 4000);
 
-    // Check Firebase status
-    getFirebaseHealth().then((health: { status: string }) => {
-      setFirebaseStatus(health.status);
-    });
-
-    return () => clearInterval(interval);
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
+
+  const [isVisible, setIsVisible] = useState(false);
 
   const features = [
     {
@@ -73,7 +72,6 @@ const LandingPage: React.FC = () => {
             <Link to="/login" className="nav-link login-btn">
               Sign In
             </Link>
-            <div className="firebase-status">Firebase: {firebaseStatus}</div>
           </nav>
         </div>
       </header>
@@ -99,203 +97,91 @@ const LandingPage: React.FC = () => {
                 Explore Quality Lessons
                 <ArrowRight size={20} />
               </Link>
+              <Link to="/te-kete-ako-resources" className="cta-button secondary">
+                <BookOpen size={20} />
+                TeKeteAko Resources
+              </Link>
               <Link to="/cultural-learning-modules" className="cta-button secondary">
+                <Heart size={20} />
                 Cultural Learning
               </Link>
             </div>
-
-            {/* Quick Access to Educational Content */}
-            <div className="quick-access">
-              <h3>Quick Access to Year 8 Content</h3>
-              <div className="quick-access-buttons">
-                <Link to="/year8-social-studies" className="quick-access-btn">
-                  Social Studies
-                </Link>
-                <Link to="/year8-reading" className="quick-access-btn">
-                  Reading Strategies
-                </Link>
-                <Link to="/year8-academic-vocab" className="quick-access-btn">
-                  Academic Vocabulary
-                </Link>
-                <Link to="/year8-writing-units" className="quick-access-btn">
-                  Writing Units
-                </Link>
-                <Link to="/year8-critical-literacy" className="quick-access-btn">
-                  Critical Literacy
-                </Link>
-                <Link to="/year8-reading-units" className="quick-access-btn">
-                  Reading Units
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <div className="feature-showcase">
-              <div className={`feature-card active feature-${currentFeature + 1}`}>
-                {features[currentFeature].icon}
-                <h3>{features[currentFeature].title}</h3>
-                <h4>{features[currentFeature].maoriTitle}</h4>
-                <p>{features[currentFeature].description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
-                <div className="stat-maori">{stat.maoriLabel}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="features-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Platform Features</h2>
-            <p className="maori-subtitle">Ngā Āhuatanga o Te Pūnaha</p>
-          </div>
+        <div className="features-container">
+          <h2 className="section-title">Platform Features</h2>
+          <p className="section-subtitle">
+            Discover the powerful tools and capabilities that make Te Kura o TeAoMarama the future
+            of culturally-integrated education.
+          </p>
           <div className="features-grid">
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <Users className="feature-icon" />
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="feature-card"
+                style={{ '--feature-color': feature.color } as React.CSSProperties}
+              >
+                {feature.icon}
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-maori-title">{feature.maoriTitle}</p>
+                <p className="feature-description">{feature.description}</p>
               </div>
-              <h3>Student Dashboard</h3>
-              <p>Personalized learning pathways with real-time progress tracking</p>
-              <Link to="/student-dashboard" className="feature-link">
-                Explore Dashboard <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <BookOpen className="feature-icon" />
-              </div>
-              <h3>Teacher Resources</h3>
-              <p>Comprehensive teaching materials and assessment tools</p>
-              <Link to="/teacher-dashboard" className="feature-link">
-                Access Resources <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <Brain className="feature-icon" />
-              </div>
-              <h3>AI Lesson Generator</h3>
-              <p>Create culturally-integrated lessons with AI assistance</p>
-              <Link to="/educational-platform" className="feature-link">
-                View Educational Platform <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon-wrapper">
-                <Target className="feature-icon" />
-              </div>
-              <h3>Assessment Framework</h3>
-              <p>Holistic assessment tools that honor cultural knowledge</p>
-              <Link to="/assessment-framework" className="feature-link">
-                View Framework <ArrowRight size={16} />
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Cultural Integration Section */}
-      <section className="cultural-section">
-        <div className="container">
-          <div className="cultural-content">
-            <div className="cultural-text">
-              <h2>Te Ao Māori Integration</h2>
-              <p className="maori-subtitle">Te Whakaurunga o Te Ao Māori</p>
-              <p>
-                Our platform deeply integrates Te Ao Māori principles, ensuring that cultural wisdom
-                and contemporary education work in harmony. Every feature is designed with respect
-                for tikanga Māori and the preservation of traditional knowledge.
-              </p>
-              <div className="cultural-principles">
-                <div className="principle">
-                  <Heart className="principle-icon" />
-                  <div>
-                    <h4>Manaakitanga</h4>
-                    <p>Creating welcoming and inclusive learning environments</p>
-                  </div>
-                </div>
-                <div className="principle">
-                  <Star className="principle-icon" />
-                  <div>
-                    <h4>Kaitiakitanga</h4>
-                    <p>Caring for knowledge and ensuring its preservation</p>
-                  </div>
-                </div>
+      {/* Stats Section */}
+      <section className="stats-section">
+        <div className="stats-container">
+          <h2 className="stats-title">Platform Impact</h2>
+          <p className="stats-subtitle">
+            Real numbers that demonstrate our commitment to educational excellence.
+          </p>
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-item">
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+                <div className="stat-maori-label">{stat.maoriLabel}</div>
               </div>
-            </div>
-            <div className="cultural-visual">
-              <div className="cultural-pattern"></div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Call to Action */}
       <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Begin Your Learning Journey?</h2>
-            <p>Join thousands of students and teachers already using our platform</p>
-            <div className="cta-actions">
-              <Link to="/educational-platform" className="cta-button primary large">
-                <BookOpen size={24} />
-                Start Learning Today
-                <ArrowRight size={24} />
-              </Link>
-              <Link to="/login" className="cta-button secondary large">
-                Sign In
-              </Link>
-            </div>
+        <div className="cta-container">
+          <h2 className="cta-title">Ready to Transform Education?</h2>
+          <p className="cta-description">
+            Join thousands of educators and students who are already experiencing the future of
+            culturally-integrated, AI-powered learning.
+          </p>
+          <div className="cta-buttons">
+            <Link to="/login" className="cta-button primary">
+              Get Started Today
+              <ArrowRight size={20} />
+            </Link>
+            <Link to="/educational-platform" className="cta-button secondary">
+              Explore Platform
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="landing-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h3>Te Kura o TeAoMarama</h3>
-              <p>The School of Enlightenment</p>
-              <p>AI-powered education with cultural wisdom</p>
-            </div>
-            <div className="footer-section">
-              <h4>Quick Links</h4>
-              <Link to="/quality-lessons">Quality Lessons</Link>
-              <Link to="/cultural-learning-modules">Cultural Learning</Link>
-              <Link to="/educational-resources">Resources</Link>
-            </div>
-            <div className="footer-section">
-              <h4>Platform</h4>
-              <Link to="/student-dashboard">Student Dashboard</Link>
-              <Link to="/teacher-dashboard">Teacher Dashboard</Link>
-              <Link to="/assessment-framework">Assessment</Link>
-            </div>
-            <div className="footer-section">
-              <h4>Advanced Features</h4>
-              <Link to="/advanced-analytics">Analytics</Link>
-              <Link to="/multimedia">Multimedia Studio</Link>
-              <Link to="/collaboration">Collaboration Hub</Link>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2024 Te Kura o TeAoMarama. All rights reserved.</p>
-          </div>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">🌿 Te Kura o TeAoMarama</div>
+          <p className="footer-text">
+            Empowering education through cultural wisdom and artificial intelligence. Building the
+            future of learning, one lesson at a time.
+          </p>
         </div>
       </footer>
     </div>
