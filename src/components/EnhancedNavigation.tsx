@@ -5,7 +5,7 @@ import '../styles/next-level-design-system.css';
 import './Navigation.css';
 
 const EnhancedNavigation: React.FC = () => {
-  const { isAuthenticated, currentUser, logout, getRoleBasedFeatures } = useAuth();
+  const { isAuthenticated, currentUser, logout } = useAuth();
   const location = useLocation();
 
   const handleLogout = async () => {
@@ -26,7 +26,7 @@ const EnhancedNavigation: React.FC = () => {
       };
     }
 
-    const roleFeatures = getRoleBasedFeatures(currentUser.role);
+    // const roleFeatures = getRoleBasedFeatures(currentUser.role); // Not currently used
     const isTeacher = currentUser.role === 'teacher';
     const isStudent = currentUser.role === 'student';
     const isAdmin = currentUser.role === 'admin';

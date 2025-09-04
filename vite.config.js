@@ -38,13 +38,15 @@ export default defineConfig({
                 },
                 // Asset naming strategy
                 chunkFileNames: function (chunkInfo) {
+                    var _a;
                     var facadeModuleId = chunkInfo.facadeModuleId
-                        ? chunkInfo.facadeModuleId.split('/').pop().replace('.tsx', '').replace('.ts', '')
+                        ? ((_a = chunkInfo.facadeModuleId.split('/').pop()) === null || _a === void 0 ? void 0 : _a.replace('.tsx', '').replace('.ts', '')) || 'chunk'
                         : 'chunk';
                     return "assets/".concat(facadeModuleId, ".[hash].js");
                 },
                 assetFileNames: function (assetInfo) {
-                    var info = assetInfo.name.split('.');
+                    var _a;
+                    var info = ((_a = assetInfo.name) === null || _a === void 0 ? void 0 : _a.split('.')) || ['asset'];
                     var ext = info[info.length - 1];
                     if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
                         return "assets/images/[name].[hash][extname]";

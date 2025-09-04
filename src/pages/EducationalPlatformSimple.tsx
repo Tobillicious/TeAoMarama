@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './EducationalPlatformSimple.css';
+import { contentIndexOptimizer } from '../utils/content-index-optimizer';
+import './EducationalPlatform.css';
 
 interface EducationalResource {
   id: string;
@@ -16,99 +17,38 @@ const EducationalPlatformSimple: React.FC = () => {
   // const navigate = useNavigate(); // Removed unused variable
   const [resources, setResources] = useState<EducationalResource[]>([]);
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
+  const [resourceCounts, setResourceCounts] = useState({
+    lessons: 0,
+    activities: 0,
+    total: 0,
+  });
 
   useEffect(() => {
-    const loadRealResources = async () => {
+    const loadResources = async () => {
       try {
-        console.log('Loading educational resources...');
+        // Use our optimized content index that prevents Vite build issues
+        const lessons = await contentIndexOptimizer.getContentByType('lessons');
+        const activities = await contentIndexOptimizer.getContentByType('activities');
 
-        const resourcePromises: Promise<EducationalResource>[] = [];
+        const lessonCount = Object.keys(lessons).length;
+        const activityCount = Object.keys(activities).length;
 
-        // Load lessons
-        const lessonFiles = import.meta.glob('../content/lessons/*.json');
-        for (const path in lessonFiles) {
-          resourcePromises.push(
-            lessonFiles[path]().then((module: unknown) => {
-              const lessonData = (module as Record<string, unknown>).default as Record<
-                string,
-                unknown
-              >;
-              return {
-                id: String(lessonData?.id || path),
-                title: String(lessonData?.title || 'Untitled Lesson'),
-                subject: String(lessonData?.subject || 'General'),
-                yearLevel: String(lessonData?.yearLevel || 'Mixed'),
-                type: 'lesson' as const,
-                isAvailable: true,
-                description: String(
-                  Array.isArray(lessonData?.learningObjectives) ? lessonData.learningObjectives[0] : 'Educational lesson content',
-                ),
-                culturalContext: String(
-                  lessonData?.culturalContext || 'Cultural context not specified',
-                ),
-              } as EducationalResource;
-            }),
-          );
-        }
-
-        // Load activities
-        const activityFiles = import.meta.glob('../content/activities/*.json');
-        for (const path in activityFiles) {
-          resourcePromises.push(
-            activityFiles[path]().then((module: unknown) => {
-              const activityData = (module as Record<string, unknown>).default as Record<
-                string,
-                unknown
-              >;
-              return {
-                id: activityData?.id || path,
-                title: activityData?.title || 'Untitled Activity',
-                subject: activityData?.subject || 'General',
-                yearLevel: activityData?.yearLevel || 'Mixed',
-                type: 'activity' as const,
-                isAvailable: true,
-                description: String(
-                  Array.isArray(activityData?.learningObjectives) ? activityData.learningObjectives[0] : 'Educational activity content'
-                ),
-                culturalContext: activityData?.culturalContext,
-              };
-            }),
-          );
-        }
-
-        const loadedResources = await Promise.all(resourcePromises);
-        console.log(`✅ Loaded ${loadedResources.length} educational resources`);
-        setResources(loadedResources);
+        setResourceCounts({
+          lessons: lessonCount,
+          activities: activityCount,
+          total: lessonCount + activityCount,
+        });
       } catch (error) {
-        console.error('❌ Error loading educational resources:', error);
-
-        // Fallback with real educational content
-        setResources([
-          {
-            id: 'fallback-1',
-            title: 'Te Taiao - Understanding Our Environment',
-            subject: 'Science',
-            yearLevel: 'Year 7-8',
-            description: 'Explore environmental science through Te Ao Māori perspectives',
-            culturalContext: 'Integrates kaitiakitanga and traditional ecological knowledge',
-            type: 'lesson',
-            isAvailable: true,
-          },
-          {
-            id: 'fallback-2',
-            title: 'Māori Mathematics - Patterns and Shapes',
-            subject: 'Mathematics',
-            yearLevel: 'Year 5-6',
-            description: 'Discover mathematical concepts through traditional Māori patterns',
-            culturalContext: 'Uses traditional whakapapa and cultural designs',
-            type: 'lesson',
-            isAvailable: true,
-          },
-        ]);
+        console.error('Error loading resource counts:', error);
+        setResourceCounts({
+          lessons: 0,
+          activities: 0,
+          total: 0,
+        });
       }
     };
 
-    loadRealResources();
+    loadResources();
   }, []);
 
   const filteredResources =
@@ -144,7 +84,9 @@ const EducationalPlatformSimple: React.FC = () => {
               <button
                 key={subject}
                 onClick={() => setSelectedSubject(subject)}
-                className={`subject-filter-btn ${selectedSubject === subject ? 'active' : 'inactive'}`}
+                className={`subject-filter-btn ${
+                  selectedSubject === subject ? 'active' : 'inactive'
+                }`}
               >
                 {subject === 'all' ? 'All Subjects' : subject}
               </button>
@@ -179,9 +121,7 @@ const EducationalPlatformSimple: React.FC = () => {
 
               <div className="resource-footer">
                 <span className="available-indicator">✅ Cultural Safety Verified</span>
-                <button className="access-resource-btn">
-                  Access Resource →
-                </button>
+                <button className="access-resource-btn">Access Resource →</button>
               </div>
             </div>
           ))}

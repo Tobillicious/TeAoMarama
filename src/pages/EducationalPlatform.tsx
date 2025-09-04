@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { contentIndexOptimizer } from '../utils/content-index-optimizer';
 import './EducationalPlatform.css';
 
 interface EducationalResource {
@@ -19,71 +20,65 @@ const EducationalPlatform: React.FC = () => {
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
 
   useEffect(() => {
-    // Load actual educational resources from the content directory
+    // Load actual educational resources using our optimized content index
     const loadRealResources = async () => {
       try {
-        // Load resources from the actual content files
-        const resourcePromises = [];
+        console.log('[EducationalPlatform] Loading resources via ContentIndexOptimizer...');
 
-        // Load ALL lessons - we have 460 lessons!
-        const lessonFiles = import.meta.glob('../content/lessons/*.json', { eager: false });
-        for (const path of Object.keys(lessonFiles)) {
-          resourcePromises.push(
-            lessonFiles[path]().then((module: any) => ({
-              ...module.default || module,
-              type: 'lesson' as const,
-              isAvailable: true,
-            })),
-          );
-        }
+        // Use our optimized content index that prevents Vite build issues
+        const lessons = await contentIndexOptimizer.getContentByType('lessons');
+        const activities = await contentIndexOptimizer.getContentByType('activities');
+        const assessments = await contentIndexOptimizer.getContentByType('assessments');
 
-        // Load ALL activities - we have 611 activities!
-        const activityFiles = import.meta.glob('../content/activities/*.json', { eager: false });
-        for (const path of Object.keys(activityFiles)) {
-          resourcePromises.push(
-            activityFiles[path]().then((module: any) => ({
-              ...module.default || module,
-              type: 'activity' as const,
-              isAvailable: true,
-            })),
-          );
-        }
+        // Transform lessons
+        const lessonResources = Object.entries(lessons).map(([key, lesson]: [string, any]) => ({
+          id: lesson.id || key,
+          title: lesson.title || `Lesson ${key}`,
+          subject: lesson.subject || 'General',
+          yearLevel: lesson.yearLevel || 'Mixed',
+          type: 'lesson' as const,
+          isAvailable: true,
+          description: lesson.description || lesson.learningObjectives?.[0] || 'Educational lesson',
+          culturalContext: lesson.culturalContext || 'New Zealand curriculum aligned',
+        }));
 
-        // Load ALL assessments - we have 265 assessments!
-        const assessmentFiles = import.meta.glob('../content/assessments/*.json', { eager: false });
-        for (const path of Object.keys(assessmentFiles)) {
-          resourcePromises.push(
-            assessmentFiles[path]().then((module: any) => ({
-              ...module.default || module,
-              type: 'assessment' as const,
-              isAvailable: true,
-            })),
-          );
-        }
-
-        const loadedResources = await Promise.all(resourcePromises);
-        console.log(`Loaded ${loadedResources.length} real educational resources`);
-        // Cast to EducationalResource array with proper handling of our real data structure
-        const validResources = loadedResources.map(
-          (resource: Record<string, unknown>, index: number) => ({
-            id: (resource.id as string) || `resource-${index}`,
-            title: (resource.title as string) || `Resource ${index + 1}`,
-            subject: (resource.subject as string) || 'General',
-            yearLevel: (resource.yearLevel as string) || 'Mixed',
-            type: (resource.type as 'lesson' | 'activity' | 'assessment') || 'lesson',
-            isAvailable: resource.isAvailable !== false,
-            description:
-              (resource.description as string) ||
-              (resource.learningObjectives as string[])?.[0] ||
-              (resource.activities as string[])?.[0] ||
-              (resource.assessment as string) ||
-              'Educational resource',
-            culturalContext: (resource.culturalContext as string) || 'New Zealand curriculum aligned',
+        // Transform activities
+        const activityResources = Object.entries(activities).map(
+          ([key, activity]: [string, any]) => ({
+            id: activity.id || key,
+            title: activity.title || `Activity ${key}`,
+            subject: activity.subject || 'General',
+            yearLevel: activity.yearLevel || 'Mixed',
+            type: 'activity' as const,
+            isAvailable: true,
+            description: activity.description || activity.activities?.[0] || 'Learning activity',
+            culturalContext: activity.culturalContext || 'New Zealand curriculum aligned',
           }),
         );
-        setResources(validResources);
+
+        // Transform assessments
+        const assessmentResources = Object.entries(assessments).map(
+          ([key, assessment]: [string, any]) => ({
+            id: assessment.id || key,
+            title: assessment.title || `Assessment ${key}`,
+            subject: assessment.subject || 'General',
+            yearLevel: assessment.yearLevel || 'Mixed',
+            type: 'assessment' as const,
+            isAvailable: true,
+            description:
+              assessment.description || assessment.assessment || 'Educational assessment',
+            culturalContext: assessment.culturalContext || 'New Zealand curriculum aligned',
+          }),
+        );
+
+        const allResources = [...lessonResources, ...activityResources, ...assessmentResources];
+        console.log(
+          `[EducationalPlatform] ✅ Loaded ${allResources.length} real educational resources`,
+        );
+
+        setResources(allResources);
       } catch (error) {
-        console.error('Error loading educational resources:', error);
+        console.error('[EducationalPlatform] Error loading educational resources:', error);
         // Fallback to comprehensive sample resources if loading fails
         setResources([
           {
@@ -91,8 +86,10 @@ const EducationalPlatform: React.FC = () => {
             title: 'Māori Mathematical Concepts in Traditional Navigation',
             subject: 'Mathematics',
             yearLevel: 'Year 9-10',
-            description: 'Exploring mathematical principles used in traditional Polynesian navigation, including geometry and spatial reasoning.',
-            culturalContext: 'Integrates traditional wayfinding knowledge with mathematical learning',
+            description:
+              'Exploring mathematical principles used in traditional Polynesian navigation, including geometry and spatial reasoning.',
+            culturalContext:
+              'Integrates traditional wayfinding knowledge with mathematical learning',
             type: 'lesson',
             isAvailable: true,
           },
@@ -101,7 +98,8 @@ const EducationalPlatform: React.FC = () => {
             title: 'Environmental Kaitiakitanga - Ecosystem Management',
             subject: 'Science',
             yearLevel: 'Year 7-8',
-            description: 'Understanding guardianship principles in environmental science through indigenous knowledge systems.',
+            description:
+              'Understanding guardianship principles in environmental science through indigenous knowledge systems.',
             culturalContext: 'Māori environmental stewardship and traditional ecological practices',
             type: 'lesson',
             isAvailable: true,
@@ -111,7 +109,8 @@ const EducationalPlatform: React.FC = () => {
             title: 'Te Reo Māori Language Structures',
             subject: 'Language',
             yearLevel: 'Year 5-6',
-            description: 'Interactive introduction to Te Reo Māori grammar, pronunciation, and cultural contexts.',
+            description:
+              'Interactive introduction to Te Reo Māori grammar, pronunciation, and cultural contexts.',
             culturalContext: 'Traditional language learning with cultural protocols',
             type: 'activity',
             isAvailable: true,
@@ -121,8 +120,10 @@ const EducationalPlatform: React.FC = () => {
             title: 'Treaty of Waitangi - Historical Perspectives',
             subject: 'Social Studies',
             yearLevel: 'Year 8-9',
-            description: 'Multi-perspective analysis of the Treaty of Waitangi and its ongoing significance.',
-            culturalContext: 'Balanced historical narrative including Māori and European perspectives',
+            description:
+              'Multi-perspective analysis of the Treaty of Waitangi and its ongoing significance.',
+            culturalContext:
+              'Balanced historical narrative including Māori and European perspectives',
             type: 'lesson',
             isAvailable: true,
           },
@@ -141,7 +142,8 @@ const EducationalPlatform: React.FC = () => {
             title: 'Cultural Competency Assessment',
             subject: 'Assessment',
             yearLevel: 'All Years',
-            description: 'Holistic assessment tool measuring cultural understanding and academic progress.',
+            description:
+              'Holistic assessment tool measuring cultural understanding and academic progress.',
             culturalContext: 'Culturally responsive assessment practices',
             type: 'assessment',
             isAvailable: true,
@@ -151,7 +153,8 @@ const EducationalPlatform: React.FC = () => {
             title: 'Marine Biology through Tangaroa Perspectives',
             subject: 'Science',
             yearLevel: 'Year 10-12',
-            description: 'Ocean science education incorporating traditional Māori marine knowledge.',
+            description:
+              'Ocean science education incorporating traditional Māori marine knowledge.',
             culturalContext: 'Traditional marine conservation and spiritual connection to the sea',
             type: 'lesson',
             isAvailable: true,
@@ -161,7 +164,8 @@ const EducationalPlatform: React.FC = () => {
             title: 'Statistics in Community Research',
             subject: 'Mathematics',
             yearLevel: 'Year 11-13',
-            description: 'Applied statistics for community-based research and indigenous data sovereignty.',
+            description:
+              'Applied statistics for community-based research and indigenous data sovereignty.',
             culturalContext: 'Community-centered research methodologies',
             type: 'activity',
             isAvailable: true,
@@ -181,11 +185,12 @@ const EducationalPlatform: React.FC = () => {
             title: 'Contemporary Issues in Māori Society',
             subject: 'Social Studies',
             yearLevel: 'Year 12-13',
-            description: 'Analysis of current social, political, and economic issues affecting Māori communities.',
+            description:
+              'Analysis of current social, political, and economic issues affecting Māori communities.',
             culturalContext: 'Contemporary Māori perspectives on social justice and equity',
             type: 'lesson',
             isAvailable: true,
-          }
+          },
         ]);
       }
     };
