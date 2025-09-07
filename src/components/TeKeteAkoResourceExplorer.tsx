@@ -1,11 +1,12 @@
 import { Award, BookOpen, Calculator, Download, Eye, FileText, Globe, Users } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { resourceLoader, type EducationalResource } from '../utils/resource-loader';
 import './TeKeteAkoResourceExplorer.css';
 
 interface TeKeteAkoResource {
   id: string;
   title: string;
-  type: 'worksheet' | 'unit' | 'lesson' | 'template' | 'guide';
+  type: 'worksheet' | 'unit' | 'lesson' | 'template' | 'guide' | 'handout' | 'assessment' | 'activity';
   subject: string;
   yearLevel: string;
   description: string;
@@ -23,153 +24,66 @@ const TeKeteAkoResourceExplorer: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedResource, setSelectedResource] = useState<TeKeteAkoResource | null>(null);
 
-  useEffect(() => {
-    // Load TeKeteAko resources
-    const teKeteAkoResources: TeKeteAkoResource[] = [
-      // Math Worksheets
+  // Convert EducationalResource to TeKeteAkoResource format
+  const convertToTeKeteAkoResource = (resource: EducationalResource): TeKeteAkoResource => {
+    const getIcon = (subject: string, type: string) => {
+      if (type === 'worksheet') return <FileText className="w-6 h-6" />;
+      if (type === 'lesson') return <BookOpen className="w-6 h-6" />;
+      if (type === 'assessment') return <Award className="w-6 h-6" />;
+      if (subject.includes('Mathematics')) return <Calculator className="w-6 h-6" />;
+      if (subject.includes('Science')) return <Globe className="w-6 h-6" />;
+      return <FileText className="w-6 h-6" />;
+    };
+
+    return {
+      id: resource.id,
+      title: resource.title,
+      type: resource.type as any,
+      subject: resource.subject,
+      yearLevel: resource.yearLevel,
+      description: resource.description,
+      path: resource.path,
+      icon: getIcon(resource.subject, resource.type),
+      category: resource.subject,
+      culturalContext: resource.culturalContent ? 'Cultural content verified' : undefined,
+      curriculumAlignment: 'NZ Curriculum Aligned'
+    };
+  };
+
+  // Fallback resources in case real data loading fails
+  const getFallbackTeKeteAkoResources = (): TeKeteAkoResource[] => [
       {
-        id: 'fractions-decimals-percentages',
-        title: 'Fractions, Decimals, and Percentages',
+        id: 'fallback-math',
+        title: 'Mathematics Resource Collection',
         type: 'worksheet',
         subject: 'Mathematics',
         yearLevel: 'Years 7-10',
-        description:
-          'Comprehensive worksheet covering conversions between fractions, decimals, and percentages with practice problems and answer key.',
-        path: '/resources/te-kete-ako-clean/math_worksheets/fractions_decimals_percentages.md',
+        description: 'Fallback mathematics resources - real content loading temporarily unavailable.',
+        path: '/fallback/math-collection',
         icon: <Calculator className="w-6 h-6" />,
         category: 'Mathematics',
-        curriculumAlignment: 'NZ Curriculum Level 4-5',
-      },
-      {
-        id: 'area-perimeter',
-        title: 'Area and Perimeter',
-        type: 'worksheet',
-        subject: 'Mathematics',
-        yearLevel: 'Years 7-9',
-        description:
-          'Interactive worksheet exploring area and perimeter calculations with real-world applications.',
-        path: '/resources/te-kete-ako-clean/math_worksheets/area_and_perimeter.md',
-        icon: <Calculator className="w-6 h-6" />,
-        category: 'Mathematics',
-        curriculumAlignment: 'NZ Curriculum Level 4',
-      },
-      {
-        id: 'negative-numbers',
-        title: 'Negative Numbers and Absolute Value',
-        type: 'worksheet',
-        subject: 'Mathematics',
-        yearLevel: 'Years 8-10',
-        description:
-          'Understanding negative numbers, absolute value, and operations with integers.',
-        path: '/resources/te-kete-ako-clean/math_worksheets/negative_numbers_and_absolute_value.md',
-        icon: <Calculator className="w-6 h-6" />,
-        category: 'Mathematics',
-        curriculumAlignment: 'NZ Curriculum Level 4-5',
-      },
-      {
-        id: 'order-operations',
-        title: 'Order of Operations',
-        type: 'worksheet',
-        subject: 'Mathematics',
-        yearLevel: 'Years 7-9',
-        description:
-          'Mastering BEDMAS/PEMDAS with progressive difficulty levels and real-world problems.',
-        path: '/resources/te-kete-ako-clean/math_worksheets/order_of_operations.md',
-        icon: <Calculator className="w-6 h-6" />,
-        category: 'Mathematics',
-        curriculumAlignment: 'NZ Curriculum Level 4',
-      },
-      {
-        id: 'linear-equations',
-        title: 'Solving Linear Equations',
-        type: 'worksheet',
-        subject: 'Mathematics',
-        yearLevel: 'Years 9-11',
-        description:
-          'Step-by-step approach to solving linear equations with variables on both sides.',
-        path: '/resources/te-kete-ako-clean/math_worksheets/solving_linear_equations.md',
-        icon: <Calculator className="w-6 h-6" />,
-        category: 'Mathematics',
-        curriculumAlignment: 'NZ Curriculum Level 5-6',
-      },
-
-      // Social Studies Units
-      {
-        id: 'decolonized-history',
-        title: 'Decolonized Aotearoa History',
-        type: 'unit',
-        subject: 'Social Studies',
-        yearLevel: 'Years 9-13',
-        description:
-          'Comprehensive unit centering Māori perspectives, agency, and resistance in Aotearoa history. Challenges colonial narratives.',
-        path: '/resources/te-kete-ako-clean/dist/units/urds/URD-Unit2-Decolonized-History.md',
-        icon: <Globe className="w-6 h-6" />,
-        category: 'Social Studies',
-        culturalContext: 'Te Ao Māori perspectives, Tino Rangatiratanga',
-        curriculumAlignment: 'NZ Curriculum Level 5-8',
-      },
-      {
-        id: 'contemporary-issues',
-        title: 'Contemporary Issues',
-        type: 'unit',
-        subject: 'Social Studies',
-        yearLevel: 'Years 10-13',
-        description:
-          'Exploring current social, political, and cultural issues in Aotearoa with critical analysis frameworks.',
-        path: '/resources/te-kete-ako-clean/dist/units/urds/URD-Unit4-Contemporary-Issues.md',
-        icon: <Globe className="w-6 h-6" />,
-        category: 'Social Studies',
-        culturalContext: 'Contemporary Māori perspectives',
-        curriculumAlignment: 'NZ Curriculum Level 6-8',
-      },
-      {
-        id: 'digital-tech-ethics',
-        title: 'Digital Technology and AI Ethics',
-        type: 'unit',
-        subject: 'Digital Technology',
-        yearLevel: 'Years 9-13',
-        description:
-          'Exploring ethical implications of digital technology and AI from cultural and social perspectives.',
-        path: '/resources/te-kete-ako-clean/dist/units/urds/URD-Unit7-Digital-Tech-AI-Ethics.md',
-        icon: <Globe className="w-6 h-6" />,
-        category: 'Digital Technology',
-        culturalContext: 'Indigenous perspectives on technology',
-        curriculumAlignment: 'NZ Curriculum Level 5-8',
-      },
-
-      // Professional Templates and Guides
-      {
-        id: 'lesson-template-guide',
-        title: 'Professional Lesson Template Guide',
-        type: 'template',
-        subject: 'Teaching Resources',
-        yearLevel: 'All Levels',
-        description:
-          'Comprehensive guide for creating culturally authentic, pedagogically sound lessons with Te Ao Māori integration.',
-        path: '/resources/te-kete-ako-clean/dist/guided-inquiry-unit/LESSON_TEMPLATE_GUIDE.md',
-        icon: <FileText className="w-6 h-6" />,
-        category: 'Teaching Resources',
-        culturalContext: 'Te Ao Māori integration protocols',
-        curriculumAlignment: 'NZ Curriculum Framework',
-      },
-      {
-        id: 'design-enhancement-report',
-        title: 'Design Enhancement Report',
-        type: 'guide',
-        subject: 'Design System',
-        yearLevel: 'All Levels',
-        description:
-          'Professional design system documentation with color palette, typography, and cultural integration guidelines.',
-        path: '/resources/te-kete-ako-clean/dist/DESIGN_ENHANCEMENT_REPORT.md',
-        icon: <Award className="w-6 h-6" />,
-        category: 'Design System',
-        culturalContext: 'Pounamu green, Kahurangi blue color palette',
-        curriculumAlignment: 'Professional Standards',
-      },
+        curriculumAlignment: 'NZ Curriculum Aligned',
+      }
     ];
 
-    setResources(teKeteAkoResources);
-    setFilteredResources(teKeteAkoResources);
+  useEffect(() => {
+    // Load real TeKeteAko resources from our resource database
+    const loadRealResources = async () => {
+      try {
+        const realResources = await resourceLoader.loadResources();
+        const teKeteAkoResources: TeKeteAkoResource[] = realResources.map(convertToTeKeteAkoResource);
+        setResources(teKeteAkoResources);
+        setFilteredResources(teKeteAkoResources);
+        console.log(`✅ Loaded ${teKeteAkoResources.length} real TeKeteAko resources`);
+      } catch (error) {
+        console.error('Failed to load TeKeteAko resources:', error);
+        // Fallback to minimal sample if real resources fail
+        setResources(getFallbackTeKeteAkoResources());
+        setFilteredResources(getFallbackTeKeteAkoResources());
+      }
+    };
+
+    loadRealResources();
   }, []);
 
   useEffect(() => {

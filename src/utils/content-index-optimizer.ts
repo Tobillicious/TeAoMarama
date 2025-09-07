@@ -2,6 +2,14 @@
  * Content Index Optimizer - Uses Superintelligence to prevent Vite build issues
  * while maintaining full dynamic content functionality
  */
+
+declare global {
+  interface Window {
+    Superintelligence?: {
+      graphRag?: any;
+    };
+  }
+}
 export interface ContentIndex {
   lessons: Record<string, any>;
   activities: Record<string, any>;

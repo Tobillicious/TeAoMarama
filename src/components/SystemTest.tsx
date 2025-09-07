@@ -42,9 +42,14 @@ const SystemTest: React.FC = () => {
 
     // Test 4: Demo Mode
     try {
-      switchToDemoMode();
-      results['demoMode'] = true;
-      console.log('✅ Demo Mode: Working');
+      if (switchToDemoMode) {
+        switchToDemoMode();
+        results['demoMode'] = true;
+        console.log('✅ Demo Mode: Working');
+      } else {
+        results['demoMode'] = false;
+        console.log('❌ Demo Mode: Method not available');
+      }
     } catch {
       results['demoMode'] = false;
       console.log('❌ Demo Mode: Failed');

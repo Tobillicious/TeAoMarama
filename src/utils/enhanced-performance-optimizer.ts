@@ -142,7 +142,7 @@ class EnhancedPerformanceOptimizer {
   }
 
   private updateNavigationMetrics(entry: PerformanceNavigationTiming): void {
-    const totalTime = entry.loadEventEnd - entry.navigationStart;
+    const totalTime = entry.loadEventEnd - entry.startTime;
     this.metrics.averageResponseTime = (this.metrics.averageResponseTime + totalTime) / 2;
   }
 
@@ -402,7 +402,7 @@ class EnhancedPerformanceOptimizer {
   private async executePreloadQueue(): Promise<void> {
     const startTime = performance.now();
     let successfulPreloads = 0;
-    let totalPreloads = Math.min(this.preloadQueue.length, 10); // Limit concurrent preloads
+    const totalPreloads = Math.min(this.preloadQueue.length, 10); // Limit concurrent preloads
 
     for (let i = 0; i < totalPreloads; i++) {
       const item = this.preloadQueue[i];

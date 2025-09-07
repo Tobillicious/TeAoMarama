@@ -1,7 +1,22 @@
-/* Teacher Dashboard Styles */
+/* Teacher Dashboard Styles - TeKeteAko Design System */
+:root {
+  --color-pounamu: #059669;
+  --color-pounamu-light: #d1fae5;
+  --color-kahurangi: #0284c7;
+  --primary-gradient: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-kahurangi) 100%);
+  --header-gradient: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+  --background-gradient: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --border-radius-lg: 1rem;
+  --shadow-elevation-1: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-elevation-2: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-3: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 .teacher-dashboard {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  background: var(--background-gradient);
+  font-family: var(--font-family);
 }
 
 /* Loading States */
@@ -37,10 +52,23 @@
 
 /* Header Section */
 .dashboard-header {
-  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+  background: var(--header-gradient);
   color: white;
   padding: 2rem 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-elevation-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .header-content {

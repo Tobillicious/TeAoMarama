@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
-import Navigation from './components/Navigation';
+import SimpleNavigation from './components/SimpleNavigation';
 import {
   performanceMonitor,
   registerServiceWorker,
@@ -32,7 +32,6 @@ import PerformanceDashboard from './components/PerformanceDashboard';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import AuthenticationTabs from './components/AuthenticationTabs';
-import BasicTest from './components/BasicTest';
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 import LessonManager from './components/LessonManager';
@@ -122,6 +121,8 @@ const AssessmentFramework = lazy(
 
 import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
 import ResourceUnlocker from './components/ResourceUnlocker';
+import DiagnosticCheck from './components/DiagnosticCheck';
+import ResourceViewer from './components/ResourceViewer';
 
 // WisdomEvolutionDashboard temporarily removed for build
 // const WisdomEvolutionDashboardLazy = lazy(
@@ -129,7 +130,6 @@ import ResourceUnlocker from './components/ResourceUnlocker';
 // );
 
 // Import the new dual-role authentication components
-import SystemTest from './components/SystemTest';
 
 // Import enhanced educational components
 const EnhancedContentDiscovery = lazy(
@@ -169,6 +169,13 @@ const ProfessionalLessonTemplate = lazy(
     ),
 );
 
+const UnifiedContentDiscovery = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "unified-content-discovery" */ './components/UnifiedContentDiscovery'
+    ),
+);
+
 function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
@@ -203,7 +210,7 @@ function App() {
   return (
     <div className="App">
       {!isLandingPage && <DemoAccessBanner />}
-      {!isLandingPage && <Navigation />}
+      {!isLandingPage && <SimpleNavigation />}
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
@@ -212,8 +219,6 @@ function App() {
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
-            <Route path="/test" element={<SystemTest />} />
-            <Route path="/basic-test" element={<BasicTest />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
@@ -272,11 +277,17 @@ function App() {
             {/* Professional Lesson Templates */}
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
             <Route path="/lesson-templates" element={<ProfessionalLessonTemplate />} />
+            {/* Unified Content Discovery */}
+            <Route path="/unified-content-discovery" element={<UnifiedContentDiscovery />} />
+            <Route path="/content-discovery" element={<UnifiedContentDiscovery />} />
+            <Route path="/discover" element={<UnifiedContentDiscovery />} />
             {/* Additional missing routes */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dashboard" element={<StudentDashboard />} />
             <Route path="/resources" element={<EducationalResources />} />
+            <Route path="/diagnostic" element={<DiagnosticCheck />} />
+            <Route path="/resource-viewer" element={<ResourceViewer />} />
             {/* StyleGuide route removed - component doesn't exist */}
             <Route path="/register" element={<AuthenticationTabs />} />
           </Routes>

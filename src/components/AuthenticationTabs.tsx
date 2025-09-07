@@ -221,32 +221,33 @@ const AuthenticationTabs: React.FC = () => {
 
   return (
     <div className="auth-tabs-container">
-      <div className="auth-header">
-        <Shield className="header-icon" />
-        <h1>Te Kura o TeAoMarama</h1>
-        <p>Secure Authentication with Cultural Safety</p>
-      </div>
+      <div className="auth-card">
+        <div className="auth-header">
+          <Shield className="header-icon" />
+          <h1>Te Kura o TeAoMarama</h1>
+          <p>Secure Authentication with Cultural Safety</p>
+        </div>
 
-      <div className="auth-tabs">
-        <button
-          className={`auth-tab ${activeTab === 'signin' ? 'active' : ''}`}
-          onClick={() => setActiveTab('signin')}
-        >
-          Sign In
-        </button>
-        <button
-          className={`auth-tab ${activeTab === 'signup' ? 'active' : ''}`}
-          onClick={() => setActiveTab('signup')}
-        >
-          Sign Up
-        </button>
-        <button
-          className={`auth-tab ${activeTab === 'reset' ? 'active' : ''}`}
-          onClick={() => setActiveTab('reset')}
-        >
-          Reset Password
-        </button>
-      </div>
+        <div className="auth-tabs">
+          <button
+            className={`auth-tab ${activeTab === 'signin' ? 'active' : ''}`}
+            onClick={() => setActiveTab('signin')}
+          >
+            Sign In
+          </button>
+          <button
+            className={`auth-tab ${activeTab === 'signup' ? 'active' : ''}`}
+            onClick={() => setActiveTab('signup')}
+          >
+            Sign Up
+          </button>
+          <button
+            className={`auth-tab ${activeTab === 'reset' ? 'active' : ''}`}
+            onClick={() => setActiveTab('reset')}
+          >
+            Reset Password
+          </button>
+        </div>
 
       {/* Sign In Tab */}
       {activeTab === 'signin' && (
@@ -512,6 +513,7 @@ const AuthenticationTabs: React.FC = () => {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 };

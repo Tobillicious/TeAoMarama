@@ -1,98 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { resourceLoader, type EducationalResource } from '../utils/resource-loader';
 import './EducationalPlatform.css';
 
-interface EducationalResource {
-  id: string;
-  title: string;
-  subject: string;
-  yearLevel: string;
-  type: string;
-  culturalContext: string;
-  description: string;
-}
-
-// Sample resources representing the 2,013+ available
-const sampleResources: EducationalResource[] = [
-  {
-    id: '1',
-    title: 'Māori Mathematical Concepts in Traditional Navigation',
-    subject: 'Mathematics',
-    yearLevel: 'Year 9-10',
-    type: 'lesson',
-    culturalContext: 'Te Ao Māori',
-    description: 'Exploring mathematical principles used in traditional Polynesian navigation, including geometry and spatial reasoning.'
-  },
-  {
-    id: '2', 
-    title: 'Environmental Kaitiakitanga - Ecosystem Management',
-    subject: 'Science',
-    yearLevel: 'Year 7-8',
-    type: 'unit',
-    culturalContext: 'Tikanga Māori',
-    description: 'Understanding guardianship principles in environmental science through indigenous knowledge systems.'
-  },
-  {
-    id: '3',
-    title: 'Te Reo Māori Language Patterns in Poetry',
-    subject: 'English/Te Reo',
-    yearLevel: 'Year 11-13', 
-    type: 'activity',
-    culturalContext: 'Whakapapa-based Learning',
-    description: 'Analyzing linguistic patterns and cultural meaning in traditional and contemporary Māori poetry.'
-  },
-  {
-    id: '4',
-    title: 'Statistical Analysis of New Zealand Census Data',
-    subject: 'Statistics',
-    yearLevel: 'Year 12-13',
-    type: 'project',
-    culturalContext: 'Aotearoa Data Contexts',
-    description: 'Using real NZ census data to understand demographic trends with cultural sensitivity.'
-  },
-  {
-    id: '5',
-    title: 'Traditional Māori Architecture and Geometry',
-    subject: 'Technology/Mathematics',
-    yearLevel: 'Year 9-10',
-    type: 'multimedia',
-    culturalContext: 'Whare Construction Principles',
-    description: 'Geometric principles in traditional building methods, connecting cultural practice to mathematical concepts.'
-  },
-  {
-    id: '6',
-    title: 'Climate Change Impact on Pacific Communities',
-    subject: 'Geography/Science',
-    yearLevel: 'Year 11',
-    type: 'assessment',
-    culturalContext: 'Pacific Climate Justice',
-    description: 'Investigating climate change effects on Pacific Island nations with focus on indigenous perspectives.'
-  }
-];
-
+// Real resources loaded from our educational content database
 const EducationalPlatformWorking: React.FC = () => {
   const navigate = useNavigate();
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
   const [userKete, setUserKete] = useState<string[]>([]);
+  const [resources, setResources] = useState<EducationalResource[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [resourceStats, setResourceStats] = useState({ total: 0, cultural: 0 });
 
-  const subjects = ['all', 'Mathematics', 'Science', 'English/Te Reo', 'Statistics', 'Technology/Mathematics', 'Geography/Science'];
-  const types = ['all', 'lesson', 'unit', 'activity', 'project', 'multimedia', 'assessment'];
+  // Load real educational resources
+  useEffect(() => {
+    const loadResources = async () => {
+      try {
+        const realResources = await resourceLoader.loadResources();
+        setResources(realResources);
+        const metadata = resourceLoader.getMetadata();
+        if (metadata) {
+          setResourceStats({
+            total: metadata.totalResources,
+            cultural: metadata.culturalResources
+          });
+        }
+        console.log(`✅ Loaded ${realResources.length} real educational resources`);
+      } catch (error) {
+        console.error('Failed to load resources:', error);
+        setResources([]); // Fallback handled in resourceLoader
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const filteredResources = sampleResources.filter(resource => {
+    loadResources();
+  }, []);
+
+  // Get available subjects and types from actual data
+  const subjects = ['all', ...Array.from(new Set(resources.map(r => r.subject)))];
+  const types = ['all', ...Array.from(new Set(resources.map(r => r.type)))];
+
+  const filteredResources = resources.filter(resource => {
     const subjectMatch = selectedSubject === 'all' || resource.subject === selectedSubject;
     const typeMatch = selectedType === 'all' || resource.type === selectedType;
     return subjectMatch && typeMatch;
   });
 
   const handleViewResource = (resource: EducationalResource) => {
-    // Navigate to a detailed view or open the resource
+    // Navigate based on resource type
     if (resource.type === 'lesson') {
       navigate(`/lesson/${resource.id}`);
     } else if (resource.type === 'unit') {
       navigate(`/unit/${resource.id}`);
+    } else if (resource.type === 'assessment') {
+      navigate(`/assessment/${resource.id}`);
     } else {
-      // For other types, navigate to a general viewer
       navigate(`/resource-viewer?id=${resource.id}&type=${resource.type}`);
     }
   };
@@ -100,7 +64,6 @@ const EducationalPlatformWorking: React.FC = () => {
   const handleAddToKete = (resource: EducationalResource) => {
     if (!userKete.includes(resource.id)) {
       setUserKete(prev => [...prev, resource.id]);
-      // Show success feedback
       alert(`✅ "${resource.title}" added to your kete!`);
     } else {
       alert(`📚 "${resource.title}" is already in your kete!`);
@@ -108,26 +71,37 @@ const EducationalPlatformWorking: React.FC = () => {
   };
 
   const handleLoadMore = () => {
-    // Navigate to full resource explorer or load more resources
-    navigate('/educational-resources');
+    navigate('/te-kete-ako-resources');
   };
 
+  if (loading) {
+    return (
+      <div className="educational-platform">
+        <div style={{ textAlign: 'center', padding: '4rem' }}>
+          <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌿</div>
+          <h2>Loading Educational Resources...</h2>
+          <p>Surfacing thousands of curriculum-aligned materials</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="educational-platform" style={{ minHeight: '100vh', background: '#f8fafc', padding: '2rem' }}>
-      <div className="platform-header" style={{ background: '#059669', color: 'white', padding: '2rem', borderRadius: '1rem', marginBottom: '2rem' }}>
+    <div className="educational-platform">
+      <div className="platform-header">
         <h1>Te Kura o TeAoMarama - Educational Resources</h1>
         <div className="resource-stats">
           <div className="stat">
-            <span className="stat-number">2,013+</span>
-            <span className="stat-label">Total Resources</span>
+            <span className="stat-number">{resourceStats.total.toLocaleString()}+</span>
+            <span className="stat-label">Real Resources</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">{resourceStats.cultural}</span>
+            <span className="stat-label">Cultural Content</span>
           </div>
           <div className="stat">
             <span className="stat-number">100%</span>
-            <span className="stat-label">Cultural Safety</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">Active</span>
-            <span className="stat-label">AI Enhanced</span>
+            <span className="stat-label">Curriculum Aligned</span>
           </div>
         </div>
       </div>
@@ -179,10 +153,12 @@ const EducationalPlatformWorking: React.FC = () => {
             </div>
             <div className="resource-content">
               <p className="resource-description">{resource.description}</p>
-              <div className="cultural-context">
-                <span className="cultural-icon">🌿</span>
-                <span className="cultural-text">{resource.culturalContext}</span>
-              </div>
+              {resource.culturalContent && (
+                <div className="cultural-context">
+                  <span className="cultural-icon">🌿</span>
+                  <span className="cultural-text">Cultural Content Verified</span>
+                </div>
+              )}
             </div>
             <div className="resource-actions">
               <button 
@@ -204,9 +180,9 @@ const EducationalPlatformWorking: React.FC = () => {
 
       <div className="load-more-section">
         <p className="showing-count">
-          Showing {filteredResources.length} of 6 sample resources 
+          Showing {filteredResources.length} of {resources.length} real educational resources
           <br />
-          <small>(Representing 2,013+ total resources available)</small>
+          <small>Curriculum-aligned content with cultural safety verification</small>
         </p>
         <button 
           className="load-more-button"
