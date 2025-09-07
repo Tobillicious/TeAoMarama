@@ -543,6 +543,74 @@
   transform: translateY(-2px);
 }
 
+/* Enhanced module display styles */
+.module-meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.module-type, .module-year {
+  background: #e2e8f0;
+  color: #4a5568;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cultural-indicator {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.module-description {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f7fafc;
+  border-radius: 6px;
+  border-left: 3px solid #38a169;
+}
+
+.module-description p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.module-tags {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.module-tag {
+  background: #bee3f8;
+  color: #2c5aa0;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.learning-module-card {
+  border-left: 4px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.learning-module-card:hover {
+  border-left-color: #38a169;
+}
+
 /* Cultural activities styles */
 .cultural-tab {
   background: white;
@@ -712,6 +780,31 @@
 .game-btn:hover {
   background: #2f855a;
   transform: translateY(-2px);
+}
+
+.real-data-badge {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0;
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+  animation: pulse-real-data 3s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse-real-data {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
 }
 
 /* Progress tab styles */

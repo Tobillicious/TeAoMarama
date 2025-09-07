@@ -33,9 +33,13 @@ service cloud.firestore {
       return hasRole('student');
     }
     
+    function isKaitiaki() {
+      return hasRole('kaitiaki') || hasRole('admin');
+    }
+    
     function canAccessCulturalContent(sensitivityLevel) {
-      // Admin and teachers can access all levels
-      return isAdmin() || isTeacher() || 
+      // Admin, teachers, and kaitiaki can access all levels
+      return isAdmin() || isTeacher() || isKaitiaki() || 
         // Students can access low and medium sensitivity content
         (isStudent() && sensitivityLevel in ['low', 'medium']);
     }
@@ -49,8 +53,7 @@ service cloud.firestore {
       allow read: if isOwner(userId) || 
                      (isTeacher() && get(/databases/$(database)/documents/users/$(userId)).data.school == getUserData().school) ||
                      isAdmin();
-      allow create: if isOwner(userId) && 
-                       request.auth.token.email_verified == true;
+      allow create: if isOwner(userId);
       allow update: if isOwner(userId) ||
                        (isTeacher() && get(/databases/$(database)/documents/users/$(userId)).data.role == 'student') ||
                        isAdmin();

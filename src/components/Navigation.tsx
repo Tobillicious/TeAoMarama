@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
+import '../styles/kaitiaki-dashboard.css';
 import '../styles/next-level-design-system.css';
 import './Navigation.css';
 
@@ -135,6 +136,12 @@ const Navigation: React.FC = () => {
 
     if (currentUser.role === 'admin' || currentUser.role === 'kaitiaki') {
       dashboards.push(
+        {
+          to: '/kaitiaki-dashboard',
+          label: '🧠 Kaitiaki Dashboard',
+          icon: '🧠',
+          description: 'Guardian Chief oversight and AI coordination dashboard',
+        },
         {
           to: '/performance-dashboard',
           label: '⚡ Performance Dashboard',

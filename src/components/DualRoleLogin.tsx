@@ -43,6 +43,23 @@ interface SecurityMetrics {
   mfaSuccessRate: number;
 }
 
+// Helper function to get dashboard path based on user role
+const getDashboardPath = (role: string): string => {
+  switch (role.toLowerCase()) {
+    case 'teacher':
+    case 'kaiako':
+      return '/teacher-dashboard';
+    case 'student':
+    case 'akonga':
+      return '/student-dashboard';
+    case 'kaitiaki':
+    case 'admin':
+      return '/kaitiaki-dashboard';
+    default:
+      return '/student-dashboard'; // Default fallback
+  }
+};
+
 const DualRoleLogin: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -183,7 +200,9 @@ const DualRoleLogin: React.FC = () => {
         // Role-based redirect with delay for better UX
         setTimeout(() => {
           // Navigate to appropriate dashboard based on role
-          navigate('/educational-dashboard');
+          const userRole = result.user?.role || 'student';
+          const dashboardPath = getDashboardPath(userRole);
+          navigate(dashboardPath);
         }, 1500);
       } else {
         setErrors([result.error || 'Login failed. Please try again.']);
