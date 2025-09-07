@@ -270,6 +270,7 @@ const EnhancedContentDiscovery: React.FC = () => {
             .sort((a, b) => b.searchScore - a.searchScore)
             .map((scoredResource) => {
               const { searchScore, ...resource } = scoredResource;
+              // Note: searchScore used for sorting above
               return resource;
             });
         } else {

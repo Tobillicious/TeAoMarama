@@ -62,6 +62,12 @@ const Navigation: React.FC = () => {
       description: 'Professional lesson templates with cultural integration',
     },
     {
+      to: '/unified-content-discovery',
+      label: '🔍 Discover All Content',
+      icon: '🔍',
+      description: 'Unified discovery of all resources, templates, and lessons',
+    },
+    {
       to: '/multimedia',
       label: '🎬 Multimedia Studio',
       icon: '🎬',

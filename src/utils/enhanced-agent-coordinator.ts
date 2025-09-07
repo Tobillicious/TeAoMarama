@@ -47,7 +47,7 @@ class EnhancedAgentCoordinator {
     action: string;
     agentId?: string;
     taskId?: string;
-    result: string;
+    result?: string;
   }> = [];
   private metrics: CoordinationMetrics;
   private coordinationInterval: NodeJS.Timeout | null = null;
@@ -481,7 +481,7 @@ class EnhancedAgentCoordinator {
     action: string;
     agentId?: string;
     taskId?: string;
-    result: string;
+    result?: string;
   }> {
     return [...this.coordinationHistory];
   }

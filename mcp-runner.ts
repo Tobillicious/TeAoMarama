@@ -1,6 +1,5 @@
 
 import { globalMCPServer } from './src/utils/mcp-server';
-import { tsx } from 'tsx/tsx';
 
 async function main() {
   try {

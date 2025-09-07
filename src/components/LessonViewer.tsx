@@ -161,6 +161,105 @@ This unit authentically integrates Te Ao Māori perspectives through:
               'Differentiation materials'
             ]
           }
+        },
+        'y5-maori-games': {
+          id: 'y5-maori-games',
+          title: 'Traditional Māori Games',
+          subject: 'Physical Education',
+          yearLevel: 'Year 5',
+          fullContent: `# Year 5 Physical Education: Traditional Māori Games
+
+**New Zealand Curriculum Level 3**
+
+## 🎯 Learning Objectives
+
+Students will learn about traditional Māori games while developing physical skills, cultural understanding, and respect for Māori traditions.
+
+### Cultural Protocols ⚠️ IMPORTANT
+- **Show respect** for traditional games and their cultural significance
+- **Acknowledge** the cultural origins of each game
+- **Include local iwi perspectives** where possible
+- **Demonstrate manaakitanga** (hospitality) in all activities
+
+---
+
+## 🎮 Featured Games
+
+### Ki-o-rahi
+A traditional ball game that combines strategy, teamwork, and physical skill.
+
+**Equipment:** Soft ball, markers for zones
+**Skills Developed:** Throwing, catching, strategic thinking, teamwork
+
+### Poi Rakau (Stick Games)
+Rhythmic games using wooden sticks to develop coordination and timing.
+
+**Equipment:** Wooden sticks (rakau)
+**Skills Developed:** Hand-eye coordination, rhythm, concentration
+
+### Mu Torere
+Traditional strategy game that develops problem-solving skills.
+
+**Equipment:** Game board and playing pieces
+**Skills Developed:** Strategic thinking, planning, patience
+
+---
+
+## 📋 Lesson Activities
+
+### Warm-up (10 minutes)
+Traditional Māori movements and stretches
+
+### Main Activities (30 minutes)
+- Game instruction and practice
+- Team-based competitions
+- Cultural context discussions
+
+### Cool-down (10 minutes)
+Reflection and cultural appreciation
+
+---
+
+## 🌿 Cultural Integration
+
+This unit celebrates Māori culture through:
+- **Manaakitanga** - showing care and respect for others
+- **Whakatōhea** - working together as a team
+- **Kotahitanga** - unity and collaboration
+- **Respect** for traditional knowledge (mātauranga Māori)
+
+## 📚 Assessment
+
+Students demonstrate:
+- Safe participation in traditional games
+- Understanding of cultural significance
+- Application of game rules and strategies
+- Respectful interaction with peers`,
+          metadata: {
+            duration: '50 minutes',
+            difficulty: 'Beginner',
+            culturalElements: [
+              'Traditional Māori games',
+              'Cultural protocols',
+              'Te Reo Māori vocabulary',
+              'Respect for mātauranga Māori'
+            ],
+            learningObjectives: [
+              'Participate safely in traditional Māori games',
+              'Understand cultural significance of traditional games',
+              'Develop physical skills through culturally authentic activities',
+              'Show respect for Māori culture and traditions',
+              'Work collaboratively and demonstrate manaakitanga'
+            ],
+            resources: [
+              'Soft balls for Ki-o-rahi',
+              'Wooden sticks (rakau) for poi games',
+              'Mu Torere game boards',
+              'Cultural context information sheets',
+              'Safety guidelines',
+              'Assessment rubrics'
+            ]
+          }
         }
       };
 

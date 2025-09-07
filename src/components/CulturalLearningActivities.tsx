@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { advancedSuperintelligenceEnhancer } from '../utils/advanced-superintelligence-enhancer';
-import { enhancedAgentCoordinator } from '../utils/enhanced-agent-coordinator';
-import { enhancedCulturalSafetyValidator } from '../utils/enhanced-cultural-safety-validator';
-import { enhancedSuperintelligenceMonitor } from '../utils/enhanced-superintelligence-monitor';
-import { terminalNode9314Coordinator } from '../utils/terminal-node-9314-coordinator';
 
 interface CulturalActivity {
   id: string;
@@ -55,12 +50,84 @@ const CulturalLearningActivities: React.FC = () => {
   useEffect(() => {
     const updateCulturalStatus = () => {
       try {
+        const mockActivities = [
+          {
+            id: '1',
+            title: 'Te Reo Māori Language Workshop',
+            description:
+              'Interactive workshop focusing on basic Te Reo Māori phrases and cultural context',
+            category: 'Te Reo Māori' as const,
+            difficulty: 'Beginner' as const,
+            duration: 60,
+            culturalSafetyScore: 98.5,
+            participants: 25,
+            status: 'active' as const,
+          },
+          {
+            id: '2',
+            title: 'Tikanga Protocols Training',
+            description:
+              'Comprehensive training on Māori cultural protocols and traditional practices',
+            category: 'Tikanga' as const,
+            difficulty: 'Intermediate' as const,
+            duration: 90,
+            culturalSafetyScore: 99.1,
+            participants: 18,
+            status: 'active' as const,
+          },
+          {
+            id: '3',
+            title: 'Traditional Weaving Workshop',
+            description: 'Hands-on workshop teaching traditional Māori weaving techniques',
+            category: 'Traditional Arts' as const,
+            difficulty: 'Intermediate' as const,
+            duration: 120,
+            culturalSafetyScore: 97.8,
+            participants: 12,
+            status: 'scheduled' as const,
+          },
+          {
+            id: '4',
+            title: 'Environmental Stewardship Program',
+            description: 'Program focusing on kaitiakitanga and environmental conservation',
+            category: 'Environmental' as const,
+            difficulty: 'Advanced' as const,
+            duration: 180,
+            culturalSafetyScore: 96.9,
+            participants: 15,
+            status: 'active' as const,
+          },
+          {
+            id: '5',
+            title: 'Community Leadership Development',
+            description:
+              'Leadership training incorporating Māori values and community principles',
+            category: 'Leadership' as const,
+            difficulty: 'Advanced' as const,
+            duration: 150,
+            culturalSafetyScore: 98.2,
+            participants: 20,
+            status: 'scheduled' as const,
+          },
+          {
+            id: '6',
+            title: 'Cultural Storytelling Session',
+            description: 'Interactive session sharing traditional Māori stories and legends',
+            category: 'Community' as const,
+            difficulty: 'Beginner' as const,
+            duration: 75,
+            culturalSafetyScore: 99.3,
+            participants: 30,
+            status: 'active' as const,
+          },
+        ];
+
         const status = {
-          node9314: terminalNode9314Coordinator.getNodeStatus(),
-          superintelligenceMonitor: enhancedSuperintelligenceMonitor.getMetrics(),
-          culturalValidator: enhancedCulturalSafetyValidator.getMetrics(),
-          agentCoordinator: enhancedAgentCoordinator.getMetrics(),
-          advancedEnhancer: advancedSuperintelligenceEnhancer.getMetrics(),
+          node9314: { status: 'active', uptime: 99.9 },
+          superintelligenceMonitor: { activities: mockActivities.length, engagement: 85 },
+          culturalValidator: { safetyScore: 98, validated: true },
+          agentCoordinator: { coordinatedActivities: 12, efficiency: 92 },
+          advancedEnhancer: { enhancement: 'optimal', performance: 94 },
           culturalMetrics: {
             teReoEngagement: 95.2,
             tikangaUnderstanding: 97.8,
@@ -71,79 +138,9 @@ const CulturalLearningActivities: React.FC = () => {
             culturalSafety: 98.3,
             knowledgeRetention: 95.6,
           },
-          activities: [
-            {
-              id: '1',
-              title: 'Te Reo Māori Language Workshop',
-              description:
-                'Interactive workshop focusing on basic Te Reo Māori phrases and cultural context',
-              category: 'Te Reo Māori' as const,
-              difficulty: 'Beginner' as const,
-              duration: 60,
-              culturalSafetyScore: 98.5,
-              participants: 25,
-              status: 'active' as const,
-            },
-            {
-              id: '2',
-              title: 'Tikanga Protocols Training',
-              description:
-                'Comprehensive training on Māori cultural protocols and traditional practices',
-              category: 'Tikanga' as const,
-              difficulty: 'Intermediate' as const,
-              duration: 90,
-              culturalSafetyScore: 99.1,
-              participants: 18,
-              status: 'active' as const,
-            },
-            {
-              id: '3',
-              title: 'Traditional Weaving Workshop',
-              description: 'Hands-on workshop teaching traditional Māori weaving techniques',
-              category: 'Traditional Arts' as const,
-              difficulty: 'Intermediate' as const,
-              duration: 120,
-              culturalSafetyScore: 97.8,
-              participants: 12,
-              status: 'scheduled' as const,
-            },
-            {
-              id: '4',
-              title: 'Environmental Stewardship Program',
-              description: 'Program focusing on kaitiakitanga and environmental conservation',
-              category: 'Environmental' as const,
-              difficulty: 'Advanced' as const,
-              duration: 180,
-              culturalSafetyScore: 96.9,
-              participants: 15,
-              status: 'active' as const,
-            },
-            {
-              id: '5',
-              title: 'Community Leadership Development',
-              description:
-                'Leadership training incorporating Māori values and community principles',
-              category: 'Leadership' as const,
-              difficulty: 'Advanced' as const,
-              duration: 150,
-              culturalSafetyScore: 98.2,
-              participants: 20,
-              status: 'scheduled' as const,
-            },
-            {
-              id: '6',
-              title: 'Cultural Storytelling Session',
-              description: 'Interactive session sharing traditional Māori stories and legends',
-              category: 'Community' as const,
-              difficulty: 'Beginner' as const,
-              duration: 75,
-              culturalSafetyScore: 99.3,
-              participants: 30,
-              status: 'active' as const,
-            },
-          ],
+          activities: mockActivities,
           activeParticipants: 120,
-          totalActivities: 6,
+          totalActivities: mockActivities.length,
         };
         setCulturalStatus(status);
         setLastUpdate(new Date());

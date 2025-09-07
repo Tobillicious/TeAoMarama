@@ -78,14 +78,81 @@ export function InteractiveLearningWidget({ activity }: { activity: LearningActi
 
         <div className="activity-area" role="main">
           {/* Activity-specific content would be rendered here based on type */}
-          <div className="placeholder-activity">
-            <p>Interactive {activity.type} activity would be implemented here</p>
-            <button 
-              onClick={() => handleActivityComplete(85)}
-              className="complete-button"
-            >
-              Complete Activity
-            </button>
+          <div className="interactive-activity">
+            {activity.type === 'drag-drop' && (
+              <div className="drag-drop-zone">
+                <div className="drag-items">
+                  <div className="drag-item">Te Reo Māori</div>
+                  <div className="drag-item">English</div>
+                  <div className="drag-item">Tikanga</div>
+                </div>
+                <div className="drop-zones">
+                  <div className="drop-zone">Language</div>
+                  <div className="drop-zone">Culture</div>
+                </div>
+                <button 
+                  onClick={() => handleActivityComplete(85)}
+                  className="complete-button"
+                >
+                  Submit Matches
+                </button>
+              </div>
+            )}
+            {activity.type === 'matching' && (
+              <div className="matching-activity">
+                <div className="matching-pairs">
+                  <div className="match-column">
+                    <button className="match-item">Kia ora</button>
+                    <button className="match-item">Whānau</button>
+                    <button className="match-item">Aroha</button>
+                  </div>
+                  <div className="match-column">
+                    <button className="match-item">Family</button>
+                    <button className="match-item">Love</button>
+                    <button className="match-item">Hello</button>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => handleActivityComplete(90)}
+                  className="complete-button"
+                >
+                  Check Matches
+                </button>
+              </div>
+            )}
+            {activity.type === 'timeline' && (
+              <div className="timeline-activity">
+                <div className="timeline-events">
+                  <div className="timeline-item">1769 - Captain Cook arrives</div>
+                  <div className="timeline-item">1840 - Treaty of Waitangi</div>
+                  <div className="timeline-item">1987 - Te Reo becomes official language</div>
+                </div>
+                <button 
+                  onClick={() => handleActivityComplete(80)}
+                  className="complete-button"
+                >
+                  Complete Timeline
+                </button>
+              </div>
+            )}
+            {activity.type === 'scenario' && (
+              <div className="scenario-activity">
+                <div className="scenario-content">
+                  <p>🌿 Cultural Scenario: You're invited to a hui (meeting). What would be appropriate?</p>
+                  <div className="scenario-options">
+                    <button className="scenario-option">Remove shoes before entering</button>
+                    <button className="scenario-option">Wait to be welcomed</button>
+                    <button className="scenario-option">Bring koha (gift)</button>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => handleActivityComplete(95)}
+                  className="complete-button"
+                >
+                  Submit Response
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

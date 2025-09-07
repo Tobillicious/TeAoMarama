@@ -1,0 +1,50 @@
+/* Comprehensive System Dashboard - TeKeteAko Professional Styling */
+:root {
+  /* TeKeteAko Color Palette */
+  --color-pounamu: #059669;
+  --color-pounamu-light: #d1fae5;
+  --color-kahurangi: #0284c7;
+  --color-ocean-light: #e0f2fe;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-800: #1f2937;
+  
+  /* Professional Gradients */
+  --primary-gradient: linear-gradient(135deg, var(--color-pounamu) 0%, var(--color-kahurangi) 100%);
+  
+  /* Professional Spacing */
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  
+  /* Professional Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.comprehensive-system-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-ocean-light) 100%);
+  font-family: var(--font-family);
+  color: var(--color-neutral-800);
+  padding: var(--spacing-lg);
+}
+
+.system-dashboard-header {
+  background: var(--primary-gradient);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: 1rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.system-dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.system-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}

@@ -71,14 +71,14 @@ class SecureAPIMiddleware {
     // High sensitivity cultural content requires special permissions
     if (resource.sensitivity === 'high' || resource.sensitivity === 'sacred') {
       if (context.culturalClearance !== 'approved' && context.culturalClearance !== 'kaitiaki') {
-        await this.logSecurityEvent('CULTURAL_ACCESS_DENIED', context.user?.id, '', '');
+        await this.logSecurityEvent('CULTURAL_ACCESS_DENIED', context.user?.id || 'anonymous', '', '');
         return false;
       }
     }
 
     // Sacred content requires kaitiaki status
     if (resource.sensitivity === 'sacred' && context.culturalClearance !== 'kaitiaki') {
-      await this.logSecurityEvent('SACRED_CONTENT_ACCESS_DENIED', context.user?.id, '', '');
+      await this.logSecurityEvent('SACRED_CONTENT_ACCESS_DENIED', context.user?.id || 'anonymous', '', '');
       return false;
     }
 
@@ -86,7 +86,7 @@ class SecureAPIMiddleware {
     if (resource.iwi_permission_required) {
       const hasIwiPermission = await this.checkIwiPermission(context.user, resource);
       if (!hasIwiPermission) {
-        await this.logSecurityEvent('IWI_PERMISSION_REQUIRED', context.user?.id, '', '');
+        await this.logSecurityEvent('IWI_PERMISSION_REQUIRED', context.user?.id || 'anonymous', '', '');
         return false;
       }
     }
@@ -141,8 +141,8 @@ class SecureAPIMiddleware {
   private async logSecurityEvent(
     event: string, 
     userId: string | null, 
-    clientIP: string, 
-    userAgent: string
+    _clientIP: string, 
+    _userAgent: string
   ): Promise<void> {
     try {
       await supabase.rpc('log_security_event', {
@@ -156,7 +156,7 @@ class SecureAPIMiddleware {
     }
   }
 
-  private async checkIwiPermission(user: User | null, resource: CulturalResource): Promise<boolean> {
+  private async checkIwiPermission(user: User | null, _resource: CulturalResource): Promise<boolean> {
     if (!user) return false;
 
     const { data } = await supabase

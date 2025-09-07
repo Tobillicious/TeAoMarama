@@ -1,4 +1,4 @@
-import { CulturalContext } from '../types/cultural';
+import { type CulturalContext } from '../types/cultural';
 
 export const getCulturalGuidance = (context: CulturalContext): string[] => {
   const guidance: string[] = [];
