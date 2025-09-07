@@ -115,13 +115,15 @@ const TeacherDashboard = lazy(
   () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
 );
 
+import KaitiakiDashboardPage from './pages/KaitiakiDashboard';
+
 const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
 );
 
 import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
-import ResourceUnlocker from './components/ResourceUnlocker';
 import DiagnosticCheck from './components/DiagnosticCheck';
+import ResourceUnlocker from './components/ResourceUnlocker';
 import ResourceViewer from './components/ResourceViewer';
 
 // WisdomEvolutionDashboard temporarily removed for build
@@ -218,6 +220,7 @@ function App() {
             <Route path="/login-old" element={<WorkingLogin />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
+            <Route path="/kaitiaki-dashboard" element={<KaitiakiDashboardPage />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />

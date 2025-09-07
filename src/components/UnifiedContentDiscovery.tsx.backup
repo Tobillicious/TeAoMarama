@@ -1,15 +1,22 @@
-import { BookOpen, Clock, Download, Eye, Heart, Search, Star, TrendingUp } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
 import {
-  filterContentByCategory,
-  filterContentBySubject,
-  loadAllIndexedContent,
-  searchContent,
-  sortContent,
-  type ContentItem,
-} from '../utils/content-indexer';
-import ContentPreviewModal from './ContentPreviewModal';
+  Award,
+  BookOpen,
+  Calculator,
+  Clock,
+  Download,
+  Eye,
+  FileText,
+  Globe,
+  Heart,
+  Search,
+  Star,
+  TrendingUp,
+  Users,
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { loadAllContent, type ContentItem } from '../utils/content-loader';
 import './UnifiedContentDiscovery.css';
+
 
 const UnifiedContentDiscovery: React.FC = () => {
   const [contentItems, setContentItems] = useState<ContentItem[]>([]);
@@ -17,16 +24,14 @@ const UnifiedContentDiscovery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [sortBy, setSortBy] = useState<'popularity' | 'recent' | 'alphabetical' | 'featured'>(
-    'featured',
-  );
+  const [sortBy, setSortBy] = useState<'popularity' | 'recent' | 'alphabetical'>('popularity');
   const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const realContent = await loadAllIndexedContent();
+        const realContent = await loadAllContent();
         setContentItems(realContent);
       } catch (error) {
         console.error('Error loading content:', error);
@@ -38,22 +43,42 @@ const UnifiedContentDiscovery: React.FC = () => {
     loadContent();
   }, []);
 
+
   useEffect(() => {
     let filtered = contentItems;
 
-    // Apply search filter
-    if (searchTerm) {
-      filtered = searchContent(filtered, searchTerm);
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter((item) => item.category === selectedCategory);
     }
 
-    // Apply category filter
-    filtered = filterContentByCategory(filtered, selectedCategory);
+    if (selectedSubject !== 'all') {
+      filtered = filtered.filter((item) => item.subject === selectedSubject);
+    }
 
-    // Apply subject filter
-    filtered = filterContentBySubject(filtered, selectedSubject);
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          (item.culturalContext &&
+            item.culturalContext.toLowerCase().includes(searchTerm.toLowerCase())),
+      );
+    }
 
     // Sort content
-    filtered = sortContent(filtered, sortBy);
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'popularity':
+          return (b.popularity || 0) - (a.popularity || 0);
+        case 'recent':
+          return new Date(b.lastUpdated || '').getTime() - new Date(a.lastUpdated || '').getTime();
+        case 'alphabetical':
+          return a.title.localeCompare(b.title);
+        default:
+          return 0;
+      }
+    });
 
     setFilteredContent(filtered);
   }, [contentItems, selectedCategory, selectedSubject, searchTerm, sortBy]);
@@ -77,6 +102,25 @@ const UnifiedContentDiscovery: React.FC = () => {
         return 'bg-indigo-100 text-indigo-800';
       default:
         return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getTypeIcon = (type: string) => {
+    switch (type) {
+      case 'worksheet':
+        return <Calculator className="w-4 h-4" />;
+      case 'unit':
+        return <BookOpen className="w-4 h-4" />;
+      case 'template':
+        return <FileText className="w-4 h-4" />;
+      case 'guide':
+        return <Award className="w-4 h-4" />;
+      case 'lesson':
+        return <Users className="w-4 h-4" />;
+      case 'resource':
+        return <Globe className="w-4 h-4" />;
+      default:
+        return <BookOpen className="w-4 h-4" />;
     }
   };
 
@@ -176,7 +220,6 @@ const UnifiedContentDiscovery: React.FC = () => {
               className="filter-select"
               aria-label="Sort content by"
             >
-              <option value="featured">Featured First</option>
               <option value="popularity">Most Popular</option>
               <option value="recent">Recently Updated</option>
               <option value="alphabetical">Alphabetical</option>
@@ -304,11 +347,76 @@ const UnifiedContentDiscovery: React.FC = () => {
         </div>
       )}
 
-      <ContentPreviewModal
-        content={selectedItem}
-        isOpen={!!selectedItem}
-        onClose={() => setSelectedItem(null)}
-      />
+      {selectedItem && (
+        <div className="content-modal-overlay" onClick={() => setSelectedItem(null)}>
+          <div className="content-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <div className="modal-title-section">
+                <h2>{selectedItem.title}</h2>
+                <div className="modal-meta">
+                  <span className={`modal-type ${getTypeColor(selectedItem.type)}`}>
+                    {getTypeIcon(selectedItem.type)}
+                    {selectedItem.type}
+                  </span>
+                  <span className="modal-subject">{selectedItem.subject}</span>
+                  <span className="modal-year">{selectedItem.yearLevel}</span>
+                </div>
+              </div>
+              <button onClick={() => setSelectedItem(null)} className="modal-close">
+                ×
+              </button>
+            </div>
+
+            <div className="modal-content">
+              <div className="modal-description">
+                <p>{selectedItem.description}</p>
+              </div>
+
+              {selectedItem.culturalContext && (
+                <div className="modal-cultural">
+                  <h4>🌿 Cultural Context</h4>
+                  <p>{selectedItem.culturalContext}</p>
+                </div>
+              )}
+
+              {selectedItem.curriculumAlignment && (
+                <div className="modal-curriculum">
+                  <h4>📚 Curriculum Alignment</h4>
+                  <p>{selectedItem.curriculumAlignment}</p>
+                </div>
+              )}
+
+              <div className="modal-metrics">
+                <div className="metric-card">
+                  <TrendingUp className="metric-card-icon" />
+                  <div className="metric-card-content">
+                    <div className="metric-card-value">{selectedItem.popularity || 0}%</div>
+                    <div className="metric-card-label">Popularity</div>
+                  </div>
+                </div>
+                {selectedItem.lastUpdated && (
+                  <div className="metric-card">
+                    <Clock className="metric-card-icon" />
+                    <div className="metric-card-content">
+                      <div className="metric-card-value">
+                        {new Date(selectedItem.lastUpdated).toLocaleDateString()}
+                      </div>
+                      <div className="metric-card-label">Last Updated</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="modal-actions">
+              <button onClick={() => handleDownload(selectedItem)} className="modal-download">
+                <Download className="action-icon" />
+                Download Resource
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
