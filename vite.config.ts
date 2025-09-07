@@ -1,124 +1,72 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
-// Performance-optimized Vite configuration
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  
-  // Build optimizations
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
   build: {
-    target: 'es2015',
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: false, // Disable in production for smaller bundle
-    minify: 'terser',
-    
-    // Chunk size optimization
-    chunkSizeWarningLimit: 1000,
-    
     rollupOptions: {
       output: {
         manualChunks: {
           // Vendor chunks
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-router': ['react-router-dom'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['lucide-react', 'framer-motion'],
+          'firebase-vendor': ['firebase/app', 'firebase/auth', 'firebase/firestore'],
           
-          // Feature-based chunks
-          'cultural-modules': [
-            './src/components/CulturalLearningModules.tsx',
-            './src/components/CulturalLearningPathNavigator.tsx'
+          // Feature chunks
+          'content-discovery': [
+            './src/components/UnifiedContentDiscovery.tsx',
+            './src/components/ContentPreviewModal.tsx',
+            './src/utils/content-indexer.tsx'
           ],
-          'assessment-system': [
+          'te-kete-ako': [
+            './src/components/TeKeteAkoResourceExplorer.tsx',
+            './src/components/ProfessionalLessonTemplate.tsx'
+          ],
+          'dashboards': [
+            './src/components/EnhancedDashboard.tsx',
+            './src/pages/TeacherDashboard.tsx',
+            './src/pages/StudentDashboard.tsx'
+          ],
+          'assessment': [
             './src/components/AssessmentSystem.tsx',
             './src/components/InteractiveAssessmentSystem.tsx'
           ],
-          'lesson-system': [
-            './src/components/LessonManager.tsx',
-            './src/components/LessonViewer.tsx'
-          ],
-          'download-utils': [
-            './src/components/DownloadManager.tsx'
+          'cultural': [
+            './src/components/CulturalLearningPathNavigator.tsx',
+            './src/contexts/CulturalContext.tsx',
+            './src/utils/cultural-context-utils.ts'
           ]
-        },
-        
-        // Asset naming strategy
-        chunkFileNames: (chunkInfo) => {
-          const facadeModuleId = chunkInfo.facadeModuleId 
-            ? chunkInfo.facadeModuleId.split('/').pop()?.replace('.tsx', '').replace('.ts', '') || 'chunk'
-            : 'chunk';
-          return `assets/${facadeModuleId}.[hash].js`;
-        },
-        
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name?.split('.') || ['asset'];
-          const ext = info[info.length - 1];
-          
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
-            return `assets/images/[name].[hash][extname]`;
-          } else if (/css/i.test(ext)) {
-            return `assets/styles/[name].[hash][extname]`;
-          }
-          return `assets/[name].[hash][extname]`;
         }
       }
     },
-    
-    // Terser options for better minification
+    chunkSizeWarningLimit: 1000,
+    target: 'esnext',
+    minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug']
       },
-      format: {
-        comments: false
-      }
-    }
+    },
   },
-  
-  // Server optimizations
-  server: {
-    hmr: {
-      overlay: false
-    }
-  },
-  
-  // Resolve optimizations
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-      '@components': resolve(__dirname, './src/components'),
-      '@utils': resolve(__dirname, './src/utils'),
-      '@styles': resolve(__dirname, './src/styles')
-    }
-  },
-  
-  // CSS optimizations
-  css: {
-    devSourcemap: false,
-    preprocessorOptions: {
-      scss: {
-        charset: false
-      }
-    }
-  },
-  
-  // Dependency optimization
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
-      'react-router-dom'
+      'react-router-dom',
+      'lucide-react',
+      'framer-motion'
     ],
-    exclude: [
-      // Large dependencies that should be loaded separately
-    ]
   },
-  
-  // Define global constants
-  define: {
-    __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
-    __BUILD_DATE__: JSON.stringify(new Date().toISOString())
-  }
-});
+  server: {
+    port: 5173,
+    host: true,
+  },
+})
