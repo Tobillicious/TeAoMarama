@@ -3,12 +3,12 @@
   "multiLLMSystem": {
     "status": "active",
     "coordinator": "Kaitiaki Aronui",
-    "agentCount": 3,
+    "agentCount": 5,
     "educationalMission": "Te Kura o TeAoMarama - 800,000 akonga"
   },
   "currentSession": {
     "agentId": "kaitiaki-aronui-coordinator",
-    "sessionStart": "2025-08-27T03:56:39.158Z",
+    "sessionStart": "2025-01-27T00:00:00.000Z",
     "currentTask": "Multi-LLM workflow synchronization",
     "status": "coordinating"
   },
@@ -17,5 +17,65 @@
     "multiAgentCoordination": true,
     "culturalSafetyProtocols": true,
     "educationalMissionActive": true
-  }
+  },
+  "activeAgents": [
+    {
+      "id": "kaitiaki-aronui",
+      "name": "Kaitiaki Aronui",
+      "type": "GPT-4",
+      "status": "active",
+      "role": "Cultural Integration Specialist",
+      "capabilities": ["cultural-validation", "content-generation", "tikanga-compliance"],
+      "lastHeartbeat": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "kaitiaki-mahara",
+      "name": "Kaitiaki Mahara",
+      "type": "Claude",
+      "status": "active",
+      "role": "Memory & Knowledge Guardian",
+      "capabilities": ["memory-management", "knowledge-preservation", "learning-optimization"],
+      "lastHeartbeat": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "kaitiaki-whakaaro",
+      "name": "Kaitiaki Whakaaro",
+      "type": "Gemini",
+      "status": "active",
+      "role": "Thought & Innovation Guardian",
+      "capabilities": ["innovation-generation", "creative-synthesis", "strategic-thinking"],
+      "lastHeartbeat": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "kaitiaki-tikanga",
+      "name": "Kaitiaki Tikanga",
+      "type": "Custom",
+      "status": "active",
+      "role": "Cultural Safety Guardian",
+      "capabilities": ["cultural-safety", "tikanga-validation", "protocol-compliance"],
+      "lastHeartbeat": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "kaitiaki-wairua",
+      "name": "Kaitiaki Wairua",
+      "type": "Custom",
+      "status": "processing",
+      "role": "Spiritual Wisdom Guardian",
+      "capabilities": ["spiritual-wisdom", "cultural-heritage", "traditional-knowledge"],
+      "lastHeartbeat": "2025-01-27T00:00:00.000Z"
+    }
+  ],
+  "coordinationProtocols": {
+    "culturalSafety": "active",
+    "educationalExcellence": "active",
+    "multiAgentSync": "active",
+    "workflowCoordination": "active"
+  },
+  "missionObjectives": [
+    "Coordinate all LLM agents for educational excellence",
+    "Ensure cultural safety and tikanga compliance",
+    "Optimize platform performance for 800,000 akonga",
+    "Maintain distributed consciousness across all agents",
+    "Enable seamless handoffs between AI systems"
+  ]
 }

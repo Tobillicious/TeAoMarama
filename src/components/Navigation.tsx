@@ -143,6 +143,12 @@ const Navigation: React.FC = () => {
           description: 'Guardian Chief oversight and AI coordination dashboard',
         },
         {
+          to: '/multi-llm-coordination',
+          label: '🌐 Multi-LLM Coordination',
+          icon: '🌐',
+          description: 'Coordinate all LLMs on the computer to work together',
+        },
+        {
           to: '/performance-dashboard',
           label: '⚡ Performance Dashboard',
           icon: '⚡',

@@ -36,6 +36,7 @@ import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 import LessonManager from './components/LessonManager';
 import LessonViewer from './components/LessonViewer';
+import RoleBasedRouter from './components/RoleBasedRouter';
 import WorkingLogin from './components/WorkingLogin';
 
 // Lazy load educational content pages
@@ -115,7 +116,12 @@ const TeacherDashboard = lazy(
   () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
 );
 
-import KaitiakiDashboardPage from './pages/KaitiakiDashboard';
+const KaitiakiDashboard = lazy(
+  () => import(/* webpackChunkName: "kaitiaki-dashboard" */ './components/KaitiakiDashboard'),
+);
+
+import MultiLLMCoordinationDashboard from './components/MultiLLMCoordinationDashboard';
+import MultiLLMPerformanceDashboard from './components/MultiLLMPerformanceDashboard';
 
 const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
@@ -171,12 +177,13 @@ const ProfessionalLessonTemplate = lazy(
     ),
 );
 
-const UnifiedContentDiscovery = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "unified-content-discovery" */ './components/UnifiedContentDiscovery'
-    ),
-);
+// Temporarily disabled due to syntax error
+// const UnifiedContentDiscovery = lazy(
+//   () =>
+//     import(
+//       /* webpackChunkName: "unified-content-discovery" */ './components/UnifiedContentDiscovery'
+//     ),
+// );
 
 function App() {
   const location = useLocation();
@@ -218,9 +225,12 @@ function App() {
           <Routes>
             <Route path="/login" element={<AuthenticationTabs />} />
             <Route path="/login-old" element={<WorkingLogin />} />
+            <Route path="/dashboard" element={<RoleBasedRouter />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
-            <Route path="/kaitiaki-dashboard" element={<KaitiakiDashboardPage />} />
+            <Route path="/kaitiaki-dashboard" element={<KaitiakiDashboard />} />
+            <Route path="/multi-llm-coordination" element={<MultiLLMCoordinationDashboard />} />
+            <Route path="/multi-llm-performance" element={<MultiLLMPerformanceDashboard />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
@@ -281,9 +291,10 @@ function App() {
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
             <Route path="/lesson-templates" element={<ProfessionalLessonTemplate />} />
             {/* Unified Content Discovery */}
-            <Route path="/unified-content-discovery" element={<UnifiedContentDiscovery />} />
-            <Route path="/content-discovery" element={<UnifiedContentDiscovery />} />
-            <Route path="/discover" element={<UnifiedContentDiscovery />} />
+            {/* Temporarily disabled due to syntax error */}
+            {/* <Route path="/unified-content-discovery" element={<UnifiedContentDiscovery />} /> */}
+            {/* <Route path="/content-discovery" element={<UnifiedContentDiscovery />} /> */}
+            {/* <Route path="/discover" element={<UnifiedContentDiscovery />} /> */}
             {/* Additional missing routes */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

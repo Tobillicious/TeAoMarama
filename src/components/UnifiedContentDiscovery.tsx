@@ -8,6 +8,7 @@ import {
   sortContent,
   type ContentItem,
 } from '../utils/content-indexer';
+import { ContentPerformanceOptimizer, debounce } from '../utils/performance-optimizer';
 import ContentPreviewModal from './ContentPreviewModal';
 import './UnifiedContentDiscovery.css';
 
@@ -26,7 +27,8 @@ const UnifiedContentDiscovery: React.FC = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const realContent = await loadAllIndexedContent();
+        const optimizer = ContentPerformanceOptimizer.getInstance();
+        const realContent = await optimizer.loadContentWithCache(loadAllIndexedContent);
         setContentItems(realContent);
       } catch (error) {
         console.error('Error loading content:', error);
@@ -38,24 +40,30 @@ const UnifiedContentDiscovery: React.FC = () => {
     loadContent();
   }, []);
 
-  useEffect(() => {
+  // Debounced search function
+  const debouncedSearch = debounce((term: string) => {
+    const optimizer = ContentPerformanceOptimizer.getInstance();
     let filtered = contentItems;
 
-    // Apply search filter
-    if (searchTerm) {
-      filtered = searchContent(filtered, searchTerm);
+    // Apply search filter with caching
+    if (term) {
+      filtered = optimizer.searchWithCache(filtered, term);
     }
 
-    // Apply category filter
-    filtered = filterContentByCategory(filtered, selectedCategory);
+    // Apply category filter with caching
+    filtered = optimizer.filterWithCache(filtered, 'category', selectedCategory);
 
-    // Apply subject filter
-    filtered = filterContentBySubject(filtered, selectedSubject);
+    // Apply subject filter with caching
+    filtered = optimizer.filterWithCache(filtered, 'subject', selectedSubject);
 
     // Sort content
     filtered = sortContent(filtered, sortBy);
 
     setFilteredContent(filtered);
+  }, 300);
+
+  useEffect(() => {
+    debouncedSearch(searchTerm);
   }, [contentItems, selectedCategory, selectedSubject, searchTerm, sortBy]);
 
   const categories = ['all', ...Array.from(new Set(contentItems.map((item) => item.category)))];
