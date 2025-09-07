@@ -15,6 +15,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
+import LandingPage from './pages/LandingPage';
 
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
@@ -31,6 +32,7 @@ import PerformanceDashboard from './components/PerformanceDashboard';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import AuthenticationTabs from './components/AuthenticationTabs';
+import ComprehensiveAuthSystem from './components/ComprehensiveAuthSystem';
 import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
 import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
 import LessonManager from './components/LessonManager';
@@ -127,7 +129,6 @@ const AssessmentFramework = lazy(
 );
 
 import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
-import DebugComponent from './components/DebugComponent';
 import DiagnosticCheck from './components/DiagnosticCheck';
 import ResourceUnlocker from './components/ResourceUnlocker';
 import ResourceViewer from './components/ResourceViewer';
@@ -223,7 +224,8 @@ function App() {
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/login" element={<AuthenticationTabs />} />
+            <Route path="/login" element={<ComprehensiveAuthSystem />} />
+            <Route path="/login-old" element={<AuthenticationTabs />} />
             <Route path="/login-old" element={<WorkingLogin />} />
             <Route path="/dashboard" element={<RoleBasedRouter />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
