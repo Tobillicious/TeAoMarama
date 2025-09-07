@@ -28,7 +28,7 @@ const TeacherDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (role !== 'kaiako') {
+    if (role !== 'teacher') {
       navigate('/');
       return;
     }

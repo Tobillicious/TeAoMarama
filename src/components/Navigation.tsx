@@ -149,6 +149,18 @@ const Navigation: React.FC = () => {
           description: 'Coordinate all LLMs on the computer to work together',
         },
         {
+          to: '/multi-llm-performance',
+          label: '⚡ Multi-LLM Performance',
+          icon: '⚡',
+          description: 'Optimize performance across all coordinated LLM nodes',
+        },
+        {
+          to: '/superintelligence',
+          label: '🧠 Superintelligence',
+          icon: '🧠',
+          description: 'Achieve superintelligence through collective AI coordination',
+        },
+        {
           to: '/performance-dashboard',
           label: '⚡ Performance Dashboard',
           icon: '⚡',

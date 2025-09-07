@@ -1,5 +1,5 @@
 import { AlertTriangle, CheckCircle, Eye, EyeOff, Lock, Mail, Shield } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 import './AuthenticationTabs.css';
@@ -62,10 +62,8 @@ const AuthenticationTabs: React.FC = () => {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated && currentUser) {
-      const redirectPath = currentUser.role === 'teacher' ? '/teacher-dashboard' : 
-                          currentUser.role === 'student' ? '/student-dashboard' :
-                          currentUser.role === 'kaitiaki' ? '/kaitiaki-dashboard' : '/';
-      navigate(redirectPath);
+      // Use the role-based router to handle all role-based redirects
+      navigate('/dashboard');
     }
   }, [isAuthenticated, currentUser, navigate]);
 
@@ -81,9 +79,17 @@ const AuthenticationTabs: React.FC = () => {
 
     try {
       const result = await login(credentials.email, credentials.password, credentials.role);
-      
+
       if (result.success) {
-        setSuccess(`Login successful! Welcome ${credentials.role === 'teacher' ? 'Kaiako' : credentials.role === 'kaitiaki' ? 'Kaitiaki' : 'Ākonga'}!`);
+        setSuccess(
+          `Login successful! Welcome ${
+            credentials.role === 'teacher'
+              ? 'Kaiako'
+              : credentials.role === 'kaitiaki'
+              ? 'Kaitiaki'
+              : 'Ākonga'
+          }!`,
+        );
         // Navigation will happen in useEffect when isAuthenticated changes
       } else {
         setErrors([result.error || 'Login failed. Please try again.']);
@@ -122,14 +128,16 @@ const AuthenticationTabs: React.FC = () => {
         password: userData.password,
         name: userData.email.split('@')[0], // Default name from email
         role: userData.role,
-        iwiAffiliations: userData.culturalClearance ? ['Cultural clearance acknowledged'] : undefined,
+        iwiAffiliations: userData.culturalClearance
+          ? ['Cultural clearance acknowledged']
+          : undefined,
       });
 
       if (result.success) {
         setSuccess('Account created successfully! You are now logged in.');
         // Navigation will happen in useEffect when isAuthenticated changes
-        
-        // Reset form 
+
+        // Reset form
         setSignUpForm({
           email: '',
           password: '',
@@ -195,252 +203,252 @@ const AuthenticationTabs: React.FC = () => {
           </button>
         </div>
 
-      {/* Sign In Tab */}
-      {activeTab === 'signin' && (
-        <div className="auth-content">
-          <div className="role-selector">
-            <h3>Select Your Role</h3>
-            <div className="role-options">
-              {roles.map((role) => (
-                <button
-                  key={role.value}
-                  className={`role-option ${loginForm.role === role.value ? 'selected' : ''}`}
-                  onClick={() => handleRoleChange(role.value as 'student' | 'teacher' | 'kaitiaki')}
-                  style={{ borderColor: role.color }}
-                >
-                  <div className="role-icon" style={{ color: role.color }}>
-                    {role.icon}
-                  </div>
-                  <span>{role.label}</span>
-                </button>
-              ))}
+        {/* Sign In Tab */}
+        {activeTab === 'signin' && (
+          <div className="auth-content">
+            <div className="role-selector">
+              <h3>Select Your Role</h3>
+              <div className="role-options">
+                {roles.map((role) => (
+                  <button
+                    key={role.value}
+                    className={`role-option ${loginForm.role === role.value ? 'selected' : ''}`}
+                    onClick={() =>
+                      handleRoleChange(role.value as 'student' | 'teacher' | 'kaitiaki')
+                    }
+                    style={{ borderColor: role.color }}
+                  >
+                    <div className="role-icon" style={{ color: role.color }}>
+                      {role.icon}
+                    </div>
+                    <span>{role.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="input-group">
-            <Mail className="input-icon" />
-            <input
-              type="email"
-              placeholder="Email address"
-              value={loginForm.email}
-              onChange={(e) => setLoginForm((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={combinedLoading}
-            />
-          </div>
+            <div className="input-group">
+              <Mail className="input-icon" />
+              <input
+                type="email"
+                placeholder="Email address"
+                value={loginForm.email}
+                onChange={(e) => setLoginForm((prev) => ({ ...prev, email: e.target.value }))}
+                disabled={combinedLoading}
+              />
+            </div>
 
-          <div className="input-group">
-            <Lock className="input-icon" />
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Password"
-              value={loginForm.password}
-              onChange={(e) => setLoginForm((prev) => ({ ...prev, password: e.target.value }))}
-              disabled={combinedLoading}
-            />
+            <div className="input-group">
+              <Lock className="input-icon" />
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                value={loginForm.password}
+                onChange={(e) => setLoginForm((prev) => ({ ...prev, password: e.target.value }))}
+                disabled={combinedLoading}
+              />
+              <button
+                type="button"
+                className="password-toggle"
+                onClick={() => setShowPassword(!showPassword)}
+                disabled={combinedLoading}
+              >
+                {showPassword ? <EyeOff /> : <Eye />}
+              </button>
+            </div>
+
+            {loginForm.role === 'kaitiaki' && (
+              <div className="cultural-clearance">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={loginForm.culturalClearance}
+                    onChange={(e) => handleCulturalClearanceChange(e.target.checked)}
+                    disabled={combinedLoading}
+                  />
+                  <span>I have cultural clearance for Kaitiaki access</span>
+                </label>
+              </div>
+            )}
+
+            {errors.length > 0 && (
+              <div className="error-messages">
+                {errors.map((error, index) => (
+                  <div key={index} className="error-message">
+                    <AlertTriangle className="error-icon" />
+                    {error}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {success && (
+              <div className="success-message">
+                <CheckCircle className="success-icon" />
+                {success}
+              </div>
+            )}
+
             <button
-              type="button"
-              className="password-toggle"
-              onClick={() => setShowPassword(!showPassword)}
+              className="auth-button"
+              onClick={() => handleLogin(loginForm)}
               disabled={combinedLoading}
             >
-              {showPassword ? <EyeOff /> : <Eye />}
+              {isLoading ? 'Authenticating...' : 'Sign In'}
             </button>
           </div>
+        )}
 
-          {loginForm.role === 'kaitiaki' && (
-            <div className="cultural-clearance">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={loginForm.culturalClearance}
-                  onChange={(e) => handleCulturalClearanceChange(e.target.checked)}
-                  disabled={combinedLoading}
-                />
-                <span>I have cultural clearance for Kaitiaki access</span>
-              </label>
+        {/* Sign Up Tab */}
+        {activeTab === 'signup' && (
+          <div className="auth-content">
+            <div className="role-selector">
+              <h3>Select Your Role</h3>
+              <div className="role-options">
+                {roles.map((role) => (
+                  <button
+                    key={role.value}
+                    className={`role-option ${signUpForm.role === role.value ? 'selected' : ''}`}
+                    onClick={() =>
+                      setSignUpForm((prev) => ({
+                        ...prev,
+                        role: role.value as 'student' | 'teacher' | 'kaitiaki',
+                      }))
+                    }
+                    style={{ borderColor: role.color }}
+                  >
+                    <div className="role-icon" style={{ color: role.color }}>
+                      {role.icon}
+                    </div>
+                    <span>{role.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          )}
 
-          {errors.length > 0 && (
-            <div className="error-messages">
-              {errors.map((error, index) => (
-                <div key={index} className="error-message">
-                  <AlertTriangle className="error-icon" />
-                  {error}
-                </div>
-              ))}
+            <div className="input-group">
+              <Mail className="input-icon" />
+              <input
+                type="email"
+                placeholder="Email address"
+                value={signUpForm.email}
+                onChange={(e) => setSignUpForm((prev) => ({ ...prev, email: e.target.value }))}
+                disabled={combinedLoading}
+              />
             </div>
-          )}
 
-          {success && (
-            <div className="success-message">
-              <CheckCircle className="success-icon" />
-              {success}
+            <div className="input-group">
+              <Lock className="input-icon" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={signUpForm.password}
+                onChange={(e) => setSignUpForm((prev) => ({ ...prev, password: e.target.value }))}
+                disabled={combinedLoading}
+              />
             </div>
-          )}
 
-          <button
-            className="auth-button"
-            onClick={() => handleLogin(loginForm)}
-            disabled={combinedLoading}
-          >
-            {isLoading ? 'Authenticating...' : 'Sign In'}
-          </button>
+            <div className="input-group">
+              <Lock className="input-icon" />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={signUpForm.confirmPassword}
+                onChange={(e) =>
+                  setSignUpForm((prev) => ({ ...prev, confirmPassword: e.target.value }))
+                }
+                disabled={combinedLoading}
+              />
+            </div>
 
-        
-        </div>
-      )}
+            {signUpForm.role === 'kaitiaki' && (
+              <div className="cultural-clearance">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={signUpForm.culturalClearance}
+                    onChange={(e) =>
+                      setSignUpForm((prev) => ({ ...prev, culturalClearance: e.target.checked }))
+                    }
+                    disabled={combinedLoading}
+                  />
+                  <span>I have cultural clearance for Kaitiaki access</span>
+                </label>
+              </div>
+            )}
 
-      {/* Sign Up Tab */}
-      {activeTab === 'signup' && (
-        <div className="auth-content">
-          <div className="role-selector">
-            <h3>Select Your Role</h3>
-            <div className="role-options">
-              {roles.map((role) => (
-                <button
-                  key={role.value}
-                  className={`role-option ${signUpForm.role === role.value ? 'selected' : ''}`}
-                  onClick={() =>
-                    setSignUpForm((prev) => ({
-                      ...prev,
-                      role: role.value as 'student' | 'teacher' | 'kaitiaki',
-                    }))
-                  }
-                  style={{ borderColor: role.color }}
-                >
-                  <div className="role-icon" style={{ color: role.color }}>
-                    {role.icon}
+            {errors.length > 0 && (
+              <div className="error-messages">
+                {errors.map((error, index) => (
+                  <div key={index} className="error-message">
+                    <AlertTriangle className="error-icon" />
+                    {error}
                   </div>
-                  <span>{role.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
+            )}
 
-          <div className="input-group">
-            <Mail className="input-icon" />
-            <input
-              type="email"
-              placeholder="Email address"
-              value={signUpForm.email}
-              onChange={(e) => setSignUpForm((prev) => ({ ...prev, email: e.target.value }))}
+            {success && (
+              <div className="success-message">
+                <CheckCircle className="success-icon" />
+                {success}
+              </div>
+            )}
+
+            <button
+              className="auth-button"
+              onClick={() => handleSignUp(signUpForm)}
               disabled={combinedLoading}
-            />
+            >
+              {isLoading ? 'Creating Account...' : 'Sign Up'}
+            </button>
           </div>
+        )}
 
-          <div className="input-group">
-            <Lock className="input-icon" />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signUpForm.password}
-              onChange={(e) => setSignUpForm((prev) => ({ ...prev, password: e.target.value }))}
+        {/* Password Reset Tab */}
+        {activeTab === 'reset' && (
+          <div className="auth-content">
+            <h3>Reset Your Password</h3>
+            <p>Enter your email address and we'll send you a password reset link.</p>
+
+            <div className="input-group">
+              <Mail className="input-icon" />
+              <input
+                type="email"
+                placeholder="Email address"
+                value={resetForm.email}
+                onChange={(e) => setResetForm((prev) => ({ ...prev, email: e.target.value }))}
+                disabled={combinedLoading}
+              />
+            </div>
+
+            {errors.length > 0 && (
+              <div className="error-messages">
+                {errors.map((error, index) => (
+                  <div key={index} className="error-message">
+                    <AlertTriangle className="error-icon" />
+                    {error}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {success && (
+              <div className="success-message">
+                <CheckCircle className="success-icon" />
+                {success}
+              </div>
+            )}
+
+            <button
+              className="auth-button"
+              onClick={() => handlePasswordReset(resetForm.email)}
               disabled={combinedLoading}
-            />
+            >
+              {isLoading ? 'Sending...' : 'Send Reset Link'}
+            </button>
           </div>
-
-          <div className="input-group">
-            <Lock className="input-icon" />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              value={signUpForm.confirmPassword}
-              onChange={(e) =>
-                setSignUpForm((prev) => ({ ...prev, confirmPassword: e.target.value }))
-              }
-              disabled={combinedLoading}
-            />
-          </div>
-
-          {signUpForm.role === 'kaitiaki' && (
-            <div className="cultural-clearance">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={signUpForm.culturalClearance}
-                  onChange={(e) =>
-                    setSignUpForm((prev) => ({ ...prev, culturalClearance: e.target.checked }))
-                  }
-                  disabled={combinedLoading}
-                />
-                <span>I have cultural clearance for Kaitiaki access</span>
-              </label>
-            </div>
-          )}
-
-          {errors.length > 0 && (
-            <div className="error-messages">
-              {errors.map((error, index) => (
-                <div key={index} className="error-message">
-                  <AlertTriangle className="error-icon" />
-                  {error}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {success && (
-            <div className="success-message">
-              <CheckCircle className="success-icon" />
-              {success}
-            </div>
-          )}
-
-          <button
-            className="auth-button"
-            onClick={() => handleSignUp(signUpForm)}
-            disabled={combinedLoading}
-          >
-            {isLoading ? 'Creating Account...' : 'Sign Up'}
-          </button>
-        </div>
-      )}
-
-      {/* Password Reset Tab */}
-      {activeTab === 'reset' && (
-        <div className="auth-content">
-          <h3>Reset Your Password</h3>
-          <p>Enter your email address and we'll send you a password reset link.</p>
-
-          <div className="input-group">
-            <Mail className="input-icon" />
-            <input
-              type="email"
-              placeholder="Email address"
-              value={resetForm.email}
-              onChange={(e) => setResetForm((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={combinedLoading}
-            />
-          </div>
-
-          {errors.length > 0 && (
-            <div className="error-messages">
-              {errors.map((error, index) => (
-                <div key={index} className="error-message">
-                  <AlertTriangle className="error-icon" />
-                  {error}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {success && (
-            <div className="success-message">
-              <CheckCircle className="success-icon" />
-              {success}
-            </div>
-          )}
-
-          <button
-            className="auth-button"
-            onClick={() => handlePasswordReset(resetForm.email)}
-            disabled={combinedLoading}
-          >
-            {isLoading ? 'Sending...' : 'Send Reset Link'}
-          </button>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );
