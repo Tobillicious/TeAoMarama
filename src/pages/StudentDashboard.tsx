@@ -41,7 +41,7 @@ const StudentDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (role !== 'akonga') {
+    if (role !== 'student') {
       navigate('/');
       return;
     }

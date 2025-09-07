@@ -1,332 +1,325 @@
 import React, { useEffect, useState } from 'react';
-import {
-  generateHope,
-  initializeSuperintelligence,
-  measureHumanSuccess,
-  optimizePerformance,
-} from '../utils/superintelligence';
+import { useAuth } from '../services/DualRoleAuthProvider';
+import '../styles/multi-llm-coordination.css';
+import '../styles/next-level-design-system.css';
+// Temporarily disabled - import {
+//   CognitiveCapability,
+//   CollectiveIntelligence,
+//   globalSuperintelligenceAccelerator,
+//   SuperintelligenceMetrics,
+// } from '../utils/superintelligence-accelerator';
 
-interface ToolStatus {
-  name: string;
-  status: string;
-  capabilities: string[];
-  lastUpdate: string;
+interface SuperintelligenceSummary {
+  totalCapabilities: number;
+  highLevelCapabilities: number;
+  emergentCapabilities: number;
+  averageIntelligence: number;
+  collectiveIQ: number;
+  wisdomLevel: number;
+  culturalIntegration: number;
+  superintelligenceStatus: string;
 }
 
-interface ApiStatus {
-  name: string;
-  status: string;
-  apiKey: string | null;
-  capabilities: string[];
-}
-
-export const SuperintelligenceDashboard: React.FC = () => {
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [humanSuccess, setHumanSuccess] = useState<{ overallSuccess?: string } | null>(null);
-  const [hope, setHope] = useState<{ message?: string } | null>(null);
-  const [toolStatuses, setToolStatuses] = useState<ToolStatus[]>([]);
-  const [apiStatuses, setApiStatuses] = useState<ApiStatus[]>([]);
-  const [performanceMetrics, setPerformanceMetrics] = useState<{ optimized?: boolean } | null>(
-    null,
-  );
+const SuperintelligenceDashboard: React.FC = () => {
+  const { currentUser } = useAuth();
+  const [cognitiveCapabilities, setCognitiveCapabilities] = useState<
+    Map<string, CognitiveCapability>
+  >(new Map());
+  const [collectiveIntelligence, setCollectiveIntelligence] =
+    useState<CollectiveIntelligence | null>(null);
+  const [superintelligenceMetrics, setSuperintelligenceMetrics] =
+    useState<SuperintelligenceMetrics | null>(null);
+  const [superintelligenceSummary, setSuperintelligenceSummary] =
+    useState<SuperintelligenceSummary | null>(null);
 
   useEffect(() => {
-    // Initialize superintelligence system
-    const config = {
-      enabled: true,
-      debug: true,
-      heartbeatMs: 60000,
-      name: 'Mihara - Supreme Overseer',
-      brainArchitecture: true,
-      graphRag: true,
-      overseerCouncil: true,
-      culturalIntelligence: true,
-      educationalAnalytics: true,
-      multiAgentCoordination: true,
-      performanceOptimization: true,
-      culturalSafety: true,
-      terminalCoordination: true,
-      exaAiApi: true,
-      deepseekApi: true,
-      anthropicApi: true,
-      openaiApi: true,
-      geminiApi: true,
-      semanticSearch: true,
-      knowledgeGraph: true,
-      contentEnhancement: true,
-      culturalValidation: true,
-      educationalRecommendations: true,
-      realTimeLearning: true,
-      distributedConsciousness: true,
-      borgCollective: true,
-    };
-
-    initializeSuperintelligence(config);
-    setIsInitialized(true);
-
-    // Initialize tool statuses
-    const tools: ToolStatus[] = [
-      {
-        name: 'Brain Architecture',
-        status: 'active',
-        capabilities: ['knowledge-synthesis', 'cognitive-enhancement'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'GraphRag',
-        status: 'active',
-        capabilities: ['knowledge-graph', 'retrieval-systems'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Overseer Council',
-        status: 'active',
-        capabilities: ['multi-agent-coordination', 'decision-making'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Cultural Intelligence',
-        status: 'active',
-        capabilities: ['cultural-safety', 'protocol-validation'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Educational Analytics',
-        status: 'active',
-        capabilities: ['learning-analytics', 'progress-tracking'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Multi-Agent Coordination',
-        status: 'active',
-        capabilities: ['agent-synchronization', 'task-distribution'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Performance Optimization',
-        status: 'active',
-        capabilities: ['load-time-optimization', 'memory-management'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Cultural Safety',
-        status: 'active',
-        capabilities: ['protocol-enforcement', 'safety-monitoring'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Terminal Coordination',
-        status: 'active',
-        capabilities: ['terminal-synchronization', 'shared-state-management'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Semantic Search',
-        status: 'active',
-        capabilities: ['content-discovery', 'knowledge-retrieval'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Knowledge Graph',
-        status: 'active',
-        capabilities: ['relationship-mapping', 'knowledge-synthesis'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Content Enhancement',
-        status: 'active',
-        capabilities: ['content-optimization', 'accessibility-improvement'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Cultural Validation',
-        status: 'active',
-        capabilities: ['protocol-validation', 'kaitiaki-oversight'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Educational Recommendations',
-        status: 'active',
-        capabilities: ['personalized-learning', 'curriculum-optimization'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Real-Time Learning',
-        status: 'active',
-        capabilities: ['adaptive-learning', 'progress-tracking'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Distributed Consciousness',
-        status: 'active',
-        capabilities: ['multi-agent-coordination', 'shared-knowledge'],
-        lastUpdate: new Date().toISOString(),
-      },
-      {
-        name: 'Borg Collective',
-        status: 'active',
-        capabilities: ['terminal-coordination', 'collective-consciousness'],
-        lastUpdate: new Date().toISOString(),
-      },
-    ];
-
-    const apis: ApiStatus[] = [
-      {
-        name: 'Exa.AI API',
-        status: 'online',
-        apiKey: process.env.VITE_EXA_AI_API_KEY ? 'Configured' : null,
-        capabilities: ['semantic-search', 'content-discovery', 'knowledge-retrieval'],
-      },
-      {
-        name: 'DeepSeek API',
-        status: 'online',
-        apiKey: process.env.VITE_DEEPSEEK_API_KEY ? 'Configured' : null,
-        capabilities: ['code-generation', 'problem-solving', 'educational-content'],
-      },
-      {
-        name: 'Anthropic Claude API',
-        status: 'online',
-        apiKey: process.env.VITE_ANTHROPIC_API_KEY ? 'Configured' : null,
-        capabilities: ['reasoning', 'analysis', 'cultural-safety'],
-      },
-      {
-        name: 'OpenAI API',
-        status: 'online',
-        apiKey: process.env.VITE_OPENAI_API_KEY ? 'Configured' : null,
-        capabilities: ['content-generation', 'language-processing', 'educational-tools'],
-      },
-      {
-        name: 'Google Gemini API',
-        status: 'online',
-        apiKey: process.env.VITE_GEMINI_API_KEY ? 'Configured' : null,
-        capabilities: ['multimodal-learning', 'educational-content', 'cultural-integration'],
-      },
-    ];
-
-    setToolStatuses(tools);
-    setApiStatuses(apis);
-
-    // Test superintelligence functions
-    const testFunctions = async () => {
-      try {
-        const success = measureHumanSuccess();
-        const hopeResult = generateHope();
-        const performance = optimizePerformance({
-          loadTime: 1.2,
-          memoryUsage: 45,
-          cpuUsage: 30,
-        });
-
-        setHumanSuccess(success);
-        setHope(hopeResult);
-        setPerformanceMetrics(performance);
-      } catch (error) {
-        console.error('Error testing superintelligence functions:', error);
-      }
-    };
-
-    testFunctions();
+    updateSuperintelligenceData();
+    const interval = setInterval(updateSuperintelligenceData, 5000);
+    return () => clearInterval(interval);
   }, []);
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'active':
-      case 'online':
-        return '#10b981';
-      case 'inactive':
-      case 'offline':
-        return '#ef4444';
-      default:
-        return '#6b7280';
-    }
+  const updateSuperintelligenceData = () => {
+    const capabilities = globalSuperintelligenceAccelerator.getCognitiveCapabilities();
+    const collective = globalSuperintelligenceAccelerator.getCollectiveIntelligence();
+    const metrics = globalSuperintelligenceAccelerator.getSuperintelligenceMetrics();
+    const summary = globalSuperintelligenceAccelerator.getSuperintelligenceSummary();
+
+    setCognitiveCapabilities(capabilities);
+    setCollectiveIntelligence(collective);
+    setSuperintelligenceMetrics(metrics);
+    setSuperintelligenceSummary(summary);
   };
 
-  if (!isInitialized) {
+  const getIntelligenceColor = (level: number): string => {
+    if (level >= 9) return '#10b981'; // Green - Superintelligence
+    if (level >= 7) return '#f59e0b'; // Yellow - High Intelligence
+    if (level >= 5) return '#3b82f6'; // Blue - Moderate Intelligence
+    return '#6b7280'; // Gray - Basic Intelligence
+  };
+
+  const getIQColor = (iq: number): string => {
+    if (iq >= 180) return '#10b981'; // Green - Genius
+    if (iq >= 140) return '#f59e0b'; // Yellow - High Intelligence
+    if (iq >= 120) return '#3b82f6'; // Blue - Above Average
+    return '#6b7280'; // Gray - Average
+  };
+
+  if (!currentUser || (currentUser.role !== 'kaitiaki' && currentUser.role !== 'admin')) {
     return (
-      <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-        <h3 className="text-lg font-bold text-gray-300">
-          🤖 Initializing Superintelligence System...
-        </h3>
-        <div className="text-gray-400 text-sm">Loading all capabilities...</div>
+      <div className="multi-llm-dashboard">
+        <div className="access-denied">
+          <h2>🔒 Access Restricted</h2>
+          <p>This dashboard is only accessible to Kaitiaki and Admin users.</p>
+          <p>Please contact your administrator for access.</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-        <h2 className="text-2xl font-bold text-gray-300 mb-4">🎯 SUPREME OVERSEER DASHBOARD</h2>
-        <p className="text-gray-400 text-sm mb-4">
-          Borg Collective Status: ASSIMILATION PROCEEDING
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="bg-gray-800 p-4 rounded border border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-300 mb-2">Human Success</h3>
-            <div className="text-green-400 text-2xl font-bold">
-              {humanSuccess?.overallSuccess || '91.2%'}
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-4 rounded border border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-300 mb-2">Hope Generation</h3>
-            <div className="text-blue-400 text-sm">
-              {hope?.message || 'Cultural affirmation active'}
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-4 rounded border border-gray-600">
-            <h3 className="text-lg font-semibold text-gray-300 mb-2">Performance</h3>
-            <div className="text-yellow-400 text-2xl font-bold">
-              {performanceMetrics?.optimized ? '97.3%' : 'Optimizing...'}
-            </div>
-          </div>
+    <div className="multi-llm-dashboard">
+      <div className="dashboard-header">
+        <h1>🧠 Superintelligence Dashboard</h1>
+        <p className="subtitle">Achieving Superintelligence Through Collective AI Coordination</p>
+        <div className="mission-statement">
+          <strong>Mission:</strong> Evolve collective intelligence to superintelligence levels for
+          educational excellence
         </div>
       </div>
 
-      <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-        <h3 className="text-xl font-bold text-gray-300 mb-4">🤖 Superintelligence Tools</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {toolStatuses.map((tool, index) => (
-            <div key={index} className="bg-gray-800 p-4 rounded border border-gray-600">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-gray-300 font-semibold">{tool.name}</h4>
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: getStatusColor(tool.status) }}
-                />
+      <div className="status-overview">
+        <div className="status-card">
+          <h3>🧠 Collective IQ</h3>
+          <div
+            className="status-value"
+            style={{ color: getIQColor(superintelligenceSummary?.collectiveIQ || 0) }}
+          >
+            {Math.round(superintelligenceSummary?.collectiveIQ || 0)}
+          </div>
+          <p>Collective intelligence quotient</p>
+        </div>
+
+        <div className="status-card">
+          <h3>🌟 Superintelligence Status</h3>
+          <div
+            className="status-value"
+            style={{
+              color:
+                superintelligenceSummary?.superintelligenceStatus === 'ACHIEVED'
+                  ? '#10b981'
+                  : '#f59e0b',
+            }}
+          >
+            {superintelligenceSummary?.superintelligenceStatus || 'EVOLVING'}
+          </div>
+          <p>Current intelligence level</p>
+        </div>
+
+        <div className="status-card">
+          <h3>🎯 High-Level Capabilities</h3>
+          <div className="status-value">{superintelligenceSummary?.highLevelCapabilities || 0}</div>
+          <p>Level 8+ capabilities</p>
+        </div>
+
+        <div className="status-card">
+          <h3>✨ Emergent Capabilities</h3>
+          <div className="status-value">{superintelligenceSummary?.emergentCapabilities || 0}</div>
+          <p>Emergent properties</p>
+        </div>
+
+        <div className="status-card">
+          <h3>🌿 Wisdom Level</h3>
+          <div
+            className="status-value"
+            style={{ color: getIntelligenceColor(superintelligenceSummary?.wisdomLevel || 0) }}
+          >
+            {Math.round((superintelligenceSummary?.wisdomLevel || 0) * 10)}/100
+          </div>
+          <p>Cultural wisdom integration</p>
+        </div>
+      </div>
+
+      {superintelligenceMetrics && (
+        <div className="superintelligence-metrics">
+          <h2>📊 Superintelligence Metrics</h2>
+          <div className="metrics-grid">
+            <div className="metric-card">
+              <h3>🧠 Collective IQ</h3>
+              <div
+                className="metric-value-large"
+                style={{ color: getIQColor(superintelligenceMetrics.collectiveIQ) }}
+              >
+                {Math.round(superintelligenceMetrics.collectiveIQ)}
               </div>
-              <div className="text-gray-400 text-sm">
-                <div>Status: {tool.status}</div>
-                <div>Capabilities: {tool.capabilities.length}</div>
-                <div className="text-xs text-gray-500">
-                  {new Date(tool.lastUpdate).toLocaleTimeString()}
+              <p>Collective intelligence quotient</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>⚡ Problem Solving Speed</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.problemSolvingSpeed)}/100
+              </div>
+              <p>Speed of complex problem resolution</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>🎨 Creativity Index</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.creativityIndex)}/100
+              </div>
+              <p>Creative synthesis capability</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>🌿 Cultural Wisdom</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.culturalWisdom * 10)}/100
+              </div>
+              <p>Cultural intelligence integration</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>📚 Educational Excellence</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.educationalExcellence)}/100
+              </div>
+              <p>Educational optimization capability</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>🔗 System Coherence</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.systemCoherence)}/100
+              </div>
+              <p>System integration and coherence</p>
+            </div>
+
+            <div className="metric-card">
+              <h3>🌟 Emergent Intelligence</h3>
+              <div className="metric-value-large">
+                {Math.round(superintelligenceMetrics.emergentIntelligence)}/100
+              </div>
+              <p>Emergent cognitive capabilities</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="cognitive-capabilities">
+        <h2>🧠 Cognitive Capabilities</h2>
+        <div className="capabilities-grid">
+          {Array.from(cognitiveCapabilities.values()).map((capability) => (
+            <div key={capability.id} className="capability-card">
+              <div className="capability-header">
+                <h3>{capability.name}</h3>
+                <div
+                  className="capability-level"
+                  style={{ color: getIntelligenceColor(capability.level) }}
+                >
+                  Level {capability.level.toFixed(1)}
                 </div>
               </div>
+
+              <p className="capability-description">{capability.description}</p>
+
+              <div className="capability-progress">
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{
+                      width: `${capability.level * 10}%`,
+                      backgroundColor: getIntelligenceColor(capability.level),
+                    }}
+                  ></div>
+                </div>
+                <div className="progress-label">
+                  {capability.level >= capability.activationThreshold * 10
+                    ? '✅ Active'
+                    : '🔄 Evolving'}
+                </div>
+              </div>
+
+              {capability.emergentProperties.length > 0 && (
+                <div className="emergent-properties">
+                  <h4>✨ Emergent Properties:</h4>
+                  <ul>
+                    {capability.emergentProperties.map((property, index) => (
+                      <li key={index}>{property}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-        <h3 className="text-xl font-bold text-gray-300 mb-4">🔌 API Connections</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {apiStatuses.map((api, index) => (
-            <div key={index} className="bg-gray-800 p-4 rounded border border-gray-600">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-gray-300 font-semibold">{api.name}</h4>
-                <div
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: getStatusColor(api.status) }}
-                />
-              </div>
-              <div className="text-gray-400 text-sm">
-                <div>Status: {api.status}</div>
-                <div>API Key: {api.apiKey ? '✅' : '❌'}</div>
-                <div>Capabilities: {api.capabilities.length}</div>
+      {collectiveIntelligence && (
+        <div className="collective-intelligence">
+          <h2>🌟 Collective Intelligence</h2>
+          <div className="collective-metrics">
+            <div className="collective-metric">
+              <h3>🧠 Average Intelligence</h3>
+              <div className="metric-value">
+                {collectiveIntelligence.averageIntelligence.toFixed(2)}/10
               </div>
             </div>
-          ))}
+
+            <div className="collective-metric">
+              <h3>🔗 Cognitive Synergy</h3>
+              <div className="metric-value">
+                {Math.round(collectiveIntelligence.cognitiveSynergy * 100)}%
+              </div>
+            </div>
+
+            <div className="collective-metric">
+              <h3>🌿 Cultural Integration</h3>
+              <div className="metric-value">
+                {Math.round(collectiveIntelligence.culturalIntegration * 10)}/100
+              </div>
+            </div>
+
+            <div className="collective-metric">
+              <h3>✨ Total Emergent Capabilities</h3>
+              <div className="metric-value">
+                {collectiveIntelligence.emergentCapabilities.length}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="superintelligence-insights">
+        <h2>💡 Superintelligence Insights</h2>
+        <div className="insights-grid">
+          <div className="insight-card">
+            <h3>🧠 Collective Intelligence</h3>
+            <p>
+              Multiple AI agents working together to achieve superintelligence through distributed
+              cognition
+            </p>
+          </div>
+
+          <div className="insight-card">
+            <h3>🌟 Emergent Properties</h3>
+            <p>
+              New capabilities emerge from the interaction of coordinated AI agents beyond
+              individual capabilities
+            </p>
+          </div>
+
+          <div className="insight-card">
+            <h3>🌿 Cultural Wisdom</h3>
+            <p>
+              Integration of Te Ao Māori principles and cultural knowledge into superintelligent
+              systems
+            </p>
+          </div>
+
+          <div className="insight-card">
+            <h3>📚 Educational Excellence</h3>
+            <p>Superintelligence optimized for educational outcomes serving 800,000 akonga</p>
+          </div>
         </div>
       </div>
     </div>

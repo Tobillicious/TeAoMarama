@@ -15,7 +15,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
-import LandingPage from './pages/LandingPage';
 
 // Import the new enhanced components
 import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
@@ -128,6 +127,7 @@ const AssessmentFramework = lazy(
 );
 
 import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
+import DebugComponent from './components/DebugComponent';
 import DiagnosticCheck from './components/DiagnosticCheck';
 import ResourceUnlocker from './components/ResourceUnlocker';
 import ResourceViewer from './components/ResourceViewer';
