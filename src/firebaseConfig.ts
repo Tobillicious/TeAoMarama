@@ -15,27 +15,24 @@ const firebaseConfig = {
   measurementId: 'G-XXXXXXXXXX',
 };
 
-// Initialize Firebase
-let app: ReturnType<typeof initializeApp> | undefined;
-let auth: ReturnType<typeof getAuth> | undefined;
-let db: ReturnType<typeof getFirestore> | undefined;
-let storage: ReturnType<typeof getStorage> | undefined;
+// Initialize Firebase - always initialize with proper error handling
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// Initialize Analytics conditionally
 let analytics: Awaited<ReturnType<typeof getAnalytics>> | null | undefined;
-
 try {
-  app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-  storage = getStorage(app);
-
-  // Initialize Analytics conditionally
   analytics = isSupported().then((yes) => (yes ? getAnalytics(app) : null));
-
-  console.log('🔥 Firebase initialized successfully');
 } catch (error) {
-  console.warn('⚠️ Firebase initialization failed:', error);
-  console.log('🔄 Running in demo mode without Firebase');
+  console.warn('Analytics initialization failed, continuing without analytics:', error);
+  analytics = null;
 }
+
+console.log('🔥 Firebase initialized successfully');
+console.log('Auth initialized:', !!auth);
+console.log('Firestore initialized:', !!db);
 
 // Connect to emulators in development
 if (
@@ -57,17 +54,9 @@ if (
 
 // Health check function
 export const getFirebaseHealth = async () => {
-  if (!auth || !db) {
-    return {
-      status: 'demo-mode',
-      message: 'Running in demo mode without Firebase',
-      timestamp: new Date().toISOString(),
-    };
-  }
-
   try {
     const authState = auth.currentUser ? 'authenticated' : 'unauthenticated';
-    const firestoreConnected = db ? 'connected' : 'disconnected';
+    const firestoreConnected = 'connected';
 
     return {
       status: 'healthy',

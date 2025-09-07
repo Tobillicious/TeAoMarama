@@ -3,7 +3,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { AlertTriangle, CheckCircle, Eye, EyeOff, Lock, Mail, Shield } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -75,10 +75,7 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      // Use Firebase Auth directly for immediate response
-      if (!auth) {
-        throw new Error('Firebase authentication not initialized');
-      }
+      // REAL Firebase Authentication - no more demo bullshit
       const userCredential = await signInWithEmailAndPassword(
         auth,
         credentials.email,
@@ -87,13 +84,25 @@ const AuthenticationTabs: React.FC = () => {
       const user = userCredential.user;
 
       if (user) {
-        // Update user profile with role
+        // Get user data from Firestore
+        let userRole = credentials.role;
         if (db) {
+          try {
+            const userDoc = await getDoc(doc(db, 'users', user.uid));
+            if (userDoc.exists()) {
+              const userData = userDoc.data();
+              userRole = userData.role || credentials.role;
+            }
+          } catch (error) {
+            console.warn('Could not fetch user data, using form role:', error);
+          }
+          
+          // Update last login
           await setDoc(
             doc(db, 'users', user.uid),
             {
               email: user.email,
-              role: credentials.role,
+              role: userRole,
               lastLogin: new Date().toISOString(),
             },
             { merge: true },
@@ -101,17 +110,19 @@ const AuthenticationTabs: React.FC = () => {
         }
 
         setSuccess(
-          `Login successful! Welcome ${credentials.role === 'teacher' ? 'Kaiako' : 'Ākonga'}!`,
+          `Login successful! Welcome ${userRole === 'teacher' ? 'Kaiako' : userRole === 'kaitiaki' ? 'Kaitiaki' : 'Ākonga'}!`,
         );
 
-        // Route based on role
+        // Route based on actual user role
         setTimeout(() => {
-          if (credentials.role === 'teacher') {
+          if (userRole === 'teacher') {
             navigate('/teacher-dashboard');
-          } else if (credentials.role === 'student') {
+          } else if (userRole === 'student') {
             navigate('/student-dashboard');
-          } else {
+          } else if (userRole === 'kaitiaki') {
             navigate('/kaitiaki-dashboard');
+          } else {
+            navigate('/');
           }
         }, 1500);
       }
@@ -163,8 +174,23 @@ const AuthenticationTabs: React.FC = () => {
       if (!auth) {
         throw new Error('Firebase authentication not initialized');
       }
-      await createUserWithEmailAndPassword(auth, userData.email, userData.password);
-      setSuccess('Account created successfully! Please check your email to verify your account.');
+      
+      // Create the user account
+      const userCredential = await createUserWithEmailAndPassword(auth, userData.email, userData.password);
+      const user = userCredential.user;
+      
+      // Store user data in Firestore
+      if (db && user) {
+        await setDoc(doc(db, 'users', user.uid), {
+          email: userData.email,
+          role: userData.role,
+          culturalClearance: userData.culturalClearance ? 'approved' : 'basic',
+          createdAt: new Date().toISOString(),
+          lastLogin: new Date().toISOString(),
+        });
+      }
+      
+      setSuccess('Account created successfully! You can now sign in.');
 
       // Reset form and switch to sign-in
       setSignUpForm({
@@ -341,25 +367,7 @@ const AuthenticationTabs: React.FC = () => {
             {isLoading ? 'Authenticating...' : 'Sign In'}
           </button>
 
-          {/* Demo Mode Helper */}
-          <div
-            className="demo-mode-helper"
-            style={{
-              marginTop: '1rem',
-              padding: '0.75rem',
-              backgroundColor: '#fef3cd',
-              border: '1px solid #facc15',
-              borderRadius: '8px',
-              fontSize: '0.875rem',
-              color: '#92400e',
-            }}
-          >
-            <strong>🎭 Demo Mode Available:</strong>
-            <br />
-            Use any email containing: @teaomarama.nz, demo, teacher, student, or kaitiaki
-            <br />
-            <em>Password can be anything for demo users</em>
-          </div>
+        
         </div>
       )}
 
