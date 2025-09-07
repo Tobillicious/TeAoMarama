@@ -1,13 +1,7 @@
-import {
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { AlertTriangle, CheckCircle, Eye, EyeOff, Lock, Mail, Shield } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../firebaseConfig';
+import { useAuth } from '../services/DualRoleAuthProvider';
 import './AuthenticationTabs.css';
 
 interface LoginForm {
@@ -31,7 +25,7 @@ interface PasswordResetForm {
 
 const AuthenticationTabs: React.FC = () => {
   const navigate = useNavigate();
-  // const { login } = useAuth(); // Not currently used
+  const { login, signUp, isAuthenticated, currentUser, isLoading: authLoading } = useAuth();
   const [activeTab, setActiveTab] = useState<'signin' | 'signup' | 'reset'>('signin');
 
   const [loginForm, setLoginForm] = useState<LoginForm>({
@@ -55,6 +49,7 @@ const AuthenticationTabs: React.FC = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const combinedLoading = isLoading || authLoading;
   const [errors, setErrors] = useState<string[]>([]);
   const [success, setSuccess] = useState<string>('');
 
@@ -63,6 +58,16 @@ const AuthenticationTabs: React.FC = () => {
     { value: 'teacher', label: 'Kaiako (Teacher)', icon: <Shield />, color: '#10b981' },
     { value: 'kaitiaki', label: 'Kaitiaki (Guardian)', icon: <Shield />, color: '#8b5cf6' },
   ];
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated && currentUser) {
+      const redirectPath = currentUser.role === 'teacher' ? '/teacher-dashboard' : 
+                          currentUser.role === 'student' ? '/student-dashboard' :
+                          currentUser.role === 'kaitiaki' ? '/kaitiaki-dashboard' : '/';
+      navigate(redirectPath);
+    }
+  }, [isAuthenticated, currentUser, navigate]);
 
   const handleLogin = async (credentials: LoginForm) => {
     if (!credentials.email || !credentials.password) {
@@ -75,76 +80,17 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      // REAL Firebase Authentication - no more demo bullshit
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        credentials.email,
-        credentials.password,
-      );
-      const user = userCredential.user;
-
-      if (user) {
-        // Get user data from Firestore
-        let userRole = credentials.role;
-        if (db) {
-          try {
-            const userDoc = await getDoc(doc(db, 'users', user.uid));
-            if (userDoc.exists()) {
-              const userData = userDoc.data();
-              userRole = userData.role || credentials.role;
-            }
-          } catch (error) {
-            console.warn('Could not fetch user data, using form role:', error);
-          }
-          
-          // Update last login
-          await setDoc(
-            doc(db, 'users', user.uid),
-            {
-              email: user.email,
-              role: userRole,
-              lastLogin: new Date().toISOString(),
-            },
-            { merge: true },
-          );
-        }
-
-        setSuccess(
-          `Login successful! Welcome ${userRole === 'teacher' ? 'Kaiako' : userRole === 'kaitiaki' ? 'Kaitiaki' : 'Ākonga'}!`,
-        );
-
-        // Route based on actual user role
-        setTimeout(() => {
-          if (userRole === 'teacher') {
-            navigate('/teacher-dashboard');
-          } else if (userRole === 'student') {
-            navigate('/student-dashboard');
-          } else if (userRole === 'kaitiaki') {
-            navigate('/kaitiaki-dashboard');
-          } else {
-            navigate('/');
-          }
-        }, 1500);
+      const result = await login(credentials.email, credentials.password, credentials.role);
+      
+      if (result.success) {
+        setSuccess(`Login successful! Welcome ${credentials.role === 'teacher' ? 'Kaiako' : credentials.role === 'kaitiaki' ? 'Kaitiaki' : 'Ākonga'}!`);
+        // Navigation will happen in useEffect when isAuthenticated changes
+      } else {
+        setErrors([result.error || 'Login failed. Please try again.']);
       }
     } catch (error: unknown) {
       console.error('Login error:', error);
-
-      // Handle specific Firebase auth errors
-      let errorMessage = 'Login failed. Please try again.';
-      if (error && typeof error === 'object' && 'code' in error) {
-        const errorCode = (error as { code: string }).code;
-        if (errorCode === 'auth/invalid-credential') {
-          errorMessage = 'Invalid email or password. Please check your credentials.';
-        } else if (errorCode === 'auth/user-not-found') {
-          errorMessage = 'No account found with this email. Please sign up first.';
-        } else if (errorCode === 'auth/wrong-password') {
-          errorMessage = 'Incorrect password. Please try again.';
-        } else if (errorCode === 'auth/too-many-requests') {
-          errorMessage = 'Too many failed attempts. Please wait a moment.';
-        }
-      }
-
-      setErrors([errorMessage]);
+      setErrors(['Login failed. Please try again.']);
     } finally {
       setIsLoading(false);
     }
@@ -171,39 +117,29 @@ const AuthenticationTabs: React.FC = () => {
     setSuccess('');
 
     try {
-      if (!auth) {
-        throw new Error('Firebase authentication not initialized');
-      }
-      
-      // Create the user account
-      const userCredential = await createUserWithEmailAndPassword(auth, userData.email, userData.password);
-      const user = userCredential.user;
-      
-      // Store user data in Firestore
-      if (db && user) {
-        await setDoc(doc(db, 'users', user.uid), {
-          email: userData.email,
-          role: userData.role,
-          culturalClearance: userData.culturalClearance ? 'approved' : 'basic',
-          createdAt: new Date().toISOString(),
-          lastLogin: new Date().toISOString(),
-        });
-      }
-      
-      setSuccess('Account created successfully! You can now sign in.');
-
-      // Reset form and switch to sign-in
-      setSignUpForm({
-        email: '',
-        password: '',
-        confirmPassword: '',
-        role: 'student',
-        culturalClearance: false,
+      const result = await signUp({
+        email: userData.email,
+        password: userData.password,
+        name: userData.email.split('@')[0], // Default name from email
+        role: userData.role,
+        iwiAffiliations: userData.culturalClearance ? ['Cultural clearance acknowledged'] : undefined,
       });
 
-      setTimeout(() => {
-        setActiveTab('signin');
-      }, 2000);
+      if (result.success) {
+        setSuccess('Account created successfully! You are now logged in.');
+        // Navigation will happen in useEffect when isAuthenticated changes
+        
+        // Reset form 
+        setSignUpForm({
+          email: '',
+          password: '',
+          confirmPassword: '',
+          role: 'student',
+          culturalClearance: false,
+        });
+      } else {
+        setErrors([result.error || 'Failed to create account. Please try again.']);
+      }
     } catch (error) {
       console.error('Sign up error:', error);
       setErrors(['Failed to create account. Please try again.']);
@@ -218,23 +154,7 @@ const AuthenticationTabs: React.FC = () => {
       return;
     }
 
-    setIsLoading(true);
-    setErrors([]);
-    setSuccess('');
-
-    try {
-      if (!auth) {
-        throw new Error('Firebase authentication not initialized');
-      }
-      await sendPasswordResetEmail(auth, email);
-      setSuccess('Password reset email sent! Please check your inbox.');
-      setResetForm({ email: '' });
-    } catch (error) {
-      console.error('Password reset error:', error);
-      setErrors(['Failed to send password reset email. Please try again.']);
-    } finally {
-      setIsLoading(false);
-    }
+    setErrors(['Password reset functionality is not available at this time.']);
   };
 
   const handleRoleChange = (role: 'student' | 'teacher' | 'kaitiaki') => {
@@ -304,7 +224,7 @@ const AuthenticationTabs: React.FC = () => {
               placeholder="Email address"
               value={loginForm.email}
               onChange={(e) => setLoginForm((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
           </div>
 
@@ -315,13 +235,13 @@ const AuthenticationTabs: React.FC = () => {
               placeholder="Password"
               value={loginForm.password}
               onChange={(e) => setLoginForm((prev) => ({ ...prev, password: e.target.value }))}
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
             <button
               type="button"
               className="password-toggle"
               onClick={() => setShowPassword(!showPassword)}
-              disabled={isLoading}
+              disabled={combinedLoading}
             >
               {showPassword ? <EyeOff /> : <Eye />}
             </button>
@@ -334,7 +254,7 @@ const AuthenticationTabs: React.FC = () => {
                   type="checkbox"
                   checked={loginForm.culturalClearance}
                   onChange={(e) => handleCulturalClearanceChange(e.target.checked)}
-                  disabled={isLoading}
+                  disabled={combinedLoading}
                 />
                 <span>I have cultural clearance for Kaitiaki access</span>
               </label>
@@ -362,7 +282,7 @@ const AuthenticationTabs: React.FC = () => {
           <button
             className="auth-button"
             onClick={() => handleLogin(loginForm)}
-            disabled={isLoading}
+            disabled={combinedLoading}
           >
             {isLoading ? 'Authenticating...' : 'Sign In'}
           </button>
@@ -405,7 +325,7 @@ const AuthenticationTabs: React.FC = () => {
               placeholder="Email address"
               value={signUpForm.email}
               onChange={(e) => setSignUpForm((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
           </div>
 
@@ -416,7 +336,7 @@ const AuthenticationTabs: React.FC = () => {
               placeholder="Password"
               value={signUpForm.password}
               onChange={(e) => setSignUpForm((prev) => ({ ...prev, password: e.target.value }))}
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
           </div>
 
@@ -429,7 +349,7 @@ const AuthenticationTabs: React.FC = () => {
               onChange={(e) =>
                 setSignUpForm((prev) => ({ ...prev, confirmPassword: e.target.value }))
               }
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
           </div>
 
@@ -442,7 +362,7 @@ const AuthenticationTabs: React.FC = () => {
                   onChange={(e) =>
                     setSignUpForm((prev) => ({ ...prev, culturalClearance: e.target.checked }))
                   }
-                  disabled={isLoading}
+                  disabled={combinedLoading}
                 />
                 <span>I have cultural clearance for Kaitiaki access</span>
               </label>
@@ -470,7 +390,7 @@ const AuthenticationTabs: React.FC = () => {
           <button
             className="auth-button"
             onClick={() => handleSignUp(signUpForm)}
-            disabled={isLoading}
+            disabled={combinedLoading}
           >
             {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>
@@ -490,7 +410,7 @@ const AuthenticationTabs: React.FC = () => {
               placeholder="Email address"
               value={resetForm.email}
               onChange={(e) => setResetForm((prev) => ({ ...prev, email: e.target.value }))}
-              disabled={isLoading}
+              disabled={combinedLoading}
             />
           </div>
 
@@ -515,7 +435,7 @@ const AuthenticationTabs: React.FC = () => {
           <button
             className="auth-button"
             onClick={() => handlePasswordReset(resetForm.email)}
-            disabled={isLoading}
+            disabled={combinedLoading}
           >
             {isLoading ? 'Sending...' : 'Send Reset Link'}
           </button>
