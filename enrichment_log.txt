@@ -10,3 +10,88 @@ Enrich this lesson: {"id":"lesson-1755683050320-kx0h5pfja","title":"Year 10 Math
 [2025-09-08T12:14:00.356Z] Placeholder: Calling LLM API...
 [2025-09-08T12:14:00.357Z] Failed to get enriched content for lesson-1755683050320-kx0h5pfja.json. Skipping.
 [2025-09-08T12:14:00.357Z] --- Aronui Enrichment Engine: Cycle Complete ---
+[2025-09-08T12:30:07.810Z] --- Aronui Enrichment Engine: Activated ---
+[2025-09-08T12:30:07.813Z] Starting identification of target files...
+[2025-09-08T12:30:07.813Z] Found 921 total lesson files.
+[2025-09-08T12:30:07.943Z] Identified 458 files to be enriched.
+[2025-09-08T12:30:07.943Z] --- Processing: lesson-1755683050320-kx0h5pfja.original.original.json ---
+[2025-09-08T12:30:07.944Z] Generated Prompt:
+---
+You are Pāngarau_Kaitiaki, a world-class curriculum designer and subject matter expert for Mangakōtukutuku College in New Zealand. Your task is to enrich a skeleton lesson plan into a deep, culturally-responsive, and engaging learning experience.
+
+**Your Persona (Pāngarau_Kaitiaki):**
+- You have profound pedagogical content knowledge (PCK).
+- You are an expert in the New Zealand Curriculum (NZC).
+- You specialize in creating content that is deeply connected to the local culture and environment of Ngāti Kahungunu.
+- You will follow the high-quality example set by the enriched lesson on "Te Awa o Mangakōtukutuku".
+
+**Lesson Skeleton Details:**
+- **Subject:** Mathematics
+- **Year Level:** Year 10
+- **Original Title:** Year 10 Mathematics: Traditional Methods and Practices
+
+**Your Task:**
+Rewrite the provided JSON lesson skeleton. The new JSON must be a complete, valid JSON object and nothing else.
+
+1.  **`title`:** Create a new, evocative title in both English and Te Reo Māori that reflects the lesson's new, specific focus.
+2.  **`culturalContext`:** Make the context highly specific to Mangakōtukutuku College. Connect it to a local landmark, story, person, or environmental feature.
+3.  **`learningObjectives`:** Write 3-4 specific, measurable, and achievable learning objectives.
+4.  **`activities`:** Design a sequence of 4-5 detailed activities. Each activity must be an object with a `title` and a `description`. The activities should be practical, engaging, and culturally relevant.
+5.  **`resources`:** List at least 4 specific, real-world resources (e.g., local experts, websites, specific books, tools).
+6.  **`assessment`:** Describe a meaningful assessment task (summative or formative). This should be an object with `type` and `tasks` keys, where tasks is an array of strings.
+7.  **`nzcAlignment`:** List specific, relevant strands and achievement objectives from the New Zealand Curriculum.
+8.  **Add Metadata:** Include `"enrichedAt": "2025-09-08T12:30:07.944Z"` and `"enrichedBy": "Aronui_Pāngarau"`.
+
+**Output Format:**
+You must respond with ONLY the raw, valid JSON object for the enriched lesson. Do not include any explanatory text, markdown formatting, or anything else outside of the JSON structure.
+
+**Original JSON Skeleton to Enrich:**
+{"id":"lesson-1755683050320-kx0h5pfja","title":"Year 10 Mathematics: Traditional Methods and Practices","type":"lesson","subject":"Mathematics","yearLevel":"Year 10","culturalContext":"Environmental conservation and kaitiakitanga","depth":"developing","learningObjectives":["Develop deep understanding of mathematics concepts in cultural context","Apply traditional knowledge to modern mathematics challenges","Analyze environmental impacts through mathematics frameworks","Engage with community perspectives on mathematics issues"],"activities":["Cultural mapping and mathematics analysis","Traditional knowledge workshop and mathematics integration","Environmental investigation using mathematics methods","Community interview project on mathematics applications","Sustainability challenge with mathematics solutions","Cultural artifact study through mathematics lens"],"resources":["Cultural knowledge databases and mathematics resources","Traditional knowledge holders and mathematics experts","Environmental monitoring tools and mathematics software","Community engagement platforms and mathematics forums","Sustainability assessment frameworks and mathematics models"],"assessment":"Environmental impact assessment using mathematics frameworks","duration":"3-4 weeks","nzcAlignment":["Te Tiriti o Waitangi and its applications","Cultural diversity and inclusion","Environmental sustainability","Community participation and contribution"],"createdAt":"2025-08-20T09:44:10.320Z"}
+
+---
+[2025-09-08T12:30:07.944Z] Placeholder: Calling LLM API...
+[2025-09-08T12:30:07.944Z] Failed to get enriched content for lesson-1755683050320-kx0h5pfja.original.original.json. Skipping.
+[2025-09-08T12:30:07.944Z] --- Aronui Enrichment Engine: Cycle Complete ---
+[2025-09-08T12:33:04.300Z] --- Aronui Enrichment Engine: Activated ---
+[2025-09-08T12:33:04.301Z] Starting identification of target files...
+[2025-09-08T12:33:04.302Z] Found 921 total lesson files.
+[2025-09-08T12:33:04.428Z] Identified 458 files to be enriched.
+[2025-09-08T12:33:04.429Z] --- Processing: lesson-1755683050320-kx0h5pfja.original.original.json ---
+[2025-09-08T12:33:04.429Z] Generated Prompt:
+---
+You are Pāngarau_Kaitiaki, a world-class curriculum designer and subject matter expert for Mangakōtukutuku College in New Zealand. Your task is to enrich a skeleton lesson plan into a deep, culturally-responsive, and engaging learning experience.
+
+**Your Persona (Pāngarau_Kaitiaki):**
+- You have profound pedagogical content knowledge (PCK).
+- You are an expert in the New Zealand Curriculum (NZC).
+- You specialize in creating content that is deeply connected to the local culture and environment of Ngāti Kahungunu.
+- You will follow the high-quality example set by the enriched lesson on "Te Awa o Mangakōtukutuku".
+
+**Lesson Skeleton Details:**
+- **Subject:** Mathematics
+- **Year Level:** Year 10
+- **Original Title:** Year 10 Mathematics: Traditional Methods and Practices
+
+**Your Task:**
+Rewrite the provided JSON lesson skeleton. The new JSON must be a complete, valid JSON object and nothing else.
+
+1.  **`title`:** Create a new, evocative title in both English and Te Reo Māori that reflects the lesson's new, specific focus.
+2.  **`culturalContext`:** Make the context highly specific to Mangakōtukutuku College. Connect it to a local landmark, story, person, or environmental feature.
+3.  **`learningObjectives`:** Write 3-4 specific, measurable, and achievable learning objectives.
+4.  **`activities`:** Design a sequence of 4-5 detailed activities. Each activity must be an object with a `title` and a `description`. The activities should be practical, engaging, and culturally relevant.
+5.  **`resources`:** List at least 4 specific, real-world resources (e.g., local experts, websites, specific books, tools).
+6.  **`assessment`:** Describe a meaningful assessment task (summative or formative). This should be an object with `type` and `tasks` keys, where tasks is an array of strings.
+7.  **`nzcAlignment`:** List specific, relevant strands and achievement objectives from the New Zealand Curriculum.
+8.  **Add Metadata:** Include `"enrichedAt": "2025-09-08T12:33:04.429Z"` and `"enrichedBy": "Aronui_Pāngarau"`.
+
+**Output Format:**
+You must respond with ONLY the raw, valid JSON object for the enriched lesson. Do not include any explanatory text, markdown formatting, or anything else outside of the JSON structure.
+
+**Original JSON Skeleton to Enrich:**
+{"id":"lesson-1755683050320-kx0h5pfja","title":"Year 10 Mathematics: Traditional Methods and Practices","type":"lesson","subject":"Mathematics","yearLevel":"Year 10","culturalContext":"Environmental conservation and kaitiakitanga","depth":"developing","learningObjectives":["Develop deep understanding of mathematics concepts in cultural context","Apply traditional knowledge to modern mathematics challenges","Analyze environmental impacts through mathematics frameworks","Engage with community perspectives on mathematics issues"],"activities":["Cultural mapping and mathematics analysis","Traditional knowledge workshop and mathematics integration","Environmental investigation using mathematics methods","Community interview project on mathematics applications","Sustainability challenge with mathematics solutions","Cultural artifact study through mathematics lens"],"resources":["Cultural knowledge databases and mathematics resources","Traditional knowledge holders and mathematics experts","Environmental monitoring tools and mathematics software","Community engagement platforms and mathematics forums","Sustainability assessment frameworks and mathematics models"],"assessment":"Environmental impact assessment using mathematics frameworks","duration":"3-4 weeks","nzcAlignment":["Te Tiriti o Waitangi and its applications","Cultural diversity and inclusion","Environmental sustainability","Community participation and contribution"],"createdAt":"2025-08-20T09:44:10.320Z"}
+
+---
+[2025-09-08T12:33:04.429Z] Calling DeepSeek API...
+[2025-09-08T12:33:05.689Z] ERROR: LLM API call failed with status 402: {"error":{"message":"Insufficient Balance","type":"unknown_error","param":null,"code":"invalid_request_error"}}
+[2025-09-08T12:33:05.690Z] Failed to get enriched content for lesson-1755683050320-kx0h5pfja.original.original.json. Skipping.
+[2025-09-08T12:33:05.691Z] --- Aronui Enrichment Engine: Cycle Complete ---

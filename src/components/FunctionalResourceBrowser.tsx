@@ -10,7 +10,10 @@ import {
   Users,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { buildComprehensiveResourceLibrary, type RealResource } from '../utils/comprehensive-resource-builder';
+import {
+  buildComprehensiveResourceLibrary,
+  type RealResource,
+} from '../utils/comprehensive-resource-builder';
 
 // Use the real resource interface
 type Resource = RealResource & {
@@ -222,7 +225,6 @@ How statistics help us understand cultural diversity in Aotearoa...`,
       path: '/resources/mathematics/census-statistics',
     },
   ];
-
 
   useEffect(() => {
     const filtered = resources.filter((resource) => {
@@ -610,8 +612,8 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             📚 Educational Resource Library
           </h1>
           <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
-            Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '5,000+'} culturally-responsive
-            educational resources
+            Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '5,000+'}{' '}
+            culturally-responsive educational resources
           </p>
         </div>
       </header>

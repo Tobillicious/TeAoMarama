@@ -107,16 +107,64 @@ async function generateEnrichmentPrompt(lessonData) {
 
 
 
+import axios from 'axios';
+
+// ... (keep existing code until getEnrichedContentFromLLM)
+
 /**
  * Calls the LLM API to get the enriched lesson content.
  * @param {string} prompt The prompt to send to the LLM.
  * @returns {Promise<object|null>} The enriched lesson data as a JSON object, or null on failure.
  */
 async function getEnrichedContentFromLLM(prompt) {
-    // This function will be implemented later.
-    // It will handle the API call, validation, and error handling.
-    await log('Placeholder: Calling LLM API...');
-    return null; // Placeholder
+    const DEEPSEEK_API_KEY = 'sk-103cb83572a346e2aef89e2d2a4f7f89'; // Replace with your actual key if needed
+    const API_URL = 'https://api.deepseek.com/chat/completions';
+
+    try {
+        await log('Calling DeepSeek API...');
+        const response = await axios.post(API_URL, {
+            model: 'deepseek-coder',
+            messages: [
+                {
+                    role: 'system',
+                    content: 'You are a helpful assistant.'
+                },
+                {
+                    role: 'user',
+                    content: prompt
+                }
+            ],
+            temperature: 0.7,
+            stream: false
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${DEEPSEEK_API_KEY}`
+            }
+        });
+
+        const content = response.data.choices[0].message.content;
+        
+        // Clean the response to ensure it's a valid JSON object
+        const jsonString = content.substring(content.indexOf('{'), content.lastIndexOf('}') + 1);
+
+        try {
+            const enrichedData = JSON.parse(jsonString);
+            await log('Successfully received and parsed valid JSON from API.');
+            return enrichedData;
+        } catch (parseError) {
+            await log(`ERROR: Failed to parse JSON response from LLM. Content: ${content}`);
+            return null;
+        }
+
+    } catch (error) {
+        if (error.response) {
+            await log(`ERROR: LLM API call failed with status ${error.response.status}: ${JSON.stringify(error.response.data)}`);
+        } else {
+            await log(`ERROR: LLM API call failed. ${error.message}`);
+        }
+        return null;
+    }
 }
 
 /**
@@ -124,9 +172,75 @@ async function getEnrichedContentFromLLM(prompt) {
  * @param {string} subject The subject of the enriched lesson.
  */
 async function updateStatusReport(subject) {
-    // This function will be implemented later.
-    // It will read the markdown file, update the counters, and write it back.
-    await log(`Placeholder: Updating status report for ${subject}.`);
+    try {
+        await log(`Updating status report for ${subject}.`);
+        let reportContent = await fs.readFile(STATUS_REPORT_PATH, 'utf-8');
+
+        // Find the line for the specific subject
+        const subjectLineRegex = new RegExp(`(\| ${subject} \| \d+ \| )(\d+)( \| \d+\.\d+% \|)`);
+        
+        if (subjectLineRegex.test(reportContent)) {
+            reportContent = reportContent.replace(subjectLineRegex, (match, prefix, count, suffix) => {
+                const newCount = parseInt(count) + 1;
+                return `${prefix}${newCount}${suffix}`;
+            });
+        } else {
+            await log(`Warning: Could not find subject line for "${subject}" in the status report.`);
+            // Optionally, you could add a new line for the subject if it doesn't exist.
+        }
+
+        // Update the total count
+        const totalLineRegex = /(\| \*\*TOTAL\*\* \| \d+ \| )(\d+)( \| ~
+\d+\.\d+% \|)/;
+        if (totalLineRegex.test(reportContent)) {
+             reportContent = reportContent.replace(totalLineRegex, (match, prefix, count, suffix) => {
+                const newCount = parseInt(count) + 1;
+                return `${prefix}${newCount}${suffix}`;
+            });
+        } else {
+            await log(`Warning: Could not find TOTAL line in the status report.`);
+        }
+        
+        // Recalculate percentages
+        const lines = reportContent.split('\n');
+        const newLines = lines.map(line => {
+            if (line.startsWith('| ') && !line.includes('**TOTAL**') && !line.includes('Subject Area')) {
+                const parts = line.split('|').map(s => s.trim());
+                if (parts.length === 5) {
+                    const totalSkeletons = parseInt(parts[2]);
+                    const enriched = parseInt(parts[3]);
+                    if (!isNaN(totalSkeletons) && !isNaN(enriched) && totalSkeletons > 0) {
+                        const percentage = ((enriched / totalSkeletons) * 100).toFixed(1);
+                        parts[4] = `${percentage}%`;
+                        return `| ${parts[1]} | ${parts[2]} | ${parts[3]} | ${parts[4]} |`;
+                    }
+                }
+            }
+            return line;
+        });
+
+        // Recalculate total percentage
+        const totalStatsRegex = /\|\s\*\*TOTAL\*\*\s\|\s(\d+)\s\|\s(\d+)\s\|/;
+        const totalMatch = reportContent.match(totalStatsRegex);
+        if (totalMatch) {
+            const totalSkeletons = parseInt(totalMatch[1]);
+            const totalEnriched = parseInt(totalMatch[2]);
+            if (totalSkeletons > 0) {
+                const totalPercentage = ((totalEnriched / totalSkeletons) * 100).toFixed(2);
+                const totalLineIndex = newLines.findIndex(line => line.includes('**TOTAL**'));
+                if (totalLineIndex !== -1) {
+                    newLines[totalLineIndex] = `| **TOTAL** | ${totalSkeletons} | ${totalEnriched} | ~${totalPercentage}% |`;
+                }
+            }
+        }
+
+
+        await fs.writeFile(STATUS_REPORT_PATH, newLines.join('\n'));
+        await log('Status report updated successfully.');
+
+    } catch (error) {
+        await log(`ERROR: Could not update status report. ${error.message}`);
+    }
 }
 
 
@@ -142,8 +256,8 @@ async function main() {
         return;
     }
 
-    // Loop through each file and process it (currently a placeholder loop)
-    for (const filePath of targetFiles.slice(0, 1)) { // Process only the first file for now as a test
+    // Loop through each file and process it
+    for (const filePath of targetFiles) {
         await log(`--- Processing: ${path.basename(filePath)} ---`);
         try {
             const fileContent = await fs.readFile(filePath, 'utf-8');
@@ -159,10 +273,9 @@ ${prompt}
             const enrichedContent = await getEnrichedContentFromLLM(prompt);
 
             if (enrichedContent) {
-                // Overwrite the file with enriched content (to be implemented)
-                // await fs.writeFile(filePath, JSON.stringify(enrichedContent, null, 2));
-                // await log(`Successfully enriched and saved ${path.basename(filePath)}`);
-                // await updateStatusReport(lessonData.subject);
+                await fs.writeFile(filePath, JSON.stringify(enrichedContent, null, 2));
+                await log(`Successfully enriched and saved ${path.basename(filePath)}`);
+                await updateStatusReport(lessonData.subject);
             } else {
                 await log(`Failed to get enriched content for ${path.basename(filePath)}. Skipping.`);
             }
