@@ -1,16 +1,17 @@
 {
   "id": "multimedia-1755691750511-gd3gnp2h3",
-  "title": "Year 7 Social Studies: Cultural Documentary",
+  "title": "Year 7 Social Studies: Cultural Documentary - Interactive Multimedia Experience",
   "type": "multimedia",
   "subject": "Social Studies",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental conservation and kaitiakitanga",
+  "culturalContext": "Developing interactive social studies multimedia that explores the history, culture, and contemporary issues of Ngāti Kahungunu and the broader Aotearoa context through engaging digital experiences.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Engage with interactive social studies multimedia through cultural and local context",
+    "Apply traditional knowledge and modern methods to social studies challenges",
+    "Connect multimedia learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in social studies multimedia contexts"
   ],
   "activities": [
     "Cultural mapping and social studies analysis",
@@ -21,19 +22,89 @@
     "Cultural artifact study through social studies lens"
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Interactive historical timeline software",
+    "Virtual reality community tours",
+    "Digital archive and primary source databases",
+    "Interactive mapping and timeline tools",
+    "Treaty of Waitangi interactive resources"
   ],
-  "assessment": "Cultural competency evaluation through social studies projects",
-  "duration": "2-3 weeks",
+  "assessment": {
+    "type": "Formative and Summative Digital Assessment",
+    "tasks": [
+      "Formative: Teacher observation during interactive multimedia exploration and digital discussions",
+      "Formative: Peer feedback through digital collaboration platforms and self-reflection on learning progress",
+      "Summative: Student digital presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Digital portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "30-45 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies: Identity, Culture, and Organisation (Level 4-5)",
+    "Social Studies: Place and Environment (Level 4-5)",
+    "Social Studies: Continuity and Change (Level 4-5)",
+    "Te Tiriti o Waitangi: Historical and contemporary perspectives"
   ],
-  "createdAt": "2025-08-20T12:09:10.512Z"
+  "createdAt": "2025-08-20T12:09:10.512Z",
+  "mediaType": "Interactive Historical Timeline",
+  "interactivity": "High - Student-driven exploration",
+  "multimediaFeatures": [
+    {
+      "title": "Whakawhanaungatanga: Building Digital Connections",
+      "description": "Begin with karakia and establish cultural protocols. Students explore their prior knowledge and personal connections to the multimedia topic through interactive digital interfaces.",
+      "duration": "5-10 minutes",
+      "tools": [
+        "Interactive karakia cards",
+        "Cultural protocol digital guides",
+        "Student reflection digital forms"
+      ]
+    },
+    {
+      "title": "Cultural Context and Interactive Exploration",
+      "description": "Students will explore interactive historical timelines and virtual tours of Mangakōtukutuku, with immersive oral history projects, virtual interviews with local community members, and digital mapping of Treaty settlements and community development.",
+      "duration": "20-25 minutes",
+      "tools": [
+        "Interactive historical timeline software",
+        "Virtual reality community tours",
+        "Digital archive and primary source databases"
+      ]
+    },
+    {
+      "title": "Hands-on Digital Learning and Application",
+      "description": "Interactive application of social studies concepts using both traditional and modern digital methods. Students work collaboratively in virtual environments to solve real-world problems connected to their local community.",
+      "duration": "10-15 minutes",
+      "tools": [
+        "Interactive mapping and timeline tools",
+        "Treaty of Waitangi interactive resources"
+      ]
+    },
+    {
+      "title": "Digital Reflection and Cultural Connection",
+      "description": "Students reflect on their digital learning journey through interactive journals, connecting new knowledge to cultural values, community needs, and personal growth through multimedia sharing platforms.",
+      "duration": "5-10 minutes",
+      "tools": [
+        "Interactive reflection journals",
+        "Cultural connection digital prompts",
+        "Digital celebration platforms"
+      ]
+    }
+  ],
+  "technicalRequirements": {
+    "devices": "Tablets, computers, or smartphones with internet access",
+    "software": "Modern web browser with multimedia support",
+    "accessibility": "Screen reader compatible, keyboard navigation support",
+    "bandwidth": "Stable internet connection for interactive content"
+  },
+  "differentiation": {
+    "support": "Provide additional digital scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced digital challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "accessibility": {
+    "visual": "High contrast options, text-to-speech, and visual descriptions for all multimedia content",
+    "auditory": "Closed captions, audio descriptions, and visual alternatives for all audio content",
+    "motor": "Keyboard navigation, voice control, and alternative input methods for all interactive elements",
+    "cognitive": "Clear instructions, progress indicators, and multiple ways to access and understand content"
+  },
+  "enrichedAt": "2025-09-08T12:54:16.552Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }
