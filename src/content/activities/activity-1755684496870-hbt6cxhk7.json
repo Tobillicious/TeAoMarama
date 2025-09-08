@@ -1,16 +1,17 @@
 {
   "id": "activity-1755684496870-hbt6cxhk7",
-  "title": "Year 8 English: Cultural Mapping Exercise",
+  "title": "Year 8 English: Cultural Mapping Exercise - Interactive Learning Experience",
   "type": "activity",
   "subject": "English",
   "yearLevel": "Year 8",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Developing literacy skills through interactive storytelling activities, combining traditional pūrākau with contemporary narratives that connect to our local community and cultural heritage.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Engage in hands-on english activities through cultural and local context",
+    "Apply traditional knowledge and modern methods to english challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in english contexts"
   ],
   "activities": [
     "Cultural mapping and english analysis",
@@ -21,19 +22,80 @@
     "Cultural artifact study through english lens"
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Local storytellers and kaumātua",
+    "Digital storytelling software and tools",
+    "Traditional story collections and pūrākau",
+    "Recording equipment and multimedia devices",
+    "Te Reo Māori language resources and dictionaries"
   ],
-  "assessment": "Traditional knowledge demonstration in english contexts",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "45-60 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing (Level 4-5)",
+    "English: Speaking, Writing, and Presenting (Level 4-5)",
+    "Te Tiriti o Waitangi: Cultural narratives and perspectives"
   ],
-  "createdAt": "2025-08-20T10:08:16.886Z"
+  "createdAt": "2025-08-20T10:08:16.886Z",
+  "activityType": "Interactive Workshop",
+  "groupSize": "Small groups (4-6 students)",
+  "activitySteps": [
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment.",
+      "duration": "10 minutes",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets"
+      ]
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will create interactive digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives through collaborative workshops.",
+      "duration": "25 minutes",
+      "materials": [
+        "Local storytellers and kaumātua",
+        "Digital storytelling software and tools",
+        "Traditional story collections and pūrākau"
+      ]
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of english concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community.",
+      "duration": "15 minutes",
+      "materials": [
+        "Recording equipment and multimedia devices",
+        "Te Reo Māori language resources and dictionaries"
+      ]
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements.",
+      "duration": "10 minutes",
+      "materials": [
+        "Reflection journals",
+        "Cultural connection prompts",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "safety": {
+    "considerations": "Follow all school safety protocols, ensure cultural protocols are respected, and provide appropriate supervision",
+    "equipment": "Check all equipment before use, ensure proper handling of cultural materials, and maintain respectful environment"
+  },
+  "enrichedAt": "2025-09-08T12:41:58.607Z",
+  "enrichedBy": "Aronui_Te Reo Pākehā"
 }

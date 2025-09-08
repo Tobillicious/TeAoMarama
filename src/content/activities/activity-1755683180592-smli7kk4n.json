@@ -1,16 +1,17 @@
 {
   "id": "activity-1755683180592-smli7kk4n",
-  "title": "Year 9 Social Studies: Traditional Knowledge Workshop",
+  "title": "Year 9 Social Studies: Traditional Knowledge Workshop - Interactive Learning Experience",
   "type": "activity",
   "subject": "Social Studies",
   "yearLevel": "Year 9",
-  "culturalContext": "Cultural practices and traditional knowledge",
+  "culturalContext": "Understanding our place in the world through interactive activities that explore the history, culture, and contemporary issues of Ngāti Kahungunu and the broader Aotearoa context.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Engage in hands-on social studies activities through cultural and local context",
+    "Apply traditional knowledge and modern methods to social studies challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in social studies contexts"
   ],
   "activities": [
     "Cultural mapping and social studies analysis",
@@ -21,19 +22,81 @@
     "Cultural artifact study through social studies lens"
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Local historians and community elders",
+    "Historical archives and primary sources",
+    "Recording equipment and interview tools",
+    "Digital mapping and timeline software",
+    "Treaty of Waitangi resources and documents"
   ],
-  "assessment": "Cultural heritage preservation through social studies methods",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "45-60 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies: Identity, Culture, and Organisation (Level 4-5)",
+    "Social Studies: Place and Environment (Level 4-5)",
+    "Social Studies: Continuity and Change (Level 4-5)",
+    "Te Tiriti o Waitangi: Historical and contemporary perspectives"
   ],
-  "createdAt": "2025-08-20T09:46:20.598Z"
+  "createdAt": "2025-08-20T09:46:20.598Z",
+  "activityType": "Interactive Workshop",
+  "groupSize": "Small groups (4-6 students)",
+  "activitySteps": [
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment.",
+      "duration": "10 minutes",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets"
+      ]
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Interactive oral history project with role-playing activities, interviewing local community members about the history of Mangakōtukutuku, Treaty settlements, and community development over time through hands-on research.",
+      "duration": "25 minutes",
+      "materials": [
+        "Local historians and community elders",
+        "Historical archives and primary sources",
+        "Recording equipment and interview tools"
+      ]
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of social studies concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community.",
+      "duration": "15 minutes",
+      "materials": [
+        "Digital mapping and timeline software",
+        "Treaty of Waitangi resources and documents"
+      ]
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements.",
+      "duration": "10 minutes",
+      "materials": [
+        "Reflection journals",
+        "Cultural connection prompts",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "safety": {
+    "considerations": "Follow all school safety protocols, ensure cultural protocols are respected, and provide appropriate supervision",
+    "equipment": "Check all equipment before use, ensure proper handling of cultural materials, and maintain respectful environment"
+  },
+  "enrichedAt": "2025-09-08T12:41:50.037Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

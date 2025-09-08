@@ -1,16 +1,17 @@
 {
   "id": "activity-1755691739038-xcqew9fhd",
-  "title": "Year 9 Science: Cultural Artifact Study",
+  "title": "Year 9 Science: Cultural Artifact Study - Interactive Learning Experience",
   "type": "activity",
   "subject": "Science",
   "yearLevel": "Year 9",
-  "culturalContext": "Traditional knowledge and cultural practices",
+  "culturalContext": "Exploring scientific principles through hands-on activities that connect to kaitiakitanga and environmental stewardship of our local awa, whenua, and moana.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of science concepts in cultural context",
-    "Apply traditional knowledge to modern science challenges",
-    "Analyze environmental impacts through science frameworks",
-    "Engage with community perspectives on science issues"
+    "Engage in hands-on science activities through cultural and local context",
+    "Apply traditional knowledge and modern methods to science challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in science contexts"
   ],
   "activities": [
     "Cultural mapping and science analysis",
@@ -21,19 +22,81 @@
     "Cultural artifact study through science lens"
   ],
   "resources": [
-    "Cultural knowledge databases and science resources",
-    "Traditional knowledge holders and science experts",
-    "Environmental monitoring tools and science software",
-    "Community engagement platforms and science forums",
-    "Sustainability assessment frameworks and science models"
+    "Water quality testing kits and scientific equipment",
+    "Local environmental experts and scientists",
+    "Traditional ecological knowledge holders",
+    "Digital microscopes and data collection tools",
+    "Environmental monitoring software and apps"
   ],
-  "assessment": "Environmental impact assessment using science frameworks",
-  "duration": "3-4 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "45-60 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Nature of Science: Understanding about science (Level 4-5)",
+    "Living World: Life processes and ecology (Level 4-5)",
+    "Planet Earth and Beyond: Earth systems (Level 4-5)",
+    "Te Tiriti o Waitangi: Environmental kaitiakitanga"
   ],
-  "createdAt": "2025-08-20T12:08:59.061Z"
+  "createdAt": "2025-08-20T12:08:59.061Z",
+  "activityType": "Interactive Workshop",
+  "groupSize": "Small groups (4-6 students)",
+  "activitySteps": [
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment.",
+      "duration": "10 minutes",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets"
+      ]
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Interactive field study activities of the Mangakōtukutuku River ecosystem, with hands-on water quality testing, biodiversity analysis, and environmental health monitoring using both scientific methods and traditional ecological knowledge.",
+      "duration": "25 minutes",
+      "materials": [
+        "Water quality testing kits and scientific equipment",
+        "Local environmental experts and scientists",
+        "Traditional ecological knowledge holders"
+      ]
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of science concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community.",
+      "duration": "15 minutes",
+      "materials": [
+        "Digital microscopes and data collection tools",
+        "Environmental monitoring software and apps"
+      ]
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements.",
+      "duration": "10 minutes",
+      "materials": [
+        "Reflection journals",
+        "Cultural connection prompts",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "safety": {
+    "considerations": "Follow all school safety protocols, ensure cultural protocols are respected, and provide appropriate supervision",
+    "equipment": "Check all equipment before use, ensure proper handling of cultural materials, and maintain respectful environment"
+  },
+  "enrichedAt": "2025-09-08T12:42:47.419Z",
+  "enrichedBy": "Aronui_Pūtaiao"
 }

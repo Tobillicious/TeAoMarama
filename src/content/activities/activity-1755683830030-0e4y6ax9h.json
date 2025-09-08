@@ -1,16 +1,17 @@
 {
   "id": "activity-1755683830030-0e4y6ax9h",
-  "title": "Year 8 Mathematics: Indigenous Perspectives Discussion",
+  "title": "Year 8 Mathematics: Indigenous Perspectives Discussion - Interactive Learning Experience",
   "type": "activity",
   "subject": "Mathematics",
   "yearLevel": "Year 8",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Connecting mathematical activities to the local environment of Mangakōtukutuku College and Ngāti Kahungunu traditions through hands-on, practical applications.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Engage in hands-on mathematics activities through cultural and local context",
+    "Apply traditional knowledge and modern methods to mathematics challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in mathematics contexts"
   ],
   "activities": [
     "Cultural mapping and mathematics analysis",
@@ -21,19 +22,80 @@
     "Cultural artifact study through mathematics lens"
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Local kaumātua for traditional measurement knowledge",
+    "Interactive mathematical tools and manipulatives",
+    "Cultural measurement references and traditional methods",
+    "Digital mapping software and calculators",
+    "Local environmental data and statistics"
   ],
-  "assessment": "Community engagement reflection on mathematics applications",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "45-60 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics: Number and Algebra (Level 4-5)",
+    "Mathematics and Statistics: Geometry and Measurement (Level 4-5)",
+    "Te Tiriti o Waitangi: Kaitiakitanga and environmental stewardship"
   ],
-  "createdAt": "2025-08-20T09:57:10.030Z"
+  "createdAt": "2025-08-20T09:57:10.030Z",
+  "activityType": "Interactive Workshop",
+  "groupSize": "Small groups (4-6 students)",
+  "activitySteps": [
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment.",
+      "duration": "10 minutes",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets"
+      ]
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will engage in traditional Māori measurement techniques alongside modern mathematical tools, connecting to local landmarks and cultural significance through interactive exploration.",
+      "duration": "25 minutes",
+      "materials": [
+        "Local kaumātua for traditional measurement knowledge",
+        "Interactive mathematical tools and manipulatives",
+        "Cultural measurement references and traditional methods"
+      ]
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of mathematics concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community.",
+      "duration": "15 minutes",
+      "materials": [
+        "Digital mapping software and calculators",
+        "Local environmental data and statistics"
+      ]
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements.",
+      "duration": "10 minutes",
+      "materials": [
+        "Reflection journals",
+        "Cultural connection prompts",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "safety": {
+    "considerations": "Follow all school safety protocols, ensure cultural protocols are respected, and provide appropriate supervision",
+    "equipment": "Check all equipment before use, ensure proper handling of cultural materials, and maintain respectful environment"
+  },
+  "enrichedAt": "2025-09-08T12:41:54.056Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }
