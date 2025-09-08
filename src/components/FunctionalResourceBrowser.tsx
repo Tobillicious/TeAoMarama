@@ -1,0 +1,983 @@
+import {
+  Bookmark,
+  BookOpen,
+  ChevronRight,
+  Download,
+  FileText,
+  Play,
+  Search,
+  Target,
+  Users,
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { buildComprehensiveResourceLibrary, type RealResource } from '../utils/comprehensive-resource-builder';
+
+// Use the real resource interface
+type Resource = RealResource & {
+  content?: string;
+  duration?: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  tags?: string[];
+};
+
+const FunctionalResourceBrowser: React.FC = () => {
+  const [resources, setResources] = useState<Resource[]>([]);
+  const [filteredResources, setFilteredResources] = useState<Resource[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedSubject, setSelectedSubject] = useState('all');
+  const [selectedYear, setSelectedYear] = useState('all');
+  const [selectedType, setSelectedType] = useState('all');
+  const [loading, setLoading] = useState(true);
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Load comprehensive resources
+  useEffect(() => {
+    const loadResources = async () => {
+      setLoading(true);
+      try {
+        // Build the comprehensive resource library (5,000+ resources)
+        const comprehensiveResources = await buildComprehensiveResourceLibrary();
+
+        // Convert to our Resource format
+        const resources: Resource[] = comprehensiveResources.map((resource) => ({
+          ...resource,
+          duration: '45-60 min',
+          difficulty: resource.yearLevel.includes('7')
+            ? 'beginner'
+            : resource.yearLevel.includes('8')
+            ? 'intermediate'
+            : 'advanced',
+          tags: [resource.subject, resource.yearLevel, resource.type],
+        }));
+
+        setResources(resources);
+        setFilteredResources(resources);
+        console.log(`🎉 Loaded ${resources.length} comprehensive educational resources`);
+      } catch (error) {
+        console.error('Error loading comprehensive resources:', error);
+        // Fallback to sample resources
+        setResources(sampleResources);
+        setFilteredResources(sampleResources);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadResources();
+  }, []);
+
+  // Sample fallback data (kept for reference)
+  const sampleResources: Resource[] = [
+    {
+      id: '1',
+      title: 'Te Reo Māori Greetings & Introductions',
+      subject: 'Language Arts',
+      yearLevel: 'Year 7-8',
+      type: 'lesson',
+      description:
+        'Learn traditional Māori greetings, introductions, and cultural protocols for meeting new people.',
+      content: `# Te Reo Māori Greetings & Introductions
+
+## Learning Objectives
+- Master basic Māori greetings and farewells
+- Understand cultural protocols for introductions
+- Practice pronunciation and intonation
+
+## Vocabulary
+- **Kia ora** - Hello/Good health
+- **Tēnā koe** - Hello (formal, to one person)
+- **Tēnā kōrua** - Hello (to two people)
+- **Tēnā koutou** - Hello (to three or more people)
+- **Haere mai** - Welcome
+- **Haere rā** - Goodbye (to someone leaving)
+
+## Cultural Context
+Traditional greetings in Māori culture carry deep meaning and respect...`,
+      culturalElements: 5,
+      duration: '45 mins',
+      difficulty: 'beginner',
+      tags: ['te-reo', 'greetings', 'cultural-protocols', 'pronunciation'],
+      path: '/resources/te-reo/greetings-introductions',
+    },
+    {
+      id: '2',
+      title: 'Māori Perspectives in Science: Native Plants',
+      subject: 'Science',
+      yearLevel: 'Year 9',
+      type: 'lesson',
+      description:
+        'Explore native Aotearoa plant adaptation through traditional Māori knowledge and modern scientific understanding.',
+      content: `# Native Plant Adaptation in Aotearoa Ecosystems
+
+## Māori Knowledge Integration
+Traditional understanding of native plants and their ecological relationships...
+
+## Scientific Concepts
+- Plant adaptation strategies
+- Ecosystem interactions
+- Climate influence on evolution
+
+## Featured Plants
+- **Kākaho (Toetoe grass)** - Adaptation to wetlands
+- **Pōhutukawa** - Coastal environment specialist
+- **Rimu** - Ancient forest ecosystem indicator`,
+      culturalElements: 4,
+      duration: '60 mins',
+      difficulty: 'intermediate',
+      tags: ['science', 'ecology', 'native-plants', 'traditional-knowledge'],
+      path: '/resources/science/native-plants-adaptation',
+    },
+    {
+      id: '3',
+      title: 'Traditional Māori Architecture: Ratios & Proportions',
+      subject: 'Mathematics',
+      yearLevel: 'Year 8',
+      type: 'handout',
+      description:
+        'Discover mathematical concepts through the study of traditional Māori building techniques and proportional relationships.',
+      content: `# Ratios and Proportions in Traditional Māori Architecture
+
+## Mathematical Concepts
+Explore ratios, proportions, and geometric relationships in traditional buildings...
+
+## Cultural Architecture
+- **Wharenui** - Meeting house proportions
+- **Whare** - Traditional dwelling ratios
+- **Palisade structures** - Defensive architecture geometry
+
+## Activities
+1. Measure and calculate ratios in architectural photos
+2. Design scaled models using traditional proportions
+3. Compare with modern architectural principles`,
+      culturalElements: 5,
+      duration: '50 mins',
+      difficulty: 'intermediate',
+      tags: ['mathematics', 'architecture', 'ratios', 'cultural-design'],
+      path: '/resources/mathematics/traditional-architecture',
+    },
+    {
+      id: '4',
+      title: 'Economics of Pre-Colonial Aotearoa',
+      subject: 'Social Studies',
+      yearLevel: 'Year 10',
+      type: 'activity',
+      description:
+        'Interactive exploration of traditional Māori economic systems, trade networks, and resource management.',
+      content: `# Economic Systems in Pre-Colonial Aotearoa
+
+## Traditional Economic Principles
+Understanding how Māori communities organized economic life...
+
+## Key Concepts
+- **Taonga** - Treasures and valuable resources
+- **Utu** - Balance and reciprocity
+- **Manaakitanga** - Hospitality and care for others
+- **Whakapapa** - Genealogical connections to resources
+
+## Trade Networks
+Explore how different iwi traded resources across Aotearoa...
+
+## Activities
+1. Map traditional trade routes
+2. Role-play resource exchange scenarios
+3. Compare with modern economic systems`,
+      culturalElements: 4,
+      duration: '75 mins',
+      difficulty: 'advanced',
+      tags: ['social-studies', 'economics', 'trade', 'traditional-systems'],
+      path: '/resources/social-studies/pre-colonial-economics',
+    },
+    {
+      id: '5',
+      title: 'Statistics Using New Zealand Census Data',
+      subject: 'Mathematics',
+      yearLevel: 'Year 9',
+      type: 'assessment',
+      description:
+        'Apply statistical analysis to real New Zealand census data, exploring demographic trends and cultural insights.',
+      content: `# Statistics Using New Zealand Census Data
+
+## Assessment Overview
+Students will analyze real census data to understand statistical concepts...
+
+## Data Sets
+- Population demographics by region
+- Language use across communities
+- Cultural identity statistics
+- Educational attainment trends
+
+## Statistical Skills
+1. Data collection and organization
+2. Graphical representation
+3. Measures of central tendency
+4. Interpretation and analysis
+
+## Cultural Connections
+How statistics help us understand cultural diversity in Aotearoa...`,
+      culturalElements: 3,
+      duration: '90 mins',
+      difficulty: 'intermediate',
+      tags: ['mathematics', 'statistics', 'census-data', 'demographics'],
+      path: '/resources/mathematics/census-statistics',
+    },
+  ];
+
+
+  useEffect(() => {
+    const filtered = resources.filter((resource) => {
+      const matchesSearch =
+        resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        resource.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+
+      const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
+      const matchesYear = selectedYear === 'all' || resource.yearLevel.includes(selectedYear);
+      const matchesType = selectedType === 'all' || resource.type === selectedType;
+
+      return matchesSearch && matchesSubject && matchesYear && matchesType;
+    });
+
+    setFilteredResources(filtered);
+  }, [searchTerm, selectedSubject, selectedYear, selectedType, resources]);
+
+  const subjects = ['all', ...Array.from(new Set(resources.map((r) => r.subject)))];
+  const yearLevels = ['all', 'Year 7', 'Year 8', 'Year 9', 'Year 10'];
+  const types = ['all', 'lesson', 'handout', 'activity', 'assessment'];
+
+  const getTypeIcon = (type: string) => {
+    switch (type) {
+      case 'lesson':
+        return <BookOpen className="w-4 h-4" />;
+      case 'handout':
+        return <FileText className="w-4 h-4" />;
+      case 'activity':
+        return <Play className="w-4 h-4" />;
+      case 'assessment':
+        return <Target className="w-4 h-4" />;
+      default:
+        return <FileText className="w-4 h-4" />;
+    }
+  };
+
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case 'lesson':
+        return '#3b82f6';
+      case 'handout':
+        return '#059669';
+      case 'activity':
+        return '#d97706';
+      case 'assessment':
+        return '#dc2626';
+      default:
+        return '#6b7280';
+    }
+  };
+
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'beginner':
+        return '#10b981';
+      case 'intermediate':
+        return '#f59e0b';
+      case 'advanced':
+        return '#ef4444';
+      default:
+        return '#6b7280';
+    }
+  };
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#f8fafc',
+        }}
+      >
+        <div style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              width: '50px',
+              height: '50px',
+              border: '4px solid #e5e7eb',
+              borderTop: '4px solid #3b82f6',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              margin: '0 auto 16px',
+            }}
+          ></div>
+          <p style={{ color: '#6b7280', fontSize: '1.1rem' }}>
+            Loading 5,000+ comprehensive educational resources...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (selectedResource) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          background: '#f8fafc',
+          fontFamily: 'Inter, system-ui, sans-serif',
+        }}
+      >
+        {/* Resource Viewer Header */}
+        <header
+          style={{
+            background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+            color: 'white',
+            padding: '20px 0',
+            boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)',
+          }}
+        >
+          <div
+            style={{
+              maxWidth: '1200px',
+              margin: '0 auto',
+              padding: '0 24px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div>
+              <button
+                onClick={() => setSelectedResource(null)}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  marginBottom: '12px',
+                }}
+              >
+                ← Back to Resources
+              </button>
+              <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+                {selectedResource.title}
+              </h1>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.9 }}>
+                <span>
+                  {selectedResource.subject} • {selectedResource.yearLevel}
+                </span>
+                <span>⭐ {selectedResource.culturalElements} cultural elements</span>
+                <span>⏱️ {selectedResource.duration}</span>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: 'none',
+                  color: 'white',
+                  padding: '10px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                }}
+              >
+                <Bookmark />
+              </button>
+              <button
+                style={{
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: 'none',
+                  color: 'white',
+                  padding: '10px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                }}
+              >
+                <Download />
+              </button>
+            </div>
+          </div>
+        </header>
+
+        {/* Resource Content */}
+        <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+          <div
+            style={{
+              background: 'white',
+              borderRadius: '12px',
+              padding: '40px',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+              border: '1px solid #e5e7eb',
+            }}
+          >
+            <div style={{ marginBottom: '24px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  marginBottom: '16px',
+                }}
+              >
+                <span
+                  style={{
+                    background: getTypeColor(selectedResource.type) + '20',
+                    color: getTypeColor(selectedResource.type),
+                    padding: '6px 12px',
+                    borderRadius: '20px',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                  }}
+                >
+                  {getTypeIcon(selectedResource.type)}
+                  {selectedResource.type}
+                </span>
+                <span
+                  style={{
+                    background: getDifficultyColor(selectedResource.difficulty) + '20',
+                    color: getDifficultyColor(selectedResource.difficulty),
+                    padding: '6px 12px',
+                    borderRadius: '20px',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                  }}
+                >
+                  {selectedResource.difficulty}
+                </span>
+              </div>
+              <p style={{ fontSize: '1.125rem', color: '#6b7280', lineHeight: '1.6', margin: '0' }}>
+                {selectedResource.description}
+              </p>
+            </div>
+
+            {/* Tags */}
+            <div style={{ marginBottom: '32px' }}>
+              <h3
+                style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: '#374151',
+                  marginBottom: '12px',
+                }}
+              >
+                TAGS
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {selectedResource.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    style={{
+                      background: '#f3f4f6',
+                      color: '#374151',
+                      padding: '4px 12px',
+                      borderRadius: '12px',
+                      fontSize: '0.75rem',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Content */}
+            <div
+              style={{
+                fontSize: '1rem',
+                lineHeight: '1.7',
+                color: '#374151',
+              }}
+            >
+              <pre
+                style={{
+                  fontFamily: 'inherit',
+                  whiteSpace: 'pre-wrap',
+                  margin: '0',
+                  background: '#f8fafc',
+                  padding: '24px',
+                  borderRadius: '8px',
+                  border: '1px solid #e5e7eb',
+                }}
+              >
+                {selectedResource.content}
+              </pre>
+            </div>
+
+            {/* Action Buttons */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '12px',
+                marginTop: '32px',
+                paddingTop: '24px',
+                borderTop: '1px solid #e5e7eb',
+              }}
+            >
+              <button
+                style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <Play className="w-4 h-4" />
+                Start Learning
+              </button>
+              <button
+                style={{
+                  background: 'white',
+                  color: '#374151',
+                  border: '1px solid #d1d5db',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <Users className="w-4 h-4" />
+                Share with Class
+              </button>
+              <button
+                style={{
+                  background: 'white',
+                  color: '#374151',
+                  border: '1px solid #d1d5db',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <Download className="w-4 h-4" />
+                Download PDF
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#f8fafc',
+        fontFamily: 'Inter, system-ui, sans-serif',
+      }}
+    >
+      {/* Header */}
+      <header
+        style={{
+          background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+          color: 'white',
+          padding: '20px 0',
+          boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <h1 style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+            📚 Educational Resource Library
+          </h1>
+          <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
+            Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '5,000+'} culturally-responsive
+            educational resources
+          </p>
+        </div>
+      </header>
+
+      {/* Search and Filters */}
+      <div
+        style={{
+          background: 'white',
+          borderBottom: '1px solid #e5e7eb',
+          padding: '20px 0',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '16px',
+              marginBottom: '16px',
+            }}
+          >
+            <div style={{ position: 'relative' }}>
+              <Search
+                style={{
+                  position: 'absolute',
+                  left: '12px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: '16px',
+                  height: '16px',
+                  color: '#9ca3af',
+                }}
+              />
+              <input
+                type="text"
+                placeholder="Search resources..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '10px 12px 10px 40px',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                }}
+              />
+            </div>
+
+            <select
+              value={selectedSubject}
+              onChange={(e) => setSelectedSubject(e.target.value)}
+              style={{
+                padding: '10px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '0.875rem',
+                background: 'white',
+              }}
+            >
+              {subjects.map((subject) => (
+                <option key={subject} value={subject}>
+                  {subject === 'all' ? 'All Subjects' : subject}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={selectedYear}
+              onChange={(e) => setSelectedYear(e.target.value)}
+              style={{
+                padding: '10px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '0.875rem',
+                background: 'white',
+              }}
+            >
+              {yearLevels.map((year) => (
+                <option key={year} value={year}>
+                  {year === 'all' ? 'All Year Levels' : year}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+              style={{
+                padding: '10px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '0.875rem',
+                background: 'white',
+              }}
+            >
+              {types.map((type) => (
+                <option key={type} value={type}>
+                  {type === 'all' ? 'All Types' : type.charAt(0).toUpperCase() + type.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0' }}>
+              Showing {filteredResources.length} of {resources.length} resources
+            </p>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button
+                onClick={() => setViewMode('grid')}
+                style={{
+                  padding: '8px',
+                  border: '1px solid #d1d5db',
+                  background: viewMode === 'grid' ? '#3b82f6' : 'white',
+                  color: viewMode === 'grid' ? 'white' : '#374151',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                }}
+              >
+                Grid
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                style={{
+                  padding: '8px',
+                  border: '1px solid #d1d5db',
+                  background: viewMode === 'list' ? '#3b82f6' : 'white',
+                  color: viewMode === 'list' ? 'white' : '#374151',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                }}
+              >
+                List
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Resource Grid */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns:
+              viewMode === 'grid' ? 'repeat(auto-fill, minmax(350px, 1fr))' : '1fr',
+            gap: '20px',
+          }}
+        >
+          {filteredResources.map((resource) => (
+            <div
+              key={resource.id}
+              onClick={async () => {
+                setSelectedResource(resource);
+
+                // Use the content that's already available in the comprehensive resource
+                if (resource.content) {
+                  console.log('Using comprehensive resource content for:', resource.title);
+                  setSelectedResource(resource);
+                } else {
+                  // Generate sample content if none exists
+                  const generatedContent = `# ${resource.title}
+
+## Overview
+${resource.description}
+
+## Learning Objectives
+- Understand key concepts related to ${resource.subject}
+- Develop skills appropriate for ${resource.yearLevel}
+- Apply knowledge through practical activities
+
+## Cultural Integration
+This resource incorporates ${resource.culturalElements} cultural elements relevant to Te Ao Māori and Aotearoa New Zealand education.
+
+## Subject Area: ${resource.subject}
+Designed specifically for ${resource.yearLevel} students, this ${resource.type} provides engaging content that respects cultural diversity.
+
+## Activities
+1. Interactive exploration
+2. Collaborative discussion
+3. Practical application
+4. Reflection and assessment
+
+## Resources Needed
+- Standard classroom materials
+- Access to digital resources
+- Culturally appropriate learning spaces
+
+## Assessment Opportunities
+Various formative and summative assessment options are embedded throughout this resource.`;
+
+                  setSelectedResource({
+                    ...resource,
+                    content: generatedContent,
+                  });
+                }
+              }}
+              style={{
+                background: 'white',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '20px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+                e.currentTarget.style.borderColor = '#3b82f6';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#e5e7eb';
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                  marginBottom: '12px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span
+                    style={{
+                      background: getTypeColor(resource.type) + '20',
+                      color: getTypeColor(resource.type),
+                      padding: '4px 8px',
+                      borderRadius: '12px',
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                    }}
+                  >
+                    {getTypeIcon(resource.type)}
+                    {resource.type}
+                  </span>
+                  <span
+                    style={{
+                      background: getDifficultyColor(resource.difficulty) + '20',
+                      color: getDifficultyColor(resource.difficulty),
+                      padding: '4px 8px',
+                      borderRadius: '12px',
+                      fontSize: '0.75rem',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {resource.difficulty}
+                  </span>
+                </div>
+                <button
+                  style={{
+                    background: 'rgba(59, 130, 246, 0.1)',
+                    border: 'none',
+                    color: '#3b82f6',
+                    padding: '6px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              <h3
+                style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: '#1f2937',
+                  margin: '0 0 8px 0',
+                }}
+              >
+                {resource.title}
+              </h3>
+
+              <p
+                style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  margin: '0 0 12px 0',
+                  lineHeight: '1.4',
+                }}
+              >
+                {resource.description}
+              </p>
+
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  fontSize: '0.75rem',
+                  color: '#9ca3af',
+                  marginBottom: '12px',
+                }}
+              >
+                <span>
+                  {resource.subject} • {resource.yearLevel}
+                </span>
+                <span>⭐ {resource.culturalElements} cultural elements</span>
+                <span>⏱️ {resource.duration}</span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {resource.tags.slice(0, 3).map((tag, index) => (
+                  <span
+                    key={index}
+                    style={{
+                      background: '#f3f4f6',
+                      color: '#6b7280',
+                      padding: '2px 8px',
+                      borderRadius: '10px',
+                      fontSize: '0.7rem',
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+                {resource.tags.length > 3 && (
+                  <span
+                    style={{
+                      color: '#9ca3af',
+                      fontSize: '0.7rem',
+                      padding: '2px 8px',
+                    }}
+                  >
+                    +{resource.tags.length - 3} more
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredResources.length === 0 && (
+          <div
+            style={{
+              textAlign: 'center',
+              padding: '60px 20px',
+              color: '#6b7280',
+            }}
+          >
+            <FileText
+              style={{ width: '48px', height: '48px', margin: '0 auto 16px', opacity: 0.5 }}
+            />
+            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0 0 8px 0' }}>
+              No resources found
+            </h3>
+            <p style={{ margin: '0' }}>
+              Try adjusting your search terms or filters to find what you're looking for.
+            </p>
+          </div>
+        )}
+      </main>
+    </div>
+  );
+};
+
+export default FunctionalResourceBrowser;

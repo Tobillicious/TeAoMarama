@@ -1,39 +1,55 @@
 {
   "id": "lesson-1755683050320-kx0h5pfja",
-  "title": "Year 10 Mathematics: Traditional Methods and Practices",
+  "title": "Year 10 Mathematics: Traditional Methods and Practices - Enhanced by Pāngarau_Kaitiaki",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 10",
-  "culturalContext": "Environmental conservation and kaitiakitanga",
+  "culturalContext": "Connecting mathematical concepts to the local environment of Mangakōtukutuku College and Ngāti Kahungunu traditions.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
+    "Develop deep understanding of mathematics concepts through cultural context",
     "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Connect learning to local environment and community",
+    "Demonstrate respect for Māori and Pacific perspectives"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge and connections to the topic."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will measure and map the school grounds using traditional Māori measurement techniques alongside modern mathematical tools."
+    },
+    {
+      "title": "Hands-on Learning",
+      "description": "Practical application of mathematics concepts using both traditional and modern methods."
+    },
+    {
+      "title": "Reflection and Sharing",
+      "description": "Students reflect on their learning and share insights with the class, connecting to cultural values."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Local kaumātua for traditional measurement knowledge",
+    "Surveying equipment",
+    "Historical maps of the area",
+    "Digital mapping software"
   ],
-  "assessment": "Environmental impact assessment using mathematics frameworks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities and discussions",
+      "Summative: Student presentation demonstrating understanding and cultural connection"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics: Level 10 achievement objectives",
+    "Te Tiriti o Waitangi: Cultural responsiveness and partnership",
+    "Key Competencies: Thinking, relating to others, using language and symbols"
   ],
-  "createdAt": "2025-08-20T09:44:10.320Z"
+  "createdAt": "2025-08-20T09:44:10.320Z",
+  "enrichedAt": "2025-09-08T12:18:49.118Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

@@ -12,44 +12,67 @@ const SimpleNavigation: React.FC = () => {
 
   const mainLinks = [
     { to: '/', label: 'Home', icon: '🏠' },
-    { to: '/quality-lessons', label: 'Quality Lessons', icon: '⭐' },
+    { to: '/teacher', label: 'TEACHER DASHBOARD', icon: '👨‍🏫', highlight: true },
+    {
+      to: '/student',
+      label: 'STUDENT DASHBOARD',
+      icon: '👨‍🎓',
+      highlight: true,
+      highlightColor: '#059669',
+    },
+    {
+      to: '/resources',
+      label: 'RESOURCES BROWSER',
+      icon: '📚',
+      highlight: true,
+      highlightColor: '#7c3aed',
+    },
     { to: '/cultural-learning-modules', label: 'Cultural Learning', icon: '🌿' },
-    { to: '/educational-platform', label: 'Educational Platform', icon: '📚' },
-    { to: '/te-kete-ako-resources', label: 'TeKeteAko Resources', icon: '📖' },
     { to: '/advanced-analytics', label: 'Analytics', icon: '📊' },
+    {
+      to: '/test-resources',
+      label: 'TEST RESOURCES',
+      icon: '🧪',
+      highlight: true,
+      highlightColor: '#f59e0b',
+    },
   ];
 
   return (
-    <nav style={{ 
-      background: 'linear-gradient(135deg, #1e3a8a 0%, #059669 100%)', 
-      padding: '0.5rem 1rem',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      flexWrap: 'wrap',
-      gap: '0.5rem'
-    }}>
+    <nav
+      style={{
+        background: 'linear-gradient(135deg, #1e3a8a 0%, #059669 100%)',
+        padding: '0.5rem 1rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '0.5rem',
+      }}
+    >
       {/* Logo */}
-      <Link 
-        to="/" 
-        style={{ 
-          color: 'white', 
-          textDecoration: 'none', 
-          fontSize: '1.2rem', 
+      <Link
+        to="/"
+        style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.2rem',
           fontWeight: 'bold',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
         }}
       >
         🌟 Te Kura o TeAoMarama
       </Link>
 
       {/* Navigation Links */}
-      <div style={{ 
-        display: 'flex', 
-        gap: '0.5rem', 
-        alignItems: 'center',
-        flexWrap: 'wrap'
-      }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
         {mainLinks.map((link) => (
           <Link
             key={link.to}
@@ -59,20 +82,49 @@ const SimpleNavigation: React.FC = () => {
               textDecoration: 'none',
               padding: '0.4rem 0.8rem',
               borderRadius: '0.375rem',
-              background: location.pathname === link.to ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              fontSize: '0.875rem',
+              background: link.highlight
+                ? link.highlightColor || '#dc2626'
+                : location.pathname === link.to
+                ? 'rgba(255, 255, 255, 0.2)'
+                : 'rgba(255, 255, 255, 0.1)',
+              border: link.highlight
+                ? `2px solid ${
+                    link.highlightColor === '#059669'
+                      ? '#10b981'
+                      : link.highlightColor === '#7c3aed'
+                      ? '#8b5cf6'
+                      : link.highlightColor === '#f59e0b'
+                      ? '#fbbf24'
+                      : '#fbbf24'
+                  }`
+                : '1px solid rgba(255, 255, 255, 0.2)',
+              fontSize: link.highlight ? '0.75rem' : '0.875rem',
+              fontWeight: link.highlight ? 'bold' : 'normal',
               whiteSpace: 'nowrap',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.25rem',
-              transition: 'background-color 0.2s'
+              transition: 'all 0.2s',
+              boxShadow: link.highlight
+                ? `0 4px 8px ${
+                    link.highlightColor === '#059669'
+                      ? 'rgba(5, 150, 105, 0.3)'
+                      : link.highlightColor === '#7c3aed'
+                      ? 'rgba(124, 58, 237, 0.3)'
+                      : link.highlightColor === '#f59e0b'
+                      ? 'rgba(245, 158, 11, 0.3)'
+                      : 'rgba(220, 38, 38, 0.3)'
+                  }`
+                : 'none',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = location.pathname === link.to ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.background =
+                location.pathname === link.to
+                  ? 'rgba(255, 255, 255, 0.2)'
+                  : 'rgba(255, 255, 255, 0.1)';
             }}
           >
             <span>{link.icon}</span>
@@ -82,17 +134,21 @@ const SimpleNavigation: React.FC = () => {
 
         {/* Auth Section */}
         {isAuthenticated && currentUser ? (
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '0.5rem',
-            marginLeft: '0.5rem'
-          }}>
-            <span style={{ 
-              color: 'white', 
-              fontSize: '0.875rem',
-              opacity: 0.9
-            }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              marginLeft: '0.5rem',
+            }}
+          >
+            <span
+              style={{
+                color: 'white',
+                fontSize: '0.875rem',
+                opacity: 0.9,
+              }}
+            >
               {currentUser.role === 'teacher' ? '👨‍🏫' : '👨‍🎓'} {currentUser.name || currentUser.email}
             </span>
             <button
@@ -104,7 +160,7 @@ const SimpleNavigation: React.FC = () => {
                 padding: '0.4rem 0.8rem',
                 borderRadius: '0.375rem',
                 fontSize: '0.875rem',
-                cursor: 'pointer'
+                cursor: 'pointer',
               }}
             >
               Logout
@@ -121,7 +177,7 @@ const SimpleNavigation: React.FC = () => {
               borderRadius: '0.375rem',
               fontSize: '0.875rem',
               textDecoration: 'none',
-              marginLeft: '0.5rem'
+              marginLeft: '0.5rem',
             }}
           >
             Sign In

@@ -175,6 +175,24 @@ const ComprehensiveAuthSystem: React.FC = () => {
       
       if (result.success) {
         setSuccess(`Welcome back! Redirecting to your dashboard...`);
+        
+        // Navigate based on role
+        setTimeout(() => {
+          switch (loginForm.role) {
+            case 'teacher':
+              navigate('/teacher-dashboard');
+              break;
+            case 'student':
+              navigate('/student-dashboard');
+              break;
+            case 'kaitiaki':
+              navigate('/kaitiaki-dashboard');
+              break;
+            default:
+              navigate('/dashboard');
+              break;
+          }
+        }, 1000);
       } else {
         setErrors([result.error || 'Login failed. Please try again.']);
       }
@@ -229,7 +247,12 @@ const ComprehensiveAuthSystem: React.FC = () => {
       });
 
       if (result.success) {
-        setSuccess('Account created successfully! Welcome to Te Ao Mārama!');
+        setSuccess('Account created successfully! Welcome to Te Ao Mārama! Redirecting to your dashboard...');
+        
+        // Navigate to student dashboard after signup
+        setTimeout(() => {
+          navigate('/student-dashboard');
+        }, 1500);
       } else {
         setErrors([result.error || 'Failed to create account. Please try again.']);
       }
@@ -277,7 +300,12 @@ const ComprehensiveAuthSystem: React.FC = () => {
       });
 
       if (result.success) {
-        setSuccess('Teacher account created successfully! Welcome to Te Ao Mārama!');
+        setSuccess('Teacher account created successfully! Welcome to Te Ao Mārama! Redirecting to your dashboard...');
+        
+        // Navigate to teacher dashboard after signup
+        setTimeout(() => {
+          navigate('/teacher-dashboard');
+        }, 1500);
       } else {
         setErrors([result.error || 'Failed to create account. Please try again.']);
       }

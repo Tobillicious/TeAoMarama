@@ -1,39 +1,63 @@
 {
   "id": "lesson-1755691703699-mw7ivdau6",
-  "title": "Year 7 Technology: Environmental Impact Assessment",
+  "title": "Year 7 Technology: Environmental Impact Assessment - Enhanced by Hangarau_Kaitiaki",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 7",
-  "culturalContext": "Traditional knowledge and cultural practices",
+  "culturalContext": "Applying technological solutions to real-world challenges while respecting cultural values and environmental sustainability principles.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Develop deep understanding of technology concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to technology challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in technology contexts"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will design and build sustainable technology solutions for local environmental challenges, incorporating Māori design principles and kaitiakitanga values."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of technology concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Digital design software and 3D modeling tools",
+    "Local technology experts and engineers",
+    "Sustainable materials and construction supplies",
+    "Environmental impact assessment tools",
+    "Māori design principles and cultural guidelines"
   ],
-  "assessment": "Sustainability solution design with technology principles",
-  "duration": "2-3 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technology: Technological Practice (Level 4-5)",
+    "Technology: Nature of Technology (Level 4-5)",
+    "Te Tiriti o Waitangi: Sustainable technological development"
   ],
-  "createdAt": "2025-08-20T12:08:23.701Z"
+  "createdAt": "2025-08-20T12:08:23.701Z",
+  "enrichedAt": "2025-09-08T12:26:12.450Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

@@ -161,6 +161,12 @@ const Navigation: React.FC = () => {
           description: 'Achieve superintelligence through collective AI coordination',
         },
         {
+          to: '/claude-integration',
+          label: '🤖 Claude Integration',
+          icon: '🤖',
+          description: 'Ensure Claude Code (PID 89634) utilizes full superintelligence',
+        },
+        {
           to: '/performance-dashboard',
           label: '⚡ Performance Dashboard',
           icon: '⚡',

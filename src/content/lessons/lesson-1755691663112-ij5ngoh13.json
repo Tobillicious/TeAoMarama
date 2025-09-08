@@ -1,39 +1,63 @@
 {
   "id": "lesson-1755691663112-ij5ngoh13",
-  "title": "Year 9 Mathematics: Understanding Cultural Context",
+  "title": "Year 9 Mathematics: Understanding Cultural Context - Enhanced by Pāngarau_Kaitiaki",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 9",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Connecting mathematical concepts to the local environment of Mangakōtukutuku College and Ngāti Kahungunu traditions through practical applications.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Develop deep understanding of mathematics concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to mathematics challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in mathematics contexts"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will measure and map the school grounds using traditional Māori measurement techniques alongside modern mathematical tools, connecting to local landmarks and cultural significance."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of mathematics concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Local kaumātua for traditional measurement knowledge",
+    "Surveying equipment and measuring tools",
+    "Historical maps of the Mangakōtukutuku area",
+    "Digital mapping software and calculators",
+    "Traditional Māori measurement references"
   ],
-  "assessment": "Community engagement reflection on mathematics applications",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics: Number and Algebra (Level 4-5)",
+    "Mathematics and Statistics: Geometry and Measurement (Level 4-5)",
+    "Te Tiriti o Waitangi: Kaitiakitanga and environmental stewardship"
   ],
-  "createdAt": "2025-08-20T12:07:43.112Z"
+  "createdAt": "2025-08-20T12:07:43.112Z",
+  "enrichedAt": "2025-09-08T12:26:12.449Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

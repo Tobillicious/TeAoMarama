@@ -1,39 +1,63 @@
 {
   "id": "lesson-1755684777355-xkqdkjjya",
-  "title": "Year 8 Health & Physical Education: Indigenous Knowledge Systems",
+  "title": "Year 8 Health & Physical Education: Indigenous Knowledge Systems - Enhanced by General_Kaitiaki",
   "type": "lesson",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 8",
-  "culturalContext": "Health and wellbeing in cultural context",
+  "culturalContext": "Developing literacy skills through stories, both traditional pūrākau and contemporary narratives that connect to our local community and cultural heritage.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Develop deep understanding of health & physical education concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to health & physical education challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in health & physical education contexts"
   ],
   "activities": [
-    "Cultural mapping and health & physical education analysis",
-    "Traditional knowledge workshop and health & physical education integration",
-    "Environmental investigation using health & physical education methods",
-    "Community interview project on health & physical education applications",
-    "Sustainability challenge with health & physical education solutions",
-    "Cultural artifact study through health & physical education lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will create digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of health & physical education concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Local storytellers and kaumātua",
+    "Digital storytelling software and tools",
+    "Traditional story collections and pūrākau",
+    "Recording equipment and multimedia devices",
+    "Te Reo Māori language resources"
   ],
-  "assessment": "Environmental impact assessment using health & physical education frameworks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing (Level 4-5)",
+    "English: Speaking, Writing, and Presenting (Level 4-5)",
+    "Te Tiriti o Waitangi: Cultural narratives and perspectives"
   ],
-  "createdAt": "2025-08-20T10:12:57.355Z"
+  "createdAt": "2025-08-20T10:12:57.355Z",
+  "enrichedAt": "2025-09-08T12:25:38.261Z",
+  "enrichedBy": "Aronui_General"
 }

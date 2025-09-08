@@ -10,6 +10,11 @@ import {
 } from './utils/performance-optimizer';
 
 // Simplified imports to avoid Node.js module issues
+import DirectTeacherAccess from './components/DirectTeacherAccess';
+import EnhancedStudentDashboard from './components/EnhancedStudentDashboard';
+import ResourceTestPage from './components/ResourceTestPage';
+import FunctionalResourceBrowser from './components/FunctionalResourceBrowser';
+import StandaloneTeacherDashboard from './components/StandaloneTeacherDashboard';
 import './components/TestRoute.css';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -117,10 +122,18 @@ const TeacherDashboard = lazy(
   () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
 );
 
+const ProfessionalTeacherDashboard = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "professional-teacher-dashboard" */ './components/ProfessionalTeacherDashboard'
+    ),
+);
+
 const KaitiakiDashboard = lazy(
   () => import(/* webpackChunkName: "kaitiaki-dashboard" */ './components/KaitiakiDashboard'),
 );
 
+import ClaudeIntegrationDashboard from './components/ClaudeIntegrationDashboard';
 import MultiLLMCoordinationDashboard from './components/MultiLLMCoordinationDashboard';
 import MultiLLMPerformanceDashboard from './components/MultiLLMPerformanceDashboard';
 
@@ -166,10 +179,10 @@ const UnitDetail = lazy(
   () => import(/* webpackChunkName: "unit-detail" */ './components/UnitDetail'),
 );
 
-const TeKeteAkoResourceExplorer = lazy(
-  () =>
-    import(/* webpackChunkName: "te-kete-ako-explorer" */ './components/TeKeteAkoResourceExplorer'),
-);
+// const TeKeteAkoResourceExplorer = lazy(
+//   () =>
+//     import(/* webpackChunkName: "te-kete-ako-explorer" */ './components/TeKeteAkoResourceExplorer'),
+// );
 
 const ProfessionalLessonTemplate = lazy(
   () =>
@@ -228,13 +241,18 @@ function App() {
             <Route path="/login-old" element={<AuthenticationTabs />} />
             <Route path="/login-old" element={<WorkingLogin />} />
             <Route path="/dashboard" element={<RoleBasedRouter />} />
-            <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
-            <Route path="/student-dashboard" element={<StudentDashboard />} />
+            <Route path="/teacher-dashboard" element={<ProfessionalTeacherDashboard />} />
+            <Route path="/teacher" element={<StandaloneTeacherDashboard />} />
+            <Route path="/professional-teacher" element={<ProfessionalTeacherDashboard />} />
+            <Route path="/student-dashboard" element={<EnhancedStudentDashboard />} />
+            <Route path="/student" element={<EnhancedStudentDashboard />} />
             <Route path="/kaitiaki-dashboard" element={<KaitiakiDashboard />} />
             <Route path="/multi-llm-coordination" element={<MultiLLMCoordinationDashboard />} />
             <Route path="/multi-llm-performance" element={<MultiLLMPerformanceDashboard />} />
+            <Route path="/claude-integration" element={<ClaudeIntegrationDashboard />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<DirectTeacherAccess />} />
+            <Route path="/landing" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
             <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
@@ -287,8 +305,11 @@ function App() {
             {/* Unit Detail Routes */}
             <Route path="/unit/:unitId" element={<UnitDetail />} />
             {/* TeKeteAko Resources */}
-            <Route path="/te-kete-ako-resources" element={<TeKeteAkoResourceExplorer />} />
-            <Route path="/resources/te-kete-ako" element={<TeKeteAkoResourceExplorer />} />
+            <Route path="/te-kete-ako-resources" element={<FunctionalResourceBrowser />} />
+            <Route path="/resources" element={<FunctionalResourceBrowser />} />
+            <Route path="/resources/te-kete-ako" element={<FunctionalResourceBrowser />} />
+            <Route path="/resource-browser" element={<FunctionalResourceBrowser />} />
+            <Route path="/test-resources" element={<ResourceTestPage />} />
             {/* Professional Lesson Templates */}
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
             <Route path="/lesson-templates" element={<ProfessionalLessonTemplate />} />
@@ -301,7 +322,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dashboard" element={<StudentDashboard />} />
-            <Route path="/resources" element={<EducationalResources />} />
+            <Route path="/educational-resources" element={<EducationalResources />} />
             <Route path="/diagnostic" element={<DiagnosticCheck />} />
             <Route path="/resource-viewer" element={<ResourceViewer />} />
             {/* StyleGuide route removed - component doesn't exist */}
