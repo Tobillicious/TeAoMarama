@@ -1,16 +1,17 @@
 {
   "id": "assessment-1755688434829-kai2dws8z",
-  "title": "Year 9 Social Studies: Cultural Competency Evaluation",
+  "title": "Year 9 Social Studies: Cultural Competency Evaluation - Authentic Assessment Experience",
   "type": "assessment",
   "subject": "Social Studies",
   "yearLevel": "Year 9",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Assessing understanding of our place in the world through authentic research projects that explore the history, culture, and contemporary issues of Ngāti Kahungunu and the broader Aotearoa context.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Demonstrate mastery of social studies concepts through authentic, culturally-responsive assessment",
+    "Apply traditional knowledge and modern methods to social studies challenges",
+    "Connect assessment tasks to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in social studies assessment contexts"
   ],
   "activities": [
     "Cultural mapping and social studies analysis",
@@ -21,19 +22,84 @@
     "Cultural artifact study through social studies lens"
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Local historians and community elders",
+    "Historical archives and primary sources",
+    "Recording equipment and interview tools",
+    "Digital mapping and timeline software",
+    "Treaty of Waitangi resources and documents"
   ],
   "assessment": "Cultural competency evaluation through social studies projects",
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies: Identity, Culture, and Organisation (Level 4-5)",
+    "Social Studies: Place and Environment (Level 4-5)",
+    "Social Studies: Continuity and Change (Level 4-5)",
+    "Te Tiriti o Waitangi: Historical and contemporary perspectives"
   ],
-  "createdAt": "2025-08-20T11:13:54.829Z"
+  "createdAt": "2025-08-20T11:13:54.829Z",
+  "assessmentType": "Historical Investigation and Presentation",
+  "groupSize": "Individual and small group work",
+  "assessmentTasks": [
+    {
+      "title": "Whakawhanaungatanga: Building Assessment Context",
+      "description": "Begin with karakia and establish cultural protocols. Students reflect on their learning journey, prior knowledge, and personal connections to the assessment topic. Set clear expectations and cultural guidelines.",
+      "duration": "1-2 lessons",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets",
+        "Assessment rubrics"
+      ]
+    },
+    {
+      "title": "Cultural Context and Authentic Application",
+      "description": "Students will conduct an in-depth oral history investigation, interviewing local community members about the history of Mangakōtukutuku, Treaty settlements, and community development, presenting findings through multiple media formats.",
+      "duration": "1-2 weeks",
+      "materials": [
+        "Local historians and community elders",
+        "Historical archives and primary sources",
+        "Recording equipment and interview tools"
+      ]
+    },
+    {
+      "title": "Research and Development Phase",
+      "description": "Students engage in deep research and development of their social studies assessment project, incorporating both traditional and modern approaches while maintaining cultural authenticity.",
+      "duration": "1 week",
+      "materials": [
+        "Digital mapping and timeline software",
+        "Treaty of Waitangi resources and documents"
+      ]
+    },
+    {
+      "title": "Presentation and Cultural Sharing",
+      "description": "Students present their assessment work to peers, teachers, and community members, demonstrating both academic achievement and cultural understanding through respectful sharing and celebration.",
+      "duration": "2-3 lessons",
+      "materials": [
+        "Presentation equipment",
+        "Cultural sharing protocols",
+        "Peer feedback forms",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "assessmentCriteria": {
+    "culturalAuthenticity": "Demonstrates genuine respect for and understanding of Māori and Pacific perspectives",
+    "academicRigor": "Shows mastery of subject-specific knowledge and skills at appropriate year level",
+    "communityConnection": "Clearly connects learning to local community, environment, and cultural context",
+    "communication": "Effectively communicates ideas using appropriate language and cultural protocols",
+    "innovation": "Demonstrates creativity and problem-solving in addressing authentic challenges"
+  },
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "assessmentTools": {
+    "rubrics": "Detailed rubrics aligned with NZC achievement objectives and cultural competencies",
+    "portfolios": "Comprehensive portfolios documenting learning journey and cultural connections",
+    "presentations": "Oral presentations incorporating cultural protocols and community sharing",
+    "reflections": "Regular reflection journals connecting learning to cultural values and community needs"
+  },
+  "enrichedAt": "2025-09-08T12:49:26.885Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

@@ -1,16 +1,17 @@
 {
   "id": "assessment-1755689454044-67oefa4io",
-  "title": "Year 8 Technology: Community Engagement Review",
+  "title": "Year 8 Technology: Community Engagement Review - Authentic Assessment Experience",
   "type": "assessment",
   "subject": "Technology",
   "yearLevel": "Year 8",
-  "culturalContext": "Traditional knowledge and cultural practices",
+  "culturalContext": "Assessing technological solutions through authentic design challenges that address real-world problems while respecting cultural values and environmental sustainability principles.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Demonstrate mastery of technology concepts through authentic, culturally-responsive assessment",
+    "Apply traditional knowledge and modern methods to technology challenges",
+    "Connect assessment tasks to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in technology assessment contexts"
   ],
   "activities": [
     "Cultural mapping and technology analysis",
@@ -21,19 +22,83 @@
     "Cultural artifact study through technology lens"
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Digital design software and 3D modeling tools",
+    "Local technology experts and engineers",
+    "Sustainable materials and construction supplies",
+    "Environmental impact assessment tools",
+    "Māori design principles and cultural guidelines"
   ],
   "assessment": "Traditional knowledge demonstration in technology contexts",
-  "duration": "3-4 weeks",
+  "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technology: Technological Practice (Level 4-5)",
+    "Technology: Nature of Technology (Level 4-5)",
+    "Te Tiriti o Waitangi: Sustainable technological development"
   ],
-  "createdAt": "2025-08-20T11:30:54.044Z"
+  "createdAt": "2025-08-20T11:30:54.044Z",
+  "assessmentType": "Design Challenge and Prototype Development",
+  "groupSize": "Individual and small group work",
+  "assessmentTasks": [
+    {
+      "title": "Whakawhanaungatanga: Building Assessment Context",
+      "description": "Begin with karakia and establish cultural protocols. Students reflect on their learning journey, prior knowledge, and personal connections to the assessment topic. Set clear expectations and cultural guidelines.",
+      "duration": "1-2 lessons",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets",
+        "Assessment rubrics"
+      ]
+    },
+    {
+      "title": "Cultural Context and Authentic Application",
+      "description": "Students will design, develop, and present a sustainable technology solution addressing local environmental challenges, incorporating Māori design principles and kaitiakitanga values through a comprehensive design portfolio.",
+      "duration": "1-2 weeks",
+      "materials": [
+        "Digital design software and 3D modeling tools",
+        "Local technology experts and engineers",
+        "Sustainable materials and construction supplies"
+      ]
+    },
+    {
+      "title": "Research and Development Phase",
+      "description": "Students engage in deep research and development of their technology assessment project, incorporating both traditional and modern approaches while maintaining cultural authenticity.",
+      "duration": "1 week",
+      "materials": [
+        "Environmental impact assessment tools",
+        "Māori design principles and cultural guidelines"
+      ]
+    },
+    {
+      "title": "Presentation and Cultural Sharing",
+      "description": "Students present their assessment work to peers, teachers, and community members, demonstrating both academic achievement and cultural understanding through respectful sharing and celebration.",
+      "duration": "2-3 lessons",
+      "materials": [
+        "Presentation equipment",
+        "Cultural sharing protocols",
+        "Peer feedback forms",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "assessmentCriteria": {
+    "culturalAuthenticity": "Demonstrates genuine respect for and understanding of Māori and Pacific perspectives",
+    "academicRigor": "Shows mastery of subject-specific knowledge and skills at appropriate year level",
+    "communityConnection": "Clearly connects learning to local community, environment, and cultural context",
+    "communication": "Effectively communicates ideas using appropriate language and cultural protocols",
+    "innovation": "Demonstrates creativity and problem-solving in addressing authentic challenges"
+  },
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "assessmentTools": {
+    "rubrics": "Detailed rubrics aligned with NZC achievement objectives and cultural competencies",
+    "portfolios": "Comprehensive portfolios documenting learning journey and cultural connections",
+    "presentations": "Oral presentations incorporating cultural protocols and community sharing",
+    "reflections": "Regular reflection journals connecting learning to cultural values and community needs"
+  },
+  "enrichedAt": "2025-09-08T12:49:29.970Z",
+  "enrichedBy": "Aronui_Hangarau"
 }
