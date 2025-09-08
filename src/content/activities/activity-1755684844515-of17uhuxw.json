@@ -1,16 +1,17 @@
 {
   "id": "activity-1755684844515-of17uhuxw",
-  "title": "Year 10 Health & Physical Education: Cultural Mapping Exercise",
+  "title": "Year 10 Health & Physical Education: Cultural Mapping Exercise - Interactive Learning Experience",
   "type": "activity",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 10",
-  "culturalContext": "Environmental guardianship and kaitiakitanga",
+  "culturalContext": "Developing literacy skills through interactive storytelling activities, combining traditional pūrākau with contemporary narratives that connect to our local community and cultural heritage.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Engage in hands-on health & physical education activities through cultural and local context",
+    "Apply traditional knowledge and modern methods to health & physical education challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in health & physical education contexts"
   ],
   "activities": [
     "Cultural mapping and health & physical education analysis",
@@ -21,19 +22,80 @@
     "Cultural artifact study through health & physical education lens"
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Local storytellers and kaumātua",
+    "Digital storytelling software and tools",
+    "Traditional story collections and pūrākau",
+    "Recording equipment and multimedia devices",
+    "Te Reo Māori language resources and dictionaries"
   ],
-  "assessment": "Traditional knowledge demonstration in health & physical education contexts",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "45-60 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing (Level 4-5)",
+    "English: Speaking, Writing, and Presenting (Level 4-5)",
+    "Te Tiriti o Waitangi: Cultural narratives and perspectives"
   ],
-  "createdAt": "2025-08-20T10:14:04.515Z"
+  "createdAt": "2025-08-20T10:14:04.515Z",
+  "activityType": "Interactive Workshop",
+  "groupSize": "Small groups (4-6 students)",
+  "activitySteps": [
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment.",
+      "duration": "10 minutes",
+      "materials": [
+        "Karakia cards",
+        "Cultural protocol guide",
+        "Student reflection sheets"
+      ]
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will create interactive digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives through collaborative workshops.",
+      "duration": "25 minutes",
+      "materials": [
+        "Local storytellers and kaumātua",
+        "Digital storytelling software and tools",
+        "Traditional story collections and pūrākau"
+      ]
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of health & physical education concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community.",
+      "duration": "15 minutes",
+      "materials": [
+        "Recording equipment and multimedia devices",
+        "Te Reo Māori language resources and dictionaries"
+      ]
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements.",
+      "duration": "10 minutes",
+      "materials": [
+        "Reflection journals",
+        "Cultural connection prompts",
+        "Celebration materials"
+      ]
+    }
+  ],
+  "differentiation": {
+    "support": "Provide additional scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "safety": {
+    "considerations": "Follow all school safety protocols, ensure cultural protocols are respected, and provide appropriate supervision",
+    "equipment": "Check all equipment before use, ensure proper handling of cultural materials, and maintain respectful environment"
+  },
+  "enrichedAt": "2025-09-08T12:42:01.766Z",
+  "enrichedBy": "Aronui_Hanga"
 }
