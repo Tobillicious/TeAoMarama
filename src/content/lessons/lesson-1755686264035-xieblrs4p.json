@@ -1,39 +1,64 @@
 {
   "id": "lesson-1755686264035-xieblrs4p",
-  "title": "Year 9 Science: Sustainable Solutions",
+  "title": "Year 9 Science: Sustainable Solutions - Enhanced by Pūtaiao_Kaitiaki",
   "type": "lesson",
   "subject": "Science",
   "yearLevel": "Year 9",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Exploring scientific principles through the lens of kaitiakitanga and environmental stewardship of our local awa, whenua, and moana.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of science concepts in cultural context",
-    "Apply traditional knowledge to modern science challenges",
-    "Analyze environmental impacts through science frameworks",
-    "Engage with community perspectives on science issues"
+    "Develop deep understanding of science concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to science challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in science contexts"
   ],
   "activities": [
-    "Cultural mapping and science analysis",
-    "Traditional knowledge workshop and science integration",
-    "Environmental investigation using science methods",
-    "Community interview project on science applications",
-    "Sustainability challenge with science solutions",
-    "Cultural artifact study through science lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Field study of the Mangakōtukutuku River ecosystem, analyzing water quality, biodiversity, and environmental health using both scientific methods and traditional ecological knowledge."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of science concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and science resources",
-    "Traditional knowledge holders and science experts",
-    "Environmental monitoring tools and science software",
-    "Community engagement platforms and science forums",
-    "Sustainability assessment frameworks and science models"
+    "Water quality testing kits and scientific equipment",
+    "Local environmental experts and scientists",
+    "Traditional ecological knowledge holders",
+    "Digital microscopes and data collection tools",
+    "Environmental monitoring software"
   ],
-  "assessment": "Kaitiakitanga implementation using science approaches",
-  "duration": "3-4 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Nature of Science: Understanding about science (Level 4-5)",
+    "Living World: Life processes and ecology (Level 4-5)",
+    "Planet Earth and Beyond: Earth systems (Level 4-5)",
+    "Te Tiriti o Waitangi: Environmental kaitiakitanga"
   ],
-  "createdAt": "2025-08-20T10:37:44.036Z"
+  "createdAt": "2025-08-20T10:37:44.036Z",
+  "enrichedAt": "2025-09-08T12:25:45.294Z",
+  "enrichedBy": "Aronui_Pūtaiao"
 }

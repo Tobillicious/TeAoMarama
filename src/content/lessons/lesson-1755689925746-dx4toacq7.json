@@ -1,39 +1,64 @@
 {
   "id": "lesson-1755689925746-dx4toacq7",
-  "title": "Year 10 Social Studies: Guardianship Responsibilities",
+  "title": "Year 10 Social Studies: Guardianship Responsibilities - Enhanced by Tikanga-ā-Iwi_Kaitiaki",
   "type": "lesson",
   "subject": "Social Studies",
   "yearLevel": "Year 10",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Understanding our place in the world through the history, culture, and contemporary issues of Ngāti Kahungunu and the broader Aotearoa context.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Develop deep understanding of social studies concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to social studies challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in social studies contexts"
   ],
   "activities": [
-    "Cultural mapping and social studies analysis",
-    "Traditional knowledge workshop and social studies integration",
-    "Environmental investigation using social studies methods",
-    "Community interview project on social studies applications",
-    "Sustainability challenge with social studies solutions",
-    "Cultural artifact study through social studies lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Oral history project interviewing local community members about the history of Mangakōtukutuku, Treaty settlements, and community development over time."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of social studies concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Local historians and community elders",
+    "Historical archives and primary sources",
+    "Recording equipment and interview tools",
+    "Digital mapping and timeline software",
+    "Treaty of Waitangi resources and documents"
   ],
-  "assessment": "Environmental impact assessment using social studies frameworks",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies: Identity, Culture, and Organisation (Level 4-5)",
+    "Social Studies: Place and Environment (Level 4-5)",
+    "Social Studies: Continuity and Change (Level 4-5)",
+    "Te Tiriti o Waitangi: Historical and contemporary perspectives"
   ],
-  "createdAt": "2025-08-20T11:38:45.746Z"
+  "createdAt": "2025-08-20T11:38:45.746Z",
+  "enrichedAt": "2025-09-08T12:26:03.401Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

@@ -1,39 +1,55 @@
 {
   "id": "lesson-1755683070323-o1aso67db",
-  "title": "Year 7 English: Sustainable Solutions",
+  "title": "Year 7 English: Sustainable Solutions - Enhanced by Te Reo Pākehā_Kaitiaki",
   "type": "lesson",
   "subject": "English",
   "yearLevel": "Year 7",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Developing literacy skills through stories, both traditional pūrākau and contemporary narratives that connect to our local community.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
+    "Develop deep understanding of english concepts through cultural context",
     "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Connect learning to local environment and community",
+    "Demonstrate respect for Māori and Pacific perspectives"
   ],
   "activities": [
-    "Cultural mapping and english analysis",
-    "Traditional knowledge workshop and english integration",
-    "Environmental investigation using english methods",
-    "Community interview project on english applications",
-    "Sustainability challenge with english solutions",
-    "Cultural artifact study through english lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge and connections to the topic."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will create digital stories combining traditional Māori storytelling techniques with modern multimedia tools."
+    },
+    {
+      "title": "Hands-on Learning",
+      "description": "Practical application of english concepts using both traditional and modern methods."
+    },
+    {
+      "title": "Reflection and Sharing",
+      "description": "Students reflect on their learning and share insights with the class, connecting to cultural values."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Local storytellers and kaumātua",
+    "Digital storytelling software",
+    "Traditional story collections",
+    "Recording equipment"
   ],
-  "assessment": "Kaitiakitanga implementation using english approaches",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities and discussions",
+      "Summative: Student presentation demonstrating understanding and cultural connection"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Level 7 achievement objectives",
+    "Te Tiriti o Waitangi: Cultural responsiveness and partnership",
+    "Key Competencies: Thinking, relating to others, using language and symbols"
   ],
-  "createdAt": "2025-08-20T09:44:30.323Z"
+  "createdAt": "2025-08-20T09:44:30.323Z",
+  "enrichedAt": "2025-09-08T12:18:49.621Z",
+  "enrichedBy": "Aronui_Te Reo Pākehā"
 }

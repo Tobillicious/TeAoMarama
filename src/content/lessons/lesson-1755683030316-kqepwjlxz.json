@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755683030316-kqepwjlxz",
-  "title": "Year 8 Mathematics: Understanding Cultural Context",
+  "title": "Year 8 Pāngarau: Te Awa o Mangakōtukutuku - Mapping Our River's Health",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 8",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Kaitiakitanga and the health of our local awa, the Mangakōtukutuku River.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Understand and apply concepts of rate of change to measure water flow.",
+    "Collect, represent, and analyze water quality data (e.g., pH, clarity) using statistical measures.",
+    "Use geometric principles to map the river's course and identify significant locations.",
+    "Connect mathematical findings to the principle of kaitiakitanga and the stories of Ngāti Kahungunu."
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakawhanaungatanga: Our Connection to the Awa",
+      "description": "Begin with a karakia. Guest speaker (kaumātua or local historian) shares pūrākau (stories) about the Mangakōtukutuku. Students share their own experiences with the river."
+    },
+    {
+      "title": "Field Trip: Data Collection at the Awa",
+      "description": "Students visit a safe, accessible point of the river. In groups, they measure the river's width, depth at various points, and the time it takes for a biodegradable object to travel a set distance. They also collect water samples for clarity and pH testing."
+    },
+    {
+      "title": "In-Class Lab: Analyzing Our Findings",
+      "description": "Back in the classroom, students calculate the river's flow rate (m³/s). They test water samples and record the data. Groups create graphs and charts to represent their findings."
+    },
+    {
+      "title": "Mapping Our Awa: Te Reo Pākehā me te Reo Māori",
+      "description": "Using online mapping tools and historical maps, students plot the course of the Mangakōtukutuku. They identify and label significant sites in both Te Reo Māori and English, including former pā sites, fishing spots, and areas of pollution concern."
+    },
+    {
+      "title": "Hui: Presenting Our Kaitiaki Report",
+      "description": "Each group prepares a short presentation of their findings, explaining the mathematical story of the river's health. They propose one action the school community could take to enhance the mauri of the awa."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Local kaumātua from Ngāti Kahungunu.",
+    "Water quality testing kits.",
+    "Measuring tapes, stopwatches, biodegradable floats.",
+    "Online mapping tools (e.g., Google Maps, LINZ).",
+    "Archival maps from the local library or council.",
+    "Video: 'The Mauri of the Mangakōtukutuku' (fictional example)."
   ],
-  "assessment": "Indigenous perspectives integration in mathematics practice",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation of data collection and in-class calculations.",
+      "Summative: The group's 'Kaitiaki Report' presentation, assessed on mathematical accuracy, clarity of communication, and the connection made to cultural values."
+    ]
+  },
+  "duration": "3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics: Statistical investigation (Level 4)",
+    "Mathematics and Statistics: Measurement (Level 4)",
+    "Social Sciences: Place and Environment (Level 4)",
+    "Te Tiriti o Waitangi: Kaitiakitanga"
   ],
-  "createdAt": "2025-08-20T09:43:50.316Z"
+  "createdAt": "2025-08-20T09:43:50.316Z",
+  "enrichedAt": "2025-09-08T14:00:00.000Z",
+  "enrichedBy": "Aronui"
 }

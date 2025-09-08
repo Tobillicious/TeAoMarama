@@ -1,39 +1,63 @@
 {
   "id": "lesson-1755691683349-5n217990h",
-  "title": "Year 9 Arts: Community Engagement",
+  "title": "Year 9 Arts: Community Engagement - Enhanced by General_Kaitiaki",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 9",
-  "culturalContext": "Environmental guardianship and kaitiakitanga",
+  "culturalContext": "Developing literacy skills through stories, both traditional pūrākau and contemporary narratives that connect to our local community and cultural heritage.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Develop deep understanding of arts concepts through cultural and local context",
+    "Apply traditional knowledge and modern methods to arts challenges",
+    "Connect learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in arts contexts"
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Whakawhanaungatanga: Building Connections",
+      "description": "Begin with karakia and introductions. Students share their prior knowledge, experiences, and personal connections to the topic. Establish cultural protocols and respectful learning environment."
+    },
+    {
+      "title": "Cultural Context Exploration",
+      "description": "Students will create digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives."
+    },
+    {
+      "title": "Hands-on Learning and Application",
+      "description": "Practical application of arts concepts using both traditional and modern methods. Students work collaboratively to solve real-world problems connected to their local community."
+    },
+    {
+      "title": "Reflection and Cultural Connection",
+      "description": "Students reflect on their learning journey, connecting new knowledge to cultural values, community needs, and personal growth. Share insights and celebrate achievements."
+    },
+    {
+      "title": "Action and Community Impact",
+      "description": "Students identify ways to apply their learning to benefit their community, family, or local environment. Plan and implement small-scale actions that demonstrate kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local storytellers and kaumātua",
+    "Digital storytelling software and tools",
+    "Traditional story collections and pūrākau",
+    "Recording equipment and multimedia devices",
+    "Te Reo Māori language resources"
   ],
-  "assessment": "Sustainability solution design with arts principles",
-  "duration": "2-3 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Formative: Teacher observation during activities, discussions, and collaborative work",
+      "Formative: Peer feedback and self-reflection on learning progress",
+      "Summative: Student presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing (Level 4-5)",
+    "English: Speaking, Writing, and Presenting (Level 4-5)",
+    "Te Tiriti o Waitangi: Cultural narratives and perspectives"
   ],
-  "createdAt": "2025-08-20T12:08:03.418Z"
+  "createdAt": "2025-08-20T12:08:03.418Z",
+  "enrichedAt": "2025-09-08T12:26:12.449Z",
+  "enrichedBy": "Aronui_General"
 }
