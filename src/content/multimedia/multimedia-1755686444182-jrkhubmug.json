@@ -1,16 +1,17 @@
 {
   "id": "multimedia-1755686444182-jrkhubmug",
-  "title": "Year 10 English: Sustainability Tutorial",
+  "title": "Year 10 English: Sustainability Tutorial - Interactive Multimedia Experience",
   "type": "multimedia",
   "subject": "English",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Creating interactive literacy multimedia that combines traditional pūrākau with contemporary narratives connected to our local community and cultural heritage through engaging digital storytelling experiences.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Engage with interactive english multimedia through cultural and local context",
+    "Apply traditional knowledge and modern methods to english challenges",
+    "Connect multimedia learning to local environment, community, and cultural heritage",
+    "Demonstrate respect for Māori and Pacific perspectives and values",
+    "Use Te Reo Māori appropriately in english multimedia contexts"
   ],
   "activities": [
     "Cultural mapping and english analysis",
@@ -21,19 +22,88 @@
     "Cultural artifact study through english lens"
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Digital storytelling software and platforms",
+    "Traditional story animation tools",
+    "Local legend interactive databases",
+    "Multimedia recording and editing equipment",
+    "Te Reo Māori language learning apps"
   ],
-  "assessment": "Environmental impact assessment using english frameworks",
-  "duration": "3-4 weeks",
+  "assessment": {
+    "type": "Formative and Summative Digital Assessment",
+    "tasks": [
+      "Formative: Teacher observation during interactive multimedia exploration and digital discussions",
+      "Formative: Peer feedback through digital collaboration platforms and self-reflection on learning progress",
+      "Summative: Student digital presentation demonstrating understanding, cultural connection, and community application",
+      "Summative: Digital portfolio of work showing growth in knowledge, skills, and cultural understanding"
+    ]
+  },
+  "duration": "30-45 minutes",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing (Level 4-5)",
+    "English: Speaking, Writing, and Presenting (Level 4-5)",
+    "Te Tiriti o Waitangi: Cultural narratives and perspectives"
   ],
-  "createdAt": "2025-08-20T10:40:44.182Z"
+  "createdAt": "2025-08-20T10:40:44.182Z",
+  "mediaType": "Interactive Digital Storytelling",
+  "interactivity": "High - Student-driven exploration",
+  "multimediaFeatures": [
+    {
+      "title": "Whakawhanaungatanga: Building Digital Connections",
+      "description": "Begin with karakia and establish cultural protocols. Students explore their prior knowledge and personal connections to the multimedia topic through interactive digital interfaces.",
+      "duration": "5-10 minutes",
+      "tools": [
+        "Interactive karakia cards",
+        "Cultural protocol digital guides",
+        "Student reflection digital forms"
+      ]
+    },
+    {
+      "title": "Cultural Context and Interactive Exploration",
+      "description": "Students will create and interact with immersive digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives through collaborative digital workshops.",
+      "duration": "20-25 minutes",
+      "tools": [
+        "Digital storytelling software and platforms",
+        "Traditional story animation tools",
+        "Local legend interactive databases"
+      ]
+    },
+    {
+      "title": "Hands-on Digital Learning and Application",
+      "description": "Interactive application of english concepts using both traditional and modern digital methods. Students work collaboratively in virtual environments to solve real-world problems connected to their local community.",
+      "duration": "10-15 minutes",
+      "tools": [
+        "Multimedia recording and editing equipment",
+        "Te Reo Māori language learning apps"
+      ]
+    },
+    {
+      "title": "Digital Reflection and Cultural Connection",
+      "description": "Students reflect on their digital learning journey through interactive journals, connecting new knowledge to cultural values, community needs, and personal growth through multimedia sharing platforms.",
+      "duration": "5-10 minutes",
+      "tools": [
+        "Interactive reflection journals",
+        "Cultural connection digital prompts",
+        "Digital celebration platforms"
+      ]
+    }
+  ],
+  "technicalRequirements": {
+    "devices": "Tablets, computers, or smartphones with internet access",
+    "software": "Modern web browser with multimedia support",
+    "accessibility": "Screen reader compatible, keyboard navigation support",
+    "bandwidth": "Stable internet connection for interactive content"
+  },
+  "differentiation": {
+    "support": "Provide additional digital scaffolding, visual aids, and one-on-one support for students who need extra help",
+    "extension": "Offer advanced digital challenges, independent research opportunities, and leadership roles for students who excel",
+    "cultural": "Ensure all students can connect to their own cultural backgrounds while learning about Māori perspectives"
+  },
+  "accessibility": {
+    "visual": "High contrast options, text-to-speech, and visual descriptions for all multimedia content",
+    "auditory": "Closed captions, audio descriptions, and visual alternatives for all audio content",
+    "motor": "Keyboard navigation, voice control, and alternative input methods for all interactive elements",
+    "cognitive": "Clear instructions, progress indicators, and multiple ways to access and understand content"
+  },
+  "enrichedAt": "2025-09-08T12:53:54.724Z",
+  "enrichedBy": "Aronui_Te Reo Pākehā"
 }
