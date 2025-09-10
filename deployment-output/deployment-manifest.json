@@ -1,0 +1,15 @@
+{
+  "deploymentId": "deploy-1757513669547",
+  "timestamp": "2025-09-10T14:14:29.547Z",
+  "platform": "firebase",
+  "environment": "production",
+  "resourceCount": 50,
+  "averageQuality": 13.99375646946095,
+  "averageCulturalAuthenticity": 9.22552950450909,
+  "config": {
+    "platform": "firebase",
+    "environment": "production",
+    "skipTests": true,
+    "skipTypeCheck": true
+  }
+}

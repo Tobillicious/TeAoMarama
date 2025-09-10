@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
 import SimpleNavigation from './components/SimpleNavigation';
+import SiteBreadcrumbs from './components/SiteBreadcrumbs';
 import {
   performanceMonitor,
   registerServiceWorker,
@@ -12,8 +13,8 @@ import {
 // Simplified imports to avoid Node.js module issues
 import DirectTeacherAccess from './components/DirectTeacherAccess';
 import EnhancedStudentDashboard from './components/EnhancedStudentDashboard';
-import ResourceTestPage from './components/ResourceTestPage';
 import FunctionalResourceBrowser from './components/FunctionalResourceBrowser';
+import ResourceTestPage from './components/ResourceTestPage';
 import StandaloneTeacherDashboard from './components/StandaloneTeacherDashboard';
 import './components/TestRoute.css';
 import About from './pages/About';
@@ -34,6 +35,7 @@ import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
 import CulturalLearningActivities from './components/CulturalLearningActivities';
 import DemoAccessBanner from './components/DemoAccessBanner';
 import PerformanceDashboard from './components/PerformanceDashboard';
+import SuperIntelligenceCoordinator from './components/SuperIntelligenceCoordinator';
 import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
 
 import AuthenticationTabs from './components/AuthenticationTabs';
@@ -118,9 +120,9 @@ const StudentDashboard = lazy(
   () => import(/* webpackChunkName: "student-dashboard" */ './components/StudentDashboard'),
 );
 
-const TeacherDashboard = lazy(
-  () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
-);
+// const TeacherDashboard = lazy(
+//   () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
+// );
 
 const ProfessionalTeacherDashboard = lazy(
   () =>
@@ -133,9 +135,19 @@ const KaitiakiDashboard = lazy(
   () => import(/* webpackChunkName: "kaitiaki-dashboard" */ './components/KaitiakiDashboard'),
 );
 
+import AdvancedPerformanceMonitoringDashboard from './components/AdvancedPerformanceMonitoringDashboard';
+import AdvancedResourceEnrichment from './components/AdvancedResourceEnrichment';
+import AgentCoordinationDashboard from './components/AgentCoordinationDashboard';
 import ClaudeIntegrationDashboard from './components/ClaudeIntegrationDashboard';
+import CulturalSafetyComplianceDashboard from './components/CulturalSafetyComplianceDashboard';
+import DistributedIntelligenceCoordinator from './components/DistributedIntelligenceCoordinator';
+import KaiakoTeamDashboard from './components/KaiakoTeamDashboard';
 import MultiLLMCoordinationDashboard from './components/MultiLLMCoordinationDashboard';
 import MultiLLMPerformanceDashboard from './components/MultiLLMPerformanceDashboard';
+import ResourceEnrichmentCoordinator from './components/ResourceEnrichmentCoordinator';
+import SocialStudiesSlideshow from './components/SocialStudiesSlideshow';
+import SuperintelligenceEvolutionDashboard from './components/SuperintelligenceEvolutionDashboard';
+import TreasureNavigation from './components/TreasureNavigation';
 
 const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
@@ -158,6 +170,41 @@ const EnhancedContentDiscovery = lazy(
   () =>
     import(
       /* webpackChunkName: "enhanced-content-discovery" */ './components/EnhancedContentDiscovery'
+    ),
+);
+
+const AdvancedResourceDiscovery = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "advanced-resource-discovery" */ './components/AdvancedResourceDiscovery'
+    ),
+);
+
+const IntelligentLessonPlanner = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "intelligent-lesson-planner" */ './components/IntelligentLessonPlanner'
+    ),
+);
+
+const RealTimeTeachingAnalytics = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "realtime-teaching-analytics" */ './components/RealTimeTeachingAnalytics'
+    ),
+);
+
+const ProgressiveEnrichmentDashboard = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "progressive-enrichment-dashboard" */ './components/ProgressiveEnrichmentDashboard'
+    ),
+);
+
+const CulturalIntegrationValidator = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "cultural-integration-validator" */ './components/CulturalIntegrationValidator'
     ),
 );
 
@@ -234,6 +281,7 @@ function App() {
     <div className="App">
       {!isLandingPage && <DemoAccessBanner />}
       {!isLandingPage && <SimpleNavigation />}
+      {!isLandingPage && <SiteBreadcrumbs />}
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
@@ -250,7 +298,49 @@ function App() {
             <Route path="/multi-llm-coordination" element={<MultiLLMCoordinationDashboard />} />
             <Route path="/multi-llm-performance" element={<MultiLLMPerformanceDashboard />} />
             <Route path="/claude-integration" element={<ClaudeIntegrationDashboard />} />
+            <Route path="/agent-coordination" element={<AgentCoordinationDashboard />} />
+            <Route
+              path="/cultural-safety-compliance"
+              element={<CulturalSafetyComplianceDashboard />}
+            />
+            <Route path="/cultural-safety" element={<CulturalSafetyComplianceDashboard />} />
+            <Route path="/tikanga-compliance" element={<CulturalSafetyComplianceDashboard />} />
+            <Route
+              path="/superintelligence-evolution"
+              element={<SuperintelligenceEvolutionDashboard />}
+            />
+            <Route path="/resource-enrichment" element={<ResourceEnrichmentCoordinator />} />
+            <Route path="/advanced-resource-enrichment" element={<AdvancedResourceEnrichment />} />
+            <Route path="/kaiako-team" element={<KaiakoTeamDashboard />} />
+            <Route path="/teaching-team" element={<KaiakoTeamDashboard />} />
+            <Route path="/super-intelligence" element={<SuperIntelligenceCoordinator />} />
             <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
+            <Route
+              path="/advanced-performance-monitoring"
+              element={<AdvancedPerformanceMonitoringDashboard />}
+            />
+            <Route
+              path="/performance-monitoring"
+              element={<AdvancedPerformanceMonitoringDashboard />}
+            />
+            <Route
+              path="/system-performance"
+              element={<AdvancedPerformanceMonitoringDashboard />}
+            />
+            <Route
+              path="/distributed-intelligence"
+              element={<DistributedIntelligenceCoordinator />}
+            />
+            <Route
+              path="/collective-intelligence"
+              element={<DistributedIntelligenceCoordinator />}
+            />
+            <Route
+              path="/superintelligence-coordinator"
+              element={<DistributedIntelligenceCoordinator />}
+            />
+            <Route path="/social-studies-slideshow" element={<SocialStudiesSlideshow />} />
+            <Route path="/slideshow" element={<SocialStudiesSlideshow />} />
             <Route path="/" element={<DirectTeacherAccess />} />
             <Route path="/landing" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
@@ -297,6 +387,24 @@ function App() {
             {/* Enhanced Educational Components */}
             <Route path="/enhanced-content-discovery" element={<EnhancedContentDiscovery />} />
             <Route path="/content-discovery" element={<EnhancedContentDiscovery />} />
+            <Route path="/advanced-resource-discovery" element={<AdvancedResourceDiscovery />} />
+            <Route path="/advanced-discovery" element={<AdvancedResourceDiscovery />} />
+            <Route path="/intelligent-search" element={<AdvancedResourceDiscovery />} />
+            <Route path="/intelligent-lesson-planner" element={<IntelligentLessonPlanner />} />
+            <Route path="/lesson-planner" element={<IntelligentLessonPlanner />} />
+            <Route path="/ai-lesson-planning" element={<IntelligentLessonPlanner />} />
+            <Route path="/realtime-teaching-analytics" element={<RealTimeTeachingAnalytics />} />
+            <Route path="/teaching-analytics" element={<RealTimeTeachingAnalytics />} />
+            <Route path="/live-analytics" element={<RealTimeTeachingAnalytics />} />
+            <Route path="/progressive-enrichment" element={<ProgressiveEnrichmentDashboard />} />
+            <Route path="/multi-agent-coordination" element={<ProgressiveEnrichmentDashboard />} />
+            <Route path="/kaiako-collaboration" element={<ProgressiveEnrichmentDashboard />} />
+            <Route
+              path="/cultural-integration-validator"
+              element={<CulturalIntegrationValidator />}
+            />
+            <Route path="/cultural-validation" element={<CulturalIntegrationValidator />} />
+            <Route path="/tikanga-validation" element={<CulturalIntegrationValidator />} />
             <Route path="/cultural-learning-paths" element={<CulturalLearningPathNavigator />} />
             <Route path="/learning-pathways" element={<CulturalLearningPathNavigator />} />
             <Route path="/interactive-assessments" element={<InteractiveAssessmentSystem />} />
@@ -309,6 +417,8 @@ function App() {
             <Route path="/resources" element={<FunctionalResourceBrowser />} />
             <Route path="/resources/te-kete-ako" element={<FunctionalResourceBrowser />} />
             <Route path="/resource-browser" element={<FunctionalResourceBrowser />} />
+            <Route path="/treasure-navigation" element={<TreasureNavigation />} />
+            <Route path="/treasure-map" element={<TreasureNavigation />} />
             <Route path="/test-resources" element={<ResourceTestPage />} />
             {/* Professional Lesson Templates */}
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />

@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-344",
+  "processedDate": "2025-09-10T13:57:20.548Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-03431",
+      "title": "Year 8 Science: Resource 3431",
+      "subject": "Science",
+      "yearLevel": "Year 8",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 8 Science learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.920274387512585,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.7986870083564,
+        "pedagogicalDepth": 9.18137136984644,
+        "progressiveIndex": 9.78963103189083,
+        "qualityScore": 14.689990498343237,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.397042798968433
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.981670406824207
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.8502244439678308
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.5407784610701811
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-29T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-8"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 85
+      }
+    },
+    {
+      "id": "resource-03432",
+      "title": "Year 9 Science: Resource 3432",
+      "subject": "Science",
+      "yearLevel": "Year 9",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 9 Science learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.474087618094518,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.204310000304101,
+        "pedagogicalDepth": 9.107634037917755,
+        "progressiveIndex": 9.228432069405791,
+        "qualityScore": 14.382881581834818,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.246212532364107
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.018865443508747
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.84899054390401
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.7947254439634366
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-19T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-9"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 69
+      }
+    },
+    {
+      "id": "resource-03433",
+      "title": "Year 11 Science: Resource 3433",
+      "subject": "Science",
+      "yearLevel": "Year 11",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 11 Science learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.091891770853701,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.4632772872613,
+        "pedagogicalDepth": 9.82557917710974,
+        "progressiveIndex": 9.156832971330191,
+        "qualityScore": 14.313404198674608,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.438519178751312
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.2939617738682347
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.946349440356232
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.5426820348451287
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-16T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-11"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 51
+      }
+    },
+    {
+      "id": "resource-03434",
+      "title": "Year 7 Science: Resource 3434",
+      "subject": "Science",
+      "yearLevel": "Year 7",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 7 Science learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.66548132812983,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.450666354916848,
+        "pedagogicalDepth": 9.410846276483936,
+        "progressiveIndex": 9.725176377452811,
+        "qualityScore": 14.821693188886165,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.4548207211737587
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.1571957457217343
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.8116471026260261
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.7325482912348158
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-13T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-7"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 59
+      }
+    },
+    {
+      "id": "resource-03435",
+      "title": "Year 12 Science: Resource 3435",
+      "subject": "Science",
+      "yearLevel": "Year 12",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 12 Science learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.339297776238942,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.142268992544391,
+        "pedagogicalDepth": 9.776552320668225,
+        "progressiveIndex": 8.718267184449724,
+        "qualityScore": 13.853357784320103,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.0842716324389032
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.0135566229502118
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.6609896468289196
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.7552421058631253
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-18T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 54
+      }
+    },
+    {
+      "id": "resource-03436",
+      "title": "Year 8 Science: Resource 3436",
+      "subject": "Science",
+      "yearLevel": "Year 8",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 8 Science learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.821084106798084,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.579669503287079,
+        "pedagogicalDepth": 8.719954365237719,
+        "progressiveIndex": 9.055388706047436,
+        "qualityScore": 14.72463293369195,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.1544146955878816
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.297533534875225
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.8429771135935644
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.6086234828371966
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-05T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-8"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 144
+      }
+    },
+    {
+      "id": "resource-03437",
+      "title": "Year 9 Science: Resource 3437",
+      "subject": "Science",
+      "yearLevel": "Year 9",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 9 Science learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.731486530410303,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.611912330912343,
+        "pedagogicalDepth": 8.722671672399718,
+        "progressiveIndex": 9.225249882000536,
+        "qualityScore": 13.099980114325028,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.2691995470268234
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.1702777872173864
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.5084444396373136
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.4205718100332005
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-11-22T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-9"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 121
+      }
+    },
+    {
+      "id": "resource-03438",
+      "title": "Year 12 Science: Resource 3438",
+      "subject": "Science",
+      "yearLevel": "Year 12",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 12 Science learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.647568376161869,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.082794273935606,
+        "pedagogicalDepth": 9.407030699446178,
+        "progressiveIndex": 9.221187716122214,
+        "qualityScore": 14.014098413928034,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.026183266339788
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.8490324757371983
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.9413843130462056
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.5499299826429735
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-07-23T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 56
+      }
+    },
+    {
+      "id": "resource-03439",
+      "title": "Year 9 Science: Resource 3439",
+      "subject": "Science",
+      "yearLevel": "Year 9",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 9 Science learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.62218479707874,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.253665287469268,
+        "pedagogicalDepth": 8.827103401070014,
+        "progressiveIndex": 9.477800023911913,
+        "qualityScore": 14.28074529603277,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.454720618444065
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.9489824577030719
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.6176479218213542
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.6372095009855379
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-12-10T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-9"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 134
+      }
+    },
+    {
+      "id": "resource-03440",
+      "title": "Year 7 Science: Resource 3440",
+      "subject": "Science",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Science learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.629289398418507,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.173489505603712,
+        "pedagogicalDepth": 9.795248797096317,
+        "progressiveIndex": 9.62851788434254,
+        "qualityScore": 13.986011606900844,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.3041734720018536
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 2.278341387982408
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.9208964538211268
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:20.548Z",
+            "qualityImprovement": 1.8533108946769477
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-07T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:20.548Z",
+        "tags": [
+          "science",
+          "year-7"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 53
+      }
+    }
+  ]
+}

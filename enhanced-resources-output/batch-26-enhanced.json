@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-26",
+  "processedDate": "2025-09-10T13:56:46.362Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-00251",
+      "title": "Year 12 Social Studies: Resource 251",
+      "subject": "Social Studies",
+      "yearLevel": "Year 12",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 12 Social Studies learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.903805354763115,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.027299555946119,
+        "pedagogicalDepth": 9.615041171046624,
+        "progressiveIndex": 8.716678100136836,
+        "qualityScore": 14.76701843319071,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.4617842776809455
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.914130572627737
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.6679992377778334
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8192989903410792
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-09T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-12"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 55
+      }
+    },
+    {
+      "id": "resource-00252",
+      "title": "Year 11 Social Studies: Resource 252",
+      "subject": "Social Studies",
+      "yearLevel": "Year 11",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 11 Social Studies learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.0344069447308675,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.594483627659484,
+        "pedagogicalDepth": 9.757537738736694,
+        "progressiveIndex": 9.297057549698009,
+        "qualityScore": 14.277111970068404,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.345262120114359
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.244290784950351
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.9140600264687548
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.739092093804071
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-03-11T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-11"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 110
+      }
+    },
+    {
+      "id": "resource-00253",
+      "title": "Year 13 Social Studies: Resource 253",
+      "subject": "Social Studies",
+      "yearLevel": "Year 13",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 13 Social Studies learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.707769662275726,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.762224537426457,
+        "pedagogicalDepth": 9.501149660416669,
+        "progressiveIndex": 9.482349726881363,
+        "qualityScore": 13.231933474894749,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.261094800014037
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8851495950932515
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.5736564722616038
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8042629452501306
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-08-21T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-13"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 90
+      }
+    },
+    {
+      "id": "resource-00254",
+      "title": "Year 11 Social Studies: Resource 254",
+      "subject": "Social Studies",
+      "yearLevel": "Year 11",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 11 Social Studies learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.741760424980054,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.930030710869682,
+        "pedagogicalDepth": 9.833755577726558,
+        "progressiveIndex": 9.306770494755362,
+        "qualityScore": 14.630543374811445,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.417694023025085
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.9228928744309015
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.7228147744068547
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8253812779685505
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-26T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-11"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 121
+      }
+    },
+    {
+      "id": "resource-00255",
+      "title": "Year 12 Social Studies: Resource 255",
+      "subject": "Social Studies",
+      "yearLevel": "Year 12",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 12 Social Studies learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.088575464611107,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.120341612647227,
+        "pedagogicalDepth": 8.69382760211983,
+        "progressiveIndex": 8.820502786763067,
+        "qualityScore": 13.376441788323051,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.0319135473748187
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.9030124233447239
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.5529979615916347
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.7999423914007675
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-18T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-12"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 94
+      }
+    },
+    {
+      "id": "resource-00256",
+      "title": "Year 10 Social Studies: Resource 256",
+      "subject": "Social Studies",
+      "yearLevel": "Year 10",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 10 Social Studies learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.822287506730297,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.147414741505045,
+        "pedagogicalDepth": 9.309140210680779,
+        "progressiveIndex": 9.087752014500023,
+        "qualityScore": 14.558637695689761,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.025685376138562
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.281868732054162
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.5834848175719785
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8453112631947612
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-01T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-10"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 64
+      }
+    },
+    {
+      "id": "resource-00257",
+      "title": "Year 13 Social Studies: Resource 257",
+      "subject": "Social Studies",
+      "yearLevel": "Year 13",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 13 Social Studies learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.004377235580641,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.941942150112355,
+        "pedagogicalDepth": 8.711920626166158,
+        "progressiveIndex": 9.866297643917738,
+        "qualityScore": 13.942955614721635,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.049555418786908
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.1483502155385166
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.9187681370942369
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8219046077213312
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-30T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-13"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 125
+      }
+    },
+    {
+      "id": "resource-00258",
+      "title": "Year 12 Social Studies: Resource 258",
+      "subject": "Social Studies",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Social Studies learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.586869032135676,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.933716298620874,
+        "pedagogicalDepth": 8.698005245008385,
+        "progressiveIndex": 9.634715512039111,
+        "qualityScore": 12.888611880589263,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.117286380620567
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.097856468156452
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.5539116112252542
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.5326883884513132
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-08-19T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-12"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 147
+      }
+    },
+    {
+      "id": "resource-00259",
+      "title": "Year 12 Social Studies: Resource 259",
+      "subject": "Social Studies",
+      "yearLevel": "Year 12",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 12 Social Studies learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.410293918945133,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.344388013534353,
+        "pedagogicalDepth": 8.869825582807366,
+        "progressiveIndex": 8.768061133142393,
+        "qualityScore": 13.812717977544278,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.1021523373635724
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.9785996366708323
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.857604851986177
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.4640672325785635
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-28T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-12"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 121
+      }
+    },
+    {
+      "id": "resource-00260",
+      "title": "Year 12 Social Studies: Resource 260",
+      "subject": "Social Studies",
+      "yearLevel": "Year 12",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 12 Social Studies learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.873761452822368,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.936864459142592,
+        "pedagogicalDepth": 9.110948199343628,
+        "progressiveIndex": 9.175686058779439,
+        "qualityScore": 14.965260608667448,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.183921116528644
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 2.219804075126745
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8714905509097046
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:56:46.362Z",
+            "qualityImprovement": 1.8162834132799845
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-01T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:56:46.362Z",
+        "tags": [
+          "social-studies",
+          "year-12"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 98
+      }
+    }
+  ]
+}
