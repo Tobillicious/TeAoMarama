@@ -10,17 +10,21 @@ import {
   Users,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import {
-  buildComprehensiveResourceLibrary,
-  type RealResource,
-} from '../utils/comprehensive-resource-builder';
+import MāoriFocusedResourceDisplay from './MāoriFocusedResourceDisplay';
 
-// Use the real resource interface
-type Resource = RealResource & {
-  content?: string;
-  duration?: string;
-  difficulty?: 'beginner' | 'intermediate' | 'advanced';
-  tags?: string[];
+// Use the enriched resource interface
+type Resource = {
+  id: string;
+  title: string;
+  subject: string;
+  yearLevel: string;
+  type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia';
+  content?: any;
+  culturalElements: number;
+  description: string;
+  duration: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  tags: string[];
 };
 
 const FunctionalResourceBrowser: React.FC = () => {
@@ -34,24 +38,28 @@ const FunctionalResourceBrowser: React.FC = () => {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
-  // Load comprehensive resources
+  // Load comprehensive resources (5000+)
   useEffect(() => {
     const loadResources = async () => {
       setLoading(true);
       try {
-        // Build the comprehensive resource library (5,000+ resources)
+        // Import and use the comprehensive resource builder
+        const { buildComprehensiveResourceLibrary } = await import('../utils/comprehensive-resource-builder');
         const comprehensiveResources = await buildComprehensiveResourceLibrary();
 
         // Convert to our Resource format
         const resources: Resource[] = comprehensiveResources.map((resource) => ({
-          ...resource,
-          duration: '45-60 min',
-          difficulty: resource.yearLevel.includes('7')
-            ? 'beginner'
-            : resource.yearLevel.includes('8')
-            ? 'intermediate'
-            : 'advanced',
-          tags: [resource.subject, resource.yearLevel, resource.type],
+          id: resource.id,
+          title: resource.title,
+          subject: resource.subject,
+          yearLevel: resource.yearLevel,
+          type: resource.type,
+          content: resource.content,
+          culturalElements: resource.culturalElements,
+          description: resource.description,
+          duration: resource.duration,
+          difficulty: resource.difficulty,
+          tags: resource.tags || [resource.subject, resource.yearLevel, resource.type],
         }));
 
         setResources(resources);
@@ -231,7 +239,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
       const matchesSearch =
         resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        resource.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        (resource.tags || []).some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
 
       const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
       const matchesYear = selectedYear === 'all' || resource.yearLevel.includes(selectedYear);
@@ -314,7 +322,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             }}
           ></div>
           <p style={{ color: '#6b7280', fontSize: '1.1rem' }}>
-            Loading 5,000+ comprehensive educational resources...
+            Loading 5,000+ comprehensive educational resources from Te Ao Mārama...
           </p>
         </div>
       </div>
@@ -325,12 +333,30 @@ How statistics help us understand cultural diversity in Aotearoa...`,
     return (
       <div
         style={{
-          minHeight: '100vh',
-          background: '#f8fafc',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.8)',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           fontFamily: 'Inter, system-ui, sans-serif',
         }}
       >
-        {/* Resource Viewer Header */}
+        <div
+          style={{
+            background: '#f8fafc',
+            width: '95%',
+            height: '95%',
+            borderRadius: '16px',
+            overflow: 'auto',
+            position: 'relative',
+          }}
+        >
+          {/* Resource Viewer Header */}
         <header
           style={{
             background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
@@ -405,7 +431,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           </div>
         </header>
 
-        {/* Resource Content */}
+          {/* Resource Content */}
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
           <div
             style={{
@@ -491,26 +517,156 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             </div>
 
             {/* Content */}
-            <div
-              style={{
-                fontSize: '1rem',
-                lineHeight: '1.7',
-                color: '#374151',
-              }}
-            >
-              <pre
-                style={{
-                  fontFamily: 'inherit',
-                  whiteSpace: 'pre-wrap',
-                  margin: '0',
-                  background: '#f8fafc',
-                  padding: '24px',
-                  borderRadius: '8px',
-                  border: '1px solid #e5e7eb',
-                }}
-              >
-                {selectedResource.content}
-              </pre>
+            <div style={{ 
+              background: 'white', 
+              borderRadius: '8px', 
+              padding: '24px', 
+              lineHeight: '1.6',
+              color: '#374151'
+            }}>
+              {selectedResource.content ? (
+                <MāoriFocusedResourceDisplay
+                  resource={selectedResource}
+                  onClose={() => setSelectedResource(null)}
+                />
+              ) : (
+                <div>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#1f2937', marginBottom: '16px' }}>
+                    📚 {selectedResource.title}
+                  </h3>
+                  
+                  <div style={{ marginBottom: '24px' }}>
+                    <p style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '16px' }}>
+                      {selectedResource.description}
+                    </p>
+                  </div>
+
+                  <div style={{ 
+                    background: '#f8fafc', 
+                    border: '1px solid #e2e8f0', 
+                    borderRadius: '8px', 
+                    padding: '20px', 
+                    marginBottom: '24px' 
+                  }}>
+                    <h4 style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '600', 
+                      color: '#1f2937', 
+                      marginBottom: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
+                    }}>
+                      🎯 Learning Focus
+                    </h4>
+                    <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6' }}>
+                      This {selectedResource.type} is designed for {selectedResource.yearLevel} students studying {selectedResource.subject}. 
+                      {selectedResource.culturalElements > 0 && ` It includes ${selectedResource.culturalElements} cultural elements that connect learning to Te Ao Māori perspectives.`}
+                    </p>
+                  </div>
+
+                  {selectedResource.culturalElements > 0 && (
+                    <div style={{ 
+                      background: '#f0fdf4', 
+                      border: '1px solid #22c55e', 
+                      borderRadius: '8px', 
+                      padding: '20px', 
+                      marginBottom: '24px' 
+                    }}>
+                      <h4 style={{ 
+                        fontSize: '1.1rem', 
+                        fontWeight: '600', 
+                        color: '#15803d', 
+                        marginBottom: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px'
+                      }}>
+                        🌿 Cultural Integration
+                      </h4>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6', color: '#166534' }}>
+                        This resource incorporates {selectedResource.culturalElements === 5 ? 'excellent' : 
+                          selectedResource.culturalElements >= 3 ? 'good' : 'some'} cultural integration, 
+                        connecting learning objectives with Te Ao Māori worldviews and practices.
+                      </p>
+                    </div>
+                  )}
+
+                  <div style={{ 
+                    background: '#f8fafc', 
+                    borderRadius: '8px', 
+                    padding: '20px',
+                    marginBottom: '24px'
+                  }}>
+                    <h4 style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '600', 
+                      color: '#1f2937', 
+                      marginBottom: '12px' 
+                    }}>
+                      📋 Suggested Learning Activities
+                    </h4>
+                    <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem' }}>
+                      <li style={{ marginBottom: '8px' }}>
+                        Introduction and context setting ({Math.floor(Math.random() * 10) + 5} minutes)
+                      </li>
+                      <li style={{ marginBottom: '8px' }}>
+                        Main content exploration and discussion ({Math.floor(Math.random() * 15) + 20} minutes)
+                      </li>
+                      <li style={{ marginBottom: '8px' }}>
+                        Hands-on activities and group work ({Math.floor(Math.random() * 10) + 10} minutes)
+                      </li>
+                      <li style={{ marginBottom: '8px' }}>
+                        Reflection and connection to broader themes ({Math.floor(Math.random() * 5) + 5} minutes)
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div style={{ 
+                    background: '#fef3c7', 
+                    border: '1px solid #f59e0b', 
+                    borderRadius: '8px', 
+                    padding: '20px',
+                    marginBottom: '24px'
+                  }}>
+                    <h4 style={{ 
+                      fontSize: '1.1rem', 
+                      fontWeight: '600', 
+                      color: '#92400e', 
+                      marginBottom: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
+                    }}>
+                      ⭐ Assessment Opportunities
+                    </h4>
+                    <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem', color: '#92400e' }}>
+                      <li style={{ marginBottom: '8px' }}>Formative assessment through questioning and observation</li>
+                      <li style={{ marginBottom: '8px' }}>Student self-reflection and peer feedback</li>
+                      <li style={{ marginBottom: '8px' }}>Portfolio evidence collection</li>
+                      {selectedResource.type === 'assessment' && <li>Formal assessment task included in resource</li>}
+                    </ul>
+                  </div>
+
+                  <div style={{ 
+                    background: '#ecfdf5', 
+                    border: '1px solid #22c55e', 
+                    borderRadius: '8px', 
+                    padding: '20px',
+                    textAlign: 'center'
+                  }}>
+                    <p style={{ 
+                      margin: 0, 
+                      fontSize: '0.95rem', 
+                      color: '#166534',
+                      fontWeight: '500'
+                    }}>
+                      📚 This resource is part of our comprehensive educational library designed to support 
+                      culturally-responsive teaching practices in Aotearoa New Zealand.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Action Buttons */}
@@ -580,6 +736,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             </div>
           </div>
         </main>
+        </div>
       </div>
     );
   }
@@ -772,50 +929,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           {filteredResources.map((resource) => (
             <div
               key={resource.id}
-              onClick={async () => {
+              onClick={() => {
+                console.log('Opening resource:', resource.title);
                 setSelectedResource(resource);
-
-                // Use the content that's already available in the comprehensive resource
-                if (resource.content) {
-                  console.log('Using comprehensive resource content for:', resource.title);
-                  setSelectedResource(resource);
-                } else {
-                  // Generate sample content if none exists
-                  const generatedContent = `# ${resource.title}
-
-## Overview
-${resource.description}
-
-## Learning Objectives
-- Understand key concepts related to ${resource.subject}
-- Develop skills appropriate for ${resource.yearLevel}
-- Apply knowledge through practical activities
-
-## Cultural Integration
-This resource incorporates ${resource.culturalElements} cultural elements relevant to Te Ao Māori and Aotearoa New Zealand education.
-
-## Subject Area: ${resource.subject}
-Designed specifically for ${resource.yearLevel} students, this ${resource.type} provides engaging content that respects cultural diversity.
-
-## Activities
-1. Interactive exploration
-2. Collaborative discussion
-3. Practical application
-4. Reflection and assessment
-
-## Resources Needed
-- Standard classroom materials
-- Access to digital resources
-- Culturally appropriate learning spaces
-
-## Assessment Opportunities
-Various formative and summative assessment options are embedded throughout this resource.`;
-
-                  setSelectedResource({
-                    ...resource,
-                    content: generatedContent,
-                  });
-                }
               }}
               style={{
                 background: 'white',
@@ -928,7 +1044,7 @@ Various formative and summative assessment options are embedded throughout this 
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {resource.tags.slice(0, 3).map((tag, index) => (
+                {(resource.tags || []).slice(0, 3).map((tag, index) => (
                   <span
                     key={index}
                     style={{
@@ -942,7 +1058,7 @@ Various formative and summative assessment options are embedded throughout this 
                     {tag}
                   </span>
                 ))}
-                {resource.tags.length > 3 && (
+                {(resource.tags || []).length > 3 && (
                   <span
                     style={{
                       color: '#9ca3af',
@@ -950,7 +1066,7 @@ Various formative and summative assessment options are embedded throughout this 
                       padding: '2px 8px',
                     }}
                   >
-                    +{resource.tags.length - 3} more
+                    +{(resource.tags || []).length - 3} more
                   </span>
                 )}
               </div>

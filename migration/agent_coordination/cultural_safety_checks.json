@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "id": "content-1757511567499-eh01koqhx",
+      "type": "content",
+      "severity": "CRITICAL",
+      "status": "FAIL",
+      "description": "Cultural safety validation for educational-content",
+      "culturalContext": "Māori, Pacific, Cultural",
+      "tikangaCompliance": false,
+      "educationalAlignment": false,
+      "recommendations": [
+        "Ensure proper acknowledgment of cultural sources according to Mana Preservation protocol",
+        "Ensure cultural content is handled with appropriate sensitivity and respect",
+        "Consider alignment with New Zealand Curriculum requirements"
+      ],
+      "validatedBy": "CulturalSafetyValidator",
+      "validatedAt": "2025-09-10T13:39:27.499Z"
+    }
+  ],
+  "lastUpdated": "2025-09-10T13:39:27.500Z"
+}
