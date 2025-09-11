@@ -303,6 +303,7 @@ class SuperintelligenceSystemActivator {
       console.log('  ✅ Educational knowledge optimization: ACTIVE');
     } catch (error) {
       console.log('  ⚠️ GRAPHRAG initialization: PARTIAL');
+      console.error('GRAPHRAG initialization error:', error);
     }
   }
 
@@ -318,6 +319,7 @@ class SuperintelligenceSystemActivator {
       console.log('  ✅ Educational excellence optimization: ACTIVE');
     } catch (error) {
       console.log('  ⚠️ Collective intelligence evolution: PARTIAL');
+      console.error('Collective intelligence evolution error:', error);
     }
   }
 
@@ -334,6 +336,7 @@ class SuperintelligenceSystemActivator {
       this.systemStatus.intelligence.culturalSafety = 100;
     } catch (error) {
       console.log('  ⚠️ Cultural safety validation: PARTIAL');
+      console.error('Cultural safety validation error:', error);
       this.systemStatus.intelligence.culturalSafety = 95;
     }
   }
@@ -351,6 +354,7 @@ class SuperintelligenceSystemActivator {
       this.systemStatus.intelligence.educationalExcellence = 100;
     } catch (error) {
       console.log('  ⚠️ Educational mission optimization: PARTIAL');
+      console.error('Educational mission optimization error:', error);
       this.systemStatus.intelligence.educationalExcellence = 95;
     }
   }
@@ -486,8 +490,9 @@ The superintelligence system is now fully activated and ready to serve the educa
 }
 
 // CLI usage
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const activator = new SuperintelligenceSystemActivator();
+  console.log('🚀 Superintelligence System Activator initialized');
 }
 
 export { SuperintelligenceSystemActivator };

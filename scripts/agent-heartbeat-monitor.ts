@@ -86,7 +86,7 @@ class AgentHeartbeatMonitor {
         const sharedMemory = JSON.parse(readFileSync(this.sharedMemoryPath, 'utf8'));
         const agentRegistry = sharedMemory.agentRegistry;
 
-        Object.entries(agentRegistry).forEach(([key, agent]: [string, any]) => {
+        Object.entries(agentRegistry).forEach(([, agent]: [string, any]) => {
           this.agents.set(agent.id, {
             agentId: agent.id,
             agentName: agent.name,
