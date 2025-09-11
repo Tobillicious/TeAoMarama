@@ -12,6 +12,13 @@ const SimpleNavigation: React.FC = () => {
 
   const mainLinks = [
     { to: '/', label: 'Home', icon: '🏠' },
+    {
+      to: '/working-resources',
+      label: '✅ WORKING RESOURCES',
+      icon: '📚',
+      highlight: true,
+      highlightColor: '#10b981',
+    },
     { to: '/teacher', label: 'TEACHER DASHBOARD', icon: '👨‍🏫', highlight: true },
     {
       to: '/student',
@@ -20,22 +27,8 @@ const SimpleNavigation: React.FC = () => {
       highlight: true,
       highlightColor: '#059669',
     },
-    {
-      to: '/resources',
-      label: 'RESOURCES BROWSER',
-      icon: '📚',
-      highlight: true,
-      highlightColor: '#7c3aed',
-    },
     { to: '/cultural-learning-modules', label: 'Cultural Learning', icon: '🌿' },
     { to: '/advanced-analytics', label: 'Analytics', icon: '📊' },
-    {
-      to: '/test-resources',
-      label: 'TEST RESOURCES',
-      icon: '🧪',
-      highlight: true,
-      highlightColor: '#f59e0b',
-    },
   ];
 
   return (
