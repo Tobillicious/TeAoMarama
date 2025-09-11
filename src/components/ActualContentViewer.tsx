@@ -1,20 +1,14 @@
-import { ArrowLeft, Award, BookOpen, Clock, Download, FileText, Globe, Target } from 'lucide-react';
+import { ArrowLeft, Award, BookOpen, Clock, Download, FileText, Globe } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import {
-  ActualLesson,
-  ActualUnitPlan,
-  loadActualLesson,
-  loadActualUnitPlan,
-} from '../utils/actual-content-loader';
-import { EnhancedResource, getResourceById } from '../utils/enhanced-resource-loader';
+import type { EnhancedResource } from '../utils/enhanced-resource-loader';
+import { getResourceById } from '../utils/enhanced-resource-loader';
 import './ActualContentViewer.css';
 
 const ActualContentViewer: React.FC = () => {
   const { resourceId } = useParams<{ resourceId: string }>();
   const navigate = useNavigate();
   const [resource, setResource] = useState<EnhancedResource | null>(null);
-  const [actualContent, setActualContent] = useState<ActualLesson | ActualUnitPlan | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,22 +30,7 @@ const ActualContentViewer: React.FC = () => {
         }
         setResource(enhancedResource);
 
-        // Try to load actual content
-        let content: ActualLesson | ActualUnitPlan | null = null;
-
-        // Try loading as lesson first
-        content = await loadActualLesson(resourceId);
-
-        // If not found as lesson, try as unit plan
-        if (!content) {
-          content = await loadActualUnitPlan(resourceId);
-        }
-
-        if (content) {
-          setActualContent(content);
-        } else {
-          setError('No actual content found for this resource');
-        }
+        // We'll display the enhanced resource data directly
       } catch (err) {
         setError('Failed to load content');
         console.error('Error loading content:', err);
@@ -64,60 +43,49 @@ const ActualContentViewer: React.FC = () => {
   }, [resourceId]);
 
   const downloadContent = () => {
-    if (!actualContent || !resource) return;
+    if (!resource) return;
 
-    const content = `# ${actualContent.title}
+    const content = `# ${resource.title}
 
-**Subject:** ${actualContent.subject}  
-**Year Level:** ${actualContent.yearLevel}  
-**Type:** ${actualContent.type}  
-**Cultural Context:** ${actualContent.culturalContext}  
-**Depth:** ${actualContent.depth}  
+**Subject:** ${resource.subject}  
+**Year Level:** ${resource.yearLevel}  
+**Type:** ${resource.type}  
+**Description:** ${resource.description}  
+**Cultural Elements:** ${resource.culturalElements}  
+**Current Pass:** ${resource.currentPass}  
 
-## Learning Objectives
-${actualContent.learningObjectives.map((obj) => `- ${obj}`).join('\n')}
+## Enhancement Process
+${resource.enhancement?.passes
+  ?.map(
+    (pass) => `
+### Pass ${pass.passNumber}: ${pass.specialization}
+**Kaiako:** ${pass.kaiako}
+**Focus:** ${pass.enhancedContent?.focus}
+**Elements:**
+${pass.enhancedContent?.elements?.map((element: string) => `- ${element}`).join('\n')}
+**Quality Improvement:** +${pass.qualityImprovement?.toFixed(2)}
+`,
+  )
+  .join('\n')}
 
-## Activities
-${
-  Array.isArray(actualContent.activities)
-    ? actualContent.activities
-        .map((activity, index) =>
-          typeof activity === 'string'
-            ? `${index + 1}. ${activity}`
-            : `### ${activity.title}\n${activity.description}`,
-        )
-        .join('\n\n')
-    : actualContent.activities.map((activity, index) => `${index + 1}. ${activity}`).join('\n')
-}
+## Quality Scores
+**Quality Score:** ${resource.enhancement?.qualityScore?.toFixed(1)}/15
+**Cultural Authenticity:** ${resource.enhancement?.culturalAuthenticity?.toFixed(1)}/10
+**Pedagogical Depth:** ${resource.enhancement?.pedagogicalDepth?.toFixed(1)}/10
+**Progressive Index:** ${resource.enhancement?.progressiveIndex?.toFixed(1)}/10
 
-## Resources
-${actualContent.resources.map((resource) => `- ${resource}`).join('\n')}
-
-## Assessment
-**Type:** ${actualContent.assessment.type}
-
-**Tasks:**
-${actualContent.assessment.tasks.map((task) => `- ${task}`).join('\n')}
-
-${actualContent.duration ? `**Duration:** ${actualContent.duration}` : ''}
-${
-  actualContent.nzcAlignment
-    ? `\n**NZC Alignment:**\n${actualContent.nzcAlignment
-        .map((alignment) => `- ${alignment}`)
-        .join('\n')}`
-    : ''
-}
-
----
-*Enhanced Resource Quality Score: ${resource.enhancement?.qualityScore?.toFixed(1) || 'N/A'}/15*
-*Cultural Authenticity: ${resource.enhancement?.culturalAuthenticity?.toFixed(1) || 'N/A'}/10*
+## Metadata
+**Estimated Duration:** ${resource.metadata?.estimatedDuration} minutes
+**Tags:** ${resource.metadata?.tags?.join(', ')}
+**Created:** ${new Date(resource.metadata?.created || '').toLocaleDateString()}
+**Last Modified:** ${new Date(resource.metadata?.lastModified || '').toLocaleDateString()}
     `;
 
     const blob = new Blob([content], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${actualContent.title.replace(/[^a-z0-9]/gi, '_')}.md`;
+    a.download = `${resource.title.replace(/[^a-z0-9]/gi, '_')}.md`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -151,13 +119,13 @@ ${
     );
   }
 
-  if (!actualContent || !resource) {
+  if (!resource) {
     return (
       <div className="actual-content-viewer error">
         <div className="error-card">
           <div className="error-icon">❌</div>
           <h2>No Content Available</h2>
-          <p>This resource doesn't have actual enriched content yet.</p>
+          <p>This resource doesn't have enriched content yet.</p>
           <button onClick={() => navigate('/working-resources')} className="btn primary">
             <ArrowLeft size={20} />
             Back to Working Resources
@@ -184,109 +152,92 @@ ${
         </div>
 
         <div className="content-title-section">
-          <h1>{actualContent.title}</h1>
+          <h1>{resource.title}</h1>
           <div className="content-meta">
-            <span className="subject">{actualContent.subject}</span>
-            <span className="year-level">{actualContent.yearLevel}</span>
-            <span className="type">{actualContent.type}</span>
-            <span className="depth">{actualContent.depth}</span>
+            <span className="subject">{resource.subject}</span>
+            <span className="year-level">{resource.yearLevel}</span>
+            <span className="type">{resource.type}</span>
+            <span className="depth">{resource.metadata?.difficulty || 'N/A'}</span>
           </div>
         </div>
       </div>
 
-      {/* Cultural Context */}
+      {/* Description */}
       <div className="content-section">
         <h2>
-          <Globe size={24} /> Cultural Context
+          <FileText size={24} /> Description
         </h2>
-        <p className="cultural-context">{actualContent.culturalContext}</p>
+        <p className="description">{resource.description}</p>
       </div>
 
-      {/* Learning Objectives */}
+      {/* Enhancement Passes */}
       <div className="content-section">
         <h2>
-          <Target size={24} /> Learning Objectives
+          <BookOpen size={24} /> Enhancement Process
         </h2>
-        <ul className="objectives-list">
-          {actualContent.learningObjectives.map((objective, index) => (
-            <li key={index}>{objective}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Activities */}
-      <div className="content-section">
-        <h2>
-          <BookOpen size={24} /> Activities
-        </h2>
-        {Array.isArray(actualContent.activities) &&
-        typeof actualContent.activities[0] === 'object' ? (
-          actualContent.activities.map((activity, index) => (
-            <div key={index} className="activity-card">
-              <h3>{activity.title}</h3>
-              <p>{activity.description}</p>
+        <div className="enhancement-passes">
+          {resource.enhancement?.passes?.map((pass, index) => (
+            <div key={index} className="pass-card">
+              <h3>
+                Pass {pass.passNumber}: {pass.specialization}
+              </h3>
+              <p>
+                <strong>Kaiako:</strong> {pass.kaiako}
+              </p>
+              <p>
+                <strong>Focus:</strong> {pass.enhancedContent?.focus}
+              </p>
+              <div className="pass-elements">
+                <strong>Elements:</strong>
+                <ul>
+                  {pass.enhancedContent?.elements?.map((element: string, idx: number) => (
+                    <li key={idx}>{element}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="quality-improvement">
+                <strong>Quality Improvement:</strong> +{pass.qualityImprovement?.toFixed(2)}
+              </div>
             </div>
-          ))
-        ) : (
-          <ul className="activities-list">
-            {actualContent.activities.map((activity, index) => (
-              <li key={index}>{activity}</li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* Resources */}
-      <div className="content-section">
-        <h2>
-          <FileText size={24} /> Resources
-        </h2>
-        <ul className="resources-list">
-          {actualContent.resources.map((resource, index) => (
-            <li key={index}>{resource}</li>
           ))}
-        </ul>
+        </div>
       </div>
 
-      {/* Assessment */}
+      {/* Cultural Elements */}
       <div className="content-section">
         <h2>
-          <Award size={24} /> Assessment
+          <Globe size={24} /> Cultural Elements
         </h2>
-        <div className="assessment-info">
-          <h3>Assessment Type: {actualContent.assessment.type}</h3>
-          <h4>Assessment Tasks:</h4>
-          <ul className="assessment-tasks">
-            {actualContent.assessment.tasks.map((task, index) => (
-              <li key={index}>{task}</li>
-            ))}
-          </ul>
+        <div className="cultural-info">
+          <p>
+            <strong>Cultural Elements Count:</strong> {resource.culturalElements}
+          </p>
+          <p>
+            <strong>Current Pass:</strong> {resource.currentPass}
+          </p>
         </div>
       </div>
 
       {/* Additional Info */}
-      {(actualContent.duration || actualContent.nzcAlignment) && (
-        <div className="content-section">
-          <h2>
-            <Clock size={24} /> Additional Information
-          </h2>
-          {actualContent.duration && (
-            <div className="info-item">
-              <strong>Duration:</strong> {actualContent.duration}
-            </div>
-          )}
-          {actualContent.nzcAlignment && (
-            <div className="info-item">
-              <strong>NZC Alignment:</strong>
-              <ul className="alignment-list">
-                {actualContent.nzcAlignment.map((alignment, index) => (
-                  <li key={index}>{alignment}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+      <div className="content-section">
+        <h2>
+          <Clock size={24} /> Additional Information
+        </h2>
+        <div className="info-item">
+          <strong>Estimated Duration:</strong> {resource.metadata?.estimatedDuration} minutes
         </div>
-      )}
+        <div className="info-item">
+          <strong>Tags:</strong> {resource.metadata?.tags?.join(', ')}
+        </div>
+        <div className="info-item">
+          <strong>Created:</strong>{' '}
+          {new Date(resource.metadata?.created || '').toLocaleDateString()}
+        </div>
+        <div className="info-item">
+          <strong>Last Modified:</strong>{' '}
+          {new Date(resource.metadata?.lastModified || '').toLocaleDateString()}
+        </div>
+      </div>
 
       {/* Quality Information */}
       <div className="content-section quality-section">
