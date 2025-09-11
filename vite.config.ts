@@ -1,10 +1,49 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { copyFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'fs';
+
+// Function to copy directory recursively
+function copyDirectory(src: string, dest: string) {
+  if (!existsSync(dest)) {
+    mkdirSync(dest, { recursive: true });
+  }
+  
+  const items = readdirSync(src);
+  for (const item of items) {
+    const srcPath = resolve(src, item);
+    const destPath = resolve(dest, item);
+    
+    if (statSync(srcPath).isDirectory()) {
+      copyDirectory(srcPath, destPath);
+    } else {
+      copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+// Plugin to copy enhanced resources
+const copyEnhancedResources = () => {
+  return {
+    name: 'copy-enhanced-resources',
+    writeBundle() {
+      const src = resolve(__dirname, 'enhanced-resources-output');
+      const dest = resolve(__dirname, 'dist/enhanced-resources-output');
+      
+      if (existsSync(src)) {
+        console.log('📦 Copying enhanced resources to dist...');
+        copyDirectory(src, dest);
+        console.log('✅ Enhanced resources copied successfully');
+      } else {
+        console.warn('⚠️ Enhanced resources directory not found');
+      }
+    }
+  };
+};
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), copyEnhancedResources()],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

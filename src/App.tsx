@@ -23,29 +23,34 @@ import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
 import Home from './pages/Home';
 import LandingPage from './pages/LandingPage';
 
-// Import the new enhanced components
-import AdvancedEducationalDashboard from './components/AdvancedEducationalDashboard';
-import CulturalLearningModules from './components/CulturalLearningModules';
-import EducationalDashboard from './components/EducationalDashboard';
-// const AuthenticationSystemLazy = lazy(
-//   () => import(/* webpackChunkName: "authentication-system" */ './components/AuthenticationSystem'),
-// );
+// Lazy load heavy components for better performance
+const AdvancedEducationalDashboard = lazy(
+  () => import('./components/AdvancedEducationalDashboard'),
+);
+const CulturalLearningModules = lazy(() => import('./components/CulturalLearningModules'));
+const EducationalDashboard = lazy(() => import('./components/EducationalDashboard'));
+const AdvancedWisdomAccelerator = lazy(() => import('./components/AdvancedWisdomAccelerator'));
+const CulturalLearningActivities = lazy(() => import('./components/CulturalLearningActivities'));
+const DemoAccessBanner = lazy(() => import('./components/DemoAccessBanner'));
+const PerformanceDashboard = lazy(() => import('./components/PerformanceDashboard'));
+const SuperIntelligenceCoordinator = lazy(
+  () => import('./components/SuperIntelligenceCoordinator'),
+);
+const SupremeIntelligenceCoordinator = lazy(
+  () => import('./components/SupremeIntelligenceCoordinator'),
+);
 
-import AdvancedWisdomAccelerator from './components/AdvancedWisdomAccelerator';
-import CulturalLearningActivities from './components/CulturalLearningActivities';
-import DemoAccessBanner from './components/DemoAccessBanner';
-import PerformanceDashboard from './components/PerformanceDashboard';
-import SuperIntelligenceCoordinator from './components/SuperIntelligenceCoordinator';
-import SupremeIntelligenceCoordinator from './components/SupremeIntelligenceCoordinator';
-
-import AuthenticationTabs from './components/AuthenticationTabs';
-import ComprehensiveAuthSystem from './components/ComprehensiveAuthSystem';
-import DatabaseIntegrationSystem from './components/DatabaseIntegrationSystem';
-import EnhancedTeachingContentQualityDashboard from './components/EnhancedTeachingContentQualityDashboard';
-import LessonManager from './components/LessonManager';
-import LessonViewer from './components/LessonViewer';
-import RoleBasedRouter from './components/RoleBasedRouter';
-import WorkingLogin from './components/WorkingLogin';
+// Lazy load authentication and heavy components
+const AuthenticationTabs = lazy(() => import('./components/AuthenticationTabs'));
+const ComprehensiveAuthSystem = lazy(() => import('./components/ComprehensiveAuthSystem'));
+const DatabaseIntegrationSystem = lazy(() => import('./components/DatabaseIntegrationSystem'));
+const EnhancedTeachingContentQualityDashboard = lazy(
+  () => import('./components/EnhancedTeachingContentQualityDashboard'),
+);
+const LessonManager = lazy(() => import('./components/LessonManager'));
+const LessonViewer = lazy(() => import('./components/LessonViewer'));
+const RoleBasedRouter = lazy(() => import('./components/RoleBasedRouter'));
+const WorkingLogin = lazy(() => import('./components/WorkingLogin'));
 
 // Lazy load educational content pages
 const Year8SocialStudies = lazy(
