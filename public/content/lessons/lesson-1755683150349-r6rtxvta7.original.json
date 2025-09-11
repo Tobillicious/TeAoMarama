@@ -1,0 +1,57 @@
+{
+  "id": "lesson-1755683150349-r6rtxvta7",
+  "title": "Te Whare Tapere o Te Awa: The Living Technology of Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 8",
+  "culturalContext": "Students will explore the traditional pā tuna (eel weirs) and modern restoration efforts along Te Awa o Mangakōtukutuku, connecting Ngāti Kahungunu mātauranga with contemporary environmental technology. The context centers on the stream's role as a living ancestor and food source for local hapū, examining how traditional engineering practices inform modern conservation technology.",
+  "depth": "mastery",
+  "learningObjectives": [
+    "Design and prototype a scale model of a pā tuna using traditional materials and modern CAD software",
+    "Analyze water quality data from Te Awa o Mangakōtukutuku using digital monitoring tools and compare with traditional observation methods",
+    "Collaborate with local kaitiaki to document and present technological solutions for stream restoration",
+    "Evaluate the effectiveness of combining mātauranga Māori with modern technology for environmental sustainability"
+  ],
+  "activities": [
+    {
+      "title": "Whakapapa o Te Awa: Stream as Ancestor",
+      "description": "Students visit Te Awa o Mangakōtukutuku with local kaumātua to learn the creation stories and traditional uses of the stream. They document traditional fishing methods and water management practices through sketches, audio recordings, and water quality testing using modern sensors."
+    },
+    {
+      "title": "Pā Tuna Prototyping: Traditional Engineering",
+      "description": "Using harakeke, mānuka, and other traditional materials, students construct physical scale models of traditional eel weirs while simultaneously creating digital 3D models using Tinkercad or similar software, comparing the design processes and structural principles."
+    },
+    {
+      "title": "Wai Ora Monitoring: Data Collection & Analysis",
+      "description": "Students deploy water quality sensors (pH, temperature, turbidity) at strategic points along the stream, collecting data over two weeks while simultaneously recording traditional indicators of water health (presence of native species, water clarity, plant health)."
+    },
+    {
+      "title": "Hui Technology: Community Solution Design",
+      "description": "Students present their findings and prototype designs to local kaitiaki and community members, facilitating a technology design charrette to develop integrated solutions that honor traditional knowledge while addressing modern environmental challenges."
+    }
+  ],
+  "resources": [
+    "Local kaitiaki from Ngāti Kahungunu environmental trust",
+    "Arduino-based water quality monitoring kits with sensors",
+    "Tinkercad or similar CAD software for 3D modeling",
+    "'Te Mahi Māra Hua Parakore: A Māori Food Sovereignty Handbook' by Jessica Hutchings"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submit a digital portfolio containing: CAD designs, water quality data analysis, and traditional knowledge documentation",
+      "Present prototype pā tuna model and explain how it integrates traditional and modern technological principles",
+      "Deliver a 5-minute pechakucha presentation to community stakeholders proposing a restoration technology solution for Te Awa o Mangakōtukutuku"
+    ]
+  },
+  "duration": "6-8 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Technological Knowledge: Understanding technological modelling and products",
+    "Nature of Technology: Characteristics of technology and characteristics of technological outcomes",
+    "Social Sciences: Understand how people participate individually and collectively in response to community challenges"
+  ],
+  "createdAt": "2025-08-20T09:45:50.350Z",
+  "enrichedAt": "2025-09-11T06:02:13.909Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

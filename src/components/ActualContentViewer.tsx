@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Download, BookOpen, Clock, Users, Target, FileText, Award, Globe } from 'lucide-react';
-import { getResourceById, EnhancedResource } from '../utils/enhanced-resource-loader';
-import { loadActualLesson, loadActualUnitPlan, ActualLesson, ActualUnitPlan } from '../utils/actual-content-loader';
+import { ArrowLeft, Award, BookOpen, Clock, Download, FileText, Globe, Target } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import {
+  ActualLesson,
+  ActualUnitPlan,
+  loadActualLesson,
+  loadActualUnitPlan,
+} from '../utils/actual-content-loader';
+import { EnhancedResource, getResourceById } from '../utils/enhanced-resource-loader';
 import './ActualContentViewer.css';
 
 const ActualContentViewer: React.FC = () => {
@@ -33,10 +38,10 @@ const ActualContentViewer: React.FC = () => {
 
         // Try to load actual content
         let content: ActualLesson | ActualUnitPlan | null = null;
-        
+
         // Try loading as lesson first
         content = await loadActualLesson(resourceId);
-        
+
         // If not found as lesson, try as unit plan
         if (!content) {
           content = await loadActualUnitPlan(resourceId);
@@ -70,35 +75,44 @@ const ActualContentViewer: React.FC = () => {
 **Depth:** ${actualContent.depth}  
 
 ## Learning Objectives
-${actualContent.learningObjectives.map(obj => `- ${obj}`).join('\n')}
+${actualContent.learningObjectives.map((obj) => `- ${obj}`).join('\n')}
 
 ## Activities
-${Array.isArray(actualContent.activities) 
-  ? actualContent.activities.map((activity, index) => 
-      typeof activity === 'string' 
-        ? `${index + 1}. ${activity}`
-        : `### ${activity.title}\n${activity.description}`
-    ).join('\n\n')
-  : actualContent.activities.map((activity, index) => `${index + 1}. ${activity}`).join('\n')
+${
+  Array.isArray(actualContent.activities)
+    ? actualContent.activities
+        .map((activity, index) =>
+          typeof activity === 'string'
+            ? `${index + 1}. ${activity}`
+            : `### ${activity.title}\n${activity.description}`,
+        )
+        .join('\n\n')
+    : actualContent.activities.map((activity, index) => `${index + 1}. ${activity}`).join('\n')
 }
 
 ## Resources
-${actualContent.resources.map(resource => `- ${resource}`).join('\n')}
+${actualContent.resources.map((resource) => `- ${resource}`).join('\n')}
 
 ## Assessment
 **Type:** ${actualContent.assessment.type}
 
 **Tasks:**
-${actualContent.assessment.tasks.map(task => `- ${task}`).join('\n')}
+${actualContent.assessment.tasks.map((task) => `- ${task}`).join('\n')}
 
 ${actualContent.duration ? `**Duration:** ${actualContent.duration}` : ''}
-${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignment.map(alignment => `- ${alignment}`).join('\n')}` : ''}
+${
+  actualContent.nzcAlignment
+    ? `\n**NZC Alignment:**\n${actualContent.nzcAlignment
+        .map((alignment) => `- ${alignment}`)
+        .join('\n')}`
+    : ''
+}
 
 ---
 *Enhanced Resource Quality Score: ${resource.enhancement?.qualityScore?.toFixed(1) || 'N/A'}/15*
 *Cultural Authenticity: ${resource.enhancement?.culturalAuthenticity?.toFixed(1) || 'N/A'}/10*
     `;
-    
+
     const blob = new Blob([content], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -162,13 +176,13 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
             <ArrowLeft size={20} />
             Back to Resources
           </button>
-          
+
           <button onClick={downloadContent} className="btn primary">
             <Download size={20} />
             Download Content
           </button>
         </div>
-        
+
         <div className="content-title-section">
           <h1>{actualContent.title}</h1>
           <div className="content-meta">
@@ -182,13 +196,17 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
 
       {/* Cultural Context */}
       <div className="content-section">
-        <h2><Globe size={24} /> Cultural Context</h2>
+        <h2>
+          <Globe size={24} /> Cultural Context
+        </h2>
         <p className="cultural-context">{actualContent.culturalContext}</p>
       </div>
 
       {/* Learning Objectives */}
       <div className="content-section">
-        <h2><Target size={24} /> Learning Objectives</h2>
+        <h2>
+          <Target size={24} /> Learning Objectives
+        </h2>
         <ul className="objectives-list">
           {actualContent.learningObjectives.map((objective, index) => (
             <li key={index}>{objective}</li>
@@ -198,8 +216,11 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
 
       {/* Activities */}
       <div className="content-section">
-        <h2><BookOpen size={24} /> Activities</h2>
-        {Array.isArray(actualContent.activities) && typeof actualContent.activities[0] === 'object' ? (
+        <h2>
+          <BookOpen size={24} /> Activities
+        </h2>
+        {Array.isArray(actualContent.activities) &&
+        typeof actualContent.activities[0] === 'object' ? (
           actualContent.activities.map((activity, index) => (
             <div key={index} className="activity-card">
               <h3>{activity.title}</h3>
@@ -217,7 +238,9 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
 
       {/* Resources */}
       <div className="content-section">
-        <h2><FileText size={24} /> Resources</h2>
+        <h2>
+          <FileText size={24} /> Resources
+        </h2>
         <ul className="resources-list">
           {actualContent.resources.map((resource, index) => (
             <li key={index}>{resource}</li>
@@ -227,7 +250,9 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
 
       {/* Assessment */}
       <div className="content-section">
-        <h2><Award size={24} /> Assessment</h2>
+        <h2>
+          <Award size={24} /> Assessment
+        </h2>
         <div className="assessment-info">
           <h3>Assessment Type: {actualContent.assessment.type}</h3>
           <h4>Assessment Tasks:</h4>
@@ -242,7 +267,9 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
       {/* Additional Info */}
       {(actualContent.duration || actualContent.nzcAlignment) && (
         <div className="content-section">
-          <h2><Clock size={24} /> Additional Information</h2>
+          <h2>
+            <Clock size={24} /> Additional Information
+          </h2>
           {actualContent.duration && (
             <div className="info-item">
               <strong>Duration:</strong> {actualContent.duration}
@@ -263,19 +290,27 @@ ${actualContent.nzcAlignment ? `\n**NZC Alignment:**\n${actualContent.nzcAlignme
 
       {/* Quality Information */}
       <div className="content-section quality-section">
-        <h2><Award size={24} /> Enhancement Quality</h2>
+        <h2>
+          <Award size={24} /> Enhancement Quality
+        </h2>
         <div className="quality-badges">
           <div className="quality-badge">
             <span className="label">Quality Score:</span>
-            <span className="value">{resource.enhancement?.qualityScore?.toFixed(1) || 'N/A'}/15</span>
+            <span className="value">
+              {resource.enhancement?.qualityScore?.toFixed(1) || 'N/A'}/15
+            </span>
           </div>
           <div className="quality-badge">
             <span className="label">Cultural Authenticity:</span>
-            <span className="value">{resource.enhancement?.culturalAuthenticity?.toFixed(1) || 'N/A'}/10</span>
+            <span className="value">
+              {resource.enhancement?.culturalAuthenticity?.toFixed(1) || 'N/A'}/10
+            </span>
           </div>
           <div className="quality-badge">
             <span className="label">Pedagogical Depth:</span>
-            <span className="value">{resource.enhancement?.pedagogicalDepth?.toFixed(1) || 'N/A'}/10</span>
+            <span className="value">
+              {resource.enhancement?.pedagogicalDepth?.toFixed(1) || 'N/A'}/10
+            </span>
           </div>
         </div>
       </div>

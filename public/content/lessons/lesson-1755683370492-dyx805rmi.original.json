@@ -1,0 +1,58 @@
+{
+  "id": "lesson-1755683370492-dyx805rmi",
+  "title": "Te Kaitiakitanga o Te Awa o Mangakōtukutuku / Guardianship of the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, a significant stream flowing through our rohe that holds cultural importance to Ngāti Kahungunu. The stream's name references the native pigeon (kererū) that once frequented its banks, and its waters have sustained our community for generations. Students will use mathematical analysis to understand water quality trends and inform restoration efforts aligned with our kaitiakitanga responsibilities.",
+  "depth": "extending",
+  "learningObjectives": [
+    "Calculate and interpret measures of central tendency (mean, median, mode) from real water quality data collected from Te Awa o Mangakōtukutuku",
+    "Create and analyze time-series graphs showing changes in water quality parameters (pH, nitrate levels, turbidity) over a 12-month period",
+    "Apply ratio and proportion reasoning to calculate the percentage improvement needed in water quality to meet Ngāti Kahungunu environmental standards",
+    "Develop a mathematical model to predict the impact of different conservation strategies on stream health indicators"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki Te Awa",
+      "description": "Students visit Te Awa o Mangakōtukutuku with kaumātua to learn the pūrākau (story) of the stream and its significance to Ngāti Kahungunu. They collect initial water samples while learning traditional methods of assessing water health."
+    },
+    {
+      "title": "Tātari Raraunga Wai",
+      "description": "Using water testing kits and historical data from Hawke's Bay Regional Council, students measure and record pH, nitrate levels, and turbidity. They calculate mean, median, and mode for each parameter and compare current readings to historical averages."
+    },
+    {
+      "title": "Te Hoahoa me te Tātari Kauwhata",
+      "description": "Students create time-series graphs showing water quality changes over time. They analyze trends, identify seasonal patterns, and calculate rates of change using gradient calculations to determine whether water quality is improving or declining."
+    },
+    {
+      "title": "Te Whakamōhiotanga Pāngarau",
+      "description": "Working in groups, students develop mathematical presentations that communicate their findings to whānau and community stakeholders. They use ratios and percentages to show what improvement targets need to be met and create predictive models showing potential outcomes of different intervention strategies."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council water quality monitoring data for Mangakōtukutuku Stream",
+    "Water testing kits (pH strips, nitrate testers, turbidity tubes)",
+    "Ngāti Kahungunu kaumātua with knowledge of traditional environmental practices",
+    "TI-Nspire CX II calculators or Desmos graphing software for data analysis"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete a water quality data analysis report showing calculations of central tendency",
+      "Create and interpret time-series graphs with written analysis of trends",
+      "Develop a mathematical model predicting water quality improvements",
+      "Present findings to community stakeholders with culturally appropriate recommendations"
+    ]
+  },
+  "nzcAlignment": [
+    "Mathematics and Statistics Level 5: Statistical investigation",
+    "Mathematics and Statistics Level 5: Number strategies and knowledge",
+    "Mathematics and Statistics Level 5: Patterns and relationships",
+    "Tikanga-ā-iwi: Understanding how cultural practices influence environmental management"
+  ],
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T09:49:30.492Z",
+  "enrichedAt": "2025-09-11T06:11:59.992Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}
