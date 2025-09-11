@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686889991-m27dt9h84",
-  "title": "Year 8 Mathematics: Cultural Preservation",
+  "title": "Te Whakatau Tātai o Te Awa: The Mathematics of River Restoration",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 8",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Students will investigate the restoration of Te Awa o Mangakōtukutuku, the local river that holds deep significance for Ngāti Kahungunu. The river's name references the native fernbird (kōtukutuku) that once thrived along its banks. Using mathematical concepts, students will analyze historical flow data, calculate sediment loads, and design restoration strategies that honor both scientific principles and mātauranga Māori regarding water conservation and ecosystem balance.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and compare river flow rates using volume and time measurements from historical and current data",
+    "Apply geometric principles to design effective riparian planting zones along the riverbank",
+    "Analyze statistical data on native bird populations to identify correlations with water quality improvements",
+    "Create scaled mathematical models proposing restoration solutions for specific sections of Te Awa o Mangakōtukutuku"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Te Horanga Wai - Understanding River Flow",
+      "description": "Students analyze historical flow data of Te Awa o Mangakōtukutuku using rate calculations and volume formulas. They compare pre-European settlement flow patterns with current data to understand environmental changes."
+    },
+    {
+      "title": "Te Tātai Mata - Geometric Planting Designs",
+      "description": "Using aerial maps of the riverbank, students apply area and perimeter calculations to design native planting zones that prevent erosion while creating habitats for kōtukutuku (fernbird) and other native species."
+    },
+    {
+      "title": "Ngā Tatauranga o Te Taiao - Statistical Analysis",
+      "description": "Students work with local conservation data to create graphs and charts showing relationships between water quality measurements and native species populations, calculating percentages and correlations."
+    },
+    {
+      "title": "Te Whakaaturanga Whakamaori - Scale Modeling",
+      "description": "Using ratio and proportion, students create accurate scale models of proposed restoration sections, incorporating their mathematical calculations into physical representations of their solutions."
+    },
+    {
+      "title": "Te Whakawhiti Kōrero - Community Presentation",
+      "description": "Students present their mathematical models and calculations to local kaumātua and environmental officers, explaining how their solutions balance mathematical precision with cultural and environmental values."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Historical flow data from Hawke's Bay Regional Council for Te Awa o Mangakōtukutuku",
+    "Ngāti Kahungunu kaumātua Rangiātea Whaanga for mātauranga Māori perspectives on water conservation",
+    "Topographic maps and aerial photographs of the river from Land Information New Zealand",
+    "Measuring equipment including flow meters, trundle wheels, and water testing kits from the school science department"
   ],
-  "assessment": "Cultural heritage preservation through mathematics methods",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete mathematical calculations workbook showing all formulas and methods used",
+      "Create a scaled restoration plan with accurate measurements and ratios",
+      "Present findings to community stakeholders using appropriate mathematical language and visual representations",
+      "Write a reflection connecting mathematical concepts to cultural values of kaitiakitanga"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Number and Algebra: Patterns and relationships, Equations and expressions",
+    "Geometry and Measurement: Measurement, Position and orientation",
+    "Statistics: Statistical investigation, Statistical literacy",
+    "Key Competencies: Using language, symbols, and texts; Participating and contributing"
   ],
-  "createdAt": "2025-08-20T10:48:09.994Z"
+  "createdAt": "2025-08-20T10:48:09.994Z",
+  "enrichedAt": "2025-09-11T08:58:24.195Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

@@ -1,6 +1,5 @@
 import { Activity, Award, BookOpen, CheckCircle, Shield, Star, Users } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { EnrichedResource, loadEnrichedResources } from '../utils/enriched-resource-loader';
 
 interface EnrichmentAgent {
   id: string;

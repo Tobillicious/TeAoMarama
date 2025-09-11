@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755685640670-u44wd4rzq",
-  "title": "Year 9 Science: Sustainable Solutions",
+  "title": "Te Whakaora i te Awa o Mangakōtukutuku | Restoring the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Science",
   "yearLevel": "Year 9",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Students will investigate the health of the Mangakōtukutuku Stream, a significant waterway flowing through our rohe that holds cultural importance to Ngāti Kahungunu. The stream's name references the kotukutuku (tree fuchsia) that once flourished along its banks. Students will connect with local kaitiaki and use mātauranga Māori alongside scientific methods to assess water quality and develop restoration plans.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of science concepts in cultural context",
-    "Apply traditional knowledge to modern science challenges",
-    "Analyze environmental impacts through science frameworks",
-    "Engage with community perspectives on science issues"
+    "Collect and analyze water quality data (pH, nitrate levels, turbidity) from the Mangakōtukutuku Stream using scientific equipment and methods.",
+    "Compare scientific water quality data with mātauranga Māori indicators of stream health (e.g., presence of tuna, kōura, and native vegetation).",
+    "Design a culturally-informed action plan proposing specific, evidence-based solutions to improve the health of the Mangakōtukutuku Stream.",
+    "Present findings and proposed solutions to the class, justifying how they integrate both scientific evidence and mātauranga Māori principles."
   ],
   "activities": [
-    "Cultural mapping and science analysis",
-    "Traditional knowledge workshop and science integration",
-    "Environmental investigation using science methods",
-    "Community interview project on science applications",
-    "Sustainability challenge with science solutions",
-    "Cultural artifact study through science lens"
+    {
+      "title": "Whakatau me te Whakawhanaungatanga | Welcome and Connecting",
+      "description": "The lesson begins with a karakia to acknowledge the awa. A local kaumātua or kaitiaki from Ngāti Kahungunu shares the pūrākau (story) and significance of the Mangakōtukutuku Stream, explaining its traditional name, uses, and why it is a taonga. Students engage in a discussion about what a healthy awa looks and feels like."
+    },
+    {
+      "title": "He Tātari Pūnaha | Systematic Analysis",
+      "description": "Guided by the science teacher, students travel to a designated, safe testing site on the Mangakōtukutuku Stream. In small groups, they use water testing kits to collect and record quantitative data on pH, nitrate levels, dissolved oxygen, and turbidity. They also make qualitative observations and sketch the site."
+    },
+    {
+      "title": "Te Kimi Tohu o te Mātauranga Māori | Seeking Māori Knowledge Indicators",
+      "description": "Back in the lab, students analyze their collected data. They then cross-reference this with a resource from local iwi that details traditional indicators of stream health (e.g., abundance of tuna/eels, kōura/freshwater crayfish, and specific riparian plants like harakeke). Students identify connections and discrepancies between the two knowledge systems."
+    },
+    {
+      "title": "Te Whakaaro Hōu | Designing New Solutions",
+      "description": "Using their analysis, student groups brainstorm a solution to a key issue identified in the stream (e.g., high nitrate levels from farmland runoff, bank erosion, lack of shade). Their solution must propose a specific, practical intervention (e.g., planting a ngahere awa/riparian buffer strip with native species like mānuka and harakeke) and explain how it is supported by both their scientific data and mātauranga Māori principles of kaitiakitanga."
+    },
+    {
+      "title": "Te Whakaatu me te Whakawhitiwhiti Kōrero | Presentation and Discussion",
+      "description": "Groups present their proposed restoration plans to the class. Peers provide feedback using a structured template, focusing on the strength of the evidence, the practicality of the solution, and the depth of cultural integration. The best ideas are compiled to be shared with the local kaitiaki group."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and science resources",
-    "Traditional knowledge holders and science experts",
-    "Environmental monitoring tools and science software",
-    "Community engagement platforms and science forums",
-    "Sustainability assessment frameworks and science models"
+    "Local Kaitiaki or Kaumātua from Ngāti Kahungunu",
+    "LaMotte Water Monitoring Kits or similar (test for pH, nitrates, turbidity)",
+    "'Te Awa Atua - The River of Life' resource by Ngāti Kahungunu (or similar iwi-led freshwater health guide)",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' (SHMAK) online resources and guides"
   ],
-  "assessment": "Community engagement reflection on science applications",
-  "duration": "6-8 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "A completed field data sheet with accurate recordings and observations.",
+      "A written report or digital presentation that analyzes the scientific and cultural data to assess the stream's health.",
+      "A proposed 'Awa Restoration Plan' that outlines an evidence-based, culturally-grounded solution.",
+      "A peer assessment of another group's presentation based on a provided rubric."
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Nature of Science: Investigating in Science (Level 5 - Develop and carry out investigations); Communicating in Science (Level 5 - Present their findings)",
+    "Living World: Ecology (Level 5 - Investigate the interdependence of living things in an ecosystem)",
+    "Planet Earth and Beyond: Earth Systems (Level 5 - Investigate the water cycle and its effect on climate, landforms, and life)",
+    "Vision: To be connected - actively involved in their communities; To be contributors - contributing to the social, cultural, and economic well-being of New Zealand"
   ],
-  "createdAt": "2025-08-20T10:27:20.670Z"
+  "duration": "6-8 weeks",
+  "createdAt": "2025-08-20T10:27:20.670Z",
+  "enrichedAt": "2025-09-11T07:57:37.732Z",
+  "enrichedBy": "Aronui_Pūtaiao"
 }

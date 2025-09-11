@@ -1,39 +1,56 @@
 {
   "id": "lesson-1755686747253-0kc70aunj",
-  "title": "Year 9 Mathematics: Indigenous Knowledge Systems",
+  "title": "Te Whakatau me te Whakamārama i ngā Tau o Te Awa o Mangakōtukutuku / Calculating and Interpreting the Numbers of Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 9",
-  "culturalContext": "Cultural practices and traditional knowledge",
+  "culturalContext": "Students will explore mathematical concepts through the lens of Te Awa o Mangakōtukutuku, a significant local waterway that holds cultural importance to Ngāti Kahungunu. The stream's health, flow patterns, and historical significance in providing mahinga kai (food gathering) will serve as the foundation for applying ratios, rates, percentages, and data analysis while connecting to the pūrākau (traditional story) of the stream's naming after the native mistletoe plant.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and interpret ratios and rates related to water quality data (e.g., nitrate levels per litre) from Te Awa o Mangakōtukutuku.",
+    "Analyze and represent stream flow data using appropriate statistical measures (mean, median, mode) and graphs.",
+    "Apply percentage change calculations to compare historical and current kōura (crayfish) population data from the stream.",
+    "Create a mathematical model to propose sustainable water usage for the stream's surrounding whenua (land)."
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Hei Tauāki mō Te Awa: Introducing the Stream Through Data",
+      "description": "Students will be introduced to Te Awa o Mangakōtukutuku through a karakia and a short video from a local kaumātua. They will then be given a dataset of basic measurements (length, average width, pH levels) and work in pairs to calculate simple ratios and percentages, creating a initial statistical profile of the awa."
+    },
+    {
+      "title": "Te Tātari Raraunga: Data Analysis of Stream Health",
+      "description": "Using provided water quality test kits, students will collect and record data on nitrate and phosphate levels at different points along a mapped section of the stream. They will calculate rates (e.g., mg/L) and use this data to create comparative bar graphs, analyzing which areas show signs of potential runoff and discussing the environmental implications."
+    },
+    {
+      "title": "Te Hurihanga Ōrau: Calculating Change in Mahinga Kai",
+      "description": "Students will examine historical and recent data on kōura populations in the awa. They will calculate the percentage change over time. Guided by questions from a local expert (e.g., a representative from Ngāti Kahungunu Iwi Inc.), they will use these calculations to support a discussion on the causes and potential solutions for the population change."
+    },
+    {
+      "title": "Te Hangarau Tauira: Designing a Sustainable Usage Model",
+      "description": "In small groups, students will be given a scenario involving water allocation for agriculture, a local māra kai (garden), and ecosystem health. Using flow rate data, they will create a mathematical model (using ratios and percentages) to propose a fair and sustainable water distribution plan, presenting their reasoning to the class."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Hawke's Bay Regional Council's Land Water Aotearoa (LWAI) portal for Mangakōtukutuku stream data",
+    "Water quality testing kits (nitrate, phosphate, pH strips)",
+    "Local kaumātua or representative from Ngāti Kahungunu Iwi Inc. for cultural context and historical knowledge",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' (SHMAK) guide and resources"
   ],
-  "assessment": "Cultural heritage preservation through mathematics methods",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Produce a detailed data analysis report on the health of Te Awa o Mangakōtukutuku, including calculations of rates, percentages, and graphical representations.",
+      "Create a presentation that uses mathematical evidence to argue for a specific action to improve or protect the stream's health, connecting the maths to the cultural value of the awa."
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Number and Algebra: Reason with linear and spatial patterns and relationships. Use ratios and rates.",
+    "Statistics: Evaluate statistical investigations or probability activities undertaken by others. Use statistical methods to make inferences.",
+    "Te Tiriti o Waitangi: Principle of partnership - working with iwi data and perspectives.",
+    "Education for Sustainability: Respecting and caring for living things and the environment, and understanding the impact of human actions on the environment."
   ],
-  "createdAt": "2025-08-20T10:45:47.253Z"
+  "createdAt": "2025-08-20T10:45:47.253Z",
+  "enrichedAt": "2025-09-11T08:51:30.591Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

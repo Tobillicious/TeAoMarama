@@ -1,39 +1,56 @@
 {
   "id": "lesson-1755686123208-0ojvxtdqc",
-  "title": "Year 9 Te Reo Māori: Community Engagement",
+  "title": "Te Hīkoi o te Waha: Voices of Our River / Ngā Reo o Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 9",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "Students will explore the cultural significance of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a vital waterway flowing through Ngāti Kahungunu rohe. They will learn traditional place names, waiata, and pūrākau associated with the awa, connecting language learning to the living history and environmental stewardship of their local community.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Whakamahi i ngā kupu Māori e hāngai ana ki te taiao, pērā i te 'awa', 'repo', 'ngāhere', me te 'taniwha', ki te kōrero mō Te Awa o Mangakōtukutuku (Use Māori vocabulary related to the environment to describe the Mangakōtukutuku Stream).",
+    "Tuhituhi he kōrero poto, e toru ngā rerenga, e whakaatu ana i te hiranga o te awa ki te hapori, me te whakamahi i ngā wetereo tika (Write a short paragraph using correct grammar to explain the stream's importance to the community).",
+    "Whakaatu māramatanga ki te pūrākau o Te Taniwha o Mangakōtukutuku mā te whakautu i ngā pātai (Demonstrate understanding of the local legend of the taniwha by answering comprehension questions).",
+    "Whakapā atu ki te kaitiaki o te awa mā te tuhi i ētahi pātou hei uiui (Formulate questions in te reo Māori to interview a local kaitiaki)."
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "He Hīkoi, He Awa, He Kōrero (A Walk, A River, A Story)",
+      "description": "A guided class hīkoi to the banks of Te Awa o Mangakōtukutuku. A kaumātua or local kaitiaki will share the pūrākau (legend) of the taniwha said to reside in its deep pools and point out significant features, using and explaining their traditional Māori names."
+    },
+    {
+      "title": "Te Whare Kupu o te Taiao (The Word House of the Environment)",
+      "description": "In pairs, students create a visual 'whare' (house) poster. Each 'pou' (post) is labelled with a key environmental kupu (awa, repo, ngahere, taniwha, kaitiaki) and its English translation. They decorate it with drawings or photos from the hīkoi."
+    },
+    {
+      "title": "He Pānui, He Pūrākau (A Reading, A Legend)",
+      "description": "Students read a simplified, written version of 'Te Taniwha o Mangakōtukutuku'. In small groups, they collaborate to answer a set of comprehension questions (He aha te ingoa o te taniwha? I hea ia e noho ana?) in te reo Māori."
+    },
+    {
+      "title": "Ngā Pātai mā te Kaitiaki (Questions for the Guardian)",
+      "description": "As a class, prepare for a virtual or in-person visit from a kaitiaki from the Mangakōtukutuku Marae Restoration Group. Students draft 2-3 questions each in te reo Māori to ask about their work and connection to the awa (e.g., 'He aha ōu mahi hei kaitiaki?')."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Kaumātua or Kaitiaki from the Mangakōtukutuku Marae Restoration Group",
+    "Ngāti Kahungunu iInc. website and Te Ahukaramū Charles Royal's 'Māori Maps' for place names",
+    "The book 'Ngā Pūrākau o Ngāti Kahungunu' by Ron Crosby",
+    "Digital cameras or tablets for documenting the hīkoi"
   ],
-  "assessment": "Community engagement reflection on te reo māori applications",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Completion of the 'Te Whare Kupu o te Taiao' poster with accurate kupu and translations.",
+      "Written responses to the pūrākau comprehension questions.",
+      "Submission of two well-structured questions in te reo for the kaitiaki."
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori: Communication (CM) L5 - Use relevant language, formulaic expressions, and grammatical conventions in a range of predictable situations.",
+    "Te Reo Māori: Language Knowledge (LK) L5 - Recognise that te reo Māori is organised in particular ways and understand how such organisation reflects Māori thought.",
+    "Social Sciences: Understand how people remember and record the past in different ways. (L4)"
   ],
-  "createdAt": "2025-08-20T10:35:23.208Z"
+  "createdAt": "2025-08-20T10:35:23.208Z",
+  "enrichedAt": "2025-09-11T08:21:03.145Z",
+  "enrichedBy": "Aronui_Te"
 }

@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755686626698-z77o5cqbe",
-  "title": "Year 7 Science: Cultural Preservation",
+  "title": "Te Whakamarumaru o Te Awa o Mangakōtukutuku / Guardians of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Science",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental conservation and kaitiakitanga",
+  "culturalContext": "This lesson is deeply connected to Te Awa o Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. Students will explore the pūrākau of Hinepūkohurangi, the mist maiden whose tears formed our awa, while investigating the current health of the stream through scientific methods. This connects our Ngāti Kahungunu identity with modern environmental science.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of science concepts in cultural context",
-    "Apply traditional knowledge to modern science challenges",
-    "Analyze environmental impacts through science frameworks",
-    "Engage with community perspectives on science issues"
+    "Measure and analyze water quality parameters (pH, turbidity, temperature) from three locations along Te Awa o Mangakōtukutuku",
+    "Compare traditional Māori indicators of stream health (presence of tuna, kōura, native vegetation) with scientific measurements",
+    "Design and propose one evidence-based intervention to improve the health of Te Awa o Mangakōtukutuku",
+    "Present findings using both scientific terminology and te reo Māori environmental vocabulary"
   ],
   "activities": [
-    "Cultural mapping and science analysis",
-    "Traditional knowledge workshop and science integration",
-    "Environmental investigation using science methods",
-    "Community interview project on science applications",
-    "Sustainability challenge with science solutions",
-    "Cultural artifact study through science lens"
+    {
+      "title": "Whakapapa o Te Awa - Story of Our Stream",
+      "description": "Students listen to local kaumātua share the pūrākau of Hinepūkohurangi and how she formed Te Awa o Mangakōtukutuku. Using large paper, students create visual timelines showing both the geological formation and the cultural story of our awa."
+    },
+    {
+      "title": "Matauranga Māori Meets Water Testing",
+      "description": "At three sites along the stream (upstream, college boundary, downstream), students work in pairs to conduct water quality testing using scientific equipment while simultaneously recording traditional indicators - presence of tuna (eels), kōura (crayfish), and healthy native riparian plants."
+    },
+    {
+      "title": "Data Korowai - Weaving Knowledge Together",
+      "description": "Using large collaborative maps of the stream, students plot their scientific data and cultural observations using different colored threads/strings, creating a physical 'korowai' (cloak) of knowledge that visually represents the health of different stream sections."
+    },
+    {
+      "title": "Rongoā Planting - Hands-on Kaitiakitanga",
+      "description": "Students identify areas of stream bank erosion and plant native rongoā (medicinal) plants such as harakeke and kawakawa to stabilize banks, learning both the ecological benefits and traditional uses of these plants from local experts."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and science resources",
-    "Traditional knowledge holders and science experts",
-    "Environmental monitoring tools and science software",
-    "Community engagement platforms and science forums",
-    "Sustainability assessment frameworks and science models"
+    "Local kaumātua from Ngāti Kahungunu to share pūrākau",
+    "Water testing kits (pH strips, thermometers, turbidity tubes)",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' guide",
+    "Te Awa Tupua - Whanganui River legislation documents for comparative study"
   ],
-  "assessment": "Sustainability solution design with science principles",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a detailed stream health report comparing scientific data and traditional indicators",
+      "Design a culturally-informed restoration plan for one section of the stream",
+      "Present findings to peers using both scientific terminology and te reo Māori"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Nature of Science: Investigating in science, Understanding about science",
+    "Living World: Ecology, Evolution",
+    "Planet Earth and Beyond: Earth systems, Interacting systems",
+    "NZC Key Competencies: Participating and contributing, Using language, symbols and texts"
   ],
-  "createdAt": "2025-08-20T10:43:46.698Z"
+  "createdAt": "2025-08-20T10:43:46.698Z",
+  "enrichedAt": "2025-09-11T08:45:24.546Z",
+  "enrichedBy": "Aronui_Pūtaiao"
 }

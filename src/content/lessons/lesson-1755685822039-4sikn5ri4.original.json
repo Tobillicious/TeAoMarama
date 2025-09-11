@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755685822039-4sikn5ri4",
-  "title": "Year 8 Health & Physical Education: Understanding Cultural Context",
+  "title": "Te Hauora o te Awa: The Health of Our River / Te Hauora o te Awa: Te Oranga o tō tātou Awa",
   "type": "lesson",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 8",
-  "culturalContext": "Traditional knowledge and cultural practices",
+  "culturalContext": "This lesson is deeply rooted in the health and wellbeing of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway flowing through our rohe. Students will explore how the mauri (life force) of our awa connects directly to the hauora (health) of our Ngāti Kahungunu community, drawing on traditional knowledge of water as a taonga and its role in physical, spiritual, and environmental wellbeing.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Analyze how the health of Te Awa o Mangakōtukutuku reflects the holistic hauora of our local community using the whare tapa whā model",
+    "Measure and document water quality indicators using both mātauranga Māori methods and scientific tools to assess the awa's mauri",
+    "Create and present a collaborative action plan that addresses one identified threat to the awa's health and its impact on community wellbeing",
+    "Demonstrate understanding of kaitiakitanga through practical engagement with local river restoration initiatives"
   ],
   "activities": [
-    "Cultural mapping and health & physical education analysis",
-    "Traditional knowledge workshop and health & physical education integration",
-    "Environmental investigation using health & physical education methods",
-    "Community interview project on health & physical education applications",
-    "Sustainability challenge with health & physical education solutions",
-    "Cultural artifact study through health & physical education lens"
+    {
+      "title": "He Whakawhiti Kōrero: Stories of Our Awa",
+      "description": "Students will engage with local kaumātua and knowledge holders to hear pūrākau (traditional stories) and historical accounts of Te Awa o Mangakōtukutuku. They will map significant sites along the awa and identify traditional uses of the waterway for food gathering, healing, and spiritual practices, connecting these to dimensions of hauora."
+    },
+    {
+      "title": "Te Tirohanga Mātauranga e Rua: Dual Lens Investigation",
+      "description": "Working in small groups, students will conduct field studies at designated sites along the awa. They will use both scientific water testing kits (measuring pH, clarity, nitrates) and mātauranga Māori indicators (presence of native species, water appearance and smell) to assess the current health status of the waterway."
+    },
+    {
+      "title": "Te Whare Tapa Whā o te Awa: Holistic Health Analysis",
+      "description": "Students will create visual representations mapping their findings about the awa's health onto the four dimensions of whare tapa whā: taha tinana (physical health - water quality), taha wairua (spiritual health - cultural significance), taha hinengaro (mental health - community connection to place), and taha whānau (social health - shared responsibility)."
+    },
+    {
+      "title": "Mahi Kaitiaki: Practical Guardianship",
+      "description": "Students will participate in a hands-on restoration activity with local environmental groups, such as native planting along riverbanks, removing invasive species, or creating educational signage. They will document their contribution and reflect on how individual actions support collective wellbeing."
+    },
+    {
+      "title": "He Mahere Mahi: Action Planning Hui",
+      "description": "Groups will develop and present actionable proposals to enhance the health of Te Awa o Mangakōtukutuku. Proposals must address both environmental and community health aspects, incorporating mātauranga Māori principles and modern scientific understanding."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Ngāti Kahungunu Iwi Incorporated environmental management plans and cultural health indicators",
+    "Hawke's Bay Regional Council water quality monitoring resources and historical data for Mangakōtukutuku Stream",
+    "Local kaumātua and representatives from Manaaki Te Awa Trust for cultural guidance and traditional knowledge sharing",
+    "Water testing kits, mapping tools, and digital documentation equipment for field studies"
   ],
-  "assessment": "Indigenous perspectives integration in health & physical education practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Group presentation of water quality investigation findings using both scientific and cultural frameworks",
+      "Written reflection connecting personal experiences of kaitiakitanga to holistic hauora concepts",
+      "Action plan proposal addressing a specific challenge facing Te Awa o Mangakōtukutuku and its impact on community wellbeing"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Health and Physical Education: A1 - Personal Health and Physical Development, A3 - Relationships with Other People",
+    "Health and Physical Education: B1 - Movement Concepts and Motor Skills, B3 - Science and Technology",
+    "Social Sciences: Understand how people manage resources and participate in communities",
+    "The Arts: Communicating and Interpreting ideas through presentation"
   ],
-  "createdAt": "2025-08-20T10:30:22.039Z"
+  "createdAt": "2025-08-20T10:30:22.039Z",
+  "enrichedAt": "2025-09-11T08:06:33.978Z",
+  "enrichedBy": "Aronui_Hauora"
 }

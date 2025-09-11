@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686506496-ik0b8l0sd",
-  "title": "Year 7 Mathematics: Indigenous Knowledge Systems",
+  "title": "Te Whakatau me te Whakamārama i ngā Tau o Te Awa o Mangakōtukutuku / Measuring and Interpreting the Data of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental guardianship and kaitiakitanga",
+  "culturalContext": "Students will engage as kaitiaki of Te Awa o Mangakōtukutuku, a significant local waterway that flows through our rohe. They will learn how Ngāti Kahungunu ancestors used mathematical reasoning to monitor and maintain the health of this awa, understanding its patterns, flows, and the life it sustains. This connects to the pūrākau of the stream's namesake, the Mangakōtukutuku (swamp harrier), which relies on the clean waters for survival.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Accurately measure and record water flow rates and depth at three different points along Te Awa o Mangakōtukutuku using appropriate tools and units of measurement.",
+    "Calculate the mean, median, and mode of the collected water quality data (e.g., pH levels, clarity measurements) to identify central tendencies and patterns.",
+    "Create a dual-axis line graph or bar graph to visually represent the relationship between water flow rates and another variable, such as time of day or recent rainfall.",
+    "Propose a data-informed recommendation for the ongoing kaitiakitanga of the awa, justifying the proposal with specific mathematical evidence from their investigation."
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "He Kōrero mō Te Awa / The Story of Our Stream",
+      "description": "A local kaumātua or representative from the mana whenua will share the pūrākau (story) and significance of Te Awa o Mangakōtukutuku. Students will learn how tūpuna (ancestors) observed and quantified natural patterns to care for the awa, setting the cultural context for the mathematical mahi (work)."
+    },
+    {
+      "title": "He Rārangi Inenga / Creating a Measurement Plan",
+      "description": "In small groups, students will plan their data collection mission. They will decide what to measure (e.g., flow rate using a float and stopwatch, depth with a measuring pole, water clarity with a Secchi disk), select appropriate units (seconds, metres, NTUs), and design a table for recording their data at three specific sites along the awa."
+    },
+    {
+      "title": "He Haerenga Kaitiaki / Kaitiaki Field Mission",
+      "description": "The class will visit the awa to conduct their measurements. Students will work in their groups to systematically collect and accurately record their data at the pre-determined sites, practising protocols of respect and safety for the environment."
+    },
+    {
+      "title": "Te Tātari Raraunga / Data Analysis Hub",
+      "description": "Back in the classroom, groups will input their data into spreadsheets. They will be guided through calculating measures of central tendency (mean, median, mode) for their datasets and will learn to create appropriate graphs (e.g., dual-axis line graphs) to visualise the relationships between their variables, such as flow rate and water depth."
+    },
+    {
+      "title": "Te Whakatau a te Kaitiaki / The Kaitiaki's Conclusion",
+      "description": "Groups will synthesize their findings to answer the driving question: 'What is the current state of our awa?'. They will prepare a brief presentation or a written report that states a data-backed recommendation for its care, connecting their mathematical evidence back to the concept of kaitiakitanga introduced by the kaumātua."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "A local kaumātua or representative from Ngāti Kahungunu iwi authority",
+    "Physical measurement tools: metre sticks, stopwatches, homemade Secchi disks, floats",
+    "NIWA's 'River and Stream' education resources and data sheets",
+    "Digital tools: Google Sheets or Excel for data analysis and graph creation"
   ],
-  "assessment": "Kaitiakitanga implementation using mathematics approaches",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "Formative and Summative",
+    "tasks": [
+      "Accurate and complete field data recording sheets from the visit to the awa.",
+      "A correctly formatted spreadsheet showing the raw data, calculations of mean, median, and mode, and at least one graph.",
+      "A final summary report or 2-minute presentation that states a recommendation for the awa's care, supported by specific mathematical evidence from the investigation."
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics: Statistics Level 4 - Evaluating statistical investigations or probability activities undertaken by others, including data collection methods, choice of measures, and validity of findings",
+    "Mathematics and Statistics: Number and Algebra Level 4 - Generalising properties of multiplication and division with whole numbers",
+    "Mathematics and Statistics: Geometry and Measurement Level 4 - Use appropriate scales, devices, and metric units for length, area, volume and capacity, weight (mass), temperature, angle, and time",
+    "The NZC Principle: Community Engagement - Students will engage with local iwi and their environment",
+    "The NZC Value: Ecological Sustainability - which includes care for the environment"
   ],
-  "createdAt": "2025-08-20T10:41:46.497Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:41:46.497Z",
+  "enrichedAt": "2025-09-11T08:39:29.981Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

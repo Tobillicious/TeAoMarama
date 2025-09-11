@@ -9,7 +9,6 @@ import {
   Users,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { EnrichedResource, loadEnrichedResources } from '../utils/enriched-resource-loader';
 
 interface EnrichmentPass {
   id: string;

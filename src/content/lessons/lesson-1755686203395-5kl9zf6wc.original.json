@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686203395-5kl9zf6wc",
-  "title": "Year 9 English: Community Engagement",
+  "title": "Whakapapa of the River: Voices of Te Awa o Mangakōtukutuku | Te Kōrero o te Awa: Ngā Reo o Mangakōtukutuku",
   "type": "lesson",
   "subject": "English",
   "yearLevel": "Year 9",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Students will explore the oral histories and written narratives surrounding Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway for Ngāti Kahungunu that flows through our rohe. This stream holds stories of ancestral journeys, traditional food gathering practices, and environmental changes. The lesson connects to local kaumātua knowledge about the stream's historical significance and current restoration efforts led by our community.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Analyze and compare oral histories and written texts about Te Awa o Mangakōtukutuku to identify narrative techniques and cultural perspectives",
+    "Create a written piece (narrative or report) that synthesizes community voices with personal observations about the awa",
+    "Use appropriate language features and structures to communicate findings about the stream's significance to different audiences",
+    "Participate effectively in group discussions by building on others' ideas and respecting diverse viewpoints about local environmental issues"
   ],
   "activities": [
-    "Cultural mapping and english analysis",
-    "Traditional knowledge workshop and english integration",
-    "Environmental investigation using english methods",
-    "Community interview project on english applications",
-    "Sustainability challenge with english solutions",
-    "Cultural artifact study through english lens"
+    {
+      "title": "Whakarongo: Listening to the Awa's Stories",
+      "description": "Students listen to recorded oral histories from local kaumātua about Te Awa o Mangakōtukutuku, then work in pairs to identify key themes, narrative structures, and language features used in these traditional accounts"
+    },
+    {
+      "title": "Tuhituhi: Mapping Narrative Journeys",
+      "description": "Using large maps of the awa, students create visual representations of the stories they've heard, annotating geographical features with corresponding narrative elements and cultural significance markers"
+    },
+    {
+      "title": "Uiui: Community Voice Gathering",
+      "description": "Students develop interview questions and conduct structured interviews with local community members (restoration group members, farmers, historians) about their relationships with the awa, practicing active listening and note-taking techniques"
+    },
+    {
+      "title": "Whakamārama: Synthesizing Multiple Perspectives",
+      "description": "In small groups, students analyze their collected data to identify common themes, contrasting viewpoints, and evolving narratives about the awa, using graphic organizers to compare oral and written accounts"
+    },
+    {
+      "title": "Whakaputa: Creating Our Awa Narrative",
+      "description": "Students craft a multi-format presentation (written report, digital story, or spoken word piece) that weaves together traditional stories, community voices, and personal reflections to tell a comprehensive story of Te Awa o Mangakōtukutuku"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Ngāti Kahungunu kaumātua oral history recordings from Hastings District Council archives",
+    "Physical and digital maps of Te Awa o Mangakōtukutuku watershed from Hawke's Bay Regional Council",
+    "Mangakōtukutuku Stream Care Group members as expert interviewees",
+    "'Te Awa Atua: The River of Life' by Anne Salmond (relevant chapters)"
   ],
-  "assessment": "Indigenous perspectives integration in english practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Written synthesis report analyzing multiple perspectives about the awa",
+      "Recorded oral presentation sharing findings with authentic audience",
+      "Reflective journal documenting the interview and research process"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing - Processes and strategies",
+    "English: Speaking, Writing, and Presenting - Ideas; Language features; Structure",
+    "English: Purposes and audiences - Show understanding of how texts are shaped for different purposes and audiences",
+    "Social Sciences: Understand how people remember and record the past in different ways"
   ],
-  "createdAt": "2025-08-20T10:36:43.395Z"
+  "createdAt": "2025-08-20T10:36:43.395Z",
+  "enrichedAt": "2025-09-11T08:25:26.692Z",
+  "enrichedBy": "Aronui_Te"
 }

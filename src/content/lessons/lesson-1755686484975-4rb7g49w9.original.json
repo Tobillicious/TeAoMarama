@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686484975-4rb7g49w9",
-  "title": "Year 10 Mathematics: Sustainable Solutions",
+  "title": "Te Whakatau Taurangi o Te Awa Mangakōtukutuku / Algebraic Modelling of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 10",
-  "culturalContext": "Environmental conservation and kaitiakitanga",
+  "culturalContext": "Students will investigate water quality and flow patterns of Te Awa Mangakōtukutuku, the stream that flows through our college lands and holds significance to Ngāti Kahungunu as a traditional food gathering site and boundary marker. The stream's health reflects our community's kaitiakitanga practices.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Create linear and quadratic functions to model water quality data collected from Te Awa Mangakōtukutuku",
+    "Calculate rates of change in water pH and turbidity levels using algebraic methods",
+    "Analyze mathematical models to predict seasonal variations in stream health",
+    "Propose evidence-based restoration strategies using mathematical justification"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakapapa o Te Awa - Stream Story Mapping",
+      "description": "Students work with kaumātua to map the historical path and significance of Te Awa Mangakōtukutuku, identifying key measurement points and creating coordinate systems based on traditional landmarks"
+    },
+    {
+      "title": "Pūtaiao Ine - Scientific Data Collection",
+      "description": "Field trip to collect water samples at 5 designated points along the stream, measuring pH, turbidity, and flow rate using digital sensors and traditional observation methods"
+    },
+    {
+      "title": "Whakatau Taurangi - Algebraic Modelling",
+      "description": "Students create linear regression models for pH levels and quadratic functions for seasonal flow rates using graphing calculators and spreadsheet software, comparing modern data with historical records"
+    },
+    {
+      "title": "Te Arotakenga Tauanga - Statistical Analysis",
+      "description": "Calculate rates of change between measurement points, determine correlation coefficients for water quality indicators, and identify trends using statistical measures"
+    },
+    {
+      "title": "Te Whakatau Kaitiaki - Guardianship Solutions",
+      "description": "Groups develop mathematically justified proposals for stream restoration, presenting cost-benefit analyses and projected improvement timelines to community representatives"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Mangakōtukutuku Stream historical water quality data from Hawke's Bay Regional Council",
+    "Digital pH meters and turbidity tubes from NZ Marine Studies Centre",
+    "Kaumātua Rangi Smith (Ngāti Kahungunu environmental knowledge holder)",
+    "Desmos graphing calculator and Google Sheets for data analysis"
   ],
-  "assessment": "Traditional knowledge demonstration in mathematics contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a mathematical model predicting water quality changes over 12 months",
+      "Write a technical report justifying restoration recommendations with mathematical evidence",
+      "Present findings to community panel using appropriate mathematical language and cultural protocols"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics Level 5: Equations and expressions",
+    "Mathematics and Statistics Level 5: Patterns and relationships",
+    "Science Level 5: Planet Earth and Beyond",
+    "Social Sciences Level 5: Economic activities and sustainability"
   ],
-  "createdAt": "2025-08-20T10:41:24.981Z"
+  "createdAt": "2025-08-20T10:41:24.981Z",
+  "enrichedAt": "2025-09-11T08:38:44.660Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

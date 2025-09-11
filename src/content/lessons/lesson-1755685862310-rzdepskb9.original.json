@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755685862310-rzdepskb9",
-  "title": "Year 7 Technology: Sustainable Solutions",
+  "title": "Te Whakaputanga o Te Awa / The River's Revelation: Designing Sustainable Solutions for Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 7",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Students will investigate the health and sustainability of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway flowing through our rohe that holds cultural, spiritual, and ecological importance to Ngāti Kahungunu. The stream's name references the kotukutuku (tree fuchsia) that once flourished along its banks, and its current state reflects both historical practices and modern environmental challenges.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and construct a functional water quality testing device using sustainable materials, documenting the design process.",
+    "Analyze collected water quality data from Te Awa o Mangakōtukutuku to identify potential sources of pollution and their environmental impact.",
+    "Propose a culturally-informed technological solution to address an identified issue affecting the health of the awa, justifying design choices with reference to both mātauranga Māori and technological principles.",
+    "Effectively communicate findings and proposed solutions to an audience, incorporating te reo Māori terminology relevant to the project."
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki Te Awa (Connecting with the River)",
+      "description": "Visit Te Awa o Mangakōtukutuku with a local kaumātua or representative from Ngāti Kahungunu. Listen to the pūrākau (stories) and history of the awa, understanding its significance as a taonga. Conduct initial observational analysis of the river's state, noting flora, fauna, and human influences. Sketch the site and record initial questions."
+    },
+    {
+      "title": "Hangaia tō Tātari Wai (Build Your Water Tester)",
+      "description": "In the tech workshop, students work in small groups to design and build a simple, sustainable water testing device. The brief is to create a tool that can measure turbidity (clarity) and potentially pH using primarily recycled or natural materials (e.g., repurposed plastic bottles, local wood, stone). The design process is documented with sketches and notes."
+    },
+    {
+      "title": "He Tātari, He Uiui (Analysis and Inquiry)",
+      "description": "Groups use their constructed devices and provided digital probes (e.g., thermometers) to collect water quality data at designated points along the awa. Back in class, they collate and analyze this data, comparing it to historical data and national standards. They research potential causes for their findings (e.g., runoff from nearby farms, urban drainage)."
+    },
+    {
+      "title": "Te Whakaaro Hangarau (The Technological Solution)",
+      "description": "Based on their analysis, each group identifies one key issue affecting the awa. They brainstorm and design a scale model or detailed plan for a technological solution. This must be a sustainable intervention (e.g., a native planting plan to stabilize banks and filter runoff, a design for a community education sign using QR codes, a model of a small-scale bioretention swale). Their design justification must integrate technological concepts and cultural values like kaitiakitanga."
+    },
+    {
+      "title": "Te Whakaaturanga (The Presentation)",
+      "description": "Groups present their findings, data, and proposed technological solutions to an audience that includes classmates, teachers, and possibly a community representative. Presentations must include their physical water tester, data visualizations, and their proposed solution model/plan, using appropriate te reo Māori."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Kaumātua or representative from Ngāti Kahungunu (local iwi authority contact)",
+    "Hawke's Bay Regional Council 'Land Water Aotearoa' (LWAR) website and water quality data sets",
+    "Book: 'Te Mahi Māra Hua Parakore: A Māori Food Sovereignty Handbook' by Jessica Hutchings (for principles of working with nature)",
+    "Materials: Assorted recycled plastics, natural materials (wood, stone), basic digital probes (thermometers, optional pH strips), craft supplies for modelling"
   ],
-  "assessment": "Traditional knowledge demonstration in technology contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "A portfolio documenting the entire technological process: design sketches of the water tester, photos/videos of the build and testing, collected data, analysis notes.",
+      "A written or multimedia report justifying their final proposed technological solution, explaining how it addresses the environmental issue using technological principles and aligns with the cultural value of kaitiakitanga.",
+      "The physical prototype of the water testing device and the model/plan of their proposed solution.",
+      "Group presentation of findings and solution to an audience."
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technology: Technological Practice (Level 4 - planning for practice, brief development, outcome development and evaluation)",
+    "Technology: Nature of Technology (Level 4 - characteristics of technological outcomes)",
+    "Science: Living World - Ecology (Level 4 - investigating in science, communicating in science)",
+    "Social Sciences: Place and Environment (Level 4 - understand how people participate individually and collectively in response to community challenges)"
   ],
-  "createdAt": "2025-08-20T10:31:02.310Z"
+  "createdAt": "2025-08-20T10:31:02.310Z",
+  "enrichedAt": "2025-09-11T08:08:42.357Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

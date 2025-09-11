@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755685400415-zv3qaa4c3",
-  "title": "Year 8 Social Studies: Environmental Impact Assessment",
+  "title": "Kaitiakitanga in Action: Guardians of the Mangakōtukutuku Stream | Te Kaitiakitanga i te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Social Studies",
   "yearLevel": "Year 8",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Students will investigate the environmental and cultural significance of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a vital waterway flowing through our rohe that sustains local ecosystems and holds deep cultural meaning for Ngāti Kahungunu. The stream's name references the native shrub (kōtukutuku) that traditionally grew along its banks, and its waters have provided mahinga kai (food gathering places) for generations.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Analyze and document at least three human impacts on Te Awa o Mangakōtukutuku using field observations and mātauranga Māori perspectives",
+    "Compare traditional Ngāti Kahungunu kaitiakitanga practices with modern environmental management approaches through interviews with local knowledge holders",
+    "Develop and present a culturally-informed environmental action plan proposing specific measures to protect and enhance the health of Te Awa o Mangakōtukutuku",
+    "Collaboratively create a digital storymap that layers geographical, ecological, and cultural knowledge about the awa using GIS technology"
   ],
   "activities": [
-    "Cultural mapping and social studies analysis",
-    "Traditional knowledge workshop and social studies integration",
-    "Environmental investigation using social studies methods",
-    "Community interview project on social studies applications",
-    "Sustainability challenge with social studies solutions",
-    "Cultural artifact study through social studies lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa | Connecting to the Stream",
+      "description": "Students begin with a karakia and mihi to the awa, then engage in sensory observation activities along designated sections of Te Awa o Mangakōtukutuku. Using field journals, they document physical characteristics, wildlife observations, and human influences while learning proper tikanga for engaging with waterways."
+    },
+    {
+      "title": "He Kōrero mō te Awa | Stories of the Stream",
+      "description": "Students interview local kaumātua and environmental kaitiaki to gather oral histories, traditional place names, and mātauranga about the awa's significance. They learn about historical mahinga kai practices, traditional resource management, and how the stream has changed over generations."
+    },
+    {
+      "title": "Te Tirohanga Mataara | Environmental Monitoring",
+      "description": "Using water testing kits and ecological survey methods, students conduct scientific assessments of stream health (pH, clarity, macroinvertebrate counts) while simultaneously documenting cultural indicators of wellbeing. They compare scientific data with mātauranga Māori perspectives on water health."
+    },
+    {
+      "title": "Ngā Pānga me ngā Tauira | Impacts and Patterns",
+      "description": "Students analyze land use maps, historical photos, and development records to identify patterns of human impact on the awa. They create layered maps showing relationships between urban development, agricultural practices, and stream health indicators documented in previous activities."
+    },
+    {
+      "title": "Te Mahere Kaitiaki | Guardianship Plan",
+      "description": "Working in small groups, students develop specific action plans for addressing identified issues. Each group creates a proposal incorporating both scientific approaches and mātauranga Māori principles, considering practical implementation, community engagement, and cultural appropriateness."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Local kaumātua and kaitiaki from Ngāti Kahungunu with knowledge of Te Awa o Mangakōtukutuku",
+    "Hawke's Bay Regional Council's 'State of the Environment' monitoring data and GIS mapping tools",
+    "Water testing kits and macroinvertebrate identification guides from Whitebait Connection education program",
+    "'Ngāti Kahungunu: People and Traditions' by J. H. Mitchell and traditional pūrākau about local waterways"
   ],
-  "assessment": "Cultural competency evaluation through social studies projects",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a comprehensive digital storymap layering cultural, historical, and scientific data about Te Awa o Mangakōtukutuku",
+      "Develop and present a detailed kaitiakitanga action plan proposal for community implementation",
+      "Write a reflective essay comparing traditional and contemporary approaches to waterway management"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies L4: Understand how people participate individually and collectively in response to community challenges",
+    "Social Studies L4: Understand how the ways in which leadership of groups is acquired and exercised have consequences for communities and societies",
+    "Social Studies L4: Understand how people's management of resources impacts on environmental and social sustainability",
+    "Science: Living World L4: Explain how living things are suited to their particular habitat and how they respond to environmental changes"
   ],
-  "createdAt": "2025-08-20T10:23:20.415Z"
+  "createdAt": "2025-08-20T10:23:20.415Z",
+  "enrichedAt": "2025-09-11T07:46:00.133Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

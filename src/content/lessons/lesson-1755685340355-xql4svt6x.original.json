@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755685340355-xql4svt6x",
-  "title": "Year 8 Arts: Environmental Impact Assessment",
+  "title": "Te Aho Tapu o te Awa: The Sacred Thread of the River - Weaving Arts with Environmental Kaitiakitanga",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 8",
-  "culturalContext": "Environmental guardianship and kaitiakitanga",
+  "culturalContext": "This lesson is deeply rooted in the story of Te Awa o Mangakōtukutuku (The Mangakōtukutuku Stream), a significant waterway that flows through our rohe. According to Ngāti Kahungunu pūrākau, the awa was created by the tears of Papatūānuku when she was separated from Ranginui. Local kaumātua speak of how the stream's patterns mirror traditional weaving patterns, particularly the poutama (stairway to heaven) design, representing our journey as kaitiaki. The stream's health has declined due to urban development, making this both an artistic and environmental restoration project.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Create an original artwork using natural materials from Te Awa o Mangakōtukutuku that visually communicates the stream's current state and cultural significance",
+    "Analyze and document at least three traditional Māori weaving patterns found in the stream's natural formations and explain their cultural meanings",
+    "Collaborate with local kaumātua to incorporate authentic Ngāti Kahungunu stories and perspectives into artistic representations",
+    "Develop and present a proposal for how art can be used as a tool for environmental advocacy and community education about the awa"
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Whakatau ki te Awa - Ceremonial Welcome to the Stream",
+      "description": "Begin with a karakia led by local kaumātua at the banks of Te Awa o Mangakōtukutuku. Students will learn the pūrākau of the stream, make visual observations of its current state, and collect natural materials (with permission and following tikanga) for later art creation while documenting the experience through sketching and photography."
+    },
+    {
+      "title": "Te Aho Tapu - The Sacred Thread Weaving Workshop",
+      "description": "Working with local weavers from Ngāti Kahungunu, students learn basic weaving techniques using harakeke and other natural materials. They explore how traditional patterns (kōwhaiwhai, tukutuku) reflect environmental patterns and create small woven pieces that tell the story of the awa's journey."
+    },
+    {
+      "title": "Pūrākau Paints - Storytelling Through Earth Pigments",
+      "description": "Students create natural pigments from soils and plants gathered from the awa's banks. Using these pigments, they create artworks on recycled materials that depict both the historical pūrākau of the stream and its current environmental challenges, blending traditional storytelling with contemporary environmental messaging."
+    },
+    {
+      "title": "Te Kōrero o te Awa - Voice of the River Installation",
+      "description": "Working in groups, students create an interactive art installation using collected natural materials, recorded sounds of the stream, and digital elements. The installation must communicate both the cultural significance and environmental status of Te Awa o Mangakōtukutuku, inviting viewers to reflect on their role as kaitiaki."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local Ngāti Kahungunu kaumātua and weavers (specific contacts: Whaea Rina Smith and Matua Hone Te Kani)",
+    "Digital archive 'Ngā Pūrākau o Te Awa o Mangakōtukutuku' available through Hawke's Bay Knowledge Bank",
+    "Natural material collection kits (approved by local iwi environmental committee)",
+    "Documentary 'Te Huarahi o te Wai: The Water's Path' featuring local environmental artists"
   ],
-  "assessment": "Indigenous perspectives integration in arts practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Creation of a portfolio documenting the artistic process from material collection to final artwork",
+      "Oral presentation explaining the cultural and environmental messages in their artwork to community members",
+      "Written reflection connecting their art practice to concepts of kaitiakitanga and environmental stewardship",
+      "Peer assessment of collaborative installation project using co-created rubrics"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Understanding the Arts in Context: Level 4 - Investigate the purpose of objects and images from past and present cultures and identify the contexts in which they were or are made, viewed, and valued",
+    "Developing Practical Knowledge in the Arts: Level 4 - Explore and use art-making conventions, applying knowledge of elements and selected principles through the use of materials and processes",
+    "Developing Ideas in the Arts: Level 4 - Develop and refine ideas in selected art disciplines in response to a variety of motivations, observation, and imagination",
+    "Communicating and Interpreting in the Arts: Level 4 - Describe how ideas and art-making processes are used to communicate meaning in selected objects and images"
   ],
-  "createdAt": "2025-08-20T10:22:20.355Z"
+  "createdAt": "2025-08-20T10:22:20.355Z",
+  "enrichedAt": "2025-09-11T07:43:23.412Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

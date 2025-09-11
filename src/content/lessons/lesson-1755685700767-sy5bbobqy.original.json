@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755685700767-sy5bbobqy",
-  "title": "Year 7 Mathematics: Cultural Preservation",
+  "title": "Te Whakatau Tohu o Te Awa Mangakōtukutuku / Mapping the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 7",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Students will explore the mathematics of water flow, volume, and quality monitoring through the lens of kaitiakitanga for Te Awa Mangakōtukutuku, a significant stream that flows through our rohe and holds cultural importance for Ngāti Kahungunu as a traditional food gathering site and part of our whakapapa",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and compare the volume of water flowing through different sections of Te Awa Mangakōtukutuku using appropriate units of measurement",
+    "Create scaled maps of the stream showing key features and mathematical measurements using coordinate geometry",
+    "Analyze water quality data using statistical measures (mean, median, mode) to identify patterns and trends",
+    "Apply mathematical reasoning to propose data-informed solutions for stream restoration and protection"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Te Awa Tātari - Stream Analysis",
+      "description": "Students visit Te Awa Mangakōtukutuku to measure stream width, depth, and flow rate at three different points, calculating volume using appropriate formulae and units"
+    },
+    {
+      "title": "Mahere Whakatau - Mapping with Coordinates",
+      "description": "Using GPS coordinates and traditional landmarks, students create scaled maps of the stream, plotting key features and calculating distances between points using coordinate geometry"
+    },
+    {
+      "title": "Tohu Wai Māori - Water Quality Statistics",
+      "description": "Students collect and analyze water quality data (pH, clarity, temperature) using statistical measures to identify patterns and assess the health of the awa"
+    },
+    {
+      "title": "Te Whakaaro Pāngarau - Mathematical Reasoning for Kaitiakitanga",
+      "description": "Working with local kaumātua, students use their mathematical findings to propose data-informed solutions for stream protection and present their reasoning"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Ngāti Kahungunu kaumātua with knowledge of Te Awa Mangakōtukutuku",
+    "Hawke's Bay Regional Council stream monitoring toolkit and data",
+    "Topographic maps of the Mangakōtukutuku area from LINZ",
+    "Digital measuring tools (calipers, flow meters, water testing kits)"
   ],
-  "assessment": "Indigenous perspectives integration in mathematics practice",
-  "duration": "2-3 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submit a detailed mathematical report with calculations of stream volume and flow rates",
+      "Present scaled maps with coordinate geometry showing key stream features",
+      "Analyze water quality data using statistical measures and identify trends",
+      "Propose and justify data-informed solutions for stream protection"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Geometry and Measurement: Use appropriate units and devices to measure length, area, volume, and capacity",
+    "Statistics: Compare and describe the variation between theoretical and experimental distributions in situations that involve elements of chance",
+    "Number and Algebra: Use a range of multiplicative strategies when operating on whole numbers and fractions",
+    "Te Tiriti o Waitangi: Applying mātauranga Māori and mathematical thinking to environmental kaitiakitanga"
   ],
-  "createdAt": "2025-08-20T10:28:20.767Z"
+  "duration": "2-3 weeks",
+  "createdAt": "2025-08-20T10:28:20.767Z",
+  "enrichedAt": "2025-09-11T08:00:40.999Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

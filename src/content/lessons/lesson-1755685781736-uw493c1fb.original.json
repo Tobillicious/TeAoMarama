@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755685781736-uw493c1fb",
-  "title": "Year 9 Health & Physical Education: Traditional Methods and Practices",
+  "title": "Te Rongoā o Te Awa: Healing Practices of Mangakōtukutuku Stream / The Healing Wisdom of Our Waters",
   "type": "lesson",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 9",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Students will explore traditional Māori healing practices (rongoā) through the lens of Te Awa o Mangakōtukutuku, the stream that flows through our college lands. This awa has been a source of healing, sustenance, and spiritual connection for Ngāti Kahungunu for generations. We will connect with local kaumātua who maintain knowledge of specific rongoā rākau (medicinal plants) that grow along its banks and their traditional uses for physical and spiritual wellbeing.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Identify and document at least three rongoā rākau found along Te Awa o Mangakōtukutuku and explain their traditional medicinal uses",
+    "Create a personal wellbeing plan incorporating both traditional Māori practices and contemporary health knowledge",
+    "Demonstrate proper tikanga (protocols) when gathering and preparing rongoā materials under guidance of local experts",
+    "Analyze how connection to whenua (land) and awa (waterways) contributes to holistic hauora (wellbeing)"
   ],
   "activities": [
-    "Cultural mapping and health & physical education analysis",
-    "Traditional knowledge workshop and health & physical education integration",
-    "Environmental investigation using health & physical education methods",
-    "Community interview project on health & physical education applications",
-    "Sustainability challenge with health & physical education solutions",
-    "Cultural artifact study through health & physical education lens"
+    {
+      "title": "Whakawhanaungatanga: Connecting to Our Awa",
+      "description": "Guided walk along Te Awa o Mangakōtukutuku with local kaumātua, learning the history and significance of the waterway while identifying native plants with medicinal properties"
+    },
+    {
+      "title": "Rongoā Rākau Discovery",
+      "description": "Hands-on workshop where students learn to identify, harvest (with proper karakia and tikanga), and prepare basic rongoā such as kawakawa balms or harakeke infusions"
+    },
+    {
+      "title": "Hauora Wheel Integration",
+      "description": "Students create personal hauora wheels that integrate traditional Māori healing practices with contemporary health knowledge, reflecting on how both contribute to taha tinana, taha wairua, taha hinengaro, and taha whānau"
+    },
+    {
+      "title": "Healing Narratives",
+      "description": "Interview local community members about their experiences with rongoā Māori and create digital stories that preserve and share this knowledge"
+    },
+    {
+      "title": "Kaitiakitanga in Action",
+      "description": "Practical conservation activity along the awa - planting native rongoā species and learning about sustainable harvesting practices to ensure these resources remain for future generations"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Ngāti Kahungunu kaumātua and rongoā practitioners from local marae",
+    "DOC website: 'Traditional Use of Native Plants' resources",
+    "Book: 'Rongoā Māori: A Practical Guide to Traditional Māori Medicine' by Rob McGowan",
+    "Mangakōtukutuku College's environmental monitoring equipment for water quality testing"
   ],
-  "assessment": "Indigenous perspectives integration in health & physical education practice",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Create an illustrated guide to three rongoā plants from our awa with traditional uses and preparation methods",
+      "Develop and present a personal hauora plan that integrates at least one traditional practice",
+      "Participate in a group reflection on the connection between environmental health and human wellbeing"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Health and Physical Education: A1 - Personal Health and Physical Development",
+    "Health and Physical Education: C1 - Relationships with Other People",
+    "Health and Physical Education: D1 - Healthy Communities and Environments",
+    "Social Sciences: Understand how people remember and record the past in different ways"
   ],
-  "createdAt": "2025-08-20T10:29:41.736Z"
+  "createdAt": "2025-08-20T10:29:41.736Z",
+  "enrichedAt": "2025-09-11T08:04:35.627Z",
+  "enrichedBy": "Aronui_Hauora"
 }

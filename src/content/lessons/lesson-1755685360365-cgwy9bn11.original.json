@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755685360365-cgwy9bn11",
-  "title": "Year 8 Technology: Environmental Impact Assessment",
+  "title": "Te Arotakenga Hōtaka Hangarau mō te Taiao | Technology Impact Assessment for Our Environment",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 8",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Students will investigate the environmental impact of technology through the lens of Ngāti Kahungunu kaitiakitanga, focusing specifically on the Mangakōtukutuku Stream restoration project. They will explore how traditional Māori environmental knowledge (mātauranga Māori) can inform modern technological solutions to improve water quality and ecosystem health.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Analyze water quality data from Mangakōtukutuku Stream using digital monitoring tools and identify key environmental concerns",
+    "Design a technological solution that integrates mātauranga Māori principles with modern engineering to address a specific stream restoration challenge",
+    "Create a digital presentation that effectively communicates findings and proposed solutions to community stakeholders using both te reo Māori and English",
+    "Evaluate the potential environmental and cultural impacts of proposed technological solutions using a sustainability framework"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa | Connecting to the Stream",
+      "description": "Visit Mangakōtukutuku Stream with local kaumātua to learn the pūrākau (traditional stories) of the waterway and conduct initial water quality testing using digital pH meters, turbidity tubes, and temperature sensors"
+    },
+    {
+      "title": "He Tātari Raraunga | Data Analysis Workshop",
+      "description": "Analyze collected water quality data using spreadsheet software, comparing results against regional council standards and historical data to identify trends and concerning patterns"
+    },
+    {
+      "title": "He Whakaaro Hangarau | Technology Design Challenge",
+      "description": "In small groups, design a technological solution (e.g., automated planting drone, smart sediment trap, digital monitoring system) that addresses an identified stream issue while honoring Māori environmental principles"
+    },
+    {
+      "title": "He Kōrerorero ki te Hapori | Community Consultation",
+      "description": "Present prototype designs to local Ngāti Kahungunu representatives and Hawke's Bay Regional Council staff for feedback, incorporating community perspectives into final designs"
+    },
+    {
+      "title": "He Whakatairanga i te Kaupapa | Solution Showcase",
+      "description": "Create digital presentations (using tools like Canva or Google Slides) that showcase final designs, including technical specifications, cultural considerations, and implementation plans in both English and te reo Māori"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Hawke's Bay Regional Council water quality monitoring data portal and testing equipment",
+    "Local kaumātua and environmental kaitiaki from Ngāti Kahungunu for cultural guidance",
+    "Digital design software (Tinkercad, SketchUp) and prototyping materials",
+    "Māori Environmental Knowledge: Concepts and Perspectives by Merata Kawharu (reference text)"
   ],
-  "assessment": "Community engagement reflection on technology applications",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Water quality data analysis report with identified concerns",
+      "Technical design blueprint of proposed solution",
+      "Cultural impact assessment of the technology",
+      "Digital presentation to community stakeholders"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Technological Knowledge: Technological modelling, technological products",
+    "Key Competencies: Thinking, using language symbols and texts, participating and contributing"
   ],
-  "createdAt": "2025-08-20T10:22:40.365Z"
+  "createdAt": "2025-08-20T10:22:40.365Z",
+  "enrichedAt": "2025-09-11T07:44:26.340Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

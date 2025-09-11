@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686324493-sqaxrest6",
-  "title": "Year 9 Social Studies: Sustainable Solutions",
+  "title": "Kaitiakitanga in Action: Protecting Te Awa o Mangakōtukutuku | Te Mahi Kaitiaki: Te Tiaki i Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Social Studies",
   "yearLevel": "Year 9",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "This lesson is deeply rooted in the local context of Ngāti Kahungunu ki Wairarapa, focusing specifically on Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream) which flows near our college. Students will explore the historical significance of this awa as a traditional food gathering site and transport route, its current ecological challenges including pollution and sedimentation, and the ongoing restoration efforts led by local hapū. The learning connects to the pūrākau (legend) of Hinewai, the guardian spirit of the stream, and examines how modern kaitiakitanga practices blend traditional knowledge with contemporary environmental science.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Analyze historical and current land-use practices along Te Awa o Mangakōtukutuku and evaluate their impact on water quality and mauri (life force).",
+    "Collaborate with local kaitiaki to conduct water quality testing and identify at least three specific sources of pollution affecting the awa.",
+    "Design and present a culturally-grounded kaitiakitanga action plan that proposes practical solutions for stream restoration, incorporating both mātauranga Māori and scientific data.",
+    "Reflect on personal and collective responsibilities as kaitiaki by creating a pepeha (personal identity statement) that connects them to Te Awa o Mangakōtukutuku."
   ],
   "activities": [
-    "Cultural mapping and social studies analysis",
-    "Traditional knowledge workshop and social studies integration",
-    "Environmental investigation using social studies methods",
-    "Community interview project on social studies applications",
-    "Sustainability challenge with social studies solutions",
-    "Cultural artifact study through social studies lens"
+    {
+      "title": "Whakapapa of the Awa: Connecting to Place",
+      "description": "Students begin by visiting the banks of Te Awa o Mangakōtukutuku for a whakatau (welcome) and karakia (incantation) led by a local kaumātua. They will learn the pūrākau of Hinewai and map significant historical sites along the awa using GIS technology, identifying traditional mahinga kai (food gathering) areas and noting changes over time."
+    },
+    {
+      "title": "Mauri Moana: Testing the Life Force of the Water",
+      "description": "Working alongside representatives from Ngāti Kahungunu's environmental team, students will conduct hands-on water quality testing using kits to measure pH, nitrate levels, turbidity, and macroinvertebrate diversity. They will compare their data with historical records to assess changes in the mauri of the awa and identify potential pollution hotspots."
+    },
+    {
+      "title": "Hīkoi: Walking the Catchment with Kaitiaki",
+      "description": "Students embark on a guided hīkoi (walk) through the stream's catchment area with local kaitiaki. They will observe and document land-use practices (e.g., farming, urban runoff) impacting the awa, engage in dialogue with landowners, and use tablets to geotag evidence of erosion, pollution, and restoration efforts."
+    },
+    {
+      "title": "Whare Kōrero: Community Panel and Solution Brainstorm",
+      "description": "Back in the classroom, students host a panel discussion featuring a local farmer, a council environmental officer, a kaumātua, and a representative from the Greater Wellington Regional Council. Students will prepare questions about responsibilities and solutions, then work in small groups to brainstorm integrated kaitiakitanga strategies that balance economic, cultural, and environmental needs."
+    },
+    {
+      "title": "Mahi Tahi: Action Plan Presentation and Planting Day",
+      "description": "Groups synthesize their learning into a digital or poster-based kaitiakitanga action plan, which they present to the panel and school community. The unit culminates in a practical planting day along the riparian margin of the awa, where students plant native species to stabilize banks and improve habitat, embodying their role as kaitiaki."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Ngāti Kahungunu Environmental Management Plan 2020-2030 (specific chapter on Te Awa o Mangakōtukutuku)",
+    "Local experts: Whānau representatives from the Mangakōtukutuku Kaitiaki Rōpū and a scientist from Greater Wellington Regional Council's Wairarapa office",
+    "LAWA (Land, Air, Water Aotearoa) website's Can I Swim Here? tool and historical data for the Mangakōtukutuku Stream",
+    "Water testing kits, tablets with ArcGIS Collector app, and native plants provided by the Wairarapa Moana Wetlands Project"
   ],
-  "assessment": "Kaitiakitanga implementation using social studies approaches",
+  "assessment": {
+    "type": "Summative",
+    "tasks": [
+      "Submit a detailed water quality testing report with data analysis and comparisons to historical norms.",
+      "Create and present a digital story map (using ArcGIS) that tells the story of the awa, its challenges, and proposed solutions.",
+      "Write a reflective journal entry that answers the question: 'He aha tāku e taea ai? What is my role as a kaitiaki of Te Awa o Mangakōtukutuku?'"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies L4: Understand how people participate individually and collectively in response to community challenges (e.g., stream restoration).",
+    "Social Studies L4: Understand how formal and informal groups make decisions that impact on communities (e.g., role of iwi, council, farmers).",
+    "Social Studies L4: Understand how people’s management of resources impacts on environmental and social sustainability (kaitiakitanga).",
+    "The Arts L4: Communicating and Interpreting: Present a digital outcome that represents an idea based on the sustainable use of an environment."
   ],
-  "createdAt": "2025-08-20T10:38:44.493Z"
+  "createdAt": "2025-08-20T10:38:44.493Z",
+  "enrichedAt": "2025-09-11T08:30:47.644Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

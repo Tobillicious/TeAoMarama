@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755686586614-xns8u6err",
-  "title": "Year 8 Arts: Sustainable Solutions",
+  "title": "Te Whakairo Toiora: Carving Sustainable Futures / Year 8 Arts: Sustainable Solutions",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 8",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Students will explore sustainable art practices through the lens of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway to Ngāti Kahungunu. They will learn about traditional Māori carving practices (whakairo) that utilized native timbers sustainably, connecting to the pūrākau (legend) of Tāne Mahuta separating Ranginui and Papatūānuku, which speaks to balance and resource stewardship. The lesson will specifically reference local master carver James Rickard (Ngāti Kahungunu) and his contemporary works that incorporate recycled materials, honoring tradition while addressing modern environmental challenges.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Analyze and explain how traditional Māori whakairo principles demonstrate kaitiakitanga (guardianship) of natural resources.",
+    "Design and create a small-scale contemporary art piece using only recycled or sustainably sourced local materials, inspired by Ngāti Kahungunu motifs.",
+    "Present and justify artistic choices, explaining the cultural and environmental significance of the materials and design in both Te Reo Māori and English.",
+    "Collaboratively develop a set of guidelines for sustainable art practices within the Mangakōtukutuku College art department."
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "He Kōrero Mo Te Awa (The Story of Our Stream)",
+      "description": "Students begin with a guided visit to Te Awa o Mangakōtukutuku with a local kaumātua (elder) or representative from Ngāti Kahungunu. They learn the history and significance of the awa, its traditional uses, and current environmental challenges. Students sketch and photograph natural forms, patterns, and potential found/recycled materials, creating a visual journal of inspiration."
+    },
+    {
+      "title": "Te Ao Whakairo (The World of Carving)",
+      "description": "Through video analysis and a potential virtual session with a local carver (e.g., exploring the work of James Rickard online), students investigate traditional and contemporary Māori carving. They deconstruct the symbolism, the sustainable sourcing of materials like tōtara, and how modern artists integrate recycled elements. Students then experiment with carving techniques on blocks of recycled soap or sustainable clay to practice motifs."
+    },
+    {
+      "title": "Mahi Toi Taiao (Eco-Art Making)",
+      "description": "Using their gathered found/recycled materials (e.g., driftwood from local beaches, discarded fabrics, reclaimed timber) and their practiced motifs, students design and create their own small contemporary art piece. This piece must reflect a concept of kaitiakitanga and incorporate a design element inspired by Te Awa o Mangakōtukutuku or Ngāti Kahungunu artistry."
+    },
+    {
+      "title": "Te Whakaaturanga (The Exhibition)",
+      "description": "Students prepare a mini-exhibition of their work for the class or wider school community. They create bilingual labels (Te Reo Māori and English) for their artwork that explain the piece's title, the materials used (and their source), the cultural inspiration behind the design, and its message about sustainability."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local Kaumātua or representative from Ngāti Kahungunu Iwi Inc.",
+    "Digital archive and videos of James Rickard's work (e.g., on NZOnScreen or Te Papa's online collections)",
+    "‘Te Ara Encyclopedia of New Zealand’ online entry: ‘Traditional Māori visual arts – Whakairo – Māori carving’",
+    "Gathered natural and recycled materials from the local environment (e.g., Te Awa o Mangakōtukutuku banks, approved local beaches)"
   ],
-  "assessment": "Traditional knowledge demonstration in arts contexts",
+  "assessment": {
+    "type": "Summative",
+    "tasks": [
+      "Completion of a visual journal documenting research, inspiration, and material sourcing from the local environment.",
+      "Creation of a final contemporary art piece using sustainable/recycled materials, demonstrating technical skill and cultural understanding.",
+      "Delivery of a short, bilingual oral presentation (1-2 minutes) explaining the artwork and its cultural and environmental significance."
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "The Arts NZC: Understanding the Arts in Context (UC) - Investigate the characteristics, uses, and interpretation of art works from specific cultural contexts, in this case, Ngāti Kahungunu.",
+    "The Arts NZC: Developing Practical Knowledge (PK) - Explore and use art-making conventions, applying knowledge of elements and principles for a specific purpose, using selected recycled and sustainable materials.",
+    "The Arts NZC: Communicating and Interpreting (CI) - Prepare and present art works, describing the ideas and intentions behind them in both Te Reo Māori and English.",
+    "The Arts NZC: Developing Ideas (DI) - Develop and revisit visual ideas, in response to a variety of motivations, observation, and imagination, with a focus on sustainability."
   ],
-  "createdAt": "2025-08-20T10:43:06.614Z"
+  "createdAt": "2025-08-20T10:43:06.614Z",
+  "enrichedAt": "2025-09-11T08:43:16.148Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

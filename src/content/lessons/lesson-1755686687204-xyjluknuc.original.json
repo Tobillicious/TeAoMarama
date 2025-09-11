@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755686687204-xyjluknuc",
-  "title": "Year 7 English: Indigenous Knowledge Systems",
+  "title": "Whakapapa of the Water: Narratives of Te Awa o Mangakōtukutuku | Te Whakapapa o te Wai: Ngā Kōrero o Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "English",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "This unit is grounded in the stories and significance of Te Awa o Mangakōtukutuku (The Mangakōtukutuku Stream), a vital waterway flowing through our Ngāti Kahungunu rohe. Students will explore how our awa is a living ancestor, a source of traditional knowledge, and a teacher of environmental stewardship. The unit connects to local pūrākau (legends) of the taniwha 'Mangakōtukutuku' and the historical pā sites along its banks, examining how narratives shape our understanding of place and responsibility.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Analyze and compare a traditional Māori pūrākau and a contemporary Pākehā text about Te Awa o Mangakōtukutuku, identifying how each text constructs meaning and perspective.",
+    "Compose a written 'Voice of the Awa' narrative (e.g., a poem, short story, or diary entry) that effectively uses descriptive language and figurative devices to convey the awa's mauri (life force) and its cultural significance.",
+    "Collaborate in a small group to plan, draft, and deliver a persuasive oral presentation, using evidence from research and texts, to propose a specific action for the care and protection of the awa.",
+    "Identify and explain the use of specific language features (e.g., metaphor, personification, emotive language) in texts about the awa and evaluate their effectiveness in communicating key ideas."
   ],
   "activities": [
-    "Cultural mapping and english analysis",
-    "Traditional knowledge workshop and english integration",
-    "Environmental investigation using english methods",
-    "Community interview project on english applications",
-    "Sustainability challenge with english solutions",
-    "Cultural artifact study through english lens"
+    {
+      "title": "He Kōrero Tawhito: Listening to the Awa's Story",
+      "description": "Students are welcomed onto the banks of Te Awa o Mangakōtukutuku (or view a high-quality documentary if off-site access is not possible). A local kaumātua or representative from Mana Whenua shares the pūrākau of the taniwha Mangakōtukutuku. Students actively listen and record key themes, values (e.g., kaitiakitanga, whanaungatanga), and powerful language used in the oral telling. This is followed by a silent observation and journaling activity where students note what the awa 'says' to them through its sights and sounds."
+    },
+    {
+      "title": "Ngā Reo e Rua: A Textual Comparison",
+      "description": "In pairs, students analyze two short texts: the transcribed pūrākau and a recent news article or council report about the health of the Mangakōtukutuku stream. Using a graphic organizer (Venn diagram or comparison table), they identify similarities and differences in purpose, audience, perspective, and language features. A class discussion focuses on how different knowledge systems (Māori and Western scientific) view and describe the same environment."
+    },
+    {
+      "title": "Te Reo o te Awa: Crafting a Narrative",
+      "description": "Drawing on their sensory observations and text analysis, students assume the persona of the awa. They plan and draft a creative piece (poem, monologue, short story) from the awa's perspective. The writing must incorporate figurative language (simile, metaphor, personification) and descriptive vocabulary to express the awa's history, its current state, and its hopes for the future. Peer feedback is used to refine ideas and language choices."
+    },
+    {
+      "title": "Hei Kaitiaki: Persuading for Protection",
+      "description": "In small groups, students become kaitiaki (guardians). They research a current, real-life issue affecting the awa (e.g., pollution, invasive species, sedimentation). Using their knowledge from all previous activities, they collaboratively plan and script a 3-minute persuasive oral presentation aimed at a specific audience (e.g., the college board, local council, community group). Their presentation must use persuasive devices and evidence to argue for a specific protective action."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Kaumātua or representative from Ngāti Kahungunu iwi to share pūrākau (e.g., contacted through local marae or iwi authority).",
+    "Hawke's Bay Regional Council 'Land & Water Open Data' portal for current scientific health data on the Mangakōtukutuku stream.",
+    "Digital voice recorders or tablets for recording oral histories and environmental sounds during the awa visit.",
+    "The book 'Ngā Pūrākau o Ngāti Kahungunu' or similar iwi-specific resource for written versions of local stories."
   ],
-  "assessment": "Cultural heritage preservation through english methods",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submit a final, polished copy of the 'Voice of the Awa' creative writing piece.",
+      "Deliver the group persuasive oral presentation to the class and a chosen authentic audience (e.g., principal, board member).",
+      "Complete a short written self-reflection on their personal understanding of kaitiakitanga and how their perspective has changed throughout the unit."
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing - Processes and strategies; Ideas; Language features; Structure.",
+    "English: Speaking, Writing, and Presenting - Processes and strategies; Purposes and audiences; Ideas; Language features; Structure.",
+    "Social Sciences: Understand how people view and use places differently; Understand how people make decisions about access to and use of resources.",
+    "The Arts (Drama): Use elements of drama and conventions to create dramatic space; Develop ideas in drama, using personal experience and imagination."
   ],
-  "createdAt": "2025-08-20T10:44:47.205Z"
+  "createdAt": "2025-08-20T10:44:47.205Z",
+  "enrichedAt": "2025-09-11T08:48:02.893Z",
+  "enrichedBy": "Aronui_Te"
 }

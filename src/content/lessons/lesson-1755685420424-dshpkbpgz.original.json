@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755685420424-dshpkbpgz",
-  "title": "Year 8 Social Studies: Traditional Methods and Practices",
+  "title": "Ngā Mahi Tuku Iho o Te Awa o Mangakōtukutuku / The Enduring Practices of Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Social Studies",
   "yearLevel": "Year 8",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Students will explore how Ngāti Kahungunu ancestors sustainably managed Te Awa o Mangakōtukutuku through traditional fishing methods (hī ika), food preservation (rourou and hāngī), and environmental guardianship (kaitiakitanga). The lesson connects to local pūrākau about the stream's namesake, the Mangakōtukutuku (the stream where kotukutuku/tree fuchsia grows), and how these practices sustained the pā sites along its banks.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Identify and describe at least three traditional Ngāti Kahungunu practices used to sustainably utilize resources from Te Awa o Mangakōtukutuku.",
+    "Explain the concept of kaitiakitanga and how it guided the relationship between local hapū and their environment.",
+    "Create a comparative analysis showing how one traditional practice (e.g., hī ika) has evolved from pre-colonial times to modern day, considering factors like technology and resource availability.",
+    "Collaboratively design a proposal for a contemporary school project that embodies kaitiakitanga for Te Awa o Mangakōtukutuku."
   ],
   "activities": [
-    "Cultural mapping and social studies analysis",
-    "Traditional knowledge workshop and social studies integration",
-    "Environmental investigation using social studies methods",
-    "Community interview project on social studies applications",
-    "Sustainability challenge with social studies solutions",
-    "Cultural artifact study through social studies lens"
+    {
+      "title": "He Whakawhiti Kōrero: Connecting to the Awa",
+      "description": "Students begin by sitting as a whānau group near the school's view of Te Awa o Mangakōtukutuku (or using aerial imagery if weather prohibits). A local kaumātua or kaitiaki from Ngāti Kahungunu shares the pūrākau (story) of the stream's name and its significance to nearby pā sites. Students engage in a circle discussion (wānanga) about what 'kaitiakitanga' means to them and what questions they have about the stream's history."
+    },
+    {
+      "title": "He Mahi Rangahau: Investigating Traditional Practices",
+      "description": "In small groups, students rotate through three research stations. Station 1: Traditional fishing methods (hī ika) using images from 'Ngā Mahi a Rēhia' and replica implements. Station 2: Food preservation techniques like rourou (woven flax food baskets) and hāngī, using flax provided from the school's pa harakeke. Station 3: Analysis of historical maps and aerial photos showing how the stream's path and health have changed over time. Each group records their findings in a shared digital journal."
+    },
+    {
+      "title": "He Haerenga: Site Visit and Sensory Mapping",
+      "description": "The class takes a guided visit to a safe, accessible section of Te Awa o Mangakōtukutuku. With guidance from the visiting kaitiaki, students create a sensory map of the area, noting what they see, hear, and smell. They identify native flora and fauna (e.g., kōura, inanga, harakeke) and record evidence of both human impact and conservation efforts. They use tablets to photograph key features."
+    },
+    {
+      "title": "He Whakaaroaro: Analysing Change and Continuity",
+      "description": "Back in the classroom, groups use a T-chart graphic organizer to compare one traditional practice (e.g., fishing) with its modern equivalent. They analyse what has changed (technology, scale, rules) and what has stayed the same (the goal of gathering kai, connection to the awa). The class then holds a debate on the statement: 'Modern technology makes it easier to be a kaitiaki today than it was for our tūpuna.'"
+    },
+    {
+      "title": "He Mahere Kaitiaki: Designing for the Future",
+      "description": "Drawing on all their learning, groups brainstorm and design a proposal for a school-based kaitiaki project for the awa (e.g., a planting day for riparian margins, a community clean-up, designing educational signage about the stream's history). They create a simple one-page proposal outlining their idea, its goals, and how it connects to the traditional value of kaitiakitanga."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "A local kaitiaki or kaumātua from a Ngāti Kahungunu marae (e.g., Omahu Marae) to share pūrākau and mātauranga.",
+    "The digital resource 'Ngā Mahi a Rēhia: Māori Games and Pastimes' on Te Ara - The Encyclopedia of New Zealand.",
+    "Flax (harakeke) from the school's own pa harakeke for weaving activities.",
+    "Historical maps and aerial photographs of the Mangakōtukutuku area from Land Information New Zealand (LINZ) Data Service."
   ],
-  "assessment": "Community engagement reflection on social studies applications",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Completion of the sensory map and research journal from the site visit and research stations.",
+      "Active participation in the wānanga (circle discussion) and T-chart analysis activity.",
+      "The collaborative one-page proposal for a kaitiaki project."
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies L4: Understand how people pass on and sustain culture and heritage for different reasons and that this has consequences for people.",
+    "Social Studies L4: Understand how people participate individually and collectively in response to community challenges.",
+    "Social Studies L4: Understand how the ways in which leadership of groups is acquired and exercised have consequences for communities and societies.",
+    "Social Studies L4: Understand how people seek and have sought economic growth through business, enterprise, and innovation."
   ],
-  "createdAt": "2025-08-20T10:23:40.425Z"
+  "createdAt": "2025-08-20T10:23:40.425Z",
+  "enrichedAt": "2025-09-11T07:46:59.486Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

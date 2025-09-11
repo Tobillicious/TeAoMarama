@@ -120,12 +120,12 @@ const DirectTeacherAccess: React.FC = () => {
             backdropFilter: 'blur(10px)',
           }}
         >
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>✅ Working Resources Browser</h3>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>📚 Enhanced Resource Library</h3>
           <p style={{ marginBottom: '20px', opacity: 0.9 }}>
-            Actually functional educational resources with complete lesson plans
+            6,055+ professionally enhanced lesson plans ready for your classroom
           </p>
           <button
-            onClick={() => navigate('/working-resources')}
+            onClick={() => navigate('/enhanced-resources')}
             style={{
               background: '#10b981',
               border: '2px solid #059669',
@@ -147,7 +147,7 @@ const DirectTeacherAccess: React.FC = () => {
               e.currentTarget.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.3)';
             }}
           >
-            ACCESS WORKING RESOURCES
+            ACCESS ENHANCED RESOURCES
           </button>
         </div>
 

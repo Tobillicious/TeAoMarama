@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755685882324-p4htgzllo",
-  "title": "Year 7 Te Reo Māori: Understanding Cultural Context",
+  "title": "Te Kōrero o Te Awa Mangakōtukutuku / The Story of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Students will explore the history, significance, and current state of Te Awa Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. They will learn the pūrākau (traditional story) of the stream's naming by Ngāti Kahungunu tūpuna, understand its role as a traditional food source and transportation route, and examine contemporary efforts to restore its mauri following urban development impacts.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Identify and use at least 15 Māori kupu related to waterways, environment, and traditional practices specific to Ngāti Kahungunu",
+    "Recount the pūrākau of Te Awa Mangakōtukutuku using appropriate sentence structures and sequencing language in te reo Māori",
+    "Create a simple pepeha that includes personal connection to Te Awa Mangakōtukutuku",
+    "Compare traditional and contemporary uses of the awa through basic te reo Māori conversations"
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "Whakataki: He Aha Tēnei Awa? (Introduction: What is This Stream?)",
+      "description": "Students begin at the actual stream bank (weather permitting) or with aerial photos. They learn basic kupu for waterway features (awa, manga, pari, one) and the story behind the name 'Mangakōtukutuku' (stream where the kōtukutuku/tree fuchsia grows). Simple sentences are introduced: 'He awa tēnei. Ko Te Awa Mangakōtukutuku tōna ingoa.'"
+    },
+    {
+      "title": "Te Pūrākau o Te Awa (The Story of the Stream)",
+      "description": "A local kaumātua or kaiako shares the specific pūrākau of the stream's discovery and naming by Ngāti Kahungunu ancestors. Students sequence illustrated story cards and learn to retell key events using te reo Māori time markers (i mua, i muri, ākuanei) and simple sentences about the tūpuna's actions."
+    },
+    {
+      "title": "He Pepeha mō Te Awa (A Pepeha for the Stream)",
+      "description": "Students create and practice delivering a personal pepeha that connects them to the awa. This builds on the traditional pepeha structure but includes the line 'Ko Te Awa Mangakōtukutuku te awa' to establish their relationship with this specific local landmark."
+    },
+    {
+      "title": "He Kōrerorero: I Mua, I Āianei (Conversation: Then and Now)",
+      "description": "In pairs, students use sentence cards and word banks to construct and practice simple dialogues comparing traditional uses of the awa (e.g., 'I hopukina te ika e ngā tūpuna' - The ancestors caught fish) with contemporary observations or restoration efforts (e.g., 'Kei te whakaora mātou i te awa' - We are healing the stream)."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Ngāti Kahungunu iwi resource 'Ngā Pūrākau o Te Whanganui-a-Orotu' (specifically the story of Mangakōtukutuku)",
+    "Local kaumātua or representative from Manaaki Te Awa environmental group (for guest speaking)",
+    "Aerial and historical photographs of Te Awa Mangakōtukutuku from Hastings District Council archives",
+    "Te Aka Māori Dictionary online or app for kupu lookup"
   ],
-  "assessment": "Cultural competency evaluation through te reo māori projects",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Deliver your personal pepeha including the awa to a small group",
+      "Complete a sequenced written retell (3-4 sentences) of the pūrākau using provided kupu",
+      "Participate in a recorded paired conversation about the awa using target sentence structures"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori - Whakaatu: Presenting information and ideas in te reo Māori",
+    "Te Reo Māori - Pānui: Reading and understanding te reo Māori texts",
+    "Social Sciences - Understand how people remember and record the past in different ways",
+    "Social Sciences - Understand how places in New Zealand are significant for individuals and groups"
   ],
-  "createdAt": "2025-08-20T10:31:22.324Z"
+  "createdAt": "2025-08-20T10:31:22.324Z",
+  "enrichedAt": "2025-09-11T08:09:50.995Z",
+  "enrichedBy": "Aronui_Te"
 }

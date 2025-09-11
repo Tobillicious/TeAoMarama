@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755685580612-59jda3odv",
-  "title": "Year 10 Health & Physical Education: Environmental Impact Assessment",
+  "title": "Kaitiakitanga in Action: Protecting Te Awa o Mangakōtukutuku | Te Mahi Kaitiaki: Te Tiaki i Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 10",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "This lesson is grounded in the whakapapa of Te Awa o Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. According to Ngāti Kahungunu pūrākau, the stream was named for the kōtukutuku (tree fuchsia) that once shaded its banks, providing habitat for native birds and medicinal resources for our tūpuna. Students will explore how the health of this awa directly impacts the physical, mental, and spiritual wellbeing of our community.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Conduct a water quality assessment of Te Awa o Mangakōtukutuku using scientific tools and mātauranga Māori observation methods",
+    "Analyze how changes in the awa's health impact community wellbeing through interviews with local kaumātua and health professionals",
+    "Develop and present a kaitiakitanga action plan that addresses an identified environmental health issue affecting the awa",
+    "Reflect on personal connection to place and responsibility as kaitiaki through written and visual journaling"
   ],
   "activities": [
-    "Cultural mapping and health & physical education analysis",
-    "Traditional knowledge workshop and health & physical education integration",
-    "Environmental investigation using health & physical education methods",
-    "Community interview project on health & physical education applications",
-    "Sustainability challenge with health & physical education solutions",
-    "Cultural artifact study through health & physical education lens"
+    {
+      "title": "Whakapapa of the Awa",
+      "description": "Begin at the streamside with a karakia and welcome from a local kaumātua who will share the pūrākau of Te Awa o Mangakōtukutuku. Students create visual maps showing historical and current connections between the awa and community health, identifying traditional food gathering sites, swimming holes, and medicinal plant areas."
+    },
+    {
+      "title": "Mauri Meter Investigation",
+      "description": "Using water testing kits and traditional observation methods (clarity, odor, presence of insects/birds), students assess the mauri (life force) of three different sites along the awa. They record physical measurements (pH, nitrates, turbidity) alongside qualitative observations of cultural health indicators."
+    },
+    {
+      "title": "Community Voice Circle",
+      "description": "Students interview local fishermen, farmers, health workers, and kaumātua about changes they've observed in the awa and how these changes affect community wellbeing. Recorded interviews are analyzed for connections between environmental and human health."
+    },
+    {
+      "title": "Kaitiakitanga Action Planning",
+      "description": "In small groups, students develop practical action plans addressing one identified issue (e.g., riparian planting to reduce runoff, educational signage, community clean-up event). Plans must incorporate both scientific and mātauranga Māori approaches to healing the awa."
+    },
+    {
+      "title": "Pepeha Presentation",
+      "description": "Students create and present an updated pepeha that includes their role as kaitiaki of Te Awa o Mangakōtukutuku, sharing their action plans and personal commitments to the health of the awa and community."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Hawke's Bay Regional Council water testing kits and monitoring guidelines",
+    "Local kaumātua Hone Smith (Ngāti Kahungunu) for pūrākau and historical knowledge",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' (SHMAK) resources",
+    "Book: 'Te Mātauranga o te Wai' by Māori Water Research Centre"
   ],
-  "assessment": "Cultural heritage preservation through health & physical education methods",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Water quality investigation report combining scientific data and cultural observations",
+      "Recorded interview analysis showing connections between environmental and community health",
+      "Kaitiakitanga action plan presentation to community stakeholders",
+      "Reflective journal entry on personal growth as kaitiaki"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Health and Physical Education: A3 - Safety management; B1 - Personal identity; C2 - Community resources; D1 - Societal attitudes",
+    "Science: Nature of Science - Investigating in science; Living World - Ecology",
+    "Social Studies: Continuity and Change; Place and Environment"
   ],
-  "createdAt": "2025-08-20T10:26:20.612Z"
+  "createdAt": "2025-08-20T10:26:20.612Z",
+  "enrichedAt": "2025-09-11T07:54:49.687Z",
+  "enrichedBy": "Aronui_Hauora"
 }

@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686163235-jylt9bdzw",
-  "title": "Year 7 Health & Physical Education: Cultural Preservation",
+  "title": "Tiaki Tinana, Tiaki Wairua: Guardianship of Body and Spirit through Kaitiakitanga",
   "type": "lesson",
   "subject": "Health & Physical Education",
   "yearLevel": "Year 7",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Located within the rohe of Ngāti Kahungunu, Mangakōtukutuku College students will explore the connection between personal hauora (wellbeing) and environmental health through the lens of Te Awa o Mangakōtukutuku (our local stream). Students will learn how traditional practices of kaitiakitanga (guardianship) directly relate to modern health concepts, drawing on local pūrākau (stories) of the taniwha who protects our waters and the historical significance of the awa as a source of physical and spiritual sustenance for our hapū.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of health & physical education concepts in cultural context",
-    "Apply traditional knowledge to modern health & physical education challenges",
-    "Analyze environmental impacts through health & physical education frameworks",
-    "Engage with community perspectives on health & physical education issues"
+    "Identify and explain at least three connections between the health of Te Awa o Mangakōtukutuku and the hauora of our community using specific local examples",
+    "Design and implement a simple water quality testing protocol using both mātauranga Māori observation techniques and scientific measurement tools",
+    "Create a personal action plan demonstrating kaitiakitanga by committing to one practice that improves both personal wellbeing and environmental health",
+    "Collaboratively develop and present a group waiata or haka that expresses the relationship between tinana (physical health) and wairua (spiritual health) through connection to our awa"
   ],
   "activities": [
-    "Cultural mapping and health & physical education analysis",
-    "Traditional knowledge workshop and health & physical education integration",
-    "Environmental investigation using health & physical education methods",
-    "Community interview project on health & physical education applications",
-    "Sustainability challenge with health & physical education solutions",
-    "Cultural artifact study through health & physical education lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa: Connecting to Our Stream",
+      "description": "Students visit Te Awa o Mangakōtukutuku with kaumātua to hear pūrākau of the taniwha protector and learn traditional methods of assessing water health through observation of native species, water clarity, and surrounding vegetation. Students sketch the awa and record observations in their journals."
+    },
+    {
+      "title": "Hei Tātari Wai: Traditional and Scientific Water Testing",
+      "description": "Using both mātauranga Māori indicators (presence of tuna/eels, kōura/crayfish, watercress) and scientific tools (pH strips, thermometer, turbidity tube), students conduct water quality assessments at three points along the awa and compare results to historical data provided by local environmental monitors."
+    },
+    {
+      "title": "Hauora Whakapapa: Mapping Health Connections",
+      "description": "Students create visual maps showing how the health of the awa connects to their own wellbeing - from drinking water and kai sources to recreational swimming and spiritual connection. They interview whānau members about historical uses of the awa for healing and sustenance."
+    },
+    {
+      "title": "Mahi Tahi: Community Action Project",
+      "description": "Working with local kaitiaki, students participate in a riparian planting day along the banks of Te Awa o Mangakōtukutuku, learning about native plants that filter water and prevent erosion while discussing how environmental action contributes to collective wellbeing."
+    },
+    {
+      "title": "Whakapuaki: Expressing Our Kaitiakitanga",
+      "description": "In small groups, students create and perform original waiata, haka, or visual art pieces that express their understanding of the connection between caring for the awa and maintaining personal hauora, presenting these to whānau and community members."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and health & physical education resources",
-    "Traditional knowledge holders and health & physical education experts",
-    "Environmental monitoring tools and health & physical education software",
-    "Community engagement platforms and health & physical education forums",
-    "Sustainability assessment frameworks and health & physical education models"
+    "Ngāti Kahungunu kaumātua and local water kaitiaki as cultural experts",
+    "Te Awa Tupua: Environmental monitoring data from Hawke's Bay Regional Council",
+    "'He Kohikohinga Wai Māori: Traditional Māori Water Collection Methods' (local resource book)",
+    "Water testing kits from the National Institute of Water and Atmospheric Research (NIWA) Stream Health Monitoring Guide"
   ],
-  "assessment": "Kaitiakitanga implementation using health & physical education approaches",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Journal entries documenting observations and reflections from awa visits",
+      "Completed water quality testing data sheets with comparative analysis",
+      "Personal kaitiakitanga action plan with measurable goals",
+      "Group cultural performance and self-assessment rubric"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Health and Physical Education: Strand A - Personal Health and Physical Development (A1, A3)",
+    "Health and Physical Education: Strand D - Healthy Communities and Environments (D1, D3)",
+    "Social Sciences: Place and Environment - Understand how people perceive, represent, and interact with places and environments",
+    "Tikanga ā-Iwi: Understand how cultural practices reflect and express people's customs, traditions, and values"
   ],
-  "createdAt": "2025-08-20T10:36:03.235Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:36:03.235Z",
+  "enrichedAt": "2025-09-11T08:23:22.755Z",
+  "enrichedBy": "Aronui_Hauora"
 }

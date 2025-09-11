@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686444613-43d38nhyp",
-  "title": "Year 9 Technology: Sustainable Solutions",
+  "title": "Whakawhanake Pūrere Auaha: Sustainable Technology Solutions for Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 9",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "Students will address water quality challenges facing Te Awa o Mangakōtukutuku (The Dragonfly Stream), a significant waterway flowing through Ngāti Kahungunu rohe that holds cultural importance for mahinga kai (traditional food gathering) and spiritual significance. The stream's declining health impacts traditional practices and ecosystem biodiversity.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and prototype a functional water quality monitoring device using basic electronics and programming",
+    "Analyze water quality data to identify specific contaminants affecting Te Awa o Mangakōtukutuku",
+    "Develop a sustainable technology solution that integrates mātauranga Māori principles with modern engineering approaches",
+    "Present technological solutions to community stakeholders with cultural and environmental justification"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa",
+      "description": "Visit Te Awa o Mangakōtukutuku with local kaumātua to learn about its cultural significance, historical uses, and current challenges. Students conduct initial water observations and document traditional knowledge about stream health indicators."
+    },
+    {
+      "title": "Pūrere Aroturuki Wai",
+      "description": "Build simple water monitoring devices using Arduino microcontrollers, pH sensors, and temperature probes. Students learn basic coding to collect and transmit water quality data to digital platforms."
+    },
+    {
+      "title": "Tātari Raraunga Mātauranga-rua",
+      "description": "Analyze collected water data alongside traditional knowledge indicators (presence of native species, water clarity traditions). Students identify patterns and potential contamination sources using both scientific and cultural frameworks."
+    },
+    {
+      "title": "Whakaora te Awa",
+      "description": "Design and prototype intervention solutions such as native plant filtration systems, traditional weir modifications for sediment control, or digital alert systems for pollution events. Solutions must blend traditional and modern technologies."
+    },
+    {
+      "title": "Whakataki Hōtaka",
+      "description": "Present technological solutions to community panel including Ngāti Kahungunu representatives, local farmers, and regional council staff. Demonstrate prototypes and explain how solutions honor both cultural and environmental needs."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Ngāti Kahungunu kaumātua and environmental knowledge holders",
+    "Arduino starter kits with water quality sensors from Mindkits.co.nz",
+    "Regional Council water quality data for Hawke's Bay waterways",
+    "Te Ara Encyclopedia entry on traditional Māori water management practices"
   ],
-  "assessment": "Environmental impact assessment using technology frameworks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Functional prototype of water monitoring or improvement technology",
+      "Written report analyzing water data with cultural context",
+      "Oral presentation to community stakeholders",
+      "Reflection on integrating mātauranga Māori with technology design"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Technological Knowledge: Understanding technological modelling and products",
+    "Nature of Technology: Characteristics of technology and characteristics of technological outcomes",
+    "Key Competencies: Participating and contributing, relating to others"
   ],
-  "createdAt": "2025-08-20T10:40:44.613Z"
+  "createdAt": "2025-08-20T10:40:44.613Z",
+  "enrichedAt": "2025-09-11T08:36:49.740Z",
+  "enrichedBy": "Aronui_Hangarau"
 }
