@@ -18,6 +18,7 @@ const WorkingResourceBrowser: React.FC = () => {
   const [resources, setResources] = useState<WorkingResource[]>([]);
   const [filteredResources, setFilteredResources] = useState<WorkingResource[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('all');
   const [selectedYearLevel, setSelectedYearLevel] = useState('all');
@@ -36,8 +37,9 @@ const WorkingResourceBrowser: React.FC = () => {
       // Load just a few batches to test
       const workingResources: WorkingResource[] = [];
 
-      // Load batches 1-5 to start with
-      for (let i = 1; i <= 5; i++) {
+      // Load batches 1-10 for better resource coverage
+      const totalBatches = 10;
+      for (let i = 1; i <= totalBatches; i++) {
         try {
           const response = await fetch(`/enhanced-resources-output/batch-${i}-enhanced.json`);
           if (response.ok) {
@@ -57,8 +59,11 @@ const WorkingResourceBrowser: React.FC = () => {
               workingResources.push(...convertedResources);
             }
           }
+          // Update progress
+          setLoadingProgress(Math.round((i / totalBatches) * 100));
         } catch (error) {
           console.warn(`Failed to load batch ${i}:`, error);
+          setLoadingProgress(Math.round((i / totalBatches) * 100));
         }
       }
 
@@ -163,6 +168,13 @@ This resource incorporates ${
         <div className="loading-spinner">
           <BookOpen className="animate-spin" size={48} />
           <p>Loading working resources...</p>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill" 
+              style={{ width: `${loadingProgress}%` }}
+            ></div>
+          </div>
+          <p className="progress-text">{loadingProgress}% complete</p>
         </div>
       </div>
     );

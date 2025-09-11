@@ -23,6 +23,29 @@
   font-size: 1.1rem;
 }
 
+.progress-bar {
+  width: 300px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 0.5rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* Header */
 .browser-header {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
