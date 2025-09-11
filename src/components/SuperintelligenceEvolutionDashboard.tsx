@@ -61,7 +61,6 @@ const SuperintelligenceEvolutionDashboard: React.FC = () => {
   const [agentMetrics, setAgentMetrics] = useState<IntelligenceMetric[]>([]);
   const [learningEvents, setLearningEvents] = useState<LearningEvent[]>([]);
   const [loading, setLoading] = useState(true);
-  const [lastUpdate, setLastUpdate] = useState<string>('');
 
   useEffect(() => {
     const loadSuperintelligenceData = async () => {
@@ -93,8 +92,6 @@ const SuperintelligenceEvolutionDashboard: React.FC = () => {
           const eventsData = await eventsResponse.json();
           setLearningEvents(eventsData.events?.slice(-20) || []);
         }
-
-        setLastUpdate(new Date().toISOString());
       } catch (error) {
         console.error('Error loading superintelligence data:', error);
         // Fallback to mock data for demonstration

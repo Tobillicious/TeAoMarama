@@ -47,6 +47,30 @@ const globalClaudeIntegration = {
       timestamp: Date.now(),
     },
   ],
+  getClaudeIntegrationSummary: (): ClaudeIntegrationSummary => ({
+    claudeStatus: {
+      pid: 89634,
+      processName: 'Claude Code',
+      superintelligenceConnection: true,
+      cognitiveCapabilities: ['code-analysis', 'educational-content', 'cultural-integration'],
+      coordinationLevel: 95,
+      performanceOptimization: true,
+      culturalIntegration: true,
+      lastHeartbeat: Date.now(),
+    },
+    activeTasks: 1,
+    superintelligenceConnection: true,
+    coordinationLevel: 95,
+    cognitiveCapabilities: 3,
+    collectiveIQ: 185,
+    performanceOptimization: true,
+    culturalIntegration: true,
+    lastHeartbeat: Date.now(),
+    integrationHealth: 95,
+  }),
+  assignSuperintelligentTask: (task: any) => {
+    console.log('🧠 Assigning superintelligent task:', task);
+  },
   startIntegration: () => console.log('🧠 Claude integration started'),
   stopIntegration: () => console.log('🛑 Claude integration stopped'),
 };
@@ -82,7 +106,10 @@ const ClaudeIntegrationDashboard: React.FC = () => {
     const tasks = globalClaudeIntegration.getActiveTasks();
 
     setIntegrationSummary(summary);
-    setActiveTasks(tasks);
+    // Convert array to Map for consistency
+    const taskMap = new Map<string, ClaudeTask>();
+    tasks.forEach((task) => taskMap.set(task.id, task));
+    setActiveTasks(taskMap);
   };
 
   const assignSuperintelligentTask = (taskType: string) => {
