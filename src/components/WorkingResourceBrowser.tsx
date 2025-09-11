@@ -286,9 +286,9 @@ This resource incorporates ${
                   </button>
                   <button
                     className="view-btn"
-                    onClick={() => window.open(`/lesson/${resource.id}`, '_blank')}
+                    onClick={() => window.open(`/actual-content/${resource.id}`, '_blank')}
                   >
-                    View Lesson Plan
+                    View Actual Content
                   </button>
                 </div>
               </div>

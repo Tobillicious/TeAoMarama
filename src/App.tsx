@@ -153,6 +153,7 @@ import SocialStudiesSlideshow from './components/SocialStudiesSlideshow';
 import SuperintelligenceEvolutionDashboard from './components/SuperintelligenceEvolutionDashboard';
 import TreasureNavigation from './components/TreasureNavigation';
 import WorkingResourceBrowser from './components/WorkingResourceBrowser';
+import ActualContentViewer from './components/ActualContentViewer';
 
 const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
@@ -440,6 +441,8 @@ function App() {
             <Route path="/treasure-map" element={<TreasureNavigation />} />
             <Route path="/working-resources" element={<WorkingResourceBrowser />} />
             <Route path="/resources-working" element={<WorkingResourceBrowser />} />
+            <Route path="/actual-content/:resourceId" element={<ActualContentViewer />} />
+            <Route path="/real-content/:resourceId" element={<ActualContentViewer />} />
             <Route path="/test-resources" element={<ResourceTestPage />} />
             {/* Professional Lesson Templates */}
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />

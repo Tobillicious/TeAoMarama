@@ -151,8 +151,44 @@ class EnhancedResourceService {
   }
 
   async getResourceById(id: string): Promise<EnhancedResource | null> {
-    const resources = await this.loadAllResources();
-    return resources.find(r => r.id === id) || null;
+    // First check if we already have it loaded
+    if (this.allResources.length > 0) {
+      const found = this.allResources.find(r => r.id === id);
+      if (found) return found;
+    }
+
+    // Extract batch number from resource ID (resource-00001 -> batch 1)
+    const resourceNumber = parseInt(id.replace('resource-', ''));
+    const batchNumber = Math.ceil(resourceNumber / 10); // Each batch has 10 resources
+    
+    try {
+      console.log(`🔍 Searching for ${id} in batch ${batchNumber}...`);
+      const batch = await this.loadBatch(batchNumber);
+      const resource = batch.find(r => r.id === id);
+      
+      if (resource) {
+        console.log(`✅ Found ${id} in batch ${batchNumber}`);
+        return resource;
+      }
+      
+      // If not found in expected batch, search nearby batches
+      console.log(`🔍 Searching nearby batches for ${id}...`);
+      for (let i = Math.max(1, batchNumber - 2); i <= Math.min(606, batchNumber + 2); i++) {
+        if (i === batchNumber) continue; // Already checked
+        const nearbyBatch = await this.loadBatch(i);
+        const nearbyResource = nearbyBatch.find(r => r.id === id);
+        if (nearbyResource) {
+          console.log(`✅ Found ${id} in batch ${i}`);
+          return nearbyResource;
+        }
+      }
+      
+      console.log(`❌ Resource ${id} not found in any batch`);
+      return null;
+    } catch (error) {
+      console.error(`Error searching for resource ${id}:`, error);
+      return null;
+    }
   }
 
   getAverageQuality(): number {
