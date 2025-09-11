@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-09-10T15:13:27.177Z",
+  "status": "ACTIVE",
+  "agents": {
+    "total": 20,
+    "active": 17,
+    "inactive": 3,
+    "errors": 0
+  },
+  "extensions": {
+    "total": 10,
+    "active": 10,
+    "inactive": 0
+  },
+  "intelligence": {
+    "collectiveIQ": 250,
+    "culturalSafety": 100,
+    "educationalExcellence": 100,
+    "technicalMastery": 171
+  },
+  "apiKeys": {
+    "deepseek": true,
+    "openai": false,
+    "anthropic": false,
+    "google": false
+  }
+}

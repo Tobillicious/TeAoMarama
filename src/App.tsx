@@ -141,13 +141,18 @@ import AgentCoordinationDashboard from './components/AgentCoordinationDashboard'
 import ClaudeIntegrationDashboard from './components/ClaudeIntegrationDashboard';
 import CulturalSafetyComplianceDashboard from './components/CulturalSafetyComplianceDashboard';
 import DistributedIntelligenceCoordinator from './components/DistributedIntelligenceCoordinator';
+import EnhancedResourceBrowser from './components/EnhancedResourceBrowser';
+import EnhancedResourceViewer from './components/EnhancedResourceViewer';
+import EnhancedSocialStudiesSlideshow from './components/EnhancedSocialStudiesSlideshow';
 import KaiakoTeamDashboard from './components/KaiakoTeamDashboard';
 import MultiLLMCoordinationDashboard from './components/MultiLLMCoordinationDashboard';
 import MultiLLMPerformanceDashboard from './components/MultiLLMPerformanceDashboard';
+import RealLessonViewer from './components/RealLessonViewer';
 import ResourceEnrichmentCoordinator from './components/ResourceEnrichmentCoordinator';
 import SocialStudiesSlideshow from './components/SocialStudiesSlideshow';
 import SuperintelligenceEvolutionDashboard from './components/SuperintelligenceEvolutionDashboard';
 import TreasureNavigation from './components/TreasureNavigation';
+import WorkingResourceBrowser from './components/WorkingResourceBrowser';
 
 const AssessmentFramework = lazy(
   () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
@@ -341,6 +346,9 @@ function App() {
             />
             <Route path="/social-studies-slideshow" element={<SocialStudiesSlideshow />} />
             <Route path="/slideshow" element={<SocialStudiesSlideshow />} />
+            <Route path="/enhanced-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
+            <Route path="/teaching-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
+            <Route path="/interactive-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
             <Route path="/" element={<DirectTeacherAccess />} />
             <Route path="/landing" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
@@ -412,13 +420,26 @@ function App() {
             <Route path="/smart-search" element={<EnhancedContentDiscovery />} />
             {/* Unit Detail Routes */}
             <Route path="/unit/:unitId" element={<UnitDetail />} />
-            {/* TeKeteAko Resources */}
+            {/* Original Resources - Restored */}
             <Route path="/te-kete-ako-resources" element={<FunctionalResourceBrowser />} />
             <Route path="/resources" element={<FunctionalResourceBrowser />} />
             <Route path="/resources/te-kete-ako" element={<FunctionalResourceBrowser />} />
             <Route path="/resource-browser" element={<FunctionalResourceBrowser />} />
+            {/* Enhanced Resources - 6,055+ enhanced educational resources */}
+            <Route path="/enhanced-resources" element={<EnhancedResourceBrowser />} />
+            <Route path="/enhanced-resource-browser" element={<EnhancedResourceBrowser />} />
+            <Route path="/enhanced-library" element={<EnhancedResourceBrowser />} />
+            <Route path="/world-class-resources" element={<EnhancedResourceBrowser />} />
+            <Route path="/progressive-enrichment-library" element={<EnhancedResourceBrowser />} />
+            {/* Enhanced Resource Viewer - Individual resource content display */}
+            <Route path="/enhanced-resource/:resourceId" element={<EnhancedResourceViewer />} />
+            {/* Real Lesson Viewer - Complete lesson plans */}
+            <Route path="/lesson/:resourceId" element={<RealLessonViewer />} />
+            <Route path="/real-lesson/:resourceId" element={<RealLessonViewer />} />
             <Route path="/treasure-navigation" element={<TreasureNavigation />} />
             <Route path="/treasure-map" element={<TreasureNavigation />} />
+            <Route path="/working-resources" element={<WorkingResourceBrowser />} />
+            <Route path="/resources-working" element={<WorkingResourceBrowser />} />
             <Route path="/test-resources" element={<ResourceTestPage />} />
             {/* Professional Lesson Templates */}
             <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
