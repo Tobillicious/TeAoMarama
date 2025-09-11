@@ -1,39 +1,60 @@
 {
   "id": "lesson-1755685600642-4840msu5n",
-  "title": "Year 10 Arts: Cultural Preservation",
+  "title": "Whakairo Awa: Carving the River's Story | Te Awa o Mangakōtukutuku - He Whakairo, He Kōrero",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 10",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Students will explore the art of whakairo (carving) through the story of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway to Ngāti Kahungunu. The awa has provided sustenance, transportation, and spiritual connection for generations. This lesson connects to local pūrākau (legends) about the taniwha protector of the awa and examines how contemporary carving practices can preserve these stories while addressing modern environmental challenges facing the waterway.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Create a small whakairo piece that visually interprets one pūrākau of Te Awa o Mangakōtukutuku, demonstrating understanding of traditional Māori design elements (e.g., koru, pikorua)",
+    "Analyze and explain how at least three different carving materials (wood, stone, modern composite) affect the expression and durability of cultural stories",
+    "Collaboratively develop and present a proposal for a public art installation along the Mangakōtukutuku Stream that addresses an environmental issue (e.g., pollution, habitat loss) through cultural narrative"
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Awa Kōrero | River Narratives",
+      "description": "Students visit the Mangakōtukutuku Stream with a local kaumātua who shares pūrākau (legends) of the awa, particularly those involving its taniwha protector. Students sketch natural forms and patterns observed at the riverbank and record key narrative elements. Back in class, they analyze how these natural patterns translate into traditional whakairo motifs."
+    },
+    {
+      "title": "Mātāpono o te Whakairo | Principles of Carving",
+      "description": "A local carver from Ngāti Kahungunu demonstrates basic whakairo techniques using different materials (wood, pounamu replica stone, modern materials). Students practice these techniques on soap or soft wood, focusing on creating patterns inspired by their river sketches and the shared pūrākau."
+    },
+    {
+      "title": "Taiao me te Toi | Environment and Art",
+      "description": "Students examine the current environmental state of the Mangakōtukutuku Stream through water testing and observation. They discuss how environmental degradation affects cultural preservation. In groups, they brainstorm how a whakairo installation could both tell the stream's stories and raise awareness about its environmental challenges."
+    },
+    {
+      "title": "He Whakairo mō Āpōpō | Carving for Tomorrow",
+      "description": "Using their developed skills and understanding, students create a small individual whakairo piece that interprets one aspect of the awa's story. They must choose their material deliberately and be prepared to explain how their material choice affects the storytelling and durability of their work."
+    },
+    {
+      "title": "Whakaaturanga Toi | Art Exhibition",
+      "description": "Students present their individual carvings and group installation proposals in a classroom gallery walk. They explain their creative choices, material selections, and how their work contributes to preserving the stories and protecting the future of Te Awa o Mangakōtukutuku."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local kaumātua from Ngāti Kahungunu to share pūrākau of Te Awa o Mangakōtukutuku",
+    "Master carver from local marae for technique demonstration",
+    "The Māori Carver: Whakairo Rakau by Sidney Moko Mead (book)",
+    "Toi Te Rito Maihi: Contemporary Māori Carving (online resource from Auckland Art Gallery)"
   ],
-  "assessment": "Traditional knowledge demonstration in arts contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Creation of individual whakairo piece with artist statement",
+      "Written analysis of material choices and cultural significance",
+      "Group presentation of proposed public art installation"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Understanding the Arts in Context: Investigate the characteristics, uses, and interpretations of whakairo in past and present cultural contexts",
+    "Developing Practical Knowledge: Explore and use tools, materials, processes, and conventions of whakairo",
+    "Developing Ideas: Generate, develop, and refine sculpture ideas in response to a local cultural and environmental context",
+    "Communicating and Interpreting: Present and respond to artwork, describing how whakairo expresses and records community values and stories"
   ],
-  "createdAt": "2025-08-20T10:26:40.642Z"
+  "createdAt": "2025-08-20T10:26:40.642Z",
+  "enrichedAt": "2025-09-11T07:55:44.541Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

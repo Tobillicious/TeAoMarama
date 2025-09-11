@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686364579-s5zziggo7",
-  "title": "Year 9 Arts: Community Engagement",
+  "title": "Whakairo Awa: Carving the River's Story | Te Awa o Mangakōtukutuku - He Whakairo, He Kōrero",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 9",
-  "culturalContext": "Environmental guardianship and kaitiakitanga",
+  "culturalContext": "Students will explore the art of whakairo (carving) through the story of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway for Ngāti Kahungunu that flows near our college. The awa holds stories of tūpuna, traditional fishing practices, and environmental changes. Students will connect with local kaumātua to understand the river's significance and create contemporary carvings that reflect both traditional patterns and modern environmental messages.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Create a whakairo piece that incorporates at least three traditional Ngāti Kahungunu patterns while expressing a modern environmental message about Te Awa o Mangakōtukutuku",
+    "Document and present the cultural significance of chosen patterns through a digital story that includes interviews with local kaumātua",
+    "Collaboratively develop and apply safe carving techniques using both traditional and modern tools to complete a finished artwork",
+    "Analyze and reflect on how their artwork contributes to the concept of kaitiakitanga for Te Awa o Mangakōtukutuku"
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Whakarongo: Listening to the Awa's Story",
+      "description": "Students visit Te Awa o Mangakōtukutuku with local kaumātua Tama Huata, who shares pūrākau (traditional stories) of the river. Students sketch environmental features and record oral histories, focusing on patterns found in nature (water flow, fish scales, native plants) that could inspire whakairo designs."
+    },
+    {
+      "title": "Whakamārama: Understanding Ngāti Kahungunu Patterns",
+      "description": "Workshop with local carver Hinewai Ormsby exploring specific Ngāti Kahungunu patterns (kōwhaiwhai, pikorua, mangōpare) and their meanings. Students practice drawing these patterns and create design concepts that blend traditional patterns with contemporary environmental themes related to the awa."
+    },
+    {
+      "title": "Whakairo: Carving Practice and Technique",
+      "description": "Guided sessions in the college's art studio learning safe carving techniques using both traditional whao (chisels) and modern tools. Students work on practice pieces of soapstone or soft wood, focusing on precision and understanding how different tools create different textural effects."
+    },
+    {
+      "title": "Hanga: Creating Final Whakairo Pieces",
+      "description": "Students create their final whakairo artworks on prepared wood or stone blocks, incorporating their blended traditional-contemporary designs. Each piece must include at least three traditional patterns and visually communicate a specific environmental message about caring for Te Awa o Mangakōtukutuku."
+    },
+    {
+      "title": "Whakaatu: Exhibition and Korero",
+      "description": "Students curate a class exhibition 'Te Hōnonga o te Awa' (The River's Connection) at the college marae, presenting their artworks alongside digital stories explaining their creative process and cultural connections. Invited whānau and community members provide feedback through structured korero sessions."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Kaumātua Tama Huata (local Ngāti Kahungunu historian and storyteller)",
+    "Carver Hinewai Ormsby from nearby Waiohiki Creative Arts Village",
+    "'Ngā Whakairo o Kahungunu' pattern resource from Hastings District Council",
+    "Documentary 'Te Awa Tupua: Voices of the Whanganui River' for comparative river guardianship approaches"
   ],
-  "assessment": "Indigenous perspectives integration in arts practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Completed whakairo artwork demonstrating technical skill and cultural pattern integration",
+      "Digital storytelling presentation (3-5 minutes) explaining cultural sources and environmental message",
+      "Written reflection (300-400 words) on personal understanding of kaitiakitanga through the creative process",
+      "Peer feedback contribution during exhibition korero sessions"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Understanding the Arts in Context: UC-1 Investigate the characteristics, uses, and meanings of art works in specific cultural contexts",
+    "Developing Practical Knowledge: PK-1 Acquire and apply practical skills, techniques, and processes in a range of art forms",
+    "Developing Ideas: DI-1 Generate, develop, and refine visual ideas in response to a variety of motivations",
+    "Communicating and Interpreting: CI-1 Share ideas, feelings, and meanings through art works in a range of contexts"
   ],
-  "createdAt": "2025-08-20T10:39:24.579Z"
+  "createdAt": "2025-08-20T10:39:24.579Z",
+  "enrichedAt": "2025-09-11T08:32:57.299Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

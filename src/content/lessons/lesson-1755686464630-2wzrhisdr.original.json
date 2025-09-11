@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686464630-2wzrhisdr",
-  "title": "Year 8 Arts: Guardianship Responsibilities",
+  "title": "Kaitiakitanga Through Clay: Guardians of Te Awa o Mangakōtukutuku | Te Mahi Uku: Ngā Kaitiaki o Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 8",
-  "culturalContext": "Cultural practices and traditional knowledge",
+  "culturalContext": "This lesson is deeply rooted in our local awa (river), Te Awa o Mangakōtukutuku, and the Ngāti Kahungunu pūrākau (legend) of Hinepūkohurangi, the maiden of the mist who guides the river's flow. Students will explore how clay from the riverbanks has been used for generations to create works that tell stories of kaitiakitanga (guardianship).",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Create a ceramic tile that visually narrates a specific aspect of the pūrākau of Hinepūkohurangi and Te Awa o Mangakōtukutuku, demonstrating understanding of symbolic representation.",
+    "Apply traditional Māori design elements (e.g., koru, pikorua) to a contemporary clay artwork, explaining the cultural significance of the chosen patterns.",
+    "Develop and articulate a personal kaitiaki statement that connects their artwork to a specific action for protecting the health of Te Awa o Mangakōtukutuku.",
+    "Collaboratively contribute to a class waka huia (treasure box) installation that showcases the collective guardianship values of the ākonga."
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Pūrākau and Pango: Story and Clay",
+      "description": "Students will gather at a designated safe spot along Te Awa o Mangakōtukutuku. A local kaumātua will share the pūrākau of Hinepūkohurangi. Students will then collect a small amount of pango (clay) from the riverbank (following tikanga and with permission) and discuss its texture, colour, and connection to the story and place."
+    },
+    {
+      "title": "Hohou te Rongo: Reconciling with the Clay",
+      "description": "Back in the art room, students will prepare the clay, learning the process of wedging to remove air bubbles. This physical act is framed as 'hohou te rongo' - making peace with and understanding the material before creating with it."
+    },
+    {
+      "title": "Whakairo Uku: Carving Our Stories",
+      "description": "Using rolling pins and guides, students will create a flat clay tile. They will then use carving tools to inscribe their design, which must incorporate at least one traditional Māori pattern that symbolizes an element of the pūrākau or an aspect of kaitiakitanga (e.g., a koru for new life, a pikorua for the bond between people and the environment)."
+    },
+    {
+      "title": "Whakamaoritanga: Interpreting Our Work",
+      "description": "Students will write a short artist's statement (whakamaoritanga) for their fired and glazed tile. This statement will explain the story their tile tells and the specific guardian action (e.g., planting natives, organizing a clean-up) they pledge to undertake for the awa."
+    },
+    {
+      "title": "Kohikohinga: Creating Our Collective Waka Huia",
+      "description": "The class will collaboratively design and assemble a large wooden 'waka huia' (treasure box). Each student will place their finished tile inside, symbolizing that their individual guardian promises are a collective treasure for the future of the awa."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Kuia Whina Te Whiu (local Ngāti Kahungunu clay artist and knowledge holder)",
+    "‘Te Mahi Kete: Māori Basketry for Beginners’ by Mick Pendergrast (for understanding weaving patterns applicable to clay)",
+    "Digital archive of the MTG Hawke's Bay Tai Ahuriri collection, specifically the traditional Māori pottery exhibits",
+    "A kit of basic pottery tools (rolling pins, wooden guides, wire clay cutters, carving loops, sponges)"
   ],
-  "assessment": "Environmental impact assessment using arts frameworks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submission of the completed ceramic tile demonstrating technical skill in slab construction and carving.",
+      "Written or recorded artist's statement (whakamaoritanga) that connects the artwork's symbolism to the pūrākau and a personal kaitiaki pledge.",
+      "Contribution to a group reflection on the process of creating the collective waka huia and what it represents."
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Understanding the Arts in Context: Investigate the purposes of the arts in past and present cultures and contexts.",
+    "Developing Practical Knowledge: Explore and use art-making conventions, applying knowledge of elements and selected principles through the use of materials and processes.",
+    "Developing Ideas: Develop and refine ideas in selected art-making disciplines in response to a variety of motivations, including the study of established practice.",
+    "Communicating and Interpreting: Describe how ideas and art-making processes are used to communicate meaning in selected objects and images."
   ],
-  "createdAt": "2025-08-20T10:41:04.630Z"
+  "createdAt": "2025-08-20T10:41:04.630Z",
+  "enrichedAt": "2025-09-11T08:37:36.739Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

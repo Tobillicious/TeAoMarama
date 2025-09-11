@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686223631-1fqirquyl",
-  "title": "Year 7 Mathematics: Traditional Methods and Practices",
+  "title": "Te Whakatau Tohu: Navigating the Mangakōtukutuku Stream / Mathematical Navigation of the Mangakōtukutuku Waterway",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 7",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Students will explore mathematical concepts through the lens of the Mangakōtukutuku Stream, a significant waterway to Ngāti Kahungunu. They will learn how ancestors used mathematical reasoning for navigation, resource management, and understanding seasonal patterns while connecting to the story of Kahungunu and Rongomaiwahine, whose descendants have maintained this knowledge along this waterway for generations.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and compare flow rates of the Mangakōtukutuku Stream using measurement and rate calculations",
+    "Create scale maps of the stream's path using coordinate geometry and proportional reasoning",
+    "Analyze seasonal water level data patterns using statistical measures and graphing techniques",
+    "Apply traditional wayfinding concepts to solve modern navigation problems using angles and bearings"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Te Awa Tūpuna - Ancestral Waterway Mapping",
+      "description": "Students visit the Mangakōtukutuku Stream to measure distances and create scale maps using coordinate systems, incorporating traditional place names and significant sites along the waterway"
+    },
+    {
+      "title": "Whakatau Tohu Taurangi - Calculating Flow Rates",
+      "description": "Using timed float measurements and cross-sectional area calculations, students determine the stream's flow rate at different points, connecting to how ancestors monitored water movement for travel and resource management"
+    },
+    {
+      "title": "Tātari Rautau - Seasonal Pattern Analysis",
+      "description": "Students analyze historical water level data from local monitoring stations, creating graphs and calculating statistical measures to identify seasonal patterns and extreme weather events"
+    },
+    {
+      "title": "Te Arataki - Traditional Wayfinding Application",
+      "description": "Using angles and bearings, students solve navigation problems along the stream, learning how ancestors used star paths, land markers, and water currents for travel between settlements"
+    },
+    {
+      "title": "Whakawhiti Kōrero - Knowledge Sharing Circle",
+      "description": "Students present their mathematical findings to local kaumātua, explaining how modern mathematics connects to traditional knowledge of the Mangakōtukutuku Stream"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Local kaumātua from Ngāti Kahungunu with knowledge of the Mangakōtukutuku Stream",
+    "Hawke's Bay Regional Council stream monitoring data and maps",
+    "Traditional navigation tools (replicas) and modern measuring equipment",
+    "'Ngā Kōrero o Te Awa' - local historical records of the waterway from Hastings District Library"
   ],
-  "assessment": "Cultural competency evaluation through mathematics projects",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a detailed mathematical report analyzing the stream's flow patterns and navigation challenges",
+      "Develop and present a scale map with coordinate references of a section of the waterway",
+      "Solve a series of wayfinding problems using angle and bearing calculations",
+      "Explain mathematical connections to traditional knowledge in a reflective journal"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Geometry and Measurement: Use scales, maps, and bearings",
+    "Number and Algebra: Calculate rates and ratios, patterns and relationships",
+    "Statistics: Statistical investigation, comparing distributions",
+    "Te Tiriti o Waitangi: Honoring Māori mathematical knowledge and traditions"
   ],
-  "createdAt": "2025-08-20T10:37:03.631Z"
+  "createdAt": "2025-08-20T10:37:03.631Z",
+  "enrichedAt": "2025-09-11T08:26:17.468Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

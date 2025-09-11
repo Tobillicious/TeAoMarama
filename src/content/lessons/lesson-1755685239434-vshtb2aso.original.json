@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755685239434-vshtb2aso",
-  "title": "Year 9 Mathematics: Cultural Preservation",
+  "title": "Te Whakatau Tātai o Te Awa: The Mathematics of River Restoration",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 9",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "Students will investigate the mathematical principles behind restoring Te Awa o Mangakōtukutuku, the local river that holds deep significance for Ngāti Kahungunu. The river's name references the native shrub (mangakōtukutuku) that once flourished along its banks, and its restoration represents both environmental and cultural revitalization. Students will connect mathematical concepts to the traditional knowledge of river management and the current community-led restoration project.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and compare flow rates and water quality measurements using ratios and percentages to assess the health of Te Awa o Mangakōtukutuku",
+    "Apply geometric principles to design and scale riparian planting zones that maximize biodiversity and erosion control",
+    "Analyze historical and current environmental data using statistical measures to evaluate the effectiveness of restoration efforts",
+    "Create mathematical models that integrate mātauranga Māori perspectives with scientific data to propose sustainable river management solutions"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Te Awa Tātai: River Mathematics Investigation",
+      "description": "Students visit Te Awa o Mangakōtukutuku to collect water flow measurements, calculate cross-sectional areas, and determine flow rates using mathematical formulas. They compare current measurements with historical data provided by local kaumātua."
+    },
+    {
+      "title": "Whakairo Whenua: Geometric Planting Design",
+      "description": "Using geometric principles, students design scaled planting plans for the riverbanks. They calculate areas, perimeters, and optimal planting patterns that reflect traditional Māori land management practices while maximizing biodiversity."
+    },
+    {
+      "title": "Tātai Tatauranga: Statistical Analysis of Restoration",
+      "description": "Students analyze water quality data collected over the past decade, calculating mean, median, mode, and range to identify trends and correlations between restoration efforts and environmental improvements."
+    },
+    {
+      "title": "Hōtaka Whakaora: Mathematical Modeling Challenge",
+      "description": "Working in groups, students create mathematical models that predict the river's recovery timeline based on different restoration scenarios, incorporating both scientific data and cultural priorities from community consultations."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Ngāti Kahungunu kaumātua and environmental experts for cultural guidance",
+    "Hawke's Bay Regional Council river monitoring data and GIS mapping tools",
+    "Traditional Māori measurement tools (kumi, maro) and modern equivalents",
+    "Local restoration project plans and community consultation reports"
   ],
-  "assessment": "Traditional knowledge demonstration in mathematics contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete a detailed mathematical report analyzing the current state of Te Awa o Mangakōtukutuku",
+      "Design and present a scaled restoration plan using geometric principles",
+      "Create and justify a mathematical model predicting restoration outcomes",
+      "Reflect on how mathematical understanding supports cultural preservation"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics: Number and Algebra - Patterns and relationships",
+    "Mathematics and Statistics: Geometry and Measurement - Position and orientation",
+    "Mathematics and Statistics: Statistics - Statistical investigation",
+    "Tikanga-ā-Iwi: Continuity and Change - Understanding how cultural practices evolve"
   ],
-  "createdAt": "2025-08-20T10:20:39.434Z"
+  "createdAt": "2025-08-20T10:20:39.434Z",
+  "enrichedAt": "2025-09-11T07:38:53.009Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

@@ -1,39 +1,64 @@
 {
   "id": "lesson-1755686183365-xunxtdom2",
-  "title": "Year 7 Te Reo Māori: Traditional Methods and Practices",
+  "title": {
+    "english": "The Healing Waters: Rongoā and the Mangakōtukutuku Stream",
+    "teReoMāori": "Ngā Wai Rongoā: Te Rongoā me Te Awa o Mangakōtukutuku"
+  },
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 7",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Students will explore traditional Māori healing practices (rongoā) through the lens of our local Mangakōtukutuku Stream, which has been used for generations by Ngāti Kahungunu for its healing properties. The lesson connects to pūrākau (traditional stories) of the taniwha who guarded these healing waters and the knowledge of local tohunga rongoā.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Identify and name at least 5 native plants from the Mangakōtukutuku area used in rongoā using correct te reo Māori terms",
+    "Create simple instructions in te reo Māori for preparing a basic rongoā remedy using sentence structures learned in class",
+    "Explain the connection between at least 2 local native plants and their traditional healing properties using te reo Māori vocabulary",
+    "Participate in a mihi whakatau to acknowledge the mauri (life force) of the plants and waters used in rongoā traditions"
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "He Mihi ki te Awa (Greeting the Stream)",
+      "description": "Students visit the Mangakōtukutuku Stream bank to learn and recite a traditional mihi that acknowledges the mauri of the waters and surrounding plant life. They will learn specific vocabulary for local flora (e.g., kawakawa, mānuka, harakeke) and water features."
+    },
+    {
+      "title": "Ngā Rākau Rongoā o Tātou Whenua (Our Medicinal Plants)",
+      "description": "Using plant identification cards with te reo Māori names, students work in pairs to match native plants with their traditional healing uses. They create simple te reo labels describing each plant's properties (e.g., 'He rongoā mō te mamae' - a medicine for pain)."
+    },
+    {
+      "title": "Te Mahi Rongoā (Medicine Making Practice)",
+      "description": "Guided by knowledge of traditional practices, students prepare a simple kawakawa tea or balm while using te reo Māori instructions and vocabulary for the process (e.g., 'tapatapahi' - to cut, 'tunu' - to boil, 'whakaranu' - to mix)."
+    },
+    {
+      "title": "He Pūrākau mō Te Awa (Story of Our Stream)",
+      "description": "Students learn and retell the local pūrākau of the taniwha who protected the healing waters of Mangakōtukutuku, using te reo Māori sentence frames and key vocabulary to share the story with classmates."
+    },
+    {
+      "title": "Te Whare Rongoā (The Medicine House)",
+      "description": "Students create a collaborative digital or physical display showcasing their learning, including te reo Māori labels, descriptions of plant uses, and instructions for preparing simple rongoā remedies."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Local kaumātua Hone Smith (Ngāti Kahungunu knowledge holder specializing in rongoā)",
+    "'Rongoā Māori: A Practical Guide to Traditional Māori Medicine' by Rob McGowan",
+    "Te Papa Tongarewa online collection of rongoā artifacts (te papa.govt.nz)",
+    "Mangakōtukutuku Stream water quality monitoring kit and plant identification guides"
   ],
-  "assessment": "Sustainability solution design with te reo māori principles",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Create and present a labeled diagram in te reo Māori of 3 medicinal plants found near Mangakōtukutuku Stream",
+      "Record a short audio explanation in te reo Māori describing one traditional healing practice connected to our local environment",
+      "Participate in a role-play demonstrating the proper process for gathering plants for rongoā while using appropriate te reo Māori phrases"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori: Communication - Level 4: Use basic te reo Māori sentence structures and vocabulary for specific purposes",
+    "Te Reo Māori: Language Knowledge - Level 4: Recognize and use tikanga associated with te reo Māori",
+    "Social Sciences: Identity, Culture, and Organization - Level 4: Understand how cultural practices reflect and express people's customs, traditions, and values",
+    "Science: Living World - Level 4: Explain how living things are suited to their particular habitat and how they respond to environmental changes"
   ],
-  "createdAt": "2025-08-20T10:36:23.366Z"
+  "createdAt": "2025-08-20T10:36:23.366Z",
+  "enrichedAt": "2025-09-11T08:24:23.291Z",
+  "enrichedBy": "Aronui_Te"
 }

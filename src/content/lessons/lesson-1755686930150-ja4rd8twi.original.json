@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686930150-ja4rd8twi",
-  "title": "Year 8 Arts: Cultural Preservation",
+  "title": "Whakairo Awa: Carving the Story of Te Awa o Mangakōtukutuku / The Art of Our River: Carving Cultural Narratives",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 8",
-  "culturalContext": "Traditional medicine and scientific understanding",
+  "culturalContext": "Students will explore the pūrākau (traditional story) of Te Awa o Mangakōtukutuku, our local river that flows through Ngāti Kahungunu rohe. The awa is named for the mangakōtukutuku (blue duck/whio) that once thrived here, and its story speaks of kaitiakitanga, connection, and resilience. Students will connect with local kaumātua to understand the river's significance as a taonga and how its story has been traditionally expressed through whakairo (carving) and other art forms.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Identify and describe key elements of the pūrākau of Te Awa o Mangakōtukutuku and represent them through original visual art concepts.",
+    "Apply fundamental whakairo design principles (such as manaia, koru, and takarangi) to create a personal art piece that tells a part of the river's story.",
+    "Collaboratively plan and contribute to a class installation artwork that reflects a collective interpretation of the awa's narrative and significance.",
+    "Articulate the connection between their artwork, the local pūrākau, and the concept of kaitiakitanga for our local environment."
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "He Haerenga: Journey to the Awa",
+      "description": "A guided class trip to the banks of Te Awa o Mangakōtukutuku. Students will make observational sketches, take photographs, and collect natural materials (responsibly and with karakia). A local kaumātua will share the pūrākau of the awa, its original name, and its importance to Ngāti Kahungunu."
+    },
+    {
+      "title": "Te Whakapapa o te Whakairo: The Language of Carving",
+      "description": "A workshop led by a local carver or kaiako. Students will learn the basic symbols and patterns (kowhaiwhai, koru, etc.) used in whakairo and their meanings. They will practice sketching these patterns and begin to brainstorm how they could be used to represent elements of the river's story."
+    },
+    {
+      "title": "Tāku Awa, Tāku Whakairo: My River, My Carving",
+      "description": "Using their research and sketches, each student will design and create a small individual 'poupou' (carved panel) on a wooden tile or a large piece of harakeke (flax) stalk using safe carving tools (lino cutters, wood burning tools, or etching on clay). Their design must visually communicate a specific part of the pūrākau or an aspect of the river's taonga status."
+    },
+    {
+      "title": "Te Wao Nui: Creating Our Collective Forest",
+      "description": "The class will work together to assemble their individual carvings into a large collaborative waka huia (treasure box) or a stylized 'waharoa' (entranceway) installation. This activity focuses on collaboration, spatial design, and creating a unified artwork that represents the collective voice and learning of the akōnga."
+    },
+    {
+      "title": "Whakanui: Exhibition and Korero",
+      "description": "Students will host a mini-exhibition of their collaborative installation for whānau and the school community. Each student will prepare a brief korero (speech) to explain their individual piece and its connection to the awa, demonstrating their understanding and pride in their work."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local Ngāti Kahungunu kaumātua or knowledge holder (e.g., [Name of specific local iwi representative if known])",
+    "Local artist or carver with expertise in Māori visual arts",
+    "Digital archive 'Te Ara: Encyclopedia of New Zealand' for research on whakairo symbols",
+    "Natural materials from the riverbank (under guidance), wood tiles, harakeke, lino cutting tools, clay, carving tools"
   ],
-  "assessment": "Sustainability solution design with arts principles",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submission of a completed individual carved piece with a design plan that annotates the symbols used and their connection to the pūrākau.",
+      "Active and constructive participation in the planning and creation of the collaborative class installation.",
+      "Delivery of a one-minute oral korero during the exhibition, explaining the story and meaning behind their individual artwork."
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "The Arts NZC: Understanding the Arts in Context (UC) - Investigate the characteristics, uses, and interpretations of art works from a Māori context.",
+    "The Arts NZC: Developing Practical Knowledge (PK) - Explore and use art-making conventions, applying knowledge of elements and selected principles through the field of Visual Arts.",
+    "The Arts NZC: Communicating and Interpreting (CI) - Explore and describe ways in which meanings can be communicated and interpreted in their own and others’ work.",
+    "Social Sciences: Place and Environment - Understand how people perceive, represent, interpret, and interact with places and environments."
   ],
-  "createdAt": "2025-08-20T10:48:50.150Z"
+  "createdAt": "2025-08-20T10:48:50.150Z",
+  "enrichedAt": "2025-09-11T09:00:19.177Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

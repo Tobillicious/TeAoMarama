@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755686284082-3vl4p295a",
-  "title": "Year 7 Technology: Indigenous Knowledge Systems",
+  "title": "Whakairo Whenua: Designing Sustainable Land Management Systems | Te Whakamahi i te Mātauranga Taketake ki te Whakahaere Whenua",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Students will explore traditional Ngāti Kahungunu land management practices used along the Mangakōtukutuku Stream, focusing on how their tūpuna used technology to create pā tuna (eel weirs), maintain water quality, and sustainably harvest resources. The context connects to the college's namesake stream and the ongoing restoration work by local hapū.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and create a scale model of a traditional pā tuna system using natural materials and explain its technological principles",
+    "Analyze water quality data from Mangakōtukutuku Stream using digital tools and compare with traditional monitoring methods",
+    "Collaborate with local kaumātua to document and present one traditional land management technology used by Ngāti Kahungunu",
+    "Evaluate how modern technology can enhance traditional practices for environmental sustainability"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakapapa o te Awa",
+      "description": "Visit Mangakōtukutuku Stream with kaumātua to hear pūrākau about the awa's significance and observe traditional land management features. Students use digital cameras and mapping apps to document observations."
+    },
+    {
+      "title": "Hanga Pā Tuna",
+      "description": "In groups, students design and construct scale models of traditional eel weirs using natural materials (harakeke, toetoe, wood). They test water flow and functionality, applying technological principles of structure and forces."
+    },
+    {
+      "title": "Mātai Wai Māori",
+      "description": "Using water testing kits and digital sensors, students collect and analyze water quality data from the stream. They compare results with traditional indicators (presence of tuna, clarity, plant health) documented through interviews."
+    },
+    {
+      "title": "Hui ā-Iwi",
+      "description": "Students prepare and present their findings to local kaumātua and community members, demonstrating how traditional knowledge and modern technology can work together for sustainable land management."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Local kaumātua from Ngāti Kahungunu (e.g., Uncle Wiremu Williams)",
+    "Mangakōtukutuku Stream water testing kits and digital pH/temperature sensors",
+    "'Ngā Whakaraupapa: Traditional Māori Technologies' by Dr. Pauline Harris",
+    "Te Papa Tongarewa online collection of traditional fishing implements"
   ],
-  "assessment": "Indigenous perspectives integration in technology practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design portfolio showing pā tuna model development with technical drawings",
+      "Water quality analysis report comparing traditional and modern monitoring methods",
+      "Oral presentation to community stakeholders with digital slides",
+      "Reflective journal on cultural and technological learning throughout the unit"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, and outcome evaluation",
+    "Nature of Technology: Characteristics of technology and how it evolves",
+    "Technological Knowledge: Technological modelling and products",
+    "Key Competencies: Participating and contributing, relating to others"
   ],
-  "createdAt": "2025-08-20T10:38:04.082Z"
+  "createdAt": "2025-08-20T10:38:04.082Z",
+  "enrichedAt": "2025-09-11T08:28:55.678Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

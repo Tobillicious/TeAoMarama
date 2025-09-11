@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755685922374-clsyn6nyi",
-  "title": "Year 10 English: Community Engagement",
+  "title": "Whakapapa of the Word: Storytelling from Te Awa o Mangakōtukutuku | Te Whakapapa o te Kupu: Te Pūrākau mai i Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "English",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "This lesson is deeply rooted in the history and mauri (life force) of Te Awa o Mangakōtukutuku (The Stream of the Bellbird), a significant waterway for local hapū of Ngāti Kahungunu. Students will explore how the stream's story—from its pristine state to its urban pollution and current restoration efforts led by local kaitiaki—is told through different narrative forms and voices, connecting language arts to place-based identity and environmental action.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Analyze and compare how different genres (e.g., pūrākau, news article, scientific report, poetry) shape the narrative of Te Awa o Mangakōtukutuku.",
+    "Craft a persuasive written text (e.g., opinion piece, formal letter) that uses evidence from research and community voices to advocate for the awa's continued restoration.",
+    "Collaboratively create and present an oral narrative that integrates a traditional Māori storytelling element (e.g., whakataukī, karakia) with modern environmental commentary.",
+    "Critically reflect on their own role and voice as a storyteller within the Mangakōtukutuku community."
   ],
   "activities": [
-    "Cultural mapping and english analysis",
-    "Traditional knowledge workshop and english integration",
-    "Environmental investigation using english methods",
-    "Community interview project on english applications",
-    "Sustainability challenge with english solutions",
-    "Cultural artifact study through english lens"
+    {
+      "title": "He Whakarongo, He Kōrero | To Listen, To Speak",
+      "description": "Students are welcomed with a karakia for the awa. A local kaitiaki (guardian) from the Mangakōtukutuku Stream Restoration Trust visits the class to share the pūrākau (historical narratives) of the stream and the ongoing efforts to restore its mauri. Students practice active listening and prepare questions to understand the story from a guardian's perspective."
+    },
+    {
+      "title": "Ngā Ahua Kōrero | The Faces of Story",
+      "description": "In small groups, students analyze a text set about the stream, which includes a Ngāti Kahungunu pūrākau, a recent article from Hawke's Bay Today, a scientific water quality report from Hawke's Bay Regional Council, and a poem by a local writer. Using a graphic organizer, they compare the purpose, audience, language features, and perspective of each text."
+    },
+    {
+      "title": "Tōu Reo, Tōu Awa | Your Voice, Your Stream",
+      "description": "Students choose a specific issue affecting the awa (e.g., pollution, native planting, community access). They draft a persuasive text aimed at a real-world audience (e.g., the college board, the local council, a community newsletter) advocating for action. Drafts are workshopped with peers for clarity, tone, and persuasive impact."
+    },
+    {
+      "title": "Te Hā o te Awa | The Breath of the Stream",
+      "description": "Guided by the English and Māori department teachers, students create a short, powerful oral presentation (1-2 mins). This presentation must weave together a personal reflection, a factual insight about the awa, and the purposeful use of one whakataukī (proverb) or kupu whakaari (descriptive word) that connects to the theme of guardianship."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "A designated kaitiaki from the Mangakōtukutuku Stream Restoration Trust",
+    "Hawke's Bay Regional Council's 'State of the Environment' reporting website and specific data on Te Awa o Mangakōtukutuku",
+    "The book 'Ngā Pūrākau o Ngāti Kahungunu' by Dr. Jessica Hutchings and others",
+    "Digital voice recorders or smartphones for interviewing and recording oral presentations"
   ],
-  "assessment": "Cultural heritage preservation through english methods",
+  "assessment": {
+    "type": "Summative",
+    "tasks": [
+      "A final, polished persuasive text (e.g., opinion piece, formal letter)",
+      "A video recording of the 1-2 minute oral presentation 'Te Hā o te Awa'",
+      "A brief written self-reflection connecting their work to the concept of kaitiakitanga"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing - Processes and strategies; Ideas; Language features; Structure",
+    "English: Speaking, Writing, and Presenting - Processes and strategies; Purposes and audiences; Ideas; Language features; Structure",
+    "Social Sciences: Place and Environment - Understand how people interact with natural and cultural environments and the consequences of these interactions.",
+    "Key Competencies: Participating and Contributing; Using Language, Symbols, and Texts"
   ],
-  "createdAt": "2025-08-20T10:32:02.374Z"
+  "createdAt": "2025-08-20T10:32:02.374Z",
+  "enrichedAt": "2025-09-11T08:11:41.080Z",
+  "enrichedBy": "Aronui_Te"
 }

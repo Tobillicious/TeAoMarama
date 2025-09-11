@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686848859-i2l5ult4x",
-  "title": "Year 8 Technology: Environmental Impact Assessment",
+  "title": "Te Arotake Hōtaka: Assessing the Mangakōtukutuku Stream Restoration Project | Te Arotake Hōtaka: Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 8",
-  "culturalContext": "Cultural rights and community responsibilities",
+  "culturalContext": "Students will investigate the ongoing restoration of Te Awa o Mangakōtukutuku, a culturally significant stream that flows through our rohe. This awa is mentioned in Ngāti Kahungunu pūrākau and was traditionally a mahinga kai site for tuna (eels) and kōura (crayfish). The project connects to the work of local kaumātua Hōri Waititi, who has led community efforts to restore the mauri of this waterway.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Analyze the environmental impact of the stream restoration using digital mapping tools to identify at least three positive ecological changes",
+    "Design and create a simple water quality testing device using locally sourced materials and traditional knowledge principles",
+    "Develop a digital presentation that incorporates mātauranga Māori perspectives on water conservation alongside technological solutions",
+    "Collaborate with local experts to assess the cultural and environmental outcomes of the restoration project"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa",
+      "description": "Visit Te Awa o Mangakōtukutuku with kaumātua Hōri Waititi to hear pūrākau about the stream, learn traditional monitoring methods, and understand the cultural significance of this waterway to Ngāti Kahungunu."
+    },
+    {
+      "title": "Hōtaka Aroturuki",
+      "description": "Use digital mapping tools (Google Earth, GIS) and water testing kits to document current water quality, identify native species returning to the area, and map the restoration progress compared to historical data."
+    },
+    {
+      "title": "Hangahanga Taonga",
+      "description": "Design and build simple water monitoring devices using natural materials (flax, wood) and basic sensors, incorporating traditional patterns and modern technology to create functional assessment tools."
+    },
+    {
+      "title": "Whiriwhiri Kōrero",
+      "description": "Interview project leaders from the regional council and mana whenua representatives to understand different perspectives on the technological and cultural approaches used in the restoration."
+    },
+    {
+      "title": "Whakatauira Matihiko",
+      "description": "Create digital presentations using TinkerCAD or similar software to propose additional technological solutions that could enhance the restoration while honoring Māori environmental values."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Kaumātua Hōri Waititi (local cultural expert and restoration leader)",
+    "Hawke's Bay Regional Council's 'Te Awa o Mangakōtukutuku Restoration Project' reports and data",
+    "NIWA's freshwater monitoring guides and digital mapping resources",
+    "Traditional Māori water conservation knowledge from 'Te Māra o Tāne' resource book"
   ],
-  "assessment": "Indigenous perspectives integration in technology practice",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a comprehensive digital impact assessment report comparing traditional and technological monitoring methods",
+      "Design and present a prototype water quality testing device that blends mātauranga Māori with modern technology",
+      "Develop a culturally-responsive proposal for the next phase of stream restoration using appropriate technologies"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Technology and Society: Current and future issues, historical influences",
+    "Key Competencies: Participating and contributing, relating to others"
   ],
-  "createdAt": "2025-08-20T10:47:28.859Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:47:28.859Z",
+  "enrichedAt": "2025-09-11T08:56:29.063Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

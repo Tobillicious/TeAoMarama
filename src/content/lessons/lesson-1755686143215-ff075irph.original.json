@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755686143215-ff075irph",
-  "title": "Year 10 Te Reo Māori: Sustainable Solutions",
+  "title": "Te Whakahaumanu o Te Awa o Mangakōtukutuku / Revitalising the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional knowledge and cultural practices",
+  "culturalContext": "Centered on the awa (stream) that flows through our college lands, named for the native kōtukutuku (tree fuchsia) that once flourished along its banks. This lesson connects to Ngāti Kahungunu pūrākau (stories) of Tāne Mahuta's children and the whakataukī: 'Ko te wai te ora o ngā mea katoa - Water is the life giver of all things'. Students will explore how traditional knowledge of water guardianship can address modern pollution challenges in our local waterway.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Whakamahi i ngā kupu Māori e hāngai ana ki te kaitiakitanga wai (e.g., waiora, mauri, wai Māori) i roto i ngā kōrerorero (Use Māori vocabulary related to water guardianship in discussions)",
+    "Tuhituhi he whakaaro mō te oranga o te awa, ki te reo Māori, mā te āta tirotiro i te taiao (Write reflections in te reo Māori about the stream's health through environmental observation)",
+    "Whakamārama i te hononga o ngā kōrero tuku iho a Ngāti Kahungunu ki te tiaki i te awa (Explain the connection between Ngāti Kahungunu ancestral stories and stream protection)",
+    "Whiriwhiri he rongoā Māori hei whakapai ake i te mauri o te wai (Collaborate to propose Māori solutions to improve water quality)"
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "He Hīkoi, He Awa, He Kōrero - Walk, Stream, Story",
+      "description": "Guided hīkoi (walk) to Te Awa o Mangakōtukutuku with kaumātua (elder) to learn its traditional name, significance, and pūrākau. Students use te reo Māori to describe what they see (wai Māori/clear water, paru/pollution) and record kupu hou (new words)."
+    },
+    {
+      "title": "Te Kimi Āhua - Seeking the Signs",
+      "description": "In small groups, students conduct wai (water) testing using simple kits (pH, clarity) and traditional observation methods (tirotiro/look, rongo/listen, hōhonu/depth). They record findings and kupu in a 'Pukapuka Awa' (stream journal) using sentence structures like 'Kei te [action] te wai' (The water is [action/state])."
+    },
+    {
+      "title": "He Kōrerorero mō te Mauri - Discussing the Life Force",
+      "description": "Using a 'Te Whare Tapa Wha' model adapted for the awa (taha wai/water health, taha tinana/physical, taha hinemoana/spiritual, taha whānau/community), students discuss in te reo Māori how pollution affects its mauri (life force). Sentence starters provided: 'Mēnā ka paru te wai, ka...' (If the water is polluted, then...)."
+    },
+    {
+      "title": "Te Whakatakoto Rongoā - Proposing Solutions",
+      "description": "Groups develop a 'Mahere Kaitiaki' (Guardianship Plan) using a template with te reo Māori prompts. They propose one practical action (e.g., planting harakeke/flax to filter runoff) and create a simple waiata or karakia to express their commitment, using relevant kupu."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Local kaumātua from Ngāti Kahungunu (e.g., Aunty Hine Smith) for pūrākau and correct pronunciation",
+    "Hawke's Bay Regional Council 'Wai Ora' water testing kits and te reo Māori guidance sheets",
+    "Book: 'Ngā Whakataukī o Ngāti Kahungunu' (Whakapapa Publishing) for relevant proverbs",
+    "Digital app: 'Kupu' by Te Taura Whiri i te Reo Māori for instant word lookup and pronunciation"
   ],
-  "assessment": "Kaitiakitanga implementation using te reo māori approaches",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Submit completed 'Pukapuka Awa' (stream journal) with at least 10 kupu hou and 5 sentences in te reo describing observations",
+      "Present group 'Mahere Kaitiaki' (Guardianship Plan) orally for 2 minutes, using at least 3 key terms correctly (e.g., waiora, mauri, kaitiaki)",
+      "Peer-assess another group's plan using a te reo Māori rubric focusing on clarity and cultural relevance"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori: Whakarongo - Listening (AO: Understand and respond to spoken Māori related to the environment)",
+    "Te Reo Māori: Kōrero - Speaking (AO: Use Māori to communicate about immediate environment and solutions)",
+    "Te Reo Māori: Tuhituhi - Writing (AO: Write simple texts in Māori about a local issue)",
+    "Social Sciences: Place and Environment (AO: Understand how people’s management of resources impacts sustainability)",
+    "Health and Physical Education: Healthy Communities and Environments (AO: Investigate community and environmental factors that affect wellbeing)"
   ],
-  "createdAt": "2025-08-20T10:35:43.215Z"
+  "createdAt": "2025-08-20T10:35:43.215Z",
+  "enrichedAt": "2025-09-11T08:22:10.286Z",
+  "enrichedBy": "Aronui_Te"
 }

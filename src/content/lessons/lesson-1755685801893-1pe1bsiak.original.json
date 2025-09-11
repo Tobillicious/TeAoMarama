@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755685801893-1pe1bsiak",
-  "title": "Year 10 English: Indigenous Knowledge Systems",
+  "title": "Whakapapa o te Awa: Voices of Mangakōtukutuku Stream | The Ancestral Voice of Our Waterway",
   "type": "lesson",
   "subject": "English",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "Students will explore the oral histories and written accounts of Mangakōtukutuku Stream, a significant waterway to Ngāti Kahungunu. They will examine how the stream's health reflects community wellbeing and connect this to broader themes of environmental guardianship (kaitiakitanga) through both traditional Māori narratives and contemporary English texts.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of english concepts in cultural context",
-    "Apply traditional knowledge to modern english challenges",
-    "Analyze environmental impacts through english frameworks",
-    "Engage with community perspectives on english issues"
+    "Analyze and compare a traditional pūrākau (Māori narrative) about Mangakōtukutuku Stream with a contemporary non-fiction text about local water conservation, identifying how each text shapes perspective.",
+    "Compose a written piece (e.g., a poem, short narrative, or persuasive article) that synthesizes research and personal reflection to express a viewpoint on the cultural and environmental significance of a local landmark.",
+    "Orally present findings from a community interview, demonstrating effective use of language techniques and showing respect for cultural protocols (tikanga).",
+    "Critically evaluate the effectiveness of different text types (oral, written, visual) in communicating ideas about kaitiakitanga and cultural identity."
   ],
   "activities": [
-    "Cultural mapping and english analysis",
-    "Traditional knowledge workshop and english integration",
-    "Environmental investigation using english methods",
-    "Community interview project on english applications",
-    "Sustainability challenge with english solutions",
-    "Cultural artifact study through english lens"
+    {
+      "title": "He Pūrākau, He Korero | Story and Voice",
+      "description": "Students will listen to a recorded pūrākau (e.g., from a local kaumātua) about the creation and significance of Mangakōtukutuku Stream. They will then read a contemporary article or report on the stream's health. In small groups, they will use a Venn diagram to analyze the language, purpose, and perspective of each text, focusing on how each conveys values and knowledge."
+    },
+    {
+      "title": "Te Awa, He Tangata | The River is a Person",
+      "description": "Guided by a local kaitiaki (environmental guardian) or representative from a group like Ngāti Kahungunu iwi or the local catchment trust, students will take a field trip to the stream. They will make observational notes and sketches, focusing on sensory details and evidence of health or change. This firsthand experience will ground their subsequent writing."
+    },
+    {
+      "title": "He Korero ki te Hapori | Community Conversation",
+      "description": "Students will prepare and conduct a short interview with a community member (e.g., a kaumātua, a parent, a local farmer, a council member) about their connection to and views on the stream. They will develop open-ended questions focused on change, memory, and responsibility, practicing active listening and respectful dialogue."
+    },
+    {
+      "title": "Tuhituhi, He Whakaaro | Writing with Purpose",
+      "description": "Using their research, observations, and interview notes, students will craft a creative or persuasive written piece. This could be a poem personifying the awa, a short story from the perspective of the water, or a persuasive article for the college newsletter arguing for a specific conservation action, using evidence from their texts and interviews."
+    },
+    {
+      "title": "Whakaahua, Whakaatu | Capturing and Presenting",
+      "description": "Students will create a simple visual representation (e.g., a annotated map, a digital slideshow, a poster) that combines a key excerpt from their writing with an image (photo or drawing) from the field trip. They will present this visual aid in a brief (2-3 minute) oral presentation to the class, explaining their chosen perspective on the awa."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and english resources",
-    "Traditional knowledge holders and english experts",
-    "Environmental monitoring tools and english software",
-    "Community engagement platforms and english forums",
-    "Sustainability assessment frameworks and english models"
+    "Recorded oral history interviews with Ngāti Kahungunu kaumātua regarding Mangakōtukutuku Stream (accessed via local marae or iwi archives).",
+    "Hawke's Bay Regional Council 'State of the Environment' reports and interactive maps for water quality data.",
+    "The book 'Voices of the Land: Ngā Reo o te Whenua' by Bradford Haami, for examples of weaving oral history and narrative.",
+    "Local experts: A kaitiaki from the Mangakōtukutuku Catchment Trust or a representative from Ngāti Kahungunu Iwi Inc."
   ],
-  "assessment": "Environmental impact assessment using english frameworks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "A written piece (creative or persuasive) that synthesizes research on the cultural and environmental significance of Mangakōtukutuku Stream.",
+      "A brief oral presentation (2-3 mins) supported by a visual element, summarizing key findings and personal reflection.",
+      "A reflective annotation on the draft of their written work, explaining their choice of language techniques and how they connect to the theme of kaitiakitanga."
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "English: Listening, Reading, and Viewing - Processes and strategies; Ideas; Language features; Structure.",
+    "English: Speaking, Writing, and Presenting - Processes and strategies; Ideas; Language features; Structure.",
+    "Key Competencies: Thinking; Using language, symbols, and texts; Relating to others; Participating and contributing.",
+    "Social Sciences: Understand how people remember and record the past in different ways.",
+    "Education for Sustainability: Responsibility for action - Students will explore and act on a current sustainability issue."
   ],
-  "createdAt": "2025-08-20T10:30:01.893Z"
+  "createdAt": "2025-08-20T10:30:01.893Z",
+  "enrichedAt": "2025-09-11T08:05:26.468Z",
+  "enrichedBy": "Aronui_Te"
 }

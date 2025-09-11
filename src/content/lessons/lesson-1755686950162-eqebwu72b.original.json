@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686950162-eqebwu72b",
-  "title": "Year 8 Technology: Environmental Impact Assessment",
+  "title": "Te Arotakenga Hōtoke Taiao / The Winter Impact Assessment",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 8",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Students will investigate how winter conditions affect the Mangakōtukutuku Stream (Te Awa o Mangakōtukutuku), a significant waterway flowing through Ngāti Kahungunu rohe. They will explore traditional Māori knowledge of seasonal changes (maramataka) and modern environmental monitoring to understand the stream's health during takurua (winter), connecting to local stories about the stream as a life-giver and source of mahinga kai.",
   "depth": "foundational",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and implement a water quality testing protocol for the Mangakōtukutuku Stream using digital sensors and traditional observation methods",
+    "Analyze winter water quality data to identify impacts of seasonal changes and potential human activities on the stream ecosystem",
+    "Create a digital presentation that integrates scientific data with mātauranga Māori perspectives on winter environmental management",
+    "Propose a technology-based solution to address one identified environmental impact on the stream"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki Te Awa",
+      "description": "Students visit Mangakōtukutuku Stream with a local kaumātua who shares pūrākau (traditional stories) about the stream and demonstrates traditional methods of assessing water health through observation of flora, fauna, and water clarity"
+    },
+    {
+      "title": "He Tātari Wai mō Takurua",
+      "description": "Students use water testing kits, digital pH meters, turbidity tubes, and temperature sensors to collect winter baseline data at three points along the stream, documenting their methods with digital devices"
+    },
+    {
+      "title": "Te Hōhonutanga o te Raraunga",
+      "description": "Working in pairs, students analyze their collected data using spreadsheet software, creating graphs and charts to visualize patterns and correlations between different water quality parameters"
+    },
+    {
+      "title": "Te Ao Hurihuri",
+      "description": "Students research modern winter environmental challenges affecting the stream (e.g., stormwater runoff, changing rainfall patterns) and traditional Māori winter practices for protecting waterways"
+    },
+    {
+      "title": "He Rautaki Whakamauri Awa",
+      "description": "Using design thinking principles, students develop a technological solution (e.g., simple filtration system, community alert app, educational resource) to address one identified impact on the stream's winter health"
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Local kaumātua from Ngāti Kahungunu with knowledge of Mangakōtukutuku Stream",
+    "LaMotte Water Monitoring Kits or similar water testing equipment",
+    "NIWA's Freshwater Ecosystem Health educational resources",
+    "Te Maramataka - Māori Lunar Calendar resources from local marae"
   ],
-  "assessment": "Sustainability solution design with technology principles",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Water quality data collection and analysis report",
+      "Digital presentation integrating scientific and cultural perspectives",
+      "Prototype or design proposal for technological solution"
+    ]
+  },
   "duration": "2-3 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development",
+    "Technological Knowledge: Technological modelling, products and systems",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Science: Living World - Ecology, Planet Earth and Beyond - Earth systems"
   ],
-  "createdAt": "2025-08-20T10:49:10.163Z"
+  "createdAt": "2025-08-20T10:49:10.163Z",
+  "enrichedAt": "2025-09-11T09:01:30.821Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

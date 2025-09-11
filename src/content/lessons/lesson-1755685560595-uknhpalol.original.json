@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755685560595-uknhpalol",
-  "title": "Year 8 Technology: Guardianship Responsibilities",
+  "title": "Te Kaitiaki Hangarau o Te Awa Mangakōtukutuku / The Technology Guardians of Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 8",
-  "culturalContext": "Environmental conservation and kaitiakitanga",
+  "culturalContext": "Students will explore their role as kaitiaki through the lens of Te Awa Mangakōtukutuku, the stream that flows through our rohe and holds deep significance for Ngāti Kahungunu. The awa is named for the kotukutuku (tree fuchsia) that once flourished along its banks, and students will investigate how technology can help restore and protect this taonga while honoring the pūrākau of our tūpuna who gathered medicinal plants from its waters.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and prototype a simple water quality testing device using digital and material technologies to monitor Te Awa Mangakōtukutuku",
+    "Create a digital storymap that layers mātauranga Māori about the awa with scientific data collected through technological monitoring",
+    "Collaboratively develop a technology-based solution addressing one identified threat to the health of Te Awa Mangakōtukutuku",
+    "Present technological findings and proposals using appropriate te reo Māori terminology and cultural protocols to community stakeholders"
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki Te Awa",
+      "description": "Visit Te Awa Mangakōtukutuku with kaumātua to hear pūrākau, learn traditional names and uses of plants along its banks, and observe current conditions. Students use digital cameras and audio recorders to document observations and stories."
+    },
+    {
+      "title": "He Rauemi Hangarau mō te Tātari Wai",
+      "description": "Workshop to design and build simple water testing tools using micro:bit sensors, pH testing strips, and turbidity tubes. Students calibrate devices and develop digital recording methods for water quality data."
+    },
+    {
+      "title": "Te Hōpara Matihiko",
+      "description": "Using GIS mapping software and traditional Māori mapping knowledge, students create layered digital maps showing historical significance, current environmental data, and potential restoration sites along the awa."
+    },
+    {
+      "title": "Te Whakaaro Hangarau",
+      "description": "Design challenge where groups develop technological solutions (e.g., native planting drone seed dispersal, smart litter collection systems, digital monitoring network) to address specific issues identified in their research."
+    },
+    {
+      "title": "Te Whakaatu mai i te Hōtaka",
+      "description": "Students present their technological solutions and findings to whānau, community members, and local iwi representatives using digital presentations that incorporate both technical data and cultural knowledge."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Micro:bit classroom sets with water quality sensors",
+    "Ngāti Kahungunu kaumātua Rangiātea Whaanga as cultural guide",
+    "NIWA RiverWatch water monitoring protocols and digital tools",
+    "Te Ara - The Encyclopedia of New Zealand online resources on Māori environmental knowledge"
   ],
-  "assessment": "Traditional knowledge demonstration in technology contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design portfolio documenting the technological development process",
+      "Functional prototype of water monitoring device or restoration technology",
+      "Digital storymap presentation integrating cultural and scientific data",
+      "Oral presentation demonstrating use of te reo Māori technical terms"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Technological Knowledge: Understanding technological modelling and products",
+    "Nature of Technology: Characteristics of technology and characteristics of technological outcomes",
+    "Social Sciences: Understand how people participate individually and collectively in response to community challenges"
   ],
-  "createdAt": "2025-08-20T10:26:00.595Z"
+  "createdAt": "2025-08-20T10:26:00.595Z",
+  "enrichedAt": "2025-09-11T07:53:58.137Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

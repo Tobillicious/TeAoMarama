@@ -1,39 +1,61 @@
 {
   "id": "lesson-1755686424607-epsu0bx36",
-  "title": "Year 9 Mathematics: Sustainable Solutions",
+  "title": "Te Whakatau Taurangi o Te Awa Mangakōtukutuku / Algebraic Modelling of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 9",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Students will investigate water quality and flow patterns of Te Awa Mangakōtukutuku, the stream that flows through our college lands and holds significance to Ngāti Kahungunu. The stream's name references the native kotukutuku (tree fuchsia) that traditionally grew along its banks, and its health is of ongoing concern to our local hapū.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Collect and organize water quality data (pH, turbidity, flow rate) from three sites along Te Awa Mangakōtukutuku",
+    "Create and interpret linear algebraic models to represent relationships between water quality variables over time",
+    "Use algebraic inequalities to determine when water quality parameters exceed safe thresholds for native species",
+    "Present mathematical findings using both scientific and cultural frameworks relevant to Ngāti Kahungunu kaitiakitanga"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "He Hīkoi mā Te Awa - Stream Walk and Data Collection",
+      "description": "Students visit three predetermined sites along Te Awa Mangakōtukutuku (upstream, mid-college, downstream) to collect water quality measurements using testing kits. They record pH, turbidity, and flow rate while observing the surrounding environment and noting any cultural markers or potential pollution sources."
+    },
+    {
+      "title": "Te Taurangi me ngā Raraunga - Variables and Data Organization",
+      "description": "Back in class, students organize their collected data into tables and scatter plots. They identify independent and dependent variables (e.g., time since rainfall vs. turbidity, location vs. pH) and discuss patterns observed, connecting them to the physical and cultural landscape of the stream."
+    },
+    {
+      "title": "Te Hangarite - Creating Linear Models",
+      "description": "Using their plotted data, students determine lines of best fit and develop linear equations (y = mx + c) to model relationships between variables. They interpret the meaning of slope and y-intercept in the context of stream health (e.g., rate of pollution increase, baseline water quality)."
+    },
+    {
+      "title": "Te Aromatawai me te Whakatau - Assessment and Decision Making",
+      "description": "Students use inequalities to determine when water quality parameters exceed safe thresholds (e.g., pH < 6.5 or > 8.5, turbidity > 10 NTU). They analyze which sites and conditions present the greatest risk to the ecosystem and make evidence-based recommendations for action."
+    },
+    {
+      "title": "Te Whakaputa Körero - Presenting to the Kaitiaki Rōpū",
+      "description": "Groups create presentations that combine their mathematical models with cultural knowledge. They present findings to a panel including our local kaitiaki representative, explaining both the algebraic relationships and what they mean for the mauri (life force) of Te Awa Mangakōtukutuku."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Hanna Instruments HI98129 pHep® pH/Temperature Tester",
+    "Local kaitiaki Hōri Waititi from Ngāti Kahungunu Environmental Trust",
+    "NIWA River Environment Classification data for Mangakōtukutuku catchment",
+    "Te Kete Ipurangi (TKI) Mathematics and Pāngarau learning resources on algebraic modelling"
   ],
-  "assessment": "Community engagement reflection on mathematics applications",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Completed data collection tables and scatter plots for three stream sites",
+      "Written report including linear equations and inequalities modeling water quality",
+      "5-minute presentation to kaitiaki panel with mathematical and cultural recommendations"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics Level 5: Patterns and relationships - Explore and use patterns and relationships in linear equations and inequalities",
+    "Mathematics and Statistics Level 5: Statistical investigation - Conduct investigations using the statistical enquiry cycle",
+    "Science Level 5: Planet Earth and Beyond - Investigate the interdependence of living things and their environment",
+    "Social Sciences Level 5: Understand how people's management of resources impacts on environmental and social sustainability"
   ],
-  "createdAt": "2025-08-20T10:40:24.608Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:40:24.608Z",
+  "enrichedAt": "2025-09-11T08:35:51.266Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755686546577-d2gb197ml",
-  "title": "Year 7 Science: Understanding Cultural Context",
+  "title": "Te Awa Tūpuna: The Living River / Te Awa o Mangakōtukutuku: He Awa Ora",
   "type": "lesson",
   "subject": "Science",
   "yearLevel": "Year 7",
-  "culturalContext": "Environmental stewardship and climate action",
+  "culturalContext": "Students will explore the Mangakōtukutuku Stream, a significant waterway flowing through our rohe that holds deep cultural, historical, and ecological importance to Ngāti Kahungunu. The stream's name references the kotukutuku (tree fuchsia) that once flourished along its banks and provided medicinal resources. Students will connect with local kaumātua knowledge about the stream's traditional uses while investigating its current ecological health through scientific methods.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of science concepts in cultural context",
-    "Apply traditional knowledge to modern science challenges",
-    "Analyze environmental impacts through science frameworks",
-    "Engage with community perspectives on science issues"
+    "Measure and analyze water quality parameters (pH, turbidity, temperature) of the Mangakōtukutuku Stream using scientific equipment",
+    "Compare traditional Māori knowledge of stream health indicators with modern scientific measurements",
+    "Create a detailed ecological map identifying native and introduced species along the stream banks",
+    "Develop and present a restoration proposal addressing one identified environmental issue affecting the stream"
   ],
   "activities": [
-    "Cultural mapping and science analysis",
-    "Traditional knowledge workshop and science integration",
-    "Environmental investigation using science methods",
-    "Community interview project on science applications",
-    "Sustainability challenge with science solutions",
-    "Cultural artifact study through science lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa: Connecting to Our Stream",
+      "description": "Students begin with a karakia and welcome from a local kaumātua who shares pūrākau (traditional stories) about the Mangakōtukutuku Stream. They learn traditional names for sections of the stream and create observational drawings of the waterway from different vantage points, noting both natural features and human impacts."
+    },
+    {
+      "title": "Ngā Tohu Ora o te Awa: Traditional and Scientific Indicators",
+      "description": "Working in small groups, students use water testing kits to measure scientific parameters (pH, dissolved oxygen, turbidity) at three different sites along the stream. Simultaneously, they learn to identify traditional indicators of water health taught by kaumātua, such as the presence of certain native plants, insects, and birds. Students create comparative data tables showing both scientific measurements and traditional observations."
+    },
+    {
+      "title": "He Rautaki Raukaha: Ecosystem Mapping",
+      "description": "Students create detailed ecological maps of a 100-meter section of stream bank, identifying and classifying native species (e.g., harakeke, kahikatea) and introduced species. They use GPS units to mark locations of significant findings and learn about traditional uses of identified native plants through hands-on workshops with local experts."
+    },
+    {
+      "title": "Te Whakaora i te Awa: Restoration Science",
+      "description": "Based on their findings, student groups identify one key environmental challenge affecting the stream (e.g., erosion, pollution, invasive species). They research both scientific and mātauranga Māori approaches to addressing this challenge and develop a restoration proposal that integrates both knowledge systems."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and science resources",
-    "Traditional knowledge holders and science experts",
-    "Environmental monitoring tools and science software",
-    "Community engagement platforms and science forums",
-    "Sustainability assessment frameworks and science models"
+    "Local Ngāti Kahungunu kaumātua and environmental kaitiaki",
+    "Water quality testing kits (pH strips, thermometers, turbidity tubes)",
+    "Ngāi Tahu Mahinga Kai website and cultural mapping resources",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' (SHMAK) resources"
   ],
-  "assessment": "Indigenous perspectives integration in science practice",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Water quality data collection and analysis report",
+      "Comparative table showing traditional and scientific indicators of stream health",
+      "Detailed ecological map with species identification",
+      "Restoration proposal presentation integrating mātauranga Māori and science"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Nature of Science: Investigating in science, Understanding about science",
+    "Living World: Ecology, Evolution",
+    "Planet Earth and Beyond: Earth systems, Interacting systems",
+    "NZC Principles: Cultural diversity, Community engagement, Sustainability"
   ],
-  "createdAt": "2025-08-20T10:42:26.577Z"
+  "createdAt": "2025-08-20T10:42:26.577Z",
+  "enrichedAt": "2025-09-11T08:41:32.138Z",
+  "enrichedBy": "Aronui_Pūtaiao"
 }

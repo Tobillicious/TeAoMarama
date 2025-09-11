@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755685620651-iyffm4rmw",
-  "title": "Year 9 Mathematics: Cultural Preservation",
+  "title": "Te Whakatau Tātai: The Mathematics of Pā Umu - Calculating Earth Oven Capacity and Heat Distribution",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 9",
-  "culturalContext": "Cultural practices and traditional knowledge",
+  "culturalContext": "Students will explore the mathematical principles behind traditional Ngāti Kahungunu pā umu (earth ovens) used at Te Poho o Tākitimu marae in Mangakōtukutuku. They will investigate volume calculations, heat distribution patterns, and proportional reasoning through the lens of preparing kai for community gatherings, connecting mathematical concepts to the cultural practice of manaakitanga (hospitality) that defines our local community.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and compare volumes of various pā umu shapes using appropriate geometric formulas",
+    "Analyze heat distribution patterns using ratio and proportion to determine optimal stone placement",
+    "Apply scaling factors to adjust recipes based on calculated oven capacity for different gathering sizes",
+    "Create mathematical models that demonstrate understanding of thermal efficiency in traditional cooking methods"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Te Hohonu o te Umu - Depth of the Earth Oven",
+      "description": "Students visit Te Poho o Tākitimu marae to measure actual pā umu dimensions. Using tape measures and digital calipers, they record length, width, and depth measurements of different oven shapes (rectangular, circular, oval). Back in class, they calculate volumes using geometric formulas and create scale drawings."
+    },
+    {
+      "title": "Ngā Pūtake Wera - The Hot Stones Principle",
+      "description": "Using thermal imaging data from local kaumātua (elders), students analyze heat distribution patterns in pā umu. They calculate stone-to-food ratios, determine optimal stone placement using coordinate geometry, and create proportional models showing how heat radiates through different oven configurations."
+    },
+    {
+      "title": "Te Whakatipu Kai - Scaling the Feast",
+      "description": "Working with traditional recipes from Ngāti Kahungunu kaumātua, students use proportional reasoning to scale ingredient quantities based on their calculated oven capacities. They create mathematical models showing how food quantities change for different gathering sizes (10, 50, 100 people)."
+    },
+    {
+      "title": "Te Arohanga Mahana - Thermal Efficiency Analysis",
+      "description": "Students use temperature data loggers to collect real thermal data from demonstration umu. They analyze heat retention rates, calculate energy efficiency percentages, and compare traditional earth oven insulation properties with modern cooking methods using ratio and percentage calculations."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Ngāti Kahungunu kaumātua from Te Poho o Tākitimu marae with pā umu expertise",
+    "Thermal imaging data and temperature loggers from local environmental science department",
+    "'Ngā Kai o Te Whenua' - traditional recipe collection from Hawke's Bay Cultural Trust",
+    "Digital measuring tools and geometric modeling software from college technology center"
   ],
-  "assessment": "Kaitiakitanga implementation using mathematics approaches",
-  "duration": "3-4 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design mathematical plans for three different sized pā umu with calculated volumes and thermal efficiency predictions",
+      "Create scaled recipe calculations for a community feast of 80 people using proportional reasoning",
+      "Present findings to kaumātua showing mathematical understanding of traditional cooking methods"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Geometry and Measurement: Use geometric formulas to solve measurement problems",
+    "Number and Algebra: Apply proportional reasoning and ratios in practical contexts",
+    "Statistical Investigation: Collect and analyze continuous data using appropriate measures",
+    "Mathematical Modeling: Create and use models to represent and solve real-world problems"
   ],
-  "createdAt": "2025-08-20T10:27:00.651Z"
+  "duration": "3-4 weeks",
+  "createdAt": "2025-08-20T10:27:00.651Z",
+  "enrichedAt": "2025-09-11T07:56:46.478Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

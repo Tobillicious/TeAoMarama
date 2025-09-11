@@ -1,7 +1,8 @@
 import { ArrowLeft, BookOpen, Clock, Download, FileText, Target } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { EnhancedResource, getResourceById } from '../utils/enhanced-resource-loader';
+import type { EnhancedResource } from '../utils/enhanced-resource-loader';
+import { getResourceById } from '../utils/enhanced-resource-loader';
 import './RealLessonViewer.css';
 
 const RealLessonViewer: React.FC = () => {

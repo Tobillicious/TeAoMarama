@@ -1,39 +1,59 @@
 {
   "id": "lesson-1755685500492-ydfox8jgj",
-  "title": "Year 10 Technology: Understanding Cultural Context",
+  "title": "Te Whakamahi Hangarau mō te Awa o Mangakōtukutuku / Technology for the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Technology",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "Students will explore how technology can support the restoration and protection of Te Awa o Mangakōtukutuku, a significant stream flowing through our rohe that holds deep cultural importance to Ngāti Kahungunu. The awa is a traditional food gathering site and features in local pūrākau about the taniwha Mangakōtukutuku who shaped the landscape.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of technology concepts in cultural context",
-    "Apply traditional knowledge to modern technology challenges",
-    "Analyze environmental impacts through technology frameworks",
-    "Engage with community perspectives on technology issues"
+    "Design and prototype a technological solution that addresses a specific environmental challenge facing Te Awa o Mangakōtukutuku, such as water quality monitoring or riparian planting support.",
+    "Analyze how mātauranga Māori principles (e.g., kaitiakitanga, whakapapa) can be integrated into the design and implementation of technological practices for environmental management.",
+    "Collaborate effectively with peers and local kaitiaki to gather data, test ideas, and refine technological solutions based on community feedback and cultural values."
   ],
   "activities": [
-    "Cultural mapping and technology analysis",
-    "Traditional knowledge workshop and technology integration",
-    "Environmental investigation using technology methods",
-    "Community interview project on technology applications",
-    "Sustainability challenge with technology solutions",
-    "Cultural artifact study through technology lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa",
+      "description": "Visit Te Awa o Mangakōtukutuku with local kaumātua or kaitiaki to hear pūrākau, learn about its cultural significance, and identify current environmental issues (e.g., sedimentation, pollution). Students document observations through sketches, photos, and water testing using basic kits."
+    },
+    {
+      "title": "He Kōrero mō te Hangarau",
+      "description": "Research existing technological solutions for stream monitoring and restoration (e.g., IoT sensors, drone mapping, digital storytelling apps). Compare these with traditional Māori environmental management practices discussed with knowledge holders."
+    },
+    {
+      "title": "Te Whakaaro Hangarau",
+      "description": "In small groups, students brainstorm and design a prototype technological solution addressing a specific issue identified at the awa. Designs must incorporate both technical functionality (e.g., data collection, user interface) and cultural considerations (e.g., respect for tapu, accessibility for community use)."
+    },
+    {
+      "title": "Te Hanga me te Whakamātautau",
+      "description": "Using available tools (e.g., Micro:bits, sensors, 3D printers, app development platforms), students build and test a working prototype of their solution. They develop a testing plan that includes both technical performance and cultural appropriateness, seeking feedback from peers and kaitiaki."
+    },
+    {
+      "title": "Te Whakaatu me te Whakawhitiwhiti Kōrero",
+      "description": "Groups present their prototypes and findings to the class and invited community members. They explain how their design reflects kaitiakitanga, addresses the environmental issue, and could be implemented or improved further with community partnership."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and technology resources",
-    "Traditional knowledge holders and technology experts",
-    "Environmental monitoring tools and technology software",
-    "Community engagement platforms and technology forums",
-    "Sustainability assessment frameworks and technology models"
+    "Local kaitiaki from Ngāti Kahungunu environmental groups (e.g., representatives from Manaaki Te Awa project)",
+    "Hawke's Bay Regional Council's environmental monitoring data and tools (e.g., Land Water Aotearoa maps)",
+    "Micro:bit kits with water quality sensors and GPS modules for prototyping",
+    "Digital copies of 'Ngā Pūrākau o Te Awa o Mangakōtukutuku' provided by college kaumātua"
   ],
-  "assessment": "Indigenous perspectives integration in technology practice",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design portfolio including research notes, initial sketches, and rationale for cultural and technical choices",
+      "Working prototype of a technological solution for the awa",
+      "Presentation to peers and community explaining the solution and its alignment with kaitiakitanga"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Technology and Society: Current and historical events and trends in technology, influences of technology on society"
   ],
-  "createdAt": "2025-08-20T10:25:00.493Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:25:00.493Z",
+  "enrichedAt": "2025-09-11T07:51:00.299Z",
+  "enrichedBy": "Aronui_Hangarau"
 }

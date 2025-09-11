@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686566599-rwlkv2lmy",
-  "title": "Year 10 Mathematics: Environmental Impact Assessment",
+  "title": "Te Aromatawai Taiao o Te Awa o Mangakōtukutuku / The Mangakōtukutuku Stream Environmental Assessment",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 10",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, a significant waterway flowing through Ngāti Kahungunu rohe. This stream holds cultural importance as a traditional food gathering site and is mentioned in local pūrākau (stories) about the taniwha Hinekorako. The assessment will connect mathematical analysis with the Māori concept of kaitiakitanga (guardianship) and the college's role as environmental stewards.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Calculate and interpret water quality indices using statistical measures (mean, median, mode) from stream testing data",
+    "Create and analyze graphical representations (scatter plots, line graphs) of environmental data to identify trends and correlations",
+    "Apply geometric principles to calculate stream flow rates and catchment areas using cross-sectional measurements",
+    "Develop mathematical models to predict environmental impacts and propose data-informed conservation strategies"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakawhanaungatanga ki Te Awa (Connecting with the Stream)",
+      "description": "Students visit Te Awa o Mangakōtukutuku with local kaumātua who share pūrākau about the stream's significance. Students conduct initial observations and learn proper protocols for engaging with the waterway as kaitiaki."
+    },
+    {
+      "title": "Tātari Raraunga Wai (Water Data Analysis)",
+      "description": "Using water testing kits, students collect pH, turbidity, nitrate, and temperature data at multiple points along the stream. They organize this data into spreadsheets and calculate central tendency measures to establish baseline water quality indices."
+    },
+    {
+      "title": "Hoahoa Awe (Graphical Representation)",
+      "description": "Students create scatter plots comparing water quality parameters, line graphs showing changes over time, and bar graphs comparing different sampling locations. They analyze these visualizations to identify correlations and concerning trends."
+    },
+    {
+      "title": "Tātari Pūtaiao Pāngarau (Mathematical Scientific Analysis)",
+      "description": "Students apply geometric formulas to calculate stream cross-sectional area and flow rate. They use algebraic equations to model potential pollution scenarios and their mathematical impact on water quality parameters."
+    },
+    {
+      "title": "Whakatau Kaitiaki (Guardian Decision-Making)",
+      "description": "Working in groups, students develop mathematical proposals for stream restoration, calculating required resources, cost projections, and predicted environmental outcomes using their collected data and models."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Ngāti Kahungunu kaumātua and environmental knowledge holders",
+    "Water testing kits and flow measurement equipment from NIWA",
+    "Te Awa Tupua (Whanganui River Claims Settlement) Act 2017 as legislative context",
+    "Mangakōtukutuku Stream historical water quality data from Hawke's Bay Regional Council"
   ],
-  "assessment": "Traditional knowledge demonstration in mathematics contexts",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete water quality data analysis workbook with statistical calculations",
+      "Create a comprehensive set of graphs visualizing stream health indicators",
+      "Develop a mathematical model predicting the impact of a proposed conservation intervention",
+      "Present findings to a panel including school leadership and local iwi representatives"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Mathematics and Statistics Level 5: Statistical investigation, Statistical literacy, Equations and expressions, Geometric representations",
+    "Science Level 5: Planet Earth and Beyond - investigating environmental issues",
+    "Social Sciences Level 5: Understanding how communities make decisions and participate in action",
+    "Key Competencies: Thinking, Using language, symbols, and texts, Participating and contributing"
   ],
-  "createdAt": "2025-08-20T10:42:46.599Z"
+  "createdAt": "2025-08-20T10:42:46.599Z",
+  "enrichedAt": "2025-09-11T08:42:23.976Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

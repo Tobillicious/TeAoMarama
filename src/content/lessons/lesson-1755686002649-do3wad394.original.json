@@ -1,39 +1,60 @@
 {
   "id": "lesson-1755686002649-do3wad394",
-  "title": "Year 10 Te Reo Māori: Sustainable Solutions",
+  "title": {
+    "english": "Kaitiakitanga of the Mangakōtukutuku Stream: Language of Guardianship",
+    "teReoMāori": "Te Kaitiakitanga o Te Awa o Mangakōtukutuku: Te Reo o te Tiaki"
+  },
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 10",
-  "culturalContext": "Traditional navigation and astronomical knowledge",
+  "culturalContext": "This lesson is deeply rooted in the local awa (stream) of Mangakōtukutuku, which flows through our rohe. Students will explore the pūrākau (traditional story) of Hinepūkohurangi, the mist maiden associated with this waterway, and connect it to contemporary kaitiakitanga practices of Ngāti Kahungunu. The learning will take place at actual sites along the awa where restoration work is occurring.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Whakamahi i ngā kupu Māori matua e pā ana ki te kaitiakitanga me te taiao (use key Māori vocabulary related to guardianship and the environment)",
+    "Whakamārama i te pūrākau o Hinepūkohurangi me tōna hononga ki te awa o Mangakōtukutuku (explain the story of Hinepūkohurangi and its connection to our stream)",
+    "Waihanga i tētahi rautaki reo Māori hei whakatairanga i te kaitiakitanga o te awa (create a Māori language strategy to promote stream guardianship)",
+    "Whiriwhiri kōrero ki ngā kaikōrero Māori o te rohe mō ō rātou whakaaro kaitiaki (engage in conversation with local Māori speakers about their guardian perspectives)"
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "He Hīkoi, He Kōrero - Walk and Talk Along the Awa",
+      "description": "Students will walk the banks of Te Awa o Mangakōtukutuku with kaumātua Matua Wiremu Smith, learning the traditional names of native plants (harakeke, tī kōuka, mānuka) and aquatic life in te reo Māori while hearing the pūrākau of Hinepūkohurangi."
+    },
+    {
+      "title": "Ngā Kupu Kaitiaki - Guardian Vocabulary Workshop",
+      "description": "Using specially created vocabulary cards featuring local flora and fauna, students will practice sentence structures for describing environmental observations (He aha tēnei? He pātiki. Kei te pai te pātiki? Kāo, kei te mate.)"
+    },
+    {
+      "title": "Te Whakawhiti Kōrero ki ngā Kaikōrero - Conversations with Knowledge Holders",
+      "description": "In small groups, students will prepare and conduct brief interviews with local kaitiaki from Ngāti Kahungunu's environmental team, using question frameworks in te reo to learn about current restoration efforts."
+    },
+    {
+      "title": "He Rautaki Reo mō te Awa - Language Strategy for the Stream",
+      "description": "Students will create bilingual educational materials (signage, pamphlets, or social media content) using te reo Māori to promote awareness of the stream's cultural significance and protection needs."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Matua Wiremu Smith (Ngāti Kahungunu kaumātua and storyteller)",
+    "Te Awa o Mangakōtukutuku Restoration Project field site",
+    "'Ngā Manu o Te Awa' bilingual identification guide from Hawke's Bay Regional Council",
+    "Te Papakupu o Te Marautanga o Aotearoa (online Māori dictionary)"
   ],
-  "assessment": "Environmental impact assessment using te reo māori frameworks",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Create a 2-minute audio recording describing three aspects of the awa using appropriate te reo vocabulary",
+      "Develop a bilingual informational leaflet about kaitiakitanga of Te Awa o Mangakōtukutuku",
+      "Participate in a simulated conversation with a community elder about stream protection"
+    ]
+  },
   "duration": "3-4 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori: Communicate about people, places, and things",
+    "Te Reo Māori: Use cultural knowledge to communicate appropriately",
+    "Social Sciences: Understand how people manage resources",
+    "Health and Physical Education: Community resources and environmental health"
   ],
-  "createdAt": "2025-08-20T10:33:22.649Z"
+  "createdAt": "2025-08-20T10:33:22.649Z",
+  "enrichedAt": "2025-09-11T08:15:44.496Z",
+  "enrichedBy": "Aronui_Te"
 }

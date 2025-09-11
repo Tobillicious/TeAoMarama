@@ -1,39 +1,62 @@
 {
   "id": "lesson-1755686103196-pxjykla1f",
-  "title": "Year 10 Mathematics: Community Engagement",
+  "title": "Te Aho Pāngarau o Te Awa: The Mathematical Threads of Our River / Year 10 Mathematics: Statistical Analysis of Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Mathematics",
   "yearLevel": "Year 10",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, the stream that flows through our college grounds and holds deep significance to Ngāti Kahungunu. According to local pūrākau, the stream was named for the kotukutuku (tree fuchsia) that once lined its banks, providing medicinal resources and habitat for native birds. Students will collect and analyze water quality data while considering the mathematical patterns that reflect the mauri (life force) of our awa.",
   "depth": "developing",
   "learningObjectives": [
-    "Develop deep understanding of mathematics concepts in cultural context",
-    "Apply traditional knowledge to modern mathematics challenges",
-    "Analyze environmental impacts through mathematics frameworks",
-    "Engage with community perspectives on mathematics issues"
+    "Collect and organize water quality data (pH, turbidity, temperature) from three locations along Te Awa o Mangakōtukutuku using appropriate measurement tools",
+    "Calculate and interpret measures of central tendency (mean, median, mode) and spread (range) for each data set to identify patterns and variations",
+    "Create and analyze comparative statistical graphs (box-and-whisker plots, bar graphs) to visually represent the health indicators of the awa",
+    "Draw evidence-based conclusions about the water quality and propose mathematically justified recommendations for stream restoration"
   ],
   "activities": [
-    "Cultural mapping and mathematics analysis",
-    "Traditional knowledge workshop and mathematics integration",
-    "Environmental investigation using mathematics methods",
-    "Community interview project on mathematics applications",
-    "Sustainability challenge with mathematics solutions",
-    "Cultural artifact study through mathematics lens"
+    {
+      "title": "Whakatau: Honoring Our Awa",
+      "description": "Begin with a karakia to acknowledge Te Awa o Mangakōtukutuku. Local kaumātua will share the pūrākau of the stream and discuss its significance to Ngāti Kahungunu. Students will learn proper protocols for engaging with the awa and understand why we measure its health mathematically."
+    },
+    {
+      "title": "Pūkenga Inenga: Measurement Skills Development",
+      "description": "Hands-on workshop using water testing kits (pH strips, turbidity tubes, thermometers) to practice accurate measurement techniques. Students will learn to record data systematically and create frequency tables for organization, ensuring consistency across measurement teams."
+    },
+    {
+      "title": "Tikanga Raraunga: Data Collection Mahi",
+      "description": "Field trip to three strategic locations along Te Awa o Mangakōtukutuku (upstream near the source, mid-stream by college grounds, downstream near confluence). Working in small groups, students will collect multiple measurements at each site following scientific protocols."
+    },
+    {
+      "title": "Tātari Tau: Statistical Analysis",
+      "description": "Back in classroom, students will calculate mean, median, mode, and range for each data set. Using digital tools (Google Sheets/Excel), they will create comparative box-and-whisker plots and bar graphs to visualize the variations between sampling locations."
+    },
+    {
+      "title": "Whakamahere Awa: Data-Informed Action Planning",
+      "description": "Students will interpret their statistical findings to assess the health of the awa. They will use their mathematical evidence to propose specific, measurable restoration actions (e.g., 'Planting 50 native trees along the bank where turbidity readings exceeded X value') and present findings to local environmental group."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and mathematics resources",
-    "Traditional knowledge holders and mathematics experts",
-    "Environmental monitoring tools and mathematics software",
-    "Community engagement platforms and mathematics forums",
-    "Sustainability assessment frameworks and mathematics models"
+    "Ngāti Kahungunu kaumātua knowledgeable about Te Awa o Mangakōtukutuku pūrākau and tikanga",
+    "Hawke's Bay Regional Council water quality testing kits and monitoring protocols",
+    "NIWA's 'River and Stream Monitoring' educational resources and data comparison tools",
+    "Mangakōtukutuku College's historical water quality data archive (2015-present)"
   ],
-  "assessment": "Sustainability solution design with mathematics principles",
-  "duration": "3-4 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete data collection table with accurate measurements from three stream locations",
+      "Calculate and present measures of central tendency and spread for each data set",
+      "Create two comparative statistical graphs that effectively visualize the water quality data",
+      "Write a conclusion paragraph that uses mathematical evidence to assess the awa's health and propose one specific restoration action"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Statistics: Statistical investigation - Plan and conduct surveys, experiments, and observational studies",
+    "Statistics: Statistical literacy - Evaluate statistical reports and trends in context",
+    "Number: Calculation and estimation - Calculate and estimate with decimals and percentages",
+    "Key Competencies: Using language, symbols and texts - Interpret statistical information and graphs"
   ],
-  "createdAt": "2025-08-20T10:35:03.197Z"
+  "duration": "3-4 weeks",
+  "createdAt": "2025-08-20T10:35:03.197Z",
+  "enrichedAt": "2025-09-11T08:20:04.498Z",
+  "enrichedBy": "Aronui_Pāngarau"
 }

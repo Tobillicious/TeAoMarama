@@ -1,39 +1,57 @@
 {
   "id": "lesson-1755686404598-v04vw0zsk",
-  "title": "Year 9 Social Studies: Guardianship Responsibilities",
+  "title": "Kaitiakitanga o Te Awa o Mangakōtukutuku | Guardianship of the Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Social Studies",
   "yearLevel": "Year 9",
-  "culturalContext": "Mathematical concepts in cultural context",
+  "culturalContext": "Students will explore kaitiakitanga through the lens of Te Awa o Mangakōtukutuku, a significant local waterway that holds deep cultural, historical and ecological importance to Ngāti Kahungunu. The stream's name references the native tree ferns that once dominated its banks and its role as a traditional food gathering site and boundary marker between hapū.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of social studies concepts in cultural context",
-    "Apply traditional knowledge to modern social studies challenges",
-    "Analyze environmental impacts through social studies frameworks",
-    "Engage with community perspectives on social studies issues"
+    "Analyze historical and contemporary human impacts on Te Awa o Mangakōtukutuku using primary source evidence",
+    "Explain the concept of kaitiakitanga through Ngāti Kahungunu perspectives and practices related to waterway management",
+    "Collaboratively develop and present a kaitiakitanga action plan addressing a specific challenge facing Te Awa o Mangakōtukutuku",
+    "Evaluate different approaches to environmental guardianship using mātauranga Māori and scientific frameworks"
   ],
   "activities": [
-    "Cultural mapping and social studies analysis",
-    "Traditional knowledge workshop and social studies integration",
-    "Environmental investigation using social studies methods",
-    "Community interview project on social studies applications",
-    "Sustainability challenge with social studies solutions",
-    "Cultural artifact study through social studies lens"
+    {
+      "title": "Whakapapa o Te Awa: Stream Story Mapping",
+      "description": "Students create layered digital maps using ArcGIS showing Te Awa o Mangakōtukutuku's historical course, significant sites (pā, kāinga, mahinga kai), current land use, and ecological data. They incorporate oral histories from local kaumatua about the stream's traditional significance."
+    },
+    {
+      "title": "Wai Māori, Wai Ora: Water Quality Investigation",
+      "description": "Working with local environmental scientists, students conduct water testing at three points along the stream using both scientific methods (pH, nitrate levels, macroinvertebrate surveys) and mātauranga Māori indicators (water clarity, presence of native species). They compare historical and contemporary data to identify changes."
+    },
+    {
+      "title": "Kōrero with Kaitiaki: Community Expert Dialogues",
+      "description": "Students prepare and conduct interviews with local kaitiaki including Ngāti Kahungunu representatives, regional council staff, and farmers from the catchment area. They explore different perspectives on stream management and responsibility using structured questioning protocols."
+    },
+    {
+      "title": "He Rautaki Kaitiaki: Guardianship Strategy Development",
+      "description": "In small groups, students develop specific kaitiakitanga action plans addressing identified stream issues (e.g., riparian planting, sediment control, cultural monitoring). Plans must integrate mātauranga Māori principles with practical solutions and include implementation timelines."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and social studies resources",
-    "Traditional knowledge holders and social studies experts",
-    "Environmental monitoring tools and social studies software",
-    "Community engagement platforms and social studies forums",
-    "Sustainability assessment frameworks and social studies models"
+    "Ngāti Kahungunu Iwi Incorporated environmental management plans",
+    "Hawke's Bay Regional Council 'State of the Environment' monitoring data for Mangakōtukutuku Stream",
+    "Local experts: Hemi Coates (Ngāti Kahungunu environmental lead) and Dr. Sarah Jenkins (Hawke's Bay Regional Council freshwater scientist)",
+    "ArcGIS Online platform with historical maps and aerial photography layers"
   ],
-  "assessment": "Cultural heritage preservation through social studies methods",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Written report analyzing human impacts on Te Awa o Mangakōtukutuku using collected data",
+      "Oral presentation of kaitiakitanga action plan to panel including local iwi representatives",
+      "Reflective journal documenting learning journey and personal connection to kaitiakitanga"
+    ]
+  },
   "duration": "4-6 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Social Studies L4: Understand how people participate individually and collectively in response to community challenges",
+    "Social Studies L5: Understand how people's management of resources impacts on environmental and social sustainability",
+    "Social Studies L4: Understand how the ideas and actions of people in the past have had a significant impact on people's lives",
+    "Social Studies L5: Understand how Treaty of Waitangi principles apply to resource management and environmental decision-making"
   ],
-  "createdAt": "2025-08-20T10:40:04.598Z"
+  "createdAt": "2025-08-20T10:40:04.598Z",
+  "enrichedAt": "2025-09-11T08:34:57.254Z",
+  "enrichedBy": "Aronui_Tikanga-ā-Iwi"
 }

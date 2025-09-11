@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755686083135-ltr1rl63u",
-  "title": "Year 9 Arts: Environmental Impact Assessment",
+  "title": "Te Aho Tapu o te Awa: The Sacred Thread of the River - Creating Art Inspired by Mangakōtukutuku Stream",
   "type": "lesson",
   "subject": "Arts",
   "yearLevel": "Year 9",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Students will explore the cultural significance of Mangakōtukutuku Stream, a vital waterway in Ngāti Kahungunu rohe. They will learn about the pūrākau (traditional story) of Hinepūkohurangi, the mist maiden whose tears formed the stream, and how this connects to contemporary environmental challenges facing the awa.",
   "depth": "extending",
   "learningObjectives": [
-    "Develop deep understanding of arts concepts in cultural context",
-    "Apply traditional knowledge to modern arts challenges",
-    "Analyze environmental impacts through arts frameworks",
-    "Engage with community perspectives on arts issues"
+    "Create original artwork that visually interprets the pūrākau of Mangakōtukutuku Stream using at least two different media",
+    "Analyze and document current environmental conditions of the stream through photographic documentation and observational sketching",
+    "Incorporate traditional Māori patterns (kōwhaiwhai) and natural materials from the stream environment into artistic compositions",
+    "Present artwork with explanation of cultural connections and environmental observations to peers and local kaumātua"
   ],
   "activities": [
-    "Cultural mapping and arts analysis",
-    "Traditional knowledge workshop and arts integration",
-    "Environmental investigation using arts methods",
-    "Community interview project on arts applications",
-    "Sustainability challenge with arts solutions",
-    "Cultural artifact study through arts lens"
+    {
+      "title": "Whakawhanaungatanga ki te Awa - Connecting to the Stream",
+      "description": "Visit Mangakōtukutuku Stream with local kaumātua who will share the pūrākau of Hinepūkohurangi and traditional knowledge about the awa. Students conduct observational sketching and water quality testing, documenting through photography and field notes."
+    },
+    {
+      "title": "Te Whakairo o te Taiao - Carving Nature's Patterns",
+      "description": "Workshop on traditional kōwhaiwhai patterns and their meanings, focusing on water-related designs. Students collect natural materials from the stream banks (with permission) and create test compositions exploring pattern, texture, and form inspired by the awa."
+    },
+    {
+      "title": "Hanga Toi - Art Making Process",
+      "description": "Students develop their final artwork using mixed media (water-based paints, natural pigments, collage with collected materials). They create pieces that respond to both the cultural narrative and their environmental observations, maintaining visual journals documenting their creative process."
+    },
+    {
+      "title": "Whakaaturanga Toi - Art Exhibition and Korero",
+      "description": "Students curate a classroom exhibition of their work, writing artist statements that explain cultural connections and environmental insights. They present their work to peers, teachers, and invited community members, engaging in korero about their artistic choices and discoveries."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and arts resources",
-    "Traditional knowledge holders and arts experts",
-    "Environmental monitoring tools and arts software",
-    "Community engagement platforms and arts forums",
-    "Sustainability assessment frameworks and arts models"
+    "Local kaumātua from Ngāti Kahungunu for cultural guidance and storytelling",
+    "Water testing kits from Hawke's Bay Regional Council",
+    "'Te Māpara: Ngā Toi o Te Tairawhiti' resource book on Māori visual arts",
+    "Digital cameras and sketching materials for field documentation"
   ],
-  "assessment": "Kaitiakitanga implementation using arts approaches",
-  "duration": "4-6 weeks",
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Completed artwork demonstrating technical skill and cultural understanding",
+      "Visual journal documenting creative process and environmental observations",
+      "Artist statement explaining cultural connections and artistic choices",
+      "Oral presentation to community audience"
+    ]
+  },
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Understanding the Arts in Context - Level 5: Investigate the purpose of objects and images from past and present cultures",
+    "Developing Practical Knowledge - Level 5: Explore and use art-making conventions, applying knowledge of elements and principles",
+    "Developing Ideas - Level 5: Develop and refine ideas in selected art disciplines",
+    "Communicating and Interpreting - Level 5: Describe and respond to ways in which meanings are communicated"
   ],
-  "createdAt": "2025-08-20T10:34:43.135Z"
+  "duration": "4-6 weeks",
+  "createdAt": "2025-08-20T10:34:43.135Z",
+  "enrichedAt": "2025-09-11T08:19:15.172Z",
+  "enrichedBy": "Aronui_Kaitiaki"
 }

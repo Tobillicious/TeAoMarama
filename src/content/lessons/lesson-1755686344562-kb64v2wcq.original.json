@@ -1,39 +1,58 @@
 {
   "id": "lesson-1755686344562-kb64v2wcq",
-  "title": "Year 7 Te Reo Māori: Community Engagement",
+  "title": "Te Kōrero o te Awa: The Living Story of Our River / Ngā Kōrero Tuku Iho o Te Awa o Mangakōtukutuku",
   "type": "lesson",
   "subject": "Te Reo Māori",
   "yearLevel": "Year 7",
-  "culturalContext": "Māori cultural knowledge and Aotearoa context",
+  "culturalContext": "Students will explore the pūrākau (traditional stories) and mātauranga Māori associated with Te Awa o Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. This awa is a living ancestor with deep connections to Ngāti Kahungunu history, containing stories of taniwha, ancestral journeys, and traditional food gathering practices.",
   "depth": "mastery",
   "learningObjectives": [
-    "Develop deep understanding of te reo māori concepts in cultural context",
-    "Apply traditional knowledge to modern te reo māori challenges",
-    "Analyze environmental impacts through te reo māori frameworks",
-    "Engage with community perspectives on te reo māori issues"
+    "Identify and describe at least three traditional stories (pūrākau) associated with Te Awa o Mangakōtukutuku using appropriate te reo Māori vocabulary",
+    "Construct and deliver a simple mihi that acknowledges the awa as a significant feature of our local environment and cultural identity",
+    "Create a visual narrative (storyboard or digital presentation) that retells one pūrākau of the awa using te reo Māori phrases and sentences",
+    "Participate in a guided visit to the awa, demonstrating respectful tikanga and using location-specific vocabulary to describe features observed"
   ],
   "activities": [
-    "Cultural mapping and te reo māori analysis",
-    "Traditional knowledge workshop and te reo māori integration",
-    "Environmental investigation using te reo māori methods",
-    "Community interview project on te reo māori applications",
-    "Sustainability challenge with te reo māori solutions",
-    "Cultural artifact study through te reo māori lens"
+    {
+      "title": "He Mihi mō te Awa - Honouring Our River",
+      "description": "Students learn and practice a collective mihi that acknowledges Te Awa o Mangakōtukutuku, its significance to Ngāti Kahungunu, and our responsibility as kaitiaki. Includes learning specific vocabulary: awa (river), mauri (life force), kaitiaki (guardian), and local place names."
+    },
+    {
+      "title": "Ngā Pūrākau o te Whenua - Stories of the Land",
+      "description": "Working with local kaumātua, students explore traditional stories of the awa, including the taniwha protector stories and ancestral journeys. Students create illustrated story maps using te reo Māori captions and labels for geographical features."
+    },
+    {
+      "title": "Te Haerenga ki te Awa - Journey to the River",
+      "description": "Guided visit to specific sites along Te Awa o Mangakōtukutuku where students practice observational language (he aha tēnei? - what is this?), record natural sounds, and document traditional food gathering sites using te reo Māori terminology."
+    },
+    {
+      "title": "He Kōrero Ataata - Digital Storytelling",
+      "description": "Students work in small groups to create short digital stories retelling one pūrākau of the awa, incorporating te reo Māori narration, traditional waiata, and visual elements that show respect for the stories and the environment."
+    }
   ],
   "resources": [
-    "Cultural knowledge databases and te reo māori resources",
-    "Traditional knowledge holders and te reo māori experts",
-    "Environmental monitoring tools and te reo māori software",
-    "Community engagement platforms and te reo māori forums",
-    "Sustainability assessment frameworks and te reo māori models"
+    "Local kaumātua and knowledge holders from Ngāti Kahungunu",
+    "\"Ngā Pūrākau o Te Matau a Māui\" - Stories of Hawke's Bay resource book",
+    "Te Awa o Mangakōtukutuku historical maps and aerial photographs from Hastings District Council archives",
+    "Digital recording equipment and storyboarding templates from college media department"
   ],
-  "assessment": "Traditional knowledge demonstration in te reo māori contexts",
+  "assessment": {
+    "type": "formative",
+    "tasks": [
+      "Oral presentation of mihi acknowledging the awa",
+      "Completed illustrated story map with te reo Māori labels",
+      "Digital story retelling a pūrākau with te reo Māori narration",
+      "Participation observation during awa visit demonstrating tikanga"
+    ]
+  },
   "duration": "6-8 weeks",
   "nzcAlignment": [
-    "Te Tiriti o Waitangi and its applications",
-    "Cultural diversity and inclusion",
-    "Environmental sustainability",
-    "Community participation and contribution"
+    "Te Reo Māori: Communication - Level 4: Use basic te reo Māori vocabulary, formulaic expressions, and simple sentences",
+    "Te Reo Māori: Language Knowledge - Level 4: Recognise that te reo Māori is the language of the tangata whenua of Aotearoa New Zealand",
+    "Social Sciences: Understand how cultural practices reflect and express people's customs, traditions, and values",
+    "Social Sciences: Understand how people remember and record the past in different ways"
   ],
-  "createdAt": "2025-08-20T10:39:04.562Z"
+  "createdAt": "2025-08-20T10:39:04.562Z",
+  "enrichedAt": "2025-09-11T08:32:01.965Z",
+  "enrichedBy": "Aronui_Te"
 }
