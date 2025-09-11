@@ -1,0 +1,278 @@
+/* Enhanced Lesson Content Styling */
+.enhanced-lesson-content {
+  background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
+  border: 2px solid #10b981;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.enhanced-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #10b981;
+}
+
+.lesson-title {
+  font-size: 1.75rem;
+  color: #065f46;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.lesson-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.subject-badge {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.year-badge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.depth-badge {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cultural-context {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid #f59e0b;
+}
+
+.cultural-context h3 {
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.context-content {
+  color: #451a03;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.learning-objectives {
+  background: #eff6ff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid #3b82f6;
+}
+
+.learning-objectives h3 {
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
+
+.learning-objectives ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.learning-objectives li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border-left: 3px solid #3b82f6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.enhanced-activities {
+  margin: 2rem 0;
+}
+
+.enhanced-activities h3 {
+  color: #065f46;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.activity-card {
+  background: white;
+  border: 2px solid #10b981;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #065f46;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.activity-number {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.activity-description {
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.enhanced-resources {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid #6b7280;
+}
+
+.enhanced-resources h3 {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.enhanced-resources ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.enhanced-resources li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border-left: 3px solid #6b7280;
+}
+
+.enhanced-assessment {
+  background: #fef2f2;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid #ef4444;
+}
+
+.enhanced-assessment h3 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.assessment-type {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.assessment-tasks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.assessment-tasks li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border-left: 3px solid #ef4444;
+}
+
+.nz-curriculum {
+  background: #f0f9ff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid #0ea5e9;
+}
+
+.nz-curriculum h3 {
+  color: #0369a1;
+  margin-bottom: 1rem;
+}
+
+.nz-curriculum ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nz-curriculum li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border-left: 3px solid #0ea5e9;
+}
+
+.enhancement-quality {
+  background: linear-gradient(135deg, #fdf4ff, #fae8ff);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border: 2px solid #a855f7;
+}
+
+.enhancement-quality h3 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+}
+
+.quality-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.metric {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric .label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.metric .score {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: #7c3aed;
+}
