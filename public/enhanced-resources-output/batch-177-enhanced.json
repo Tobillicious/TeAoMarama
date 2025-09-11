@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-177",
+  "processedDate": "2025-09-10T13:57:03.142Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-01761",
+      "title": "Year 13 Mathematics: Resource 1761",
+      "subject": "Mathematics",
+      "yearLevel": "Year 13",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 13 Mathematics learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.529740924346596,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.33435986129163,
+        "pedagogicalDepth": 8.616757077801186,
+        "progressiveIndex": 8.739098317881025,
+        "qualityScore": 13.49982677530728,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.4378136814151055
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.148227921828068
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.745555590804245
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.6384886569132644
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-12-09T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-13"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 99
+      }
+    },
+    {
+      "id": "resource-01762",
+      "title": "Year 10 Mathematics: Resource 1762",
+      "subject": "Mathematics",
+      "yearLevel": "Year 10",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 10 Mathematics learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.83981447041559,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.52017496116663,
+        "pedagogicalDepth": 9.521632754165925,
+        "progressiveIndex": 8.701796555577225,
+        "qualityScore": 13.399318450696105,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.4223495654562264
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8877758776777118
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.617370831044111
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.632007706102467
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-16T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-10"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 81
+      }
+    },
+    {
+      "id": "resource-01763",
+      "title": "Year 12 Mathematics: Resource 1763",
+      "subject": "Mathematics",
+      "yearLevel": "Year 12",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 12 Mathematics learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.199372832207783,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.689650046400722,
+        "pedagogicalDepth": 9.491310457285234,
+        "progressiveIndex": 9.620816507073593,
+        "qualityScore": 13.940814976146749,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.1181313209967945
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.195609249483021
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8204675678946476
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.607234005564504
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-30T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-12"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 140
+      }
+    },
+    {
+      "id": "resource-01764",
+      "title": "Year 9 Mathematics: Resource 1764",
+      "subject": "Mathematics",
+      "yearLevel": "Year 9",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 9 Mathematics learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.2295706697249615,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.635200528044184,
+        "pedagogicalDepth": 8.609197782284438,
+        "progressiveIndex": 8.90092913936641,
+        "qualityScore": 13.480335562915153,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.1265483104332366
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8523852643832854
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.7329117761335844
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.5389195422400854
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-13T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-9"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 54
+      }
+    },
+    {
+      "id": "resource-01765",
+      "title": "Year 12 Mathematics: Resource 1765",
+      "subject": "Mathematics",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Mathematics learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 6.368132438657831,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.98608260735795,
+        "pedagogicalDepth": 9.527316999185633,
+        "progressiveIndex": 8.7420949039088,
+        "qualityScore": 14.096388642904781,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.117606068721925
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.105746548999152
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.6418549958884394
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8630485906374359
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-30T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-12"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 38
+      }
+    },
+    {
+      "id": "resource-01766",
+      "title": "Year 12 Mathematics: Resource 1766",
+      "subject": "Mathematics",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Mathematics learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.742245412510913,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.977802290510645,
+        "pedagogicalDepth": 9.357026600991796,
+        "progressiveIndex": 9.025433519763821,
+        "qualityScore": 14.126975603456902,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.1076447183951
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8042181081121975
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.9241172624898941
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.5487501019487975
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-03-25T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 76
+      }
+    },
+    {
+      "id": "resource-01767",
+      "title": "Year 7 Mathematics: Resource 1767",
+      "subject": "Mathematics",
+      "yearLevel": "Year 7",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 7 Mathematics learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.855985802009556,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.737693864739803,
+        "pedagogicalDepth": 9.820049411763746,
+        "progressiveIndex": 9.77985466903108,
+        "qualityScore": 13.97252526990668,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.304857274516278
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.2091059613974653
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.9072206982228126
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.6953555337605652
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-02T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-7"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 72
+      }
+    },
+    {
+      "id": "resource-01768",
+      "title": "Year 13 Mathematics: Resource 1768",
+      "subject": "Mathematics",
+      "yearLevel": "Year 13",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 13 Mathematics learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.200077623796812,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.651587056272897,
+        "pedagogicalDepth": 9.53865897362539,
+        "progressiveIndex": 9.040710835839729,
+        "qualityScore": 13.821297188112133,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.0770005649618533
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.9549112019873247
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.9119309025888502
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.6773768947772938
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-06-23T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-13"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 110
+      }
+    },
+    {
+      "id": "resource-01769",
+      "title": "Year 12 Mathematics: Resource 1769",
+      "subject": "Mathematics",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Mathematics learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.632491726392239,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.895051787830695,
+        "pedagogicalDepth": 9.246946481419952,
+        "progressiveIndex": 9.901081888261588,
+        "qualityScore": 13.988366683076608,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.0531563736117806
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.9126315889029604
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.8639600036598885
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.5261269905097379
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-13T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 52
+      }
+    },
+    {
+      "id": "resource-01770",
+      "title": "Year 8 Mathematics: Resource 1770",
+      "subject": "Mathematics",
+      "yearLevel": "Year 8",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 8 Mathematics learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.006154435235623,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.51016653498689,
+        "pedagogicalDepth": 9.906242266619719,
+        "progressiveIndex": 9.267065362538437,
+        "qualityScore": 13.425404562543205,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.112723509273593
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 2.1641370192277387
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.652136016202618
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:03.142Z",
+            "qualityImprovement": 1.4902535826036338
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-07-08T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:03.142Z",
+        "tags": [
+          "mathematics",
+          "year-8"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 73
+      }
+    }
+  ]
+}

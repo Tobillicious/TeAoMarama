@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-533",
+  "processedDate": "2025-09-10T13:57:40.073Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-05321",
+      "title": "Year 13 Arts: Resource 5321",
+      "subject": "Arts",
+      "yearLevel": "Year 13",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 13 Arts learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.6251315522325855,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.790673772480595,
+        "pedagogicalDepth": 8.635849343737,
+        "progressiveIndex": 9.294574134879982,
+        "qualityScore": 14.396175869603804,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.4026536735562707
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.093799799147678
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.5023288339047007
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.772262010762569
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-24T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-13"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 32
+      }
+    },
+    {
+      "id": "resource-05322",
+      "title": "Year 12 Arts: Resource 5322",
+      "subject": "Arts",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Arts learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 5.724635574470068,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.708959701170246,
+        "pedagogicalDepth": 8.803819752990625,
+        "progressiveIndex": 9.831171414791047,
+        "qualityScore": 14.011355279587779,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.427887218917365
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.235078591644699
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8302914306526648
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.7934624639029808
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-01T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-12"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 63
+      }
+    },
+    {
+      "id": "resource-05323",
+      "title": "Year 11 Arts: Resource 5323",
+      "subject": "Arts",
+      "yearLevel": "Year 11",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 11 Arts learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.713216765334983,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.283898573828223,
+        "pedagogicalDepth": 8.779684140562033,
+        "progressiveIndex": 9.747309177189095,
+        "qualityScore": 14.378237554303123,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.1726672371318507
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8861040110154281
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8346955699808294
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.7715539708400305
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-06-17T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-11"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 78
+      }
+    },
+    {
+      "id": "resource-05324",
+      "title": "Year 7 Arts: Resource 5324",
+      "subject": "Arts",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Arts learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.458991186613146,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.6475737112627,
+        "pedagogicalDepth": 9.133595115706218,
+        "progressiveIndex": 9.44268615108748,
+        "qualityScore": 13.854651299056348,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.223223598949013
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.9376731323333525
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.780673368720484
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.4540900124403542
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-16T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-7"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 127
+      }
+    },
+    {
+      "id": "resource-05325",
+      "title": "Year 7 Arts: Resource 5325",
+      "subject": "Arts",
+      "yearLevel": "Year 7",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 7 Arts learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 6.537150869650402,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.630967059978557,
+        "pedagogicalDepth": 9.51323997302135,
+        "progressiveIndex": 8.977858108742092,
+        "qualityScore": 14.155601667611394,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.3787774474329777
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8258110417586382
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.6136901357512743
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8001721730181033
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-12-23T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-7"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 145
+      }
+    },
+    {
+      "id": "resource-05326",
+      "title": "Year 7 Arts: Resource 5326",
+      "subject": "Arts",
+      "yearLevel": "Year 7",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 7 Arts learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.570200904586765,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.885838524466863,
+        "pedagogicalDepth": 8.629072192671291,
+        "progressiveIndex": 8.612354565141391,
+        "qualityScore": 12.824848272414076,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.0644715941478045
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8802944511123982
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.747596768396043
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.5622845541710646
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-04T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-7"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 127
+      }
+    },
+    {
+      "id": "resource-05327",
+      "title": "Year 12 Arts: Resource 5327",
+      "subject": "Arts",
+      "yearLevel": "Year 12",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 12 Arts learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.170134877394522,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.577621546220803,
+        "pedagogicalDepth": 9.265618387415788,
+        "progressiveIndex": 8.636230671313944,
+        "qualityScore": 13.883085679780908,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.324060715910332
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.9520627129620047
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.8197588500401953
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.6170685234738538
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-30T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 78
+      }
+    },
+    {
+      "id": "resource-05328",
+      "title": "Year 9 Arts: Resource 5328",
+      "subject": "Arts",
+      "yearLevel": "Year 9",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 9 Arts learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 5.822708029872729,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.538676328473887,
+        "pedagogicalDepth": 9.702147793918286,
+        "progressiveIndex": 9.218444352237562,
+        "qualityScore": 13.707568163987789,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.2311136656778094
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.115576300148232
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.7483020818096153
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.7898680864794017
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-18T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-9"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 38
+      }
+    },
+    {
+      "id": "resource-05329",
+      "title": "Year 11 Arts: Resource 5329",
+      "subject": "Arts",
+      "yearLevel": "Year 11",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 11 Arts learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.013522985360837,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.66639339940408,
+        "pedagogicalDepth": 8.643217741525971,
+        "progressiveIndex": 9.150497988143263,
+        "qualityScore": 14.360427515002206,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.4771740160585676
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.1845089142216723
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.9467338817668498
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.738487717594278
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-03-14T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-11"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 47
+      }
+    },
+    {
+      "id": "resource-05330",
+      "title": "Year 13 Arts: Resource 5330",
+      "subject": "Arts",
+      "yearLevel": "Year 13",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 13 Arts learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.421040439267145,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.45926399955363,
+        "pedagogicalDepth": 9.247197786236157,
+        "progressiveIndex": 8.935441360615124,
+        "qualityScore": 14.086784276393626,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.2342241407841006
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 2.1464392222313036
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.7626335772181774
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:40.073Z",
+            "qualityImprovement": 1.5224468968928973
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-07-20T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:40.073Z",
+        "tags": [
+          "arts",
+          "year-13"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 139
+      }
+    }
+  ]
+}

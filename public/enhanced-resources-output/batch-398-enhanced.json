@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-398",
+  "processedDate": "2025-09-10T13:57:26.067Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-03971",
+      "title": "Year 11 English: Resource 3971",
+      "subject": "English",
+      "yearLevel": "Year 11",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 11 English learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 5.96139513238026,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.520938129014986,
+        "pedagogicalDepth": 8.729669742858826,
+        "progressiveIndex": 9.669302562613183,
+        "qualityScore": 13.589304171497721,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.1441694670990348
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.901761925781433
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.9635013678585151
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.6184762783784792
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-05-11T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-11"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 74
+      }
+    },
+    {
+      "id": "resource-03972",
+      "title": "Year 9 English: Resource 3972",
+      "subject": "English",
+      "yearLevel": "Year 9",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 9 English learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.979290301301557,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.59892479126134,
+        "pedagogicalDepth": 9.652865204835836,
+        "progressiveIndex": 9.7437784078535,
+        "qualityScore": 13.489538606752657,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.1743496493380556
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8902653152559716
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8873954827827886
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.5582378580742848
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-05-03T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-9"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 115
+      }
+    },
+    {
+      "id": "resource-03973",
+      "title": "Year 12 English: Resource 3973",
+      "subject": "English",
+      "yearLevel": "Year 12",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 12 English learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.694325436505064,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.84552136837271,
+        "pedagogicalDepth": 8.510997315218162,
+        "progressiveIndex": 9.46067290546877,
+        "qualityScore": 15.013056782142263,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.4403215614048954
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.233231586798501
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.9108079036124206
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.7343702938213819
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-11T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-12"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 141
+      }
+    },
+    {
+      "id": "resource-03974",
+      "title": "Year 8 English: Resource 3974",
+      "subject": "English",
+      "yearLevel": "Year 8",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 8 English learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.932285691563408,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.75549793068929,
+        "pedagogicalDepth": 8.753917545718322,
+        "progressiveIndex": 8.822061561911676,
+        "qualityScore": 13.217541569325967,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.1508349737108805
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8068231778426833
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8432542611802094
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.4843434650287852
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-31T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-8"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 60
+      }
+    },
+    {
+      "id": "resource-03975",
+      "title": "Year 13 English: Resource 3975",
+      "subject": "English",
+      "yearLevel": "Year 13",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 13 English learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.753253224092939,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.596564647127494,
+        "pedagogicalDepth": 8.957334418012714,
+        "progressiveIndex": 9.612250617456414,
+        "qualityScore": 14.892756794823736,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.2954604353038803
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.299057374477732
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8850735830879324
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.6599121778612527
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-05-05T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-13"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 92
+      }
+    },
+    {
+      "id": "resource-03976",
+      "title": "Year 13 English: Resource 3976",
+      "subject": "English",
+      "yearLevel": "Year 13",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 13 English learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.690996995408235,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.41123425821551,
+        "pedagogicalDepth": 9.50748490562808,
+        "progressiveIndex": 8.864119539725309,
+        "qualityScore": 13.18638408413646,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.3303958389352424
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.853155723912299
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.5254440156497568
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.7863915102309287
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-11-04T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-13"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 85
+      }
+    },
+    {
+      "id": "resource-03977",
+      "title": "Year 11 English: Resource 3977",
+      "subject": "English",
+      "yearLevel": "Year 11",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 11 English learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 6.9963320127817905,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.6960804670655,
+        "pedagogicalDepth": 9.103875771690644,
+        "progressiveIndex": 9.474551329496508,
+        "qualityScore": 14.700825080663444,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.044859678283146
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.027977237760583
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8620878968332135
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.769568255004712
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-03-09T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-11"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 72
+      }
+    },
+    {
+      "id": "resource-03978",
+      "title": "Year 9 English: Resource 3978",
+      "subject": "English",
+      "yearLevel": "Year 9",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 9 English learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 5.880064608496615,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.83238171530824,
+        "pedagogicalDepth": 9.893392546591361,
+        "progressiveIndex": 8.546566514196,
+        "qualityScore": 13.415408566542188,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.258154169992708
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.1266782474786767
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.6298682915663636
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.5206432490078232
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-11-05T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-9"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 121
+      }
+    },
+    {
+      "id": "resource-03979",
+      "title": "Year 7 English: Resource 3979",
+      "subject": "English",
+      "yearLevel": "Year 7",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 7 English learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 6.795646456770897,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.685795789032326,
+        "pedagogicalDepth": 9.914650970880636,
+        "progressiveIndex": 9.143802286312221,
+        "qualityScore": 14.79844624297394,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.205145687610711
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.154822090668067
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.9431923772877606
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.6996396306365047
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-09-21T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-7"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 107
+      }
+    },
+    {
+      "id": "resource-03980",
+      "title": "Year 13 English: Resource 3980",
+      "subject": "English",
+      "yearLevel": "Year 13",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 13 English learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.58493618093825,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.978183621758388,
+        "pedagogicalDepth": 9.325832287144186,
+        "progressiveIndex": 9.33951216715208,
+        "qualityScore": 12.837373527042343,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 2.0193521132240684
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.8104313719492213
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.9006171677341974
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:26.067Z",
+            "qualityImprovement": 1.522036693196608
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-03-11T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:26.067Z",
+        "tags": [
+          "english",
+          "year-13"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 113
+      }
+    }
+  ]
+}

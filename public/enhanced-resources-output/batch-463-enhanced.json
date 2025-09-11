@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-463",
+  "processedDate": "2025-09-10T13:57:32.859Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-04621",
+      "title": "Year 9 Te Reo Māori: Resource 4621",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 9",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 9 Te Reo Māori learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.3445462118916165,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.703464187900792,
+        "pedagogicalDepth": 8.716708670056315,
+        "progressiveIndex": 9.540247978689884,
+        "qualityScore": 13.824281958442853,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.2601443079119674
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.115741580802588
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5447154758709414
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5591343819657402
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-05-15T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-9"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 116
+      }
+    },
+    {
+      "id": "resource-04622",
+      "title": "Year 13 Te Reo Māori: Resource 4622",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 13",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 13 Te Reo Māori learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.42485050243503,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.506409104365165,
+        "pedagogicalDepth": 8.851763817130122,
+        "progressiveIndex": 9.47904566363203,
+        "qualityScore": 13.515800686636045,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.0372289136238506
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.8735770182629734
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.6256152668401842
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5545289854740068
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-06-12T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-13"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 81
+      }
+    },
+    {
+      "id": "resource-04623",
+      "title": "Year 11 Te Reo Māori: Resource 4623",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 11",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 11 Te Reo Māori learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.719437641889813,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.869114242454344,
+        "pedagogicalDepth": 8.580404787195931,
+        "progressiveIndex": 8.835860645342938,
+        "qualityScore": 13.712589127148567,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.084744792544388
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.1427314243879048
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.9648639806793604
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.800811287647098
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-30T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-11"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 112
+      }
+    },
+    {
+      "id": "resource-04624",
+      "title": "Year 10 Te Reo Māori: Resource 4624",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 10",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 10 Te Reo Māori learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.581602503264296,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.553909200290919,
+        "pedagogicalDepth": 9.563199209939649,
+        "progressiveIndex": 8.58616591078764,
+        "qualityScore": 13.730251200329109,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.14490470263434
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.811919406587815
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.6299957667109415
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5618288211317153
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-11-05T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-10"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 73
+      }
+    },
+    {
+      "id": "resource-04625",
+      "title": "Year 13 Te Reo Māori: Resource 4625",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 13",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 13 Te Reo Māori learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.847711770373065,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.000519294913152,
+        "pedagogicalDepth": 9.055492807806704,
+        "progressiveIndex": 8.825597328265635,
+        "qualityScore": 13.753554664837363,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.0140759788809466
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.2977560023194528
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.703255627766607
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.890755285497291
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-08-04T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-13"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 141
+      }
+    },
+    {
+      "id": "resource-04626",
+      "title": "Year 13 Te Reo Māori: Resource 4626",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 13",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 13 Te Reo Māori learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.994093825748303,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.862500144993236,
+        "pedagogicalDepth": 9.76057097249966,
+        "progressiveIndex": 8.877919226765306,
+        "qualityScore": 14.500999633856194,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.280084782799552
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.833784250200038
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5324677561190916
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.8605690189892095
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-07-26T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-13"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 128
+      }
+    },
+    {
+      "id": "resource-04627",
+      "title": "Year 7 Te Reo Māori: Resource 4627",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Te Reo Māori learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.871218438503575,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.601143278096494,
+        "pedagogicalDepth": 8.55317366382619,
+        "progressiveIndex": 8.76115142444673,
+        "qualityScore": 14.275343621631514,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.383092959287908
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.9753320613916783
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.5897939019131564
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.4559062605351958
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-04-01T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-7"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 39
+      }
+    },
+    {
+      "id": "resource-04628",
+      "title": "Year 12 Te Reo Māori: Resource 4628",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 12",
+      "type": "assessment",
+      "description": "Comprehensive assessment for Year 12 Te Reo Māori learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 6.630895251855447,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.105372452958903,
+        "pedagogicalDepth": 9.682512252685513,
+        "progressiveIndex": 9.110813160482703,
+        "qualityScore": 14.41045181818936,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.3357029292706235
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.1802891536084914
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.6240329348557112
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.6395315485990882
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-12-05T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-12"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 127
+      }
+    },
+    {
+      "id": "resource-04629",
+      "title": "Year 12 Te Reo Māori: Resource 4629",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 12",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 12 Te Reo Māori learning",
+      "culturalElements": 4,
+      "currentPass": 4,
+      "originalQuality": 6.6940533731160485,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.805635732033087,
+        "pedagogicalDepth": 9.074030503510377,
+        "progressiveIndex": 8.72259642566102,
+        "qualityScore": 14.459412365660292,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.0314159211661917
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.9429025644918645
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.9470306480926884
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.8440098587934974
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-10-23T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-12"
+        ],
+        "difficulty": 4,
+        "estimatedDuration": 55
+      }
+    },
+    {
+      "id": "resource-04630",
+      "title": "Year 7 Te Reo Māori: Resource 4630",
+      "subject": "Te Reo Māori",
+      "yearLevel": "Year 7",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 7 Te Reo Māori learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.112219101202282,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.714491378658407,
+        "pedagogicalDepth": 9.83414092797554,
+        "progressiveIndex": 8.903970452856184,
+        "qualityScore": 13.913208358897585,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.3958988522006432
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 2.195443030918465
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.777608010661766
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:32.859Z",
+            "qualityImprovement": 1.4320393639144282
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-19T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:32.859Z",
+        "tags": [
+          "te-reo māori",
+          "year-7"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 100
+      }
+    }
+  ]
+}
