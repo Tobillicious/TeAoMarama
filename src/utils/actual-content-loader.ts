@@ -63,7 +63,7 @@ class ActualContentService {
 
     try {
       // Try to load from the actual lesson files
-      const response = await fetch(`/src/content/lessons/${lessonId}.json`);
+      const response = await fetch(`/content/lessons/${lessonId}.json`);
       if (response.ok) {
         const lesson: ActualLesson = await response.json();
         this.lessonsCache.set(lessonId, lesson);
@@ -82,7 +82,7 @@ class ActualContentService {
     }
 
     try {
-      const response = await fetch(`/src/content/unit-plans/${unitId}.json`);
+      const response = await fetch(`/content/unit-plans/${unitId}.json`);
       if (response.ok) {
         const unitPlan: ActualUnitPlan = await response.json();
         this.unitPlansCache.set(unitId, unitPlan);
@@ -108,25 +108,28 @@ class ActualContentService {
   }
 
   // Convert enhanced resource to actual content if we have it
-  async getActualContentForResource(resourceId: string): Promise<ActualLesson | ActualUnitPlan | null> {
+  async getActualContentForResource(
+    resourceId: string,
+  ): Promise<ActualLesson | ActualUnitPlan | null> {
     // Try to find matching lesson or unit plan
     // This is a simplified mapping - in reality we'd need a proper mapping system
     const lessons = await this.getAllLessons();
     const unitPlans = await this.getAllUnitPlans();
-    
+
     // Look for content that matches the resource
-    const matchingLesson = lessons.find(lesson => 
-      lesson.id.includes(resourceId) || 
-      lesson.title.toLowerCase().includes(resourceId.toLowerCase())
+    const matchingLesson = lessons.find(
+      (lesson) =>
+        lesson.id.includes(resourceId) ||
+        lesson.title.toLowerCase().includes(resourceId.toLowerCase()),
     );
-    
+
     if (matchingLesson) return matchingLesson;
 
-    const matchingUnitPlan = unitPlans.find(unit => 
-      unit.id.includes(resourceId) || 
-      unit.title.toLowerCase().includes(resourceId.toLowerCase())
+    const matchingUnitPlan = unitPlans.find(
+      (unit) =>
+        unit.id.includes(resourceId) || unit.title.toLowerCase().includes(resourceId.toLowerCase()),
     );
-    
+
     if (matchingUnitPlan) return matchingUnitPlan;
 
     return null;
@@ -135,10 +138,13 @@ class ActualContentService {
 
 const actualContentService = new ActualContentService();
 
-export const loadActualLesson = (lessonId: string) => actualContentService.loadActualLesson(lessonId);
-export const loadActualUnitPlan = (unitId: string) => actualContentService.loadActualUnitPlan(unitId);
+export const loadActualLesson = (lessonId: string) =>
+  actualContentService.loadActualLesson(lessonId);
+export const loadActualUnitPlan = (unitId: string) =>
+  actualContentService.loadActualUnitPlan(unitId);
 export const getAllActualLessons = () => actualContentService.getAllLessons();
 export const getAllActualUnitPlans = () => actualContentService.getAllUnitPlans();
-export const getActualContentForResource = (resourceId: string) => actualContentService.getActualContentForResource(resourceId);
+export const getActualContentForResource = (resourceId: string) =>
+  actualContentService.getActualContentForResource(resourceId);
 
 export default actualContentService;

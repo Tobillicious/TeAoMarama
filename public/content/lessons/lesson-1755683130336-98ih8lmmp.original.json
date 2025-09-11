@@ -1,0 +1,61 @@
+{
+  "id": "lesson-1755683130336-98ih8lmmp",
+  "title": "Te Whakatau me te Whakamārama i ngā Tau o Te Awa o Mangakōtukutuku / Calculating and Interpreting the Numbers of Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 8",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. Drawing on Ngāti Kahungunu knowledge of freshwater ecosystems and kaitiakitanga, students will use mathematical methods to analyze water quality data collected from the stream, connecting mathematical concepts to our responsibility as guardians of this significant waterway.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Calculate and interpret measures of central tendency (mean, median, mode) from water quality data collected from Te Awa o Mangakōtukutuku",
+    "Create and analyze time-series graphs showing changes in water quality parameters (pH, turbidity, temperature) over a two-week period",
+    "Apply ratio and proportion concepts to calculate water quality indices and compare results against regional council standards",
+    "Communicate mathematical findings about the stream's health using appropriate statistical language and cultural context of kaitiakitanga"
+  ],
+  "activities": [
+    {
+      "title": "Whakatau i te Mauri o Te Awa (Determining the Life Force of the Stream)",
+      "description": "Students visit Te Awa o Mangakōtukutuku to collect water quality data using testing kits. They measure pH, temperature, turbidity, and dissolved oxygen at three different locations along the stream, recording measurements in structured data tables while learning about the cultural significance of the awa from a local kaumātua."
+    },
+    {
+      "title": "Te Tātari Tau me ngā Inenga Pokapū (Data Analysis and Measures of Center)",
+      "description": "Back in the classroom, students calculate mean, median, and mode for each water quality parameter across the three testing sites. They create comparative bar graphs to visualize the differences between locations and discuss what these statistical measures reveal about the stream's health."
+    },
+    {
+      "title": "Te Wāhi me te Taurangi (Time and Variables)",
+      "description": "Using two weeks of collected data, students create time-series line graphs showing how each water quality parameter changes over time. They analyze trends, identify patterns, and calculate rates of change, connecting these mathematical observations to environmental factors like rainfall and seasonal changes."
+    },
+    {
+      "title": "Te Whakatauranga me ngā Tau Ōrite (Ratios and Proportions)",
+      "description": "Students use ratio and proportion concepts to calculate water quality indices, comparing their results against Hawke's Bay Regional Council standards. They determine what percentage of measurements fall within acceptable ranges and calculate improvement targets based on current data."
+    },
+    {
+      "title": "Te Whakamārama me te Kaitiakitanga (Interpretation and Guardianship)",
+      "description": "Working in small groups, students prepare mathematical reports that present their findings using appropriate statistical language. They include recommendations for stream restoration based on their data analysis and present their work to the class, explaining how mathematics supports their role as kaitiaki of Te Awa o Mangakōtukutuku."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council freshwater monitoring database and water quality standards documentation",
+    "Water testing kits (pH strips, thermometers, turbidity tubes, dissolved oxygen tests) for hands-on data collection",
+    "Local kaumātua from Ngāti Kahungunu to share mātauranga Māori about the cultural significance of Te Awa o Mangakōtukutuku",
+    "NZ Maths digital learning objects for statistical graphing and data analysis techniques"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Create a comprehensive data analysis report including calculated measures of center, time-series graphs, and water quality indices",
+      "Write a mathematical justification for the current health status of Te Awa o Mangakōtukutuku based on statistical evidence",
+      "Develop a kaitiakitanga action plan with specific, mathematically-supported recommendations for stream improvement"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics Level 4: Statistical investigation - Conduct investigations using the statistical enquiry cycle",
+    "Mathematics and Statistics Level 4: Number and algebra - Use rates and ratios",
+    "Mathematics and Statistics Level 4: Geometry and measurement - Interpret and use graphs, tables, and rules to describe linear relationships",
+    "Science Level 4: Planet Earth and Beyond - Investigate the water cycle and its effect on climate, landforms, and life"
+  ],
+  "createdAt": "2025-08-20T09:45:30.336Z",
+  "enrichedAt": "2025-09-11T06:01:12.690Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}
