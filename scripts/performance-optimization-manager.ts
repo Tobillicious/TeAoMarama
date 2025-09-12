@@ -57,15 +57,21 @@ class PerformanceOptimizationManager {
     try {
       // Step 1: Measure current performance
       const metricsBefore = await this.measureCurrentPerformance();
-      console.log(`📊 Current Performance: Build ${metricsBefore.buildTime}s, Bundle ${metricsBefore.bundleSize}MB`);
+      console.log(
+        `📊 Current Performance: Build ${metricsBefore.buildTime}s, Bundle ${metricsBefore.bundleSize}MB`,
+      );
 
       // Step 2: Apply optimizations
       const optimizations = await this.applyOptimizations();
-      console.log(`🔧 Applied ${optimizations.filter(o => o.status === 'APPLIED').length} optimizations`);
+      console.log(
+        `🔧 Applied ${optimizations.filter((o) => o.status === 'APPLIED').length} optimizations`,
+      );
 
       // Step 3: Measure improved performance
       const metricsAfter = await this.measureImprovedPerformance(metricsBefore);
-      console.log(`📈 Improved Performance: Build ${metricsAfter.buildTime}s, Bundle ${metricsAfter.bundleSize}MB`);
+      console.log(
+        `📈 Improved Performance: Build ${metricsAfter.buildTime}s, Bundle ${metricsAfter.bundleSize}MB`,
+      );
 
       // Step 4: Calculate overall improvement
       const overallImprovement = this.calculateOverallImprovement(metricsBefore, metricsAfter);
@@ -283,7 +289,10 @@ class PerformanceOptimizationManager {
     },
   },`;
 
-        config = config.replace('export default defineConfig({', `export default defineConfig({${buildOptimizations}`);
+        config = config.replace(
+          'export default defineConfig({',
+          `export default defineConfig({${buildOptimizations}`,
+        );
         writeFileSync(viteConfigPath, config, 'utf-8');
       }
     }
@@ -390,7 +399,9 @@ export const cacheConfig = {
   /**
    * Measure improved performance
    */
-  private async measureImprovedPerformance(before: PerformanceMetrics): Promise<PerformanceMetrics> {
+  private async measureImprovedPerformance(
+    before: PerformanceMetrics,
+  ): Promise<PerformanceMetrics> {
     console.log('📈 Measuring improved performance...');
 
     // Simulate improved performance after optimizations
@@ -408,28 +419,45 @@ export const cacheConfig = {
   /**
    * Calculate overall improvement
    */
-  private calculateOverallImprovement(before: PerformanceMetrics, after: PerformanceMetrics): number {
+  private calculateOverallImprovement(
+    before: PerformanceMetrics,
+    after: PerformanceMetrics,
+  ): number {
     const buildImprovement = ((before.buildTime - after.buildTime) / before.buildTime) * 100;
     const bundleImprovement = ((before.bundleSize - after.bundleSize) / before.bundleSize) * 100;
     const loadImprovement = ((before.loadTime - after.loadTime) / before.loadTime) * 100;
     const memoryImprovement = ((before.memoryUsage - after.memoryUsage) / before.memoryUsage) * 100;
     const cpuImprovement = ((before.cpuUsage - after.cpuUsage) / before.cpuUsage) * 100;
-    const uxImprovement = ((after.userExperienceScore - before.userExperienceScore) / before.userExperienceScore) * 100;
+    const uxImprovement =
+      ((after.userExperienceScore - before.userExperienceScore) / before.userExperienceScore) * 100;
 
-    return (buildImprovement + bundleImprovement + loadImprovement + memoryImprovement + cpuImprovement + uxImprovement) / 6;
+    return (
+      (buildImprovement +
+        bundleImprovement +
+        loadImprovement +
+        memoryImprovement +
+        cpuImprovement +
+        uxImprovement) /
+      6
+    );
   }
 
   /**
    * Generate recommendations
    */
-  private generateRecommendations(optimizations: OptimizationResult[], metrics: PerformanceMetrics): string[] {
+  private generateRecommendations(
+    optimizations: OptimizationResult[],
+    metrics: PerformanceMetrics,
+  ): string[] {
     const recommendations: string[] = [];
 
-    const appliedOptimizations = optimizations.filter(o => o.status === 'APPLIED');
-    const failedOptimizations = optimizations.filter(o => o.status === 'FAILED');
+    const appliedOptimizations = optimizations.filter((o) => o.status === 'APPLIED');
+    const failedOptimizations = optimizations.filter((o) => o.status === 'FAILED');
 
     if (appliedOptimizations.length > 0) {
-      recommendations.push(`Successfully applied ${appliedOptimizations.length} performance optimizations`);
+      recommendations.push(
+        `Successfully applied ${appliedOptimizations.length} performance optimizations`,
+      );
     }
 
     if (failedOptimizations.length > 0) {
@@ -525,30 +553,64 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 
 ## 🔧 APPLIED OPTIMIZATIONS
 
-${report.optimizations.map((opt, index) => `
-### **${index + 1}. ${opt.optimization}** ${opt.status === 'APPLIED' ? '✅' : opt.status === 'FAILED' ? '❌' : '⏭️'}
+${report.optimizations
+  .map(
+    (opt, index) => `
+### **${index + 1}. ${opt.optimization}** ${
+      opt.status === 'APPLIED' ? '✅' : opt.status === 'FAILED' ? '❌' : '⏭️'
+    }
 
 - **Impact**: ${opt.impact}
 - **Improvement**: ${opt.improvement}%
 - **Status**: ${opt.status}
-`).join('\n')}
+`,
+  )
+  .join('\n')}
 
 ---
 
 ## 📈 IMPROVEMENTS ACHIEVED
 
 ### **Build Performance**
-- **Build Time**: ${((report.metricsBefore.buildTime - report.metricsAfter.buildTime) / report.metricsBefore.buildTime * 100).toFixed(1)}% improvement
-- **Bundle Size**: ${((report.metricsBefore.bundleSize - report.metricsAfter.bundleSize) / report.metricsBefore.bundleSize * 100).toFixed(1)}% reduction
+- **Build Time**: ${(
+      ((report.metricsBefore.buildTime - report.metricsAfter.buildTime) /
+        report.metricsBefore.buildTime) *
+      100
+    ).toFixed(1)}% improvement
+- **Bundle Size**: ${(
+      ((report.metricsBefore.bundleSize - report.metricsAfter.bundleSize) /
+        report.metricsBefore.bundleSize) *
+      100
+    ).toFixed(1)}% reduction
 
 ### **Runtime Performance**
-- **Load Time**: ${((report.metricsBefore.loadTime - report.metricsAfter.loadTime) / report.metricsBefore.loadTime * 100).toFixed(1)}% improvement
-- **Memory Usage**: ${((report.metricsBefore.memoryUsage - report.metricsAfter.memoryUsage) / report.metricsBefore.memoryUsage * 100).toFixed(1)}% reduction
-- **CPU Usage**: ${((report.metricsBefore.cpuUsage - report.metricsAfter.cpuUsage) / report.metricsBefore.cpuUsage * 100).toFixed(1)}% reduction
+- **Load Time**: ${(
+      ((report.metricsBefore.loadTime - report.metricsAfter.loadTime) /
+        report.metricsBefore.loadTime) *
+      100
+    ).toFixed(1)}% improvement
+- **Memory Usage**: ${(
+      ((report.metricsBefore.memoryUsage - report.metricsAfter.memoryUsage) /
+        report.metricsBefore.memoryUsage) *
+      100
+    ).toFixed(1)}% reduction
+- **CPU Usage**: ${(
+      ((report.metricsBefore.cpuUsage - report.metricsAfter.cpuUsage) /
+        report.metricsBefore.cpuUsage) *
+      100
+    ).toFixed(1)}% reduction
 
 ### **User Experience**
-- **Error Rate**: ${((report.metricsBefore.errorRate - report.metricsAfter.errorRate) / report.metricsBefore.errorRate * 100).toFixed(1)}% reduction
-- **UX Score**: ${((report.metricsAfter.userExperienceScore - report.metricsBefore.userExperienceScore) / report.metricsBefore.userExperienceScore * 100).toFixed(1)}% improvement
+- **Error Rate**: ${(
+      ((report.metricsBefore.errorRate - report.metricsAfter.errorRate) /
+        report.metricsBefore.errorRate) *
+      100
+    ).toFixed(1)}% reduction
+- **UX Score**: ${(
+      ((report.metricsAfter.userExperienceScore - report.metricsBefore.userExperienceScore) /
+        report.metricsBefore.userExperienceScore) *
+      100
+    ).toFixed(1)}% improvement
 
 ---
 
@@ -572,11 +634,29 @@ ${report.recommendations.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
 ## 🎉 OPTIMIZATION SUMMARY
 
 ### **What We Accomplished**
-- ✅ Applied ${report.optimizations.filter(o => o.status === 'APPLIED').length} performance optimizations
-- ✅ Improved build time by ${((report.metricsBefore.buildTime - report.metricsAfter.buildTime) / report.metricsBefore.buildTime * 100).toFixed(1)}%
-- ✅ Reduced bundle size by ${((report.metricsBefore.bundleSize - report.metricsAfter.bundleSize) / report.metricsBefore.bundleSize * 100).toFixed(1)}%
-- ✅ Enhanced user experience score by ${((report.metricsAfter.userExperienceScore - report.metricsBefore.userExperienceScore) / report.metricsBefore.userExperienceScore * 100).toFixed(1)}%
-- ✅ Reduced error rate by ${((report.metricsBefore.errorRate - report.metricsAfter.errorRate) / report.metricsBefore.errorRate * 100).toFixed(1)}%
+- ✅ Applied ${
+      report.optimizations.filter((o) => o.status === 'APPLIED').length
+    } performance optimizations
+- ✅ Improved build time by ${(
+      ((report.metricsBefore.buildTime - report.metricsAfter.buildTime) /
+        report.metricsBefore.buildTime) *
+      100
+    ).toFixed(1)}%
+- ✅ Reduced bundle size by ${(
+      ((report.metricsBefore.bundleSize - report.metricsAfter.bundleSize) /
+        report.metricsBefore.bundleSize) *
+      100
+    ).toFixed(1)}%
+- ✅ Enhanced user experience score by ${(
+      ((report.metricsAfter.userExperienceScore - report.metricsBefore.userExperienceScore) /
+        report.metricsBefore.userExperienceScore) *
+      100
+    ).toFixed(1)}%
+- ✅ Reduced error rate by ${(
+      ((report.metricsBefore.errorRate - report.metricsAfter.errorRate) /
+        report.metricsBefore.errorRate) *
+      100
+    ).toFixed(1)}%
 
 ### **Overall Impact**
 - **Performance Improvement**: ${report.overallImprovement.toFixed(1)}%
@@ -624,9 +704,19 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .then((report) => {
       console.log('\n🎉 Performance Optimization Complete!');
       console.log(`📊 Overall Improvement: ${report.overallImprovement.toFixed(1)}%`);
-      console.log(`⚡ Build Time: ${report.metricsBefore.buildTime.toFixed(2)}s → ${report.metricsAfter.buildTime.toFixed(2)}s`);
-      console.log(`📦 Bundle Size: ${report.metricsBefore.bundleSize.toFixed(2)}MB → ${report.metricsAfter.bundleSize.toFixed(2)}MB`);
-      console.log(`🎯 UX Score: ${report.metricsBefore.userExperienceScore}/10 → ${report.metricsAfter.userExperienceScore}/10`);
+      console.log(
+        `⚡ Build Time: ${report.metricsBefore.buildTime.toFixed(
+          2,
+        )}s → ${report.metricsAfter.buildTime.toFixed(2)}s`,
+      );
+      console.log(
+        `📦 Bundle Size: ${report.metricsBefore.bundleSize.toFixed(
+          2,
+        )}MB → ${report.metricsAfter.bundleSize.toFixed(2)}MB`,
+      );
+      console.log(
+        `🎯 UX Score: ${report.metricsBefore.userExperienceScore}/10 → ${report.metricsAfter.userExperienceScore}/10`,
+      );
       console.log(`📄 Report: ${manager['reportPath']}`);
     })
     .catch((error) => {

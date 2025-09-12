@@ -14,16 +14,17 @@ import {
 import React, { useEffect, useState } from 'react';
 import MāoriFocusedResourceDisplay from './MāoriFocusedResourceDisplay';
 import { filterByQuality, getQualityStats } from '../utils/quality-content-filter';
+import type { RealResource } from '../types';
 
 // Load resources with actual content function
-async function loadRealResourcesWithContent() {
-  const realResources = [
+async function loadRealResourcesWithContent(): Promise<RealResource[]> {
+  const realResources: RealResource[] = [
     {
       id: 'y2-visual-arts-maori-design',
       title: 'Y2 Visual Arts Patterns In Nature Maori Design',
       subject: 'Visual Arts',
       yearLevel: 'Year 2',
-      type: 'lesson' as const,
+      type: 'lesson',
       filename: 'Y2_Visual_Arts_Patterns_in_Nature_Maori_Design.md',
       path: 'real-resources/Y2_Visual_Arts_Patterns_in_Nature_Maori_Design.md',
       culturalElements: 4,
@@ -59,15 +60,15 @@ Students create their own artwork combining natural patterns with Māori design 
 - Shows understanding of Māori design elements
 - Creates original artwork respectfully incorporating cultural elements`,
       duration: '60 mins',
-      difficulty: 'beginner' as const,
-      tags: ['visual-arts', 'cultural-content', 'māori-perspectives', 'nature']
+      difficulty: 'beginner',
+      tags: ['visual-arts', 'cultural-content', 'māori-perspectives', 'nature'],
     },
     {
       id: 'y5-pe-traditional-maori-games',
       title: 'Y5 Physical Education Traditional Maori Games',
-      subject: 'Physical Education', 
+      subject: 'Physical Education',
       yearLevel: 'Year 5',
-      type: 'activity' as const,
+      type: 'activity',
       filename: 'Y5_Physical_Education_Traditional_Maori_Games.md',
       path: 'real-resources/Y5_Physical_Education_Traditional_Maori_Games.md',
       culturalElements: 5,
@@ -120,15 +121,21 @@ A traditional ball game combining elements of rugby and touch.
 - Shows teamwork and fair play
 - Explains cultural significance of activities`,
       duration: '60 mins',
-      difficulty: 'intermediate' as const,
-      tags: ['physical-education', 'cultural-content', 'māori-perspectives', 'traditional-games', 'teamwork']
+      difficulty: 'intermediate',
+      tags: [
+        'physical-education',
+        'cultural-content',
+        'māori-perspectives',
+        'traditional-games',
+        'teamwork',
+      ],
     },
     {
       id: 'y7-english-close-reading-skeleton',
       title: 'Y7 English Close Reading (Template)',
       subject: 'English',
       yearLevel: 'Year 7',
-      type: 'handout' as const,
+      type: 'handout',
       filename: 'Y7_English_Close_Reading_0018.md',
       path: 'handouts/Y7_English_Close_Reading_0018.md',
       culturalElements: 1,
@@ -175,16 +182,16 @@ A short, scaffolded example demonstrates the concept and models quality working 
 
 ### Practice
 A set of tiered practice prompts consolidates understanding and encourages extension.`,
-      duration: '45 mins', 
-      difficulty: 'beginner' as const,
-      tags: ['english', 'template', 'skeleton']
+      duration: '45 mins',
+      difficulty: 'beginner',
+      tags: ['english', 'template', 'skeleton'],
     },
     {
       id: 'y9-science-native-plants-complete',
       title: 'Native Plant Adaptation in Aotearoa Ecosystems',
       subject: 'Science',
       yearLevel: 'Year 9',
-      type: 'lesson' as const,
+      type: 'lesson',
       filename: 'lesson_Science_Y9_native_plant_adaptation_in_aotearoa_ecosystems.md',
       path: 'deepseek-generated/lesson_Science_Y9_native_plant_adaptation_in_aotearoa_ecosystems.md',
       culturalElements: 5,
@@ -291,9 +298,9 @@ Students create an educational resource (choice of format: video, interactive di
 
 *This lesson was developed in consultation with cultural advisors to ensure appropriate integration of mātauranga Māori. Continued relationship with local iwi and knowledge holders is essential for authentic implementation.*`,
       duration: '6 periods (300 mins)',
-      difficulty: 'advanced' as const,
-      tags: ['science', 'cultural-content', 'māori-perspectives', 'ecology', 'advanced', 'complete-lesson']
-    }
+      difficulty: 'advanced',
+      tags: ['science', 'cultural-content', 'māori-perspectives', 'ecology', 'advanced', 'complete-lesson'],
+    },
   ];
 
   return realResources;
@@ -305,13 +312,14 @@ type Resource = {
   title: string;
   subject: string;
   yearLevel: string;
-  type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia';
+  type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia' | 'handout';
   content?: any;
   culturalElements: number;
   description: string;
   duration: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   tags: string[];
+  path?: string;
 };
 
 const FunctionalResourceBrowser: React.FC = () => {
@@ -335,7 +343,7 @@ const FunctionalResourceBrowser: React.FC = () => {
       try {
         // Load actual resources with content from public/resources/
         const realResources = await loadRealResourcesWithContent();
-        
+
         // Convert to our Resource format
         const resources: Resource[] = realResources.map((resource) => ({
           id: resource.id,
@@ -346,25 +354,30 @@ const FunctionalResourceBrowser: React.FC = () => {
           content: resource.content, // This now has actual content!
           culturalElements: resource.culturalElements,
           description: resource.description,
-          duration: resource.duration,
-          difficulty: resource.difficulty,
-          tags: resource.tags,
+          duration: resource.duration || 'N/A',
+          difficulty: resource.difficulty || 'intermediate',
+          tags: resource.tags || [],
         }));
 
         // Apply initial quality filtering
-        const qualityResources = showQualityOnly ? filterByQuality(resources, qualityFilter) : resources;
-        
+        const qualityResources = showQualityOnly
+          ? filterByQuality(resources, qualityFilter)
+          : resources;
+
         setResources(resources);
         setFilteredResources(qualityResources);
         setQualityStats(getQualityStats(resources));
-        
+
         console.log(`🎉 Loaded ${resources.length} real resources with content`);
         console.log(`⭐ ${qualityResources.length} quality resources available after filtering`);
         console.log('📊 Quality stats:', getQualityStats(resources));
       } catch (error) {
         console.error('Error loading real resources:', error);
         // Fallback to sample resources with content
-        const resourcesWithContent = sampleResources.map(r => ({ ...r, content: r.content || 'Sample content' }));
+        const resourcesWithContent = sampleResources.map((r) => ({
+          ...r,
+          content: r.content || 'Sample content',
+        }));
         setResources(resourcesWithContent);
         setFilteredResources(resourcesWithContent);
         setQualityStats(getQualityStats(resourcesWithContent));
@@ -534,14 +547,18 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
   useEffect(() => {
     // First apply quality filtering if enabled
-    const qualityResources = showQualityOnly ? filterByQuality(resources, qualityFilter) : resources;
-    
+    const qualityResources = showQualityOnly
+      ? filterByQuality(resources, qualityFilter)
+      : resources;
+
     // Then apply other filters
     const filtered = qualityResources.filter((resource) => {
       const matchesSearch =
         resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (resource.tags || []).some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        (resource.tags || []).some((tag: string) =>
+          tag.toLowerCase().includes(searchTerm.toLowerCase()),
+        );
 
       const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
       const matchesYear = selectedYear === 'all' || resource.yearLevel.includes(selectedYear);
@@ -551,7 +568,15 @@ How statistics help us understand cultural diversity in Aotearoa...`,
     });
 
     setFilteredResources(filtered);
-  }, [searchTerm, selectedSubject, selectedYear, selectedType, resources, qualityFilter, showQualityOnly]);
+  }, [
+    searchTerm,
+    selectedSubject,
+    selectedYear,
+    selectedType,
+    resources,
+    qualityFilter,
+    showQualityOnly,
+  ]);
 
   const subjects = ['all', ...Array.from(new Set(resources.map((r) => r.subject)))];
   const yearLevels = ['all', 'Year 7', 'Year 8', 'Year 9', 'Year 10'];
@@ -659,385 +684,448 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           }}
         >
           {/* Resource Viewer Header */}
-        <header
-          style={{
-            background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
-            color: 'white',
-            padding: '20px 0',
-            boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)',
-          }}
-        >
-          <div
+          <header
             style={{
-              maxWidth: '1200px',
-              margin: '0 auto',
-              padding: '0 24px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
+              background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+              color: 'white',
+              padding: '20px 0',
+              boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)',
             }}
           >
-            <div>
-              <button
-                onClick={() => setSelectedResource(null)}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
-                  color: 'white',
-                  padding: '8px 16px',
-                  borderRadius: '6px',
-                  cursor: 'pointer',
-                  fontSize: '0.875rem',
-                  marginBottom: '12px',
-                }}
-              >
-                ← Back to Resources
-              </button>
-              <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
-                {selectedResource.title}
-              </h1>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.9 }}>
-                <span>
-                  {selectedResource.subject} • {selectedResource.yearLevel}
-                </span>
-                <span>⭐ {selectedResource.culturalElements} cultural elements</span>
-                <span>⏱️ {selectedResource.duration}</span>
+            <div
+              style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                padding: '0 24px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <div>
+                <button
+                  onClick={() => setSelectedResource(null)}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    color: 'white',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '0.875rem',
+                    marginBottom: '12px',
+                  }}
+                >
+                  ← Back to Resources
+                </button>
+                <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+                  {selectedResource.title}
+                </h1>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.9 }}>
+                  <span>
+                    {selectedResource.subject} • {selectedResource.yearLevel}
+                  </span>
+                  <span>⭐ {selectedResource.culturalElements} cultural elements</span>
+                  <span>⏱️ {selectedResource.duration}</span>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <button
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: 'none',
+                    color: 'white',
+                    padding: '10px',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Bookmark />
+                </button>
+                <button
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: 'none',
+                    color: 'white',
+                    padding: '10px',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Download />
+                </button>
               </div>
             </div>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <button
-                style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: 'none',
-                  color: 'white',
-                  padding: '10px',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                }}
-              >
-                <Bookmark />
-              </button>
-              <button
-                style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: 'none',
-                  color: 'white',
-                  padding: '10px',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                }}
-              >
-                <Download />
-              </button>
-            </div>
-          </div>
-        </header>
+          </header>
 
           {/* Resource Content */}
-        <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
-          <div
-            style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: '40px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-              border: '1px solid #e5e7eb',
-            }}
-          >
-            <div style={{ marginBottom: '24px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  marginBottom: '16px',
-                }}
-              >
-                <span
+          <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+            <div
+              style={{
+                background: 'white',
+                borderRadius: '12px',
+                padding: '40px',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+                border: '1px solid #e5e7eb',
+              }}
+            >
+              <div style={{ marginBottom: '24px' }}>
+                <div
                   style={{
-                    background: getTypeColor(selectedResource.type) + '20',
-                    color: getTypeColor(selectedResource.type),
-                    padding: '6px 12px',
-                    borderRadius: '20px',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '12px',
+                    marginBottom: '16px',
                   }}
                 >
-                  {getTypeIcon(selectedResource.type)}
-                  {selectedResource.type}
-                </span>
-                <span
-                  style={{
-                    background: getDifficultyColor(selectedResource.difficulty) + '20',
-                    color: getDifficultyColor(selectedResource.difficulty),
-                    padding: '6px 12px',
-                    borderRadius: '20px',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                  }}
-                >
-                  {selectedResource.difficulty}
-                </span>
-              </div>
-              <p style={{ fontSize: '1.125rem', color: '#6b7280', lineHeight: '1.6', margin: '0' }}>
-                {selectedResource.description}
-              </p>
-            </div>
-
-            {/* Tags */}
-            <div style={{ marginBottom: '32px' }}>
-              <h3
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '600',
-                  color: '#374151',
-                  marginBottom: '12px',
-                }}
-              >
-                TAGS
-              </h3>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {selectedResource.tags.map((tag, index) => (
                   <span
-                    key={index}
                     style={{
-                      background: '#f3f4f6',
-                      color: '#374151',
-                      padding: '4px 12px',
-                      borderRadius: '12px',
-                      fontSize: '0.75rem',
+                      background: getTypeColor(selectedResource.type) + '20',
+                      color: getTypeColor(selectedResource.type),
+                      padding: '6px 12px',
+                      borderRadius: '20px',
+                      fontSize: '0.875rem',
+                      fontWeight: '500',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                    }}
+                  >
+                    {getTypeIcon(selectedResource.type)}
+                    {selectedResource.type}
+                  </span>
+                  <span
+                    style={{
+                      background: getDifficultyColor(selectedResource.difficulty) + '20',
+                      color: getDifficultyColor(selectedResource.difficulty),
+                      padding: '6px 12px',
+                      borderRadius: '20px',
+                      fontSize: '0.875rem',
                       fontWeight: '500',
                     }}
                   >
-                    {tag}
+                    {selectedResource.difficulty}
                   </span>
-                ))}
+                </div>
+                <p
+                  style={{ fontSize: '1.125rem', color: '#6b7280', lineHeight: '1.6', margin: '0' }}
+                >
+                  {selectedResource.description}
+                </p>
               </div>
-            </div>
 
-            {/* Content */}
-            <div style={{ 
-              background: 'white', 
-              borderRadius: '8px', 
-              padding: '24px', 
-              lineHeight: '1.6',
-              color: '#374151'
-            }}>
-              {selectedResource.content ? (
-                <MāoriFocusedResourceDisplay
-                  resource={selectedResource}
-                  onClose={() => setSelectedResource(null)}
-                />
-              ) : (
-                <div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#1f2937', marginBottom: '16px' }}>
-                    📚 {selectedResource.title}
-                  </h3>
-                  
-                  <div style={{ marginBottom: '24px' }}>
-                    <p style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '16px' }}>
-                      {selectedResource.description}
-                    </p>
-                  </div>
+              {/* Tags */}
+              <div style={{ marginBottom: '32px' }}>
+                <h3
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '600',
+                    color: '#374151',
+                    marginBottom: '12px',
+                  }}
+                >
+                  TAGS
+                </h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {selectedResource.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      style={{
+                        background: '#f3f4f6',
+                        color: '#374151',
+                        padding: '4px 12px',
+                        borderRadius: '12px',
+                        fontSize: '0.75rem',
+                        fontWeight: '500',
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                  <div style={{ 
-                    background: '#f8fafc', 
-                    border: '1px solid #e2e8f0', 
-                    borderRadius: '8px', 
-                    padding: '20px', 
-                    marginBottom: '24px' 
-                  }}>
-                    <h4 style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '600', 
-                      color: '#1f2937', 
-                      marginBottom: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px'
-                    }}>
-                      🎯 Learning Focus
-                    </h4>
-                    <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6' }}>
-                      This {selectedResource.type} is designed for {selectedResource.yearLevel} students studying {selectedResource.subject}. 
-                      {selectedResource.culturalElements > 0 && ` It includes ${selectedResource.culturalElements} cultural elements that connect learning to Te Ao Māori perspectives.`}
-                    </p>
-                  </div>
+              {/* Content */}
+              <div
+                style={{
+                  background: 'white',
+                  borderRadius: '8px',
+                  padding: '24px',
+                  lineHeight: '1.6',
+                  color: '#374151',
+                }}
+              >
+                {selectedResource.content ? (
+                  <MāoriFocusedResourceDisplay
+                    resource={selectedResource}
+                    onClose={() => setSelectedResource(null)}
+                  />
+                ) : (
+                  <div>
+                    <h3
+                      style={{
+                        fontSize: '1.25rem',
+                        fontWeight: '600',
+                        color: '#1f2937',
+                        marginBottom: '16px',
+                      }}
+                    >
+                      📚 {selectedResource.title}
+                    </h3>
 
-                  {selectedResource.culturalElements > 0 && (
-                    <div style={{ 
-                      background: '#f0fdf4', 
-                      border: '1px solid #22c55e', 
-                      borderRadius: '8px', 
-                      padding: '20px', 
-                      marginBottom: '24px' 
-                    }}>
-                      <h4 style={{ 
-                        fontSize: '1.1rem', 
-                        fontWeight: '600', 
-                        color: '#15803d', 
-                        marginBottom: '12px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px'
-                      }}>
-                        🌿 Cultural Integration
-                      </h4>
-                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6', color: '#166534' }}>
-                        This resource incorporates {selectedResource.culturalElements === 5 ? 'excellent' : 
-                          selectedResource.culturalElements >= 3 ? 'good' : 'some'} cultural integration, 
-                        connecting learning objectives with Te Ao Māori worldviews and practices.
+                    <div style={{ marginBottom: '24px' }}>
+                      <p style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '16px' }}>
+                        {selectedResource.description}
                       </p>
                     </div>
-                  )}
 
-                  <div style={{ 
-                    background: '#f8fafc', 
-                    borderRadius: '8px', 
-                    padding: '20px',
-                    marginBottom: '24px'
-                  }}>
-                    <h4 style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '600', 
-                      color: '#1f2937', 
-                      marginBottom: '12px' 
-                    }}>
-                      📋 Suggested Learning Activities
-                    </h4>
-                    <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem' }}>
-                      <li style={{ marginBottom: '8px' }}>
-                        Introduction and context setting ({Math.floor(Math.random() * 10) + 5} minutes)
-                      </li>
-                      <li style={{ marginBottom: '8px' }}>
-                        Main content exploration and discussion ({Math.floor(Math.random() * 15) + 20} minutes)
-                      </li>
-                      <li style={{ marginBottom: '8px' }}>
-                        Hands-on activities and group work ({Math.floor(Math.random() * 10) + 10} minutes)
-                      </li>
-                      <li style={{ marginBottom: '8px' }}>
-                        Reflection and connection to broader themes ({Math.floor(Math.random() * 5) + 5} minutes)
-                      </li>
-                    </ul>
-                  </div>
+                    <div
+                      style={{
+                        background: '#f8fafc',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: '8px',
+                        padding: '20px',
+                        marginBottom: '24px',
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: '1.1rem',
+                          fontWeight: '600',
+                          color: '#1f2937',
+                          marginBottom: '12px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                        }}
+                      >
+                        🎯 Learning Focus
+                      </h4>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6' }}>
+                        This {selectedResource.type} is designed for {selectedResource.yearLevel}{' '}
+                        students studying {selectedResource.subject}.
+                        {selectedResource.culturalElements > 0 &&
+                          ` It includes ${selectedResource.culturalElements} cultural elements that connect learning to Te Ao Māori perspectives.`}
+                      </p>
+                    </div>
 
-                  <div style={{ 
-                    background: '#fef3c7', 
-                    border: '1px solid #f59e0b', 
-                    borderRadius: '8px', 
-                    padding: '20px',
-                    marginBottom: '24px'
-                  }}>
-                    <h4 style={{ 
-                      fontSize: '1.1rem', 
-                      fontWeight: '600', 
-                      color: '#92400e', 
-                      marginBottom: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px'
-                    }}>
-                      ⭐ Assessment Opportunities
-                    </h4>
-                    <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem', color: '#92400e' }}>
-                      <li style={{ marginBottom: '8px' }}>Formative assessment through questioning and observation</li>
-                      <li style={{ marginBottom: '8px' }}>Student self-reflection and peer feedback</li>
-                      <li style={{ marginBottom: '8px' }}>Portfolio evidence collection</li>
-                      {selectedResource.type === 'assessment' && <li>Formal assessment task included in resource</li>}
-                    </ul>
-                  </div>
+                    {selectedResource.culturalElements > 0 && (
+                      <div
+                        style={{
+                          background: '#f0fdf4',
+                          border: '1px solid #22c55e',
+                          borderRadius: '8px',
+                          padding: '20px',
+                          marginBottom: '24px',
+                        }}
+                      >
+                        <h4
+                          style={{
+                            fontSize: '1.1rem',
+                            fontWeight: '600',
+                            color: '#15803d',
+                            marginBottom: '12px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                          }}
+                        >
+                          🌿 Cultural Integration
+                        </h4>
+                        <p
+                          style={{
+                            margin: 0,
+                            fontSize: '1rem',
+                            lineHeight: '1.6',
+                            color: '#166534',
+                          }}
+                        >
+                          This resource incorporates{' '}
+                          {selectedResource.culturalElements === 5
+                            ? 'excellent'
+                            : selectedResource.culturalElements >= 3
+                            ? 'good'
+                            : 'some'}{' '}
+                          cultural integration, connecting learning objectives with Te Ao Māori
+                          worldviews and practices.
+                        </p>
+                      </div>
+                    )}
 
-                  <div style={{ 
-                    background: '#ecfdf5', 
-                    border: '1px solid #22c55e', 
-                    borderRadius: '8px', 
-                    padding: '20px',
-                    textAlign: 'center'
-                  }}>
-                    <p style={{ 
-                      margin: 0, 
-                      fontSize: '0.95rem', 
-                      color: '#166534',
-                      fontWeight: '500'
-                    }}>
-                      📚 This resource is part of our comprehensive educational library designed to support 
-                      culturally-responsive teaching practices in Aotearoa New Zealand.
-                    </p>
+                    <div
+                      style={{
+                        background: '#f8fafc',
+                        borderRadius: '8px',
+                        padding: '20px',
+                        marginBottom: '24px',
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: '1.1rem',
+                          fontWeight: '600',
+                          color: '#1f2937',
+                          marginBottom: '12px',
+                        }}
+                      >
+                        📋 Suggested Learning Activities
+                      </h4>
+                      <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem' }}>
+                        <li style={{ marginBottom: '8px' }}>
+                          Introduction and context setting ({Math.floor(Math.random() * 10) + 5}{' '}
+                          minutes)
+                        </li>
+                        <li style={{ marginBottom: '8px' }}>
+                          Main content exploration and discussion (
+                          {Math.floor(Math.random() * 15) + 20} minutes)
+                        </li>
+                        <li style={{ marginBottom: '8px' }}>
+                          Hands-on activities and group work ({Math.floor(Math.random() * 10) + 10}{' '}
+                          minutes)
+                        </li>
+                        <li style={{ marginBottom: '8px' }}>
+                          Reflection and connection to broader themes (
+                          {Math.floor(Math.random() * 5) + 5} minutes)
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div
+                      style={{
+                        background: '#fef3c7',
+                        border: '1px solid #f59e0b',
+                        borderRadius: '8px',
+                        padding: '20px',
+                        marginBottom: '24px',
+                      }}
+                    >
+                      <h4
+                        style={{
+                          fontSize: '1.1rem',
+                          fontWeight: '600',
+                          color: '#92400e',
+                          marginBottom: '12px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                        }}
+                      >
+                        ⭐ Assessment Opportunities
+                      </h4>
+                      <ul
+                        style={{
+                          margin: 0,
+                          paddingLeft: '20px',
+                          fontSize: '1rem',
+                          color: '#92400e',
+                        }}
+                      >
+                        <li style={{ marginBottom: '8px' }}>
+                          Formative assessment through questioning and observation
+                        </li>
+                        <li style={{ marginBottom: '8px' }}>
+                          Student self-reflection and peer feedback
+                        </li>
+                        <li style={{ marginBottom: '8px' }}>Portfolio evidence collection</li>
+                        {selectedResource.type === 'assessment' && (
+                          <li>Formal assessment task included in resource</li>
+                        )}
+                      </ul>
+                    </div>
+
+                    <div
+                      style={{
+                        background: '#ecfdf5',
+                        border: '1px solid #22c55e',
+                        borderRadius: '8px',
+                        padding: '20px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: '0.95rem',
+                          color: '#166534',
+                          fontWeight: '500',
+                        }}
+                      >
+                        📚 This resource is part of our comprehensive educational library designed
+                        to support culturally-responsive teaching practices in Aotearoa New
+                        Zealand.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '12px',
+                  marginTop: '32px',
+                  paddingTop: '24px',
+                  borderTop: '1px solid #e5e7eb',
+                }}
+              >
+                <button
+                  style={{
+                    background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '12px 24px',
+                    borderRadius: '8px',
+                    fontSize: '0.875rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <Play className="w-4 h-4" />
+                  Start Learning
+                </button>
+                <button
+                  style={{
+                    background: 'white',
+                    color: '#374151',
+                    border: '1px solid #d1d5db',
+                    padding: '12px 24px',
+                    borderRadius: '8px',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <Users className="w-4 h-4" />
+                  Share with Class
+                </button>
+                <button
+                  style={{
+                    background: 'white',
+                    color: '#374151',
+                    border: '1px solid #d1d5db',
+                    padding: '12px 24px',
+                    borderRadius: '8px',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </button>
+              </div>
             </div>
-
-            {/* Action Buttons */}
-            <div
-              style={{
-                display: 'flex',
-                gap: '12px',
-                marginTop: '32px',
-                paddingTop: '24px',
-                borderTop: '1px solid #e5e7eb',
-              }}
-            >
-              <button
-                style={{
-                  background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  fontSize: '0.875rem',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
-              >
-                <Play className="w-4 h-4" />
-                Start Learning
-              </button>
-              <button
-                style={{
-                  background: 'white',
-                  color: '#374151',
-                  border: '1px solid #d1d5db',
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
-              >
-                <Users className="w-4 h-4" />
-                Share with Class
-              </button>
-              <button
-                style={{
-                  background: 'white',
-                  color: '#374151',
-                  border: '1px solid #d1d5db',
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
-              >
-                <Download className="w-4 h-4" />
-                Download PDF
-              </button>
-            </div>
-          </div>
-        </main>
+          </main>
         </div>
       </div>
     );
@@ -1074,16 +1162,18 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '5,000+'}{' '}
             culturally-responsive educational resources
           </p>
-          
+
           {/* Quality Stats Bar */}
           {qualityStats && (
-            <div style={{ 
-              display: 'flex', 
-              gap: '16px', 
-              fontSize: '0.875rem', 
-              opacity: 0.9,
-              flexWrap: 'wrap'
-            }}>
+            <div
+              style={{
+                display: 'flex',
+                gap: '16px',
+                fontSize: '0.875rem',
+                opacity: 0.9,
+                flexWrap: 'wrap',
+              }}
+            >
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Star className="w-4 h-4" fill="currentColor" />
                 {qualityStats.ready} Quality Ready
@@ -1091,9 +1181,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               <span>{qualityStats.enhanced} Enhanced</span>
               <span>{qualityStats.templates} Templates</span>
               <span>{qualityStats.skeletons} Skeletons</span>
-              <span style={{ fontWeight: '600' }}>
-                {qualityStats.percentReady}% Production Ready
-              </span>
+              <span style={{ fontWeight: '600' }}>{qualityStats.percentReady}% Production Ready</span>
             </div>
           )}
         </div>
@@ -1115,28 +1203,39 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           }}
         >
           {/* Quality Filter Toggle */}
-          <div style={{
-            background: showQualityOnly ? '#ecfdf5' : '#fef3c7',
-            border: `1px solid ${showQualityOnly ? '#22c55e' : '#f59e0b'}`,
-            borderRadius: '8px',
-            padding: '12px 16px',
-            marginBottom: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
+          <div
+            style={{
+              background: showQualityOnly ? '#ecfdf5' : '#fef3c7',
+              border: `1px solid ${showQualityOnly ? '#22c55e' : '#f59e0b'}`,
+              borderRadius: '8px',
+              padding: '12px 16px',
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Filter className="w-4 h-4" style={{ color: showQualityOnly ? '#16a34a' : '#d97706' }} />
-              <span style={{ 
-                fontWeight: '600', 
-                fontSize: '0.875rem',
-                color: showQualityOnly ? '#15803d' : '#92400e'
-              }}>
-                {showQualityOnly ? '⭐ Quality Content Filter: ON' : '⚠️ Showing All Content (including skeletons)'}
+              <Filter
+                className="w-4 h-4"
+                style={{ color: showQualityOnly ? '#16a34a' : '#d97706' }}
+              />
+              <span
+                style={{
+                  fontWeight: '600',
+                  fontSize: '0.875rem',
+                  color: showQualityOnly ? '#15803d' : '#92400e',
+                }}
+              >
+                {showQualityOnly
+                  ? '⭐ Quality Content Filter: ON'
+                  : '⚠️ Showing All Content (including skeletons)'}
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <label style={{ fontSize: '0.75rem', color: showQualityOnly ? '#16a34a' : '#d97706' }}>
+              <label
+                style={{ fontSize: '0.75rem', color: showQualityOnly ? '#16a34a' : '#d97706' }}
+              >
                 Min Quality: {qualityFilter}%
               </label>
               <input
@@ -1157,14 +1256,14 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   fontWeight: '600',
                   cursor: 'pointer',
                   background: showQualityOnly ? '#16a34a' : '#d97706',
-                  color: 'white'
+                  color: 'white',
                 }}
               >
                 {showQualityOnly ? 'Show All' : 'Quality Only'}
               </button>
             </div>
           </div>
-          
+
           <div
             style={{
               display: 'grid',
@@ -1265,7 +1364,8 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               </p>
               {qualityStats && (
                 <p style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '0' }}>
-                  {qualityStats.ready} ready • {qualityStats.enhanced} enhanced • {qualityStats.templates} templates • {qualityStats.skeletons} skeletons
+                  {qualityStats.ready} ready • {qualityStats.enhanced} enhanced •{' '}
+                  {qualityStats.templates} templates • {qualityStats.skeletons} skeletons
                 </p>
               )}
             </div>
@@ -1427,10 +1527,13 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 <span>⭐ {resource.culturalElements} cultural elements</span>
                 <span>⏱️ {resource.duration}</span>
                 {(resource as any).qualityMetrics && (
-                  <span style={{ 
-                    color: (resource as any).qualityMetrics.qualityScore >= 70 ? '#16a34a' : '#d97706',
-                    fontWeight: '600'
-                  }}>
+                  <span
+                    style={{
+                      color:
+                        (resource as any).qualityMetrics.qualityScore >= 70 ? '#16a34a' : '#d97706',
+                      fontWeight: '600',
+                    }}
+                  >
                     🎯 {(resource as any).qualityMetrics.qualityScore}% quality
                   </span>
                 )}
