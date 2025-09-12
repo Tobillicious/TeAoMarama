@@ -6,9 +6,9 @@
  * Ensures complete system integrity and synchronization
  */
 
-import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'fs';
-import { join } from 'path';
 import { execSync } from 'child_process';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
 
 interface SystemStatus {
   gitStatus: string;
@@ -59,30 +59,29 @@ class SystemSyncRestorationManager {
     try {
       // Check current system status
       await this.checkSystemStatus();
-      
+
       // Restore deleted unstaged changes
       await this.restoreDeletedUnstagedChanges();
-      
+
       // Stage and commit changes
       await this.stageAndCommitChanges();
-      
+
       // Run comprehensive tests
       await this.runComprehensiveTests();
-      
+
       // Rebuild the system
       await this.rebuildSystem();
-      
+
       // Sync with remote repositories
       await this.syncWithRemote();
-      
+
       // Push changes
       await this.pushChanges();
-      
+
       // Generate restoration report
       await this.generateRestorationReport();
-      
+
       console.log('🎉 SYSTEM SYNC AND RESTORATION COMPLETE!');
-      
     } catch (error) {
       console.error('❌ Error in system sync and restoration:', error);
       await this.saveErrorReport(error);
@@ -93,21 +92,34 @@ class SystemSyncRestorationManager {
 
   private async checkSystemStatus(): Promise<void> {
     console.log('📊 CHECKING SYSTEM STATUS...');
-    
+
     try {
       // Check git status
       const gitStatus = execSync('git status --porcelain', { encoding: 'utf-8' });
-      const statusLines = gitStatus.trim().split('\n').filter(line => line.length > 0);
-      
+      const statusLines = gitStatus
+        .trim()
+        .split('\n')
+        .filter((line) => line.length > 0);
+
       const systemStatus: SystemStatus = {
         gitStatus: gitStatus,
-        stagedChanges: statusLines.filter(line => line.startsWith('A ') || line.startsWith('M ')).map(line => line.substring(2)),
-        unstagedChanges: statusLines.filter(line => line.startsWith(' M') || line.startsWith(' A')).map(line => line.substring(2)),
-        untrackedFiles: statusLines.filter(line => line.startsWith('??')).map(line => line.substring(3)),
-        deletedFiles: statusLines.filter(line => line.startsWith('D ') || line.startsWith(' D')).map(line => line.substring(2)),
-        modifiedFiles: statusLines.filter(line => line.includes('M')).map(line => line.substring(2)),
+        stagedChanges: statusLines
+          .filter((line) => line.startsWith('A ') || line.startsWith('M '))
+          .map((line) => line.substring(2)),
+        unstagedChanges: statusLines
+          .filter((line) => line.startsWith(' M') || line.startsWith(' A'))
+          .map((line) => line.substring(2)),
+        untrackedFiles: statusLines
+          .filter((line) => line.startsWith('??'))
+          .map((line) => line.substring(3)),
+        deletedFiles: statusLines
+          .filter((line) => line.startsWith('D ') || line.startsWith(' D'))
+          .map((line) => line.substring(2)),
+        modifiedFiles: statusLines
+          .filter((line) => line.includes('M'))
+          .map((line) => line.substring(2)),
         lastCommit: execSync('git log -1 --oneline', { encoding: 'utf-8' }).trim(),
-        branchStatus: execSync('git branch --show-current', { encoding: 'utf-8' }).trim()
+        branchStatus: execSync('git branch --show-current', { encoding: 'utf-8' }).trim(),
       };
 
       console.log(`✅ Git status checked - Branch: ${systemStatus.branchStatus}`);
@@ -120,7 +132,6 @@ class SystemSyncRestorationManager {
       // Save status report
       const statusPath = join(this.outputDir, 'system-status.json');
       writeFileSync(statusPath, JSON.stringify(systemStatus, null, 2));
-      
     } catch (error) {
       console.error('❌ Error checking system status:', error);
     }
@@ -128,13 +139,14 @@ class SystemSyncRestorationManager {
 
   private async restoreDeletedUnstagedChanges(): Promise<void> {
     console.log('🔄 RESTORING DELETED UNSTAGED CHANGES...');
-    
+
     try {
       // Check for deleted files that can be restored
       const gitStatus = execSync('git status --porcelain', { encoding: 'utf-8' });
-      const deletedFiles = gitStatus.split('\n')
-        .filter(line => line.startsWith(' D'))
-        .map(line => line.substring(3));
+      const deletedFiles = gitStatus
+        .split('\n')
+        .filter((line) => line.startsWith(' D'))
+        .map((line) => line.substring(3));
 
       const restoredFiles: string[] = [];
 
@@ -150,9 +162,10 @@ class SystemSyncRestorationManager {
       }
 
       // Check for unstaged changes that might have been lost
-      const unstagedChanges = gitStatus.split('\n')
-        .filter(line => line.startsWith(' M') || line.startsWith(' A'))
-        .map(line => line.substring(3));
+      const unstagedChanges = gitStatus
+        .split('\n')
+        .filter((line) => line.startsWith(' M') || line.startsWith(' A'))
+        .map((line) => line.substring(3));
 
       for (const changedFile of unstagedChanges) {
         if (existsSync(changedFile)) {
@@ -163,7 +176,6 @@ class SystemSyncRestorationManager {
       }
 
       console.log(`✅ Restored ${restoredFiles.length} deleted files`);
-      
     } catch (error) {
       console.error('❌ Error restoring deleted unstaged changes:', error);
     }
@@ -171,7 +183,7 @@ class SystemSyncRestorationManager {
 
   private async stageAndCommitChanges(): Promise<void> {
     console.log('📝 STAGING AND COMMITTING CHANGES...');
-    
+
     try {
       // Add all changes
       execSync('git add .', { encoding: 'utf-8' });
@@ -179,9 +191,10 @@ class SystemSyncRestorationManager {
 
       // Check if there are changes to commit
       const statusAfterAdd = execSync('git status --porcelain', { encoding: 'utf-8' });
-      const stagedChanges = statusAfterAdd.split('\n')
-        .filter(line => line.startsWith('A ') || line.startsWith('M ') || line.startsWith('D '))
-        .map(line => line.substring(2));
+      const stagedChanges = statusAfterAdd
+        .split('\n')
+        .filter((line) => line.startsWith('A ') || line.startsWith('M ') || line.startsWith('D '))
+        .map((line) => line.substring(2));
 
       if (stagedChanges.length > 0) {
         // Create commit message
@@ -204,7 +217,6 @@ Total files: ${stagedChanges.length}`;
       } else {
         console.log('✅ No changes to commit');
       }
-      
     } catch (error) {
       console.error('❌ Error staging and committing changes:', error);
     }
@@ -212,7 +224,7 @@ Total files: ${stagedChanges.length}`;
 
   private async runComprehensiveTests(): Promise<void> {
     console.log('🧪 RUNNING COMPREHENSIVE TESTS...');
-    
+
     try {
       const testsRun: string[] = [];
       const testResults: { [key: string]: boolean } = {};
@@ -261,20 +273,22 @@ Total files: ${stagedChanges.length}`;
         timestamp: new Date().toISOString(),
         testsRun: testsRun,
         testResults: testResults,
-        overallStatus: Object.values(testResults).every(result => result) ? 'PASSED' : 'FAILED'
+        overallStatus: Object.values(testResults).every((result) => result) ? 'PASSED' : 'FAILED',
       };
 
       const testReportPath = join(this.outputDir, 'test-results.json');
       writeFileSync(testReportPath, JSON.stringify(testReport, null, 2));
-      
+
       console.log(`✅ Comprehensive tests completed - ${testsRun.length} tests run`);
-      
     } catch (error) {
       console.error('❌ Error running comprehensive tests:', error);
     }
   }
 
-  private async runCustomSystemTests(testsRun: string[], testResults: { [key: string]: boolean }): Promise<void> {
+  private async runCustomSystemTests(
+    testsRun: string[],
+    testResults: { [key: string]: boolean },
+  ): Promise<void> {
     console.log('🔧 Running custom system tests...');
 
     // Test resource availability
@@ -283,7 +297,7 @@ Total files: ${stagedChanges.length}`;
         'public/lessons/content-index.json',
         'public/advanced-content/advanced-features-index.json',
         'src/components/DeployedContentBrowser.tsx',
-        'src/components/SiteBreadcrumbs.tsx'
+        'src/components/SiteBreadcrumbs.tsx',
       ];
 
       let allResourcesAvailable = true;
@@ -308,7 +322,7 @@ Total files: ${stagedChanges.length}`;
       const scriptPaths = [
         'scripts/comprehensive-resource-manager.ts',
         'scripts/continuous-assistance-system.ts',
-        'scripts/advanced-system-enhancement-manager.ts'
+        'scripts/advanced-system-enhancement-manager.ts',
       ];
 
       let allScriptsAvailable = true;
@@ -333,7 +347,7 @@ Total files: ${stagedChanges.length}`;
       const docPaths = [
         'ALL_RESOURCES_WORKING_PERFECTLY_2025-09-11_2359.md',
         'CONTINUOUS_ASSISTANCE_STATUS_2025-09-11_2359.md',
-        'SUPERINTELLIGENCE_COORDINATION_REPORT.md'
+        'SUPERINTELLIGENCE_COORDINATION_REPORT.md',
       ];
 
       let allDocsAvailable = true;
@@ -356,7 +370,7 @@ Total files: ${stagedChanges.length}`;
 
   private async rebuildSystem(): Promise<void> {
     console.log('🔨 REBUILDING SYSTEM...');
-    
+
     try {
       // Clean previous build
       try {
@@ -388,7 +402,6 @@ Total files: ${stagedChanges.length}`;
       } catch (error) {
         console.log('ℹ️  Could not determine build size');
       }
-      
     } catch (error) {
       console.error('❌ Error rebuilding system:', error);
     }
@@ -396,7 +409,7 @@ Total files: ${stagedChanges.length}`;
 
   private async syncWithRemote(): Promise<void> {
     console.log('🔄 SYNCING WITH REMOTE REPOSITORY...');
-    
+
     try {
       // Fetch latest changes
       execSync('git fetch origin', { encoding: 'utf-8' });
@@ -404,7 +417,7 @@ Total files: ${stagedChanges.length}`;
 
       // Check for conflicts
       const status = execSync('git status --porcelain', { encoding: 'utf-8' });
-      const conflicts = status.split('\n').filter(line => line.includes('UU'));
+      const conflicts = status.split('\n').filter((line) => line.includes('UU'));
 
       if (conflicts.length > 0) {
         console.log(`⚠️  Found ${conflicts.length} merge conflicts`);
@@ -422,7 +435,6 @@ Total files: ${stagedChanges.length}`;
       } catch (error) {
         console.log('⚠️  Could not pull changes - may need manual resolution');
       }
-      
     } catch (error) {
       console.error('❌ Error syncing with remote:', error);
     }
@@ -430,11 +442,13 @@ Total files: ${stagedChanges.length}`;
 
   private async pushChanges(): Promise<void> {
     console.log('📤 PUSHING CHANGES TO REMOTE...');
-    
+
     try {
       // Check if there are commits to push
       const status = execSync('git status --porcelain', { encoding: 'utf-8' });
-      const aheadCommits = execSync('git rev-list --count @{u}..HEAD', { encoding: 'utf-8' }).trim();
+      const aheadCommits = execSync('git rev-list --count @{u}..HEAD', {
+        encoding: 'utf-8',
+      }).trim();
 
       if (parseInt(aheadCommits) > 0) {
         // Push changes
@@ -443,7 +457,6 @@ Total files: ${stagedChanges.length}`;
       } else {
         console.log('✅ No commits to push - repository is up to date');
       }
-      
     } catch (error) {
       console.error('❌ Error pushing changes:', error);
     }
@@ -451,7 +464,7 @@ Total files: ${stagedChanges.length}`;
 
   private async generateRestorationReport(): Promise<void> {
     console.log('📊 GENERATING RESTORATION REPORT...');
-    
+
     const report: RestorationReport = {
       timestamp: new Date().toISOString(),
       restorationType: 'COMPREHENSIVE SYSTEM SYNC AND RESTORATION',
@@ -463,7 +476,7 @@ Total files: ${stagedChanges.length}`;
         'Production build test',
         'Resource availability test',
         'Script availability test',
-        'Documentation completeness test'
+        'Documentation completeness test',
       ],
       rebuildStatus: 'SUCCESSFUL',
       syncStatus: 'COMPLETED',
@@ -476,8 +489,8 @@ Total files: ${stagedChanges.length}`;
         'Continuous integration and deployment',
         'Regular security updates and patches',
         'Ongoing cultural compliance validation',
-        'Continuous user experience monitoring'
-      ]
+        'Continuous user experience monitoring',
+      ],
     };
 
     // Load actual test results
@@ -505,9 +518,9 @@ Total files: ${stagedChanges.length}`;
 
     const reportPath = join(this.outputDir, 'system-sync-restoration-report.json');
     writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     console.log(`📊 Restoration report saved to: ${reportPath}`);
-    
+
     // Print summary
     console.log('\n🎉 SYSTEM SYNC AND RESTORATION SUMMARY:');
     console.log(`🔄 Restoration Type: ${report.restorationType}`);
@@ -525,12 +538,12 @@ Total files: ${stagedChanges.length}`;
       timestamp: new Date().toISOString(),
       error: error.message,
       stack: error.stack,
-      systemType: 'system-sync-restoration'
+      systemType: 'system-sync-restoration',
     };
-    
+
     const reportPath = join(this.outputDir, 'sync-restoration-error-report.json');
     writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
-    
+
     console.log(`🚨 Error report saved to: ${reportPath}`);
   }
 
@@ -538,7 +551,7 @@ Total files: ${stagedChanges.length}`;
   public getCurrentStatus(): any {
     return {
       isRunning: this.isRunning,
-      projectRoot: this.projectRoot
+      projectRoot: this.projectRoot,
     };
   }
 }
