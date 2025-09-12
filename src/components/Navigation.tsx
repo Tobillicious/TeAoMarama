@@ -39,6 +39,12 @@ const Navigation: React.FC = () => {
       description: 'Comprehensive educational resources',
     },
     {
+      to: '/human-content',
+      label: '📖 Human Content',
+      icon: '📖',
+      description: 'Human-readable educational content (1,398+ files)',
+    },
+    {
       to: '/about',
       label: 'ℹ️ About',
       icon: 'ℹ️',

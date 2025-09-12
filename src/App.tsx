@@ -18,6 +18,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const TeacherDashboard = lazy(() => import('./components/ProfessionalTeacherDashboard'));
 const StudentDashboard = lazy(() => import('./components/EnhancedStudentDashboard'));
 const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowser'));
+const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 
@@ -73,6 +74,7 @@ function App() {
 
             {/* Resources - single route */}
             <Route path="/resources" element={<ResourceBrowser />} />
+            <Route path="/human-content" element={<HumanReadableContentBrowser />} />
             <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
             {/* Year Level Content - Year 8 only for now */}
