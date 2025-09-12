@@ -1,6 +1,6 @@
 # 🚀 ULTIMATE MISSION ACHIEVEMENT REPORT
 
-_"Ko te mea nui ko te aroha" - The most important thing is love and care for each other*
+\_"Ko te mea nui ko te aroha" - The most important thing is love and care for each other\*
 
 ## 🎯 ULTIMATE MISSION ACHIEVEMENT: PERFECT SUCCESS
 
@@ -311,4 +311,4 @@ The system is now ready for:
 
 ---
 
-*Ultimate Mission Achievement - ${new Date().toLocaleDateString()}* 🚀✨
+_Ultimate Mission Achievement - ${new Date().toLocaleDateString()}_ 🚀✨
