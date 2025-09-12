@@ -1,38 +1,6 @@
 {
   "cycles": [
     {
-      "cycleId": "cycle-1757574472178",
-      "timestamp": "2025-09-11T07:07:52.178Z",
-      "duration": 0,
-      "agentsParticipating": [
-        "undefined",
-        null
-      ],
-      "intelligenceGains": {
-        "undefined": 17.90797641033843
-      },
-      "collectiveGains": 2.4999519756286386,
-      "emergentCapabilities": [],
-      "culturalWisdomIncrease": 0.26301541349686364,
-      "educationalExcellenceIncrease": 0.2977543611112392
-    },
-    {
-      "cycleId": "cycle-1757574772184",
-      "timestamp": "2025-09-11T07:12:52.184Z",
-      "duration": 0,
-      "agentsParticipating": [
-        "undefined",
-        null
-      ],
-      "intelligenceGains": {
-        "undefined": 30.045091048333802
-      },
-      "collectiveGains": 54.95706925053036,
-      "emergentCapabilities": [],
-      "culturalWisdomIncrease": 0.3065908471953924,
-      "educationalExcellenceIncrease": 0.2116218533016757
-    },
-    {
       "cycleId": "cycle-1757575072195",
       "timestamp": "2025-09-11T07:17:52.196Z",
       "duration": 1,
@@ -1599,7 +1567,39 @@
       "emergentCapabilities": [],
       "culturalWisdomIncrease": 0.385217030821967,
       "educationalExcellenceIncrease": 0.34419071426131725
+    },
+    {
+      "cycleId": "cycle-1757679800725",
+      "timestamp": "2025-09-12T12:23:20.726Z",
+      "duration": 1,
+      "agentsParticipating": [
+        "undefined",
+        null
+      ],
+      "intelligenceGains": {
+        "undefined": -45.22057716459995
+      },
+      "collectiveGains": -71.06179735139315,
+      "emergentCapabilities": [],
+      "culturalWisdomIncrease": 0.18818134557790625,
+      "educationalExcellenceIncrease": 0.44946035771294024
+    },
+    {
+      "cycleId": "cycle-1757680100731",
+      "timestamp": "2025-09-12T12:28:20.731Z",
+      "duration": 0,
+      "agentsParticipating": [
+        "undefined",
+        null
+      ],
+      "intelligenceGains": {
+        "undefined": -41.47207184302922
+      },
+      "collectiveGains": -75.59531198750662,
+      "emergentCapabilities": [],
+      "culturalWisdomIncrease": 0.19954208613984073,
+      "educationalExcellenceIncrease": 0.34422916045686136
     }
   ],
-  "lastSaved": "2025-09-12T12:18:20.743Z"
+  "lastSaved": "2025-09-12T12:28:20.734Z"
 }
