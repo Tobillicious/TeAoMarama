@@ -1,13 +1,21 @@
 {
-  "timestamp": "2025-09-12T10:01:50.642Z",
+  "timestamp": "2025-09-12T10:38:47.987Z",
   "restorationType": "COMPREHENSIVE SYSTEM SYNC AND RESTORATION",
   "filesRestored": [],
   "changesRestored": [
+    " continuous-assistance/node-84784/continuous-assistance-report.json",
     " migration/agent_coordination/collective_intelligence.json",
     " migration/agent_coordination/evolution_cycles.json",
     " migration/agent_coordination/learning_events.json",
     " reports/resource-summary.json",
-    " resource-system-status/comprehensive-resource-report.json"
+    " scripts/system-sync-restoration-manager.ts",
+    " src/App.tsx",
+    " src/components/DeployedContentBrowser.tsx",
+    " src/components/Navigation.tsx",
+    " src/components/SiteBreadcrumbs.tsx",
+    " tsconfig.node.tsbuildinfo",
+    " vite.config.js",
+    " vite.config.ts"
   ],
   "testsRun": [
     "TypeScript type checking (failed)",

@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 export default defineConfig({
     plugins: [react()],
     build: {
@@ -9,12 +9,12 @@ export default defineConfig({
         terserOptions: {
             compress: {
                 drop_console: true,
-                drop_debugger: true
-            }
-        }
+                drop_debugger: true,
+            },
+        },
     },
     server: {
         port: 3000,
-        open: true
-    }
+        open: true,
+    },
 });

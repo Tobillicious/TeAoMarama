@@ -1,12 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import {
+  Activity,
+  AlertTriangle,
+  BarChart3,
+  Bell,
+  BookOpen,
+  Calendar,
+  CheckCircle,
+  ChevronRight,
+  Clock,
+  Download,
+  Eye,
+  FileText,
+  Filter,
+  MessageCircle,
+  PieChart,
+  Play,
+  Plus,
+  Search,
+  Settings,
+  Star,
+  Target,
+  TrendingUp,
+  Upload,
+  Users,
+} from 'lucide-react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
-import { 
-  BookOpen, Users, BarChart3, FileText, Calendar, Settings, 
-  Plus, Search, Filter, Download, Upload, Bell, Star,
-  TrendingUp, Clock, Target, Award, MessageCircle, Eye,
-  ChevronRight, Activity, PieChart, AlertTriangle, CheckCircle
-} from 'lucide-react';
 import './ProfessionalTeacherDashboard.css';
 
 interface StudentProgress {
@@ -43,7 +63,7 @@ interface ClassroomStats {
 }
 
 const ProfessionalTeacherDashboard: React.FC = () => {
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const [searchTerm, setSearchTerm] = useState('');
@@ -72,7 +92,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
       needsSupport: ['Mathematics application'],
     },
     {
-      id: '2', 
+      id: '2',
       name: 'James Thompson',
       yearLevel: 'Year 8',
       overallProgress: 67,
@@ -84,7 +104,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
     {
       id: '3',
       name: 'Mere Patel',
-      yearLevel: 'Year 8', 
+      yearLevel: 'Year 8',
       overallProgress: 91,
       recentActivity: 'Completed advanced literacy module',
       culturalEngagement: 87,
@@ -108,7 +128,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
       id: '2',
       title: 'Critical Literacy: Media Representation',
       subject: 'English',
-      yearLevel: 'Year 8', 
+      yearLevel: 'Year 8',
       duration: '60 mins',
       status: 'draft',
       culturalElements: 3,
@@ -119,7 +139,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
       title: 'Statistical Analysis with NZ Data',
       subject: 'Mathematics',
       yearLevel: 'Year 8',
-      duration: '45 mins', 
+      duration: '45 mins',
       status: 'in-progress',
       culturalElements: 2,
       lastModified: '3 hours ago',
@@ -135,46 +155,52 @@ const ProfessionalTeacherDashboard: React.FC = () => {
 
   const quickActions = [
     {
-      title: 'Create Lesson Plan',
-      icon: <Plus />,
-      description: 'Design culturally-responsive lessons',
-      action: () => navigate('/lesson-planner'),
+      title: "Start Today's Lesson",
+      icon: <Play />,
+      description: 'Launch your next lesson instantly',
+      action: () => navigate('/lesson-launcher'),
       color: '#059669',
+      priority: 'high',
     },
     {
-      title: 'View Student Progress', 
+      title: 'Quick Assessment',
+      icon: <Target />,
+      description: 'Create instant formative assessment',
+      action: () => navigate('/quick-assessment'),
+      color: '#dc2626',
+      priority: 'high',
+    },
+    {
+      title: 'Student Check-in',
       icon: <Users />,
-      description: 'Monitor class performance',
+      description: 'See who needs support right now',
       action: () => setActiveTab('students'),
       color: '#3b82f6',
+      priority: 'high',
     },
     {
-      title: 'Cultural Resources',
+      title: 'Cultural Connection',
       icon: <BookOpen />,
-      description: 'Access Te Ao Mārama content',
+      description: 'Find Te Ao Māori resources',
       action: () => navigate('/cultural-resources'),
       color: '#7c3aed',
+      priority: 'medium',
     },
     {
-      title: 'Assessment Tools',
-      icon: <Target />,
-      description: 'Create and manage assessments',
-      action: () => navigate('/assessment-creator'),
-      color: '#dc2626',
-    },
-    {
-      title: 'Parent Communication',
+      title: 'Parent Update',
       icon: <MessageCircle />,
-      description: 'Connect with families',
+      description: 'Send quick family communication',
       action: () => navigate('/parent-communication'),
       color: '#059669',
+      priority: 'medium',
     },
     {
-      title: 'Professional Development',
-      icon: <Award />,
-      description: 'Enhance cultural competency',
-      action: () => navigate('/professional-development'),
+      title: 'Plan Tomorrow',
+      icon: <Calendar />,
+      description: "Prepare next day's activities",
+      action: () => navigate('/lesson-planner'),
       color: '#d97706',
+      priority: 'low',
     },
   ];
 
@@ -186,15 +212,19 @@ const ProfessionalTeacherDashboard: React.FC = () => {
 
   const getStatusColor = (status: LessonPlan['status']) => {
     switch (status) {
-      case 'published': return '#059669';
-      case 'in-progress': return '#d97706';
-      case 'draft': return '#6b7280';
-      default: return '#6b7280';
+      case 'published':
+        return '#059669';
+      case 'in-progress':
+        return '#d97706';
+      case 'draft':
+        return '#6b7280';
+      default:
+        return '#6b7280';
     }
   };
 
-  const filteredStudents = studentProgress.filter(student =>
-    student.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredStudents = studentProgress.filter((student) =>
+    student.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const handleLogout = async () => {
@@ -210,17 +240,28 @@ const ProfessionalTeacherDashboard: React.FC = () => {
           <div className="header-info">
             <h1>Kia ora, Professional Kaiako! 👨‍🏫</h1>
             <p className="header-subtitle">
-              Professional Teaching Dashboard - Alpha Testing School
+              Your Teaching Command Center - Mangakotukutuku College
             </p>
+            <div className="quick-status">
+              <span className="status-indicator active">●</span>
+              <span>
+                Ready to teach •{' '}
+                {new Date().toLocaleTimeString('en-NZ', { hour: '2-digit', minute: '2-digit' })}
+              </span>
+            </div>
           </div>
           <div className="header-actions">
-            <button className="notification-btn">
+            <button className="notification-btn" title="Notifications">
               <Bell />
               {stats.parentNotifications > 0 && (
                 <span className="notification-badge">{stats.parentNotifications}</span>
               )}
             </button>
-            <button className="profile-btn" onClick={() => setActiveTab('settings')}>
+            <button
+              className="profile-btn"
+              onClick={() => setActiveTab('settings')}
+              title="Settings"
+            >
               <Settings />
             </button>
             <button className="logout-btn" onClick={handleLogout}>
@@ -282,11 +323,13 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                 </div>
                 <div className="stat-content">
                   <h3>Active Students</h3>
-                  <div className="stat-value">{stats.activeStudents}/{stats.totalStudents}</div>
+                  <div className="stat-value">
+                    {stats.activeStudents}/{stats.totalStudents}
+                  </div>
                   <p className="stat-change positive">+2 this week</p>
                 </div>
               </div>
-              
+
               <div className="stat-card">
                 <div className="stat-icon">
                   <TrendingUp />
@@ -323,22 +366,28 @@ const ProfessionalTeacherDashboard: React.FC = () => {
 
             {/* Quick Actions */}
             <section className="quick-actions-section">
-              <h2>Quick Actions</h2>
+              <h2>Today's Teaching Tools</h2>
               <div className="quick-actions-grid">
-                {quickActions.map((action, index) => (
-                  <button
-                    key={index}
-                    className="quick-action-card"
-                    onClick={action.action}
-                    style={{ borderTopColor: action.color }}
-                  >
-                    <div className="action-icon" style={{ color: action.color }}>
-                      {action.icon}
-                    </div>
-                    <h3>{action.title}</h3>
-                    <p>{action.description}</p>
-                  </button>
-                ))}
+                {quickActions
+                  .sort((a, b) => {
+                    const priorityOrder: { [key: string]: number } = { high: 0, medium: 1, low: 2 };
+                    return priorityOrder[a.priority] - priorityOrder[b.priority];
+                  })
+                  .map((action, index) => (
+                    <button
+                      key={index}
+                      className={`quick-action-card priority-${action.priority}`}
+                      onClick={action.action}
+                      style={{ borderTopColor: action.color }}
+                    >
+                      <div className="action-icon" style={{ color: action.color }}>
+                        {action.icon}
+                      </div>
+                      <h3>{action.title}</h3>
+                      <p>{action.description}</p>
+                      <div className="priority-badge">{action.priority}</div>
+                    </button>
+                  ))}
               </div>
             </section>
 
@@ -440,11 +489,11 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                     <div className="progress-item">
                       <span>Overall Progress</span>
                       <div className="progress-bar">
-                        <div 
+                        <div
                           className="progress-fill"
-                          style={{ 
+                          style={{
                             width: `${student.overallProgress}%`,
-                            backgroundColor: getProgressColor(student.overallProgress)
+                            backgroundColor: getProgressColor(student.overallProgress),
                           }}
                         />
                       </div>
@@ -454,11 +503,11 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                     <div className="progress-item">
                       <span>Cultural Engagement</span>
                       <div className="progress-bar">
-                        <div 
+                        <div
                           className="progress-fill"
-                          style={{ 
+                          style={{
                             width: `${student.culturalEngagement}%`,
-                            backgroundColor: '#7c3aed'
+                            backgroundColor: '#7c3aed',
                           }}
                         />
                       </div>
@@ -478,17 +527,21 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                       <h4>Strengths:</h4>
                       <div className="tags">
                         {student.strengths.map((strength, index) => (
-                          <span key={index} className="tag positive">{strength}</span>
+                          <span key={index} className="tag positive">
+                            {strength}
+                          </span>
                         ))}
                       </div>
                     </div>
-                    
+
                     {student.needsSupport.length > 0 && (
                       <div className="needs-support">
                         <h4>Needs Support:</h4>
                         <div className="tags">
                           {student.needsSupport.map((need, index) => (
-                            <span key={index} className="tag attention">{need}</span>
+                            <span key={index} className="tag attention">
+                              {need}
+                            </span>
                           ))}
                         </div>
                       </div>
@@ -523,9 +576,11 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                   <div className="lesson-header">
                     <div className="lesson-info">
                       <h3>{lesson.title}</h3>
-                      <p>{lesson.subject} • {lesson.yearLevel}</p>
+                      <p>
+                        {lesson.subject} • {lesson.yearLevel}
+                      </p>
                     </div>
-                    <span 
+                    <span
                       className="lesson-status"
                       style={{ backgroundColor: getStatusColor(lesson.status) }}
                     >
@@ -535,13 +590,15 @@ const ProfessionalTeacherDashboard: React.FC = () => {
 
                   <div className="lesson-details">
                     <div className="lesson-meta">
-                      <span><Clock /> {lesson.duration}</span>
-                      <span><Star /> {lesson.culturalElements} cultural elements</span>
+                      <span>
+                        <Clock /> {lesson.duration}
+                      </span>
+                      <span>
+                        <Star /> {lesson.culturalElements} cultural elements
+                      </span>
                     </div>
-                    
-                    <p className="last-modified">
-                      Modified {lesson.lastModified}
-                    </p>
+
+                    <p className="last-modified">Modified {lesson.lastModified}</p>
                   </div>
 
                   <div className="lesson-actions">
@@ -568,7 +625,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
         {activeTab === 'analytics' && (
           <div className="analytics-content">
             <h2>Class Analytics & Insights</h2>
-            
+
             <div className="analytics-grid">
               <div className="analytics-card">
                 <h3>Weekly Engagement</h3>
@@ -641,9 +698,9 @@ const ProfessionalTeacherDashboard: React.FC = () => {
           <div className="resources-content">
             <h2>Teaching Resources & Materials</h2>
             <p>Access to 3,063+ culturally-responsive educational resources</p>
-            
+
             <div className="resources-quick-access">
-              <button 
+              <button
                 className="resource-quick-btn"
                 onClick={() => navigate('/te-kete-ako-resources')}
               >
@@ -651,8 +708,8 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                 <span>Te Kete Ako Collection</span>
                 <ChevronRight />
               </button>
-              
-              <button 
+
+              <button
                 className="resource-quick-btn"
                 onClick={() => navigate('/cultural-learning-modules')}
               >
@@ -660,11 +717,8 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                 <span>Cultural Learning Modules</span>
                 <ChevronRight />
               </button>
-              
-              <button 
-                className="resource-quick-btn"
-                onClick={() => navigate('/assessment-tools')}
-              >
+
+              <button className="resource-quick-btn" onClick={() => navigate('/assessment-tools')}>
                 <Target />
                 <span>Assessment Tools</span>
                 <ChevronRight />
