@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755683370492-dyx805rmi",
+  "title": "Te Whakahaere Pūtaiao o Te Awa o Mangakōtukutuku / The Scientific Management of Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, the stream that flows through our college lands and holds deep significance to Ngāti Kahungunu. According to local pūrākau, this stream was where the tupuna Kahungunu would rest and gather his thoughts. Today, the stream faces challenges from urban runoff and agricultural impacts, making mathematical analysis essential for its protection.",
+  "depth": "extending",
+  "learningObjectives": [
+    "Calculate and interpret water quality statistics (mean, median, mode, range) from stream testing data",
+    "Create and analyze scatter plots to identify correlations between rainfall and stream turbidity levels",
+    "Use algebraic equations to model and predict water quality changes under different environmental scenarios",
+    "Apply geometric principles to calculate stream flow rates and catchment areas using cross-sectional measurements"
+  ],
+  "activities": [
+    {
+      "title": "Whakapapa o Te Awa - Understanding Our Stream",
+      "description": "Students meet with local kaumātua to learn the pūrākau of Te Awa o Mangakōtukutuku and its significance to Ngāti Kahungunu. They then create scaled maps of the stream's path through college lands, applying geometric principles of scale and measurement."
+    },
+    {
+      "title": "Tātari Wai - Water Quality Data Collection",
+      "description": "Working with Hawke's Bay Regional Council monitoring protocols, students collect actual water samples from three points along the stream. They measure pH, turbidity, temperature, and nitrate levels, recording data for statistical analysis."
+    },
+    {
+      "title": "Pūtaiao Tatau - Statistical Analysis Workshop",
+      "description": "Students calculate descriptive statistics (mean, median, mode, range) for their water quality data sets. They create comparative box-and-whisker plots to visualize differences between sampling locations and identify statistical outliers."
+    },
+    {
+      "title": "Whakamōhiotanga Matapae - Predictive Modeling",
+      "description": "Using historical rainfall data from NIWA and their collected water quality data, students create scatter plots and determine correlation coefficients. They develop linear equations to predict how water quality changes with varying rainfall amounts."
+    },
+    {
+      "title": "Kaitiakitanga Whakatau - Guardianship Solutions",
+      "description": "Students apply their mathematical findings to develop evidence-based recommendations for stream restoration. They calculate the area of riparian planting needed, model the mathematical impact of proposed interventions, and present their findings to college leadership."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council Water Quality Monitoring Kit and protocols",
+    "NIWA (National Institute of Water and Atmospheric Research) historical rainfall data for Hastings region",
+    "Local kaumātua from Ngāti Kahungunu with knowledge of Te Awa o Mangakōtukutuku",
+    "GIS mapping software and topographic maps of the Mangakōtukutuku catchment area"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete a statistical analysis report of water quality data with calculations of central tendency and variation",
+      "Create and interpret scatter plots showing relationship between rainfall and water quality parameters",
+      "Develop and solve algebraic equations to predict water quality under different scenarios",
+      "Present evidence-based kaitiakitanga recommendations using mathematical justification"
+    ]
+  },
+  "duration": "4-6 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics Level 5: Statistical investigation, Statistical literacy, Equations and expressions, Geometric representations",
+    "NZC Key Competencies: Thinking, Using language symbols and texts, Participating and contributing",
+    "NZC Values: Innovation, inquiry and curiosity; Ecological sustainability; Community and participation",
+    "Te Marautanga o Aotearoa: Pāngarau - Te tātari raraunga, Te whakaatu i ngā raraunga"
+  ],
+  "createdAt": "2025-08-20T09:49:30.492Z",
+  "enrichedAt": "2025-09-11T11:33:27.759Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

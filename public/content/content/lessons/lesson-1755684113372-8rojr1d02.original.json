@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755684113372-8rojr1d02",
+  "title": "Te Whakamārama i te Pānga o te Pāngarau ki te Taiao | Mathematics of the Mangakōtukutuku Stream Ecosystem",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will investigate the health and flow patterns of the Mangakōtukutuku Stream, a significant waterway to Ngāti Kahungunu that flows through our local rohe. The stream's name references the native kotukutuku (tree fuchsia) that once flourished along its banks, and its restoration is a priority for our local hapū. Students will use mathematical modeling to analyze water quality data collected from the stream and contribute to ongoing monitoring efforts led by local kaitiaki.",
+  "depth": "extending",
+  "learningObjectives": [
+    "Calculate and interpret statistical measures (mean, median, mode, range) for water quality data collected from the Mangakōtukutuku Stream",
+    "Create and analyze graphical representations (scatter plots, line graphs) to identify patterns and correlations in stream flow and water quality parameters",
+    "Apply algebraic formulas to calculate stream discharge rates and predict seasonal variations in water flow",
+    "Develop mathematical arguments to support recommendations for stream restoration and present findings using appropriate mathematical language"
+  ],
+  "activities": [
+    {
+      "title": "He Hīkoi Awa | Stream Walk and Data Collection",
+      "description": "Students visit the Mangakōtukutuku Stream with local kaitiaki to learn about its cultural significance and collect water quality data (pH, turbidity, temperature) at multiple points using testing kits. They measure stream width and depth to calculate cross-sectional area."
+    },
+    {
+      "title": "Te Tātari Raraunga | Data Analysis with Statistical Measures",
+      "description": "Working in small groups, students calculate descriptive statistics for their collected data. They compare results between sampling locations and discuss what the measures reveal about stream health, connecting mathematical findings to environmental observations."
+    },
+    {
+      "title": "Te Hoahoa Kauwhata | Graphical Representation and Pattern Recognition",
+      "description": "Students create scatter plots comparing different water quality parameters and line graphs showing changes over time. They identify correlations and trends, using these to make predictions about seasonal changes and potential pollution sources affecting the stream."
+    },
+    {
+      "title": "Te Tātari Rere Awa | Stream Flow Calculations",
+      "description": "Using the formula Q = A × V (discharge = cross-sectional area × velocity), students calculate stream discharge rates. They explore how changing variables (e.g., rainfall, drought) would affect these calculations and discuss implications for stream ecosystem health."
+    },
+    {
+      "title": "Te Whakatau Kaupapa | Mathematical Recommendations for Action",
+      "description": "Groups synthesize their mathematical findings to develop evidence-based recommendations for stream restoration. They prepare presentations using mathematical evidence to support their proposals, which will be shared with local kaitiaki groups."
+    }
+  ],
+  "resources": [
+    "Ngāti Kahungunu kaitiaki from local marae for cultural guidance and stream knowledge",
+    "Water testing kits and flow meters for practical data collection",
+    "Mangakōtukutuku Stream historical data from Hawke's Bay Regional Council",
+    "TI-Nspire calculators or Google Sheets for statistical analysis and graphing"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete a statistical analysis report of collected water quality data",
+      "Create and interpret multiple graphical representations showing stream health indicators",
+      "Calculate and explain stream discharge rates using appropriate formulas",
+      "Present evidence-based recommendations for stream restoration to peers and kaitiaki"
+    ]
+  },
+  "duration": "4-6 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics Level 5: Statistical investigation, Statistical literacy, Equations and expressions, Patterns and relationships",
+    "NZC Key Competencies: Thinking, Using language, symbols, and texts, Participating and contributing",
+    "NZC Values: Ecological sustainability, Community and participation",
+    "Te Marautanga o Aotearoa: Pāngarau - Te tātari raraunga, Te whakaatu raraunga"
+  ],
+  "createdAt": "2025-08-20T10:01:53.373Z",
+  "enrichedAt": "2025-09-11T12:04:14.933Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

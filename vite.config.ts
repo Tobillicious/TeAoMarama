@@ -1,19 +1,19 @@
 import react from '@vitejs/plugin-react';
+import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import { copyFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'fs';
 
 // Function to copy directory recursively
 function copyDirectory(src: string, dest: string) {
   if (!existsSync(dest)) {
     mkdirSync(dest, { recursive: true });
   }
-  
+
   const items = readdirSync(src);
   for (const item of items) {
     const srcPath = resolve(src, item);
     const destPath = resolve(dest, item);
-    
+
     if (statSync(srcPath).isDirectory()) {
       copyDirectory(srcPath, destPath);
     } else {
@@ -29,7 +29,7 @@ const copyEnhancedResources = () => {
     writeBundle() {
       const src = resolve(__dirname, 'enhanced-resources-output');
       const dest = resolve(__dirname, 'dist/enhanced-resources-output');
-      
+
       if (existsSync(src)) {
         console.log('📦 Copying enhanced resources to dist...');
         copyDirectory(src, dest);
@@ -37,7 +37,7 @@ const copyEnhancedResources = () => {
       } else {
         console.warn('⚠️ Enhanced resources directory not found');
       }
-    }
+    },
   };
 };
 
@@ -52,46 +52,66 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['lucide-react', 'framer-motion'],
-          'firebase-vendor': ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+        manualChunks: (id) => {
+          // Vendor libraries
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            if (id.includes('lucide-react') || id.includes('framer-motion')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('firebase') || id.includes('supabase')) {
+              return 'firebase-vendor';
+            }
+            return 'vendor-misc';
+          }
 
-          // Feature chunks
-          'content-discovery': [
-            './src/components/UnifiedContentDiscovery.tsx',
-            './src/components/ContentPreviewModal.tsx',
-            './src/utils/content-indexer.tsx',
-          ],
-          'te-kete-ako': [
-            './src/components/TeKeteAkoResourceExplorer.tsx',
-            './src/components/ProfessionalLessonTemplate.tsx',
-          ],
-          dashboards: [
-            './src/components/EnhancedDashboard.tsx',
-            './src/pages/TeacherDashboard.tsx',
-            './src/pages/StudentDashboard.tsx',
-          ],
-          assessment: [
-            './src/components/AssessmentSystem.tsx',
-            './src/components/InteractiveAssessmentSystem.tsx',
-          ],
-          cultural: [
-            './src/components/CulturalLearningPathNavigator.tsx',
-            './src/contexts/CulturalContext.tsx',
-            './src/utils/cultural-context-utils.ts',
-          ],
+          // Feature-specific chunks
+          if (
+            id.includes('UnifiedContentDiscovery') ||
+            id.includes('ContentPreviewModal') ||
+            id.includes('content-indexer')
+          ) {
+            return 'content-discovery';
+          }
+          if (
+            id.includes('TeKeteAkoResourceExplorer') ||
+            id.includes('ProfessionalLessonTemplate')
+          ) {
+            return 'te-kete-ako';
+          }
+          if (
+            id.includes('EnhancedDashboard') ||
+            id.includes('TeacherDashboard') ||
+            id.includes('StudentDashboard')
+          ) {
+            return 'dashboards';
+          }
+          if (id.includes('AssessmentSystem') || id.includes('InteractiveAssessmentSystem')) {
+            return 'assessment';
+          }
+          if (id.includes('CulturalLearning') || id.includes('CulturalContext')) {
+            return 'cultural';
+          }
+
+          // Large content files
+          if (id.includes('content/') || id.includes('lessons/') || id.includes('resources/')) {
+            return 'content-files';
+          }
+
+          return 'main';
         },
       },
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 500,
     target: 'esnext',
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
       },
     },
   },

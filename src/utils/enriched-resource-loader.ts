@@ -1,6 +1,6 @@
 // Enriched Resource Loader - Loads actual enriched content for display
 
-import lesson1755683030316 from '../content/lessons/lesson-1755683030316-kqepwjlxz.json';
+// Content now loaded dynamically from /public/content/
 
 export interface EnrichedResource {
   id: string;
@@ -24,7 +24,7 @@ export const SAMPLE_ENRICHED_RESOURCES: EnrichedResource[] = [
     subject: 'Mathematics',
     yearLevel: 'Year 8',
     type: 'lesson',
-    content: lesson1755683030316,
+    content: null, // Loaded dynamically
     culturalElements: 5,
     description:
       'A comprehensive mathematics lesson integrating kaitiakitanga and local environmental data collection.',
@@ -195,6 +195,32 @@ export const SAMPLE_ENRICHED_RESOURCES: EnrichedResource[] = [
     tags: ['science', 'forces', 'motion', 'engineering', 'traditional-knowledge'],
   },
 ];
+
+// Function to load lesson content dynamically
+export async function loadLessonContent(resourceId: string): Promise<any> {
+  try {
+    const response = await fetch(`/content/lessons/${resourceId}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to load lesson: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error loading lesson content:', error);
+    return null;
+  }
+}
+
+// Function to load resource with content
+export async function loadEnrichedResource(resourceId: string): Promise<EnrichedResource | null> {
+  const resource = SAMPLE_ENRICHED_RESOURCES.find(r => r.id === resourceId);
+  if (!resource) return null;
+
+  const content = await loadLessonContent(resourceId);
+  return {
+    ...resource,
+    content
+  };
+}
 
 export function loadEnrichedResources(): EnrichedResource[] {
   // Add more sample resources to demonstrate the enrichment system

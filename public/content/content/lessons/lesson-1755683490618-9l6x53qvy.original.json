@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755683490618-9l6x53qvy",
+  "title": "Te Aromatawai Taiao o Te Awa o Mangakōtukutuku / The Mangakōtukutuku Stream Environmental Assessment",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 7",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, a significant stream that flows through our rohe and holds cultural importance to Ngāti Kahungunu. The stream's name references the native kotukutuku (tree fuchsia) that once flourished along its banks. Students will apply mathematical reasoning to assess water quality, calculate flow rates, and analyze historical data to understand human impact on this taonga, connecting to the Ngāti Kahungunu value of kaitiakitanga (guardianship) for our waterways.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Calculate and compare mean, median, and mode values from water quality data sets collected at different points along Te Awa o Mangakōtukutuku.",
+    "Create and interpret time-series graphs showing changes in water clarity (turbidity) and nitrate levels over a one-month period.",
+    "Apply proportional reasoning to calculate the stream's flow rate (volume per second) using cross-sectional area and velocity measurements.",
+    "Synthesize mathematical findings with mātauranga Māori perspectives to propose a data-informed action for enhancing the health of the awa."
+  ],
+  "activities": [
+    {
+      "title": "He Hīkoi, He Aromatawai (The Walk, The Assessment)",
+      "description": "Students embark on a guided hīkoi (walk) to three specific sites along Te Awa o Mangakōtukutuku: near the source, behind the college, and downstream near the confluence with the Ngaruroro River. At each site, they will work in small groups to collect primary data: water temperature, pH levels, and visual clarity observations. They will sketch the stream's cross-section and use a float to estimate surface water velocity, recording all measurements systematically."
+    },
+    {
+      "title": "Te Tātari Raraunga (Data Analysis)",
+      "description": "Back in the classroom, groups will pool their field data to create a master data set for each measurement type. Students will calculate the measures of central tendency (mean, median, mode) for temperature and pH across all sites. They will create a comparative bar graph to visually represent the differences in these measurements between the upstream, midstream, and downstream sites, initiating discussion on trends."
+    },
+    {
+      "title": "Te Tauine Me Te Inenga (Rate and Measurement)",
+      "description": "Using their cross-sectional sketches and velocity estimates, students will calculate the approximate flow rate of the stream at their assigned site. They will apply the formula: Flow Rate = Cross-sectional Area × Velocity. Groups will then compare their calculated flow rates and discuss factors that could cause variations, such as recent rainfall or the width/depth of the channel at different sites."
+    },
+    {
+      "title": "He Kōrero mō te Awa (A Conversation About the Stream)",
+      "description": "A local kaumātua (elder) or representative from a Ngāti Kahungunu environmental group (e.g., Manaaki Te Awa) will join the class via video call or in person. They will share pūrākau (stories) and mātauranga (knowledge) about the historical and cultural significance of Te Awa o Mangakōtukutuku, providing a vital cultural lens through which to interpret the mathematical data the students have gathered."
+    },
+    {
+      "title": "He Mahere Kaitiaki (A Guardian Plan)",
+      "description": "Synthesizing their mathematical evidence and the cultural knowledge gained, each group will create a brief 'Kaitiaki Action Plan'. This plan will use their data to identify one key issue (e.g., higher temperature downstream) and propose a specific, actionable solution (e.g., planting native riparian vegetation to shade the water). They will present their plan and the supporting data to the class."
+    }
+  ],
+  "resources": [
+    "Digital water testing kits (for pH, temperature) and secchi tubes (for clarity) from the science department.",
+    "The NIWA 'River and Stream' monitoring guide and data sheets, accessible via TKI.",
+    "Contact information and expertise of 'Manaaki Te Awa', a local Ngāti Kahungunu river care group.",
+    "Historical aerial photographs of the Mangakōtukutuku stream area from the Hawke's Bay Knowledge Bank online archive."
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "A completed fieldwork booklet containing all raw data, calculations for measures of central tendency, and the flow rate calculation.",
+      "A individually created time-series graph tracking a chosen water quality metric over the month, with written observations on the trend.",
+      "A one-page written reflection connecting their mathematical findings to the concept of kaitiakitanga discussed by the guest speaker."
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics: Statistics (Statistical investigation; Statistical literacy)",
+    "Mathematics and Statistics: Number and Algebra (Number strategies; Equations and expressions)",
+    "Mathematics and Statistics: Geometry and Measurement (Measurement)",
+    "The Living World: Ecology",
+    "Vision: Confident, Connected, Actively Involved, Lifelong Learners"
+  ],
+  "createdAt": "2025-08-20T09:51:30.618Z",
+  "enrichedAt": "2025-09-11T11:38:34.027Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755684797365-dui8x0n04",
+  "title": "Whakamahi Hangarau ki te Awa o Mangakōtukutuku | Technology Applications for the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 7",
+  "culturalContext": "Students will explore how technology can support the restoration and protection of Te Awa o Mangakōtukutuku, a culturally significant stream that flows through our rohe. This awa is mentioned in Ngāti Kahungunu pūrākau and was traditionally used for mahinga kai, navigation, and spiritual practices. The lesson connects to local kaitiakitanga practices and the college's ongoing stream restoration project.",
+  "depth": "foundational",
+  "learningObjectives": [
+    "Design and create a digital story map that identifies at least three culturally significant sites along Te Awa o Mangakōtukutuku",
+    "Develop a functional water quality testing prototype using simple sensors and materials to monitor stream health indicators",
+    "Create a presentation that explains how technological solutions can support Ngāti Kahungunu kaitiakitanga values for the awa",
+    "Collaborate effectively in small groups to solve a specific technological challenge related to stream restoration"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki te Awa",
+      "description": "Visit Te Awa o Mangakōtukutuku with local kaumātua who will share pūrākau (stories) and traditional knowledge about the stream. Students document significant sites using GPS coordinates and photographs, creating initial field notes for their digital mapping project."
+    },
+    {
+      "title": "Hangaia tō Aroturuki Wai",
+      "description": "In the technology workshop, students design and build simple water monitoring tools using pH test strips, temperature sensors, and turbidity tubes. They learn calibration techniques and practice taking accurate measurements at different points along the stream."
+    },
+    {
+      "title": "Mahi Mahere Ataata",
+      "description": "Using digital mapping software (ArcGIS or Google Earth), students create interactive story maps that layer cultural significance data with environmental monitoring results. They incorporate traditional place names, historical images, and audio recordings of kaumātua stories."
+    },
+    {
+      "title": "Wānanga Hangarau",
+      "description": "Students participate in a design thinking workshop where they develop technological solutions to specific stream challenges (e.g., sediment control, native fish passage, riparian planting). They create prototypes using recycled materials and present their concepts to the class."
+    },
+    {
+      "title": "Whakaaturanga Kaitiaki",
+      "description": "Groups prepare and deliver presentations to whānau and community members, demonstrating their technological solutions and explaining how these innovations support Ngāti Kahungunu values of kaitiakitanga and whanaungatanga with the awa."
+    }
+  ],
+  "resources": [
+    "Ngāti Kahungunu kaumātua and environmental kaitiaki from local marae",
+    "ArcGIS Online educational licenses and mapping tutorials",
+    "Water quality testing kits from Hawke's Bay Regional Council",
+    "'Te Awa Atua: The River of Life' by Anne Salmond (specific chapters about Māori relationships with waterways)"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Digital story map presentation with layered cultural and environmental data",
+      "Functional water monitoring prototype and testing results documentation",
+      "Group design portfolio showing iterative development of technological solution",
+      "Oral presentation demonstrating understanding of kaitiakitanga through technology"
+    ]
+  },
+  "duration": "2-3 weeks",
+  "nzcAlignment": [
+    "Technology: Technological Practice (Level 4) - Brief development, planning for practice, outcome development and evaluation",
+    "Technology: Nature of Technology (Level 4) - Characteristics of technology, characteristics of technological outcomes",
+    "Social Sciences: Place and Environment (Level 4) - Understand how people participate individually and collectively in response to community challenges",
+    "Science: Living World (Level 4) - Ecology: Explain how living things are suited to their particular habitat and how they respond to environmental changes"
+  ],
+  "createdAt": "2025-08-20T10:13:17.365Z",
+  "enrichedAt": "2025-09-11T12:33:54.650Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

@@ -1,0 +1,1 @@
+This lesson has been enhanced through our 4-pass progressive enrichment system, achieving a quality score of 13.4/15. The lesson integrates cultural elements and provides authentic learning experiences for Year 9 students.
