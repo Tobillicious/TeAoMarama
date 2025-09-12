@@ -478,6 +478,53 @@ class CulturalSafetyValidationManager {
    * Generate markdown report
    */
   private generateMarkdownReport(report: CulturalValidationReport): string {
+    const resultsSection =
+      report.results && report.results.length > 0
+        ? report.results
+            .slice(0, 20)
+            .map(
+              (result, index) => `
+### **${index + 1}. ${result.fileName}** ${
+                result.status === 'VALIDATED'
+                  ? '✅'
+                  : result.status === 'NEEDS_REVIEW'
+                  ? '⚠️'
+                  : '❌'
+              }
+
+- **Type**: ${result.resourceType}
+- **Tikanga Score**: ${result.tikangaCompliance}%
+- **Te Reo Score**: ${result.teReoCompliance}%
+- **Cultural Safety Score**: ${result.culturalSafetyScore}%
+- **Status**: ${result.status}
+
+${
+  result.issues.length > 0
+    ? `
+**Issues**:
+${result.issues.map((issue) => `- ${issue}`).join('\n')}
+`
+    : ''
+}
+
+${
+  result.recommendations.length > 0
+    ? `
+**Recommendations**:
+${result.recommendations.map((rec) => `- ${rec}`).join('\n')}
+`
+    : ''
+}
+`,
+            )
+            .join('\n')
+        : 'No resources found to validate.';
+
+    const moreResourcesNote =
+      report.results && report.results.length > 20
+        ? `\n*... and ${report.results.length - 20} more resources*`
+        : '';
+
     return `# 🌿 Cultural Safety Validation Report
 
 _"Ko te mea nui ko te aroha" - The most important thing is love and care for each other*
@@ -539,48 +586,7 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 
 ## 📋 VALIDATION RESULTS
 
-${report.results ? report.results
-  .slice(0, 20)
-  .map(
-    (result, index) => `
-### **${index + 1}. ${result.fileName}** ${
-      result.status === 'VALIDATED' ? '✅' : result.status === 'NEEDS_REVIEW' ? '⚠️' : '❌'
-    }
-
-- **Type**: ${result.resourceType}
-- **Tikanga Score**: ${result.tikangaCompliance}%
-- **Te Reo Score**: ${result.teReoCompliance}%
-- **Cultural Safety Score**: ${result.culturalSafetyScore}%
-- **Status**: ${result.status}
-
-${
-  result.issues.length > 0
-    ? `
-**Issues**:
-${result.issues.map((issue) => `- ${issue}`).join('\n')}
-`
-    : ''
-}
-
-${
-  result.recommendations.length > 0
-    ? `
-**Recommendations**:
-${result.recommendations.map((rec) => `- ${rec}`).join('\n')}
-`
-    : ''
-}
-`,
-  )
-  .join('\n')}
-
-${
-  report.results && report.results.length > 20
-    ? `
-*... and ${report.results ? report.results.length - 20 : 0} more resources*
-`
-    : ''
-}
+${resultsSection}${moreResourcesNote}
 
 ---
 
@@ -603,16 +609,22 @@ ${this.getResourceTypeBreakdown(report.results)}
 
 ### **Score Distribution**
 - **90-100% (Excellent)**: ${
-      report.results.filter((r) => r.culturalSafetyScore >= 90).length
+      report.results ? report.results.filter((r) => r.culturalSafetyScore >= 90).length : 0
     } resources
 - **80-89% (Good)**: ${
-      report.results.filter((r) => r.culturalSafetyScore >= 80 && r.culturalSafetyScore < 90).length
+      report.results
+        ? report.results.filter((r) => r.culturalSafetyScore >= 80 && r.culturalSafetyScore < 90)
+            .length
+        : 0
     } resources
 - **70-79% (Needs Improvement)**: ${
-      report.results.filter((r) => r.culturalSafetyScore >= 70 && r.culturalSafetyScore < 80).length
+      report.results
+        ? report.results.filter((r) => r.culturalSafetyScore >= 70 && r.culturalSafetyScore < 80)
+            .length
+        : 0
     } resources
 - **Below 70% (Failed)**: ${
-      report.results.filter((r) => r.culturalSafetyScore < 70).length
+      report.results ? report.results.filter((r) => r.culturalSafetyScore < 70).length : 0
     } resources
 
 ---
@@ -670,6 +682,10 @@ Cultural safety validation has been completed successfully with comprehensive an
    * Get resource type breakdown
    */
   private getResourceTypeBreakdown(results: CulturalValidationResult[]): string {
+    if (!results || results.length === 0) {
+      return 'No resources found';
+    }
+
     const breakdown: { [key: string]: number } = {};
     results.forEach((result) => {
       breakdown[result.resourceType] = (breakdown[result.resourceType] || 0) + 1;

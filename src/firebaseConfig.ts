@@ -12,7 +12,7 @@ const firebaseConfig = {
   storageBucket: 'teao-marama.appspot.com',
   messagingSenderId: '28147937673',
   appId: '1:28147937673:web:b69bb650dafba206a0b158',
-  measurementId: 'G-XXXXXXXXXX',
+  measurementId: 'G-89HLG0TB4E',
 };
 
 // Initialize Firebase - always initialize with proper error handling
