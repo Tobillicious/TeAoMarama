@@ -1,0 +1,30 @@
+{
+  "lessonId": "resource-00050",
+  "title": "Year 10 Social Studies: Resource 50 - Interactive Simulations",
+  "simulations": [
+    {
+      "id": "sim-1-resource-00050",
+      "title": "Social Studies Concept Simulator",
+      "description": "Interactive simulation to explore Social Studies concepts",
+      "type": "concept-exploration",
+      "features": [
+        "Visual concept mapping",
+        "Interactive elements",
+        "Cultural context integration",
+        "Real-time feedback"
+      ]
+    },
+    {
+      "id": "sim-2-resource-00050",
+      "title": "Cultural Perspective Simulator",
+      "description": "Explore different cultural perspectives on the topic",
+      "type": "cultural-exploration",
+      "features": [
+        "Multiple cultural viewpoints",
+        "Interactive cultural scenarios",
+        "Respectful cultural representation",
+        "Learning reflection tools"
+      ]
+    }
+  ]
+}

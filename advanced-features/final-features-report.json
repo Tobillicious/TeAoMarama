@@ -1,0 +1,4413 @@
+{
+  "timestamp": "2025-09-11T11:41:11.426Z",
+  "totalFeaturesGenerated": 100,
+  "success": true,
+  "summary": {
+    "pdfGeneration": 100,
+    "videoContent": 100,
+    "interactiveFeatures": 100,
+    "accessibility": 100
+  },
+  "features": [
+    {
+      "id": "features-resource-00001",
+      "lessonId": "resource-00001",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00001-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00001-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00001-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00001-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00001-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00001-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00001-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00001-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00001-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00001-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00001-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00001-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00002",
+      "lessonId": "resource-00002",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00002-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00002-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00002-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00002-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00002-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00002-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00002-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00002-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00002-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00002-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00002-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00002-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00003",
+      "lessonId": "resource-00003",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00003-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00003-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00003-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00003-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00003-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00003-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00003-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00003-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00003-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00003-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00003-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00003-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00004",
+      "lessonId": "resource-00004",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00004-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00004-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00004-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00004-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00004-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00004-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00004-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00004-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00004-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00004-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00004-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00004-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00005",
+      "lessonId": "resource-00005",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00005-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00005-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00005-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00005-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00005-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00005-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00005-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00005-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00005-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00005-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00005-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00005-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00006",
+      "lessonId": "resource-00006",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00006-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00006-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00006-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00006-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00006-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00006-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00006-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00006-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00006-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00006-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00006-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00006-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00007",
+      "lessonId": "resource-00007",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00007-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00007-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00007-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00007-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00007-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00007-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00007-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00007-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00007-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00007-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00007-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00007-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00008",
+      "lessonId": "resource-00008",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00008-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00008-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00008-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00008-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00008-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00008-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00008-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00008-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00008-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00008-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00008-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00008-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00009",
+      "lessonId": "resource-00009",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00009-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00009-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00009-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00009-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00009-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00009-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00009-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00009-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00009-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00009-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00009-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00009-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00010",
+      "lessonId": "resource-00010",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00010-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00010-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00010-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00010-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00010-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00010-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00010-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00010-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00010-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00010-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00010-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00010-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00011",
+      "lessonId": "resource-00011",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00011-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00011-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00011-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00011-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00011-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00011-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00011-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00011-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00011-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00011-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00011-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00011-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00012",
+      "lessonId": "resource-00012",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00012-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00012-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00012-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00012-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00012-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00012-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00012-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00012-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00012-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00012-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00012-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00012-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00013",
+      "lessonId": "resource-00013",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00013-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00013-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00013-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00013-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00013-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00013-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00013-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00013-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00013-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00013-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00013-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00013-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00014",
+      "lessonId": "resource-00014",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00014-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00014-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00014-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00014-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00014-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00014-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00014-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00014-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00014-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00014-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00014-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00014-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00015",
+      "lessonId": "resource-00015",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00015-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00015-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00015-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00015-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00015-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00015-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00015-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00015-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00015-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00015-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00015-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00015-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00016",
+      "lessonId": "resource-00016",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00016-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00016-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00016-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00016-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00016-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00016-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00016-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00016-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00016-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00016-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00016-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00016-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00017",
+      "lessonId": "resource-00017",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00017-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00017-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00017-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00017-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00017-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00017-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00017-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00017-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00017-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00017-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00017-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00017-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00018",
+      "lessonId": "resource-00018",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00018-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00018-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00018-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00018-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00018-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00018-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00018-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00018-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00018-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00018-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00018-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00018-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00019",
+      "lessonId": "resource-00019",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00019-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00019-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00019-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00019-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00019-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00019-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00019-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00019-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00019-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00019-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00019-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00019-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00020",
+      "lessonId": "resource-00020",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00020-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00020-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00020-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00020-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00020-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00020-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00020-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00020-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00020-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00020-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00020-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00020-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00021",
+      "lessonId": "resource-00021",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00021-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00021-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00021-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00021-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00021-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00021-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00021-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00021-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00021-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00021-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00021-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00021-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00022",
+      "lessonId": "resource-00022",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00022-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00022-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00022-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00022-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00022-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00022-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00022-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00022-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00022-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00022-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00022-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00022-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00023",
+      "lessonId": "resource-00023",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00023-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00023-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00023-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00023-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00023-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00023-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00023-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00023-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00023-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00023-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00023-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00023-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00024",
+      "lessonId": "resource-00024",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00024-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00024-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00024-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00024-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00024-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00024-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00024-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00024-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00024-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00024-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00024-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00024-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00025",
+      "lessonId": "resource-00025",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00025-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00025-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00025-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00025-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00025-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00025-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00025-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00025-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00025-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00025-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00025-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00025-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00026",
+      "lessonId": "resource-00026",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00026-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00026-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00026-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00026-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00026-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00026-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00026-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00026-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00026-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00026-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00026-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00026-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00027",
+      "lessonId": "resource-00027",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00027-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00027-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00027-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00027-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00027-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00027-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00027-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00027-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00027-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00027-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00027-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00027-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00028",
+      "lessonId": "resource-00028",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00028-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00028-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00028-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00028-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00028-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00028-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00028-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00028-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00028-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00028-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00028-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00028-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00029",
+      "lessonId": "resource-00029",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00029-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00029-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00029-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00029-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00029-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00029-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00029-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00029-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00029-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00029-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00029-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00029-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00030",
+      "lessonId": "resource-00030",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00030-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00030-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00030-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00030-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00030-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00030-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00030-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00030-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00030-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00030-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00030-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00030-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00031",
+      "lessonId": "resource-00031",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00031-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00031-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00031-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00031-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00031-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00031-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00031-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00031-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00031-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00031-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00031-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00031-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00032",
+      "lessonId": "resource-00032",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00032-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00032-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00032-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00032-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00032-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00032-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00032-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00032-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00032-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00032-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00032-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00032-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00033",
+      "lessonId": "resource-00033",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00033-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00033-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00033-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00033-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00033-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00033-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00033-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00033-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00033-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00033-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00033-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00033-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00034",
+      "lessonId": "resource-00034",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00034-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00034-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00034-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00034-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00034-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00034-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00034-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00034-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00034-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00034-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00034-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00034-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00035",
+      "lessonId": "resource-00035",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00035-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00035-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00035-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00035-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00035-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00035-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00035-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00035-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00035-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00035-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00035-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00035-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00036",
+      "lessonId": "resource-00036",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00036-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00036-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00036-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00036-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00036-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00036-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00036-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00036-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00036-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00036-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00036-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00036-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00037",
+      "lessonId": "resource-00037",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00037-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00037-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00037-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00037-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00037-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00037-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00037-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00037-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00037-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00037-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00037-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00037-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00038",
+      "lessonId": "resource-00038",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00038-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00038-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00038-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00038-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00038-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00038-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00038-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00038-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00038-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00038-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00038-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00038-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00039",
+      "lessonId": "resource-00039",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00039-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00039-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00039-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00039-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00039-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00039-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00039-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00039-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00039-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00039-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00039-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00039-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00040",
+      "lessonId": "resource-00040",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00040-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00040-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00040-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00040-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00040-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00040-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00040-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00040-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00040-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00040-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00040-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00040-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00041",
+      "lessonId": "resource-00041",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00041-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00041-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00041-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00041-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00041-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00041-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00041-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00041-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00041-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00041-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00041-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00041-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00042",
+      "lessonId": "resource-00042",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00042-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00042-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00042-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00042-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00042-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00042-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00042-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00042-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00042-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00042-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00042-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00042-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00043",
+      "lessonId": "resource-00043",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00043-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00043-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00043-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00043-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00043-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00043-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00043-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00043-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00043-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00043-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00043-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00043-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00044",
+      "lessonId": "resource-00044",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00044-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00044-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00044-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00044-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00044-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00044-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00044-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00044-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00044-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00044-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00044-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00044-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00045",
+      "lessonId": "resource-00045",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00045-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00045-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00045-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00045-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00045-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00045-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00045-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00045-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00045-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00045-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00045-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00045-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00046",
+      "lessonId": "resource-00046",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00046-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00046-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00046-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00046-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00046-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00046-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00046-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00046-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00046-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00046-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00046-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00046-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00047",
+      "lessonId": "resource-00047",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00047-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00047-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00047-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00047-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00047-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00047-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00047-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00047-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00047-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00047-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00047-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00047-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00048",
+      "lessonId": "resource-00048",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00048-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00048-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00048-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00048-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00048-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00048-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00048-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00048-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00048-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00048-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00048-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00048-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00049",
+      "lessonId": "resource-00049",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00049-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00049-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00049-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00049-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00049-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00049-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00049-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00049-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00049-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00049-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00049-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00049-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00050",
+      "lessonId": "resource-00050",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00050-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00050-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00050-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00050-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00050-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00050-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00050-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00050-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00050-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00050-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00050-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00050-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00051",
+      "lessonId": "resource-00051",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00051-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00051-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00051-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00051-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00051-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00051-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00051-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00051-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00051-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00051-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00051-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00051-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00052",
+      "lessonId": "resource-00052",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00052-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00052-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00052-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00052-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00052-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00052-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00052-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00052-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00052-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00052-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00052-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00052-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00053",
+      "lessonId": "resource-00053",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00053-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00053-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00053-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00053-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00053-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00053-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00053-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00053-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00053-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00053-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00053-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00053-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00054",
+      "lessonId": "resource-00054",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00054-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00054-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00054-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00054-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00054-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00054-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00054-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00054-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00054-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00054-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00054-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00054-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00055",
+      "lessonId": "resource-00055",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00055-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00055-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00055-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00055-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00055-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00055-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00055-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00055-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00055-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00055-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00055-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00055-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00056",
+      "lessonId": "resource-00056",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00056-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00056-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00056-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00056-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00056-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00056-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00056-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00056-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00056-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00056-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00056-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00056-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00057",
+      "lessonId": "resource-00057",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00057-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00057-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00057-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00057-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00057-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00057-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00057-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00057-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00057-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00057-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00057-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00057-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00058",
+      "lessonId": "resource-00058",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00058-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00058-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00058-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00058-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00058-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00058-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00058-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00058-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00058-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00058-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00058-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00058-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00059",
+      "lessonId": "resource-00059",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00059-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00059-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00059-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00059-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00059-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00059-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00059-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00059-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00059-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00059-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00059-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00059-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00060",
+      "lessonId": "resource-00060",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00060-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00060-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00060-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00060-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00060-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00060-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00060-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00060-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00060-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00060-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00060-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00060-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00061",
+      "lessonId": "resource-00061",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00061-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00061-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00061-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00061-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00061-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00061-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00061-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00061-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00061-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00061-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00061-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00061-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00062",
+      "lessonId": "resource-00062",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00062-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00062-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00062-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00062-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00062-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00062-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00062-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00062-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00062-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00062-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00062-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00062-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00063",
+      "lessonId": "resource-00063",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00063-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00063-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00063-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00063-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00063-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00063-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00063-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00063-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00063-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00063-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00063-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00063-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00064",
+      "lessonId": "resource-00064",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00064-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00064-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00064-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00064-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00064-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00064-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00064-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00064-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00064-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00064-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00064-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00064-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00065",
+      "lessonId": "resource-00065",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00065-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00065-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00065-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00065-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00065-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00065-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00065-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00065-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00065-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00065-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00065-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00065-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00066",
+      "lessonId": "resource-00066",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00066-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00066-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00066-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00066-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00066-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00066-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00066-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00066-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00066-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00066-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00066-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00066-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00067",
+      "lessonId": "resource-00067",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00067-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00067-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00067-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00067-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00067-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00067-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00067-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00067-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00067-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00067-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00067-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00067-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00068",
+      "lessonId": "resource-00068",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00068-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00068-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00068-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00068-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00068-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00068-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00068-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00068-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00068-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00068-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00068-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00068-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00069",
+      "lessonId": "resource-00069",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00069-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00069-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00069-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00069-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00069-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00069-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00069-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00069-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00069-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00069-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00069-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00069-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00070",
+      "lessonId": "resource-00070",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00070-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00070-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00070-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00070-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00070-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00070-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00070-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00070-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00070-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00070-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00070-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00070-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00071",
+      "lessonId": "resource-00071",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00071-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00071-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00071-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00071-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00071-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00071-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00071-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00071-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00071-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00071-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00071-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00071-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00072",
+      "lessonId": "resource-00072",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00072-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00072-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00072-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00072-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00072-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00072-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00072-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00072-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00072-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00072-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00072-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00072-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00073",
+      "lessonId": "resource-00073",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00073-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00073-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00073-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00073-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00073-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00073-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00073-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00073-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00073-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00073-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00073-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00073-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00074",
+      "lessonId": "resource-00074",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00074-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00074-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00074-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00074-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00074-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00074-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00074-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00074-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00074-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00074-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00074-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00074-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00075",
+      "lessonId": "resource-00075",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00075-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00075-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00075-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00075-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00075-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00075-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00075-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00075-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00075-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00075-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00075-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00075-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00076",
+      "lessonId": "resource-00076",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00076-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00076-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00076-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00076-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00076-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00076-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00076-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00076-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00076-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00076-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00076-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00076-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00077",
+      "lessonId": "resource-00077",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00077-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00077-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00077-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00077-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00077-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00077-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00077-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00077-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00077-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00077-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00077-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00077-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00078",
+      "lessonId": "resource-00078",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00078-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00078-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00078-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00078-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00078-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00078-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00078-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00078-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00078-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00078-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00078-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00078-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00079",
+      "lessonId": "resource-00079",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00079-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00079-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00079-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00079-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00079-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00079-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00079-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00079-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00079-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00079-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00079-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00079-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00080",
+      "lessonId": "resource-00080",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00080-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00080-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00080-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00080-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00080-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00080-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00080-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00080-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00080-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00080-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00080-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00080-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00081",
+      "lessonId": "resource-00081",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00081-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00081-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00081-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00081-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00081-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00081-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00081-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00081-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00081-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00081-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00081-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00081-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00082",
+      "lessonId": "resource-00082",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00082-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00082-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00082-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00082-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00082-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00082-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00082-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00082-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00082-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00082-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00082-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00082-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00083",
+      "lessonId": "resource-00083",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00083-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00083-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00083-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00083-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00083-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00083-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00083-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00083-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00083-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00083-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00083-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00083-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00084",
+      "lessonId": "resource-00084",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00084-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00084-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00084-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00084-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00084-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00084-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00084-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00084-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00084-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00084-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00084-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00084-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00085",
+      "lessonId": "resource-00085",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00085-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00085-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00085-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00085-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00085-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00085-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00085-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00085-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00085-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00085-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00085-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00085-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00086",
+      "lessonId": "resource-00086",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00086-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00086-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00086-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00086-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00086-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00086-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00086-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00086-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00086-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00086-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00086-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00086-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00087",
+      "lessonId": "resource-00087",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00087-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00087-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00087-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00087-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00087-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00087-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00087-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00087-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00087-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00087-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00087-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00087-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00088",
+      "lessonId": "resource-00088",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00088-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00088-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00088-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00088-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00088-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00088-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00088-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00088-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00088-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00088-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00088-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00088-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00089",
+      "lessonId": "resource-00089",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00089-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00089-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00089-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00089-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00089-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00089-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00089-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00089-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00089-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00089-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00089-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00089-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00090",
+      "lessonId": "resource-00090",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00090-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00090-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00090-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00090-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00090-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00090-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00090-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00090-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00090-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00090-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00090-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00090-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00091",
+      "lessonId": "resource-00091",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00091-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00091-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00091-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00091-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00091-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00091-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00091-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00091-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00091-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00091-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00091-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00091-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00092",
+      "lessonId": "resource-00092",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00092-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00092-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00092-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00092-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00092-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00092-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00092-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00092-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00092-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00092-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00092-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00092-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00093",
+      "lessonId": "resource-00093",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00093-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00093-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00093-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00093-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00093-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00093-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00093-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00093-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00093-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00093-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00093-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00093-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00094",
+      "lessonId": "resource-00094",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00094-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00094-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00094-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00094-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00094-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00094-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00094-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00094-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00094-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00094-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00094-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00094-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00095",
+      "lessonId": "resource-00095",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00095-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00095-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00095-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00095-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00095-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00095-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00095-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00095-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00095-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00095-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00095-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00095-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00096",
+      "lessonId": "resource-00096",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00096-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00096-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00096-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00096-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00096-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00096-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00096-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00096-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00096-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00096-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00096-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00096-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00097",
+      "lessonId": "resource-00097",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00097-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00097-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00097-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00097-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00097-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00097-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00097-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00097-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00097-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00097-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00097-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00097-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00098",
+      "lessonId": "resource-00098",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00098-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00098-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00098-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00098-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00098-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00098-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00098-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00098-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00098-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00098-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00098-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00098-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00099",
+      "lessonId": "resource-00099",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00099-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00099-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00099-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00099-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00099-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00099-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00099-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00099-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00099-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00099-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00099-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00099-visual-aids.md"
+        ]
+      }
+    },
+    {
+      "id": "features-resource-00100",
+      "lessonId": "resource-00100",
+      "pdfGeneration": {
+        "enabled": true,
+        "teacherGuide": "/advanced-content/pdfs/resource-00100-teacher-guide.md",
+        "studentWorkbook": "/advanced-content/pdfs/resource-00100-student-workbook.md",
+        "assessmentRubric": "/advanced-content/pdfs/resource-00100-assessment-rubric.md"
+      },
+      "videoContent": {
+        "enabled": true,
+        "introductionVideo": "/advanced-content/videos/resource-00100-introduction.md",
+        "activityVideos": [
+          "/advanced-content/videos/resource-00100-activities.md"
+        ],
+        "culturalContextVideos": [
+          "/advanced-content/videos/resource-00100-cultural-context.md"
+        ]
+      },
+      "interactiveFeatures": {
+        "enabled": true,
+        "quizzes": [
+          "/advanced-content/interactive/resource-00100-quizzes.json"
+        ],
+        "simulations": [
+          "/advanced-content/interactive/resource-00100-simulations.json"
+        ],
+        "collaborativeTools": [
+          "/advanced-content/interactive/resource-00100-collaborative.json"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "audioDescriptions": [
+          "/advanced-content/accessibility/resource-00100-audio-descriptions.md"
+        ],
+        "textToSpeech": [
+          "/advanced-content/accessibility/resource-00100-text-to-speech.md"
+        ],
+        "visualAids": [
+          "/advanced-content/accessibility/resource-00100-visual-aids.md"
+        ]
+      }
+    }
+  ]
+}
