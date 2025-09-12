@@ -2,12 +2,12 @@
 
 /**
  * Cultural Enhancement Manager
- * 
+ *
  * This script enhances educational resources with cultural safety,
  * tikanga compliance, and authentic Te Reo Māori integration.
  */
 
-import { existsSync, readFileSync, writeFileSync, readdirSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 interface CulturalEnhancement {
@@ -42,11 +42,16 @@ class CulturalEnhancementManager {
   // Cultural enhancement templates
   private tikangaTemplates = {
     mana: 'This resource demonstrates mana (respect) by honoring Māori perspectives and values.',
-    whakawhanaungatanga: 'This resource builds whakawhanaungatanga (relationships) through community connections and cultural sharing.',
-    kaitiakitanga: 'This resource embodies kaitiakitanga (guardianship) by promoting environmental and cultural responsibility.',
-    whanaungatanga: 'This resource strengthens whanaungatanga (family connections) through cultural relationships and community bonds.',
-    aroha: 'This resource expresses aroha (love and compassion) through caring for students and community wellbeing.',
-    manaakitanga: 'This resource shows manaakitanga (hospitality and care) by welcoming all learners with respect and kindness.'
+    whakawhanaungatanga:
+      'This resource builds whakawhanaungatanga (relationships) through community connections and cultural sharing.',
+    kaitiakitanga:
+      'This resource embodies kaitiakitanga (guardianship) by promoting environmental and cultural responsibility.',
+    whanaungatanga:
+      'This resource strengthens whanaungatanga (family connections) through cultural relationships and community bonds.',
+    aroha:
+      'This resource expresses aroha (love and compassion) through caring for students and community wellbeing.',
+    manaakitanga:
+      'This resource shows manaakitanga (hospitality and care) by welcoming all learners with respect and kindness.',
   };
 
   private teReoTemplates = {
@@ -55,16 +60,20 @@ class CulturalEnhancementManager {
     encouragement: 'Ka pai! Well done on your learning progress.',
     respect: 'He tangata, he tangata, he tangata - it is people, it is people, it is people.',
     learning: 'Ako - learning and teaching together.',
-    wisdom: 'Mā te kōrero, ka mōhio - through discussion, we gain knowledge.'
+    wisdom: 'Mā te kōrero, ka mōhio - through discussion, we gain knowledge.',
   };
 
   private culturalContexts = {
-    ngatiKahungunu: 'This resource connects to Ngāti Kahungunu traditions and the Hawke\'s Bay region.',
-    aotearoa: 'This resource reflects Aotearoa New Zealand\'s unique cultural landscape.',
-    teTiriti: 'This resource honors Te Tiriti o Waitangi and its principles of partnership, protection, and participation.',
-    whenua: 'This resource connects to whenua (land) and our responsibility as kaitiaki (guardians).',
-    moana: 'This resource acknowledges our connection to moana (ocean) and water as a source of life.',
-    rangi: 'This resource connects to rangi (sky) and our relationship with the natural world.'
+    ngatiKahungunu:
+      "This resource connects to Ngāti Kahungunu traditions and the Hawke's Bay region.",
+    aotearoa: "This resource reflects Aotearoa New Zealand's unique cultural landscape.",
+    teTiriti:
+      'This resource honors Te Tiriti o Waitangi and its principles of partnership, protection, and participation.',
+    whenua:
+      'This resource connects to whenua (land) and our responsibility as kaitiaki (guardians).',
+    moana:
+      'This resource acknowledges our connection to moana (ocean) and water as a source of life.',
+    rangi: 'This resource connects to rangi (sky) and our relationship with the natural world.',
   };
 
   constructor() {
@@ -78,7 +87,7 @@ class CulturalEnhancementManager {
    */
   async enhanceCulturalContent(): Promise<CulturalEnhancementReport> {
     console.log('🌺 Starting Cultural Enhancement...');
-    
+
     try {
       // Step 1: Load resources that need enhancement
       const resources = await this.loadResourcesForEnhancement();
@@ -90,13 +99,12 @@ class CulturalEnhancementManager {
 
       // Step 3: Generate enhancement report
       const report = await this.generateEnhancementReport(enhancements);
-      
+
       // Step 4: Save report
       await this.saveEnhancementReport(report);
-      
+
       console.log('🎉 Cultural Enhancement Complete!');
       return report;
-
     } catch (error) {
       console.error('❌ Cultural enhancement failed:', error);
       throw error;
@@ -114,8 +122,10 @@ class CulturalEnhancementManager {
     for (const type of resourceTypes) {
       const typeDir = join(this.contentDir, type);
       if (existsSync(typeDir)) {
-        const files = readdirSync(typeDir).filter(file => file.endsWith('.json')).slice(0, 100);
-        
+        const files = readdirSync(typeDir)
+          .filter((file) => file.endsWith('.json'))
+          .slice(0, 100);
+
         for (const file of files) {
           try {
             const filePath = join(typeDir, file);
@@ -125,7 +135,7 @@ class CulturalEnhancementManager {
               title: content.title || 'Untitled Resource',
               type: type,
               content: content,
-              filePath: filePath
+              filePath: filePath,
             });
           } catch (error) {
             console.warn(`Warning: Could not load ${file}: ${error}`);
@@ -157,14 +167,14 @@ class CulturalEnhancementManager {
   private async enhanceResource(resource: any): Promise<CulturalEnhancement> {
     const content = resource.content;
     const originalScore = this.calculateOriginalCulturalScore(content);
-    
+
     // Apply cultural enhancements
     const enhancedContent = this.applyCulturalEnhancements(content, resource.type);
     const enhancedScore = this.calculateEnhancedCulturalScore(enhancedContent);
-    
+
     // Identify improvements made
     const improvements = this.identifyImprovements(originalScore, enhancedScore);
-    
+
     // Extract cultural elements
     const culturalElements = this.extractCulturalElements(enhancedContent);
     const tikangaElements = this.extractTikangaElements(enhancedContent);
@@ -179,7 +189,7 @@ class CulturalEnhancementManager {
       improvements,
       culturalElements,
       tikangaElements,
-      teReoElements
+      teReoElements,
     };
   }
 
@@ -189,13 +199,13 @@ class CulturalEnhancementManager {
   private calculateOriginalCulturalScore(content: any): number {
     let score = 0;
     const text = this.extractTextContent(content).toLowerCase();
-    
+
     // Basic scoring based on existing content
     if (content.culturalContext) score += 2;
     if (content.culturalElements && content.culturalElements > 0) score += 1;
     if (text.includes('māori') || text.includes('te reo')) score += 1;
     if (text.includes('tikanga') || text.includes('kaitiakitanga')) score += 1;
-    
+
     return Math.min(10, score);
   }
 
@@ -204,33 +214,33 @@ class CulturalEnhancementManager {
    */
   private applyCulturalEnhancements(content: any, type: string): any {
     const enhanced = { ...content };
-    
+
     // Add cultural context if missing
     if (!enhanced.culturalContext) {
       enhanced.culturalContext = this.generateCulturalContext(type);
     }
-    
+
     // Enhance learning objectives with cultural elements
     if (enhanced.learningObjectives) {
       enhanced.learningObjectives = this.enhanceLearningObjectives(enhanced.learningObjectives);
     }
-    
+
     // Add tikanga elements
     enhanced.tikangaElements = this.generateTikangaElements(type);
-    
+
     // Add Te Reo elements
     enhanced.teReoElements = this.generateTeReoElements(type);
-    
+
     // Enhance activities with cultural context
     if (enhanced.activities) {
       enhanced.activities = this.enhanceActivities(enhanced.activities, type);
     }
-    
+
     // Add cultural assessment criteria
     if (enhanced.assessment) {
       enhanced.assessment = this.enhanceAssessment(enhanced.assessment);
     }
-    
+
     return enhanced;
   }
 
@@ -240,12 +250,12 @@ class CulturalEnhancementManager {
   private generateCulturalContext(type: string): string {
     const contexts = [
       'This resource honors Te Tiriti o Waitangi and promotes cultural understanding and respect.',
-      'This resource connects to Ngāti Kahungunu traditions and the Hawke\'s Bay region.',
+      "This resource connects to Ngāti Kahungunu traditions and the Hawke's Bay region.",
       'This resource embodies tikanga (cultural protocols) and promotes manaakitanga (care and hospitality).',
       'This resource strengthens whanaungatanga (relationships) and community connections.',
-      'This resource demonstrates kaitiakitanga (guardianship) and environmental responsibility.'
+      'This resource demonstrates kaitiakitanga (guardianship) and environmental responsibility.',
     ];
-    
+
     return contexts[Math.floor(Math.random() * contexts.length)];
   }
 
@@ -258,9 +268,9 @@ class CulturalEnhancementManager {
       'Use Te Reo Māori appropriately in learning contexts',
       'Apply tikanga (cultural protocols) in learning activities',
       'Connect learning to local environment and cultural heritage',
-      'Show manaakitanga (care and hospitality) in collaborative work'
+      'Show manaakitanga (care and hospitality) in collaborative work',
     ];
-    
+
     return [...objectives, ...culturalObjectives.slice(0, 2)];
   }
 
@@ -289,9 +299,9 @@ class CulturalEnhancementManager {
       'Include opportunities for students to share their cultural perspectives',
       'Connect activities to local environment and cultural heritage',
       'Encourage collaborative learning that builds whanaungatanga (relationships)',
-      'End with reflection on cultural learning and community connection'
+      'End with reflection on cultural learning and community connection',
     ];
-    
+
     return [...activities, ...culturalActivities.slice(0, 2)];
   }
 
@@ -300,15 +310,15 @@ class CulturalEnhancementManager {
    */
   private enhanceAssessment(assessment: any): any {
     const enhanced = { ...assessment };
-    
+
     if (enhanced.tasks) {
       enhanced.tasks = [
         ...enhanced.tasks,
         'Demonstrate cultural respect and understanding in all work',
-        'Use appropriate Te Reo Māori terminology where relevant'
+        'Use appropriate Te Reo Māori terminology where relevant',
       ];
     }
-    
+
     return enhanced;
   }
 
@@ -317,15 +327,25 @@ class CulturalEnhancementManager {
    */
   private calculateEnhancedCulturalScore(content: any): number {
     let score = 0;
-    
+
     // Enhanced scoring
     if (content.culturalContext) score += 3;
     if (content.tikangaElements && content.tikangaElements.length > 0) score += 2;
     if (content.teReoElements && content.teReoElements.length > 0) score += 2;
-    if (content.learningObjectives && content.learningObjectives.some((obj: string) => obj.toLowerCase().includes('māori'))) score += 2;
-    if (content.activities && Array.isArray(content.activities) && content.activities.some((act: any) => 
-      typeof act === 'string' && act.toLowerCase().includes('cultural'))) score += 1;
-    
+    if (
+      content.learningObjectives &&
+      content.learningObjectives.some((obj: string) => obj.toLowerCase().includes('māori'))
+    )
+      score += 2;
+    if (
+      content.activities &&
+      Array.isArray(content.activities) &&
+      content.activities.some(
+        (act: any) => typeof act === 'string' && act.toLowerCase().includes('cultural'),
+      )
+    )
+      score += 1;
+
     return Math.min(10, score);
   }
 
@@ -335,21 +355,21 @@ class CulturalEnhancementManager {
   private identifyImprovements(originalScore: number, enhancedScore: number): string[] {
     const improvements: string[] = [];
     const improvement = enhancedScore - originalScore;
-    
+
     if (improvement > 0) {
       improvements.push(`Cultural score improved by ${improvement.toFixed(1)} points`);
     }
-    
+
     if (enhancedScore >= 8) {
       improvements.push('Achieved excellent cultural integration');
     } else if (enhancedScore >= 6) {
       improvements.push('Achieved good cultural integration');
     }
-    
+
     if (enhancedScore - originalScore >= 3) {
       improvements.push('Significant cultural enhancement achieved');
     }
-    
+
     return improvements;
   }
 
@@ -358,14 +378,17 @@ class CulturalEnhancementManager {
    */
   private extractCulturalElements(content: any): string[] {
     const elements: string[] = [];
-    
+
     if (content.culturalContext) elements.push('Cultural Context');
     if (content.tikangaElements) elements.push('Tikanga Elements');
     if (content.teReoElements) elements.push('Te Reo Elements');
-    if (content.learningObjectives && content.learningObjectives.some((obj: string) => obj.toLowerCase().includes('māori'))) {
+    if (
+      content.learningObjectives &&
+      content.learningObjectives.some((obj: string) => obj.toLowerCase().includes('māori'))
+    ) {
       elements.push('Māori Learning Objectives');
     }
-    
+
     return elements;
   }
 
@@ -388,7 +411,7 @@ class CulturalEnhancementManager {
    */
   private extractTextContent(content: any): string {
     let text = '';
-    
+
     if (content.title) text += content.title + ' ';
     if (content.description) text += content.description + ' ';
     if (content.learningObjectives) {
@@ -398,28 +421,35 @@ class CulturalEnhancementManager {
         text += content.learningObjectives + ' ';
       }
     }
-    
+
     return text;
   }
 
   /**
    * Generate enhancement report
    */
-  private async generateEnhancementReport(enhancements: CulturalEnhancement[]): Promise<CulturalEnhancementReport> {
+  private async generateEnhancementReport(
+    enhancements: CulturalEnhancement[],
+  ): Promise<CulturalEnhancementReport> {
     const totalResources = enhancements.length;
-    const enhancedResources = enhancements.filter(e => e.enhancedScore > e.originalScore).length;
-    
-    const averageImprovement = enhancements.reduce((sum, e) => sum + (e.enhancedScore - e.originalScore), 0) / totalResources;
-    const culturalScoreImprovement = enhancements.reduce((sum, e) => sum + e.enhancedScore, 0) / totalResources;
-    const tikangaComplianceImprovement = enhancements.filter(e => e.tikangaElements.length > 0).length / totalResources * 100;
-    const teReoUsageImprovement = enhancements.filter(e => e.teReoElements.length > 0).length / totalResources * 100;
+    const enhancedResources = enhancements.filter((e) => e.enhancedScore > e.originalScore).length;
+
+    const averageImprovement =
+      enhancements.reduce((sum, e) => sum + (e.enhancedScore - e.originalScore), 0) /
+      totalResources;
+    const culturalScoreImprovement =
+      enhancements.reduce((sum, e) => sum + e.enhancedScore, 0) / totalResources;
+    const tikangaComplianceImprovement =
+      (enhancements.filter((e) => e.tikangaElements.length > 0).length / totalResources) * 100;
+    const teReoUsageImprovement =
+      (enhancements.filter((e) => e.teReoElements.length > 0).length / totalResources) * 100;
 
     const recommendations = [
       'Continue applying cultural enhancements to all resources',
       'Focus on resources with the lowest cultural scores first',
       'Ensure all new resources include cultural elements from the start',
       'Provide cultural safety training for content creators',
-      'Regular cultural audits and continuous improvement'
+      'Regular cultural audits and continuous improvement',
     ];
 
     return {
@@ -431,7 +461,7 @@ class CulturalEnhancementManager {
       tikangaComplianceImprovement: Math.round(tikangaComplianceImprovement * 10) / 10,
       teReoUsageImprovement: Math.round(teReoUsageImprovement * 10) / 10,
       enhancements,
-      recommendations
+      recommendations,
     };
   }
 
@@ -464,7 +494,10 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 
 ### **Overall Results**
 - **Total Resources Enhanced**: ${report.totalResources.toLocaleString()}
-- **Successfully Enhanced**: ${report.enhancedResources.toLocaleString()} (${((report.enhancedResources / report.totalResources) * 100).toFixed(1)}%)
+- **Successfully Enhanced**: ${report.enhancedResources.toLocaleString()} (${(
+      (report.enhancedResources / report.totalResources) *
+      100
+    ).toFixed(1)}%)
 - **Average Improvement**: ${report.averageImprovement} points
 - **Final Cultural Score**: ${report.culturalScoreImprovement}/10
 
@@ -486,7 +519,10 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 - **Assessment**: Cultural respect and understanding criteria
 
 ### **Sample Enhancements**
-${report.enhancements.slice(0, 10).map((enhancement, index) => `
+${report.enhancements
+  .slice(0, 10)
+  .map(
+    (enhancement, index) => `
 **${index + 1}. ${enhancement.title}**
 - **Type**: ${enhancement.type}
 - **Original Score**: ${enhancement.originalScore}/10
@@ -495,7 +531,9 @@ ${report.enhancements.slice(0, 10).map((enhancement, index) => `
 - **Cultural Elements**: ${enhancement.culturalElements.join(', ')}
 - **Tikanga Elements**: ${enhancement.tikangaElements.join(', ')}
 - **Te Reo Elements**: ${enhancement.teReoElements.join(', ')}
-`).join('\n')}
+`,
+  )
+  .join('\n')}
 
 ---
 
@@ -547,7 +585,10 @@ ${report.recommendations.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
 
 The Cultural Enhancement has successfully improved ${report.totalResources.toLocaleString()} educational resources with:
 
-- ✅ **${report.enhancedResources.toLocaleString()} Resources Enhanced** (${((report.enhancedResources / report.totalResources) * 100).toFixed(1)}%)
+- ✅ **${report.enhancedResources.toLocaleString()} Resources Enhanced** (${(
+      (report.enhancedResources / report.totalResources) *
+      100
+    ).toFixed(1)}%)
 - ✅ **${report.averageImprovement} Point Average Improvement**
 - ✅ **${report.culturalScoreImprovement}/10 Final Cultural Score**
 - ✅ **${report.tikangaComplianceImprovement}% Tikanga Compliance**
@@ -567,12 +608,18 @@ The platform now provides culturally-enhanced educational resources with authent
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
   const manager = new CulturalEnhancementManager();
-  
-  manager.enhanceCulturalContent()
+
+  manager
+    .enhanceCulturalContent()
     .then((report) => {
       console.log('\n🎉 Cultural Enhancement Complete!');
       console.log(`📚 Total Resources: ${report.totalResources.toLocaleString()}`);
-      console.log(`✨ Enhanced: ${report.enhancedResources.toLocaleString()} (${((report.enhancedResources / report.totalResources) * 100).toFixed(1)}%)`);
+      console.log(
+        `✨ Enhanced: ${report.enhancedResources.toLocaleString()} (${(
+          (report.enhancedResources / report.totalResources) *
+          100
+        ).toFixed(1)}%)`,
+      );
       console.log(`📈 Average Improvement: ${report.averageImprovement} points`);
       console.log(`🌺 Final Cultural Score: ${report.culturalScoreImprovement}/10`);
       console.log(`📄 Report: ${manager['reportPath']}`);
