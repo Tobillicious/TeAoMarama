@@ -2,12 +2,12 @@
 
 /**
  * Cultural Safety Validation Manager
- * 
+ *
  * This script validates all educational resources for cultural safety
  * and tikanga compliance, ensuring 100% cultural authenticity.
  */
 
-import { existsSync, readFileSync, writeFileSync, readdirSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 interface CulturalValidationResult {
@@ -42,19 +42,48 @@ class CulturalSafetyValidationManager {
 
   // Cultural safety criteria
   private tikangaElements = [
-    'mana', 'whakawhanaungatanga', 'kaitiakitanga', 'whanaungatanga',
-    'aroha', 'manaakitanga', 'tapu', 'noa', 'tikanga', 'kawa'
+    'mana',
+    'whakawhanaungatanga',
+    'kaitiakitanga',
+    'whanaungatanga',
+    'aroha',
+    'manaakitanga',
+    'tapu',
+    'noa',
+    'tikanga',
+    'kawa',
   ];
 
   private teReoKeywords = [
-    'te reo māori', 'māori', 'aotearoa', 'ngāti', 'iwi', 'hapū',
-    'whānau', 'marae', 'pōwhiri', 'karakia', 'waiata', 'haka',
-    'pūrākau', 'whakapapa', 'whenua', 'moana', 'rangi', 'papa'
+    'te reo māori',
+    'māori',
+    'aotearoa',
+    'ngāti',
+    'iwi',
+    'hapū',
+    'whānau',
+    'marae',
+    'pōwhiri',
+    'karakia',
+    'waiata',
+    'haka',
+    'pūrākau',
+    'whakapapa',
+    'whenua',
+    'moana',
+    'rangi',
+    'papa',
   ];
 
   private culturalContexts = [
-    'ngāti kahungunu', 'hawke\'s bay', 'napier', 'hastings',
-    'wairoa', 'central hawke\'s bay', 'chb', 'te matau a māui'
+    'ngāti kahungunu',
+    "hawke's bay",
+    'napier',
+    'hastings',
+    'wairoa',
+    "central hawke's bay",
+    'chb',
+    'te matau a māui',
   ];
 
   constructor() {
@@ -68,7 +97,7 @@ class CulturalSafetyValidationManager {
    */
   async validateCulturalSafety(): Promise<CulturalValidationReport> {
     console.log('🌺 Starting Cultural Safety Validation...');
-    
+
     try {
       // Step 1: Load all resources
       const resources = await this.loadAllResources();
@@ -80,13 +109,12 @@ class CulturalSafetyValidationManager {
 
       // Step 3: Generate validation report
       const report = await this.generateValidationReport(results);
-      
+
       // Step 4: Save report
       await this.saveValidationReport(report);
-      
+
       console.log('🎉 Cultural Safety Validation Complete!');
       return report;
-
     } catch (error) {
       console.error('❌ Cultural validation failed:', error);
       throw error;
@@ -103,8 +131,8 @@ class CulturalSafetyValidationManager {
     for (const type of resourceTypes) {
       const typeDir = join(this.contentDir, type);
       if (existsSync(typeDir)) {
-        const files = readdirSync(typeDir).filter(file => file.endsWith('.json'));
-        
+        const files = readdirSync(typeDir).filter((file) => file.endsWith('.json'));
+
         for (const file of files) {
           try {
             const filePath = join(typeDir, file);
@@ -114,7 +142,7 @@ class CulturalSafetyValidationManager {
               title: content.title || 'Untitled Resource',
               type: type,
               content: content,
-              filePath: filePath
+              filePath: filePath,
             });
           } catch (error) {
             console.warn(`Warning: Could not load ${file}: ${error}`);
@@ -146,22 +174,27 @@ class CulturalSafetyValidationManager {
   private async validateResource(resource: any): Promise<CulturalValidationResult> {
     const content = resource.content;
     const text = this.extractTextContent(content);
-    
+
     // Calculate cultural score
     const culturalScore = this.calculateCulturalScore(text, content);
-    
+
     // Check tikanga compliance
     const tikangaCompliance = this.checkTikangaCompliance(text, content);
-    
+
     // Assess Te Reo usage
     const teReoUsage = this.assessTeReoUsage(text, content);
-    
+
     // Identify cultural elements
     const culturalElements = this.identifyCulturalElements(text, content);
-    
+
     // Generate recommendations
-    const recommendations = this.generateRecommendations(culturalScore, tikangaCompliance, teReoUsage, culturalElements);
-    
+    const recommendations = this.generateRecommendations(
+      culturalScore,
+      tikangaCompliance,
+      teReoUsage,
+      culturalElements,
+    );
+
     // Determine status
     const status = this.determineStatus(culturalScore, tikangaCompliance, teReoUsage);
 
@@ -174,7 +207,7 @@ class CulturalSafetyValidationManager {
       teReoUsage,
       culturalElements,
       recommendations,
-      status
+      status,
     };
   }
 
@@ -183,7 +216,7 @@ class CulturalSafetyValidationManager {
    */
   private extractTextContent(content: any): string {
     let text = '';
-    
+
     if (content.title) text += content.title + ' ';
     if (content.description) text += content.description + ' ';
     if (content.learningObjectives) {
@@ -220,15 +253,15 @@ class CulturalSafetyValidationManager {
     let maxScore = 10;
 
     // Check for tikanga elements (3 points)
-    const tikangaCount = this.tikangaElements.filter(element => text.includes(element)).length;
+    const tikangaCount = this.tikangaElements.filter((element) => text.includes(element)).length;
     score += Math.min(3, tikangaCount * 0.5);
 
     // Check for Te Reo usage (3 points)
-    const teReoCount = this.teReoKeywords.filter(keyword => text.includes(keyword)).length;
+    const teReoCount = this.teReoKeywords.filter((keyword) => text.includes(keyword)).length;
     score += Math.min(3, teReoCount * 0.3);
 
     // Check for cultural context (2 points)
-    const contextCount = this.culturalContexts.filter(context => text.includes(context)).length;
+    const contextCount = this.culturalContexts.filter((context) => text.includes(context)).length;
     score += Math.min(2, contextCount * 0.5);
 
     // Check for cultural elements in content (2 points)
@@ -243,19 +276,22 @@ class CulturalSafetyValidationManager {
    */
   private checkTikangaCompliance(text: string, content: any): boolean {
     // Basic tikanga compliance check
-    const hasTikangaElements = this.tikangaElements.some(element => text.includes(element));
+    const hasTikangaElements = this.tikangaElements.some((element) => text.includes(element));
     const hasCulturalContext = content.culturalContext || content.culturalElements > 0;
-    const hasTeReo = this.teReoKeywords.some(keyword => text.includes(keyword));
-    
+    const hasTeReo = this.teReoKeywords.some((keyword) => text.includes(keyword));
+
     return hasTikangaElements && hasCulturalContext && hasTeReo;
   }
 
   /**
    * Assess Te Reo usage
    */
-  private assessTeReoUsage(text: string, content: any): 'EXCELLENT' | 'GOOD' | 'ADEQUATE' | 'NEEDS_IMPROVEMENT' {
-    const teReoCount = this.teReoKeywords.filter(keyword => text.includes(keyword)).length;
-    
+  private assessTeReoUsage(
+    text: string,
+    content: any,
+  ): 'EXCELLENT' | 'GOOD' | 'ADEQUATE' | 'NEEDS_IMPROVEMENT' {
+    const teReoCount = this.teReoKeywords.filter((keyword) => text.includes(keyword)).length;
+
     if (teReoCount >= 5) return 'EXCELLENT';
     if (teReoCount >= 3) return 'GOOD';
     if (teReoCount >= 1) return 'ADEQUATE';
@@ -267,19 +303,19 @@ class CulturalSafetyValidationManager {
    */
   private identifyCulturalElements(text: string, content: any): string[] {
     const elements: string[] = [];
-    
+
     // Check for tikanga elements
-    this.tikangaElements.forEach(element => {
+    this.tikangaElements.forEach((element) => {
       if (text.includes(element)) elements.push(element);
     });
-    
+
     // Check for Te Reo keywords
-    this.teReoKeywords.forEach(keyword => {
+    this.teReoKeywords.forEach((keyword) => {
       if (text.includes(keyword)) elements.push(keyword);
     });
-    
+
     // Check for cultural contexts
-    this.culturalContexts.forEach(context => {
+    this.culturalContexts.forEach((context) => {
       if (text.includes(context)) elements.push(context);
     });
 
@@ -293,7 +329,7 @@ class CulturalSafetyValidationManager {
     culturalScore: number,
     tikangaCompliance: boolean,
     teReoUsage: string,
-    culturalElements: string[]
+    culturalElements: string[],
   ): string[] {
     const recommendations: string[] = [];
 
@@ -326,7 +362,7 @@ class CulturalSafetyValidationManager {
   private determineStatus(
     culturalScore: number,
     tikangaCompliance: boolean,
-    teReoUsage: string
+    teReoUsage: string,
   ): 'VALIDATED' | 'NEEDS_REVIEW' | 'REQUIRES_CHANGES' {
     if (culturalScore >= 8 && tikangaCompliance && teReoUsage !== 'NEEDS_IMPROVEMENT') {
       return 'VALIDATED';
@@ -340,32 +376,42 @@ class CulturalSafetyValidationManager {
   /**
    * Generate validation report
    */
-  private async generateValidationReport(results: CulturalValidationResult[]): Promise<CulturalValidationReport> {
+  private async generateValidationReport(
+    results: CulturalValidationResult[],
+  ): Promise<CulturalValidationReport> {
     const totalResources = results.length;
-    const validatedResources = results.filter(r => r.status === 'VALIDATED').length;
-    const needsReview = results.filter(r => r.status === 'NEEDS_REVIEW').length;
-    const requiresChanges = results.filter(r => r.status === 'REQUIRES_CHANGES').length;
-    
-    const averageCulturalScore = results.reduce((sum, r) => sum + r.culturalScore, 0) / totalResources;
-    const tikangaComplianceRate = (results.filter(r => r.tikangaCompliance).length / totalResources) * 100;
-    
-    const teReoUsageScores = results.map(r => {
+    const validatedResources = results.filter((r) => r.status === 'VALIDATED').length;
+    const needsReview = results.filter((r) => r.status === 'NEEDS_REVIEW').length;
+    const requiresChanges = results.filter((r) => r.status === 'REQUIRES_CHANGES').length;
+
+    const averageCulturalScore =
+      results.reduce((sum, r) => sum + r.culturalScore, 0) / totalResources;
+    const tikangaComplianceRate =
+      (results.filter((r) => r.tikangaCompliance).length / totalResources) * 100;
+
+    const teReoUsageScores = results.map((r) => {
       switch (r.teReoUsage) {
-        case 'EXCELLENT': return 4;
-        case 'GOOD': return 3;
-        case 'ADEQUATE': return 2;
-        case 'NEEDS_IMPROVEMENT': return 1;
-        default: return 0;
+        case 'EXCELLENT':
+          return 4;
+        case 'GOOD':
+          return 3;
+        case 'ADEQUATE':
+          return 2;
+        case 'NEEDS_IMPROVEMENT':
+          return 1;
+        default:
+          return 0;
       }
     });
-    const teReoUsageScore = (teReoUsageScores.reduce((sum, score) => sum + score, 0) / totalResources) * 25; // Convert to percentage
+    const teReoUsageScore =
+      (teReoUsageScores.reduce((sum, score) => sum + score, 0) / totalResources) * 25; // Convert to percentage
 
     const recommendations = [
       'Continue maintaining high cultural standards across all resources',
       'Focus on resources that need review or changes',
       'Enhance Te Reo Māori integration where needed',
       'Strengthen tikanga compliance in all educational content',
-      'Regular cultural safety audits and updates'
+      'Regular cultural safety audits and updates',
     ];
 
     return {
@@ -378,7 +424,7 @@ class CulturalSafetyValidationManager {
       tikangaComplianceRate: Math.round(tikangaComplianceRate * 10) / 10,
       teReoUsageScore: Math.round(teReoUsageScore * 10) / 10,
       results,
-      recommendations
+      recommendations,
     };
   }
 
@@ -411,9 +457,18 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 
 ### **Overall Results**
 - **Total Resources**: ${report.totalResources.toLocaleString()}
-- **Validated Resources**: ${report.validatedResources.toLocaleString()} (${((report.validatedResources / report.totalResources) * 100).toFixed(1)}%)
-- **Needs Review**: ${report.needsReview.toLocaleString()} (${((report.needsReview / report.totalResources) * 100).toFixed(1)}%)
-- **Requires Changes**: ${report.requiresChanges.toLocaleString()} (${((report.requiresChanges / report.totalResources) * 100).toFixed(1)}%)
+- **Validated Resources**: ${report.validatedResources.toLocaleString()} (${(
+      (report.validatedResources / report.totalResources) *
+      100
+    ).toFixed(1)}%)
+- **Needs Review**: ${report.needsReview.toLocaleString()} (${(
+      (report.needsReview / report.totalResources) *
+      100
+    ).toFixed(1)}%)
+- **Requires Changes**: ${report.requiresChanges.toLocaleString()} (${(
+      (report.requiresChanges / report.totalResources) *
+      100
+    ).toFixed(1)}%)
 
 ### **Cultural Metrics**
 - **Average Cultural Score**: ${report.averageCulturalScore}/10
@@ -449,7 +504,10 @@ Resources that need cultural enhancement:
 
 ## 📈 DETAILED RESULTS
 
-${report.results.slice(0, 20).map((result, index) => `
+${report.results
+  .slice(0, 20)
+  .map(
+    (result, index) => `
 ### **${index + 1}. ${result.title}**
 - **Type**: ${result.type}
 - **Cultural Score**: ${result.culturalScore}/10
@@ -458,7 +516,9 @@ ${report.results.slice(0, 20).map((result, index) => `
 - **Status**: ${result.status}
 - **Cultural Elements**: ${result.culturalElements.join(', ') || 'None identified'}
 - **Recommendations**: ${result.recommendations.join('; ')}
-`).join('\n')}
+`,
+  )
+  .join('\n')}
 
 ${report.results.length > 20 ? `\n*... and ${report.results.length - 20} more resources*` : ''}
 
@@ -511,7 +571,10 @@ ${report.recommendations.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
 
 The Cultural Safety Validation has successfully assessed ${report.totalResources.toLocaleString()} educational resources with:
 
-- ✅ **${report.validatedResources.toLocaleString()} Resources Validated** (${((report.validatedResources / report.totalResources) * 100).toFixed(1)}%)
+- ✅ **${report.validatedResources.toLocaleString()} Resources Validated** (${(
+      (report.validatedResources / report.totalResources) *
+      100
+    ).toFixed(1)}%)
 - ✅ **${report.tikangaComplianceRate}% Tikanga Compliance Rate**
 - ✅ **${report.averageCulturalScore}/10 Average Cultural Score**
 - ✅ **${report.teReoUsageScore}% Te Reo Usage Score**
@@ -530,12 +593,18 @@ The platform maintains excellent cultural safety standards with strong tikanga c
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
   const manager = new CulturalSafetyValidationManager();
-  
-  manager.validateCulturalSafety()
+
+  manager
+    .validateCulturalSafety()
     .then((report) => {
       console.log('\n🎉 Cultural Safety Validation Complete!');
       console.log(`📚 Total Resources: ${report.totalResources.toLocaleString()}`);
-      console.log(`✅ Validated: ${report.validatedResources.toLocaleString()} (${((report.validatedResources / report.totalResources) * 100).toFixed(1)}%)`);
+      console.log(
+        `✅ Validated: ${report.validatedResources.toLocaleString()} (${(
+          (report.validatedResources / report.totalResources) *
+          100
+        ).toFixed(1)}%)`,
+      );
       console.log(`📋 Needs Review: ${report.needsReview.toLocaleString()}`);
       console.log(`⚠️ Requires Changes: ${report.requiresChanges.toLocaleString()}`);
       console.log(`🌺 Cultural Score: ${report.averageCulturalScore}/10`);
