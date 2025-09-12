@@ -1,0 +1,1253 @@
+{
+  "timestamp": "2025-09-12T11:34:13.364Z",
+  "baseUrl": "http://localhost:3001",
+  "issues": {
+    "critical": [
+      {
+        "type": "Route Navigation Error",
+        "route": "/",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/about",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/contact",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/login",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/resources",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/working-resources",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/teacher",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/student",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/human-content",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/year8-social-studies",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/platform",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/cultural-learning-modules",
+        "error": "page.waitForTimeout is not a function"
+      },
+      {
+        "type": "Route Navigation Error",
+        "route": "/advanced-analytics",
+        "error": "page.waitForTimeout is not a function"
+      }
+    ],
+    "high": [
+      {
+        "type": "Failed Network Request",
+        "url": "http://localhost:3001/src/styles/critical.css",
+        "status": 304,
+        "statusText": "Not Modified"
+      }
+    ],
+    "medium": [],
+    "low": []
+  },
+  "pageTests": {
+    "/": {
+      "route": "/",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/about": {
+      "route": "/about",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/contact": {
+      "route": "/contact",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/login": {
+      "route": "/login",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/resources": {
+      "route": "/resources",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/working-resources": {
+      "route": "/working-resources",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/teacher": {
+      "route": "/teacher",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/student": {
+      "route": "/student",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/human-content": {
+      "route": "/human-content",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/year8-social-studies": {
+      "route": "/year8-social-studies",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/platform": {
+      "route": "/platform",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/cultural-learning-modules": {
+      "route": "/cultural-learning-modules",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    },
+    "/advanced-analytics": {
+      "route": "/advanced-analytics",
+      "error": "page.waitForTimeout is not a function",
+      "status": "failed"
+    }
+  },
+  "performance": {},
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:14.227Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:14.240Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:14.240Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:14.240Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:14.241Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:14.370Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:14.377Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:14.434Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:14.436Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 TTFB: 55 ms",
+      "timestamp": "2025-09-12T11:34:14.820Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 FCP: 1488 ms",
+      "timestamp": "2025-09-12T11:34:14.951Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 1488",
+      "timestamp": "2025-09-12T11:34:14.951Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:15.016Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:15.016Z"
+    },
+    {
+      "type": "log",
+      "text": "Performance Metrics: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:15.828Z"
+    },
+    {
+      "type": "log",
+      "text": "Performance Metrics: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:15.829Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:17.162Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:17.180Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:17.213Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:17.218Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:17.218Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:17.218Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:17.313Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:17.314Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:17.331Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:17.446Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:17.447Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 980",
+      "timestamp": "2025-09-12T11:34:17.971Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 1012",
+      "timestamp": "2025-09-12T11:34:18.001Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:18.132Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:18.135Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:18.165Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:18.170Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:18.170Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:18.170Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 180",
+      "timestamp": "2025-09-12T11:34:18.261Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:18.262Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:18.262Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:18.265Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:18.383Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:18.387Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 480",
+      "timestamp": "2025-09-12T11:34:18.550Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:19.104Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:19.106Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:19.142Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:19.147Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:19.147Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:19.148Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 220",
+      "timestamp": "2025-09-12T11:34:19.296Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:19.297Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:19.298Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:19.299Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:19.344Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:19.346Z"
+    },
+    {
+      "type": "verbose",
+      "text": "[DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+      "timestamp": "2025-09-12T11:34:19.575Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:20.172Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:20.191Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:20.201Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:20.206Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:20.207Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:20.207Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 248",
+      "timestamp": "2025-09-12T11:34:20.302Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:20.302Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:20.303Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:20.303Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:20.424Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:20.432Z"
+    },
+    {
+      "type": "log",
+      "text": "🎉 Loaded 5055 comprehensive educational resources",
+      "timestamp": "2025-09-12T11:34:20.594Z"
+    },
+    {
+      "type": "log",
+      "text": "🎉 Loaded 5055 comprehensive educational resources",
+      "timestamp": "2025-09-12T11:34:20.598Z"
+    },
+    {
+      "type": "error",
+      "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Y8_Mathematics_Fractions_0241",
+      "timestamp": "2025-09-12T11:34:21.060Z"
+    },
+    {
+      "type": "log",
+      "text": "Performance Metrics: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:23.521Z"
+    },
+    {
+      "type": "log",
+      "text": "Performance Metrics: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:23.522Z"
+    },
+    {
+      "type": "error",
+      "text": "Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. Y8_Mathematics_Fractions_0241",
+      "timestamp": "2025-09-12T11:34:23.934Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 3532",
+      "timestamp": "2025-09-12T11:34:24.856Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 3532",
+      "timestamp": "2025-09-12T11:34:24.890Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 3532",
+      "timestamp": "2025-09-12T11:34:24.926Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 FCP: 248 ms",
+      "timestamp": "2025-09-12T11:34:24.927Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 TTFB: 11.29999999993015 ms",
+      "timestamp": "2025-09-12T11:34:24.928Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:27.183Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:27.196Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:27.202Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:27.203Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:27.203Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:27.204Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/working-resources\" ",
+      "timestamp": "2025-09-12T11:34:27.253Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/working-resources\" ",
+      "timestamp": "2025-09-12T11:34:27.254Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 524",
+      "timestamp": "2025-09-12T11:34:27.260Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:27.261Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:27.262Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:27.262Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:27.381Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:27.382Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:28.092Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:28.107Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:28.140Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:28.145Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:28.145Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:28.146Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 224",
+      "timestamp": "2025-09-12T11:34:28.221Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:28.225Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:28.225Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:28.237Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:28.348Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:28.348Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:29.596Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:29.630Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:29.638Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:29.638Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:29.638Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:29.719Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 696",
+      "timestamp": "2025-09-12T11:34:29.720Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:29.727Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:29.727Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:29.736Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:29.839Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:29.840Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 1012",
+      "timestamp": "2025-09-12T11:34:30.019Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:30.605Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:30.614Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:30.646Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:30.652Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:30.652Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:30.652Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 240",
+      "timestamp": "2025-09-12T11:34:30.721Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:30.721Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:30.722Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:30.735Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:30.855Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:30.856Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 556",
+      "timestamp": "2025-09-12T11:34:31.036Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:31.576Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:31.587Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:31.626Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:31.630Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:31.630Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:31.630Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 196",
+      "timestamp": "2025-09-12T11:34:31.715Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:31.717Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:31.718Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:31.719Z"
+    },
+    {
+      "type": "log",
+      "text": "🤖 Enhanced Agent Coordinator initialized",
+      "timestamp": "2025-09-12T11:34:31.732Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Unified Superintelligence API initialized",
+      "timestamp": "2025-09-12T11:34:31.733Z"
+    },
+    {
+      "type": "log",
+      "text": "🌿 Enhanced Cultural Safety Validator initialized",
+      "timestamp": "2025-09-12T11:34:31.733Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Enhanced Superintelligence Monitor initialized",
+      "timestamp": "2025-09-12T11:34:31.735Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Terminal Node 9314 Coordinator initialized",
+      "timestamp": "2025-09-12T11:34:31.735Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Advanced Superintelligence Enhancer initialized",
+      "timestamp": "2025-09-12T11:34:31.736Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:31.827Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:31.828Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Year 8 Social Studies enhanced with superintelligence",
+      "timestamp": "2025-09-12T11:34:31.948Z"
+    },
+    {
+      "type": "log",
+      "text": "🌟 Year 8 Social Studies enhanced with superintelligence",
+      "timestamp": "2025-09-12T11:34:31.949Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 864",
+      "timestamp": "2025-09-12T11:34:32.351Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:32.599Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:32.600Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:32.639Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:32.649Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:32.649Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:32.650Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/platform\" ",
+      "timestamp": "2025-09-12T11:34:32.726Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/platform\" ",
+      "timestamp": "2025-09-12T11:34:32.726Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 232",
+      "timestamp": "2025-09-12T11:34:32.731Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:32.731Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:32.731Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:32.739Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:32.863Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:32.875Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:33.570Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:33.573Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:33.599Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:33.604Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:33.604Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:33.604Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/cultural-learning-modules\" ",
+      "timestamp": "2025-09-12T11:34:33.673Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/cultural-learning-modules\" ",
+      "timestamp": "2025-09-12T11:34:33.674Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 220",
+      "timestamp": "2025-09-12T11:34:33.689Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:33.704Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:33.718Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:33.719Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:33.818Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:33.821Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:34.540Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:34.543Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:34.572Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:34.577Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:34.577Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:34.577Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/advanced-analytics\" ",
+      "timestamp": "2025-09-12T11:34:34.643Z"
+    },
+    {
+      "type": "warn",
+      "text": "No routes matched location \"/advanced-analytics\" ",
+      "timestamp": "2025-09-12T11:34:34.643Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 216",
+      "timestamp": "2025-09-12T11:34:34.647Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:34.649Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:34.649Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:34.660Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:34.776Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:34.777Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 FCP: 216 ms",
+      "timestamp": "2025-09-12T11:34:35.636Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 TTFB: 6.599999999976717 ms",
+      "timestamp": "2025-09-12T11:34:35.636Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:35.786Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:35.795Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:35.836Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:35.841Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:35.841Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:35.841Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 248",
+      "timestamp": "2025-09-12T11:34:35.914Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:35.918Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:35.918Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:35.923Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:36.035Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:36.036Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 564",
+      "timestamp": "2025-09-12T11:34:36.199Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:36.734Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:36.736Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:36.736Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:36.736Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:36.736Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:36.736Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:36.737Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:36.737Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 104",
+      "timestamp": "2025-09-12T11:34:36.752Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:36.795Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:36.914Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:36.914Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 404",
+      "timestamp": "2025-09-12T11:34:37.051Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-09-12T11:34:37.702Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-09-12T11:34:37.703Z"
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+      "timestamp": "2025-09-12T11:34:37.705Z"
+    },
+    {
+      "type": "log",
+      "text": "🔥 Firebase initialized successfully",
+      "timestamp": "2025-09-12T11:34:37.705Z"
+    },
+    {
+      "type": "log",
+      "text": "Auth initialized: true",
+      "timestamp": "2025-09-12T11:34:37.705Z"
+    },
+    {
+      "type": "log",
+      "text": "Firestore initialized: true",
+      "timestamp": "2025-09-12T11:34:37.705Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:37.722Z"
+    },
+    {
+      "type": "log",
+      "text": "Service Worker registered: JSHandle@object",
+      "timestamp": "2025-09-12T11:34:37.722Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 204",
+      "timestamp": "2025-09-12T11:34:37.752Z"
+    },
+    {
+      "type": "log",
+      "text": "👋 No user logged in.",
+      "timestamp": "2025-09-12T11:34:37.800Z"
+    },
+    {
+      "type": "warn",
+      "text": "[2025-09-12T11:34:37.914Z]  @firebase/analytics: The measurement ID in the local Firebase config (G-XXXXXXXXXX) does not match the measurement ID fetched from the server (G-89HLG0TB4E). To ensure analytics events are always sent to the correct Analytics property, update the measurement ID field in the local config or remove it from the local config.",
+      "timestamp": "2025-09-12T11:34:37.915Z"
+    },
+    {
+      "type": "log",
+      "text": "LCP: 536",
+      "timestamp": "2025-09-12T11:34:38.084Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 FCP: 204 ms",
+      "timestamp": "2025-09-12T11:34:38.740Z"
+    },
+    {
+      "type": "log",
+      "text": "🎯 TTFB: 48.70000000006985 ms",
+      "timestamp": "2025-09-12T11:34:38.743Z"
+    }
+  ]
+}
