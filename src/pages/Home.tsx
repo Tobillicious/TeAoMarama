@@ -8,11 +8,11 @@ const Home = React.memo(function Home() {
   const [showTeReo, setShowTeReo] = useState(false);
   const [resourceCount, setResourceCount] = useState(2013);
 
-  // Animate resource count up to actual massive number
+  // Animate to show actual development pipeline scale
   useEffect(() => {
-    const targetCount = 12055; // True total: 12,000+ resources across all categories
-    const increment = Math.ceil((targetCount - 2013) / 40);
-    let current = 2013;
+    const targetCount = 500; // Honest count of quality-ready resources
+    const increment = Math.ceil((targetCount - 50) / 30);
+    let current = 50;
     
     const timer = setInterval(() => {
       current += increment;
@@ -22,32 +22,32 @@ const Home = React.memo(function Home() {
       } else {
         setResourceCount(current);
       }
-    }, 60);
+    }, 80);
 
     return () => clearInterval(timer);
   }, []);
 
   const quickActions = [
     {
-      title: showTeReo ? '✅ Ngā Rauemi Mahi' : '✅ WORKING RESOURCES',
-      subtitle: showTeReo ? `${resourceCount}+ ngā rauemi` : `${resourceCount.toLocaleString()}+ Educational Treasures`,
+      title: showTeReo ? '🔥 Quality Resources' : '🔥 QUALITY RESOURCES',
+      subtitle: showTeReo ? `${resourceCount}+ ready-to-use` : `${resourceCount}+ Ready-to-use lessons`,
       path: '/working-resources',
       icon: <BookOpen className="w-8 h-8" />,
       color: 'from-green-500 to-emerald-600',
       highlight: true
     },
     {
-      title: showTeReo ? '🧠 AI Superintelligence' : '🧠 AI SUPERINTELLIGENCE',
-      subtitle: showTeReo ? 'Multi-LLM hāngai' : 'Multi-agent AI coordination',
+      title: showTeReo ? '⚡ Enhancement Engine' : '⚡ ENHANCEMENT ENGINE',
+      subtitle: showTeReo ? '4-pass AI whakapai' : '4-pass AI content enhancement',
       path: '/superintelligence',
       icon: <Cpu className="w-8 h-8" />,
       color: 'from-cyan-500 to-blue-600',
       highlight: true,
-      badge: 'NEW'
+      badge: 'ACTIVE'
     },
     {
       title: showTeReo ? 'Kaiako Dashboard' : 'TEACHER DASHBOARD',
-      subtitle: showTeReo ? 'Ngā taputapu kaiako' : 'Professional teaching tools',
+      subtitle: showTeReo ? 'Professional taputapu' : 'Development & analytics tools',
       path: '/teacher',
       icon: <Users className="w-8 h-8" />,
       color: 'from-blue-500 to-indigo-600',
@@ -55,41 +55,26 @@ const Home = React.memo(function Home() {
     },
     {
       title: showTeReo ? 'Ākonga Dashboard' : 'STUDENT DASHBOARD', 
-      subtitle: showTeReo ? 'Taiao ako ākonga' : 'Personalized learning experience',
+      subtitle: showTeReo ? 'Personalized ako' : 'Adaptive learning pathways',
       path: '/student',
       icon: <Award className="w-8 h-8" />,
       color: 'from-purple-500 to-violet-600',
       highlight: true
     },
     {
-      title: showTeReo ? 'Akoranga Tikanga' : 'CULTURAL LEARNING',
-      subtitle: showTeReo ? '99+ tikanga modules' : '99+ Cultural components',
+      title: showTeReo ? 'Place-Based Learning' : 'PLACE-BASED LEARNING',
+      subtitle: showTeReo ? 'Local context integration' : 'Authentic community connections',
       path: '/cultural-learning-modules',
       icon: <Heart className="w-8 h-8" />,
       color: 'from-pink-500 to-rose-600',
       highlight: true
     },
     {
-      title: showTeReo ? 'Tātaritanga' : 'ADVANCED ANALYTICS',
-      subtitle: showTeReo ? 'Real-time raraunga' : 'Real-time performance insights',
+      title: showTeReo ? 'Content Pipeline' : 'CONTENT PIPELINE',
+      subtitle: showTeReo ? '2K+ in development' : '2K+ Resources in development',
       path: '/advanced-analytics',
       icon: <TrendingUp className="w-8 h-8" />,
-      color: 'from-orange-500 to-amber-600',
-      highlight: true
-    },
-    {
-      title: showTeReo ? 'Multimedia Studio' : 'MULTIMEDIA STUDIO',
-      subtitle: showTeReo ? 'Hanga rauemi' : 'Interactive content creation',
-      path: '/multimedia',
-      icon: <Palette className="w-8 h-8" />,
-      color: 'from-violet-500 to-purple-600'
-    },
-    {
-      title: showTeReo ? 'Assessment Hub' : 'ASSESSMENT HUB',
-      subtitle: showTeReo ? '6,055+ aromatawai' : '6,055+ Assessment tools',
-      path: '/assessments',
-      icon: <Target className="w-8 h-8" />,
-      color: 'from-teal-500 to-cyan-600'
+      color: 'from-orange-500 to-amber-600'
     }
   ];
 
@@ -104,27 +89,37 @@ const Home = React.memo(function Home() {
           </h1>
           <p className="hero-subtitle">
             {showTeReo 
-              ? 'Taonga mātauranga mō ngā akonga katoa o Aotearoa - ERO Ready'
-              : 'ERO-Ready Educational Excellence Platform for Aotearoa New Zealand'
+              ? 'AI-Enhanced Educational Development Platform - Building Tomorrow\'s Curriculum'
+              : 'AI-Enhanced Educational Development Platform - Transforming Learning for Aotearoa'
             }
           </p>
           
-          {/* Live Stats Bar */}
+          {/* Live Stats Bar - Honest Development Pipeline */}
           <div className="stats-bar">
             <div className="stat-item">
               <Sparkles className="w-6 h-6 text-yellow-500" />
-              <span className="stat-number">{resourceCount.toLocaleString()}+</span>
-              <span className="stat-label">{showTeReo ? 'Rauemi' : 'Resources'}</span>
+              <span className="stat-number">{resourceCount}+</span>
+              <span className="stat-label">{showTeReo ? 'Ready Resources' : 'Quality Resources'}</span>
             </div>
             <div className="stat-item">
-              <Brain className="w-6 h-6 text-blue-500" />
-              <span className="stat-number">8</span>
-              <span className="stat-label">{showTeReo ? 'Marautanga' : 'Subjects'}</span>
+              <Cpu className="w-6 h-6 text-cyan-500" />
+              <span className="stat-number">4-Pass</span>
+              <span className="stat-label">{showTeReo ? 'Enhancement' : 'AI Enhancement'}</span>
+            </div>
+            <div className="stat-item">
+              <Heart className="w-6 h-6 text-pink-500" />
+              <span className="stat-number">Local</span>
+              <span className="stat-label">{showTeReo ? 'Place-Based' : 'Place-Based Learning'}</span>
+            </div>
+            <div className="stat-item">
+              <Target className="w-6 h-6 text-teal-500" />
+              <span className="stat-number">2K+</span>
+              <span className="stat-label">{showTeReo ? 'In Development' : 'In Development'}</span>
             </div>
             <div className="stat-item">
               <Award className="w-6 h-6 text-purple-500" />
-              <span className="stat-number">100%</span>
-              <span className="stat-label">{showTeReo ? 'Tikanga Safe' : 'Culturally Safe'}</span>
+              <span className="stat-number">NZC</span>
+              <span className="stat-label">{showTeReo ? 'Aligned' : 'Curriculum Aligned'}</span>
             </div>
           </div>
 
@@ -178,33 +173,45 @@ const Home = React.memo(function Home() {
         </div>
       </section>
 
-      {/* Featured Content Showcase */}
+      {/* Platform Capabilities Showcase */}
       <section className="showcase-section">
         <h2 className="section-title">
-          {showTeReo ? 'Ngā Taonga Mātauranga' : 'Educational Treasures'}
+          {showTeReo ? 'Platform Capabilities' : 'Platform Capabilities'}
         </h2>
         <div className="showcase-grid">
           <div className="showcase-item">
             <div className="showcase-icon">
-              <Heart className="w-12 h-12 text-pink-500" />
+              <Cpu className="w-12 h-12 text-cyan-500" />
             </div>
-            <h3>{showTeReo ? 'Tikanga Māori Integration' : 'Indigenous Knowledge'}</h3>
-            <p>{showTeReo ? 'Katoa ngā rauemi he tikanga Māori' : 'All resources culturally validated and integrated'}</p>
+            <h3>{showTeReo ? '4-Pass Enhancement' : 'AI Enhancement Engine'}</h3>
+            <p>{showTeReo ? 'AI whakapai system' : 'Transforms template content into culturally-rich, place-based lessons'}</p>
             <div className="showcase-stats">
-              <span className="highlight-number">5/5</span>
-              <span>Cultural authenticity score</span>
+              <span className="highlight-number">4-Pass</span>
+              <span>Enhancement pipeline</span>
             </div>
           </div>
           
           <div className="showcase-item">
             <div className="showcase-icon">
-              <Brain className="w-12 h-12 text-blue-500" />
+              <Heart className="w-12 h-12 text-pink-500" />
             </div>
-            <h3>{showTeReo ? 'AI Kaitautoko' : 'AI Enhancement'}</h3>
-            <p>{showTeReo ? 'DeepSeek me MCP hāngai' : 'Multi-LLM coordination with DeepSeek and MCP'}</p>
+            <h3>{showTeReo ? 'Place-Based Focus' : 'Authentic Integration'}</h3>
+            <p>{showTeReo ? 'Local context weaving' : 'Genuine community knowledge and local environmental connections'}</p>
             <div className="showcase-stats">
-              <span className="highlight-number">4</span>
-              <span>Enhancement passes per resource</span>
+              <span className="highlight-number">Local</span>
+              <span>Community-centered approach</span>
+            </div>
+          </div>
+          
+          <div className="showcase-item">
+            <div className="showcase-icon">
+              <Sparkles className="w-12 h-12 text-yellow-500" />
+            </div>
+            <h3>{showTeReo ? 'Quality Over Quantity' : 'Quality-First Approach'}</h3>
+            <p>{showTeReo ? 'Focused excellence' : 'Developing fewer, higher-quality resources with authentic pedagogy'}</p>
+            <div className="showcase-stats">
+              <span className="highlight-number">Quality</span>
+              <span>Over quantity every time</span>
             </div>
           </div>
           
@@ -212,11 +219,11 @@ const Home = React.memo(function Home() {
             <div className="showcase-icon">
               <TrendingUp className="w-12 h-12 text-green-500" />
             </div>
-            <h3>{showTeReo ? 'ERO Rēhita' : 'ERO Ready'}</h3>
-            <p>{showTeReo ? 'Katoa rauemi ERO rēhita' : 'Professional-grade content meeting ERO standards'}</p>
+            <h3>{showTeReo ? 'Development Pipeline' : 'Content Development'}</h3>
+            <p>{showTeReo ? 'Continuous improvement' : 'Active development of template content into complete lessons'}</p>
             <div className="showcase-stats">
-              <span className="highlight-number">100%</span>
-              <span>Compliance rate</span>
+              <span className="highlight-number">2K+</span>
+              <span>Resources in active development</span>
             </div>
           </div>
         </div>
@@ -225,18 +232,18 @@ const Home = React.memo(function Home() {
       {/* Mission Statement */}
       <section className="mission-section">
         <div className="mission-content">
-          <h2>{showTeReo ? 'Ā Mātou Whāinga' : 'Our Mission'}</h2>
+          <h2>{showTeReo ? 'Ā Mātou Whāinga' : 'Our Vision'}</h2>
           <p className="mission-text">
             {showTeReo 
-              ? 'He whakatipu i te mātauranga Māori me te mātauranga ā-taiao hoki, ā, he whakamahi hoki i ngā hangarau AI hōu hei āwhina i ngā akonga katoa o Aotearoa kia whakatōhea ai rātou i ō rātou taonga tuku iho.'
-              : 'Empowering indigenous education through cutting-edge AI coordination and culturally safe learning experiences, ensuring every student in Aotearoa can connect with their cultural heritage while achieving academic excellence.'
+              ? 'He whakatipu i ngā taputapu AI hei whakapai i nga rauemi akoranga, he whakamahi i te mātauranga-ā-iwi me nga pūnaha AI hei hanga i nga akoranga auaha, ā-rohe hoki mō Aotearoa.'
+              : 'Building AI-powered tools that transform educational templates into authentic, place-based learning experiences. We develop quality-first resources that connect students to their local communities while meeting curriculum excellence standards.'
             }
           </p>
           <div className="mission-badges">
-            <span className="badge">{showTeReo ? 'Tikanga Māori' : 'Cultural Safety'}</span>
-            <span className="badge">{showTeReo ? 'AI Hāngai' : 'AI Enhanced'}</span>
-            <span className="badge">{showTeReo ? 'ERO Rēhita' : 'ERO Ready'}</span>
-            <span className="badge">{showTeReo ? 'Aotearoa Whānui' : 'Nationwide'}</span>
+            <span className="badge">{showTeReo ? 'Quality-First' : 'Quality-First Development'}</span>
+            <span className="badge">{showTeReo ? 'AI-Powered' : 'AI-Enhanced Creation'}</span>
+            <span className="badge">{showTeReo ? 'Place-Based' : 'Place-Based Learning'}</span>
+            <span className="badge">{showTeReo ? 'Community-Connected' : 'Community-Centered'}</span>
           </div>
         </div>
       </section>

@@ -31,6 +31,14 @@ const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
 const CulturalLearningModules = lazy(() => import('./components/CulturalLearningModules'));
 const AdvancedAnalytics = lazy(() => import('./components/AdvancedAnalyticsDashboard'));
 
+// Superintelligence and Advanced Features
+const SuperintelligenceDashboard = lazy(() => import('./components/SuperintelligenceDashboard'));
+const SuperIntelligenceCoordinator = lazy(
+  () => import('./components/SuperIntelligenceCoordinator'),
+);
+const MultimediaStudio = lazy(() => import('./components/MultimediaStudio'));
+const AssessmentHub = lazy(() => import('./components/AdvancedStudentAnalytics')); // Using available component
+
 function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
@@ -69,37 +77,43 @@ function App() {
         <ErrorBoundary>
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-            {/* Landing */}
-            <Route path="/" element={<Home />} />
+              {/* Landing */}
+              <Route path="/" element={<Home />} />
 
-            {/* Authentication */}
-            <Route path="/login" element={<Login />} />
+              {/* Authentication */}
+              <Route path="/login" element={<Login />} />
 
-            {/* Core Dashboards - single route each */}
-            <Route path="/teacher" element={<TeacherDashboard />} />
-            <Route path="/student" element={<StudentDashboard />} />
+              {/* Core Dashboards - single route each */}
+              <Route path="/teacher" element={<TeacherDashboard />} />
+              <Route path="/student" element={<StudentDashboard />} />
 
-            {/* Resources - single route */}
-            <Route path="/resources" element={<ResourceBrowser />} />
-            <Route path="/working-resources" element={<ResourceBrowser />} />
-            <Route path="/human-content" element={<HumanReadableContentBrowser />} />
-            <Route path="/lesson/:resourceId" element={<LessonViewer />} />
+              {/* Resources - single route */}
+              <Route path="/resources" element={<ResourceBrowser />} />
+              <Route path="/working-resources" element={<ResourceBrowser />} />
+              <Route path="/human-content" element={<HumanReadableContentBrowser />} />
+              <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
-            {/* Year Level Content - Year 8 only for now */}
-            <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
+              {/* Year Level Content - Year 8 only for now */}
+              <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
 
-            {/* Cultural Learning and Analytics */}
-            <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
-            <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
-            <Route path="/platform" element={<Home />} />
+              {/* Cultural Learning and Analytics */}
+              <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
+              <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
+              <Route path="/platform" element={<Home />} />
 
-            {/* Static Pages */}
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            
-            {/* 404 Fallback */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              {/* Superintelligence and Advanced Features */}
+              <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
+              <Route path="/super-intelligence" element={<SuperIntelligenceCoordinator />} />
+              <Route path="/multimedia" element={<MultimediaStudio />} />
+              <Route path="/assessments" element={<AssessmentHub />} />
+
+              {/* Static Pages */}
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+
+              {/* 404 Fallback */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </Suspense>
         </ErrorBoundary>
       </main>
