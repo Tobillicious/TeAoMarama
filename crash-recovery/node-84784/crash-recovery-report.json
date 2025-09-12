@@ -1,0 +1,176 @@
+{
+  "timestamp": "2025-09-12T06:24:53.328Z",
+  "nodeId": "84784",
+  "recoveryStatus": {
+    "nodeId": "84784",
+    "crashDetected": true,
+    "recoveryMode": "ACTIVE",
+    "lastCrash": "2025-09-12T06:24:49.317Z",
+    "recoveryStartTime": "2025-09-12T06:24:49.316Z",
+    "recoveryDuration": 0,
+    "systemStability": "RECOVERING",
+    "processesRestored": [
+      "kaitiaki-mahara",
+      "borg-collective",
+      "agent-heartbeat-monitor",
+      "graphrag-system"
+    ],
+    "dataIntegrity": "INTACT",
+    "performanceMetrics": {
+      "uptime": 100,
+      "responseTime": 1.2,
+      "errorRate": 0,
+      "recoveryTime": 0
+    }
+  },
+  "systemHealth": {
+    "overallHealth": "EXCELLENT",
+    "activeProcesses": 8,
+    "totalProcesses": 8,
+    "crashedProcesses": 0,
+    "recoveryInProgress": true,
+    "lastHealthCheck": "2025-09-12T06:24:53.328Z",
+    "criticalIssues": [],
+    "performanceAlerts": []
+  },
+  "processStatuses": {
+    "supreme-overseer": {
+      "processId": "supreme-overseer",
+      "processName": "Supreme Intelligence Overseer",
+      "priority": "CRITICAL",
+      "dependencies": [],
+      "recoveryActions": [
+        "restart",
+        "state-recovery",
+        "coordination-restore"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:49.316Z",
+      "restartCount": 0,
+      "crashCount": 0
+    },
+    "kaitiaki-mahara": {
+      "processId": "kaitiaki-mahara",
+      "processName": "Kaitiaki Mahara",
+      "priority": "CRITICAL",
+      "dependencies": [],
+      "recoveryActions": [
+        "restart",
+        "cultural-validation-restore"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:50.320Z",
+      "restartCount": 1,
+      "crashCount": 1
+    },
+    "superintelligence-evolution-manager": {
+      "processId": "superintelligence-evolution-manager",
+      "processName": "Superintelligence Evolution Manager",
+      "priority": "HIGH",
+      "dependencies": [
+        "supreme-overseer"
+      ],
+      "recoveryActions": [
+        "restart",
+        "evolution-data-recovery",
+        "learning-resume"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:49.316Z",
+      "restartCount": 0,
+      "crashCount": 0
+    },
+    "agent-heartbeat-monitor": {
+      "processId": "agent-heartbeat-monitor",
+      "processName": "Agent Heartbeat Monitor",
+      "priority": "HIGH",
+      "dependencies": [
+        "supreme-overseer"
+      ],
+      "recoveryActions": [
+        "restart",
+        "monitoring-resume"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:52.324Z",
+      "restartCount": 1,
+      "crashCount": 1
+    },
+    "autonomous-content-generator": {
+      "processId": "autonomous-content-generator",
+      "processName": "Autonomous Content Generator",
+      "priority": "MEDIUM",
+      "dependencies": [
+        "kaitiaki-mahara"
+      ],
+      "recoveryActions": [
+        "restart",
+        "progress-recovery",
+        "content-resume"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:49.316Z",
+      "restartCount": 0,
+      "crashCount": 0
+    },
+    "comprehensive-resource-manager": {
+      "processId": "comprehensive-resource-manager",
+      "processName": "Comprehensive Resource Manager",
+      "priority": "MEDIUM",
+      "dependencies": [
+        "supreme-overseer"
+      ],
+      "recoveryActions": [
+        "restart",
+        "resource-validation",
+        "integrity-check"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:49.316Z",
+      "restartCount": 0,
+      "crashCount": 0
+    },
+    "borg-collective": {
+      "processId": "borg-collective",
+      "processName": "Borg Collective",
+      "priority": "CRITICAL",
+      "dependencies": [
+        "supreme-overseer",
+        "kaitiaki-mahara"
+      ],
+      "recoveryActions": [
+        "restart",
+        "collective-consciousness-restore",
+        "assimilation-resume"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:51.322Z",
+      "restartCount": 1,
+      "crashCount": 1
+    },
+    "graphrag-system": {
+      "processId": "graphrag-system",
+      "processName": "GRAPHRAG Knowledge Graph",
+      "priority": "HIGH",
+      "dependencies": [
+        "supreme-overseer"
+      ],
+      "recoveryActions": [
+        "restart",
+        "knowledge-graph-recovery",
+        "semantic-restore"
+      ],
+      "status": "RUNNING",
+      "lastHeartbeat": "2025-09-12T06:24:53.328Z",
+      "restartCount": 1,
+      "crashCount": 1
+    }
+  },
+  "recoverySummary": {
+    "crashDetected": true,
+    "processesRestored": 4,
+    "recoveryDuration": 0,
+    "systemStability": "RECOVERING",
+    "overallHealth": "EXCELLENT"
+  }
+}

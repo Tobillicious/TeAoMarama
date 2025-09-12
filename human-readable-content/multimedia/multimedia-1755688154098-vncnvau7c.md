@@ -1,0 +1,120 @@
+# 🎬 Year 9 Arts: Community Voices Podcast - Interactive Multimedia Experience
+
+## 📋 Basic Information
+
+- **Type**: multimedia
+- **Subject**: 🎨 Arts
+- **Year Level**: 9️⃣ Year 9
+- **Duration**: 30-45 minutes
+- **Depth**: developing
+- **Created**: 8/20/2025
+- **Enhanced**: 9/9/2025
+
+## 🌺 Cultural Context
+
+Creating interactive literacy multimedia that combines traditional pūrākau with contemporary narratives connected to our local community and cultural heritage through engaging digital storytelling experiences.
+
+## 🎯 Learning Objectives
+
+1. Engage with interactive arts multimedia through cultural and local context
+2. Apply traditional knowledge and modern methods to arts challenges
+3. Connect multimedia learning to local environment, community, and cultural heritage
+4. Demonstrate respect for Māori and Pacific perspectives and values
+5. Use Te Reo Māori appropriately in arts multimedia contexts
+
+## 🚀 Activities
+
+1. Cultural mapping and arts analysis
+2. Traditional knowledge workshop and arts integration
+3. Environmental investigation using arts methods
+4. Community interview project on arts applications
+5. Sustainability challenge with arts solutions
+6. Cultural artifact study through arts lens
+
+## 📚 Resources
+
+1. Digital storytelling software and platforms
+2. Traditional story animation tools
+3. Local legend interactive databases
+4. Multimedia recording and editing equipment
+5. Te Reo Māori language learning apps
+
+## 📊 Assessment
+
+**Type**: Formative and Summative Digital Assessment
+
+**Tasks**:
+1. Formative: Teacher observation during interactive multimedia exploration and digital discussions
+2. Formative: Peer feedback through digital collaboration platforms and self-reflection on learning progress
+3. Summative: Student digital presentation demonstrating understanding, cultural connection, and community application
+4. Summative: Digital portfolio of work showing growth in knowledge, skills, and cultural understanding
+
+## 🏛️ New Zealand Curriculum Alignment
+
+1. English: Listening, Reading, and Viewing (Level 4-5)
+2. English: Speaking, Writing, and Presenting (Level 4-5)
+3. Te Tiriti o Waitangi: Cultural narratives and perspectives
+
+## 🎬 Multimedia Features
+
+### 1. Whakawhanaungatanga: Building Digital Connections
+
+**Description**: Begin with karakia and establish cultural protocols. Students explore their prior knowledge and personal connections to the multimedia topic through interactive digital interfaces.
+
+**Duration**: 5-10 minutes
+
+**Tools**:
+1. Interactive karakia cards
+2. Cultural protocol digital guides
+3. Student reflection digital forms
+
+### 2. Cultural Context and Interactive Exploration
+
+**Description**: Students will create and interact with immersive digital stories combining traditional Māori storytelling techniques with modern multimedia tools, focusing on local legends and community narratives through collaborative digital workshops.
+
+**Duration**: 20-25 minutes
+
+**Tools**:
+1. Digital storytelling software and platforms
+2. Traditional story animation tools
+3. Local legend interactive databases
+
+### 3. Hands-on Digital Learning and Application
+
+**Description**: Interactive application of arts concepts using both traditional and modern digital methods. Students work collaboratively in virtual environments to solve real-world problems connected to their local community.
+
+**Duration**: 10-15 minutes
+
+**Tools**:
+1. Multimedia recording and editing equipment
+2. Te Reo Māori language learning apps
+
+### 4. Digital Reflection and Cultural Connection
+
+**Description**: Students reflect on their digital learning journey through interactive journals, connecting new knowledge to cultural values, community needs, and personal growth through multimedia sharing platforms.
+
+**Duration**: 5-10 minutes
+
+**Tools**:
+1. Interactive reflection journals
+2. Cultural connection digital prompts
+3. Digital celebration platforms
+
+## 💻 Technical Requirements
+
+- **Devices**: Tablets, computers, or smartphones with internet access
+- **Software**: Modern web browser with multimedia support
+- **Accessibility**: Screen reader compatible, keyboard navigation support
+- **Bandwidth**: Stable internet connection for interactive content
+
+## ♿ Accessibility Features
+
+- **Visual**: High contrast options, text-to-speech, and visual descriptions for all multimedia content
+- **Auditory**: Closed captions, audio descriptions, and visual alternatives for all audio content
+- **Motor**: Keyboard navigation, voice control, and alternative input methods for all interactive elements
+- **Cognitive**: Clear instructions, progress indicators, and multiple ways to access and understand content
+
+---
+
+*This content was automatically converted from JSON format for human readability.*
+*Original ID: multimedia-1755688154098-vncnvau7c*
