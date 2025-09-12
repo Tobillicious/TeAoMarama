@@ -44,21 +44,35 @@ const EnhancedResourceViewer: React.FC = () => {
   const handleDownload = () => {
     if (!resource) return;
 
-    // Create downloadable content
+    // Create comprehensive downloadable content
     const content = `
 # ${resource.title}
 
+## 📚 Resource Overview
 **Subject:** ${resource.subject}  
 **Year Level:** ${resource.yearLevel}  
 **Type:** ${resource.type}  
 **Quality Score:** ${resource.enhancement.qualityScore.toFixed(1)}/15  
 **Cultural Authenticity:** ${resource.enhancement.culturalAuthenticity.toFixed(1)}/10  
+**Pedagogical Depth:** ${resource.enhancement.pedagogicalDepth.toFixed(1)}/10  
+**Progressive Index:** ${resource.enhancement.progressiveIndex.toFixed(1)}/10  
 
-## Description
+## 📖 Description
 ${resource.description}
 
-## Enhancement Details
-This resource has been enhanced through our 4-pass progressive enrichment system:
+## 🌿 Cultural Integration
+This resource incorporates ${
+      resource.culturalElements
+    } cultural elements connecting learning to Te Ao Māori perspectives, ensuring authentic cultural representation and respect for traditional knowledge systems.
+
+## 🎯 Learning Objectives
+- Develop understanding of ${resource.subject} through culturally responsive pedagogy
+- Connect learning to Te Ao Māori worldviews and values
+- Apply progressive pedagogical approaches for enhanced learning outcomes
+- Engage with authentic cultural contexts and traditional knowledge
+
+## 🔄 Enhancement Journey
+This resource has been enhanced through our comprehensive 4-pass progressive enrichment system:
 
 ${resource.enhancement.passes
   .map(
@@ -67,30 +81,53 @@ ${resource.enhancement.passes
 **Enhanced by:** ${pass.kaiako}  
 **Quality Improvement:** +${pass.qualityImprovement.toFixed(1)} points  
 **Completed:** ${new Date(pass.timeCompleted).toLocaleDateString()}  
+**Cultural Authenticity Score:** ${pass.culturalAuthenticity?.toFixed(1) || 'N/A'}/10  
+**Pedagogical Depth Score:** ${pass.pedagogicalDepth?.toFixed(1) || 'N/A'}/10  
 
+#### Enhanced Content Highlights:
 ${
   pass.enhancedContent
-    ? JSON.stringify(pass.enhancedContent, null, 2)
+    ? Object.entries(pass.enhancedContent)
+        .map(
+          ([key, value]) =>
+            `- **${key.replace(/([A-Z])/g, ' $1').trim()}:** ${
+              typeof value === 'object' ? JSON.stringify(value, null, 2) : value
+            }`,
+        )
+        .join('\n')
     : 'Enhanced content available in full version'
 }
 `,
   )
   .join('\n')}
 
-## Cultural Elements
-This resource incorporates ${
-      resource.culturalElements
-    } cultural elements connecting learning to Te Ao Māori perspectives.
+## 📊 Quality Metrics
+- **Overall Quality Score:** ${resource.enhancement.qualityScore.toFixed(1)}/15
+- **Cultural Authenticity:** ${resource.enhancement.culturalAuthenticity.toFixed(1)}/10
+- **Pedagogical Depth:** ${resource.enhancement.pedagogicalDepth.toFixed(1)}/10
+- **Progressive Index:** ${resource.enhancement.progressiveIndex.toFixed(1)}/10
+- **Enhancement Passes Completed:** ${resource.enhancement.passesCompleted}/4
 
-## Metadata
-- **Difficulty:** ${resource.metadata.difficulty}/10
+## 🏷️ Resource Metadata
+- **Difficulty Level:** ${resource.metadata.difficulty}/10
 - **Estimated Duration:** ${resource.metadata.estimatedDuration} minutes
 - **Tags:** ${resource.metadata.tags.join(', ')}
 - **Created:** ${new Date(resource.metadata.created).toLocaleDateString()}
 - **Last Modified:** ${new Date(resource.metadata.lastModified).toLocaleDateString()}
+- **Current Pass:** ${resource.currentPass}/4
+
+## 🎓 Implementation Notes
+This resource has been carefully crafted to align with:
+- New Zealand Curriculum requirements
+- Te Ao Māori principles and values
+- Progressive pedagogical best practices
+- Cultural safety and inclusion standards
+- Authentic learning experiences
 
 ---
 Generated from TeAoMarama Enhanced Resource Library
+Mangakōtukutuku Excellence Standards
+Progressive Multi-Pass Enhancement System
     `;
 
     const blob = new Blob([content], { type: 'text/markdown' });
@@ -207,130 +244,11 @@ Generated from TeAoMarama Enhanced Resource Library
 
       {/* Content Area */}
       <div className="viewer-content">
-        {/* Enhancement Pass Tabs */}
-        <div className="pass-tabs">
-          <h3>Enhancement Passes</h3>
-          <div className="tabs">
-            {resource.enhancement.passes.map((pass, index) => (
-              <button
-                key={index}
-                className={`tab ${index === activePass ? 'active' : ''}`}
-                onClick={() => setActivePass(index)}
-              >
-                <div className="tab-header">
-                  <span className="pass-number">Pass {pass.passNumber}</span>
-                  <span className="improvement">+{pass.qualityImprovement.toFixed(1)}</span>
-                </div>
-                <div className="tab-subtitle">{pass.specialization}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Current Pass Content */}
-        {currentPass && (
-          <div className="pass-content">
-            <div className="pass-header">
-              <h2>
-                Pass {currentPass.passNumber}: {currentPass.specialization}
-              </h2>
-              <div className="kaiako-info">
-                <strong>Enhanced by:</strong> {currentPass.kaiako}
-              </div>
-              <div className="completion-date">
-                <strong>Completed:</strong>{' '}
-                {new Date(currentPass.timeCompleted).toLocaleDateString()}
-              </div>
-            </div>
-
-            <div className="enhanced-content">
-              <h3>Enhanced Learning Content</h3>
-
-              {/* Display the actual enhanced content */}
-              {currentPass.enhancedContent ? (
-                <div className="content-display">
-                  {typeof currentPass.enhancedContent === 'string' ? (
-                    <div className="text-content">
-                      <pre>{currentPass.enhancedContent}</pre>
-                    </div>
-                  ) : (
-                    <div className="structured-content">
-                      {/* Handle structured content objects */}
-                      {Object.entries(currentPass.enhancedContent).map(([key, value]) => (
-                        <div key={key} className="content-section">
-                          <h4>
-                            {key
-                              .replace(/([A-Z])/g, ' $1')
-                              .replace(/^./, (str) => str.toUpperCase())}
-                          </h4>
-                          <div className="content-value">
-                            {typeof value === 'string' ? (
-                              <p>{value}</p>
-                            ) : Array.isArray(value) ? (
-                              <ul>
-                                {value.map((item, idx) => (
-                                  <li key={idx}>
-                                    {typeof item === 'string' ? item : JSON.stringify(item)}
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <pre>{JSON.stringify(value, null, 2)}</pre>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="placeholder-content">
-                  <p>
-                    This pass focused on {currentPass.specialization.toLowerCase()} and improved the
-                    resource quality by {currentPass.qualityImprovement.toFixed(1)} points.
-                  </p>
-                  <p>
-                    <strong>Kaiako Expertise:</strong> {currentPass.kaiako} applied their
-                    specialized knowledge in {currentPass.specialization.toLowerCase()} to enhance
-                    this educational resource.
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Original Resource Description */}
-        <div className="original-description">
-          <h3>Resource Description</h3>
-          <p>{resource.description}</p>
-
-          {resource.metadata.tags.length > 0 && (
-            <div className="tags">
-              <strong>Tags:</strong>{' '}
-              {resource.metadata.tags.map((tag) => (
-                <span key={tag} className="tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Cultural Integration Info */}
-        {resource.culturalElements > 0 && (
-          <div className="cultural-integration">
-            <h3>Cultural Integration</h3>
-            <p>
-              This resource incorporates <strong>{resource.culturalElements}</strong> cultural
-              elements that connect learning objectives with Te Ao Māori worldviews and practices.
-            </p>
-            <p>
-              Cultural authenticity score:{' '}
-              <strong>{resource.enhancement.culturalAuthenticity.toFixed(1)}/10</strong>
-            </p>
-          </div>
-        )}
+        <ResourceContentDisplay
+          resource={resource}
+          activePass={activePass}
+          onPassChange={setActivePass}
+        />
       </div>
     </div>
   );
