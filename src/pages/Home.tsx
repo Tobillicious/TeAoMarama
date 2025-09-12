@@ -70,6 +70,15 @@ const Home = React.memo(function Home() {
       highlight: true
     },
     {
+      title: showTeReo ? 'Platform Audit' : '🔍 PLATFORM AUDIT',
+      subtitle: showTeReo ? 'Quality analysis' : 'Content quality & cultural analysis',
+      path: '/audit',
+      icon: <Target className="w-8 h-8" />,
+      color: 'from-red-500 to-pink-600',
+      highlight: true,
+      badge: 'NEW'
+    },
+    {
       title: showTeReo ? 'Content Pipeline' : 'CONTENT PIPELINE',
       subtitle: showTeReo ? '2K+ in development' : '2K+ Resources in development',
       path: '/advanced-analytics',
