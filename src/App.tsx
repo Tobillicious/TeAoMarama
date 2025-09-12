@@ -63,21 +63,21 @@ function App() {
           <Routes>
             {/* Landing */}
             <Route path="/" element={<Home />} />
-            
+
             {/* Authentication */}
             <Route path="/login" element={<Login />} />
-            
+
             {/* Core Dashboards - single route each */}
             <Route path="/teacher" element={<TeacherDashboard />} />
             <Route path="/student" element={<StudentDashboard />} />
-            
+
             {/* Resources - single route */}
             <Route path="/resources" element={<ResourceBrowser />} />
             <Route path="/lesson/:resourceId" element={<LessonViewer />} />
-            
+
             {/* Year Level Content - Year 8 only for now */}
             <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
-            
+
             {/* Static Pages */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
