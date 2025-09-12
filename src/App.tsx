@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import SimpleNavigation from './components/SimpleNavigation';
 import {
@@ -21,6 +22,7 @@ const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowse
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Educational content - keep Year 8 only for now
 const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
@@ -43,9 +45,9 @@ function App() {
     // Performance monitoring
     const measurePerformance = async () => {
       try {
-        const lcp = await performanceMonitor.measureLCP();
-        const fid = await performanceMonitor.measureFID();
-        const cls = await performanceMonitor.measureCLS();
+        const lcp = performanceMonitor.measureLCP();
+        const fid = performanceMonitor.measureFID();
+        const cls = performanceMonitor.measureCLS();
 
         console.log('Performance Metrics:', {
           LCP: `${lcp}ms`,
@@ -64,8 +66,9 @@ function App() {
     <div className="App">
       {!isLandingPage && <SimpleNavigation />}
       <main className="main-content">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
             {/* Landing */}
             <Route path="/" element={<Home />} />
 
@@ -93,8 +96,12 @@ function App() {
             {/* Static Pages */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* 404 Fallback */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
+          </Suspense>
+        </ErrorBoundary>
       </main>
     </div>
   );

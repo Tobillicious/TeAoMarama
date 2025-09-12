@@ -426,6 +426,7 @@ const ComprehensiveAuthSystem: React.FC = () => {
                 placeholder="Email address"
                 value={loginForm.email}
                 onChange={(e) => setLoginForm(prev => ({ ...prev, email: e.target.value }))}
+                autoComplete="email"
                 required
               />
             </div>
@@ -437,6 +438,7 @@ const ComprehensiveAuthSystem: React.FC = () => {
                 placeholder="Password"
                 value={loginForm.password}
                 onChange={(e) => setLoginForm(prev => ({ ...prev, password: e.target.value }))}
+                autoComplete="current-password"
                 required
               />
               <button
