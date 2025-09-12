@@ -216,16 +216,16 @@
   text-transform: capitalize;
 }
 
-.depth-badge[data-depth="developing"] {
-  background-color: #4CAF50;
+.depth-badge[data-depth='developing'] {
+  background-color: #4caf50;
 }
 
-.depth-badge[data-depth="extending"] {
-  background-color: #FF9800;
+.depth-badge[data-depth='extending'] {
+  background-color: #ff9800;
 }
 
-.depth-badge[data-depth="mastery"] {
-  background-color: #9C27B0;
+.depth-badge[data-depth='mastery'] {
+  background-color: #9c27b0;
 }
 
 .content-title {
