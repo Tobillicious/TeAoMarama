@@ -146,7 +146,11 @@ const HumanReadableContentBrowser: React.FC = () => {
   }
 
   return (
-    <div className="content-browser">
+    <div
+      className="content-browser"
+      role="main"
+      aria-label="Human-readable educational content browser"
+    >
       <div className="browser-header">
         <h1>📚 Human-Readable Educational Content</h1>
         <p className="browser-subtitle">
@@ -192,6 +196,8 @@ const HumanReadableContentBrowser: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
+            aria-label="Search educational content"
+            role="searchbox"
           />
         </div>
 
@@ -201,6 +207,7 @@ const HumanReadableContentBrowser: React.FC = () => {
             onChange={(e) => setSelectedType(e.target.value)}
             className="filter-select"
             title="Filter by content type"
+            aria-label="Filter by content type"
           >
             <option value="all">All Types</option>
             <option value="multimedia">🎬 Multimedia</option>
@@ -216,6 +223,7 @@ const HumanReadableContentBrowser: React.FC = () => {
             onChange={(e) => setSelectedSubject(e.target.value)}
             className="filter-select"
             title="Filter by subject"
+            aria-label="Filter by subject"
           >
             <option value="all">All Subjects</option>
             <option value="Te Reo Māori">🌺 Te Reo Māori</option>
@@ -268,15 +276,29 @@ const HumanReadableContentBrowser: React.FC = () => {
                 setSelectedYear('all');
               }}
               className="clear-filters-btn"
+              aria-label="Clear all filters"
             >
               Clear Filters
             </button>
           )}
         </div>
 
-        <div className="content-grid">
+        <div className="content-grid" role="grid" aria-label="Educational content grid">
           {filteredContent.map((content) => (
-            <div key={content.id} className="content-card">
+            <div
+              key={content.id}
+              className="content-card"
+              role="gridcell"
+              tabIndex={0}
+              aria-label={`${content.type} content: ${content.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  // Handle content selection/opening
+                  console.log('Selected content:', content.title);
+                }
+              }}
+            >
               <div className="content-header">
                 <div className="content-type">
                   <span className="type-icon">{getTypeEmoji(content.type)}</span>
