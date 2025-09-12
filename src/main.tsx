@@ -52,15 +52,14 @@ if (typeof window !== 'undefined') {
   window.addEventListener('load', () => {
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => {
-        // Prefetch educational platform route (most common)
-        import('./pages/EducationalPlatform').catch(() => {});
-        // Prefetch critical components
+        // Prefetch critical components only
         import('./components/Navigation').catch(() => {});
+        import('./components/LoadingSpinner').catch(() => {});
       });
     } else {
       // Fallback for browsers without requestIdleCallback
       setTimeout(() => {
-        import('./pages/EducationalPlatform').catch(() => {});
+        import('./components/Navigation').catch(() => {});
       }, 1000);
     }
 

@@ -12,6 +12,14 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+        passes: 2,
+        unsafe: true,
+        unsafe_comps: true,
+        unsafe_math: true,
+        unsafe_proto: true,
+      },
+      mangle: {
+        toplevel: true,
       },
     },
     rollupOptions: {
@@ -68,5 +76,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
+  },
+  css: {
+    devSourcemap: true,
   },
 });
