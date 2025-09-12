@@ -51,7 +51,7 @@ class JSONToHumanContentConverter {
     }
 
     // Create subdirectories
-    const subdirs = ['multimedia', 'unit-plans', 'lesson-plans', 'assessments'];
+    const subdirs = ['multimedia', 'unit-plans', 'lessons', 'assessments'];
     subdirs.forEach((subdir) => {
       const subdirPath = join(this.outputDir, subdir);
       if (!existsSync(subdirPath)) {
@@ -69,6 +69,12 @@ class JSONToHumanContentConverter {
 
       // Convert unit plans
       await this.convertContentType('unit-plans');
+
+      // Convert lesson plans
+      await this.convertContentType('lessons');
+
+      // Convert assessments
+      await this.convertContentType('assessments');
 
       // Generate index files
       await this.generateIndexFiles();
@@ -352,7 +358,7 @@ class JSONToHumanContentConverter {
     writeFileSync(join(this.outputDir, 'README.md'), mainIndex);
 
     // Generate type-specific indexes
-    const types = ['multimedia', 'unit-plans'];
+    const types = ['multimedia', 'unit-plans', 'lessons', 'assessments'];
     for (const type of types) {
       const typeIndex = this.generateTypeIndex(type);
       writeFileSync(join(this.outputDir, type, 'README.md'), typeIndex);
@@ -368,6 +374,8 @@ This directory contains educational content that has been converted from JSON fo
 
 - [🎬 Multimedia Content](./multimedia/) - Interactive multimedia experiences
 - [📅 Unit Plans](./unit-plans/) - Comprehensive unit planning resources
+- [📝 Lesson Plans](./lessons/) - Individual lesson resources
+- [📊 Assessments](./assessments/) - Assessment tools and frameworks
 
 ## 🌺 Cultural Context
 
@@ -377,7 +385,7 @@ All content has been developed with cultural safety and tikanga protocols in min
 
 - **Total Files Converted**: ${this.convertedCount}
 - **Conversion Errors**: ${this.errorCount}
-- **Content Types**: 2 (Multimedia, Unit Plans)
+- **Content Types**: 4 (Multimedia, Unit Plans, Lessons, Assessments)
 
 ## 🚀 Usage
 

@@ -1,0 +1,58 @@
+# 📊 Year 10 Mathematics: Traditional Knowledge Quiz - Authentic Assessment Experience
+
+## 📋 Basic Information
+
+- **Type**: assessment
+- **Subject**: 🔢 Mathematics
+- **Year Level**: 🔟 Year 10
+- **Duration**: 2-3 weeks
+- **Depth**: foundational
+- **Created**: 8/20/2025
+- **Enhanced**: 9/9/2025
+
+## 🌺 Cultural Context
+
+Connecting mathematical assessment to the local environment of Mangakōtukutuku College and Ngāti Kahungunu traditions through authentic, culturally-responsive evaluation methods.
+
+## 🎯 Learning Objectives
+
+1. Demonstrate mastery of mathematics concepts through authentic, culturally-responsive assessment
+2. Apply traditional knowledge and modern methods to mathematics challenges
+3. Connect assessment tasks to local environment, community, and cultural heritage
+4. Demonstrate respect for Māori and Pacific perspectives and values
+5. Use Te Reo Māori appropriately in mathematics assessment contexts
+
+## 🚀 Activities
+
+1. Cultural mapping and mathematics analysis
+2. Traditional knowledge workshop and mathematics integration
+3. Environmental investigation using mathematics methods
+4. Community interview project on mathematics applications
+5. Sustainability challenge with mathematics solutions
+6. Cultural artifact study through mathematics lens
+
+## 📚 Resources
+
+1. Local kaumātua for traditional measurement knowledge
+2. Environmental data from Mangakōtukutuku River
+3. Mathematical modeling software and calculators
+4. Cultural measurement references and traditional methods
+5. Community statistics and local economic data
+
+## 📊 Assessment
+
+**Type**: Not specified
+
+**Tasks**:
+No assessment tasks specified.
+
+## 🏛️ New Zealand Curriculum Alignment
+
+1. Mathematics and Statistics: Number and Algebra (Level 4-5)
+2. Mathematics and Statistics: Geometry and Measurement (Level 4-5)
+3. Te Tiriti o Waitangi: Kaitiakitanga and environmental stewardship
+
+---
+
+*This content was automatically converted from JSON format for human readability.*
+*Original ID: assessment-1755687346620-2mr5dutfx*

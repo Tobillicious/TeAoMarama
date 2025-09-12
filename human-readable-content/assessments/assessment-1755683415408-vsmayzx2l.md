@@ -1,0 +1,59 @@
+# 📊 Year 10 Social Studies: Cultural Understanding Check - Authentic Assessment Experience
+
+## 📋 Basic Information
+
+- **Type**: assessment
+- **Subject**: 🏛️ Social Studies
+- **Year Level**: 🔟 Year 10
+- **Duration**: 2-3 weeks
+- **Depth**: developing
+- **Created**: 8/20/2025
+- **Enhanced**: 9/9/2025
+
+## 🌺 Cultural Context
+
+Assessing understanding of our place in the world through authentic research projects that explore the history, culture, and contemporary issues of Ngāti Kahungunu and the broader Aotearoa context.
+
+## 🎯 Learning Objectives
+
+1. Demonstrate mastery of social studies concepts through authentic, culturally-responsive assessment
+2. Apply traditional knowledge and modern methods to social studies challenges
+3. Connect assessment tasks to local environment, community, and cultural heritage
+4. Demonstrate respect for Māori and Pacific perspectives and values
+5. Use Te Reo Māori appropriately in social studies assessment contexts
+
+## 🚀 Activities
+
+1. Cultural mapping and social studies analysis
+2. Traditional knowledge workshop and social studies integration
+3. Environmental investigation using social studies methods
+4. Community interview project on social studies applications
+5. Sustainability challenge with social studies solutions
+6. Cultural artifact study through social studies lens
+
+## 📚 Resources
+
+1. Local historians and community elders
+2. Historical archives and primary sources
+3. Recording equipment and interview tools
+4. Digital mapping and timeline software
+5. Treaty of Waitangi resources and documents
+
+## 📊 Assessment
+
+**Type**: Not specified
+
+**Tasks**:
+No assessment tasks specified.
+
+## 🏛️ New Zealand Curriculum Alignment
+
+1. Social Studies: Identity, Culture, and Organisation (Level 4-5)
+2. Social Studies: Place and Environment (Level 4-5)
+3. Social Studies: Continuity and Change (Level 4-5)
+4. Te Tiriti o Waitangi: Historical and contemporary perspectives
+
+---
+
+*This content was automatically converted from JSON format for human readability.*
+*Original ID: assessment-1755683415408-vsmayzx2l*
