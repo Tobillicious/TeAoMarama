@@ -3,259 +3,26 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/LoadingSpinner';
 import SimpleNavigation from './components/SimpleNavigation';
-import SiteBreadcrumbs from './components/SiteBreadcrumbs';
 import {
   performanceMonitor,
   registerServiceWorker,
   useMemoryOptimization,
 } from './utils/performance-optimizer';
 
-// Simplified imports to avoid Node.js module issues
-import DirectTeacherAccess from './components/DirectTeacherAccess';
-import EnhancedStudentDashboard from './components/EnhancedStudentDashboard';
-import FunctionalResourceBrowser from './components/FunctionalResourceBrowser';
-import ResourceTestPage from './components/ResourceTestPage';
-import StandaloneTeacherDashboard from './components/StandaloneTeacherDashboard';
-import './components/TestRoute.css';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import EducationalPlatformWorking from './pages/EducationalPlatformWorking';
-import Home from './pages/Home';
-import LandingPage from './pages/LandingPage';
+// Essential pages only - no duplicates
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
 
-// Lazy load heavy components for better performance
-const AdvancedEducationalDashboard = lazy(
-  () => import('./components/AdvancedEducationalDashboard'),
-);
-const CulturalLearningModules = lazy(() => import('./components/CulturalLearningModules'));
-const EducationalDashboard = lazy(() => import('./components/EducationalDashboard'));
-const AdvancedWisdomAccelerator = lazy(() => import('./components/AdvancedWisdomAccelerator'));
-const CulturalLearningActivities = lazy(() => import('./components/CulturalLearningActivities'));
-const DemoAccessBanner = lazy(() => import('./components/DemoAccessBanner'));
-const PerformanceDashboard = lazy(() => import('./components/PerformanceDashboard'));
-const SuperIntelligenceCoordinator = lazy(
-  () => import('./components/SuperIntelligenceCoordinator'),
-);
-const SupremeIntelligenceCoordinator = lazy(
-  () => import('./components/SupremeIntelligenceCoordinator'),
-);
+// Core functionality only - single version each
+const TeacherDashboard = lazy(() => import('./components/ProfessionalTeacherDashboard'));
+const StudentDashboard = lazy(() => import('./components/EnhancedStudentDashboard'));
+const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowser'));
+const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
+const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 
-// Lazy load authentication and heavy components
-const AuthenticationTabs = lazy(() => import('./components/AuthenticationTabs'));
-const ComprehensiveAuthSystem = lazy(() => import('./components/ComprehensiveAuthSystem'));
-const DatabaseIntegrationSystem = lazy(() => import('./components/DatabaseIntegrationSystem'));
-const EnhancedTeachingContentQualityDashboard = lazy(
-  () => import('./components/EnhancedTeachingContentQualityDashboard'),
-);
-const LessonManager = lazy(() => import('./components/LessonManager'));
-const LessonViewer = lazy(() => import('./components/LessonViewer'));
-const RoleBasedRouter = lazy(() => import('./components/RoleBasedRouter'));
-const WorkingLogin = lazy(() => import('./components/WorkingLogin'));
-
-// Lazy load educational content pages
-const Year8SocialStudies = lazy(
-  () => import(/* webpackChunkName: "year8-social-studies" */ './pages/Year8SocialStudies'),
-);
-
-const Year8ReadingStrategies = lazy(
-  () => import(/* webpackChunkName: "year8-reading" */ './pages/Year8ReadingStrategies'),
-);
-
-const Year8AcademicVocab = lazy(
-  () => import(/* webpackChunkName: "year8-academic-vocab" */ './pages/Year8AcademicVocab'),
-);
-
-const Year8WritingUnits = lazy(
-  () => import(/* webpackChunkName: "year8-writing-units" */ './pages/Year8WritingUnits'),
-);
-
-const Year8CriticalLiteracy = lazy(
-  () => import(/* webpackChunkName: "year8-critical-literacy" */ './pages/Year8CriticalLiteracy'),
-);
-
-const Year8ReadingUnits = lazy(
-  () => import(/* webpackChunkName: "year8-reading-units" */ './pages/Year8ReadingUnits'),
-);
-
-// Lazy load superintelligence components
-const SuperintelligenceDashboard = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ai-superintelligence" */ './components/SuperintelligenceDashboard'
-    ),
-);
-
-const SuperintelligenceAssistantDashboard = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ai-assistant" */ './components/SuperintelligenceAssistantDashboard'
-    ),
-);
-
-const SuperintelligenceAssistanceDashboard = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "ai-assistance" */ './components/SuperintelligenceAssistanceDashboard'
-    ),
-);
-
-const SuperintelligenceOrchestrator = lazy(
-  () =>
-    import(/* webpackChunkName: "ai-orchestrator" */ './components/SuperintelligenceOrchestrator'),
-);
-
-const EducationalResources = lazy(
-  () => import(/* webpackChunkName: "educational-resources" */ './pages/EducationalResources'),
-);
-
-const AdvancedAnalyticsDashboard = lazy(
-  () =>
-    import(/* webpackChunkName: "advanced-analytics" */ './components/AdvancedAnalyticsDashboard'),
-);
-
-const CollaborationHub = lazy(
-  () => import(/* webpackChunkName: "collaboration" */ './components/CollaborationHub'),
-);
-
-const MultimediaStudio = lazy(
-  () => import(/* webpackChunkName: "multimedia" */ './components/MultimediaStudio'),
-);
-
-const StudentDashboard = lazy(
-  () => import(/* webpackChunkName: "student-dashboard" */ './components/StudentDashboard'),
-);
-
-// const TeacherDashboard = lazy(
-//   () => import(/* webpackChunkName: "teacher-dashboard" */ './components/TeacherDashboard'),
-// );
-
-const ProfessionalTeacherDashboard = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "professional-teacher-dashboard" */ './components/ProfessionalTeacherDashboard'
-    ),
-);
-
-const KaitiakiDashboard = lazy(
-  () => import(/* webpackChunkName: "kaitiaki-dashboard" */ './components/KaitiakiDashboard'),
-);
-
-import AdvancedPerformanceMonitoringDashboard from './components/AdvancedPerformanceMonitoringDashboard';
-import AdvancedResourceEnrichment from './components/AdvancedResourceEnrichment';
-import AgentCoordinationDashboard from './components/AgentCoordinationDashboard';
-import ClaudeIntegrationDashboard from './components/ClaudeIntegrationDashboard';
-import CulturalSafetyComplianceDashboard from './components/CulturalSafetyComplianceDashboard';
-import DistributedIntelligenceCoordinator from './components/DistributedIntelligenceCoordinator';
-import EnhancedResourceBrowser from './components/EnhancedResourceBrowser';
-import EnhancedResourceViewer from './components/EnhancedResourceViewer';
-import EnhancedSocialStudiesSlideshow from './components/EnhancedSocialStudiesSlideshow';
-import KaiakoTeamDashboard from './components/KaiakoTeamDashboard';
-import MultiLLMCoordinationDashboard from './components/MultiLLMCoordinationDashboard';
-import MultiLLMPerformanceDashboard from './components/MultiLLMPerformanceDashboard';
-import RealLessonViewer from './components/RealLessonViewer';
-import ResourceEnrichmentCoordinator from './components/ResourceEnrichmentCoordinator';
-import SocialStudiesSlideshow from './components/SocialStudiesSlideshow';
-import SuperintelligenceEvolutionDashboard from './components/SuperintelligenceEvolutionDashboard';
-import TreasureNavigation from './components/TreasureNavigation';
-import WorkingResourceBrowser from './components/WorkingResourceBrowser';
-import ActualContentViewer from './components/ActualContentViewer';
-
-const AssessmentFramework = lazy(
-  () => import(/* webpackChunkName: "assessment-framework" */ './components/AssessmentFramework'),
-);
-
-import CommunityFeedbackSystem from './components/CommunityFeedbackSystem';
-import DiagnosticCheck from './components/DiagnosticCheck';
-import ResourceUnlocker from './components/ResourceUnlocker';
-import ResourceViewer from './components/ResourceViewer';
-
-// WisdomEvolutionDashboard temporarily removed for build
-// const WisdomEvolutionDashboardLazy = lazy(
-//   () => import(/* webpackChunkName: "wisdom-evolution" */ './components/WisdomEvolutionDashboard'),
-// );
-
-// Import the new dual-role authentication components
-
-// Import enhanced educational components
-const EnhancedContentDiscovery = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "enhanced-content-discovery" */ './components/EnhancedContentDiscovery'
-    ),
-);
-
-const AdvancedResourceDiscovery = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "advanced-resource-discovery" */ './components/AdvancedResourceDiscovery'
-    ),
-);
-
-const IntelligentLessonPlanner = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "intelligent-lesson-planner" */ './components/IntelligentLessonPlanner'
-    ),
-);
-
-const RealTimeTeachingAnalytics = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "realtime-teaching-analytics" */ './components/RealTimeTeachingAnalytics'
-    ),
-);
-
-const ProgressiveEnrichmentDashboard = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "progressive-enrichment-dashboard" */ './components/ProgressiveEnrichmentDashboard'
-    ),
-);
-
-const CulturalIntegrationValidator = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "cultural-integration-validator" */ './components/CulturalIntegrationValidator'
-    ),
-);
-
-const CulturalLearningPathNavigator = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "cultural-learning-navigator" */ './components/CulturalLearningPathNavigator'
-    ),
-);
-
-const InteractiveAssessmentSystem = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "interactive-assessment-system" */ './components/InteractiveAssessmentSystem'
-    ),
-);
-
-const UnitDetail = lazy(
-  () => import(/* webpackChunkName: "unit-detail" */ './components/UnitDetail'),
-);
-
-// const TeKeteAkoResourceExplorer = lazy(
-//   () =>
-//     import(/* webpackChunkName: "te-kete-ako-explorer" */ './components/TeKeteAkoResourceExplorer'),
-// );
-
-const ProfessionalLessonTemplate = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "professional-lesson-template" */ './components/ProfessionalLessonTemplate'
-    ),
-);
-
-// Temporarily disabled due to syntax error
-// const UnifiedContentDiscovery = lazy(
-//   () =>
-//     import(
-//       /* webpackChunkName: "unified-content-discovery" */ './components/UnifiedContentDiscovery'
-//     ),
-// );
+// Educational content - keep Year 8 only for now
+const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
 
 function App() {
   const location = useLocation();
@@ -290,182 +57,30 @@ function App() {
 
   return (
     <div className="App">
-      {!isLandingPage && <DemoAccessBanner />}
       {!isLandingPage && <SimpleNavigation />}
-      {!isLandingPage && <SiteBreadcrumbs />}
       <main className="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/login" element={<ComprehensiveAuthSystem />} />
-            <Route path="/login-old" element={<AuthenticationTabs />} />
-            <Route path="/login-old" element={<WorkingLogin />} />
-            <Route path="/dashboard" element={<RoleBasedRouter />} />
-            <Route path="/teacher-dashboard" element={<ProfessionalTeacherDashboard />} />
-            <Route path="/teacher" element={<StandaloneTeacherDashboard />} />
-            <Route path="/professional-teacher" element={<ProfessionalTeacherDashboard />} />
-            <Route path="/student-dashboard" element={<EnhancedStudentDashboard />} />
-            <Route path="/student" element={<EnhancedStudentDashboard />} />
-            <Route path="/kaitiaki-dashboard" element={<KaitiakiDashboard />} />
-            <Route path="/multi-llm-coordination" element={<MultiLLMCoordinationDashboard />} />
-            <Route path="/multi-llm-performance" element={<MultiLLMPerformanceDashboard />} />
-            <Route path="/claude-integration" element={<ClaudeIntegrationDashboard />} />
-            <Route path="/agent-coordination" element={<AgentCoordinationDashboard />} />
-            <Route
-              path="/cultural-safety-compliance"
-              element={<CulturalSafetyComplianceDashboard />}
-            />
-            <Route path="/cultural-safety" element={<CulturalSafetyComplianceDashboard />} />
-            <Route path="/tikanga-compliance" element={<CulturalSafetyComplianceDashboard />} />
-            <Route
-              path="/superintelligence-evolution"
-              element={<SuperintelligenceEvolutionDashboard />}
-            />
-            <Route path="/resource-enrichment" element={<ResourceEnrichmentCoordinator />} />
-            <Route path="/advanced-resource-enrichment" element={<AdvancedResourceEnrichment />} />
-            <Route path="/kaiako-team" element={<KaiakoTeamDashboard />} />
-            <Route path="/teaching-team" element={<KaiakoTeamDashboard />} />
-            <Route path="/super-intelligence" element={<SuperIntelligenceCoordinator />} />
-            <Route path="/performance-dashboard" element={<PerformanceDashboard />} />
-            <Route
-              path="/advanced-performance-monitoring"
-              element={<AdvancedPerformanceMonitoringDashboard />}
-            />
-            <Route
-              path="/performance-monitoring"
-              element={<AdvancedPerformanceMonitoringDashboard />}
-            />
-            <Route
-              path="/system-performance"
-              element={<AdvancedPerformanceMonitoringDashboard />}
-            />
-            <Route
-              path="/distributed-intelligence"
-              element={<DistributedIntelligenceCoordinator />}
-            />
-            <Route
-              path="/collective-intelligence"
-              element={<DistributedIntelligenceCoordinator />}
-            />
-            <Route
-              path="/superintelligence-coordinator"
-              element={<DistributedIntelligenceCoordinator />}
-            />
-            <Route path="/social-studies-slideshow" element={<SocialStudiesSlideshow />} />
-            <Route path="/slideshow" element={<SocialStudiesSlideshow />} />
-            <Route path="/enhanced-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
-            <Route path="/teaching-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
-            <Route path="/interactive-slideshow" element={<EnhancedSocialStudiesSlideshow />} />
-            <Route path="/" element={<DirectTeacherAccess />} />
-            <Route path="/landing" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/educational-platform" element={<EducationalPlatformWorking />} />
-            <Route path="/educational-dashboard" element={<AdvancedEducationalDashboard />} />
-            <Route path="/educational-dashboard-new" element={<EducationalDashboard />} />
-            <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
-            <Route path="/cultural-activities" element={<CulturalLearningActivities />} />
-            <Route path="/quality-lessons" element={<LessonManager />} />
-            <Route path="/lesson/:lessonId" element={<LessonViewer />} />
-            <Route path="/advanced-analytics" element={<AdvancedAnalyticsDashboard />} />
-            {/* <Route path="/wisdom-evolution" element={<WisdomEvolutionDashboardLazy />} /> */}
-            <Route path="/wisdom-accelerator" element={<AdvancedWisdomAccelerator />} />
-            <Route path="/supreme-coordination" element={<SupremeIntelligenceCoordinator />} />
-            <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
-            <Route
-              path="/superintelligence-assistant"
-              element={<SuperintelligenceAssistantDashboard />}
-            />
-            <Route
-              path="/superintelligence-assistance"
-              element={<SuperintelligenceAssistanceDashboard />}
-            />
-            <Route path="/borg-collective" element={<SuperintelligenceOrchestrator />} />
-            <Route path="/overseer-guidance" element={<SuperintelligenceOrchestrator />} />
-            <Route path="/educational-resources" element={<EducationalResources />} />
+            {/* Landing */}
+            <Route path="/" element={<Home />} />
+            
+            {/* Authentication */}
+            <Route path="/login" element={<Login />} />
+            
+            {/* Core Dashboards - single route each */}
+            <Route path="/teacher" element={<TeacherDashboard />} />
+            <Route path="/student" element={<StudentDashboard />} />
+            
+            {/* Resources - single route */}
+            <Route path="/resources" element={<ResourceBrowser />} />
+            <Route path="/lesson/:resourceId" element={<LessonViewer />} />
+            
+            {/* Year Level Content - Year 8 only for now */}
             <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
-            <Route path="/year8-reading" element={<Year8ReadingStrategies />} />
-            <Route path="/year8-academic-vocab" element={<Year8AcademicVocab />} />
-            <Route path="/year8-writing-units" element={<Year8WritingUnits />} />
-            <Route path="/year8-critical-literacy" element={<Year8CriticalLiteracy />} />
-            <Route path="/year8-reading-units" element={<Year8ReadingUnits />} />
-            <Route path="/year8-writing" element={<Year8WritingUnits />} />
-            <Route path="/year8-vocab" element={<Year8AcademicVocab />} />
-            <Route path="/analytics" element={<AdvancedAnalyticsDashboard />} />
-            <Route path="/collaboration" element={<CollaborationHub />} />
-            <Route path="/multimedia" element={<MultimediaStudio />} />
-            <Route path="/assessment-framework" element={<AssessmentFramework />} />
-            {/* <Route path="/authentication" element={<AuthenticationSystemLazy />} /> */}
-            <Route path="/community-feedback" element={<CommunityFeedbackSystem />} />
-            <Route path="/teaching-quality" element={<EnhancedTeachingContentQualityDashboard />} />
-            <Route path="/database-integration" element={<DatabaseIntegrationSystem />} />
-            <Route path="/resource-unlocker" element={<ResourceUnlocker />} />
-            {/* Enhanced Educational Components */}
-            <Route path="/enhanced-content-discovery" element={<EnhancedContentDiscovery />} />
-            <Route path="/content-discovery" element={<EnhancedContentDiscovery />} />
-            <Route path="/advanced-resource-discovery" element={<AdvancedResourceDiscovery />} />
-            <Route path="/advanced-discovery" element={<AdvancedResourceDiscovery />} />
-            <Route path="/intelligent-search" element={<AdvancedResourceDiscovery />} />
-            <Route path="/intelligent-lesson-planner" element={<IntelligentLessonPlanner />} />
-            <Route path="/lesson-planner" element={<IntelligentLessonPlanner />} />
-            <Route path="/ai-lesson-planning" element={<IntelligentLessonPlanner />} />
-            <Route path="/realtime-teaching-analytics" element={<RealTimeTeachingAnalytics />} />
-            <Route path="/teaching-analytics" element={<RealTimeTeachingAnalytics />} />
-            <Route path="/live-analytics" element={<RealTimeTeachingAnalytics />} />
-            <Route path="/progressive-enrichment" element={<ProgressiveEnrichmentDashboard />} />
-            <Route path="/multi-agent-coordination" element={<ProgressiveEnrichmentDashboard />} />
-            <Route path="/kaiako-collaboration" element={<ProgressiveEnrichmentDashboard />} />
-            <Route
-              path="/cultural-integration-validator"
-              element={<CulturalIntegrationValidator />}
-            />
-            <Route path="/cultural-validation" element={<CulturalIntegrationValidator />} />
-            <Route path="/tikanga-validation" element={<CulturalIntegrationValidator />} />
-            <Route path="/cultural-learning-paths" element={<CulturalLearningPathNavigator />} />
-            <Route path="/learning-pathways" element={<CulturalLearningPathNavigator />} />
-            <Route path="/interactive-assessments" element={<InteractiveAssessmentSystem />} />
-            <Route path="/cultural-assessments" element={<InteractiveAssessmentSystem />} />
-            <Route path="/smart-search" element={<EnhancedContentDiscovery />} />
-            {/* Unit Detail Routes */}
-            <Route path="/unit/:unitId" element={<UnitDetail />} />
-            {/* Original Resources - Restored */}
-            <Route path="/te-kete-ako-resources" element={<FunctionalResourceBrowser />} />
-            <Route path="/resources" element={<FunctionalResourceBrowser />} />
-            <Route path="/resources/te-kete-ako" element={<FunctionalResourceBrowser />} />
-            <Route path="/resource-browser" element={<FunctionalResourceBrowser />} />
-            {/* Enhanced Resources - 6,055+ enhanced educational resources */}
-            <Route path="/enhanced-resources" element={<EnhancedResourceBrowser />} />
-            <Route path="/enhanced-resource-browser" element={<EnhancedResourceBrowser />} />
-            <Route path="/enhanced-library" element={<EnhancedResourceBrowser />} />
-            <Route path="/world-class-resources" element={<EnhancedResourceBrowser />} />
-            <Route path="/progressive-enrichment-library" element={<EnhancedResourceBrowser />} />
-            {/* Enhanced Resource Viewer - Individual resource content display */}
-            <Route path="/enhanced-resource/:resourceId" element={<EnhancedResourceViewer />} />
-            {/* Real Lesson Viewer - Complete lesson plans */}
-            <Route path="/lesson/:resourceId" element={<RealLessonViewer />} />
-            <Route path="/real-lesson/:resourceId" element={<RealLessonViewer />} />
-            <Route path="/treasure-navigation" element={<TreasureNavigation />} />
-            <Route path="/treasure-map" element={<TreasureNavigation />} />
-            <Route path="/working-resources" element={<WorkingResourceBrowser />} />
-            <Route path="/resources-working" element={<WorkingResourceBrowser />} />
-            <Route path="/actual-content/:resourceId" element={<ActualContentViewer />} />
-            <Route path="/real-content/:resourceId" element={<ActualContentViewer />} />
-            <Route path="/test-resources" element={<ResourceTestPage />} />
-            {/* Professional Lesson Templates */}
-            <Route path="/professional-lesson-templates" element={<ProfessionalLessonTemplate />} />
-            <Route path="/lesson-templates" element={<ProfessionalLessonTemplate />} />
-            {/* Unified Content Discovery */}
-            {/* Temporarily disabled due to syntax error */}
-            {/* <Route path="/unified-content-discovery" element={<UnifiedContentDiscovery />} /> */}
-            {/* <Route path="/content-discovery" element={<UnifiedContentDiscovery />} /> */}
-            {/* <Route path="/discover" element={<UnifiedContentDiscovery />} /> */}
-            {/* Additional missing routes */}
+            
+            {/* Static Pages */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/dashboard" element={<StudentDashboard />} />
-            <Route path="/educational-resources" element={<EducationalResources />} />
-            <Route path="/diagnostic" element={<DiagnosticCheck />} />
-            <Route path="/resource-viewer" element={<ResourceViewer />} />
-            {/* StyleGuide route removed - component doesn't exist */}
-            <Route path="/register" element={<AuthenticationTabs />} />
           </Routes>
         </Suspense>
       </main>

@@ -477,6 +477,15 @@ const SiteBreadcrumbs: React.FC<SiteBreadcrumbsProps> = ({
         description: 'Interactive Educational Slideshow',
       },
     ],
+    '/deployed-content': [
+      { label: 'Home', path: '/', icon: '🏠' },
+      {
+        label: 'Deployed Content',
+        path: '/deployed-content',
+        icon: '📚',
+        description: '500+ Deployed Lesson Plans Ready for Use',
+      },
+    ],
   };
 
   // Generate breadcrumbs based on current path
@@ -597,6 +606,7 @@ const SiteBreadcrumbs: React.FC<SiteBreadcrumbsProps> = ({
       coordinator: '🧠',
       slideshow: '📚',
       'social-studies': '📚',
+      'deployed-content': '📚',
     };
 
     return iconMap[segment] || '📄';
