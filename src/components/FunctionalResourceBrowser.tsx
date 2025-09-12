@@ -8,9 +8,12 @@ import {
   Search,
   Target,
   Users,
+  Filter,
+  Star,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import MāoriFocusedResourceDisplay from './MāoriFocusedResourceDisplay';
+import { filterByQuality, getQualityStats } from '../utils/quality-content-filter';
 
 // Use the enriched resource interface
 type Resource = {
@@ -37,6 +40,9 @@ const FunctionalResourceBrowser: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [qualityFilter, setQualityFilter] = useState(70);
+  const [showQualityOnly, setShowQualityOnly] = useState(true);
+  const [qualityStats, setQualityStats] = useState<any>(null);
 
   // Load comprehensive resources (5000+)
   useEffect(() => {
@@ -62,9 +68,16 @@ const FunctionalResourceBrowser: React.FC = () => {
           tags: resource.tags || [resource.subject, resource.yearLevel, resource.type],
         }));
 
+        // Apply initial quality filtering
+        const qualityResources = showQualityOnly ? filterByQuality(resources, qualityFilter) : resources;
+        
         setResources(resources);
-        setFilteredResources(resources);
-        console.log(`🎉 Loaded ${resources.length} comprehensive educational resources`);
+        setFilteredResources(qualityResources);
+        setQualityStats(getQualityStats(resources));
+        
+        console.log(`🎉 Loaded ${resources.length} total resources`);
+        console.log(`⭐ ${qualityResources.length} quality resources available`);
+        console.log('📊 Quality stats:', getQualityStats(resources));
       } catch (error) {
         console.error('Error loading comprehensive resources:', error);
         // Fallback to sample resources
@@ -235,7 +248,11 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   ];
 
   useEffect(() => {
-    const filtered = resources.filter((resource) => {
+    // First apply quality filtering if enabled
+    const qualityResources = showQualityOnly ? filterByQuality(resources, qualityFilter) : resources;
+    
+    // Then apply other filters
+    const filtered = qualityResources.filter((resource) => {
       const matchesSearch =
         resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -249,7 +266,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
     });
 
     setFilteredResources(filtered);
-  }, [searchTerm, selectedSubject, selectedYear, selectedType, resources]);
+  }, [searchTerm, selectedSubject, selectedYear, selectedType, resources, qualityFilter, showQualityOnly]);
 
   const subjects = ['all', ...Array.from(new Set(resources.map((r) => r.subject)))];
   const yearLevels = ['all', 'Year 7', 'Year 8', 'Year 9', 'Year 10'];
@@ -768,10 +785,32 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           <h1 style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 8px 0' }}>
             📚 Educational Resource Library
           </h1>
-          <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
+          <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0 0 12px 0' }}>
             Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '5,000+'}{' '}
             culturally-responsive educational resources
           </p>
+          
+          {/* Quality Stats Bar */}
+          {qualityStats && (
+            <div style={{ 
+              display: 'flex', 
+              gap: '16px', 
+              fontSize: '0.875rem', 
+              opacity: 0.9,
+              flexWrap: 'wrap'
+            }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <Star className="w-4 h-4" fill="currentColor" />
+                {qualityStats.ready} Quality Ready
+              </span>
+              <span>{qualityStats.enhanced} Enhanced</span>
+              <span>{qualityStats.templates} Templates</span>
+              <span>{qualityStats.skeletons} Skeletons</span>
+              <span style={{ fontWeight: '600' }}>
+                {qualityStats.percentReady}% Production Ready
+              </span>
+            </div>
+          )}
         </div>
       </header>
 
@@ -790,6 +829,57 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             padding: '0 24px',
           }}
         >
+          {/* Quality Filter Toggle */}
+          <div style={{
+            background: showQualityOnly ? '#ecfdf5' : '#fef3c7',
+            border: `1px solid ${showQualityOnly ? '#22c55e' : '#f59e0b'}`,
+            borderRadius: '8px',
+            padding: '12px 16px',
+            marginBottom: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Filter className="w-4 h-4" style={{ color: showQualityOnly ? '#16a34a' : '#d97706' }} />
+              <span style={{ 
+                fontWeight: '600', 
+                fontSize: '0.875rem',
+                color: showQualityOnly ? '#15803d' : '#92400e'
+              }}>
+                {showQualityOnly ? '⭐ Quality Content Filter: ON' : '⚠️ Showing All Content (including skeletons)'}
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <label style={{ fontSize: '0.75rem', color: showQualityOnly ? '#16a34a' : '#d97706' }}>
+                Min Quality: {qualityFilter}%
+              </label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={qualityFilter}
+                onChange={(e) => setQualityFilter(Number(e.target.value))}
+                style={{ width: '80px' }}
+              />
+              <button
+                onClick={() => setShowQualityOnly(!showQualityOnly)}
+                style={{
+                  padding: '4px 12px',
+                  border: 'none',
+                  borderRadius: '4px',
+                  fontSize: '0.75rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  background: showQualityOnly ? '#16a34a' : '#d97706',
+                  color: 'white'
+                }}
+              >
+                {showQualityOnly ? 'Show All' : 'Quality Only'}
+              </button>
+            </div>
+          </div>
+          
           <div
             style={{
               display: 'grid',
@@ -881,9 +971,19 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0' }}>
-              Showing {filteredResources.length} of {resources.length} resources
-            </p>
+            <div>
+              <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 4px 0' }}>
+                Showing {filteredResources.length} of {resources.length} resources
+                {showQualityOnly && (
+                  <span style={{ color: '#16a34a', fontWeight: '600' }}> (Quality filtered)</span>
+                )}
+              </p>
+              {qualityStats && (
+                <p style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '0' }}>
+                  {qualityStats.ready} ready • {qualityStats.enhanced} enhanced • {qualityStats.templates} templates • {qualityStats.skeletons} skeletons
+                </p>
+              )}
+            </div>
             <div style={{ display: 'flex', gap: '8px' }}>
               <button
                 onClick={() => setViewMode('grid')}
@@ -1041,6 +1141,14 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 </span>
                 <span>⭐ {resource.culturalElements} cultural elements</span>
                 <span>⏱️ {resource.duration}</span>
+                {(resource as any).qualityMetrics && (
+                  <span style={{ 
+                    color: (resource as any).qualityMetrics.qualityScore >= 70 ? '#16a34a' : '#d97706',
+                    fontWeight: '600'
+                  }}>
+                    🎯 {(resource as any).qualityMetrics.qualityScore}% quality
+                  </span>
+                )}
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
