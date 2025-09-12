@@ -182,7 +182,7 @@ class AgentSynchronizationManager {
       const agentRegistry = sharedMemory.agentRegistry;
 
       // Update agent states
-      Object.entries(agentRegistry).forEach(([key, agent]: [string, any]) => {
+      for (const [key, agent] of Object.entries(agentRegistry)) {
         const existingAgent = this.agents.get(agent.id);
         if (existingAgent) {
           // Check for significant changes
