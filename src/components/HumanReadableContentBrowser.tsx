@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import type { ContentFile, ContentStats } from '../services/ContentService';
+import { contentService } from '../services/ContentService';
 import '../styles/kaitiaki-dashboard.css';
 import './HumanReadableContentBrowser.css';
-import { contentService, type ContentFile, type ContentStats } from '../services/ContentService';
 
 const HumanReadableContentBrowser: React.FC = () => {
   const [contentFiles, setContentFiles] = useState<ContentFile[]>([]);
@@ -25,17 +26,16 @@ const HumanReadableContentBrowser: React.FC = () => {
     const loadContentFiles = async () => {
       try {
         setLoading(true);
-        
+
         // Load content and stats from the ContentService
         const [content, stats] = await Promise.all([
           contentService.loadAllContent(),
-          contentService.getContentStats()
+          contentService.getContentStats(),
         ]);
 
         setContentFiles(content);
         setFilteredContent(content);
         setStats(stats);
-        
       } catch (err) {
         setError('Failed to load content files');
         console.error('Error loading content:', err);
@@ -122,7 +122,6 @@ const HumanReadableContentBrowser: React.FC = () => {
     };
     return emojiMap[yearLevel] || '📚';
   };
-
 
   if (loading) {
     return (
@@ -283,10 +282,7 @@ const HumanReadableContentBrowser: React.FC = () => {
                   <span className="type-icon">{getTypeEmoji(content.type)}</span>
                   <span className="type-label">{content.type.replace('-', ' ')}</span>
                 </div>
-                <div 
-                  className="depth-badge"
-                  data-depth={content.depth}
-                >
+                <div className="depth-badge" data-depth={content.depth}>
                   {content.depth}
                 </div>
               </div>
