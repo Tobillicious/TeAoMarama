@@ -25,6 +25,10 @@ const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 // Educational content - keep Year 8 only for now
 const Year8SocialStudies = lazy(() => import('./pages/Year8SocialStudies'));
 
+// Cultural Learning and Analytics
+const CulturalLearningModules = lazy(() => import('./components/CulturalLearningModules'));
+const AdvancedAnalytics = lazy(() => import('./components/AdvancedAnalyticsDashboard'));
+
 function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
@@ -74,11 +78,17 @@ function App() {
 
             {/* Resources - single route */}
             <Route path="/resources" element={<ResourceBrowser />} />
+            <Route path="/working-resources" element={<ResourceBrowser />} />
             <Route path="/human-content" element={<HumanReadableContentBrowser />} />
             <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
             {/* Year Level Content - Year 8 only for now */}
             <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
+
+            {/* Cultural Learning and Analytics */}
+            <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
+            <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
+            <Route path="/platform" element={<Home />} />
 
             {/* Static Pages */}
             <Route path="/about" element={<About />} />

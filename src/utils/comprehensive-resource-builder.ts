@@ -108,7 +108,6 @@ const SAMPLE_RESOURCE_FILES = [
   'Y7_Science_Forces_2528.md',
   'Y8_Science_Energy_0107.md',
   'Y8_English_Speech_1624.md',
-  'Y8_Mathematics_Fractions_0241.md',
   'Y9_Science_Climate_0420.md',
   'Y9_Science_Earth_Systems_2146.md',
   'Y8_English_Speech_0688.md',
