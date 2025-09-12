@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755683631146-gn6ifb7e6",
+  "title": "Te Whakapakari i te Awa Mangakōtukutuku / Enhancing the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 9",
+  "culturalContext": "Students will engage with the history and current state of the Mangakōtukutuku Stream, a significant waterway flowing through our rohe that holds cultural importance to Ngāti Kahungunu. The stream's name references the kotukutuku (tree fuchsia) that once flourished along its banks, and students will explore how technology can help restore its mauri while honoring traditional knowledge of waterway management.",
+  "depth": "extending",
+  "learningObjectives": [
+    "Design and prototype a technological solution to address one identified issue affecting the health of the Mangakōtukutuku Stream",
+    "Analyze water quality data collected from the stream using digital tools and present findings using appropriate technical terminology",
+    "Explain how their proposed technological solution incorporates both mātauranga Māori principles and modern engineering approaches",
+    "Collaborate effectively in small groups to develop, test, and refine a functional prototype that addresses a real-world environmental challenge"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki te Awa (Connecting with the Stream)",
+      "description": "Visit the Mangakōtukutuku Stream with local kaumātua who will share pūrākau (stories) and historical knowledge about the waterway. Students conduct initial observations and document current conditions through photography, sketching, and water sampling."
+    },
+    {
+      "title": "He Tātari Wai (Water Analysis)",
+      "description": "Using water testing kits and digital microscopes, students analyze collected water samples for pH, nitrate levels, turbidity, and macroinvertebrate presence. Data is recorded in digital spreadsheets and compared against historical records of the stream's health."
+    },
+    {
+      "title": "Te Whakaaro Hangarau (Technological Thinking)",
+      "description": "In design teams, students brainstorm technological solutions to address identified issues (e.g., sediment filtration systems, native planting drones, water quality monitoring buoys). Teams create digital design portfolios documenting their ideation process and concept sketches using CAD software."
+    },
+    {
+      "title": "Hanga Prototype (Building Prototypes)",
+      "description": "Using materials from the technology workshop (sensors, microcontrollers, 3D printers, natural materials), student teams build functional scale prototypes of their solutions, testing and iterating based on performance feedback."
+    },
+    {
+      "title": "Whakaaturanga me te Aromatawai (Presentation and Evaluation)",
+      "description": "Teams present their prototypes and design process to a panel including local iwi representatives, environmental scientists, and community members, explaining how their solution respects both cultural values and technological effectiveness."
+    }
+  ],
+  "resources": [
+    "Local kaumātua from Ngāti Kahungunu with knowledge of the Mangakōtukutuku Stream",
+    "Water testing kits and digital microscopes from the science department",
+    "Arduino microcontrollers, sensors, and 3D printing equipment in technology workshop",
+    "NIWA's freshwater ecosystem health monitoring guidelines and digital resources"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Digital design portfolio documenting the entire technological process",
+      "Functional prototype demonstrating technical solution",
+      "Oral presentation explaining cultural and technical considerations",
+      "Written reflection on how the solution embodies kaitiakitanga"
+    ]
+  },
+  "duration": "4-6 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Technological Knowledge: Technological modelling, technological products",
+    "Key Competencies: Thinking, using language symbols and texts, managing self, relating to others, participating and contributing"
+  ],
+  "createdAt": "2025-08-20T09:53:51.146Z",
+  "enrichedAt": "2025-09-11T11:44:55.888Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

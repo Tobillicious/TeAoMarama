@@ -1,0 +1,60 @@
+{
+  "id": "lesson-1755684213417-0v6gu0crh",
+  "title": "Te Aho Pāngarau o Te Awa: The Mathematical Thread of Our River / Te Aho Pāngarau o Te Awa Mangakōtukutuku",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 9",
+  "culturalContext": "Students will investigate the health and flow of Te Awa Mangakōtukutuku (The Stream Where the Kōtukutuku/Tree Fuchsia Grows), a significant waterway for Ngāti Kahungunu that flows through our college grounds. The lesson connects to the pūrākau (traditional story) of Haumiatiketike and Rongomātāne, who represent the cultivated and uncultivated foods sustained by our awa, framing mathematics as a tool for kaitiakitanga (guardianship).",
+  "depth": "extending",
+  "learningObjectives": [
+    "Calculate and interpret mean, median, mode, and range for water quality data (pH, turbidity, temperature) collected from Te Awa Mangakōtukutuku.",
+    "Construct and analyze time-series graphs showing seasonal changes in the awa's flow rate and identify trends using mathematical reasoning.",
+    "Apply scale and ratio to create an accurate topographic map of the awa's path through the college, incorporating Māori place names and significant sites.",
+    "Collaboratively design a statistical survey to gather whānau and community perspectives on the awa's cultural significance and environmental health."
+  ],
+  "activities": [
+    {
+      "title": "He Kohikohinga Raraunga: Data Gathering at the Awa",
+      "description": "Students visit Te Awa Mangakōtukutuku in small groups. Using provided testing kits, they collect physical measurements (flow rate, width, depth) and water quality samples (temperature, pH). They record measurements precisely and note observations about the surrounding environment."
+    },
+    {
+      "title": "Te Tātari I ngā Tau: Statistical Analysis of Our Findings",
+      "description": "Back in the classroom, groups pool their data to create a large dataset. They learn to calculate measures of central tendency (mean, median, mode) and spread (range) for the different variables. They discuss what these statistics reveal about the current state of the awa."
+    },
+    {
+      "title": "Te Whakaahua I te Awa: Graphing and Mapping",
+      "description": "Students use their data to create two graphical representations: 1) A time-series line graph showing changes in a chosen variable over the duration of their testing. 2) A scaled map of the section of the awa they studied, using ratios to accurately represent its physical dimensions and features."
+    },
+    {
+      "title": "Te Hīkoi Pāngarau: A Mathematical Walk with a Kaumatua",
+      "description": "A local kaumatua (elder) from Ngāti Kahungunu leads a hīkoi (walk) along the awa, sharing its pūrākau (stories), original Māori place names, and historical significance. Students connect these narratives to the mathematical data they collected, developing a holistic understanding."
+    },
+    {
+      "title": "Te Whakatauira Kaitiaki: Designing a Kaitiakitanga Proposal",
+      "description": "In groups, students synthesize their mathematical evidence and cultural understanding to create a proposal for an action that supports the health of Te Awa Mangakōtukutuku. They must use their graphs, maps, and statistics to mathematically justify their proposed solution."
+    }
+  ],
+  "resources": [
+    "Kaumatua Hone Smith (Ngāti Kahungunu historian and cultural advisor)",
+    "NIWA's 'River and Stream Monitoring' protocol and online data tools",
+    "Topographic maps of the Heretaunga Plains from Hastings District Council",
+    "LaMotte Water Monitoring Kits or similar for student water testing"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Produce a written report that includes all calculated statistics, created graphs, and the scaled map.",
+      "Present your group's Kaitiakitanga Proposal to the class, using your mathematical evidence to justify your recommended action."
+    ]
+  },
+  "duration": "4-6 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics: Statistical investigation; Number strategies; Geometric representation",
+    "Science: Nature of Science - Investigating in science; Planet Earth and Beyond - Earth systems",
+    "Social Sciences: Place and Environment",
+    "Tikanga-ā-Iwi"
+  ],
+  "createdAt": "2025-08-20T10:03:33.417Z",
+  "enrichedAt": "2025-09-11T12:08:20.190Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

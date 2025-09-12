@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755684817370-gxbl0wp7r",
+  "title": "Te Aho Pāngarau o Te Awa: The Mathematical Thread of the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will investigate the mathematical patterns and relationships within Te Awa o Mangakōtukutuku, the stream that flows through our rohe and gives our college its name. Drawing on Ngāti Kahungunu knowledge of water flow, seasonal patterns, and traditional resource management, students will apply mathematical concepts to understand and protect this significant waterway.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Calculate and analyze flow rates and water volume data from Te Awa o Mangakōtukutuku using algebraic formulas",
+    "Create statistical representations of water quality data collected from three different points along the stream",
+    "Apply geometric principles to model the stream's catchment area and calculate potential flood zones",
+    "Develop mathematical arguments to support recommendations for stream restoration using collected data"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki Te Awa: Connecting with the Stream",
+      "description": "Visit Te Awa o Mangakōtukutuku with kaumātua to learn the pūrākau (stories) and traditional knowledge about the stream. Students will make initial observations and measurements of width, depth, and flow at designated points."
+    },
+    {
+      "title": "Tātari Ine: Data Collection and Analysis",
+      "description": "Conduct systematic measurements of water flow rates, pH levels, and temperature at three strategic points along the stream. Students will use flow meters, water testing kits, and timing devices to gather quantitative data over one week."
+    },
+    {
+      "title": "Whakaahua Raraunga: Data Visualization",
+      "description": "Create multiple representations of collected data including time-series graphs, comparative bar charts, and statistical summaries. Students will calculate mean, median, mode, and range for each data set and identify patterns and anomalies."
+    },
+    {
+      "title": "Te Hoahoa Whenua: Geometric Modeling",
+      "description": "Using topographic maps and GIS data, students will calculate the catchment area of Te Awa o Mangakōtukutuku, determine gradient percentages, and model potential flood zones using geometric principles and area calculations."
+    },
+    {
+      "title": "Te Whakatau Kaupapa: Mathematical Argument Development",
+      "description": "Students will develop evidence-based mathematical arguments proposing specific restoration strategies for the stream, using their data analysis to support recommendations for planting zones, flow management, and water quality improvement."
+    }
+  ],
+  "resources": [
+    "Ngāti Kahungunu kaumātua and environmental knowledge holders",
+    "Digital flow meters and water quality testing kits from Hawke's Bay Regional Council",
+    "Topographic maps and LiDAR data of the Mangakōtukutuku catchment area",
+    "NZ Maths digital learning platform for statistical and geometric modeling tools"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete data collection workbook with accurate measurements and calculations",
+      "Create a portfolio of data visualizations with statistical analysis",
+      "Develop a geometric model of the catchment area with area calculations",
+      "Present evidence-based recommendations for stream management using mathematical reasoning"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Number and Algebra: Patterns and relationships",
+    "Geometry and Measurement: Shape, position, and movement",
+    "Statistics: Statistical investigation and interpretation",
+    "Key Competencies: Using language, symbols, and texts; Participating and contributing"
+  ],
+  "createdAt": "2025-08-20T10:13:37.371Z",
+  "enrichedAt": "2025-09-11T12:34:47.215Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

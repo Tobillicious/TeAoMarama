@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755683110331-4kl935qgt",
+  "title": "Te Whakatinanatanga o Te Awa: The Living River - Designing Technology Solutions for Te Awa o Mangakōtukutuku",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will engage with the story of Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway that flows through our rohe and holds deep cultural significance for Ngāti Kahungunu. The awa has faced environmental challenges, and local iwi have been working to restore its mauri (life force). Students will learn about the traditional practices of monitoring and protecting waterways while addressing modern environmental issues through technological innovation.",
+  "depth": "mastery",
+  "learningObjectives": [
+    "Design and prototype a functional water quality monitoring device using Arduino sensors that measures pH, turbidity, and temperature levels",
+    "Analyze historical and current water quality data from Te Awa o Mangakōtukutuku to identify patterns and environmental impacts",
+    "Create a digital storytelling project that combines mātauranga Māori perspectives with scientific data to communicate the awa's health",
+    "Collaborate with local kaitiaki to develop technology solutions that support the ongoing restoration of Te Awa o Mangakōtukutuku"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki Te Awa",
+      "description": "Visit Te Awa o Mangakōtukutuku with local kaumātua to learn the pūrākau (stories) and traditional monitoring methods. Students will conduct initial water observations using mātauranga Māori frameworks and document their findings."
+    },
+    {
+      "title": "Hangaia te Mataara Awa (Building the River Sentinel)",
+      "description": "Workshop series where students design and build water monitoring devices using Arduino microcontrollers, sensors, and waterproof casing. Focus on creating robust, affordable technology suitable for continuous monitoring in local conditions."
+    },
+    {
+      "title": "Te Tātari Raraunga (Data Analysis Wānanga)",
+      "description": "Students analyze water quality data collected from their devices alongside historical data from regional council records. They identify trends, correlations, and potential environmental impacts using spreadsheet software and data visualization tools."
+    },
+    {
+      "title": "Te Hōtaka Whakaahua Awa (River Digital Storytelling)",
+      "description": "Create interactive digital stories using Adobe Spark or similar tools that combine scientific data, cultural narratives, and proposed solutions. Stories must present findings in both te reo Māori and English for community accessibility."
+    },
+    {
+      "title": "Whakatau Kaitiaki (Guardian Solutions Showcase)",
+      "description": "Students present their technology solutions and digital stories to local iwi representatives, council environmental officers, and community members. They receive feedback and discuss implementation possibilities for ongoing monitoring."
+    }
+  ],
+  "resources": [
+    "Ngāti Kahungunu Iwi Incorporated environmental team members as cultural advisors",
+    "Hawke's Bay Regional Council water quality data portal and monitoring protocols",
+    "Arduino starter kits with pH sensors, turbidity sensors, and temperature probes",
+    "Te Awa o Mangakōtukutuku restoration project documentation and historical records"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Functional water monitoring device prototype with calibrated sensors",
+      "Comprehensive data analysis report showing trends and environmental insights",
+      "Bilingual digital storytelling project presenting findings and solutions",
+      "Presentation to community stakeholders with implementation recommendations"
+    ]
+  },
+  "duration": "6-8 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Technological Knowledge: Understanding technological modelling and products",
+    "Nature of Technology: Characteristics of technology and characteristics of technological outcomes",
+    "Social Sciences: Place and Environment, Continuity and Change"
+  ],
+  "createdAt": "2025-08-20T09:45:10.331Z",
+  "enrichedAt": "2025-09-11T11:22:35.105Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

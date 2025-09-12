@@ -1,0 +1,61 @@
+{
+  "id": "lesson-1755683832967-jl3v1gepm",
+  "title": "Te Whakaputanga Hōtaka: Programming the Future / Te Whakamahi Hangarau hei Tiaki i te Awa o Mangakōtukutuku",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 8",
+  "culturalContext": "Students will explore how digital technologies can address real-world challenges facing Te Awa o Mangakōtukutuku (the Mangakōtukutuku Stream), a significant waterway for Ngāti Kahungunu that flows through our rohe. This stream faces issues including sediment runoff from nearby farms, invasive weed species, and fluctuating water quality. The lesson connects to the story of Kahungunu and Rongomaiwahine, whose union brought together different iwi, symbolizing how technology can bridge traditional knowledge and modern solutions to protect our taonga.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Design and code a simple environmental monitoring program using Scratch or similar platform to simulate data collection from Te Awa o Mangakōtukutuku",
+    "Analyze and interpret data sets from local environmental monitoring reports to identify patterns in water quality and ecosystem health",
+    "Collaborate in small groups to develop a digital presentation that proposes a technological solution to an identified issue affecting the awa, incorporating both mātauranga Māori and modern programming concepts",
+    "Present and justify their proposed technological solution to peers, explaining how it addresses both environmental and cultural values"
+  ],
+  "activities": [
+    {
+      "title": "He Hīkoi ki te Awa: Visiting and Understanding Our Waterway",
+      "description": "Students will take a guided hīkoi (walk) to Te Awa o Mangakōtukutuku with a local kaumatua or environmental expert. They will observe the current state of the awa, identify visible issues (e.g., sediment, weeds), and learn about its cultural significance through local pūrākau (stories). They will use tablets to photograph and record observations."
+    },
+    {
+      "title": "Te Tātari Raraunga: Data Analysis with a Cultural Lens",
+      "description": "Using provided water quality data sets from Hawke's Bay Regional Council's monitoring of the stream, students will work in pairs to analyze trends in pH, nitrate levels, and turbidity. They will learn to use simple spreadsheet functions to graph this data and will discuss what these metrics mean for the health of the awa from both a scientific and a cultural perspective (e.g., how clean water supports mahinga kai)."
+    },
+    {
+      "title": "Te Waehere Hōtaka: Coding a Monitoring Simulation",
+      "description": "Students will learn basic programming concepts in Scratch or a similar block-based coding environment. Their task will be to create a simple interactive program that simulates an environmental sensor. For example, programming a sprite to change color or display a warning message when the user inputs 'high nitrate levels,' visually connecting the code to the health of the awa."
+    },
+    {
+      "title": "Te Whakaaro Tahi: Collaborative Solution Design",
+      "description": "In small groups, students will brainstorm a technological solution to one of the issues identified at the awa (e.g., a sensor network, an educational app, a drone for weed spotting). They will create a digital concept map or a simple prototype using tools like Google Slides or Canva, ensuring their solution considers both technological feasibility and cultural values like kaitiakitanga."
+    },
+    {
+      "title": "Te Whakaaturanga: Presenting to the Panui",
+      "description": "Groups will present their proposed technological solutions to the class (the panui). Their presentation must explain the problem, how their technology works, and how it upholds the role of kaitiaki for Te Awa o Mangakōtukutuku. Peers will provide feedback using a simple digital form."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council - Land Water Aotearoa interactive maps and water quality data for the Mangakōtukutuku Stream",
+    "Scratch programming platform (scratch.mit.edu) or similar block-based coding tool",
+    "Local expert: A representative from Ngāti Kahungunu iwi environmental team or a Hawke's Bay Regional Council freshwater scientist",
+    "Tablets or digital cameras for documentation during the hīkoi"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Submit the coded Scratch program that simulates an environmental sensor for the awa",
+      "Submit the group's digital presentation or concept map proposing their technological solution",
+      "Deliver a 3-minute group presentation explaining and justifying their proposed solution"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for Practice, Brief Development",
+    "Technological Knowledge: Technological Modelling",
+    "Nature of Technology: Characteristics of Technology",
+    "Key Competencies: Participating and Contributing, Using Language, Symbols, and Texts"
+  ],
+  "createdAt": "2025-08-20T09:57:12.967Z",
+  "enrichedAt": "2025-09-11T11:53:05.929Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

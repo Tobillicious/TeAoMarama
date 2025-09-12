@@ -1,0 +1,60 @@
+{
+  "id": "lesson-1755686787280-933z7830l",
+  "title": "Whakamahere Taiao: Designing for the Mangakōtukutuku Stream | Te Whakamahere Taiao mō te Awa o Mangakōtukutuku",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 7",
+  "culturalContext": "Students will engage with the history and current state of the Mangakōtukutuku Stream, a significant waterway for Ngāti Kahungunu. They will learn about traditional practices of monitoring and protecting the awa (stream) and how these can be integrated with modern technology to address current environmental challenges like water quality and biodiversity loss.",
+  "depth": "mastery",
+  "learningObjectives": [
+    "Design and construct a functional, culturally-informed water quality testing tool or data collection device.",
+    "Analyze collected water quality data to identify potential environmental pressures on the Mangakōtukutuku Stream ecosystem.",
+    "Propose a technology-based solution for a specific kaitiakitanga (guardianship) challenge facing the awa, justifying how it integrates mātauranga Māori (Māori knowledge) with technological practice."
+  ],
+  "activities": [
+    {
+      "title": "He Haerenga: A Journey to the Awa",
+      "description": "A field trip to the Mangakōtukutuku Stream. Students will observe the environment, sketch the area, and listen to a local kaumātua (elder) or representative from Ngāti Kahungunu share pūrākau (stories) and historical knowledge about the significance of the awa."
+    },
+    {
+      "title": "Te Tirohanga Ā-Ipurangi: Digital Cultural Mapping",
+      "description": "Using digital mapping tools (e.g., Google My Maps or ArcGIS), students will collaboratively create an interactive map of the stream. They will layer modern geographical data with the cultural narratives and historical sites shared by the kaumātua, creating a digital taonga (treasure)."
+    },
+    {
+      "title": "Te Waihanga: Prototyping a Kaitiaki Tool",
+      "description": "In the technology workshop, students will design and build a simple, low-cost water testing device. This could be a Secchi disk for turbidity, a temperature probe using a Micro:bit, or a macroinvertebrate sampling net, drawing on both technical skills and an understanding of what needs to be monitored for the health of the awa."
+    },
+    {
+      "title": "He Whakamātautau: Testing and Data Collection",
+      "description": "A return trip to the stream to deploy the student-made tools. Students will systematically collect water quality data at pre-determined points, record their observations, and begin to analyze the health of the stream based on their findings."
+    },
+    {
+      "title": "Te Whakaaro Anamata: Pitching a Kaitiakitanga Solution",
+      "description": "In small groups, students will synthesize their learning to pitch a technology-based solution for an issue they identified. Pitches must explain how their design (e.g., a planting drone, an automated alert system for pollution, an educational app) respects and incorporates the mātauranga of the awa."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council's 'Land Water Aotearoa' water quality data portal and environmental reports.",
+    "A local kaumātua or environmental lead from the Ngāti Kahungunu Iwi Incorporated office.",
+    "Micro:bit microcontrollers, sensors, and basic prototyping materials (cardboard, craft supplies, recycled materials).",
+    "The picture book 'The River' by Sally Sutton and illustrated by Brian Lovelock, as a narrative prompt for discussing an awa's journey."
+  ],
+  "assessment": {
+    "type": "Summative",
+    "tasks": [
+      "The completed functional prototype of a water testing/collection device.",
+      "A digital cultural map of the Mangakōtukutuku Stream with layered data and narratives.",
+      "A group pitch presentation for a future-focused kaitiakitanga technology solution."
+    ]
+  },
+  "duration": "6-8 weeks",
+  "nzcAlignment": [
+    "Technology: Technological Practice (Level 3-4) - Brief development, planning for practice, outcome development and evaluation.",
+    "Technology: Nature of Technology (Level 3-4) - Understanding how technological development expands human possibilities and how technology reflects the values of society.",
+    "Science: Living World (Level 3-4) - Ecology: Explain how living things are suited to their particular habitat and how they respond to environmental changes.",
+    "Social Sciences: Place and Environment (Level 3-4) - Understand how people perceive, represent, interpret, and interact with places and environments."
+  ],
+  "createdAt": "2025-08-20T10:46:27.280Z",
+  "enrichedAt": "2025-09-11T08:53:21.770Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

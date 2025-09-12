@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755685380395-v244vsx84",
+  "title": "Te Whakapakari i te Awa Mangakōtukutuku / Enhancing the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 7",
+  "culturalContext": "Students will address water quality challenges in the Mangakōtukutuku Stream, a significant waterway flowing through our rohe that holds cultural importance to Ngāti Kahungunu as a traditional food gathering site and part of our ancestral narrative. The stream currently faces sedimentation and pollution challenges affecting tuna (eel) populations and water quality.",
+  "depth": "foundational",
+  "learningObjectives": [
+    "Design and prototype a simple water monitoring device using sustainable materials",
+    "Analyze water quality data from the Mangakōtukutuku Stream using digital tools",
+    "Create a digital presentation that integrates mātauranga Māori perspectives on water guardianship with technological solutions",
+    "Collaborate in small groups to develop a proposed intervention for improving stream health"
+  ],
+  "activities": [
+    {
+      "title": "Te Awa Tupuna - Understanding Our Stream",
+      "description": "Visit the Mangakōtukutuku Stream with kaumātua to learn about its cultural significance, traditional uses, and current challenges. Students document observations and collect initial water samples while learning proper karakia for approaching the waterway."
+    },
+    {
+      "title": "He Pūrere Aromatawai - Water Monitoring Technology",
+      "description": "Design and build simple water testing devices using Arduino microcontrollers, sensors, and sustainable materials. Test pH, turbidity, and temperature parameters while considering the environmental impact of the technology itself."
+    },
+    {
+      "title": "Te Tohu Aro - Data Analysis and Interpretation",
+      "description": "Use Tinkerplots or Google Sheets to analyze collected water quality data. Compare findings with historical data from Hawke's Bay Regional Council and identify patterns affecting stream health."
+    },
+    {
+      "title": "Te Whakaaro Hou - Solution Design Workshop",
+      "description": "Work in design teams to develop technological solutions addressing specific stream issues (sedimentation, pollution, habitat loss). Incorporate both modern technology and mātauranga Māori principles in proposed designs."
+    },
+    {
+      "title": "Te Whakaputa - Community Presentation",
+      "description": "Create digital presentations (using Book Creator or similar) showcasing findings and proposed solutions to be shared with local marae representatives and council environmental officers."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council water quality monitoring data and reports",
+    "Local kaumātua knowledge holders from Ngāti Kahungunu",
+    "Arduino starter kits with water quality sensors",
+    "Book Creator digital publishing platform for student presentations"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design portfolio documenting the water monitoring device development process",
+      "Data analysis report showing interpretation of stream quality findings",
+      "Digital presentation proposing a technological solution for stream enhancement",
+      "Peer evaluation of collaborative work and cultural responsiveness"
+    ]
+  },
+  "duration": "2-3 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, and outcome evaluation",
+    "Nature of Technology: Characteristics of technology and how it interacts with society and the environment",
+    "Technological Knowledge: Understanding how technological systems work and how materials are used",
+    "Key Competencies: Participating and contributing, relating to others, and thinking"
+  ],
+  "createdAt": "2025-08-20T10:23:00.396Z",
+  "enrichedAt": "2025-09-11T07:45:13.029Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

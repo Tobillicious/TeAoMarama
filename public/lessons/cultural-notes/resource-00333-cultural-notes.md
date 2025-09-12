@@ -1,0 +1,1 @@
+This lesson integrates 4 cultural elements, including Te Reo Māori vocabulary, Māori worldviews, and cultural protocols. Ensure respectful engagement with cultural content and provide opportunities for students to share their own cultural perspectives.

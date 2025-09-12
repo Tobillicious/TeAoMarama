@@ -1,0 +1,58 @@
+{
+  "id": "lesson-1755686243803-699xjvnvj",
+  "title": "Te Aromatawai Taiao o Te Awa Mangakōtukutuku / The Mangakōtukutuku Stream Environmental Assessment",
+  "type": "lesson",
+  "subject": "Mathematics",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will investigate the health of Te Awa Mangakōtukutuku, a significant stream flowing through our rohe that provides habitat for native species and holds cultural importance for Ngāti Kahungunu. The stream's name references the mangakōtukutuku (blue duck/whio), a taonga species that once thrived here. Students will use mathematical analysis to assess water quality and ecosystem health, connecting to the Ngāti Kahungunu value of kaitiakitanga (guardianship) and the concept of mauri (life force) of the waterway.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Calculate and interpret water quality indices using pH, turbidity, and nitrate data collected from Te Awa Mangakōtukutuku",
+    "Create statistical representations (box plots, scatter graphs) to analyze seasonal variations in stream health indicators",
+    "Apply geometric principles to calculate stream flow rates and catchment areas using topographic maps",
+    "Develop mathematical models to predict environmental impacts on the stream ecosystem and propose evidence-based restoration strategies"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki Te Awa (Connecting with the Stream)",
+      "description": "Visit Te Awa Mangakōtukutuku with local kaumātua who will share pūrākau (stories) about the stream's significance. Students will learn proper protocols for engaging with the waterway and begin initial water sampling using testing kits to collect baseline data."
+    },
+    {
+      "title": "Tātari Raraunga Wai (Water Data Analysis)",
+      "description": "Students will organize, clean, and analyze water quality data using spreadsheets. They will calculate means, medians, and ranges for each parameter, create comparative box plots showing variations between sampling sites, and identify statistical outliers and trends."
+    },
+    {
+      "title": "Te Huringa o Te Taiao (Environmental Change Modeling)",
+      "description": "Using historical data provided by Hawke's Bay Regional Council, students will create scatter graphs showing changes in water quality over time. They will develop linear regression models to predict future conditions under different scenarios (e.g., increased rainfall, urban development)."
+    },
+    {
+      "title": "Te Whakatau Kaupapa (Solution Development)",
+      "description": "Working in small groups, students will use their mathematical models to propose specific restoration strategies. They will calculate required resources, cost projections, and expected outcomes using ratios, percentages, and measurement conversions, connecting mathematical solutions to cultural restoration goals."
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council freshwater monitoring data portal and GIS maps",
+    "Water testing kits (pH meters, turbidity tubes, nitrate test strips) and flow meters",
+    "Ngāti Kahungunu kaumātua and environmental kaitiaki for cultural guidance",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' resources and calculation guides"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Complete a water quality analysis report with statistical calculations and graphical representations",
+      "Develop and present a mathematical model predicting stream health under different environmental scenarios",
+      "Create a costed proposal for a stream restoration project using measurement, ratio, and percentage calculations",
+      "Write a reflection connecting mathematical findings to concepts of kaitiakitanga and mauri"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Mathematics and Statistics Level 5: Statistical investigation, Statistical literacy, Number strategies and knowledge",
+    "Mathematics and Statistics Level 5: Measurement, Geometric thinking, Patterns and relationships",
+    "NZC Key Competencies: Thinking, Using language symbols and texts, Managing self, Relating to others, Participating and contributing",
+    "NZC Values: Innovation, inquiry and curiosity; Ecological sustainability; Community and participation"
+  ],
+  "createdAt": "2025-08-20T10:37:23.803Z",
+  "enrichedAt": "2025-09-11T08:27:05.114Z",
+  "enrichedBy": "Aronui_Pāngarau"
+}

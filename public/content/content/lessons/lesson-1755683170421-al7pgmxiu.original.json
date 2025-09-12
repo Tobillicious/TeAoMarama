@@ -1,0 +1,58 @@
+{
+  "id": "lesson-1755683170421-al7pgmxiu",
+  "title": "Whakamātau Taiao: Assessing the Health of Te Awa o Mangakōtukutuku / Environmental Impact Assessment of the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 9",
+  "culturalContext": "Students will investigate the health of Te Awa o Mangakōtukutuku, a significant stream that flows through our rohe and holds deep cultural importance to Ngāti Kahungunu. The stream is named after the kotukutuku (tree fuchsia) that once flourished along its banks and was traditionally used for medicinal purposes. Students will learn how our tūpuna monitored and maintained the mauri (life force) of waterways using mātauranga Māori, and apply this knowledge alongside modern technological methods.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Collect and analyze water quality data from Te Awa o Mangakōtukutuku using digital sensors and traditional observation methods (hinengaro, tinana, wairua)",
+    "Design a simple technological tool or system that could help monitor or improve the health of the awa, incorporating both mātauranga Māori and modern principles",
+    "Create a digital presentation that communicates findings and proposed technological solutions to an audience of peers and local kaumatua, explaining the environmental impact"
+  ],
+  "activities": [
+    {
+      "title": "Whakatau ki te Awa (Introduction to the Stream)",
+      "description": "A welcome and orientation at the banks of Te Awa o Mangakōtukutuku. A local kaumatua will share the pūrākau (story) of the awa, its name, and its significance to Ngāti Kahungunu. Students will learn traditional methods of observing a waterway's health (e.g., looking for certain native species, clarity, smell)."
+    },
+    {
+      "title": "Tātari Taiao (Environmental Analysis)",
+      "description": "Using water testing kits, digital pH sensors, thermometers, and turbidity tubes, students will collect quantitative data from designated sites along the awa. They will simultaneously record qualitative observations guided by mātauranga Māori, creating a blended data set."
+    },
+    {
+      "title": "Hōtaka Whakaraupapa (Data Synthesis Program)",
+      "description": "In the tech lab, students will input their collected data into a shared digital spreadsheet or a simple graphing program (e.g., Google Sheets). They will analyze the data to identify trends, correlations, and potential points of environmental impact, comparing modern data with traditional indicators."
+    },
+    {
+      "title": "Waihanga Hangarau (Technology Creation Challenge)",
+      "description": "In small groups, students will design a conceptual model for a technological tool that addresses an issue identified in their data. This could be a simple app that crowdsources sightings of pollution, a design for a native planting drone to stabilize banks, or a sensor network that alerts the community to changes in water quality. Designs must explain how they respect the mauri of the awa."
+    },
+    {
+      "title": "Whakaahua Matihiko (Digital Showcase)",
+      "description": "Groups will create a short digital presentation (e.g., using Canva, Google Slides) showcasing their findings and their proposed technological solution. They will present this to the class and invited community experts, focusing on how their solution minimizes negative environmental impact."
+    }
+  ],
+  "resources": [
+    "Kaumatua Hone Smith (local Ngāti Kahungunu elder and environmental knowledge holder)",
+    "NIWA's 'Stream Health Monitoring and Assessment Kit' (SHMAK) resources and digital tools",
+    "Digital sensors: pH meters, thermometers, turbidity tubes (available through the science department)",
+    "Te Ara - The Encyclopedia of New Zealand: entries on 'Māori conservation – te papa atawhai'"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Group digital presentation of findings and proposed technological solution",
+      "Individual written reflection on the process of integrating mātauranga Māori with technological practice"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Technology: Technological Practice, Level 5 - brief development, planning for practice, outcome development and evaluation",
+    "Science: Living World, Level 5 - ecology",
+    "Social Sciences: Place and Environment, Level 5 - how people's management of resources impacts on environmental and social sustainability"
+  ],
+  "createdAt": "2025-08-20T09:46:10.421Z",
+  "enrichedAt": "2025-09-11T11:25:05.135Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

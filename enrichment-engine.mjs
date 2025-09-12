@@ -117,7 +117,7 @@ import axios from 'axios';
  * @returns {Promise<object|null>} The enriched lesson data as a JSON object, or null on failure.
  */
 async function getEnrichedContentFromLLM(prompt) {
-    const DEEPSEEK_API_KEY = 'sk-103cb83572a346e2aef89e2d2a4f7f89'; // Replace with your actual key if needed
+    const DEEPSEEK_API_KEY = 'sk-103cb83572a346e2aef89e2d2a4f7f89';
     const API_URL = 'https://api.deepseek.com/chat/completions';
 
     try {
@@ -190,8 +190,7 @@ async function updateStatusReport(subject) {
         }
 
         // Update the total count
-        const totalLineRegex = /(\| \*\*TOTAL\*\* \| \d+ \| )(\d+)( \| ~
-\d+\.\d+% \|)/;
+        const totalLineRegex = /(\| \*\*TOTAL\*\* \| \d+ \| )(\d+)( \| ~\d+\.\d+% \|)/;
         if (totalLineRegex.test(reportContent)) {
              reportContent = reportContent.replace(totalLineRegex, (match, prefix, count, suffix) => {
                 const newCount = parseInt(count) + 1;

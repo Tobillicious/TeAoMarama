@@ -1,0 +1,62 @@
+{
+  "id": "lesson-1755684596103-16cyo2z9s",
+  "title": "Te Whakamahi i te Mātauranga Taketake ki te Hoahoa Rauemi / Applying Indigenous Knowledge to Resource Design",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 10",
+  "culturalContext": "Students will explore how Ngāti Kahungunu traditional knowledge of the Mangakōtukutuku Stream (Te Awa o Mangakōtukutuku) informs sustainable resource design. The lesson connects to local pūrākau about the stream as a source of healing and sustenance, and how this knowledge can be applied to contemporary environmental technology challenges facing our community.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Analyze traditional Ngāti Kahungunu practices for water resource management and identify their technological principles",
+    "Design a sustainable water monitoring device that incorporates both mātauranga Māori and modern technology concepts",
+    "Create a prototype that demonstrates understanding of both cultural values and technical specifications",
+    "Present design solutions that show how traditional knowledge can address contemporary environmental challenges"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhiti Kōrero: Stories of Te Awa o Mangakōtukutuku",
+      "description": "Students engage with local kaumātua to learn pūrākau about the Mangakōtukutuku Stream, its traditional uses for rongoā (medicine), mahinga kai (food gathering), and the technological practices used to maintain its mauri (life force)"
+    },
+    {
+      "title": "Te Tirohanga Ā-Ipurangi: Digital Cultural Mapping",
+      "description": "Using GIS technology, students create digital maps identifying significant sites along the awa, documenting traditional resource gathering areas, and overlaying modern environmental data to identify changes over time"
+    },
+    {
+      "title": "Hoahoa Rauemi: Cultural Technology Design Challenge",
+      "description": "Working in pairs, students design a water quality monitoring device that incorporates both traditional indicators of water health (observed by tūpuna) and modern sensor technology, ensuring the design respects cultural protocols"
+    },
+    {
+      "title": "Waihanga Prototype: Building with Purpose",
+      "description": "Students use micro:bit sensors, Arduino technology, and natural materials to create functional prototypes that measure water quality while being culturally appropriate for use in significant sites"
+    },
+    {
+      "title": "Whakaaturanga: Presenting to the Marae",
+      "description": "Students present their designs and prototypes to community members at local marae, explaining how their technology solutions honor traditional knowledge while addressing modern environmental challenges"
+    }
+  ],
+  "resources": [
+    "Local kaumātua from Ngāti Kahungunu with knowledge of Te Awa o Mangakōtukutuku",
+    "Micro:bit water quality sensors and Arduino prototyping kits",
+    "'Te Mātauranga o Ngāti Kahungunu' by local historians (Mangakōtukutuku College library)",
+    "Hawke's Bay Regional Council water quality data and GIS mapping tools"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Design portfolio documenting the integration of mātauranga Māori and technology principles",
+      "Functional prototype of water monitoring device with cultural considerations",
+      "Oral presentation to community stakeholders explaining cultural and technical design choices",
+      "Written reflection on how the design process honored Te Tiriti o Waitangi principles"
+    ]
+  },
+  "duration": "3-4 weeks",
+  "nzcAlignment": [
+    "Technology Level 5: Nature of Technology - Characteristics of technological outcomes",
+    "Technology Level 5: Technological Practice - Planning for practice, brief development, outcome development and evaluation",
+    "Social Sciences Level 5: Understand how people's management of resources impacts on environmental and social sustainability",
+    "Science Level 5: Living World - Life processes, ecology, and evolution"
+  ],
+  "createdAt": "2025-08-20T10:09:56.103Z",
+  "enrichedAt": "2025-09-11T12:24:39.104Z",
+  "enrichedBy": "Aronui_Hangarau"
+}
