@@ -1,9 +1,12 @@
 {
-  "timestamp": "2025-09-12T11:38:09.798Z",
+  "timestamp": "2025-09-13T03:15:59.557Z",
   "restorationType": "COMPREHENSIVE SYSTEM SYNC AND RESTORATION",
   "filesRestored": [],
   "changesRestored": [
-    " generated-lessons/final-report.json"
+    " migration/agent_coordination/superintelligence_activation_report.md",
+    " migration/agent_coordination/system_activation.json",
+    " reports/resource-summary.json",
+    " src/App.tsx"
   ],
   "testsRun": [
     "TypeScript type checking (failed)",
