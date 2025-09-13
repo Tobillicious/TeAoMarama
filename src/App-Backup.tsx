@@ -59,7 +59,7 @@ const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessment
 const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 
-function App() {
+function App(): void {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 

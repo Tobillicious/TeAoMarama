@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom';
 
-function MinimalHome() : void {
+function MinimalHome() {
   return (
     <div
       /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -51,10 +51,20 @@ function MinimalHome() : void {
           textAlign: 'center',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#065f46', margin: '0 0 0.5rem 0' }}>
+        <h2
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            color: '#065f46',
+            margin: '0 0 0.5rem 0',
+          }}
+        >
           ✅ React Application Successfully Running!
         </h2>
-        <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#047857', margin: '0' }}>
+        <p
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            color: '#047857',
+            margin: '0',
+          }}
+        >
           The platform core is operational and ready for development.
         </p>
       </div>
@@ -71,7 +81,12 @@ function MinimalHome() : void {
         }}
       >
         {/* Test Page Card */}
-        <Link to="/test" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}>
+        <Link
+          to="/test"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
+        >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'white',
@@ -84,23 +99,39 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               🧪
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#059669', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#059669',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               Test Page
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0',
+              }}
+            >
               Verify navigation and basic functionality
             </p>
           </div>
         </Link>
 
         {/* Resources Card */}
-        <Link to="/resources" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}>
+        <Link
+          to="/resources"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
+        >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'white',
@@ -113,23 +144,39 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               📚
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#0891b2', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#0891b2',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               Educational Resources
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0',
+              }}
+            >
               Browse curriculum-aligned educational content
             </p>
           </div>
         </Link>
 
         {/* GLM Models Card */}
-        <Link to="/glm-models" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}>
+        <Link
+          to="/glm-models"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
+        >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'white',
@@ -142,16 +189,27 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               🤖
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#7c3aed', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#7c3aed',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               GLM-4.5 & Z1 Models
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0 0 1rem 0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0 0 1rem 0',
+              }}
+            >
               AI-powered educational enhancement tools
             </p>
             <div
@@ -172,7 +230,9 @@ function MinimalHome() : void {
         {/* Real-Time Analytics Card */}
         <Link
           to="/real-time-analytics"
-          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
         >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -186,16 +246,27 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               📊
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#ea580c', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#ea580c',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               Real-Time Analytics
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0 0 1rem 0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0 0 1rem 0',
+              }}
+            >
               Live classroom insights and learning analytics
             </p>
             <div
@@ -214,38 +285,11 @@ function MinimalHome() : void {
         </Link>
 
         {/* Teacher Dashboard Card */}
-        <Link to="/teacher" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}>
-          <div
-            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '2rem',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-              border: '1px solid #e5e7eb',
-              transition: 'all 0.3s ease',
-              cursor: 'pointer',
-            }}
-          >
-            <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
-            >
-              👩‍🏫
-            </div>
-            <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#3b82f6', margin: '0 0 0.5rem 0' }}
-            >
-              Teacher Dashboard
-            </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
-              Professional teaching tools and student progress
-            </p>
-          </div>
-        </Link>
-
-        {/* Collaborative Workspace Card */}
         <Link
-          to="/collaborative-workspace"
-          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}
+          to="/teacher"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
         >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -259,16 +303,72 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
+            >
+              👩‍🏫
+            </div>
+            <h3
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#3b82f6',
+                margin: '0 0 0.5rem 0',
+              }}
+            >
+              Teacher Dashboard
+            </h3>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0',
+              }}
+            >
+              Professional teaching tools and student progress
+            </p>
+          </div>
+        </Link>
+
+        {/* Collaborative Workspace Card */}
+        <Link
+          to="/collaborative-workspace"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
+        >
+          <div
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '2rem',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+              border: '1px solid #e5e7eb',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+            }}
+          >
+            <div
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               🤝
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#7c3aed', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#7c3aed',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               Collaborative Learning
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0 0 1rem 0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0 0 1rem 0',
+              }}
+            >
               Real-time peer learning and cultural sharing
             </p>
             <div
@@ -289,7 +389,9 @@ function MinimalHome() : void {
         {/* Advanced Assessment Hub Card */}
         <Link
           to="/advanced-assessments"
-          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
         >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -303,16 +405,27 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               🎯
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#7c3aed', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#7c3aed',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               Assessment Hub
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0 0 1rem 0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0 0 1rem 0',
+              }}
+            >
               Culturally responsive assessment and evaluation
             </p>
             <div
@@ -331,7 +444,12 @@ function MinimalHome() : void {
         </Link>
 
         {/* Functionality Test Card */}
-        <Link to="/test" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textDecoration: 'none' }}>
+        <Link
+          to="/test"
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+            textDecoration: 'none',
+          }}
+        >
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'white',
@@ -344,16 +462,27 @@ function MinimalHome() : void {
             }}
           >
             <div
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                fontSize: '2rem',
+                marginBottom: '1rem',
+              }}
             >
               🔧
             </div>
             <h3
-              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#dc2626', margin: '0 0 0.5rem 0' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#dc2626',
+                margin: '0 0 0.5rem 0',
+              }}
             >
               System Tests
             </h3>
-            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
+            <p
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#6b7280',
+                margin: '0',
+              }}
+            >
               Run comprehensive functionality tests
             </p>
           </div>
@@ -363,7 +492,7 @@ function MinimalHome() : void {
   );
 }
 
-function TestPage(): void {
+function TestPage() {
   return (
     <div
       /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -373,7 +502,12 @@ function TestPage(): void {
         padding: '2rem',
       }}
     >
-      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+        }}
+      >
         <div
           /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'white',
@@ -383,10 +517,20 @@ function TestPage(): void {
             marginBottom: '2rem',
           }}
         >
-          <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#059669', marginBottom: '1rem' }}>
+          <h1
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#059669',
+              marginBottom: '1rem',
+            }}
+          >
             🧪 Test Page Working
           </h1>
-          <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', marginBottom: '2rem' }}>
+          <p
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#6b7280',
+              marginBottom: '2rem',
+            }}
+          >
             ✅ Navigation is functional! This confirms React Router is working properly.
           </p>
           <Link
@@ -409,7 +553,7 @@ function TestPage(): void {
   );
 }
 
-function ResourcesPage(): void {
+function ResourcesPage() {
   return (
     <div
       /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -419,7 +563,12 @@ function ResourcesPage(): void {
         padding: '2rem',
       }}
     >
-      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+        }}
+      >
         <div
           /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'white',
@@ -429,10 +578,20 @@ function ResourcesPage(): void {
             marginBottom: '2rem',
           }}
         >
-          <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#0891b2', marginBottom: '1rem' }}>
+          <h1
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#0891b2',
+              marginBottom: '1rem',
+            }}
+          >
             📚 Educational Resources
           </h1>
-          <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', marginBottom: '1rem' }}>
+          <p
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#6b7280',
+              marginBottom: '1rem',
+            }}
+          >
             This section will contain curriculum-aligned educational resources for New Zealand
             teachers and students.
           </p>
@@ -445,10 +604,19 @@ function ResourcesPage(): void {
               border: '1px solid #0891b2',
             }}
           >
-            <strong /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#0891b2' }}>
+            <strong
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                color: '#0891b2',
+              }}
+            >
               Coming Soon:
             </strong>
-            <ul /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0.5rem 0', color: '#6b7280' }}>
+            <ul
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                margin: '0.5rem 0',
+                color: '#6b7280',
+              }}
+            >
               <li>Lesson plans and activities</li>
               <li>Assessment tools</li>
               <li>Multimedia resources</li>
@@ -475,7 +643,7 @@ function ResourcesPage(): void {
   );
 }
 
-function GLMModelsPage(): void {
+function GLMModelsPage() {
   return (
     <div
       /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
@@ -485,7 +653,12 @@ function GLMModelsPage(): void {
         padding: '2rem',
       }}
     >
-      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+        }}
+      >
         <div
           /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'white',
@@ -495,10 +668,20 @@ function GLMModelsPage(): void {
             marginBottom: '2rem',
           }}
         >
-          <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#7c3aed', marginBottom: '1rem' }}>
+          <h1
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#7c3aed',
+              marginBottom: '1rem',
+            }}
+          >
             🤖 GLM Models Dashboard
           </h1>
-          <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#6b7280', marginBottom: '1rem' }}>
+          <p
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+              color: '#6b7280',
+              marginBottom: '1rem',
+            }}
+          >
             AI-powered educational enhancement using GLM-4.5 and Z1 models for content generation
             and improvement.
           </p>
@@ -597,7 +780,11 @@ function App(): void {
         <Route
           path="*"
           element={
-            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '20px' }}>
+            <div
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
+                padding: '20px',
+              }}
+            >
               Page not found - <Link to="/">Go Home</Link>
             </div>
           }
