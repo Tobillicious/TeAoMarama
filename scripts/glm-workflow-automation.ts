@@ -321,7 +321,13 @@ async function main() {
   const automation = new GLMWorkflowAutomation();
 
   const command = process.argv[2];
-  const workflowId = process.argv[3];
+  let workflowId = process.argv[3];
+
+  // Handle --workflow parameter
+  const workflowIndex = process.argv.findIndex((arg) => arg === '--workflow');
+  if (workflowIndex !== -1 && process.argv[workflowIndex + 1]) {
+    workflowId = process.argv[workflowIndex + 1];
+  }
 
   switch (command) {
     case 'run':

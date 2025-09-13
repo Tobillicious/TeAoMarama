@@ -1,16 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Heart, 
-  Star, 
-  Users, 
-  BookOpen, 
-  Sparkles, 
-  Award,
-  TreePine,
-  Mountain,
-  Waves,
-  Sun
-} from 'lucide-react';
+import React, { useState } from 'react';
 import './CulturalIntegrationEnhancer.css';
 
 interface CulturalElement {
@@ -35,10 +23,9 @@ interface CulturalIntegrationEnhancerProps {
 const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = ({
   context,
   showTeReo = false,
-  onCulturalElementClick
+  onCulturalElementClick,
 }) => {
   const [activeElement, setActiveElement] = useState<CulturalElement | null>(null);
-  const [showFullContext, setShowFullContext] = useState(false);
 
   const culturalElements: CulturalElement[] = [
     {
@@ -51,7 +38,8 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '❤️',
       color: '#ef4444',
       significance: 'The foundation of all relationships and learning in Te Ao Māori',
-      modernApplication: 'Creating safe, supportive learning environments where every student feels valued'
+      modernApplication:
+        'Creating safe, supportive learning environments where every student feels valued',
     },
     {
       id: 'mana',
@@ -63,7 +51,8 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '⭐',
       color: '#f59e0b',
       significance: 'The spiritual power that comes from living with integrity and purpose',
-      modernApplication: 'Building student confidence and self-worth through meaningful achievements'
+      modernApplication:
+        'Building student confidence and self-worth through meaningful achievements',
     },
     {
       id: 'whanaungatanga',
@@ -75,7 +64,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '👥',
       color: '#3b82f6',
       significance: 'The importance of relationships and community in all learning',
-      modernApplication: 'Creating collaborative learning environments and peer support systems'
+      modernApplication: 'Creating collaborative learning environments and peer support systems',
     },
     {
       id: 'kaitiakitanga',
@@ -87,7 +76,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '🌿',
       color: '#10b981',
       significance: 'Responsible care for all that sustains us - land, sea, knowledge',
-      modernApplication: 'Teaching environmental responsibility and knowledge preservation'
+      modernApplication: 'Teaching environmental responsibility and knowledge preservation',
     },
     {
       id: 'rangatiratanga',
@@ -99,7 +88,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '👑',
       color: '#8b5cf6',
       significance: 'The right and responsibility to lead and make decisions',
-      modernApplication: 'Encouraging student voice, choice, and leadership in learning'
+      modernApplication: 'Encouraging student voice, choice, and leadership in learning',
     },
     {
       id: 'mātauranga',
@@ -111,7 +100,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '📚',
       color: '#6366f1',
       significance: 'The body of knowledge passed down through generations',
-      modernApplication: 'Integrating traditional knowledge with modern learning approaches'
+      modernApplication: 'Integrating traditional knowledge with modern learning approaches',
     },
     {
       id: 'wairua',
@@ -123,7 +112,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '✨',
       color: '#ec4899',
       significance: 'The spiritual dimension that connects all living things',
-      modernApplication: 'Honoring the whole person - mind, body, and spirit in learning'
+      modernApplication: 'Honoring the whole person - mind, body, and spirit in learning',
     },
     {
       id: 'taiao',
@@ -135,20 +124,28 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       icon: '🌍',
       color: '#059669',
       significance: 'Our connection to and responsibility for the natural world',
-      modernApplication: 'Learning through nature and understanding environmental relationships'
-    }
+      modernApplication: 'Learning through nature and understanding environmental relationships',
+    },
   ];
 
   const getContextualElements = () => {
     switch (context) {
       case 'dashboard':
-        return culturalElements.filter(el => ['aroha', 'mana', 'whanaungatanga', 'rangatiratanga'].includes(el.id));
+        return culturalElements.filter((el) =>
+          ['aroha', 'mana', 'whanaungatanga', 'rangatiratanga'].includes(el.id),
+        );
       case 'lesson':
-        return culturalElements.filter(el => ['mātauranga', 'kaitiakitanga', 'taiao', 'wairua'].includes(el.id));
+        return culturalElements.filter((el) =>
+          ['mātauranga', 'kaitiakitanga', 'taiao', 'wairua'].includes(el.id),
+        );
       case 'assessment':
-        return culturalElements.filter(el => ['mana', 'rangatiratanga', 'aroha', 'mātauranga'].includes(el.id));
+        return culturalElements.filter((el) =>
+          ['mana', 'rangatiratanga', 'aroha', 'mātauranga'].includes(el.id),
+        );
       case 'resource':
-        return culturalElements.filter(el => ['kaitiakitanga', 'mātauranga', 'taiao', 'wairua'].includes(el.id));
+        return culturalElements.filter((el) =>
+          ['kaitiakitanga', 'mātauranga', 'taiao', 'wairua'].includes(el.id),
+        );
       default:
         return culturalElements.slice(0, 4);
     }
@@ -168,10 +165,9 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
           {showTeReo ? 'Ngā Mātāpono Māori' : 'Te Ao Māori Principles'}
         </h3>
         <p className="cultural-subtitle">
-          {showTeReo 
+          {showTeReo
             ? 'He mātāpono e arahina ai tātou i ngā mahi katoa'
-            : 'Principles that guide us in all our learning and teaching'
-          }
+            : 'Principles that guide us in all our learning and teaching'}
         </p>
       </div>
 
@@ -181,15 +177,13 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
             key={element.id}
             className={`cultural-element ${activeElement?.id === element.id ? 'active' : ''}`}
             onClick={() => handleElementClick(element)}
-            style={{ '--element-color': element.color } as React.CSSProperties}
+            data-color={element.color}
           >
             <div className="element-icon">
               <span className="emoji-icon">{element.icon}</span>
             </div>
             <div className="element-content">
-              <h4 className="element-name">
-                {showTeReo ? element.nameTeReo : element.name}
-              </h4>
+              <h4 className="element-name">{showTeReo ? element.nameTeReo : element.name}</h4>
               <p className="element-description">
                 {showTeReo ? element.descriptionTeReo : element.description}
               </p>
@@ -198,7 +192,7 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
               </div>
             </div>
             <div className="element-actions">
-              <button 
+              <button
                 className="learn-more-btn"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -223,33 +217,32 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
                 <h3>{showTeReo ? activeElement.nameTeReo : activeElement.name}</h3>
                 <p className="modal-category">{activeElement.category}</p>
               </div>
-              <button 
-                className="close-btn"
-                onClick={() => setActiveElement(null)}
-              >
+              <button className="close-btn" onClick={() => setActiveElement(null)}>
                 ×
               </button>
             </div>
-            
+
             <div className="modal-body">
               <div className="significance-section">
                 <h4>{showTeReo ? 'Te Hiranga' : 'Significance'}</h4>
                 <p>{activeElement.significance}</p>
               </div>
-              
+
               <div className="application-section">
                 <h4>{showTeReo ? 'Te Whakamahinga' : 'Modern Application'}</h4>
                 <p>{activeElement.modernApplication}</p>
               </div>
-              
+
               <div className="cultural-connections">
                 <h4>{showTeReo ? 'Ngā Hononga' : 'Cultural Connections'}</h4>
                 <div className="connections-grid">
                   {culturalElements
-                    .filter(el => el.id !== activeElement.id && el.category === activeElement.category)
+                    .filter(
+                      (el) => el.id !== activeElement.id && el.category === activeElement.category,
+                    )
                     .slice(0, 3)
-                    .map(related => (
-                      <div 
+                    .map((related) => (
+                      <div
                         key={related.id}
                         className="connection-item"
                         onClick={() => setActiveElement(related)}
@@ -268,17 +261,19 @@ const CulturalIntegrationEnhancer: React.FC<CulturalIntegrationEnhancerProps> = 
       )}
 
       <div className="cultural-footer">
-        <button 
+        <button
           className="toggle-te-reo-btn"
-          onClick={() => setShowTeReo(!showTeReo)}
+          onClick={() => {
+            // This would need to be passed as a prop from parent component
+            console.log('Toggle Te Reo clicked');
+          }}
         >
           {showTeReo ? 'Switch to English' : 'Te Reo Māori'}
         </button>
         <p className="cultural-note">
-          {showTeReo 
+          {showTeReo
             ? 'He mātāpono tēnei e arahina ai tātou i ngā mahi katoa'
-            : 'These principles guide us in all our learning and teaching'
-          }
+            : 'These principles guide us in all our learning and teaching'}
         </p>
       </div>
     </div>

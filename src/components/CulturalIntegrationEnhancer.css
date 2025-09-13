@@ -75,13 +75,13 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--element-color);
+  background: #10b981;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .cultural-element:hover {
-  border-color: var(--element-color);
+  border-color: #10b981;
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -91,8 +91,8 @@
 }
 
 .cultural-element.active {
-  border-color: var(--element-color);
-  box-shadow: 0 0 0 1px var(--element-color), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #10b981;
+  box-shadow: 0 0 0 1px #10b981, 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .element-icon {
@@ -137,7 +137,7 @@
 }
 
 .category-badge {
-  background: var(--element-color);
+  background: #10b981;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -153,7 +153,7 @@
 }
 
 .learn-more-btn {
-  background: var(--element-color);
+  background: #10b981;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -165,7 +165,7 @@
 }
 
 .learn-more-btn:hover {
-  background: color-mix(in srgb, var(--element-color) 80%, black);
+  background: #059669;
   transform: translateY(-1px);
 }
 
