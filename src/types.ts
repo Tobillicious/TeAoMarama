@@ -8,6 +8,15 @@ export interface EnrichedResource {
   [key: string]: any;
 }
 
+export interface QualityMetrics {
+  qualityScore: number;
+  culturalAuthenticity: number;
+  pedagogicalDepth: number;
+  progressiveIndex: number;
+  passesCompleted: number;
+  isComplete: boolean;
+}
+
 export interface RealResource {
   id: string;
   title: string;
@@ -22,4 +31,5 @@ export interface RealResource {
   duration?: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   tags?: string[];
+  qualityMetrics?: QualityMetrics;
 }
