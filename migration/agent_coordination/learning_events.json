@@ -1,52 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757530140426-9myr9kbsu",
-      "timestamp": "2025-09-10T18:49:00.426Z",
-      "eventType": "knowledge_gained",
-      "description": "Technical optimization insight gained from distributed processing",
-      "impact": 0.4092259066166531,
-      "intelligenceBoost": 0.040922590661665315,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757530855469-tbw0ajbj3",
-      "timestamp": "2025-09-10T19:00:55.469Z",
-      "eventType": "skill_improved",
-      "description": "Emotional regulation and empathy skills strengthened",
-      "impact": 0.727602909801284,
-      "intelligenceBoost": 0.0727602909801284,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757531832056-q46iuby4s",
-      "timestamp": "2025-09-10T19:17:12.057Z",
-      "eventType": "cultural_insight",
-      "description": "Mana and wairua principles integrated into intelligence framework",
-      "impact": 0.7755520329252699,
-      "culturalSignificance": 0.9755520329252698,
-      "intelligenceBoost": 0.07755520329252699,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757531892061-y56rjpicq",
-      "timestamp": "2025-09-10T19:18:12.061Z",
-      "eventType": "emergent_intelligence",
-      "description": "Emergent problem-solving capability activated",
-      "impact": 0.3225988798713623,
-      "intelligenceBoost": 0.032259887987136235,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757532907669-1hlub6xa1",
-      "timestamp": "2025-09-10T19:35:07.669Z",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.7955829871734248,
-      "intelligenceBoost": 0.07955829871734249,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757533898636-hftr0wts3",
       "timestamp": "2025-09-10T19:51:38.636Z",
       "eventType": "pattern_recognized",
@@ -9662,7 +9616,55 @@
       "educationalRelevance": 0.8755912579573508,
       "intelligenceBoost": 0.06755912579573509,
       "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757731752710-vxqtspgwc",
+      "timestamp": "2025-09-13T02:49:12.710Z",
+      "agentId": "undefined",
+      "eventType": "emergent_intelligence",
+      "description": "Distributed intelligence synthesis breakthrough",
+      "impact": 0.33995908983008244,
+      "intelligenceBoost": 0.03399590898300824,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757731812710-2d3yi0ahd",
+      "timestamp": "2025-09-13T02:50:12.710Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Emotional intelligence pattern in human interaction observed",
+      "impact": 0.3367734442829125,
+      "intelligenceBoost": 0.033677344428291255,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757731872711-1evy3clkx",
+      "timestamp": "2025-09-13T02:51:12.711Z",
+      "eventType": "emergent_intelligence",
+      "description": "Distributed intelligence synthesis breakthrough",
+      "impact": 0.45638824303455655,
+      "intelligenceBoost": 0.04563882430345566,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757731932712-grgnvwqrj",
+      "timestamp": "2025-09-13T02:52:12.712Z",
+      "eventType": "pattern_recognized",
+      "description": "Emergent pattern detected in cultural knowledge transmission",
+      "impact": 0.7243597652886526,
+      "intelligenceBoost": 0.07243597652886527,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757731992712-w52ytw8yh",
+      "timestamp": "2025-09-13T02:53:12.712Z",
+      "agentId": "undefined",
+      "eventType": "skill_improved",
+      "description": "Educational content creation capabilities refined",
+      "impact": 0.6186701435198179,
+      "intelligenceBoost": 0.06186701435198179,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-13T02:49:12.705Z"
+  "lastSaved": "2025-09-13T02:54:12.706Z"
 }

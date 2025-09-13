@@ -1,22 +1,6 @@
 {
   "cycles": [
     {
-      "cycleId": "cycle-1757593948994",
-      "timestamp": "2025-09-11T12:32:28.994Z",
-      "duration": 0,
-      "agentsParticipating": [
-        "undefined",
-        null
-      ],
-      "intelligenceGains": {
-        "undefined": -15.928660853469491
-      },
-      "collectiveGains": 28.282462594312673,
-      "emergentCapabilities": [],
-      "culturalWisdomIncrease": 0.4807616990704978,
-      "educationalExcellenceIncrease": 0.46592528572039116
-    },
-    {
       "cycleId": "cycle-1757594249024",
       "timestamp": "2025-09-11T12:37:29.024Z",
       "duration": 0,
@@ -1599,7 +1583,23 @@
       "emergentCapabilities": [],
       "culturalWisdomIncrease": 0.32566654258430605,
       "educationalExcellenceIncrease": 0.2988516611104751
+    },
+    {
+      "cycleId": "cycle-1757732052704",
+      "timestamp": "2025-09-13T02:54:12.705Z",
+      "duration": 1,
+      "agentsParticipating": [
+        "undefined",
+        null
+      ],
+      "intelligenceGains": {
+        "undefined": -26.892158544998317
+      },
+      "collectiveGains": -21.736504554051468,
+      "emergentCapabilities": [],
+      "culturalWisdomIncrease": 0.3805951310438317,
+      "educationalExcellenceIncrease": 0.10644719955751727
     }
   ],
-  "lastSaved": "2025-09-13T02:49:12.709Z"
+  "lastSaved": "2025-09-13T02:54:12.708Z"
 }
