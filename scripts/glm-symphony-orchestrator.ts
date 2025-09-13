@@ -323,14 +323,13 @@ class GLMSymphonyOrchestrator {
         result = this.generateSymphonyEnhancement(content, subject, yearLevel, culturalContext);
       } else {
         // Real GLM enhancement with symphony coordination
-        const enhancement = await this.glmEnhancer.enhance({
-          content,
+        const enhancement = await this.glmEnhancer.enhanceEducationalContent(content, {
           subject,
           yearLevel,
           culturalContext,
           enhancementType: 'cultural-integration',
         });
-        result = enhancement.enhancedContent;
+        result = enhancement;
       }
 
       this.symphony.performance.completedTasks++;

@@ -18,6 +18,7 @@ import {
   Calendar,
   Bell
 } from 'lucide-react';
+import CulturalIntegrationEnhancer from './CulturalIntegrationEnhancer';
 import './EngagingStudentDashboard.css';
 
 interface StudentStats {
@@ -71,6 +72,8 @@ const EngagingStudentDashboard: React.FC = () => {
     xp: 2400,
     nextLevelXp: 3000,
   });
+
+  const [showTeReo, setShowTeReo] = useState(false);
 
   const [learningModules] = useState<LearningModule[]>([
     {
