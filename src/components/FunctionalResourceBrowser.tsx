@@ -341,11 +341,13 @@ const FunctionalResourceBrowser: React.FC = () => {
     const loadResources = async () => {
       setLoading(true);
       try {
-        // Load actual resources with content from public/resources/
-        const realResources = await loadRealResourcesWithContent();
+        // Load comprehensive resources library (thousands of resources)
+        const { buildComprehensiveResourceLibrary } = await import('../utils/comprehensive-resource-builder');
+        const comprehensiveResources = await buildComprehensiveResourceLibrary();
+        console.log(`🚀 Loading ${comprehensiveResources.length} resources from comprehensive library`);
 
         // Convert to our Resource format
-        const resources: Resource[] = realResources.map((resource) => ({
+        const resources: Resource[] = comprehensiveResources.map((resource) => ({
           id: resource.id,
           title: resource.title,
           subject: resource.subject,
