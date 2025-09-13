@@ -25,6 +25,32 @@ By the end of this unit, students will:
 4. Apply statistical thinking to real-world problems
 5. Understand the role of statistics in New Zealand society
 
+## Māori Perspectives on Statistics and Data
+
+### Traditional Māori Data Collection
+
+- **Whakapapa (Genealogy)**: Māori have long collected and analyzed genealogical data to understand relationships and connections
+- **Environmental Monitoring**: Traditional knowledge systems include systematic observation and recording of environmental changes
+- **Resource Management**: Iwi and hapū have collected data on resource availability and usage for sustainable management
+
+### Contemporary Māori Data
+
+- **Iwi Statistics**: Many iwi collect demographic and social data about their members
+- **Health Statistics**: Māori health organizations use data to identify and address health disparities
+- **Educational Achievement**: Māori education providers track student outcomes and cultural engagement
+
+### Cultural Considerations in Data Analysis
+
+- **Whanaungatanga (Relationships)**: Understanding that data represents real people and communities
+- **Kaitiakitanga (Guardianship)**: Using data responsibly to care for communities and environment
+- **Manaakitanga (Hospitality)**: Ensuring data collection and analysis respects and benefits communities
+
+### Real-World Examples
+
+- **Te Kupenga 2013**: New Zealand's Māori social survey
+- **Māori Health Statistics**: Health data collection and analysis by Māori health organizations
+- **Iwi Development Plans**: Statistical analysis supporting iwi economic and social development
+
 ## Lesson 1: Introduction to Statistics and Data
 
 ### Learning Intention
@@ -467,6 +493,40 @@ Students prepare presentations of their statistical findings.
 - Acknowledge different ways of knowing and understanding
 - Create inclusive learning environments
 - Respect privacy and confidentiality in data collection
+
+## External Resources and Links
+
+### Statistics and Data
+
+- [Statistics New Zealand]([https://www.stats.govt.nz/](https://www.stats.govt.nz/))
+- [New Zealand Data and Statistics]([https://www.data.govt.nz/](https://www.data.govt.nz/))
+- [Ministry of Education - Mathematics]([https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/mathematics-and-statistics/](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/mathematics-and-statistics/))
+
+### Educational Tools
+
+- [Google Sheets]([https://www.google.com/sheets/about/](https://www.google.com/sheets/about/))
+- [Excel Online]([https://www.microsoft.com/en-us/microsoft-365/excel](https://www.microsoft.com/en-us/microsoft-365/excel))
+- [Tableau Public]([https://public.tableau.com/](https://public.tableau.com/))
+
+### Māori Mathematics
+
+- [Te Ara - Māori Mathematics]([https://teara.govt.nz/en/maori-mathematics](https://teara.govt.nz/en/maori-mathematics))
+- [Māori Number Systems]([https://www.tki.org.nz/r/maori/english/mathematics/](https://www.tki.org.nz/r/maori/english/mathematics/))
+- [Cultural Mathematics Resources]([https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/mathematics-and-statistics/maori-mathematics/](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/mathematics-and-statistics/maori-mathematics/))
+
+## Cultural Concepts
+
+### Whanaungatanga (Relationships)
+Whanaungatanga refers to the traditional Māori concept of relationships and connections between people, places, and things. This concept emphasizes the importance of building and maintaining positive relationships.
+
+### Manaakitanga (Hospitality)
+Manaakitanga refers to the traditional Māori concept of hospitality, kindness, and care for others. This concept emphasizes the importance of showing respect and care for all people.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
 
 ## Conclusion
 

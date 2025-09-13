@@ -466,21 +466,35 @@ Students create an original text inspired by their reading and analysis.
 
 ### Māori Literature Resources
 
-- [New Zealand Book Council](https://www.bookcouncil.org.nz/)
-- [Te Ara - Māori Literature](https://teara.govt.nz/en/maori-literature)
-- [NZ On Screen - Māori Stories](https://www.nzonscreen.com/collection/maori-stories)
+- [New Zealand Book Council]([https://www.bookcouncil.org.nz/](https://www.bookcouncil.org.nz/))
+- [Te Ara - Māori Literature]([https://teara.govt.nz/en/maori-literature](https://teara.govt.nz/en/maori-literature))
+- [NZ On Screen - Māori Stories]([https://www.nzonscreen.com/collection/maori-stories](https://www.nzonscreen.com/collection/maori-stories))
 
 ### Author Resources
 
-- [Witi Ihimaera - Author Profile](https://www.penguin.co.nz/authors/witi-ihimaera)
-- [Patricia Grace - Author Profile](https://www.huia.co.nz/patricia-grace)
-- [Hone Tuwhare - Poetry Foundation](https://www.poetryfoundation.org/poets/hone-tuwhare)
+- [Witi Ihimaera - Author Profile]([https://www.penguin.co.nz/authors/witi-ihimaera](https://www.penguin.co.nz/authors/witi-ihimaera))
+- [Patricia Grace - Author Profile]([https://www.huia.co.nz/patricia-grace](https://www.huia.co.nz/patricia-grace))
+- [Hone Tuwhare - Poetry Foundation]([https://www.poetryfoundation.org/poets/hone-tuwhare](https://www.poetryfoundation.org/poets/hone-tuwhare))
 
 ### Educational Resources
 
-- [Te Kete Ipurangi - English Resources](https://www.tki.org.nz/r/maori/english/)
-- [Ministry of Education - English Curriculum](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/english/)
-- [New Zealand Literature Archive](https://www.nzliterature.org.nz/)
+- [Te Kete Ipurangi - English Resources]([https://www.tki.org.nz/r/maori/english/](https://www.tki.org.nz/r/maori/english/))
+- [Ministry of Education - English Curriculum]([https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/english/](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/english/))
+- [New Zealand Literature Archive]([https://www.nzliterature.org.nz/](https://www.nzliterature.org.nz/))
+
+## Cultural Concepts
+
+### Whanaungatanga (Relationships)
+Whanaungatanga refers to the traditional Māori concept of relationships and connections between people, places, and things. This concept emphasizes the importance of building and maintaining positive relationships.
+
+### Manaakitanga (Hospitality)
+Manaakitanga refers to the traditional Māori concept of hospitality, kindness, and care for others. This concept emphasizes the importance of showing respect and care for all people.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
 
 ## Conclusion
 

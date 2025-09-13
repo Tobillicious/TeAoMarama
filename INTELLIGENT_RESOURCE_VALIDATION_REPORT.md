@@ -1,15 +1,15 @@
 # 🧠 Intelligent Resource Validation Report
 
-**Generated**: 9/14/2025, 12:03:24 AM
+**Generated**: 9/14/2025, 12:39:09 AM
 
 ## 📊 Executive Summary
 
-- **Total Resources**: 169
-- **Average Quality Score**: 45.4/100
-- **Excellent Resources**: 8 (4.7%)
-- **Good Resources**: 27 (16.0%)
-- **Needs Work**: 33 (19.5%)
-- **Incomplete**: 101 (59.8%)
+- **Total Resources**: 155
+- **Average Quality Score**: 47.2/100
+- **Excellent Resources**: 9 (5.8%)
+- **Good Resources**: 26 (16.8%)
+- **Needs Work**: 32 (20.6%)
+- **Incomplete**: 88 (56.8%)
 
 ## 🎯 Top Issues to Address
 
@@ -46,47 +46,47 @@
 
 
 ### Māori Literature: Voices of Aotearoa - Year 8 English Unit
-- **Quality Score**: 95/100
+- **Quality Score**: 100/100
 - **Status**: EXCELLENT
 - **Cultural Integration**: 15/15
 - **NZC Alignment**: 15/15
 - **Real-World Examples**: 15/15
 - **Teacher Readiness**: 90/100
-- **Issues**: Missing external links
-- **Recommendations**: Add links to relevant websites and databases
+- **Issues**: None
+- **Recommendations**: None
 
 
 ### Statistics and Data Analysis: Understanding Aotearoa - Year 8 Mathematics Unit
-- **Quality Score**: 80/100
-- **Status**: GOOD
-- **Cultural Integration**: 0/15
+- **Quality Score**: 100/100
+- **Status**: EXCELLENT
+- **Cultural Integration**: 15/15
 - **NZC Alignment**: 15/15
 - **Real-World Examples**: 15/15
 - **Teacher Readiness**: 90/100
-- **Issues**: Missing Māori cultural elements, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add links to relevant websites and databases
+- **Issues**: None
+- **Recommendations**: None
 
 
 ### Ecosystems and Conservation: Aotearoa's Unique Environment - Year 8 Science Unit
-- **Quality Score**: 95/100
+- **Quality Score**: 100/100
 - **Status**: EXCELLENT
 - **Cultural Integration**: 15/15
 - **NZC Alignment**: 15/15
 - **Real-World Examples**: 15/15
 - **Teacher Readiness**: 90/100
-- **Issues**: Missing external links
-- **Recommendations**: Add links to relevant websites and databases
+- **Issues**: None
+- **Recommendations**: None
 
 
 ### Te Tiriti o Waitangi: A Comprehensive Year 8 Social Studies Unit
-- **Quality Score**: 95/100
+- **Quality Score**: 100/100
 - **Status**: EXCELLENT
 - **Cultural Integration**: 15/15
 - **NZC Alignment**: 15/15
 - **Real-World Examples**: 15/15
 - **Teacher Readiness**: 90/100
-- **Issues**: Missing external links
-- **Recommendations**: Add links to relevant websites and databases
+- **Issues**: None
+- **Recommendations**: None
 
 
 ### Nz Curriculum Year8
@@ -353,17 +353,6 @@
 - **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
 
 
-### AuthTest
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
 ### AuthenticationSystem
 - **Quality Score**: 45/100
 - **Status**: INCOMPLETE
@@ -373,28 +362,6 @@
 - **Teacher Readiness**: 60/100
 - **Issues**: Missing NZC alignment, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
 - **Recommendations**: Add New Zealand Curriculum statements and objectives, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### AuthenticationTabs
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### BasicTest
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
 
 
 ### Breadcrumbs
@@ -727,17 +694,6 @@
 - **Recommendations**: Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
-### DualRoleLogin
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
 ### EducationalDashboard
 - **Quality Score**: 45/100
 - **Status**: INCOMPLETE
@@ -824,17 +780,6 @@
 - **Teacher Readiness**: 60/100
 - **Issues**: Missing NZC alignment, Missing learning activities, Missing resource lists, Missing external links
 - **Recommendations**: Add New Zealand Curriculum statements and objectives, Add specific learning activities and student engagement strategies, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### EnhancedNavigation
-- **Quality Score**: 45/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 90/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
 ### EnhancedResourceAccessModal
@@ -1223,14 +1168,14 @@
 
 
 ### Navigation
-- **Quality Score**: 45/100
+- **Quality Score**: 20/100
 - **Status**: INCOMPLETE
 - **Cultural Integration**: 0/15
 - **NZC Alignment**: 0/15
 - **Real-World Examples**: 0/15
-- **Teacher Readiness**: 90/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add links to relevant websites and databases
+- **Teacher Readiness**: 60/100
+- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
+- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
 
 
 ### OptimizedImage
@@ -1453,17 +1398,6 @@
 - **Recommendations**: Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
-### ResourceTestPage
-- **Quality Score**: 30/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add links to relevant websites and databases
-
-
 ### ResourceUnlocker
 - **Quality Score**: 45/100
 - **Status**: INCOMPLETE
@@ -1484,17 +1418,6 @@
 - **Teacher Readiness**: 90/100
 - **Issues**: Missing NZC alignment, Missing external links
 - **Recommendations**: Add New Zealand Curriculum statements and objectives, Add links to relevant websites and databases
-
-
-### RoleAdaptiveNavigation
-- **Quality Score**: 35/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add links to relevant websites and databases
 
 
 ### RoleBasedRouter
@@ -1521,50 +1444,6 @@
 
 ### SignUp
 - **Quality Score**: 0/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### SimpleLogin
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### SimpleNavigation Working
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### SimpleNavigation
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
-### SimpleTest
-- **Quality Score**: 20/100
 - **Status**: INCOMPLETE
 - **Cultural Integration**: 0/15
 - **NZC Alignment**: 0/15
@@ -1739,17 +1618,6 @@
 - **Recommendations**: Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
-### SystemTest
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
 ### TeKeteAkoResourceExplorer
 - **Quality Score**: 40/100
 - **Status**: INCOMPLETE
@@ -1803,17 +1671,6 @@
 - **Teacher Readiness**: 60/100
 - **Issues**: Missing learning activities, Missing external links
 - **Recommendations**: Add specific learning activities and student engagement strategies, Add links to relevant websites and databases
-
-
-### TreasureNavigation
-- **Quality Score**: 60/100
-- **Status**: NEEDS-WORK
-- **Cultural Integration**: 15/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 90/100
-- **Issues**: Missing NZC alignment, Missing real-world New Zealand examples, Missing external links
-- **Recommendations**: Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
 ### UnifiedContentDiscovery
@@ -1871,17 +1728,6 @@
 - **Recommendations**: Add specific New Zealand case studies and examples, Add links to relevant websites and databases
 
 
-### WorkingLogin
-- **Quality Score**: 20/100
-- **Status**: INCOMPLETE
-- **Cultural Integration**: 0/15
-- **NZC Alignment**: 0/15
-- **Real-World Examples**: 0/15
-- **Teacher Readiness**: 60/100
-- **Issues**: Missing Māori cultural elements, Missing NZC alignment, Missing real-world New Zealand examples, Missing learning activities, Missing assessment criteria, Missing resource lists, Missing external links
-- **Recommendations**: Add Māori perspectives and cultural context, Add New Zealand Curriculum statements and objectives, Add specific New Zealand case studies and examples, Add specific learning activities and student engagement strategies, Add assessment rubrics and evaluation criteria, Add materials lists and external resources, Add links to relevant websites and databases
-
-
 ### WorkingResourceBrowser
 - **Quality Score**: 45/100
 - **Status**: INCOMPLETE
@@ -1902,4 +1748,4 @@
 
 ---
 
-*Generated by Intelligent Resource Validator - 2025-09-13T12:03:25.010Z*
+*Generated by Intelligent Resource Validator - 2025-09-13T12:39:09.992Z*

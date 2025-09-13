@@ -419,27 +419,41 @@ Students create a family presentation about what they've learned.
 
 ### Primary Sources
 
-- [Te Tiriti o Waitangi (Māori and English versions)](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi)
-- [Archives New Zealand - Treaty Documents](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi)
-- [Waitangi Tribunal Reports](https://www.waitangitribunal.govt.nz/reports/)
+- [Te Tiriti o Waitangi (Māori and English versions)]([https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi))
+- [Archives New Zealand - Treaty Documents]([https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi))
+- [Waitangi Tribunal Reports]([https://www.waitangitribunal.govt.nz/reports/](https://www.waitangitribunal.govt.nz/reports/))
 
 ### Educational Resources
 
-- [Te Ara: The Encyclopedia of New Zealand](https://teara.govt.nz/en)
-- [NZHistory.net.nz - Treaty Timeline](https://nzhistory.govt.nz/politics/treaty/treaty-timeline)
-- [Te Papa - Treaty Exhibition](https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/treaty-waitangi)
+- [Te Ara: The Encyclopedia of New Zealand]([https://teara.govt.nz/en](https://teara.govt.nz/en))
+- [NZHistory.net.nz - Treaty Timeline]([https://nzhistory.govt.nz/politics/treaty/treaty-timeline](https://nzhistory.govt.nz/politics/treaty/treaty-timeline))
+- [Te Papa - Treaty Exhibition]([https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/treaty-waitangi](https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/treaty-waitangi))
 
 ### Contemporary Issues
 
-- [Ihumātao - Land Occupation](https://www.rnz.co.nz/news/national/396123/ihumatao-protesters-occupy-land-in-south-auckland)
-- [Whanganui River - Legal Personhood](https://www.whanganui.govt.nz/our-council/whanganui-river)
-- [Te Urewera - Co-governance](https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/)
+- [Ihumātao - Land Occupation]([https://www.rnz.co.nz/news/national/396123/ihumatao-protesters-occupy-land-in-south-auckland](https://www.rnz.co.nz/news/national/396123/ihumatao-protesters-occupy-land-in-south-auckland))
+- [Whanganui River - Legal Personhood]([https://www.whanganui.govt.nz/our-council/whanganui-river](https://www.whanganui.govt.nz/our-council/whanganui-river))
+- [Te Urewera - Co-governance]([https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/](https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/))
 
 ### Government Resources
 
-- [Ministry of Education - Treaty Education](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/te-tiriti-o-waitangi/)
-- [New Zealand Curriculum Online](https://nzcurriculum.tki.org.nz/)
-- [Te Kete Ipurangi (TKI)](https://www.tki.org.nz/)
+- [Ministry of Education - Treaty Education]([https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/te-tiriti-o-waitangi/](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/te-tiriti-o-waitangi/))
+- [New Zealand Curriculum Online]([https://nzcurriculum.tki.org.nz/](https://nzcurriculum.tki.org.nz/))
+- [Te Kete Ipurangi (TKI)]([https://www.tki.org.nz/](https://www.tki.org.nz/))
+
+## Cultural Concepts
+
+### Whanaungatanga (Relationships)
+Whanaungatanga refers to the traditional Māori concept of relationships and connections between people, places, and things. This concept emphasizes the importance of building and maintaining positive relationships.
+
+### Manaakitanga (Hospitality)
+Manaakitanga refers to the traditional Māori concept of hospitality, kindness, and care for others. This concept emphasizes the importance of showing respect and care for all people.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
+
+### Kaitiakitanga (Guardianship)
+Kaitiakitanga refers to the traditional Māori concept of guardianship and protection of the environment and resources. This concept emphasizes the responsibility to care for and protect the natural world for future generations.
 
 ## Conclusion
 

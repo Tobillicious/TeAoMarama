@@ -1,241 +1,68 @@
-import React, { useState } from 'react';
-import type { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import { useAuth } from '../services/DualRoleAuthProvider';
-import '../styles/kaitiaki-dashboard.css';
-import '../styles/next-level-design-system.css';
-import './Navigation.css';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Navigation: React.FC = () => {
-  const { isAuthenticated, currentUser, logout } = useAuth();
+const SimpleNavigationWorking: React.FC = () => {
   const location = useLocation();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchError, setSearchError] = useState<string | null>(null);
-  const [isSearching, setIsSearching] = useState(false);
-  const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
-  const handleLogout = async () => {
-    await logout();
-  };
-
-  // Main navigation - accessible to all users
-  const mainNavigationLinks = [
-    { to: '/', label: '🏠 Home', icon: '🏠', description: 'Platform overview and getting started' },
-    {
-      to: '/quality-lessons',
-      label: '🌟 Quality Lessons',
-      icon: '🌟',
-      description: 'High-quality, fully developed educational content',
-    },
-    {
-      to: '/cultural-learning-modules',
-      label: '🌺 Cultural Learning',
-      icon: '🌺',
-      description: 'Authentic cultural learning experiences',
-    },
+  const mainLinks = [
+    { to: '/', label: 'Home', icon: '🏠' },
     {
       to: '/resources',
-      label: '📚 Resources',
+      label: '✅ REAL RESOURCES',
       icon: '📚',
-      description: 'Comprehensive educational resources',
+      highlight: true,
+      highlightColor: '#10b981',
     },
-    {
-      to: '/human-content',
-      label: '📖 Human Content',
-      icon: '📖',
-      description: 'Human-readable educational content (1,398+ files)',
-    },
-    {
-      to: '/about',
-      label: 'ℹ️ About',
-      icon: 'ℹ️',
-      description: 'Learn about our platform and mission',
-    },
+    { to: '/teacher', label: 'TEACHER', icon: '👨‍🏫' },
+    { to: '/student', label: 'STUDENT', icon: '👨‍🎓' },
+    { to: '/glm-symphony', label: 'GLM AI', icon: '🎼' },
   ];
-
-  // Teacher-specific navigation
-  const teacherNavigationLinks = [
-    {
-      to: '/teacher',
-      label: '👨‍🏫 Teacher Dashboard',
-      icon: '👨‍🏫',
-      description: 'Professional teaching tools and resources',
-    },
-    {
-      to: '/lesson-planner',
-      label: '📝 Lesson Planner',
-      icon: '📝',
-      description: 'Plan and organize your lessons',
-    },
-    {
-      to: '/assessment-tools',
-      label: '📊 Assessment Tools',
-      icon: '📊',
-      description: 'Create and manage assessments',
-    },
-    {
-      to: '/cultural-advisor',
-      label: '👥 Cultural Advisor',
-      icon: '👥',
-      description: 'Cultural guidance and support',
-    },
-  ];
-
-  // Student-specific navigation
-  const studentNavigationLinks = [
-    {
-      to: '/student',
-      label: '🎓 Student Dashboard',
-      icon: '🎓',
-      description: 'Your learning journey and progress',
-    },
-    {
-      to: '/assignments',
-      label: '📋 Assignments',
-      icon: '📋',
-      description: 'View and submit assignments',
-    },
-    {
-      to: '/progress',
-      label: '📈 Progress',
-      icon: '📈',
-      description: 'Track your learning progress',
-    },
-    {
-      to: '/cultural-journey',
-      label: '🌺 Cultural Journey',
-      icon: '🌺',
-      description: 'Explore your cultural learning path',
-    },
-  ];
-
-  // Handle search functionality
-  const handleSearch = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!searchTerm.trim()) return;
-
-    setIsSearching(true);
-    setSearchError(null);
-
-    try {
-      // Add to search history
-      setSearchHistory((prev) => [searchTerm, ...prev.slice(0, 4)]);
-
-      // Here you would implement actual search logic
-      console.log('Searching for:', searchTerm);
-
-      // Simulate search delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    } catch (error) {
-      setSearchError('Search failed. Please try again.');
-    } finally {
-      setIsSearching(false);
-    }
-  };
-
-  // Get current user role
-  const userRole = currentUser?.role || 'guest';
 
   return (
-    <nav className="kaitiaki-navigation">
-      <div className="nav-container">
-        {/* Logo and Brand */}
-        <div className="nav-brand">
-          <Link to="/" className="brand-link">
-            <span className="brand-icon">🌺</span>
-            <span className="brand-text">Te Ao Marama</span>
+    <nav style={{
+      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+      color: 'white',
+      padding: '16px 0',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 24px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+          <Link to="/" style={{
+            fontSize: '1.5rem',
+            fontWeight: '700',
+            color: 'white',
+            textDecoration: 'none'
+          }}>
+            🌿 Te Ao Mārama
           </Link>
-        </div>
 
-        {/* Search Bar */}
-        <div className="nav-search">
-          <form onSubmit={handleSearch} className="search-form">
-            <div className="search-input-container">
-              <input
-                type="text"
-                placeholder="Search resources, lessons, or content..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-              />
-              <button type="submit" disabled={isSearching} className="search-button">
-                {isSearching ? '🔍' : '🔍'}
-              </button>
-            </div>
-            {searchError && <div className="search-error">{searchError}</div>}
-          </form>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="nav-links">
-          {/* Main Navigation */}
-          <div className="nav-section">
-            {mainNavigationLinks.map((link) => (
+          <div style={{ display: 'flex', gap: '24px' }}>
+            {mainLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
-                title={link.description}
+                style={{
+                  color: location.pathname === link.to ? '#fbbf24' : 'rgba(255, 255, 255, 0.9)',
+                  textDecoration: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  background: link.highlight ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                  border: link.highlight ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
+                  fontWeight: location.pathname === link.to ? '600' : '500',
+                  fontSize: '0.9rem',
+                  transition: 'all 0.2s ease'
+                }}
               >
-                <span className="nav-icon">{link.icon}</span>
-                <span className="nav-label">{link.label}</span>
+                {link.icon} {link.label}
               </Link>
             ))}
-          </div>
-
-          {/* Role-specific Navigation */}
-          {userRole === 'teacher' && (
-            <div className="nav-section teacher-nav">
-              {teacherNavigationLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`nav-link teacher-link ${
-                    location.pathname === link.to ? 'active' : ''
-                  }`}
-                  title={link.description}
-                >
-                  <span className="nav-icon">{link.icon}</span>
-                  <span className="nav-label">{link.label}</span>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {userRole === 'student' && (
-            <div className="nav-section student-nav">
-              {studentNavigationLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`nav-link student-link ${
-                    location.pathname === link.to ? 'active' : ''
-                  }`}
-                  title={link.description}
-                >
-                  <span className="nav-icon">{link.icon}</span>
-                  <span className="nav-label">{link.label}</span>
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Authentication */}
-          <div className="nav-section auth-nav">
-            {isAuthenticated ? (
-              <>
-                <span className="user-welcome">Welcome, {currentUser?.name || 'User'}!</span>
-                <button onClick={handleLogout} className="nav-link logout-link">
-                  <span className="nav-icon">🚪</span>
-                  <span className="nav-label">Logout</span>
-                </button>
-              </>
-            ) : (
-              <Link to="/login" className="nav-link login-link">
-                <span className="nav-icon">🔐</span>
-                <span className="nav-label">Login</span>
-              </Link>
-            )}
           </div>
         </div>
       </div>
@@ -243,4 +70,4 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
+export default SimpleNavigationWorking;

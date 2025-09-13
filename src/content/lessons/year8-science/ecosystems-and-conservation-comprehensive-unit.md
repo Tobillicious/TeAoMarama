@@ -449,21 +449,21 @@ Students develop a personal or family conservation action plan.
 
 ### Conservation Organizations
 
-- [Department of Conservation](https://www.doc.govt.nz/)
-- [New Zealand Biodiversity](https://www.biodiversity.govt.nz/)
-- [Forest & Bird](https://www.forestandbird.org.nz/)
+- [Department of Conservation]([https://www.doc.govt.nz/](https://www.doc.govt.nz/))
+- [New Zealand Biodiversity]([https://www.biodiversity.govt.nz/](https://www.biodiversity.govt.nz/))
+- [Forest & Bird]([https://www.forestandbird.org.nz/](https://www.forestandbird.org.nz/))
 
 ### Scientific Research
 
-- [NIWA - National Institute of Water and Atmospheric Research](https://www.niwa.co.nz/)
-- [Landcare Research](https://www.landcareresearch.co.nz/)
-- [Manaaki Whenua - Landcare Research](https://www.landcareresearch.co.nz/)
+- [NIWA - National Institute of Water and Atmospheric Research]([https://www.niwa.co.nz/](https://www.niwa.co.nz/))
+- [Landcare Research]([https://www.landcareresearch.co.nz/](https://www.landcareresearch.co.nz/))
+- [Manaaki Whenua - Landcare Research]([https://www.landcareresearch.co.nz/](https://www.landcareresearch.co.nz/))
 
 ### Māori Environmental Knowledge
 
-- [Te Ara - Māori and the Environment](https://teara.govt.nz/en/maori-and-the-environment)
-- [Māori Environmental Knowledge](https://www.doc.govt.nz/nature/maori-and-biodiversity/)
-- [Kaitiakitanga Resources](https://www.doc.govt.nz/nature/maori-and-biodiversity/kaitiakitanga/)
+- [Te Ara - Māori and the Environment]([https://teara.govt.nz/en/maori-and-the-environment](https://teara.govt.nz/en/maori-and-the-environment))
+- [Māori Environmental Knowledge]([https://www.doc.govt.nz/nature/maori-and-biodiversity/](https://www.doc.govt.nz/nature/maori-and-biodiversity/))
+- [Kaitiakitanga Resources]([https://www.doc.govt.nz/nature/maori-and-biodiversity/kaitiakitanga/](https://www.doc.govt.nz/nature/maori-and-biodiversity/kaitiakitanga/))
 
 ## Conclusion
 

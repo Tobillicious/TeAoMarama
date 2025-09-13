@@ -4,7 +4,7 @@ import './App.css';
 import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
-import SimpleNavigation from './components/SimpleNavigation-Working';
+import Navigation from './components/Navigation';
 // Temporarily disabled to fix critical errors
 // import {
 //   performanceMonitor,
@@ -13,15 +13,13 @@ import SimpleNavigation from './components/SimpleNavigation-Working';
 // } from './utils/performance-optimizer';
 
 // Essential pages only - no duplicates
-const HomeMinimal = lazy(() => import('./App-Minimal'));
-const Home = lazy(() => import('./pages/Home-Simple'));
+const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 // Core functionality only - single version each
 const TeacherDashboard = lazy(() => import('./components/ProfessionalTeacherDashboard'));
 const StudentDashboard = lazy(() => import('./components/EnhancedStudentDashboard'));
-const EngagingStudentDashboard = lazy(() => import('./components/EngagingStudentDashboard'));
 const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowser'));
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
@@ -50,8 +48,6 @@ const GLMSymphonyDashboard = lazy(() => import('./components/GLMSymphonyDashboar
 const QualityFilteringHarmonyDashboard = lazy(
   () => import('./components/QualityFilteringHarmonyDashboard'),
 );
-const FunctionalityTest = lazy(() => import('./pages/FunctionalityTest'));
-const SimpleTest = lazy(() => import('./pages/SimpleTest'));
 const RealTimeLearningAnalytics = lazy(() => import('./components/RealTimeLearningAnalytics'));
 const CollaborativeLearningWorkspace = lazy(
   () => import('./components/CollaborativeLearningWorkspace'),
@@ -72,13 +68,13 @@ function App() {
   return (
     <DualRoleAuthProvider>
       <div className="App">
-        {!isLandingPage && <SimpleNavigation />}
+        {!isLandingPage && <Navigation />}
         <main className="main-content">
           <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
               {/* Landing */}
-              <Route path="/" element={<HomeMinimal />} />
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
 
               {/* Authentication */}
@@ -87,11 +83,9 @@ function App() {
               {/* Core Dashboards - single route each */}
               <Route path="/teacher" element={<TeacherDashboard />} />
               <Route path="/student" element={<StudentDashboard />} />
-              <Route path="/student-engaging" element={<EngagingStudentDashboard />} />
 
               {/* Resources - single route */}
               <Route path="/resources" element={<ResourceBrowser />} />
-              <Route path="/working-resources" element={<ResourceBrowser />} />
               <Route path="/human-content" element={<HumanReadableContentBrowser />} />
               {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
               <Route path="/lesson/:resourceId" element={<LessonViewer />} />
@@ -112,23 +106,14 @@ function App() {
 
               {/* GLM Models - Priority Routes */}
               <Route path="/glm-models" element={<GLMModelDashboard />} />
-              <Route path="/glm-4.5" element={<GLMModelDashboard />} />
-              <Route path="/glm-z1" element={<GLMModelDashboard />} />
               <Route path="/ai-models" element={<GLMModelDashboard />} />
               <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
               <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
-              <Route path="/test" element={<FunctionalityTest />} />
-              <Route path="/simple-test" element={<SimpleTest />} />
               <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
-              <Route path="/live-analytics" element={<RealTimeLearningAnalytics />} />
               <Route path="/collaborative-workspace" element={<CollaborativeLearningWorkspace />} />
-              <Route path="/collaboration" element={<CollaborativeLearningWorkspace />} />
               <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
-              <Route path="/assessment-hub" element={<AdvancedAssessmentHub />} />
-              <Route path="/showcase" element={<TeacherShowcaseDashboard />} />
               <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
               <Route path="/teacher-guide" element={<TeacherGuide />} />
-              <Route path="/guide" element={<TeacherGuide />} />
 
               <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
