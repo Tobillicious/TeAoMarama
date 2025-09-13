@@ -1,14 +1,5 @@
-import {
-  Activity,
-  AlertTriangle,
-  Brain,
-  CheckCircle,
-  Clock,
-  Globe,
-  Shield,
-  Users,
-  Zap,
-} from 'lucide-react';
+import type { Activity, AlertTriangle, Brain, CheckCircle, Clock, Globe, Shield, Users, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 interface AgentStatus {

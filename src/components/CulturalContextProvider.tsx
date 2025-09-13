@@ -1,6 +1,6 @@
 import { useCulturalContext } from '../hooks/useCulturalContext';
 
-export function CulturalGuidancePanel() {
+export function CulturalGuidancePanel() : void {
   const { getCulturalGuidance } = useCulturalContext();
   const guidance = getCulturalGuidance();
 

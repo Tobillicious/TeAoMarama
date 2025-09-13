@@ -4,8 +4,10 @@
  * Quality-first systematic enrichment with NZ Teaching Standards
  */
 
-import { buildComprehensiveResourceLibrary, type RealResource } from './comprehensive-resource-builder';
-import { globalEnrichmentEngine, type EnrichedContent } from './content-enrichment-engine';
+import type { RealResource } from './comprehensive-resource-builder';
+import { buildComprehensiveResourceLibrary } from './comprehensive-resource-builder';
+import type { EnrichedContent } from './content-enrichment-engine';
+import { globalEnrichmentEngine } from './content-enrichment-engine';
 import { globalKaiakoTeam } from './kaiako-team-coordinator';
 
 export interface EnrichmentBatch {
@@ -189,7 +191,7 @@ export class ResourceEnrichmentLauncher {
     const teamMembers = globalKaiakoTeam.getAllTeamMembers();
 
     // Calculate team contributions
-    const teamContributions: any = {};
+    const teamContributions: unknown = {};
     teamMembers.forEach(member => {
       const memberResources = completedEnrichments.filter(content => 
         content.enrichedBy.includes(member.name)

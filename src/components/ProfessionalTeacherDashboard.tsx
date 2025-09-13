@@ -1,29 +1,5 @@
-import {
-  Activity,
-  AlertTriangle,
-  BarChart3,
-  Bell,
-  BookOpen,
-  Calendar,
-  CheckCircle,
-  ChevronRight,
-  Clock,
-  Download,
-  Eye,
-  FileText,
-  Filter,
-  MessageCircle,
-  PieChart,
-  Play,
-  Plus,
-  Search,
-  Settings,
-  Star,
-  Target,
-  TrendingUp,
-  Upload,
-  Users,
-} from 'lucide-react';
+import type { Activity, AlertTriangle, BarChart3, Bell, BookOpen, Calendar, CheckCircle, ChevronRight, Clock, Download, Eye, FileText, Filter, MessageCircle, PieChart, Play, Plus, Search, Settings, Star, Target, TrendingUp, Upload, Users } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
@@ -378,9 +354,9 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                       key={index}
                       className={`quick-action-card priority-${action.priority}`}
                       onClick={action.action}
-                      style={{ borderTopColor: action.color }}
+                      /* TODO: Move to external CSS */ style={{ borderTopColor: action.color }}
                     >
-                      <div className="action-icon" style={{ color: action.color }}>
+                      <div className="action-icon" /* TODO: Move to external CSS */ style={{ color: action.color }}>
                         {action.icon}
                       </div>
                       <h3>{action.title}</h3>
@@ -582,7 +558,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                     </div>
                     <span
                       className="lesson-status"
-                      style={{ backgroundColor: getStatusColor(lesson.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(lesson.status) }}
                     >
                       {lesson.status}
                     </span>
@@ -662,28 +638,28 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                   <div className="trend-item">
                     <span>English</span>
                     <div className="trend-bar">
-                      <div className="trend-fill" style={{ width: '85%' }}></div>
+                      <div className="trend-fill" /* TODO: Move to external CSS */ style={{ width: '85%' }}></div>
                     </div>
                     <span>85%</span>
                   </div>
                   <div className="trend-item">
                     <span>Mathematics</span>
                     <div className="trend-bar">
-                      <div className="trend-fill" style={{ width: '73%' }}></div>
+                      <div className="trend-fill" /* TODO: Move to external CSS */ style={{ width: '73%' }}></div>
                     </div>
                     <span>73%</span>
                   </div>
                   <div className="trend-item">
                     <span>Science</span>
                     <div className="trend-bar">
-                      <div className="trend-fill" style={{ width: '79%' }}></div>
+                      <div className="trend-fill" /* TODO: Move to external CSS */ style={{ width: '79%' }}></div>
                     </div>
                     <span>79%</span>
                   </div>
                   <div className="trend-item">
                     <span>Social Studies</span>
                     <div className="trend-bar">
-                      <div className="trend-fill" style={{ width: '91%' }}></div>
+                      <div className="trend-fill" /* TODO: Move to external CSS */ style={{ width: '91%' }}></div>
                     </div>
                     <span>91%</span>
                   </div>

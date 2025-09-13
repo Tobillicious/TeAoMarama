@@ -16,7 +16,7 @@ export const withAuthGuard = (
 };
 
 // Hook for checking cultural permissions in components
-export const useCulturalPermissions = () => {
+export // const useCulturalPermissions = () => {
   const { currentUser } = useAuth();
   const [permissions, setPermissions] = React.useState({
     canAccessSacred: false,

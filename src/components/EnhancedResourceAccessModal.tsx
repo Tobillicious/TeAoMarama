@@ -86,7 +86,7 @@ const useCulturalSafety = (resource: EducationalResource | null) => {
         // Check for appropriate cultural context
         const hasCulturalContext = resource.culturalContext.length > 0;
         const hasLearningObjectives = resource.learningObjectives.length > 0;
-        // const isAppropriateDifficulty =
+        // // const isAppropriateDifficulty =
         //   resource.difficulty !== 'advanced' || resource.status === 'available';
 
         const warnings = [];

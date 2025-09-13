@@ -1,14 +1,9 @@
 import { BookOpen, Clock, Download, Eye, Heart, Search, Star, TrendingUp } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import {
-  filterContentByCategory,
-  filterContentBySubject,
-  loadAllIndexedContent,
-  searchContent,
-  sortContent,
-  type ContentItem,
-} from '../utils/content-indexer';
-import { ContentPerformanceOptimizer, debounce } from '../utils/performance-optimizer';
+import type { ContentItem } from '../utils/content-indexer';
+import { filterContentByCategory, filterContentBySubject, loadAllIndexedContent, searchContent, sortContent,  } from '../utils/content-indexer';
+import type { ContentPerformanceOptimizer } from '../utils/performance-optimizer';
+import { debounce } from '../utils/performance-optimizer';
 import ContentPreviewModal from './ContentPreviewModal';
 import './UnifiedContentDiscovery.css';
 

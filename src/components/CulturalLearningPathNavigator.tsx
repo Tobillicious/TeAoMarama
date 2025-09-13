@@ -626,7 +626,7 @@ const CulturalLearningPathNavigator: React.FC = () => {
                 <div className="path-header">
                   <div
                     className="path-difficulty"
-                    style={{ backgroundColor: getDifficultyColor(path.difficulty) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(path.difficulty) }}
                   >
                     {path.difficulty}
                   </div>

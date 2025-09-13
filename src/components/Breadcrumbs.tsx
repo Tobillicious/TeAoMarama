@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Breadcrumbs.css';
 
 interface BreadcrumbItem {

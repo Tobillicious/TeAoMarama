@@ -28,7 +28,7 @@ const PlatformAuditDashboard: React.FC = () => {
   if (loading) {
     return (
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
@@ -36,9 +36,9 @@ const PlatformAuditDashboard: React.FC = () => {
           background: '#f8fafc',
         }}
       >
-        <div style={{ textAlign: 'center' }}>
+        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               width: '60px',
               height: '60px',
               border: '4px solid #e5e7eb',
@@ -48,8 +48,8 @@ const PlatformAuditDashboard: React.FC = () => {
               margin: '0 auto 20px',
             }}
           ></div>
-          <h2 style={{ color: '#1f2937', marginBottom: '8px' }}>🔍 Auditing Platform Content</h2>
-          <p style={{ color: '#6b7280' }}>
+          <h2 /* TODO: Move to external CSS */ style={{ color: '#1f2937', marginBottom: '8px' }}>🔍 Auditing Platform Content</h2>
+          <p /* TODO: Move to external CSS */ style={{ color: '#6b7280' }}>
             Analyzing educational resources for quality and cultural authenticity...
           </p>
         </div>
@@ -67,7 +67,7 @@ const PlatformAuditDashboard: React.FC = () => {
 
   return (
     <div
-      style={{
+      /* TODO: Move to external CSS */ style={{
         minHeight: '100vh',
         background: '#f8fafc',
         fontFamily: 'Inter, system-ui, sans-serif',
@@ -75,7 +75,7 @@ const PlatformAuditDashboard: React.FC = () => {
     >
       {/* Header */}
       <header
-        style={{
+        /* TODO: Move to external CSS */ style={{
           background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%)',
           color: 'white',
           padding: '24px 0',
@@ -83,23 +83,23 @@ const PlatformAuditDashboard: React.FC = () => {
         }}
       >
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 24px',
           }}
         >
-          <h1 style={{ fontSize: '2.25rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+          <h1 /* TODO: Move to external CSS */ style={{ fontSize: '2.25rem', fontWeight: '700', margin: '0 0 8px 0' }}>
             📊 Platform Content Audit
           </h1>
-          <p style={{ fontSize: '1.125rem', opacity: 0.9, margin: '0' }}>
+          <p /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', opacity: 0.9, margin: '0' }}>
             TeAoMarama Educational Resource Quality Analysis
           </p>
         </div>
       </header>
 
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '24px',
@@ -107,7 +107,7 @@ const PlatformAuditDashboard: React.FC = () => {
       >
         {/* Critical Metrics */}
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '20px',
@@ -115,7 +115,7 @@ const PlatformAuditDashboard: React.FC = () => {
           }}
         >
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'white',
               borderRadius: '12px',
               padding: '24px',
@@ -124,25 +124,25 @@ const PlatformAuditDashboard: React.FC = () => {
             }}
           >
             <div
-              style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
+              /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
             >
-              <CheckCircle className="w-8 h-8" style={{ color: '#16a34a' }} />
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
+              <CheckCircle className="w-8 h-8" /* TODO: Move to external CSS */ style={{ color: '#16a34a' }} />
+              <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
                 Production Ready
               </h3>
             </div>
             <div
-              style={{ fontSize: '3rem', fontWeight: '700', color: '#16a34a', marginBottom: '8px' }}
+              /* TODO: Move to external CSS */ style={{ fontSize: '3rem', fontWeight: '700', color: '#16a34a', marginBottom: '8px' }}
             >
               {readinessPercent}%
             </div>
-            <p style={{ color: '#6b7280', margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
               {readyResources} of {auditResult.fileCount} resources classroom-ready
             </p>
           </div>
 
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'white',
               borderRadius: '12px',
               padding: '24px',
@@ -151,25 +151,25 @@ const PlatformAuditDashboard: React.FC = () => {
             }}
           >
             <div
-              style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
+              /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
             >
-              <Globe className="w-8 h-8" style={{ color: '#059669' }} />
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
+              <Globe className="w-8 h-8" /* TODO: Move to external CSS */ style={{ color: '#059669' }} />
+              <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
                 Cultural Integration
               </h3>
             </div>
             <div
-              style={{ fontSize: '3rem', fontWeight: '700', color: '#059669', marginBottom: '8px' }}
+              /* TODO: Move to external CSS */ style={{ fontSize: '3rem', fontWeight: '700', color: '#059669', marginBottom: '8px' }}
             >
               {culturalPercent}%
             </div>
-            <p style={{ color: '#6b7280', margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
               {culturallyIntegrated} resources with authentic Māori perspectives
             </p>
           </div>
 
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'white',
               borderRadius: '12px',
               padding: '24px',
@@ -178,17 +178,17 @@ const PlatformAuditDashboard: React.FC = () => {
             }}
           >
             <div
-              style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
+              /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}
             >
-              <AlertTriangle className="w-8 h-8" style={{ color: '#dc2626' }} />
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>Issues Found</h3>
+              <AlertTriangle className="w-8 h-8" /* TODO: Move to external CSS */ style={{ color: '#dc2626' }} />
+              <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>Issues Found</h3>
             </div>
             <div
-              style={{ fontSize: '3rem', fontWeight: '700', color: '#dc2626', marginBottom: '8px' }}
+              /* TODO: Move to external CSS */ style={{ fontSize: '3rem', fontWeight: '700', color: '#dc2626', marginBottom: '8px' }}
             >
               {auditResult.technicalIssues.length}
             </div>
-            <p style={{ color: '#6b7280', margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ color: '#6b7280', margin: '0' }}>
               Technical and content quality issues identified
             </p>
           </div>
@@ -196,7 +196,7 @@ const PlatformAuditDashboard: React.FC = () => {
 
         {/* Quality Breakdown */}
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             background: 'white',
             borderRadius: '12px',
             padding: '32px',
@@ -206,7 +206,7 @@ const PlatformAuditDashboard: React.FC = () => {
           }}
         >
           <h2
-            style={{
+            /* TODO: Move to external CSS */ style={{
               fontSize: '1.5rem',
               fontWeight: '600',
               marginBottom: '24px',
@@ -215,19 +215,19 @@ const PlatformAuditDashboard: React.FC = () => {
               gap: '12px',
             }}
           >
-            <BarChart3 className="w-6 h-6" style={{ color: '#3b82f6' }} />
+            <BarChart3 className="w-6 h-6" /* TODO: Move to external CSS */ style={{ color: '#3b82f6' }} />
             Content Quality Distribution
           </h2>
 
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               gap: '20px',
             }}
           >
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: '#fef2f2',
                 border: '1px solid #fecaca',
                 borderRadius: '8px',
@@ -235,7 +235,7 @@ const PlatformAuditDashboard: React.FC = () => {
               }}
             >
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '2rem',
                   fontWeight: '700',
                   color: '#dc2626',
@@ -245,7 +245,7 @@ const PlatformAuditDashboard: React.FC = () => {
                 {auditResult.qualityDistribution.skeleton}
               </div>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.875rem',
                   fontWeight: '600',
                   color: '#991b1b',
@@ -254,13 +254,13 @@ const PlatformAuditDashboard: React.FC = () => {
               >
                 SKELETON TEMPLATES
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280' }}>
                 Basic templates with placeholders
               </div>
             </div>
 
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: '#fffbeb',
                 border: '1px solid #fed7aa',
                 borderRadius: '8px',
@@ -268,7 +268,7 @@ const PlatformAuditDashboard: React.FC = () => {
               }}
             >
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '2rem',
                   fontWeight: '700',
                   color: '#d97706',
@@ -278,7 +278,7 @@ const PlatformAuditDashboard: React.FC = () => {
                 {auditResult.qualityDistribution.template}
               </div>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.875rem',
                   fontWeight: '600',
                   color: '#92400e',
@@ -287,13 +287,13 @@ const PlatformAuditDashboard: React.FC = () => {
               >
                 TEMPLATE RESOURCES
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280' }}>
                 Some content, needs development
               </div>
             </div>
 
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: '#f0fdf4',
                 border: '1px solid #bbf7d0',
                 borderRadius: '8px',
@@ -301,7 +301,7 @@ const PlatformAuditDashboard: React.FC = () => {
               }}
             >
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '2rem',
                   fontWeight: '700',
                   color: '#16a34a',
@@ -311,7 +311,7 @@ const PlatformAuditDashboard: React.FC = () => {
                 {auditResult.qualityDistribution.enhanced}
               </div>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.875rem',
                   fontWeight: '600',
                   color: '#15803d',
@@ -320,13 +320,13 @@ const PlatformAuditDashboard: React.FC = () => {
               >
                 ENHANCED CONTENT
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280' }}>
                 Good content, nearly ready
               </div>
             </div>
 
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: '#eff6ff',
                 border: '1px solid #93c5fd',
                 borderRadius: '8px',
@@ -334,7 +334,7 @@ const PlatformAuditDashboard: React.FC = () => {
               }}
             >
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '2rem',
                   fontWeight: '700',
                   color: '#2563eb',
@@ -344,7 +344,7 @@ const PlatformAuditDashboard: React.FC = () => {
                 {auditResult.qualityDistribution.complete}
               </div>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.875rem',
                   fontWeight: '600',
                   color: '#1d4ed8',
@@ -353,7 +353,7 @@ const PlatformAuditDashboard: React.FC = () => {
               >
                 COMPLETE LESSONS
               </div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280' }}>
                 Production-ready resources
               </div>
             </div>
@@ -363,7 +363,7 @@ const PlatformAuditDashboard: React.FC = () => {
         {/* Technical Issues */}
         {auditResult.technicalIssues.length > 0 && (
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'white',
               borderRadius: '12px',
               padding: '24px',
@@ -373,7 +373,7 @@ const PlatformAuditDashboard: React.FC = () => {
             }}
           >
             <h3
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 fontSize: '1.25rem',
                 fontWeight: '600',
                 marginBottom: '16px',
@@ -386,11 +386,11 @@ const PlatformAuditDashboard: React.FC = () => {
               <AlertTriangle className="w-5 h-5" />
               Critical Issues Detected
             </h3>
-            <ul style={{ margin: '0', paddingLeft: '20px' }}>
+            <ul /* TODO: Move to external CSS */ style={{ margin: '0', paddingLeft: '20px' }}>
               {auditResult.technicalIssues.map((issue, index) => (
                 <li
                   key={index}
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     marginBottom: '8px',
                     color: '#991b1b',
                     fontSize: '0.875rem',
@@ -405,7 +405,7 @@ const PlatformAuditDashboard: React.FC = () => {
 
         {/* Recommendations */}
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             background: 'white',
             borderRadius: '12px',
             padding: '24px',
@@ -415,7 +415,7 @@ const PlatformAuditDashboard: React.FC = () => {
           }}
         >
           <h3
-            style={{
+            /* TODO: Move to external CSS */ style={{
               fontSize: '1.25rem',
               fontWeight: '600',
               marginBottom: '16px',
@@ -428,11 +428,11 @@ const PlatformAuditDashboard: React.FC = () => {
             <ArrowUp className="w-5 h-5" />
             Recommended Actions
           </h3>
-          <ul style={{ margin: '0', paddingLeft: '20px' }}>
+          <ul /* TODO: Move to external CSS */ style={{ margin: '0', paddingLeft: '20px' }}>
             {auditResult.recommendations.map((rec, index) => (
               <li
                 key={index}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   marginBottom: '12px',
                   color: '#065f46',
                   fontSize: '0.875rem',
@@ -447,7 +447,7 @@ const PlatformAuditDashboard: React.FC = () => {
 
         {/* Action Buttons */}
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             display: 'flex',
             gap: '12px',
             justifyContent: 'center',
@@ -456,7 +456,7 @@ const PlatformAuditDashboard: React.FC = () => {
         >
           <button
             onClick={runAudit}
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
               color: 'white',
               border: 'none',
@@ -476,7 +476,7 @@ const PlatformAuditDashboard: React.FC = () => {
 
           <button
             onClick={() => setShowFullReport(!showFullReport)}
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'white',
               color: '#374151',
               border: '1px solid #d1d5db',
@@ -498,7 +498,7 @@ const PlatformAuditDashboard: React.FC = () => {
         {/* Full Report */}
         {showFullReport && (
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: '#1f2937',
               color: '#f9fafb',
               borderRadius: '8px',
@@ -509,7 +509,7 @@ const PlatformAuditDashboard: React.FC = () => {
               lineHeight: '1.6',
             }}
           >
-            <pre style={{ margin: '0', whiteSpace: 'pre-wrap' }}>
+            <pre /* TODO: Move to external CSS */ style={{ margin: '0', whiteSpace: 'pre-wrap' }}>
               {generateAuditReport(auditResult)}
             </pre>
           </div>

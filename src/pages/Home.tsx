@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BookOpen, Users, Brain, Award, TrendingUp, Sparkles, Heart, Globe, Zap, Cpu, Target, Palette } from 'lucide-react';
 import './Home.css';
 
-const Home = React.memo(function Home() {
+const Home = React.memo(function Home() : void {
   const navigate = useNavigate();
   const [showTeReo, setShowTeReo] = useState(false);
   const [resourceCount, setResourceCount] = useState(2013);

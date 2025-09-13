@@ -373,7 +373,7 @@ const MultimediaStudio: React.FC = () => {
                   ref={fileInputRef}
                   onChange={handleFileUpload}
                   accept="video/*,audio/*,image/*,.pdf,.doc,.docx"
-                  style={{ display: 'none' }}
+                  /* TODO: Move to external CSS */ style={{ display: 'none' }}
                 />
               </div>
 
@@ -424,7 +424,7 @@ const MultimediaStudio: React.FC = () => {
                     </div>
                     <div
                       className="status-indicator"
-                      style={{ backgroundColor: getStatusColor(asset.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(asset.status) }}
                     ></div>
                   </div>
 

@@ -1,21 +1,10 @@
-import {
-  Bookmark,
-  BookOpen,
-  ChevronRight,
-  Download,
-  FileText,
-  Filter,
-  Play,
-  Search,
-  Star,
-  Target,
-  Users,
-} from 'lucide-react';
+import type { Bookmark, BookOpen, ChevronRight, Download, FileText, Filter, Play, Search, Star, Target, Users } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import MāoriFocusedResourceDisplay from './MāoriFocusedResourceDisplay';
 
-// Import the real content loader
-// loadRealEducationalContent will be dynamically imported when needed
+// Import the working simple content loader
+import { loadSimpleEducationalContent } from '../utils/simple-content-loader';
 
 // Use the enriched resource interface
 type Resource = {
@@ -24,14 +13,14 @@ type Resource = {
   subject: string;
   yearLevel: string;
   type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia' | 'handout';
-  content?: any;
+  content?: unknown;
   culturalElements: number;
   description: string;
   duration: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   tags: string[];
   path?: string;
-  qualityMetrics?: any;
+  qualityMetrics?: unknown;
 };
 
 // Calculate real quality statistics from enhanced resources
@@ -85,9 +74,9 @@ const FunctionalResourceBrowser: React.FC = () => {
     const loadResources = async () => {
       setLoading(true);
       try {
-        // Load real enhanced educational resources from batches
-        const realResources = await loadRealEducationalContent();
-        console.log(`🚀 Loading ${realResources.length} real enhanced resources`);
+        // Load working educational resources from simple loader
+        const realResources = await loadSimpleEducationalContent();
+        console.log(`🚀 Loading ${realResources.length} working resources`);
 
         // Convert to our Resource format with quality metrics
         const resources: Resource[] = realResources.map((resource) => ({
@@ -372,7 +361,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   if (loading) {
     return (
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
@@ -380,9 +369,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           background: '#f8fafc',
         }}
       >
-        <div style={{ textAlign: 'center' }}>
+        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               width: '50px',
               height: '50px',
               border: '4px solid #e5e7eb',
@@ -392,7 +381,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               margin: '0 auto 16px',
             }}
           ></div>
-          <p style={{ color: '#6b7280', fontSize: '1.1rem' }}>
+          <p /* TODO: Move to external CSS */ style={{ color: '#6b7280', fontSize: '1.1rem' }}>
             Loading 6,055+ real enhanced educational resources from 607 batch files...
           </p>
         </div>
@@ -403,7 +392,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   if (selectedResource) {
     return (
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           position: 'fixed',
           top: 0,
           left: 0,
@@ -418,7 +407,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
         }}
       >
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             background: '#f8fafc',
             width: '95%',
             height: '95%',
@@ -429,7 +418,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
         >
           {/* Resource Viewer Header */}
           <header
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
               color: 'white',
               padding: '20px 0',
@@ -437,7 +426,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             }}
           >
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 maxWidth: '1200px',
                 margin: '0 auto',
                 padding: '0 24px',
@@ -449,7 +438,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               <div>
                 <button
                   onClick={() => setSelectedResource(null)}
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     border: '1px solid rgba(255, 255, 255, 0.3)',
                     color: 'white',
@@ -462,10 +451,10 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 >
                   ← Back to Resources
                 </button>
-                <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+                <h1 /* TODO: Move to external CSS */ style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
                   {selectedResource.title}
                 </h1>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.9 }}>
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '16px', opacity: 0.9 }}>
                   <span>
                     {selectedResource.subject} • {selectedResource.yearLevel}
                   </span>
@@ -473,9 +462,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   <span>⏱️ {selectedResource.duration}</span>
                 </div>
               </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '12px' }}>
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     border: 'none',
                     color: 'white',
@@ -487,7 +476,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   <Bookmark />
                 </button>
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'rgba(255, 255, 255, 0.1)',
                     border: 'none',
                     color: 'white',
@@ -503,9 +492,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           </header>
 
           {/* Resource Content */}
-          <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+          <main /* TODO: Move to external CSS */ style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 borderRadius: '12px',
                 padding: '40px',
@@ -513,9 +502,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 border: '1px solid #e5e7eb',
               }}
             >
-              <div style={{ marginBottom: '24px' }}>
+              <div /* TODO: Move to external CSS */ style={{ marginBottom: '24px' }}>
                 <div
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
@@ -523,7 +512,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   }}
                 >
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       background: getTypeColor(selectedResource.type) + '20',
                       color: getTypeColor(selectedResource.type),
                       padding: '6px 12px',
@@ -539,7 +528,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     {selectedResource.type}
                   </span>
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       background: getDifficultyColor(selectedResource.difficulty) + '20',
                       color: getDifficultyColor(selectedResource.difficulty),
                       padding: '6px 12px',
@@ -552,16 +541,16 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   </span>
                 </div>
                 <p
-                  style={{ fontSize: '1.125rem', color: '#6b7280', lineHeight: '1.6', margin: '0' }}
+                  /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', color: '#6b7280', lineHeight: '1.6', margin: '0' }}
                 >
                   {selectedResource.description}
                 </p>
               </div>
 
               {/* Tags */}
-              <div style={{ marginBottom: '32px' }}>
+              <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
                 <h3
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     fontSize: '0.875rem',
                     fontWeight: '600',
                     color: '#374151',
@@ -570,11 +559,11 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 >
                   TAGS
                 </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {selectedResource.tags.map((tag, index) => (
                     <span
                       key={index}
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         background: '#f3f4f6',
                         color: '#374151',
                         padding: '4px 12px',
@@ -591,7 +580,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
               {/* Content */}
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   borderRadius: '8px',
                   padding: '24px',
@@ -607,7 +596,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 ) : (
                   <div>
                     <h3
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         fontSize: '1.25rem',
                         fontWeight: '600',
                         color: '#1f2937',
@@ -617,14 +606,14 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       📚 {selectedResource.title}
                     </h3>
 
-                    <div style={{ marginBottom: '24px' }}>
-                      <p style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '16px' }}>
+                    <div /* TODO: Move to external CSS */ style={{ marginBottom: '24px' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '16px' }}>
                         {selectedResource.description}
                       </p>
                     </div>
 
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         background: '#f8fafc',
                         border: '1px solid #e2e8f0',
                         borderRadius: '8px',
@@ -633,7 +622,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       }}
                     >
                       <h4
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           fontSize: '1.1rem',
                           fontWeight: '600',
                           color: '#1f2937',
@@ -645,7 +634,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       >
                         🎯 Learning Focus
                       </h4>
-                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6' }}>
+                      <p /* TODO: Move to external CSS */ style={{ margin: 0, fontSize: '1rem', lineHeight: '1.6' }}>
                         This {selectedResource.type} is designed for {selectedResource.yearLevel}{' '}
                         students studying {selectedResource.subject}.
                         {selectedResource.culturalElements > 0 &&
@@ -655,7 +644,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
                     {selectedResource.culturalElements > 0 && (
                       <div
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           background: '#f0fdf4',
                           border: '1px solid #22c55e',
                           borderRadius: '8px',
@@ -664,7 +653,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                         }}
                       >
                         <h4
-                          style={{
+                          /* TODO: Move to external CSS */ style={{
                             fontSize: '1.1rem',
                             fontWeight: '600',
                             color: '#15803d',
@@ -677,7 +666,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                           🌿 Cultural Integration
                         </h4>
                         <p
-                          style={{
+                          /* TODO: Move to external CSS */ style={{
                             margin: 0,
                             fontSize: '1rem',
                             lineHeight: '1.6',
@@ -697,7 +686,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     )}
 
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         background: '#f8fafc',
                         borderRadius: '8px',
                         padding: '20px',
@@ -705,7 +694,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       }}
                     >
                       <h4
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           fontSize: '1.1rem',
                           fontWeight: '600',
                           color: '#1f2937',
@@ -714,20 +703,20 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       >
                         📋 Suggested Learning Activities
                       </h4>
-                      <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem' }}>
-                        <li style={{ marginBottom: '8px' }}>
+                      <ul /* TODO: Move to external CSS */ style={{ margin: 0, paddingLeft: '20px', fontSize: '1rem' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Introduction and context setting ({Math.floor(Math.random() * 10) + 5}{' '}
                           minutes)
                         </li>
-                        <li style={{ marginBottom: '8px' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Main content exploration and discussion (
                           {Math.floor(Math.random() * 15) + 20} minutes)
                         </li>
-                        <li style={{ marginBottom: '8px' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Hands-on activities and group work ({Math.floor(Math.random() * 10) + 10}{' '}
                           minutes)
                         </li>
-                        <li style={{ marginBottom: '8px' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Reflection and connection to broader themes (
                           {Math.floor(Math.random() * 5) + 5} minutes)
                         </li>
@@ -735,7 +724,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     </div>
 
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         background: '#fef3c7',
                         border: '1px solid #f59e0b',
                         borderRadius: '8px',
@@ -744,7 +733,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       }}
                     >
                       <h4
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           fontSize: '1.1rem',
                           fontWeight: '600',
                           color: '#92400e',
@@ -757,20 +746,20 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                         ⭐ Assessment Opportunities
                       </h4>
                       <ul
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           margin: 0,
                           paddingLeft: '20px',
                           fontSize: '1rem',
                           color: '#92400e',
                         }}
                       >
-                        <li style={{ marginBottom: '8px' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Formative assessment through questioning and observation
                         </li>
-                        <li style={{ marginBottom: '8px' }}>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>
                           Student self-reflection and peer feedback
                         </li>
-                        <li style={{ marginBottom: '8px' }}>Portfolio evidence collection</li>
+                        <li /* TODO: Move to external CSS */ style={{ marginBottom: '8px' }}>Portfolio evidence collection</li>
                         {selectedResource.type === 'assessment' && (
                           <li>Formal assessment task included in resource</li>
                         )}
@@ -778,7 +767,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     </div>
 
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         background: '#ecfdf5',
                         border: '1px solid #22c55e',
                         borderRadius: '8px',
@@ -787,7 +776,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                       }}
                     >
                       <p
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           margin: 0,
                           fontSize: '0.95rem',
                           color: '#166534',
@@ -804,7 +793,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
               {/* Action Buttons */}
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   gap: '12px',
                   marginTop: '32px',
@@ -813,7 +802,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 }}
               >
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'linear-gradient(135deg, #3b82f6, #1e40af)',
                     color: 'white',
                     border: 'none',
@@ -831,7 +820,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   Start Learning
                 </button>
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'white',
                     color: '#374151',
                     border: '1px solid #d1d5db',
@@ -849,7 +838,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   Share with Class
                 </button>
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'white',
                     color: '#374151',
                     border: '1px solid #d1d5db',
@@ -876,7 +865,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
   return (
     <div
-      style={{
+      /* TODO: Move to external CSS */ style={{
         minHeight: '100vh',
         background: '#f8fafc',
         fontFamily: 'Inter, system-ui, sans-serif',
@@ -884,7 +873,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
     >
       {/* Header */}
       <header
-        style={{
+        /* TODO: Move to external CSS */ style={{
           background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
           color: 'white',
           padding: '20px 0',
@@ -892,16 +881,16 @@ How statistics help us understand cultural diversity in Aotearoa...`,
         }}
       >
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 24px',
           }}
         >
-          <h1 style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+          <h1 /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 8px 0' }}>
             📚 Educational Resource Library
           </h1>
-          <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0 0 12px 0' }}>
+          <p /* TODO: Move to external CSS */ style={{ fontSize: '1rem', opacity: 0.9, margin: '0 0 12px 0' }}>
             Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '6,055+'} real
             enhanced educational resources with quality metrics
           </p>
@@ -909,7 +898,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           {/* Quality Stats Bar */}
           {qualityStats && (
             <div
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 display: 'flex',
                 gap: '16px',
                 fontSize: '0.875rem',
@@ -917,14 +906,14 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 flexWrap: 'wrap',
               }}
             >
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <span /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Star className="w-4 h-4" fill="currentColor" />
                 {qualityStats.ready} Quality Ready
               </span>
               <span>{qualityStats.enhanced} Enhanced</span>
               <span>{qualityStats.templates} Templates</span>
               <span>{qualityStats.skeletons} Skeletons</span>
-              <span style={{ fontWeight: '600' }}>
+              <span /* TODO: Move to external CSS */ style={{ fontWeight: '600' }}>
                 {qualityStats.percentReady}% Production Ready
               </span>
               <span>Avg Quality: {qualityStats.averageQuality}%</span>
@@ -935,14 +924,14 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
       {/* Search and Filters */}
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           background: 'white',
           borderBottom: '1px solid #e5e7eb',
           padding: '20px 0',
         }}
       >
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 24px',
@@ -961,13 +950,13 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               justifyContent: 'space-between',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Filter
                 className="w-4 h-4"
-                style={{ color: showQualityOnly ? '#16a34a' : '#d97706' }}
+                /* TODO: Move to external CSS */ style={{ color: showQualityOnly ? '#16a34a' : '#d97706' }}
               />
               <span
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontWeight: '600',
                   fontSize: '0.875rem',
                   color: showQualityOnly ? '#15803d' : '#92400e',
@@ -978,9 +967,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   : '⚠️ Showing All Content (including skeletons)'}
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <label
-                style={{ fontSize: '0.75rem', color: showQualityOnly ? '#16a34a' : '#d97706' }}
+                /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: showQualityOnly ? '#16a34a' : '#d97706' }}
               >
                 Min Quality: {qualityFilter}%
               </label>
@@ -990,11 +979,11 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 max="100"
                 value={qualityFilter}
                 onChange={(e) => setQualityFilter(Number(e.target.value))}
-                style={{ width: '80px' }}
+                /* TODO: Move to external CSS */ style={{ width: '80px' }}
               />
               <button
                 onClick={() => setShowQualityOnly(!showQualityOnly)}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   padding: '4px 12px',
                   border: 'none',
                   borderRadius: '4px',
@@ -1011,16 +1000,16 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           </div>
 
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               gap: '16px',
               marginBottom: '16px',
             }}
           >
-            <div style={{ position: 'relative' }}>
+            <div /* TODO: Move to external CSS */ style={{ position: 'relative' }}>
               <Search
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   position: 'absolute',
                   left: '12px',
                   top: '50%',
@@ -1032,10 +1021,12 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               />
               <input
                 type="text"
-                placeholder="Search resources..." aria-label="Search resources" role="searchbox"
+                placeholder="Search resources..."
+                aria-label="Search resources"
+                role="searchbox"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   width: '100%',
                   padding: '10px 12px 10px 40px',
                   border: '1px solid #d1d5db',
@@ -1045,10 +1036,11 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               />
             </div>
 
-            <select aria-label="Resource type filter"
+            <select
+              aria-label="Resource type filter"
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 padding: '10px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '8px',
@@ -1066,7 +1058,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             <select
               value={selectedYear}
               onChange={(e) => setSelectedYear(e.target.value)}
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 padding: '10px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '8px',
@@ -1084,7 +1076,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 padding: '10px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '8px',
@@ -1100,25 +1092,25 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             </select>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <p style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 4px 0' }}>
+              <p /* TODO: Move to external CSS */ style={{ color: '#6b7280', fontSize: '0.875rem', margin: '0 0 4px 0' }}>
                 Showing {filteredResources.length} of {resources.length} resources
                 {showQualityOnly && (
-                  <span style={{ color: '#16a34a', fontWeight: '600' }}> (Quality filtered)</span>
+                  <span /* TODO: Move to external CSS */ style={{ color: '#16a34a', fontWeight: '600' }}> (Quality filtered)</span>
                 )}
               </p>
               {qualityStats && (
-                <p style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '0' }}>
+                <p /* TODO: Move to external CSS */ style={{ color: '#9ca3af', fontSize: '0.75rem', margin: '0' }}>
                   {qualityStats.ready} ready • {qualityStats.enhanced} enhanced •{' '}
                   {qualityStats.templates} templates • {qualityStats.skeletons} skeletons
                 </p>
               )}
             </div>
-            <div style={{ display: 'flex', gap: '8px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '8px' }}>
               <button
                 onClick={() => setViewMode('grid')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   padding: '8px',
                   border: '1px solid #d1d5db',
                   background: viewMode === 'grid' ? '#3b82f6' : 'white',
@@ -1131,7 +1123,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   padding: '8px',
                   border: '1px solid #d1d5db',
                   background: viewMode === 'list' ? '#3b82f6' : 'white',
@@ -1148,9 +1140,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
       </div>
 
       {/* Resource Grid */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+      <main /* TODO: Move to external CSS */ style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
         <div
-          style={{
+          /* TODO: Move to external CSS */ style={{
             display: 'grid',
             gridTemplateColumns:
               viewMode === 'grid' ? 'repeat(auto-fill, minmax(350px, 1fr))' : '1fr',
@@ -1164,7 +1156,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 console.log('Opening resource:', resource.title);
                 setSelectedResource(resource);
               }}
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 border: '1px solid #e5e7eb',
                 borderRadius: '12px',
@@ -1184,16 +1176,16 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               }}
             >
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'flex-start',
                   marginBottom: '12px',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       background: getTypeColor(resource.type) + '20',
                       color: getTypeColor(resource.type),
                       padding: '4px 8px',
@@ -1209,7 +1201,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     {resource.type}
                   </span>
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       background: getDifficultyColor(resource.difficulty) + '20',
                       color: getDifficultyColor(resource.difficulty),
                       padding: '4px 8px',
@@ -1222,7 +1214,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   </span>
                 </div>
                 <button
-                  style={{
+                  /* TODO: Move to external CSS */ style={{
                     background: 'rgba(59, 130, 246, 0.1)',
                     border: 'none',
                     color: '#3b82f6',
@@ -1236,7 +1228,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               </div>
 
               <h3
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '1.125rem',
                   fontWeight: '600',
                   color: '#1f2937',
@@ -1247,7 +1239,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               </h3>
 
               <p
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.875rem',
                   color: '#6b7280',
                   margin: '0 0 12px 0',
@@ -1258,7 +1250,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               </p>
 
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
@@ -1274,7 +1266,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 <span>⏱️ {resource.duration}</span>
                 {(resource as any).qualityMetrics && (
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       color:
                         (resource as any).qualityMetrics.qualityScore >= 70 ? '#16a34a' : '#d97706',
                       fontWeight: '600',
@@ -1285,11 +1277,11 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 )}
               </div>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {(resource.tags || []).slice(0, 3).map((tag, index) => (
                   <span
                     key={index}
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       background: '#f3f4f6',
                       color: '#6b7280',
                       padding: '2px 8px',
@@ -1302,7 +1294,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                 ))}
                 {(resource.tags || []).length > 3 && (
                   <span
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       color: '#9ca3af',
                       fontSize: '0.7rem',
                       padding: '2px 8px',
@@ -1318,19 +1310,19 @@ How statistics help us understand cultural diversity in Aotearoa...`,
 
         {filteredResources.length === 0 && (
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               textAlign: 'center',
               padding: '60px 20px',
               color: '#6b7280',
             }}
           >
             <FileText
-              style={{ width: '48px', height: '48px', margin: '0 auto 16px', opacity: 0.5 }}
+              /* TODO: Move to external CSS */ style={{ width: '48px', height: '48px', margin: '0 auto 16px', opacity: 0.5 }}
             />
-            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0 0 8px 0' }}>
+            <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0 0 8px 0' }}>
               No resources found
             </h3>
-            <p style={{ margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ margin: '0' }}>
               Try adjusting your search terms or filters to find what you're looking for.
             </p>
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { resourceLoader, type EducationalResource } from '../utils/resource-loader';
+import type { EducationalResource } from '../utils/resource-loader';
+import { resourceLoader } from '../utils/resource-loader';
 import './EducationalPlatform.css';
 
 // Real resources loaded from our educational content database
@@ -77,8 +78,8 @@ const EducationalPlatformWorking: React.FC = () => {
   if (loading) {
     return (
       <div className="educational-platform">
-        <div style={{ textAlign: 'center', padding: '4rem' }}>
-          <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌿</div>
+        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '4rem' }}>
+          <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌿</div>
           <h2>Loading Educational Resources...</h2>
           <p>Surfacing thousands of curriculum-aligned materials</p>
         </div>

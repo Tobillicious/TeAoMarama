@@ -1,5 +1,6 @@
 // Real resource indexer - connects to 5,439+ educational resources
-import { buildComprehensiveResourceLibrary, generateSampleContent, type RealResource } from './comprehensive-resource-builder';
+import type { RealResource } from './comprehensive-resource-builder';
+import { buildComprehensiveResourceLibrary, generateSampleContent } from './comprehensive-resource-builder';
 
 // Re-export the RealResource interface
 export type { RealResource };

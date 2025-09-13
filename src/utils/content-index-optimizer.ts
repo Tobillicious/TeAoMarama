@@ -6,7 +6,7 @@
 declare global {
   interface Window {
     Superintelligence?: {
-      graphRag?: any;
+      graphRag?: unknown;
     };
   }
 }
@@ -170,7 +170,7 @@ export class ContentIndexOptimizer {
     const subjects = new Set<string>();
 
     // Extract subjects from all content
-    Object.values(this.contentIndex!.lessons).forEach((lesson: any) => {
+    Object.values(this.contentIndex!.lessons).forEach((lesson: unknown) => {
       if (lesson.subject) subjects.add(lesson.subject);
     });
 
@@ -181,7 +181,7 @@ export class ContentIndexOptimizer {
     const themes = new Set<string>();
 
     // Extract cultural themes from all content
-    Object.values(this.contentIndex!.lessons).forEach((lesson: any) => {
+    Object.values(this.contentIndex!.lessons).forEach((lesson: unknown) => {
       if (lesson.culturalContext) themes.add(lesson.culturalContext);
     });
 
@@ -205,7 +205,7 @@ export class ContentIndexOptimizer {
    */
   async getContentByType(
     type: 'lessons' | 'activities' | 'assessments' | 'unitPlans',
-    filters?: any,
+    filters?: unknown,
   ) {
     const index = await this.loadContentIndex();
     let content = index[type];
@@ -220,7 +220,7 @@ export class ContentIndexOptimizer {
   /**
    * Apply intelligent filters to content
    */
-  private applyFilters(content: Record<string, any>, filters: any) {
+  private applyFilters(content: Record<string, any>, filters: unknown) {
     return Object.entries(content)
       .filter(([_, item]) => {
         if (filters.subject && item.subject !== filters.subject) return false;
@@ -248,7 +248,7 @@ export class ContentIndexOptimizer {
    */
   async searchContent(query: string, options?: { type?: string; limit?: number }) {
     const index = await this.loadContentIndex();
-    const results: Array<{ key: string; content: any; relevance: number }> = [];
+    const results: Array<{ key: string; content: unknown; relevance: number }> = [];
 
     // Simple search implementation - can be enhanced with GraphRag
     const searchInContent = (content: Record<string, any>, type: string) => {
@@ -299,4 +299,4 @@ export class ContentIndexOptimizer {
 }
 
 // Export singleton instance
-export const contentIndexOptimizer = ContentIndexOptimizer.getInstance();
+export // const contentIndexOptimizer = ContentIndexOptimizer.getInstance();

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {
-  platformDevelopmentService,
-  type DevelopmentMetrics,
-  type PlatformTask,
-} from '../services/PlatformDevelopmentService';
+import type { DevelopmentMetrics, PlatformTask } from '../services/PlatformDevelopmentService';
+import { platformDevelopmentService,  } from '../services/PlatformDevelopmentService';
 
 export const PlatformDevelopmentDashboard: React.FC = () => {
   const [tasks, setTasks] = useState<PlatformTask[]>([]);

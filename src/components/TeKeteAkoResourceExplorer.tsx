@@ -1,6 +1,7 @@
 import { Award, BookOpen, Calculator, Download, Eye, FileText, Globe, Users } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { resourceLoader, type EducationalResource } from '../utils/resource-loader';
+import type { EducationalResource } from '../utils/resource-loader';
+import { resourceLoader } from '../utils/resource-loader';
 import './TeKeteAkoResourceExplorer.css';
 
 interface TeKeteAkoResource {

@@ -148,7 +148,7 @@ const EnhancedResourceBrowser: React.FC = () => {
     return 'cultural-basic';
   };
 
-  const getKaiakoInfo = (passes: any[]) => {
+  const getKaiakoInfo = (passes: unknown[]) => {
     return passes.map((pass) => `${pass.kaiako} (${pass.specialization})`).join(', ');
   };
 

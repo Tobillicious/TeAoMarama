@@ -459,13 +459,13 @@ const CulturalLearningModules: React.FC = () => {
                   <div className="module-meta">
                     <span
                       className="category-badge"
-                      style={{ backgroundColor: getCategoryColor(module.category) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(module.category) }}
                     >
                       {module.category}
                     </span>
                     <span
                       className="difficulty-badge"
-                      style={{ backgroundColor: getDifficultyColor(module.difficulty) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(module.difficulty) }}
                     >
                       {module.difficulty}
                     </span>

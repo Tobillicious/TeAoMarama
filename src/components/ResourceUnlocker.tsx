@@ -566,13 +566,13 @@ const ResourceUnlocker: React.FC = () => {
                   <div className="resource-meta">
                     <span
                       className="category-badge"
-                      style={{ backgroundColor: getCategoryColor(resource.category) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(resource.category) }}
                     >
                       {resource.category}
                     </span>
                     <span
                       className="difficulty-badge"
-                      style={{ backgroundColor: getDifficultyColor(resource.difficulty) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(resource.difficulty) }}
                     >
                       {resource.difficulty}
                     </span>

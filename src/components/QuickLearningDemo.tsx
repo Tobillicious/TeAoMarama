@@ -8,7 +8,7 @@ interface DemoStats {
   streak: number;
 }
 
-export function QuickLearningDemo() {
+export function QuickLearningDemo() : void {
   const [stats, setStats] = useState<DemoStats>({
     conceptsLearned: 0,
     timeSpent: 0,

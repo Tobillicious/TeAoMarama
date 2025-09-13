@@ -332,15 +332,15 @@ export class EducationalContentManager {
     return `edu_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  private saveToLocalStorage(table: string, data: any): void {
+  private saveToLocalStorage(table: string, data: unknown): void {
     const existing = JSON.parse(localStorage.getItem(table) || '[]');
     existing.push(data);
     localStorage.setItem(table, JSON.stringify(existing));
   }
 
-  private getFromLocalStorage(table: string, filters: any = {}): any[] {
+  private getFromLocalStorage(table: string, filters: unknown = {}): unknown[] {
     const data = JSON.parse(localStorage.getItem(table) || '[]');
-    return data.filter((item: any) => {
+    return data.filter((item: unknown) => {
       return Object.entries(filters).every(([key, value]) => {
         if (key === 'yearLevel' && Array.isArray(item.yearLevel)) {
           return item.yearLevel.includes(value);
@@ -350,9 +350,9 @@ export class EducationalContentManager {
     });
   }
 
-  private updateInLocalStorage(table: string, id: string, updates: any): any {
+  private updateInLocalStorage(table: string, id: string, updates: unknown): unknown {
     const data = JSON.parse(localStorage.getItem(table) || '[]');
-    const index = data.findIndex((item: any) => item.id === id);
+    const index = data.findIndex((item: unknown) => item.id === id);
     if (index !== -1) {
       data[index] = { ...data[index], ...updates };
       localStorage.setItem(table, JSON.stringify(data));
@@ -361,7 +361,7 @@ export class EducationalContentManager {
     throw new Error('Resource not found');
   }
 
-  private calculateAnalytics(resources: any[], validations: any[], progress: any[]): any {
+  private calculateAnalytics(resources: unknown[], validations: unknown[], progress: unknown[]): unknown {
     const totalResources = resources.length;
     const culturallyIntegratedResources = resources.filter(r => r.maoriIntegration).length;
     const approvedResources = resources.filter(r => r.culturalReviewStatus === 'approved').length;
@@ -391,7 +391,7 @@ export class EducationalContentManager {
     };
   }
 
-  private getLocalAnalytics(): any {
+  private getLocalAnalytics(): unknown {
     return {
       totalResources: 14,
       culturallyIntegratedResources: 12,
@@ -432,4 +432,4 @@ export class EducationalContentManager {
   }
 }
 
-export const educationalContentManager = EducationalContentManager.getInstance();
+export // const educationalContentManager = EducationalContentManager.getInstance();

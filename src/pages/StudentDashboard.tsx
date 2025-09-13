@@ -337,7 +337,7 @@ const StudentDashboard: React.FC = () => {
                     <div className="module-badge">
                       <span
                         className="difficulty-badge"
-                        style={{ backgroundColor: getDifficultyColor(module.difficulty) }}
+                        /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(module.difficulty) }}
                       >
                         {module.difficulty}
                       </span>
@@ -398,7 +398,7 @@ const StudentDashboard: React.FC = () => {
                     <div className="achievement-meta">
                       <span
                         className="category-badge"
-                        style={{ backgroundColor: getCategoryColor(achievement.category) }}
+                        /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(achievement.category) }}
                       >
                         {achievement.category}
                       </span>

@@ -384,7 +384,7 @@ const AdvancedPerformanceMonitoringDashboard: React.FC = () => {
                 <div className="metric-status">
                   <span
                     className="status-indicator"
-                    style={{ backgroundColor: getStatusColor(metric.status) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(metric.status) }}
                   >
                     {metric.status}
                   </span>
@@ -435,7 +435,7 @@ const AdvancedPerformanceMonitoringDashboard: React.FC = () => {
               <div className="table-cell">
                 <span
                   className="status-badge"
-                  style={{ backgroundColor: getAgentStatusColor(agent.status) }}
+                  /* TODO: Move to external CSS */ style={{ backgroundColor: getAgentStatusColor(agent.status) }}
                 >
                   {agent.status}
                 </span>
@@ -472,7 +472,7 @@ const AdvancedPerformanceMonitoringDashboard: React.FC = () => {
                   <span className="trend-label">Overall Performance:</span>
                   <span
                     className="trend-value"
-                    style={{ color: getTrendColor(predictiveAnalytics.trends.performance) }}
+                    /* TODO: Move to external CSS */ style={{ color: getTrendColor(predictiveAnalytics.trends.performance) }}
                   >
                     {predictiveAnalytics.trends.performance}
                   </span>
@@ -481,7 +481,7 @@ const AdvancedPerformanceMonitoringDashboard: React.FC = () => {
                   <span className="trend-label">System Capacity:</span>
                   <span
                     className="trend-value"
-                    style={{ color: getTrendColor(predictiveAnalytics.trends.capacity) }}
+                    /* TODO: Move to external CSS */ style={{ color: getTrendColor(predictiveAnalytics.trends.capacity) }}
                   >
                     {predictiveAnalytics.trends.capacity}
                   </span>
@@ -490,7 +490,7 @@ const AdvancedPerformanceMonitoringDashboard: React.FC = () => {
                   <span className="trend-label">Reliability:</span>
                   <span
                     className="trend-value"
-                    style={{ color: getTrendColor(predictiveAnalytics.trends.reliability) }}
+                    /* TODO: Move to external CSS */ style={{ color: getTrendColor(predictiveAnalytics.trends.reliability) }}
                   >
                     {predictiveAnalytics.trends.reliability}
                   </span>

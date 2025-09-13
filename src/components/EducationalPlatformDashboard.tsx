@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {
-  educationalEnhancer,
-  type EducationalEnhancement,
-  type LearningPathway,
-  type PerformanceMetrics,
-} from '../utils/educational-enhancement';
+import type { EducationalEnhancement, LearningPathway, PerformanceMetrics } from '../utils/educational-enhancement';
+import { educationalEnhancer,  } from '../utils/educational-enhancement';
 import { initializeSuperintelligence } from '../utils/superintelligence';
 import './EducationalPlatformDashboard.css';
 

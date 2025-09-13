@@ -84,7 +84,7 @@ class LessonContentGenerator {
 
   private generateSocialStudiesLesson(resource: EnhancedResource): LessonPlan {
     const yearNum = parseInt(resource.yearLevel.replace('Year ', ''));
-    const isJunior = yearNum <= 10;
+    // const isJunior = yearNum <= 10;
     
     return {
       title: resource.title,

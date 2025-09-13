@@ -20,7 +20,7 @@ class AIContentGenerator {
     educationalLevel: string,
     culturalContext: string
   ): Promise<string> {
-    const prompt = `
+    // const prompt = `
 Create educational content for "${topic}" suitable for ${educationalLevel} students in Aotearoa New Zealand.
 
 Cultural Requirements:
@@ -101,4 +101,4 @@ Holistic assessment considering both academic understanding and cultural appreci
   }
 }
 
-export const aiContentGenerator = new AIContentGenerator();
+export // const aiContentGenerator = new AIContentGenerator();

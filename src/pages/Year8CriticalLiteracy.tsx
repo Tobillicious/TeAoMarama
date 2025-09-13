@@ -313,7 +313,7 @@ const Year8CriticalLiteracy: React.FC = () => {
                   </span>
                   <span
                     className="critical-difficulty"
-                    style={{ backgroundColor: getDifficultyColor(skill.difficulty) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(skill.difficulty) }}
                   >
                     {skill.difficulty}
                   </span>

@@ -210,7 +210,7 @@ function convertEnhancedToRealResource(enhanced: EnhancedResource, batchNum: num
   };
 }
 
-function convertIndexItemToRealResource(item: any, index: number): RealResource {
+function convertIndexItemToRealResource(item: unknown, index: number): RealResource {
   return {
     id: item.id || `index-${index}`,
     title: item.title || `Educational Resource ${index + 1}`,
@@ -227,7 +227,7 @@ function convertIndexItemToRealResource(item: any, index: number): RealResource 
   };
 }
 
-function convertResourceItemToReal(item: any, index: number): RealResource {
+function convertResourceItemToReal(item: unknown, index: number): RealResource {
   return {
     id: item.id || `real-${index}`,
     title: item.title || `Real Resource ${index + 1}`,

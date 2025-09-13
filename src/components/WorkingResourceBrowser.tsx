@@ -45,7 +45,7 @@ const WorkingResourceBrowser: React.FC = () => {
           if (response.ok) {
             const batch = await response.json();
             if (batch.resources) {
-              const convertedResources = batch.resources.map((resource: any) => ({
+              const convertedResources = batch.resources.map((resource: unknown) => ({
                 id: resource.id,
                 title: resource.title,
                 subject: resource.subject,

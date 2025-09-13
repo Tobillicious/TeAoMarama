@@ -6,7 +6,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
 // Database connection details for superintelligence
-export const databaseConfig = {
+export // const databaseConfig = {
   host: 'aws-0-ap-southeast-2.pooler.supabase.com',
   port: 5432,
   database: 'postgres',
@@ -20,7 +20,7 @@ export const databaseConfig = {
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Enhanced client with additional configuration
-export const supabaseEnhanced = createClient(supabaseUrl, supabaseAnonKey, {
+export // const supabaseEnhanced = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     autoRefreshToken: true,
     persistSession: true,

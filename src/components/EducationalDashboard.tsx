@@ -393,7 +393,7 @@ const EducationalDashboard: React.FC = () => {
               <h3>Cultural Engagement</h3>
               <span
                 className="stat-value"
-                style={{ color: getMetricColor(analytics.culturalEngagement) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(analytics.culturalEngagement) }}
               >
                 {analytics.culturalEngagement.toFixed(1)}%
               </span>
@@ -455,25 +455,25 @@ const EducationalDashboard: React.FC = () => {
                 <div className="student-metrics">
                   <div className="metric-row">
                     <span>Cultural Engagement:</span>
-                    <span style={{ color: getMetricColor(student.culturalEngagement) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(student.culturalEngagement) }}>
                       {student.culturalEngagement}%
                     </span>
                   </div>
                   <div className="metric-row">
                     <span>Academic Progress:</span>
-                    <span style={{ color: getMetricColor(student.academicProgress) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(student.academicProgress) }}>
                       {student.academicProgress}%
                     </span>
                   </div>
                   <div className="metric-row">
                     <span>Te Reo Proficiency:</span>
-                    <span style={{ color: getMetricColor(student.teReoProficiency) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(student.teReoProficiency) }}>
                       {student.teReoProficiency}%
                     </span>
                   </div>
                   <div className="metric-row">
                     <span>Attendance Rate:</span>
-                    <span style={{ color: getMetricColor(student.attendanceRate) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(student.attendanceRate) }}>
                       {student.attendanceRate}%
                     </span>
                   </div>
@@ -534,13 +534,13 @@ const EducationalDashboard: React.FC = () => {
                   </div>
                   <div className="metric-row">
                     <span>Completion Rate:</span>
-                    <span style={{ color: getMetricColor(lesson.completionRate) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(lesson.completionRate) }}>
                       {lesson.completionRate}%
                     </span>
                   </div>
                   <div className="metric-row">
                     <span>Cultural Impact:</span>
-                    <span style={{ color: getMetricColor(lesson.culturalImpact) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(lesson.culturalImpact) }}>
                       {lesson.culturalImpact}%
                     </span>
                   </div>
@@ -593,7 +593,7 @@ const EducationalDashboard: React.FC = () => {
                   </div>
                   <div className="detail-row">
                     <span>Cultural Impact:</span>
-                    <span style={{ color: getMetricColor(activity.culturalImpact) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(activity.culturalImpact) }}>
                       {activity.culturalImpact}%
                     </span>
                   </div>

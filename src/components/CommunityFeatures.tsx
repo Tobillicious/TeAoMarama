@@ -660,7 +660,7 @@ const CommunityFeatures: React.FC = () => {
                   <h3>{member.name}</h3>
                   <span
                     className="role-badge"
-                    style={{ backgroundColor: getRoleColor(member.role) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getRoleColor(member.role) }}
                   >
                     {member.role.replace('-', ' ').toUpperCase()}
                   </span>
@@ -673,13 +673,13 @@ const CommunityFeatures: React.FC = () => {
                   </div>
                   <div className="detail-row">
                     <span>Contribution Level:</span>
-                    <span style={{ color: getProgressColor(member.contributionLevel) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(member.contributionLevel) }}>
                       {member.contributionLevel}%
                     </span>
                   </div>
                   <div className="detail-row">
                     <span>Cultural Impact:</span>
-                    <span style={{ color: getProgressColor(member.culturalImpact) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(member.culturalImpact) }}>
                       {member.culturalImpact}%
                     </span>
                   </div>
@@ -689,7 +689,7 @@ const CommunityFeatures: React.FC = () => {
                   </div>
                   <div className="detail-row">
                     <span>Cultural Knowledge:</span>
-                    <span style={{ color: getProgressColor(member.culturalKnowledge) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(member.culturalKnowledge) }}>
                       {member.culturalKnowledge}%
                     </span>
                   </div>
@@ -749,7 +749,7 @@ const CommunityFeatures: React.FC = () => {
                   <div className="project-badges">
                     <span
                       className="status-badge"
-                      style={{ backgroundColor: getProjectStatusColor(project.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getProjectStatusColor(project.status) }}
                     >
                       {project.status.toUpperCase()}
                     </span>
@@ -769,13 +769,13 @@ const CommunityFeatures: React.FC = () => {
                     </div>
                     <div className="metric-row">
                       <span>Cultural Impact:</span>
-                      <span style={{ color: getProgressColor(project.culturalImpact) }}>
+                      <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(project.culturalImpact) }}>
                         {project.culturalImpact}%
                       </span>
                     </div>
                     <div className="metric-row">
                       <span>Community Support:</span>
-                      <span style={{ color: getProgressColor(project.communitySupport) }}>
+                      <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(project.communitySupport) }}>
                         {project.communitySupport}%
                       </span>
                     </div>
@@ -944,7 +944,7 @@ const CommunityFeatures: React.FC = () => {
                   <div className="knowledge-metrics">
                     <div className="metric-row">
                       <span>Cultural Value:</span>
-                      <span style={{ color: getProgressColor(item.culturalValue) }}>
+                      <span /* TODO: Move to external CSS */ style={{ color: getProgressColor(item.culturalValue) }}>
                         {item.culturalValue}%
                       </span>
                     </div>

@@ -180,7 +180,7 @@ const Year8SocialStudies: React.FC = () => {
 
   return (
     <div className="year8-social-studies-container">
-      <Navigation />
+      {/* <Navigation /> */}
 
       {/* Authentication Notice */}
       {!isAuthenticated && (
@@ -321,7 +321,7 @@ const Year8SocialStudies: React.FC = () => {
                   <span className="unit-badge">Unit {unit.id.split('-')[1]}</span>
                   <span
                     className="unit-difficulty"
-                    style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
                   >
                     {unit.difficulty}
                   </span>

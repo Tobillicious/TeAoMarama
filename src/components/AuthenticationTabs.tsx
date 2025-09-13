@@ -216,9 +216,9 @@ const AuthenticationTabs: React.FC = () => {
                     onClick={() =>
                       handleRoleChange(role.value as 'student' | 'teacher' | 'kaitiaki')
                     }
-                    style={{ borderColor: role.color }}
+                    /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                   >
-                    <div className="role-icon" style={{ color: role.color }}>
+                    <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
                       {role.icon}
                     </div>
                     <span>{role.label}</span>
@@ -315,9 +315,9 @@ const AuthenticationTabs: React.FC = () => {
                         role: role.value as 'student' | 'teacher' | 'kaitiaki',
                       }))
                     }
-                    style={{ borderColor: role.color }}
+                    /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                   >
-                    <div className="role-icon" style={{ color: role.color }}>
+                    <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
                       {role.icon}
                     </div>
                     <span>{role.label}</span>

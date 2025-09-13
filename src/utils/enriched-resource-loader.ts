@@ -8,7 +8,7 @@ export interface EnrichedResource {
   subject: string;
   yearLevel: string;
   type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia';
-  content: any; // The enriched JSON content
+  content: unknown; // The enriched JSON content
   culturalElements: number;
   description: string;
   duration: string;

@@ -112,7 +112,7 @@ const OverseerDashboard: React.FC = () => {
     const terminalStatus = terminalCoordination.getSystemStatus();
     const rawTerminals = terminalCoordination.getTerminals();
     setTerminals(
-      rawTerminals.map((terminal: any) => ({
+      rawTerminals.map((terminal: unknown) => ({
         id: String(terminal.id || ''),
         status: String(terminal.status || 'unknown'),
         lastHeartbeat: terminal.lastHeartbeat?.toISOString() || new Date().toISOString(),

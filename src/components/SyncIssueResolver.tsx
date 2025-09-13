@@ -1,15 +1,5 @@
-import {
-  AlertTriangle,
-  CheckCircle,
-  Cloud,
-  Database,
-  FileText,
-  RefreshCw,
-  Settings,
-  Users,
-  XCircle,
-  Zap,
-} from 'lucide-react';
+import type { AlertTriangle, CheckCircle, Cloud, Database, FileText, RefreshCw, Settings, Users, XCircle, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 interface SyncIssue {
@@ -25,7 +15,7 @@ interface SyncIssue {
 const SyncIssueResolver: React.FC = () => {
   const [issues, setIssues] = useState<SyncIssue[]>([]);
   const [isResolving, setIsResolving] = useState(false);
-  const [resolvedCount, setResolvedCount] = useState(0);
+  const [resolvedCountState, setResolvedCount] = useState(0);
 
   // Initialize with 21 sync issues as mentioned
   useEffect(() => {

@@ -561,4 +561,4 @@ export class RealTimePerformanceMonitor {
   }
 }
 
-export const realTimePerformanceMonitor = RealTimePerformanceMonitor.getInstance();
+export // const realTimePerformanceMonitor = RealTimePerformanceMonitor.getInstance();

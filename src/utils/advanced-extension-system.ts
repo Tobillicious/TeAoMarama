@@ -397,4 +397,4 @@ export class AdvancedExtensionSystem {
 }
 
 // Global extension system instance
-export const globalExtensionSystem = new AdvancedExtensionSystem();
+export // const globalExtensionSystem = new AdvancedExtensionSystem();

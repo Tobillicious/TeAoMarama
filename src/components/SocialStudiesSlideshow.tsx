@@ -302,7 +302,7 @@ const SocialStudiesSlideshow: React.FC = () => {
 
   return (
     <div className="slideshow-container">
-      <audio ref={audioPlayerRef} style={{ display: 'none' }} />
+      <audio ref={audioPlayerRef} /* TODO: Move to external CSS */ style={{ display: 'none' }} />
       <div className="slide-content">
         {currentSlideData.isChatbot ? (
           <div className="chatbot-container">

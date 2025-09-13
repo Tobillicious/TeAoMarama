@@ -14,7 +14,7 @@ interface AgentTask {
   assignedAgent?: string;
   startTime?: Date;
   completionTime?: Date;
-  result?: any;
+  result?: unknown;
 }
 
 interface AgentCapability {
@@ -301,7 +301,7 @@ class EnhancedAgentCoordinator {
     this.logCoordination('task-assigned', agentId, taskId, `Task ${taskId} assigned to ${agentId}`);
   }
 
-  public completeTask(taskId: string, result: any): void {
+  public completeTask(taskId: string, result: unknown): void {
     const task = this.tasks.get(taskId);
     if (!task || task.status !== 'assigned') return;
 
@@ -505,7 +505,7 @@ class EnhancedAgentCoordinator {
 }
 
 // Export the enhanced agent coordinator
-export const enhancedAgentCoordinator = new EnhancedAgentCoordinator();
+export // const enhancedAgentCoordinator = new EnhancedAgentCoordinator();
 
 // Export types for external use
 export type { AgentCapability, AgentTask, CoordinationMetrics };

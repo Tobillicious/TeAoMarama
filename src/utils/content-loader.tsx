@@ -325,7 +325,7 @@ export const loadDeepSeekContent = async (): Promise<ContentItem[]> => {
   return content;
 };
 
-export const loadAllContent = async (): Promise<ContentItem[]> => {
+export // const loadAllContent = async (): Promise<ContentItem[]> => {
   try {
     const [teKeteAkoContent, deepSeekContent] = await Promise.all([
       loadTeKeteAkoContent(),

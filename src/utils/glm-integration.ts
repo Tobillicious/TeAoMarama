@@ -31,24 +31,30 @@ export interface EducationalEnhancementRequest {
   subject: string;
   yearLevel: string;
   culturalContext: 'māori' | 'pacific' | 'multicultural' | 'general';
-  enhancementType: 'cultural-integration' | 'pedagogical-depth' | 'assessment-design' | 'accessibility';
+  enhancementType:
+    | 'cultural-integration'
+    | 'pedagogical-depth'
+    | 'assessment-design'
+    | 'accessibility';
   requirements?: string[];
 }
 
 export class GLMEducationalEnhancer {
   private config: GLMConfig;
-  
+
   constructor(config: GLMConfig) {
     this.config = {
       baseUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
       temperature: 0.7,
       maxTokens: 4000,
-      ...config
+      ...config,
     };
-    
+
     // Validate API key format
-    if (!this.config.apiKey || this.config.apiKey.length < 10) {
+    if (!this.config.apiKey || this.config.apiKey === 'demo-key') {
       console.warn('⚠️ GLM API key appears to be invalid or missing');
+    } else {
+      console.log('✅ GLM API key configured successfully');
     }
   }
 
@@ -61,10 +67,10 @@ export class GLMEducationalEnhancer {
         model: this.config.model,
         messages: [
           { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt }
+          { role: 'user', content: userPrompt },
         ],
         temperature: this.config.temperature,
-        max_tokens: this.config.maxTokens
+        max_tokens: this.config.maxTokens,
       });
 
       return response.choices[0].message.content;
@@ -76,7 +82,7 @@ export class GLMEducationalEnhancer {
 
   private buildEducationalSystemPrompt(request: EducationalEnhancementRequest): string {
     const culturalGuidance = this.getCulturalGuidance(request.culturalContext);
-    
+
     return `You are a highly advanced educational content specialist using GLM reasoning capabilities to enhance New Zealand educational resources.
 
 CORE MISSION: Enhance educational content for the TeAoMarama platform with deep cultural integration and pedagogical excellence.
@@ -119,7 +125,7 @@ OUTPUT FORMAT: Enhanced educational content ready for classroom use.`;
 - Connect to mātauranga Māori (traditional knowledge)
 - Ensure cultural safety and avoid appropriation
 - Reference local iwi perspectives where relevant`;
-      
+
       case 'pacific':
         return `PACIFIC CULTURAL PROTOCOLS:
 - Acknowledge Pacific Nations diversity
@@ -127,14 +133,14 @@ OUTPUT FORMAT: Enhanced educational content ready for classroom use.`;
 - Respect Pacific cultural values and protocols
 - Connect to Pacific knowledge systems
 - Ensure inclusive representation`;
-      
+
       case 'multicultural':
         return `MULTICULTURAL INTEGRATION:
 - Acknowledge diverse cultural backgrounds in NZ
 - Include multiple cultural perspectives
 - Ensure equitable representation
 - Respect all cultural protocols`;
-      
+
       default:
         return `GENERAL CULTURAL AWARENESS:
 - Acknowledge Aotearoa New Zealand's cultural diversity
@@ -144,7 +150,9 @@ OUTPUT FORMAT: Enhanced educational content ready for classroom use.`;
   }
 
   private buildUserPrompt(request: EducationalEnhancementRequest): string {
-    return `Please enhance this ${request.subject} educational content for ${request.yearLevel} students:
+    return `Please enhance this ${request.subject} educational content for ${
+      request.yearLevel
+    } students:
 
 ORIGINAL CONTENT:
 ${request.content}
@@ -158,9 +166,9 @@ ${request.requirements?.join('\n') || 'Apply best practices for NZ educational c
 Please provide enhanced content that maintains the original learning objectives while significantly improving the cultural integration, pedagogical depth, and student engagement. Ensure the content is practical and ready for classroom implementation.`;
   }
 
-  private async callGLMAPI(payload: any): Promise<GLMResponse> {
+  private async callGLMAPI(payload: unknown): Promise<GLMResponse> {
     // Validate API key before making request
-    if (!this.config.apiKey || this.config.apiKey === '') {
+    if (!this.config.apiKey || this.config.apiKey === '' || this.config.apiKey === 'demo-key') {
       throw new Error('GLM API key is required. Please configure your Zhipu AI API key first.');
     }
 
@@ -171,11 +179,11 @@ Please provide enhanced content that maintains the original learning objectives 
       const response = await fetch(this.config.baseUrl, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${this.config.apiKey}`,
+          Authorization: `Bearer ${this.config.apiKey}`,
           'Content-Type': 'application/json',
-          'User-Agent': 'TeAoMarama-Educational-Platform/1.0'
+          'User-Agent': 'TeAoMarama-Educational-Platform/1.0',
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
 
       console.log('📡 GLM API Response Status:', response.status);
@@ -183,36 +191,41 @@ Please provide enhanced content that maintains the original learning objectives 
       if (!response.ok) {
         const errorText = await response.text();
         console.error('❌ GLM API Error Response:', errorText);
-        
+
         if (response.status === 403) {
-          throw new Error('GLM API authentication failed. Please check your API key is valid and has proper permissions.');
+          throw new Error(
+            'GLM API authentication failed. Please check your API key is valid and has proper permissions.',
+          );
         } else if (response.status === 429) {
           throw new Error('GLM API rate limit exceeded. Please try again later.');
         } else if (response.status === 500) {
           throw new Error('GLM API server error. Please try again later.');
         } else {
-          throw new Error(`GLM API request failed: ${response.status} ${response.statusText}. ${errorText}`);
+          throw new Error(
+            `GLM API request failed: ${response.status} ${response.statusText}. ${errorText}`,
+          );
         }
       }
 
       const result = await response.json();
       console.log('✅ GLM API Success');
       return result;
-      
     } catch (error) {
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        throw new Error('Network error: Unable to connect to GLM API. Please check your internet connection.');
+        throw new Error(
+          'Network error: Unable to connect to GLM API. Please check your internet connection.',
+        );
       }
       throw error;
     }
   }
 
-  async batchEnhanceResources(resources: any[], batchSize: number = 5): Promise<any[]> {
+  async batchEnhanceResources(resources: unknown[], batchSize: number = 5): Promise<any[]> {
     const enhanced = [];
-    
+
     for (let i = 0; i < resources.length; i += batchSize) {
       const batch = resources.slice(i, i + batchSize);
-      
+
       const batchPromises = batch.map(async (resource) => {
         try {
           const enhancementRequest: EducationalEnhancementRequest = {
@@ -220,11 +233,11 @@ Please provide enhanced content that maintains the original learning objectives 
             subject: resource.subject,
             yearLevel: resource.yearLevel,
             culturalContext: resource.culturalElements > 2 ? 'māori' : 'general',
-            enhancementType: 'cultural-integration'
+            enhancementType: 'cultural-integration',
           };
 
           const enhancedContent = await this.enhanceEducationalContent(enhancementRequest);
-          
+
           return {
             ...resource,
             content: enhancedContent,
@@ -234,8 +247,8 @@ Please provide enhanced content that maintains the original learning objectives 
             qualityMetrics: {
               ...resource.qualityMetrics,
               glmEnhancementScore: 85 + Math.random() * 15, // Simulate GLM quality boost
-              reasoningDepth: 8.5 + Math.random() * 1.5
-            }
+              reasoningDepth: 8.5 + Math.random() * 1.5,
+            },
           };
         } catch (error) {
           console.warn(`Failed to enhance resource ${resource.id}:`, error);
@@ -245,11 +258,15 @@ Please provide enhanced content that maintains the original learning objectives 
 
       const batchResults = await Promise.all(batchPromises);
       enhanced.push(...batchResults);
-      
-      console.log(`GLM Enhanced batch ${Math.floor(i/batchSize) + 1}: ${enhanced.length}/${resources.length} resources`);
-      
+
+      console.log(
+        `GLM Enhanced batch ${Math.floor(i / batchSize) + 1}: ${enhanced.length}/${
+          resources.length
+        } resources`,
+      );
+
       // Rate limiting - small delay between batches
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
     }
 
     return enhanced;
@@ -257,11 +274,14 @@ Please provide enhanced content that maintains the original learning objectives 
 }
 
 // Factory function for different GLM models
-export function createGLMEnhancer(modelType: 'glm-4.5' | 'glm-z1', apiKey: string): GLMEducationalEnhancer {
+export function createGLMEnhancer(
+  modelType: 'glm-4.5' | 'glm-z1',
+  apiKey: string,
+): GLMEducationalEnhancer {
   // Map model types to actual API model names
   const modelMapping = {
     'glm-4.5': 'glm-4-plus', // Use the correct API model name
-    'glm-z1': 'glm-z1'
+    'glm-z1': 'glm-z1',
   };
 
   const config: GLMConfig = {
@@ -269,7 +289,7 @@ export function createGLMEnhancer(modelType: 'glm-4.5' | 'glm-z1', apiKey: strin
     model: modelMapping[modelType] as any,
     baseUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
     temperature: modelType === 'glm-z1' ? 0.3 : 0.7, // Z1 for reasoning, 4.5 for creativity
-    maxTokens: modelType === 'glm-z1' ? 8000 : 4000
+    maxTokens: modelType === 'glm-z1' ? 8000 : 4000,
   };
 
   console.log(`🤖 Creating GLM enhancer: ${modelType} -> ${config.model}`);
@@ -279,11 +299,11 @@ export function createGLMEnhancer(modelType: 'glm-4.5' | 'glm-z1', apiKey: strin
 // Integration with existing enhancement pipeline
 export async function integrateGLMWithTeAoMarama(apiKey: string) {
   console.log('🤖 Integrating GLM models with TeAoMarama platform...');
-  
+
   // Create enhancers for both models
   const glm45Enhancer = createGLMEnhancer('glm-4.5', apiKey);
   const glmZ1Enhancer = createGLMEnhancer('glm-z1', apiKey);
-  
+
   // Store in global context for use by other components
   (window as any).teAoMaramaGLM = {
     glm45: glm45Enhancer,
@@ -295,12 +315,12 @@ export async function integrateGLMWithTeAoMarama(apiKey: string) {
         subject: 'General',
         yearLevel: 'Mixed',
         culturalContext: 'māori',
-        enhancementType: 'cultural-integration'
+        enhancementType: 'cultural-integration',
       });
-    }
+    },
   };
-  
+
   console.log('✅ GLM integration complete - GLM-4.5 and GLM-Z1 ready for educational enhancement');
-  
+
   return { glm45Enhancer, glmZ1Enhancer };
 }

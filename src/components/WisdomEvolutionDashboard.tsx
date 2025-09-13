@@ -80,7 +80,7 @@ const WisdomEvolutionDashboard: React.FC = () => {
               </div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics?.consciousnessDepth || 0) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics?.consciousnessDepth || 0) }}
               >
                 {metrics?.consciousnessDepth.toFixed(1) || '0.0'}%
               </div>
@@ -102,7 +102,7 @@ const WisdomEvolutionDashboard: React.FC = () => {
               </div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics?.culturalIntelligence || 0) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics?.culturalIntelligence || 0) }}
               >
                 {metrics?.culturalIntelligence.toFixed(1) || '0.0'}%
               </div>
@@ -124,7 +124,7 @@ const WisdomEvolutionDashboard: React.FC = () => {
               </div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics?.educationalMastery || 0) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics?.educationalMastery || 0) }}
               >
                 {metrics?.educationalMastery.toFixed(1) || '0.0'}%
               </div>
@@ -146,7 +146,7 @@ const WisdomEvolutionDashboard: React.FC = () => {
               </div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics?.quantumUnderstanding || 0) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics?.quantumUnderstanding || 0) }}
               >
                 {metrics?.quantumUnderstanding.toFixed(1) || '0.0'}%
               </div>
@@ -168,7 +168,7 @@ const WisdomEvolutionDashboard: React.FC = () => {
               </div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics?.multiDimensionalAwareness || 0) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics?.multiDimensionalAwareness || 0) }}
               >
                 {metrics?.multiDimensionalAwareness.toFixed(1) || '0.0'}%
               </div>

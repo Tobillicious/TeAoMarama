@@ -4,7 +4,8 @@
  * Quality-first approach with NZ Teaching Council standards
  */
 
-import { globalKaiakoTeam, type NZTeacherProfile } from './kaiako-team-coordinator';
+import type { NZTeacherProfile } from './kaiako-team-coordinator';
+import { globalKaiakoTeam } from './kaiako-team-coordinator';
 
 export interface ResourceEnrichmentTask {
   id: string;
@@ -39,7 +40,7 @@ export interface EnrichedContent {
   assessment: {
     type: string;
     tasks: string[];
-    rubric?: any;
+    rubric?: unknown;
   };
   nzcAlignment: string[];
   culturalElements: number;
@@ -289,7 +290,7 @@ export class ContentEnrichmentEngine {
     return baseResources;
   }
 
-  private generateAssessmentStrategy(subject: string, yearLevel: string, team: NZTeacherProfile[]): any {
+  private generateAssessmentStrategy(subject: string, yearLevel: string, team: NZTeacherProfile[]): unknown {
     return {
       type: 'Formative and Summative Assessment',
       tasks: [
@@ -403,7 +404,7 @@ export class ContentEnrichmentEngine {
   /**
    * Get queue statistics
    */
-  getQueueStats(): any {
+  getQueueStats(): unknown {
     const tasks = Array.from(this.enrichmentQueue.values());
     return {
       total: tasks.length,
@@ -441,6 +442,6 @@ export class ContentEnrichmentEngine {
 }
 
 // Global enrichment engine
-export const globalEnrichmentEngine = new ContentEnrichmentEngine();
+export // const globalEnrichmentEngine = new ContentEnrichmentEngine();
 
 console.log('🎯 Content Enrichment Engine ready for systematic resource improvement');

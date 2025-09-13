@@ -8,7 +8,7 @@ export interface QualityMetrics {
   authenticityLevel: 'skeleton' | 'template' | 'enhanced' | 'complete';
 }
 
-export function assessContentQuality(resource: any): QualityMetrics {
+export function assessContentQuality(resource: unknown): QualityMetrics {
   let qualityScore = 0;
   let completeness = 0;
   
@@ -70,7 +70,7 @@ function isTemplateContent(content: string): boolean {
   );
 }
 
-function hasSpecificPlaceReferences(resource: any): boolean {
+function hasSpecificPlaceReferences(resource: unknown): boolean {
   const specificPlaces = [
     'Mangakōtukutuku',
     'Te Awa Tūpuna', 
@@ -84,7 +84,7 @@ function hasSpecificPlaceReferences(resource: any): boolean {
   return specificPlaces.some(place => content.includes(place.toLowerCase()));
 }
 
-function hasAuthenticCulturalContent(resource: any): boolean {
+function hasAuthenticCulturalContent(resource: unknown): boolean {
   if (resource.culturalElements < 3) return false;
   
   const authenticIndicators = [
@@ -105,7 +105,7 @@ function hasAuthenticCulturalContent(resource: any): boolean {
   return authCount >= 3;
 }
 
-function hasFullLessonStructure(resource: any): boolean {
+function hasFullLessonStructure(resource: unknown): boolean {
   if (!resource.content) return false;
   
   const requiredElements = [
@@ -125,7 +125,7 @@ function hasFullLessonStructure(resource: any): boolean {
 }
 
 // Filter resources by quality
-export function filterByQuality(resources: any[], minQuality: number = 70): any[] {
+export function filterByQuality(resources: unknown[], minQuality: number = 70): unknown[] {
   return resources
     .map(resource => ({
       ...resource,
@@ -136,7 +136,7 @@ export function filterByQuality(resources: any[], minQuality: number = 70): any[
 }
 
 // Get quality stats
-export function getQualityStats(resources: any[]) {
+export function getQualityStats(resources: unknown[]) {
   const metrics = resources.map(assessContentQuality);
   
   const ready = metrics.filter(m => m.isReady).length;
