@@ -702,7 +702,7 @@ const QualityFilteringHarmonyDashboard: React.FC<QualityFilteringHarmonyDashboar
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.overallScore) }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.overallScore) }}
           >
             {qualityMetrics.overallScore}%
           </div>
@@ -725,7 +725,7 @@ const QualityFilteringHarmonyDashboard: React.FC<QualityFilteringHarmonyDashboar
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.culturalSafety) }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.culturalSafety) }}
           >
             {qualityMetrics.culturalSafety}%
           </div>
@@ -748,7 +748,7 @@ const QualityFilteringHarmonyDashboard: React.FC<QualityFilteringHarmonyDashboar
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.accessibility) }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(qualityMetrics.accessibility) }}
           >
             {qualityMetrics.accessibility}%
           </div>
@@ -771,7 +771,7 @@ const QualityFilteringHarmonyDashboard: React.FC<QualityFilteringHarmonyDashboar
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getQualityColor(performanceMetrics.overallEfficiency) }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(performanceMetrics.overallEfficiency) }}
           >
             {performanceMetrics.overallEfficiency}%
           </div>

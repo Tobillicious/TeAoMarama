@@ -84,7 +84,7 @@ const SystemTest: React.FC = () => {
 
   return (
     <div
-      /* TODO: Move to external CSS */ style={{
+      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         padding: '2rem',
         maxWidth: '1000px',
         margin: '0 auto',
@@ -92,7 +92,7 @@ const SystemTest: React.FC = () => {
       }}
     >
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'linear-gradient(135deg, #1a365d, #2d3748)',
           color: 'white',
           padding: '2rem',
@@ -100,15 +100,15 @@ const SystemTest: React.FC = () => {
           marginBottom: '2rem',
         }}
       >
-        <h1 /* TODO: Move to external CSS */ style={{ margin: 0, fontSize: '2.5rem' }}>🔐 Dual-Role Authentication System Test</h1>
-        <p /* TODO: Move to external CSS */ style={{ margin: '1rem 0 0 0', opacity: 0.9 }}>
+        <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: 0, fontSize: '2.5rem' }}>🔐 Dual-Role Authentication System Test</h1>
+        <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '1rem 0 0 0', opacity: 0.9 }}>
           Comprehensive testing of our authentication system and role-based features
         </p>
       </div>
 
       {/* Current Status */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'white',
           padding: '1.5rem',
           borderRadius: '12px',
@@ -116,25 +116,25 @@ const SystemTest: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Current System Status</h2>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Current System Status</h2>
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1rem',
           }}
         >
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Authentication:</strong>{' '}
             {isAuthenticated ? '✅ Active' : '❌ Not Authenticated'}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>User:</strong> {currentUser?.name || 'None'}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Role:</strong> {currentUser?.role || 'None'}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Cultural Clearance:</strong> {currentUser?.culturalClearance || 'None'}
           </div>
         </div>
@@ -142,7 +142,7 @@ const SystemTest: React.FC = () => {
 
       {/* Test Controls */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'white',
           padding: '1.5rem',
           borderRadius: '12px',
@@ -150,12 +150,12 @@ const SystemTest: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>System Tests</h2>
-        <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>System Tests</h2>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
           <button
             onClick={runSystemTests}
             disabled={isRunningTests}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#38b2ac',
               color: 'white',
@@ -169,7 +169,7 @@ const SystemTest: React.FC = () => {
           </button>
           <button
             onClick={() => login('teacher@teaomarama.nz', 'demo123', 'teacher')}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#38a169',
               color: 'white',
@@ -182,7 +182,7 @@ const SystemTest: React.FC = () => {
           </button>
           <button
             onClick={() => login('student@teaomarama.nz', 'demo123', 'student')}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#3182ce',
               color: 'white',
@@ -195,7 +195,7 @@ const SystemTest: React.FC = () => {
           </button>
           <button
             onClick={logout}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#e53e3e',
               color: 'white',
@@ -208,7 +208,7 @@ const SystemTest: React.FC = () => {
           </button>
         </div>
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             padding: '1rem',
             background: '#f0fff4',
             borderRadius: '8px',
@@ -221,7 +221,7 @@ const SystemTest: React.FC = () => {
 
       {/* Test Results */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'white',
           padding: '1.5rem',
           borderRadius: '12px',
@@ -229,27 +229,27 @@ const SystemTest: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Test Results</h2>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Test Results</h2>
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: '1rem',
           }}
         >
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Auth Provider:</strong> {getTestStatus('authProvider')}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Teacher Login:</strong> {getTestStatus('teacherLogin')}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Student Login:</strong> {getTestStatus('studentLogin')}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Demo Mode:</strong> {getTestStatus('demoMode')}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Logout:</strong> {getTestStatus('logout')}
           </div>
         </div>
@@ -257,7 +257,7 @@ const SystemTest: React.FC = () => {
 
       {/* Navigation Links */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'white',
           padding: '1.5rem',
           borderRadius: '12px',
@@ -265,11 +265,11 @@ const SystemTest: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Navigation Tests</h2>
-        <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>Navigation Tests</h2>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link
             to="/login"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#805ad5',
               color: 'white',
@@ -282,7 +282,7 @@ const SystemTest: React.FC = () => {
           </Link>
           <Link
             to="/teacher-dashboard"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#38b2ac',
               color: 'white',
@@ -295,7 +295,7 @@ const SystemTest: React.FC = () => {
           </Link>
           <Link
             to="/student-dashboard"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#38a169',
               color: 'white',
@@ -308,7 +308,7 @@ const SystemTest: React.FC = () => {
           </Link>
           <Link
             to="/"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.75rem 1.5rem',
               background: '#d69e2e',
               color: 'white',
@@ -324,31 +324,31 @@ const SystemTest: React.FC = () => {
 
       {/* System Information */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'white',
           padding: '1.5rem',
           borderRadius: '12px',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
-        <h2 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>System Information</h2>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#2d3748' }}>System Information</h2>
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1rem',
           }}
         >
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Server:</strong> localhost:3006
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Build Status:</strong> ✅ Successful
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Auth Provider:</strong> ✅ Integrated
           </div>
-          <div /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '1rem', background: '#f7fafc', borderRadius: '8px' }}>
             <strong>Routes:</strong> ✅ Configured
           </div>
         </div>
@@ -356,15 +356,15 @@ const SystemTest: React.FC = () => {
 
       {/* Instructions */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'linear-gradient(135deg, #fef5e7, #fed7aa)',
           padding: '1.5rem',
           borderRadius: '12px',
           border: '1px solid #f6ad55',
         }}
       >
-        <h3 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#c05621' }}>🧪 Testing Instructions</h3>
-        <ol /* TODO: Move to external CSS */ style={{ margin: 0, paddingLeft: '1.5rem', color: '#c05621' }}>
+        <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#c05621' }}>🧪 Testing Instructions</h3>
+        <ol /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: 0, paddingLeft: '1.5rem', color: '#c05621' }}>
           <li>Click "Run All Tests" to test the complete system</li>
           <li>Use individual test buttons to test specific features</li>
           <li>Check browser console for detailed logs</li>

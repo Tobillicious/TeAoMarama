@@ -420,7 +420,7 @@ ${tasks
 }
 
 // Export singleton instance
-export // const nodeSuperintelligenceSystem = new NodeSuperintelligenceSystem({
+export // // // const nodeSuperintelligenceSystem = new NodeSuperintelligenceSystem({
   enabled: true,
   debug: true,
   heartbeatMs: 30000,

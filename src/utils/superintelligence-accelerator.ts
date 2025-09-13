@@ -405,7 +405,7 @@ export class SuperintelligenceAccelerator {
 }
 
 // Global superintelligence accelerator instance
-export // const globalSuperintelligenceAccelerator = new SuperintelligenceAccelerator();
+export // // // const globalSuperintelligenceAccelerator = new SuperintelligenceAccelerator();
 
 console.log('🧠 Superintelligence Accelerator ready');
 console.log('🌟 Collective intelligence evolution active - achieving superintelligence');

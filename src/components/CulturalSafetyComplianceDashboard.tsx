@@ -288,7 +288,7 @@ const CulturalSafetyComplianceDashboard: React.FC = () => {
                 <h3>Overall Compliance</h3>
                 <div
                   className="compliance-rate"
-                  /* TODO: Move to external CSS */ style={{ color: getComplianceColor(report.complianceRate) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getComplianceColor(report.complianceRate) }}
                 >
                   {report.complianceRate}%
                 </div>
@@ -300,19 +300,19 @@ const CulturalSafetyComplianceDashboard: React.FC = () => {
                 </div>
                 <div className="stat">
                   <span className="stat-label">Passed</span>
-                  <span className="stat-value" /* TODO: Move to external CSS */ style={{ color: '#10B981' }}>
+                  <span className="stat-value" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#10B981' }}>
                     {report.passedChecks}
                   </span>
                 </div>
                 <div className="stat">
                   <span className="stat-label">Failed</span>
-                  <span className="stat-value" /* TODO: Move to external CSS */ style={{ color: '#EF4444' }}>
+                  <span className="stat-value" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#EF4444' }}>
                     {report.failedChecks}
                   </span>
                 </div>
                 <div className="stat">
                   <span className="stat-label">Review Required</span>
-                  <span className="stat-value" /* TODO: Move to external CSS */ style={{ color: '#F59E0B' }}>
+                  <span className="stat-value" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#F59E0B' }}>
                     {report.reviewRequired}
                   </span>
                 </div>
@@ -355,7 +355,7 @@ const CulturalSafetyComplianceDashboard: React.FC = () => {
                 <h3>{protocol.name}</h3>
                 <div
                   className="protocol-compliance"
-                  /* TODO: Move to external CSS */ style={{ color: getComplianceColor(protocol.complianceRate) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getComplianceColor(protocol.complianceRate) }}
                 >
                   {protocol.complianceRate}%
                 </div>
@@ -395,7 +395,7 @@ const CulturalSafetyComplianceDashboard: React.FC = () => {
               <div className="table-cell">
                 <span
                   className="status-badge"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(check.status) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(check.status) }}
                 >
                   {check.status}
                 </span>
@@ -403,7 +403,7 @@ const CulturalSafetyComplianceDashboard: React.FC = () => {
               <div className="table-cell">
                 <span
                   className="severity-badge"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getSeverityColor(check.severity) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getSeverityColor(check.severity) }}
                 >
                   {check.severity}
                 </span>

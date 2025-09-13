@@ -183,7 +183,7 @@ const EngagingStudentDashboard: React.FC = () => {
     return (stats.weeklyProgress / stats.weeklyGoal) * 100;
   };
 
-  // const getDifficultyColor = (difficulty: string) => {
+  // // const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'beginner': return '#10b981';
       case 'intermediate': return '#f59e0b';
@@ -212,8 +212,18 @@ const EngagingStudentDashboard: React.FC = () => {
               <div className="level-badge">Lv.{stats.level}</div>
             </div>
             <div className="student-details">
-              <h1>Kia ora, Student! 🌟</h1>
-              <p>Ready for today's learning adventure?</p>
+              <h1>{showTeReo ? 'Kia ora, Ākonga! 🌟' : 'Kia ora, Student! 🌟'}</h1>
+              <p>{showTeReo ? 'Kua rite koe mō te haerenga ako o tēnei rā?' : 'Ready for today\'s learning adventure?'}</p>
+            </div>
+            
+            <div className="cultural-toggle">
+              <button 
+                className={`te-reo-toggle ${showTeReo ? 'active' : ''}`}
+                onClick={() => setShowTeReo(!showTeReo)}
+                title={showTeReo ? 'Switch to English' : 'Te Reo Māori'}
+              >
+                {showTeReo ? 'EN' : 'MĀ'}
+              </button>
             </div>
           </div>
           
@@ -335,6 +345,15 @@ const EngagingStudentDashboard: React.FC = () => {
       <div className="tab-content">
         {activeTab === 'overview' && (
           <div className="overview-content">
+            {/* Cultural Integration Enhancer */}
+            <CulturalIntegrationEnhancer 
+              context="dashboard" 
+              showTeReo={showTeReo}
+              onCulturalElementClick={(element) => {
+                console.log('Cultural element clicked:', element);
+              }}
+            />
+            
             <div className="quick-actions">
               <h2>Continue Your Journey</h2>
               <div className="action-cards">
@@ -343,7 +362,7 @@ const EngagingStudentDashboard: React.FC = () => {
                   .slice(0, 2)
                   .map(module => (
                     <div key={module.id} className="action-card">
-                      <div className="action-icon" /* TODO: Move to external CSS */ style={{ color: module.color }}>
+                      <div className="action-icon" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: module.color }}>
                         {module.icon}
                       </div>
                       <div className="action-content">
@@ -393,7 +412,7 @@ const EngagingStudentDashboard: React.FC = () => {
               {learningModules.map(module => (
                 <div key={module.id} className={`module-card ${module.completed ? 'completed' : ''}`}>
                   <div className="module-header">
-                    <div className="module-icon" /* TODO: Move to external CSS */ style={{ color: module.color }}>
+                    <div className="module-icon" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: module.color }}>
                       {module.icon}
                     </div>
                     <div className="module-info">

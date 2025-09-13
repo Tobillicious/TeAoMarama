@@ -65,7 +65,7 @@ const SimpleTest: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div /* TODO: Move to external CSS */ style={{ padding: '2rem', textAlign: 'center' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '2rem', textAlign: 'center' }}>
         <h1>🧪 Running Tests...</h1>
         <p>Please wait while we test the basic functionality...</p>
       </div>
@@ -73,15 +73,15 @@ const SimpleTest: React.FC = () => {
   }
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
       <h1>🧪 Simple Functionality Test</h1>
       <p>Testing basic functionality to see what's working:</p>
 
-      <div /* TODO: Move to external CSS */ style={{ marginTop: '2rem' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginTop: '2rem' }}>
         {testResults.map((result, index) => (
           <div
             key={index}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               padding: '0.5rem',
               margin: '0.5rem 0',
               backgroundColor: result.startsWith('✅') ? '#d1fae5' : '#fee2e2',
@@ -95,7 +95,7 @@ const SimpleTest: React.FC = () => {
       </div>
 
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           marginTop: '2rem',
           padding: '1rem',
           backgroundColor: '#f3f4f6',
@@ -112,10 +112,10 @@ const SimpleTest: React.FC = () => {
         </ul>
       </div>
 
-      <div /* TODO: Move to external CSS */ style={{ marginTop: '2rem' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginTop: '2rem' }}>
         <button
           onClick={() => (window.location.href = '/')}
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             padding: '1rem 2rem',
             backgroundColor: '#3b82f6',
             color: 'white',
@@ -130,7 +130,7 @@ const SimpleTest: React.FC = () => {
 
         <button
           onClick={() => window.location.reload()}
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             padding: '1rem 2rem',
             backgroundColor: '#10b981',
             color: 'white',

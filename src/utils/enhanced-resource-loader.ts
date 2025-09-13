@@ -310,8 +310,8 @@ class EnhancedResourceService {
 const enhancedResourceService = new EnhancedResourceService();
 
 // Export convenience functions
-// export const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
-// export const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
+// export // // const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
+// export // // const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
 export const getResourcesBySubject = (subject: string) =>
   enhancedResourceService.getResourcesBySubject(subject);
 export const getResourcesByYearLevel = (yearLevel: string) =>
@@ -321,7 +321,7 @@ export const getHighQualityResources = (minQuality?: number) =>
 export const getCulturallyAuthenticResources = (minScore?: number) =>
   enhancedResourceService.getCulturallyAuthenticResources(minScore);
 export const getResourceById = (id: string) => enhancedResourceService.getResourceById(id);
-// export const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
+// export // // const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
 
 // Export the service for advanced usage
 export default enhancedResourceService;

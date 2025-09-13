@@ -24,7 +24,7 @@ const ResourceViewer: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const resourceId = searchParams.get('id');
-  // const resourceType = searchParams.get('type');
+  // // // const resourceType = searchParams.get('type');
 
   useEffect(() => {
     const loadResource = async () => {
@@ -87,7 +87,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
 
   if (loading) {
     return (
-      <div /* TODO: Move to external CSS */ style={{ 
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
         padding: '2rem', 
         textAlign: 'center',
         minHeight: '50vh',
@@ -96,7 +96,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
         justifyContent: 'center'
       }}>
         <div>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}>📚</div>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}>📚</div>
           <div>Loading resource...</div>
         </div>
       </div>
@@ -105,7 +105,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
 
   if (error) {
     return (
-      <div /* TODO: Move to external CSS */ style={{ 
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
         padding: '2rem', 
         textAlign: 'center',
         minHeight: '50vh',
@@ -114,13 +114,13 @@ This is a professional educational resource aligned with New Zealand curriculum 
         justifyContent: 'center',
         flexDirection: 'column'
       }}>
-        <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem', color: '#dc3545' }}>❌</div>
-        <h2 /* TODO: Move to external CSS */ style={{ color: '#dc3545', marginBottom: '1rem' }}>Resource Not Found</h2>
-        <p /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', color: '#6c757d' }}>{error}</p>
-        <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem' }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem', color: '#dc3545' }}>❌</div>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#dc3545', marginBottom: '1rem' }}>Resource Not Found</h2>
+        <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', color: '#6c757d' }}>{error}</p>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem' }}>
           <button
             onClick={() => navigate('/educational-platform')}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: '#28a745',
               color: 'white',
               border: 'none',
@@ -134,7 +134,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
           </button>
           <button
             onClick={() => navigate('/')}
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: '#6c757d',
               color: 'white',
               border: 'none',
@@ -153,9 +153,9 @@ This is a professional educational resource aligned with New Zealand curriculum 
 
   if (!resource) {
     return (
-      <div /* TODO: Move to external CSS */ style={{ padding: '2rem', textAlign: 'center' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '2rem', textAlign: 'center' }}>
         <h2>Resource Not Found</h2>
-        <button onClick={() => navigate('/')} /* TODO: Move to external CSS */ style={{
+        <button onClick={() => navigate('/')} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: '#28a745',
           color: 'white',
           border: 'none',
@@ -170,14 +170,14 @@ This is a professional educational resource aligned with New Zealand curriculum 
   }
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ 
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
       maxWidth: '800px', 
       margin: '0 auto', 
       padding: '1rem',
       minHeight: 'calc(100vh - 200px)'
     }}>
       {/* Header */}
-      <div /* TODO: Move to external CSS */ style={{ 
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
         background: 'linear-gradient(135deg, #28a745 0%, #20c997 100%)',
         color: 'white',
         padding: '1.5rem',
@@ -185,18 +185,18 @@ This is a professional educational resource aligned with New Zealand curriculum 
         marginBottom: '2rem',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
       }}>
-        <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-          <span /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem' }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+          <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem' }}>
             {resource.type === 'lesson' ? '📖' : 
              resource.type === 'worksheet' ? '📝' : 
              resource.type === 'assessment' ? '📊' : '📚'}
           </span>
-          <h1 /* TODO: Move to external CSS */ style={{ margin: 0, fontSize: '1.5rem', fontWeight: '600' }}>
+          <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: 0, fontSize: '1.5rem', fontWeight: '600' }}>
             {resource.title}
           </h1>
         </div>
         
-        <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.9rem', opacity: 0.9 }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.9rem', opacity: 0.9 }}>
           <span>📚 {resource.subject}</span>
           <span>🎓 {resource.yearLevel}</span>
           <span>📄 {resource.type}</span>
@@ -205,10 +205,10 @@ This is a professional educational resource aligned with New Zealand curriculum 
       </div>
 
       {/* Navigation */}
-      <div /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
         <button
           onClick={() => navigate('/educational-platform')}
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'transparent',
             border: '1px solid #28a745',
             color: '#28a745',
@@ -226,7 +226,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
       </div>
 
       {/* Content */}
-      <div /* TODO: Move to external CSS */ style={{ 
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
         background: 'white',
         border: '1px solid #e9ecef',
         borderRadius: '0.5rem',
@@ -235,7 +235,7 @@ This is a professional educational resource aligned with New Zealand curriculum 
         lineHeight: '1.6'
       }}>
         <div 
-          /* TODO: Move to external CSS */ style={{ color: '#495057' }}
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#495057' }}
           dangerouslySetInnerHTML={{ 
             __html: content
               .replace(/^# (.*$)/gim, '<h1 style="color: #28a745; font-size: 1.75rem; font-weight: 700; margin: 1.5rem 0 1rem 0; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;">$1</h1>')

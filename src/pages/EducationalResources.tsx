@@ -430,13 +430,13 @@ const EducationalResources: React.FC = () => {
               <div className="resource-header">
                 <div
                   className="resource-type"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getTypeColor(resource.type) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getTypeColor(resource.type) }}
                 >
                   {getTypeIcon(resource.type)} {resource.type}
                 </div>
                 <div
                   className="resource-status"
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     backgroundColor:
                       resource.status === 'published'
                         ? '#10b981'
@@ -472,7 +472,7 @@ const EducationalResources: React.FC = () => {
                     <span className="meta-label">Difficulty:</span>
                     <span
                       className="meta-value difficulty"
-                      /* TODO: Move to external CSS */ style={{ color: getDifficultyColor(resource.difficulty) }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getDifficultyColor(resource.difficulty) }}
                     >
                       {resource.difficulty}
                     </span>

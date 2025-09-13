@@ -127,14 +127,14 @@ const RealTimeLearningAnalytics: React.FC = () => {
   };
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ 
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%)',
       padding: '2rem'
     }}>
-      <div /* TODO: Move to external CSS */ style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxWidth: '1400px', margin: '0 auto' }}>
         {/* Header */}
-        <div /* TODO: Move to external CSS */ style={{ 
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
           background: 'white',
           borderRadius: '16px',
           padding: '2rem',
@@ -142,19 +142,19 @@ const RealTimeLearningAnalytics: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
           border: '1px solid #e2e8f0'
         }}>
-          <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <div>
-              <h1 /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', color: '#1a365d', margin: '0 0 0.5rem 0' }}>
+              <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', color: '#1a365d', margin: '0 0 0.5rem 0' }}>
                 📊 Real-Time Learning Analytics
               </h1>
-              <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0 }}>
+              <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0 }}>
                 Live classroom insights with cultural intelligence integration
               </p>
             </div>
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <button
                 onClick={() => setIsLive(!isLive)}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   padding: '0.75rem 1.5rem',
                   borderRadius: '8px',
                   border: 'none',
@@ -166,14 +166,14 @@ const RealTimeLearningAnalytics: React.FC = () => {
               >
                 {isLive ? '⏸️ Pause Live' : '▶️ Resume Live'}
               </button>
-              <div /* TODO: Move to external CSS */ style={{ 
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: '0.5rem',
                 color: isLive ? '#059669' : '#6b7280',
                 fontWeight: '600'
               }}>
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   width: '8px',
                   height: '8px',
                   borderRadius: '50%',
@@ -187,74 +187,74 @@ const RealTimeLearningAnalytics: React.FC = () => {
 
         {/* Classroom Overview */}
         {insights && (
-          <div /* TODO: Move to external CSS */ style={{ 
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1.5rem',
             marginBottom: '2rem'
           }}>
-            <div /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
               color: 'white',
               padding: '1.5rem',
               borderRadius: '12px',
               textAlign: 'center'
             }}>
-              <Users size={32} /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.activeNow}</div>
-              <div /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Active Now</div>
+              <Users size={32} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.activeNow}</div>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Active Now</div>
             </div>
 
-            <div /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               background: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
               color: 'white',
               padding: '1.5rem',
               borderRadius: '12px',
               textAlign: 'center'
             }}>
-              <Activity size={32} /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.averageEngagement}%</div>
-              <div /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Avg Engagement</div>
+              <Activity size={32} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.averageEngagement}%</div>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Avg Engagement</div>
             </div>
 
-            <div /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               background: 'linear-gradient(135deg, #ed8936 0%, #dd6b20 100%)',
               color: 'white',
               padding: '1.5rem',
               borderRadius: '12px',
               textAlign: 'center'
             }}>
-              <Heart size={32} /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.culturalParticipation}%</div>
-              <div /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Cultural Connection</div>
+              <Heart size={32} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.culturalParticipation}%</div>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Cultural Connection</div>
             </div>
 
-            <div /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               background: 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)',
               color: 'white',
               padding: '1.5rem',
               borderRadius: '12px',
               textAlign: 'center'
             }}>
-              <Target size={32} /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.needsSupport}</div>
-              <div /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Need Support</div>
+              <Target size={32} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '0.5rem' }} />
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700' }}>{insights.needsSupport}</div>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ opacity: 0.9 }}>Need Support</div>
             </div>
           </div>
         )}
 
         {/* Recommended Action */}
         {insights && (
-          <div /* TODO: Move to external CSS */ style={{
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: '#fef3c7',
             border: '1px solid #f59e0b',
             borderRadius: '12px',
             padding: '1rem',
             marginBottom: '2rem'
           }}>
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Brain size={20} /* TODO: Move to external CSS */ style={{ color: '#d97706' }} />
-              <span /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#92400e' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Brain size={20} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#d97706' }} />
+              <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#92400e' }}>
                 Recommendation: {insights.recommendedAction}
               </span>
             </div>
@@ -262,18 +262,18 @@ const RealTimeLearningAnalytics: React.FC = () => {
         )}
 
         {/* Student Metrics */}
-        <div /* TODO: Move to external CSS */ style={{ 
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
           background: 'white',
           borderRadius: '16px',
           padding: '2rem',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
           border: '1px solid #e2e8f0'
         }}>
-          <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '600', color: '#1a365d', marginBottom: '1.5rem' }}>
+          <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '600', color: '#1a365d', marginBottom: '1.5rem' }}>
             Individual Student Analytics
           </h2>
           
-          <div /* TODO: Move to external CSS */ style={{ 
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             display: 'grid',
             gap: '1rem'
           }}>
@@ -282,7 +282,7 @@ const RealTimeLearningAnalytics: React.FC = () => {
               return (
                 <div 
                   key={metric.id}
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     background: '#f8fafc',
                     border: '1px solid #e2e8f0',
                     borderRadius: '12px',
@@ -294,19 +294,19 @@ const RealTimeLearningAnalytics: React.FC = () => {
                   }}
                 >
                   <div>
-                    <div /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', marginBottom: '0.25rem' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', marginBottom: '0.25rem' }}>
                       {metric.studentName}
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.9rem', color: '#4a5568', marginBottom: '0.5rem' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.9rem', color: '#4a5568', marginBottom: '0.5rem' }}>
                       {metric.currentActivity}
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: activityStatus.color }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: activityStatus.color }}>
                       {activityStatus.status}
                     </div>
                   </div>
 
-                  <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
                       Engagement
                     </div>
                     <div style={{
@@ -324,20 +324,20 @@ const RealTimeLearningAnalytics: React.FC = () => {
                     </div>
                   </div>
 
-                  <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
                       Cultural
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748' }}>
                       {metric.culturalConnection}%
                     </div>
                   </div>
 
-                  <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096', marginBottom: '0.25rem' }}>
                       Time on Task
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748' }}>
                       {metric.timeOnTask}m
                     </div>
                   </div>

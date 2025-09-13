@@ -396,7 +396,7 @@ const DistributedIntelligenceCoordinator: React.FC = () => {
     }
   };
 
-  // const getEvolutionColor = (level: string) => {
+  // // // const getEvolutionColor = (level: string) => {
     switch (level) {
       case 'EMERGENT':
         return '#6B7280';
@@ -481,7 +481,7 @@ const DistributedIntelligenceCoordinator: React.FC = () => {
                 <h3>{intelligence.name}</h3>
                 <span
                   className="status-badge"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(intelligence.status) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(intelligence.status) }}
                 >
                   {intelligence.status}
                 </span>
@@ -541,7 +541,7 @@ const DistributedIntelligenceCoordinator: React.FC = () => {
                 <h3>{pattern.name}</h3>
                 <span
                   className="complexity-badge"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getComplexityColor(pattern.complexity) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getComplexityColor(pattern.complexity) }}
                 >
                   {pattern.complexity}
                 </span>

@@ -303,7 +303,7 @@ const Year8AcademicVocab: React.FC = () => {
                   </span>
                   <span
                     className="vocabulary-difficulty"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
                   >
                     {unit.difficulty}
                   </span>

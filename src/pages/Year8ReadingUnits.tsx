@@ -313,7 +313,7 @@ const Year8ReadingUnits: React.FC = () => {
                   </span>
                   <span
                     className="reading-difficulty"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
                   >
                     {unit.difficulty}
                   </span>

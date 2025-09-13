@@ -461,7 +461,7 @@ const StudentDashboard: React.FC = () => {
                 {getLearningModules().map((module, index) => (
                 <div key={index} className="learning-module-card">
                   <div className="module-header">
-                    <div className="module-icon" /* TODO: Move to external CSS */ style={{ color: module.color }}>
+                    <div className="module-icon" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: module.color }}>
                       {module.icon}
                     </div>
                     <div className="module-info">

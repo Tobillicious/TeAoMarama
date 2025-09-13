@@ -264,14 +264,14 @@ const CollaborativeLearningWorkspace: React.FC = () => {
   const selectedActivityData = activities.find(a => a.id === selectedActivity);
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ 
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%)',
       padding: '1rem'
     }}>
-      <div /* TODO: Move to external CSS */ style={{ maxWidth: '1600px', margin: '0 auto' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxWidth: '1600px', margin: '0 auto' }}>
         {/* Header */}
-        <div /* TODO: Move to external CSS */ style={{ 
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
           background: 'white',
           borderRadius: '16px',
           padding: '2rem',
@@ -279,25 +279,25 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
           border: '1px solid #e2e8f0'
         }}>
-          <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <h1 /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', color: '#1a365d', margin: '0 0 0.5rem 0' }}>
+              <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', color: '#1a365d', margin: '0 0 0.5rem 0' }}>
                 🤝 Collaborative Learning Workspace
               </h1>
-              <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0 }}>
+              <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0 }}>
                 Real-time collaboration with cultural intelligence and peer learning
               </p>
             </div>
             
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Users size={20} /* TODO: Move to external CSS */ style={{ color: '#059669' }} />
-                <span /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#059669' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Users size={20} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#059669' }} />
+                <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#059669' }}>
                   {participants.filter(p => p.status === 'online').length} online
                 </span>
               </div>
               
-              <div /* TODO: Move to external CSS */ style={{ 
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 background: '#d1fae5',
                 color: '#065f46',
                 padding: '0.5rem 1rem',
@@ -311,7 +311,7 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           </div>
 
           {/* Navigation Tabs */}
-          <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
             {[
               { id: 'overview', label: 'Overview', icon: '📊' },
               { id: 'activity', label: 'Active Session', icon: '🎯' },
@@ -320,7 +320,7 @@ const CollaborativeLearningWorkspace: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveView(tab.id as any)}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   padding: '0.75rem 1.5rem',
                   borderRadius: '8px',
                   border: 'none',
@@ -337,9 +337,9 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           </div>
         </div>
 
-        <div /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: '300px 1fr 350px', gap: '1.5rem' }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: '300px 1fr 350px', gap: '1.5rem' }}>
           {/* Participants Panel */}
-          <div /* TODO: Move to external CSS */ style={{ 
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             background: 'white',
             borderRadius: '16px',
             padding: '1.5rem',
@@ -347,15 +347,15 @@ const CollaborativeLearningWorkspace: React.FC = () => {
             border: '1px solid #e2e8f0',
             height: 'fit-content'
           }}>
-            <h3 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#1a365d', fontWeight: '600' }}>
+            <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#1a365d', fontWeight: '600' }}>
               👥 Participants
             </h3>
             
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {participants.map(participant => (
                 <div 
                   key={participant.id}
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.75rem',
@@ -365,9 +365,9 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                     border: '1px solid #e2e8f0'
                   }}
                 >
-                  <div /* TODO: Move to external CSS */ style={{ position: 'relative' }}>
-                    <span /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem' }}>{participant.avatar}</span>
-                    <div /* TODO: Move to external CSS */ style={{
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ position: 'relative' }}>
+                    <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem' }}>{participant.avatar}</span>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                       position: 'absolute',
                       bottom: '-2px',
                       right: '-2px',
@@ -379,14 +379,14 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                     }} />
                   </div>
                   
-                  <div /* TODO: Move to external CSS */ style={{ flex: 1 }}>
-                    <div /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', fontSize: '0.9rem' }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ flex: 1 }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', fontSize: '0.9rem' }}>
                       {participant.name}
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#718096' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#718096' }}>
                       {participant.culturalRole || participant.role}
                     </div>
-                    <div /* TODO: Move to external CSS */ style={{ fontSize: '0.7rem', color: '#a0aec0', marginTop: '0.25rem' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.7rem', color: '#a0aec0', marginTop: '0.25rem' }}>
                       {participant.currentActivity}
                     </div>
                   </div>
@@ -396,7 +396,7 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           </div>
 
           {/* Main Content Area */}
-          <div /* TODO: Move to external CSS */ style={{ 
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             background: 'white',
             borderRadius: '16px',
             padding: '2rem',
@@ -405,11 +405,11 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           }}>
             {activeView === 'overview' && (
               <div>
-                <h3 /* TODO: Move to external CSS */ style={{ margin: '0 0 1.5rem 0', color: '#1a365d', fontWeight: '600' }}>
+                <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1.5rem 0', color: '#1a365d', fontWeight: '600' }}>
                   📚 Active Learning Activities
                 </h3>
                 
-                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {activities.map(activity => (
                     <div 
                       key={activity.id}
@@ -426,15 +426,15 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                         transition: 'all 0.2s'
                       }}
                     >
-                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                        <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <span /* TODO: Move to external CSS */ style={{ fontSize: '1.2rem' }}>{getActivityTypeIcon(activity.type)}</span>
-                          <h4 /* TODO: Move to external CSS */ style={{ margin: 0, color: '#2d3748', fontWeight: '600' }}>
+                      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
+                        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.2rem' }}>{getActivityTypeIcon(activity.type)}</span>
+                          <h4 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: 0, color: '#2d3748', fontWeight: '600' }}>
                             {activity.title}
                           </h4>
                         </div>
                         
-                        <div /* TODO: Move to external CSS */ style={{
+                        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                           background: activity.status === 'active' ? '#d1fae5' : '#fef3c7',
                           color: activity.status === 'active' ? '#065f46' : '#92400e',
                           padding: '0.25rem 0.75rem',
@@ -446,22 +446,22 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                         </div>
                       </div>
                       
-                      <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 1rem 0', fontSize: '0.9rem' }}>
+                      <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 1rem 0', fontSize: '0.9rem' }}>
                         {activity.description}
                       </p>
                       
-                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <Users size={14} /* TODO: Move to external CSS */ style={{ color: '#718096' }} />
-                          <span /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096' }}>
+                      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <Users size={14} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#718096' }} />
+                          <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#718096' }}>
                             {activity.participants.length} participants
                           </span>
                         </div>
                         
                         {activity.timeRemaining && (
-                          <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                            <Clock size={14} /* TODO: Move to external CSS */ style={{ color: '#ea580c' }} />
-                            <span /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#ea580c', fontWeight: '600' }}>
+                          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                            <Clock size={14} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#ea580c' }} />
+                            <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: '#ea580c', fontWeight: '600' }}>
                               {formatTimeRemaining(activity.timeRemaining)}
                             </span>
                           </div>
@@ -475,13 +475,13 @@ const CollaborativeLearningWorkspace: React.FC = () => {
 
             {activeView === 'activity' && selectedActivityData && (
               <div>
-                <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                  <h3 /* TODO: Move to external CSS */ style={{ margin: 0, color: '#1a365d', fontWeight: '600' }}>
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                  <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: 0, color: '#1a365d', fontWeight: '600' }}>
                     {getActivityTypeIcon(selectedActivityData.type)} {selectedActivityData.title}
                   </h3>
                   
                   {selectedActivityData.timeRemaining && (
-                    <div /* TODO: Move to external CSS */ style={{ 
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                       background: '#fed7d7',
                       color: '#c53030',
                       padding: '0.5rem 1rem',
@@ -494,26 +494,26 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                   )}
                 </div>
                 
-                <div /* TODO: Move to external CSS */ style={{ 
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                   background: '#f7fafc',
                   padding: '1.5rem',
                   borderRadius: '12px',
                   border: '1px solid #e2e8f0',
                   marginBottom: '1.5rem'
                 }}>
-                  <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 1rem 0' }}>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 1rem 0' }}>
                     {selectedActivityData.description}
                   </p>
                   
                   <div>
-                    <h4 /* TODO: Move to external CSS */ style={{ color: '#2d3748', margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>
+                    <h4 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#2d3748', margin: '0 0 0.5rem 0', fontSize: '0.9rem' }}>
                       Learning Outcomes:
                     </h4>
-                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                       {selectedActivityData.outcomes.map((outcome, index) => (
                         <span 
                           key={index}
-                          /* TODO: Move to external CSS */ style={{
+                          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                             background: '#059669',
                             color: 'white',
                             padding: '0.25rem 0.75rem',
@@ -529,18 +529,18 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                   </div>
                 </div>
 
-                <div /* TODO: Move to external CSS */ style={{ 
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                   background: '#fffbeb',
                   border: '1px solid #f59e0b',
                   borderRadius: '12px',
                   padding: '1rem',
                   textAlign: 'center'
                 }}>
-                  <div /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎯</div>
-                  <p /* TODO: Move to external CSS */ style={{ color: '#92400e', fontWeight: '600', margin: 0 }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎯</div>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#92400e', fontWeight: '600', margin: 0 }}>
                     Active collaboration session in progress
                   </p>
-                  <p /* TODO: Move to external CSS */ style={{ color: '#a16207', fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#a16207', fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
                     Students are engaging with cultural perspectives and peer learning
                   </p>
                 </div>
@@ -548,24 +548,24 @@ const CollaborativeLearningWorkspace: React.FC = () => {
             )}
 
             {activeView === 'cultural-circle' && (
-              <div /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '3rem' }}>
-                <div /* TODO: Move to external CSS */ style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌿</div>
-                <h3 /* TODO: Move to external CSS */ style={{ color: '#1a365d', margin: '0 0 1rem 0' }}>Cultural Circle</h3>
-                <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 2rem 0' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '3rem' }}>
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌿</div>
+                <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#1a365d', margin: '0 0 1rem 0' }}>Cultural Circle</h3>
+                <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: '0 0 2rem 0' }}>
                   A dedicated space for sharing cultural knowledge, stories, and wisdom
                 </p>
                 
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#f0fdfa',
                   border: '1px solid #059669',
                   borderRadius: '12px',
                   padding: '1.5rem',
                   textAlign: 'left'
                 }}>
-                  <h4 /* TODO: Move to external CSS */ style={{ color: '#065f46', margin: '0 0 1rem 0' }}>
+                  <h4 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#065f46', margin: '0 0 1rem 0' }}>
                     Current Focus: Whakatōhea and Environmental Stewardship
                   </h4>
-                  <p /* TODO: Move to external CSS */ style={{ color: '#047857', margin: 0 }}>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#047857', margin: 0 }}>
                     Exploring traditional Māori relationships with the land and how ancient wisdom 
                     guides modern environmental practices.
                   </p>
@@ -575,7 +575,7 @@ const CollaborativeLearningWorkspace: React.FC = () => {
           </div>
 
           {/* Chat Panel */}
-          <div /* TODO: Move to external CSS */ style={{ 
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             background: 'white',
             borderRadius: '16px',
             padding: '1.5rem',
@@ -585,11 +585,11 @@ const CollaborativeLearningWorkspace: React.FC = () => {
             flexDirection: 'column',
             height: '600px'
           }}>
-            <h3 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#1a365d', fontWeight: '600' }}>
+            <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#1a365d', fontWeight: '600' }}>
               💬 Live Discussion
             </h3>
             
-            <div /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               flex: 1,
               overflowY: 'auto',
               display: 'flex',
@@ -611,36 +611,36 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                     }`
                   }}
                 >
-                  <div /* TODO: Move to external CSS */ style={{ 
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                     display: 'flex', 
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     marginBottom: '0.5rem'
                   }}>
-                    <span /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', fontSize: '0.9rem' }}>
+                    <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontWeight: '600', color: '#2d3748', fontSize: '0.9rem' }}>
                       {message.senderName}
                     </span>
-                    <span /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#a0aec0' }}>
+                    <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#a0aec0' }}>
                       {message.timestamp.toLocaleTimeString('en-US', { 
                         hour: '2-digit', 
                         minute: '2-digit' 
                       })}
                     </span>
                   </div>
-                  <p /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0, fontSize: '0.9rem' }}>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#4a5568', margin: 0, fontSize: '0.9rem' }}>
                     {message.message}
                   </p>
                 </div>
               ))}
             </div>
             
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '0.5rem' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '0.5rem' }}>
               <input
                 type="text"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder="Share your thoughts..."
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   flex: 1,
                   padding: '0.75rem',
                   border: '1px solid #e2e8f0',
@@ -677,7 +677,7 @@ const CollaborativeLearningWorkspace: React.FC = () => {
                     setNewMessage('');
                   }
                 }}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   padding: '0.75rem',
                   background: '#059669',
                   color: 'white',

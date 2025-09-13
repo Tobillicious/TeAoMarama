@@ -463,13 +463,13 @@ const AdvancedResourceDiscovery: React.FC = () => {
                         <div className="flex flex-col items-end gap-2 ml-4">
                           <div 
                             className="px-2 py-1 rounded text-xs font-medium text-white"
-                            /* TODO: Move to external CSS */ style={{ backgroundColor: getQualityColor(resource.qualityScore) }}
+                            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getQualityColor(resource.qualityScore) }}
                           >
                             {resource.qualityScore.toFixed(1)}
                           </div>
                           <div 
                             className="px-2 py-1 rounded text-xs font-medium text-white"
-                            /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(resource.difficulty) }}
+                            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(resource.difficulty) }}
                           >
                             {resource.difficulty}
                           </div>

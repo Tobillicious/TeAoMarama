@@ -150,24 +150,24 @@ ${testContent}
   };
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ 
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
       minHeight: '100vh', 
       background: '#f8fafc',
       fontFamily: 'Inter, system-ui, sans-serif'
     }}>
       {/* Header */}
-      <header /* TODO: Move to external CSS */ style={{
+      <header /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)',
         color: 'white',
         padding: '24px 0',
         boxShadow: '0 4px 20px rgba(124, 58, 237, 0.15)'
       }}>
-        <div /* TODO: Move to external CSS */ style={{
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '0 24px'
         }}>
-          <h1 /* TODO: Move to external CSS */ style={{ 
+          <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
             fontSize: '2.25rem', 
             fontWeight: '700', 
             margin: '0 0 8px 0',
@@ -178,20 +178,20 @@ ${testContent}
             <Brain className="w-8 h-8" />
             GLM Model Integration
           </h1>
-          <p /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', opacity: 0.9, margin: '0' }}>
+          <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', opacity: 0.9, margin: '0' }}>
             Advanced reasoning models for educational content enhancement
           </p>
         </div>
       </header>
 
-      <div /* TODO: Move to external CSS */ style={{
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         maxWidth: '1200px',
         margin: '0 auto',
         padding: '24px'
       }}>
         {/* Configuration Section */}
         {!isConfigured && (
-          <div /* TODO: Move to external CSS */ style={{
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'white',
             borderRadius: '12px',
             padding: '32px',
@@ -199,7 +199,7 @@ ${testContent}
             boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             border: '1px solid #e5e7eb'
           }}>
-            <h2 /* TODO: Move to external CSS */ style={{ 
+            <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               fontSize: '1.5rem', 
               fontWeight: '600', 
               marginBottom: '16px',
@@ -211,8 +211,8 @@ ${testContent}
               Configure GLM API Access
             </h2>
             
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
-              <label /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+              <label /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 display: 'block', 
                 fontSize: '0.875rem', 
                 fontWeight: '500', 
@@ -226,7 +226,7 @@ ${testContent}
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 placeholder="Enter your Zhipu AI API key..."
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   width: '100%',
                   padding: '12px',
                   border: '1px solid #d1d5db',
@@ -236,11 +236,11 @@ ${testContent}
               />
             </div>
             
-            <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               <button
                 onClick={configureGLM}
                 disabled={!apiKey}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: apiKey ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
                   color: 'white',
                   border: 'none',
@@ -260,7 +260,7 @@ ${testContent}
               
               <button
                 onClick={() => setDemoMode(true)}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   color: '#7c3aed',
                   border: '2px solid #7c3aed',
@@ -279,7 +279,7 @@ ${testContent}
               </button>
             </div>
             
-            <p /* TODO: Move to external CSS */ style={{ 
+            <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               fontSize: '0.875rem', 
               color: '#6b7280', 
               marginTop: '12px',
@@ -291,27 +291,27 @@ ${testContent}
         )}
 
         {/* Model Status Cards */}
-        <div /* TODO: Move to external CSS */ style={{
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '20px',
           marginBottom: '24px'
         }}>
           {glmStatus.map((model, index) => (
-            <div key={model.model} /* TODO: Move to external CSS */ style={{
+            <div key={model.model} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'white',
               borderRadius: '12px',
               padding: '24px',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
               border: '1px solid #e5e7eb'
             }}>
-              <div /* TODO: Move to external CSS */ style={{ 
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: '12px', 
                 marginBottom: '16px' 
               }}>
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
@@ -322,13 +322,13 @@ ${testContent}
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <Brain className="w-5 h-5" /* TODO: Move to external CSS */ style={{ color: 'white' }} />
+                  <Brain className="w-5 h-5" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: 'white' }} />
                 </div>
                 <div>
-                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
+                  <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.25rem', fontWeight: '600', margin: '0' }}>
                     {model.model}
                   </h3>
-                  <p /* TODO: Move to external CSS */ style={{ 
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                     fontSize: '0.875rem', 
                     color: model.status === 'ready' ? '#059669' : 
                            model.status === 'processing' ? '#d97706' : 
@@ -341,15 +341,15 @@ ${testContent}
                 </div>
               </div>
               
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                <p /* TODO: Move to external CSS */ style={{ margin: '0 0 4px 0' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>
+                <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 4px 0' }}>
                   <strong>Enhancements:</strong> {model.totalEnhancements}
                 </p>
-                <p /* TODO: Move to external CSS */ style={{ margin: '0 0 4px 0' }}>
+                <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 4px 0' }}>
                   <strong>Avg Quality:</strong> {model.averageQuality}%
                 </p>
                 {model.lastUsed && (
-                  <p /* TODO: Move to external CSS */ style={{ margin: '0' }}>
+                  <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0' }}>
                     <strong>Last Used:</strong> {new Date(model.lastUsed).toLocaleDateString()}
                   </p>
                 )}
@@ -360,14 +360,14 @@ ${testContent}
 
         {/* Testing Interface */}
         {(isConfigured || demoMode) && (
-          <div /* TODO: Move to external CSS */ style={{
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             background: 'white',
             borderRadius: '12px',
             padding: '32px',
             boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
             border: '1px solid #e5e7eb'
           }}>
-            <h2 /* TODO: Move to external CSS */ style={{ 
+            <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
               fontSize: '1.5rem', 
               fontWeight: '600', 
               marginBottom: '24px',
@@ -379,8 +379,8 @@ ${testContent}
               Test GLM Enhancement
             </h2>
 
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
-              <label /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+              <label /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 display: 'block', 
                 fontSize: '0.875rem', 
                 fontWeight: '500', 
@@ -392,7 +392,7 @@ ${testContent}
               <select
                 value={selectedModel}
                 onChange={(e) => setSelectedModel(e.target.value as 'glm-4.5' | 'glm-z1')}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   padding: '8px 12px',
                   border: '1px solid #d1d5db',
                   borderRadius: '6px',
@@ -405,8 +405,8 @@ ${testContent}
               </select>
             </div>
 
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
-              <label /* TODO: Move to external CSS */ style={{ 
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+              <label /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                 display: 'block', 
                 fontSize: '0.875rem', 
                 fontWeight: '500', 
@@ -420,7 +420,7 @@ ${testContent}
                 onChange={(e) => setTestContent(e.target.value)}
                 placeholder="Paste educational content here to test GLM enhancement..."
                 rows={6}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   width: '100%',
                   padding: '12px',
                   border: '1px solid #d1d5db',
@@ -432,9 +432,9 @@ ${testContent}
               />
             </div>
 
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '24px' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '24px' }}>
               {demoMode && !isConfigured && (
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#eff6ff',
                   border: '1px solid #3b82f6',
                   borderRadius: '8px',
@@ -448,7 +448,7 @@ ${testContent}
               )}
               
               {lastError && (
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#fef2f2',
                   border: '1px solid #fca5a5',
                   borderRadius: '8px',
@@ -464,7 +464,7 @@ ${testContent}
               <button
                 onClick={testGLMEnhancement}
                 disabled={!testContent || isEnhancing}
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: testContent && !isEnhancing ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
                   color: 'white',
                   border: 'none',
@@ -487,7 +487,7 @@ ${testContent}
 
             {enhancedContent && (
               <div>
-                <h3 /* TODO: Move to external CSS */ style={{ 
+                <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: '600', 
                   marginBottom: '12px',
@@ -495,7 +495,7 @@ ${testContent}
                 }}>
                   Enhanced Content
                 </h3>
-                <div /* TODO: Move to external CSS */ style={{
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#f8fafc',
                   border: '1px solid #e2e8f0',
                   borderRadius: '8px',

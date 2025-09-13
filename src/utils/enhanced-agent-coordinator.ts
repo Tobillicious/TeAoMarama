@@ -505,7 +505,7 @@ class EnhancedAgentCoordinator {
 }
 
 // Export the enhanced agent coordinator
-export // const enhancedAgentCoordinator = new EnhancedAgentCoordinator();
+export // // // const enhancedAgentCoordinator = new EnhancedAgentCoordinator();
 
 // Export types for external use
 export type { AgentCapability, AgentTask, CoordinationMetrics };

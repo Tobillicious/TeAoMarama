@@ -33,7 +33,7 @@ const WorkingLogin: React.FC = () => {
 
   return (
     <div
-      /* TODO: Move to external CSS */ style={{
+      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -43,7 +43,7 @@ const WorkingLogin: React.FC = () => {
       }}
     >
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           background: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(20px)',
           borderRadius: '24px',
@@ -54,10 +54,10 @@ const WorkingLogin: React.FC = () => {
           border: '1px solid rgba(255, 255, 255, 0.2)',
         }}
       >
-        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌿</div>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌿</div>
           <h1
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               fontSize: '2rem',
               fontWeight: '700',
               color: '#1a365d',
@@ -66,11 +66,11 @@ const WorkingLogin: React.FC = () => {
           >
             Te Kura o TeAoMarama
           </h1>
-          <p /* TODO: Move to external CSS */ style={{ color: '#718096', margin: 0 }}>The School of Enlightenment</p>
+          <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#718096', margin: 0 }}>The School of Enlightenment</p>
         </div>
 
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             display: 'flex',
             gap: '1rem',
             marginBottom: '2rem',
@@ -110,10 +110,10 @@ const WorkingLogin: React.FC = () => {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} /* TODO: Move to external CSS */ style={{ marginBottom: '2rem' }}>
-          <div /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
+        <form onSubmit={handleSubmit} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '2rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
             <label
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 display: 'block',
                 marginBottom: '0.5rem',
                 color: '#2d3748',
@@ -129,7 +129,7 @@ const WorkingLogin: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email"
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 width: '100%',
                 padding: '0.75rem 1rem',
                 border: '2px solid #e2e8f0',
@@ -140,9 +140,9 @@ const WorkingLogin: React.FC = () => {
             />
           </div>
 
-          <div /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '1.5rem' }}>
             <label
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 display: 'block',
                 marginBottom: '0.5rem',
                 color: '#2d3748',
@@ -158,7 +158,7 @@ const WorkingLogin: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Enter your password"
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 width: '100%',
                 padding: '0.75rem 1rem',
                 border: '2px solid #e2e8f0',
@@ -171,7 +171,7 @@ const WorkingLogin: React.FC = () => {
 
           <button
             type="submit"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               width: '100%',
               padding: '1rem',
               background: 'linear-gradient(135deg, #38b2ac, #319795)',
@@ -188,7 +188,7 @@ const WorkingLogin: React.FC = () => {
         </form>
 
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             textAlign: 'center',
             marginBottom: '2rem',
             padding: '1.5rem',
@@ -197,13 +197,13 @@ const WorkingLogin: React.FC = () => {
             border: '1px solid #f6ad55',
           }}
         >
-          <h4 /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#c05621', fontSize: '1rem' }}>
+          <h4 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ margin: '0 0 1rem 0', color: '#c05621', fontSize: '1rem' }}>
             🎭 Try Demo Mode
           </h4>
-          <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem' }}>
             <button
               onClick={() => handleDemoLogin('teacher')}
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 flex: 1,
                 padding: '0.75rem 1rem',
                 border: '2px solid #f6ad55',
@@ -219,7 +219,7 @@ const WorkingLogin: React.FC = () => {
             </button>
             <button
               onClick={() => handleDemoLogin('student')}
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 flex: 1,
                 padding: '0.75rem 1rem',
                 border: '2px solid #f6ad55',
@@ -236,10 +236,10 @@ const WorkingLogin: React.FC = () => {
           </div>
         </div>
 
-        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center' }}>
           <a
             href="/basic-test"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               color: '#38b2ac',
               fontWeight: '600',
               textDecoration: 'none',

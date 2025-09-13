@@ -388,7 +388,7 @@ class ComprehensiveSearchEngine {
 }
 
 // Export singleton instance
-export const comprehensiveSearchEngine = new ComprehensiveSearchEngine();
+export // // const comprehensiveSearchEngine = new ComprehensiveSearchEngine();
 
 // Export types and interfaces
 export type { SearchAnalytics, SearchFilters, SearchOptions, SearchResult, SearchSuggestion };

@@ -318,31 +318,31 @@ const RealTimeTeachingAnalytics: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="text-center">
-                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.overallEngagement) }}>
+                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.overallEngagement) }}>
                   {analyticsData.currentLesson.overallEngagement}%
                 </div>
                 <div className="text-sm text-gray-600">Overall Engagement</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.comprehensionRate) }}>
+                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.comprehensionRate) }}>
                   {analyticsData.currentLesson.comprehensionRate}%
                 </div>
                 <div className="text-sm text-gray-600">Comprehension</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.culturalResonance) }}>
+                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.culturalResonance) }}>
                   {analyticsData.currentLesson.culturalResonance}%
                 </div>
                 <div className="text-sm text-gray-600">Cultural Resonance</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.pacingScore) }}>
+                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.pacingScore) }}>
                   {analyticsData.currentLesson.pacingScore}%
                 </div>
                 <div className="text-sm text-gray-600">Pacing Score</div>
               </div>
               <div className="text-center">
-                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.differentiationEffectiveness) }}>
+                <div className={`text-2xl font-bold`} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getEngagementColor(analyticsData.currentLesson.differentiationEffectiveness) }}>
                   {analyticsData.currentLesson.differentiationEffectiveness}%
                 </div>
                 <div className="text-sm text-gray-600">Differentiation</div>

@@ -539,7 +539,7 @@ const LessonManager: React.FC = () => {
                     <span className="year-level">{lesson.yearLevel}</span>
                     <span className="subject-badge">{lesson.subject}</span>
                   </div>
-                  <div className="quality-badge" /* TODO: Move to external CSS */ style={{ backgroundColor: qualityBadge.color }}>
+                  <div className="quality-badge" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: qualityBadge.color }}>
                     {qualityBadge.icon} {qualityBadge.label}
                   </div>
                 </div>

@@ -369,9 +369,9 @@ const DualRoleLogin: React.FC = () => {
                       key={role.value}
                       className={`role-option ${form.role === role.value ? 'selected' : ''}`}
                       onClick={() => handleInputChange('role', role.value)}
-                      /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                     >
-                      <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
+                      <div className="role-icon" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: role.color }}>
                         {role.icon}
                       </div>
                       <span>{role.label}</span>
@@ -501,9 +501,9 @@ const DualRoleLogin: React.FC = () => {
                           role: role.value as 'student' | 'teacher' | 'kaitiaki',
                         }))
                       }
-                      /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                     >
-                      <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
+                      <div className="role-icon" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: role.color }}>
                         {role.icon}
                       </div>
                       <span>{role.label}</span>

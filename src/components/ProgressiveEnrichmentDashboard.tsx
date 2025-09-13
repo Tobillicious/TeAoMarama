@@ -266,7 +266,7 @@ const ProgressiveEnrichmentDashboard: React.FC = () => {
                   <h3 className="font-bold text-gray-900 flex items-center gap-2">
                     <div 
                       className="w-3 h-3 rounded-full"
-                      /* TODO: Move to external CSS */ style={{ backgroundColor: getAgentTypeColor(agent.type) }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getAgentTypeColor(agent.type) }}
                     ></div>
                     {agent.name}
                   </h3>
@@ -332,7 +332,7 @@ const ProgressiveEnrichmentDashboard: React.FC = () => {
                   <div className="flex items-center gap-4">
                     <div 
                       className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
-                      /* TODO: Move to external CSS */ style={{ backgroundColor: getPassStatusColor(pass.status) }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getPassStatusColor(pass.status) }}
                     >
                       {pass.status === 'completed' ? (
                         <CheckCircle className="w-5 h-5" />
@@ -442,7 +442,7 @@ const ProgressiveEnrichmentDashboard: React.FC = () => {
                   <div className="flex items-center gap-2 text-sm text-gray-600">
                     <div 
                       className="w-2 h-2 rounded-full"
-                      /* TODO: Move to external CSS */ style={{ backgroundColor: getAgentTypeColor(activeAgents.find(a => a.id === resource.assignedAgent)?.type || 'human') }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getAgentTypeColor(activeAgents.find(a => a.id === resource.assignedAgent)?.type || 'human') }}
                     ></div>
                     Assigned to: {activeAgents.find(a => a.id === resource.assignedAgent)?.name}
                   </div>

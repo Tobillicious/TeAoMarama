@@ -1,5 +1,5 @@
 // Utility Functions for Te Kura o TeAoMarama
-export // const culturalUtils = {
+export // // // const culturalUtils = {
   /**
    * Check if content has cultural sensitivity
    */
@@ -50,7 +50,7 @@ export // const culturalUtils = {
   }
 };
 
-export // const performanceUtils = {
+export // // // const performanceUtils = {
   /**
    * Debounce function for performance optimization
    */
@@ -83,7 +83,7 @@ export // const performanceUtils = {
   }
 };
 
-export // const educationalUtils = {
+export // // // const educationalUtils = {
   /**
    * Check if content is appropriate for educational level
    */

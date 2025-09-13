@@ -48,7 +48,7 @@ const ResourceContentDisplay: React.FC<ResourceContentDisplayProps> = ({
             <div className="metric-content">
               <div
                 className="metric-value"
-                /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.qualityScore, 15) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.qualityScore, 15) }}
               >
                 {resource.enhancement.qualityScore.toFixed(1)}/15
               </div>
@@ -66,7 +66,7 @@ const ResourceContentDisplay: React.FC<ResourceContentDisplayProps> = ({
             <div className="metric-content">
               <div
                 className="metric-value"
-                /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.culturalAuthenticity) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.culturalAuthenticity) }}
               >
                 {resource.enhancement.culturalAuthenticity.toFixed(1)}/10
               </div>
@@ -84,7 +84,7 @@ const ResourceContentDisplay: React.FC<ResourceContentDisplayProps> = ({
             <div className="metric-content">
               <div
                 className="metric-value"
-                /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.pedagogicalDepth) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.pedagogicalDepth) }}
               >
                 {resource.enhancement.pedagogicalDepth.toFixed(1)}/10
               </div>
@@ -102,7 +102,7 @@ const ResourceContentDisplay: React.FC<ResourceContentDisplayProps> = ({
             <div className="metric-content">
               <div
                 className="metric-value"
-                /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.progressiveIndex) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getQualityColor(resource.enhancement.progressiveIndex) }}
               >
                 {resource.enhancement.progressiveIndex.toFixed(1)}/10
               </div>
