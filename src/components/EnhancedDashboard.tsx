@@ -1,21 +1,6 @@
 import { motion } from 'framer-motion';
-import {
-  Award,
-  BarChart3,
-  Bell,
-  BookOpen,
-  CheckCircle,
-  Clock,
-  Globe,
-  Heart,
-  Play,
-  Settings,
-  Shield,
-  Star,
-  TrendingUp,
-  Users,
-  Zap,
-} from 'lucide-react';
+import type { Award, BarChart3, Bell, BookOpen, CheckCircle, Clock, Globe, Heart, Play, Settings, Shield, Star, TrendingUp, Users, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import './EnhancedDashboard.css';
 

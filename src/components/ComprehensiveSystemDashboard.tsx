@@ -462,7 +462,7 @@ const ComprehensiveSystemDashboard: React.FC = () => {
                     <h3>{metric.name}</h3>
                     <span
                       className="status-indicator"
-                      style={{ backgroundColor: getStatusColor(metric.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(metric.status) }}
                     ></span>
                   </div>
                   <div className="metric-value">
@@ -509,7 +509,7 @@ const ComprehensiveSystemDashboard: React.FC = () => {
                     </div>
                     <span
                       className="status-badge"
-                      style={{ backgroundColor: getStatusColor(component.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(component.status) }}
                     >
                       {component.status}
                     </span>

@@ -33,7 +33,7 @@ export interface EnhancementPass {
   passNumber: number;
   kaiako: string;
   specialization: string;
-  enhancedContent: any;
+  enhancedContent: unknown;
   culturalElements: string[];
   pedagogicalTechniques: string[];
   progressiveFeatures: string[];
@@ -190,7 +190,7 @@ export class ProgressiveMultiPassEnricher {
     }
   };
 
-  async enrichResourceWithMultiplePasses(resource: any): Promise<ProgressiveResource> {
+  async enrichResourceWithMultiplePasses(resource: unknown): Promise<ProgressiveResource> {
     const progressiveResource: ProgressiveResource = {
       id: resource.id,
       title: resource.title,
@@ -535,4 +535,4 @@ export class ProgressiveMultiPassEnricher {
   }
 }
 
-export const progressiveEnricher = new ProgressiveMultiPassEnricher();
+export // const progressiveEnricher = new ProgressiveMultiPassEnricher();

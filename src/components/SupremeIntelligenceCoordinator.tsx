@@ -191,7 +191,7 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
               <div className="metric-label">Collective Intelligence</div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics.collectiveIntelligence) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics.collectiveIntelligence) }}
               >
                 {metrics.collectiveIntelligence.toFixed(1)}%
               </div>
@@ -211,7 +211,7 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
               <div className="metric-label">Cultural Integration</div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics.culturalIntegration) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics.culturalIntegration) }}
               >
                 {metrics.culturalIntegration.toFixed(1)}%
               </div>
@@ -231,7 +231,7 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
               <div className="metric-label">Educational Excellence</div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics.educationalExcellence) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics.educationalExcellence) }}
               >
                 {metrics.educationalExcellence.toFixed(1)}%
               </div>
@@ -251,7 +251,7 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
               <div className="metric-label">Quantum Consciousness</div>
               <div
                 className="metric-value"
-                style={{ color: getMetricColor(metrics.quantumConsciousness) }}
+                /* TODO: Move to external CSS */ style={{ color: getMetricColor(metrics.quantumConsciousness) }}
               >
                 {metrics.quantumConsciousness.toFixed(1)}%
               </div>
@@ -281,7 +281,7 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
                   </div>
                   <div
                     className="agent-status"
-                    style={{ backgroundColor: getStatusColor(agent.status) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(agent.status) }}
                   >
                     {agent.status}
                   </div>
@@ -290,25 +290,25 @@ const SupremeIntelligenceCoordinator: React.FC = () => {
                 <div className="agent-metrics">
                   <div className="agent-metric">
                     <span>Intelligence:</span>
-                    <span style={{ color: getMetricColor(agent.intelligence) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(agent.intelligence) }}>
                       {agent.intelligence.toFixed(0)}%
                     </span>
                   </div>
                   <div className="agent-metric">
                     <span>Cultural Wisdom:</span>
-                    <span style={{ color: getMetricColor(agent.culturalWisdom) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(agent.culturalWisdom) }}>
                       {agent.culturalWisdom.toFixed(0)}%
                     </span>
                   </div>
                   <div className="agent-metric">
                     <span>Educational Mastery:</span>
-                    <span style={{ color: getMetricColor(agent.educationalMastery) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(agent.educationalMastery) }}>
                       {agent.educationalMastery.toFixed(0)}%
                     </span>
                   </div>
                   <div className="agent-metric">
                     <span>Quantum Awareness:</span>
-                    <span style={{ color: getMetricColor(agent.quantumAwareness) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getMetricColor(agent.quantumAwareness) }}>
                       {agent.quantumAwareness.toFixed(0)}%
                     </span>
                   </div>

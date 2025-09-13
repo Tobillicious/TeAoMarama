@@ -338,22 +338,22 @@ const AdvancedCulturalIntegration: React.FC = () => {
                       {protocol.status}
                     </span>
                   </h3>
-                  <p style={{ color: '#d0d0d0', marginBottom: '1rem', fontStyle: 'italic' }}>
+                  <p /* TODO: Move to external CSS */ style={{ color: '#d0d0d0', marginBottom: '1rem', fontStyle: 'italic' }}>
                     {protocol.maoriName}
                   </p>
-                  <p style={{ color: '#b0b0b0', marginBottom: '1rem' }}>{protocol.description}</p>
+                  <p /* TODO: Move to external CSS */ style={{ color: '#b0b0b0', marginBottom: '1rem' }}>{protocol.description}</p>
                   <div
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
                     }}
                   >
-                    <span style={{ color: '#b0b0b0', fontSize: '0.9rem' }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: '#b0b0b0', fontSize: '0.9rem' }}>
                       Compliance: {protocol.compliance}%
                     </span>
                     <span
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         color: getRiskColor(protocol.riskLevel),
                         fontSize: '0.9rem',
                         fontWeight: '600',
@@ -363,7 +363,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
                     </span>
                   </div>
                   <div
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       marginTop: '0.5rem',
                       color: '#b0b0b0',
                       fontSize: '0.8rem',
@@ -400,7 +400,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
                     </span>
                   </div>
                   <div
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       marginTop: '0.5rem',
                       color: '#b0b0b0',
                       fontSize: '0.8rem',
@@ -430,7 +430,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
                     <div className="progress-text">{module.progress}% Complete</div>
                   </div>
                   <div
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
@@ -438,7 +438,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
                     }}
                   >
                     <span
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         color: '#4ecdc4',
                         fontSize: '0.9rem',
                         fontWeight: '600',
@@ -447,7 +447,7 @@ const AdvancedCulturalIntegration: React.FC = () => {
                       Cultural Alignment: {module.culturalAlignment}%
                     </span>
                     <span
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         color: '#b0b0b0',
                         fontSize: '0.8rem',
                       }}

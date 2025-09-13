@@ -1,19 +1,8 @@
-import {
-  Award,
-  BookOpen,
-  Clock,
-  Compass,
-  FileText,
-  Heart,
-  Map,
-  Play,
-  Search,
-  Sparkles,
-  Target,
-  TrendingUp,
-} from 'lucide-react';
+import type { Award, BookOpen, Clock, Compass, FileText, Heart, Map, Play, Search, Sparkles, Target, TrendingUp } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loadEnrichedResources } from '../utils/enriched-resource-loader';
 import './TreasureNavigation.css';
 
@@ -24,11 +13,11 @@ interface TreasureCategory {
   icon: React.ReactNode;
   color: string;
   count: number;
-  resources: any[];
+  resources: unknown[];
 }
 
 interface TreasureNavigationProps {
-  onResourceSelect?: (resource: any) => void;
+  onResourceSelect?: (resource: unknown) => void;
   showQuickAccess?: boolean;
   showTrending?: boolean;
   showCultural?: boolean;
@@ -143,7 +132,7 @@ const TreasureNavigation: React.FC<TreasureNavigationProps> = ({
     return matchesSearch && matchesCategory;
   });
 
-  const handleResourceClick = (resource: any) => {
+  const handleResourceClick = (resource: unknown) => {
     if (onResourceSelect) {
       onResourceSelect(resource);
     } else {

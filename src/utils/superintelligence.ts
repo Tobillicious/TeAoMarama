@@ -501,7 +501,7 @@ function initializeCulturalIntelligence(globalObj: GlobalWindow, config: Superin
 }
 
 // Simple, focused utility functions that deliver immediate value
-export function measureHumanSuccess() {
+export function measureHumanSuccess() : void {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const globalObj = (typeof window !== 'undefined' ? window : global) as any;
   if (globalObj.Superintelligence?.measureHumanSuccess) {
@@ -510,7 +510,7 @@ export function measureHumanSuccess() {
   return { overallSuccess: '0.000', status: 'system-not-initialized' };
 }
 
-export function generateHope() {
+export function generateHope() : void {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const globalObj = (typeof window !== 'undefined' ? window : global) as any;
   if (globalObj.Superintelligence?.generateHope) {

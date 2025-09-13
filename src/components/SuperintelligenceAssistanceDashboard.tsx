@@ -397,7 +397,7 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                     <h3>{agent.name}</h3>
                     <span
                       className="agent-status"
-                      style={{ backgroundColor: getStatusColor(agent.status) }}
+                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(agent.status) }}
                     >
                       {agent.status}
                     </span>
@@ -476,13 +476,13 @@ const SuperintelligenceAssistanceDashboard: React.FC = () => {
                       <div className="task-meta">
                         <span
                           className="task-priority"
-                          style={{ backgroundColor: getPriorityColor(task.priority) }}
+                          /* TODO: Move to external CSS */ style={{ backgroundColor: getPriorityColor(task.priority) }}
                         >
                           {task.priority}
                         </span>
                         <span
                           className="task-status"
-                          style={{ backgroundColor: getTaskStatusColor(task.status) }}
+                          /* TODO: Move to external CSS */ style={{ backgroundColor: getTaskStatusColor(task.status) }}
                         >
                           {task.status.replace('_', ' ')}
                         </span>

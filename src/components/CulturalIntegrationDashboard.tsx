@@ -1,21 +1,5 @@
-import {
-  AlertCircle,
-  Award,
-  BookOpen,
-  Calendar,
-  CheckCircle,
-  ChevronDown,
-  ChevronRight,
-  Download,
-  Globe,
-  Heart,
-  Info,
-  Languages,
-  Search,
-  Share2,
-  Shield,
-  Users,
-} from 'lucide-react';
+import type { AlertCircle, Award, BookOpen, Calendar, CheckCircle, ChevronDown, ChevronRight, Download, Globe, Heart, Info, Languages, Search, Share2, Shield, Users } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useState } from 'react';
 import './CulturalIntegrationDashboard.css';
 

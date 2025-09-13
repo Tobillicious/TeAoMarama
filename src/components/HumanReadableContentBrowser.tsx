@@ -202,7 +202,7 @@ const HumanReadableContentBrowser: React.FC = () => {
         </div>
 
         <div className="filter-group">
-          <select aria-label="Content type filter"
+          <select 
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
             className="filter-select"
@@ -283,7 +283,7 @@ const HumanReadableContentBrowser: React.FC = () => {
           )}
         </div>
 
-        <div className="content-grid" role="grid" aria-label="Content cards" role="grid" aria-label="Educational content grid">
+        <div className="content-grid" role="grid" aria-label="Educational content grid">
           {filteredContent.map((content) => (
             <div
               key={content.id}

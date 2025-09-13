@@ -1,17 +1,8 @@
-import {
-  BookOpen,
-  GraduationCap,
-  Home,
-  LogOut,
-  Menu,
-  Settings,
-  Shield,
-  User,
-  Users,
-  X,
-} from 'lucide-react';
+import type { BookOpen, GraduationCap, Home, LogOut, Menu, Settings, Shield, User, Users, X } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 
 const RoleAdaptiveNavigation: React.FC = () => {

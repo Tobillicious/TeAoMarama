@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Breadcrumbs from './Breadcrumbs';
 import './LessonViewer.css';
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 import Navigation from './Navigation';
 import './UnitDetail.css';
@@ -208,7 +209,7 @@ const UnitDetail: React.FC = () => {
               <span className="unit-badge">Unit {unit.id.split('-')[1]}</span>
               <span 
                 className="unit-difficulty"
-                style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
               >
                 {unit.difficulty}
               </span>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 import '../styles/next-level-design-system.css';
 import './Navigation.css';

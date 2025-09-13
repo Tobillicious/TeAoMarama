@@ -3,7 +3,8 @@
 
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useState } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import type { Navigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 import { supabase } from '../supabaseClient';
 

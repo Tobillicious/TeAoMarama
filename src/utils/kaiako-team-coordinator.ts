@@ -277,7 +277,7 @@ export class KaiakoTeamCoordinator {
     return this.qualityThreshold;
   }
 
-  getTeamSummary(): any {
+  getTeamSummary(): unknown {
     const total = this.teamMembers.size;
     const specialists = this.getAllTeamMembers().filter(m => m.role === 'specialist').length;
     const coordinators = this.getAllTeamMembers().filter(m => m.role === 'coordinator').length;

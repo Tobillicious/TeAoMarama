@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { globalExtensionSystem, type ExtensionReport } from '../utils/advanced-extension-system';
+import type { ExtensionReport } from '../utils/advanced-extension-system';
+import { globalExtensionSystem } from '../utils/advanced-extension-system';
 import { globalMCPSystem } from '../utils/advanced-mcp-system';
 import './AdvancedSystemDashboard.css';
 

@@ -134,7 +134,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     return (
       <div 
         ref={imgRef}
-        style={{ ...containerStyle, ...placeholderStyle }}
+        /* TODO: Move to external CSS */ style={{ ...containerStyle, ...placeholderStyle }}
         className={className}
         role="img"
         aria-label={alt}
@@ -149,7 +149,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       {/* Placeholder */}
       {!isLoaded && (
         <div 
-          style={{
+          /* TODO: Move to external CSS */ style={{
             ...placeholderStyle,
             position: 'absolute',
             top: 0,

@@ -704,7 +704,7 @@ class SuperintelligenceAssistanceCoordinator {
 }
 
 // Export singleton instance
-export const superintelligenceAssistanceCoordinator = new SuperintelligenceAssistanceCoordinator();
+export // const superintelligenceAssistanceCoordinator = new SuperintelligenceAssistanceCoordinator();
 
 // Export types for external use
 export type { AssistanceModule, AssistanceResult, ComprehensiveMetrics };

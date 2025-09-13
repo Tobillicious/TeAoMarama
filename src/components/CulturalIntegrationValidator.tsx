@@ -275,7 +275,7 @@ const CulturalIntegrationValidator: React.FC = () => {
 
   const [selectedResource, setSelectedResource] = useState<ValidationResult | null>(null);
 
-  const validateResource = async (resourceId: string) => {
+  // const validateResource = async (resourceId: string) => {
     // Simulated validation process
     console.log(`Starting cultural validation for resource: ${resourceId}`);
     
@@ -449,7 +449,7 @@ const CulturalIntegrationValidator: React.FC = () => {
                       <span className="text-lg font-bold">{result.overallScore}/10</span>
                       <div 
                         className="px-3 py-1 rounded-full text-xs font-medium text-white"
-                        style={{ backgroundColor: getSafetyLevelColor(result.culturalSafetyLevel) }}
+                        /* TODO: Move to external CSS */ style={{ backgroundColor: getSafetyLevelColor(result.culturalSafetyLevel) }}
                       >
                         {result.culturalSafetyLevel.replace('-', ' ')}
                       </div>
@@ -472,7 +472,7 @@ const CulturalIntegrationValidator: React.FC = () => {
                           {validationCriteria.find(c => c.id === criteria.criteriaId)?.criterion}
                         </span>
                       </div>
-                      <span className="text-sm font-bold" style={{ color: getStatusColor(criteria.status) }}>
+                      <span className="text-sm font-bold" /* TODO: Move to external CSS */ style={{ color: getStatusColor(criteria.status) }}>
                         {criteria.score}/10
                       </span>
                     </div>

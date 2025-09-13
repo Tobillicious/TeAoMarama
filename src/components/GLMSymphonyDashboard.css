@@ -1,0 +1,428 @@
+.glm-symphony-dashboard {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #1a365d;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin: 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Conductor Card */
+.conductor-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.conductor-card h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.conductor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.conductor-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.conductor-role {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.conductor-status,
+.conductor-performance,
+.conductor-intelligence {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.status.active {
+  color: #68d391;
+  font-weight: 600;
+}
+
+.status.processing {
+  color: #f6e05e;
+  font-weight: 600;
+}
+
+.status.inactive {
+  color: #fc8181;
+  font-weight: 600;
+}
+
+/* Orchestra Card */
+.orchestra-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.orchestra-card h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.orchestra-members {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.orchestra-member {
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.member-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.member-name {
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.member-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.performance {
+  font-weight: 600;
+  color: #38a169;
+}
+
+.member-specialization {
+  font-size: 0.9rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Performance Card */
+.performance-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.performance-card h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.metric {
+  text-align: center;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* Cultural Card */
+.cultural-card {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cultural-card h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cultural-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cultural-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.cultural-label {
+  font-weight: 500;
+}
+
+.cultural-value {
+  font-weight: 600;
+}
+
+/* Config Card */
+.config-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.config-card h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.config-section label {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.config-section input {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.config-section input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.mode-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.demo-mode {
+  color: #f6ad55;
+  font-weight: 600;
+}
+
+.production-mode {
+  color: #48bb78;
+  font-weight: 600;
+}
+
+/* Actions Card */
+.actions-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.actions-card h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.orchestrate-btn,
+.enhance-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.orchestrate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.orchestrate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.enhance-btn {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+}
+
+.enhance-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+}
+
+.orchestrate-btn:disabled,
+.enhance-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Enhancement Result */
+.enhancement-result {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  margin-top: 2rem;
+}
+
+.enhancement-result h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.result-content {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.result-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glm-symphony-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .performance-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .conductor-card,
+  .orchestra-card,
+  .performance-card,
+  .cultural-card,
+  .config-card,
+  .actions-card {
+    padding: 1.5rem;
+  }
+}

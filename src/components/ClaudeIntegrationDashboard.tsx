@@ -68,7 +68,7 @@ const globalClaudeIntegration = {
     lastHeartbeat: Date.now(),
     integrationHealth: 95,
   }),
-  assignSuperintelligentTask: (task: any) => {
+  assignSuperintelligentTask: (task: unknown) => {
     console.log('🧠 Assigning superintelligent task:', task);
   },
   startIntegration: () => console.log('🧠 Claude integration started'),
@@ -205,7 +205,7 @@ const ClaudeIntegrationDashboard: React.FC = () => {
           <h3>🧠 Integration Health</h3>
           <div
             className="status-value"
-            style={{ color: getHealthColor(integrationSummary?.integrationHealth || 0) }}
+            /* TODO: Move to external CSS */ style={{ color: getHealthColor(integrationSummary?.integrationHealth || 0) }}
           >
             {Math.round(integrationSummary?.integrationHealth || 0)}%
           </div>
@@ -216,7 +216,7 @@ const ClaudeIntegrationDashboard: React.FC = () => {
           <h3>🌟 Superintelligence</h3>
           <div
             className="status-value"
-            style={{
+            /* TODO: Move to external CSS */ style={{
               color: integrationSummary?.superintelligenceConnection ? '#10b981' : '#ef4444',
             }}
           >
@@ -301,7 +301,7 @@ const ClaudeIntegrationDashboard: React.FC = () => {
                 <h3>{task.description}</h3>
                 <div
                   className="task-complexity"
-                  style={{ color: getComplexityColor(task.complexity) }}
+                  /* TODO: Move to external CSS */ style={{ color: getComplexityColor(task.complexity) }}
                 >
                   {task.complexity.toUpperCase()}
                 </div>

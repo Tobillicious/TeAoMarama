@@ -4,14 +4,16 @@ import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import SimpleNavigation from './components/SimpleNavigation';
-import {
-  performanceMonitor,
-  registerServiceWorker,
-  useMemoryOptimization,
-} from './utils/performance-optimizer';
+// Temporarily disabled to fix critical errors
+// import {
+//   performanceMonitor,
+//   registerServiceWorker,
+//   useMemoryOptimization,
+// } from './utils/performance-optimizer';
 
 // Essential pages only - no duplicates
-const Home = lazy(() => import('./pages/Home'));
+const HomeMinimal = lazy(() => import('./App-Minimal'));
+const Home = lazy(() => import('./pages/Home-Simple'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
@@ -23,6 +25,10 @@ const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadabl
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
+// Temporarily disabled due to missing dependencies
+// const ComprehensiveSearchInterface = lazy(
+//   () => import('./components/ComprehensiveSearchInterface'),
+// );
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Educational content - keep Year 8 only for now
@@ -34,43 +40,31 @@ const AdvancedAnalytics = lazy(() => import('./components/AdvancedAnalyticsDashb
 
 // Superintelligence and Advanced Features
 const SuperintelligenceDashboard = lazy(() => import('./components/SuperintelligenceDashboard'));
-const SuperIntelligenceCoordinator = lazy(
-  () => import('./components/SuperIntelligenceCoordinator'),
-);
 const MultimediaStudio = lazy(() => import('./components/MultimediaStudio'));
 const AssessmentHub = lazy(() => import('./components/AdvancedStudentAnalytics')); // Using available component
 const PlatformAuditDashboard = lazy(() => import('./components/PlatformAuditDashboard'));
 const GLMModelDashboard = lazy(() => import('./components/GLMModelDashboard'));
+const GLMSymphonyDashboard = lazy(() => import('./components/GLMSymphonyDashboard'));
+const QualityFilteringHarmonyDashboard = lazy(
+  () => import('./components/QualityFilteringHarmonyDashboard'),
+);
+const FunctionalityTest = lazy(() => import('./pages/FunctionalityTest'));
+const SimpleTest = lazy(() => import('./pages/SimpleTest'));
+const RealTimeLearningAnalytics = lazy(() => import('./components/RealTimeLearningAnalytics'));
+const CollaborativeLearningWorkspace = lazy(
+  () => import('./components/CollaborativeLearningWorkspace'),
+);
+const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessmentHub'));
+const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
+const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 
 function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
-  // Performance optimization hooks
-  useMemoryOptimization();
-
+  // Simplified - no performance hooks for now
   useEffect(() => {
-    // Register service worker for offline functionality
-    registerServiceWorker();
-
-    // Performance monitoring
-    const measurePerformance = async () => {
-      try {
-        const lcp = performanceMonitor.measureLCP();
-        const fid = performanceMonitor.measureFID();
-        const cls = performanceMonitor.measureCLS();
-
-        console.log('Performance Metrics:', {
-          LCP: `${lcp}ms`,
-          FID: `${fid}ms`,
-          CLS: cls,
-        });
-      } catch {
-        console.log('Performance monitoring not available in this browser');
-      }
-    };
-
-    setTimeout(measurePerformance, 2000);
+    console.log('🌿 TeAoMarama Platform Loading...');
   }, []);
 
   return (
@@ -81,7 +75,8 @@ function App() {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               {/* Landing */}
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomeMinimal />} />
+              <Route path="/home" element={<Home />} />
 
               {/* Authentication */}
               <Route path="/login" element={<Login />} />
@@ -94,6 +89,7 @@ function App() {
               <Route path="/resources" element={<ResourceBrowser />} />
               <Route path="/working-resources" element={<ResourceBrowser />} />
               <Route path="/human-content" element={<HumanReadableContentBrowser />} />
+              {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
               <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
               {/* Year Level Content - Year 8 only for now */}
@@ -106,11 +102,30 @@ function App() {
 
               {/* Superintelligence and Advanced Features */}
               <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
-              <Route path="/super-intelligence" element={<SuperIntelligenceCoordinator />} />
               <Route path="/multimedia" element={<MultimediaStudio />} />
               <Route path="/assessments" element={<AssessmentHub />} />
               <Route path="/audit" element={<PlatformAuditDashboard />} />
+
+              {/* GLM Models - Priority Routes */}
               <Route path="/glm-models" element={<GLMModelDashboard />} />
+              <Route path="/glm-4.5" element={<GLMModelDashboard />} />
+              <Route path="/glm-z1" element={<GLMModelDashboard />} />
+              <Route path="/ai-models" element={<GLMModelDashboard />} />
+              <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
+              <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
+              <Route path="/test" element={<FunctionalityTest />} />
+              <Route path="/simple-test" element={<SimpleTest />} />
+              <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
+              <Route path="/live-analytics" element={<RealTimeLearningAnalytics />} />
+              <Route path="/collaborative-workspace" element={<CollaborativeLearningWorkspace />} />
+              <Route path="/collaboration" element={<CollaborativeLearningWorkspace />} />
+              <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
+              <Route path="/assessment-hub" element={<AdvancedAssessmentHub />} />
+              <Route path="/showcase" element={<TeacherShowcaseDashboard />} />
+              <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
+              <Route path="/teacher-guide" element={<TeacherGuide />} />
+              <Route path="/guide" element={<TeacherGuide />} />
+
               <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
               {/* Static Pages */}

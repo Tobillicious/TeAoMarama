@@ -5,16 +5,19 @@ export interface EnrichedResource {
   yearLevel: string;
   description: string;
   culturalElements: number;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface QualityMetrics {
   qualityScore: number;
-  culturalAuthenticity: number;
-  pedagogicalDepth: number;
-  progressiveIndex: number;
-  passesCompleted: number;
-  isComplete: boolean;
+  culturalSafety: number;
+  accessibility: number;
+  educationalValue: number;
+  culturalAuthenticity?: number;
+  pedagogicalDepth?: number;
+  progressiveIndex?: number;
+  passesCompleted?: number;
+  isComplete?: boolean;
 }
 
 export interface RealResource {
@@ -22,12 +25,12 @@ export interface RealResource {
   title: string;
   subject: string;
   yearLevel: string;
-  type: 'handout' | 'lesson' | 'assessment' | 'activity';
-  filename: string;
-  path: string;
+  type: 'handout' | 'lesson' | 'assessment' | 'activity' | 'unit-plan' | 'multimedia';
+  filename?: string;
+  path?: string;
   culturalElements: number;
   description: string;
-  content?: any;
+  content?: unknown;
   duration?: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   tags?: string[];

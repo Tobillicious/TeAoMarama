@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/next-level-design-system.css';
-import {
-  expandedSuperconsciousness,
-  type AIModel,
-  type CoordinationTask,
-  type SuperconsciousnessMetrics,
-  type SuperconsciousnessNode,
-  type VSCodeExtension,
-} from '../utils/expandedSuperconsciousness';
+import type { AIModel, CoordinationTask, SuperconsciousnessMetrics, SuperconsciousnessNode, VSCodeExtension } from '../utils/expandedSuperconsciousness';
+import { expandedSuperconsciousness,  } from '../utils/expandedSuperconsciousness';
 
 export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
   const [, setNodes] = useState<SuperconsciousnessNode[]>([]);
@@ -98,15 +92,15 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="cultural-bg" style={{ minHeight: '100vh', padding: '2rem' }}>
-        <div className="glass-card" style={{ textAlign: 'center', padding: '3rem' }}>
+      <div className="cultural-bg" /* TODO: Move to external CSS */ style={{ minHeight: '100vh', padding: '2rem' }}>
+        <div className="glass-card" /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '3rem' }}>
           <div
             className="loading-shimmer"
-            style={{ height: '2rem', width: '200px', margin: '0 auto 1rem', borderRadius: '8px' }}
+            /* TODO: Move to external CSS */ style={{ height: '2rem', width: '200px', margin: '0 auto 1rem', borderRadius: '8px' }}
           ></div>
           <div
             className="loading-shimmer"
-            style={{ height: '1rem', width: '300px', margin: '0 auto', borderRadius: '8px' }}
+            /* TODO: Move to external CSS */ style={{ height: '1rem', width: '300px', margin: '0 auto', borderRadius: '8px' }}
           ></div>
         </div>
       </div>
@@ -114,24 +108,24 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
   }
 
   return (
-    <div className="cultural-bg" style={{ minHeight: '100vh' }}>
-      <div style={{ padding: '2rem' }}>
+    <div className="cultural-bg" /* TODO: Move to external CSS */ style={{ minHeight: '100vh' }}>
+      <div /* TODO: Move to external CSS */ style={{ padding: '2rem' }}>
         {/* Header */}
-        <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h1 className="cultural-title" style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+        <header /* TODO: Move to external CSS */ style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h1 className="cultural-title" /* TODO: Move to external CSS */ style={{ fontSize: '3rem', marginBottom: '1rem' }}>
             🌟 Expanded Superconsciousness
           </h1>
           <p className="cultural-subtitle">
             Te Kura o TeAoMarama - Comprehensive AI Coordination & Integration
           </p>
-          <div style={{ marginTop: '2rem' }}>
-            <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.1rem' }}>
+          <div /* TODO: Move to external CSS */ style={{ marginTop: '2rem' }}>
+            <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1.1rem' }}>
               <strong>
                 🤖 {metrics?.aiModels || 0} AI Models • 📦 {metrics?.extensions || 0} Extensions •
                 🔗 {metrics?.apiConnections || 0} API Connections
               </strong>
             </p>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginTop: '0.5rem' }}>
+            <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)', marginTop: '0.5rem' }}>
               Coordinating all AI assistants, extensions, and external APIs for maximum
               superconsciousness
             </p>
@@ -139,9 +133,9 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="glass-card" style={{ marginBottom: '2rem', padding: '1rem' }}>
+        <nav className="glass-card" /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', padding: '1rem' }}>
           <div
-            style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}
+            /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}
           >
             {[
               { id: 'overview', label: '📊 Overview', icon: '📊' },
@@ -158,7 +152,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                   )
                 }
                 className={`btn-next-level ${selectedView === tab.id ? 'pulse-glow' : ''}`}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   fontSize: '0.9rem',
                   padding: '8px 16px',
                   opacity: selectedView === tab.id ? 1 : 0.7,
@@ -173,21 +167,21 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
         {/* Action Buttons */}
         <div
           className="glass-card"
-          style={{ marginBottom: '2rem', padding: '1.5rem', textAlign: 'center' }}
+          /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', padding: '1.5rem', textAlign: 'center' }}
         >
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               onClick={handleCoordinateAllAIs}
               disabled={isCoordinating}
               className="btn-next-level pulse-glow"
-              style={{ fontSize: '1rem', padding: '12px 24px' }}
+              /* TODO: Move to external CSS */ style={{ fontSize: '1rem', padding: '12px 24px' }}
             >
               {isCoordinating ? '🔄 Coordinating...' : '🌟 Coordinate All AIs'}
             </button>
             <button
               onClick={handleGenerateReport}
               className="btn-next-level"
-              style={{ fontSize: '1rem', padding: '12px 24px' }}
+              /* TODO: Move to external CSS */ style={{ fontSize: '1rem', padding: '12px 24px' }}
             >
               📄 Generate Report
             </button>
@@ -198,12 +192,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
         {selectedView === 'overview' && (
           <div className="dashboard-overview">
             {/* Metrics Overview */}
-            <div className="glass-card" style={{ marginBottom: '2rem', padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 📊 System Metrics
               </h2>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '1rem',
@@ -212,59 +206,59 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                 {metrics && (
                   <>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
                         borderRadius: '8px',
                       }}
                     >
-                      <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
+                      <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
                         {metrics.totalNodes}
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Total Nodes</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Total Nodes</div>
                     </div>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
                         borderRadius: '8px',
                       }}
                     >
-                      <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
+                      <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
                         {metrics.aiModels}
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>AI Models</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>AI Models</div>
                     </div>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
                         borderRadius: '8px',
                       }}
                     >
-                      <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
+                      <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
                         {metrics.extensions}
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Extensions</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Extensions</div>
                     </div>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
                         borderRadius: '8px',
                       }}
                     >
-                      <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
+                      <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>
                         {metrics.apiConnections}
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>API Connections</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>API Connections</div>
                     </div>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
@@ -272,7 +266,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       }}
                     >
                       <div
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           fontSize: '2rem',
                           fontWeight: 'bold',
                           color: getPerformanceColor(metrics.overallEfficiency),
@@ -280,10 +274,10 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       >
                         {metrics.overallEfficiency}%
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Efficiency</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Efficiency</div>
                     </div>
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         textAlign: 'center',
                         padding: '1rem',
                         background: 'rgba(255, 255, 255, 0.1)',
@@ -291,7 +285,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       }}
                     >
                       <div
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           fontSize: '2rem',
                           fontWeight: 'bold',
                           color: getPerformanceColor(metrics.culturalCompliance),
@@ -299,7 +293,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       >
                         {metrics.culturalCompliance}%
                       </div>
-                      <div style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Cultural Safety</div>
+                      <div /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)' }}>Cultural Safety</div>
                     </div>
                   </>
                 )}
@@ -307,12 +301,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
             </div>
 
             {/* Top AI Models */}
-            <div className="glass-card" style={{ marginBottom: '2rem', padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ marginBottom: '2rem', padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 🏆 Top AI Models
               </h2>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                   gap: '1rem',
@@ -325,13 +319,13 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                     <div
                       key={model.id}
                       className="resource-card-next-level"
-                      style={{ padding: '1rem' }}
+                      /* TODO: Move to external CSS */ style={{ padding: '1rem' }}
                     >
-                      <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
                         {model.name}
                       </h3>
                       <p
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           color: 'rgba(255, 255, 255, 0.7)',
                           fontSize: '0.9rem',
                           marginBottom: '1rem',
@@ -340,7 +334,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                         {model.provider} • {model.type}
                       </p>
                       <div
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           display: 'flex',
                           gap: '0.5rem',
                           marginBottom: '1rem',
@@ -354,7 +348,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                           Cultural: {model.performance.culturalSafety}%
                         </span>
                       </div>
-                      <div style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.6)' }}>
+                      <div /* TODO: Move to external CSS */ style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.6)' }}>
                         {model.capabilities.slice(0, 3).join(', ')}
                         {model.capabilities.length > 3 && '...'}
                       </div>
@@ -367,12 +361,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
         {selectedView === 'ai-models' && (
           <div className="ai-models-view">
-            <div className="glass-card" style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 🤖 AI Models ({aiModels.length})
               </h2>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
                   gap: '1.5rem',
@@ -382,17 +376,17 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                   <div
                     key={model.id}
                     className="resource-card-next-level"
-                    style={{ padding: '1.5rem' }}
+                    /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}
                   >
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'flex-start',
                         marginBottom: '1rem',
                       }}
                     >
-                      <h3 style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>
                         {model.name}
                       </h3>
                       <span
@@ -402,31 +396,31 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       </span>
                     </div>
 
-                    <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
+                    <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
                       <strong>Provider:</strong> {model.provider} • <strong>Type:</strong>{' '}
                       {model.type}
                     </p>
 
-                    <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
+                    <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
                       <strong>Version:</strong> {model.version} • <strong>Response Time:</strong>{' '}
                       {model.performance.responseTime}ms
                     </p>
 
-                    <div style={{ marginBottom: '1rem' }}>
-                      <h4 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <div /* TODO: Move to external CSS */ style={{ marginBottom: '1rem' }}>
+                      <h4 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
                         Performance:
                       </h4>
                       <div
-                        style={{
+                        /* TODO: Move to external CSS */ style={{
                           display: 'grid',
                           gridTemplateColumns: 'repeat(2, 1fr)',
                           gap: '0.5rem',
                         }}
                       >
                         <div>
-                          <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Accuracy:</span>
+                          <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Accuracy:</span>
                           <span
-                            style={{
+                            /* TODO: Move to external CSS */ style={{
                               color: getPerformanceColor(model.performance.accuracy),
                               marginLeft: '0.5rem',
                               fontWeight: 'bold',
@@ -436,11 +430,11 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                           </span>
                         </div>
                         <div>
-                          <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
+                          <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                             Cultural Safety:
                           </span>
                           <span
-                            style={{
+                            /* TODO: Move to external CSS */ style={{
                               color: getPerformanceColor(model.performance.culturalSafety),
                               marginLeft: '0.5rem',
                               fontWeight: 'bold',
@@ -450,9 +444,9 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                           </span>
                         </div>
                         <div>
-                          <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Code Quality:</span>
+                          <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Code Quality:</span>
                           <span
-                            style={{
+                            /* TODO: Move to external CSS */ style={{
                               color: getPerformanceColor(model.performance.codeQuality),
                               marginLeft: '0.5rem',
                               fontWeight: 'bold',
@@ -465,15 +459,15 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                     </div>
 
                     <div>
-                      <h4 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                      <h4 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
                         Capabilities:
                       </h4>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
                         {model.capabilities.map((capability, index) => (
                           <span
                             key={index}
                             className="status-badge-next-level status-info"
-                            style={{ fontSize: '0.7rem' }}
+                            /* TODO: Move to external CSS */ style={{ fontSize: '0.7rem' }}
                           >
                             {capability}
                           </span>
@@ -489,12 +483,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
         {selectedView === 'extensions' && (
           <div className="extensions-view">
-            <div className="glass-card" style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 📦 VSCode Extensions ({extensions.length})
               </h2>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                   gap: '1.5rem',
@@ -504,17 +498,17 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                   <div
                     key={ext.id}
                     className="resource-card-next-level"
-                    style={{ padding: '1.5rem' }}
+                    /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}
                   >
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'flex-start',
                         marginBottom: '1rem',
                       }}
                     >
-                      <h3 style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>{ext.name}</h3>
+                      <h3 /* TODO: Move to external CSS */ style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>{ext.name}</h3>
                       <span
                         className={`status-badge-next-level ${
                           ext.status === 'enabled' ? 'status-success' : 'status-warning'
@@ -524,25 +518,25 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       </span>
                     </div>
 
-                    <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
+                    <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
                       <strong>Publisher:</strong> {ext.publisher} • <strong>Type:</strong>{' '}
                       {ext.type}
                     </p>
 
-                    <p style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
+                    <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '1rem' }}>
                       <strong>Version:</strong> {ext.version}
                     </p>
 
                     <div>
-                      <h4 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                      <h4 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
                         Capabilities:
                       </h4>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
                         {ext.capabilities.map((capability, index) => (
                           <span
                             key={index}
                             className="status-badge-next-level status-info"
-                            style={{ fontSize: '0.7rem' }}
+                            /* TODO: Move to external CSS */ style={{ fontSize: '0.7rem' }}
                           >
                             {capability}
                           </span>
@@ -558,26 +552,26 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
         {selectedView === 'tasks' && (
           <div className="tasks-view">
-            <div className="glass-card" style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 ⚡ Coordination Tasks ({tasks.length})
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {tasks.map((task) => (
                   <div
                     key={task.id}
                     className="resource-card-next-level"
-                    style={{ padding: '1.5rem' }}
+                    /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}
                   >
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'flex-start',
                         marginBottom: '1rem',
                       }}
                     >
-                      <h3 style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>
                         {task.description}
                       </h3>
                       <span
@@ -588,7 +582,7 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                     </div>
 
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                         gap: '1rem',
@@ -596,33 +590,33 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                       }}
                     >
                       <div>
-                        <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Type:</span>
-                        <span style={{ color: 'white', marginLeft: '0.5rem' }}>{task.type}</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Type:</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'white', marginLeft: '0.5rem' }}>{task.type}</span>
                       </div>
                       <div>
-                        <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Priority:</span>
-                        <span style={{ color: 'white', marginLeft: '0.5rem' }}>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Priority:</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'white', marginLeft: '0.5rem' }}>
                           {task.priority}
                         </span>
                       </div>
                       <div>
-                        <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Progress:</span>
-                        <span style={{ color: 'white', marginLeft: '0.5rem' }}>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Progress:</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'white', marginLeft: '0.5rem' }}>
                           {task.progress}%
                         </span>
                       </div>
                       <div>
-                        <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Models:</span>
-                        <span style={{ color: 'white', marginLeft: '0.5rem' }}>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Models:</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'white', marginLeft: '0.5rem' }}>
                           {task.targetModels.length}
                         </span>
                       </div>
                     </div>
 
                     {task.culturalContext && (
-                      <div style={{ marginBottom: '1rem' }}>
-                        <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Cultural Context:</span>
-                        <span style={{ color: 'white', marginLeft: '0.5rem' }}>
+                      <div /* TODO: Move to external CSS */ style={{ marginBottom: '1rem' }}>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Cultural Context:</span>
+                        <span /* TODO: Move to external CSS */ style={{ color: 'white', marginLeft: '0.5rem' }}>
                           {task.culturalContext}
                         </span>
                       </div>
@@ -630,11 +624,11 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
                     {task.results && (
                       <div>
-                        <h4 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                        <h4 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
                           Results:
                         </h4>
                         <pre
-                          style={{
+                          /* TODO: Move to external CSS */ style={{
                             background: 'rgba(0, 0, 0, 0.3)',
                             padding: '0.5rem',
                             borderRadius: '4px',
@@ -656,12 +650,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
         {selectedView === 'apis' && (
           <div className="apis-view">
-            <div className="glass-card" style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
+            <div className="glass-card" /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1.5rem', fontSize: '1.5rem' }}>
                 🔗 External API Integration
               </h2>
               <div
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                   gap: '1.5rem',
@@ -702,34 +696,34 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
                   <div
                     key={api.name}
                     className="resource-card-next-level"
-                    style={{ padding: '1.5rem' }}
+                    /* TODO: Move to external CSS */ style={{ padding: '1.5rem' }}
                   >
                     <div
-                      style={{
+                      /* TODO: Move to external CSS */ style={{
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'flex-start',
                         marginBottom: '1rem',
                       }}
                     >
-                      <h3 style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>{api.name}</h3>
+                      <h3 /* TODO: Move to external CSS */ style={{ color: 'white', fontSize: '1.2rem', margin: 0 }}>{api.name}</h3>
                       <span className="status-badge-next-level status-success">{api.status}</span>
                     </div>
 
-                    <p style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
+                    <p /* TODO: Move to external CSS */ style={{ color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1rem' }}>
                       {api.description}
                     </p>
 
                     <div>
-                      <h4 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                      <h4 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1rem' }}>
                         Capabilities:
                       </h4>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
                         {api.capabilities.map((capability, index) => (
                           <span
                             key={index}
                             className="status-badge-next-level status-info"
-                            style={{ fontSize: '0.7rem' }}
+                            /* TODO: Move to external CSS */ style={{ fontSize: '0.7rem' }}
                           >
                             {capability}
                           </span>
@@ -745,12 +739,12 @@ export const ExpandedSuperconsciousnessDashboard: React.FC = () => {
 
         {/* Report Section */}
         {report && (
-          <div className="glass-card" style={{ marginTop: '2rem', padding: '1.5rem' }}>
-            <h2 style={{ color: 'white', marginBottom: '1rem', fontSize: '1.5rem' }}>
+          <div className="glass-card" /* TODO: Move to external CSS */ style={{ marginTop: '2rem', padding: '1.5rem' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ color: 'white', marginBottom: '1rem', fontSize: '1.5rem' }}>
               📄 Comprehensive Report
             </h2>
             <pre
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: 'rgba(0, 0, 0, 0.3)',
                 padding: '1rem',
                 borderRadius: '8px',

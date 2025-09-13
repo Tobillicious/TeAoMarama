@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import type { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 
 const SimpleNavigation: React.FC = () => {
@@ -29,11 +30,18 @@ const SimpleNavigation: React.FC = () => {
     },
     { to: '/cultural-learning-modules', label: 'Cultural Learning', icon: '🌿' },
     { to: '/advanced-analytics', label: 'Analytics', icon: '📊' },
+    {
+      to: '/teacher-demo',
+      label: '🎓 Teacher Demo',
+      icon: '🎓',
+      highlight: true,
+      highlightColor: '#059669',
+    },
   ];
 
   return (
     <nav
-      style={{
+      /* TODO: Move to external CSS */ style={{
         background: 'linear-gradient(135deg, #1e3a8a 0%, #059669 100%)',
         padding: '0.5rem 1rem',
         display: 'flex',
@@ -46,7 +54,7 @@ const SimpleNavigation: React.FC = () => {
       {/* Logo */}
       <Link
         to="/"
-        style={{
+        /* TODO: Move to external CSS */ style={{
           color: 'white',
           textDecoration: 'none',
           fontSize: '1.2rem',
@@ -59,7 +67,7 @@ const SimpleNavigation: React.FC = () => {
 
       {/* Navigation Links */}
       <div
-        style={{
+        /* TODO: Move to external CSS */ style={{
           display: 'flex',
           gap: '0.5rem',
           alignItems: 'center',
@@ -128,7 +136,7 @@ const SimpleNavigation: React.FC = () => {
         {/* Auth Section */}
         {isAuthenticated && currentUser ? (
           <div
-            style={{
+            /* TODO: Move to external CSS */ style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -136,7 +144,7 @@ const SimpleNavigation: React.FC = () => {
             }}
           >
             <span
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 color: 'white',
                 fontSize: '0.875rem',
                 opacity: 0.9,
@@ -146,7 +154,7 @@ const SimpleNavigation: React.FC = () => {
             </span>
             <button
               onClick={handleLogout}
-              style={{
+              /* TODO: Move to external CSS */ style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 color: 'white',
@@ -162,7 +170,7 @@ const SimpleNavigation: React.FC = () => {
         ) : (
           <Link
             to="/login"
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.15)',
               border: '1px solid rgba(255, 255, 255, 0.3)',
               color: 'white',

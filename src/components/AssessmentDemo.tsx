@@ -96,7 +96,7 @@ interface AssessmentResults {
   nextRecommendations: string[];
 }
 
-export function AssessmentDemo() {
+export function AssessmentDemo() : void {
   const [showAssessment, setShowAssessment] = useState(false);
   const [results, setResults] = useState<AssessmentResults | null>(null);
   const [showTeReo, setShowTeReo] = useState(false);

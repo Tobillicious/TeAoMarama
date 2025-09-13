@@ -156,15 +156,15 @@ const EnhancedStudentDashboard: React.FC = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div /* TODO: Move to external CSS */ style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'Inter, system-ui, sans-serif' }}>
       {/* Header */}
-      <header style={{
+      <header /* TODO: Move to external CSS */ style={{
         background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
         color: 'white',
         padding: '20px 0',
         boxShadow: '0 4px 20px rgba(5, 150, 105, 0.15)'
       }}>
-        <div style={{
+        <div /* TODO: Move to external CSS */ style={{
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '0 24px',
@@ -174,42 +174,42 @@ const EnhancedStudentDashboard: React.FC = () => {
           gap: '20px'
         }}>
           <div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+            <h1 /* TODO: Move to external CSS */ style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
               Kia ora, Rangatahi! 👨‍🎓
             </h1>
-            <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
               Your Learning Journey - {studentStats.currentStreak} day streak! 🔥
             </p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.1)',
               padding: '12px',
               borderRadius: '10px',
               textAlign: 'center'
             }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700', margin: '0' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', margin: '0' }}>
                 {studentStats.overallProgress}%
               </div>
-              <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Progress</div>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', opacity: 0.8 }}>Progress</div>
             </div>
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.1)',
               padding: '12px',
               borderRadius: '10px',
               textAlign: 'center'
             }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700', margin: '0' }}>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', margin: '0' }}>
                 {studentStats.achievements}
               </div>
-              <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>Achievements</div>
+              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', opacity: 0.8 }}>Achievements</div>
             </div>
           </div>
         </div>
       </header>
 
       {/* Navigation Tabs */}
-      <nav style={{
+      <nav /* TODO: Move to external CSS */ style={{
         background: 'white',
         borderBottom: '1px solid #e5e7eb',
         padding: '0',
@@ -226,7 +226,7 @@ const EnhancedStudentDashboard: React.FC = () => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'none',
               border: 'none',
               padding: '16px 20px',
@@ -250,18 +250,18 @@ const EnhancedStudentDashboard: React.FC = () => {
       </nav>
 
       {/* Main Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+      <main /* TODO: Move to external CSS */ style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
         
         {/* Overview Tab */}
         {activeTab === 'overview' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {/* Stats Grid */}
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
               gap: '20px'
             }}>
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 padding: '24px',
                 borderRadius: '12px',
@@ -271,7 +271,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(5, 150, 105, 0.1)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -279,22 +279,22 @@ const EnhancedStudentDashboard: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <TrendingUp style={{ color: '#059669' }} />
+                  <TrendingUp /* TODO: Move to external CSS */ style={{ color: '#059669' }} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Overall Progress
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {studentStats.overallProgress}%
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
                     Excellent progress!
                   </p>
                 </div>
               </div>
 
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 padding: '24px',
                 borderRadius: '12px',
@@ -304,7 +304,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(124, 58, 237, 0.1)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -312,22 +312,22 @@ const EnhancedStudentDashboard: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <Star style={{ color: '#7c3aed' }} />
+                  <Star /* TODO: Move to external CSS */ style={{ color: '#7c3aed' }} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Cultural Engagement
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {studentStats.culturalEngagement}%
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#7c3aed' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#7c3aed' }}>
                     Outstanding connection!
                   </p>
                 </div>
               </div>
 
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 padding: '24px',
                 borderRadius: '12px',
@@ -337,7 +337,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(217, 119, 6, 0.1)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -345,16 +345,16 @@ const EnhancedStudentDashboard: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <Clock style={{ color: '#d97706' }} />
+                  <Clock /* TODO: Move to external CSS */ style={{ color: '#d97706' }} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Time Today
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {studentStats.timeSpentToday}m
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#d97706' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#d97706' }}>
                     Great focus!
                   </p>
                 </div>
@@ -363,16 +363,16 @@ const EnhancedStudentDashboard: React.FC = () => {
 
             {/* Current Modules */}
             <section>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
                 Continue Learning
               </h2>
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
                 gap: '20px'
               }}>
                 {currentModules.map((module) => (
-                  <div key={module.id} style={{
+                  <div key={module.id} /* TODO: Move to external CSS */ style={{
                     background: 'white',
                     border: '1px solid #e5e7eb',
                     borderRadius: '12px',
@@ -388,8 +388,8 @@ const EnhancedStudentDashboard: React.FC = () => {
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '16px' }}>
-                      <div style={{
+                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '16px' }}>
+                      <div /* TODO: Move to external CSS */ style={{
                         fontSize: '2.5rem',
                         background: 'rgba(5, 150, 105, 0.1)',
                         padding: '12px',
@@ -402,9 +402,9 @@ const EnhancedStudentDashboard: React.FC = () => {
                       }}>
                         {module.thumbnail}
                       </div>
-                      <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                          <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0' }}>
+                      <div /* TODO: Move to external CSS */ style={{ flex: 1 }}>
+                        <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                          <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0' }}>
                             {module.title}
                           </h3>
                           <span style={{
@@ -418,24 +418,24 @@ const EnhancedStudentDashboard: React.FC = () => {
                             {module.difficulty}
                           </span>
                         </div>
-                        <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0 0 8px 0' }}>
+                        <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0 0 8px 0' }}>
                           {module.description}
                         </p>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.75rem', color: '#9ca3af' }}>
+                        <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.75rem', color: '#9ca3af' }}>
                           <span>⭐ {module.culturalElements} cultural elements</span>
                           <span>⏱️ {module.timeRemaining} left</span>
                         </div>
                       </div>
                     </div>
 
-                    <div style={{ marginBottom: '16px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <span style={{ fontSize: '0.875rem', color: '#374151' }}>Progress</span>
-                        <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
+                    <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                        <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#374151' }}>Progress</span>
+                        <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
                           {module.progress}%
                         </span>
                       </div>
-                      <div style={{ height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div /* TODO: Move to external CSS */ style={{ height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
                         <div style={{
                           height: '100%',
                           width: `${module.progress}%`,
@@ -446,16 +446,16 @@ const EnhancedStudentDashboard: React.FC = () => {
                       </div>
                     </div>
 
-                    <div style={{ marginBottom: '16px' }}>
-                      <p style={{ fontSize: '0.75rem', color: '#6b7280', margin: '0 0 4px 0' }}>
+                    <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280', margin: '0 0 4px 0' }}>
                         Last activity: {module.lastActivity}
                       </p>
-                      <p style={{ fontSize: '0.75rem', color: '#374151', margin: '0', fontWeight: '500' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#374151', margin: '0', fontWeight: '500' }}>
                         Next: {module.nextLesson}
                       </p>
                     </div>
 
-                    <button style={{
+                    <button /* TODO: Move to external CSS */ style={{
                       width: '100%',
                       background: 'linear-gradient(135deg, #059669, #10b981)',
                       color: 'white',
@@ -479,7 +479,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                       e.currentTarget.style.transform = 'translateY(0)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}>
-                      <Play style={{ width: '16px', height: '16px' }} />
+                      <Play /* TODO: Move to external CSS */ style={{ width: '16px', height: '16px' }} />
                       Continue Learning
                     </button>
                   </div>
@@ -489,12 +489,12 @@ const EnhancedStudentDashboard: React.FC = () => {
 
             {/* Recent Activity */}
             <section>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
                 Recent Activity
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {recentActivity.map((activity) => (
-                  <div key={activity.id} style={{
+                  <div key={activity.id} /* TODO: Move to external CSS */ style={{
                     background: 'white',
                     border: '1px solid #e5e7eb',
                     borderRadius: '8px',
@@ -511,16 +511,16 @@ const EnhancedStudentDashboard: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <activity.icon style={{ width: '20px', height: '20px', color: activity.color }} />
+                      <activity.icon /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: activity.color }} />
                     </div>
-                    <div style={{ flex: 1 }}>
-                      <h4 style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
+                    <div /* TODO: Move to external CSS */ style={{ flex: 1 }}>
+                      <h4 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
                         {activity.title}
                       </h4>
-                      <p style={{ fontSize: '0.75rem', color: '#6b7280', margin: '0 0 4px 0' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#6b7280', margin: '0 0 4px 0' }}>
                         {activity.description}
                       </p>
-                      <span style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
                         {activity.time}
                       </span>
                     </div>
@@ -533,29 +533,29 @@ const EnhancedStudentDashboard: React.FC = () => {
 
         {/* Assignments Tab */}
         {activeTab === 'assignments' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
               Upcoming Assignments
             </h2>
             
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
               gap: '20px'
             }}>
               {upcomingAssignments.map((assignment) => (
-                <div key={assignment.id} style={{
+                <div key={assignment.id} /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '12px',
                   padding: '20px'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                  <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                     <div>
-                      <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
                         {assignment.title}
                       </h3>
-                      <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
                         {assignment.subject}
                       </p>
                     </div>
@@ -571,18 +571,18 @@ const EnhancedStudentDashboard: React.FC = () => {
                     </span>
                   </div>
 
-                  <p style={{ fontSize: '0.875rem', color: '#374151', margin: '0 0 16px 0' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#374151', margin: '0 0 16px 0' }}>
                     {assignment.description}
                   </p>
 
-                  <div style={{ marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '0.875rem', color: '#374151' }}>Progress</span>
-                      <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
+                  <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#374151' }}>Progress</span>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
                         {assignment.progress}%
                       </span>
                     </div>
-                    <div style={{ height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div /* TODO: Move to external CSS */ style={{ height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
                       <div style={{
                         height: '100%',
                         width: `${assignment.progress}%`,
@@ -593,11 +593,11 @@ const EnhancedStudentDashboard: React.FC = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>
+                  <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>
                       Due: {assignment.dueDate}
                     </span>
-                    <button style={{
+                    <button /* TODO: Move to external CSS */ style={{
                       background: 'linear-gradient(135deg, #059669, #10b981)',
                       color: 'white',
                       border: 'none',
@@ -618,18 +618,18 @@ const EnhancedStudentDashboard: React.FC = () => {
 
         {/* Achievements Tab */}
         {activeTab === 'achievements' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
               Your Achievements
             </h2>
             
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: '20px'
             }}>
               {achievements.map((achievement) => (
-                <div key={achievement.id} style={{
+                <div key={achievement.id} /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '12px',
@@ -639,7 +639,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                   transform: achievement.unlocked ? 'scale(1)' : 'scale(0.95)',
                   transition: 'all 0.3s ease'
                 }}>
-                  <div style={{
+                  <div /* TODO: Move to external CSS */ style={{
                     fontSize: '3rem',
                     marginBottom: '16px',
                     background: achievement.unlocked ? 'linear-gradient(135deg, #fbbf24, #f59e0b)' : '#e5e7eb',
@@ -653,7 +653,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                   }}>
                     {achievement.icon}
                   </div>
-                  <h3 style={{
+                  <h3 /* TODO: Move to external CSS */ style={{
                     fontSize: '1.125rem',
                     fontWeight: '600',
                     color: achievement.unlocked ? '#1f2937' : '#9ca3af',
@@ -661,7 +661,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                   }}>
                     {achievement.title}
                   </h3>
-                  <p style={{
+                  <p /* TODO: Move to external CSS */ style={{
                     fontSize: '0.875rem',
                     color: achievement.unlocked ? '#6b7280' : '#9ca3af',
                     margin: '0'
@@ -669,7 +669,7 @@ const EnhancedStudentDashboard: React.FC = () => {
                     {achievement.description}
                   </p>
                   {achievement.unlocked && (
-                    <div style={{
+                    <div /* TODO: Move to external CSS */ style={{
                       marginTop: '12px',
                       background: 'rgba(5, 150, 105, 0.1)',
                       color: '#059669',
@@ -690,18 +690,18 @@ const EnhancedStudentDashboard: React.FC = () => {
 
         {/* Resources Tab */}
         {activeTab === 'resources' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
               Learning Resources
             </h2>
-            <p style={{ fontSize: '1rem', color: '#6b7280', margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ fontSize: '1rem', color: '#6b7280', margin: '0' }}>
               Access 3,063+ culturally-responsive educational resources
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <button
                 onClick={() => window.location.href = '/resources'}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -724,16 +724,16 @@ const EnhancedStudentDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <BookOpen style={{ width: '24px', height: '24px', color: '#059669' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <BookOpen /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#059669' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Cultural Learning Library
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
 
               <button
                 onClick={() => alert('Interactive Modules - Hands-on Cultural Experiences!')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -756,16 +756,16 @@ const EnhancedStudentDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <Play style={{ width: '24px', height: '24px', color: '#059669' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <Play /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#059669' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Interactive Cultural Modules
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
 
               <button
                 onClick={() => alert('Study Groups - Connect with Cultural Learning Partners!')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -788,11 +788,11 @@ const EnhancedStudentDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <Users style={{ width: '24px', height: '24px', color: '#059669' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <Users /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#059669' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Cultural Study Groups
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
             </div>
           </div>

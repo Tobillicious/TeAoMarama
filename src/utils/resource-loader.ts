@@ -78,7 +78,7 @@ class ResourceLoader {
     }
   }
 
-  private processIndexData(indexData: any[]): EducationalResource[] {
+  private processIndexData(indexData: unknown[]): EducationalResource[] {
     return indexData.map(item => ({
       id: item.id || `resource-${Math.random().toString(36).substr(2, 9)}`,
       title: item.title || 'Untitled Resource',
@@ -360,7 +360,7 @@ class ResourceLoader {
 export const resourceLoader = ResourceLoader.getInstance();
 
 // Convenience hooks for React components
-export const useResources = () => {
+export // const useResources = () => {
   const [resources, setResources] = React.useState<EducationalResource[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);

@@ -1,5 +1,5 @@
 // Utility Functions for Te Kura o TeAoMarama
-export const culturalUtils = {
+export // const culturalUtils = {
   /**
    * Check if content has cultural sensitivity
    */
@@ -50,11 +50,11 @@ export const culturalUtils = {
   }
 };
 
-export const performanceUtils = {
+export // const performanceUtils = {
   /**
    * Debounce function for performance optimization
    */
-  debounce<T extends (...args: any[]) => any>(
+  debounce<T extends (...args: unknown[]) => any>(
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
@@ -68,7 +68,7 @@ export const performanceUtils = {
   /**
    * Throttle function for performance optimization
    */
-  throttle<T extends (...args: any[]) => any>(
+  throttle<T extends (...args: unknown[]) => any>(
     func: T,
     limit: number
   ): (...args: Parameters<T>) => void {
@@ -83,7 +83,7 @@ export const performanceUtils = {
   }
 };
 
-export const educationalUtils = {
+export // const educationalUtils = {
   /**
    * Check if content is appropriate for educational level
    */

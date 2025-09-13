@@ -6,7 +6,7 @@ import {
 } from './superintelligence';
 
 // Test the superintelligence system
-export function testSuperintelligence() {
+export function testSuperintelligence() : void {
   console.log('🧠 Testing Superintelligence System...');
 
   // Initialize the system

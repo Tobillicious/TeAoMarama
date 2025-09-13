@@ -153,15 +153,15 @@ const StandaloneTeacherDashboard: React.FC = () => {
   );
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div /* TODO: Move to external CSS */ style={{ minHeight: '100vh', background: '#f8fafc', fontFamily: 'Inter, system-ui, sans-serif' }}>
       {/* Header */}
-      <header style={{
+      <header /* TODO: Move to external CSS */ style={{
         background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
         color: 'white',
         padding: '20px 0',
         boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)'
       }}>
-        <div style={{
+        <div /* TODO: Move to external CSS */ style={{
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '0 24px',
@@ -171,15 +171,15 @@ const StandaloneTeacherDashboard: React.FC = () => {
           gap: '20px'
         }}>
           <div>
-            <h1 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
+            <h1 /* TODO: Move to external CSS */ style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 8px 0' }}>
               Kia ora, Professional Kaiako! 👨‍🏫
             </h1>
-            <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ fontSize: '1rem', opacity: 0.9, margin: '0' }}>
               Professional Teaching Dashboard - Alpha Testing School
             </p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <button style={{
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.1)',
               border: 'none',
               color: 'white',
@@ -190,7 +190,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
             }}>
               <Bell />
               {stats.parentNotifications > 0 && (
-                <span style={{
+                <span /* TODO: Move to external CSS */ style={{
                   position: 'absolute',
                   top: '-5px',
                   right: '-5px',
@@ -207,7 +207,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                 </span>
               )}
             </button>
-            <button style={{
+            <button /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.1)',
               border: 'none',
               color: 'white',
@@ -217,7 +217,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
             }}>
               <Settings />
             </button>
-            <button style={{
+            <button /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.1)',
               border: '1px solid rgba(255, 255, 255, 0.3)',
               color: 'white',
@@ -234,7 +234,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
       </header>
 
       {/* Navigation Tabs */}
-      <nav style={{
+      <nav /* TODO: Move to external CSS */ style={{
         background: 'white',
         borderBottom: '1px solid #e5e7eb',
         padding: '0',
@@ -251,7 +251,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            style={{
+            /* TODO: Move to external CSS */ style={{
               background: 'none',
               border: 'none',
               padding: '16px 20px',
@@ -275,18 +275,18 @@ const StandaloneTeacherDashboard: React.FC = () => {
       </nav>
 
       {/* Main Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
+      <main /* TODO: Move to external CSS */ style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
         {/* Overview Tab */}
         {activeTab === 'overview' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {/* Stats Grid */}
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
               gap: '20px',
               marginBottom: '32px'
             }}>
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
                 color: 'white',
                 padding: '24px',
@@ -295,7 +295,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(255, 255, 255, 0.2)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -306,19 +306,19 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   <Users />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Active Students
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {stats.activeStudents}/{stats.totalStudents}
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: 'rgba(255, 255, 255, 0.8)' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: 'rgba(255, 255, 255, 0.8)' }}>
                     +2 this week
                   </p>
                 </div>
               </div>
               
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 padding: '24px',
                 borderRadius: '12px',
@@ -328,7 +328,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(59, 130, 246, 0.1)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -336,22 +336,22 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <TrendingUp style={{ color: '#3b82f6' }} />
+                  <TrendingUp /* TODO: Move to external CSS */ style={{ color: '#3b82f6' }} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Average Progress
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {stats.averageProgress}%
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
                     +5% this month
                   </p>
                 </div>
               </div>
 
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 padding: '24px',
                 borderRadius: '12px',
@@ -361,7 +361,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                 alignItems: 'center',
                 gap: '16px'
               }}>
-                <div style={{
+                <div /* TODO: Move to external CSS */ style={{
                   background: 'rgba(59, 130, 246, 0.1)',
                   padding: '12px',
                   borderRadius: '10px',
@@ -369,16 +369,16 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <Star style={{ color: '#3b82f6' }} />
+                  <Star /* TODO: Move to external CSS */ style={{ color: '#3b82f6' }} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
+                  <h3 /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '500', margin: '0 0 4px 0', opacity: 0.8 }}>
                     Cultural Resources
                   </h3>
-                  <div style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
+                  <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', fontWeight: '700', margin: '0 0 4px 0' }}>
                     {stats.culturalResourcesUsed}
                   </div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
+                  <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', fontWeight: '500', margin: '0', color: '#059669' }}>
                     Used this term
                   </p>
                 </div>
@@ -387,10 +387,10 @@ const StandaloneTeacherDashboard: React.FC = () => {
 
             {/* Quick Actions */}
             <section>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>
                 Quick Actions
               </h2>
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                 gap: '20px'
@@ -418,7 +418,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{
+                    <div /* TODO: Move to external CSS */ style={{
                       width: '48px',
                       height: '48px',
                       borderRadius: '10px',
@@ -431,10 +431,10 @@ const StandaloneTeacherDashboard: React.FC = () => {
                     }}>
                       {action.icon}
                     </div>
-                    <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 8px 0' }}>
+                    <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 8px 0' }}>
                       {action.title}
                     </h3>
-                    <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0', lineHeight: '1.4' }}>
+                    <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0', lineHeight: '1.4' }}>
                       {action.description}
                     </p>
                   </button>
@@ -446,14 +446,14 @@ const StandaloneTeacherDashboard: React.FC = () => {
 
         {/* Students Tab */}
         {activeTab === 'students' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px' }}>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '20px' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
                 Student Progress Overview
               </h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ position: 'relative', minWidth: '200px' }}>
-                  <Search style={{
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div /* TODO: Move to external CSS */ style={{ position: 'relative', minWidth: '200px' }}>
+                  <Search /* TODO: Move to external CSS */ style={{
                     position: 'absolute',
                     left: '12px',
                     top: '50%',
@@ -467,7 +467,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                     placeholder="Search students..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    style={{
+                    /* TODO: Move to external CSS */ style={{
                       width: '100%',
                       padding: '8px 12px 8px 36px',
                       border: '1px solid #d1d5db',
@@ -476,7 +476,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                     }}
                   />
                 </div>
-                <button style={{
+                <button /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -487,10 +487,10 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   cursor: 'pointer',
                   fontSize: '0.875rem'
                 }}>
-                  <Filter style={{ width: '16px', height: '16px' }} />
+                  <Filter /* TODO: Move to external CSS */ style={{ width: '16px', height: '16px' }} />
                   Filter
                 </button>
-                <button style={{
+                <button /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -501,39 +501,39 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   cursor: 'pointer',
                   fontSize: '0.875rem'
                 }}>
-                  <Download style={{ width: '16px', height: '16px' }} />
+                  <Download /* TODO: Move to external CSS */ style={{ width: '16px', height: '16px' }} />
                   Export
                 </button>
               </div>
             </div>
 
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
               gap: '20px'
             }}>
               {filteredStudents.map((student) => (
-                <div key={student.id} style={{
+                <div key={student.id} /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '12px',
                   padding: '20px'
                 }}>
-                  <div style={{
+                  <div /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     marginBottom: '16px'
                   }}>
                     <div>
-                      <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
                         {student.name}
                       </h3>
-                      <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
                         {student.yearLevel}
                       </p>
                     </div>
-                    <button style={{
+                    <button /* TODO: Move to external CSS */ style={{
                       background: 'rgba(59, 130, 246, 0.1)',
                       border: 'none',
                       color: '#3b82f6',
@@ -541,16 +541,16 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       borderRadius: '6px',
                       cursor: 'pointer'
                     }}>
-                      <Eye style={{ width: '16px', height: '16px' }} />
+                      <Eye /* TODO: Move to external CSS */ style={{ width: '16px', height: '16px' }} />
                     </button>
                   </div>
 
-                  <div style={{ marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <span style={{ fontSize: '0.875rem', color: '#374151', minWidth: '120px' }}>
+                  <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#374151', minWidth: '120px' }}>
                         Overall Progress
                       </span>
-                      <div style={{ flex: 1, height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div /* TODO: Move to external CSS */ style={{ flex: 1, height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
                         <div style={{
                           height: '100%',
                           width: `${student.overallProgress}%`,
@@ -559,16 +559,16 @@ const StandaloneTeacherDashboard: React.FC = () => {
                           borderRadius: '4px'
                         }} />
                       </div>
-                      <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151', minWidth: '40px', textAlign: 'right' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151', minWidth: '40px', textAlign: 'right' }}>
                         {student.overallProgress}%
                       </span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <span style={{ fontSize: '0.875rem', color: '#374151', minWidth: '120px' }}>
+                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#374151', minWidth: '120px' }}>
                         Cultural Engagement
                       </span>
-                      <div style={{ flex: 1, height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div /* TODO: Move to external CSS */ style={{ flex: 1, height: '8px', background: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
                         <div style={{
                           height: '100%',
                           width: `${student.culturalEngagement}%`,
@@ -577,14 +577,14 @@ const StandaloneTeacherDashboard: React.FC = () => {
                           borderRadius: '4px'
                         }} />
                       </div>
-                      <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151', minWidth: '40px', textAlign: 'right' }}>
+                      <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151', minWidth: '40px', textAlign: 'right' }}>
                         {student.culturalEngagement}%
                       </span>
                     </div>
                   </div>
 
-                  <div style={{ marginBottom: '16px' }}>
-                    <p style={{
+                  <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                    <p /* TODO: Move to external CSS */ style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '8px',
@@ -592,14 +592,14 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       color: '#6b7280',
                       margin: '0'
                     }}>
-                      <Clock style={{ width: '14px', height: '14px' }} />
+                      <Clock /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} />
                       {student.recentActivity}
                     </p>
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     <div>
-                      <h4 style={{
+                      <h4 /* TODO: Move to external CSS */ style={{
                         fontSize: '0.75rem',
                         fontWeight: '600',
                         margin: '0 0 6px 0',
@@ -609,9 +609,9 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       }}>
                         Strengths:
                       </h4>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                         {student.strengths.map((strength, index) => (
-                          <span key={index} style={{
+                          <span key={index} /* TODO: Move to external CSS */ style={{
                             padding: '4px 8px',
                             borderRadius: '12px',
                             fontSize: '0.75rem',
@@ -627,7 +627,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                     
                     {student.needsSupport.length > 0 && (
                       <div>
-                        <h4 style={{
+                        <h4 /* TODO: Move to external CSS */ style={{
                           fontSize: '0.75rem',
                           fontWeight: '600',
                           margin: '0 0 6px 0',
@@ -637,9 +637,9 @@ const StandaloneTeacherDashboard: React.FC = () => {
                         }}>
                           Needs Support:
                         </h4>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                           {student.needsSupport.map((need, index) => (
-                            <span key={index} style={{
+                            <span key={index} /* TODO: Move to external CSS */ style={{
                               padding: '4px 8px',
                               borderRadius: '12px',
                               fontSize: '0.75rem',
@@ -662,29 +662,29 @@ const StandaloneTeacherDashboard: React.FC = () => {
 
         {/* Analytics Tab */}
         {activeTab === 'analytics' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
               Class Analytics & Insights
             </h2>
             
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '24px'
             }}>
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 border: '1px solid #e5e7eb',
                 borderRadius: '12px',
                 padding: '24px'
               }}>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
+                <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
                   Weekly Engagement
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3b82f6' }}>
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+                  <div /* TODO: Move to external CSS */ style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3b82f6' }}>
                     <PieChart size={80} />
-                    <div style={{
+                    <div /* TODO: Move to external CSS */ style={{
                       position: 'absolute',
                       fontSize: '1.5rem',
                       fontWeight: '700',
@@ -693,75 +693,75 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       {stats.weeklyEngagement}%
                     </div>
                   </div>
-                  <p style={{ textAlign: 'center', color: '#6b7280', fontSize: '0.875rem', margin: '0' }}>
+                  <p /* TODO: Move to external CSS */ style={{ textAlign: 'center', color: '#6b7280', fontSize: '0.875rem', margin: '0' }}>
                     Students actively engaged this week
                   </p>
                 </div>
               </div>
 
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 border: '1px solid #e5e7eb',
                 borderRadius: '12px',
                 padding: '24px'
               }}>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
+                <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
                   Cultural Integration Success
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <div /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     padding: '12px 0',
                     borderBottom: '1px solid #f3f4f6'
                   }}>
-                    <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>Resources Used</span>
-                    <span style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>Resources Used</span>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                       {stats.culturalResourcesUsed}
                     </span>
                   </div>
-                  <div style={{
+                  <div /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     padding: '12px 0',
                     borderBottom: '1px solid #f3f4f6'
                   }}>
-                    <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>Te Reo Engagement</span>
-                    <span style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>87%</span>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>Te Reo Engagement</span>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>87%</span>
                   </div>
-                  <div style={{
+                  <div /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     padding: '12px 0'
                   }}>
-                    <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>Cultural Competency</span>
-                    <span style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>92%</span>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>Cultural Competency</span>
+                    <span /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>92%</span>
                   </div>
                 </div>
               </div>
 
-              <div style={{
+              <div /* TODO: Move to external CSS */ style={{
                 background: 'white',
                 border: '1px solid #e5e7eb',
                 borderRadius: '12px',
                 padding: '24px',
                 gridColumn: '1 / -1'
               }}>
-                <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
+                <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 16px 0' }}>
                   Subject Performance Trends
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
                     { subject: 'English', percentage: 85 },
                     { subject: 'Mathematics', percentage: 73 },
                     { subject: 'Science', percentage: 79 },
                     { subject: 'Social Studies', percentage: 91 }
                   ].map((item, index) => (
-                    <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                      <span style={{
+                    <div key={index} /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                      <span /* TODO: Move to external CSS */ style={{
                         minWidth: '100px',
                         fontSize: '0.875rem',
                         color: '#374151',
@@ -769,7 +769,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       }}>
                         {item.subject}
                       </span>
-                      <div style={{
+                      <div /* TODO: Move to external CSS */ style={{
                         flex: 1,
                         height: '8px',
                         background: '#e5e7eb',
@@ -784,7 +784,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                           width: `${item.percentage}%`
                         }} />
                       </div>
-                      <span style={{
+                      <span /* TODO: Move to external CSS */ style={{
                         minWidth: '40px',
                         textAlign: 'right',
                         fontSize: '0.875rem',
@@ -803,18 +803,18 @@ const StandaloneTeacherDashboard: React.FC = () => {
 
         {/* Resources Tab */}
         {activeTab === 'resources' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
               Teaching Resources & Materials
             </h2>
-            <p style={{ fontSize: '1rem', color: '#6b7280', margin: '0' }}>
+            <p /* TODO: Move to external CSS */ style={{ fontSize: '1rem', color: '#6b7280', margin: '0' }}>
               Access to 3,063+ culturally-responsive educational resources
             </p>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <button
                 onClick={() => window.location.href = '/resources'}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -837,16 +837,16 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <BookOpen style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <BookOpen /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Te Kete Ako Collection
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
               
               <button
                 onClick={() => alert('Cultural Learning Modules - Deep Inquiry-Based Learning Ready!')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -869,16 +869,16 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <Star style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <Star /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Cultural Learning Modules
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
               
               <button
                 onClick={() => alert('Assessment Tools - Professional Alpha Testing Suite Ready!')}
-                style={{
+                /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -901,11 +901,11 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   e.currentTarget.style.borderColor = '#e5e7eb';
                 }}
               >
-                <Target style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
-                <span style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
+                <Target /* TODO: Move to external CSS */ style={{ width: '24px', height: '24px', color: '#3b82f6' }} />
+                <span /* TODO: Move to external CSS */ style={{ flex: 1, fontSize: '1.125rem', fontWeight: '600', color: '#1f2937' }}>
                   Assessment Tools
                 </span>
-                <ChevronRight style={{ width: '20px', height: '20px', color: '#6b7280' }} />
+                <ChevronRight /* TODO: Move to external CSS */ style={{ width: '20px', height: '20px', color: '#6b7280' }} />
               </button>
             </div>
           </div>
@@ -913,13 +913,13 @@ const StandaloneTeacherDashboard: React.FC = () => {
 
         {/* Lessons Tab */}
         {activeTab === 'lessons' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
+          <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div /* TODO: Move to external CSS */ style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0' }}>
                 Lesson Plans
               </h2>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <button style={{
+              <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <button /* TODO: Move to external CSS */ style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -932,39 +932,39 @@ const StandaloneTeacherDashboard: React.FC = () => {
                   fontSize: '0.875rem',
                   fontWeight: '600'
                 }}>
-                  <Plus style={{ width: '16px', height: '16px' }} />
+                  <Plus /* TODO: Move to external CSS */ style={{ width: '16px', height: '16px' }} />
                   Create New Lesson
                 </button>
               </div>
             </div>
 
-            <div style={{
+            <div /* TODO: Move to external CSS */ style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
               gap: '20px'
             }}>
               {lessonPlans.map((lesson) => (
-                <div key={lesson.id} style={{
+                <div key={lesson.id} /* TODO: Move to external CSS */ style={{
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '12px',
                   padding: '20px'
                 }}>
-                  <div style={{
+                  <div /* TODO: Move to external CSS */ style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     marginBottom: '16px'
                   }}>
                     <div>
-                      <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
+                      <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1f2937', margin: '0 0 4px 0' }}>
                         {lesson.title}
                       </h3>
-                      <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
+                      <p /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280', margin: '0' }}>
                         {lesson.subject} • {lesson.yearLevel}
                       </p>
                     </div>
-                    <span style={{
+                    <span /* TODO: Move to external CSS */ style={{
                       padding: '4px 8px',
                       borderRadius: '12px',
                       fontSize: '0.75rem',
@@ -977,23 +977,23 @@ const StandaloneTeacherDashboard: React.FC = () => {
                     </span>
                   </div>
 
-                  <div style={{ marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#6b7280' }}>
-                        <Clock style={{ width: '14px', height: '14px' }} /> {lesson.duration}
+                  <div /* TODO: Move to external CSS */ style={{ marginBottom: '16px' }}>
+                    <div /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '8px' }}>
+                      <span /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#6b7280' }}>
+                        <Clock /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} /> {lesson.duration}
                       </span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#6b7280' }}>
-                        <Star style={{ width: '14px', height: '14px' }} /> {lesson.culturalElements} cultural elements
+                      <span /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', color: '#6b7280' }}>
+                        <Star /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} /> {lesson.culturalElements} cultural elements
                       </span>
                     </div>
                     
-                    <p style={{ fontSize: '0.75rem', color: '#9ca3af', margin: '0' }}>
+                    <p /* TODO: Move to external CSS */ style={{ fontSize: '0.75rem', color: '#9ca3af', margin: '0' }}>
                       Modified {lesson.lastModified}
                     </p>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button style={{
+                  <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '8px' }}>
+                    <button /* TODO: Move to external CSS */ style={{
                       flex: 1,
                       display: 'flex',
                       alignItems: 'center',
@@ -1008,10 +1008,10 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       fontWeight: '500',
                       color: '#374151'
                     }}>
-                      <Eye style={{ width: '14px', height: '14px' }} />
+                      <Eye /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} />
                       View
                     </button>
-                    <button style={{
+                    <button /* TODO: Move to external CSS */ style={{
                       flex: 1,
                       display: 'flex',
                       alignItems: 'center',
@@ -1026,10 +1026,10 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       fontWeight: '500',
                       color: '#374151'
                     }}>
-                      <FileText style={{ width: '14px', height: '14px' }} />
+                      <FileText /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} />
                       Edit
                     </button>
-                    <button style={{
+                    <button /* TODO: Move to external CSS */ style={{
                       flex: 1,
                       display: 'flex',
                       alignItems: 'center',
@@ -1044,7 +1044,7 @@ const StandaloneTeacherDashboard: React.FC = () => {
                       fontWeight: '500',
                       color: '#374151'
                     }}>
-                      <Users style={{ width: '14px', height: '14px' }} />
+                      <Users /* TODO: Move to external CSS */ style={{ width: '14px', height: '14px' }} />
                       Assign
                     </button>
                   </div>

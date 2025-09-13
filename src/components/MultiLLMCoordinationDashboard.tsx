@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../services/DualRoleAuthProvider';
 import '../styles/multi-llm-coordination.css';
 import '../styles/next-level-design-system.css';
-// Temporarily disabled - import { globalMultiLLMActivator, LLMNode } from '../utils/multi-llm-coordination-activator';
+// Temporarily disabled - import type { LLMNode } from '../utils/multi-llm-coordination-activator';
+import { globalMultiLLMActivator } from '../utils/multi-llm-coordination-activator';
 
 interface CoordinationStatus {
   coordinationActive: boolean;
   totalNodes: number;
   activeNodes: number;
   nodes: LLMNode[];
-  kaitiakiStatus: any;
+  kaitiakiStatus: unknown;
   lastHeartbeat: number;
 }
 

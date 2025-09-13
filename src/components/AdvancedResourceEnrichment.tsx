@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Activity,
-  Award,
-  BarChart3,
-  BookOpen,
-  CheckCircle,
-  Shield,
-  Star,
-  Users,
-} from 'lucide-react';
+import type { Activity, Award, BarChart3, BookOpen, CheckCircle, Shield, Star, Users } from 'lucide-react';
+import {  } from 'lucide-react';
 import type { EnrichedResource } from '../types';
 
 // Placeholder function to resolve TS2552

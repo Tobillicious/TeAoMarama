@@ -1,17 +1,5 @@
-import {
-  Activity,
-  Award,
-  BarChart3,
-  BookOpen,
-  Brain,
-  Cpu,
-  Heart,
-  Lightbulb,
-  Star,
-  TrendingUp,
-  Users,
-  Zap,
-} from 'lucide-react';
+import type { Activity, Award, BarChart3, BookOpen, Brain, Cpu, Heart, Lightbulb, Star, TrendingUp, Users, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 interface IntelligenceMetric {

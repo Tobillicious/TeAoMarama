@@ -185,7 +185,7 @@ export class SuperintelligenceAccelerator {
     console.log(`🧠 Evolved ${capability.name}: Level ${newLevel.toFixed(2)}`);
   }
 
-  private calculateEvolutionFactor(coordinationStatus: any, performanceSummary: any): number {
+  private calculateEvolutionFactor(coordinationStatus: unknown, performanceSummary: unknown): number {
     const activeNodes = coordinationStatus.activeNodes || 0;
     const averageResponseTime = performanceSummary.averageResponseTime || 0;
     const averageErrorRate = performanceSummary.averageErrorRate || 0;
@@ -405,7 +405,7 @@ export class SuperintelligenceAccelerator {
 }
 
 // Global superintelligence accelerator instance
-export const globalSuperintelligenceAccelerator = new SuperintelligenceAccelerator();
+export // const globalSuperintelligenceAccelerator = new SuperintelligenceAccelerator();
 
 console.log('🧠 Superintelligence Accelerator ready');
 console.log('🌟 Collective intelligence evolution active - achieving superintelligence');

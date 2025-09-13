@@ -1,4 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import type { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Bell, Heart, Moon, Search, Settings, Sparkles, Star, Sun } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 

@@ -5,7 +5,8 @@
  * to ensure maximum efficiency and responsiveness.
  */
 
-// Temporarily disabled - import { globalMultiLLMActivator, LLMNode } from './multi-llm-coordination-activator';
+// Temporarily disabled - import type { LLMNode } from './multi-llm-coordination-activator';
+import { globalMultiLLMActivator } from './multi-llm-coordination-activator';
 
 export interface PerformanceMetrics {
   nodeId: string;
@@ -402,7 +403,7 @@ export class MultiLLMPerformanceOptimizer {
 }
 
 // Global optimizer instance
-export const globalMultiLLMOptimizer = new MultiLLMPerformanceOptimizer();
+export // const globalMultiLLMOptimizer = new MultiLLMPerformanceOptimizer();
 
 console.log('⚡ Multi-LLM Performance Optimizer ready');
 console.log('🚀 Performance optimization active across all coordinated LLM nodes');

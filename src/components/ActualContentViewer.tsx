@@ -329,7 +329,7 @@ This lesson plan is ready for immediate classroom use.
           {/* Activities - The Core Beautiful Content */}
           <div className="enhanced-activities">
             <h3>⭐ Enhanced Learning Activities</h3>
-            {resource.actualLessonContent.activities?.map((activity: any, index: number) => (
+            {resource.actualLessonContent.activities?.map((activity: unknown, index: number) => (
               <div key={index} className="activity-card">
                 <h4>
                   <span className="activity-number">{index + 1}</span>

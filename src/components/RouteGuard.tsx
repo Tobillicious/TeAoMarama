@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import type { Navigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
 
 interface RouteGuardProps {

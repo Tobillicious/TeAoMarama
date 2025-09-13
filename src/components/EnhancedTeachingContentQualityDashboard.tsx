@@ -185,7 +185,7 @@ const EnhancedTeachingContentQualityDashboard: React.FC = () => {
               <h3>Average Quality Score</h3>
               <div
                 className="metric-value"
-                style={{ color: getQualityColor(status.averageQualityScore) }}
+                /* TODO: Move to external CSS */ style={{ color: getQualityColor(status.averageQualityScore) }}
               >
                 {status.averageQualityScore}%
               </div>
@@ -241,7 +241,7 @@ const EnhancedTeachingContentQualityDashboard: React.FC = () => {
                 <div className="metric-details">
                   <div className="metric-item">
                     <span>Overall Score:</span>
-                    <span style={{ color: getQualityColor(metric.overallScore) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getQualityColor(metric.overallScore) }}>
                       {metric.overallScore}%
                     </span>
                   </div>
@@ -279,7 +279,7 @@ const EnhancedTeachingContentQualityDashboard: React.FC = () => {
                   <h4>{module.name}</h4>
                   <span
                     className="priority-badge"
-                    style={{ backgroundColor: getPriorityColor(module.priority) }}
+                    /* TODO: Move to external CSS */ style={{ backgroundColor: getPriorityColor(module.priority) }}
                   >
                     {module.priority.toUpperCase()}
                   </span>
@@ -377,7 +377,7 @@ const EnhancedTeachingContentQualityDashboard: React.FC = () => {
                   </div>
                   <div className="detail-row">
                     <span>Quality Score:</span>
-                    <span style={{ color: getQualityColor(content.qualityMetrics.overallScore) }}>
+                    <span /* TODO: Move to external CSS */ style={{ color: getQualityColor(content.qualityMetrics.overallScore) }}>
                       {content.qualityMetrics.overallScore}%
                     </span>
                   </div>

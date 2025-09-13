@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import {
-  educationalContentManager,
-  type EducationalResource,
-} from '../utils/educational-content-manager';
+import type { EducationalResource } from '../utils/educational-content-manager';
+import { educationalContentManager,  } from '../utils/educational-content-manager';
 import './EnhancedContentDiscovery.css';
 
 interface SmartSearchFilters {

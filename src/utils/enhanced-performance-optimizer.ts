@@ -3,7 +3,7 @@
 
 interface ResourceCacheItem {
   id: string;
-  data: any;
+  data: unknown;
   timestamp: Date;
   accessCount: number;
   lastAccessed: Date;
@@ -161,7 +161,7 @@ class EnhancedPerformanceOptimizer {
   }
 
   // Enhanced caching system with cultural priority
-  public async cacheResource(resourceId: string, data: any, options: {
+  public async cacheResource(resourceId: string, data: unknown, options: {
     priority?: 'high' | 'medium' | 'low';
     culturalContent?: boolean;
     estimatedSize?: number;
@@ -256,7 +256,7 @@ class EnhancedPerformanceOptimizer {
     return patterns;
   }
 
-  private async buildPreloadQueue(userPatterns: any, currentContext: any): Promise<void> {
+  private async buildPreloadQueue(userPatterns: unknown, currentContext: unknown): Promise<void> {
     this.preloadQueue = [];
 
     // Strategy 1: Cultural Priority Preloading
@@ -285,7 +285,7 @@ class EnhancedPerformanceOptimizer {
     });
   }
 
-  private async addCulturalPriorityResources(context: any): Promise<void> {
+  private async addCulturalPriorityResources(context: unknown): Promise<void> {
     // Simulate culturally relevant resources
     const culturalResources = [
       {
@@ -321,7 +321,7 @@ class EnhancedPerformanceOptimizer {
     });
   }
 
-  private async addPredictiveResources(learningPath: string, userPatterns: any): Promise<void> {
+  private async addPredictiveResources(learningPath: string, userPatterns: unknown): Promise<void> {
     // Predict next likely resources based on learning path progression
     const predictiveResources = [
       {
@@ -351,7 +351,7 @@ class EnhancedPerformanceOptimizer {
     });
   }
 
-  private async addUserPatternResources(userPatterns: any, context: any): Promise<void> {
+  private async addUserPatternResources(userPatterns: unknown, context: unknown): Promise<void> {
     // Resources based on user's historical preferences
     const patternResources = [
       {
@@ -375,7 +375,7 @@ class EnhancedPerformanceOptimizer {
     });
   }
 
-  private async addProximityBasedResources(context: any): Promise<void> {
+  private async addProximityBasedResources(context: unknown): Promise<void> {
     // Resources in same subject area or cultural context
     const proximityResources = [
       {
@@ -499,7 +499,7 @@ class EnhancedPerformanceOptimizer {
     }
   }
 
-  private estimateDataSize(data: any): number {
+  private estimateDataSize(data: unknown): number {
     try {
       return JSON.stringify(data).length * 2; // Rough estimate
     } catch {
@@ -567,7 +567,7 @@ class EnhancedPerformanceOptimizer {
 }
 
 // Export the enhanced performance optimizer
-export const enhancedPerformanceOptimizer = new EnhancedPerformanceOptimizer();
+export // const enhancedPerformanceOptimizer = new EnhancedPerformanceOptimizer();
 
 // Export types for external use
 export type { ResourceCacheItem, PerformanceMetrics, PreloadStrategy, ResourcePreloadQueue };

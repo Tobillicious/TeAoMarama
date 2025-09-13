@@ -460,7 +460,7 @@ const EnhancedSocialStudiesSlideshow: React.FC = () => {
     }
   };
 
-  const handleAssessmentResponse = (questionIndex: number, response: any) => {
+  const handleAssessmentResponse = (questionIndex: number, response: unknown) => {
     setAssessmentResponses(prev => ({
       ...prev,
       [`slide-${currentSlide}-q${questionIndex}`]: response
@@ -486,7 +486,7 @@ const EnhancedSocialStudiesSlideshow: React.FC = () => {
 
   return (
     <div className="enhanced-slideshow-container">
-      <audio ref={audioPlayerRef} style={{ display: 'none' }} />
+      <audio ref={audioPlayerRef} /* TODO: Move to external CSS */ style={{ display: 'none' }} />
       
       {/* Teacher Notes Panel */}
       {showTeacherNotes && currentSlideData.teacherNotes && (

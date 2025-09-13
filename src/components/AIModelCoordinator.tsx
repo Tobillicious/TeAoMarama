@@ -1,18 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Brain, 
-  Zap, 
-  CheckCircle, 
-  AlertTriangle, 
-  RefreshCw,
-  Activity,
-  Cpu,
-  Database,
-  Globe,
-  Users,
-  BookOpen,
-  Sparkles
-} from 'lucide-react';
+import type { Activity, AlertTriangle, Brain, CheckCircle, Cpu, Database, Globe, RefreshCw, Sparkles, Users, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 interface AIModel {
   id: string;
@@ -33,6 +21,12 @@ const AIModelCoordinator: React.FC = () => {
   const [models, setModels] = useState<AIModel[]>([]);
   const [isCoordinating, setIsCoordinating] = useState(false);
   const [coordinationStatus, setCoordinationStatus] = useState<string>('');
+  const [performanceMetrics, setPerformanceMetrics] = useState({
+    totalModels: 0,
+    activeModels: 0,
+    averageResponseTime: 0,
+    culturalCompliance: 0,
+  });
 
   useEffect(() => {
     // Initialize with 10 AI models as mentioned
@@ -45,7 +39,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Code Generation', 'Bug Fixing', 'Architecture Design'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1200, accuracy: 94, culturalCompliance: 98 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'ds-codegpt',
@@ -55,7 +49,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Code Analysis', 'Documentation', 'Testing'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 800, accuracy: 92, culturalCompliance: 96 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'texra-ai',
@@ -65,7 +59,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Content Creation', 'Text Analysis', 'Translation'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1500, accuracy: 89, culturalCompliance: 97 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'glm-45',
@@ -75,7 +69,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Advanced Reasoning', 'Cultural Context', 'Educational Enhancement'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 900, accuracy: 96, culturalCompliance: 100 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'glm-z1',
@@ -85,7 +79,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Multimodal Processing', 'Cultural Safety', 'Content Validation'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1100, accuracy: 95, culturalCompliance: 100 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'gemini-pro',
@@ -95,7 +89,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Multimodal AI', 'Code Generation', 'Analysis'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1300, accuracy: 91, culturalCompliance: 93 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'cultural-ai-1',
@@ -105,7 +99,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Te Reo Māori', 'Cultural Protocols', 'Community Integration'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1000, accuracy: 98, culturalCompliance: 100 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'cultural-ai-2',
@@ -115,7 +109,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Pacific Languages', 'Cultural Values', 'Community Connections'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1200, accuracy: 97, culturalCompliance: 99 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'educational-ai',
@@ -125,7 +119,7 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['Curriculum Alignment', 'Assessment Design', 'Pedagogical Support'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 1400, accuracy: 93, culturalCompliance: 95 },
-        glmIntegration: true
+        glmIntegration: true,
       },
       {
         id: 'performance-ai',
@@ -135,41 +129,72 @@ const AIModelCoordinator: React.FC = () => {
         capabilities: ['System Optimization', 'Performance Monitoring', 'Efficiency Analysis'],
         lastSync: new Date().toISOString(),
         performance: { responseTime: 700, accuracy: 90, culturalCompliance: 94 },
-        glmIntegration: true
-      }
+        glmIntegration: true,
+      },
     ];
 
     setModels(initialModels);
+
+    // Calculate performance metrics
+    const activeModels = initialModels.filter((m) => m.status === 'active').length;
+    const avgResponseTime =
+      initialModels.reduce((sum, m) => sum + m.performance.responseTime, 0) / initialModels.length;
+    const avgCulturalCompliance =
+      initialModels.reduce((sum, m) => sum + m.performance.culturalCompliance, 0) /
+      initialModels.length;
+
+    setPerformanceMetrics({
+      totalModels: initialModels.length,
+      activeModels,
+      averageResponseTime: Math.round(avgResponseTime),
+      culturalCompliance: Math.round(avgCulturalCompliance),
+    });
   }, []);
 
-  const getStatusColor = (status: string) => {
+  // const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': return 'text-green-600 bg-green-50 border-green-200';
-      case 'inactive': return 'text-gray-600 bg-gray-50 border-gray-200';
-      case 'error': return 'text-red-600 bg-red-50 border-red-200';
-      case 'syncing': return 'text-blue-600 bg-blue-50 border-blue-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
+      case 'active':
+        return 'text-green-600 bg-green-50 border-green-200';
+      case 'inactive':
+        return 'text-gray-600 bg-gray-50 border-gray-200';
+      case 'error':
+        return 'text-red-600 bg-red-50 border-red-200';
+      case 'syncing':
+        return 'text-blue-600 bg-blue-50 border-blue-200';
+      default:
+        return 'text-gray-600 bg-gray-50 border-gray-200';
     }
   };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'active': return <CheckCircle className="w-4 h-4 text-green-600" />;
-      case 'inactive': return <AlertTriangle className="w-4 h-4 text-gray-600" />;
-      case 'error': return <AlertTriangle className="w-4 h-4 text-red-600" />;
-      case 'syncing': return <RefreshCw className="w-4 h-4 text-blue-600 animate-spin" />;
-      default: return <AlertTriangle className="w-4 h-4 text-gray-600" />;
+      case 'active':
+        return <CheckCircle className="w-4 h-4 text-green-600" />;
+      case 'inactive':
+        return <AlertTriangle className="w-4 h-4 text-gray-600" />;
+      case 'error':
+        return <AlertTriangle className="w-4 h-4 text-red-600" />;
+      case 'syncing':
+        return <RefreshCw className="w-4 h-4 text-blue-600 animate-spin" />;
+      default:
+        return <AlertTriangle className="w-4 h-4 text-gray-600" />;
     }
   };
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'claude': return <Brain className="w-4 h-4 text-purple-600" />;
-      case 'gpt': return <Cpu className="w-4 h-4 text-green-600" />;
-      case 'glm': return <Globe className="w-4 h-4 text-blue-600" />;
-      case 'gemini': return <Sparkles className="w-4 h-4 text-yellow-600" />;
-      case 'custom': return <Users className="w-4 h-4 text-indigo-600" />;
-      default: return <Database className="w-4 h-4 text-gray-600" />;
+      case 'claude':
+        return <Brain className="w-4 h-4 text-purple-600" />;
+      case 'gpt':
+        return <Cpu className="w-4 h-4 text-green-600" />;
+      case 'glm':
+        return <Globe className="w-4 h-4 text-blue-600" />;
+      case 'gemini':
+        return <Sparkles className="w-4 h-4 text-yellow-600" />;
+      case 'custom':
+        return <Users className="w-4 h-4 text-indigo-600" />;
+      default:
+        return <Database className="w-4 h-4 text-gray-600" />;
     }
   };
 
@@ -180,44 +205,50 @@ const AIModelCoordinator: React.FC = () => {
     // Simulate coordination process
     for (let i = 0; i < models.length; i++) {
       const model = models[i];
-      
+
       // Update model status to syncing
-      setModels(prev => prev.map(m => 
-        m.id === model.id ? { ...m, status: 'syncing' } : m
-      ));
+      setModels((prev) => prev.map((m) => (m.id === model.id ? { ...m, status: 'syncing' } : m)));
 
       setCoordinationStatus(`Integrating GLM with ${model.name}...`);
 
       // Simulate integration time
-      await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1000 + Math.random() * 1500));
 
       // Update model with enhanced capabilities
-      setModels(prev => prev.map(m => 
-        m.id === model.id ? { 
-          ...m, 
-          status: 'active',
-          performance: {
-            ...m.performance,
-            responseTime: Math.max(500, m.performance.responseTime - 200),
-            accuracy: Math.min(100, m.performance.accuracy + 2),
-            culturalCompliance: Math.min(100, m.performance.culturalCompliance + 1)
-          },
-          lastSync: new Date().toISOString()
-        } : m
-      ));
+      setModels((prev) =>
+        prev.map((m) =>
+          m.id === model.id
+            ? {
+                ...m,
+                status: 'active',
+                performance: {
+                  ...m.performance,
+                  responseTime: Math.max(500, m.performance.responseTime - 200),
+                  accuracy: Math.min(100, m.performance.accuracy + 2),
+                  culturalCompliance: Math.min(100, m.performance.culturalCompliance + 1),
+                },
+                lastSync: new Date().toISOString(),
+              }
+            : m,
+        ),
+      );
     }
 
-    setCoordinationStatus('GLM integration complete! All models are now enhanced with advanced reasoning capabilities.');
+    setCoordinationStatus(
+      'GLM integration complete! All models are now enhanced with advanced reasoning capabilities.',
+    );
     setIsCoordinating(false);
 
     // Clear status after 3 seconds
     setTimeout(() => setCoordinationStatus(''), 3000);
   };
 
-  const activeModels = models.filter(m => m.status === 'active').length;
-  const avgResponseTime = models.reduce((sum, m) => sum + m.performance.responseTime, 0) / models.length;
+  const activeModels = models.filter((m) => m.status === 'active').length;
+  const avgResponseTime =
+    models.reduce((sum, m) => sum + m.performance.responseTime, 0) / models.length;
   const avgAccuracy = models.reduce((sum, m) => sum + m.performance.accuracy, 0) / models.length;
-  const avgCulturalCompliance = models.reduce((sum, m) => sum + m.performance.culturalCompliance, 0) / models.length;
+  const avgCulturalCompliance =
+    models.reduce((sum, m) => sum + m.performance.culturalCompliance, 0) / models.length;
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-neutral-200 p-6">
@@ -227,9 +258,7 @@ const AIModelCoordinator: React.FC = () => {
             <Brain className="w-6 h-6 text-pounamu" />
             <span>AI Model Coordinator</span>
           </h3>
-          <p className="text-neutral-600 mt-1">
-            Managing 10 AI models with GLM integration
-          </p>
+          <p className="text-neutral-600 mt-1">Managing 10 AI models with GLM integration</p>
         </div>
         <div className="flex items-center space-x-4">
           <div className="text-center">
@@ -284,8 +313,8 @@ const AIModelCoordinator: React.FC = () => {
           <div
             key={model.id}
             className={`border rounded-lg p-4 transition-all duration-200 ${
-              model.status === 'active' 
-                ? 'bg-green-50 border-green-200' 
+              model.status === 'active'
+                ? 'bg-green-50 border-green-200'
                 : model.status === 'syncing'
                 ? 'bg-blue-50 border-blue-200'
                 : 'bg-gray-50 border-gray-200'
@@ -298,7 +327,15 @@ const AIModelCoordinator: React.FC = () => {
               </div>
               <div className="flex items-center space-x-1">
                 {getStatusIcon(model.status)}
-                <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getSeverityColor(model.status)}`}>
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-medium border ${
+                    model.status === 'active'
+                      ? 'bg-green-100 text-green-800 border-green-200'
+                      : model.status === 'warning'
+                      ? 'bg-yellow-100 text-yellow-800 border-yellow-200'
+                      : 'bg-red-100 text-red-800 border-red-200'
+                  }`}
+                >
                   {model.status.toUpperCase()}
                 </span>
               </div>
@@ -364,7 +401,9 @@ const AIModelCoordinator: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           <div className="text-center">
-            <div className="text-2xl font-bold text-pounamu-600">{Math.round(avgResponseTime)}ms</div>
+            <div className="text-2xl font-bold text-pounamu-600">
+              {Math.round(avgResponseTime)}ms
+            </div>
             <div className="text-pounamu-700">Average Response Time</div>
           </div>
           <div className="text-center">
@@ -372,7 +411,9 @@ const AIModelCoordinator: React.FC = () => {
             <div className="text-blue-700">Overall Accuracy</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-green-600">{Math.round(avgCulturalCompliance)}%</div>
+            <div className="text-2xl font-bold text-green-600">
+              {Math.round(avgCulturalCompliance)}%
+            </div>
             <div className="text-green-700">Cultural Compliance</div>
           </div>
         </div>

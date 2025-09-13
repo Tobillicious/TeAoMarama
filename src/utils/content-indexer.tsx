@@ -301,7 +301,7 @@ const getIconForType = (type: string): React.ReactNode => {
 };
 
 // Load all content with comprehensive indexing
-export const loadAllIndexedContent = async (): Promise<ContentItem[]> => {
+export // const loadAllIndexedContent = async (): Promise<ContentItem[]> => {
   try {
     // Generate content from the comprehensive index
     const indexedContent = generateContentFromIndex();
@@ -338,7 +338,7 @@ export const loadAllIndexedContent = async (): Promise<ContentItem[]> => {
 };
 
 // Search and filter functions
-export const searchContent = (content: ContentItem[], query: string): ContentItem[] => {
+export // const searchContent = (content: ContentItem[], query: string): ContentItem[] => {
   if (!query.trim()) return content;
 
   const searchTerm = query.toLowerCase();
@@ -353,7 +353,7 @@ export const searchContent = (content: ContentItem[], query: string): ContentIte
   );
 };
 
-export const filterContentByCategory = (
+export // const filterContentByCategory = (
   content: ContentItem[],
   category: string,
 ): ContentItem[] => {
@@ -361,17 +361,17 @@ export const filterContentByCategory = (
   return content.filter((item) => item.category === category);
 };
 
-export const filterContentBySubject = (content: ContentItem[], subject: string): ContentItem[] => {
+export // const filterContentBySubject = (content: ContentItem[], subject: string): ContentItem[] => {
   if (subject === 'all') return content;
   return content.filter((item) => item.subject === subject);
 };
 
-export const filterContentByType = (content: ContentItem[], type: string): ContentItem[] => {
+export // const filterContentByType = (content: ContentItem[], type: string): ContentItem[] => {
   if (type === 'all') return content;
   return content.filter((item) => item.type === type);
 };
 
-export const sortContent = (
+export // const sortContent = (
   content: ContentItem[],
   sortBy: 'popularity' | 'recent' | 'alphabetical' | 'featured',
 ): ContentItem[] => {

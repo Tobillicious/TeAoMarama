@@ -42,7 +42,7 @@ export const UniversalAccessProvider: React.FC<UniversalAccessProviderProps> = (
     console.log('🎓 All educational resources now accessible to humans');
     console.log('🌿 Cultural clearance: MAXIMUM (kaitiaki level)');
     console.log('📚 7000+ resources unlocked');
-  }, []);
+  }, [universalAccess]);
 
   return (
     <UniversalAccessContext.Provider value={universalAccess}>
@@ -52,7 +52,7 @@ export const UniversalAccessProvider: React.FC<UniversalAccessProviderProps> = (
 };
 
 // Higher-order component to wrap any component with universal access
-export const withUniversalAccess = <P extends object>(Component: React.ComponentType<P>) => {
+export // const withUniversalAccess = <P extends object>(Component: React.ComponentType<P>) => {
   return (props: P) => (
     <UniversalAccessProvider>
       <Component {...props} />
@@ -61,7 +61,7 @@ export const withUniversalAccess = <P extends object>(Component: React.Component
 };
 
 // Hook for components to check if they have universal access
-export const useAccessCheck = () => {
+export // const useAccessCheck = () => {
   const { hasAccess, canAccessAll, userRole, culturalClearance } = useUniversalAccess();
 
   return {

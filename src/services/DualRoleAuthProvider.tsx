@@ -1,12 +1,5 @@
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-  type User as FirebaseUser,
-  type UserCredential,
-} from 'firebase/auth';
+import type { User as FirebaseUser, UserCredential } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile,  } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { auth, db } from '../firebaseConfig';

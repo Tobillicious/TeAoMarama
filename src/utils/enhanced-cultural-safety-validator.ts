@@ -352,7 +352,7 @@ class EnhancedCulturalSafetyValidator {
 
   private async applyValidationProtocols(
     analysis: CulturalContentAnalysis,
-    context: any,
+    context: unknown,
   ): Promise<Array<{ protocol: string; isValid: boolean; issue?: string }>> {
     const results: Array<{ protocol: string; isValid: boolean; issue?: string }> = [];
 
@@ -404,7 +404,7 @@ class EnhancedCulturalSafetyValidator {
 
   private async validateTeReoContent(
     teReoWords: string[],
-    context: any,
+    context: unknown,
   ): Promise<{ isValid: boolean; issue?: string }> {
     // Simulate Te Reo validation
     const hasSpellingErrors = teReoWords.some((word) => word.includes('error'));
@@ -423,7 +423,7 @@ class EnhancedCulturalSafetyValidator {
 
   private async validateTikangaContent(
     tikangaReferences: string[],
-    context: any,
+    context: unknown,
   ): Promise<{ isValid: boolean; issue?: string }> {
     // Simulate tikanga validation
     const hasProtocolErrors = tikangaReferences.some((ref) => ref.includes('incorrect'));
@@ -443,7 +443,7 @@ class EnhancedCulturalSafetyValidator {
 
   private async validateIwiReferences(
     iwiMentions: string[],
-    context: any,
+    context: unknown,
   ): Promise<{ isValid: boolean; issue?: string }> {
     // Simulate iwi validation
     const hasInaccurateReferences = iwiMentions.some((iwi) => iwi.includes('incorrect'));
@@ -462,7 +462,7 @@ class EnhancedCulturalSafetyValidator {
 
   private async validateTraditionalKnowledge(
     traditionalKnowledge: string[],
-    context: any,
+    context: unknown,
   ): Promise<{ isValid: boolean; issue?: string }> {
     // Traditional knowledge always requires special handling
     return {
@@ -562,7 +562,7 @@ class EnhancedCulturalSafetyValidator {
       100;
   }
 
-  private logValidation(content: string, result: CulturalValidationResult, context: any): void {
+  private logValidation(content: string, result: CulturalValidationResult, context: unknown): void {
     this.validationHistory.push({
       timestamp: new Date(),
       contentId: `content-${Date.now()}`,
@@ -590,7 +590,7 @@ class EnhancedCulturalSafetyValidator {
 }
 
 // Export the enhanced cultural safety validator
-export const enhancedCulturalSafetyValidator = new EnhancedCulturalSafetyValidator();
+export // const enhancedCulturalSafetyValidator = new EnhancedCulturalSafetyValidator();
 
 // Export types for external use
 export type { CulturalContentAnalysis, CulturalSafetyProtocol, CulturalValidationMetrics };

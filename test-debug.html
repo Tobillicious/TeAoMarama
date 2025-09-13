@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debug Test</title>
+  </head>
+  <body>
+    <h1>Debug Test Page</h1>
+    <div id="root">
+      <p>If you can see this, the basic HTML is working.</p>
+      <p>Check the browser console for JavaScript errors.</p>
+    </div>
+
+    <script>
+      console.log('Basic JavaScript is working');
+
+      // Test if React is available
+      if (typeof React !== 'undefined') {
+        console.log('React is available');
+      } else {
+        console.log('React is NOT available');
+      }
+
+      // Test if the main script loads
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = '/src/main.tsx';
+      script.onload = () => console.log('Main script loaded successfully');
+      script.onerror = (e) => console.error('Main script failed to load:', e);
+      document.head.appendChild(script);
+    </script>
+  </body>
+</html>

@@ -23,7 +23,7 @@ export interface EnhancedResource {
       passNumber: number;
       kaiako: string;
       specialization: string;
-      enhancedContent: any;
+      enhancedContent: unknown;
       timeCompleted: string;
       qualityImprovement: number;
     }>;
@@ -35,7 +35,7 @@ export interface EnhancedResource {
     difficulty: number;
     estimatedDuration: number;
   };
-  actualLessonContent?: any; // The real enhanced lesson data
+  actualLessonContent?: unknown; // The real enhanced lesson data
 }
 
 export interface EnhancedResourceBatch {
@@ -299,14 +299,14 @@ class EnhancedResourceService {
 const enhancedResourceService = new EnhancedResourceService();
 
 // Export convenience functions
-export const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
-export const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
+export // const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
+export // const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
 export const getResourcesBySubject = (subject: string) => enhancedResourceService.getResourcesBySubject(subject);
 export const getResourcesByYearLevel = (yearLevel: string) => enhancedResourceService.getResourcesByYearLevel(yearLevel);
 export const getHighQualityResources = (minQuality?: number) => enhancedResourceService.getHighQualityResources(minQuality);
 export const getCulturallyAuthenticResources = (minScore?: number) => enhancedResourceService.getCulturallyAuthenticResources(minScore);
 export const getResourceById = (id: string) => enhancedResourceService.getResourceById(id);
-export const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
+export // const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
 
 // Export the service for advanced usage
 export default enhancedResourceService;

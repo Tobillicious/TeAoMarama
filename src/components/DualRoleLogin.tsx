@@ -1,15 +1,5 @@
-import {
-  AlertTriangle,
-  BookOpen,
-  CheckCircle,
-  Eye,
-  EyeOff,
-  GraduationCap,
-  Lock,
-  Mail,
-  Shield,
-  Smartphone,
-} from 'lucide-react';
+import type { AlertTriangle, BookOpen, CheckCircle, Eye, EyeOff, GraduationCap, Lock, Mail, Shield, Smartphone } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
@@ -379,9 +369,9 @@ const DualRoleLogin: React.FC = () => {
                       key={role.value}
                       className={`role-option ${form.role === role.value ? 'selected' : ''}`}
                       onClick={() => handleInputChange('role', role.value)}
-                      style={{ borderColor: role.color }}
+                      /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                     >
-                      <div className="role-icon" style={{ color: role.color }}>
+                      <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
                         {role.icon}
                       </div>
                       <span>{role.label}</span>
@@ -511,9 +501,9 @@ const DualRoleLogin: React.FC = () => {
                           role: role.value as 'student' | 'teacher' | 'kaitiaki',
                         }))
                       }
-                      style={{ borderColor: role.color }}
+                      /* TODO: Move to external CSS */ style={{ borderColor: role.color }}
                     >
-                      <div className="role-icon" style={{ color: role.color }}>
+                      <div className="role-icon" /* TODO: Move to external CSS */ style={{ color: role.color }}>
                         {role.icon}
                       </div>
                       <span>{role.label}</span>
