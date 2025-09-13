@@ -768,7 +768,7 @@ function GLMModelsPage() {
   );
 }
 
-function App(): void {
+function App() {
   return (
     <div>
       <Routes>

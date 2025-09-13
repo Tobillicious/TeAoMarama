@@ -15,8 +15,8 @@ export * from './brain/ingest/kaitiaki-cerebellum';
 export * from './brain/validate-brain-system';
 
 // Integration Status
-export // // const INTEGRATION_STATUS = {
-  timestamp: '2025-09-13T10:48:26.583Z',
+export const INTEGRATION_STATUS = {
+  timestamp: '2025-09-13T11:08:56.156Z',
   status: 'ACTIVE',
   brainSystem: 'INTEGRATED',
   culturalSafety: 'VALIDATED',
@@ -24,7 +24,7 @@ export // // const INTEGRATION_STATUS = {
 };
 
 // Cultural Safety Validation
-export // // const CULTURAL_SAFETY = {
+export const CULTURAL_SAFETY = {
   tikangaCompliance: true,
   teReoIntegration: true,
   culturalValidation: true,

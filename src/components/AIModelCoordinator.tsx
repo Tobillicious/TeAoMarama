@@ -1,5 +1,4 @@
-import type { Activity, AlertTriangle, Brain, CheckCircle, Cpu, Database, Globe, RefreshCw, Sparkles, Users, Zap } from 'lucide-react';
-import {  } from 'lucide-react';
+import { Activity, AlertTriangle, Brain, CheckCircle, Cpu, Database, Globe, RefreshCw, Sparkles, Users, Zap } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 interface AIModel {
@@ -418,8 +417,7 @@ const AIModelCoordinator: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default AIModelCoordinator;
