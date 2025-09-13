@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
-import LoadingSpinner from './components/LoadingSpinner';
+// LoadingSpinner will be dynamically imported when needed
 import SimpleNavigation from './components/SimpleNavigation';
 import {
   performanceMonitor,

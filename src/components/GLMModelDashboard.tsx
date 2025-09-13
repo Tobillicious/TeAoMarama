@@ -431,27 +431,58 @@ ${testContent}
               />
             </div>
 
-            <button
-              onClick={testGLMEnhancement}
-              disabled={!testContent || isEnhancing}
-              style={{
-                background: testContent && !isEnhancing ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
-                color: 'white',
-                border: 'none',
-                padding: '12px 24px',
-                borderRadius: '8px',
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                cursor: testContent && !isEnhancing ? 'pointer' : 'not-allowed',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginBottom: '24px'
-              }}
-            >
-              <Play className="w-4 h-4" />
-              {isEnhancing ? 'Enhancing...' : `Enhance with ${selectedModel.toUpperCase()}`}
-            </button>
+            <div style={{ marginBottom: '24px' }}>
+              {demoMode && !isConfigured && (
+                <div style={{
+                  background: '#eff6ff',
+                  border: '1px solid #3b82f6',
+                  borderRadius: '8px',
+                  padding: '12px 16px',
+                  marginBottom: '16px',
+                  fontSize: '0.875rem',
+                  color: '#1e40af'
+                }}>
+                  🎭 Demo Mode Active - This will simulate GLM enhancement responses
+                </div>
+              )}
+              
+              {lastError && (
+                <div style={{
+                  background: '#fef2f2',
+                  border: '1px solid #fca5a5',
+                  borderRadius: '8px',
+                  padding: '12px 16px',
+                  marginBottom: '16px',
+                  fontSize: '0.875rem',
+                  color: '#dc2626'
+                }}>
+                  ❌ {lastError}
+                </div>
+              )}
+
+              <button
+                onClick={testGLMEnhancement}
+                disabled={!testContent || isEnhancing}
+                style={{
+                  background: testContent && !isEnhancing ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: testContent && !isEnhancing ? 'pointer' : 'not-allowed',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <Play className="w-4 h-4" />
+                {isEnhancing ? 'Enhancing...' : 
+                 demoMode ? `Demo ${selectedModel.toUpperCase()}` : 
+                 `Enhance with ${selectedModel.toUpperCase()}`}
+              </button>
+            </div>
 
             {enhancedContent && (
               <div>

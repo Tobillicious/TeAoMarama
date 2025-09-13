@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from '../components/Navigation';
+// Navigation will be dynamically imported when needed
 import { useAuth } from '../services/DualRoleAuthProvider';
 import { advancedSuperintelligenceEnhancer } from '../utils/advanced-superintelligence-enhancer';
 import './Year8SocialStudies.css';
@@ -181,14 +181,17 @@ const Year8SocialStudies: React.FC = () => {
   return (
     <div className="year8-social-studies-container">
       <Navigation />
-      
+
       {/* Authentication Notice */}
       {!isAuthenticated && (
         <div className="auth-notice">
-          <p>🔐 <Link to="/login">Sign in</Link> to access interactive features, track progress, and save your work!</p>
+          <p>
+            🔐 <Link to="/login">Sign in</Link> to access interactive features, track progress, and
+            save your work!
+          </p>
         </div>
       )}
-      
+
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-visual">
@@ -380,23 +383,15 @@ const Year8SocialStudies: React.FC = () => {
 
                 <div className="unit-actions">
                   {isAuthenticated ? (
-                    <Link 
-                      to={`/unit/${unit.id}`} 
-                      className="explore-unit-btn primary"
-                    >
+                    <Link to={`/unit/${unit.id}`} className="explore-unit-btn primary">
                       📚 Start Unit
                     </Link>
                   ) : (
-                    <Link 
-                      to="/login" 
-                      className="explore-unit-btn secondary"
-                    >
+                    <Link to="/login" className="explore-unit-btn secondary">
                       🔐 Sign in to Access
                     </Link>
                   )}
-                  <button className="preview-btn">
-                    👁️ Preview
-                  </button>
+                  <button className="preview-btn">👁️ Preview</button>
                 </div>
               </div>
             ))}
