@@ -21,6 +21,8 @@ const GLMModelDashboard: React.FC = () => {
   const [enhancedContent, setEnhancedContent] = useState('');
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [selectedModel, setSelectedModel] = useState<'glm-4.5' | 'glm-z1'>('glm-4.5');
+  const [demoMode, setDemoMode] = useState(false);
+  const [lastError, setLastError] = useState('');
 
   useEffect(() => {
     // Check if GLM integration is already configured
@@ -62,17 +64,54 @@ const GLMModelDashboard: React.FC = () => {
   };
 
   const testGLMEnhancement = async () => {
-    if (!testContent || !isConfigured) return;
+    if (!testContent) return;
     
     setIsEnhancing(true);
+    setLastError('');
     updateModelStatus('processing');
     
     try {
+      // Check if we should use demo mode
+      if (!isConfigured || demoMode) {
+        // Demo mode - simulate GLM enhancement
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
+        
+        const demoEnhancement = `# Enhanced Educational Content (Demo Mode)
+
+## Original Content Analysis
+${testContent}
+
+## ${selectedModel.toUpperCase()} Enhancement Applied
+
+### Cultural Integration
+- Added Te Reo Māori greetings and vocabulary
+- Included whakataukī (proverb) for context
+- Connected to mātauranga Māori perspectives
+
+### Pedagogical Improvements
+- Clear learning objectives established
+- Success criteria defined
+- Assessment opportunities identified
+- Differentiated learning activities included
+
+### Key Enhancements:
+1. **Cultural Authenticity**: Integrated authentic Māori perspectives
+2. **Pedagogical Depth**: Added scaffolded learning opportunities
+3. **Real-world Connections**: Linked to Aotearoa New Zealand context
+4. **Assessment Design**: Clear evaluation criteria provided
+
+*Note: This is a demo enhancement. Configure a valid GLM API key for real AI-powered enhancement.*`;
+        
+        setEnhancedContent(demoEnhancement);
+        updateModelStatus('ready');
+        return;
+      }
+
       const enhancer = selectedModel === 'glm-4.5' 
         ? (window as any).teAoMaramaGLM?.glm45
         : (window as any).teAoMaramaGLM?.glmZ1;
       
-      if (!enhancer) throw new Error('GLM enhancer not available');
+      if (!enhancer) throw new Error('GLM enhancer not available - please configure API key');
       
       const request: EducationalEnhancementRequest = {
         content: testContent,
@@ -99,10 +138,11 @@ const GLMModelDashboard: React.FC = () => {
       ));
       
       updateModelStatus('ready');
-    } catch (error) {
+    } catch (error: any) {
       console.error('GLM Enhancement failed:', error);
+      setLastError(error.message || 'Enhancement failed');
       updateModelStatus('error');
-      setEnhancedContent(`Enhancement failed: ${error.message}`);
+      setEnhancedContent(`Enhancement failed: ${error.message || 'Unknown error'}`);
     } finally {
       setIsEnhancing(false);
     }
@@ -195,26 +235,57 @@ const GLMModelDashboard: React.FC = () => {
               />
             </div>
             
-            <button
-              onClick={configureGLM}
-              disabled={!apiKey}
-              style={{
-                background: apiKey ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
-                color: 'white',
-                border: 'none',
-                padding: '12px 24px',
-                borderRadius: '8px',
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                cursor: apiKey ? 'pointer' : 'not-allowed',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
-              <Zap className="w-4 h-4" />
-              Configure GLM Models
-            </button>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+              <button
+                onClick={configureGLM}
+                disabled={!apiKey}
+                style={{
+                  background: apiKey ? 'linear-gradient(135deg, #7c3aed, #a855f7)' : '#9ca3af',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: apiKey ? 'pointer' : 'not-allowed',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <Zap className="w-4 h-4" />
+                Configure GLM Models
+              </button>
+              
+              <button
+                onClick={() => setDemoMode(true)}
+                style={{
+                  background: 'white',
+                  color: '#7c3aed',
+                  border: '2px solid #7c3aed',
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <Play className="w-4 h-4" />
+                Try Demo Mode
+              </button>
+            </div>
+            
+            <p style={{ 
+              fontSize: '0.875rem', 
+              color: '#6b7280', 
+              marginTop: '12px',
+              fontStyle: 'italic'
+            }}>
+              Don't have an API key? Try demo mode to see how GLM enhancement works with simulated responses.
+            </p>
           </div>
         )}
 
@@ -287,7 +358,7 @@ const GLMModelDashboard: React.FC = () => {
         </div>
 
         {/* Testing Interface */}
-        {isConfigured && (
+        {(isConfigured || demoMode) && (
           <div style={{
             background: 'white',
             borderRadius: '12px',

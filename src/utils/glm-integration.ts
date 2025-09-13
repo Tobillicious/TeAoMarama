@@ -45,6 +45,11 @@ export class GLMEducationalEnhancer {
       maxTokens: 4000,
       ...config
     };
+    
+    // Validate API key format
+    if (!this.config.apiKey || this.config.apiKey.length < 10) {
+      console.warn('⚠️ GLM API key appears to be invalid or missing');
+    }
   }
 
   async enhanceEducationalContent(request: EducationalEnhancementRequest): Promise<string> {
@@ -154,20 +159,52 @@ Please provide enhanced content that maintains the original learning objectives 
   }
 
   private async callGLMAPI(payload: any): Promise<GLMResponse> {
-    const response = await fetch(this.config.baseUrl, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${this.config.apiKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-      throw new Error(`GLM API request failed: ${response.status} ${response.statusText}`);
+    // Validate API key before making request
+    if (!this.config.apiKey || this.config.apiKey === '') {
+      throw new Error('GLM API key is required. Please configure your Zhipu AI API key first.');
     }
 
-    return await response.json();
+    console.log('🔗 Making GLM API request to:', this.config.baseUrl);
+    console.log('🔑 Using API key:', this.config.apiKey.substring(0, 10) + '...');
+
+    try {
+      const response = await fetch(this.config.baseUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.config.apiKey}`,
+          'Content-Type': 'application/json',
+          'User-Agent': 'TeAoMarama-Educational-Platform/1.0'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      console.log('📡 GLM API Response Status:', response.status);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('❌ GLM API Error Response:', errorText);
+        
+        if (response.status === 403) {
+          throw new Error('GLM API authentication failed. Please check your API key is valid and has proper permissions.');
+        } else if (response.status === 429) {
+          throw new Error('GLM API rate limit exceeded. Please try again later.');
+        } else if (response.status === 500) {
+          throw new Error('GLM API server error. Please try again later.');
+        } else {
+          throw new Error(`GLM API request failed: ${response.status} ${response.statusText}. ${errorText}`);
+        }
+      }
+
+      const result = await response.json();
+      console.log('✅ GLM API Success');
+      return result;
+      
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        throw new Error('Network error: Unable to connect to GLM API. Please check your internet connection.');
+      }
+      throw error;
+    }
   }
 
   async batchEnhanceResources(resources: any[], batchSize: number = 5): Promise<any[]> {
@@ -221,14 +258,21 @@ Please provide enhanced content that maintains the original learning objectives 
 
 // Factory function for different GLM models
 export function createGLMEnhancer(modelType: 'glm-4.5' | 'glm-z1', apiKey: string): GLMEducationalEnhancer {
+  // Map model types to actual API model names
+  const modelMapping = {
+    'glm-4.5': 'glm-4-plus', // Use the correct API model name
+    'glm-z1': 'glm-z1'
+  };
+
   const config: GLMConfig = {
     apiKey,
-    model: modelType === 'glm-4.5' ? 'glm-4.5' : 'glm-z1',
+    model: modelMapping[modelType] as any,
     baseUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
     temperature: modelType === 'glm-z1' ? 0.3 : 0.7, // Z1 for reasoning, 4.5 for creativity
     maxTokens: modelType === 'glm-z1' ? 8000 : 4000
   };
 
+  console.log(`🤖 Creating GLM enhancer: ${modelType} -> ${config.model}`);
   return new GLMEducationalEnhancer(config);
 }
 
