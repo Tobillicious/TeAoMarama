@@ -462,6 +462,26 @@ Students create an original text inspired by their reading and analysis.
 - Acknowledge different cultural perspectives and experiences
 - Create safe spaces for all students to participate and share
 
+## External Resources and Links
+
+### Māori Literature Resources
+
+- [New Zealand Book Council](https://www.bookcouncil.org.nz/)
+- [Te Ara - Māori Literature](https://teara.govt.nz/en/maori-literature)
+- [NZ On Screen - Māori Stories](https://www.nzonscreen.com/collection/maori-stories)
+
+### Author Resources
+
+- [Witi Ihimaera - Author Profile](https://www.penguin.co.nz/authors/witi-ihimaera)
+- [Patricia Grace - Author Profile](https://www.huia.co.nz/patricia-grace)
+- [Hone Tuwhare - Poetry Foundation](https://www.poetryfoundation.org/poets/hone-tuwhare)
+
+### Educational Resources
+
+- [Te Kete Ipurangi - English Resources](https://www.tki.org.nz/r/maori/english/)
+- [Ministry of Education - English Curriculum](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/english/)
+- [New Zealand Literature Archive](https://www.nzliterature.org.nz/)
+
 ## Conclusion
 
 This comprehensive unit provides students with deep, meaningful engagement with Māori literature that develops both literary understanding and cultural awareness. Through authentic engagement with traditional and contemporary texts, students develop the knowledge, skills, and attitudes needed to appreciate and contribute to New Zealand's rich literary heritage.

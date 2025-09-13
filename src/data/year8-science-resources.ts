@@ -180,10 +180,17 @@ export const newZealandEcosystemsResource: NZCResource = {
       },
       {
         title: "iNaturalist New Zealand",
-        url: "https://inaturalist.nz/",
+        url: "https://www.inaturalist.org/places/new-zealand",
         type: "interactive",
         description: "Citizen science platform where students can contribute biodiversity observations and access real occurrence data",
-        source: "iNaturalist NZ"
+        source: "iNaturalist"
+      },
+      {
+        title: "ZEALANDIA Ecosanctuary",
+        url: "https://visitzealandia.com/",
+        type: "website",
+        description: "Wellington's ecosanctuary showcasing successful conservation and native species recovery",
+        source: "ZEALANDIA"
       },
       {
         title: "Zealandia Ecosystem Restoration",

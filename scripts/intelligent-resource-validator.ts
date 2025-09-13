@@ -475,8 +475,7 @@ async function main() {
   console.log(`📋 Enhancement plan: RESOURCE_ENHANCEMENT_PLAN.md`);
 }
 
-if (require.main === module) {
-  main().catch(console.error);
-}
+// Run the validator
+main().catch(console.error);
 
 export default IntelligentResourceValidator;

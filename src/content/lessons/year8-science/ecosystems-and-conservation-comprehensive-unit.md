@@ -445,6 +445,26 @@ Students develop a personal or family conservation action plan.
 - Acknowledge different cultural perspectives and values
 - Create safe spaces for all students to participate
 
+## External Resources and Links
+
+### Conservation Organizations
+
+- [Department of Conservation](https://www.doc.govt.nz/)
+- [New Zealand Biodiversity](https://www.biodiversity.govt.nz/)
+- [Forest & Bird](https://www.forestandbird.org.nz/)
+
+### Scientific Research
+
+- [NIWA - National Institute of Water and Atmospheric Research](https://www.niwa.co.nz/)
+- [Landcare Research](https://www.landcareresearch.co.nz/)
+- [Manaaki Whenua - Landcare Research](https://www.landcareresearch.co.nz/)
+
+### Māori Environmental Knowledge
+
+- [Te Ara - Māori and the Environment](https://teara.govt.nz/en/maori-and-the-environment)
+- [Māori Environmental Knowledge](https://www.doc.govt.nz/nature/maori-and-biodiversity/)
+- [Kaitiakitanga Resources](https://www.doc.govt.nz/nature/maori-and-biodiversity/kaitiakitanga/)
+
 ## Conclusion
 
 This comprehensive unit provides students with deep, meaningful understanding of New Zealand's unique ecosystems and conservation challenges. Through authentic engagement with real-world issues and multiple knowledge systems, students develop the knowledge, skills, and attitudes needed to be informed, active environmental citizens.

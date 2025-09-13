@@ -415,6 +415,32 @@ Students create a family presentation about what they've learned.
 - Acknowledge different cultural perspectives
 - Create safe spaces for all students to participate
 
+## External Resources and Links
+
+### Primary Sources
+
+- [Te Tiriti o Waitangi (Māori and English versions)](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi)
+- [Archives New Zealand - Treaty Documents](https://www.archives.govt.nz/discover-our-stories/te-tiriti-o-waitangi)
+- [Waitangi Tribunal Reports](https://www.waitangitribunal.govt.nz/reports/)
+
+### Educational Resources
+
+- [Te Ara: The Encyclopedia of New Zealand](https://teara.govt.nz/en)
+- [NZHistory.net.nz - Treaty Timeline](https://nzhistory.govt.nz/politics/treaty/treaty-timeline)
+- [Te Papa - Treaty Exhibition](https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/treaty-waitangi)
+
+### Contemporary Issues
+
+- [Ihumātao - Land Occupation](https://www.rnz.co.nz/news/national/396123/ihumatao-protesters-occupy-land-in-south-auckland)
+- [Whanganui River - Legal Personhood](https://www.whanganui.govt.nz/our-council/whanganui-river)
+- [Te Urewera - Co-governance](https://www.doc.govt.nz/parks-and-recreation/places-to-go/east-coast/places/te-urewera/)
+
+### Government Resources
+
+- [Ministry of Education - Treaty Education](https://www.education.govt.nz/school/teaching-and-learning/curriculum-and-learning-resources/te-tiriti-o-waitangi/)
+- [New Zealand Curriculum Online](https://nzcurriculum.tki.org.nz/)
+- [Te Kete Ipurangi (TKI)](https://www.tki.org.nz/)
+
 ## Conclusion
 
 This comprehensive unit provides students with deep, meaningful learning about Te Tiriti o Waitangi that connects past and present, theory and practice, and different learning areas. Through authentic engagement with real-world issues and multiple perspectives, students develop the knowledge, skills, and attitudes needed to be informed, active citizens in Aotearoa New Zealand.

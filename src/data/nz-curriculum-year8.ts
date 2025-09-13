@@ -195,22 +195,29 @@ export const earlyNZHistoryResource: NZCResource = {
     ],
     resources: [
       {
-        title: "Archives New Zealand - Treaty of Waitangi",
-        url: "https://archives.govt.nz/discover-our-collections/treaty-of-waitangi",
-        type: "website",
+        title: "Te Tiriti o Waitangi Original Documents",
+        url: "https://www.archives.govt.nz/discover-our-stories/the-treaty-of-waitangi/the-sheets-and-signatures-of-te-tiriti-o-waitangi",
+        type: "website", 
         description: "Official government archives with high-resolution images of original Treaty documents and detailed historical context",
         source: "Archives New Zealand"
       },
       {
+        title: "What Te Tiriti o Waitangi Says in English and Te Reo Māori", 
+        url: "https://www.archives.govt.nz/discover-our-stories/the-treaty-of-waitangi/what-te-tiriti-o-waitangi-says-in-english-and-te-reo-maori",
+        type: "website",
+        description: "Side-by-side comparison of the Māori and English versions with detailed analysis of differences",
+        source: "Archives New Zealand"
+      },
+      {
         title: "Waitangi Tribunal Reports", 
-        url: "https://waitangitribunal.govt.nz/",
+        url: "https://www.waitangitribunal.govt.nz/en/publications/tribunal-reports",
         type: "website",
         description: "Contemporary Treaty settlement processes and Tribunal findings on historical and modern Treaty claims",
         source: "Waitangi Tribunal"
       },
       {
         title: "Te Papa Treaty Exhibition Online",
-        url: "https://www.tepapa.govt.nz/discover-collections/read-watch-play/history/treaty-waitangi",
+        url: "https://tepapa.govt.nz/discover-collections/read-watch-play/treaty-waitangi",
         type: "interactive",
         description: "Interactive online exhibition with artifacts, stories, and multimedia presentations about the Treaty",
         source: "Te Papa Tongarewa Museum"
