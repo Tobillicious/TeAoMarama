@@ -22,6 +22,7 @@ const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowse
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
+const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Educational content - keep Year 8 only for now
@@ -110,6 +111,7 @@ function App() {
               <Route path="/assessments" element={<AssessmentHub />} />
               <Route path="/audit" element={<PlatformAuditDashboard />} />
               <Route path="/glm-models" element={<GLMModelDashboard />} />
+              <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
               {/* Static Pages */}
               <Route path="/about" element={<About />} />
