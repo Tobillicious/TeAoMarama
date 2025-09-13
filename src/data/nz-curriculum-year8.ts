@@ -275,11 +275,15 @@ export const earlyNZHistoryResource: NZCResource = {
   ]
 };
 
-// Import science resources
+// Import other subject resources
 import { realScienceResources } from './year8-science-resources';
+import { realEnglishResources } from './year8-english-resources';
+import { realMathematicsResources } from './year8-mathematics-resources';
 
 // Export for immediate use - combining all real resources
 export const realTeachingResources = [
   earlyNZHistoryResource,
-  ...realScienceResources
+  ...realScienceResources,
+  ...realEnglishResources,
+  ...realMathematicsResources
 ];

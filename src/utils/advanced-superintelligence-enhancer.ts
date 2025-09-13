@@ -452,7 +452,8 @@ class AdvancedSuperintelligenceEnhancer {
 }
 
 // Export the advanced superintelligence enhancer
-export // // // const advancedSuperintelligenceEnhancer = new AdvancedSuperintelligenceEnhancer();
+const advancedSuperintelligenceEnhancer = new AdvancedSuperintelligenceEnhancer();
+export { advancedSuperintelligenceEnhancer };
 
 // Export types for external use
 export type { AdvancedMetrics, EnhancementModule, EnhancementResult };

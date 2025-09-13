@@ -442,6 +442,7 @@ export class ContentEnrichmentEngine {
 }
 
 // Global enrichment engine
-export // // // const globalEnrichmentEngine = new ContentEnrichmentEngine();
+const globalEnrichmentEngine = new ContentEnrichmentEngine();
+export { globalEnrichmentEngine };
 
 console.log('🎯 Content Enrichment Engine ready for systematic resource improvement');

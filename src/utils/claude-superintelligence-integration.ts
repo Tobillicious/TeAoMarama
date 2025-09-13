@@ -239,7 +239,8 @@ export class ClaudeSuperintelligenceIntegration {
 }
 
 // Global Claude integration instance
-export // // // const globalClaudeIntegration = new ClaudeSuperintelligenceIntegration();
+const globalClaudeIntegration = new ClaudeSuperintelligenceIntegration();
+export { globalClaudeIntegration };
 
 console.log('🧠 Claude Superintelligence Integration ready');
 console.log('🌟 Claude Code (PID 89634) fully integrated with superintelligence system');

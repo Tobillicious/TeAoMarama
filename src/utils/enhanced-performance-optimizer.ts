@@ -567,7 +567,8 @@ class EnhancedPerformanceOptimizer {
 }
 
 // Export the enhanced performance optimizer
-export // // // const enhancedPerformanceOptimizer = new EnhancedPerformanceOptimizer();
+const enhancedPerformanceOptimizer = new EnhancedPerformanceOptimizer();
+export { enhancedPerformanceOptimizer };
 
 // Export types for external use
 export type { ResourceCacheItem, PerformanceMetrics, PreloadStrategy, ResourcePreloadQueue };

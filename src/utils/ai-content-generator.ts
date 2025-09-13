@@ -101,4 +101,5 @@ Holistic assessment considering both academic understanding and cultural appreci
   }
 }
 
-export // // // const aiContentGenerator = new AIContentGenerator();
+const aiContentGenerator = new AIContentGenerator();
+export { aiContentGenerator };

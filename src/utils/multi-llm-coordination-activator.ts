@@ -335,7 +335,8 @@ export class MultiLLMCoordinationActivator {
 }
 
 // Global activator instance
-export // // // const globalMultiLLMActivator = new MultiLLMCoordinationActivator();
+const globalMultiLLMActivator = new MultiLLMCoordinationActivator();
+export { globalMultiLLMActivator };
 
 // Auto-activate coordination
 console.log('🌐 Multi-LLM Coordination Activator ready');

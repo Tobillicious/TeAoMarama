@@ -524,7 +524,8 @@ class TerminalNode9314Coordinator {
 }
 
 // Export the terminal node 9314 coordinator
-export // // // const terminalNode9314Coordinator = new TerminalNode9314Coordinator();
+const terminalNode9314Coordinator = new TerminalNode9314Coordinator();
+export { terminalNode9314Coordinator };
 
 // Export types for external use
 export type { Node9314Metrics, Node9314Task, TerminalNode9314 };

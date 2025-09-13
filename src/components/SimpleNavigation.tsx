@@ -1,15 +1,12 @@
 import React from 'react';
 import type { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useAuth } from '../services/DualRoleAuthProvider';
 
 const SimpleNavigation: React.FC = () => {
-  const { isAuthenticated, currentUser, logout } = useAuth();
+  // Temporarily disable auth to show real content
+  const isAuthenticated = false;
+  const currentUser = null;
   const location = useLocation();
-
-  const handleLogout = async () => {
-    await logout();
-  };
 
   const mainLinks = [
     { to: '/', label: 'Home', icon: '🏠' },

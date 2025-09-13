@@ -535,4 +535,5 @@ export class ProgressiveMultiPassEnricher {
   }
 }
 
-export // // // const progressiveEnricher = new ProgressiveMultiPassEnricher();
+const progressiveEnricher = new ProgressiveMultiPassEnricher();
+export { progressiveEnricher };

@@ -657,4 +657,5 @@ Generated at: ${new Date().toISOString()}
   }
 }
 
-export // // // const superintelligenceAssistant = new SuperintelligenceAssistant();
+const superintelligenceAssistant = new SuperintelligenceAssistant();
+export { superintelligenceAssistant };

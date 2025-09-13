@@ -299,4 +299,5 @@ export class ContentIndexOptimizer {
 }
 
 // Export singleton instance
-export // // // const contentIndexOptimizer = ContentIndexOptimizer.getInstance();
+const contentIndexOptimizer = ContentIndexOptimizer.getInstance();
+export { contentIndexOptimizer };

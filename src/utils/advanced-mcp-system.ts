@@ -415,4 +415,5 @@ export class AdvancedMCPSystem {
 }
 
 // Global MCP instance
-export // // // const globalMCPSystem = new AdvancedMCPSystem();
+const globalMCPSystem = new AdvancedMCPSystem();
+export { globalMCPSystem };

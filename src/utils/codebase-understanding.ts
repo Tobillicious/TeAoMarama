@@ -307,4 +307,5 @@ Generated at: ${new Date().toISOString()}
   }
 }
 
-export // // // const codebaseUnderstandingSystem = new CodebaseUnderstandingSystem();
+const codebaseUnderstandingSystem = new CodebaseUnderstandingSystem();
+export { codebaseUnderstandingSystem };
