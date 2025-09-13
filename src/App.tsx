@@ -39,6 +39,7 @@ const SuperIntelligenceCoordinator = lazy(
 const MultimediaStudio = lazy(() => import('./components/MultimediaStudio'));
 const AssessmentHub = lazy(() => import('./components/AdvancedStudentAnalytics')); // Using available component
 const PlatformAuditDashboard = lazy(() => import('./components/PlatformAuditDashboard'));
+const GLMModelDashboard = lazy(() => import('./components/GLMModelDashboard'));
 
 function App() {
   const location = useLocation();
@@ -108,6 +109,7 @@ function App() {
               <Route path="/multimedia" element={<MultimediaStudio />} />
               <Route path="/assessments" element={<AssessmentHub />} />
               <Route path="/audit" element={<PlatformAuditDashboard />} />
+              <Route path="/glm-models" element={<GLMModelDashboard />} />
 
               {/* Static Pages */}
               <Route path="/about" element={<About />} />

@@ -57,6 +57,8 @@
     "agent:heartbeat": "npx tsx scripts/agent-heartbeat.ts",
     "performance:audit": "npx lighthouse http://localhost:5174 --output=json --output-path=./lighthouse-audit.json --chrome-flags=\"--headless\"",
     "performance:report": "npm run performance:audit && node -e \"const report = require('./lighthouse-audit.json'); console.log('Performance Score:', report.categories.performance.score); console.log('LCP:', report.audits['largest-contentful-paint'].displayValue); console.log('FCP:', report.audits['first-contentful-paint'].displayValue);\"",
+    "glm:enhance": "tsx scripts/glm-batch-enhancement.ts",
+    "glm:test": "tsx -e \"console.log('GLM integration test - use GLM_API_KEY=your_key npm run glm:enhance')\"",
     "wisdom:start": "tsx scripts/wisdom-evolution-superconsciousness.ts",
     "wisdom:status": "tsx scripts/wisdom-controller.ts status",
     "wisdom:silent": "tsx scripts/wisdom-controller.ts silent",
