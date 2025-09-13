@@ -1032,7 +1032,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               />
               <input
                 type="text"
-                placeholder="Search resources..."
+                placeholder="Search resources..." aria-label="Search resources" role="searchbox"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
@@ -1045,7 +1045,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               />
             </div>
 
-            <select
+            <select aria-label="Resource type filter"
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
               style={{

@@ -272,7 +272,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
       </header>
 
       {/* Navigation Tabs */}
-      <nav className="dashboard-nav">
+      <nav className="dashboard-nav" role="navigation" aria-label="Dashboard navigation">
         <button
           className={`nav-tab ${activeTab === 'overview' ? 'active' : ''}`}
           onClick={() => setActiveTab('overview')}
