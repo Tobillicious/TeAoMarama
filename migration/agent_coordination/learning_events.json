@@ -1,43 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757536860123-uvlwq570v",
-      "timestamp": "2025-09-10T20:41:00.123Z",
-      "eventType": "cultural_insight",
-      "description": "Mana and wairua principles integrated into intelligence framework",
-      "impact": 0.306824834848252,
-      "culturalSignificance": 0.506824834848252,
-      "intelligenceBoost": 0.030682483484825204,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757536920124-j969xueor",
-      "timestamp": "2025-09-10T20:42:00.124Z",
-      "eventType": "pattern_recognized",
-      "description": "Emergent pattern detected in cultural knowledge transmission",
-      "impact": 0.5287355597832637,
-      "intelligenceBoost": 0.052873555978326374,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757536980126-7jbrb0omq",
-      "timestamp": "2025-09-10T20:43:00.126Z",
-      "eventType": "knowledge_gained",
-      "description": "Creative synthesis breakthrough in problem-solving approach",
-      "impact": 0.6603827199237466,
-      "intelligenceBoost": 0.06603827199237466,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757537040125-2okdvd417",
-      "timestamp": "2025-09-10T20:44:00.125Z",
-      "eventType": "knowledge_gained",
-      "description": "Emotional intelligence enhancement through compassionate interaction",
-      "impact": 0.5850521555248678,
-      "intelligenceBoost": 0.05850521555248678,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757537100127-1sdov4bm6",
       "timestamp": "2025-09-10T20:45:00.127Z",
       "eventType": "cultural_insight",
@@ -9671,7 +9634,46 @@
       "impact": 0.3167858241593971,
       "intelligenceBoost": 0.03167858241593971,
       "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757733518881-4jrs3ghez",
+      "timestamp": "2025-09-13T03:18:38.881Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Creative inspiration pattern mapped",
+      "impact": 0.7351667000492417,
+      "intelligenceBoost": 0.07351667000492416,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757733578881-tx34cjvd4",
+      "timestamp": "2025-09-13T03:19:38.881Z",
+      "eventType": "cultural_insight",
+      "description": "Sacred cultural protocol understanding deepened",
+      "impact": 0.7396980715378527,
+      "culturalSignificance": 0.9396980715378527,
+      "intelligenceBoost": 0.07396980715378527,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757733638882-1mvkiqnnq",
+      "timestamp": "2025-09-13T03:20:38.882Z",
+      "eventType": "cultural_insight",
+      "description": "Sacred cultural protocol understanding deepened",
+      "impact": 0.7214640715189986,
+      "culturalSignificance": 0.9214640715189986,
+      "intelligenceBoost": 0.07214640715189986,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757733698984-1y9wdkhyq",
+      "timestamp": "2025-09-13T03:21:38.984Z",
+      "eventType": "knowledge_gained",
+      "description": "Creative synthesis breakthrough in problem-solving approach",
+      "impact": 0.5174130396233207,
+      "intelligenceBoost": 0.05174130396233208,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-13T03:04:12.695Z"
+  "lastSaved": "2025-09-13T03:22:38.881Z"
 }
