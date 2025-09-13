@@ -1,52 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757536560119-ovzfb2rxl",
-      "timestamp": "2025-09-10T20:36:00.119Z",
-      "eventType": "emergent_intelligence",
-      "description": "Emergent problem-solving capability activated",
-      "impact": 0.46705389045487516,
-      "intelligenceBoost": 0.046705389045487516,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757536620121-4g1g90yb9",
-      "timestamp": "2025-09-10T20:37:00.121Z",
-      "eventType": "pattern_recognized",
-      "description": "Emergent pattern detected in cultural knowledge transmission",
-      "impact": 0.7707590446655215,
-      "intelligenceBoost": 0.07707590446655216,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757536680124-cpddf1p18",
-      "timestamp": "2025-09-10T20:38:00.124Z",
-      "eventType": "pattern_recognized",
-      "description": "Creative inspiration pattern mapped",
-      "impact": 0.5281326820255119,
-      "intelligenceBoost": 0.052813268202551195,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757536740124-f3wmpe5jx",
-      "timestamp": "2025-09-10T20:39:00.124Z",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.5272290160157411,
-      "intelligenceBoost": 0.05272290160157411,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757536800121-wli9u7bx5",
-      "timestamp": "2025-09-10T20:40:00.121Z",
-      "eventType": "cultural_insight",
-      "description": "Mana and wairua principles integrated into intelligence framework",
-      "impact": 0.32674062936032616,
-      "culturalSignificance": 0.5267406293603262,
-      "intelligenceBoost": 0.032674062936032616,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757536860123-uvlwq570v",
       "timestamp": "2025-09-10T20:41:00.123Z",
       "eventType": "cultural_insight",
@@ -9670,7 +9624,54 @@
       "educationalRelevance": 0.9257656577131459,
       "intelligenceBoost": 0.07257656577131459,
       "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757732352715-x63rjq1m4",
+      "timestamp": "2025-09-13T02:59:12.716Z",
+      "eventType": "educational_breakthrough",
+      "description": "Student learning optimization breakthrough achieved",
+      "impact": 0.36587357219975786,
+      "educationalRelevance": 0.5658735721997579,
+      "intelligenceBoost": 0.03658735721997579,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757732412709-fz0lc31mq",
+      "timestamp": "2025-09-13T03:00:12.709Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Educational learning pathway optimization pattern identified",
+      "impact": 0.31894564581581303,
+      "intelligenceBoost": 0.031894564581581304,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757732472709-2cuyepsbz",
+      "timestamp": "2025-09-13T03:01:12.709Z",
+      "eventType": "knowledge_gained",
+      "description": "Technical optimization insight gained from distributed processing",
+      "impact": 0.6782923920217707,
+      "intelligenceBoost": 0.06782923920217708,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757732532710-ywi4bm4y5",
+      "timestamp": "2025-09-13T03:02:12.710Z",
+      "eventType": "knowledge_gained",
+      "description": "Technical optimization insight gained from distributed processing",
+      "impact": 0.5911607713387201,
+      "intelligenceBoost": 0.059116077133872014,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757732592711-eiank5n1t",
+      "timestamp": "2025-09-13T03:03:12.711Z",
+      "eventType": "emergent_intelligence",
+      "description": "Emergent problem-solving capability activated",
+      "impact": 0.3167858241593971,
+      "intelligenceBoost": 0.03167858241593971,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-13T02:59:12.706Z"
+  "lastSaved": "2025-09-13T03:04:12.695Z"
 }

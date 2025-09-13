@@ -4,20 +4,18 @@ import {
   ChevronRight,
   Download,
   FileText,
+  Filter,
   Play,
   Search,
+  Star,
   Target,
   Users,
-  Filter,
-  Star,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import MāoriFocusedResourceDisplay from './MāoriFocusedResourceDisplay';
-import { filterByQuality, getQualityStats } from '../utils/quality-content-filter';
-import type { RealResource } from '../types';
 
 // Import the real content loader
-import { loadRealEducationalContent } from '../utils/real-content-loader';
+// loadRealEducationalContent will be dynamically imported when needed
 
 // Use the enriched resource interface
 type Resource = {
@@ -39,11 +37,17 @@ type Resource = {
 // Calculate real quality statistics from enhanced resources
 function calculateRealQualityStats(resources: Resource[]) {
   const total = resources.length;
-  const withMetrics = resources.filter(r => r.qualityMetrics?.qualityScore);
-  const ready = resources.filter(r => r.qualityMetrics?.qualityScore >= 70);
-  const enhanced = resources.filter(r => r.qualityMetrics?.qualityScore >= 50 && r.qualityMetrics?.qualityScore < 70);
-  const templates = resources.filter(r => r.qualityMetrics?.qualityScore >= 20 && r.qualityMetrics?.qualityScore < 50);
-  const skeletons = resources.filter(r => !r.qualityMetrics || r.qualityMetrics?.qualityScore < 20);
+  const withMetrics = resources.filter((r) => r.qualityMetrics?.qualityScore);
+  const ready = resources.filter((r) => r.qualityMetrics?.qualityScore >= 70);
+  const enhanced = resources.filter(
+    (r) => r.qualityMetrics?.qualityScore >= 50 && r.qualityMetrics?.qualityScore < 70,
+  );
+  const templates = resources.filter(
+    (r) => r.qualityMetrics?.qualityScore >= 20 && r.qualityMetrics?.qualityScore < 50,
+  );
+  const skeletons = resources.filter(
+    (r) => !r.qualityMetrics || r.qualityMetrics?.qualityScore < 20,
+  );
 
   return {
     total,
@@ -52,8 +56,13 @@ function calculateRealQualityStats(resources: Resource[]) {
     templates: templates.length,
     skeletons: skeletons.length,
     percentReady: total > 0 ? Math.round((ready.length / total) * 100) : 0,
-    averageQuality: withMetrics.length > 0 ? 
-      Math.round(withMetrics.reduce((sum, r) => sum + (r.qualityMetrics?.qualityScore || 0), 0) / withMetrics.length) : 0
+    averageQuality:
+      withMetrics.length > 0
+        ? Math.round(
+            withMetrics.reduce((sum, r) => sum + (r.qualityMetrics?.qualityScore || 0), 0) /
+              withMetrics.length,
+          )
+        : 0,
   };
 }
 
@@ -93,17 +102,17 @@ const FunctionalResourceBrowser: React.FC = () => {
           duration: resource.duration || '45 mins',
           difficulty: resource.difficulty || 'intermediate',
           tags: resource.tags || [],
-          qualityMetrics: resource.qualityMetrics
+          qualityMetrics: resource.qualityMetrics,
         }));
 
         // Apply initial quality filtering using real quality metrics
         const qualityResources = showQualityOnly
-          ? resources.filter(r => r.qualityMetrics?.qualityScore >= qualityFilter)
+          ? resources.filter((r) => r.qualityMetrics?.qualityScore >= qualityFilter)
           : resources;
 
         setResources(resources);
         setFilteredResources(qualityResources);
-        
+
         // Calculate real quality stats from enhanced resources
         const stats = calculateRealQualityStats(resources);
         setQualityStats(stats);
@@ -283,7 +292,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   useEffect(() => {
     // First apply real quality filtering if enabled
     const qualityResources = showQualityOnly
-      ? resources.filter(r => r.qualityMetrics?.qualityScore >= qualityFilter)
+      ? resources.filter((r) => r.qualityMetrics?.qualityScore >= qualityFilter)
       : resources;
 
     // Then apply other filters
@@ -786,8 +795,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                         }}
                       >
                         📚 This resource is part of our comprehensive educational library designed
-                        to support culturally-responsive teaching practices in Aotearoa New
-                        Zealand.
+                        to support culturally-responsive teaching practices in Aotearoa New Zealand.
                       </p>
                     </div>
                   </div>
@@ -894,8 +902,8 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             📚 Educational Resource Library
           </h1>
           <p style={{ fontSize: '1rem', opacity: 0.9, margin: '0 0 12px 0' }}>
-            Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '6,055+'}{' '}
-            real enhanced educational resources with quality metrics
+            Access {resources.length > 0 ? `${resources.length.toLocaleString()}` : '6,055+'} real
+            enhanced educational resources with quality metrics
           </p>
 
           {/* Quality Stats Bar */}
@@ -916,7 +924,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               <span>{qualityStats.enhanced} Enhanced</span>
               <span>{qualityStats.templates} Templates</span>
               <span>{qualityStats.skeletons} Skeletons</span>
-              <span style={{ fontWeight: '600' }}>{qualityStats.percentReady}% Production Ready</span>
+              <span style={{ fontWeight: '600' }}>
+                {qualityStats.percentReady}% Production Ready
+              </span>
               <span>Avg Quality: {qualityStats.averageQuality}%</span>
             </div>
           )}
