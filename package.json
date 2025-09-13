@@ -73,6 +73,7 @@
     "glm:workflow:run": "tsx scripts/glm-workflow-automation.ts run",
     "exa:update-links": "tsx scripts/update-resource-links.ts",
     "exa:validate-url": "tsx -e \"import { exaLinkValidator } from './src/utils/exa-link-validator.ts'; console.log('Exa Link Validator ready');\"",
+    "polish:test": "tsx scripts/comprehensive-polish-test.ts",
     "glm:workflow:status": "tsx scripts/glm-workflow-automation.ts status",
     "glm:workflow:list": "tsx scripts/glm-workflow-automation.ts list",
     "glm:workflow:report": "tsx scripts/glm-workflow-automation.ts report",
