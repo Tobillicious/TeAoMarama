@@ -9,7 +9,7 @@
  */
 
 import { execSync } from 'child_process';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 interface SystemMetrics {
@@ -79,26 +79,40 @@ class AdvancedMonitoringManager {
     try {
       // Step 1: Collect system metrics
       const systemMetrics = await this.collectSystemMetrics();
-      console.log(`🖥️ System Metrics: CPU ${systemMetrics.cpuUsage}%, Memory ${systemMetrics.memoryUsage}MB`);
+      console.log(
+        `🖥️ System Metrics: CPU ${systemMetrics.cpuUsage}%, Memory ${systemMetrics.memoryUsage}MB`,
+      );
 
       // Step 2: Collect performance metrics
       const performanceMetrics = await this.collectPerformanceMetrics();
-      console.log(`⚡ Performance: Build ${performanceMetrics.buildTime}s, UX ${performanceMetrics.userExperienceScore}/10`);
+      console.log(
+        `⚡ Performance: Build ${performanceMetrics.buildTime}s, UX ${performanceMetrics.userExperienceScore}/10`,
+      );
 
       // Step 3: Collect cultural metrics
       const culturalMetrics = await this.collectCulturalMetrics();
-      console.log(`🌿 Cultural: Safety ${culturalMetrics.culturalSafetyScore}%, Compliance ${culturalMetrics.tikangaCompliance}%`);
+      console.log(
+        `🌿 Cultural: Safety ${culturalMetrics.culturalSafetyScore}%, Compliance ${culturalMetrics.tikangaCompliance}%`,
+      );
 
       // Step 4: Analyze and generate alerts
       const alerts = await this.generateAlerts(systemMetrics, performanceMetrics, culturalMetrics);
       console.log(`🚨 Generated ${alerts.length} alerts`);
 
       // Step 5: Generate recommendations
-      const recommendations = await this.generateRecommendations(systemMetrics, performanceMetrics, culturalMetrics);
+      const recommendations = await this.generateRecommendations(
+        systemMetrics,
+        performanceMetrics,
+        culturalMetrics,
+      );
       console.log(`💡 Generated ${recommendations.length} recommendations`);
 
       // Step 6: Calculate health score
-      const healthScore = this.calculateHealthScore(systemMetrics, performanceMetrics, culturalMetrics);
+      const healthScore = this.calculateHealthScore(
+        systemMetrics,
+        performanceMetrics,
+        culturalMetrics,
+      );
 
       // Step 7: Determine system status
       const status = this.determineSystemStatus(healthScore, alerts);
@@ -448,7 +462,10 @@ class AdvancedMonitoringManager {
   /**
    * Determine system status
    */
-  private determineSystemStatus(healthScore: number, alerts: string[]): 'HEALTHY' | 'WARNING' | 'CRITICAL' {
+  private determineSystemStatus(
+    healthScore: number,
+    alerts: string[],
+  ): 'HEALTHY' | 'WARNING' | 'CRITICAL' {
     if (healthScore >= 90 && alerts.length === 0) {
       return 'HEALTHY';
     } else if (healthScore >= 70 && alerts.length <= 2) {
@@ -495,7 +512,8 @@ class AdvancedMonitoringManager {
    * Generate markdown report
    */
   private generateMarkdownReport(report: MonitoringReport): string {
-    const statusEmoji = report.status === 'HEALTHY' ? '✅' : report.status === 'WARNING' ? '⚠️' : '❌';
+    const statusEmoji =
+      report.status === 'HEALTHY' ? '✅' : report.status === 'WARNING' ? '⚠️' : '❌';
 
     return `# 📊 Advanced Monitoring Report
 
@@ -563,7 +581,11 @@ _"Ko te mea nui ko te aroha" - The most important thing is love and care for eac
 
 ## 🚨 ALERTS
 
-${report.alerts.length > 0 ? report.alerts.map((alert, index) => `${index + 1}. ${alert}`).join('\n') : 'No alerts generated'}
+${
+  report.alerts.length > 0
+    ? report.alerts.map((alert, index) => `${index + 1}. ${alert}`).join('\n')
+    : 'No alerts generated'
+}
 
 ---
 
@@ -577,22 +599,28 @@ ${report.recommendations.map((rec, index) => `${index + 1}. ${rec}`).join('\n')}
 
 ### **Overall Health Score**: ${report.healthScore.toFixed(1)}/100
 
-${report.status === 'HEALTHY' ? `
+${
+  report.status === 'HEALTHY'
+    ? `
 ✅ **SYSTEM HEALTHY**
 - All metrics within acceptable ranges
 - No critical alerts
 - Optimal performance maintained
-` : report.status === 'WARNING' ? `
+`
+    : report.status === 'WARNING'
+    ? `
 ⚠️ **SYSTEM WARNING**
 - Some metrics require attention
 - Minor issues detected
 - Monitoring recommended
-` : `
+`
+    : `
 ❌ **SYSTEM CRITICAL**
 - Multiple issues detected
 - Immediate attention required
 - System optimization needed
-`}
+`
+}
 
 ### **Score Breakdown**
 - **System Score**: ${this.calculateSystemScore(report.systemMetrics).toFixed(1)}/100

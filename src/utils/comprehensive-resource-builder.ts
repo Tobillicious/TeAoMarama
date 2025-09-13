@@ -11,6 +11,10 @@ export interface RealResource {
   path: string;
   culturalElements: number;
   description: string;
+  content?: string;
+  duration?: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  tags?: string[];
 }
 
 // Local parsing function to avoid circular import
@@ -218,7 +222,9 @@ export function buildComprehensiveResourceLibrary(): RealResource[] {
     const topic = topics[i % topics.length];
     const resourceId = `generated_${i + 1000}`;
 
-    resources.push({
+    const culturalElements = subject.includes('Te Reo') || topic.includes('Cultural') ? 4 : Math.floor(Math.random() * 3);
+    
+    const resource = {
       id: resourceId,
       title: `${subject}: ${topic}`,
       subject: subject,
@@ -232,12 +238,25 @@ export function buildComprehensiveResourceLibrary(): RealResource[] {
         ' ',
         '_',
       )}_${topic.replace(' ', '_')}_${resourceId}.md`,
-      culturalElements:
-        subject.includes('Te Reo') || topic.includes('Cultural')
-          ? 4
-          : Math.floor(Math.random() * 3),
+      culturalElements,
       description: `${subject} resource for ${yearLevel} focusing on ${topic}`,
-    });
+      content: generateSampleContent({
+        id: resourceId,
+        title: `${subject}: ${topic}`,
+        subject,
+        yearLevel,
+        type: 'handout',
+        filename: '',
+        path: '',
+        culturalElements,
+        description: `${subject} resource for ${yearLevel} focusing on ${topic}`
+      }),
+      duration: '45-60 mins',
+      difficulty: (['beginner', 'intermediate', 'advanced'] as const)[Math.floor(Math.random() * 3)],
+      tags: [subject.toLowerCase(), yearLevel.toLowerCase().replace(' ', '-'), topic.toLowerCase()]
+    };
+    
+    resources.push(resource);
   }
 
   return resources;
