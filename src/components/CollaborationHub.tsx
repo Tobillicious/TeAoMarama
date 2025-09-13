@@ -284,7 +284,7 @@ const CollaborationHub: React.FC = () => {
                     {educator.avatar}
                     <div 
                       className="status-indicator"
-                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(educator.status) }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(educator.status) }}
                     ></div>
                   </div>
                   <div className="educator-info">

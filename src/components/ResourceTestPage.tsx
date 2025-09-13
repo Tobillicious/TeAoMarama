@@ -72,41 +72,41 @@ const ResourceTestPage: React.FC = () => {
   };
 
   return (
-    <div /* TODO: Move to external CSS */ style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, system-ui, sans-serif' }}>
-      <h1 /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#1f2937', marginBottom: '16px' }}>🚀 Comprehensive Resource Library Test</h1>
-      <p /* TODO: Move to external CSS */ style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '32px' }}>Testing our expanded library of {stats.totalResources.toLocaleString()} educational resources!</p>
+    <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <h1 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#1f2937', marginBottom: '16px' }}>🚀 Comprehensive Resource Library Test</h1>
+      <p /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.1rem', color: '#6b7280', marginBottom: '32px' }}>Testing our expanded library of {stats.totalResources.toLocaleString()} educational resources!</p>
       
       {/* Stats Grid */}
-      <div /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginBottom: '40px' }}>
-        <div /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
-          <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Total Resources</h3>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#059669' }}>{stats.totalResources.toLocaleString()}</div>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginBottom: '40px' }}>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
+          <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Total Resources</h3>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#059669' }}>{stats.totalResources.toLocaleString()}</div>
         </div>
 
-        <div /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
-          <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Cultural Resources</h3>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#7c3aed' }}>{stats.culturalResources.toLocaleString()}</div>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
+          <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Cultural Resources</h3>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#7c3aed' }}>{stats.culturalResources.toLocaleString()}</div>
         </div>
 
-        <div /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
-          <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Subjects</h3>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#3b82f6' }}>{Object.keys(stats.subjects).length}</div>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
+          <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Subjects</h3>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#3b82f6' }}>{Object.keys(stats.subjects).length}</div>
         </div>
 
-        <div /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
-          <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Resource Types</h3>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#d97706' }}>{Object.keys(stats.types).length}</div>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ background: 'white', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
+          <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', margin: '0 0 8px 0' }}>Resource Types</h3>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2.5rem', fontWeight: '700', color: '#d97706' }}>{Object.keys(stats.types).length}</div>
         </div>
       </div>
       
       {/* Subject Breakdown */}
-      <div /* TODO: Move to external CSS */ style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb', marginBottom: '32px' }}>
-        <h2 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>Resources by Subject</h2>
-        <div /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb', marginBottom: '32px' }}>
+        <h2 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>Resources by Subject</h2>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
           {Object.entries(stats.subjects).map(([subject, count]) => (
-            <div key={subject} /* TODO: Move to external CSS */ style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', textAlign: 'center' }}>
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '600', color: '#374151' }}>{count.toLocaleString()}</div>
-              <div /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>{subject}</div>
+            <div key={subject} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '12px', background: '#f8fafc', borderRadius: '8px', textAlign: 'center' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '600', color: '#374151' }}>{count.toLocaleString()}</div>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '0.875rem', color: '#6b7280' }}>{subject}</div>
             </div>
           ))}
         </div>
@@ -115,7 +115,7 @@ const ResourceTestPage: React.FC = () => {
       <button
         onClick={testResourceLoading}
         disabled={loading}
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           padding: '1rem 2rem',
           fontSize: '1.1rem',
           backgroundColor: '#3b82f6',
@@ -130,7 +130,7 @@ const ResourceTestPage: React.FC = () => {
       </button>
 
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           backgroundColor: '#f8f9fa',
           border: '1px solid #e5e7eb',
           borderRadius: '8px',
@@ -143,26 +143,26 @@ const ResourceTestPage: React.FC = () => {
         {testResult || 'Click the button above to test resource loading...'}
       </div>
 
-      <div /* TODO: Move to external CSS */ style={{ marginTop: '2rem', background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
-        <h3 /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>Resource Preview ({REAL_RESOURCES.length.toLocaleString()} total)</h3>
-        <div /* TODO: Move to external CSS */ style={{ maxHeight: '300px', overflowY: 'auto' }}>
+      <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginTop: '2rem', background: 'white', padding: '24px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', border: '1px solid #e5e7eb' }}>
+        <h3 /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1f2937', margin: '0 0 20px 0' }}>Resource Preview ({REAL_RESOURCES.length.toLocaleString()} total)</h3>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ maxHeight: '300px', overflowY: 'auto' }}>
           {REAL_RESOURCES.slice(0, 20).map((resource, index) => (
             <div
               key={resource.id}
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 padding: '0.5rem',
                 borderBottom: '1px solid #e5e7eb',
                 fontSize: '0.9rem',
               }}
             >
               <strong>{index + 1}.</strong> {resource.title}
-              <span /* TODO: Move to external CSS */ style={{ color: '#666', marginLeft: '1rem' }}>
+              <span /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: '#666', marginLeft: '1rem' }}>
                 ({resource.subject} - {resource.yearLevel})
               </span>
             </div>
           ))}
           {REAL_RESOURCES.length > 20 && (
-            <div /* TODO: Move to external CSS */ style={{ padding: '0.5rem', color: '#666', fontStyle: 'italic' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ padding: '0.5rem', color: '#666', fontStyle: 'italic' }}>
               ... and {REAL_RESOURCES.length - 20} more resources
             </div>
           )}

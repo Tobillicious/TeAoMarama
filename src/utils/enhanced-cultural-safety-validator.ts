@@ -590,7 +590,7 @@ class EnhancedCulturalSafetyValidator {
 }
 
 // Export the enhanced cultural safety validator
-export // const enhancedCulturalSafetyValidator = new EnhancedCulturalSafetyValidator();
+export // // // const enhancedCulturalSafetyValidator = new EnhancedCulturalSafetyValidator();
 
 // Export types for external use
 export type { CulturalContentAnalysis, CulturalSafetyProtocol, CulturalValidationMetrics };

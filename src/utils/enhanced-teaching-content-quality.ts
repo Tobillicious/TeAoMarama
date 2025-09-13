@@ -444,4 +444,4 @@ export class EnhancedTeachingContentQualitySystem {
 }
 
 // Export singleton instance
-export // const enhancedTeachingContentQualitySystem = new EnhancedTeachingContentQualitySystem();
+export // // // const enhancedTeachingContentQualitySystem = new EnhancedTeachingContentQualitySystem();

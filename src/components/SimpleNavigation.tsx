@@ -41,7 +41,7 @@ const SimpleNavigation: React.FC = () => {
 
   return (
     <nav
-      /* TODO: Move to external CSS */ style={{
+      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         background: 'linear-gradient(135deg, #1e3a8a 0%, #059669 100%)',
         padding: '0.5rem 1rem',
         display: 'flex',
@@ -54,7 +54,7 @@ const SimpleNavigation: React.FC = () => {
       {/* Logo */}
       <Link
         to="/"
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           color: 'white',
           textDecoration: 'none',
           fontSize: '1.2rem',
@@ -67,7 +67,7 @@ const SimpleNavigation: React.FC = () => {
 
       {/* Navigation Links */}
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           display: 'flex',
           gap: '0.5rem',
           alignItems: 'center',
@@ -136,7 +136,7 @@ const SimpleNavigation: React.FC = () => {
         {/* Auth Section */}
         {isAuthenticated && currentUser ? (
           <div
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -144,7 +144,7 @@ const SimpleNavigation: React.FC = () => {
             }}
           >
             <span
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 color: 'white',
                 fontSize: '0.875rem',
                 opacity: 0.9,
@@ -154,7 +154,7 @@ const SimpleNavigation: React.FC = () => {
             </span>
             <button
               onClick={handleLogout}
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 color: 'white',
@@ -170,7 +170,7 @@ const SimpleNavigation: React.FC = () => {
         ) : (
           <Link
             to="/login"
-            /* TODO: Move to external CSS */ style={{
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               background: 'rgba(255, 255, 255, 0.15)',
               border: '1px solid rgba(255, 255, 255, 0.3)',
               color: 'white',

@@ -151,7 +151,7 @@ const AIModelCoordinator: React.FC = () => {
     });
   }, []);
 
-  // const getStatusColor = (status: string) => {
+  // // // const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
         return 'text-green-600 bg-green-50 border-green-200';

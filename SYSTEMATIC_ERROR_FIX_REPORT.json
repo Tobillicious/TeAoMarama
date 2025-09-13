@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-09-13T09:38:55.241Z",
-  "totalFilesProcessed": 280,
+  "timestamp": "2025-09-13T10:51:08.166Z",
+  "totalFilesProcessed": 281,
   "totalFixes": 0,
   "criticalFixes": 0,
   "highPriorityFixes": 0,
@@ -53,6 +53,7 @@
     "src/components/ContentPreviewModal.tsx",
     "src/components/CulturalContextProvider.tsx",
     "src/components/CulturalIntegrationDashboard.tsx",
+    "src/components/CulturalIntegrationEnhancer.tsx",
     "src/components/CulturalIntegrationValidator.tsx",
     "src/components/CulturalLearningActivities.tsx",
     "src/components/CulturalLearningCard.tsx",

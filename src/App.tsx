@@ -1,5 +1,7 @@
-import { Suspense, lazy, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import type { Suspense } from 'react';
+import { lazy, useEffect } from 'react';
+import type { Route, Routes } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -20,6 +22,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 // Core functionality only - single version each
 const TeacherDashboard = lazy(() => import('./components/ProfessionalTeacherDashboard'));
 const StudentDashboard = lazy(() => import('./components/EnhancedStudentDashboard'));
+const EngagingStudentDashboard = lazy(() => import('./components/EngagingStudentDashboard'));
 const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowser'));
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
@@ -58,14 +61,14 @@ const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessment
 const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 
-function App() {
+function App(): void {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
   // Simplified - no performance hooks for now
   useEffect(() => {
     console.log('🌿 TeAoMarama Platform Loading...');
-  }, []);
+  }, [Loading]);
 
   return (
     <div className="App">
@@ -84,6 +87,7 @@ function App() {
               {/* Core Dashboards - single route each */}
               <Route path="/teacher" element={<TeacherDashboard />} />
               <Route path="/student" element={<StudentDashboard />} />
+              <Route path="/student-engaging" element={<EngagingStudentDashboard />} />
 
               {/* Resources - single route */}
               <Route path="/resources" element={<ResourceBrowser />} />

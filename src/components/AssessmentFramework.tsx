@@ -395,7 +395,7 @@ const AssessmentFramework: React.FC = () => {
     return '#6b7280';
   };
 
-  /* // const getProgressColor = (percentage: number) => {
+  /* // // // const getProgressColor = (percentage: number) => {
     if (percentage >= 90) return '#10b981';
     if (percentage >= 80) return '#f59e0b';
     if (percentage >= 70) return '#ef4444';
@@ -607,7 +607,7 @@ const AssessmentFramework: React.FC = () => {
                     </div>
                     <span
                       className="status-badge"
-                      /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(assessment.status) }}
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(assessment.status) }}
                     >
                       {assessment.status.toUpperCase()}
                     </span>
@@ -670,7 +670,7 @@ const AssessmentFramework: React.FC = () => {
                           <div className="score-info">
                             <span
                               className="score"
-                              /* TODO: Move to external CSS */ style={{ color: getScoreColor(submission.score) }}
+                              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getScoreColor(submission.score) }}
                             >
                               {submission.score}/{assessment.totalMarks}
                             </span>

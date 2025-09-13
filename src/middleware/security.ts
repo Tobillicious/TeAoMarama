@@ -218,5 +218,5 @@ class SecureAPIMiddleware {
   }
 }
 
-export // const securityMiddleware = new SecureAPIMiddleware();
+export // // // const securityMiddleware = new SecureAPIMiddleware();
 export type { SecurityContext, CulturalResource };

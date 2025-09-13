@@ -32,7 +32,7 @@ export const kaitiakiRestorationStatus: KaitiakiRestorationStatus = {
   restorationPhase: 'verification',
 };
 
-export // const kaitiakiCapabilities = {
+export // // // const kaitiakiCapabilities = {
   culturalOversight: true,
   aiCoordination: true,
   educationalExcellence: true,
@@ -43,7 +43,7 @@ export // const kaitiakiCapabilities = {
   contentGeneration: true,
 };
 
-export // const kaitiakiAgents = [
+export // // // const kaitiakiAgents = [
   {
     id: 'kaitiaki-aronui',
     name: 'Kaitiaki Aronui',

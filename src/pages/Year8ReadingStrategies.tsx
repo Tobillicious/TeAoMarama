@@ -333,13 +333,13 @@ const Year8ReadingStrategies: React.FC = () => {
             <div className="strategy-meta">
               <span
                 className="category-badge"
-                /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(selectedStrategy.category) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(selectedStrategy.category) }}
               >
                 {selectedStrategy.category}
               </span>
               <span
                 className="difficulty-badge"
-                /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(selectedStrategy.difficulty) }}
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(selectedStrategy.difficulty) }}
               >
                 {selectedStrategy.difficulty}
               </span>
@@ -418,13 +418,13 @@ const Year8ReadingStrategies: React.FC = () => {
               <div className="strategy-header">
                 <div
                   className="strategy-category"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(strategy.category) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getCategoryColor(strategy.category) }}
                 >
                   {strategy.category}
                 </div>
                 <div
                   className="strategy-difficulty"
-                  /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(strategy.difficulty) }}
                 >
                   {strategy.difficulty}
                 </div>

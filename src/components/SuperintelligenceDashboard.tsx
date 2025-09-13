@@ -11,19 +11,8 @@
  * OPTIMIZATION: DeepSeek (Problem Solver) - Optimizing intelligence systems
  */
 
-import {
-  Activity,
-  AlertTriangle,
-  Brain,
-  CheckCircle,
-  Pause,
-  Play,
-  RotateCcw,
-  Shield,
-  Users,
-  XCircle,
-  Zap,
-} from 'lucide-react';
+import type { Activity, AlertTriangle, Brain, CheckCircle, Pause, Play, RotateCcw, Shield, Users, XCircle, Zap } from 'lucide-react';
+import {  } from 'lucide-react';
 import React, { useCallback, useEffect, useState } from 'react';
 
 interface IntelligenceSystem {
@@ -669,7 +658,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
           >
             {systemHealth.overall}%
           </div>
@@ -692,7 +681,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
           >
             {systemHealth.culturalSafety}%
           </div>
@@ -715,7 +704,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
           >
             {systemHealth.performance}%
           </div>
@@ -738,7 +727,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
           </div>
           <div
             className="metric-value"
-            /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
+            /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ color: getStatusColor('active') }}
           >
             {systemHealth.accessibility}%
           </div>
@@ -763,7 +752,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
               <div className="system-name">{system.name}</div>
               <div
                 className="system-status"
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   backgroundColor: getStatusColor(system.status),
                   color: 'white',
                 }}
@@ -790,7 +779,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
               />
             </div>
             <div
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 fontSize: '12px',
                 color: '#94a3b8',
                 marginTop: '8px',
@@ -811,7 +800,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
             <div className="agent-specialization">{agent.specialization}</div>
             <div
               className="system-status"
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 backgroundColor: getStatusColor(agent.status),
                 color: 'white',
                 margin: '8px auto',
@@ -823,7 +812,7 @@ const SuperIntelligenceDashboard: React.FC = () => {
             </div>
             <div className="agent-task">{agent.currentTask}</div>
             <div
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 fontSize: '12px',
                 color: '#94a3b8',
                 marginTop: '8px',

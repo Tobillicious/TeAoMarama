@@ -39,8 +39,8 @@ class KaitiakiAronuiOverseer {private deepseekConfig: 'DeepSeekConfig;
    * 🧠 SUPREME INTELLIGENCE: 'Analyze entire Te Kete Ako content;
    */;
   async analyzeTeKeteAkoContent(): Promise<MigrationIntelligence> {console.log(🧠 Kaitiaki Aronui: Analyzing Te Kete Ako content with supreme intelligence..");
-    const _handoutsPath = join(this.teKeteBasePath, "public, handouts");
-    const _enhancedPath = join(handoutsPath, "enhanced);
+    // // const _handoutsPath = join(this.teKeteBasePath, "public, handouts");
+    // // const _enhancedPath = join(handoutsPath, "enhanced);
     const intelligence: 'MigrationIntelligence = {;
       handouts: [],;
       totalHandouts: 0,;
@@ -48,7 +48,7 @@ class KaitiakiAronuiOverseer {private deepseekConfig: 'DeepSeekConfig;
       culturallyRichContent: 0,;
       migrationStrategy: []};
     try {// Analyze main handouts;
-      const _handoutFiles = await this.analyzeHandoutsDirectory('handoutsPath');
+      // // const _handoutFiles = await this.analyzeHandoutsDirectory('handoutsPath');
       intelligence.handouts.push('..handoutFiles');
       // Analyze enhanced handouts;
       try {;
@@ -66,169 +66,140 @@ class KaitiakiAronuiOverseer {private deepseekConfig: 'DeepSeekConfig;
     } catch(error) {console.error("❌ Analysis failed: , error);
       throw error};
   };
-  private async analyzeHandoutsDirectory(dirPath: string, isEnhanced = false): Promise<Handout[]> {
-    const handouts: Handout[] = [];
-    const files = await readdir(dirPath);
-    for (const file of files) {
-      if (file.endsWith(".html")) {
-        const filePath = join(dirPath, file);
-        const content = await readFile(filePath, "utf-8");
-        const handout: Handout = {
-          path: filePath,
-          title: this.extractTitle(content),
-          culturalAuthenticity: this.analyzeCulturalAuthenticity(content, file),
-          yearLevel: this.extractYearLevel(content, file),
-          subject: this.extractSubject(content, file),
-          complexity: isEnhanced ? "enhanced" as const : this.analyzeComplexity(content),
-          migrationPriority: this.calculateMigrationPriority(content, file, isEnhanced)
-        };
-        handouts.push(handout);
-      }
-    }
-    return handouts.sort((a, b) => b.migrationPriority - a.migrationPriority);
-  }
-  private extractTitle(content: string): string {
-    const titleMatch = content.match(/<title[^>]*>([^<]+)<\/title>/i);
-    if (titleMatch) return titleMatch[1].trim();
-    const h1Match = content.match(/<h1[^>]*>([^<]+)<\/h1>/i);
-    if (h1Match) return h1Match[1].trim();
-    return "Te Kete Ako Handout";
-  }
-  private analyzeCulturalAuthenticity(content: string, filename: string): number {
-    let score = 0;
-    // Cultural terms and concepts (weighted heavily)
-    const culturalTerms = [
-      "māori", "maori", "tikanga", "whakapapa", "kaitiakitanga", "mātauranga",
-      "tangata whenua", "aotearoa", "te reo", "iwi", "hapū", "whānau",
-      "marae", "whakataukī", "te ao māori", "tino rangatiratanga"
-    ];
-    culturalTerms.forEach(term => {
-      const regex = new RegExp(term, "gi");
-      const matches = content.match(regex);
-      if (matches) score += matches.length * 5;
-    });
-    // Cultural context indicators
-    if (content.includes("traditional")) score += 10;
-    if (content.includes("indigenous")) score += 8;
-    if (content.includes("cultural")) score += 6;
-    if (content.includes("Treaty") || content.includes("Tiriti")) score += 15;
-    // Filename cultural indicators
-    if (filename.toLowerCase().includes("maori")) score += 20;
-    if (filename.toLowerCase().includes("cultural")) score += 15;
-    if (filename.toLowerCase().includes("traditional")) score += 12;
-    // Content depth indicators
-    if (content.length > 5000) score += 10; // Substantial content
-    if (content.includes("Te Kete Ako")) score += 5; // Authentic source
-    return Math.min(score, 100); // Cap at 100%
-  }
-  private extractYearLevel(content: string, filename: string): string {
-    // Check filename for year indicators
-    const yearMatch = filename.match(/[Yy](\d+)/);
-    if (yearMatch) return `Year ${yearMatch[1]}`;
-    // Check content for year level indicators
-    const contentYearMatch = content.match(/Year\s+(\d+)/i);
-    if (contentYearMatch) return `Year ${contentYearMatch[1]}`;
-    // Analyze complexity to infer year level
-    if (content.includes("trigonometry") || content.includes("algebra")) return "Year 9-10";
-    if (content.includes("comprehension") || content.includes("basic")) return "Year 7-8";
-    return "Year 7-10";
-  }
-  private extractSubject(content: string, filename: string): string {
-    const subjects: { [key: string]: string[] } = {
-      "Mathematics": ["math", "algebra", "geometry", "statistics", "trigonometry", "fractions"],
-      "English": ["comprehension", "literacy", "reading", "writing", "grammar"],
-      "Science": ["biology", "chemistry", "physics", "atoms", "environment", "ecosystem"],
-      "Social Studies": ["history", "geography", "culture", "society", "treaty", "colonization"],
-      "Health": ["health", "wellbeing", "physical", "safety", "nutrition"],
-      "Arts": ["art", "design", "creative", "visual", "music", "performance"]
+  private async analyzeHandoutsDirectory(dirPath: string, isEnhanced = false): 'Promise<unknown[]> {const handouts = [];
+    // // const _files = await readdir('dirPath');
+    for (const file of files) {if (file.endsWith(.html")) {;
+        // // const _filePath = join(dirPath, file);
+        const content = await readFile(filePath, "utf-8);
+        const handout = {;
+          path: filePath,;
+          title: this.extractTitle(content),;
+          culturalAuthenticity: this.analyzeCulturalAuthenticity(content, file),;
+          yearLevel: this.extractYearLevel(content, file),;
+          subject: this.extractSubject(content, file),;
+          complexity: isEnhanced ? enhanced" as const : this.analyzeComplexity(content),;
+          migrationPriority: this.calculateMigrationPriority(content, file, isEnhanced)};
+        handouts.push('handout');
+      };
     };
-    const text = (content + " " + filename).toLowerCase();
-    for (const [subject, keywords] of Object.entries(subjects)) {
-      if (keywords.some(keyword => text.includes(keyword))) {
-        return subject;
-      }
-    }
-    return "Cross-curricular";
-  }
-  private analyzeComplexity(content: string): "simple" | "enhanced" | "interactive" {
-    if (content.includes("interactive") || content.includes("javascript") || content.includes("activity")) {
-      return "interactive";
-    }
-    if (content.length > 8000 || content.includes("comprehensive") || content.includes("advanced")) {
-      return "enhanced";
-    }
-    return "simple";
-  }
-  private calculateMigrationPriority(content: string, filename: string, isEnhanced: boolean): number {
-    let priority = 0;
-    // Enhanced handouts get highest priority
+    return handouts.sort((a, b) => b.migrationPriority - a.migrationPriority);
+  };
+  private extractTitle(content: 'string): string {// // const _titleMatch = content.match(/<title[^>]*>([^<]+)<\/title>/i);
+    if (titleMatch) return titleMatch[1].trim();
+    // // const _h1Match = content.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+    if (h1Match) return h1Match[1].trim();
+    return "Te Kete Ako Handout};
+  private analyzeCulturalAuthenticity(content: string, filename: 'string): number {let score = 0;
+    // Cultural terms and concepts ('weighted heavily');
+    const culturalTerms = [māori", "maori, tikanga", "whakapapa, kaitiakitanga", "mātauranga,;
+      tangata whenua", "aotearoa, te reo", "iwi, hapū", "whānau,;
+      marae", "whakataukī, te ao māori", "tino rangatiratanga];
+    culturalTerms.forEach(term => {// // const _regex = new RegExp(term, gi");
+      const matches = content.match(regex);
+      if (matches) score += matches.length * 5});
+    // Cultural context indicators;
+    if (content.includes("traditional)) score += 10;
+    if (content.includes(indigenous")) score += 8;
+    if (content.includes("cultural)) score += 6;
+    if (content.includes(Treaty") || content.includes("Tiriti)) score += 15;
+    // Filename cultural indicators;
+    if (filename.toLowerCase().includes(maori")) score += 20;
+    if (filename.toLowerCase().includes("cultural)) score += 15;
+    if (filename.toLowerCase().includes(traditional")) score += 12;
+    // Content depth indicators;
+    if (content.length > 5000) score += 10; // Substantial content;
+    if (content.includes("Te Kete Ako)) score += 5; // Authentic source;
+    return Math.min(score, 100) // Cap at 100%;
+  };
+  private extractYearLevel(content: string, filename: string): string {// Check filename for year indicators;
+    // // const _yearMatch = filename.match(/[Yy](\d+)/);
+    if (yearMatch) return `Year ${yearMatch[1]};
+    // Check content for year level indicators;
+    // // const _contentYearMatch = content.match(/Year\s+(\d+)/i);
+    if (contentYearMatch) return `Year ${contentYearMatch[1]};
+    // Analyze complexity to infer year level;
+    if (content.includes(trigonometry") || content.includes("algebra)) return Year 9-10";
+    if (content.includes("comprehension) || content.includes(basic")) return "Year 7-8;
+    return Year 7-10"};
+  private extractSubject(content: string, filename: 'string): string {// // const _subjects = {;
+      "mathematics: [math", "algebra, geometry", "statistics, trigonometry", "fractions],;
+      english": ["comprehension, literacy", "reading, writing", "grammar],;
+      science": ["biology, chemistry", "physics, atoms", "environment, ecosystem"],;
+      "social studies: [history", "geography, culture", "society, treaty", "colonization],;
+      health": ["health, wellbeing", "physical, safety", "nutrition],;
+      arts": ["art, design", "creative, visual", "music, performance"]};
+    const text = (content + "  + filename).toLowerCase();
+    for (const [subject, keywords] of Object.entries(subjects)) {if (keywords.some(keyword => text.includes(keyword))) {;
+        return subject.charAt(0).toUpperCase() + subject.slice(1)};
+    };
+    return Cross-curricular";
+  };
+  private analyzeComplexity(content: string): "simple | enhanced" | "interactive {if (content.includes(interactive") || content.includes("javascript) || content.includes(activity")) {;
+      return "interactive};
+    if (content.length > 8000 || content.includes(comprehensive") || content.includes("advanced)) {return enhanced"};
+    return "simple};
+  private calculateMigrationPriority(content: string, filename: string, isEnhanced: boolean): number {let priority = 0;
+    // Enhanced handouts get highest priority;
     if (isEnhanced) priority += 50;
-    // Cultural authenticity boosts priority
-    const culturalScore = this.analyzeCulturalAuthenticity(content, filename);
+    // Cultural authenticity boosts priority;
+    // // const _culturalScore = this.analyzeCulturalAuthenticity(content, filename);
     priority += culturalScore * 0.3;
-    // Content quality indicators
-    if (content.includes("Mangakōtukutuku College")) priority += 20; // ERO-specific content
-    if (content.includes("whakataukī") || content.includes("Te Ao Māori")) priority += 15;
-    if (content.length > 5000) priority += 10; // Substantial content
-    // Subject matter importance (for educational platform)
-    if (filename.includes("math") || filename.includes("english")) priority += 12;
-    if (filename.includes("science") || filename.includes("social")) priority += 10;
-    return Math.round(priority);
-  }
-  private generateMigrationStrategy(intelligence: MigrationIntelligence): string[] {
-    const strategy = [
-      "🧠 KAITIAKI ARONUI MIGRATION INTELLIGENCE",
-      "",
-      "📊 CONTENT ANALYSIS SUMMARY:",
-      `- Total Handouts: ${intelligence.totalHandouts}`,
-      `- Enhanced Handouts: ${intelligence.enhancedHandouts}`,
-      `- High Cultural Authenticity: ${intelligence.culturallyRichContent}`,
-      "",
-      "🎯 MIGRATION PRIORITY STRATEGY:",
-      "1. Enhanced handouts (cultural + interactive)",
-      "2. High cultural authenticity content (80%+)",
-      "3. Core subject handouts (Math, English, Science)",
-      "4. Cross-curricular and specialized content",
-      "",
-      "⚡ RECOMMENDED BATCH PROCESSING:",
-      `- Batch 1: Top ${Math.min(20, intelligence.enhancedHandouts)} enhanced handouts`,
-      `- Batch 2: Top ${Math.min(30, intelligence.culturallyRichContent)} cultural handouts`,
-      `- Batch 3: Remaining ${intelligence.totalHandouts - Math.min(50, intelligence.enhancedHandouts + intelligence.culturallyRichContent)} standard handouts`,
-      "",
-      "🌿 CULTURAL SAFETY PROTOCOLS:",
-      "- All content reviewed for tikanga compliance",
-      "- Māori language accuracy validation",
-      "- Cultural context preservation guaranteed",
-      "",
-      "🚀 DEEPSEEK AUTOMATION READY:",
-      "- API integration active",
-      "- Bulk processing scripts prepared",
-      "- Quality assurance protocols embedded"
-    ];
+    // Content quality indicators;
+    if (content.includes(Mangakōtukutuku College")) priority += 20 // ERO-specific content;
+    if (content.includes("whakataukī) || content.includes(Te Ao Māori")) priority += 15;
+    if (content.length > 5000) priority += 10 // Substantial content;
+    // Subject matter importance (for educational platform);
+    if (filename.includes("math) || filename.includes(english")) priority += 12;
+    if (filename.includes("science) || filename.includes(social")) priority += 10;
+    return Math.round(priority)};
+  private generateMigrationStrategy(intelligence: MigrationIntelligence): string[] {// // const _strategy = ["🧠 KAITIAKI ARONUI MIGRATION INTELLIGENCE,;
+      ",;
+      "📊 CONTENT ANALYSIS SUMMARY: ,;
+      `- Total Handouts: ${intelligence.totalHandouts}`,;
+      `- Enhanced Handouts: ${intelligence.enhancedHandouts}`,;
+      `- High Cultural Authenticity: ${intelligence.culturallyRichContent}`,;
+      ",;
+      "🎯 MIGRATION PRIORITY STRATEGY: ,;
+      1. Enhanced handouts (cultural + interactive)",;
+      "2. High cultural authenticity content (80%+),;
+      3. Core subject handouts (Math, English, Science)",;
+      "4. Cross-curricular and specialized content,;
+      ",;
+      "⚡ RECOMMENDED BATCH PROCESSING: ,;
+      `- Batch 1: Top ${Math.min(20, intelligence.enhancedHandouts)} enhanced handouts`,;
+      `- Batch 2: Top ${Math.min(30, intelligence.culturallyRichContent)} cultural handouts`,;
+      `- Batch 3: Remaining ${intelligence.totalHandouts - Math.min(50, intelligence.enhancedHandouts + intelligence.culturallyRichContent)} standard handouts`,;
+      ",;
+      "🌿 CULTURAL SAFETY PROTOCOLS: ,;
+      - All content reviewed for tikanga compliance",;
+      "- Māori language accuracy validation,;
+      - Cultural context preservation guaranteed",;
+      ",;
+      🚀 DEEPSEEK AUTOMATION READY: ",;
+      "- API integration active,;
+      - Bulk processing scripts prepared",;
+      "- Quality assurance protocols embedded];
     return strategy;
-  }
-  /**
-   * 🚀 Execute automated migration using DeepSeek API
-   */
-  async executeAutomatedMigration(intelligence: MigrationIntelligence, batchSize = 5): Promise<void> {
-    console.log("🚀 Executing automated migration with DeepSeek assistance..");
-    const highPriorityHandouts = intelligence.handouts
-      .filter(h => h.migrationPriority >= 50)
+  };
+  /**;
+   * 🚀 Execute automated migration using DeepSeek API;
+   */;
+  async executeAutomatedMigration(intelligence: MigrationIntelligence, batchSize = 5): Promise<void> {console.log(🚀 Executing automated migration with DeepSeek assistance..");
+    const highPriorityHandouts = intelligence.handouts;
+      .filter(h => h.migrationPriority >= 50);
       .slice(0, batchSize);
     console.log(`Processing ${highPriorityHandouts.length} high-priority handouts..`);
-    for (const handout of highPriorityHandouts) {
-      await this.migrateHandoutWithDeepSeek(handout);
-    }
-  }
+    for (const handout of highPriorityHandouts) {await this.migrateHandoutWithDeepSeek(handout)};
+  };
   private async migrateHandoutWithDeepSeek(handout: unknown): Promise<void> {try {;
       console.log(`🔄 Migrating: ${handout.title}`);
       const htmlContent = await readFile(handout.path, "utf-8);
       const componentName = this.generateComponentName(basename(handout.path, .html"));
       // Use DeepSeek to extract and enhance content;
-      const _enhancedComponent = await this.generateReactComponent(htmlContent,;
+      // // const _enhancedComponent = await this.generateReactComponent(htmlContent,;
         componentName,;
         handout);
-      const _outputPath = join(this.targetBasePath, `${componentName}.tsx`);
+      // // const _outputPath = join(this.targetBasePath, `${componentName}.tsx`);
       await writeFile(outputPath, enhancedComponent);
       console.log(`✅ Migrated: ${componentName}.tsx`);
     } catch(error) {console.error(`❌ Migration failed for ${handout.title}:`, error);
@@ -240,7 +211,7 @@ class KaitiakiAronuiOverseer {private deepseekConfig: 'DeepSeekConfig;
       .replace(/\s/g, ")};
   private async generateReactComponent(htmlContent: string, componentName: string, handout: unknown): Promise<string> {// For now, generate component without DeepSeek API call to avoid rate limits;
     // In production, this would use the DeepSeek API for intelligent content extraction;
-    const _mainContent = this.extractMainContent(htmlContent);
+    // // const _mainContent = this.extractMainContent(htmlContent);
     return `import React from "react";
 import {Card} from ././Card";
 import "./././styles/te-kete-synthesis.css;
@@ -269,13 +240,13 @@ const ${componentName}: React.FC<${componentName}Props> = ({culturalContext = ${
     </div>)};
 export default ${componentName};
 `};
-  private extractMainContent(htmlContent: 'string): string {const _mainMatch = htmlContent.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+  private extractMainContent(htmlContent: 'string): string {// // const _mainMatch = htmlContent.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
     if (mainMatch) {;
       return this.cleanHtmlForReact(mainMatch[1])};
-    const _articleMatch = htmlContent.match(/<article[^>]*>([\s\S]*?)<\/article>/i);
+    // // const _articleMatch = htmlContent.match(/<article[^>]*>([\s\S]*?)<\/article>/i);
     if (articleMatch) {return this.cleanHtmlForReact(articleMatch[1])};
     // Fallback to extracting content between common markers;
-    const _bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    // // const _bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
     if (bodyMatch) {return this.cleanHtmlForReact(bodyMatch[1])};
     return "<p>Content extraction in progress..</p>;
   };

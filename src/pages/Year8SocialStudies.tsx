@@ -321,7 +321,7 @@ const Year8SocialStudies: React.FC = () => {
                   <span className="unit-badge">Unit {unit.id.split('-')[1]}</span>
                   <span
                     className="unit-difficulty"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getDifficultyColor(unit.difficulty) }}
                   >
                     {unit.difficulty}
                   </span>

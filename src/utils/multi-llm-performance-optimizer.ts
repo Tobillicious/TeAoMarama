@@ -403,7 +403,7 @@ export class MultiLLMPerformanceOptimizer {
 }
 
 // Global optimizer instance
-export // const globalMultiLLMOptimizer = new MultiLLMPerformanceOptimizer();
+export // // // const globalMultiLLMOptimizer = new MultiLLMPerformanceOptimizer();
 
 console.log('⚡ Multi-LLM Performance Optimizer ready');
 console.log('🚀 Performance optimization active across all coordinated LLM nodes');

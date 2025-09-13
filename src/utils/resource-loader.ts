@@ -360,7 +360,7 @@ class ResourceLoader {
 export const resourceLoader = ResourceLoader.getInstance();
 
 // Convenience hooks for React components
-export // const useResources = () => {
+export // // // const useResources = () => {
   const [resources, setResources] = React.useState<EducationalResource[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);

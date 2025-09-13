@@ -69,7 +69,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
   return (
     <div
-      /* TODO: Move to external CSS */ style={{
+      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -84,7 +84,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
       }}
     >
       <div
-        /* TODO: Move to external CSS */ style={{
+        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
           backgroundColor: 'white',
           borderRadius: '16px',
           maxWidth: '1000px',
@@ -98,7 +98,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
       >
         {/* Header */}
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             padding: '24px',
             borderBottom: '1px solid #e5e7eb',
             display: 'flex',
@@ -107,9 +107,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
             background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
           }}
         >
-          <div /* TODO: Move to external CSS */ style={{ flex: 1 }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ flex: 1 }}>
             <h1
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 fontSize: '1.875rem',
                 fontWeight: '700',
                 color: '#1e293b',
@@ -120,10 +120,10 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               {formattedContent.title || resource.title}
             </h1>
             <div
-              /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}
             >
               <span
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#3b82f6',
                   color: 'white',
                   padding: '4px 12px',
@@ -139,7 +139,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 {resource.subject}
               </span>
               <span
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#10b981',
                   color: 'white',
                   padding: '4px 12px',
@@ -151,7 +151,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 {resource.yearLevel}
               </span>
               <span
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#f59e0b',
                   color: 'white',
                   padding: '4px 12px',
@@ -180,7 +180,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 }}
               >
                 <h3
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     fontSize: '1rem',
                     fontWeight: '600',
                     color: getCulturalContextColor(formattedContent.culturalContext),
@@ -194,7 +194,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                   He Ako ā-Tangata, He Ako ā-Wairua
                 </h3>
                 <p
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     fontSize: '0.95rem',
                     color: '#374151',
                     margin: '0',
@@ -206,9 +206,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               </div>
             )}
           </div>
-          <div /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '8px', marginLeft: '16px' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', gap: '8px', marginLeft: '16px' }}>
             <button
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: '#f3f4f6',
                 border: 'none',
                 borderRadius: '8px',
@@ -223,7 +223,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               <Download size={18} color="#6b7280" />
             </button>
             <button
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: '#f3f4f6',
                 border: 'none',
                 borderRadius: '8px',
@@ -238,7 +238,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               <Share2 size={18} color="#6b7280" />
             </button>
             <button
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: '#f3f4f6',
                 border: 'none',
                 borderRadius: '8px',
@@ -254,7 +254,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
             </button>
             <button
               onClick={onClose}
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: '#ef4444',
                 color: 'white',
                 border: 'none',
@@ -271,7 +271,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
         {/* Content */}
         <div
-          /* TODO: Move to external CSS */ style={{
+          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
             flex: 1,
             overflow: 'auto',
             padding: '24px',
@@ -280,9 +280,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
           {/* Learning Objectives */}
           {formattedContent.learningObjectives &&
             formattedContent.learningObjectives.length > 0 && (
-              <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
                 <h2
-                  /* TODO: Move to external CSS */ style={{
+                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                     fontSize: '1.25rem',
                     fontWeight: '600',
                     color: '#1e293b',
@@ -295,11 +295,11 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                   <Target size={20} />
                   Ngā Whāinga Ako - Learning Objectives
                 </h2>
-                <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {formattedContent.learningObjectives.map((objective: string, index: number) => (
                     <div
                       key={index}
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         background: '#f8fafc',
                         border: '1px solid #e2e8f0',
                         borderRadius: '8px',
@@ -310,7 +310,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                       }}
                     >
                       <div
-                        /* TODO: Move to external CSS */ style={{
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                           background: '#3b82f6',
                           color: 'white',
                           borderRadius: '50%',
@@ -327,7 +327,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                         {index + 1}
                       </div>
                       <p
-                        /* TODO: Move to external CSS */ style={{
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                           margin: '0',
                           fontSize: '1rem',
                           color: '#374151',
@@ -344,9 +344,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
           {/* Activities */}
           {formattedContent.activities && formattedContent.activities.length > 0 && (
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
               <h2
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   fontSize: '1.25rem',
                   fontWeight: '600',
                   color: '#1e293b',
@@ -359,11 +359,11 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 <Users size={20} />
                 Ngā Mahi - Activities
               </h2>
-              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {formattedContent.activities.map((activity: unknown, index: number) => (
                   <div
                     key={index}
-                    /* TODO: Move to external CSS */ style={{
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                       background: 'white',
                       border: '1px solid #e5e7eb',
                       borderRadius: '12px',
@@ -372,7 +372,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                     }}
                   >
                     <h3
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         fontSize: '1.125rem',
                         fontWeight: '600',
                         color: '#1e293b',
@@ -382,7 +382,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                       {activity.title || `Activity ${index + 1}`}
                     </h3>
                     <p
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         margin: '0',
                         fontSize: '1rem',
                         color: '#374151',
@@ -399,9 +399,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
           {/* Resources */}
           {formattedContent.resources && formattedContent.resources.length > 0 && (
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
               <h2
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   fontSize: '1.25rem',
                   fontWeight: '600',
                   color: '#1e293b',
@@ -414,11 +414,11 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 <BookOpen size={20} />
                 Ngā Rauemi - Resources
               </h2>
-              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {formattedContent.resources.map((resource: string, index: number) => (
                   <div
                     key={index}
-                    /* TODO: Move to external CSS */ style={{
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                       background: '#f8fafc',
                       border: '1px solid #e2e8f0',
                       borderRadius: '8px',
@@ -429,7 +429,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                     }}
                   >
                     <div
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         background: '#10b981',
                         color: 'white',
                         borderRadius: '50%',
@@ -446,7 +446,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                       •
                     </div>
                     <span
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         fontSize: '0.95rem',
                         color: '#374151',
                         lineHeight: '1.5',
@@ -462,9 +462,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
           {/* Assessment */}
           {formattedContent.assessment && Object.keys(formattedContent.assessment).length > 0 && (
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
               <h2
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   fontSize: '1.25rem',
                   fontWeight: '600',
                   color: '#1e293b',
@@ -478,7 +478,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 Aromatawai - Assessment
               </h2>
               <div
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   background: '#fef3c7',
                   border: '1px solid #f59e0b',
                   borderRadius: '12px',
@@ -487,7 +487,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               >
                 {formattedContent.assessment.type && (
                   <h3
-                    /* TODO: Move to external CSS */ style={{
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                       fontSize: '1rem',
                       fontWeight: '600',
                       color: '#92400e',
@@ -498,11 +498,11 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                   </h3>
                 )}
                 {formattedContent.assessment.tasks && (
-                  <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {formattedContent.assessment.tasks.map((task: string, index: number) => (
                       <div
                         key={index}
-                        /* TODO: Move to external CSS */ style={{
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                           background: 'white',
                           border: '1px solid #f59e0b',
                           borderRadius: '8px',
@@ -513,7 +513,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                         }}
                       >
                         <span
-                          /* TODO: Move to external CSS */ style={{
+                          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                             color: '#92400e',
                             fontWeight: '600',
                             flexShrink: 0,
@@ -522,7 +522,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                           {index + 1}.
                         </span>
                         <span
-                          /* TODO: Move to external CSS */ style={{
+                          /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                             fontSize: '0.95rem',
                             color: '#374151',
                             lineHeight: '1.5',
@@ -540,9 +540,9 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
 
           {/* NZC Alignment */}
           {formattedContent.nzcAlignment && formattedContent.nzcAlignment.length > 0 && (
-            <div /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
+            <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ marginBottom: '32px' }}>
               <h2
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   fontSize: '1.25rem',
                   fontWeight: '600',
                   color: '#1e293b',
@@ -555,11 +555,11 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                 <Star size={20} />
                 NZC Alignment - Te Mātaiaho
               </h2>
-              <div /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {formattedContent.nzcAlignment.map((alignment: string, index: number) => (
                   <div
                     key={index}
-                    /* TODO: Move to external CSS */ style={{
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                       background: '#ecfdf5',
                       border: '1px solid #10b981',
                       borderRadius: '8px',
@@ -570,7 +570,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                     }}
                   >
                     <div
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         background: '#10b981',
                         color: 'white',
                         borderRadius: '50%',
@@ -587,7 +587,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
                       ✓
                     </div>
                     <span
-                      /* TODO: Move to external CSS */ style={{
+                      /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                         fontSize: '0.95rem',
                         color: '#374151',
                         lineHeight: '1.5',
@@ -604,7 +604,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
           {/* Enrichment Info */}
           {formattedContent.enrichedBy && (
             <div
-              /* TODO: Move to external CSS */ style={{
+              /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                 background: '#f0f9ff',
                 border: '1px solid #0ea5e9',
                 borderRadius: '12px',
@@ -613,7 +613,7 @@ const MāoriFocusedResourceDisplay: React.FC<MāoriFocusedResourceDisplayProps> 
               }}
             >
               <p
-                /* TODO: Move to external CSS */ style={{
+                /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
                   margin: '0',
                   fontSize: '0.875rem',
                   color: '#0369a1',

@@ -609,4 +609,4 @@ export class TerminalCoordinationSystem {
 }
 
 // Export singleton instance
-export // const terminalCoordination = TerminalCoordinationSystem.getInstance();
+export // // // const terminalCoordination = TerminalCoordinationSystem.getInstance();

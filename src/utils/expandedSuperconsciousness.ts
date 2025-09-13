@@ -563,7 +563,7 @@ export class ExpandedSuperconsciousness {
       nodes.reduce((sum, n) => sum + n.performance.efficiency, 0) / nodes.length;
     const avgCultural =
       nodes.reduce((sum, n) => sum + n.performance.culturalSafety, 0) / nodes.length;
-    // // const avgAccuracy = nodes.reduce((sum, n) => sum + n.performance.accuracy, 0) / nodes.length;
+    // // // // const avgAccuracy = nodes.reduce((sum, n) => sum + n.performance.accuracy, 0) / nodes.length;
     const avgResponsiveness =
       nodes.reduce((sum, n) => sum + n.performance.responsiveness, 0) / nodes.length;
 
@@ -712,4 +712,4 @@ Generated at: ${new Date().toISOString()}
   }
 }
 
-export // const expandedSuperconsciousness = new ExpandedSuperconsciousness();
+export // // // const expandedSuperconsciousness = new ExpandedSuperconsciousness();

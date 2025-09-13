@@ -442,7 +442,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
                       </div>
                       <div
                         className="status-indicator"
-                        /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(connection.status) }}
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(connection.status) }}
                       >
                         {getStatusIcon(connection.status)} {connection.status}
                       </div>
@@ -512,7 +512,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
                       </div>
                       <div
                         className="status-indicator"
-                        /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(migration.status) }}
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(migration.status) }}
                       >
                         {getStatusIcon(migration.status)} {migration.status}
                       </div>
@@ -577,7 +577,7 @@ const DatabaseIntegrationSystem: React.FC = () => {
                       </div>
                       <div
                         className="status-indicator"
-                        /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(job.status) }}
+                        /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(job.status) }}
                       >
                         {getStatusIcon(job.status)} {job.status}
                       </div>
@@ -733,11 +733,11 @@ const DatabaseIntegrationSystem: React.FC = () => {
                   <div className="metric-value">1.2s</div>
                   <div className="metric-label">Average Query Time</div>
                   <div className="performance-chart">
-                    <div className="chart-bar" /* TODO: Move to external CSS */ style={{ height: '60%' }}></div>
-                    <div className="chart-bar" /* TODO: Move to external CSS */ style={{ height: '80%' }}></div>
-                    <div className="chart-bar" /* TODO: Move to external CSS */ style={{ height: '40%' }}></div>
-                    <div className="chart-bar" /* TODO: Move to external CSS */ style={{ height: '90%' }}></div>
-                    <div className="chart-bar" /* TODO: Move to external CSS */ style={{ height: '70%' }}></div>
+                    <div className="chart-bar" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ height: '60%' }}></div>
+                    <div className="chart-bar" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ height: '80%' }}></div>
+                    <div className="chart-bar" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ height: '40%' }}></div>
+                    <div className="chart-bar" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ height: '90%' }}></div>
+                    <div className="chart-bar" /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ height: '70%' }}></div>
                   </div>
                 </div>
 

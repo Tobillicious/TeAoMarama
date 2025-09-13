@@ -267,7 +267,7 @@ export const bundleOptimizer = {
 };
 
 // Performance monitoring
-export // const performanceMonitor = {
+export // // // const performanceMonitor = {
   measureLCP: () => {
     try {
       new PerformanceObserver((entryList) => {
@@ -308,7 +308,7 @@ export // const performanceMonitor = {
 };
 
 // Memory optimization hook
-export // const useMemoryOptimization = () => {
+export // // // const useMemoryOptimization = () => {
   const optimizer = ContentPerformanceOptimizer.getInstance();
   
   return {
@@ -320,7 +320,7 @@ export // const useMemoryOptimization = () => {
 };
 
 // Service worker registration
-export // const registerServiceWorker = async () => {
+export // // // const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator) {
     try {
       const registration = await navigator.serviceWorker.register('/sw.js');

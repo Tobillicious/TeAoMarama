@@ -64,7 +64,7 @@ class SimplifiedClaudeIntegration {
 }
 
 // Global Claude integration instance
-export // const globalClaudeIntegration = new SimplifiedClaudeIntegration();
+export // // // const globalClaudeIntegration = new SimplifiedClaudeIntegration();
 
 console.log('🧠 Simplified Claude Integration ready');
 console.log('🌟 Claude Code operational with basic integration');

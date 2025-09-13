@@ -78,8 +78,8 @@ const EducationalPlatformWorking: React.FC = () => {
   if (loading) {
     return (
       <div className="educational-platform">
-        <div /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '4rem' }}>
-          <div /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌿</div>
+        <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ textAlign: 'center', padding: '4rem' }}>
+          <div /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ fontSize: '2rem', marginBottom: '1rem' }}>🌿</div>
           <h2>Loading Educational Resources...</h2>
           <p>Surfacing thousands of curriculum-aligned materials</p>
         </div>

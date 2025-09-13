@@ -423,11 +423,11 @@ const AdvancedWisdomAccelerator: React.FC = () => {
                 <div className="module-status">
                   <span
                     className="status-indicator"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(module.status) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getStatusColor(module.status) }}
                   ></span>
                   <span
                     className="priority-badge"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getPriorityColor(module.priority) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getPriorityColor(module.priority) }}
                   >
                     {module.priority}
                   </span>
@@ -497,7 +497,7 @@ const AdvancedWisdomAccelerator: React.FC = () => {
                   <span className="insight-category">{insight.category}</span>
                   <span
                     className="impact-badge"
-                    /* TODO: Move to external CSS */ style={{ backgroundColor: getImpactColor(insight.impact) }}
+                    /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ backgroundColor: getImpactColor(insight.impact) }}
                   >
                     {insight.impact}
                   </span>

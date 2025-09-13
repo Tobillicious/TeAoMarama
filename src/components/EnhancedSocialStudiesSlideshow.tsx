@@ -486,7 +486,7 @@ const EnhancedSocialStudiesSlideshow: React.FC = () => {
 
   return (
     <div className="enhanced-slideshow-container">
-      <audio ref={audioPlayerRef} /* TODO: Move to external CSS */ style={{ display: 'none' }} />
+      <audio ref={audioPlayerRef} /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{ display: 'none' }} />
       
       {/* Teacher Notes Panel */}
       {showTeacherNotes && currentSlideData.teacherNotes && (

@@ -10,7 +10,7 @@ export const useUniversalAccess = () => {
 };
 
 // Hook for components to check if they have universal access
-export // const useAccessCheck = () => {
+export // // // const useAccessCheck = () => {
   const { hasAccess, canAccessAll, userRole, culturalClearance } = useUniversalAccess();
 
   return {
@@ -28,7 +28,7 @@ export // const useAccessCheck = () => {
 };
 
 // Higher-order component to wrap any component with universal access
-export // const withUniversalAccess = <P extends object>(Component: React.ComponentType<P>) => {
+export // // // const withUniversalAccess = <P extends object>(Component: React.ComponentType<P>) => {
   return (props: P): React.JSX.Element => {
     const { UniversalAccessProvider } = require('../components/UniversalAccessProvider');
     return React.createElement(
