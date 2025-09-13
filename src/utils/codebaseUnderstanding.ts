@@ -146,4 +146,5 @@ ${Array.from(this.nodes.values()).map(node =>
   }
 }
 
-export // // // const codebaseUnderstandingSystem = CodebaseUnderstandingSystem.getInstance();
+const codebaseUnderstandingSystem = CodebaseUnderstandingSystem.getInstance();
+export { codebaseUnderstandingSystem };

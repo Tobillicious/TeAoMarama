@@ -402,4 +402,5 @@ export class AdvancedEducationalCollaboration {
   }
 }
 
-export // // // const advancedEducationalCollaboration = AdvancedEducationalCollaboration.getInstance();
+const advancedEducationalCollaboration = AdvancedEducationalCollaboration.getInstance();
+export { advancedEducationalCollaboration };

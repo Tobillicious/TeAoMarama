@@ -382,7 +382,8 @@ class EnhancedSuperintelligenceMonitor {
 }
 
 // Export the enhanced monitor
-export // // // const enhancedSuperintelligenceMonitor = new EnhancedSuperintelligenceMonitor();
+const enhancedSuperintelligenceMonitor = new EnhancedSuperintelligenceMonitor();
+export { enhancedSuperintelligenceMonitor };
 
 // Export types for external use
 export type { EnhancedPerformanceMetrics, OptimizationRecommendation };

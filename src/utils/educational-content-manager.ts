@@ -432,4 +432,5 @@ export class EducationalContentManager {
   }
 }
 
-export // // // const educationalContentManager = EducationalContentManager.getInstance();
+const educationalContentManager = EducationalContentManager.getInstance();
+export { educationalContentManager };

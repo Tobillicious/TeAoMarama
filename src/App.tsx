@@ -4,7 +4,7 @@ import './App.css';
 import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
-import SimpleNavigation from './components/SimpleNavigation';
+import SimpleNavigation from './components/SimpleNavigation-Working';
 // Temporarily disabled to fix critical errors
 // import {
 //   performanceMonitor,

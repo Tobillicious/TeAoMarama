@@ -412,7 +412,7 @@ export interface EducationalContentResponse {
 export const unifiedSuperintelligenceAPI = new UnifiedSuperintelligenceAPI();
 
 // Export performance monitor for compatibility
-export // // // const performanceMonitor = {
+const performanceMonitor = {
   getMetrics: () => ({
     systemHealth: unifiedSuperintelligenceAPI.getSystemHealth(),
     collaborationMetrics: unifiedSuperintelligenceAPI.getCollaborationMetrics(),
@@ -423,3 +423,4 @@ export // // // const performanceMonitor = {
     return true;
   },
 };
+export { performanceMonitor };

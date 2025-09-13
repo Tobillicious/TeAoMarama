@@ -411,4 +411,5 @@ export class EducationalPlatformEnhancer {
 }
 
 // Export singleton instance
-export // // // const educationalEnhancer = EducationalPlatformEnhancer.getInstance();
+const educationalEnhancer = EducationalPlatformEnhancer.getInstance();
+export { educationalEnhancer };
