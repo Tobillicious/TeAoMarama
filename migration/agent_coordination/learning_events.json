@@ -1,53 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757527602458-fstrfil6t",
-      "timestamp": "2025-09-10T18:06:42.458Z",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.7695520633667154,
-      "intelligenceBoost": 0.07695520633667155,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757527662461-w7tb5o0o3",
-      "timestamp": "2025-09-10T18:07:42.461Z",
-      "eventType": "cultural_insight",
-      "description": "Deep cultural wisdom insight gained from traditional knowledge",
-      "impact": 0.5472651178539312,
-      "culturalSignificance": 0.7472651178539311,
-      "intelligenceBoost": 0.05472651178539312,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757527722461-b2os9g17t",
-      "timestamp": "2025-09-10T18:08:42.461Z",
-      "eventType": "skill_improved",
-      "description": "Cultural sensitivity skills enhanced through community interaction",
-      "impact": 0.5362502774876159,
-      "intelligenceBoost": 0.05362502774876159,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757527782464-ug124min4",
-      "timestamp": "2025-09-10T18:09:42.465Z",
-      "eventType": "cultural_insight",
-      "description": "Sacred cultural protocol understanding deepened",
-      "impact": 0.49116342162608567,
-      "culturalSignificance": 0.6911634216260857,
-      "intelligenceBoost": 0.04911634216260857,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757527842466-8dpz05jct",
-      "timestamp": "2025-09-10T18:10:42.466Z",
-      "eventType": "skill_improved",
-      "description": "Emotional regulation and empathy skills strengthened",
-      "impact": 0.6194354244738638,
-      "intelligenceBoost": 0.06194354244738638,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757527902469-q5jesl1jn",
       "timestamp": "2025-09-10T18:11:42.469Z",
       "eventType": "emergent_intelligence",
@@ -9647,7 +9600,56 @@
       "impact": 0.6456406304620725,
       "intelligenceBoost": 0.06456406304620725,
       "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757727376219-geqd3awws",
+      "timestamp": "2025-09-13T01:36:16.219Z",
+      "eventType": "skill_improved",
+      "description": "Emotional regulation and empathy skills strengthened",
+      "impact": 0.4235457640318581,
+      "intelligenceBoost": 0.042354576403185816,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757727436221-oe7qfl96h",
+      "timestamp": "2025-09-13T01:37:16.221Z",
+      "eventType": "emergent_intelligence",
+      "description": "Emergent problem-solving capability activated",
+      "impact": 0.7599831687225711,
+      "intelligenceBoost": 0.07599831687225711,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757727496222-nfbb4r2h7",
+      "timestamp": "2025-09-13T01:38:16.222Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.32740507532178625,
+      "culturalSignificance": 0.5274050753217863,
+      "intelligenceBoost": 0.03274050753217863,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757727556226-r6qsj93ky",
+      "timestamp": "2025-09-13T01:39:16.226Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Advanced reasoning pattern recognized in cultural context analysis",
+      "impact": 0.5708956918969406,
+      "intelligenceBoost": 0.05708956918969406,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757727616226-hjtcj4dbv",
+      "timestamp": "2025-09-13T01:40:16.226Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Emotional intelligence pattern in human interaction observed",
+      "impact": 0.716527267658047,
+      "intelligenceBoost": 0.0716527267658047,
+      "sharedWithCollective": false
     }
   ],
-  "lastSaved": "2025-09-13T01:35:21.929Z"
+  "lastSaved": "2025-09-13T01:40:21.930Z"
 }
