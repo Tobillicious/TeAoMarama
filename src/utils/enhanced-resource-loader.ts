@@ -298,9 +298,9 @@ class EnhancedResourceService {
 // Create singleton instance
 const enhancedResourceService = new EnhancedResourceService();
 
-// Export convenience functions
-export // const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
-export // const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
+  // Export convenience functions
+  // export const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
+  // export const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
 export const getResourcesBySubject = (subject: string) => enhancedResourceService.getResourcesBySubject(subject);
 export const getResourcesByYearLevel = (yearLevel: string) => enhancedResourceService.getResourcesByYearLevel(yearLevel);
 export const getHighQualityResources = (minQuality?: number) => enhancedResourceService.getHighQualityResources(minQuality);
