@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
+import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import SimpleNavigation from './components/SimpleNavigation';
@@ -69,12 +70,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {!isLandingPage && <SimpleNavigation />}
-      <main className="main-content">
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
+    <DualRoleAuthProvider>
+      <div className="App">
+        {!isLandingPage && <SimpleNavigation />}
+        <main className="main-content">
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
               {/* Landing */}
               <Route path="/" element={<HomeMinimal />} />
               <Route path="/home" element={<Home />} />
@@ -137,10 +139,11 @@ function App() {
               {/* 404 Fallback */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </main>
-    </div>
+            </Suspense>
+          </ErrorBoundary>
+        </main>
+      </div>
+    </DualRoleAuthProvider>
   );
 }
 
