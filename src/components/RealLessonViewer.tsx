@@ -195,7 +195,7 @@ const RealLessonViewer: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Teacher Control Bar */}
       <div className="bg-white shadow-sm border-b p-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-4">
           <button 
             onClick={() => navigate('/resources')}
             className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded"
@@ -206,25 +206,25 @@ const RealLessonViewer: React.FC = () => {
           
           {/* Timer Display */}
           {timer.totalTime > 0 && (
-            <div className="flex items-center gap-4 bg-blue-50 px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-4 bg-blue-50 px-6 py-3 rounded-lg flex-wrap">
               <div className="text-2xl font-mono text-blue-900">
                 {formatTime(timer.timeLeft)}
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={pauseTimer}
-                  className={`p-2 rounded ${timer.isRunning ? 'bg-yellow-500 text-white' : 'bg-green-500 text-white'}`}
+                  className={`p-2 rounded transition-colors ${timer.isRunning ? 'bg-yellow-500 hover:bg-yellow-600 text-white' : 'bg-green-500 hover:bg-green-600 text-white'}`}
                 >
                   {timer.isRunning ? <Pause size={16} /> : <Play size={16} />}
                 </button>
                 <button
                   onClick={resetTimer}
-                  className="p-2 bg-gray-500 text-white rounded"
+                  className="p-2 bg-gray-500 hover:bg-gray-600 text-white rounded transition-colors"
                 >
                   <RotateCcw size={16} />
                 </button>
               </div>
-              <div className="text-sm text-blue-700">
+              <div className="text-sm text-blue-700 hidden sm:block">
                 Activity {timer.currentActivity + 1}: {activities[timer.currentActivity]?.title}
               </div>
             </div>
@@ -232,7 +232,7 @@ const RealLessonViewer: React.FC = () => {
           
           <button
             onClick={() => setShowHandouts(!showHandouts)}
-            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
           >
             <Printer size={20} />
             {showHandouts ? 'Hide' : 'Show'} Handouts
@@ -240,7 +240,7 @@ const RealLessonViewer: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-6" style={{ marginTop: '100px' }}>
+      <div className="max-w-6xl mx-auto p-6 pt-24">
         {/* Lesson Header */}
         <div className="bg-white rounded-lg p-6 mb-6 shadow">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">{resource.title}</h1>
@@ -272,17 +272,17 @@ const RealLessonViewer: React.FC = () => {
           {activities.map((activity, index) => (
             <div key={index} className="bg-white rounded-lg shadow">
               <div className={`p-6 ${currentStep === index ? 'bg-blue-50 border-l-4 border-blue-500' : ''}`}>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
                   <h3 className="text-xl font-semibold">
                     Step {index + 1}: {activity.title}
                   </h3>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">
                       {activity.duration} minutes
                     </span>
                     <button
                       onClick={() => startTimer(index)}
-                      className="flex items-center gap-1 bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700"
+                      className="flex items-center gap-1 bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors"
                     >
                       <Play size={14} />
                       Start Timer
@@ -318,7 +318,7 @@ const RealLessonViewer: React.FC = () => {
                       <h4 className="font-medium text-gray-900">Student Handout</h4>
                       <button
                         onClick={() => printHandout(activity, index)}
-                        className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
+                        className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition-colors"
                       >
                         <Printer size={14} />
                         Print
@@ -345,7 +345,7 @@ const RealLessonViewer: React.FC = () => {
                   href={res.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 border rounded-lg hover:bg-blue-50 hover:border-blue-300"
+                  className="flex items-center gap-3 p-4 border rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-colors"
                 >
                   <div className="bg-green-100 p-2 rounded">
                     <ExternalLink className="text-green-600" size={20} />

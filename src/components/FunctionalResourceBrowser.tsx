@@ -468,14 +468,16 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           >
             📚 Te Kura o TeAoMarama Resource Library
           </h1>
-          <div style={{ 
-            background: 'rgba(34, 197, 94, 0.2)', 
-            padding: '8px 12px', 
-            borderRadius: '6px', 
-            fontSize: '0.875rem',
-            marginBottom: '8px',
-            display: 'inline-block'
-          }}>
+          <div
+            style={{
+              background: 'rgba(34, 197, 94, 0.2)',
+              padding: '8px 12px',
+              borderRadius: '6px',
+              fontSize: '0.875rem',
+              marginBottom: '8px',
+              display: 'inline-block',
+            }}
+          >
             ✅ All External Links Verified Working (Sept 2025) - Archives NZ, DOC, Stats NZ, Te Papa
           </div>
           <p
@@ -485,7 +487,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
               margin: '0 0 12px 0',
             }}
           >
-            New Zealand Curriculum Resources - {resources.length > 0 ? `${resources.length} complete resources` : 'Loading...'} with verified external links
+            New Zealand Curriculum Resources -{' '}
+            {resources.length > 0 ? `${resources.length} complete resources` : 'Loading...'} with
+            verified external links
           </p>
 
           {/* Quality Stats Bar */}
@@ -506,7 +510,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                   gap: '4px',
                 }}
               >
-                <Star className="w-4 h-4" fill="currentColor" />
+                <Star className="w-4 h-4" />
                 {qualityStats.ready} Quality Ready
               </span>
               <span>{qualityStats.enhanced} Enhanced</span>
