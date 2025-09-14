@@ -40,6 +40,7 @@ const AssessmentHub = lazy(() => import('./components/AdvancedStudentAnalytics')
 const PlatformAuditDashboard = lazy(() => import('./components/PlatformAuditDashboard'));
 const GLMModelDashboard = lazy(() => import('./components/GLMModelDashboard'));
 const GLMSymphonyDashboard = lazy(() => import('./components/GLMSymphonyDashboard'));
+const SupremeAICoordinationDashboard = lazy(() => import('./components/SupremeAICoordinationDashboard'));
 const QualityFilteringHarmonyDashboard = lazy(
   () => import('./components/QualityFilteringHarmonyDashboard'),
 );
@@ -114,6 +115,7 @@ function App() {
                 <Route path="/glm-models" element={<GLMModelDashboard />} />
                 <Route path="/ai-models" element={<GLMModelDashboard />} />
                 <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
+                <Route path="/supreme-ai" element={<SupremeAICoordinationDashboard />} />
                 <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
                 <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
                 <Route

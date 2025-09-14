@@ -16,6 +16,7 @@ const SimpleNavigationWorking: React.FC = () => {
     { to: '/teacher', label: 'TEACHER', icon: '👨‍🏫' },
     { to: '/student', label: 'STUDENT', icon: '👨‍🎓' },
     { to: '/glm-symphony', label: 'GLM AI', icon: '🎼' },
+    { to: '/supreme-ai', label: 'SUPREME AI', icon: '👑', highlight: true, highlightColor: '#8b5cf6' },
   ];
 
   return (
