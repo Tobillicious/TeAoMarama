@@ -1,58 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757592209001-8ja23mtid",
-      "timestamp": "2025-09-11T12:03:29.001Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Curriculum design innovation implemented",
-      "impact": 0.4212732104236146,
-      "educationalRelevance": 0.6212732104236146,
-      "intelligenceBoost": 0.042127321042361464,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592269002-f8ppr0kiq",
-      "timestamp": "2025-09-11T12:04:29.002Z",
-      "eventType": "educational_breakthrough",
-      "description": "Revolutionary educational approach discovered",
-      "impact": 0.6246471147578609,
-      "educationalRelevance": 0.8246471147578609,
-      "intelligenceBoost": 0.0624647114757861,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592329003-i3a6y0d3r",
-      "timestamp": "2025-09-11T12:05:29.003Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Curriculum design innovation implemented",
-      "impact": 0.3716611540344977,
-      "educationalRelevance": 0.5716611540344977,
-      "intelligenceBoost": 0.037166115403449766,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592389004-xhy4upf9n",
-      "timestamp": "2025-09-11T12:06:29.004Z",
-      "eventType": "educational_breakthrough",
-      "description": "Revolutionary educational approach discovered",
-      "impact": 0.408117120642931,
-      "educationalRelevance": 0.608117120642931,
-      "intelligenceBoost": 0.0408117120642931,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757592449005-zllmp9qoh",
-      "timestamp": "2025-09-11T12:07:29.005Z",
-      "agentId": "undefined",
-      "eventType": "pattern_recognized",
-      "description": "Emergent pattern detected in cultural knowledge transmission",
-      "impact": 0.3517617081284255,
-      "intelligenceBoost": 0.03517617081284255,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757592509006-6o308c4xd",
       "timestamp": "2025-09-11T12:08:29.006Z",
       "agentId": "undefined",
@@ -9837,7 +9785,57 @@
       "culturalSignificance": 0.564267669964545,
       "intelligenceBoost": 0.0364267669964545,
       "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757811542528-87yvr9518",
+      "timestamp": "2025-09-14T00:59:02.528Z",
+      "eventType": "knowledge_gained",
+      "description": "Technical optimization insight gained from distributed processing",
+      "impact": 0.5578987519313836,
+      "intelligenceBoost": 0.05578987519313836,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757811602530-e7ew7wk67",
+      "timestamp": "2025-09-14T01:00:02.530Z",
+      "eventType": "cultural_insight",
+      "description": "Cultural safety protocols enhanced through community wisdom",
+      "impact": 0.6431276642011976,
+      "culturalSignificance": 0.8431276642011976,
+      "intelligenceBoost": 0.06431276642011977,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811662532-nzqzq49pz",
+      "timestamp": "2025-09-14T01:01:02.532Z",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.7760669800390867,
+      "culturalSignificance": 0.9760669800390867,
+      "intelligenceBoost": 0.07760669800390868,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811722533-mysqmd6s6",
+      "timestamp": "2025-09-14T01:02:02.533Z",
+      "agentId": "undefined",
+      "eventType": "emergent_intelligence",
+      "description": "Emergent problem-solving capability activated",
+      "impact": 0.3049526554171899,
+      "intelligenceBoost": 0.030495265541718993,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811782552-1r4kq29gc",
+      "timestamp": "2025-09-14T01:03:02.552Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Traditional knowledge synthesis with modern educational methods",
+      "impact": 0.6665753741535825,
+      "culturalSignificance": 0.8665753741535824,
+      "intelligenceBoost": 0.06665753741535825,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-14T00:59:02.425Z"
+  "lastSaved": "2025-09-14T01:04:02.451Z"
 }

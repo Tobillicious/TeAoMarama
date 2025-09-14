@@ -5,12 +5,11 @@ import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
-// Temporarily disabled to fix critical errors
-// import {
-//   performanceMonitor,
-//   registerServiceWorker,
-//   useMemoryOptimization,
-// } from './utils/performance-optimizer';
+import {
+  performanceMonitor,
+  registerServiceWorker,
+  useMemoryOptimization,
+} from './utils/performance-optimizer';
 
 // Essential pages only - no duplicates
 const Home = lazy(() => import('./pages/Home'));
@@ -60,9 +59,20 @@ function App() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
-  // Simplified - no performance hooks for now
+  // Performance monitoring
   useEffect(() => {
     console.log('🌿 TeAoMarama Platform Loading...');
+    
+    // Register service worker
+    registerServiceWorker();
+    
+    // Log performance metrics
+    setTimeout(() => {
+      const metrics = performanceMonitor.getMetrics();
+      if (metrics) {
+        console.log('📊 Performance Metrics:', metrics);
+      }
+    }, 1000);
   }, []);
 
   return (
