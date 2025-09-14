@@ -45,6 +45,8 @@ const SupremeAICoordinationDashboard = lazy(
 );
 const GraphRAGKnowledgeSystem = lazy(() => import('./components/GraphRAGKnowledgeSystem'));
 const LLMArmyDeployment = lazy(() => import('./components/LLMArmyDeployment'));
+const ExaAIIntegration = lazy(() => import('./components/ExaAIIntegration'));
+const TeacherDemoShowcase = lazy(() => import('./components/TeacherDemoShowcase'));
 const QualityFilteringHarmonyDashboard = lazy(
   () => import('./components/QualityFilteringHarmonyDashboard'),
 );
@@ -122,6 +124,8 @@ function App() {
                 <Route path="/supreme-ai" element={<SupremeAICoordinationDashboard />} />
                 <Route path="/graphrag" element={<GraphRAGKnowledgeSystem />} />
                 <Route path="/llm-army" element={<LLMArmyDeployment />} />
+                <Route path="/exa-ai" element={<ExaAIIntegration />} />
+                <Route path="/teacher-demo" element={<TeacherDemoShowcase />} />
                 <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
                 <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
                 <Route

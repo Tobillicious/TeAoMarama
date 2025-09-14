@@ -37,6 +37,20 @@ const SimpleNavigationWorking: React.FC = () => {
       highlight: true,
       highlightColor: '#f59e0b',
     },
+    {
+      to: '/exa-ai',
+      label: 'EXA.AI',
+      icon: '🔍',
+      highlight: true,
+      highlightColor: '#3b82f6',
+    },
+    {
+      to: '/teacher-demo',
+      label: 'TEACHER DEMO',
+      icon: '🎯',
+      highlight: true,
+      highlightColor: '#8b5cf6',
+    },
   ];
 
   return (

@@ -169,5 +169,5 @@ export class APIConfigManager {
   }
 }
 
-// Export singleton instance
-export const apiConfigManager = APIConfigManager.getInstance();
+// Export singleton instance - temporarily disabled to fix browser error
+// export const apiConfigManager = APIConfigManager.getInstance();
