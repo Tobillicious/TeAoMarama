@@ -40,7 +40,11 @@ const AssessmentHub = lazy(() => import('./components/AdvancedStudentAnalytics')
 const PlatformAuditDashboard = lazy(() => import('./components/PlatformAuditDashboard'));
 const GLMModelDashboard = lazy(() => import('./components/GLMModelDashboard'));
 const GLMSymphonyDashboard = lazy(() => import('./components/GLMSymphonyDashboard'));
-const SupremeAICoordinationDashboard = lazy(() => import('./components/SupremeAICoordinationDashboard'));
+const SupremeAICoordinationDashboard = lazy(
+  () => import('./components/SupremeAICoordinationDashboard'),
+);
+const GraphRAGKnowledgeSystem = lazy(() => import('./components/GraphRAGKnowledgeSystem'));
+const LLMArmyDeployment = lazy(() => import('./components/LLMArmyDeployment'));
 const QualityFilteringHarmonyDashboard = lazy(
   () => import('./components/QualityFilteringHarmonyDashboard'),
 );
@@ -116,6 +120,8 @@ function App() {
                 <Route path="/ai-models" element={<GLMModelDashboard />} />
                 <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
                 <Route path="/supreme-ai" element={<SupremeAICoordinationDashboard />} />
+                <Route path="/graphrag" element={<GraphRAGKnowledgeSystem />} />
+                <Route path="/llm-army" element={<LLMArmyDeployment />} />
                 <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
                 <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
                 <Route

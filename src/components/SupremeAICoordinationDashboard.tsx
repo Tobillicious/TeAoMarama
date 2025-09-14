@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { 
-  Brain, 
-  Zap, 
-  Users, 
-  Globe, 
-  Cpu, 
-  Database, 
-  Network, 
-  Crown, 
-  Shield, 
-  Sparkles,
+import {
   Activity,
-  CheckCircle,
   AlertTriangle,
-  Settings,
   BarChart3,
+  Brain,
+  CheckCircle,
+  Crown,
+  Database,
+  Globe,
   Layers,
-  GitBranch,
-  Target
+  Network,
+  Settings,
+  Shield,
+  Sparkles,
+  Target,
+  Zap,
 } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { apiConfigManager } from '../utils/api-config-manager';
 
 interface LLMAgent {
@@ -98,7 +95,12 @@ const SupremeAICoordinationDashboard: React.FC = () => {
         status: 'active',
         performance: 98,
         culturalIntelligence: true,
-        capabilities: ['Educational Enhancement', 'Cultural Integration', 'Content Generation', 'Quality Assessment'],
+        capabilities: [
+          'Educational Enhancement',
+          'Cultural Integration',
+          'Content Generation',
+          'Quality Assessment',
+        ],
         apiKey: '90f7738e0e734c13a201b5cb95bcbf64.znT6L8AUHI9ZoKrk',
         lastActivity: new Date().toISOString(),
         tasksCompleted: 1247,
@@ -250,10 +252,12 @@ const SupremeAICoordinationDashboard: React.FC = () => {
   };
 
   const updateSystemMetrics = (agents: LLMAgent[], nodes: GraphRAGNode[]) => {
-    const activeAgents = agents.filter(a => a.status === 'active');
+    const activeAgents = agents.filter((a) => a.status === 'active');
     const totalTasks = agents.reduce((sum, agent) => sum + agent.tasksCompleted, 0);
-    const avgSuccessRate = agents.reduce((sum, agent) => sum + agent.successRate, 0) / agents.length;
-    const culturalCompliance = agents.filter(a => a.culturalIntelligence).length / agents.length * 100;
+    const avgSuccessRate =
+      agents.reduce((sum, agent) => sum + agent.successRate, 0) / agents.length;
+    const culturalCompliance =
+      (agents.filter((a) => a.culturalIntelligence).length / agents.length) * 100;
 
     setMetrics({
       totalLLMs: agents.length,
@@ -278,37 +282,46 @@ const SupremeAICoordinationDashboard: React.FC = () => {
   const startHeartbeat = () => {
     setInterval(() => {
       // Simulate real-time updates
-      setAgents(prev => prev.map(agent => ({
-        ...agent,
-        lastActivity: new Date().toISOString(),
-        performance: Math.min(100, agent.performance + (Math.random() - 0.5) * 0.5),
-      })));
+      setAgents((prev) =>
+        prev.map((agent) => ({
+          ...agent,
+          lastActivity: new Date().toISOString(),
+          performance: Math.min(100, agent.performance + (Math.random() - 0.5) * 0.5),
+        })),
+      );
     }, 30000); // 30 second heartbeat
   };
 
   const handleSupremeOrchestration = async () => {
     setIsOrchestrating(true);
-    
+
     // Simulate supreme orchestration
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     // Enhance all agents
-    setAgents(prev => prev.map(agent => ({
-      ...agent,
-      performance: Math.min(100, agent.performance + Math.random() * 2),
-      tasksCompleted: agent.tasksCompleted + Math.floor(Math.random() * 5),
-    })));
-    
+    setAgents((prev) =>
+      prev.map((agent) => ({
+        ...agent,
+        performance: Math.min(100, agent.performance + Math.random() * 2),
+        tasksCompleted: agent.tasksCompleted + Math.floor(Math.random() * 5),
+      })),
+    );
+
     setIsOrchestrating(false);
   };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'active': return <CheckCircle className="w-4 h-4 text-green-500" />;
-      case 'inactive': return <AlertTriangle className="w-4 h-4 text-yellow-500" />;
-      case 'error': return <AlertTriangle className="w-4 h-4 text-red-500" />;
-      case 'syncing': return <Activity className="w-4 h-4 text-blue-500 animate-pulse" />;
-      default: return <AlertTriangle className="w-4 h-4 text-gray-500" />;
+      case 'active':
+        return <CheckCircle className="w-4 h-4 text-green-500" />;
+      case 'inactive':
+        return <AlertTriangle className="w-4 h-4 text-yellow-500" />;
+      case 'error':
+        return <AlertTriangle className="w-4 h-4 text-red-500" />;
+      case 'syncing':
+        return <Activity className="w-4 h-4 text-blue-500 animate-pulse" />;
+      default:
+        return <AlertTriangle className="w-4 h-4 text-gray-500" />;
     }
   };
 
@@ -321,11 +334,16 @@ const SupremeAICoordinationDashboard: React.FC = () => {
 
   const getNodeTypeColor = (type: string) => {
     switch (type) {
-      case 'cultural': return 'bg-green-100 text-green-800 border-green-200';
-      case 'technical': return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'educational': return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'prototype': return 'bg-orange-100 text-orange-800 border-orange-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'cultural':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'technical':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'educational':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'prototype':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
+      default:
+        return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
@@ -337,7 +355,9 @@ const SupremeAICoordinationDashboard: React.FC = () => {
           <Crown className="w-12 h-12 text-purple-600" />
           <div>
             <h1 className="text-4xl font-bold text-gray-900">Supreme AI Coordination Dashboard</h1>
-            <p className="text-lg text-gray-600">MASSIVE AI EMPIRE - Thousands of LLMs Working in Perfect Harmony</p>
+            <p className="text-lg text-gray-600">
+              MASSIVE AI EMPIRE - Thousands of LLMs Working in Perfect Harmony
+            </p>
           </div>
         </div>
 
@@ -355,7 +375,9 @@ const SupremeAICoordinationDashboard: React.FC = () => {
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
             <Target className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-            <p className="text-2xl font-bold text-blue-600">{metrics.totalTasks.toLocaleString()}</p>
+            <p className="text-2xl font-bold text-blue-600">
+              {metrics.totalTasks.toLocaleString()}
+            </p>
             <p className="text-sm text-gray-600">Tasks</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
@@ -365,7 +387,9 @@ const SupremeAICoordinationDashboard: React.FC = () => {
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
             <Globe className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
-            <p className="text-2xl font-bold text-indigo-600">{metrics.culturalCompliance.toFixed(1)}%</p>
+            <p className="text-2xl font-bold text-indigo-600">
+              {metrics.culturalCompliance.toFixed(1)}%
+            </p>
             <p className="text-sm text-gray-600">Cultural</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
@@ -383,7 +407,10 @@ const SupremeAICoordinationDashboard: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {agents.map((agent) => (
-              <div key={agent.id} className="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+              <div
+                key={agent.id}
+                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500"
+              >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     {getStatusIcon(agent.status)}
@@ -399,7 +426,7 @@ const SupremeAICoordinationDashboard: React.FC = () => {
                     <p className="text-sm text-gray-600">Performance</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between text-sm">
                     <span>Tasks Completed:</span>
@@ -417,7 +444,10 @@ const SupremeAICoordinationDashboard: React.FC = () => {
 
                 <div className="flex flex-wrap gap-1">
                   {agent.capabilities.slice(0, 3).map((capability) => (
-                    <span key={capability} className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">
+                    <span
+                      key={capability}
+                      className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
+                    >
                       {capability}
                     </span>
                   ))}
@@ -442,14 +472,18 @@ const SupremeAICoordinationDashboard: React.FC = () => {
             {graphRAGNodes.map((node) => (
               <div key={node.id} className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getNodeTypeColor(node.type)}`}>
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-medium border ${getNodeTypeColor(
+                      node.type,
+                    )}`}
+                  >
                     {node.type.toUpperCase()}
                   </span>
                   <span className="text-sm text-gray-600">{node.connections} connections</span>
                 </div>
                 <h3 className="font-bold text-lg mb-2">{node.label}</h3>
                 <p className="text-sm text-gray-600 mb-3">{node.description}</p>
-                
+
                 {node.culturalContext && (
                   <div className="bg-green-50 p-3 rounded-lg">
                     <p className="text-sm font-medium text-green-800 mb-1">Cultural Context:</p>
@@ -458,7 +492,8 @@ const SupremeAICoordinationDashboard: React.FC = () => {
                         <span className="font-medium">Mana:</span> {node.culturalContext.mana}/100
                       </p>
                       <p className="text-xs text-green-700">
-                        <span className="font-medium">Tapu:</span> {node.culturalContext.tapu ? 'Yes' : 'No'}
+                        <span className="font-medium">Tapu:</span>{' '}
+                        {node.culturalContext.tapu ? 'Yes' : 'No'}
                       </p>
                       <p className="text-xs text-green-700">
                         <span className="font-medium">Wairua:</span> {node.culturalContext.wairua}
@@ -516,7 +551,7 @@ const SupremeAICoordinationDashboard: React.FC = () => {
             <Crown className="w-5 h-5" />
             {isOrchestrating ? 'Supreme Orchestration...' : 'Supreme Orchestration'}
           </button>
-          
+
           <button className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg hover:from-green-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
             <Sparkles className="w-5 h-5" />
             Activate GraphRAG
@@ -530,10 +565,12 @@ const SupremeAICoordinationDashboard: React.FC = () => {
             Supreme AI Empire Status
           </h3>
           <p className="text-green-800">
-            🚀 <strong>MASSIVE AI EMPIRE ACTIVE:</strong> {metrics.totalLLMs} LLMs, {metrics.knowledgeNodes} knowledge nodes, 
-            {metrics.totalTasks.toLocaleString()} tasks completed with {metrics.successRate.toFixed(1)}% success rate. 
-            Cultural intelligence at {metrics.culturalCompliance.toFixed(1)}% compliance. 
-            All systems operational and working in perfect harmony! 🌟
+            🚀 <strong>MASSIVE AI EMPIRE ACTIVE:</strong> {metrics.totalLLMs} LLMs,{' '}
+            {metrics.knowledgeNodes} knowledge nodes,
+            {metrics.totalTasks.toLocaleString()} tasks completed with{' '}
+            {metrics.successRate.toFixed(1)}% success rate. Cultural intelligence at{' '}
+            {metrics.culturalCompliance.toFixed(1)}% compliance. All systems operational and working
+            in perfect harmony! 🌟
           </p>
         </div>
       </div>

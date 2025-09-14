@@ -39,15 +39,15 @@ export class APIConfigManager {
   private loadConfig(): APIConfig {
     return {
       glm: {
-        apiKey: import.meta.env.VITE_GLM_API_KEY || process.env.GLM_API_KEY || '',
+        apiKey: import.meta.env.VITE_GLM_API_KEY || '',
         baseUrl:
           import.meta.env.VITE_GLM_BASE_URL ||
           'https://open.bigmodel.cn/api/paas/v4/chat/completions',
-        enabled: !!(import.meta.env.VITE_GLM_API_KEY || process.env.GLM_API_KEY),
+        enabled: !!import.meta.env.VITE_GLM_API_KEY,
       },
       exa: {
-        apiKey: import.meta.env.VITE_EXA_API_KEY || process.env.EXASEARCH_API_KEY || '',
-        enabled: !!(import.meta.env.VITE_EXA_API_KEY || process.env.EXASEARCH_API_KEY),
+        apiKey: import.meta.env.VITE_EXA_API_KEY || '',
+        enabled: !!import.meta.env.VITE_EXA_API_KEY,
       },
       firebase: {
         enabled: !!import.meta.env.VITE_FIREBASE_API_KEY,
