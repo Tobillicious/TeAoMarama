@@ -24,11 +24,12 @@ export const performanceMonitor = {
   measureRender: (componentName: string, startTime: number) => {
     const endTime = performance.now();
     const renderTime = endTime - startTime;
-    
-    if (renderTime > 100) { // Log slow renders
+
+    if (renderTime > 100) {
+      // Log slow renders
       console.warn(`🐌 Slow render: ${componentName} took ${renderTime.toFixed(2)}ms`);
     }
-    
+
     return renderTime;
   },
 
@@ -39,11 +40,12 @@ export const performanceMonitor = {
       const result = await apiCall();
       const endTime = performance.now();
       const duration = endTime - startTime;
-      
-      if (duration > 1000) { // Log slow API calls
+
+      if (duration > 1000) {
+        // Log slow API calls
         console.warn(`🐌 Slow API: ${apiName} took ${duration.toFixed(2)}ms`);
       }
-      
+
       return result;
     } catch (error) {
       const endTime = performance.now();
@@ -56,17 +58,19 @@ export const performanceMonitor = {
   // Get performance metrics
   getMetrics: () => {
     if (typeof window === 'undefined') return null;
-    
+
     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const paint = performance.getEntriesByType('paint');
-    
+
     return {
       loadTime: navigation?.loadEventEnd - navigation?.loadEventStart,
-      domContentLoaded: navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart,
-      firstPaint: paint.find(entry => entry.name === 'first-paint')?.startTime,
-      firstContentfulPaint: paint.find(entry => entry.name === 'first-contentful-paint')?.startTime,
+      domContentLoaded:
+        navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart,
+      firstPaint: paint.find((entry) => entry.name === 'first-paint')?.startTime,
+      firstContentfulPaint: paint.find((entry) => entry.name === 'first-contentful-paint')
+        ?.startTime,
     };
-  }
+  },
 };
 
 // Service worker registration
@@ -96,7 +100,7 @@ export const optimizeImage = (src: string, width?: number, height?: number) => {
 // Debounce utility
 export const debounce = <T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  wait: number,
 ): ((...args: Parameters<T>) => void) => {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {
@@ -108,7 +112,7 @@ export const debounce = <T extends (...args: any[]) => any>(
 // Throttle utility
 export const throttle = <T extends (...args: any[]) => any>(
   func: T,
-  limit: number
+  limit: number,
 ): ((...args: Parameters<T>) => void) => {
   let inThrottle: boolean;
   return (...args: Parameters<T>) => {

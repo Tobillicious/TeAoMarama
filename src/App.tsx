@@ -1,15 +1,11 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import Navigation from './components/Navigation';
-import {
-  performanceMonitor,
-  registerServiceWorker,
-  useMemoryOptimization,
-} from './utils/performance-optimizer';
+import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
+import { performanceMonitor, registerServiceWorker } from './utils/performance-optimizer';
 
 // Essential pages only - no duplicates
 const Home = lazy(() => import('./pages/Home'));
@@ -62,10 +58,10 @@ function App() {
   // Performance monitoring
   useEffect(() => {
     console.log('🌿 TeAoMarama Platform Loading...');
-    
+
     // Register service worker
     registerServiceWorker();
-    
+
     // Log performance metrics
     setTimeout(() => {
       const metrics = performanceMonitor.getMetrics();
@@ -83,57 +79,60 @@ function App() {
           <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
-              {/* Landing */}
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
+                {/* Landing */}
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
 
-              {/* Authentication */}
-              <Route path="/login" element={<Login />} />
+                {/* Authentication */}
+                <Route path="/login" element={<Login />} />
 
-              {/* Core Dashboards - single route each */}
-              <Route path="/teacher" element={<TeacherDashboard />} />
-              <Route path="/student" element={<StudentDashboard />} />
+                {/* Core Dashboards - single route each */}
+                <Route path="/teacher" element={<TeacherDashboard />} />
+                <Route path="/student" element={<StudentDashboard />} />
 
-              {/* Resources - single route */}
-              <Route path="/resources" element={<ResourceBrowser />} />
-              <Route path="/human-content" element={<HumanReadableContentBrowser />} />
-              {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
-              <Route path="/lesson/:resourceId" element={<LessonViewer />} />
+                {/* Resources - single route */}
+                <Route path="/resources" element={<ResourceBrowser />} />
+                <Route path="/human-content" element={<HumanReadableContentBrowser />} />
+                {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
+                <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
-              {/* Year Level Content - Year 8 only for now */}
-              <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
+                {/* Year Level Content - Year 8 only for now */}
+                <Route path="/year8-social-studies" element={<Year8SocialStudies />} />
 
-              {/* Cultural Learning and Analytics */}
-              <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
-              <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
-              <Route path="/platform" element={<Home />} />
+                {/* Cultural Learning and Analytics */}
+                <Route path="/cultural-learning-modules" element={<CulturalLearningModules />} />
+                <Route path="/advanced-analytics" element={<AdvancedAnalytics />} />
+                <Route path="/platform" element={<Home />} />
 
-              {/* Superintelligence and Advanced Features */}
-              <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
-              <Route path="/multimedia" element={<MultimediaStudio />} />
-              <Route path="/assessments" element={<AssessmentHub />} />
-              <Route path="/audit" element={<PlatformAuditDashboard />} />
+                {/* Superintelligence and Advanced Features */}
+                <Route path="/superintelligence" element={<SuperintelligenceDashboard />} />
+                <Route path="/multimedia" element={<MultimediaStudio />} />
+                <Route path="/assessments" element={<AssessmentHub />} />
+                <Route path="/audit" element={<PlatformAuditDashboard />} />
 
-              {/* GLM Models - Priority Routes */}
-              <Route path="/glm-models" element={<GLMModelDashboard />} />
-              <Route path="/ai-models" element={<GLMModelDashboard />} />
-              <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
-              <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
-              <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
-              <Route path="/collaborative-workspace" element={<CollaborativeLearningWorkspace />} />
-              <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
-              <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
-              <Route path="/teacher-guide" element={<TeacherGuide />} />
+                {/* GLM Models - Priority Routes */}
+                <Route path="/glm-models" element={<GLMModelDashboard />} />
+                <Route path="/ai-models" element={<GLMModelDashboard />} />
+                <Route path="/glm-symphony" element={<GLMSymphonyDashboard />} />
+                <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
+                <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
+                <Route
+                  path="/collaborative-workspace"
+                  element={<CollaborativeLearningWorkspace />}
+                />
+                <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
+                <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
+                <Route path="/teacher-guide" element={<TeacherGuide />} />
 
-              <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
+                <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
-              {/* Static Pages */}
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+                {/* Static Pages */}
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
 
-              {/* 404 Fallback */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+                {/* 404 Fallback */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </Suspense>
           </ErrorBoundary>
         </main>

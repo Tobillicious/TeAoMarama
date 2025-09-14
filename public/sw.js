@@ -7,18 +7,14 @@ const CACHE_NAME = 'teao-marama-v1';
 const STATIC_CACHE = 'static-v1';
 
 // Files to cache
-const STATIC_FILES = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.ico'
-];
+const STATIC_FILES = ['/', '/index.html', '/manifest.json', '/favicon.ico'];
 
 // Install event
 self.addEventListener('install', (event) => {
   console.log('🔧 Service Worker installing...');
   event.waitUntil(
-    caches.open(STATIC_CACHE)
+    caches
+      .open(STATIC_CACHE)
       .then((cache) => {
         console.log('📦 Caching static files');
         return cache.addAll(STATIC_FILES);
@@ -26,7 +22,7 @@ self.addEventListener('install', (event) => {
       .then(() => {
         console.log('✅ Service Worker installed');
         return self.skipWaiting();
-      })
+      }),
   );
 });
 
@@ -34,7 +30,8 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   console.log('🚀 Service Worker activating...');
   event.waitUntil(
-    caches.keys()
+    caches
+      .keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
@@ -42,13 +39,13 @@ self.addEventListener('activate', (event) => {
               console.log('🗑️ Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
-          })
+          }),
         );
       })
       .then(() => {
         console.log('✅ Service Worker activated');
         return self.clients.claim();
-      })
+      }),
   );
 });
 
@@ -65,39 +62,37 @@ self.addEventListener('fetch', (event) => {
   }
 
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version if available
-        if (response) {
-          return response;
-        }
+    caches.match(event.request).then((response) => {
+      // Return cached version if available
+      if (response) {
+        return response;
+      }
 
-        // Fetch from network
-        return fetch(event.request)
-          .then((response) => {
-            // Don't cache if not a valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // Clone the response
-            const responseToCache = response.clone();
-
-            // Cache the response
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                cache.put(event.request, responseToCache);
-              });
-
+      // Fetch from network
+      return fetch(event.request)
+        .then((response) => {
+          // Don't cache if not a valid response
+          if (!response || response.status !== 200 || response.type !== 'basic') {
             return response;
-          })
-          .catch(() => {
-            // Return offline page if available
-            if (event.request.destination === 'document') {
-              return caches.match('/index.html');
-            }
+          }
+
+          // Clone the response
+          const responseToCache = response.clone();
+
+          // Cache the response
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
           });
-      })
+
+          return response;
+        })
+        .catch(() => {
+          // Return offline page if available
+          if (event.request.destination === 'document') {
+            return caches.match('/index.html');
+          }
+        });
+    }),
   );
 });
 

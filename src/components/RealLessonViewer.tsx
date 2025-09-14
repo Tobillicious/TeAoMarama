@@ -1,4 +1,12 @@
-import { ArrowLeft, Clock, Download, ExternalLink, Play, Pause, RotateCcw, Users, FileText, Printer, Edit3, CheckSquare } from 'lucide-react';
+import {
+  ArrowLeft,
+  CheckSquare,
+  ExternalLink,
+  Pause,
+  Play,
+  Printer,
+  RotateCcw,
+} from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { realTeachingResources } from '../data/nz-curriculum-year8';
@@ -30,11 +38,11 @@ const RealLessonViewer: React.FC = () => {
     isRunning: false,
     timeLeft: 0,
     totalTime: 0,
-    currentActivity: 0
+    currentActivity: 0,
   });
 
   useEffect(() => {
-    const foundResource = realTeachingResources.find(r => r.id === resourceId);
+    const foundResource = realTeachingResources.find((r) => r.id === resourceId);
     if (foundResource) {
       setResource(foundResource);
     }
@@ -46,14 +54,14 @@ const RealLessonViewer: React.FC = () => {
     let interval: NodeJS.Timeout;
     if (timer.isRunning && timer.timeLeft > 0) {
       interval = setInterval(() => {
-        setTimer(prev => ({
+        setTimer((prev) => ({
           ...prev,
-          timeLeft: prev.timeLeft - 1
+          timeLeft: prev.timeLeft - 1,
         }));
       }, 1000);
     } else if (timer.timeLeft === 0 && timer.isRunning) {
       // Timer finished - show alert and move to next activity
-      setTimer(prev => ({ ...prev, isRunning: false }));
+      setTimer((prev) => ({ ...prev, isRunning: false }));
       alert(`Activity "${getActivities()[timer.currentActivity]?.title}" time is up!`);
     }
     return () => clearInterval(interval);
@@ -66,22 +74,22 @@ const RealLessonViewer: React.FC = () => {
       isRunning: true,
       timeLeft: duration * 60, // Convert to seconds
       totalTime: duration * 60,
-      currentActivity: activityIndex
+      currentActivity: activityIndex,
     });
   };
 
   const pauseTimer = () => {
-    setTimer(prev => ({ ...prev, isRunning: !prev.isRunning }));
+    setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
   };
 
   const resetTimer = () => {
     const activities = getActivities();
     const duration = activities[timer.currentActivity]?.duration || 10;
-    setTimer(prev => ({
+    setTimer((prev) => ({
       ...prev,
       isRunning: false,
       timeLeft: duration * 60,
-      totalTime: duration * 60
+      totalTime: duration * 60,
     }));
   };
 
@@ -93,7 +101,7 @@ const RealLessonViewer: React.FC = () => {
 
   const getActivities = (): Activity[] => {
     if (!resource) return [];
-    
+
     return [
       {
         title: 'Opening Circle (Whakawhanaungatanga)',
@@ -102,11 +110,11 @@ const RealLessonViewer: React.FC = () => {
         materials: ['Circle seating', 'Karakia sheet'],
         instructions: [
           'Begin with karakia or acknowledgment',
-          'Students share one thing they know about today\'s topic',
+          "Students share one thing they know about today's topic",
           'Record key ideas on whiteboard',
-          'Set learning intentions together'
+          'Set learning intentions together',
         ],
-        handout: 'Opening circle discussion prompts'
+        handout: 'Opening circle discussion prompts',
       },
       {
         title: `Main Activity: ${resource.title}`,
@@ -115,11 +123,11 @@ const RealLessonViewer: React.FC = () => {
         materials: resource.content.activities[0]?.materials || ['Worksheets', 'Digital resources'],
         instructions: resource.content.activities[0]?.instructions || [
           'Introduce key concepts',
-          'Students work in pairs or small groups', 
+          'Students work in pairs or small groups',
           'Facilitate class discussion',
-          'Connect to external resources'
+          'Connect to external resources',
         ],
-        handout: 'Student worksheet and resource links'
+        handout: 'Student worksheet and resource links',
       },
       {
         title: 'Reflection & Assessment',
@@ -130,16 +138,16 @@ const RealLessonViewer: React.FC = () => {
           'Students complete exit ticket',
           'Share one thing learned and one question',
           'Teacher provides formative feedback',
-          'Preview next lesson'
+          'Preview next lesson',
         ],
-        handout: 'Exit ticket template'
-      }
+        handout: 'Exit ticket template',
+      },
     ];
   };
 
   const generateHandout = (activity: Activity, activityIndex: number) => {
     let handoutContent = `# ${activity.title}\n**${resource.title}** | ${resource.yearLevel}\n\n`;
-    
+
     if (activityIndex === 0) {
       handoutContent += `## Discussion Prompts\n1. What do you already know about this topic?\n2. How might this connect to your community?\n3. What questions do you have?\n\n## Notes:\n_____________________________\n_____________________________\n_____________________________\n`;
     } else if (activityIndex === 1) {
@@ -151,7 +159,7 @@ const RealLessonViewer: React.FC = () => {
     } else {
       handoutContent += `## Reflection Questions\n1. What was the most important thing you learned today?\n2. How does this connect to your own experience?\n3. What questions do you still have?\n\n## Exit Ticket:\nToday I learned: ______________________\nI still wonder: _______________________\n`;
     }
-    
+
     return handoutContent;
   };
 
@@ -170,7 +178,9 @@ const RealLessonViewer: React.FC = () => {
           </style></head>
           <body>
             <div class="header">
-              <strong>Te Kura o TeAoMarama</strong> | Generated: ${new Date().toLocaleDateString('en-NZ')}
+              <strong>Te Kura o TeAoMarama</strong> | Generated: ${new Date().toLocaleDateString(
+                'en-NZ',
+              )}
             </div>
             <pre style="white-space: pre-wrap; font-family: Arial, sans-serif;">${content}</pre>
           </body>
@@ -196,24 +206,26 @@ const RealLessonViewer: React.FC = () => {
       {/* Teacher Control Bar */}
       <div className="bg-white shadow-sm border-b p-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between flex-wrap gap-4">
-          <button 
+          <button
             onClick={() => navigate('/resources')}
             className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded"
           >
             <ArrowLeft size={20} />
             Back to Resources
           </button>
-          
+
           {/* Timer Display */}
           {timer.totalTime > 0 && (
             <div className="flex items-center gap-4 bg-blue-50 px-6 py-3 rounded-lg flex-wrap">
-              <div className="text-2xl font-mono text-blue-900">
-                {formatTime(timer.timeLeft)}
-              </div>
+              <div className="text-2xl font-mono text-blue-900">{formatTime(timer.timeLeft)}</div>
               <div className="flex gap-2">
                 <button
                   onClick={pauseTimer}
-                  className={`p-2 rounded transition-colors ${timer.isRunning ? 'bg-yellow-500 hover:bg-yellow-600 text-white' : 'bg-green-500 hover:bg-green-600 text-white'}`}
+                  className={`p-2 rounded transition-colors ${
+                    timer.isRunning
+                      ? 'bg-yellow-500 hover:bg-yellow-600 text-white'
+                      : 'bg-green-500 hover:bg-green-600 text-white'
+                  }`}
                 >
                   {timer.isRunning ? <Pause size={16} /> : <Play size={16} />}
                 </button>
@@ -229,7 +241,7 @@ const RealLessonViewer: React.FC = () => {
               </div>
             </div>
           )}
-          
+
           <button
             onClick={() => setShowHandouts(!showHandouts)}
             className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
@@ -271,7 +283,11 @@ const RealLessonViewer: React.FC = () => {
         <div className="space-y-6">
           {activities.map((activity, index) => (
             <div key={index} className="bg-white rounded-lg shadow">
-              <div className={`p-6 ${currentStep === index ? 'bg-blue-50 border-l-4 border-blue-500' : ''}`}>
+              <div
+                className={`p-6 ${
+                  currentStep === index ? 'bg-blue-50 border-l-4 border-blue-500' : ''
+                }`}
+              >
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
                   <h3 className="text-xl font-semibold">
                     Step {index + 1}: {activity.title}
@@ -289,9 +305,9 @@ const RealLessonViewer: React.FC = () => {
                     </button>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-700 mb-4">{activity.description}</p>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2">Materials Needed:</h4>
@@ -301,7 +317,7 @@ const RealLessonViewer: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2">Instructions:</h4>
                     <ol className="list-decimal list-inside space-y-1 text-gray-700">
@@ -337,7 +353,9 @@ const RealLessonViewer: React.FC = () => {
         {/* External Resources */}
         {resource.content.resources && (
           <div className="bg-white rounded-lg p-6 mt-6 shadow">
-            <h3 className="text-xl font-semibold mb-4">External Resources (All Verified Working)</h3>
+            <h3 className="text-xl font-semibold mb-4">
+              External Resources (All Verified Working)
+            </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {resource.content.resources.map((res: any, index: number) => (
                 <a

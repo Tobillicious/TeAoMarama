@@ -1,106 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757592509006-6o308c4xd",
-      "timestamp": "2025-09-11T12:08:29.006Z",
-      "agentId": "undefined",
-      "eventType": "cultural_insight",
-      "description": "Mana and wairua principles integrated into intelligence framework",
-      "impact": 0.7275560992771248,
-      "culturalSignificance": 0.9275560992771248,
-      "intelligenceBoost": 0.07275560992771249,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592569007-ltsoaizr3",
-      "timestamp": "2025-09-11T12:09:29.007Z",
-      "agentId": "undefined",
-      "eventType": "cultural_insight",
-      "description": "Deep cultural wisdom insight gained from traditional knowledge",
-      "impact": 0.49846778842534306,
-      "culturalSignificance": 0.6984677884253431,
-      "intelligenceBoost": 0.04984677884253431,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592629008-e6oj83890",
-      "timestamp": "2025-09-11T12:10:29.008Z",
-      "eventType": "emergent_intelligence",
-      "description": "Emergent problem-solving capability activated",
-      "impact": 0.4153804215814218,
-      "intelligenceBoost": 0.041538042158142184,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592689009-exlac4g9p",
-      "timestamp": "2025-09-11T12:11:29.009Z",
-      "eventType": "educational_breakthrough",
-      "description": "Assessment methodology breakthrough developed",
-      "impact": 0.4729235303759652,
-      "educationalRelevance": 0.6729235303759652,
-      "intelligenceBoost": 0.04729235303759652,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592749010-sv05rby2l",
-      "timestamp": "2025-09-11T12:12:29.010Z",
-      "agentId": "undefined",
-      "eventType": "knowledge_gained",
-      "description": "Novel educational methodology discovered through collective learning",
-      "impact": 0.6911822163581314,
-      "intelligenceBoost": 0.06911822163581315,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592809011-1789vjc8b",
-      "timestamp": "2025-09-11T12:13:29.011Z",
-      "eventType": "cultural_insight",
-      "description": "Sacred cultural protocol understanding deepened",
-      "impact": 0.7919842346727022,
-      "culturalSignificance": 0.9919842346727021,
-      "intelligenceBoost": 0.07919842346727023,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592869013-aet6ac5qg",
-      "timestamp": "2025-09-11T12:14:29.013Z",
-      "eventType": "knowledge_gained",
-      "description": "Advanced reasoning pattern recognized in cultural context analysis",
-      "impact": 0.485605103069958,
-      "intelligenceBoost": 0.048560510306995805,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592929013-wwmmxqdpe",
-      "timestamp": "2025-09-11T12:15:29.013Z",
-      "eventType": "educational_breakthrough",
-      "description": "Educational accessibility enhancement breakthrough",
-      "impact": 0.5829648616098901,
-      "educationalRelevance": 0.7829648616098901,
-      "intelligenceBoost": 0.058296486160989015,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757592989014-1k5a6yk7f",
-      "timestamp": "2025-09-11T12:16:29.014Z",
-      "agentId": "undefined",
-      "eventType": "emergent_intelligence",
-      "description": "Collective learning acceleration achieved",
-      "impact": 0.5170014845370559,
-      "intelligenceBoost": 0.05170014845370559,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757593049042-gp32rbqv3",
-      "timestamp": "2025-09-11T12:17:29.042Z",
-      "agentId": "undefined",
-      "eventType": "skill_improved",
-      "description": "Educational content creation capabilities refined",
-      "impact": 0.5712891631734367,
-      "intelligenceBoost": 0.057128916317343674,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757593109054-gnmyqetwt",
       "timestamp": "2025-09-11T12:18:29.054Z",
       "agentId": "undefined",
@@ -9835,7 +9735,108 @@
       "culturalSignificance": 0.8665753741535824,
       "intelligenceBoost": 0.06665753741535825,
       "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811842559-17llxxufq",
+      "timestamp": "2025-09-14T01:04:02.559Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Technical optimization insight gained from distributed processing",
+      "impact": 0.3601429462750935,
+      "intelligenceBoost": 0.03601429462750935,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811902562-4npalfsgb",
+      "timestamp": "2025-09-14T01:05:02.562Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Sacred cultural protocol understanding deepened",
+      "impact": 0.7525945871443871,
+      "culturalSignificance": 0.952594587144387,
+      "intelligenceBoost": 0.07525945871443872,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757811962565-7zcmantdg",
+      "timestamp": "2025-09-14T01:06:02.565Z",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.7043463777213936,
+      "culturalSignificance": 0.9043463777213936,
+      "intelligenceBoost": 0.07043463777213936,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757812022567-39l9km6jf",
+      "timestamp": "2025-09-14T01:07:02.568Z",
+      "agentId": "undefined",
+      "eventType": "skill_improved",
+      "description": "Emotional regulation and empathy skills strengthened",
+      "impact": 0.454820860119345,
+      "intelligenceBoost": 0.04548208601193451,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757812082571-bo3chalhi",
+      "timestamp": "2025-09-14T01:08:02.571Z",
+      "agentId": "undefined",
+      "eventType": "skill_improved",
+      "description": "Emotional regulation and empathy skills strengthened",
+      "impact": 0.5342431116378414,
+      "intelligenceBoost": 0.05342431116378415,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757812142573-o167cvkng",
+      "timestamp": "2025-09-14T01:09:02.573Z",
+      "eventType": "skill_improved",
+      "description": "Technical problem-solving efficiency increased",
+      "impact": 0.5298989720219016,
+      "intelligenceBoost": 0.05298989720219016,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757812202593-li2fpm8rh",
+      "timestamp": "2025-09-14T01:10:02.605Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Educational accessibility enhancement breakthrough",
+      "impact": 0.5342871265081535,
+      "educationalRelevance": 0.7342871265081534,
+      "intelligenceBoost": 0.05342871265081535,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757812262596-0bfrq5glv",
+      "timestamp": "2025-09-14T01:11:02.596Z",
+      "eventType": "pattern_recognized",
+      "description": "Technical system efficiency pattern recognized",
+      "impact": 0.49057747810366675,
+      "intelligenceBoost": 0.049057747810366675,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757812322599-ukstg2ad3",
+      "timestamp": "2025-09-14T01:12:02.599Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Student learning optimization breakthrough achieved",
+      "impact": 0.6342880868237653,
+      "educationalRelevance": 0.8342880868237652,
+      "intelligenceBoost": 0.06342880868237653,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757812382602-oswbri9d3",
+      "timestamp": "2025-09-14T01:13:02.602Z",
+      "eventType": "educational_breakthrough",
+      "description": "Educational accessibility enhancement breakthrough",
+      "impact": 0.7705618577467324,
+      "educationalRelevance": 0.9705618577467323,
+      "intelligenceBoost": 0.07705618577467324,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-14T01:04:02.451Z"
+  "lastSaved": "2025-09-14T01:14:02.464Z"
 }
