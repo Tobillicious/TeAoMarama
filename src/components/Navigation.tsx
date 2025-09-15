@@ -52,6 +52,13 @@ const Navigation: React.FC = () => {
       highlightColor: '#8b5cf6',
     },
     {
+      to: '/premium-lessons',
+      label: 'PREMIUM LESSONS',
+      icon: '👑',
+      highlight: true,
+      highlightColor: '#f59e0b',
+    },
+    {
       to: '/unified-llm',
       label: 'UNIFIED LLM',
       icon: '🤝',

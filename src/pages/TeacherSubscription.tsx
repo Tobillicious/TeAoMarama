@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle, Star, Users, BookOpen, Shield, Zap } from 'lucide-react';
+import { loadStripe } from '@stripe/stripe-js';
 
 interface SubscriptionPlan {
   id: string;
@@ -113,10 +114,51 @@ const TeacherSubscription: React.FC = () => {
     }
   ];
 
-  const handleGetStarted = (planId: string) => {
-    // This would typically redirect to payment/signup
-    console.log(`Starting subscription to ${planId} plan`);
-    alert(`Redirecting to secure checkout for ${plans.find(p => p.id === planId)?.name} plan...`);
+  const handleGetStarted = async (planId: string) => {
+    const plan = plans.find(p => p.id === planId);
+    if (!plan) return;
+
+    try {
+      // Initialize Stripe
+      const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder');
+      
+      if (!stripe) {
+        throw new Error('Stripe failed to load');
+      }
+
+      // Create checkout session
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          planId: plan.id,
+          price: plan.price,
+          billing: plan.billing,
+          teacherEmail: 'teacher@example.com', // Would be from auth
+          teacherName: 'Teacher Name', // Would be from auth
+        }),
+      });
+
+      const session = await response.json();
+
+      if (session.error) {
+        throw new Error(session.error);
+      }
+
+      // Redirect to Stripe Checkout
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      alert(`Payment setup error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   };
 
   return (

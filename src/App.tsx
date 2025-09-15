@@ -9,6 +9,7 @@ import { performanceMonitor, registerServiceWorker } from './utils/performance-o
 
 // Essential pages only - no duplicates
 const Home = lazy(() => import('./pages/Home'));
+const HumanFocusedHomepage = lazy(() => import('./components/HumanFocusedHomepage'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
@@ -61,6 +62,7 @@ const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcase
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
+const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
 const PremiumLessonPlanShowcase = lazy(() => import('./components/PremiumLessonPlanShowcase'));
 const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));
 
@@ -93,7 +95,7 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 {/* Landing */}
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<HumanFocusedHomepage />} />
                 <Route path="/home" element={<Home />} />
 
                 {/* Authentication */}
