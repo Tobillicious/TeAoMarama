@@ -89,7 +89,7 @@ const FunctionalResourceBrowser: React.FC = () => {
           type: 'unit-plan',
           content: nzcResource.content,
           culturalElements: nzcResource.content?.culturalConnections?.length || 0,
-          description: nzcResource.content.overview,
+          description: nzcResource.content?.overview || 'Curriculum resource',
           duration: nzcResource.duration,
           difficulty: 'intermediate',
           tags: [
