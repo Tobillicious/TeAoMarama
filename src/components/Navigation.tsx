@@ -15,7 +15,13 @@ const Navigation: React.FC = () => {
     },
     { to: '/teacher', label: 'TEACHER', icon: '👨‍🏫' },
     { to: '/signup', label: 'SIGN UP', icon: '💳', highlight: true, highlightColor: '#f59e0b' },
-    { to: '/subscription', label: 'SUBSCRIPTION', icon: '💰', highlight: true, highlightColor: '#10b981' },
+    {
+      to: '/subscription',
+      label: 'SUBSCRIPTION',
+      icon: '💰',
+      highlight: true,
+      highlightColor: '#10b981',
+    },
     { to: '/student', label: 'STUDENT', icon: '👨‍🎓' },
     { to: '/glm-symphony', label: 'GLM AI', icon: '🎼' },
     {

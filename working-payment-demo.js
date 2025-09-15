@@ -1,5 +1,5 @@
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 
 const app = express();
 const PORT = 3004;
@@ -12,13 +12,13 @@ app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const { planId, price, billing, teacherEmail, teacherName } = req.body;
 
-    console.log('🎯 REAL Payment Request Received:', { 
-      planId, 
-      price, 
-      billing, 
-      teacherEmail, 
+    console.log('🎯 REAL Payment Request Received:', {
+      planId,
+      price,
+      billing,
+      teacherEmail,
       teacherName,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
 
     // Simulate real payment processing
@@ -26,7 +26,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
     const checkoutUrl = `https://checkout.stripe.com/pay/${sessionId}`;
 
     // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     console.log('✅ Payment Session Created:', sessionId);
 
@@ -41,10 +41,9 @@ app.post('/api/create-checkout-session', async (req, res) => {
         planId,
         billing,
         teacherName,
-        processed_at: new Date().toISOString()
-      }
+        processed_at: new Date().toISOString(),
+      },
     });
-
   } catch (error) {
     console.error('❌ Payment Error:', error);
     res.status(500).json({ error: error.message });
@@ -55,21 +54,20 @@ app.post('/api/create-checkout-session', async (req, res) => {
 app.get('/api/verify-payment/:sessionId', async (req, res) => {
   try {
     const { sessionId } = req.params;
-    
+
     console.log('🔍 Verifying Payment:', sessionId);
-    
+
     // Simulate payment verification
     const isPaid = Math.random() > 0.3; // 70% success rate for demo
-    
+
     res.json({
       paid: isPaid,
       sessionId,
       amount_total: 2900, // $29.00 in cents
       currency: 'nzd',
       status: isPaid ? 'paid' : 'pending',
-      verified_at: new Date().toISOString()
+      verified_at: new Date().toISOString(),
     });
-
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -84,8 +82,8 @@ app.get('/health', (req, res) => {
     endpoints: [
       'POST /api/create-checkout-session',
       'GET /api/verify-payment/:sessionId',
-      'GET /health'
-    ]
+      'GET /health',
+    ],
   });
 });
 
