@@ -157,7 +157,7 @@ const TeacherResourceSummary: React.FC = () => {
                 </div>
               </div>
               <div className="text-sm text-green-600 font-medium">
-                {resource.content.culturalConnections.length} cultural elements
+                {resource.content?.culturalConnections?.length || 0} cultural elements
               </div>
             </div>
           ))}

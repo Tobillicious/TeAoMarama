@@ -58,6 +58,13 @@ const Navigation: React.FC = () => {
       highlight: true,
       highlightColor: '#10b981',
     },
+    {
+      to: '/royal-command',
+      label: 'ROYAL COMMAND',
+      icon: '👑',
+      highlight: true,
+      highlightColor: '#9333ea',
+    },
   ];
 
   return (

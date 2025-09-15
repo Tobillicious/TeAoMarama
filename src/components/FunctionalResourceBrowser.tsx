@@ -88,7 +88,7 @@ const FunctionalResourceBrowser: React.FC = () => {
           yearLevel: `Year ${nzcResource.yearLevel}`,
           type: 'unit-plan',
           content: nzcResource.content,
-          culturalElements: nzcResource.content.culturalConnections.length,
+          culturalElements: nzcResource.content?.culturalConnections?.length || 0,
           description: nzcResource.content.overview,
           duration: nzcResource.duration,
           difficulty: 'intermediate',

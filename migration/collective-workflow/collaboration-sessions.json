@@ -126,5 +126,69 @@
     "decisions": [],
     "culturalSafetyCheck": false,
     "qualityAssuranceCheck": false
+  },
+  {
+    "id": "session-1757928752857-pyodxx39a",
+    "taskId": "task-1757928752856-tafe3ovhx",
+    "participatingAgents": [
+      "kaitiaki-mahara"
+    ],
+    "sessionType": "planning",
+    "startTime": "2025-09-15T09:32:32.857Z",
+    "insights": [
+      "content-kokako: Progress: Initial research and cultural consultation completed"
+    ],
+    "decisions": [],
+    "culturalSafetyCheck": false,
+    "qualityAssuranceCheck": false,
+    "endTime": "2025-09-15T09:32:32.860Z"
+  },
+  {
+    "id": "session-1757928752859-mxto059wu",
+    "taskId": "task-1757928752858-9som5vk1k",
+    "participatingAgents": [
+      "cascade-windsurf"
+    ],
+    "sessionType": "planning",
+    "startTime": "2025-09-15T09:32:32.859Z",
+    "insights": [
+      "cascade-windsurf: Progress: Performance analysis completed, optimization opportunities identified"
+    ],
+    "decisions": [],
+    "culturalSafetyCheck": false,
+    "qualityAssuranceCheck": false,
+    "endTime": "2025-09-15T09:32:32.861Z"
+  },
+  {
+    "id": "session-1757928752859-e7j581els",
+    "taskId": "task-1757928752856-tafe3ovhx",
+    "participatingAgents": [
+      "content-kokako",
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki",
+      "qa-kea"
+    ],
+    "sessionType": "planning",
+    "startTime": "2025-09-15T09:32:32.859Z",
+    "insights": [],
+    "decisions": [],
+    "culturalSafetyCheck": false,
+    "qualityAssuranceCheck": false
+  },
+  {
+    "id": "session-1757928752859-3iqtuais5",
+    "taskId": "task-1757928752858-9som5vk1k",
+    "participatingAgents": [
+      "cascade-windsurf",
+      "infra-tui",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "sessionType": "planning",
+    "startTime": "2025-09-15T09:32:32.859Z",
+    "insights": [],
+    "decisions": [],
+    "culturalSafetyCheck": false,
+    "qualityAssuranceCheck": false
   }
 ]

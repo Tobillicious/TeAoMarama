@@ -61,6 +61,7 @@ const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcase
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
+const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));
 
 function App() {
   const location = useLocation();
@@ -144,6 +145,7 @@ function App() {
                 <Route path="/subscribe" element={<TeacherSubscription />} />
                 <Route path="/pricing" element={<TeacherSubscription />} />
                 <Route path="/dashboard-beta" element={<TeacherDashboardBeta />} />
+                <Route path="/royal-command" element={<RoyalCommandDashboard />} />
 
                 <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
