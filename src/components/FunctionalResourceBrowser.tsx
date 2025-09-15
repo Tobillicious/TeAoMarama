@@ -93,19 +93,19 @@ const FunctionalResourceBrowser: React.FC = () => {
 
         // Convert real NZ Curriculum resources to Resource format
         const nzCurriculumResources: Resource[] = realTeachingResources.map((nzcResource) => ({
-          id: nzcResource.id,
-          title: nzcResource.title,
-          subject: nzcResource.learningArea,
-          yearLevel: `Year ${nzcResource.yearLevel}`,
+          id: nzcResource.id || `resource-${Math.random()}`,
+          title: nzcResource.title || 'Untitled Resource',
+          subject: nzcResource.learningArea || 'General',
+          yearLevel: `Year ${nzcResource.yearLevel || 8}`,
           type: 'unit-plan',
-          content: nzcResource.content,
+          content: nzcResource.content || {},
           culturalElements: nzcResource.content?.culturalConnections?.length || 0,
           description: nzcResource.content?.overview || nzcResource.title || 'Curriculum resource',
-          duration: nzcResource.duration,
+          duration: nzcResource.duration || '45 minutes',
           difficulty: 'intermediate',
           tags: [
-            ...nzcResource.keyCompetencies.slice(0, 3),
-            ...nzcResource.crossCurricularLinks.map((link) => link.subject),
+            ...(nzcResource.keyCompetencies?.slice(0, 3) || []),
+            ...(nzcResource.crossCurricularLinks?.map((link) => link.subject) || []),
           ],
           qualityMetrics: {
             qualityScore: 95, // Real content gets high quality score
