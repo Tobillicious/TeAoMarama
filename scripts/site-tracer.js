@@ -5,7 +5,8 @@
  * Uses tracer library to provide detailed logging and monitoring
  */
 
-const tracer = require('tracer').colorConsole({
+import tracer from 'tracer';
+const logger = tracer.colorConsole({
   format: '{{timestamp}} [{{title}}] {{file}}:{{line}} - {{message}}',
   dateformat: 'HH:MM:ss',
   preprocess: function (data) {
@@ -13,8 +14,7 @@ const tracer = require('tracer').colorConsole({
   },
 });
 
-const http = require('http');
-const https = require('https');
+import http from 'http';
 
 class SiteTracer {
   constructor() {
@@ -36,8 +36,8 @@ class SiteTracer {
   }
 
   async traceSite() {
-    tracer.info('🚀 Starting Site Tracer - Monitoring TeKeteAkoClient Platform');
-    tracer.info('📍 Base URL:', this.baseUrl);
+    logger.info('🚀 Starting Site Tracer - Monitoring TeKeteAkoClient Platform');
+    logger.info('📍 Base URL:', this.baseUrl);
 
     // Check if dev server is running
     await this.checkDevServer();
@@ -50,26 +50,26 @@ class SiteTracer {
   }
 
   async checkDevServer() {
-    tracer.info('🔍 Checking if development server is running...');
+    logger.info('🔍 Checking if development server is running...');
 
     try {
       const response = await this.makeRequest('/');
       if (response.statusCode === 200) {
-        tracer.info('✅ Development server is running');
+        logger.info('✅ Development server is running');
         return true;
       } else {
-        tracer.warn('⚠️  Development server responded with status:', response.statusCode);
+        logger.warn('⚠️  Development server responded with status:', response.statusCode);
         return false;
       }
     } catch (error) {
-      tracer.error('❌ Development server is not running or not accessible');
-      tracer.error('Error:', error.message);
+      logger.error('❌ Development server is not running or not accessible');
+      logger.error('Error:', error.message);
       return false;
     }
   }
 
   async testEndpoints() {
-    tracer.info('🧪 Testing all endpoints...');
+    logger.info('🧪 Testing all endpoints...');
 
     for (const endpoint of this.endpoints) {
       await this.testEndpoint(endpoint);
@@ -89,9 +89,9 @@ class SiteTracer {
       };
 
       if (response.statusCode === 200) {
-        tracer.info(`✅ ${endpoint} - OK (${response.responseTime}ms)`);
+        logger.info(`✅ ${endpoint} - OK (${response.responseTime}ms)`);
       } else {
-        tracer.warn(`⚠️  ${endpoint} - Status ${response.statusCode} (${response.responseTime}ms)`);
+        logger.warn(`⚠️  ${endpoint} - Status ${response.statusCode} (${response.responseTime}ms)`);
       }
     } catch (error) {
       this.results[endpoint] = {
@@ -100,7 +100,7 @@ class SiteTracer {
         error: error.message,
         responseTime: null,
       };
-      tracer.error(`❌ ${endpoint} - Error: ${error.message}`);
+      logger.error(`❌ ${endpoint} - Error: ${error.message}`);
     }
   }
 
@@ -129,60 +129,60 @@ class SiteTracer {
   }
 
   generateReport() {
-    tracer.info('📊 Generating Site Tracer Report...');
+    logger.info('📊 Generating Site Tracer Report...');
 
     const totalEndpoints = this.endpoints.length;
     const successfulEndpoints = Object.values(this.results).filter((r) => r.success).length;
     const failedEndpoints = totalEndpoints - successfulEndpoints;
 
-    tracer.info('='.repeat(60));
-    tracer.info('📈 SITE TRACER REPORT');
-    tracer.info('='.repeat(60));
-    tracer.info(`Total Endpoints Tested: ${totalEndpoints}`);
-    tracer.info(`✅ Successful: ${successfulEndpoints}`);
-    tracer.info(`❌ Failed: ${failedEndpoints}`);
-    tracer.info(`📊 Success Rate: ${((successfulEndpoints / totalEndpoints) * 100).toFixed(1)}%`);
-    tracer.info('');
+    logger.info('='.repeat(60));
+    logger.info('📈 SITE TRACER REPORT');
+    logger.info('='.repeat(60));
+    logger.info(`Total Endpoints Tested: ${totalEndpoints}`);
+    logger.info(`✅ Successful: ${successfulEndpoints}`);
+    logger.info(`❌ Failed: ${failedEndpoints}`);
+    logger.info(`📊 Success Rate: ${((successfulEndpoints / totalEndpoints) * 100).toFixed(1)}%`);
+    logger.info('');
 
     // Detailed results
-    tracer.info('📋 DETAILED RESULTS:');
-    tracer.info('-'.repeat(60));
+    logger.info('📋 DETAILED RESULTS:');
+    logger.info('-'.repeat(60));
 
     for (const [endpoint, result] of Object.entries(this.results)) {
       const status = result.success ? '✅' : '❌';
       const time = result.responseTime ? `${result.responseTime}ms` : 'N/A';
-      tracer.info(`${status} ${endpoint.padEnd(20)} - Status: ${result.status} - Time: ${time}`);
+      logger.info(`${status} ${endpoint.padEnd(20)} - Status: ${result.status} - Time: ${time}`);
 
       if (result.error) {
-        tracer.error(`   Error: ${result.error}`);
+        logger.error(`   Error: ${result.error}`);
       }
     }
 
-    tracer.info('');
-    tracer.info('🎯 RECOMMENDATIONS:');
-    tracer.info('-'.repeat(60));
+    logger.info('');
+    logger.info('🎯 RECOMMENDATIONS:');
+    logger.info('-'.repeat(60));
 
     if (failedEndpoints === 0) {
-      tracer.info('🎉 All endpoints are working perfectly!');
-      tracer.info('🚀 Site is ready for production use');
+      logger.info('🎉 All endpoints are working perfectly!');
+      logger.info('🚀 Site is ready for production use');
     } else {
-      tracer.warn('⚠️  Some endpoints need attention:');
+      logger.warn('⚠️  Some endpoints need attention:');
       for (const [endpoint, result] of Object.entries(this.results)) {
         if (!result.success) {
-          tracer.warn(`   - Fix ${endpoint}: ${result.error || `Status ${result.status}`}`);
+          logger.warn(`   - Fix ${endpoint}: ${result.error || `Status ${result.status}`}`);
         }
       }
     }
 
-    tracer.info('');
-    tracer.info('🔧 NEXT STEPS:');
-    tracer.info('-'.repeat(60));
-    tracer.info('1. Fix any failed endpoints');
-    tracer.info('2. Optimize response times if needed');
-    tracer.info('3. Test user workflows end-to-end');
-    tracer.info('4. Deploy to production when ready');
+    logger.info('');
+    logger.info('🔧 NEXT STEPS:');
+    logger.info('-'.repeat(60));
+    logger.info('1. Fix any failed endpoints');
+    logger.info('2. Optimize response times if needed');
+    logger.info('3. Test user workflows end-to-end');
+    logger.info('4. Deploy to production when ready');
 
-    tracer.info('='.repeat(60));
+    logger.info('='.repeat(60));
   }
 }
 
@@ -192,8 +192,6 @@ async function main() {
   await tracer.traceSite();
 }
 
-if (require.main === module) {
-  main().catch(console.error);
-}
+main().catch(console.error);
 
-module.exports = SiteTracer;
+export default SiteTracer;

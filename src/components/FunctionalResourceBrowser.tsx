@@ -1,4 +1,15 @@
-import { BookOpen, ChevronRight, Copy, FileText, Filter, Heart, Play, Search, Star, Target } from 'lucide-react';
+import {
+  BookOpen,
+  ChevronRight,
+  Copy,
+  FileText,
+  Filter,
+  Heart,
+  Play,
+  Search,
+  Star,
+  Target,
+} from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import RealResourceViewer from './RealResourceViewer';
 
@@ -89,7 +100,7 @@ const FunctionalResourceBrowser: React.FC = () => {
           type: 'unit-plan',
           content: nzcResource.content,
           culturalElements: nzcResource.content?.culturalConnections?.length || 0,
-          description: nzcResource.content?.overview || 'Curriculum resource',
+          description: nzcResource.content?.overview || nzcResource.title || 'Curriculum resource',
           duration: nzcResource.duration,
           difficulty: 'intermediate',
           tags: [
@@ -134,10 +145,10 @@ const FunctionalResourceBrowser: React.FC = () => {
             duration: '45 mins',
             difficulty: 'beginner',
             tags: ['greetings', 'culture', 'language'],
-            qualityMetrics: { qualityScore: 85 }
+            qualityMetrics: { qualityScore: 85 },
           },
           {
-            id: 'test-2', 
+            id: 'test-2',
             title: 'NZ History: Early Settlements',
             subject: 'Social Studies',
             yearLevel: 'Year 8',
@@ -147,25 +158,29 @@ const FunctionalResourceBrowser: React.FC = () => {
             duration: '3 weeks',
             difficulty: 'intermediate',
             tags: ['history', 'settlement', 'māori', 'european'],
-            qualityMetrics: { qualityScore: 92 }
+            qualityMetrics: { qualityScore: 92 },
           },
           {
             id: 'test-3',
             title: 'Math in Māori Culture',
             subject: 'Mathematics',
-            yearLevel: 'Year 8', 
+            yearLevel: 'Year 8',
             type: 'activity',
             culturalElements: 3,
             description: 'Discover mathematical concepts in traditional Māori practices',
             duration: '60 mins',
             difficulty: 'intermediate',
             tags: ['mathematics', 'culture', 'patterns'],
-            qualityMetrics: { qualityScore: 78 }
-          }
+            qualityMetrics: { qualityScore: 78 },
+          },
         ];
 
         // Combine real NZ Curriculum resources with existing ones and test resources
-        const combinedResources = [...nzCurriculumResources, ...existingConverted, ...testResources];
+        const combinedResources = [
+          ...nzCurriculumResources,
+          ...existingConverted,
+          ...testResources,
+        ];
         console.log(
           `🌟 Total resources loaded: ${combinedResources.length} (${nzCurriculumResources.length} real NZC content)`,
         );
@@ -379,9 +394,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
           resource.yearLevel.toLowerCase().includes(searchLower) ||
           resource.type.toLowerCase().includes(searchLower) ||
           resource.duration?.toLowerCase().includes(searchLower) ||
-          (resource.tags || []).some((tag: string) =>
-            tag.toLowerCase().includes(searchLower),
-          )
+          (resource.tags || []).some((tag: string) => tag.toLowerCase().includes(searchLower))
         );
       });
     }
@@ -427,7 +440,7 @@ How statistics help us understand cultural diversity in Aotearoa...`,
       newFavorites.add(resourceId);
     }
     setFavorites(newFavorites);
-    
+
     // Store in localStorage for persistence
     localStorage.setItem('resource-favorites', JSON.stringify(Array.from(newFavorites)));
   };
@@ -443,7 +456,9 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   // Quick copy lesson plan functionality
   const copyLessonPlan = (resource: Resource) => {
     const lessonPlan = `# ${resource.title}
-**Subject:** ${resource.subject} | **Year Level:** ${resource.yearLevel} | **Duration:** ${resource.duration}
+**Subject:** ${resource.subject} | **Year Level:** ${resource.yearLevel} | **Duration:** ${
+      resource.duration
+    }
 
 ## Overview
 ${resource.description}
@@ -463,7 +478,11 @@ ${resource.description}
 [Add assessment criteria and methods]
 
 ## Cultural Connections
-${resource.culturalElements > 0 ? `This lesson includes ${resource.culturalElements} cultural elements` : 'Consider adding Māori perspectives'}
+${
+  resource.culturalElements > 0
+    ? `This lesson includes ${resource.culturalElements} cultural elements`
+    : 'Consider adding Māori perspectives'
+}
 
 ## Tags
 ${resource.tags.join(', ')}
@@ -1069,16 +1088,22 @@ Generated from TeAoMarama Resource Browser`;
                       toggleFavorite(resource.id);
                     }}
                     style={{
-                      background: favorites.has(resource.id) ? 'rgba(236, 72, 153, 0.1)' : 'rgba(107, 114, 128, 0.1)',
+                      background: favorites.has(resource.id)
+                        ? 'rgba(236, 72, 153, 0.1)'
+                        : 'rgba(107, 114, 128, 0.1)',
                       border: 'none',
                       color: favorites.has(resource.id) ? '#ec4899' : '#6b7280',
                       padding: '6px',
                       borderRadius: '6px',
                       cursor: 'pointer',
                     }}
-                    title={favorites.has(resource.id) ? 'Remove from favorites' : 'Add to favorites'}
+                    title={
+                      favorites.has(resource.id) ? 'Remove from favorites' : 'Add to favorites'
+                    }
                   >
-                    <Heart className={`w-4 h-4 ${favorites.has(resource.id) ? 'fill-current' : ''}`} />
+                    <Heart
+                      className={`w-4 h-4 ${favorites.has(resource.id) ? 'fill-current' : ''}`}
+                    />
                   </button>
                   <button
                     onClick={(e) => {
