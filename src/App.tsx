@@ -21,6 +21,7 @@ const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowse
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
+const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
 // Temporarily disabled due to missing dependencies
 // const ComprehensiveSearchInterface = lazy(
@@ -62,7 +63,6 @@ const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcase
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
-const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
 const PremiumLessonPlanShowcase = lazy(() => import('./components/PremiumLessonPlanShowcase'));
 const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));
 
@@ -100,6 +100,7 @@ function App() {
 
                 {/* Authentication */}
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<TeacherSignupFlow />} />
 
                 {/* Core Dashboards - single route each */}
                 <Route path="/teacher" element={<TeacherDashboard />} />

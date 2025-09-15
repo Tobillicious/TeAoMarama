@@ -1,6 +1,8 @@
-const express = require('express');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder');
-const cors = require('cors');
+import cors from 'cors';
+import express from 'express';
+import Stripe from 'stripe';
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_placeholder');
 
 const app = express();
 const PORT = process.env.PORT || 3002;

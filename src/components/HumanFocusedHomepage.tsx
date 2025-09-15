@@ -271,7 +271,7 @@ const HumanFocusedHomepage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => navigate('/subscribe')}
+              onClick={() => navigate('/signup')}
               className="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-colors"
             >
               <CheckCircle className="h-5 w-5" />
