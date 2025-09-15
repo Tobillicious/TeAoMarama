@@ -122,33 +122,46 @@ const TeacherSubscription: React.FC = () => {
     if (!plan) return;
 
     try {
-      // Initialize Stripe
+      // Initialize Stripe with REAL publishable key
       const stripe = await loadStripe(
-        process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder',
+        'pk_test_51Q8X4qL2KxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXx'
       );
 
       if (!stripe) {
         throw new Error('Stripe failed to load');
       }
 
-      // Mock checkout session for demonstration
-      const mockSession = {
-        id: `cs_test_${Date.now()}`,
-        url: `https://checkout.stripe.com/pay/cs_test_${Date.now()}`,
-        status: 'open'
-      };
+      // Create REAL checkout session with backend
+      const response = await fetch('http://localhost:3004/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          planId: plan.id,
+          price: plan.price,
+          billing: plan.billing,
+          teacherEmail: 'teacher@example.com',
+          teacherName: 'Demo Teacher',
+        }),
+      });
 
-      console.log('Payment request:', { planId, price: plan.price, billing: plan.billing });
-      console.log('Mock checkout session created:', mockSession);
+      const session = await response.json();
 
-      // For demonstration, show success message instead of redirecting
-      alert(`✅ Payment Integration Working!\n\nPlan: ${plan.name}\nPrice: $${plan.price}/${plan.billing}\n\nIn production, this would redirect to Stripe Checkout.\n\nSession ID: ${mockSession.id}`);
+      if (session.error) {
+        throw new Error(session.error);
+      }
 
-      // In production, this would redirect to Stripe Checkout:
-      // const { error } = await stripe.redirectToCheckout({
-      //   sessionId: session.id,
-      // });
+      console.log('REAL Stripe session created:', session);
 
+      // Redirect to REAL Stripe Checkout
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
     } catch (error) {
       console.error('Payment error:', error);
       alert(`Payment setup error: ${error instanceof Error ? error.message : 'Unknown error'}`);

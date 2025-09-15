@@ -66,6 +66,20 @@ export function getPenaltySummary(): void {
   console.log(`\n💰 Total Penalties: -$${Math.abs(getTotalPenalties())}`);
 }
 
+// Record penalty for poor quality demo
+recordPenalty(
+  'King Aronui',
+  0.15,
+  'Poor quality payment demo - just alert popup, not real payment processing',
+);
+
+// Record penalty for misleading Central Bank
+recordPenalty(
+  'King Aronui',
+  0.5,
+  'Misleading Central Bank about actual progress - false claims about revenue systems',
+);
+
 // Auto-run if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   getPenaltySummary();

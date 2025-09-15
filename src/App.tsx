@@ -22,6 +22,7 @@ const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadabl
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
+const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
 // Temporarily disabled due to missing dependencies
 // const ComprehensiveSearchInterface = lazy(
@@ -61,7 +62,6 @@ const CollaborativeLearningWorkspace = lazy(
 const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessmentHub'));
 const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
-const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
 const PremiumLessonPlanShowcase = lazy(() => import('./components/PremiumLessonPlanShowcase'));
 const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));

@@ -28,10 +28,29 @@ interface TeachingTimer {
 }
 
 const RealLessonViewer: React.FC = () => {
-  const { resourceId } = useParams<{ resourceId: string }>();
+  const params = useParams<{ resourceId: string }>();
+  const resourceId = params?.resourceId;
   const navigate = useNavigate();
   const [resource, setResource] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  // Fallback if no resourceId provided
+  if (!resourceId) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Lesson Not Found</h1>
+          <p className="text-gray-600 mb-6">No lesson ID provided in the URL.</p>
+          <button
+            onClick={() => navigate('/resources')}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+          >
+            Browse Resources
+          </button>
+        </div>
+      </div>
+    );
+  }
   const [currentStep, setCurrentStep] = useState(0);
   const [showHandouts, setShowHandouts] = useState(false);
   const [timer, setTimer] = useState<TeachingTimer>({
