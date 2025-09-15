@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Brain, CheckCircle, AlertTriangle, Settings, Zap, Users, Globe, Cpu } from 'lucide-react';
-// Temporarily disabled: import { apiConfigManager } from '../utils/api-config-manager';
+import { apiConfigManager } from '../utils/api-config-manager';
 
 interface GLMModel {
   id: string;

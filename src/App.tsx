@@ -15,6 +15,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 // Core functionality only - single version each
 const TeacherDashboard = lazy(() => import('./components/ProfessionalTeacherDashboard'));
 const StudentDashboard = lazy(() => import('./components/EnhancedStudentDashboard'));
+const EngagingStudentDashboard = lazy(() => import('./components/EngagingStudentDashboard'));
 const ResourceBrowser = lazy(() => import('./components/FunctionalResourceBrowser'));
 const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadableContentBrowser'));
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
@@ -47,6 +48,7 @@ const GraphRAGKnowledgeSystem = lazy(() => import('./components/GraphRAGKnowledg
 const LLMArmyDeployment = lazy(() => import('./components/LLMArmyDeployment'));
 const ExaAIIntegration = lazy(() => import('./components/ExaAIIntegration'));
 const TeacherDemoShowcase = lazy(() => import('./components/TeacherDemoShowcase'));
+const UnifiedLLMDashboard = lazy(() => import('./components/UnifiedLLMDashboard'));
 const QualityFilteringHarmonyDashboard = lazy(
   () => import('./components/QualityFilteringHarmonyDashboard'),
 );
@@ -57,6 +59,8 @@ const CollaborativeLearningWorkspace = lazy(
 const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessmentHub'));
 const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
+const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
+const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
 
 function App() {
   const location = useLocation();
@@ -96,6 +100,7 @@ function App() {
                 {/* Core Dashboards - single route each */}
                 <Route path="/teacher" element={<TeacherDashboard />} />
                 <Route path="/student" element={<StudentDashboard />} />
+                <Route path="/student-engaging" element={<EngagingStudentDashboard />} />
 
                 {/* Resources - single route */}
                 <Route path="/resources" element={<ResourceBrowser />} />
@@ -126,6 +131,7 @@ function App() {
                 <Route path="/llm-army" element={<LLMArmyDeployment />} />
                 <Route path="/exa-ai" element={<ExaAIIntegration />} />
                 <Route path="/teacher-demo" element={<TeacherDemoShowcase />} />
+                <Route path="/unified-llm" element={<UnifiedLLMDashboard />} />
                 <Route path="/quality-filtering" element={<QualityFilteringHarmonyDashboard />} />
                 <Route path="/real-time-analytics" element={<RealTimeLearningAnalytics />} />
                 <Route
@@ -135,6 +141,9 @@ function App() {
                 <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
                 <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
                 <Route path="/teacher-guide" element={<TeacherGuide />} />
+                <Route path="/subscribe" element={<TeacherSubscription />} />
+                <Route path="/pricing" element={<TeacherSubscription />} />
+                <Route path="/dashboard-beta" element={<TeacherDashboardBeta />} />
 
                 <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 

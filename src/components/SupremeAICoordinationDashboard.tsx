@@ -16,7 +16,7 @@ import {
   Zap,
 } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-// Temporarily disabled: import { apiConfigManager } from '../utils/api-config-manager';
+import { apiConfigManager } from '../utils/api-config-manager';
 
 interface LLMAgent {
   id: string;

@@ -15,6 +15,7 @@ import {
   Database,
   GitBranch,
   Crown,
+  Cpu,
 } from 'lucide-react';
 
 interface KnowledgeNode {

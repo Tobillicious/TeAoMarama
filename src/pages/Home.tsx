@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, ExternalLink, Play, FileText, Users, Award } from 'lucide-react';
+import TeacherResourceSummary from '../components/TeacherResourceSummary';
 import './Home.css';
 
 const Home = React.memo(function Home() {
@@ -117,6 +118,14 @@ const Home = React.memo(function Home() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Teacher Resource Summary */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            📊 Your Teaching Dashboard
+          </h2>
+          <TeacherResourceSummary />
         </div>
 
         {/* Featured Resources */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const SimpleNavigationWorking: React.FC = () => {
+const Navigation: React.FC = () => {
   const location = useLocation();
 
   const mainLinks = [
@@ -50,6 +50,13 @@ const SimpleNavigationWorking: React.FC = () => {
       icon: '🎯',
       highlight: true,
       highlightColor: '#8b5cf6',
+    },
+    {
+      to: '/unified-llm',
+      label: 'UNIFIED LLM',
+      icon: '🤝',
+      highlight: true,
+      highlightColor: '#10b981',
     },
   ];
 
@@ -112,4 +119,4 @@ const SimpleNavigationWorking: React.FC = () => {
   );
 };
 
-export default SimpleNavigationWorking;
+export default Navigation;

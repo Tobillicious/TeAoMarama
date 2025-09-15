@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Create Māori Language Learning Module",
+    "description": "Develop a comprehensive Te Reo Māori learning module that integrates traditional knowledge with modern pedagogy",
+    "category": "cultural",
+    "priority": "high",
+    "culturalSafetyRequired": true,
+    "estimatedDuration": 120,
+    "dependencies": [],
+    "deliverables": [
+      "Comprehensive Te Reo Māori module",
+      "Cultural safety validation",
+      "Teacher training materials"
+    ],
+    "id": "task-1757827716398-0zirph9nh",
+    "createdAt": "2025-09-14T05:28:36.398Z",
+    "updatedAt": "2025-09-14T05:28:36.400Z",
+    "status": "completed",
+    "supportingAgents": [
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki",
+      "qa-kea"
+    ],
+    "assignedAgent": "content-kokako",
+    "culturalValidation": {
+      "tikangaCompliance": true,
+      "teReoIntegration": true,
+      "mātaurangaMāoriAlignment": true,
+      "culturalSafetyScore": 92,
+      "approved": true,
+      "validatedBy": "kaitiaki-mahara",
+      "validatedAt": "2025-09-14T05:28:36.400Z"
+    },
+    "actualDuration": 0
+  },
+  {
+    "title": "Optimize Platform Performance",
+    "description": "Improve system performance and user experience through technical enhancements",
+    "category": "technical",
+    "priority": "medium",
+    "culturalSafetyRequired": false,
+    "estimatedDuration": 90,
+    "dependencies": [],
+    "deliverables": [
+      "Performance optimization report",
+      "Implementation roadmap",
+      "Monitoring dashboard"
+    ],
+    "id": "task-1757827716398-w9ghvivpy",
+    "createdAt": "2025-09-14T05:28:36.398Z",
+    "updatedAt": "2025-09-14T05:28:36.401Z",
+    "status": "completed",
+    "supportingAgents": [
+      "infra-tui",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "assignedAgent": "cascade-windsurf",
+    "qualityAssurance": {
+      "technicalQuality": 88,
+      "educationalAlignment": 85,
+      "accessibilityCompliance": true,
+      "nzCurriculumAlignment": true,
+      "approved": true,
+      "reviewedBy": "qa-kea",
+      "reviewedAt": "2025-09-14T05:28:36.400Z"
+    },
+    "actualDuration": 0
+  },
+  {
+    "title": "Create Māori Language Learning Module",
+    "description": "Develop a comprehensive Te Reo Māori learning module that integrates traditional knowledge with modern pedagogy",
+    "category": "cultural",
+    "priority": "high",
+    "culturalSafetyRequired": true,
+    "estimatedDuration": 120,
+    "dependencies": [],
+    "deliverables": [
+      "Comprehensive Te Reo Māori module",
+      "Cultural safety validation",
+      "Teacher training materials"
+    ],
+    "id": "task-1757833123393-62kut9444",
+    "createdAt": "2025-09-14T06:58:43.393Z",
+    "updatedAt": "2025-09-14T06:58:43.395Z",
+    "status": "completed",
+    "supportingAgents": [
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki",
+      "qa-kea"
+    ],
+    "assignedAgent": "content-kokako",
+    "culturalValidation": {
+      "tikangaCompliance": true,
+      "teReoIntegration": true,
+      "mātaurangaMāoriAlignment": true,
+      "culturalSafetyScore": 92,
+      "approved": true,
+      "validatedBy": "kaitiaki-mahara",
+      "validatedAt": "2025-09-14T06:58:43.395Z"
+    },
+    "actualDuration": 0
+  },
+  {
+    "title": "Optimize Platform Performance",
+    "description": "Improve system performance and user experience through technical enhancements",
+    "category": "technical",
+    "priority": "medium",
+    "culturalSafetyRequired": false,
+    "estimatedDuration": 90,
+    "dependencies": [],
+    "deliverables": [
+      "Performance optimization report",
+      "Implementation roadmap",
+      "Monitoring dashboard"
+    ],
+    "id": "task-1757833123394-565339r2l",
+    "createdAt": "2025-09-14T06:58:43.394Z",
+    "updatedAt": "2025-09-14T06:58:43.396Z",
+    "status": "completed",
+    "supportingAgents": [
+      "infra-tui",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "assignedAgent": "cascade-windsurf",
+    "qualityAssurance": {
+      "technicalQuality": 88,
+      "educationalAlignment": 85,
+      "accessibilityCompliance": true,
+      "nzCurriculumAlignment": true,
+      "approved": true,
+      "reviewedBy": "qa-kea",
+      "reviewedAt": "2025-09-14T06:58:43.395Z"
+    },
+    "actualDuration": 0
+  }
+]

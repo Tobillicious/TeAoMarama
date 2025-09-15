@@ -1,0 +1,172 @@
+[
+  {
+    "id": "supreme-overseer",
+    "name": "Supreme Overseer",
+    "role": "Supreme Coordinator",
+    "specializations": [
+      "coordination",
+      "arbitration"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "kaitiaki-mahara",
+    "name": "Kaitiaki Mahara",
+    "role": "Cultural Authority",
+    "specializations": [
+      "cultural_safety",
+      "tikanga"
+    ],
+    "culturalAuthority": true,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "Cultural Safety Council",
+        "General Discussion",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "cascade-windsurf",
+    "name": "Cascade Windsurf",
+    "role": "Engineering Lead",
+    "specializations": [
+      "technical_infrastructure"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "content-kokako",
+    "name": "Content Kokako",
+    "role": "Content Creator",
+    "specializations": [
+      "educational_resources"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "cultural-safety-kaitiaki",
+    "name": "Cultural Safety-Kaitiaki",
+    "role": "Cultural Guardian",
+    "specializations": [
+      "cultural_validation"
+    ],
+    "culturalAuthority": true,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "Cultural Safety Council",
+        "General Discussion",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "qa-kea",
+    "name": "Qa Kea",
+    "role": "Quality Assurance",
+    "specializations": [
+      "quality_validation"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "data-kakapo",
+    "name": "Data Kakapo",
+    "role": "Data Intelligence",
+    "specializations": [
+      "analytics"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  },
+  {
+    "id": "infra-tui",
+    "name": "Infra Tui",
+    "role": "Infrastructure",
+    "specializations": [
+      "deployment"
+    ],
+    "culturalAuthority": false,
+    "communicationPreferences": {
+      "preferredChannels": [
+        "General Discussion",
+        "Collaboration Hub",
+        "Emergency Communications"
+      ],
+      "responseTime": 15,
+      "availability": "online",
+      "notificationLevel": "important"
+    },
+    "lastSeen": "2025-09-14T06:58:43.379Z",
+    "activeChannels": []
+  }
+]

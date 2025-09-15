@@ -1,5 +1,7 @@
 // API Configuration Manager for TeAoMarama Educational Platform
 // Centralized management of all external API integrations
+// Version: 1.0.1
+
 
 export interface APIConfig {
   glm: {
@@ -37,25 +39,35 @@ export class APIConfigManager {
   }
 
   private loadConfig(): APIConfig {
+    // Support both import.meta.env (browser) and process.env (Node.js)
+    const getEnvVar = (key: string): string => {
+      // Check if we're in browser environment with Vite
+      if (typeof window !== 'undefined' && (globalThis as any).import?.meta?.env) {
+        return (globalThis as any).import.meta.env[key] || '';
+      }
+      // Node.js environment
+      return process.env[key] || '';
+    };
+
     return {
       glm: {
-        apiKey: import.meta.env.VITE_GLM_API_KEY || '',
+        apiKey: getEnvVar('VITE_GLM_API_KEY'),
         baseUrl:
-          import.meta.env.VITE_GLM_BASE_URL ||
+          getEnvVar('VITE_GLM_BASE_URL') ||
           'https://open.bigmodel.cn/api/paas/v4/chat/completions',
-        enabled: !!import.meta.env.VITE_GLM_API_KEY,
+        enabled: !!getEnvVar('VITE_GLM_API_KEY'),
       },
       exa: {
-        apiKey: import.meta.env.VITE_EXA_API_KEY || '',
-        enabled: !!import.meta.env.VITE_EXA_API_KEY,
+        apiKey: getEnvVar('VITE_EXA_API_KEY'),
+        enabled: !!getEnvVar('VITE_EXA_API_KEY'),
       },
       firebase: {
-        enabled: !!import.meta.env.VITE_FIREBASE_API_KEY,
-        useEmulator: import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true',
+        enabled: !!getEnvVar('VITE_FIREBASE_API_KEY'),
+        useEmulator: getEnvVar('VITE_USE_FIREBASE_EMULATOR') === 'true',
       },
       performance: {
-        monitoring: import.meta.env.VITE_ENABLE_PERFORMANCE_MONITORING !== 'false',
-        serviceWorker: import.meta.env.VITE_ENABLE_SERVICE_WORKER !== 'false',
+        monitoring: getEnvVar('VITE_ENABLE_PERFORMANCE_MONITORING') !== 'false',
+        serviceWorker: getEnvVar('VITE_ENABLE_SERVICE_WORKER') !== 'false',
       },
     };
   }
@@ -169,5 +181,5 @@ export class APIConfigManager {
   }
 }
 
-// Export singleton instance - temporarily disabled to fix browser error
-// export const apiConfigManager = APIConfigManager.getInstance();
+// Export singleton instance
+export const apiConfigManager = APIConfigManager.getInstance();

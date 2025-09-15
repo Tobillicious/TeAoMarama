@@ -199,6 +199,20 @@
   transform: translateY(-2px);
 }
 
+.action-btn.primary {
+  background: linear-gradient(135deg, #2c5530 0%, #4a7c5d 100%);
+  color: white;
+  border-color: #2c5530;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(44, 85, 48, 0.3);
+}
+
+.action-btn.primary:hover {
+  background: linear-gradient(135deg, #1a3320 0%, #2c5530 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(44, 85, 48, 0.4);
+}
+
 /* Classes Tab */
 .classes-tab h3 {
   margin: 0 0 2rem 0;

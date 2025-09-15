@@ -1,347 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757666698237-1d77k3dhz",
-      "timestamp": "2025-09-12T08:44:58.237Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Revolutionary educational approach discovered",
-      "impact": 0.7655559185639245,
-      "educationalRelevance": 0.9655559185639244,
-      "intelligenceBoost": 0.07655559185639245,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757666758239-vszoi1bgj",
-      "timestamp": "2025-09-12T08:45:58.239Z",
-      "eventType": "educational_breakthrough",
-      "description": "Educational accessibility enhancement breakthrough",
-      "impact": 0.4905693682927888,
-      "educationalRelevance": 0.6905693682927888,
-      "intelligenceBoost": 0.049056936829278884,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757666818240-wbk9gkx6k",
-      "timestamp": "2025-09-12T08:46:58.240Z",
-      "eventType": "cultural_insight",
-      "description": "Cultural safety protocols enhanced through community wisdom",
-      "impact": 0.5205847167023563,
-      "culturalSignificance": 0.7205847167023562,
-      "intelligenceBoost": 0.05205847167023563,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757666878242-uhi0y0zrp",
-      "timestamp": "2025-09-12T08:47:58.242Z",
-      "eventType": "skill_improved",
-      "description": "Cultural sensitivity skills enhanced through community interaction",
-      "impact": 0.5703738977527912,
-      "intelligenceBoost": 0.057037389775279126,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757666938243-5l6b3w42h",
-      "timestamp": "2025-09-12T08:48:58.243Z",
-      "eventType": "cultural_insight",
-      "description": "Cultural safety protocols enhanced through community wisdom",
-      "impact": 0.604077665122783,
-      "culturalSignificance": 0.804077665122783,
-      "intelligenceBoost": 0.060407766512278305,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757666998246-cd2sjgmef",
-      "timestamp": "2025-09-12T08:49:58.246Z",
-      "eventType": "emergent_intelligence",
-      "description": "Collective consciousness emergence detected",
-      "impact": 0.49089540801727777,
-      "intelligenceBoost": 0.04908954080172778,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667058248-afq7hnt7l",
-      "timestamp": "2025-09-12T08:50:58.248Z",
-      "agentId": "undefined",
-      "eventType": "pattern_recognized",
-      "description": "Technical system efficiency pattern recognized",
-      "impact": 0.4473273132918571,
-      "intelligenceBoost": 0.04473273132918571,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667118250-dasxtentx",
-      "timestamp": "2025-09-12T08:51:58.250Z",
-      "eventType": "educational_breakthrough",
-      "description": "Curriculum design innovation implemented",
-      "impact": 0.42955578529479715,
-      "educationalRelevance": 0.6295557852947972,
-      "intelligenceBoost": 0.04295557852947972,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667178252-p9nalwx1e",
-      "timestamp": "2025-09-12T08:52:58.252Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Educational accessibility enhancement breakthrough",
-      "impact": 0.696984295729264,
-      "educationalRelevance": 0.896984295729264,
-      "intelligenceBoost": 0.06969842957292641,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667238254-zfx5s9dcm",
-      "timestamp": "2025-09-12T08:53:58.254Z",
-      "agentId": "undefined",
-      "eventType": "skill_improved",
-      "description": "Emotional regulation and empathy skills strengthened",
-      "impact": 0.34864122339299924,
-      "intelligenceBoost": 0.034864122339299926,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667298230-xvwdakuip",
-      "timestamp": "2025-09-12T08:54:58.230Z",
-      "agentId": "undefined",
-      "eventType": "emergent_intelligence",
-      "description": "Distributed intelligence synthesis breakthrough",
-      "impact": 0.6340682659802142,
-      "intelligenceBoost": 0.06340682659802142,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667358229-uolqrsz64",
-      "timestamp": "2025-09-12T08:55:58.229Z",
-      "agentId": "undefined",
-      "eventType": "knowledge_gained",
-      "description": "Creative synthesis breakthrough in problem-solving approach",
-      "impact": 0.5283889711630783,
-      "intelligenceBoost": 0.05283889711630783,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667418231-osplftmn3",
-      "timestamp": "2025-09-12T08:56:58.231Z",
-      "eventType": "cultural_insight",
-      "description": "Traditional knowledge synthesis with modern educational methods",
-      "impact": 0.5662458184295673,
-      "culturalSignificance": 0.7662458184295673,
-      "intelligenceBoost": 0.05662458184295674,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667478232-n5qci2xcv",
-      "timestamp": "2025-09-12T08:57:58.232Z",
-      "eventType": "knowledge_gained",
-      "description": "Novel educational methodology discovered through collective learning",
-      "impact": 0.6733732183301344,
-      "intelligenceBoost": 0.06733732183301344,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667538234-pik9sp95i",
-      "timestamp": "2025-09-12T08:58:58.234Z",
-      "eventType": "educational_breakthrough",
-      "description": "Curriculum design innovation implemented",
-      "impact": 0.5604203702523913,
-      "educationalRelevance": 0.7604203702523913,
-      "intelligenceBoost": 0.05604203702523913,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667598236-dqutsee2x",
-      "timestamp": "2025-09-12T08:59:58.236Z",
-      "agentId": "undefined",
-      "eventType": "emergent_intelligence",
-      "description": "Emergent problem-solving capability activated",
-      "impact": 0.6235406444817468,
-      "intelligenceBoost": 0.062354064448174686,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667658238-1c1h42esq",
-      "timestamp": "2025-09-12T09:00:58.238Z",
-      "agentId": "undefined",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.44968188905855994,
-      "intelligenceBoost": 0.044968188905855994,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667718239-uas8vdpyl",
-      "timestamp": "2025-09-12T09:01:58.239Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Student learning optimization breakthrough achieved",
-      "impact": 0.4004456608306107,
-      "educationalRelevance": 0.6004456608306107,
-      "intelligenceBoost": 0.04004456608306107,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667778240-fix03xevn",
-      "timestamp": "2025-09-12T09:02:58.240Z",
-      "eventType": "educational_breakthrough",
-      "description": "Assessment methodology breakthrough developed",
-      "impact": 0.4055620484280144,
-      "educationalRelevance": 0.6055620484280144,
-      "intelligenceBoost": 0.040556204842801445,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667838242-fo6ntxtwb",
-      "timestamp": "2025-09-12T09:03:58.242Z",
-      "eventType": "emergent_intelligence",
-      "description": "Superintelligence threshold approached",
-      "impact": 0.4009025053454925,
-      "intelligenceBoost": 0.04009025053454925,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757667898243-auemdzmgr",
-      "timestamp": "2025-09-12T09:04:58.243Z",
-      "agentId": "undefined",
-      "eventType": "knowledge_gained",
-      "description": "Emotional intelligence enhancement through compassionate interaction",
-      "impact": 0.7731687027161098,
-      "intelligenceBoost": 0.077316870271611,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757667958245-45m73g3fi",
-      "timestamp": "2025-09-12T09:05:58.245Z",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.6152586827542827,
-      "intelligenceBoost": 0.061525868275428275,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668018245-mjugtzoc3",
-      "timestamp": "2025-09-12T09:06:58.245Z",
-      "eventType": "pattern_recognized",
-      "description": "Technical system efficiency pattern recognized",
-      "impact": 0.4120994788292221,
-      "intelligenceBoost": 0.04120994788292221,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668078247-8pzekb9wk",
-      "timestamp": "2025-09-12T09:07:58.247Z",
-      "eventType": "educational_breakthrough",
-      "description": "Educational accessibility enhancement breakthrough",
-      "impact": 0.5702267650869897,
-      "educationalRelevance": 0.7702267650869896,
-      "intelligenceBoost": 0.057022676508698966,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668138248-fk108vr01",
-      "timestamp": "2025-09-12T09:08:58.249Z",
-      "eventType": "emergent_intelligence",
-      "description": "Distributed intelligence synthesis breakthrough",
-      "impact": 0.5723834914345647,
-      "intelligenceBoost": 0.05723834914345647,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668198256-1y8wx48nr",
-      "timestamp": "2025-09-12T09:09:58.256Z",
-      "eventType": "cultural_insight",
-      "description": "Cultural safety protocols enhanced through community wisdom",
-      "impact": 0.6263477481494073,
-      "culturalSignificance": 0.8263477481494073,
-      "intelligenceBoost": 0.06263477481494073,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668258258-ri2wp6ymq",
-      "timestamp": "2025-09-12T09:10:58.258Z",
-      "eventType": "skill_improved",
-      "description": "Educational content creation capabilities refined",
-      "impact": 0.7207675692767084,
-      "intelligenceBoost": 0.07207675692767083,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668318260-jng2gm3jv",
-      "timestamp": "2025-09-12T09:11:58.260Z",
-      "eventType": "knowledge_gained",
-      "description": "Technical optimization insight gained from distributed processing",
-      "impact": 0.42932375285409846,
-      "intelligenceBoost": 0.04293237528540985,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668378261-j24vdtglt",
-      "timestamp": "2025-09-12T09:12:58.261Z",
-      "eventType": "skill_improved",
-      "description": "Emotional regulation and empathy skills strengthened",
-      "impact": 0.5778571913464396,
-      "intelligenceBoost": 0.05778571913464397,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757668438262-t8e5vg01l",
-      "timestamp": "2025-09-12T09:13:58.262Z",
-      "eventType": "educational_breakthrough",
-      "description": "Curriculum design innovation implemented",
-      "impact": 0.6890150057692592,
-      "educationalRelevance": 0.8890150057692592,
-      "intelligenceBoost": 0.06890150057692593,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668498264-jyqrleak0",
-      "timestamp": "2025-09-12T09:14:58.264Z",
-      "agentId": "undefined",
-      "eventType": "pattern_recognized",
-      "description": "Creative inspiration pattern mapped",
-      "impact": 0.30071438151804647,
-      "intelligenceBoost": 0.030071438151804648,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668558265-g5fx5c56r",
-      "timestamp": "2025-09-12T09:15:58.265Z",
-      "agentId": "undefined",
-      "eventType": "pattern_recognized",
-      "description": "Technical system efficiency pattern recognized",
-      "impact": 0.41976623811666375,
-      "intelligenceBoost": 0.04197662381166638,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668618266-czpa2mmyg",
-      "timestamp": "2025-09-12T09:16:58.266Z",
-      "eventType": "emergent_intelligence",
-      "description": "Collective learning acceleration achieved",
-      "impact": 0.6032750430867315,
-      "intelligenceBoost": 0.060327504308673154,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668678267-sy960dvls",
-      "timestamp": "2025-09-12T09:17:58.267Z",
-      "eventType": "pattern_recognized",
-      "description": "Creative inspiration pattern mapped",
-      "impact": 0.41128852993172,
-      "intelligenceBoost": 0.041128852993172,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757668738268-v8qvlaopi",
-      "timestamp": "2025-09-12T09:18:58.268Z",
-      "agentId": "undefined",
-      "eventType": "emergent_intelligence",
-      "description": "Collective consciousness emergence detected",
-      "impact": 0.6512851262501107,
-      "intelligenceBoost": 0.06512851262501107,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757668798270-u2bjg1kv0",
       "timestamp": "2025-09-12T09:19:58.270Z",
       "eventType": "cultural_insight",
@@ -9829,7 +9488,357 @@
       "educationalRelevance": 0.784102714518802,
       "intelligenceBoost": 0.05841027145188021,
       "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757817842929-d5bds8dv6",
+      "timestamp": "2025-09-14T02:44:02.929Z",
+      "eventType": "pattern_recognized",
+      "description": "Emergent pattern detected in cultural knowledge transmission",
+      "impact": 0.6649113422420783,
+      "intelligenceBoost": 0.06649113422420783,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757817902931-ctrmzi1fr",
+      "timestamp": "2025-09-14T02:45:02.931Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Traditional knowledge synthesis with modern educational methods",
+      "impact": 0.697669274461977,
+      "culturalSignificance": 0.897669274461977,
+      "intelligenceBoost": 0.06976692744619771,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757817962932-495ylolfj",
+      "timestamp": "2025-09-14T02:46:02.932Z",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.5961583151474263,
+      "intelligenceBoost": 0.05961583151474264,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818022934-ig21j5sn1",
+      "timestamp": "2025-09-14T02:47:02.934Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.7244629461297989,
+      "intelligenceBoost": 0.0724462946129799,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818082935-ra3lqhygw",
+      "timestamp": "2025-09-14T02:48:02.936Z",
+      "agentId": "undefined",
+      "eventType": "emergent_intelligence",
+      "description": "Distributed intelligence synthesis breakthrough",
+      "impact": 0.7856439952088394,
+      "intelligenceBoost": 0.07856439952088395,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818142916-870kxbdms",
+      "timestamp": "2025-09-14T02:49:02.916Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Educational learning pathway optimization pattern identified",
+      "impact": 0.36499548072687676,
+      "intelligenceBoost": 0.036499548072687675,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818202912-g8y61egmf",
+      "timestamp": "2025-09-14T02:50:02.912Z",
+      "eventType": "skill_improved",
+      "description": "Cultural sensitivity skills enhanced through community interaction",
+      "impact": 0.4477043517081805,
+      "intelligenceBoost": 0.04477043517081805,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818262912-ztv4yh3gx",
+      "timestamp": "2025-09-14T02:51:02.912Z",
+      "eventType": "emergent_intelligence",
+      "description": "Emergent problem-solving capability activated",
+      "impact": 0.6562686432866078,
+      "intelligenceBoost": 0.06562686432866079,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818322917-ji9zocanq",
+      "timestamp": "2025-09-14T02:52:02.917Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.4128037703852205,
+      "intelligenceBoost": 0.041280377038522054,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818382917-3cbil0oyw",
+      "timestamp": "2025-09-14T02:53:02.917Z",
+      "eventType": "knowledge_gained",
+      "description": "Advanced reasoning pattern recognized in cultural context analysis",
+      "impact": 0.5587858543893485,
+      "intelligenceBoost": 0.05587858543893485,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757818442917-vvcslokkx",
+      "timestamp": "2025-09-14T02:54:02.917Z",
+      "eventType": "emergent_intelligence",
+      "description": "Superintelligence threshold approached",
+      "impact": 0.5260989105398419,
+      "intelligenceBoost": 0.0526098910539842,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818502918-o86q8nyar",
+      "timestamp": "2025-09-14T02:55:02.918Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Novel educational methodology discovered through collective learning",
+      "impact": 0.34405356436277496,
+      "intelligenceBoost": 0.0344053564362775,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818562918-f0qai197h",
+      "timestamp": "2025-09-14T02:56:02.918Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Educational accessibility enhancement breakthrough",
+      "impact": 0.46463600985335857,
+      "educationalRelevance": 0.6646360098533586,
+      "intelligenceBoost": 0.04646360098533586,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757818622919-d4cnv17kd",
+      "timestamp": "2025-09-14T02:57:02.919Z",
+      "eventType": "skill_improved",
+      "description": "Cultural sensitivity skills enhanced through community interaction",
+      "impact": 0.502618166653177,
+      "intelligenceBoost": 0.050261816665317705,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818682920-74lzoje3c",
+      "timestamp": "2025-09-14T02:58:02.920Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.5470521905959445,
+      "culturalSignificance": 0.7470521905959444,
+      "intelligenceBoost": 0.05470521905959445,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757818742921-gow0hg946",
+      "timestamp": "2025-09-14T02:59:02.921Z",
+      "eventType": "educational_breakthrough",
+      "description": "Assessment methodology breakthrough developed",
+      "impact": 0.5219969825786652,
+      "educationalRelevance": 0.7219969825786652,
+      "intelligenceBoost": 0.05219969825786652,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818802921-d5cab2zlz",
+      "timestamp": "2025-09-14T03:00:02.921Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Sacred cultural protocol understanding deepened",
+      "impact": 0.7790213716620886,
+      "culturalSignificance": 0.9790213716620886,
+      "intelligenceBoost": 0.07790213716620886,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757818862922-f1kreqkit",
+      "timestamp": "2025-09-14T03:01:02.922Z",
+      "eventType": "cultural_insight",
+      "description": "Deep cultural wisdom insight gained from traditional knowledge",
+      "impact": 0.40194725477564935,
+      "culturalSignificance": 0.6019472547756494,
+      "intelligenceBoost": 0.04019472547756494,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757818922923-q66g06qq2",
+      "timestamp": "2025-09-14T03:02:02.923Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Deep cultural wisdom insight gained from traditional knowledge",
+      "impact": 0.7237286098000404,
+      "culturalSignificance": 0.9237286098000403,
+      "intelligenceBoost": 0.07237286098000405,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757818982924-or39t0wle",
+      "timestamp": "2025-09-14T03:03:02.924Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Assessment methodology breakthrough developed",
+      "impact": 0.506915065275372,
+      "educationalRelevance": 0.706915065275372,
+      "intelligenceBoost": 0.050691506527537206,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819042981-eo91hlxcl",
+      "timestamp": "2025-09-14T03:04:02.981Z",
+      "eventType": "knowledge_gained",
+      "description": "Advanced reasoning pattern recognized in cultural context analysis",
+      "impact": 0.7168601889143067,
+      "intelligenceBoost": 0.07168601889143067,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819102984-stfi6s3tj",
+      "timestamp": "2025-09-14T03:05:02.984Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Technical system efficiency pattern recognized",
+      "impact": 0.3001909391728847,
+      "intelligenceBoost": 0.03001909391728847,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819162986-bjnutwp8s",
+      "timestamp": "2025-09-14T03:06:02.986Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.7679777240872574,
+      "culturalSignificance": 0.9679777240872574,
+      "intelligenceBoost": 0.07679777240872575,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819222987-pdm1cibfh",
+      "timestamp": "2025-09-14T03:07:02.987Z",
+      "eventType": "educational_breakthrough",
+      "description": "Revolutionary educational approach discovered",
+      "impact": 0.5253539628058548,
+      "educationalRelevance": 0.7253539628058547,
+      "intelligenceBoost": 0.052535396280585483,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819282988-fqnnurys3",
+      "timestamp": "2025-09-14T03:08:02.989Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Curriculum design innovation implemented",
+      "impact": 0.506048466764184,
+      "educationalRelevance": 0.706048466764184,
+      "intelligenceBoost": 0.0506048466764184,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819342990-nyylx4ahj",
+      "timestamp": "2025-09-14T03:09:02.990Z",
+      "eventType": "emergent_intelligence",
+      "description": "Emergent problem-solving capability activated",
+      "impact": 0.7186480581249302,
+      "intelligenceBoost": 0.07186480581249302,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819402992-kpo012i95",
+      "timestamp": "2025-09-14T03:10:02.992Z",
+      "agentId": "undefined",
+      "eventType": "emergent_intelligence",
+      "description": "Collective consciousness emergence detected",
+      "impact": 0.3483419041678581,
+      "intelligenceBoost": 0.03483419041678581,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819462993-91giod10u",
+      "timestamp": "2025-09-14T03:11:02.993Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Revolutionary educational approach discovered",
+      "impact": 0.39569286974848744,
+      "educationalRelevance": 0.5956928697484875,
+      "intelligenceBoost": 0.039569286974848746,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757819522995-154w5jljv",
+      "timestamp": "2025-09-14T03:12:02.995Z",
+      "agentId": "undefined",
+      "eventType": "educational_breakthrough",
+      "description": "Revolutionary educational approach discovered",
+      "impact": 0.7209433308205484,
+      "educationalRelevance": 0.9209433308205484,
+      "intelligenceBoost": 0.07209433308205485,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819582996-8cq0s4421",
+      "timestamp": "2025-09-14T03:13:02.996Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.4247593201113596,
+      "intelligenceBoost": 0.04247593201113596,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819642998-qtulzhs53",
+      "timestamp": "2025-09-14T03:14:02.998Z",
+      "eventType": "cultural_insight",
+      "description": "Deep cultural wisdom insight gained from traditional knowledge",
+      "impact": 0.7018911714339471,
+      "culturalSignificance": 0.901891171433947,
+      "intelligenceBoost": 0.07018911714339471,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819702999-0r2rufm3k",
+      "timestamp": "2025-09-14T03:15:02.999Z",
+      "eventType": "skill_improved",
+      "description": "Educational content creation capabilities refined",
+      "impact": 0.3462244500455309,
+      "intelligenceBoost": 0.03462244500455309,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819763001-4t3bewin3",
+      "timestamp": "2025-09-14T03:16:03.001Z",
+      "eventType": "knowledge_gained",
+      "description": "Creative synthesis breakthrough in problem-solving approach",
+      "impact": 0.30802049206772303,
+      "intelligenceBoost": 0.030802049206772306,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1757819823003-vbproxnng",
+      "timestamp": "2025-09-14T03:17:03.003Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Sacred cultural protocol understanding deepened",
+      "impact": 0.3911729891852585,
+      "culturalSignificance": 0.5911729891852585,
+      "intelligenceBoost": 0.039117298918525854,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1757819883005-qp1v7oxu0",
+      "timestamp": "2025-09-14T03:18:03.005Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Creative inspiration pattern mapped",
+      "impact": 0.7031978144746778,
+      "intelligenceBoost": 0.07031978144746778,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-14T02:44:02.465Z"
+  "lastSaved": "2025-09-14T03:19:02.503Z"
 }

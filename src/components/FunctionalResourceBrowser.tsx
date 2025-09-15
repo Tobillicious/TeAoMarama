@@ -1,4 +1,4 @@
-import { BookOpen, ChevronRight, FileText, Filter, Play, Search, Star, Target } from 'lucide-react';
+import { BookOpen, ChevronRight, Copy, FileText, Filter, Heart, Play, Search, Star, Target } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import RealResourceViewer from './RealResourceViewer';
 
@@ -65,8 +65,10 @@ const FunctionalResourceBrowser: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [qualityFilter, setQualityFilter] = useState(70);
-  const [showQualityOnly, setShowQualityOnly] = useState(true);
+  const [qualityFilter, setQualityFilter] = useState(20);
+  const [showQualityOnly, setShowQualityOnly] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [qualityStats, setQualityStats] = useState<any>(null);
 
   // Load real enhanced educational content
@@ -119,8 +121,51 @@ const FunctionalResourceBrowser: React.FC = () => {
           qualityMetrics: resource.qualityMetrics,
         }));
 
-        // Combine real NZ Curriculum resources with existing ones
-        const combinedResources = [...nzCurriculumResources, ...existingConverted];
+        // Add some simple test resources to ensure display works
+        const testResources: Resource[] = [
+          {
+            id: 'test-1',
+            title: 'Te Reo Māori Basic Greetings',
+            subject: 'Te Reo Māori',
+            yearLevel: 'Year 8',
+            type: 'lesson',
+            culturalElements: 5,
+            description: 'Learn essential Māori greetings and introductions with cultural context',
+            duration: '45 mins',
+            difficulty: 'beginner',
+            tags: ['greetings', 'culture', 'language'],
+            qualityMetrics: { qualityScore: 85 }
+          },
+          {
+            id: 'test-2', 
+            title: 'NZ History: Early Settlements',
+            subject: 'Social Studies',
+            yearLevel: 'Year 8',
+            type: 'unit-plan',
+            culturalElements: 8,
+            description: 'Explore early Māori and European settlements in New Zealand',
+            duration: '3 weeks',
+            difficulty: 'intermediate',
+            tags: ['history', 'settlement', 'māori', 'european'],
+            qualityMetrics: { qualityScore: 92 }
+          },
+          {
+            id: 'test-3',
+            title: 'Math in Māori Culture',
+            subject: 'Mathematics',
+            yearLevel: 'Year 8', 
+            type: 'activity',
+            culturalElements: 3,
+            description: 'Discover mathematical concepts in traditional Māori practices',
+            duration: '60 mins',
+            difficulty: 'intermediate',
+            tags: ['mathematics', 'culture', 'patterns'],
+            qualityMetrics: { qualityScore: 78 }
+          }
+        ];
+
+        // Combine real NZ Curriculum resources with existing ones and test resources
+        const combinedResources = [...nzCurriculumResources, ...existingConverted, ...testResources];
         console.log(
           `🌟 Total resources loaded: ${combinedResources.length} (${nzCurriculumResources.length} real NZC content)`,
         );
@@ -310,26 +355,51 @@ How statistics help us understand cultural diversity in Aotearoa...`,
   ];
 
   useEffect(() => {
-    // First apply real quality filtering if enabled
-    const qualityResources = showQualityOnly
-      ? resources.filter((r) => r.qualityMetrics?.qualityScore >= qualityFilter)
-      : resources;
+    // Start with all resources
+    let filtered = resources;
 
-    // Then apply other filters
-    const filtered = qualityResources.filter((resource) => {
-      const matchesSearch =
-        resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (resource.tags || []).some((tag: string) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase()),
+    // Apply favorites filter first if enabled
+    if (showFavorites) {
+      filtered = filtered.filter((resource) => favorites.has(resource.id));
+    }
+
+    // Apply quality filtering if enabled
+    if (showQualityOnly) {
+      filtered = filtered.filter((r) => r.qualityMetrics?.qualityScore >= qualityFilter);
+    }
+
+    // Enhanced search - include more fields and better matching
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      filtered = filtered.filter((resource) => {
+        return (
+          resource.title.toLowerCase().includes(searchLower) ||
+          resource.description.toLowerCase().includes(searchLower) ||
+          resource.subject.toLowerCase().includes(searchLower) ||
+          resource.yearLevel.toLowerCase().includes(searchLower) ||
+          resource.type.toLowerCase().includes(searchLower) ||
+          resource.duration?.toLowerCase().includes(searchLower) ||
+          (resource.tags || []).some((tag: string) =>
+            tag.toLowerCase().includes(searchLower),
+          )
         );
+      });
+    }
 
-      const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
-      const matchesYear = selectedYear === 'all' || resource.yearLevel.includes(selectedYear);
-      const matchesType = selectedType === 'all' || resource.type === selectedType;
+    // Subject filter
+    if (selectedSubject !== 'all') {
+      filtered = filtered.filter((resource) => resource.subject === selectedSubject);
+    }
 
-      return matchesSearch && matchesSubject && matchesYear && matchesType;
-    });
+    // Year level filter
+    if (selectedYear !== 'all') {
+      filtered = filtered.filter((resource) => resource.yearLevel.includes(selectedYear));
+    }
+
+    // Type filter
+    if (selectedType !== 'all') {
+      filtered = filtered.filter((resource) => resource.type === selectedType);
+    }
 
     setFilteredResources(filtered);
   }, [
@@ -340,11 +410,70 @@ How statistics help us understand cultural diversity in Aotearoa...`,
     resources,
     qualityFilter,
     showQualityOnly,
+    showFavorites,
+    favorites,
   ]);
 
   const subjects = ['all', ...Array.from(new Set(resources.map((r) => r.subject)))];
   const yearLevels = ['all', 'Year 7', 'Year 8', 'Year 9', 'Year 10'];
   const types = ['all', 'lesson', 'handout', 'activity', 'assessment'];
+
+  // Favorites functionality
+  const toggleFavorite = (resourceId: string) => {
+    const newFavorites = new Set(favorites);
+    if (newFavorites.has(resourceId)) {
+      newFavorites.delete(resourceId);
+    } else {
+      newFavorites.add(resourceId);
+    }
+    setFavorites(newFavorites);
+    
+    // Store in localStorage for persistence
+    localStorage.setItem('resource-favorites', JSON.stringify(Array.from(newFavorites)));
+  };
+
+  // Load favorites from localStorage on mount
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('resource-favorites');
+    if (savedFavorites) {
+      setFavorites(new Set(JSON.parse(savedFavorites)));
+    }
+  }, []);
+
+  // Quick copy lesson plan functionality
+  const copyLessonPlan = (resource: Resource) => {
+    const lessonPlan = `# ${resource.title}
+**Subject:** ${resource.subject} | **Year Level:** ${resource.yearLevel} | **Duration:** ${resource.duration}
+
+## Overview
+${resource.description}
+
+## Learning Objectives
+[Add specific learning objectives here]
+
+## Materials Needed
+[List required materials and resources]
+
+## Lesson Structure
+1. **Introduction** (10 mins) - Hook and learning intentions
+2. **Main Activity** (30 mins) - Core learning content
+3. **Conclusion** (10 mins) - Review and assessment
+
+## Assessment
+[Add assessment criteria and methods]
+
+## Cultural Connections
+${resource.culturalElements > 0 ? `This lesson includes ${resource.culturalElements} cultural elements` : 'Consider adding Māori perspectives'}
+
+## Tags
+${resource.tags.join(', ')}
+
+Generated from TeAoMarama Resource Browser`;
+
+    navigator.clipboard.writeText(lessonPlan).then(() => {
+      alert('Lesson plan template copied to clipboard!');
+    });
+  };
 
   const getTypeIcon = (type: string) => {
     switch (type) {
@@ -625,6 +754,53 @@ How statistics help us understand cultural diversity in Aotearoa...`,
             </div>
           </div>
 
+          {/* Favorites Filter */}
+          <div
+            style={{
+              background: showFavorites ? '#fdf2f8' : '#f9fafb',
+              border: `1px solid ${showFavorites ? '#ec4899' : '#d1d5db'}`,
+              borderRadius: '8px',
+              padding: '12px 16px',
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Heart
+                className={`w-4 h-4 ${showFavorites ? 'fill-pink-500' : ''}`}
+                style={{ color: showFavorites ? '#ec4899' : '#6b7280' }}
+              />
+              <span
+                style={{
+                  fontWeight: '600',
+                  fontSize: '0.875rem',
+                  color: showFavorites ? '#be185d' : '#4b5563',
+                }}
+              >
+                {showFavorites
+                  ? `💖 Showing ${favorites.size} Favorite Resources`
+                  : `🔖 ${favorites.size} Resources Bookmarked`}
+              </span>
+            </div>
+            <button
+              onClick={() => setShowFavorites(!showFavorites)}
+              style={{
+                padding: '4px 12px',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '0.75rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                background: showFavorites ? '#ec4899' : '#6b7280',
+                color: 'white',
+              }}
+            >
+              {showFavorites ? 'Show All' : 'Favorites Only'}
+            </button>
+          </div>
+
           <div
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
               display: 'grid',
@@ -886,18 +1062,55 @@ How statistics help us understand cultural diversity in Aotearoa...`,
                     {resource.difficulty}
                   </span>
                 </div>
-                <button
-                  /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{
-                    background: 'rgba(59, 130, 246, 0.1)',
-                    border: 'none',
-                    color: '#3b82f6',
-                    padding: '6px',
-                    borderRadius: '6px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                <div style={{ display: 'flex', gap: '4px' }}>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleFavorite(resource.id);
+                    }}
+                    style={{
+                      background: favorites.has(resource.id) ? 'rgba(236, 72, 153, 0.1)' : 'rgba(107, 114, 128, 0.1)',
+                      border: 'none',
+                      color: favorites.has(resource.id) ? '#ec4899' : '#6b7280',
+                      padding: '6px',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                    }}
+                    title={favorites.has(resource.id) ? 'Remove from favorites' : 'Add to favorites'}
+                  >
+                    <Heart className={`w-4 h-4 ${favorites.has(resource.id) ? 'fill-current' : ''}`} />
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      copyLessonPlan(resource);
+                    }}
+                    style={{
+                      background: 'rgba(34, 197, 94, 0.1)',
+                      border: 'none',
+                      color: '#22c55e',
+                      padding: '6px',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                    }}
+                    title="Copy lesson plan template"
+                  >
+                    <Copy className="w-4 h-4" />
+                  </button>
+                  <button
+                    style={{
+                      background: 'rgba(59, 130, 246, 0.1)',
+                      border: 'none',
+                      color: '#3b82f6',
+                      padding: '6px',
+                      borderRadius: '6px',
+                      cursor: 'pointer',
+                    }}
+                    title="View resource details"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
               <h3

@@ -9,7 +9,7 @@ import {
   Globe,
   Pause,
   Play,
-  PresentationChart,
+  Presentation,
   Share,
   Sparkles,
   Star,
@@ -305,7 +305,7 @@ const TeacherDemoShowcase: React.FC = () => {
       <div className="bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 rounded-xl shadow-2xl p-8">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
-          <PresentationChart className="w-12 h-12 text-purple-600" />
+          <Presentation className="w-12 h-12 text-purple-600" />
           <div>
             <h1 className="text-4xl font-bold text-gray-900">Teacher Demo Showcase</h1>
             <p className="text-lg text-gray-600">
