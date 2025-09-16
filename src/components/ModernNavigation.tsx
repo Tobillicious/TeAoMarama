@@ -94,6 +94,13 @@ const ModernNavigation: React.FC = () => {
       highlight: true,
       highlightColor: '#f59e0b',
     },
+    {
+      to: '/analytics',
+      label: 'ANALYTICS',
+      icon: '📊',
+      highlight: true,
+      highlightColor: '#10b981',
+    },
   ];
 
   return (
