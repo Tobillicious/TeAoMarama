@@ -254,7 +254,6 @@ const WorkingSubscription: React.FC = () => {
     },
   ];
 
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -364,7 +363,7 @@ const WorkingSubscription: React.FC = () => {
 
               {/* CTA Button */}
               <button
-                onClick={() => handleSubscribe(plan.id, plan.price)}
+                onClick={() => handleSubscribe(plan.id)}
                 className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-colors ${
                   plan.popular
                     ? 'bg-blue-600 text-white hover:bg-blue-700'

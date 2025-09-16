@@ -100,13 +100,13 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 {/* Landing */}
-                <Route path="/" element={<StunningHomepage />} />
+                <Route path="/" element={<HumanFocusedHomepage />} />
                 <Route path="/home" element={<Home />} />
 
                 {/* Authentication */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<TeacherSignupFlow />} />
-                <Route path="/subscription" element={<WorkingSubscription />} />
+                <Route path="/subscription" element={<BeautifulSubscription />} />
 
                 {/* Core Dashboards - single route each */}
                 <Route path="/teacher" element={<TeacherDashboard />} />
@@ -159,9 +159,9 @@ function App() {
                 <Route path="/royal-command" element={<RoyalCommandDashboard />} />
                 <Route path="/royal-revenue" element={<RoyalRevenueDashboard />} />
                 <Route path="/onboarding" element={<AdvancedTeacherOnboarding />} />
-                  <Route path="/join" element={<UltraModernOnboarding />} />
-                  <Route path="/subscription" element={<BeautifulSubscription />} />
-                  <Route path="/referrals" element={<ReferralSystem />} />
+                <Route path="/join" element={<UltraModernOnboarding />} />
+                <Route path="/subscription" element={<BeautifulSubscription />} />
+                <Route path="/referrals" element={<ReferralSystem />} />
 
                 <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
