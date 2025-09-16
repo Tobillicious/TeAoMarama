@@ -96,17 +96,37 @@
 
       async function testEndpoint(url, name) {
         try {
-          const response = await fetch(url);
+          // Use a proxy approach for CORS issues
+          const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+          const response = await fetch(proxyUrl);
           if (response.ok) {
-            addResult(`✅ ${name}: OK (${response.status})`, 'success');
-            return true;
+            const data = await response.json();
+            if (data.contents && data.contents.includes('<!DOCTYPE html>')) {
+              addResult(`✅ ${name}: OK (HTML content loaded)`, 'success');
+              return true;
+            } else {
+              addResult(`❌ ${name}: No HTML content`, 'error');
+              return false;
+            }
           } else {
-            addResult(`❌ ${name}: Error ${response.status}`, 'error');
+            addResult(`❌ ${name}: Proxy error ${response.status}`, 'error');
             return false;
           }
         } catch (error) {
-          addResult(`❌ ${name}: ${error.message}`, 'error');
-          return false;
+          // Fallback: try direct fetch (might fail due to CORS)
+          try {
+            const directResponse = await fetch(url);
+            if (directResponse.ok) {
+              addResult(`✅ ${name}: OK (${directResponse.status})`, 'success');
+              return true;
+            } else {
+              addResult(`❌ ${name}: Error ${directResponse.status}`, 'error');
+              return false;
+            }
+          } catch (directError) {
+            addResult(`❌ ${name}: CORS blocked - ${error.message}`, 'error');
+            return false;
+          }
         }
       }
 

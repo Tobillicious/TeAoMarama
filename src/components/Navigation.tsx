@@ -14,7 +14,7 @@ const Navigation: React.FC = () => {
       highlightColor: '#10b981',
     },
     { to: '/teacher', label: 'TEACHER', icon: '👨‍🏫' },
-    { to: '/signup', label: 'SIGN UP', icon: '💳', highlight: true, highlightColor: '#f59e0b' },
+    { to: '/join', label: 'JOIN NOW', icon: '🚀', highlight: true, highlightColor: '#f59e0b' },
     {
       to: '/subscription',
       label: 'SUBSCRIPTION',
@@ -79,6 +79,27 @@ const Navigation: React.FC = () => {
       icon: '👑',
       highlight: true,
       highlightColor: '#9333ea',
+    },
+    {
+      to: '/royal-revenue',
+      label: 'ROYAL REVENUE',
+      icon: '💰',
+      highlight: true,
+      highlightColor: '#f59e0b',
+    },
+    {
+      to: '/onboarding',
+      label: 'ONBOARDING',
+      icon: '🎯',
+      highlight: true,
+      highlightColor: '#10b981',
+    },
+    {
+      to: '/referrals',
+      label: 'REFERRALS',
+      icon: '🎁',
+      highlight: true,
+      highlightColor: '#f59e0b',
     },
   ];
 

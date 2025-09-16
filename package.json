@@ -10,6 +10,8 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:with-payments": "node working-payment-demo.js & vite",
+    "payments:start": "node working-payment-demo.js",
     "build": "tsx scripts/build-resources.ts && vite build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

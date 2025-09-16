@@ -1,2 +1,7 @@
-/* Import Te Kete Ako design system */
+/* Import Te Kete Ako design system - must be first */
 @import './styles/globals.css';
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

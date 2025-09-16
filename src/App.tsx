@@ -3,13 +3,13 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
-import Navigation from './components/Navigation';
+import ModernNavigation from './components/ModernNavigation';
 import { DualRoleAuthProvider } from './services/DualRoleAuthProvider';
 import { performanceMonitor, registerServiceWorker } from './utils/performance-optimizer';
 
 // Essential pages only - no duplicates
 const Home = lazy(() => import('./pages/Home'));
-const HumanFocusedHomepage = lazy(() => import('./components/HumanFocusedHomepage'));
+const SimpleTestHomepage = lazy(() => import('./components/SimpleTestHomepage'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
@@ -22,7 +22,7 @@ const HumanReadableContentBrowser = lazy(() => import('./components/HumanReadabl
 const LessonViewer = lazy(() => import('./components/RealLessonViewer'));
 const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
-const TeacherSubscription = lazy(() => import('./pages/TeacherSubscription'));
+const WorkingSubscription = lazy(() => import('./pages/WorkingSubscription'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
 // Temporarily disabled due to missing dependencies
 // const ComprehensiveSearchInterface = lazy(
@@ -65,6 +65,11 @@ const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
 const PremiumLessonPlanShowcase = lazy(() => import('./components/PremiumLessonPlanShowcase'));
 const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));
+const RoyalRevenueDashboard = lazy(() => import('./components/RoyalRevenueDashboard'));
+const AdvancedTeacherOnboarding = lazy(() => import('./components/AdvancedTeacherOnboarding'));
+const UltraModernOnboarding = lazy(() => import('./components/UltraModernOnboarding'));
+const BeautifulSubscription = lazy(() => import('./components/BeautifulSubscription'));
+const ReferralSystem = lazy(() => import('./components/ReferralSystem'));
 
 function App() {
   const location = useLocation();
@@ -89,18 +94,19 @@ function App() {
   return (
     <DualRoleAuthProvider>
       <div className="App">
-        {!isLandingPage && <Navigation />}
+        {!isLandingPage && <ModernNavigation />}
         <main className="main-content">
           <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 {/* Landing */}
-                <Route path="/" element={<HumanFocusedHomepage />} />
+                <Route path="/" element={<StunningHomepage />} />
                 <Route path="/home" element={<Home />} />
 
                 {/* Authentication */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<TeacherSignupFlow />} />
+                <Route path="/subscription" element={<WorkingSubscription />} />
 
                 {/* Core Dashboards - single route each */}
                 <Route path="/teacher" element={<TeacherDashboard />} />
@@ -146,11 +152,16 @@ function App() {
                 <Route path="/advanced-assessments" element={<AdvancedAssessmentHub />} />
                 <Route path="/teacher-showcase" element={<TeacherShowcaseDashboard />} />
                 <Route path="/teacher-guide" element={<TeacherGuide />} />
-                <Route path="/subscribe" element={<TeacherSubscription />} />
-                <Route path="/pricing" element={<TeacherSubscription />} />
+                <Route path="/subscribe" element={<WorkingSubscription />} />
+                <Route path="/pricing" element={<WorkingSubscription />} />
                 <Route path="/dashboard-beta" element={<TeacherDashboardBeta />} />
                 <Route path="/premium-lessons" element={<PremiumLessonPlanShowcase />} />
                 <Route path="/royal-command" element={<RoyalCommandDashboard />} />
+                <Route path="/royal-revenue" element={<RoyalRevenueDashboard />} />
+                <Route path="/onboarding" element={<AdvancedTeacherOnboarding />} />
+                  <Route path="/join" element={<UltraModernOnboarding />} />
+                  <Route path="/subscription" element={<BeautifulSubscription />} />
+                  <Route path="/referrals" element={<ReferralSystem />} />
 
                 <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 

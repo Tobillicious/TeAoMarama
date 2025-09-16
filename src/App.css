@@ -1,7 +1,7 @@
 /* Te Kete Ako Beautiful Application Styles */
 
-/* Auth forms with cultural beauty */
-.app-container {
+/* Auth forms with cultural beauty - scope to auth only */
+.auth-container {
   max-width: 500px;
   margin: var(--space-8) auto;
   padding: var(--space-6);
@@ -13,7 +13,18 @@
   overflow: hidden;
 }
 
-.app-container::before {
+/* Main app should be full width */
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.auth-container::before {
   content: '';
   position: absolute;
   top: 0;
@@ -426,7 +437,7 @@ form {
 @media (prefers-reduced-motion: reduce) {
   .card::before,
   .resource-card::before,
-  .app-container::before {
+  .auth-container::before {
     animation: none;
   }
 

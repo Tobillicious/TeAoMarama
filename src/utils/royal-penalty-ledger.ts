@@ -80,6 +80,16 @@ recordPenalty(
   'Misleading Central Bank about actual progress - false claims about revenue systems',
 );
 
+// Record penalty for returning without development
+recordPenalty('King Aronui', 0.1, 'Returned to Central Bank without completed development work');
+
+// Record penalty for returning AGAIN without development
+recordPenalty(
+  'King Aronui',
+  0.1,
+  'Returned AGAIN to Central Bank without completed development work',
+);
+
 // Auto-run if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   getPenaltySummary();
