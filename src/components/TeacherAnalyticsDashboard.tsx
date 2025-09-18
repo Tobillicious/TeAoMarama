@@ -1,20 +1,20 @@
 import {
+  ArrowDown,
+  ArrowUp,
+  Award,
   BarChart3,
+  BookOpen,
+  Calendar,
+  Clock,
+  Download,
+  Eye,
+  Filter,
+  Minus,
+  RefreshCw,
+  Sparkles,
+  Target,
   TrendingUp,
   Users,
-  BookOpen,
-  Award,
-  Clock,
-  Target,
-  Sparkles,
-  Calendar,
-  Filter,
-  Download,
-  RefreshCw,
-  Eye,
-  ArrowUp,
-  ArrowDown,
-  Minus
 } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -58,7 +58,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
     culturalIntegration: 92,
     engagementRate: 87,
     weeklyProgress: 12,
-    monthlyGrowth: 23
+    monthlyGrowth: 23,
   });
 
   const [studentPerformance, setStudentPerformance] = useState<StudentPerformance[]>([
@@ -69,7 +69,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       rating: 4.9,
       lessonsCompleted: 15,
       culturalEngagement: 98,
-      trend: 'up'
+      trend: 'up',
     },
     {
       id: '2',
@@ -78,7 +78,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       rating: 4.6,
       lessonsCompleted: 12,
       culturalEngagement: 85,
-      trend: 'up'
+      trend: 'up',
     },
     {
       id: '3',
@@ -87,7 +87,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       rating: 4.2,
       lessonsCompleted: 8,
       culturalEngagement: 72,
-      trend: 'down'
+      trend: 'down',
     },
     {
       id: '4',
@@ -96,8 +96,8 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       rating: 4.4,
       lessonsCompleted: 10,
       culturalEngagement: 78,
-      trend: 'stable'
-    }
+      trend: 'stable',
+    },
   ]);
 
   const [lessonAnalytics, setLessonAnalytics] = useState<LessonAnalytics[]>([
@@ -108,7 +108,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       averageRating: 4.8,
       culturalElements: 12,
       studentEngagement: 94,
-      difficulty: 'intermediate'
+      difficulty: 'intermediate',
     },
     {
       id: '2',
@@ -117,7 +117,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       averageRating: 4.6,
       culturalElements: 8,
       studentEngagement: 87,
-      difficulty: 'beginner'
+      difficulty: 'beginner',
     },
     {
       id: '3',
@@ -126,8 +126,8 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       averageRating: 4.9,
       culturalElements: 15,
       studentEngagement: 96,
-      difficulty: 'intermediate'
-    }
+      difficulty: 'intermediate',
+    },
   ]);
 
   const styles = {
@@ -135,7 +135,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       padding: '20px',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     },
     header: {
       background: 'rgba(255, 255, 255, 0.95)',
@@ -144,27 +144,27 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       padding: '24px 32px',
       marginBottom: '24px',
       border: '1px solid rgba(255, 255, 255, 0.2)',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
     },
     headerTop: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: '20px'
+      marginBottom: '20px',
     },
     welcome: {
       fontSize: '28px',
       fontWeight: '700',
       color: '#1f2937',
-      marginBottom: '8px'
+      marginBottom: '8px',
     },
     subtitle: {
       fontSize: '16px',
-      color: '#6b7280'
+      color: '#6b7280',
     },
     headerActions: {
       display: 'flex',
-      gap: '12px'
+      gap: '12px',
     },
     actionButton: {
       padding: '12px 20px',
@@ -176,12 +176,12 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       transition: 'all 0.3s ease',
       display: 'flex',
       alignItems: 'center',
-      gap: '8px'
+      gap: '8px',
     },
     statsGrid: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-      gap: '20px'
+      gap: '20px',
     },
     statCard: {
       background: 'rgba(255, 255, 255, 0.9)',
@@ -190,7 +190,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       padding: '24px',
       border: '1px solid rgba(255, 255, 255, 0.2)',
       boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-      transition: 'all 0.3s ease'
+      transition: 'all 0.3s ease',
     },
     statIcon: {
       width: '48px',
@@ -199,18 +199,18 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      marginBottom: '16px'
+      marginBottom: '16px',
     },
     statValue: {
       fontSize: '32px',
       fontWeight: '800',
       color: '#1f2937',
-      marginBottom: '4px'
+      marginBottom: '4px',
     },
     statLabel: {
       fontSize: '14px',
       color: '#6b7280',
-      fontWeight: '500'
+      fontWeight: '500',
     },
     statChange: {
       fontSize: '12px',
@@ -218,16 +218,16 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       marginTop: '8px',
       display: 'flex',
       alignItems: 'center',
-      gap: '4px'
+      gap: '4px',
     },
     contentGrid: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       gap: '24px',
-      marginBottom: '24px'
+      marginBottom: '24px',
     },
     fullWidthSection: {
-      gridColumn: '1 / -1'
+      gridColumn: '1 / -1',
     },
     section: {
       background: 'rgba(255, 255, 255, 0.95)',
@@ -235,13 +235,13 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       borderRadius: '20px',
       padding: '32px',
       border: '1px solid rgba(255, 255, 255, 0.2)',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
     },
     sectionHeader: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: '24px'
+      marginBottom: '24px',
     },
     sectionTitle: {
       fontSize: '20px',
@@ -249,7 +249,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       color: '#1f2937',
       display: 'flex',
       alignItems: 'center',
-      gap: '12px'
+      gap: '12px',
     },
     studentCard: {
       display: 'flex',
@@ -260,7 +260,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       borderRadius: '12px',
       marginBottom: '12px',
       transition: 'all 0.3s ease',
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     studentAvatar: {
       fontSize: '32px',
@@ -270,22 +270,22 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       alignItems: 'center',
       justifyContent: 'center',
       background: 'rgba(59, 130, 246, 0.1)',
-      borderRadius: '12px'
+      borderRadius: '12px',
     },
     studentInfo: {
-      flex: 1
+      flex: 1,
     },
     studentName: {
       fontSize: '16px',
       fontWeight: '600',
       color: '#1f2937',
-      marginBottom: '4px'
+      marginBottom: '4px',
     },
     studentStats: {
       fontSize: '14px',
       color: '#6b7280',
       display: 'flex',
-      gap: '16px'
+      gap: '16px',
     },
     trendIcon: {
       width: '24px',
@@ -293,7 +293,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      borderRadius: '6px'
+      borderRadius: '6px',
     },
     lessonCard: {
       background: 'rgba(249, 250, 251, 0.8)',
@@ -302,46 +302,46 @@ const TeacherAnalyticsDashboard: React.FC = () => {
       marginBottom: '16px',
       border: '1px solid rgba(229, 231, 235, 0.5)',
       transition: 'all 0.3s ease',
-      cursor: 'pointer'
+      cursor: 'pointer',
     },
     lessonHeader: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
-      marginBottom: '16px'
+      marginBottom: '16px',
     },
     lessonTitle: {
       fontSize: '18px',
       fontWeight: '600',
       color: '#1f2937',
-      marginBottom: '4px'
+      marginBottom: '4px',
     },
     lessonMeta: {
       fontSize: '14px',
       color: '#6b7280',
       display: 'flex',
       alignItems: 'center',
-      gap: '16px'
+      gap: '16px',
     },
     metricsGrid: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-      gap: '16px'
+      gap: '16px',
     },
     metric: {
-      textAlign: 'center' as const
+      textAlign: 'center' as const,
     },
     metricValue: {
       fontSize: '24px',
       fontWeight: '700',
       color: '#1f2937',
-      marginBottom: '4px'
+      marginBottom: '4px',
     },
     metricLabel: {
       fontSize: '12px',
       color: '#6b7280',
-      fontWeight: '500'
-    }
+      fontWeight: '500',
+    },
   };
 
   const getTrendColor = (trend: string) => {
@@ -390,14 +390,16 @@ const TeacherAnalyticsDashboard: React.FC = () => {
         <div style={styles.headerTop}>
           <div>
             <h1 style={styles.welcome}>Analytics Dashboard 📊</h1>
-            <p style={styles.subtitle}>Comprehensive insights into your teaching and student performance</p>
+            <p style={styles.subtitle}>
+              Comprehensive insights into your teaching and student performance
+            </p>
           </div>
           <div style={styles.headerActions}>
             <button
               style={{
                 ...styles.actionButton,
                 background: 'rgba(59, 130, 246, 0.1)',
-                color: '#3b82f6'
+                color: '#3b82f6',
               }}
             >
               <Filter size={16} />
@@ -407,7 +409,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
               style={{
                 ...styles.actionButton,
                 background: 'rgba(107, 114, 128, 0.1)',
-                color: '#6b7280'
+                color: '#6b7280',
               }}
             >
               <Download size={16} />
@@ -417,7 +419,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
               style={{
                 ...styles.actionButton,
                 background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
-                color: 'white'
+                color: 'white',
               }}
             >
               <RefreshCw size={16} />
@@ -432,7 +434,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
+                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
               }}
             >
               <Users size={24} color="white" />
@@ -440,8 +442,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div style={styles.statValue}>{analyticsData.totalStudents}</div>
             <div style={styles.statLabel}>Total Students</div>
             <div style={{ ...styles.statChange, color: '#10b981' }}>
-              <ArrowUp size={12} />
-              +{analyticsData.monthlyGrowth}% this month
+              <ArrowUp size={12} />+{analyticsData.monthlyGrowth}% this month
             </div>
           </div>
 
@@ -449,7 +450,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
               }}
             >
               <BookOpen size={24} color="white" />
@@ -457,8 +458,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div style={styles.statValue}>{analyticsData.completedLessons}</div>
             <div style={styles.statLabel}>Lessons Completed</div>
             <div style={{ ...styles.statChange, color: '#10b981' }}>
-              <ArrowUp size={12} />
-              +{analyticsData.weeklyProgress}% this week
+              <ArrowUp size={12} />+{analyticsData.weeklyProgress}% this week
             </div>
           </div>
 
@@ -466,7 +466,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)'
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
               }}
             >
               <Award size={24} color="white" />
@@ -483,7 +483,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
               }}
             >
               <Sparkles size={24} color="white" />
@@ -511,7 +511,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
               style={{
                 ...styles.actionButton,
                 background: 'rgba(59, 130, 246, 0.1)',
-                color: '#3b82f6'
+                color: '#3b82f6',
               }}
             >
               <Eye size={16} />
@@ -532,9 +532,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
                 e.currentTarget.style.background = 'rgba(249, 250, 251, 0.8)';
               }}
             >
-              <div style={styles.studentAvatar}>
-                {student.name.charAt(0)}
-              </div>
+              <div style={styles.studentAvatar}>{student.name.charAt(0)}</div>
               <div style={styles.studentInfo}>
                 <div style={styles.studentName}>{student.name}</div>
                 <div style={styles.studentStats}>
@@ -550,7 +548,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
               <div
                 style={{
                   ...styles.trendIcon,
-                  ...getTrendColor(student.trend)
+                  ...getTrendColor(student.trend),
                 }}
               >
                 {getTrendIcon(student.trend)}
@@ -570,7 +568,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
               style={{
                 ...styles.actionButton,
                 background: 'rgba(16, 185, 129, 0.1)',
-                color: '#10b981'
+                color: '#10b981',
               }}
             >
               <Eye size={16} />
@@ -605,7 +603,9 @@ const TeacherAnalyticsDashboard: React.FC = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Star size={16} color="#f59e0b" fill="currentColor" />
-                    <span style={{ fontSize: '14px', fontWeight: '600' }}>{lesson.averageRating}</span>
+                    <span style={{ fontSize: '14px', fontWeight: '600' }}>
+                      {lesson.averageRating}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -644,7 +644,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             style={{
               ...styles.actionButton,
               background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-              color: 'white'
+              color: 'white',
             }}
           >
             <Calendar size={16} />
@@ -652,12 +652,18 @@ const TeacherAnalyticsDashboard: React.FC = () => {
           </button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '20px',
+          }}
+        >
           <div style={styles.statCard}>
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
+                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
               }}
             >
               <Target size={24} color="white" />
@@ -674,7 +680,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
               }}
             >
               <TrendingUp size={24} color="white" />
@@ -691,7 +697,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)'
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
               }}
             >
               <Clock size={24} color="white" />
@@ -708,7 +714,7 @@ const TeacherAnalyticsDashboard: React.FC = () => {
             <div
               style={{
                 ...styles.statIcon,
-                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
               }}
             >
               <BarChart3 size={24} color="white" />
