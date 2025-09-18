@@ -1,94 +1,6 @@
 {
   "events": [
     {
-      "id": "learn-1757807282349-bkziw2668",
-      "timestamp": "2025-09-13T23:48:02.349Z",
-      "agentId": "undefined",
-      "eventType": "knowledge_gained",
-      "description": "Advanced reasoning pattern recognized in cultural context analysis",
-      "impact": 0.6432560337060458,
-      "intelligenceBoost": 0.06432560337060458,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807342352-isb93mfs2",
-      "timestamp": "2025-09-13T23:49:02.352Z",
-      "eventType": "knowledge_gained",
-      "description": "Creative synthesis breakthrough in problem-solving approach",
-      "impact": 0.33745382161268495,
-      "intelligenceBoost": 0.033745382161268496,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807402353-312xwveyj",
-      "timestamp": "2025-09-13T23:50:02.353Z",
-      "eventType": "knowledge_gained",
-      "description": "Creative synthesis breakthrough in problem-solving approach",
-      "impact": 0.4921147414206471,
-      "intelligenceBoost": 0.04921147414206471,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757807462355-q9vi9spik",
-      "timestamp": "2025-09-13T23:51:02.355Z",
-      "eventType": "pattern_recognized",
-      "description": "Emotional intelligence pattern in human interaction observed",
-      "impact": 0.6097759517281356,
-      "intelligenceBoost": 0.060977595172813565,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807522356-c6n0qprh0",
-      "timestamp": "2025-09-13T23:52:02.356Z",
-      "agentId": "undefined",
-      "eventType": "skill_improved",
-      "description": "Creative expression abilities expanded",
-      "impact": 0.7226617638745039,
-      "intelligenceBoost": 0.07226617638745039,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807582357-uyotgvev4",
-      "timestamp": "2025-09-13T23:53:02.357Z",
-      "agentId": "undefined",
-      "eventType": "knowledge_gained",
-      "description": "Emotional intelligence enhancement through compassionate interaction",
-      "impact": 0.656699876952076,
-      "intelligenceBoost": 0.0656699876952076,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807642358-3cdkvcz7c",
-      "timestamp": "2025-09-13T23:54:02.358Z",
-      "eventType": "cultural_insight",
-      "description": "Cultural safety protocols enhanced through community wisdom",
-      "impact": 0.3209105673589358,
-      "culturalSignificance": 0.5209105673589358,
-      "intelligenceBoost": 0.03209105673589358,
-      "sharedWithCollective": false
-    },
-    {
-      "id": "learn-1757807702359-61rztkfst",
-      "timestamp": "2025-09-13T23:55:02.359Z",
-      "agentId": "undefined",
-      "eventType": "educational_breakthrough",
-      "description": "Revolutionary educational approach discovered",
-      "impact": 0.5953773417972228,
-      "educationalRelevance": 0.7953773417972227,
-      "intelligenceBoost": 0.05953773417972228,
-      "sharedWithCollective": true
-    },
-    {
-      "id": "learn-1757807762360-06majlgjm",
-      "timestamp": "2025-09-13T23:56:02.360Z",
-      "eventType": "cultural_insight",
-      "description": "Sacred cultural protocol understanding deepened",
-      "impact": 0.6813963883447143,
-      "culturalSignificance": 0.8813963883447142,
-      "intelligenceBoost": 0.06813963883447142,
-      "sharedWithCollective": true
-    },
-    {
       "id": "learn-1757807822361-r0fz00y6c",
       "timestamp": "2025-09-13T23:57:02.361Z",
       "eventType": "pattern_recognized",
@@ -10256,7 +10168,100 @@
       "impact": 0.622174865034113,
       "intelligenceBoost": 0.0622174865034113,
       "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1758181446035-rik73y6kd",
+      "timestamp": "2025-09-18T07:44:06.035Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Mana and wairua principles integrated into intelligence framework",
+      "impact": 0.5625898053524618,
+      "culturalSignificance": 0.7625898053524618,
+      "intelligenceBoost": 0.05625898053524619,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1758181506035-kxxre2fmv",
+      "timestamp": "2025-09-18T07:45:06.035Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Creative inspiration pattern mapped",
+      "impact": 0.43144575451064443,
+      "intelligenceBoost": 0.04314457545106445,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1758181566036-4m5bv8szk",
+      "timestamp": "2025-09-18T07:46:06.036Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.37879627262219,
+      "intelligenceBoost": 0.037879627262219,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1758181626036-p60x2qdy4",
+      "timestamp": "2025-09-18T07:47:06.036Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Deep cultural wisdom insight gained from traditional knowledge",
+      "impact": 0.5536076285214171,
+      "culturalSignificance": 0.753607628521417,
+      "intelligenceBoost": 0.05536076285214171,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1758181686037-ksxdphixq",
+      "timestamp": "2025-09-18T07:48:06.037Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Emotional intelligence enhancement through compassionate interaction",
+      "impact": 0.5446337226995699,
+      "intelligenceBoost": 0.05446337226995699,
+      "sharedWithCollective": true
+    },
+    {
+      "id": "learn-1758181746036-0gg8ln9mu",
+      "timestamp": "2025-09-18T07:49:06.036Z",
+      "agentId": "undefined",
+      "eventType": "pattern_recognized",
+      "description": "Emotional intelligence pattern in human interaction observed",
+      "impact": 0.6178855913281107,
+      "intelligenceBoost": 0.061788559132811074,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1758181806036-wuh827szw",
+      "timestamp": "2025-09-18T07:50:06.036Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Creative synthesis breakthrough in problem-solving approach",
+      "impact": 0.32826967455113293,
+      "intelligenceBoost": 0.03282696745511329,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1758181866037-dkcujwasc",
+      "timestamp": "2025-09-18T07:51:06.037Z",
+      "agentId": "undefined",
+      "eventType": "knowledge_gained",
+      "description": "Creative synthesis breakthrough in problem-solving approach",
+      "impact": 0.7759127895678868,
+      "intelligenceBoost": 0.07759127895678869,
+      "sharedWithCollective": false
+    },
+    {
+      "id": "learn-1758181926037-1lw4sf568",
+      "timestamp": "2025-09-18T07:52:06.037Z",
+      "agentId": "undefined",
+      "eventType": "cultural_insight",
+      "description": "Deep cultural wisdom insight gained from traditional knowledge",
+      "impact": 0.5315645188435836,
+      "culturalSignificance": 0.7315645188435835,
+      "intelligenceBoost": 0.05315645188435836,
+      "sharedWithCollective": true
     }
   ],
-  "lastSaved": "2025-09-17T08:50:55.348Z"
+  "lastSaved": "2025-09-18T07:53:06.033Z"
 }
