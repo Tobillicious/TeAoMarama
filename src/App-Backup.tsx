@@ -63,13 +63,18 @@ const AdvancedAssessmentHub = lazy(() => import('./components/AdvancedAssessment
 const TeacherShowcaseDashboard = lazy(() => import('./components/TeacherShowcaseDashboard'));
 const TeacherGuide = lazy(() => import('./components/TeacherGuide'));
 const TeacherDashboardBeta = lazy(() => import('./components/TeacherDashboardBeta'));
+const BrilliantTeacherDashboard = lazy(() => import('./components/BrilliantTeacherDashboard'));
 const PremiumLessonPlanShowcase = lazy(() => import('./components/PremiumLessonPlanShowcase'));
 const RoyalCommandDashboard = lazy(() => import('./components/RoyalCommandDashboard'));
 const RoyalRevenueDashboard = lazy(() => import('./components/RoyalRevenueDashboard'));
 const AdvancedTeacherOnboarding = lazy(() => import('./components/AdvancedTeacherOnboarding'));
+const ProfessionalHomepage = lazy(() => import('./components/ProfessionalHomepage'));
 const UltraModernOnboarding = lazy(() => import('./components/UltraModernOnboarding'));
+const BrilliantOnboarding = lazy(() => import('./components/BrilliantOnboarding'));
 const BeautifulSubscription = lazy(() => import('./components/BeautifulSubscription'));
+const Revolutionary2025Subscription = lazy(() => import('./pages/Revolutionary2025Subscription'));
 const ReferralSystem = lazy(() => import('./components/ReferralSystem'));
+const PremiumContentShowcase = lazy(() => import('./components/PremiumContentShowcase'));
 
 function App() {
   const location = useLocation();
@@ -98,18 +103,18 @@ function App() {
         <main className="main-content">
           <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
+              <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
                 {/* Landing */}
-                <Route path="/" element={<StunningHomepage />} />
+                <Route path="/" element={<ProfessionalHomepage />} />
                 <Route path="/home" element={<Home />} />
 
                 {/* Authentication */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<TeacherSignupFlow />} />
-                <Route path="/subscription" element={<WorkingSubscription />} />
 
                 {/* Core Dashboards - single route each */}
-                <Route path="/teacher" element={<TeacherDashboard />} />
+                <Route path="/teacher" element={<BrilliantTeacherDashboard />} />
                 <Route path="/student" element={<StudentDashboard />} />
                 <Route path="/student-engaging" element={<EngagingStudentDashboard />} />
 
@@ -159,8 +164,11 @@ function App() {
                 <Route path="/royal-command" element={<RoyalCommandDashboard />} />
                 <Route path="/royal-revenue" element={<RoyalRevenueDashboard />} />
                 <Route path="/onboarding" element={<AdvancedTeacherOnboarding />} />
-                <Route path="/join" element={<UltraModernOnboarding />} />
+                <Route path="/join" element={<BrilliantOnboarding />} />
+                <Route path="/subscription" element={<Revolutionary2025Subscription />} />
+                <Route path="/subscription-classic" element={<BeautifulSubscription />} />
                 <Route path="/referrals" element={<ReferralSystem />} />
+                <Route path="/premium-content" element={<PremiumContentShowcase />} />
 
                 <Route path="/teacher-demo" element={<TeacherDemoDashboard />} />
 
@@ -170,7 +178,8 @@ function App() {
 
                 {/* 404 Fallback */}
                 <Route path="*" element={<NotFound />} />
-              </Routes>
+                      </Routes>
+      </Suspense>
             </Suspense>
           </ErrorBoundary>
         </main>

@@ -24,10 +24,6 @@ const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
 const WorkingSubscription = lazy(() => import('./pages/WorkingSubscription'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
-// Temporarily disabled due to missing dependencies
-// const ComprehensiveSearchInterface = lazy(
-//   () => import('./components/ComprehensiveSearchInterface'),
-// );
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Educational content - keep Year 8 only for now
@@ -76,7 +72,8 @@ const Revolutionary2025Subscription = lazy(() => import('./pages/Revolutionary20
 const ReferralSystem = lazy(() => import('./components/ReferralSystem'));
 const PremiumContentShowcase = lazy(() => import('./components/PremiumContentShowcase'));
 
-function App() {
+// Router-safe App component with error boundaries
+function AppInner() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
@@ -121,7 +118,6 @@ function App() {
                 {/* Resources - single route */}
                 <Route path="/resources" element={<ResourceBrowser />} />
                 <Route path="/human-content" element={<HumanReadableContentBrowser />} />
-                {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
                 <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
                 {/* Year Level Content - Year 8 only for now */}
@@ -186,6 +182,43 @@ function App() {
       </div>
     </DualRoleAuthProvider>
   );
+}
+
+// Fallback App component for when Router context is completely unavailable
+const FallbackApp = () => {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <div style={{
+        background: 'white',
+        padding: '40px',
+        borderRadius: '20px',
+        textAlign: 'center',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+      }}>
+        <h1 style={{ color: '#1e40af', fontSize: '2.5rem', marginBottom: '20px' }}>
+          🌿 Te Ao Mārama
+        </h1>
+        <p style={{ color: '#374151', fontSize: '1.2rem', marginBottom: '30px' }}>
+          New Zealand's Educational Platform - Initializing...
+        </p>
+        <div style={{ color: '#f59e0b', fontWeight: 'bold' }}>
+          Router context loading, please refresh page if this persists.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main App component
+function App() {
+  return <AppInner />;
 }
 
 export default App;

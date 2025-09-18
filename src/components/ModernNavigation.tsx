@@ -1,8 +1,55 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const ModernNavigation: React.FC = () => {
-  const location = useLocation();
+// Router-safe wrapper component
+const RouterSafeNavigation: React.FC = () => {
+  try {
+    return <ModernNavigationInner />;
+  } catch (error) {
+    console.error('Router context error in navigation:', error);
+    // Fallback navigation without router hooks
+    return <FallbackNavigation />;
+  }
+};
+
+// Fallback navigation for when Router context is unavailable
+const FallbackNavigation: React.FC = () => {
+  return (
+    <nav
+      style={{
+        background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+        color: 'white',
+        padding: '1rem 0',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="text-2xl">🌿</span>
+            <span className="text-xl font-bold">TeKeteAkoClient</span>
+          </div>
+          <div className="text-sm text-blue-100">
+            Navigation loading...
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+const ModernNavigationInner: React.FC = () => {
+  let location;
+  try {
+    location = useLocation();
+  } catch (error) {
+    console.error('useLocation hook failed:', error);
+    // Provide fallback location
+    location = { pathname: '/' };
+  }
 
   const mainLinks = [
     { to: '/', label: 'Home', icon: '🏠' },
@@ -123,25 +170,49 @@ const ModernNavigation: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-1 overflow-x-auto">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                  location.pathname === link.to
-                    ? 'bg-white/20 text-white'
-                    : link.highlight
-                    ? 'text-white hover:bg-white/10 border border-white/20'
-                    : 'text-blue-100 hover:bg-white/10 hover:text-white'
-                }`}
-                style={{
-                  borderColor: link.highlight ? link.highlightColor : 'transparent',
-                }}
-              >
-                <span className="mr-1">{link.icon}</span>
-                {link.label}
-              </Link>
-            ))}
+            {mainLinks.map((link) => {
+              try {
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+                      location.pathname === link.to
+                        ? 'bg-white/20 text-white'
+                        : link.highlight
+                        ? 'text-white hover:bg-white/10 border border-white/20'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                    style={{
+                      borderColor: link.highlight ? link.highlightColor : 'transparent',
+                    }}
+                  >
+                    <span className="mr-1">{link.icon}</span>
+                    {link.label}
+                  </Link>
+                );
+              } catch (error) {
+                console.error(`Error rendering link ${link.to}:`, error);
+                // Fallback to regular anchor tag
+                return (
+                  <a
+                    key={link.to}
+                    href={link.to}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
+                      link.highlight
+                        ? 'text-white hover:bg-white/10 border border-white/20'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                    style={{
+                      borderColor: link.highlight ? link.highlightColor : 'transparent',
+                    }}
+                  >
+                    <span className="mr-1">{link.icon}</span>
+                    {link.label}
+                  </a>
+                );
+              }
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -165,30 +236,59 @@ const ModernNavigation: React.FC = () => {
         {/* Mobile menu */}
         <div className="md:hidden mt-4">
           <div className="grid grid-cols-2 gap-2">
-            {mainLinks.slice(0, 8).map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === link.to
-                    ? 'bg-white/20 text-white'
-                    : link.highlight
-                    ? 'text-white hover:bg-white/10 border border-white/20'
-                    : 'text-blue-100 hover:bg-white/10 hover:text-white'
-                }`}
-                style={{
-                  borderColor: link.highlight ? link.highlightColor : 'transparent',
-                }}
-              >
-                <span className="mr-1">{link.icon}</span>
-                {link.label}
-              </Link>
-            ))}
+            {mainLinks.slice(0, 8).map((link) => {
+              try {
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      location.pathname === link.to
+                        ? 'bg-white/20 text-white'
+                        : link.highlight
+                        ? 'text-white hover:bg-white/10 border border-white/20'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                    style={{
+                      borderColor: link.highlight ? link.highlightColor : 'transparent',
+                    }}
+                  >
+                    <span className="mr-1">{link.icon}</span>
+                    {link.label}
+                  </Link>
+                );
+              } catch (error) {
+                console.error(`Error rendering mobile link ${link.to}:`, error);
+                // Fallback to regular anchor tag
+                return (
+                  <a
+                    key={link.to}
+                    href={link.to}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      link.highlight
+                        ? 'text-white hover:bg-white/10 border border-white/20'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                    style={{
+                      borderColor: link.highlight ? link.highlightColor : 'transparent',
+                    }}
+                  >
+                    <span className="mr-1">{link.icon}</span>
+                    {link.label}
+                  </a>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
     </nav>
   );
+};
+
+// Main export with error boundary
+const ModernNavigation: React.FC = () => {
+  return <RouterSafeNavigation />;
 };
 
 export default ModernNavigation;
