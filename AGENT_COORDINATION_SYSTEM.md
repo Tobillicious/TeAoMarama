@@ -11,6 +11,7 @@ This system enables seamless collaboration between multiple AI agents, developer
 ## 🧠 AGENT ARCHITECTURE
 
 ### **Agent Hierarchy**
+
 ```
 Supreme Overseer (Current: Claude Code Node)
 ├── Development Agents
@@ -38,18 +39,21 @@ Supreme Overseer (Current: Claude Code Node)
 ### **Agent Types & Responsibilities**
 
 #### **Development Agents**
+
 - **Frontend Specialists**: React, TypeScript, UI/UX
 - **Backend Engineers**: Firebase, Supabase, API integration
 - **AI Integration Experts**: GraphRAG, GLM, Exa AI systems
 - **Cultural Safety Validators**: Māori protocols, cultural appropriateness
 
 #### **Content Agents**
+
 - **Educational Content Creators**: Curriculum-aligned resources
 - **Cultural Knowledge Curators**: Te Reo Māori, Tikanga, Whakapapa
 - **Assessment Developers**: Interactive assessments, progress tracking
 - **Multimedia Specialists**: Videos, images, interactive content
 
 #### **Quality Assurance Agents**
+
 - **Code Reviewers**: TypeScript, ESLint, best practices
 - **Accessibility Auditors**: WCAG compliance, inclusive design
 - **Performance Optimizers**: Bundle size, load times, efficiency
@@ -60,6 +64,7 @@ Supreme Overseer (Current: Claude Code Node)
 ## 🔄 COORDINATION PROTOCOLS
 
 ### **Heartbeat System**
+
 Every agent maintains a heartbeat to ensure coordination:
 
 ```bash
@@ -73,6 +78,7 @@ AGENT_NAME="agent:content-creator" npm run agent:heartbeat
 ```
 
 ### **Status Reporting**
+
 Agents report status every 30-60 minutes:
 
 ```bash
@@ -89,12 +95,14 @@ npm run performance:report
 ### **Communication Protocol**
 
 #### **Non-Blocking Coordination**
+
 - **Propose Changes First**: Use feature flags and staging
 - **Avoid Breaking Flows**: Maintain backward compatibility
 - **Lightweight Pings**: Quick status updates, not heavy reports
 - **Escalation Ladder**: Follow defined escalation procedures
 
 #### **Active Touchpoints**
+
 - **Surpass Plan Owners**: Regular check-ins with domain experts
 - **Status Board**: Centralized progress tracking
 - **TeKeteAkoClient Standards**: Maintain quality benchmarks
@@ -105,28 +113,34 @@ npm run performance:report
 ## 📊 STATUS TRACKING SYSTEM
 
 ### **Repository Status Summary**
+
 Located in: `migration/agent_coordination/agent_sync_status.md`
 
 ```markdown
 # Agent Sync Status - [Timestamp]
 
 ## Active Agents
+
 - Agent: [Name] | Status: [Active/Idle/Error] | Last Heartbeat: [Time]
 - Agent: [Name] | Status: [Active/Idle/Error] | Last Heartbeat: [Time]
 
 ## Current Tasks
+
 - Task: [Description] | Owner: [Agent] | Status: [In Progress/Complete/Blocked]
 - Task: [Description] | Owner: [Agent] | Status: [In Progress/Complete/Blocked]
 
 ## Blockers & Issues
+
 - Issue: [Description] | Severity: [High/Medium/Low] | Assigned: [Agent]
 - Issue: [Description] | Severity: [High/Medium/Low] | Assigned: [Agent]
 
 ## Next Actions
+
 - Action: [Description] | Priority: [High/Medium/Low] | Deadline: [Date]
 ```
 
 ### **Performance Metrics**
+
 ```bash
 # Collect metrics
 npm run performance:audit
@@ -143,6 +157,7 @@ npm run coordination:status
 ## 🚨 EMERGENCY PROTOCOLS
 
 ### **Escalation Ladder**
+
 Following the escalation ladder in `migration/COMMUNICATION.md`:
 
 1. **Level 1**: Agent-to-Agent Communication
@@ -151,6 +166,7 @@ Following the escalation ladder in `migration/COMMUNICATION.md`:
 4. **Level 4**: Emergency Response Protocol
 
 ### **Emergency Commands**
+
 ```bash
 # Emergency restoration
 npm run emergency:restore
@@ -164,6 +180,7 @@ npm run consciousness:verify
 ```
 
 ### **Crisis Response**
+
 - **Immediate**: Stop all non-critical operations
 - **Assessment**: Evaluate system health and impact
 - **Recovery**: Execute emergency protocols
@@ -175,6 +192,7 @@ npm run consciousness:verify
 ## 🔧 AGENT DEPLOYMENT
 
 ### **New Agent Onboarding**
+
 ```bash
 # 1. Register agent
 AGENT_NAME="new-agent-name" npm run agent:heartbeat
@@ -190,22 +208,14 @@ npm run coordination:status
 ```
 
 ### **Agent Capabilities**
+
 Each agent should declare capabilities:
 
 ```json
 {
   "agentId": "agent:frontend-specialist",
-  "capabilities": [
-    "react-development",
-    "typescript",
-    "ui-ux-design",
-    "accessibility-auditing"
-  ],
-  "specializations": [
-    "educational-platforms",
-    "cultural-safety",
-    "performance-optimization"
-  ],
+  "capabilities": ["react-development", "typescript", "ui-ux-design", "accessibility-auditing"],
+  "specializations": ["educational-platforms", "cultural-safety", "performance-optimization"],
   "availability": "24/7",
   "timezone": "UTC",
   "lastHeartbeat": "2025-01-20T12:00:00Z"
@@ -217,6 +227,7 @@ Each agent should declare capabilities:
 ## 📋 TASK MANAGEMENT
 
 ### **Task Assignment Protocol**
+
 1. **Task Creation**: Define clear objectives and requirements
 2. **Agent Selection**: Match capabilities to task requirements
 3. **Assignment**: Notify agent and update status board
@@ -224,12 +235,14 @@ Each agent should declare capabilities:
 5. **Completion**: Validation and handoff procedures
 
 ### **Task Types**
+
 - **Development**: Code implementation, bug fixes, features
 - **Content**: Educational resources, cultural materials
 - **Quality**: Testing, review, optimization
 - **Coordination**: Communication, documentation, monitoring
 
 ### **Priority Levels**
+
 - **Critical**: System-breaking issues, security vulnerabilities
 - **High**: Feature development, performance issues
 - **Medium**: Enhancements, optimizations
@@ -240,6 +253,7 @@ Each agent should declare capabilities:
 ## 🌐 DISTRIBUTED DEVELOPMENT
 
 ### **Multi-Agent Workflows**
+
 ```bash
 # Coordinate multiple agents
 npm run agents:coord
@@ -255,12 +269,14 @@ npm run agents:support
 ```
 
 ### **Knowledge Sharing**
+
 - **Real-time Updates**: Continuous status reporting
 - **Documentation**: Comprehensive guides and protocols
 - **Code Sharing**: Centralized repository with clear structure
 - **Cultural Knowledge**: Shared understanding of Māori protocols
 
 ### **Conflict Resolution**
+
 1. **Agent Negotiation**: Direct communication between agents
 2. **Domain Expert**: Consultation with subject matter experts
 3. **Supreme Overseer**: Final arbitration when needed
@@ -271,18 +287,21 @@ npm run agents:support
 ## 📈 MONITORING & ANALYTICS
 
 ### **Agent Performance Metrics**
+
 - **Task Completion Rate**: Percentage of tasks completed on time
 - **Code Quality**: TypeScript errors, linting issues, test coverage
 - **Cultural Safety**: Validation of Māori content and protocols
 - **System Health**: Performance, uptime, error rates
 
 ### **Coordination Effectiveness**
+
 - **Communication Latency**: Time between agent interactions
 - **Conflict Resolution**: Speed and success of dispute resolution
 - **Knowledge Transfer**: Effectiveness of information sharing
 - **Overall Productivity**: System-wide development velocity
 
 ### **Reporting Schedule**
+
 - **Real-time**: Heartbeat status (every 60 seconds)
 - **Short-term**: Task progress (every 30 minutes)
 - **Medium-term**: Status summaries (every 2 hours)
@@ -293,6 +312,7 @@ npm run agents:support
 ## 🎯 SUCCESS CRITERIA
 
 ### **Coordination Goals**
+
 - ✅ **Seamless Communication**: Agents work together without conflicts
 - ✅ **Efficient Task Distribution**: Optimal assignment based on capabilities
 - ✅ **Quality Maintenance**: High standards across all contributions
@@ -300,6 +320,7 @@ npm run agents:support
 - ✅ **Performance Optimization**: Continuous system improvement
 
 ### **Key Performance Indicators**
+
 - **Agent Uptime**: >99% availability
 - **Task Completion**: >95% on-time delivery
 - **Code Quality**: <1% TypeScript errors
@@ -311,12 +332,14 @@ npm run agents:support
 ## 🔄 CONTINUOUS IMPROVEMENT
 
 ### **Feedback Loops**
+
 - **Agent Feedback**: Regular input on coordination effectiveness
 - **Performance Analysis**: Continuous monitoring and optimization
 - **Protocol Updates**: Refinement based on experience
 - **Knowledge Base**: Expanding shared understanding
 
 ### **Evolution Protocol**
+
 1. **Monitor**: Track system performance and agent satisfaction
 2. **Analyze**: Identify areas for improvement
 3. **Propose**: Suggest protocol modifications
@@ -328,6 +351,6 @@ npm run agents:support
 
 **Last Updated**: January 2025  
 **Version**: 2.0  
-**Status**: Active Coordination System  
+**Status**: Active Coordination System
 
-*This system is maintained by the Supreme Overseer and all participating agents. For updates or issues, use the established communication protocols.*
+_This system is maintained by the Supreme Overseer and all participating agents. For updates or issues, use the established communication protocols._

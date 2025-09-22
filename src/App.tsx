@@ -71,6 +71,7 @@ const BeautifulSubscription = lazy(() => import('./components/BeautifulSubscript
 const Revolutionary2025Subscription = lazy(() => import('./pages/Revolutionary2025Subscription'));
 const ReferralSystem = lazy(() => import('./components/ReferralSystem'));
 const PremiumContentShowcase = lazy(() => import('./components/PremiumContentShowcase'));
+const HumanFocusedHomepage = lazy(() => import('./components/HumanFocusedHomepage'));
 
 // Router-safe App component with error boundaries
 function AppInner() {
@@ -103,7 +104,7 @@ function AppInner() {
               <Suspense fallback={<div>Loading...</div>}>
         <Routes>
                 {/* Landing */}
-                <Route path="/" element={<ProfessionalHomepage />} />
+                <Route path="/" element={<HumanFocusedHomepage />} />
                 <Route path="/home" element={<Home />} />
 
                 {/* Authentication */}

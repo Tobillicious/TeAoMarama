@@ -11,6 +11,7 @@ This document establishes clear code organization and styling standards for the 
 ## 🏗️ CODE ORGANIZATION
 
 ### **Project Structure**
+
 ```
 src/
 ├── components/                 # React components (451 files)
@@ -68,6 +69,7 @@ src/
 ```
 
 ### **File Naming Conventions**
+
 - **Components**: PascalCase (e.g., `ResourceBrowser.tsx`)
 - **Pages**: PascalCase (e.g., `Year8SocialStudies.tsx`)
 - **Utilities**: camelCase (e.g., `culturalValidators.ts`)
@@ -80,6 +82,7 @@ src/
 ## 🎨 STYLING STANDARDS
 
 ### **CSS Organization**
+
 Following the user's preference for external CSS files (no inline styles):
 
 ```css
@@ -107,6 +110,7 @@ Following the user's preference for external CSS files (no inline styles):
 ```
 
 ### **CSS File Structure**
+
 ```
 styles/
 ├── globals.css               # Global styles and variables
@@ -124,6 +128,7 @@ styles/
 ```
 
 ### **CSS Variables**
+
 ```css
 :root {
   /* Primary Colors */
@@ -131,13 +136,13 @@ styles/
   --primary-green: #059669;
   --primary-purple: #667eea;
   --primary-indigo: #764ba2;
-  
+
   /* Cultural Colors */
   --maori-red: #d32f2f;
   --maori-black: #212121;
   --maori-white: #fafafa;
   --maori-brown: #8d6e63;
-  
+
   /* Neutral Colors */
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -149,7 +154,7 @@ styles/
   --gray-700: #374151;
   --gray-800: #1f2937;
   --gray-900: #111827;
-  
+
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -157,18 +162,18 @@ styles/
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
-  
+
   /* Typography */
   --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-family-serif: 'Georgia', serif;
   --font-family-mono: 'Fira Code', monospace;
-  
+
   /* Border Radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -182,6 +187,7 @@ styles/
 ## 🧩 COMPONENT STANDARDS
 
 ### **Component Structure**
+
 ```typescript
 // Component.tsx
 import React from 'react';
@@ -199,19 +205,13 @@ const Component: React.FC<ComponentProps> = ({
   title,
   description,
   culturalContext = 'multicultural',
-  children
+  children,
 }) => {
   return (
     <div className={`component component--${culturalContext}`}>
       <h2 className="component__title">{title}</h2>
-      {description && (
-        <p className="component__description">{description}</p>
-      )}
-      {children && (
-        <div className="component__content">
-          {children}
-        </div>
-      )}
+      {description && <p className="component__description">{description}</p>}
+      {children && <div className="component__content">{children}</div>}
     </div>
   );
 };
@@ -220,6 +220,7 @@ export default Component;
 ```
 
 ### **Component CSS**
+
 ```css
 /* Component.css */
 .component {
@@ -271,6 +272,7 @@ export default Component;
 ## 📝 TYPESCRIPT STANDARDS
 
 ### **Type Definitions**
+
 ```typescript
 // types/component-types.ts
 export interface BaseComponentProps {
@@ -310,6 +312,7 @@ export interface AccessibilityInfo {
 ```
 
 ### **Cultural Types**
+
 ```typescript
 // types/cultural.ts
 export interface CulturalContext {
@@ -340,6 +343,7 @@ export interface CulturalValidation {
 ## 🎯 CULTURAL SAFETY STANDARDS
 
 ### **Cultural Content Guidelines**
+
 ```typescript
 // Cultural content validation
 interface CulturalContentValidator {
@@ -356,11 +360,12 @@ const culturalSafetyChecklist = {
   whakapapa: 'Genealogy and family connections honored',
   kaitiakitanga: 'Environmental stewardship emphasized',
   manaakitanga: 'Hospitality and care demonstrated',
-  whanaungatanga: 'Relationship building prioritized'
+  whanaungatanga: 'Relationship building prioritized',
 };
 ```
 
 ### **Cultural Styling Guidelines**
+
 ```css
 /* Cultural theme styles */
 .cultural-theme--maori {
@@ -390,6 +395,7 @@ const culturalSafetyChecklist = {
 ## 🔧 DEVELOPMENT STANDARDS
 
 ### **Code Quality Requirements**
+
 ```typescript
 // ESLint configuration
 {
@@ -420,6 +426,7 @@ const culturalSafetyChecklist = {
 ```
 
 ### **Testing Standards**
+
 ```typescript
 // Component testing
 import { render, screen } from '@testing-library/react';
@@ -432,12 +439,7 @@ describe('Component', () => {
   });
 
   it('validates cultural context', () => {
-    render(
-      <Component 
-        title="Test Title" 
-        culturalContext="maori" 
-      />
-    );
+    render(<Component title="Test Title" culturalContext="maori" />);
     expect(screen.getByRole('main')).toHaveClass('component--maori');
   });
 });
@@ -448,6 +450,7 @@ describe('Component', () => {
 ## 📊 PERFORMANCE STANDARDS
 
 ### **Performance Requirements**
+
 - **Bundle Size**: <500KB initial bundle
 - **Load Time**: <3 seconds first contentful paint
 - **Runtime Performance**: >60fps animations
@@ -455,6 +458,7 @@ describe('Component', () => {
 - **Accessibility**: WCAG 2.1 AA compliance
 
 ### **Optimization Guidelines**
+
 ```typescript
 // Code splitting
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
@@ -477,6 +481,7 @@ getTTFB(console.log);
 ## 🚀 DEPLOYMENT STANDARDS
 
 ### **Build Requirements**
+
 ```bash
 # Build process
 npm run build
@@ -489,6 +494,7 @@ npm run performance:audit
 ```
 
 ### **Deployment Checklist**
+
 - [ ] TypeScript compilation successful
 - [ ] ESLint validation passed
 - [ ] All tests passing
@@ -503,6 +509,7 @@ npm run performance:audit
 ## 📋 CODE REVIEW STANDARDS
 
 ### **Review Checklist**
+
 - [ ] **Code Quality**: TypeScript, ESLint compliance
 - [ ] **Cultural Safety**: Māori content validation
 - [ ] **Accessibility**: WCAG compliance
@@ -513,6 +520,7 @@ npm run performance:audit
 - [ ] **Styling**: External CSS, no inline styles
 
 ### **Review Process**
+
 1. **Automated Checks**: TypeScript, ESLint, tests
 2. **Cultural Review**: Māori content validation
 3. **Technical Review**: Code quality and architecture
@@ -526,6 +534,7 @@ npm run performance:audit
 ## 🔄 CONTINUOUS IMPROVEMENT
 
 ### **Standards Evolution**
+
 - **Regular Review**: Monthly standards review
 - **Community Input**: Team feedback incorporation
 - **Best Practices**: Industry standard adoption
@@ -533,6 +542,7 @@ npm run performance:audit
 - **Technology Updates**: Framework and tool updates
 
 ### **Quality Metrics**
+
 - **Code Coverage**: >90% test coverage
 - **TypeScript Coverage**: 100% type coverage
 - **Cultural Safety**: 100% validation compliance
@@ -543,6 +553,6 @@ npm run performance:audit
 
 **Last Updated**: January 2025  
 **Version**: 2.0  
-**Status**: Active Standards  
+**Status**: Active Standards
 
-*These standards are maintained by the development team and AI coordination system. For updates or clarifications, follow the established communication protocols.*
+_These standards are maintained by the development team and AI coordination system. For updates or clarifications, follow the established communication protocols._

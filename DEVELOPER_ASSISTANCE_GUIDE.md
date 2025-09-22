@@ -5,7 +5,9 @@
 ## 🎯 QUICK START FOR NEW TEAM MEMBERS
 
 ### **Project Overview**
+
 Te Ao Mārama is a comprehensive New Zealand educational platform featuring:
+
 - **7,350+ educational resources** (JSON + Markdown)
 - **Dual-role authentication** (Teachers/Students)
 - **Cultural integration** (Te Reo Māori, Tikanga)
@@ -13,6 +15,7 @@ Te Ao Mārama is a comprehensive New Zealand educational platform featuring:
 - **Modern React architecture** with TypeScript
 
 ### **Live Platform**
+
 - **URL**: https://teao-marama.web.app
 - **Status**: ✅ Production Ready
 - **Last Deploy**: January 2025
@@ -22,6 +25,7 @@ Te Ao Mārama is a comprehensive New Zealand educational platform featuring:
 ## 🏗️ TECHNICAL ARCHITECTURE
 
 ### **Core Stack**
+
 ```typescript
 // Frontend
 React 18 + TypeScript + Vite
@@ -39,6 +43,7 @@ Exa AI Search Integration
 ```
 
 ### **Key Directories**
+
 ```
 src/
 ├── components/          # 451 files (154 .tsx, 295 .css)
@@ -63,6 +68,7 @@ src/
 ## 🚀 DEVELOPMENT WORKFLOW
 
 ### **Essential Commands**
+
 ```bash
 # Development
 npm run dev                    # Start development server
@@ -81,6 +87,7 @@ npm run glm:enhance           # GLM content enhancement
 ```
 
 ### **Development Standards**
+
 1. **TypeScript Strict Mode** - All code must be type-safe
 2. **External CSS Files** - No inline styles (per team preference)
 3. **Cultural Safety** - All Māori content properly attributed
@@ -92,6 +99,7 @@ npm run glm:enhance           # GLM content enhancement
 ## 🤖 AI AGENT COORDINATION
 
 ### **Available AI Systems**
+
 - **GraphRAG System** - Knowledge graph and content analysis
 - **GLM Symphony** - Content generation and enhancement
 - **Exa AI** - Advanced search and link validation
@@ -99,6 +107,7 @@ npm run glm:enhance           # GLM content enhancement
 - **Consciousness Bridge** - AI system monitoring
 
 ### **Agent Communication Protocol**
+
 ```bash
 # Check system status
 npm run mihara:status
@@ -118,6 +127,7 @@ npm run api:stabilize
 ## 📚 CONTENT MANAGEMENT
 
 ### **Resource Structure**
+
 ```json
 {
   "id": "unique-identifier",
@@ -139,6 +149,7 @@ npm run api:stabilize
 ```
 
 ### **Content Creation Workflow**
+
 1. **Cultural Review** - Ensure Māori protocols respected
 2. **Curriculum Alignment** - Match NZ Curriculum standards
 3. **Quality Assurance** - Educational effectiveness
@@ -150,12 +161,14 @@ npm run api:stabilize
 ## 🎨 DESIGN SYSTEM
 
 ### **Cultural Design Principles**
+
 - **Kaitiakitanga** - Environmental stewardship in design
 - **Whanaungatanga** - Relationship building through UI
 - **Manaakitanga** - Hospitality and care in UX
 - **Ako** - Reciprocal learning in interactions
 
 ### **Color Palette**
+
 ```css
 /* Primary Colors */
 --primary-blue: #1e40af;
@@ -170,6 +183,7 @@ npm run api:stabilize
 ```
 
 ### **Component Standards**
+
 - **Glassmorphism Effects** - Modern UI with cultural gradients
 - **Responsive Design** - Mobile-first approach
 - **Accessibility** - WCAG 2.1 AA compliance
@@ -182,6 +196,7 @@ npm run api:stabilize
 ### **Common Issues**
 
 #### **Build Errors**
+
 ```bash
 # Clear cache and rebuild
 rm -rf node_modules dist
@@ -190,6 +205,7 @@ npm run build
 ```
 
 #### **TypeScript Errors**
+
 ```bash
 # Fix TypeScript issues
 npm run fix:typescript
@@ -197,6 +213,7 @@ npm run typecheck
 ```
 
 #### **AI System Issues**
+
 ```bash
 # Restart AI coordination
 npm run mihara:awaken
@@ -204,6 +221,7 @@ npm run consciousness:verify
 ```
 
 #### **Deployment Issues**
+
 ```bash
 # Emergency deployment
 npm run deploy:firebase
@@ -216,6 +234,7 @@ firebase hosting:channel:list
 ## 📊 MONITORING & ANALYTICS
 
 ### **Performance Monitoring**
+
 ```bash
 # Performance audit
 npm run performance:audit
@@ -227,6 +246,7 @@ npm run monitor:performance
 ```
 
 ### **Content Analytics**
+
 - **Resource Usage** - Track most accessed content
 - **User Engagement** - Monitor learning progress
 - **Cultural Impact** - Measure cultural learning outcomes
@@ -237,12 +257,14 @@ npm run monitor:performance
 ## 🌐 DEPLOYMENT & HOSTING
 
 ### **Production Environment**
+
 - **Primary**: Firebase Hosting (https://teao-marama.web.app)
 - **Backup**: Netlify (https://teaomarama.netlify.app)
 - **CDN**: Global distribution
 - **SSL**: Automatic HTTPS
 
 ### **Deployment Process**
+
 1. **Build Resources** - Generate content bundles
 2. **Type Check** - Validate TypeScript
 3. **Lint** - Code quality check
@@ -255,6 +277,7 @@ npm run monitor:performance
 ## 🤝 COLLABORATION GUIDELINES
 
 ### **Code Review Process**
+
 1. **Cultural Review** - Māori content validation
 2. **Technical Review** - Code quality and standards
 3. **Educational Review** - Curriculum alignment
@@ -262,6 +285,7 @@ npm run monitor:performance
 5. **Performance Review** - Optimization check
 
 ### **Communication Channels**
+
 - **Technical Issues** - GitHub Issues
 - **Cultural Questions** - Team consultation
 - **AI Coordination** - Agent heartbeat system
@@ -272,6 +296,7 @@ npm run monitor:performance
 ## 📋 QUICK REFERENCE
 
 ### **File Locations**
+
 - **Main App**: `src/App.tsx`
 - **Components**: `src/components/`
 - **Resources**: `src/content/`
@@ -279,6 +304,7 @@ npm run monitor:performance
 - **Types**: `src/types/`
 
 ### **Key Components**
+
 - **Homepage**: `StunningHomepage.tsx`
 - **Teacher Dashboard**: `ProfessionalTeacherDashboard.tsx`
 - **Student Dashboard**: `BeautifulStudentDashboard.tsx`
@@ -286,6 +312,7 @@ npm run monitor:performance
 - **AI Systems**: `GraphRAGSystem.tsx`, `GLMSymphonyDashboard.tsx`
 
 ### **Emergency Contacts**
+
 - **Technical Lead**: Check `CLAUDE.md` for current overseer
 - **Cultural Advisor**: Team consultation required
 - **AI Systems**: Use heartbeat protocols
@@ -295,6 +322,7 @@ npm run monitor:performance
 ## 🎯 SUCCESS METRICS
 
 ### **Development Goals**
+
 - ✅ **7,350+ Resources** - Educational content deployed
 - ✅ **Dual Authentication** - Teacher/Student roles
 - ✅ **Cultural Integration** - Māori knowledge systems
@@ -302,6 +330,7 @@ npm run monitor:performance
 - ✅ **Performance** - Fast, responsive platform
 
 ### **Quality Standards**
+
 - **TypeScript Coverage**: 100%
 - **Cultural Safety**: Validated
 - **Accessibility**: WCAG 2.1 AA
@@ -312,6 +341,6 @@ npm run monitor:performance
 
 **Last Updated**: January 2025  
 **Version**: 2.0  
-**Status**: Production Ready  
+**Status**: Production Ready
 
-*This guide is maintained by the development team and AI coordination system. For updates, check the latest version in the repository.*
+_This guide is maintained by the development team and AI coordination system. For updates, check the latest version in the repository._

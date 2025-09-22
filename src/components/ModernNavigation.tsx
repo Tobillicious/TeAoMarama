@@ -30,7 +30,7 @@ const FallbackNavigation: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">🌿</span>
-            <span className="text-xl font-bold">TeKeteAkoClient</span>
+            <span className="text-xl font-bold">Te Ao Mārama</span>
           </div>
           <div className="text-sm text-blue-100">
             Navigation loading...
@@ -166,7 +166,7 @@ const ModernNavigationInner: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">🌿</span>
-            <span className="text-xl font-bold">TeKeteAkoClient</span>
+            <span className="text-xl font-bold">Te Ao Mārama</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-1 overflow-x-auto">
