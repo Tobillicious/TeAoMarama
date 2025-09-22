@@ -184,7 +184,39 @@ function AppInner() {
   );
 }
 
-// Main App component with clean Router structure for multi-agent collaboration
+// Fallback App component for when Router context is completely unavailable
+const FallbackApp = () => {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <div style={{
+        background: 'white',
+        padding: '40px',
+        borderRadius: '20px',
+        textAlign: 'center',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+      }}>
+        <h1 style={{ color: '#1e40af', fontSize: '2.5rem', marginBottom: '20px' }}>
+          🌿 Te Ao Mārama
+        </h1>
+        <p style={{ color: '#374151', fontSize: '1.2rem', marginBottom: '30px' }}>
+          New Zealand's Educational Platform - Initializing...
+        </p>
+        <div style={{ color: '#f59e0b', fontWeight: 'bold' }}>
+          Router context loading, please refresh page if this persists.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main App component
 function App() {
   return <AppInner />;
 }

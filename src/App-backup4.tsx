@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -24,6 +24,10 @@ const Login = lazy(() => import('./components/ComprehensiveAuthSystem'));
 const TeacherSignupFlow = lazy(() => import('./components/TeacherSignupFlow'));
 const WorkingSubscription = lazy(() => import('./pages/WorkingSubscription'));
 const TeacherDemoDashboard = lazy(() => import('./components/TeacherDemoDashboard'));
+// Temporarily disabled due to missing dependencies
+// const ComprehensiveSearchInterface = lazy(
+//   () => import('./components/ComprehensiveSearchInterface'),
+// );
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Educational content - keep Year 8 only for now
@@ -72,10 +76,8 @@ const Revolutionary2025Subscription = lazy(() => import('./pages/Revolutionary20
 const ReferralSystem = lazy(() => import('./components/ReferralSystem'));
 const PremiumContentShowcase = lazy(() => import('./components/PremiumContentShowcase'));
 
-// Router-safe App component with error boundaries
-function AppInner() {
-  const location = useLocation();
-  const isLandingPage = location.pathname === '/';
+function App() {
+  const isLandingPage = false; // Always show navigation for professional appearance
 
   // Performance monitoring
   useEffect(() => {
@@ -118,6 +120,7 @@ function AppInner() {
                 {/* Resources - single route */}
                 <Route path="/resources" element={<ResourceBrowser />} />
                 <Route path="/human-content" element={<HumanReadableContentBrowser />} />
+                {/* <Route path="/search" element={<ComprehensiveSearchInterface />} /> */}
                 <Route path="/lesson/:resourceId" element={<LessonViewer />} />
 
                 {/* Year Level Content - Year 8 only for now */}
@@ -182,11 +185,6 @@ function AppInner() {
       </div>
     </DualRoleAuthProvider>
   );
-}
-
-// Main App component with clean Router structure for multi-agent collaboration
-function App() {
-  return <AppInner />;
 }
 
 export default App;
