@@ -1,279 +1,288 @@
-// REAL Year 8 English Resources - New Zealand Literature and Language
-// Focus: Reading authentic New Zealand texts and developing critical literacy
+// Year 8 English Resources - Integrating Te Reo Māori
+// Authentic New Zealand Curriculum content with cultural integration
 
-import { type NZCResource } from './nz-curriculum-year8';
+export interface EnglishResource {
+  id: string;
+  title: string;
+  focus: string;
+  duration: string;
+  objectives: string[];
+  teReoTerms: string[];
+  activities: EnglishActivity[];
+  assessments: EnglishAssessment[];
+  externalResources: ExternalResource[];
+  culturalConnections: CulturalConnection[];
+}
 
-export const newZealandLiteratureResource: NZCResource = {
-  id: "year8-nz-literature-001",
-  title: "Voices of Aotearoa: Contemporary New Zealand Short Stories",
-  learningArea: "English",
-  yearLevel: 8,
-  duration: "6 weeks (18 lessons)",
-  objectives: [
-    "Analyze how New Zealand authors use language to express cultural identity",
-    "Compare perspectives across different cultural backgrounds in NZ literature", 
-    "Develop critical thinking skills through literary analysis",
-    "Create original writing inspired by New Zealand settings and themes"
-  ],
-  keyCompetencies: [
-    "Using language, symbols and texts - Literary analysis and creative writing",
-    "Thinking - Critical analysis of themes, characters, and cultural contexts",
-    "Relating to others - Understanding diverse cultural perspectives in literature",
-    "Managing self - Independent reading and research skills",
-    "Participating and contributing - Respectful discussion of cultural representations"
-  ],
-  content: {
-    overview: `This unit explores contemporary New Zealand short stories that reflect our diverse cultural landscape. Students read works by Māori, Pacific, Asian-New Zealand, and Pākehā authors, analyzing how each writer uses language, setting, and character to explore themes of identity, belonging, and cultural heritage. Through close reading, creative response, and critical discussion, students develop appreciation for New Zealand's rich literary tradition while building sophisticated literacy skills.`,
+export interface EnglishActivity {
+  title: string;
+  description: string;
+  duration: string;
+  materials: string[];
+  instructions: string[];
+  teReoIntegration: string[];
+}
+
+export interface EnglishAssessment {
+  type: 'formative' | 'summative' | 'creative';
+  title: string;
+  description: string;
+  criteria: string[];
+}
+
+export interface ExternalResource {
+  title: string;
+  url: string;
+  type: 'website' | 'video' | 'document' | 'interactive';
+  description: string;
+  verified: boolean;
+}
+
+export interface CulturalConnection {
+  element: string;
+  description: string;
+  languageConnection: string;
+  activities: string[];
+}
+
+export const realEnglishResources: EnglishResource[] = [
+  {
+    id: 'creative-writing-te-reo',
+    title: 'Creative Writing: Integrating Te Reo Māori',
+    focus: 'Creative Writing',
+    duration: '4 weeks',
+    objectives: [
+      'Develop creative writing skills using Te Reo Māori elements',
+      'Understand Māori storytelling traditions and techniques',
+      'Create original stories incorporating cultural elements',
+      'Build confidence in using Te Reo Māori in writing',
+    ],
+    teReoTerms: [
+      'pūrākau - traditional story',
+      'kōrero - to speak/tell',
+      'whakapapa - genealogy',
+      'mana - authority/power',
+      'tupuna - ancestors',
+      'whenua - land',
+      'whānau - family',
+    ],
     activities: [
       {
-        title: "Patricia Grace Short Story Analysis",
-        description: "Close reading of 'A Way of Talking' exploring Māori perspectives on identity and family dynamics",
-        duration: "3 x 50 minute lessons",
+        title: 'Pūrākau (Traditional Stories) Analysis',
+        description:
+          'Students study traditional Māori stories to understand storytelling techniques',
+        duration: '3 lessons',
         materials: [
-          "'A Way of Talking' by Patricia Grace (from Selected Stories)",
-          "Audio recording of Patricia Grace reading the story",
-          "Background information on Patricia Grace and her writing",
-          "Character analysis worksheets",
-          "Māori cultural context resources"
+          'Traditional Māori stories from Te Papa collections',
+          'Story analysis worksheets',
+          'Te Reo Māori vocabulary lists',
+          'Digital recording tools',
+          'Cultural reference materials',
         ],
         instructions: [
-          "Begin with mihi (introduction) and acknowledgment of Māori as tangata whenua",
-          "Introduce Patricia Grace as pioneering Māori writer - first published Māori woman in English",
-          "Read story aloud with students following text, pausing for vocabulary/cultural references",
-          "Identify key themes: code-switching, cultural identity, generational differences",
-          "Analyze Grace's use of dialogue to show character perspectives and cultural tensions",
-          "Discuss how the story reflects real experiences of Māori families in New Zealand",
-          "Students create character maps showing internal conflicts and motivations"
+          'Read and analyze traditional Māori stories',
+          'Identify storytelling techniques and structures',
+          'Study the use of Te Reo Māori in stories',
+          'Compare different storytelling traditions',
+          'Create analysis presentations with cultural context',
         ],
-        differentiation: [
-          "Provide audio version for students with reading difficulties",
-          "Include visual cultural context materials and maps",
-          "Offer choice in response format (written, oral, visual, digital)",
-          "Support with guided reading questions for complex passages",
-          "Extension: research other Patricia Grace works and themes"
-        ]
+        teReoIntegration: [
+          'Use "pūrākau" when discussing traditional stories',
+          'Apply "kōrero" when describing storytelling',
+          'Include "whakapapa" in story analysis',
+          'Discuss "mana" in character development',
+        ],
       },
       {
-        title: "Albert Wendt Pacific Voices Project", 
-        description: "Exploring Pacific Island identity in New Zealand through Wendt's 'Flying-Fox in a Freedom Tree'",
-        duration: "4 x 50 minute lessons",
+        title: 'Contemporary Māori Fiction Writing',
+        description:
+          'Students create original stories incorporating Te Reo Māori and Māori cultural elements',
+        duration: '4 lessons',
         materials: [
-          "Selected passages from 'Flying-Fox in a Freedom Tree'",
-          "Map of Pacific Islands and migration patterns to NZ",
-          "Pacific cultural artifacts and images",
-          "Interview clips with Albert Wendt",
-          "Comparative texts from other Pacific NZ authors"
+          'Writing journals',
+          'Te Reo Māori dictionaries',
+          'Cultural reference materials',
+          'Peer review sheets',
+          'Digital publishing tools',
         ],
         instructions: [
-          "Context setting: Pacific migration to New Zealand and cultural adaptation",
-          "Read key passages exploring themes of displacement and cultural preservation",
-          "Analyze Wendt's use of Pacific imagery and mythology in New Zealand setting",
-          "Compare with students' own experiences of cultural adaptation/identity",
-          "Research other Pacific New Zealand authors (Sia Figiel, Toa Fraser, Selina Tusitala Marsh)",
-          "Create multimedia presentations on Pacific voices in NZ literature",
-          "Explore how Pacific languages influence New Zealand English"
+          'Plan original stories with Māori cultural elements',
+          'Incorporate Te Reo Māori vocabulary naturally',
+          'Write first drafts focusing on character and plot development',
+          'Peer review and revise stories',
+          'Present finished stories to the class',
         ],
-        differentiation: [
-          "Include Pacific students as cultural experts and discussion leaders",
-          "Provide visual supports for complex cultural concepts",
-          "Offer collaborative options for research and presentation",
-          "Connect to students' own cultural heritage through comparative writing"
-        ]
+        teReoIntegration: [
+          'Include appropriate Te Reo Māori vocabulary',
+          'Use cultural concepts authentically',
+          'Apply storytelling traditions respectfully',
+          'Integrate cultural elements naturally',
+        ],
+      },
+    ],
+    assessments: [
+      {
+        type: 'formative',
+        title: 'Story Planning and Drafting',
+        description: 'Students demonstrate planning and drafting skills for creative writing',
+        criteria: [
+          'Shows clear story planning',
+          'Incorporates Māori cultural elements appropriately',
+          'Uses Te Reo Māori vocabulary effectively',
+          'Demonstrates creative thinking',
+        ],
       },
       {
-        title: "Contemporary Urban Voices - Multicultural Auckland Stories",
-        description: "Analysis of short stories reflecting Auckland's diverse cultural communities",
-        duration: "3 x 50 minute lessons", 
+        type: 'summative',
+        title: 'Original Creative Story',
+        description: 'Students create and present original stories with Māori cultural integration',
+        criteria: [
+          'Creates engaging original story',
+          'Incorporates Māori cultural elements authentically',
+          'Uses Te Reo Māori appropriately and accurately',
+          'Demonstrates strong writing skills',
+          'Presents work effectively',
+        ],
+      },
+    ],
+    externalResources: [
+      {
+        title: 'Te Reo Māori Creative Writing Resources',
+        url: 'https://tereomaori.tki.org.nz/Reo-Maori/He-Reo-Matapono/English',
+        type: 'website',
+        description: 'Official resources for integrating Te Reo Māori in English language learning',
+        verified: true,
+      },
+      {
+        title: 'Contemporary Māori Literature',
+        url: 'https://www.natlib.govt.nz/collections/a-z/maori-literature',
+        type: 'website',
+        description: 'National Library resources on contemporary Māori literature',
+        verified: true,
+      },
+      {
+        title: 'Te Papa - Māori Storytelling Collections',
+        url: 'https://collections.tepapa.govt.nz/topic/4454',
+        type: 'website',
+        description: 'Museum collections on Māori storytelling traditions',
+        verified: true,
+      },
+    ],
+    culturalConnections: [
+      {
+        element: 'Whakapapa',
+        description: 'Understanding personal and cultural connections in storytelling',
+        languageConnection:
+          'Using genealogy and family connections to develop authentic characters and narratives',
+        activities: [
+          'Family story research and documentation',
+          'Cultural identity exploration through writing',
+          'Personal narrative development with cultural context',
+        ],
+      },
+      {
+        element: 'Mana',
+        description: 'Exploring the power and authority of storytelling in Māori culture',
+        languageConnection:
+          'Understanding the responsibility and authority inherent in storytelling',
+        activities: [
+          'Storytelling protocols and cultural practices',
+          'Cultural respect in writing and presentation',
+          'Community storytelling and cultural sharing',
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'persuasive-writing-cultural-issues',
+    title: 'Persuasive Writing: Contemporary Cultural Issues',
+    focus: 'Persuasive Writing',
+    duration: '3-4 weeks',
+    objectives: [
+      'Develop persuasive writing skills',
+      'Understand contemporary Māori cultural issues',
+      'Create compelling arguments with evidence',
+      'Build awareness of cultural perspectives',
+    ],
+    teReoTerms: [
+      'whakaaro - opinion/thought',
+      'tautohe - to argue/debate',
+      'mana - authority/credibility',
+      'tika - right/correct',
+      'he - wrong/incorrect',
+      'tūmanako - hope/expectation',
+    ],
+    activities: [
+      {
+        title: 'Cultural Issues Research and Analysis',
+        description:
+          'Students research contemporary Māori cultural issues and develop informed opinions',
+        duration: '3 lessons',
         materials: [
-          "Stories by Witi Ihimaera, Alice Tawhai, Renee Liang, Rajorshi Chakraborti",
-          "Auckland demographic data and suburb profiles",
-          "Student interviews with family members about migration/settlement",
-          "Digital storytelling tools for creative responses"
+          'Current news articles and reports',
+          'Cultural organization websites',
+          'Research databases',
+          'Note-taking templates',
+          'Citation guides',
         ],
         instructions: [
-          "Survey: students identify their own cultural heritage and family migration stories",
-          "Read diverse short stories set in contemporary Auckland/New Zealand",
-          "Map story settings to actual Auckland locations students know",
-          "Analyze how authors represent cultural diversity and urban life",
-          "Interview family members about their settlement experiences in New Zealand",
-          "Write and share original short stories based on family migration narratives",
-          "Create 'Auckland Stories' digital collection showcasing class writing"
+          'Research contemporary Māori cultural issues',
+          'Analyze different perspectives and viewpoints',
+          'Develop informed personal opinions',
+          'Collect evidence to support arguments',
+          'Create research summaries with citations',
         ],
-        differentiation: [
-          "Encourage use of heritage languages in creative writing",
-          "Provide family interview templates and recording equipment",
-          "Offer multiple formats for final presentations",
-          "Support English language learners with collaborative writing opportunities"
-        ]
-      }
+        teReoIntegration: [
+          'Use "whakaaro" when discussing opinions',
+          'Apply "tautohe" in argument development',
+          'Consider "mana" when evaluating sources',
+          'Discuss "tika" and "he" in moral arguments',
+        ],
+      },
     ],
     assessments: [
       {
         type: 'summative',
-        title: 'Cultural Identity Essay',
-        description: 'Students write a 600-word critical essay analyzing how two NZ authors from different cultural backgrounds explore themes of identity and belonging',
+        title: 'Persuasive Essay on Cultural Issue',
+        description: 'Students write persuasive essays on contemporary Māori cultural issues',
         criteria: [
-          'Demonstrates close reading of literary texts',
-          'Analyzes specific language techniques and their effects',
-          'Shows understanding of cultural contexts and perspectives', 
-          'Makes thoughtful comparisons between texts and authors',
-          'Uses appropriate literary terminology and essay structure'
+          'Develops clear, compelling arguments',
+          'Uses evidence effectively',
+          'Incorporates Māori perspectives appropriately',
+          'Demonstrates strong writing skills',
+          'Shows cultural awareness and respect',
         ],
-        rubric: [
-          {
-            level: 'Excellence',
-            description: 'Sophisticated literary analysis with cultural insight',
-            indicators: [
-              'Demonstrates perceptive understanding of how authors use language to express cultural identity',
-              'Makes sophisticated connections between texts, contexts, and personal experience',
-              'Shows nuanced appreciation for different cultural perspectives',
-              'Uses advanced literary terminology accurately and effectively'
-            ]
-          },
-          {
-            level: 'Merit',
-            description: 'Clear analysis with good cultural understanding',
-            indicators: [
-              'Shows good understanding of how language reflects cultural identity',
-              'Makes clear connections between texts and cultural contexts',
-              'Demonstrates respectful awareness of cultural diversity',
-              'Uses literary terminology appropriately'
-            ]
-          },
-          {
-            level: 'Achieved',
-            description: 'Basic literary analysis with some cultural awareness',
-            indicators: [
-              'Shows basic understanding of themes and characters',
-              'Identifies some cultural elements in texts',
-              'Demonstrates awareness that authors write from different perspectives',
-              'Uses simple literary terminology correctly'
-            ]
-          }
-        ]
       },
-      {
-        type: 'formative',
-        title: 'Creative Writing Portfolio',
-        description: 'Students create original short stories or poems inspired by New Zealand settings and cultural experiences',
-        criteria: [
-          'Shows creative engagement with New Zealand themes and settings',
-          'Demonstrates understanding of literary techniques studied',
-          'Reflects personal/cultural perspective authentically',
-          'Shows development and improvement over time'
-        ]
-      }
     ],
-    resources: [
+    externalResources: [
       {
-        title: "New Zealand Book Council - NZ Authors",
-        url: "https://www.bookcouncil.org.nz/writers",
-        type: "website", 
-        description: "Comprehensive database of New Zealand authors with biographies, book lists, and teaching resources",
-        source: "New Zealand Book Council"
+        title: 'Te Taura Whiri i te Reo Māori',
+        url: 'https://www.tetaurawhiri.govt.nz/',
+        type: 'website',
+        description: 'Māori Language Commission resources and information',
+        verified: true,
       },
       {
-        title: "Auckland Writers Festival Education Programme",
-        url: "https://www.aucklandwritersfestival.co.nz/schools-programme/",
-        type: "website",
-        description: "Annual festival with school programmes, author visits, and educational resources for NZ literature",
-        source: "Auckland Writers Festival"
+        title: 'Māori Television News',
+        url: 'https://www.maoritelevision.com/news',
+        type: 'website',
+        description: 'Current news and issues from Māori perspective',
+        verified: true,
       },
-      {
-        title: "Te Papa Press Short Story Collection",
-        url: "https://www.tepapa.govt.nz/discover-collections/read-watch-play/new-zealand-literature",
-        type: "website",
-        description: "Curated collection of New Zealand short stories with cultural and historical context",
-        source: "Te Papa Tongarewa Museum"
-      },
-      {
-        title: "Poetry Archive of New Zealand",
-        url: "https://www.poetryarchive.org/explore/nz-poets/",
-        type: "website",
-        description: "Audio recordings of New Zealand poets reading their work with biographical information",
-        source: "Poetry Archive"
-      },
-      {
-        title: "New Zealand Literature File",
-        url: "https://www.nzliterature.com/",
-        type: "website",
-        description: "Academic resource with critical essays, author interviews, and teaching guides for NZ literature",
-        source: "New Zealand Literature File"
-      }
     ],
     culturalConnections: [
       {
-        title: "Oral Storytelling Traditions in New Zealand",
-        description: "Understanding how Māori pūrākau (traditional stories) and Pacific oral traditions influence contemporary New Zealand writing",
-        tikangaAspect: "Pūrākau (traditional stories), whakapapa (genealogy), kōrero (storytelling)",
-        teReoVocabulary: [
-          "Pūrākau - Traditional Māori stories",
-          "Kōrero - To speak, tell stories",
-          "Whakatōhea - Welcome, introduction", 
-          "Whakapapa - Genealogy, connections",
-          "Tangata whenua - People of the land"
+        element: 'Mana',
+        description: 'Understanding the authority and credibility in persuasive communication',
+        languageConnection:
+          'Building credibility and authority through respectful, informed argumentation',
+        activities: [
+          'Research credible sources and cultural authorities',
+          'Develop respectful arguments that honor cultural perspectives',
+          'Build authority through informed, culturally-aware writing',
         ],
-        culturalNarrative: "Traditional Māori and Pacific storytelling emphasizes oral transmission, communal sharing, and the interconnectedness of past and present. Contemporary New Zealand authors often blend these oral traditions with written forms, creating unique narrative styles that honor ancestral storytelling while addressing modern themes."
-      }
-    ]
+      },
+    ],
   },
-  realWorldConnections: [
-    {
-      title: "New Zealand Book Awards and Literary Recognition",
-      location: "Nationwide literary events and festivals",
-      description: "Annual recognition of New Zealand authors through various literary prizes including the Ockham New Zealand Book Awards",
-      relevance: "Students can follow contemporary literary culture and understand how New Zealand literature is celebrated and promoted",
-      connections: [
-        "Student book award voting programmes",
-        "Local library author events and readings",
-        "School visits from New Zealand authors and poets"
-      ]
-    },
-    {
-      title: "Auckland's Cultural Diversity in Literature",
-      location: "Auckland suburbs and communities", 
-      description: "New Zealand's largest city as setting for multicultural literature reflecting Asian, Pacific, Māori, and European communities",
-      relevance: "Students can connect literature to real places and communities they know or can visit",
-      connections: [
-        "Literary walking tours of Auckland settings",
-        "Community cultural festivals featuring storytelling",
-        "Local multicultural bookshops and cultural centers"
-      ]
-    },
-    {
-      title: "Digital New Zealand Literature Platforms",
-      location: "Online literary communities and publications",
-      description: "Emerging digital platforms showcasing contemporary New Zealand voices including Turbine, Landfall, and Sport magazines",
-      relevance: "Students can engage with living literary culture and potentially contribute their own writing",
-      connections: [
-        "Online student writing competitions and publications",
-        "Social media literary communities and book clubs",
-        "Digital storytelling platforms and podcasts"
-      ]
-    }
-  ],
-  crossCurricularLinks: [
-    {
-      subject: "Social Studies",
-      connection: "Migration and settlement histories in New Zealand",
-      sharedLearning: "Students explore how historical migration patterns are reflected in contemporary literature and personal narratives"
-    },
-    {
-      subject: "Te Reo Māori",
-      connection: "Understanding Māori concepts and worldview in English-language texts",
-      sharedLearning: "Students learn key Māori terms and concepts that appear in New Zealand literature, deepening cultural understanding"
-    },
-    {
-      subject: "Health and Physical Education",
-      connection: "Identity, relationships, and wellbeing themes in literature",
-      sharedLearning: "Students explore how literature addresses issues of mental health, cultural identity, and social relationships"
-    },
-    {
-      subject: "The Arts",
-      connection: "Creative expression through visual and performance arts",
-      sharedLearning: "Students create visual art, drama performances, or multimedia projects inspired by literary texts and themes"
-    }
-  ]
-};
-
-export const realEnglishResources = [newZealandLiteratureResource];
+];

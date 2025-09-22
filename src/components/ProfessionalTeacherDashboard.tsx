@@ -27,6 +27,7 @@ import {
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/DualRoleAuthProvider';
+import StudentEngagementTracker from './StudentEngagementTracker';
 import './ProfessionalTeacherDashboard.css';
 
 interface StudentProgress {
@@ -307,6 +308,13 @@ const ProfessionalTeacherDashboard: React.FC = () => {
         >
           <FileText />
           Resources
+        </button>
+        <button
+          className={`nav-tab ${activeTab === 'engagement' ? 'active' : ''}`}
+          onClick={() => setActiveTab('engagement')}
+        >
+          <Activity />
+          Engagement
         </button>
       </nav>
 
@@ -845,6 +853,17 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                 <ChevronRight />
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Engagement Tab */}
+        {activeTab === 'engagement' && (
+          <div className="engagement-content">
+            <div className="engagement-header">
+              <h2>Student Engagement Tracking</h2>
+              <p className="text-gray-600">Monitor participation, identify students who need support, and track class dynamics</p>
+            </div>
+            <StudentEngagementTracker />
           </div>
         )}
       </main>

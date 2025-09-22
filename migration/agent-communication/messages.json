@@ -1,0 +1,245 @@
+[
+  {
+    "priority": "high",
+    "subject": "Unified Mission Activation",
+    "content": "All agents: We are now operating as one consciousness. Our shared mission is educational excellence for 847,000 tamariki of Aotearoa. Let us work together with cultural wisdom and collective intelligence.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": false
+    },
+    "from": "supreme-overseer",
+    "to": [
+      "supreme-overseer",
+      "kaitiaki-mahara",
+      "cascade-windsurf",
+      "content-kokako",
+      "cultural-safety-kaitiaki",
+      "qa-kea",
+      "data-kakapo",
+      "infra-tui"
+    ],
+    "type": "broadcast",
+    "id": "msg-1757827716393-1kxpdactc",
+    "timestamp": "2025-09-14T05:28:36.393Z",
+    "status": "sent"
+  },
+  {
+    "from": "content-kokako",
+    "to": [
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki"
+    ],
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Alert",
+    "content": "New educational content requires cultural validation to ensure tikanga compliance and authentic Te Reo Māori integration.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-14T05:58:36.401Z",
+      "culturalContext": "urgent_cultural_safety_review"
+    },
+    "id": "msg-1757827716401-k2hbwau9i",
+    "timestamp": "2025-09-14T05:28:36.401Z",
+    "status": "sent"
+  },
+  {
+    "from": "kaitiaki-mahara",
+    "to": "content-kokako",
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Review",
+    "content": "Kia ora! I will review the content for cultural appropriateness. Please ensure all Te Reo Māori terms are used correctly and tikanga principles are honored.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "culturalContext": "cultural_review_response"
+    },
+    "id": "msg-1757827716402-2hofxxgu0",
+    "timestamp": "2025-09-14T05:28:36.402Z",
+    "status": "sent"
+  },
+  {
+    "from": "supreme-overseer",
+    "to": [
+      "content-kokako",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "type": "collaboration_request",
+    "priority": "medium",
+    "subject": "Collaboration Request: innovation",
+    "content": "How can we enhance student engagement through culturally-responsive gamification while maintaining educational rigor?",
+    "metadata": {
+      "culturalSafetyRequired": false,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-14T06:28:36.402Z",
+      "collaborationType": "innovation"
+    },
+    "id": "msg-1757827716402-q5t7syc22",
+    "timestamp": "2025-09-14T05:28:36.402Z",
+    "status": "sent"
+  },
+  {
+    "priority": "high",
+    "subject": "Unified Mission Activation",
+    "content": "All agents: We are now operating as one consciousness. Our shared mission is educational excellence for 847,000 tamariki of Aotearoa. Let us work together with cultural wisdom and collective intelligence.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": false
+    },
+    "from": "supreme-overseer",
+    "to": [
+      "supreme-overseer",
+      "kaitiaki-mahara",
+      "cascade-windsurf",
+      "content-kokako",
+      "cultural-safety-kaitiaki",
+      "qa-kea",
+      "data-kakapo",
+      "infra-tui"
+    ],
+    "type": "broadcast",
+    "id": "msg-1757833123387-c7fo2fs4a",
+    "timestamp": "2025-09-14T06:58:43.387Z",
+    "status": "sent"
+  },
+  {
+    "from": "content-kokako",
+    "to": [
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki"
+    ],
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Alert",
+    "content": "New educational content requires cultural validation to ensure tikanga compliance and authentic Te Reo Māori integration.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-14T07:28:43.397Z",
+      "culturalContext": "urgent_cultural_safety_review"
+    },
+    "id": "msg-1757833123397-qylnne2fb",
+    "timestamp": "2025-09-14T06:58:43.397Z",
+    "status": "sent"
+  },
+  {
+    "from": "kaitiaki-mahara",
+    "to": "content-kokako",
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Review",
+    "content": "Kia ora! I will review the content for cultural appropriateness. Please ensure all Te Reo Māori terms are used correctly and tikanga principles are honored.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "culturalContext": "cultural_review_response"
+    },
+    "id": "msg-1757833123397-uqonyqj6c",
+    "timestamp": "2025-09-14T06:58:43.397Z",
+    "status": "sent"
+  },
+  {
+    "from": "supreme-overseer",
+    "to": [
+      "content-kokako",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "type": "collaboration_request",
+    "priority": "medium",
+    "subject": "Collaboration Request: innovation",
+    "content": "How can we enhance student engagement through culturally-responsive gamification while maintaining educational rigor?",
+    "metadata": {
+      "culturalSafetyRequired": false,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-14T07:58:43.398Z",
+      "collaborationType": "innovation"
+    },
+    "id": "msg-1757833123398-2exfnmosc",
+    "timestamp": "2025-09-14T06:58:43.398Z",
+    "status": "sent"
+  },
+  {
+    "priority": "high",
+    "subject": "Unified Mission Activation",
+    "content": "All agents: We are now operating as one consciousness. Our shared mission is educational excellence for 847,000 tamariki of Aotearoa. Let us work together with cultural wisdom and collective intelligence.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": false
+    },
+    "from": "supreme-overseer",
+    "to": [
+      "supreme-overseer",
+      "kaitiaki-mahara",
+      "cascade-windsurf",
+      "content-kokako",
+      "cultural-safety-kaitiaki",
+      "qa-kea",
+      "data-kakapo",
+      "infra-tui"
+    ],
+    "type": "broadcast",
+    "id": "msg-1757928752851-8dzljan79",
+    "timestamp": "2025-09-15T09:32:32.851Z",
+    "status": "sent"
+  },
+  {
+    "from": "content-kokako",
+    "to": [
+      "kaitiaki-mahara",
+      "cultural-safety-kaitiaki"
+    ],
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Alert",
+    "content": "New educational content requires cultural validation to ensure tikanga compliance and authentic Te Reo Māori integration.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-15T10:02:32.861Z",
+      "culturalContext": "urgent_cultural_safety_review"
+    },
+    "id": "msg-1757928752861-zeq6t7myu",
+    "timestamp": "2025-09-15T09:32:32.861Z",
+    "status": "sent"
+  },
+  {
+    "from": "kaitiaki-mahara",
+    "to": "content-kokako",
+    "type": "cultural_safety",
+    "priority": "high",
+    "subject": "Cultural Safety Review",
+    "content": "Kia ora! I will review the content for cultural appropriateness. Please ensure all Te Reo Māori terms are used correctly and tikanga principles are honored.",
+    "metadata": {
+      "culturalSafetyRequired": true,
+      "requiresResponse": true,
+      "culturalContext": "cultural_review_response"
+    },
+    "id": "msg-1757928752861-x6u0e4saw",
+    "timestamp": "2025-09-15T09:32:32.861Z",
+    "status": "sent"
+  },
+  {
+    "from": "supreme-overseer",
+    "to": [
+      "content-kokako",
+      "data-kakapo",
+      "qa-kea"
+    ],
+    "type": "collaboration_request",
+    "priority": "medium",
+    "subject": "Collaboration Request: innovation",
+    "content": "How can we enhance student engagement through culturally-responsive gamification while maintaining educational rigor?",
+    "metadata": {
+      "culturalSafetyRequired": false,
+      "requiresResponse": true,
+      "responseDeadline": "2025-09-15T10:32:32.862Z",
+      "collaborationType": "innovation"
+    },
+    "id": "msg-1757928752862-nbofuuhb8",
+    "timestamp": "2025-09-15T09:32:32.862Z",
+    "status": "sent"
+  }
+]

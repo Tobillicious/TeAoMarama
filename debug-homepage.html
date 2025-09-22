@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Homepage</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .debug-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { background-color: #d4edda; }
+        .error { background-color: #f8d7da; }
+        .info { background-color: #d1ecf1; }
+        pre { background: #f8f9fa; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Homepage Debug Tool</h1>
+    
+    <div class="debug-section info">
+        <h2>Current Homepage Content</h2>
+        <div id="homepage-content">Loading...</div>
+    </div>
+    
+    <div class="debug-section info">
+        <h2>Content Analysis</h2>
+        <div id="content-analysis">Analyzing...</div>
+    </div>
+    
+    <div class="debug-section info">
+        <h2>Component Detection</h2>
+        <div id="component-detection">Detecting...</div>
+    </div>
+
+    <script>
+        async function fetchHomepage() {
+            try {
+                const response = await fetch('http://localhost:3000/');
+                const html = await response.text();
+                
+                document.getElementById('homepage-content').innerHTML = 
+                    `<pre>${html.substring(0, 2000)}...</pre>`;
+                
+                // Analyze content
+                const analysis = analyzeContent(html);
+                document.getElementById('content-analysis').innerHTML = analysis;
+                
+                // Detect components
+                const components = detectComponents(html);
+                document.getElementById('component-detection').innerHTML = components;
+                
+            } catch (error) {
+                document.getElementById('homepage-content').innerHTML = 
+                    `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+        
+        function analyzeContent(html) {
+            const checks = [
+                { name: 'Contains DOCTYPE', test: html.includes('<!DOCTYPE html>') },
+                { name: 'Contains React', test: html.includes('react') || html.includes('React') },
+                { name: 'Contains Vite', test: html.includes('vite') },
+                { name: 'Contains Te Ao Mārama', test: html.includes('Te Ao Mārama') },
+                { name: 'Contains Educational Excellence', test: html.includes('Educational Excellence') },
+                { name: 'Contains Active Teachers', test: html.includes('Active Teachers') },
+                { name: 'Contains HumanFocusedHomepage', test: html.includes('HumanFocusedHomepage') },
+                { name: 'Contains Navigation', test: html.includes('Navigation') },
+                { name: 'Contains Error Boundary', test: html.includes('ErrorBoundary') }
+            ];
+            
+            return checks.map(check => 
+                `<div class="${check.test ? 'success' : 'error'}">
+                    ${check.test ? '✅' : '❌'} ${check.name}
+                </div>`
+            ).join('');
+        }
+        
+        function detectComponents(html) {
+            const components = [
+                'HumanFocusedHomepage',
+                'TeacherSignupFlow', 
+                'RealLessonViewer',
+                'FunctionalResourceBrowser',
+                'Navigation',
+                'ErrorBoundary'
+            ];
+            
+            return components.map(component => {
+                const found = html.includes(component);
+                return `<div class="${found ? 'success' : 'error'}">
+                    ${found ? '✅' : '❌'} ${component}
+                </div>`;
+            }).join('');
+        }
+        
+        // Run analysis
+        fetchHomepage();
+    </script>
+</body>
+</html>

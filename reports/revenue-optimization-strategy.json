@@ -1,0 +1,80 @@
+{
+  "currentMetrics": {
+    "conversionRate": 8.3,
+    "averageOrderValue": 38.4,
+    "revenuePerVisitor": 3.19,
+    "bounceRate": 45,
+    "timeOnPage": 180,
+    "clickThroughRate": 12.5
+  },
+  "targets": {
+    "conversionRate": 12,
+    "averageOrderValue": 45,
+    "revenuePerVisitor": 5.4,
+    "monthlyRevenue": 100000,
+    "subscribers": 5000
+  },
+  "strategies": [
+    {
+      "name": "Pricing Optimization",
+      "description": "Test different pricing tiers and positioning",
+      "impact": "high",
+      "implementation": "A/B test pricing page layouts and value propositions"
+    },
+    {
+      "name": "Upselling Strategy",
+      "description": "Implement upsell flows for higher-tier subscriptions",
+      "impact": "high",
+      "implementation": "Add upgrade prompts in teacher dashboard"
+    },
+    {
+      "name": "Referral Program",
+      "description": "Launch teacher referral program with incentives",
+      "impact": "medium",
+      "implementation": "Create referral tracking and reward system"
+    },
+    {
+      "name": "Retention Campaigns",
+      "description": "Reduce churn with targeted retention campaigns",
+      "impact": "high",
+      "implementation": "Email sequences for at-risk subscribers"
+    },
+    {
+      "name": "Enterprise Sales",
+      "description": "Target schools and districts for bulk subscriptions",
+      "impact": "high",
+      "implementation": "Create enterprise sales funnel and pricing"
+    }
+  ],
+  "experiments": [
+    {
+      "name": "Free Trial Length",
+      "description": "Test 7-day vs 14-day vs 30-day free trials",
+      "hypothesis": "Longer trials increase conversion but may increase churn",
+      "metrics": [
+        "conversion_rate",
+        "churn_rate",
+        "lifetime_value"
+      ]
+    },
+    {
+      "name": "Pricing Anchoring",
+      "description": "Test showing highest price first vs lowest price first",
+      "hypothesis": "Anchoring with highest price increases perceived value",
+      "metrics": [
+        "conversion_rate",
+        "average_order_value"
+      ]
+    },
+    {
+      "name": "Payment Frequency",
+      "description": "Test monthly vs annual vs term-based billing",
+      "hypothesis": "Annual billing reduces churn and increases LTV",
+      "metrics": [
+        "churn_rate",
+        "lifetime_value",
+        "cash_flow"
+      ]
+    }
+  ]
+}

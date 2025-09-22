@@ -212,17 +212,20 @@ const TeacherDashboard: React.FC = () => {
             <div className="quick-actions">
               <h3>Quick Actions</h3>
               <div className="action-buttons">
-                <button className="action-btn" onClick={() => navigate('/year8-writing')}>
-                  Year 8 Writing Units
+                <button className="action-btn primary" onClick={() => navigate('/resources')}>
+                  📚 Browse All Resources
                 </button>
-                <button className="action-btn" onClick={() => navigate('/year8-reading')}>
-                  Year 8 Reading Units
+                <button className="action-btn" onClick={() => navigate('/year8-social-studies')}>
+                  🏛️ Year 8 Social Studies  
                 </button>
-                <button className="action-btn" onClick={() => navigate('/year8-critical-literacy')}>
-                  Critical Literacy
+                <button className="action-btn" onClick={() => navigate('/teacher-demo')}>
+                  🎬 Interactive Lessons
                 </button>
-                <button className="action-btn" onClick={() => navigate('/assessment-framework')}>
-                  Assessment Tools
+                <button className="action-btn" onClick={() => navigate('/graphrag')}>
+                  🧠 AI Knowledge System
+                </button>
+                <button className="action-btn" onClick={() => navigate('/glm-symphony')}>
+                  🎼 AI Teaching Assistant
                 </button>
               </div>
             </div>

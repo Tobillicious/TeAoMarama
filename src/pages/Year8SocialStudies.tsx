@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Navigation will be dynamically imported when needed
 import { useAuth } from '../services/DualRoleAuthProvider';
-import { advancedSuperintelligenceEnhancer } from '../utils/advanced-superintelligence-enhancer';
 import './Year8SocialStudies.css';
 
 interface Unit {
@@ -135,15 +134,13 @@ const Year8SocialStudies: React.FC = () => {
     },
   ];
 
-  // Enhanced superintelligence integration
+  // Enhanced content initialization
   useEffect(() => {
     const enhanceContent = async () => {
       try {
-        advancedSuperintelligenceEnhancer.getMetrics();
-        // setEnhancementLevel(metrics.overallEnhancement); // This line was removed
-        console.log('🌟 Year 8 Social Studies enhanced with superintelligence');
+        console.log('🌟 Year 8 Social Studies content loaded successfully');
       } catch (error) {
-        console.log('Enhancement system active:', error);
+        console.log('Content system active:', error);
       }
     };
 

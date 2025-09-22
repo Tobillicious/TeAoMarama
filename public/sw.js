@@ -6,8 +6,8 @@
 const CACHE_NAME = 'teao-marama-v1';
 const STATIC_CACHE = 'static-v1';
 
-// Files to cache
-const STATIC_FILES = ['/', '/index.html', '/manifest.json', '/favicon.ico'];
+// Files to cache - only cache files that actually exist
+const STATIC_FILES = ['/'];
 
 // Install event
 self.addEventListener('install', (event) => {
@@ -17,7 +17,15 @@ self.addEventListener('install', (event) => {
       .open(STATIC_CACHE)
       .then((cache) => {
         console.log('📦 Caching static files');
-        return cache.addAll(STATIC_FILES);
+        // Cache files individually to handle failures gracefully
+        return Promise.allSettled(
+          STATIC_FILES.map((file) =>
+            cache.add(file).catch((err) => {
+              console.warn(`Failed to cache ${file}:`, err);
+              return null;
+            }),
+          ),
+        );
       })
       .then(() => {
         console.log('✅ Service Worker installed');

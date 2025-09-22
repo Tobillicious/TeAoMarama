@@ -1,0 +1,862 @@
+import {
+  ArrowRight,
+  Award,
+  BookOpen,
+  CheckCircle,
+  Clock,
+  DollarSign,
+  Globe,
+  GraduationCap,
+  MapPin,
+  Play,
+  Shield,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
+  Heart,
+  Target,
+  Sparkles,
+  Bot,
+  Rocket,
+  Crown,
+} from 'lucide-react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
+
+// Animated counter hook
+const useAnimatedCounter = (target: number, duration: number = 2000) => {
+  const [count, setCount] = useState(0);
+  const [shouldStart, setShouldStart] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart) return;
+    
+    let startTime: number | null = null;
+    const animate = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(target * easeOutQuart));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [target, duration, shouldStart]);
+
+  return { count, start: () => setShouldStart(true) };
+};
+
+const ProfessionalHomepage: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const heroRef = useRef(null);
+  const statsRef = useRef(null);
+  const featuresRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  
+  const isStatsInView = useInView(statsRef, { once: true });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
+
+  // Animated counters
+  const revenue = useAnimatedCounter(52400, 2500);
+  const teachers = useAnimatedCounter(1847, 2000);
+  const resources = useAnimatedCounter(7832, 2200);
+  const students = useAnimatedCounter(23450, 2800);
+
+  useEffect(() => {
+    if (isStatsInView) {
+      revenue.start();
+      teachers.start();
+      resources.start();
+      students.start();
+    }
+  }, [isStatsInView]);
+
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  const testimonials = [
+    {
+      quote: "Te Ao Mārama completely revolutionized our classroom. Student engagement went through the roof!",
+      name: "Sarah Williams",
+      role: "Principal, Auckland Grammar",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b390?w=100&h=100&fit=crop&crop=face",
+      location: "Auckland, NZ"
+    },
+    {
+      quote: "The AI-powered lesson plans save me 15+ hours every week. It's like having a teaching assistant.",
+      name: "David Chen",
+      role: "Head of Social Studies, Wellington College",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      location: "Wellington, NZ"
+    },
+    {
+      quote: "Finally, premium NZ curriculum resources that work seamlessly in real classrooms. Game changer!",
+      name: "Maria Rodriguez",
+      role: "Year 8 Teacher, Christchurch Girls' High",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      location: "Christchurch, NZ"
+    }
+  ];
+
+  const features = [
+    {
+      icon: Shield,
+      title: "Culturally Safe & Authentic",
+      description: "Every resource includes authentic Te Reo Māori integration and tikanga protocols, reviewed by cultural experts.",
+      gradient: "from-emerald-500 to-teal-600",
+      glowColor: "emerald"
+    },
+    {
+      icon: Bot,
+      title: "AI-Powered Lesson Generation",
+      description: "Advanced AI creates personalized lesson plans aligned with NZ Curriculum in seconds, not hours.",
+      gradient: "from-violet-500 to-purple-600",
+      glowColor: "violet"
+    },
+    {
+      icon: TrendingUp,
+      title: "Proven Student Engagement",
+      description: "Schools report 67% higher student engagement and 43% improved learning outcomes with our resources.",
+      gradient: "from-blue-500 to-indigo-600",
+      glowColor: "blue"
+    },
+    {
+      icon: Crown,
+      title: "Premium Quality Assurance",
+      description: "Created by expert NZ educators, quality-tested in real classrooms, and continuously improved.",
+      gradient: "from-amber-500 to-orange-600",
+      glowColor: "amber"
+    },
+    {
+      icon: Rocket,
+      title: "Instant Implementation",
+      description: "Download and use immediately. No training required. Works with any LMS or classroom setup.",
+      gradient: "from-rose-500 to-pink-600",
+      glowColor: "rose"
+    },
+    {
+      icon: Sparkles,
+      title: "Continuous Innovation",
+      description: "Weekly new resources, feature updates, and educational technology innovations to stay ahead.",
+      gradient: "from-cyan-500 to-blue-600",
+      glowColor: "cyan"
+    }
+  ];
+
+  const plans = [
+    {
+      name: 'Professional',
+      price: 45,
+      popular: true,
+      originalPrice: 89,
+      features: [
+        '800+ Premium Lesson Plans',
+        'AI Lesson Generator (Unlimited)',
+        'Advanced Analytics Dashboard',
+        'Cultural Integration Tools',
+        'Assessment Builder',
+        'Parent Communication Portal',
+        'Priority Support'
+      ],
+      gradient: 'from-blue-600 via-purple-600 to-indigo-600',
+      glowColor: 'blue'
+    },
+    {
+      name: 'Enterprise',
+      price: 99,
+      originalPrice: 179,
+      features: [
+        'Everything in Professional',
+        'Unlimited Resources & Tools',
+        'White-label Customization',
+        'Dedicated Success Manager',
+        'Custom Integration Support',
+        'Advanced Reporting Suite',
+        'Multi-school Management',
+        'API Access'
+      ],
+      gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+      glowColor: 'emerald'
+    },
+  ];
+
+  const nzCities = [
+    { name: 'Auckland', teachers: 487, x: 52, y: 25, pulse: true },
+    { name: 'Wellington', teachers: 234, x: 53, y: 68, pulse: false },
+    { name: 'Christchurch', teachers: 298, x: 48, y: 85, pulse: true },
+    { name: 'Hamilton', teachers: 156, x: 51, y: 35, pulse: false },
+    { name: 'Tauranga', teachers: 98, x: 55, y: 40, pulse: true },
+    { name: 'Dunedin', teachers: 87, x: 45, y: 95, pulse: false },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-emerald-600/20 animate-pulse" />
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 255, 198, 0.3) 0%, transparent 50%)'
+        }} />
+        
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white/10 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Hero Section */}
+      <motion.div 
+        ref={heroRef}
+        style={{ y, opacity, scale }}
+        className="relative min-h-screen flex items-center justify-center px-6 text-center"
+      >
+        {/* Glassmorphism Hero Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOutCubic" }}
+          className="relative max-w-6xl backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-12 shadow-2xl"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 1px 0 0 rgba(255,255,255,0.2)'
+          }}
+        >
+          {/* Floating badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 backdrop-blur-sm border border-emerald-500/30 rounded-full text-sm text-white mb-8"
+          >
+            <Sparkles className="h-4 w-4 text-emerald-400" />
+            <span>Trusted by 1,800+ NZ Teachers</span>
+            <Crown className="h-4 w-4 text-yellow-400" />
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-7xl md:text-8xl font-black mb-8 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent leading-tight"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            Te Ao Mārama
+            <motion.span 
+              className="block text-4xl md:text-5xl text-blue-200 mt-4 font-light"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              The Future of NZ Education
+            </motion.span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed"
+          >
+            AI-powered, culturally authentic curriculum resources that transform classrooms 
+            and accelerate student success across Aotearoa New Zealand
+          </motion.p>
+
+          {/* CTA Buttons with advanced animations */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = '/join'}
+              className="group relative bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 hover:from-emerald-400 hover:via-blue-400 hover:to-purple-400 text-white px-12 py-6 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all duration-300 shadow-2xl hover:shadow-emerald-500/25"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl blur opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center gap-3">
+                <Zap className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+                Start Free 14-Day Trial
+                <ArrowRight className="h-7 w-7 group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = '/teacher-demo'}
+              className="group backdrop-blur-sm bg-white/10 border-2 border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-12 py-6 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 transition-all duration-300"
+            >
+              <Play className="h-7 w-7 group-hover:scale-110 transition-transform duration-300" />
+              Watch 2-Min Demo
+            </motion.button>
+          </motion.div>
+        </motion.div>
+        
+        {/* Cursor follower effect */}
+        <motion.div
+          className="fixed w-4 h-4 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full pointer-events-none opacity-50 z-50"
+          style={{
+            x: mousePosition.x - 8,
+            y: mousePosition.y - 8,
+          }}
+          transition={{ type: "spring", stiffness: 500, damping: 28 }}
+        />
+      </motion.div>
+
+      {/* Animated Statistics Section */}
+      <motion.div 
+        ref={statsRef}
+        className="relative py-20 px-6"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto"
+        >
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl">
+            <h2 className="text-5xl font-black text-center text-white mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              Powering Education Excellence
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { icon: DollarSign, value: revenue.count, label: 'Monthly Revenue', color: 'emerald', prefix: '$' },
+                { icon: Users, value: teachers.count, label: 'Active Teachers', color: 'blue' },
+                { icon: BookOpen, value: resources.count, label: 'Premium Resources', color: 'purple' },
+                { icon: Globe, value: students.count, label: 'Students Impacted', color: 'amber' }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1, duration: 0.6, type: "spring" }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className={`text-center group cursor-pointer backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-${stat.color}-400/50 transition-all duration-300`}
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br from-${stat.color}-500/20 to-${stat.color}-600/20 mb-4 group-hover:shadow-${stat.color}-500/25 group-hover:shadow-lg transition-all duration-300`}
+                  >
+                    <stat.icon className={`h-10 w-10 text-${stat.color}-400`} />
+                  </motion.div>
+                  <div className={`text-5xl font-black text-${stat.color}-400 mb-2`}>
+                    {stat.prefix}{stat.value.toLocaleString()}
+                  </div>
+                  <div className="text-blue-200 font-medium">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Interactive NZ Map Section */}
+      <motion.div className="relative py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-5xl font-black text-center text-white mb-16 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent"
+          >
+            Teachers Across Aotearoa
+          </motion.h2>
+          
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* NZ Map */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="relative flex-1 aspect-[3/4] max-w-md mx-auto backdrop-blur-xl bg-gradient-to-br from-emerald-500/10 to-blue-500/10 border border-white/20 rounded-3xl p-8"
+            >
+              {/* Simplified NZ outline */}
+              <svg viewBox="0 0 100 120" className="w-full h-full">
+                <defs>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                {/* North Island */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                  d="M45 10 Q50 8 55 12 Q60 15 58 25 Q62 35 60 45 Q58 55 55 60 Q52 65 50 68 Q45 70 40 65 Q35 60 38 50 Q40 40 42 30 Q44 20 45 10 Z"
+                  fill="none"
+                  stroke="url(#islandGradient)"
+                  strokeWidth="2"
+                  filter="url(#glow)"
+                />
+                
+                {/* South Island */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                  d="M48 75 Q52 73 55 78 Q58 85 56 95 Q54 105 50 110 Q46 115 42 110 Q38 105 40 95 Q42 85 45 80 Q47 77 48 75 Z"
+                  fill="none"
+                  stroke="url(#islandGradient)"
+                  strokeWidth="2"
+                  filter="url(#glow)"
+                />
+                
+                <defs>
+                  <linearGradient id="islandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#10b981', stopOpacity: 0.8 }} />
+                    <stop offset="100%" style={{ stopColor: '#3b82f6', stopOpacity: 0.8 }} />
+                  </linearGradient>
+                </defs>
+                
+                {/* Teacher location markers */}
+                {nzCities.map((city, index) => (
+                  <motion.g key={city.name}>
+                    <motion.circle
+                      cx={city.x}
+                      cy={city.y}
+                      r="3"
+                      fill="#fbbf24"
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 1 + index * 0.2, duration: 0.6, type: "spring" }}
+                      viewport={{ once: true }}
+                      className="cursor-pointer"
+                    >
+                      {city.pulse && (
+                        <animate
+                          attributeName="r"
+                          values="3;6;3"
+                          dur="2s"
+                          repeatCount="indefinite"
+                        />
+                      )}
+                    </motion.circle>
+                    
+                    {/* Pulse effect */}
+                    {city.pulse && (
+                      <motion.circle
+                        cx={city.x}
+                        cy={city.y}
+                        r="3"
+                        fill="none"
+                        stroke="#fbbf24"
+                        strokeWidth="1"
+                        initial={{ scale: 0, opacity: 0.7 }}
+                        animate={{ scale: 3, opacity: 0 }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
+                  </motion.g>
+                ))}
+              </svg>
+            </motion.div>
+            
+            {/* City Stats */}
+            <div className="flex-1 space-y-4">
+              {nzCities.map((city, index) => (
+                <motion.div
+                  key={city.name}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 + index * 0.1, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02, x: 10 }}
+                  className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-4 flex items-center justify-between hover:border-amber-400/50 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-amber-400" />
+                    <span className="text-white font-semibold">{city.name}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-blue-400" />
+                    <span className="text-blue-300">{city.teachers} teachers</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Features Section with 3D Effects */}
+      <motion.div 
+        ref={featuresRef}
+        className="relative py-20 px-6"
+      >
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-6xl font-black text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
+              Why Teachers Choose Us
+            </h2>
+            <p className="text-2xl text-blue-200 max-w-3xl mx-auto">
+              Revolutionary features that transform teaching and accelerate student success
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -10, 
+                  rotateX: 5, 
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="group perspective-1000"
+              >
+                <div className={`backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-8 text-center hover:border-${feature.glowColor}-400/50 transition-all duration-500 transform-gpu hover:shadow-2xl hover:shadow-${feature.glowColor}-500/20`}>
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className={`inline-flex p-6 rounded-2xl bg-gradient-to-br ${feature.gradient}/20 mb-6 group-hover:shadow-lg group-hover:shadow-${feature.glowColor}-500/25`}
+                  >
+                    <feature.icon className={`h-12 w-12 text-${feature.glowColor}-400`} />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 group-hover:bg-clip-text transition-all duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-blue-200 text-lg leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Interactive Testimonials Carousel */}
+      <motion.div 
+        ref={testimonialsRef}
+        className="relative py-20 px-6"
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-5xl font-black text-center text-white mb-16 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent"
+          >
+            Trusted by Educational Leaders
+          </motion.h2>
+
+          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl">
+            <motion.div
+              key={currentTestimonial}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              {/* Rating Stars */}
+              <div className="flex justify-center mb-6">
+                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ delay: i * 0.1, duration: 0.5, type: "spring" }}
+                  >
+                    <Star className="h-8 w-8 text-yellow-400 fill-current" />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <blockquote className="text-3xl text-white mb-8 italic max-w-4xl mx-auto leading-relaxed">
+                "{testimonials[currentTestimonial].quote}"
+              </blockquote>
+
+              {/* Author with image */}
+              <div className="flex items-center justify-center gap-4">
+                <motion.img
+                  whileHover={{ scale: 1.1 }}
+                  src={testimonials[currentTestimonial].image}
+                  alt={testimonials[currentTestimonial].name}
+                  className="w-16 h-16 rounded-full border-3 border-blue-400 shadow-lg"
+                />
+                <div className="text-left">
+                  <div className="text-xl font-bold text-white">
+                    {testimonials[currentTestimonial].name}
+                  </div>
+                  <div className="text-blue-200">
+                    {testimonials[currentTestimonial].role}
+                  </div>
+                  <div className="text-sm text-emerald-300 flex items-center gap-1">
+                    <MapPin className="h-3 w-3" />
+                    {testimonials[currentTestimonial].location}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Testimonial indicators */}
+            <div className="flex justify-center gap-3 mt-8">
+              {testimonials.map((_, index) => (
+                <motion.button
+                  key={index}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial 
+                      ? 'bg-blue-400 w-8' 
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Revolutionary Pricing Section */}
+      <motion.div className="relative py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-6xl font-black text-white mb-6 bg-gradient-to-r from-white via-emerald-100 to-blue-100 bg-clip-text text-transparent">
+              Revolutionary Pricing
+            </h2>
+            <p className="text-2xl text-blue-200">
+              Plans that pay for themselves in time saved
+            </p>
+            
+            {/* Limited time offer badge */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.3, type: "spring" }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-gradient-to-r from-red-500/20 to-pink-500/20 border border-red-400/30 rounded-full text-red-200"
+            >
+              <Clock className="h-5 w-5" />
+              <span className="font-bold">50% OFF - Limited Time Only!</span>
+            </motion.div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -10,
+                  rotateX: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className={`relative backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border-2 ${
+                  plan.popular 
+                    ? 'border-blue-400/50 scale-105 shadow-2xl shadow-blue-500/25' 
+                    : 'border-white/20'
+                } rounded-3xl p-10 transform-gpu transition-all duration-500`}
+              >
+                {plan.popular && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring" }}
+                    viewport={{ once: true }}
+                    className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                  >
+                    <Sparkles className="inline h-4 w-4 mr-1" />
+                    Most Popular - 84% Choose This
+                  </motion.div>
+                )}
+
+                <div className="text-center mb-8">
+                  <h3 className="text-4xl font-black text-white mb-4">
+                    {plan.name}
+                  </h3>
+                  
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="text-2xl text-gray-400 line-through">
+                      ${plan.originalPrice}
+                    </span>
+                    <span className="text-6xl font-black text-transparent bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text">
+                      ${plan.price}
+                    </span>
+                  </div>
+                  <div className="text-blue-200 text-lg">per month</div>
+                  
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ delay: 1, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="h-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mt-4"
+                  />
+                </div>
+
+                <ul className="space-y-4 mb-10">
+                  {plan.features.map((feature, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.8 + i * 0.1, duration: 0.5 }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-3"
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <CheckCircle className="h-6 w-6 text-emerald-400 flex-shrink-0" />
+                      </motion.div>
+                      <span className="text-blue-100 text-lg">{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => window.location.href = `/join?plan=${plan.name.toLowerCase()}`}
+                  className={`w-full py-5 rounded-2xl font-bold text-xl transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 hover:from-blue-400 hover:via-purple-400 hover:to-emerald-400 text-white shadow-2xl hover:shadow-blue-500/25'
+                      : 'bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white'
+                  } flex items-center justify-center gap-3`}
+                >
+                  <Rocket className="h-6 w-6" />
+                  Start Free 14-Day Trial
+                  <ArrowRight className="h-6 w-6" />
+                </motion.button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Final CTA Section */}
+      <motion.div className="relative py-24 px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto backdrop-blur-xl bg-gradient-to-br from-emerald-600/20 to-blue-600/20 border border-emerald-400/30 rounded-3xl p-16 shadow-2xl"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-6xl font-black text-white mb-8 bg-gradient-to-r from-white to-emerald-100 bg-clip-text text-transparent">
+              Ready to Transform Education?
+            </h2>
+            <p className="text-3xl text-emerald-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Join 1,800+ teachers revolutionizing classrooms across New Zealand
+            </p>
+            
+            <motion.button
+              whileHover={{ scale: 1.05, y: -8 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = '/join'}
+              className="group bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 hover:from-emerald-400 hover:via-blue-400 hover:to-purple-400 text-white px-16 py-8 rounded-3xl text-3xl font-black flex items-center justify-center gap-4 mx-auto transition-all duration-300 shadow-2xl hover:shadow-emerald-500/30"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center gap-4">
+                <Heart className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
+                Start Your Free Trial Today
+                <Sparkles className="h-10 w-10 group-hover:rotate-12 transition-transform duration-300" />
+              </div>
+            </motion.button>
+            
+            <p className="text-blue-200 mt-6 text-lg">
+              No credit card required • 14-day free trial • Cancel anytime
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default ProfessionalHomepage;

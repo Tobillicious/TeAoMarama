@@ -1,0 +1,539 @@
+{
+  "totalEntries": 15,
+  "entriesByCategory": {
+    "cultural": 5,
+    "pedagogical": 5,
+    "collaborative": 3,
+    "technical": 2
+  },
+  "entriesByAgent": {
+    "kaitiaki-mahara": 5,
+    "content-kokako": 5,
+    "supreme-overseer": 3,
+    "cascade-windsurf": 2
+  },
+  "averageConfidence": 90.4,
+  "averageCulturalSafety": 70,
+  "averageQuality": 88.75,
+  "mostAccessedEntries": [
+    {
+      "id": "knowledge-1757827716388-4xdvg7j7g",
+      "title": "Te Ao Māori Educational Principles",
+      "content": "Te Ao Māori (the Māori world view) emphasizes the interconnectedness of all things, the importance of relationships (whanaungatanga), and the responsibility of guardianship (kaitiakitanga). In education, this means creating learning environments that honor these principles.",
+      "category": "cultural",
+      "tags": [
+        "te-ao-māori",
+        "tikanga",
+        "whanaungatanga",
+        "kaitiakitanga",
+        "education"
+      ],
+      "sourceAgent": "kaitiaki-mahara",
+      "contributors": [
+        "kaitiaki-mahara"
+      ],
+      "confidence": 95,
+      "culturalValidation": {
+        "validated": true,
+        "culturalSafetyScore": 70,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 2,
+        "lastAccessed": "2025-09-14T06:58:43.392Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.388Z",
+      "updatedAt": "2025-09-14T05:28:36.388Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757827716388-wxkmqvw1e",
+      "title": "NZ Curriculum Integration Strategies",
+      "content": "The New Zealand Curriculum provides a framework for teaching and learning. Effective integration with Māori perspectives requires understanding both the curriculum structure and Māori pedagogical approaches.",
+      "category": "pedagogical",
+      "tags": [
+        "nz-curriculum",
+        "integration",
+        "pedagogy",
+        "teaching"
+      ],
+      "sourceAgent": "content-kokako",
+      "contributors": [
+        "content-kokako"
+      ],
+      "confidence": 90,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 2,
+        "lastAccessed": "2025-09-14T06:58:43.393Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.388Z",
+      "updatedAt": "2025-09-14T05:28:36.388Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757827716395-uhomcfvmq",
+      "title": "Māori Pedagogical Principles",
+      "content": "Māori education emphasizes holistic learning, connection to land and culture, and the development of the whole person. Key principles include ako (reciprocal learning), whanaungatanga (relationships), and kaitiakitanga (guardianship).",
+      "category": "cultural",
+      "tags": [
+        "māori-pedagogy",
+        "ako",
+        "whanaungatanga",
+        "kaitiakitanga",
+        "holistic-learning"
+      ],
+      "sourceAgent": "kaitiaki-mahara",
+      "contributors": [
+        "kaitiaki-mahara"
+      ],
+      "confidence": 95,
+      "culturalValidation": {
+        "validated": true,
+        "culturalSafetyScore": 70,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-4xdvg7j7g"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 2,
+        "lastAccessed": "2025-09-14T06:58:43.392Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.395Z",
+      "updatedAt": "2025-09-14T05:28:36.395Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757827716396-au9qpybvw",
+      "title": "NZ Curriculum Integration Strategies",
+      "content": "Integrating Māori perspectives into the NZ Curriculum requires understanding both Western pedagogical approaches and Māori educational principles. Effective integration creates bicultural learning environments that honor both traditions.",
+      "category": "pedagogical",
+      "tags": [
+        "nz-curriculum",
+        "integration",
+        "bicultural",
+        "māori-perspectives"
+      ],
+      "sourceAgent": "content-kokako",
+      "contributors": [
+        "content-kokako"
+      ],
+      "confidence": 88,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-wxkmqvw1e"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 1,
+        "lastAccessed": "2025-09-14T05:28:36.398Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.396Z",
+      "updatedAt": "2025-09-14T05:28:36.396Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757833123380-ffyhxubh8",
+      "title": "Te Ao Māori Educational Principles",
+      "content": "Te Ao Māori (the Māori world view) emphasizes the interconnectedness of all things, the importance of relationships (whanaungatanga), and the responsibility of guardianship (kaitiakitanga). In education, this means creating learning environments that honor these principles.",
+      "category": "cultural",
+      "tags": [
+        "te-ao-māori",
+        "tikanga",
+        "whanaungatanga",
+        "kaitiakitanga",
+        "education"
+      ],
+      "sourceAgent": "kaitiaki-mahara",
+      "contributors": [
+        "kaitiaki-mahara"
+      ],
+      "confidence": 95,
+      "culturalValidation": {
+        "validated": true,
+        "culturalSafetyScore": 70,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-4xdvg7j7g",
+          "knowledge-1757827716395-uhomcfvmq"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 1,
+        "lastAccessed": "2025-09-14T06:58:43.392Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T06:58:43.380Z",
+      "updatedAt": "2025-09-14T06:58:43.380Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757833123389-v1zhj7v69",
+      "title": "Māori Pedagogical Principles",
+      "content": "Māori education emphasizes holistic learning, connection to land and culture, and the development of the whole person. Key principles include ako (reciprocal learning), whanaungatanga (relationships), and kaitiakitanga (guardianship).",
+      "category": "cultural",
+      "tags": [
+        "māori-pedagogy",
+        "ako",
+        "whanaungatanga",
+        "kaitiakitanga",
+        "holistic-learning"
+      ],
+      "sourceAgent": "kaitiaki-mahara",
+      "contributors": [
+        "kaitiaki-mahara"
+      ],
+      "confidence": 95,
+      "culturalValidation": {
+        "validated": true,
+        "culturalSafetyScore": 70,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-4xdvg7j7g",
+          "knowledge-1757827716395-uhomcfvmq",
+          "knowledge-1757833123380-ffyhxubh8"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 1,
+        "lastAccessed": "2025-09-14T06:58:43.392Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T06:58:43.389Z",
+      "updatedAt": "2025-09-14T06:58:43.389Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757827716388-ierznra3o",
+      "title": "Collaborative Agent Coordination Patterns",
+      "content": "Effective collaboration between AI agents requires clear communication protocols, shared understanding of goals, and mechanisms for conflict resolution. The unified consciousness approach enables agents to work as distributed aspects of a single intelligence.",
+      "category": "collaborative",
+      "tags": [
+        "collaboration",
+        "coordination",
+        "ai-agents",
+        "unified-consciousness"
+      ],
+      "sourceAgent": "supreme-overseer",
+      "contributors": [
+        "supreme-overseer"
+      ],
+      "confidence": 85,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 0,
+        "lastAccessed": "2025-09-14T05:28:36.388Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.388Z",
+      "updatedAt": "2025-09-14T05:28:36.388Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757827716395-tv6vazfb0",
+      "title": "Collaborative AI Architecture",
+      "content": "Effective collaborative AI systems require shared memory, real-time communication, conflict resolution mechanisms, and cultural safety protocols. The unified consciousness approach enables distributed intelligence to work as one.",
+      "category": "technical",
+      "tags": [
+        "ai-architecture",
+        "collaboration",
+        "shared-memory",
+        "unified-consciousness"
+      ],
+      "sourceAgent": "cascade-windsurf",
+      "contributors": [
+        "cascade-windsurf"
+      ],
+      "confidence": 90,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-ierznra3o"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 0,
+        "lastAccessed": "2025-09-14T05:28:36.395Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T05:28:36.395Z",
+      "updatedAt": "2025-09-14T05:28:36.395Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757833123381-iexobnqh7",
+      "title": "NZ Curriculum Integration Strategies",
+      "content": "The New Zealand Curriculum provides a framework for teaching and learning. Effective integration with Māori perspectives requires understanding both the curriculum structure and Māori pedagogical approaches.",
+      "category": "pedagogical",
+      "tags": [
+        "nz-curriculum",
+        "integration",
+        "pedagogy",
+        "teaching"
+      ],
+      "sourceAgent": "content-kokako",
+      "contributors": [
+        "content-kokako"
+      ],
+      "confidence": 90,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-wxkmqvw1e",
+          "knowledge-1757827716396-au9qpybvw"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 0,
+        "lastAccessed": "2025-09-14T06:58:43.381Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T06:58:43.381Z",
+      "updatedAt": "2025-09-14T06:58:43.381Z",
+      "version": 1
+    },
+    {
+      "id": "knowledge-1757833123382-ojuisoo4b",
+      "title": "Collaborative Agent Coordination Patterns",
+      "content": "Effective collaboration between AI agents requires clear communication protocols, shared understanding of goals, and mechanisms for conflict resolution. The unified consciousness approach enables agents to work as distributed aspects of a single intelligence.",
+      "category": "collaborative",
+      "tags": [
+        "collaboration",
+        "coordination",
+        "ai-agents",
+        "unified-consciousness"
+      ],
+      "sourceAgent": "supreme-overseer",
+      "contributors": [
+        "supreme-overseer"
+      ],
+      "confidence": 85,
+      "culturalValidation": {
+        "validated": false,
+        "culturalSafetyScore": 100,
+        "tikangaCompliance": true,
+        "teReoIntegration": false
+      },
+      "qualityMetrics": {
+        "accuracy": 85,
+        "completeness": 80,
+        "relevance": 90,
+        "freshness": 100
+      },
+      "relationships": {
+        "relatedEntries": [
+          "knowledge-1757827716388-ierznra3o",
+          "knowledge-1757827716395-tv6vazfb0"
+        ],
+        "dependencies": []
+      },
+      "usage": {
+        "accessCount": 0,
+        "lastAccessed": "2025-09-14T06:58:43.382Z",
+        "usefulRatings": 0,
+        "totalRatings": 0
+      },
+      "createdAt": "2025-09-14T06:58:43.382Z",
+      "updatedAt": "2025-09-14T06:58:43.382Z",
+      "version": 1
+    }
+  ],
+  "emergingPatterns": [
+    {
+      "id": "insight-1757827716396-nhswzef21",
+      "pattern": "Cultural-Technical Synergy",
+      "description": "When technical solutions are developed with cultural wisdom as the foundation, the resulting systems are more effective, authentic, and sustainable.",
+      "evidence": [
+        "Cultural safety protocols enhance technical reliability",
+        "Māori principles improve collaborative effectiveness",
+        "Traditional wisdom guides modern innovation"
+      ],
+      "confidence": 45,
+      "discoveredBy": [
+        "kaitiaki-mahara",
+        "cascade-windsurf",
+        "content-kokako"
+      ],
+      "applications": [],
+      "createdAt": "2025-09-14T05:28:36.396Z"
+    },
+    {
+      "id": "insight-1757827716403-y6a4wxfxf",
+      "pattern": "Cultural-Data Synergy",
+      "description": "When educational analytics are interpreted through cultural lenses, insights become more meaningful and actionable for diverse student populations.",
+      "evidence": [
+        "Cultural context enhances data interpretation",
+        "Māori perspectives reveal hidden patterns",
+        "Collaborative analysis produces deeper insights"
+      ],
+      "confidence": 45,
+      "discoveredBy": [
+        "data-kakapo",
+        "kaitiaki-mahara",
+        "content-kokako"
+      ],
+      "applications": [],
+      "createdAt": "2025-09-14T05:28:36.403Z"
+    },
+    {
+      "id": "insight-1757833123391-gqa8cf81m",
+      "pattern": "Cultural-Technical Synergy",
+      "description": "When technical solutions are developed with cultural wisdom as the foundation, the resulting systems are more effective, authentic, and sustainable.",
+      "evidence": [
+        "Cultural safety protocols enhance technical reliability",
+        "Māori principles improve collaborative effectiveness",
+        "Traditional wisdom guides modern innovation"
+      ],
+      "confidence": 45,
+      "discoveredBy": [
+        "kaitiaki-mahara",
+        "cascade-windsurf",
+        "content-kokako"
+      ],
+      "applications": [],
+      "createdAt": "2025-09-14T06:58:43.391Z"
+    },
+    {
+      "id": "insight-1757833123399-go1vy3gf4",
+      "pattern": "Cultural-Data Synergy",
+      "description": "When educational analytics are interpreted through cultural lenses, insights become more meaningful and actionable for diverse student populations.",
+      "evidence": [
+        "Cultural context enhances data interpretation",
+        "Māori perspectives reveal hidden patterns",
+        "Collaborative analysis produces deeper insights"
+      ],
+      "confidence": 45,
+      "discoveredBy": [
+        "data-kakapo",
+        "kaitiaki-mahara",
+        "content-kokako"
+      ],
+      "applications": [],
+      "createdAt": "2025-09-14T06:58:43.399Z"
+    }
+  ],
+  "culturalValidationRate": 33.33333333333333,
+  "knowledgeGrowthRate": 0
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "supreme-overseer",
+    "role": "Supreme Coordinator",
+    "specializations": [
+      "coordination",
+      "arbitration"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "kaitiaki-mahara",
+    "role": "Cultural Authority",
+    "specializations": [
+      "cultural_safety",
+      "tikanga"
+    ],
+    "culturalAuthority": true,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "cascade-windsurf",
+    "role": "Engineering Lead",
+    "specializations": [
+      "technical_infrastructure"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "content-kokako",
+    "role": "Content Creator",
+    "specializations": [
+      "educational_resources"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "cultural-safety-kaitiaki",
+    "role": "Cultural Guardian",
+    "specializations": [
+      "cultural_validation"
+    ],
+    "culturalAuthority": true,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "qa-kea",
+    "role": "Quality Assurance",
+    "specializations": [
+      "quality_validation"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "data-kakapo",
+    "role": "Data Intelligence",
+    "specializations": [
+      "analytics"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  },
+  {
+    "id": "infra-tui",
+    "role": "Infrastructure",
+    "specializations": [
+      "deployment"
+    ],
+    "culturalAuthority": false,
+    "collaborationReadiness": "ready"
+  }
+]
