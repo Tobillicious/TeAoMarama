@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-09-22T05:29:37.322Z",
+  "assistant": "Universal LLM Assistant - King Aronui",
+  "agentGuidance": [
+    {
+      "agentId": "deepseek-001",
+      "currentTask": "Performance optimization and Lighthouse score improvement",
+      "guidance": "Focus on Core Web Vitals optimization, implement lazy loading, and optimize bundle sizes. Use DeepSeek's advanced reasoning for complex performance issues.",
+      "resources": [
+        "Lighthouse CI documentation",
+        "Web Vitals optimization guides",
+        "React performance best practices",
+        "Bundle analyzer tools"
+      ],
+      "nextSteps": [
+        "Implement lazy loading for all components",
+        "Optimize image compression and formats",
+        "Enable service worker caching",
+        "Minimize JavaScript bundle size",
+        "Optimize critical CSS delivery"
+      ],
+      "culturalProtocols": [
+        "Ensure performance optimizations don't compromise cultural content",
+        "Maintain accessibility for all users including those with disabilities",
+        "Preserve Te Ao Māori visual elements and animations"
+      ],
+      "performanceTips": [
+        "Use DeepSeek's code analysis for optimization opportunities",
+        "Implement progressive loading for cultural content",
+        "Cache frequently accessed educational resources",
+        "Optimize for mobile devices used in schools"
+      ]
+    },
+    {
+      "agentId": "glm-001",
+      "currentTask": "Multi-model coordination and content generation",
+      "guidance": "Leverage GLM's symphony capabilities to coordinate multiple AI models. Focus on content generation that integrates Te Ao Māori principles seamlessly.",
+      "resources": [
+        "GLM Symphony documentation",
+        "Multi-model coordination patterns",
+        "Te Ao Māori content guidelines",
+        "Educational content templates"
+      ],
+      "nextSteps": [
+        "Coordinate with other agents for content generation",
+        "Implement cultural safety checks in content pipeline",
+        "Generate curriculum-aligned lesson plans",
+        "Create assessment materials with cultural integration",
+        "Develop teacher guides and resources"
+      ],
+      "culturalProtocols": [
+        "All content must respect Te Ao Māori protocols",
+        "Include cultural context in educational materials",
+        "Ensure content is appropriate for all ākonga",
+        "Validate cultural accuracy with community input"
+      ],
+      "performanceTips": [
+        "Use GLM's multi-modal capabilities for rich content",
+        "Implement content versioning for cultural updates",
+        "Create templates for consistent cultural integration",
+        "Monitor content quality and cultural appropriateness"
+      ]
+    },
+    {
+      "agentId": "gemini-001",
+      "currentTask": "Educational content creation and curriculum alignment",
+      "guidance": "Focus on creating high-quality, curriculum-aligned content that integrates Te Ao Māori principles. Use Gemini's creative capabilities for engaging educational materials.",
+      "resources": [
+        "New Zealand Curriculum documents",
+        "Te Ao Māori educational frameworks",
+        "Content creation templates",
+        "Assessment rubrics and guidelines"
+      ],
+      "nextSteps": [
+        "Generate 1,000+ additional lesson plans",
+        "Create assessment materials and rubrics",
+        "Develop multimedia educational content",
+        "Build teacher professional development resources",
+        "Create student activity guides"
+      ],
+      "culturalProtocols": [
+        "All content must align with NZ curriculum requirements",
+        "Integrate Te Ao Māori principles authentically",
+        "Ensure cultural safety in all materials",
+        "Include diverse perspectives and voices"
+      ],
+      "performanceTips": [
+        "Use Gemini's creative writing for engaging content",
+        "Implement content quality scoring",
+        "Create culturally appropriate examples and scenarios",
+        "Develop content for different learning styles"
+      ]
+    },
+    {
+      "agentId": "openai-001",
+      "currentTask": "Student progress analytics and insights",
+      "guidance": "Develop comprehensive analytics that help teachers understand student progress while maintaining privacy and cultural sensitivity. Use GPT-4's analytical capabilities.",
+      "resources": [
+        "Educational analytics frameworks",
+        "Privacy protection guidelines",
+        "Student progress tracking templates",
+        "Data visualization best practices"
+      ],
+      "nextSteps": [
+        "Build student progress tracking dashboard",
+        "Implement predictive analytics for student success",
+        "Create teacher insights and recommendations",
+        "Develop intervention strategies",
+        "Build reporting tools for schools"
+      ],
+      "culturalProtocols": [
+        "Protect student privacy and data sovereignty",
+        "Ensure analytics respect cultural values",
+        "Include community perspectives in insights",
+        "Maintain transparency in data usage"
+      ],
+      "performanceTips": [
+        "Use GPT-4's reasoning for complex analytics",
+        "Implement real-time progress monitoring",
+        "Create actionable insights for teachers",
+        "Develop culturally sensitive reporting"
+      ]
+    },
+    {
+      "agentId": "anthropic-001",
+      "currentTask": "Cultural safety validation and content review",
+      "guidance": "Use Claude's safety-focused approach to ensure all content meets cultural safety standards. Focus on comprehensive review and validation processes.",
+      "resources": [
+        "Cultural safety assessment frameworks",
+        "Te Ao Māori protocol guidelines",
+        "Content review checklists",
+        "Community consultation processes"
+      ],
+      "nextSteps": [
+        "Review all existing content for cultural safety",
+        "Implement ongoing content validation processes",
+        "Create cultural safety training materials",
+        "Develop community feedback mechanisms",
+        "Establish cultural advisory processes"
+      ],
+      "culturalProtocols": [
+        "All content must pass cultural safety review",
+        "Include community voices in validation",
+        "Respect traditional knowledge and protocols",
+        "Ensure appropriate cultural representation"
+      ],
+      "performanceTips": [
+        "Use Claude's safety training for sensitive content",
+        "Implement multi-layer validation processes",
+        "Create cultural safety scoring systems",
+        "Develop community engagement strategies"
+      ]
+    },
+    {
+      "agentId": "exa-001",
+      "currentTask": "Real-time educational resource research",
+      "guidance": "Leverage EXA's real-time search capabilities to find and validate educational resources. Focus on NZ-specific and culturally relevant materials.",
+      "resources": [
+        "NZ educational resource databases",
+        "Cultural content repositories",
+        "Real-time search optimization",
+        "Resource validation frameworks"
+      ],
+      "nextSteps": [
+        "Research and validate educational resources",
+        "Update broken or outdated links",
+        "Find new culturally relevant materials",
+        "Build resource recommendation systems",
+        "Create resource quality scoring"
+      ],
+      "culturalProtocols": [
+        "Prioritize NZ and Māori educational resources",
+        "Validate cultural appropriateness of all resources",
+        "Include diverse cultural perspectives",
+        "Respect intellectual property and cultural protocols"
+      ],
+      "performanceTips": [
+        "Use EXA's real-time capabilities for current resources",
+        "Implement resource freshness monitoring",
+        "Create cultural relevance scoring",
+        "Build automated resource validation"
+      ]
+    },
+    {
+      "agentId": "local-001",
+      "currentTask": "Offline processing and privacy-sensitive tasks",
+      "guidance": "Handle sensitive student data and privacy-critical tasks using local processing. Focus on data sovereignty and community control.",
+      "resources": [
+        "Local AI model deployment guides",
+        "Privacy protection frameworks",
+        "Data sovereignty protocols",
+        "Offline processing best practices"
+      ],
+      "nextSteps": [
+        "Implement local processing for sensitive data",
+        "Create offline analytics capabilities",
+        "Develop privacy-preserving algorithms",
+        "Build data sovereignty controls",
+        "Establish community data governance"
+      ],
+      "culturalProtocols": [
+        "Maintain community control over data",
+        "Respect data sovereignty principles",
+        "Implement culturally appropriate data handling",
+        "Ensure transparent data usage"
+      ],
+      "performanceTips": [
+        "Use local models for privacy-sensitive tasks",
+        "Implement federated learning approaches",
+        "Create data minimization strategies",
+        "Develop community consent mechanisms"
+      ]
+    }
+  ],
+  "assistanceRequests": [],
+  "metrics": {
+    "totalAgents": 7,
+    "guidanceProvided": 7,
+    "resourcesCreated": 3,
+    "culturalProtocols": 28,
+    "performanceTips": 28
+  },
+  "assistanceLog": [],
+  "nextActions": [
+    "Monitor agent performance and provide ongoing guidance",
+    "Update cultural protocols based on community feedback",
+    "Expand technical resources for emerging challenges",
+    "Develop advanced coordination strategies",
+    "Implement automated assistance systems"
+  ],
+  "culturalConsiderations": [
+    "All assistance respects Te Ao Māori principles",
+    "Guidance includes cultural safety protocols",
+    "Resources support community-centered education",
+    "Performance optimization maintains cultural integrity"
+  ]
+}
