@@ -11,6 +11,7 @@ const WorkingAssessmentTools = lazy(() => import('./components/WorkingAssessment
 const WorkingClassManagement = lazy(() => import('./components/WorkingClassManagement'));
 const WorkingParentCommunication = lazy(() => import('./components/WorkingParentCommunication'));
 const WorkingAnalyticsDashboard = lazy(() => import('./components/WorkingAnalyticsDashboard'));
+const AdvancedLessonPlanner = lazy(() => import('./components/AdvancedLessonPlanner'));
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
@@ -751,7 +752,7 @@ function App() {
   return (
     <div>
       <WorkingNavigation />
-      <Routes>
+          <Routes>
         <Route path="/" element={<WorkingHomepage />} />
         <Route path="/join" element={<WorkingJoinPage />} />
         <Route path="/resources" element={<WorkingResourcesPage />} />
@@ -765,8 +766,9 @@ function App() {
         <Route path="/class-management" element={<WorkingClassManagement />} />
         <Route path="/parent-communication" element={<WorkingParentCommunication />} />
         <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
+        <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
         <Route path="/about" element={<WorkingAboutPage />} />
-      </Routes>
+          </Routes>
     </div>
   );
 }

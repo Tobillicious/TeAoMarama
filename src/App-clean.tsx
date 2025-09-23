@@ -11,6 +11,8 @@ const WorkingAssessmentTools = lazy(() => import('./components/WorkingAssessment
 const WorkingClassManagement = lazy(() => import('./components/WorkingClassManagement'));
 const WorkingParentCommunication = lazy(() => import('./components/WorkingParentCommunication'));
 const WorkingAnalyticsDashboard = lazy(() => import('./components/WorkingAnalyticsDashboard'));
+const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
+const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
 const WorkingHomepage = () => {
   return (

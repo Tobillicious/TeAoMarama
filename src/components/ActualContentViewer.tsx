@@ -320,7 +320,7 @@ This lesson plan is ready for immediate classroom use.
           <div className="learning-objectives">
             <h3>🎯 Learning Objectives</h3>
             <ul>
-              {resource.actualLessonContent.learningObjectives?.map((objective: string, index: number) => (
+              {(resource.actualLessonContent.learningObjectives as string[])?.map((objective: string, index: number) => (
                 <li key={index}>{objective}</li>
               ))}
             </ul>
@@ -329,7 +329,7 @@ This lesson plan is ready for immediate classroom use.
           {/* Activities - The Core Beautiful Content */}
           <div className="enhanced-activities">
             <h3>⭐ Enhanced Learning Activities</h3>
-            {resource.actualLessonContent.activities?.map((activity: unknown, index: number) => (
+            {(resource.actualLessonContent.activities as Array<{title: string, description: string}>)?.map((activity, index: number) => (
               <div key={index} className="activity-card">
                 <h4>
                   <span className="activity-number">{index + 1}</span>
