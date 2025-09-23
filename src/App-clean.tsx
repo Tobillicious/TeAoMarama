@@ -11,8 +11,6 @@ const WorkingAssessmentTools = lazy(() => import('./components/WorkingAssessment
 const WorkingClassManagement = lazy(() => import('./components/WorkingClassManagement'));
 const WorkingParentCommunication = lazy(() => import('./components/WorkingParentCommunication'));
 const WorkingAnalyticsDashboard = lazy(() => import('./components/WorkingAnalyticsDashboard'));
-const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
-const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
 const WorkingHomepage = () => {
   return (
@@ -170,7 +168,9 @@ const WorkingJoinPage = () => {
         </div>
 
         <div style={{ marginBottom: '30px' }}>
-          <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Role</label>
+          <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+            Role
+          </label>
           <select
             style={{
               width: '100%',
@@ -648,9 +648,7 @@ const WorkingNavigation = () => {
             onMouseOver={(e) =>
               ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.3)')
             }
-            onMouseOut={(e) =>
-              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.2)')
-            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.2)')}
           >
             Join Now
           </a>

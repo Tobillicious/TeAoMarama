@@ -9,10 +9,23 @@ export interface QualityMetrics {
 }
 
 export interface ResourceForQualityCheck {
-  content?: string;
+  content?:
+    | string
+    | {
+        description?: string;
+        objectives?: string[];
+        activities?: string[];
+        assessment?: string;
+        images?: string[];
+        [key: string]: unknown;
+      };
   description?: string;
   title?: string;
   culturalElements?: number;
+  tags?: string[];
+  type?: string;
+  id?: string;
+  culturalContext?: string;
   [key: string]: unknown;
 }
 

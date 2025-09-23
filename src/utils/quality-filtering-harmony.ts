@@ -234,7 +234,9 @@ class QualityFilteringHarmony {
     return report;
   }
 
-  private async assessResourceQuality(resource: unknown): Promise<QualityAssessment> {
+  private async assessResourceQuality(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): Promise<QualityAssessment> {
     const contentQuality = this.assessContentQuality(resource);
     const culturalMetrics = this.assessCulturalSafety(resource);
     const accessibilityMetrics = this.assessAccessibility(resource);
@@ -280,21 +282,29 @@ class QualityFilteringHarmony {
     };
   }
 
-  private assessContentQuality(resource: unknown): number {
+  private assessContentQuality(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): number {
     let score = 50;
     if (resource.title && resource.title.length > 5) score += 10;
     if (resource.description && resource.description.length > 20) score += 15;
     if (resource.content) {
-      if (resource.content.description) score += 10;
-      if (resource.content.objectives && resource.content.objectives.length > 0) score += 10;
-      if (resource.content.activities && resource.content.activities.length > 0) score += 10;
-      if (resource.content.assessment) score += 5;
+      if (typeof resource.content === 'object' && resource.content !== null) {
+        if (resource.content.description) score += 10;
+        if (resource.content.objectives && resource.content.objectives.length > 0) score += 10;
+        if (resource.content.activities && resource.content.activities.length > 0) score += 10;
+        if (resource.content.assessment) score += 5;
+      } else if (typeof resource.content === 'string' && resource.content.length > 500) {
+        score += 15;
+      }
     }
     if (resource.tags && resource.tags.length > 0) score += 5;
     return Math.min(score, 100);
   }
 
-  private assessCulturalSafety(resource: unknown): QualityAssessment['culturalMetrics'] {
+  private assessCulturalSafety(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): QualityAssessment['culturalMetrics'] {
     let tikangaCompliance = true;
     let teReoIntegration = 0;
     let culturalAuthenticity = 50;
@@ -340,7 +350,9 @@ class QualityFilteringHarmony {
     };
   }
 
-  private assessAccessibility(resource: unknown): QualityAssessment['accessibilityMetrics'] {
+  private assessAccessibility(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): QualityAssessment['accessibilityMetrics'] {
     let readabilityScore = 50;
     let visualAccessibility = 50;
     let cognitiveAccessibility = 50;
@@ -358,11 +370,24 @@ class QualityFilteringHarmony {
       }
     }
 
-    if (resource.type === 'multimedia' && resource.content?.images) {
+    if (
+      resource.type === 'multimedia' &&
+      resource.content &&
+      typeof resource.content === 'object' &&
+      resource.content !== null &&
+      'images' in resource.content
+    ) {
       visualAccessibility += 10;
     }
 
-    if (resource.content?.objectives && resource.content.objectives.length > 0) {
+    if (
+      resource.content &&
+      typeof resource.content === 'object' &&
+      resource.content !== null &&
+      'objectives' in resource.content &&
+      resource.content.objectives &&
+      resource.content.objectives.length > 0
+    ) {
       cognitiveAccessibility += 20;
     }
 
@@ -378,7 +403,9 @@ class QualityFilteringHarmony {
     };
   }
 
-  private assessEducationalValue(resource: unknown): QualityAssessment['educationalMetrics'] {
+  private assessEducationalValue(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): QualityAssessment['educationalMetrics'] {
     let curriculumAlignment = 50;
     let learningObjectives = 50;
     let assessmentQuality = 50;
@@ -388,17 +415,37 @@ class QualityFilteringHarmony {
       curriculumAlignment += 30;
     }
 
-    if (resource.content?.objectives && resource.content.objectives.length > 0) {
+    if (
+      resource.content &&
+      typeof resource.content === 'object' &&
+      resource.content !== null &&
+      'objectives' in resource.content &&
+      resource.content.objectives &&
+      resource.content.objectives.length > 0
+    ) {
       learningObjectives += 30;
       pedagogicalSoundness += 20;
     }
 
-    if (resource.content?.assessment) {
+    if (
+      resource.content &&
+      typeof resource.content === 'object' &&
+      resource.content !== null &&
+      'assessment' in resource.content &&
+      resource.content.assessment
+    ) {
       assessmentQuality += 30;
       pedagogicalSoundness += 15;
     }
 
-    if (resource.content?.activities && resource.content.activities.length > 0) {
+    if (
+      resource.content &&
+      typeof resource.content === 'object' &&
+      resource.content !== null &&
+      'activities' in resource.content &&
+      resource.content.activities &&
+      resource.content.activities.length > 0
+    ) {
       pedagogicalSoundness += 15;
     }
 
@@ -410,7 +457,9 @@ class QualityFilteringHarmony {
     };
   }
 
-  private assessTechnicalQuality(resource: unknown): number {
+  private assessTechnicalQuality(
+    resource: import('./quality-content-filter').ResourceForQualityCheck,
+  ): number {
     let score = 50;
     if (resource.id && resource.title && resource.description) score += 20;
     if (resource.content) score += 15;
