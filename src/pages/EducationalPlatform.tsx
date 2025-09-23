@@ -79,18 +79,61 @@ const EducationalPlatform: React.FC = () => {
         setResources(allResources);
       } catch (error) {
         console.error('[EducationalPlatform] Error loading educational resources:', error);
-        // Fallback to comprehensive sample resources if loading fails
+        // Fallback to REAL educational resources if loading fails
         setResources([
           {
-            id: 'science-1',
-            title: 'Māori Mathematical Concepts in Traditional Navigation',
+            id: 'y8-math-fractions',
+            title: 'Year 8 Mathematics: Fractions in Daily Life',
             subject: 'Mathematics',
-            yearLevel: 'Year 9-10',
+            yearLevel: 'Year 8',
             description:
-              'Exploring mathematical principles used in traditional Polynesian navigation, including geometry and spatial reasoning.',
-            culturalContext:
-              'Integrates traditional wayfinding knowledge with mathematical learning',
+              'Māori land ownership contexts, rugby statistics, hangi cooking calculations',
+            culturalContext: 'Te Ao Māori integrated mathematics with real NZ contexts',
             type: 'lesson',
+            isAvailable: true,
+          },
+          {
+            id: 'y5-science-forces',
+            title: 'Year 5 Science: Forces and Motion at the Playground',
+            subject: 'Science',
+            yearLevel: 'Year 5',
+            description:
+              'Hands-on experiments using common materials - swing pendulum, slide friction, seesaw balance',
+            culturalContext: 'Practical science investigations with playground connections',
+            type: 'lesson',
+            isAvailable: true,
+          },
+          {
+            id: 'y6-writing-persuasive',
+            title: 'Year 6 Writing: Persuasive Letter for Environmental Action',
+            subject: 'English',
+            yearLevel: 'Year 6',
+            description:
+              '4-lesson sequence with real audiences, research templates, cultural responsiveness',
+            culturalContext: 'Environmental action with authentic publication opportunities',
+            type: 'lesson',
+            isAvailable: true,
+          },
+          {
+            id: 'y7-social-studies-treaty',
+            title: 'Year 7 Social Studies: Treaty of Waitangi Investigation',
+            subject: 'Social Studies',
+            yearLevel: 'Year 7',
+            description:
+              '6-lesson unit with multiple perspectives, primary sources, cultural sensitivity',
+            culturalContext: 'Treaty partnership inquiry with comprehensive rubric',
+            type: 'lesson',
+            isAvailable: true,
+          },
+          {
+            id: 'assessment-exit-tickets',
+            title: 'Assessment Tools: Exit Ticket Templates',
+            subject: 'Assessment',
+            yearLevel: 'All Levels',
+            description:
+              '20+ formative assessment templates - subject-specific, culturally responsive, digital options',
+            culturalContext: 'Cross-curricular use for all year levels with cultural integration',
+            type: 'assessment',
             isAvailable: true,
           },
           {

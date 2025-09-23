@@ -45,5 +45,7 @@ export interface ActualLessonContent {
   description?: string;
   content?: string;
   culturalElements?: number;
+  culturalContext?: string;
+  learningObjectives?: string[];
   [key: string]: unknown;
 }

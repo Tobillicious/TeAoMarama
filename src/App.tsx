@@ -1,4 +1,12 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+// Lazy load new components
+const WorkingSubscriptionSystem = lazy(() => import('./components/WorkingSubscriptionSystem'));
+const ProfessionalTeacherOnboarding = lazy(
+  () => import('./components/ProfessionalTeacherOnboarding'),
+);
+const WorkingTeacherDashboard = lazy(() => import('./components/WorkingTeacherDashboard'));
 
 const WorkingHomepage = () => {
   return (
@@ -878,8 +886,10 @@ const WorkingNavigation = () => {
               borderRadius: '6px',
               transition: 'background 0.3s',
             }}
-            onMouseOver={(e) => (e.target.style.background = 'rgba(255,255,255,0.1)')}
-            onMouseOut={(e) => (e.target.style.background = 'transparent')}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
           >
             Resources
           </a>
@@ -892,8 +902,10 @@ const WorkingNavigation = () => {
               borderRadius: '6px',
               transition: 'background 0.3s',
             }}
-            onMouseOver={(e) => (e.target.style.background = 'rgba(255,255,255,0.1)')}
-            onMouseOut={(e) => (e.target.style.background = 'transparent')}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
           >
             Pricing
           </a>
@@ -906,8 +918,10 @@ const WorkingNavigation = () => {
               borderRadius: '6px',
               transition: 'background 0.3s',
             }}
-            onMouseOver={(e) => (e.target.style.background = 'rgba(255,255,255,0.1)')}
-            onMouseOut={(e) => (e.target.style.background = 'transparent')}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
           >
             Teacher
           </a>
@@ -920,8 +934,10 @@ const WorkingNavigation = () => {
               borderRadius: '6px',
               transition: 'background 0.3s',
             }}
-            onMouseOver={(e) => (e.target.style.background = 'rgba(255,255,255,0.1)')}
-            onMouseOut={(e) => (e.target.style.background = 'transparent')}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
           >
             Student
           </a>
@@ -947,6 +963,431 @@ const WorkingNavigation = () => {
   );
 };
 
+const WorkingLessonCreator = () => {
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #059669 0%, #1e40af 100%)',
+        padding: '40px',
+        fontFamily: 'Arial, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          background: 'white',
+          padding: '40px',
+          borderRadius: '20px',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}
+      >
+        <h1
+          style={{
+            color: '#1e40af',
+            fontSize: '2.5rem',
+            marginBottom: '20px',
+            textAlign: 'center',
+          }}
+        >
+          📝 Create Lesson Plan
+        </h1>
+        <p
+          style={{
+            color: '#374151',
+            fontSize: '1.2rem',
+            marginBottom: '30px',
+            textAlign: 'center',
+          }}
+        >
+          Design curriculum-aligned lessons for New Zealand students
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
+          <div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.3rem', marginBottom: '20px' }}>
+              Lesson Details
+            </h3>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Lesson Title
+              </label>
+              <input
+                type="text"
+                placeholder="Enter lesson title..."
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Subject
+              </label>
+              <select
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                }}
+              >
+                <option>Mathematics</option>
+                <option>Science</option>
+                <option>English</option>
+                <option>Social Studies</option>
+                <option>Te Reo Māori</option>
+                <option>Arts</option>
+              </select>
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Year Level
+              </label>
+              <select
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                }}
+              >
+                <option>Year 1</option>
+                <option>Year 2</option>
+                <option>Year 3</option>
+                <option>Year 4</option>
+                <option>Year 5</option>
+                <option>Year 6</option>
+                <option>Year 7</option>
+                <option>Year 8</option>
+                <option>Year 9</option>
+                <option>Year 10</option>
+                <option>Year 11</option>
+                <option>Year 12</option>
+                <option>Year 13</option>
+              </select>
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Duration (minutes)
+              </label>
+              <input
+                type="number"
+                placeholder="45"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                }}
+              />
+            </div>
+          </div>
+
+          <div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.3rem', marginBottom: '20px' }}>
+              Curriculum Alignment
+            </h3>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Learning Objectives
+              </label>
+              <textarea
+                placeholder="Students will be able to..."
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                  minHeight: '100px',
+                  resize: 'vertical',
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Cultural Connections
+              </label>
+              <textarea
+                placeholder="How does this lesson connect to Te Ao Māori or Pacific cultures?"
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                  minHeight: '80px',
+                  resize: 'vertical',
+                }}
+              />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+                Assessment Method
+              </label>
+              <select
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  fontSize: '1rem',
+                }}
+              >
+                <option>Formative Assessment</option>
+                <option>Summative Assessment</option>
+                <option>Peer Assessment</option>
+                <option>Self Assessment</option>
+                <option>Portfolio</option>
+                <option>Project-based</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '30px' }}>
+          <h3 style={{ color: '#1e40af', fontSize: '1.3rem', marginBottom: '20px' }}>
+            Lesson Structure
+          </h3>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+              Introduction (Hook)
+            </label>
+            <textarea
+              placeholder="How will you capture students' attention and introduce the topic?"
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '8px',
+                border: '1px solid #d1d5db',
+                fontSize: '1rem',
+                minHeight: '80px',
+                resize: 'vertical',
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+              Main Activities
+            </label>
+            <textarea
+              placeholder="Describe the main learning activities and teaching strategies..."
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '8px',
+                border: '1px solid #d1d5db',
+                fontSize: '1rem',
+                minHeight: '120px',
+                resize: 'vertical',
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: '30px' }}>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+              Conclusion & Reflection
+            </label>
+            <textarea
+              placeholder="How will you wrap up the lesson and assess understanding?"
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '8px',
+                border: '1px solid #d1d5db',
+                fontSize: '1rem',
+                minHeight: '80px',
+                resize: 'vertical',
+              }}
+            />
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+          <button
+            style={{
+              background: '#3b82f6',
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              border: 'none',
+              fontSize: '1.1rem',
+              cursor: 'pointer',
+            }}
+          >
+            Save Draft
+          </button>
+          <button
+            style={{
+              background: '#059669',
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              border: 'none',
+              fontSize: '1.1rem',
+              cursor: 'pointer',
+            }}
+          >
+            Publish Lesson
+          </button>
+          <button
+            style={{
+              background: '#7c3aed',
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              border: 'none',
+              fontSize: '1.1rem',
+              cursor: 'pointer',
+            }}
+          >
+            Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const WorkingAboutPage = () => {
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)',
+        padding: '40px',
+        fontFamily: 'Arial, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          background: 'white',
+          padding: '40px',
+          borderRadius: '20px',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}
+      >
+        <h1
+          style={{
+            color: '#1e40af',
+            fontSize: '2.5rem',
+            marginBottom: '20px',
+            textAlign: 'center',
+          }}
+        >
+          🌿 About Te Ao Mārama
+        </h1>
+        <p
+          style={{
+            color: '#374151',
+            fontSize: '1.2rem',
+            marginBottom: '30px',
+            textAlign: 'center',
+          }}
+        >
+          The School of the World of Light - Empowering New Zealand Education
+        </p>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '30px',
+          }}
+        >
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '15px' }}>🎯</div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.5rem', marginBottom: '15px' }}>
+              Our Mission
+            </h3>
+            <p style={{ color: '#6b7280', lineHeight: '1.6' }}>
+              To provide New Zealand teachers with culturally responsive, curriculum-aligned
+              educational resources that honor Te Ao Māori and support all learners to achieve their
+              potential.
+            </p>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '15px' }}>🌿</div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.5rem', marginBottom: '15px' }}>
+              Cultural Safety
+            </h3>
+            <p style={{ color: '#6b7280', lineHeight: '1.6' }}>
+              All our resources are developed with cultural safety at the forefront, ensuring
+              authentic representation of Te Ao Māori and Pacific perspectives in education.
+            </p>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '15px' }}>📚</div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.5rem', marginBottom: '15px' }}>
+              Curriculum Aligned
+            </h3>
+            <p style={{ color: '#6b7280', lineHeight: '1.6' }}>
+              Every resource is carefully aligned with the New Zealand Curriculum Framework,
+              ensuring relevance and effectiveness in the classroom.
+            </p>
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '15px' }}>👥</div>
+            <h3 style={{ color: '#1e40af', fontSize: '1.5rem', marginBottom: '15px' }}>
+              Community Driven
+            </h3>
+            <p style={{ color: '#6b7280', lineHeight: '1.6' }}>
+              Built by teachers, for teachers. Our platform is shaped by the real needs and
+              experiences of educators across Aotearoa New Zealand.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ marginTop: '40px', textAlign: 'center' }}>
+          <h3 style={{ color: '#1e40af', fontSize: '1.8rem', marginBottom: '20px' }}>
+            Join Our Community
+          </h3>
+          <p
+            style={{
+              color: '#6b7280',
+              fontSize: '1.1rem',
+              marginBottom: '30px',
+              maxWidth: '600px',
+              margin: '0 auto 30px',
+            }}
+          >
+            Be part of a growing community of educators committed to excellence, cultural
+            responsiveness, and student success across New Zealand.
+          </p>
+          <button
+            onClick={() => (window.location.href = '/join')}
+            style={{
+              background: '#059669',
+              color: 'white',
+              padding: '15px 30px',
+              borderRadius: '8px',
+              border: 'none',
+              fontSize: '1.2rem',
+              cursor: 'pointer',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+            }}
+          >
+            Join Te Ao Mārama Today
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   return (
     <div>
@@ -955,9 +1396,14 @@ function App() {
         <Route path="/" element={<WorkingHomepage />} />
         <Route path="/join" element={<WorkingJoinPage />} />
         <Route path="/resources" element={<WorkingResourcesPage />} />
+        <Route path="/pricing" element={<WorkingSubscriptionSystem />} />
+        <Route path="/onboarding" element={<ProfessionalTeacherOnboarding />} />
+        <Route path="/teacher-dashboard" element={<WorkingTeacherDashboard />} />
         <Route path="/pricing" element={<WorkingPricingPage />} />
         <Route path="/teacher" element={<WorkingTeacherDashboard />} />
         <Route path="/student" element={<WorkingStudentDashboard />} />
+        <Route path="/create-lesson" element={<WorkingLessonCreator />} />
+        <Route path="/about" element={<WorkingAboutPage />} />
       </Routes>
     </div>
   );

@@ -8,48 +8,58 @@ export interface QualityMetrics {
   authenticityLevel: 'skeleton' | 'template' | 'enhanced' | 'complete';
 }
 
-export function assessContentQuality(resource: unknown): QualityMetrics {
+export interface ResourceForQualityCheck {
+  content?: string;
+  description?: string;
+  title?: string;
+  culturalElements?: number;
+  [key: string]: unknown;
+}
+
+export function assessContentQuality(resource: ResourceForQualityCheck): QualityMetrics {
   let qualityScore = 0;
   let completeness = 0;
-  
+
   // Check for actual content vs templates
-  const hasSubstantiveContent = resource.content && 
-    resource.content.length > 500 && 
-    !isTemplateContent(resource.content);
-  
+  const hasSubstantiveContent = !!(
+    resource.content &&
+    resource.content.length > 500 &&
+    !isTemplateContent(resource.content)
+  );
+
   // Check for specific local references (not generic)
   const hasLocalContext = hasSpecificPlaceReferences(resource);
-  
+
   // Check for authentic cultural integration
   const hasCulturalDepth = hasAuthenticCulturalContent(resource);
-  
+
   // Check for complete lesson structure
   const hasCompleteStructure = hasFullLessonStructure(resource);
-  
+
   // Calculate scores
   if (hasSubstantiveContent) qualityScore += 30;
   if (hasLocalContext) qualityScore += 25;
   if (hasCulturalDepth) qualityScore += 25;
   if (hasCompleteStructure) qualityScore += 20;
-  
+
   // Calculate completeness
   completeness = Math.min(100, qualityScore + 10);
-  
+
   // Determine authenticity level
   let authenticityLevel: 'skeleton' | 'template' | 'enhanced' | 'complete' = 'skeleton';
   if (qualityScore >= 80) authenticityLevel = 'complete';
   else if (qualityScore >= 60) authenticityLevel = 'enhanced';
   else if (qualityScore >= 30) authenticityLevel = 'template';
-  
+
   // Ready if score is above 70
   const isReady = qualityScore >= 70;
-  
+
   return {
     isReady,
     qualityScore,
     completeness,
     hasRealContent: hasSubstantiveContent,
-    authenticityLevel
+    authenticityLevel,
   };
 }
 
@@ -61,32 +71,34 @@ function isTemplateContent(content: string): boolean {
     'Cultural mapping',
     'Community presentation',
     '[Insert specific examples]',
-    'Placeholder content'
+    'Placeholder content',
   ];
-  
+
   const lowerContent = content.toLowerCase();
-  return templateIndicators.some(indicator => 
-    lowerContent.includes(indicator.toLowerCase())
-  );
+  return templateIndicators.some((indicator) => lowerContent.includes(indicator.toLowerCase()));
 }
 
-function hasSpecificPlaceReferences(resource: unknown): boolean {
+function hasSpecificPlaceReferences(resource: ResourceForQualityCheck): boolean {
   const specificPlaces = [
     'Mangakōtukutuku',
-    'Te Awa Tūpuna', 
+    'Te Awa Tūpuna',
     'specific waterway',
     'local kaumātua',
     'community elder',
-    '[specific school/area name]'
+    '[specific school/area name]',
   ];
-  
-  const content = (resource.content + resource.description + resource.title).toLowerCase();
-  return specificPlaces.some(place => content.includes(place.toLowerCase()));
+
+  const content = (
+    (resource.content || '') +
+    (resource.description || '') +
+    (resource.title || '')
+  ).toLowerCase();
+  return specificPlaces.some((place) => content.includes(place.toLowerCase()));
 }
 
-function hasAuthenticCulturalContent(resource: unknown): boolean {
-  if (resource.culturalElements < 3) return false;
-  
+function hasAuthenticCulturalContent(resource: ResourceForQualityCheck): boolean {
+  if ((resource.culturalElements || 0) < 3) return false;
+
   const authenticIndicators = [
     'karakia',
     'whakapapa',
@@ -94,62 +106,67 @@ function hasAuthenticCulturalContent(resource: unknown): boolean {
     'tikanga',
     'te reo māori',
     'traditional ecological knowledge',
-    'mātauranga māori'
+    'mātauranga māori',
   ];
-  
-  const content = (resource.content + resource.description).toLowerCase();
-  const authCount = authenticIndicators.filter(indicator => 
-    content.includes(indicator)
-  ).length;
-  
+
+  const content = ((resource.content || '') + (resource.description || '')).toLowerCase();
+  const authCount = authenticIndicators.filter((indicator) => content.includes(indicator)).length;
+
   return authCount >= 3;
 }
 
-function hasFullLessonStructure(resource: unknown): boolean {
+function hasFullLessonStructure(resource: ResourceForQualityCheck): boolean {
   if (!resource.content) return false;
-  
+
   const requiredElements = [
     'learning objectives',
     'materials',
     'activities',
     'assessment',
-    'duration'
+    'duration',
   ];
-  
+
   const lowerContent = resource.content.toLowerCase();
-  const presentElements = requiredElements.filter(element =>
-    lowerContent.includes(element)
+  const presentElements = requiredElements.filter((element) =>
+    lowerContent.includes(element),
   ).length;
-  
+
   return presentElements >= 4;
 }
 
 // Filter resources by quality
-export function filterByQuality(resources: unknown[], minQuality: number = 70): unknown[] {
+export interface ResourceWithQuality extends ResourceForQualityCheck {
+  qualityMetrics: QualityMetrics;
+}
+
+export function filterByQuality(
+  resources: ResourceForQualityCheck[],
+  minQuality: number = 70,
+): ResourceWithQuality[] {
   return resources
-    .map(resource => ({
+    .map((resource) => ({
       ...resource,
-      qualityMetrics: assessContentQuality(resource)
+      qualityMetrics: assessContentQuality(resource),
     }))
-    .filter(resource => resource.qualityMetrics.qualityScore >= minQuality)
+    .filter((resource) => resource.qualityMetrics.qualityScore >= minQuality)
     .sort((a, b) => b.qualityMetrics.qualityScore - a.qualityMetrics.qualityScore);
 }
 
 // Get quality stats
-export function getQualityStats(resources: unknown[]) {
+export function getQualityStats(resources: ResourceForQualityCheck[]) {
   const metrics = resources.map(assessContentQuality);
-  
-  const ready = metrics.filter(m => m.isReady).length;
-  const enhanced = metrics.filter(m => m.authenticityLevel === 'enhanced').length;
-  const templates = metrics.filter(m => m.authenticityLevel === 'template').length;
-  const skeletons = metrics.filter(m => m.authenticityLevel === 'skeleton').length;
-  
+
+  const ready = metrics.filter((m) => m.isReady).length;
+  const enhanced = metrics.filter((m) => m.authenticityLevel === 'enhanced').length;
+  const templates = metrics.filter((m) => m.authenticityLevel === 'template').length;
+  const skeletons = metrics.filter((m) => m.authenticityLevel === 'skeleton').length;
+
   return {
     total: resources.length,
     ready,
-    enhanced, 
+    enhanced,
     templates,
     skeletons,
-    percentReady: Math.round((ready / resources.length) * 100)
+    percentReady: Math.round((ready / resources.length) * 100),
   };
 }
