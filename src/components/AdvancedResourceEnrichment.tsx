@@ -1,6 +1,14 @@
+import {
+  Activity,
+  Award,
+  BarChart3,
+  BookOpen,
+  CheckCircle,
+  Shield,
+  Star,
+  Users,
+} from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import type { Activity, Award, BarChart3, BookOpen, CheckCircle, Shield, Star, Users } from 'lucide-react';
-import {  } from 'lucide-react';
 import type { EnrichedResource } from '../types';
 
 // Placeholder function to resolve TS2552
@@ -397,7 +405,9 @@ const AdvancedResourceEnrichment: React.FC = () => {
           (agent) => agent.status === 'active' || agent.status === 'busy',
         ).length,
         totalResources: enrichedResources.length,
-        enrichedResources: enrichedResources.filter((r: EnrichedResource) => r.culturalElements >= 3).length,
+        enrichedResources: enrichedResources.filter(
+          (r: EnrichedResource) => r.culturalElements >= 3,
+        ).length,
       };
 
       setMetrics(enrichmentMetrics);
@@ -794,7 +804,7 @@ const AdvancedResourceEnrichment: React.FC = () => {
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-lg font-semibold text-white">{resource.title}</h3>
                     <span className="px-2 py-1 bg-purple-500/20 text-purple-200 text-xs rounded">
-                      {resource.type}
+                      {resource.type as string}
                     </span>
                   </div>
 
@@ -827,7 +837,7 @@ const AdvancedResourceEnrichment: React.FC = () => {
                           : 'text-red-600 bg-red-100'
                       }`}
                     >
-                      {resource.difficulty}
+                      {resource.difficulty as string}
                     </span>
                   </div>
                 </div>

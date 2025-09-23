@@ -12,6 +12,8 @@ const WorkingClassManagement = lazy(() => import('./components/WorkingClassManag
 const WorkingParentCommunication = lazy(() => import('./components/WorkingParentCommunication'));
 const WorkingAnalyticsDashboard = lazy(() => import('./components/WorkingAnalyticsDashboard'));
 const AdvancedLessonPlanner = lazy(() => import('./components/AdvancedLessonPlanner'));
+const CurriculumMappingTool = lazy(() => import('./components/CurriculumMappingTool'));
+const TeacherCollaborationHub = lazy(() => import('./components/TeacherCollaborationHub'));
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
@@ -653,6 +655,38 @@ const WorkingNavigation = () => {
             Lesson Planner
           </a>
           <a
+            href="/curriculum-mapping"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Curriculum Mapping
+          </a>
+          <a
+            href="/collaboration"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Collaboration
+          </a>
+          <a
             href="/join"
             style={{
               background: 'rgba(255,255,255,0.2)',
@@ -783,6 +817,8 @@ function App() {
         <Route path="/parent-communication" element={<WorkingParentCommunication />} />
         <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
         <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
+        <Route path="/curriculum-mapping" element={<CurriculumMappingTool />} />
+        <Route path="/collaboration" element={<TeacherCollaborationHub />} />
         <Route path="/about" element={<WorkingAboutPage />} />
       </Routes>
     </div>

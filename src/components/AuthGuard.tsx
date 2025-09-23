@@ -2,9 +2,10 @@
 // Authentication Guards - Te Kura o TeAoMarama
 // Cultural sensitivity and educational access controls
 
-import { useAuth } from './useAuth';
+import { useAuth } from '../services/useAuth';
 import { Navigate, useLocation } from 'react-router-dom';
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 
 interface AuthGuardProps {

@@ -388,7 +388,7 @@ This lesson plan is ready for immediate classroom use.
           <div className="nz-curriculum">
             <h3>📋 New Zealand Curriculum Alignment</h3>
             <ul>
-              {resource.actualLessonContent.nzcAlignment?.map(
+              {(resource.actualLessonContent.nzcAlignment as string[])?.map(
                 (alignment: string, index: number) => (
                   <li key={index}>{alignment}</li>
                 ),
