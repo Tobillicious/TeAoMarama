@@ -14,6 +14,8 @@ const WorkingAnalyticsDashboard = lazy(() => import('./components/WorkingAnalyti
 const AdvancedLessonPlanner = lazy(() => import('./components/AdvancedLessonPlanner'));
 const CurriculumMappingTool = lazy(() => import('./components/CurriculumMappingTool'));
 const TeacherCollaborationHub = lazy(() => import('./components/TeacherCollaborationHub'));
+const ProfessionalResourceLibrary = lazy(() => import('./components/ProfessionalResourceLibrary'));
+const ComprehensiveGradebook = lazy(() => import('./components/ComprehensiveGradebook'));
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
@@ -687,6 +689,22 @@ const WorkingNavigation = () => {
             Collaboration
           </a>
           <a
+            href="/resource-library"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Resource Library
+          </a>
+          <a
             href="/join"
             style={{
               background: 'rgba(255,255,255,0.2)',
@@ -802,7 +820,7 @@ function App() {
   return (
     <div>
       <WorkingNavigation />
-      <Routes>
+          <Routes>
         <Route path="/" element={<WorkingHomepage />} />
         <Route path="/join" element={<WorkingJoinPage />} />
         <Route path="/resources" element={<WorkingResourcesPage />} />
@@ -819,8 +837,9 @@ function App() {
         <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
         <Route path="/curriculum-mapping" element={<CurriculumMappingTool />} />
         <Route path="/collaboration" element={<TeacherCollaborationHub />} />
+        <Route path="/resource-library" element={<ProfessionalResourceLibrary />} />
         <Route path="/about" element={<WorkingAboutPage />} />
-      </Routes>
+          </Routes>
     </div>
   );
 }

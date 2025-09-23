@@ -1,4 +1,16 @@
-import { Activity, AlertTriangle, Brain, CheckCircle, Cpu, Database, Globe, RefreshCw, Sparkles, Users, Zap } from 'lucide-react';
+import {
+  Activity,
+  AlertTriangle,
+  Brain,
+  CheckCircle,
+  Cpu,
+  Database,
+  Globe,
+  RefreshCw,
+  Sparkles,
+  Users,
+  Zap,
+} from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 interface AIModel {
@@ -330,7 +342,7 @@ const AIModelCoordinator: React.FC = () => {
                   className={`px-2 py-1 rounded-full text-xs font-medium border ${
                     model.status === 'active'
                       ? 'bg-green-100 text-green-800 border-green-200'
-                      : model.status === 'warning'
+                      : model.status === 'syncing'
                       ? 'bg-yellow-100 text-yellow-800 border-yellow-200'
                       : 'bg-red-100 text-red-800 border-red-200'
                   }`}
