@@ -637,6 +637,22 @@ const WorkingNavigation = () => {
             Analytics
           </a>
           <a
+            href="/lesson-planner"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Lesson Planner
+          </a>
+          <a
             href="/join"
             style={{
               background: 'rgba(255,255,255,0.2)',
@@ -752,7 +768,7 @@ function App() {
   return (
     <div>
       <WorkingNavigation />
-          <Routes>
+      <Routes>
         <Route path="/" element={<WorkingHomepage />} />
         <Route path="/join" element={<WorkingJoinPage />} />
         <Route path="/resources" element={<WorkingResourcesPage />} />
@@ -768,7 +784,7 @@ function App() {
         <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
         <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
         <Route path="/about" element={<WorkingAboutPage />} />
-          </Routes>
+      </Routes>
     </div>
   );
 }

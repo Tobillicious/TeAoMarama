@@ -25,18 +25,18 @@ const AdvancedLessonPlanner: React.FC = () => {
       learningObjectives: [
         'Understand early Māori settlement patterns',
         'Analyze environmental factors in settlement decisions',
-        'Connect historical patterns to modern communities'
+        'Connect historical patterns to modern communities',
       ],
       activities: [
         'Map analysis of early settlements',
         'Group discussion on environmental factors',
-        'Create modern settlement comparison'
+        'Create modern settlement comparison',
       ],
       assessment: 'Written reflection on settlement patterns',
       culturalElements: ['Māori history', 'Environmental connection', 'Community values'],
       resources: ['Historical maps', 'Māori legends', 'Environmental data'],
-      createdAt: '2024-01-15'
-    }
+      createdAt: '2024-01-15',
+    },
   ]);
 
   const [newPlan, setNewPlan] = useState<Partial<LessonPlan>>({
@@ -48,36 +48,36 @@ const AdvancedLessonPlanner: React.FC = () => {
     activities: [''],
     assessment: '',
     culturalElements: [''],
-    resources: ['']
+    resources: [''],
   });
 
   const [showForm, setShowForm] = useState(false);
 
   const handleAddObjective = () => {
-    setNewPlan(prev => ({
+    setNewPlan((prev) => ({
       ...prev,
-      learningObjectives: [...(prev.learningObjectives || []), '']
+      learningObjectives: [...(prev.learningObjectives || []), ''],
     }));
   };
 
   const handleAddActivity = () => {
-    setNewPlan(prev => ({
+    setNewPlan((prev) => ({
       ...prev,
-      activities: [...(prev.activities || []), '']
+      activities: [...(prev.activities || []), ''],
     }));
   };
 
   const handleAddCulturalElement = () => {
-    setNewPlan(prev => ({
+    setNewPlan((prev) => ({
       ...prev,
-      culturalElements: [...(prev.culturalElements || []), '']
+      culturalElements: [...(prev.culturalElements || []), ''],
     }));
   };
 
   const handleAddResource = () => {
-    setNewPlan(prev => ({
+    setNewPlan((prev) => ({
       ...prev,
-      resources: [...(prev.resources || []), '']
+      resources: [...(prev.resources || []), ''],
     }));
   };
 
@@ -89,15 +89,15 @@ const AdvancedLessonPlanner: React.FC = () => {
         subject: newPlan.subject,
         yearLevel: newPlan.yearLevel,
         duration: newPlan.duration || 60,
-        learningObjectives: newPlan.learningObjectives?.filter(obj => obj.trim()) || [],
-        activities: newPlan.activities?.filter(act => act.trim()) || [],
+        learningObjectives: newPlan.learningObjectives?.filter((obj) => obj.trim()) || [],
+        activities: newPlan.activities?.filter((act) => act.trim()) || [],
         assessment: newPlan.assessment || '',
-        culturalElements: newPlan.culturalElements?.filter(el => el.trim()) || [],
-        resources: newPlan.resources?.filter(res => res.trim()) || [],
-        createdAt: new Date().toISOString().split('T')[0]
+        culturalElements: newPlan.culturalElements?.filter((el) => el.trim()) || [],
+        resources: newPlan.resources?.filter((res) => res.trim()) || [],
+        createdAt: new Date().toISOString().split('T')[0],
       };
-      
-      setLessonPlans(prev => [plan, ...prev]);
+
+      setLessonPlans((prev) => [plan, ...prev]);
       setNewPlan({
         title: '',
         subject: '',
@@ -107,87 +107,105 @@ const AdvancedLessonPlanner: React.FC = () => {
         activities: [''],
         assessment: '',
         culturalElements: [''],
-        resources: ['']
+        resources: [''],
       });
       setShowForm(false);
     }
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      padding: '20px',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        background: 'rgba(255, 255, 255, 0.95)',
-        borderRadius: '20px',
-        padding: '30px',
-        boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-      }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        padding: '20px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          background: 'rgba(255, 255, 255, 0.95)',
+          borderRadius: '20px',
+          padding: '30px',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+        }}
+      >
         {/* Header */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '40px',
-          borderBottom: '3px solid #667eea',
-          paddingBottom: '20px'
-        }}>
-          <h1 style={{
-            fontSize: '2.5rem',
-            color: '#2d3748',
-            margin: '0 0 10px 0',
-            fontWeight: '700'
-          }}>
+        <div
+          style={{
+            textAlign: 'center',
+            marginBottom: '40px',
+            borderBottom: '3px solid #667eea',
+            paddingBottom: '20px',
+          }}
+        >
+          <h1
+            style={{
+              fontSize: '2.5rem',
+              color: '#2d3748',
+              margin: '0 0 10px 0',
+              fontWeight: '700',
+            }}
+          >
             📚 Advanced Lesson Planner
           </h1>
-          <p style={{
-            fontSize: '1.2rem',
-            color: '#4a5568',
-            margin: '0'
-          }}>
+          <p
+            style={{
+              fontSize: '1.2rem',
+              color: '#4a5568',
+              margin: '0',
+            }}
+          >
             Create comprehensive, culturally-integrated lesson plans for New Zealand curriculum
           </p>
         </div>
 
         {/* Quick Stats */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '20px',
-          marginBottom: '40px'
-        }}>
-          <div style={{
-            background: 'linear-gradient(135deg, #667eea, #764ba2)',
-            color: 'white',
-            padding: '20px',
-            borderRadius: '15px',
-            textAlign: 'center'
-          }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '20px',
+            marginBottom: '40px',
+          }}
+        >
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #667eea, #764ba2)',
+              color: 'white',
+              padding: '20px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
             <h3 style={{ margin: '0 0 10px 0', fontSize: '2rem' }}>{lessonPlans.length}</h3>
             <p style={{ margin: '0', opacity: '0.9' }}>Total Plans</p>
           </div>
-          <div style={{
-            background: 'linear-gradient(135deg, #f093fb, #f5576c)',
-            color: 'white',
-            padding: '20px',
-            borderRadius: '15px',
-            textAlign: 'center'
-          }}>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #f093fb, #f5576c)',
+              color: 'white',
+              padding: '20px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
             <h3 style={{ margin: '0 0 10px 0', fontSize: '2rem' }}>
               {lessonPlans.reduce((acc, plan) => acc + plan.learningObjectives.length, 0)}
             </h3>
             <p style={{ margin: '0', opacity: '0.9' }}>Learning Objectives</p>
           </div>
-          <div style={{
-            background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-            color: 'white',
-            padding: '20px',
-            borderRadius: '15px',
-            textAlign: 'center'
-          }}>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
+              color: 'white',
+              padding: '20px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
             <h3 style={{ margin: '0 0 10px 0', fontSize: '2rem' }}>
               {lessonPlans.reduce((acc, plan) => acc + plan.culturalElements.length, 0)}
             </h3>
@@ -209,7 +227,7 @@ const AdvancedLessonPlanner: React.FC = () => {
               fontWeight: '600',
               cursor: 'pointer',
               boxShadow: '0 10px 20px rgba(102, 126, 234, 0.3)',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.3s ease',
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)';
@@ -226,47 +244,70 @@ const AdvancedLessonPlanner: React.FC = () => {
 
         {/* New Plan Form */}
         {showForm && (
-          <div style={{
-            background: '#f7fafc',
-            padding: '30px',
-            borderRadius: '15px',
-            marginBottom: '30px',
-            border: '2px solid #e2e8f0'
-          }}>
+          <div
+            style={{
+              background: '#f7fafc',
+              padding: '30px',
+              borderRadius: '15px',
+              marginBottom: '30px',
+              border: '2px solid #e2e8f0',
+            }}
+          >
             <h2 style={{ color: '#2d3748', marginBottom: '20px' }}>Create New Lesson Plan</h2>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr 1fr',
+                gap: '20px',
+                marginBottom: '20px',
+              }}
+            >
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#4a5568' }}>
+                <label
+                  style={{
+                    display: 'block',
+                    marginBottom: '5px',
+                    fontWeight: '600',
+                    color: '#4a5568',
+                  }}
+                >
                   Lesson Title
                 </label>
                 <input
                   type="text"
                   value={newPlan.title || ''}
-                  onChange={(e) => setNewPlan(prev => ({ ...prev, title: e.target.value }))}
+                  onChange={(e) => setNewPlan((prev) => ({ ...prev, title: e.target.value }))}
                   style={{
                     width: '100%',
                     padding: '12px',
                     border: '2px solid #e2e8f0',
                     borderRadius: '8px',
-                    fontSize: '1rem'
+                    fontSize: '1rem',
                   }}
                   placeholder="Enter lesson title"
                 />
               </div>
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#4a5568' }}>
+                <label
+                  style={{
+                    display: 'block',
+                    marginBottom: '5px',
+                    fontWeight: '600',
+                    color: '#4a5568',
+                  }}
+                >
                   Subject
                 </label>
                 <select
                   value={newPlan.subject || ''}
-                  onChange={(e) => setNewPlan(prev => ({ ...prev, subject: e.target.value }))}
+                  onChange={(e) => setNewPlan((prev) => ({ ...prev, subject: e.target.value }))}
                   style={{
                     width: '100%',
                     padding: '12px',
                     border: '2px solid #e2e8f0',
                     borderRadius: '8px',
-                    fontSize: '1rem'
+                    fontSize: '1rem',
                   }}
                 >
                   <option value="">Select Subject</option>
@@ -281,18 +322,25 @@ const AdvancedLessonPlanner: React.FC = () => {
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#4a5568' }}>
+                <label
+                  style={{
+                    display: 'block',
+                    marginBottom: '5px',
+                    fontWeight: '600',
+                    color: '#4a5568',
+                  }}
+                >
                   Year Level
                 </label>
                 <select
                   value={newPlan.yearLevel || ''}
-                  onChange={(e) => setNewPlan(prev => ({ ...prev, yearLevel: e.target.value }))}
+                  onChange={(e) => setNewPlan((prev) => ({ ...prev, yearLevel: e.target.value }))}
                   style={{
                     width: '100%',
                     padding: '12px',
                     border: '2px solid #e2e8f0',
                     borderRadius: '8px',
-                    fontSize: '1rem'
+                    fontSize: '1rem',
                   }}
                 >
                   <option value="">Select Year Level</option>
@@ -307,26 +355,42 @@ const AdvancedLessonPlanner: React.FC = () => {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#4a5568' }}>
+              <label
+                style={{
+                  display: 'block',
+                  marginBottom: '5px',
+                  fontWeight: '600',
+                  color: '#4a5568',
+                }}
+              >
                 Duration (minutes)
               </label>
               <input
                 type="number"
                 value={newPlan.duration || 60}
-                onChange={(e) => setNewPlan(prev => ({ ...prev, duration: parseInt(e.target.value) }))}
+                onChange={(e) =>
+                  setNewPlan((prev) => ({ ...prev, duration: parseInt(e.target.value) }))
+                }
                 style={{
                   width: '200px',
                   padding: '12px',
                   border: '2px solid #e2e8f0',
                   borderRadius: '8px',
-                  fontSize: '1rem'
+                  fontSize: '1rem',
                 }}
               />
             </div>
 
             {/* Learning Objectives */}
             <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '10px',
+                }}
+              >
                 <label style={{ fontWeight: '600', color: '#4a5568' }}>Learning Objectives</label>
                 <button
                   onClick={handleAddObjective}
@@ -337,7 +401,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     padding: '8px 16px',
                     borderRadius: '6px',
                     cursor: 'pointer',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
                   }}
                 >
                   + Add Objective
@@ -351,7 +415,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   onChange={(e) => {
                     const newObjectives = [...(newPlan.learningObjectives || [])];
                     newObjectives[index] = e.target.value;
-                    setNewPlan(prev => ({ ...prev, learningObjectives: newObjectives }));
+                    setNewPlan((prev) => ({ ...prev, learningObjectives: newObjectives }));
                   }}
                   style={{
                     width: '100%',
@@ -359,7 +423,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     border: '1px solid #e2e8f0',
                     borderRadius: '6px',
                     fontSize: '0.95rem',
-                    marginBottom: '8px'
+                    marginBottom: '8px',
                   }}
                   placeholder={`Learning objective ${index + 1}`}
                 />
@@ -368,7 +432,14 @@ const AdvancedLessonPlanner: React.FC = () => {
 
             {/* Activities */}
             <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '10px',
+                }}
+              >
                 <label style={{ fontWeight: '600', color: '#4a5568' }}>Activities</label>
                 <button
                   onClick={handleAddActivity}
@@ -379,7 +450,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     padding: '8px 16px',
                     borderRadius: '6px',
                     cursor: 'pointer',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
                   }}
                 >
                   + Add Activity
@@ -393,7 +464,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   onChange={(e) => {
                     const newActivities = [...(newPlan.activities || [])];
                     newActivities[index] = e.target.value;
-                    setNewPlan(prev => ({ ...prev, activities: newActivities }));
+                    setNewPlan((prev) => ({ ...prev, activities: newActivities }));
                   }}
                   style={{
                     width: '100%',
@@ -401,7 +472,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     border: '1px solid #e2e8f0',
                     borderRadius: '6px',
                     fontSize: '0.95rem',
-                    marginBottom: '8px'
+                    marginBottom: '8px',
                   }}
                   placeholder={`Activity ${index + 1}`}
                 />
@@ -410,7 +481,14 @@ const AdvancedLessonPlanner: React.FC = () => {
 
             {/* Cultural Elements */}
             <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '10px',
+                }}
+              >
                 <label style={{ fontWeight: '600', color: '#4a5568' }}>Cultural Elements</label>
                 <button
                   onClick={handleAddCulturalElement}
@@ -421,7 +499,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     padding: '8px 16px',
                     borderRadius: '6px',
                     cursor: 'pointer',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
                   }}
                 >
                   + Add Element
@@ -435,7 +513,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   onChange={(e) => {
                     const newElements = [...(newPlan.culturalElements || [])];
                     newElements[index] = e.target.value;
-                    setNewPlan(prev => ({ ...prev, culturalElements: newElements }));
+                    setNewPlan((prev) => ({ ...prev, culturalElements: newElements }));
                   }}
                   style={{
                     width: '100%',
@@ -443,7 +521,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     border: '1px solid #e2e8f0',
                     borderRadius: '6px',
                     fontSize: '0.95rem',
-                    marginBottom: '8px'
+                    marginBottom: '8px',
                   }}
                   placeholder={`Cultural element ${index + 1}`}
                 />
@@ -452,12 +530,19 @@ const AdvancedLessonPlanner: React.FC = () => {
 
             {/* Assessment */}
             <div style={{ marginBottom: '20px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#4a5568' }}>
+              <label
+                style={{
+                  display: 'block',
+                  marginBottom: '5px',
+                  fontWeight: '600',
+                  color: '#4a5568',
+                }}
+              >
                 Assessment
               </label>
               <textarea
                 value={newPlan.assessment || ''}
-                onChange={(e) => setNewPlan(prev => ({ ...prev, assessment: e.target.value }))}
+                onChange={(e) => setNewPlan((prev) => ({ ...prev, assessment: e.target.value }))}
                 style={{
                   width: '100%',
                   padding: '12px',
@@ -465,7 +550,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   borderRadius: '8px',
                   fontSize: '1rem',
                   minHeight: '80px',
-                  resize: 'vertical'
+                  resize: 'vertical',
                 }}
                 placeholder="Describe how students will be assessed"
               />
@@ -473,7 +558,14 @@ const AdvancedLessonPlanner: React.FC = () => {
 
             {/* Resources */}
             <div style={{ marginBottom: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '10px',
+                }}
+              >
                 <label style={{ fontWeight: '600', color: '#4a5568' }}>Resources</label>
                 <button
                   onClick={handleAddResource}
@@ -484,7 +576,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     padding: '8px 16px',
                     borderRadius: '6px',
                     cursor: 'pointer',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
                   }}
                 >
                   + Add Resource
@@ -498,7 +590,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   onChange={(e) => {
                     const newResources = [...(newPlan.resources || [])];
                     newResources[index] = e.target.value;
-                    setNewPlan(prev => ({ ...prev, resources: newResources }));
+                    setNewPlan((prev) => ({ ...prev, resources: newResources }));
                   }}
                   style={{
                     width: '100%',
@@ -506,7 +598,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                     border: '1px solid #e2e8f0',
                     borderRadius: '6px',
                     fontSize: '0.95rem',
-                    marginBottom: '8px'
+                    marginBottom: '8px',
                   }}
                   placeholder={`Resource ${index + 1}`}
                 />
@@ -526,7 +618,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   fontWeight: '600',
                   cursor: 'pointer',
                   boxShadow: '0 10px 20px rgba(72, 187, 120, 0.3)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
@@ -556,7 +648,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                   borderRadius: '15px',
                   padding: '25px',
                   boxShadow: '0 5px 15px rgba(0,0,0,0.08)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)';
@@ -567,12 +659,26 @@ const AdvancedLessonPlanner: React.FC = () => {
                   e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                  }}
+                >
                   <div>
                     <h3 style={{ color: '#2d3748', margin: '0 0 5px 0', fontSize: '1.4rem' }}>
                       {plan.title}
                     </h3>
-                    <div style={{ display: 'flex', gap: '15px', color: '#718096', fontSize: '0.95rem' }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: '15px',
+                        color: '#718096',
+                        fontSize: '0.95rem',
+                      }}
+                    >
                       <span>📚 {plan.subject}</span>
                       <span>👥 {plan.yearLevel}</span>
                       <span>⏱️ {plan.duration} min</span>
@@ -580,26 +686,30 @@ const AdvancedLessonPlanner: React.FC = () => {
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '10px' }}>
-                    <button style={{
-                      background: '#4299e1',
-                      color: 'white',
-                      border: 'none',
-                      padding: '8px 16px',
-                      borderRadius: '6px',
-                      cursor: 'pointer',
-                      fontSize: '0.9rem'
-                    }}>
+                    <button
+                      style={{
+                        background: '#4299e1',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                      }}
+                    >
                       Edit
                     </button>
-                    <button style={{
-                      background: '#e53e3e',
-                      color: 'white',
-                      border: 'none',
-                      padding: '8px 16px',
-                      borderRadius: '6px',
-                      cursor: 'pointer',
-                      fontSize: '0.9rem'
-                    }}>
+                    <button
+                      style={{
+                        background: '#e53e3e',
+                        color: 'white',
+                        border: 'none',
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                      }}
+                    >
                       Delete
                     </button>
                   </div>
@@ -641,7 +751,7 @@ const AdvancedLessonPlanner: React.FC = () => {
                             padding: '4px 12px',
                             borderRadius: '15px',
                             fontSize: '0.85rem',
-                            fontWeight: '500'
+                            fontWeight: '500',
                           }}
                         >
                           {element}
