@@ -474,7 +474,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
                   </h3>
                 </div>
                 <p style={{ margin: '0 0 12px 0', color: '#166534' }}>
-                  Archives NZ, DOC, Statistics NZ, Te Papa - All verified September 2025
+                  Archives NZ, DOC, Statistics NZ, Te Papa - All // Link verification required
                 </p>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <button
@@ -814,7 +814,7 @@ const ProfessionalTeacherDashboard: React.FC = () => {
               }}
             >
               <p style={{ margin: '0', color: '#166534', fontWeight: '600' }}>
-                ✅ 12+ Complete Resources • All External Links Verified Working (Sept 2025)
+                ✅ 12+ Complete Resources • All External Links // Link verification required)
               </p>
               <p style={{ margin: '4px 0 0 0', color: '#166534', fontSize: '0.9em' }}>
                 Archives NZ, DOC, Statistics NZ, Te Papa - All functional for immediate classroom

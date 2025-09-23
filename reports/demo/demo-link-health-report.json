@@ -1,0 +1,99 @@
+{
+  "demo": true,
+  "timestamp": "2025-09-23T11:03:25.029Z",
+  "summary": {
+    "healthScore": 91,
+    "totalLinks": 34,
+    "workingLinks": 31,
+    "brokenLinks": 3,
+    "replacedLinks": 0,
+    "priorityLinks": 20,
+    "avgResponseTime": 2336,
+    "credibilityStatus": "Excellent"
+  },
+  "priorityDomains": {
+    "archives.govt.nz": {
+      "total": 3,
+      "working": 3,
+      "percentage": 100,
+      "avgResponseTime": 1391
+    },
+    "doc.govt.nz": {
+      "total": 4,
+      "working": 4,
+      "percentage": 100,
+      "avgResponseTime": 1519
+    },
+    "stats.govt.nz": {
+      "total": 1,
+      "working": 1,
+      "percentage": 100,
+      "avgResponseTime": 1499
+    },
+    "tepapa.govt.nz": {
+      "total": 6,
+      "working": 5,
+      "percentage": 83,
+      "avgResponseTime": 2350
+    },
+    "tki.org.nz": {
+      "total": 2,
+      "working": 2,
+      "percentage": 100,
+      "avgResponseTime": 1608
+    },
+    "nzhistory.govt.nz": {
+      "total": 1,
+      "working": 1,
+      "percentage": 100,
+      "avgResponseTime": 1894
+    },
+    "natlib.govt.nz": {
+      "total": 1,
+      "working": 1,
+      "percentage": 100,
+      "avgResponseTime": 1736
+    },
+    "tetaurawhiri.govt.nz": {
+      "total": 1,
+      "working": 1,
+      "percentage": 100,
+      "avgResponseTime": 1531
+    },
+    "maoritelevision.com": {
+      "total": 1,
+      "working": 1,
+      "percentage": 100,
+      "avgResponseTime": 1100
+    }
+  },
+  "issues": [
+    {
+      "url": "https://teketeakoclient.com/signup?ref={referralData.referralCode}",
+      "status": "broken",
+      "file": "src/components/ReferralSystem.tsx",
+      "priority": "medium",
+      "recommendation": "Find alternative resource or remove"
+    },
+    {
+      "url": "https://collections.tepapa.govt.nz",
+      "status": "broken",
+      "file": "src/components/PremiumLessonPlanShowcase.tsx",
+      "priority": "high",
+      "recommendation": "Find alternative resource or remove"
+    },
+    {
+      "url": "https://broken-link.example.com",
+      "status": "broken",
+      "file": "src/components/ExaAIIntegration.tsx",
+      "priority": "medium",
+      "recommendation": "Find alternative resource or remove"
+    }
+  ],
+  "recommendations": [
+    "Fix 3 broken links immediately",
+    "Set up daily automated verification",
+    "Configure Exa.ai API for intelligent link replacement",
+    "Monitor priority educational domains closely"
+  ]
+}

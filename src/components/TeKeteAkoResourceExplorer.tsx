@@ -144,7 +144,7 @@ const TeKeteAkoResourceExplorer: React.FC = () => {
               TeKeteAko Resource Explorer
             </h1>
             <p className="explorer-subtitle">
-              Discover thousands of beautiful, professional educational resources from the TeKeteAko
+              Discover 39 beautiful, professional educational resources from the TeKeteAko
               collection
             </p>
           </div>

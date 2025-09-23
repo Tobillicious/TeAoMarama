@@ -142,7 +142,7 @@ const BrilliantOnboarding: React.FC = () => {
                 <Award className="h-8 w-8 text-purple-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">What You'll Get</h3>
                 <ul className="space-y-2 text-blue-200">
-                  <li>• 500+ premium lesson plans</li>
+                  <li>• 3 complete curriculum units + 36 supporting resources</li>
                   <li>• Advanced student analytics</li>
                   <li>• Cultural integration tools</li>
                   <li>• 24/7 teacher support</li>
@@ -366,7 +366,7 @@ const BrilliantOnboarding: React.FC = () => {
                   name: 'Professional',
                   price: '$45',
                   popular: true,
-                  features: ['500+ resources', 'Advanced analytics', 'Priority support', 'AI insights']
+                  features: ['3 units + 36 resources', 'Advanced analytics', 'Priority support', 'AI insights']
                 },
                 {
                   id: 'enterprise',

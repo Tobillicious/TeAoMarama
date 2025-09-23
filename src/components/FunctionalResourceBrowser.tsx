@@ -626,7 +626,7 @@ Generated from TeAoMarama Resource Browser`;
               display: 'inline-block',
             }}
           >
-            ✅ All External Links Verified Working (Sept 2025) - Archives NZ, DOC, Stats NZ, Te Papa
+            ✅ All External Links // Link verification required) - Archives NZ, DOC, Stats NZ, Te Papa
           </div>
           <p
             /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ /* TODO: Move to external CSS */ style={{

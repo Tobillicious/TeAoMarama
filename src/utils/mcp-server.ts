@@ -447,7 +447,7 @@ export class MCPServer {
 }
 
 // Global MCP server instance
-export // // // const globalMCPServer = new MCPServer({
+export const globalMCPServer = new MCPServer({
   port: 3001,
   host: 'localhost',
   protocol: 'http',

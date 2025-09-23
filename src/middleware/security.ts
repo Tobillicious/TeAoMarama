@@ -71,7 +71,7 @@ class SecureAPIMiddleware {
     // High sensitivity cultural content requires special permissions
     if (resource.sensitivity === 'high' || resource.sensitivity === 'sacred') {
       if (context.culturalClearance !== 'approved' && context.culturalClearance !== 'kaitiaki') {
-        await this.logSecurityEvent('CULTURAL_ACCESS_DENIED', context.user?.id, '', '');
+        await this.logSecurityEvent('CULTURAL_ACCESS_DENIED', context.user?.id || null, '', '');
         return false;
       }
     }

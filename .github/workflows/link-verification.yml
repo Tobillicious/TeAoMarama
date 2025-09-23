@@ -1,0 +1,310 @@
+name: Educational Link Verification
+
+on:
+  schedule:
+    # Run daily at 6 AM NZ time (6 PM UTC)
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Verification scope'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - priority-only
+          - broken-only
+  push:
+    paths:
+      - 'src/data/**/*.ts'
+      - 'src/components/**/*.tsx'
+      - 'src/pages/**/*.tsx'
+      - 'scripts/automated-link-verification-system.ts'
+      - 'scripts/remove-false-verification-claims.ts'
+  pull_request:
+    paths:
+      - 'src/data/**/*.ts'
+      - 'src/components/**/*.tsx'
+      - 'src/pages/**/*.tsx'
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  verify-links:
+    name: Verify Educational Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Create reports directory
+        run: mkdir -p reports/link-verification
+      
+      - name: Run link verification
+        env:
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+        run: |
+          echo "🔍 Starting link verification for NZ educational resources..."
+          npm run verify-links
+        continue-on-error: true
+      
+      - name: Remove false verification claims
+        run: |
+          echo "🧹 Removing false verification claims..."
+          npm run remove-false-claims
+        continue-on-error: true
+      
+      - name: Check link health score
+        id: health-check
+        run: |
+          if [ -f "reports/link-verification/link-health-report.json" ]; then
+            HEALTH_SCORE=$(node -e "
+              const report = require('./reports/link-verification/link-health-report.json');
+              console.log(report.summary.healthScore);
+            ")
+            echo "health_score=$HEALTH_SCORE" >> $GITHUB_OUTPUT
+            echo "📊 Link health score: $HEALTH_SCORE%"
+            
+            # Set status based on health score
+            if [ "$HEALTH_SCORE" -ge 90 ]; then
+              echo "status=excellent" >> $GITHUB_OUTPUT
+              echo "✅ Excellent link health"
+            elif [ "$HEALTH_SCORE" -ge 70 ]; then
+              echo "status=good" >> $GITHUB_OUTPUT
+              echo "⚠️ Good link health but needs attention"
+            else
+              echo "status=poor" >> $GITHUB_OUTPUT
+              echo "🔴 Poor link health - immediate action required"
+              exit 1
+            fi
+          else
+            echo "❌ No health report generated"
+            echo "status=error" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+      
+      - name: Upload link verification reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: link-verification-reports-${{ github.run_number }}
+          path: |
+            reports/link-verification/
+            reports/false-claims-removal/
+          retention-days: 30
+      
+      - name: Upload backup files
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backup-files-${{ github.run_number }}
+          path: backups/
+          retention-days: 7
+      
+      - name: Comment PR with link health results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            let comment = `## 🔗 Educational Link Verification Report\n\n`;
+            
+            try {
+              // Read link verification summary
+              if (fs.existsSync('reports/link-verification/link-verification-summary.md')) {
+                const linkSummary = fs.readFileSync('reports/link-verification/link-verification-summary.md', 'utf8');
+                comment += linkSummary + '\n\n';
+              }
+              
+              // Read false claims removal summary
+              if (fs.existsSync('reports/false-claims-removal/false-claims-removal-summary.md')) {
+                const claimsSummary = fs.readFileSync('reports/false-claims-removal/false-claims-removal-summary.md', 'utf8');
+                comment += '## False Claims Removal\n\n' + claimsSummary + '\n\n';
+              }
+              
+              comment += `### 🎯 Impact on Teacher Credibility\n\n`;
+              comment += `This verification ensures that New Zealand teachers can rely on working, valuable external links in their educational resources.\n\n`;
+              comment += `**Next Steps:**\n`;
+              comment += `- Review any broken links and replace with working alternatives\n`;
+              comment += `- Ensure all verification claims are accurate\n`;
+              comment += `- Monitor link health regularly to maintain educational quality\n`;
+              
+            } catch (error) {
+              comment += `❌ Error generating detailed report: ${error.message}\n\n`;
+              comment += `Please check the uploaded artifacts for detailed results.`;
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+      
+      - name: Create issue for poor link health
+        if: steps.health-check.outputs.status == 'poor'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const healthScore = '${{ steps.health-check.outputs.health_score }}';
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 Critical: Poor Link Health Score (${healthScore}%) - Teacher Credibility at Risk`,
+              body: `## 🔴 Critical Link Health Issue
+            
+            **Health Score:** ${healthScore}% (Below 70% threshold)
+            **Impact:** High risk to teacher credibility and educational resource reliability
+            
+            ### Immediate Actions Required:
+            
+            1. **Review Broken Links**: Check the link verification report for broken educational resources
+            2. **Fix Priority Domains**: Focus on:
+               - archives.govt.nz (Te Tiriti content)
+               - doc.govt.nz (Kākāpō conservation)
+               - stats.govt.nz (Census data)
+               - tepapa.govt.nz (Museum resources)
+               - education.govt.nz (Ministry resources)
+            3. **Remove False Claims**: Clean up any misleading verification statements
+            4. **Test Resources**: Manually verify critical educational links
+            
+            ### Reports Available:
+            - Link Verification Report: Check workflow artifacts
+            - False Claims Removal Report: Check workflow artifacts
+            
+            **This issue affects the professional credibility of the educational platform with New Zealand teachers.**
+            
+            Priority: **CRITICAL** 🔴
+            Assignees: @admin
+            Labels: link-health, critical, educational-quality`,
+              labels: ['link-health', 'critical', 'educational-quality', 'teacher-credibility'],
+              assignees: ['admin']
+            });
+      
+      - name: Update link health badge
+        if: always()
+        run: |
+          HEALTH_SCORE="${{ steps.health-check.outputs.health_score }}"
+          STATUS="${{ steps.health-check.outputs.status }}"
+          
+          # Create badge color based on status
+          case $STATUS in
+            excellent) COLOR="brightgreen" ;;
+            good) COLOR="yellow" ;;
+            poor) COLOR="red" ;;
+            *) COLOR="lightgrey" ;;
+          esac
+          
+          # Update README badge (if we had one)
+          echo "Link health: $HEALTH_SCORE% ($STATUS) - Badge color: $COLOR"
+      
+      - name: Send Slack notification
+        if: steps.health-check.outputs.status == 'poor' && github.event_name == 'schedule'
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK" ]; then
+            curl -X POST -H 'Content-type: application/json' \
+              --data "{
+                \"text\": \"🚨 Critical: Educational link health score dropped to ${{ steps.health-check.outputs.health_score }}%. Teacher credibility at risk. Immediate action required.\",
+                \"blocks\": [
+                  {
+                    \"type\": \"section\",
+                    \"text\": {
+                      \"type\": \"mrkdwn\",
+                      \"text\": \"*🚨 Critical Link Health Alert*\\n\\nEducational resource link health has dropped below acceptable levels.\\n\\n*Health Score:* ${{ steps.health-check.outputs.health_score }}%\\n*Status:* Poor\\n*Impact:* Teacher credibility at risk\\n\\n<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Report>\"
+                    }
+                  }
+                ]
+              }" \
+              $SLACK_WEBHOOK
+          fi
+
+  # Separate job for emergency link fixing
+  emergency-fix:
+    name: Emergency Link Fix
+    runs-on: ubuntu-latest
+    needs: verify-links
+    if: needs.verify-links.outputs.status == 'poor' && github.event_name == 'schedule'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Emergency link repair
+        env:
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+        run: |
+          echo "🚨 Running emergency link repair..."
+          # This would run a more aggressive repair process
+          npm run verify-links
+          npm run remove-false-claims
+      
+      - name: Create emergency fix PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Check if there are any changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "Link Verification Bot"
+            git checkout -b emergency-link-fix-$(date +%Y%m%d-%H%M%S)
+            git add .
+            git commit -m "🚨 Emergency fix: Repair broken educational links
+            
+            - Fixed broken external links in educational resources
+            - Removed false verification claims
+            - Restored teacher credibility and resource reliability
+            
+            This automated fix ensures educational resources remain reliable for NZ teachers."
+            git push origin HEAD
+            
+            # Create PR
+            gh pr create \
+              --title "🚨 Emergency Link Fix - Restore Educational Resource Credibility" \
+              --body "## Emergency Link Repair
+            
+            This PR contains automated fixes for broken educational links that were affecting teacher credibility.
+            
+            ### Changes:
+            - Repaired broken external links
+            - Removed false verification claims
+            - Updated resource URLs with working alternatives
+            
+            ### Impact:
+            - Restored reliability of educational resources
+            - Maintained professional credibility with NZ teachers
+            - Ensured students have access to working resources
+            
+            **This is an emergency fix to maintain educational quality.**" \
+              --label "emergency,link-health,educational-quality" \
+              --reviewer admin
+          fi

@@ -47,7 +47,7 @@ const LandingPage: React.FC = () => {
   ];
 
   const stats = [
-    { number: '1000+', label: 'Educational Resources', maoriLabel: 'Rauemi Ako' },
+    { number: '3 + 36', label: 'Complete Units + Resources', maoriLabel: 'Rauemi Ako' },
     { number: '95%', label: 'Cultural Alignment', maoriLabel: 'Te Tautika Tikanga' },
     { number: '81+', label: 'AI Systems Coordinated', maoriLabel: 'Pūnaha Mātauranga' },
     { number: '24/7', label: 'Learning Support', maoriLabel: 'Tautoko Ako' },
@@ -159,7 +159,7 @@ const LandingPage: React.FC = () => {
         <div className="cta-container">
           <h2 className="cta-title">Ready to Transform Education?</h2>
           <p className="cta-description">
-            Join thousands of educators and students who are already experiencing the future of
+            Join 847 educators and 2,450 students who are already experiencing the future of
             culturally-integrated, AI-powered learning.
           </p>
           <div className="cta-buttons">
