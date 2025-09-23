@@ -36,3 +36,14 @@ export interface RealResource {
   tags?: string[];
   qualityMetrics?: QualityMetrics;
 }
+
+export interface ActualLessonContent {
+  title: string;
+  subject: string;
+  yearLevel: string;
+  depth: string;
+  description?: string;
+  content?: string;
+  culturalElements?: number;
+  [key: string]: unknown;
+}

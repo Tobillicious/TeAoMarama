@@ -35,7 +35,7 @@ export interface EnhancedResource {
     difficulty: number;
     estimatedDuration: number;
   };
-  actualLessonContent?: unknown; // The real enhanced lesson data
+  actualLessonContent?: import('../types').ActualLessonContent; // The real enhanced lesson data
 }
 
 export interface EnhancedResourceBatch {
