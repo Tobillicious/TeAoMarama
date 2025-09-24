@@ -1,7 +1,5 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import RealAssessmentBrowser from './components/RealAssessmentBrowser';
-import RealResourceBrowser from './components/RealResourceBrowser';
 import { EducationProvider } from './contexts/EducationContext';
 
 // Lazy load new components
@@ -29,6 +27,8 @@ const LLMCoordinationDashboard = lazy(() => import('./components/LLMCoordination
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 const AssessmentWorkflow = lazy(() => import('./components/AssessmentWorkflow'));
+const RealAssessmentBrowser = lazy(() => import('./components/RealAssessmentBrowser'));
+const RealResourceBrowser = lazy(() => import('./components/RealResourceBrowser'));
 
 const WorkingHomepage = () => {
   return (

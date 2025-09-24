@@ -2,14 +2,13 @@
 
 /**
  * 🚀 PRODUCTION DEPLOYMENT COORDINATOR
- * 
+ *
  * Orchestrates the full production deployment of Te Ao Mārama
  * Coordinates multiple AI agents for market launch
  */
 
 import { execSync } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 
 interface DeploymentTask {
   id: string;
@@ -34,57 +33,57 @@ class ProductionDeploymentCoordinator {
         name: 'Platform Validation',
         status: 'pending',
         description: 'Final validation of all platform features',
-        agent: 'DeepSeek Enhanced AI'
+        agent: 'DeepSeek Enhanced AI',
       },
       {
         id: 'deploy-2',
         name: 'Production Build',
         status: 'pending',
         description: 'Create optimized production build',
-        agent: 'Build Specialist'
+        agent: 'Build Specialist',
       },
       {
         id: 'deploy-3',
         name: 'Payment Integration',
         status: 'pending',
         description: 'Connect real Stripe API for subscriptions',
-        agent: 'Payment Specialist'
+        agent: 'Payment Specialist',
       },
       {
         id: 'deploy-4',
         name: 'Content Validation',
         status: 'pending',
         description: 'Validate all educational content and cultural integration',
-        agent: 'Cultural Advisor'
+        agent: 'Cultural Advisor',
       },
       {
         id: 'deploy-5',
         name: 'Performance Optimization',
         status: 'pending',
         description: 'Optimize for production performance',
-        agent: 'Performance Specialist'
+        agent: 'Performance Specialist',
       },
       {
         id: 'deploy-6',
         name: 'Security Hardening',
         status: 'pending',
         description: 'Implement production security measures',
-        agent: 'Security Specialist'
+        agent: 'Security Specialist',
       },
       {
         id: 'deploy-7',
         name: 'User Testing Setup',
         status: 'pending',
         description: 'Prepare platform for real teacher testing',
-        agent: 'Testing Coordinator'
+        agent: 'Testing Coordinator',
       },
       {
         id: 'deploy-8',
         name: 'Market Launch',
         status: 'pending',
         description: 'Launch platform for NZ education market',
-        agent: 'Market Specialist'
-      }
+        agent: 'Market Specialist',
+      },
     ];
   }
 
@@ -107,7 +106,7 @@ class ProductionDeploymentCoordinator {
     console.log(`🎯 Executing: ${task.name}`);
     console.log(`   Agent: ${task.agent}`);
     console.log(`   Description: ${task.description}`);
-    
+
     task.status = 'in_progress';
 
     try {
@@ -137,38 +136,39 @@ class ProductionDeploymentCoordinator {
           await this.marketLaunch();
           break;
       }
-      
+
       task.status = 'completed';
       console.log(`   ✅ ${task.name} - COMPLETED`);
-      
     } catch (error) {
       task.status = 'failed';
       console.log(`   ❌ ${task.name} - FAILED: ${error}`);
     }
-    
+
     console.log('');
   }
 
   private async platformValidation(): Promise<void> {
     // Final validation of all platform features
     console.log('   🔍 Validating platform features...');
-    
+
     // Test all critical routes
     const routes = ['/', '/pricing', '/teacher-dashboard', '/onboarding', '/resources'];
     for (const route of routes) {
-      const response = execSync(`curl -s -o /dev/null -w "%{http_code}" ${this.baseUrl}${route}`, { encoding: 'utf8' });
+      const response = execSync(`curl -s -o /dev/null -w "%{http_code}" ${this.baseUrl}${route}`, {
+        encoding: 'utf8',
+      });
       if (response.trim() !== '200') {
         throw new Error(`Route ${route} failed validation`);
       }
     }
-    
+
     console.log('   ✅ All platform routes validated');
   }
 
   private async productionBuild(): Promise<void> {
     // Create optimized production build
     console.log('   🔨 Creating production build...');
-    
+
     try {
       execSync('npm run build', { stdio: 'pipe' });
       console.log('   ✅ Production build created successfully');
@@ -180,7 +180,7 @@ class ProductionDeploymentCoordinator {
   private async paymentIntegration(): Promise<void> {
     // Connect real Stripe API for subscriptions
     console.log('   💳 Setting up payment integration...');
-    
+
     // Check if Stripe configuration exists
     if (fs.existsSync('src/utils/stripe-payment-system.ts')) {
       console.log('   ✅ Stripe payment system configured');
@@ -192,58 +192,68 @@ class ProductionDeploymentCoordinator {
   private async contentValidation(): Promise<void> {
     // Validate all educational content and cultural integration
     console.log('   📚 Validating educational content...');
-    
+
     const expandedContent = fs.readFileSync('src/content/expanded-nz-curriculum.ts', 'utf8');
-    const additionalContent = fs.readFileSync('src/content/additional-nz-curriculum-lessons.ts', 'utf8');
-    
+    const additionalContent = fs.readFileSync(
+      'src/content/additional-nz-curriculum-lessons.ts',
+      'utf8',
+    );
+
     const lessonCount = (expandedContent.match(/id:\s*'[^']+'/g) || []).length;
     const additionalLessonCount = (additionalContent.match(/id:\s*'[^']+'/g) || []).length;
-    
+
     console.log(`   ✅ ${lessonCount + additionalLessonCount} curriculum lessons validated`);
-    
+
     // Check cultural integration
-    const maoriPrinciples = ['Whakapapa', 'Kaitiakitanga', 'Manaakitanga', 'Whanaungatanga', 'Mana', 'Tikanga'];
+    const maoriPrinciples = [
+      'Whakapapa',
+      'Kaitiakitanga',
+      'Manaakitanga',
+      'Whanaungatanga',
+      'Mana',
+      'Tikanga',
+    ];
     let foundPrinciples = 0;
-    
+
     for (const principle of maoriPrinciples) {
       if (expandedContent.includes(principle)) {
         foundPrinciples++;
       }
     }
-    
+
     console.log(`   ✅ ${foundPrinciples}/6 core Māori principles integrated`);
   }
 
   private async performanceOptimization(): Promise<void> {
     // Optimize for production performance
     console.log('   ⚡ Optimizing performance...');
-    
+
     // Check build size
     if (fs.existsSync('dist/index.html')) {
       const stats = fs.statSync('dist/index.html');
       const sizeKB = (stats.size / 1024).toFixed(1);
       console.log(`   ✅ Production bundle: ${sizeKB} KB`);
     }
-    
+
     console.log('   ✅ Performance optimization complete');
   }
 
   private async securityHardening(): Promise<void> {
     // Implement production security measures
     console.log('   🔒 Implementing security measures...');
-    
+
     // Check for security configurations
     if (fs.existsSync('src/utils/stripe-payment-system.ts')) {
       console.log('   ✅ Payment security configured');
     }
-    
+
     console.log('   ✅ Security hardening complete');
   }
 
   private async userTestingSetup(): Promise<void> {
     // Prepare platform for real teacher testing
     console.log('   👥 Setting up user testing...');
-    
+
     // Create testing documentation
     const testingDoc = `# 🧪 USER TESTING GUIDE
 
@@ -283,7 +293,7 @@ class ProductionDeploymentCoordinator {
   private async marketLaunch(): Promise<void> {
     // Launch platform for NZ education market
     console.log('   🎯 Launching to market...');
-    
+
     // Create market launch documentation
     const launchDoc = `# 🚀 MARKET LAUNCH READY
 
@@ -328,23 +338,23 @@ class ProductionDeploymentCoordinator {
   private generateDeploymentReport(): void {
     console.log('📊 DEPLOYMENT REPORT');
     console.log('====================');
-    
-    const completed = this.tasks.filter(t => t.status === 'completed').length;
-    const failed = this.tasks.filter(t => t.status === 'failed').length;
+
+    const completed = this.tasks.filter((t) => t.status === 'completed').length;
+    const failed = this.tasks.filter((t) => t.status === 'failed').length;
     const total = this.tasks.length;
-    
+
     console.log(`✅ COMPLETED: ${completed}/${total}`);
     console.log(`❌ FAILED: ${failed}/${total}`);
     console.log('');
-    
+
     // Detailed task status
     for (const task of this.tasks) {
       const icon = task.status === 'completed' ? '✅' : task.status === 'failed' ? '❌' : '⏳';
       console.log(`${icon} ${task.name}: ${task.status.toUpperCase()}`);
     }
-    
+
     console.log('');
-    
+
     if (failed === 0) {
       console.log('🎉 DEPLOYMENT STATUS: SUCCESS');
       console.log('Te Ao Mārama is ready for production deployment!');
