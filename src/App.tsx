@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import RealResourceBrowser from './components/RealResourceBrowser';
 import { EducationProvider } from './contexts/EducationContext';
 
 // Lazy load new components
@@ -329,7 +330,7 @@ const WorkingResourcesPage = () => {
           >
             <h3 style={{ color: '#1e40af', marginBottom: '15px' }}>📊 Assessment Tools</h3>
             <p style={{ color: '#6b7280', marginBottom: '20px' }}>
-              Formative and summative assessment resources
+              Interactive assessments with cultural integration
             </p>
             <button
               style={{
@@ -913,7 +914,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WorkingHomepage />} />
           <Route path="/join" element={<WorkingJoinPage />} />
-          <Route path="/resources" element={<WorkingResourcesPage />} />
+          <Route path="/resources" element={<RealResourceBrowser />} />
           <Route path="/pricing" element={<WorkingSubscriptionSystem />} />
           <Route path="/onboarding" element={<ProfessionalTeacherOnboarding />} />
           <Route path="/teacher-dashboard" element={<ComprehensiveTeacherDashboard />} />
@@ -921,6 +922,7 @@ function App() {
           <Route path="/student" element={<WorkingStudentDashboard />} />
           <Route path="/create-lesson" element={<WorkingLessonCreator />} />
           <Route path="/assessments" element={<WorkingAssessmentTools />} />
+          <Route path="/assessment-workflow" element={<AssessmentWorkflow />} />
           <Route path="/class-management" element={<WorkingClassManagement />} />
           <Route path="/parent-communication" element={<WorkingParentCommunication />} />
           <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
