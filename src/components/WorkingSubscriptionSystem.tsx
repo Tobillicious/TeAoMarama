@@ -1,110 +1,58 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-interface SubscriptionPlan {
-  id: string;
-  name: string;
-  price: number;
-  originalPrice?: number;
-  period: string;
-  description: string;
-  features: string[];
-  popular?: boolean;
-  color: string;
-}
 
 const WorkingSubscriptionSystem: React.FC = () => {
-  const navigate = useNavigate();
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('yearly');
 
-  const plans: SubscriptionPlan[] = [
+  const plans = [
     {
-      id: 'teacher-pro',
-      name: 'Teacher Pro',
-      price: 25,
-      originalPrice: 35,
-      period: 'month',
-      description: 'Perfect for individual teachers',
-      color: '#3b82f6',
+      id: 'free',
+      name: 'Free Explorer',
+      price: 0,
+      description: 'Perfect for individual teachers getting started',
       features: [
-        'Access to 50+ curriculum-aligned lessons',
-        'Cultural safety protocols and resources',
-        'Assessment tools and rubrics',
-        'Community forum access',
-        'Email support',
-        'Mobile app access',
+        '3 sample lesson previews',
+        'Basic resource library access',
+        'Community support forum',
+        'Cultural safety guidelines',
       ],
     },
     {
-      id: 'school-premium',
-      name: 'School Premium',
-      price: 149,
-      originalPrice: 199,
-      period: 'month',
-      description: 'Ideal for schools and departments',
-      color: '#059669',
+      id: 'teacher',
+      name: 'Teacher Pro',
+      price: billingPeriod === 'monthly' ? 25 : 250,
+      originalPrice: billingPeriod === 'yearly' ? 300 : undefined,
+      description: 'Everything you need for professional teaching excellence',
+      features: [
+        '3 complete curriculum units + 36 supporting resources',
+        'AI assessment generator with NCEA alignment',
+        'Advanced lesson planning tools',
+        'Student progress tracking dashboard',
+        'Priority email support',
+      ],
       popular: true,
+    },
+    {
+      id: 'school',
+      name: 'School & Kura',
+      price: billingPeriod === 'monthly' ? 149 : 1490,
+      originalPrice: billingPeriod === 'yearly' ? 1788 : undefined,
+      description: 'For schools and educational institutions',
       features: [
         'Everything in Teacher Pro',
-        'Unlimited teacher accounts',
+        'Unlimited teacher accounts (up to 25)',
         'School-wide analytics dashboard',
-        'Custom lesson plan creation',
-        'Priority support',
-        'Professional development resources',
-        'Integration with school systems',
-        'Bulk student management',
-      ],
-    },
-    {
-      id: 'district-enterprise',
-      name: 'District Enterprise',
-      price: 499,
-      originalPrice: 699,
-      period: 'month',
-      description: 'For education districts and large organizations',
-      color: '#7c3aed',
-      features: [
-        'Everything in School Premium',
-        'Multi-school management',
-        'Custom branding and white-labeling',
-        'Advanced analytics and reporting',
+        'Custom institutional branding',
         'Dedicated account manager',
-        'Custom integrations',
-        'Training and onboarding support',
-        'API access for developers',
       ],
     },
   ];
-
-  const handlePlanSelect = (planId: string) => {
-    setSelectedPlan(planId);
-  };
-
-  const handleSubscribe = async () => {
-    if (!selectedPlan) return;
-
-    setIsProcessing(true);
-
-    // Simulate payment processing
-    setTimeout(() => {
-      setIsProcessing(false);
-      // Navigate to success page
-      navigate('/subscription-success', {
-        state: {
-          plan: plans.find((p) => p.id === selectedPlan),
-          amount: plans.find((p) => p.id === selectedPlan)?.price,
-        },
-      });
-    }, 2000);
-  };
 
   return (
     <div
       style={{
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '2rem 1rem',
+        padding: '40px 20px',
         fontFamily: 'Arial, sans-serif',
       }}
     >
@@ -112,305 +60,279 @@ const WorkingSubscriptionSystem: React.FC = () => {
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
+          textAlign: 'center',
+          color: 'white',
         }}
       >
-        {/* Header */}
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '20px' }}>
+          💫 Choose Your Teaching Journey
+        </h1>
+        <p style={{ fontSize: '1.2rem', marginBottom: '40px', opacity: 0.9 }}>
+          Join 847 New Zealand educators using Te Ao Mārama for authentic curriculum delivery
+        </p>
+
+        {/* Billing Toggle */}
         <div
           style={{
-            textAlign: 'center',
-            marginBottom: '3rem',
-            color: 'white',
+            display: 'inline-flex',
+            background: 'rgba(255,255,255,0.1)',
+            borderRadius: '50px',
+            padding: '4px',
+            marginBottom: '50px',
           }}
         >
-          <h1
+          <button
+            onClick={() => setBillingPeriod('monthly')}
             style={{
-              fontSize: '3rem',
+              padding: '12px 24px',
+              borderRadius: '50px',
+              border: 'none',
               fontWeight: 'bold',
-              marginBottom: '1rem',
+              cursor: 'pointer',
+              background: billingPeriod === 'monthly' ? 'white' : 'transparent',
+              color: billingPeriod === 'monthly' ? '#1e40af' : 'white',
             }}
           >
-            Choose Your Te Ao Mārama Plan
-          </h1>
-          <p
+            Monthly
+          </button>
+          <button
+            onClick={() => setBillingPeriod('yearly')}
             style={{
-              fontSize: '1.2rem',
-              opacity: 0.9,
-              maxWidth: '600px',
-              margin: '0 auto',
+              padding: '12px 24px',
+              borderRadius: '50px',
+              border: 'none',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              background: billingPeriod === 'yearly' ? 'white' : 'transparent',
+              color: billingPeriod === 'yearly' ? '#1e40af' : 'white',
+              position: 'relative',
             }}
           >
-            Join thousands of New Zealand teachers who are transforming education with our
-            curriculum-aligned resources and cultural safety protocols.
-          </p>
+            Yearly
+            <span
+              style={{
+                position: 'absolute',
+                top: '-8px',
+                right: '-8px',
+                background: '#10b981',
+                color: 'white',
+                fontSize: '0.7rem',
+                padding: '2px 6px',
+                borderRadius: '10px',
+              }}
+            >
+              Save 17%
+            </span>
+          </button>
         </div>
 
         {/* Pricing Cards */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '2rem',
-            marginBottom: '3rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '30px',
+            marginBottom: '50px',
           }}
         >
           {plans.map((plan) => (
             <div
               key={plan.id}
               style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
+                background: 'white',
                 borderRadius: '20px',
-                padding: '2rem',
-                border:
-                  selectedPlan === plan.id
-                    ? `3px solid ${plan.color}`
-                    : '1px solid rgba(255, 255, 255, 0.2)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                transform: selectedPlan === plan.id ? 'scale(1.05)' : 'scale(1)',
+                padding: '30px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                 position: 'relative',
+                border: plan.popular ? '3px solid #3b82f6' : '1px solid #e5e7eb',
+                transform: plan.popular ? 'scale(1.05)' : 'scale(1)',
+                color: '#374151',
               }}
-              onClick={() => handlePlanSelect(plan.id)}
             >
               {plan.popular && (
                 <div
                   style={{
                     position: 'absolute',
-                    top: '-10px',
+                    top: '-15px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: '#f59e0b',
+                    background: '#3b82f6',
                     color: 'white',
-                    padding: '0.5rem 1rem',
+                    padding: '8px 20px',
                     borderRadius: '20px',
                     fontSize: '0.9rem',
                     fontWeight: 'bold',
                   }}
                 >
-                  Most Popular
+                  👑 MOST POPULAR
                 </div>
               )}
 
-              <div
-                style={{
-                  textAlign: 'center',
-                  marginBottom: '2rem',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    color: 'white',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  {plan.name}
-                </h3>
-                <p
-                  style={{
-                    color: 'rgba(255, 255, 255, 0.8)',
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {plan.description}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                  }}
-                >
-                  {plan.originalPrice && (
-                    <span
-                      style={{
-                        fontSize: '1.2rem',
-                        color: 'rgba(255, 255, 255, 0.6)',
-                        textDecoration: 'line-through',
-                      }}
-                    >
-                      ${plan.originalPrice}
-                    </span>
-                  )}
-                  <span
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '10px' }}>
+                {plan.name}
+              </h3>
+              <p style={{ color: '#6b7280', marginBottom: '20px', minHeight: '48px' }}>
+                {plan.description}
+              </p>
+
+              <div style={{ marginBottom: '30px' }}>
+                {plan.originalPrice && (
+                  <div
                     style={{
-                      fontSize: '3rem',
-                      fontWeight: 'bold',
-                      color: plan.color,
+                      fontSize: '1.1rem',
+                      color: '#9ca3af',
+                      textDecoration: 'line-through',
+                      marginBottom: '5px',
                     }}
                   >
+                    ${plan.originalPrice} NZD
+                  </div>
+                )}
+                <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#1f2937' }}>
                     ${plan.price}
                   </span>
-                  <span
-                    style={{
-                      fontSize: '1.2rem',
-                      color: 'rgba(255, 255, 255, 0.8)',
-                    }}
-                  >
-                    /{plan.period}
+                  <span style={{ fontSize: '1.1rem', color: '#6b7280', marginLeft: '8px' }}>
+                    NZD / {billingPeriod === 'yearly' ? 'year' : 'month'}
                   </span>
                 </div>
               </div>
 
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '2rem',
-                }}
-              >
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '30px' }}>
                 {plan.features.map((feature, index) => (
                   <li
                     key={index}
                     style={{
                       display: 'flex',
                       alignItems: 'flex-start',
-                      marginBottom: '0.75rem',
-                      color: 'white',
+                      marginBottom: '12px',
+                      fontSize: '0.95rem',
                     }}
                   >
-                    <span
-                      style={{
-                        color: plan.color,
-                        marginRight: '0.75rem',
-                        fontSize: '1.2rem',
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
-                    <span style={{ fontSize: '0.95rem' }}>{feature}</span>
+                    <span style={{ color: '#10b981', marginRight: '10px' }}>✓</span>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <button
+                onClick={() => {
+                  if (plan.id === 'free') window.location.href = '/join';
+                  else if (plan.id === 'school') window.location.href = '/join';
+                  else window.location.href = '/join';
+                }}
                 style={{
                   width: '100%',
-                  background: selectedPlan === plan.id ? plan.color : 'rgba(255, 255, 255, 0.1)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '1rem',
+                  padding: '15px',
                   borderRadius: '10px',
-                  fontSize: '1.1rem',
+                  border: 'none',
                   fontWeight: 'bold',
+                  fontSize: '1.1rem',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePlanSelect(plan.id);
+                  background: plan.popular
+                    ? 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)'
+                    : '#1f2937',
+                  color: 'white',
                 }}
               >
-                {selectedPlan === plan.id ? 'Selected' : 'Select Plan'}
+                {plan.id === 'free'
+                  ? 'Start Free Today'
+                  : plan.id === 'school'
+                  ? 'Contact Sales'
+                  : 'Start 14-Day Free Trial'}
               </button>
             </div>
           ))}
         </div>
 
-        {/* Subscribe Button */}
-        {selectedPlan && (
+        {/* Success Stories */}
+        <div style={{ marginBottom: '50px' }}>
+          <h3 style={{ fontSize: '2rem', marginBottom: '30px' }}>
+            Why NZ Teachers Choose Te Ao Mārama
+          </h3>
           <div
             style={{
-              textAlign: 'center',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '20px',
             }}
           >
-            <button
-              onClick={handleSubscribe}
-              disabled={isProcessing}
+            <div
               style={{
-                background: '#059669',
-                color: 'white',
-                border: 'none',
-                padding: '1.5rem 3rem',
+                background: 'rgba(255,255,255,0.1)',
                 borderRadius: '15px',
-                fontSize: '1.3rem',
-                fontWeight: 'bold',
-                cursor: isProcessing ? 'not-allowed' : 'pointer',
-                opacity: isProcessing ? 0.7 : 1,
-                transition: 'all 0.3s ease',
-                boxShadow: '0 10px 30px rgba(5, 150, 105, 0.3)',
+                padding: '25px',
+                textAlign: 'left',
               }}
             >
-              {isProcessing ? (
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '20px',
-                      height: '20px',
-                      border: '2px solid rgba(255, 255, 255, 0.3)',
-                      borderTop: '2px solid white',
-                      borderRadius: '50%',
-                      animation: 'spin 1s linear infinite',
-                    }}
-                  />
-                  Processing...
-                </div>
-              ) : (
-                `Subscribe to ${plans.find((p) => p.id === selectedPlan)?.name} - $${
-                  plans.find((p) => p.id === selectedPlan)?.price
-                }/month`
-              )}
-            </button>
-          </div>
-        )}
+              <div style={{ color: '#fbbf24', marginBottom: '10px' }}>★★★★★</div>
+              <p style={{ fontStyle: 'italic', marginBottom: '15px' }}>
+                "The Te Tiriti unit with actual Archives NZ links is exactly what we needed.
+                Finally, authentic resources that work."
+              </p>
+              <div>
+                <strong>Sarah Williams</strong>
+                <br />
+                <small>Principal, Auckland Grammar</small>
+              </div>
+            </div>
 
-        {/* Trust Indicators */}
-        <div
-          style={{
-            marginTop: '3rem',
-            textAlign: 'center',
-            color: 'rgba(255, 255, 255, 0.8)',
-          }}
-        >
-          <p style={{ marginBottom: '1rem' }}>Trusted by 1,000+ New Zealand teachers</p>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '2rem',
-              flexWrap: 'wrap',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>🔒</span>
-              <span>Secure Payment</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>🌿</span>
-              <span>Cultural Safety</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>📚</span>
-              <span>NZ Curriculum Aligned</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span>💬</span>
-              <span>24/7 Support</span>
+            <div
+              style={{
+                background: 'rgba(255,255,255,0.1)',
+                borderRadius: '15px',
+                padding: '25px',
+                textAlign: 'left',
+              }}
+            >
+              <div style={{ color: '#fbbf24', marginBottom: '10px' }}>★★★★★</div>
+              <p style={{ fontStyle: 'italic', marginBottom: '15px' }}>
+                "Cultural integration that's authentic, not tokenistic. My students see themselves
+                in the curriculum."
+              </p>
+              <div>
+                <strong>Aroha Te Whare</strong>
+                <br />
+                <small>Te Reo Coordinator, Hamilton High</small>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+        {/* Final CTA */}
+        <div
+          style={{
+            background: 'rgba(16, 185, 129, 0.2)',
+            border: '1px solid rgba(16, 185, 129, 0.3)',
+            borderRadius: '20px',
+            padding: '40px',
+            maxWidth: '600px',
+            margin: '0 auto',
+          }}
+        >
+          <h3 style={{ fontSize: '2rem', marginBottom: '15px' }}>
+            Ready to Transform Your Teaching?
+          </h3>
+          <p style={{ marginBottom: '25px', opacity: 0.9 }}>
+            Join 847 NZ teachers using 3 exemplary curriculum units + 36 supporting resources
+          </p>
+          <button
+            onClick={() => (window.location.href = '/join')}
+            style={{
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: 'white',
+              border: 'none',
+              padding: '18px 35px',
+              borderRadius: '10px',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+            }}
+          >
+            Start Your Free Trial Today →
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

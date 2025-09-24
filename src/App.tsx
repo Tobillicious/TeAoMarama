@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { EducationProvider } from './contexts/EducationContext';
 
 // Lazy load new components
 const WorkingSubscriptionSystem = lazy(() => import('./components/WorkingSubscriptionSystem'));
@@ -16,6 +17,10 @@ const CurriculumMappingTool = lazy(() => import('./components/CurriculumMappingT
 const TeacherCollaborationHub = lazy(() => import('./components/TeacherCollaborationHub'));
 const ProfessionalResourceLibrary = lazy(() => import('./components/ProfessionalResourceLibrary'));
 const ComprehensiveGradebook = lazy(() => import('./components/ComprehensiveGradebook'));
+const NotificationSystem = lazy(() => import('./components/NotificationSystem'));
+const StudentPortfolioSystem = lazy(() => import('./components/StudentPortfolioSystem'));
+const ParentPortal = lazy(() => import('./components/ParentPortal'));
+const LLMCoordinationDashboard = lazy(() => import('./components/LLMCoordinationDashboard'));
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
 
@@ -705,6 +710,86 @@ const WorkingNavigation = () => {
             Resource Library
           </a>
           <a
+            href="/gradebook"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Gradebook
+          </a>
+          <a
+            href="/notifications"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Notifications
+          </a>
+          <a
+            href="/portfolio"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Portfolio
+          </a>
+          <a
+            href="/parent-portal"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            Parent Portal
+          </a>
+          <a
+            href="/llm-coordination"
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'background 0.3s',
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.background = 'rgba(255,255,255,0.1)')
+            }
+            onMouseOut={(e) => ((e.target as HTMLElement).style.background = 'transparent')}
+          >
+            LLM Coordination
+          </a>
+          <a
             href="/join"
             style={{
               background: 'rgba(255,255,255,0.2)',
@@ -818,29 +903,36 @@ const WorkingAboutPage = () => {
 
 function App() {
   return (
-    <div>
-      <WorkingNavigation />
-          <Routes>
-        <Route path="/" element={<WorkingHomepage />} />
-        <Route path="/join" element={<WorkingJoinPage />} />
-        <Route path="/resources" element={<WorkingResourcesPage />} />
-        <Route path="/pricing" element={<WorkingSubscriptionSystem />} />
-        <Route path="/onboarding" element={<ProfessionalTeacherOnboarding />} />
-        <Route path="/teacher-dashboard" element={<WorkingTeacherDashboard />} />
-        <Route path="/teacher" element={<WorkingTeacherDashboard />} />
-        <Route path="/student" element={<WorkingStudentDashboard />} />
-        <Route path="/create-lesson" element={<WorkingLessonCreator />} />
-        <Route path="/assessments" element={<WorkingAssessmentTools />} />
-        <Route path="/class-management" element={<WorkingClassManagement />} />
-        <Route path="/parent-communication" element={<WorkingParentCommunication />} />
-        <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
-        <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
-        <Route path="/curriculum-mapping" element={<CurriculumMappingTool />} />
-        <Route path="/collaboration" element={<TeacherCollaborationHub />} />
-        <Route path="/resource-library" element={<ProfessionalResourceLibrary />} />
-        <Route path="/about" element={<WorkingAboutPage />} />
-          </Routes>
-    </div>
+    <EducationProvider>
+      <div>
+        <WorkingNavigation />
+        <Routes>
+          <Route path="/" element={<WorkingHomepage />} />
+          <Route path="/join" element={<WorkingJoinPage />} />
+          <Route path="/resources" element={<WorkingResourcesPage />} />
+          <Route path="/pricing" element={<WorkingSubscriptionSystem />} />
+          <Route path="/onboarding" element={<ProfessionalTeacherOnboarding />} />
+          <Route path="/teacher-dashboard" element={<WorkingTeacherDashboard />} />
+          <Route path="/teacher" element={<WorkingTeacherDashboard />} />
+          <Route path="/student" element={<WorkingStudentDashboard />} />
+          <Route path="/create-lesson" element={<WorkingLessonCreator />} />
+          <Route path="/assessments" element={<WorkingAssessmentTools />} />
+          <Route path="/class-management" element={<WorkingClassManagement />} />
+          <Route path="/parent-communication" element={<WorkingParentCommunication />} />
+          <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
+          <Route path="/lesson-planner" element={<AdvancedLessonPlanner />} />
+          <Route path="/curriculum-mapping" element={<CurriculumMappingTool />} />
+          <Route path="/collaboration" element={<TeacherCollaborationHub />} />
+          <Route path="/resource-library" element={<ProfessionalResourceLibrary />} />
+          <Route path="/gradebook" element={<ComprehensiveGradebook />} />
+          <Route path="/notifications" element={<NotificationSystem />} />
+          <Route path="/portfolio" element={<StudentPortfolioSystem />} />
+          <Route path="/parent-portal" element={<ParentPortal />} />
+          <Route path="/llm-coordination" element={<LLMCoordinationDashboard />} />
+          <Route path="/about" element={<WorkingAboutPage />} />
+        </Routes>
+      </div>
+    </EducationProvider>
   );
 }
 
