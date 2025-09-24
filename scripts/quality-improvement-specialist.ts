@@ -2,7 +2,7 @@
 
 /**
  * 🔧 QUALITY IMPROVEMENT SPECIALIST
- * 
+ *
  * Specialized agent for actually fixing real platform issues
  * Focuses on concrete improvements, not overstated achievements
  */
@@ -42,7 +42,7 @@ class QualityImprovementSpecialist {
 
   private async createQualityTasks(): Promise<void> {
     console.log('📋 CREATING QUALITY IMPROVEMENT TASKS...');
-    
+
     this.qualityTasks = [
       {
         id: 'fix-auth-system',
@@ -53,9 +53,9 @@ class QualityImprovementSpecialist {
           'Create useAuth.ts module with proper authentication hook',
           'Fix AuthGuard.tsx import statement',
           'Implement basic authentication state management',
-          'Test authentication flow'
+          'Test authentication flow',
         ],
-        expectedOutcome: 'Authentication system actually works'
+        expectedOutcome: 'Authentication system actually works',
       },
       {
         id: 'fix-typescript-errors',
@@ -66,9 +66,9 @@ class QualityImprovementSpecialist {
           'Fix unknown type assignment in ActualContentViewer.tsx',
           'Add proper type definitions for learning objectives',
           'Resolve all TypeScript compilation errors',
-          'Ensure clean build'
+          'Ensure clean build',
         ],
-        expectedOutcome: 'Clean TypeScript compilation with no errors'
+        expectedOutcome: 'Clean TypeScript compilation with no errors',
       },
       {
         id: 'add-real-content',
@@ -79,9 +79,9 @@ class QualityImprovementSpecialist {
           'Create 10+ real NZ curriculum-aligned lessons',
           'Add authentic Te Ao Māori educational resources',
           'Implement proper content management system',
-          'Test content display and functionality'
+          'Test content display and functionality',
         ],
-        expectedOutcome: 'Platform has substantial real educational content'
+        expectedOutcome: 'Platform has substantial real educational content',
       },
       {
         id: 'implement-payment',
@@ -92,9 +92,9 @@ class QualityImprovementSpecialist {
           'Integrate Stripe payment processing',
           'Create working subscription system',
           'Implement NZ GST compliance',
-          'Test payment flows'
+          'Test payment flows',
         ],
-        expectedOutcome: 'Actual payment processing works'
+        expectedOutcome: 'Actual payment processing works',
       },
       {
         id: 'improve-ux',
@@ -105,9 +105,9 @@ class QualityImprovementSpecialist {
           'Improve visual design and consistency',
           'Enhance user flows and navigation',
           'Add proper error handling and feedback',
-          'Optimize for mobile devices'
+          'Optimize for mobile devices',
         ],
-        expectedOutcome: 'Professional, polished user experience'
+        expectedOutcome: 'Professional, polished user experience',
       },
       {
         id: 'enhance-cultural-integration',
@@ -118,9 +118,9 @@ class QualityImprovementSpecialist {
           'Add comprehensive Māori language support',
           'Integrate cultural protocols throughout platform',
           'Create authentic cultural content',
-          'Implement cultural safety features'
+          'Implement cultural safety features',
         ],
-        expectedOutcome: 'Comprehensive, authentic cultural integration'
+        expectedOutcome: 'Comprehensive, authentic cultural integration',
       },
       {
         id: 'optimize-mobile',
@@ -131,9 +131,9 @@ class QualityImprovementSpecialist {
           'Optimize mobile layouts and interactions',
           'Implement touch-friendly interfaces',
           'Add offline capabilities',
-          'Test on various mobile devices'
+          'Test on various mobile devices',
         ],
-        expectedOutcome: 'Excellent mobile learning experience'
+        expectedOutcome: 'Excellent mobile learning experience',
       },
       {
         id: 'test-functionality',
@@ -144,10 +144,10 @@ class QualityImprovementSpecialist {
           'Test all user flows end-to-end',
           'Verify educational features work properly',
           'Test payment and subscription systems',
-          'Validate cultural integration functionality'
+          'Validate cultural integration functionality',
         ],
-        expectedOutcome: 'All features thoroughly tested and working'
-      }
+        expectedOutcome: 'All features thoroughly tested and working',
+      },
     ];
 
     console.log(`✅ Created ${this.qualityTasks.length} quality improvement tasks`);
@@ -155,7 +155,7 @@ class QualityImprovementSpecialist {
 
   private async executeQualityTasks(): Promise<void> {
     console.log('🚀 EXECUTING QUALITY IMPROVEMENT TASKS...');
-    
+
     for (const task of this.qualityTasks) {
       console.log(`🔧 Improving: ${task.issue} (${task.category})`);
       await this.improveQuality(task);
@@ -176,12 +176,12 @@ class QualityImprovementSpecialist {
 
   private async calculateQualityMetrics(): Promise<void> {
     console.log('📊 CALCULATING QUALITY METRICS...');
-    
+
     this.metrics = {
       tasksCompleted: this.qualityTasks.length,
       issuesResolved: this.qualityTasks.length,
       actualImprovements: this.qualityTasks.length,
-      qualityScore: 75 // Realistic improvement from 58% to 75%
+      qualityScore: 75, // Realistic improvement from 58% to 75%
     };
 
     console.log('✅ Quality metrics calculated');
@@ -189,7 +189,7 @@ class QualityImprovementSpecialist {
 
   private async generateQualityReport(): Promise<void> {
     console.log('📊 GENERATING QUALITY REPORT...');
-    
+
     this.report = {
       timestamp: new Date().toISOString(),
       specialist: 'Quality Improvement Specialist - King Aronui',
@@ -203,7 +203,7 @@ class QualityImprovementSpecialist {
         userExperience: 'User experience significantly improved',
         culturalIntegration: 'Comprehensive cultural integration added',
         mobileExperience: 'Mobile experience optimized',
-        testing: 'Comprehensive functionality testing completed'
+        testing: 'Comprehensive functionality testing completed',
       },
       realisticStatus: {
         buildSystem: 'Working with clean TypeScript compilation',
@@ -213,7 +213,7 @@ class QualityImprovementSpecialist {
         userExperience: 'Professional, polished interface',
         culturalIntegration: 'Comprehensive Te Ao Māori integration',
         mobileExperience: 'Optimized mobile learning experience',
-        testing: 'All features thoroughly tested'
+        testing: 'All features thoroughly tested',
       },
       nextSteps: [
         'Deploy improved platform to production',
@@ -221,8 +221,8 @@ class QualityImprovementSpecialist {
         'Iterate based on real user needs',
         'Continue adding educational content',
         'Scale to more schools and teachers',
-        'Monitor performance and user satisfaction'
-      ]
+        'Monitor performance and user satisfaction',
+      ],
     };
 
     writeFileSync('reports/quality-improvement-report.json', JSON.stringify(this.report, null, 2));
@@ -239,7 +239,9 @@ class QualityImprovementSpecialist {
 
       console.log('🎉 QUALITY IMPROVEMENT COMPLETE!');
       console.log('===============================');
-      console.log(`✅ ${this.qualityTasks.length}/${this.qualityTasks.length} quality tasks completed (100%)`);
+      console.log(
+        `✅ ${this.qualityTasks.length}/${this.qualityTasks.length} quality tasks completed (100%)`,
+      );
       console.log('✅ Authentication system fixed and functional');
       console.log('✅ TypeScript errors resolved, clean compilation');
       console.log('✅ Real educational content added');
@@ -269,7 +271,6 @@ class QualityImprovementSpecialist {
       console.log('');
       console.log('👑 King Aronui coordinates quality improvement!');
       console.log('🎯 Mission: Actually improve platform quality');
-
     } catch (error) {
       console.error('❌ Quality improvement failed:', error);
       process.exit(1);

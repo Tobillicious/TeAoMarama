@@ -361,9 +361,9 @@ export const EducationProvider: React.FC<EducationProviderProps> = ({ children }
               `[EducationContext] Loaded ${enhancedResources.length} enhanced resources!`,
             );
 
-            // Convert enhanced resources to our Resource format
+            // Convert enhanced resources to our Resource format - Load more for better UX
             const convertedResources: Resource[] = enhancedResources
-              .slice(0, 50)
+              .slice(0, 100)
               .map((resource) => ({
                 id: resource.id,
                 title: resource.title,

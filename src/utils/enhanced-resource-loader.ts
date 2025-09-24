@@ -60,7 +60,7 @@ class EnhancedResourceService {
 
     try {
       // Load batches in smaller chunks to avoid timeout
-      const BATCH_SIZE = 50; // Load 50 batches at a time
+      const BATCH_SIZE = 20; // Load 20 batches at a time for faster initial load
       const allBatchResults: EnhancedResource[] = [];
 
       // Load batches 1-606 (we know we have 606 batch files)
@@ -83,7 +83,7 @@ class EnhancedResourceService {
         this.allResources = [...allBatchResults];
 
         // Small delay to prevent overwhelming the browser
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        await new Promise((resolve) => setTimeout(resolve, 5));
       }
 
       this.allResources = allBatchResults;

@@ -1,11 +1,22 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { EducationProvider } from './contexts/EducationContext';
+import { AuthProvider } from './components/useAuth';
 
 // Minimal lazy-loaded components to prevent bundle issues
-const WorkingHomepage = React.lazy(() => import('./components/WorkingHomepage'));
+const SimpleWorkingHomepage = React.lazy(() => import('./components/SimpleWorkingHomepage'));
 const WorkingStudentDashboard = React.lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingTeacherDashboard = React.lazy(() => import('./components/WorkingTeacherDashboard'));
+const WorkingLessonCreator = React.lazy(() => import('./components/WorkingLessonCreator'));
+const WorkingResourceBrowser = React.lazy(() => import('./components/WorkingResourceBrowser'));
+const WorkingAnalyticsDashboard = React.lazy(
+  () => import('./components/WorkingAnalyticsDashboard'),
+);
+const WorkingClassManagement = React.lazy(() => import('./components/WorkingClassManagement'));
+const WorkingAssessmentTools = React.lazy(() => import('./components/WorkingAssessmentTools'));
+const WorkingParentCommunication = React.lazy(
+  () => import('./components/WorkingParentCommunication'),
+);
 const AssessmentWorkflow = React.lazy(() => import('./components/AssessmentWorkflow'));
 
 // Simple loading component
@@ -48,18 +59,26 @@ const LoadingSpinner = () => (
 
 const App: React.FC = () => {
   return (
-    <EducationProvider>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          <Route path="/" element={<WorkingHomepage />} />
-          <Route path="/student" element={<WorkingStudentDashboard />} />
-          <Route path="/teacher" element={<WorkingTeacherDashboard />} />
-          <Route path="/assessment-workflow" element={<AssessmentWorkflow />} />
-          {/* Fallback route */}
-          <Route path="*" element={<WorkingHomepage />} />
-        </Routes>
-      </Suspense>
-    </EducationProvider>
+    <AuthProvider>
+      <EducationProvider>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<SimpleWorkingHomepage />} />
+            <Route path="/student" element={<WorkingStudentDashboard />} />
+            <Route path="/teacher" element={<WorkingTeacherDashboard />} />
+            <Route path="/create-lesson" element={<WorkingLessonCreator />} />
+            <Route path="/resources" element={<WorkingResourceBrowser />} />
+            <Route path="/analytics" element={<WorkingAnalyticsDashboard />} />
+            <Route path="/class-management" element={<WorkingClassManagement />} />
+            <Route path="/assessments" element={<WorkingAssessmentTools />} />
+            <Route path="/parent-communication" element={<WorkingParentCommunication />} />
+            <Route path="/assessment-workflow" element={<AssessmentWorkflow />} />
+            {/* Fallback route */}
+            <Route path="*" element={<SimpleWorkingHomepage />} />
+          </Routes>
+        </Suspense>
+      </EducationProvider>
+    </AuthProvider>
   );
 };
 

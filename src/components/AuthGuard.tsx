@@ -30,7 +30,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({
   requireCulturalClearance,
   culturalSensitivity = 'low'
 }) => {
-  const { isAuthenticated, currentUser } = useAuth();
+  const { isAuthenticated, user: currentUser } = useAuth();
   const location = useLocation();
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -218,7 +218,7 @@ export const withAuthGuard = (
 
 // Hook for checking cultural permissions in components
 export const useCulturalPermissions = () => {
-  const { currentUser } = useAuth();
+  const { user: currentUser } = useAuth();
   const [permissions, setPermissions] = useState({
     canAccessSacred: false,
     canAccessHigh: false,
