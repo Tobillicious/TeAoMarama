@@ -8,7 +8,9 @@ const ProfessionalTeacherOnboarding = lazy(
   () => import('./components/ProfessionalTeacherOnboarding'),
 );
 const WorkingTeacherDashboard = lazy(() => import('./components/WorkingTeacherDashboard'));
-const ComprehensiveTeacherDashboard = lazy(() => import('./components/ComprehensiveTeacherDashboard'));
+const ComprehensiveTeacherDashboard = lazy(
+  () => import('./components/ComprehensiveTeacherDashboard'),
+);
 const WorkingAssessmentTools = lazy(() => import('./components/WorkingAssessmentTools'));
 const WorkingClassManagement = lazy(() => import('./components/WorkingClassManagement'));
 const WorkingParentCommunication = lazy(() => import('./components/WorkingParentCommunication'));
@@ -24,6 +26,7 @@ const ParentPortal = lazy(() => import('./components/ParentPortal'));
 const LLMCoordinationDashboard = lazy(() => import('./components/LLMCoordinationDashboard'));
 const WorkingStudentDashboard = lazy(() => import('./components/WorkingStudentDashboard'));
 const WorkingLessonCreator = lazy(() => import('./components/WorkingLessonCreator'));
+const AssessmentWorkflow = lazy(() => import('./components/AssessmentWorkflow'));
 
 const WorkingHomepage = () => {
   return (
@@ -907,7 +910,7 @@ function App() {
     <EducationProvider>
       <div>
         <WorkingNavigation />
-          <Routes>
+        <Routes>
           <Route path="/" element={<WorkingHomepage />} />
           <Route path="/join" element={<WorkingJoinPage />} />
           <Route path="/resources" element={<WorkingResourcesPage />} />
@@ -931,8 +934,8 @@ function App() {
           <Route path="/parent-portal" element={<ParentPortal />} />
           <Route path="/llm-coordination" element={<LLMCoordinationDashboard />} />
           <Route path="/about" element={<WorkingAboutPage />} />
-          </Routes>
-    </div>
+        </Routes>
+      </div>
     </EducationProvider>
   );
 }
