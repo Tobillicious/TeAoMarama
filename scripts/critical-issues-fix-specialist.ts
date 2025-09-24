@@ -2,7 +2,7 @@
 
 /**
  * 🔧 CRITICAL ISSUES FIX SPECIALIST
- * 
+ *
  * Specialized agent for fixing critical platform issues identified through testing
  * Focuses on resolving build failures, TypeScript errors, and component integration issues
  */
@@ -44,7 +44,7 @@ class CriticalIssuesFixSpecialist {
 
   private async createFixTasks(): Promise<void> {
     console.log('📋 CREATING CRITICAL FIX TASKS...');
-    
+
     this.fixTasks = [
       {
         id: 'fix-education-context-export',
@@ -57,8 +57,8 @@ class CriticalIssuesFixSpecialist {
           'Check EducationContext.tsx export structure',
           'Fix import statement in RealResourceBrowser.tsx',
           'Ensure proper context provider setup',
-          'Test context usage across components'
-        ]
+          'Test context usage across components',
+        ],
       },
       {
         id: 'fix-useauth-module',
@@ -71,8 +71,8 @@ class CriticalIssuesFixSpecialist {
           'Create useAuth.ts module with proper exports',
           'Implement authentication hook functionality',
           'Fix AuthGuard.tsx import statement',
-          'Test authentication flow'
-        ]
+          'Test authentication flow',
+        ],
       },
       {
         id: 'fix-actual-content-viewer-types',
@@ -85,8 +85,8 @@ class CriticalIssuesFixSpecialist {
           'Fix unknown type assignment to ReactNode',
           'Add proper type definitions for learning objectives',
           'Ensure proper component prop types',
-          'Test component rendering'
-        ]
+          'Test component rendering',
+        ],
       },
       {
         id: 'fix-component-integration',
@@ -99,8 +99,8 @@ class CriticalIssuesFixSpecialist {
           'Fix RealResourceBrowser component integration',
           'Resolve ActualContentViewer rendering issues',
           'Fix AuthGuard component dependencies',
-          'Test all component interactions'
-        ]
+          'Test all component interactions',
+        ],
       },
       {
         id: 'fix-build-system',
@@ -113,8 +113,8 @@ class CriticalIssuesFixSpecialist {
           'Fix all import/export issues',
           'Resolve TypeScript compilation errors',
           'Ensure all components build successfully',
-          'Test production build process'
-        ]
+          'Test production build process',
+        ],
       },
       {
         id: 'fix-authentication-system',
@@ -127,8 +127,8 @@ class CriticalIssuesFixSpecialist {
           'Implement proper authentication context',
           'Fix AuthGuard component functionality',
           'Add authentication state management',
-          'Test authentication flow end-to-end'
-        ]
+          'Test authentication flow end-to-end',
+        ],
       },
       {
         id: 'fix-educational-features',
@@ -141,8 +141,8 @@ class CriticalIssuesFixSpecialist {
           'Fix lesson planner functionality',
           'Resolve resource browser issues',
           'Fix gradebook component integration',
-          'Test all educational features'
-        ]
+          'Test all educational features',
+        ],
       },
       {
         id: 'fix-navigation-system',
@@ -155,8 +155,8 @@ class CriticalIssuesFixSpecialist {
           'Test all navigation routes',
           'Fix any broken route links',
           'Ensure proper route parameter handling',
-          'Test navigation flow'
-        ]
+          'Test navigation flow',
+        ],
       },
       {
         id: 'fix-cultural-integration',
@@ -169,8 +169,8 @@ class CriticalIssuesFixSpecialist {
           'Test cultural element rendering',
           'Fix any cultural content display issues',
           'Ensure Māori language support works',
-          'Test cultural integration across components'
-        ]
+          'Test cultural integration across components',
+        ],
       },
       {
         id: 'fix-typescript-compilation',
@@ -183,9 +183,9 @@ class CriticalIssuesFixSpecialist {
           'Fix all type errors in components',
           'Add missing type definitions',
           'Resolve import/export type issues',
-          'Ensure clean TypeScript compilation'
-        ]
-      }
+          'Ensure clean TypeScript compilation',
+        ],
+      },
     ];
 
     console.log(`✅ Created ${this.fixTasks.length} critical fix tasks`);
@@ -193,7 +193,7 @@ class CriticalIssuesFixSpecialist {
 
   private async executeFixTasks(): Promise<void> {
     console.log('🚀 EXECUTING CRITICAL FIX TASKS...');
-    
+
     for (const task of this.fixTasks) {
       console.log(`🔧 Fixing: ${task.issue} (${task.category})`);
       await this.applyFixes(task);
@@ -215,13 +215,13 @@ class CriticalIssuesFixSpecialist {
 
   private async calculateFixMetrics(): Promise<void> {
     console.log('📊 CALCULATING FIX METRICS...');
-    
+
     this.fixMetrics = {
       issuesFixed: this.fixTasks.length,
       buildStatus: 'success',
       typescriptErrors: 0,
       componentIssues: 0,
-      importIssues: 0
+      importIssues: 0,
     };
 
     console.log('✅ Fix metrics calculated');
@@ -229,7 +229,7 @@ class CriticalIssuesFixSpecialist {
 
   private async generateFixReport(): Promise<void> {
     console.log('📊 GENERATING FIX REPORT...');
-    
+
     this.fixReport = {
       timestamp: new Date().toISOString(),
       specialist: 'Critical Issues Fix Specialist - King Aronui',
@@ -245,7 +245,7 @@ class CriticalIssuesFixSpecialist {
         educationalFeatures: 'Fixed educational features functionality',
         navigation: 'Fixed navigation system routing issues',
         culturalIntegration: 'Fixed cultural integration display issues',
-        compilation: 'Resolved all TypeScript compilation errors'
+        compilation: 'Resolved all TypeScript compilation errors',
       },
       platformStatus: {
         buildStatus: 'Production build now successful',
@@ -253,7 +253,7 @@ class CriticalIssuesFixSpecialist {
         componentStatus: 'All components integrated and functional',
         authenticationStatus: 'Authentication system fully functional',
         educationalStatus: 'Educational features working properly',
-        culturalStatus: 'Cultural integration displaying correctly'
+        culturalStatus: 'Cultural integration displaying correctly',
       },
       nextSteps: [
         'Run comprehensive testing again to verify fixes',
@@ -261,11 +261,14 @@ class CriticalIssuesFixSpecialist {
         'Verify cultural integration works properly',
         'Test authentication flow end-to-end',
         'Run production build to ensure success',
-        'Deploy platform for ākonga of Mangakootukutuku College'
-      ]
+        'Deploy platform for ākonga of Mangakootukutuku College',
+      ],
     };
 
-    writeFileSync('reports/critical-issues-fix-report.json', JSON.stringify(this.fixReport, null, 2));
+    writeFileSync(
+      'reports/critical-issues-fix-report.json',
+      JSON.stringify(this.fixReport, null, 2),
+    );
     console.log('✅ Fix report generated');
   }
 
@@ -279,7 +282,9 @@ class CriticalIssuesFixSpecialist {
 
       console.log('🎉 CRITICAL ISSUES FIX COMPLETE!');
       console.log('===============================');
-      console.log(`✅ ${this.fixTasks.length}/${this.fixTasks.length} critical issues fixed (100%)`);
+      console.log(
+        `✅ ${this.fixTasks.length}/${this.fixTasks.length} critical issues fixed (100%)`,
+      );
       console.log('✅ EducationContext export/import issues resolved');
       console.log('✅ useAuth module created and authentication fixed');
       console.log('✅ TypeScript compilation errors resolved');
@@ -310,7 +315,6 @@ class CriticalIssuesFixSpecialist {
       console.log('');
       console.log('👑 King Aronui coordinates critical issues fix!');
       console.log('🎯 Mission: Platform ready for ākonga of Mangakootukutuku College');
-
     } catch (error) {
       console.error('❌ Critical issues fix failed:', error);
       process.exit(1);

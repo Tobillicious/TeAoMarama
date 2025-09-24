@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import RealAssessmentBrowser from './components/RealAssessmentBrowser';
 import RealResourceBrowser from './components/RealResourceBrowser';
 import { EducationProvider } from './contexts/EducationContext';
 
@@ -921,7 +922,7 @@ function App() {
           <Route path="/teacher" element={<WorkingTeacherDashboard />} />
           <Route path="/student" element={<WorkingStudentDashboard />} />
           <Route path="/create-lesson" element={<WorkingLessonCreator />} />
-          <Route path="/assessments" element={<WorkingAssessmentTools />} />
+          <Route path="/assessments" element={<RealAssessmentBrowser />} />
           <Route path="/assessment-workflow" element={<AssessmentWorkflow />} />
           <Route path="/class-management" element={<WorkingClassManagement />} />
           <Route path="/parent-communication" element={<WorkingParentCommunication />} />

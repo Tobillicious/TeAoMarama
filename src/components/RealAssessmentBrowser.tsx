@@ -1,27 +1,71 @@
-import React, { useState } from 'react';
-import { useEducation } from '../contexts/EducationContext';
+import React, { useContext, useState } from 'react';
+import { EducationContext } from '../contexts/EducationContext';
 
-const RealResourceBrowser: React.FC = () => {
-  const { resources, loading } = useEducation();
+const RealAssessmentBrowser: React.FC = () => {
+  const { resources, loading } = useContext(EducationContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
-  const [displayCount, setDisplayCount] = useState(12);
+  const [selectedType, setSelectedType] = useState('all');
 
-  const filteredResources = resources.filter((resource) => {
+  // Filter for assessment resources
+  const assessmentResources = resources.filter(
+    (resource) =>
+      resource.type === 'assessment' ||
+      resource.title.toLowerCase().includes('assessment') ||
+      resource.tags.some((tag) => tag.toLowerCase().includes('assessment')),
+  );
+
+  const filteredAssessments = assessmentResources.filter((assessment) => {
     const matchesSearch =
-      resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      resource.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+      assessment.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      assessment.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      assessment.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    const matchesSubject = selectedSubject === 'all' || resource.subject === selectedSubject;
-    const matchesYear = selectedYear === 'all' || resource.yearLevel === selectedYear;
+    const matchesSubject = selectedSubject === 'all' || assessment.subject === selectedSubject;
+    const matchesYear = selectedYear === 'all' || assessment.yearLevel === selectedYear;
+    const matchesType = selectedType === 'all' || assessment.type === selectedType;
 
-    return matchesSearch && matchesSubject && matchesYear;
+    return matchesSearch && matchesSubject && matchesYear && matchesType;
   });
 
-  const subjects = [...new Set(resources.map((r) => r.subject))];
-  const years = [...new Set(resources.map((r) => r.yearLevel))];
+  const subjects = [...new Set(assessmentResources.map((r) => r.subject))];
+  const years = [...new Set(assessmentResources.map((r) => r.yearLevel))];
+  const types = [...new Set(assessmentResources.map((r) => r.type))];
+
+  const getAssessmentIcon = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'formative':
+        return '📝';
+      case 'summative':
+        return '📊';
+      case 'diagnostic':
+        return '🔍';
+      case 'peer':
+        return '👥';
+      case 'self':
+        return '🤔';
+      default:
+        return '📋';
+    }
+  };
+
+  const getAssessmentColor = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'formative':
+        return '#3b82f6';
+      case 'summative':
+        return '#ef4444';
+      case 'diagnostic':
+        return '#8b5cf6';
+      case 'peer':
+        return '#10b981';
+      case 'self':
+        return '#f59e0b';
+      default:
+        return '#6b7280';
+    }
+  };
 
   return (
     <div
@@ -45,13 +89,15 @@ const RealResourceBrowser: React.FC = () => {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ color: '#1e40af', fontSize: '2.5rem', marginBottom: '20px' }}>
-            📚 Educational Resources Library
+            📊 Assessment Tools Library
           </h1>
           <p style={{ color: '#374151', fontSize: '1.2rem', marginBottom: '10px' }}>
-            {loading ? 'Loading resources...' : `${resources.length}+ Real Educational Resources`}
+            {loading
+              ? 'Loading assessments...'
+              : `${assessmentResources.length}+ Real Assessment Tools`}
           </p>
           <p style={{ color: '#6b7280', fontSize: '1rem' }}>
-            Curriculum-aligned content with cultural safety verification
+            NCEA-aligned assessments with cultural integration and rubrics
           </p>
         </div>
 
@@ -68,7 +114,7 @@ const RealResourceBrowser: React.FC = () => {
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
             <input
               type="text"
-              placeholder="Search resources..."
+              placeholder="Search assessments..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{
@@ -116,10 +162,119 @@ const RealResourceBrowser: React.FC = () => {
                 </option>
               ))}
             </select>
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+              style={{
+                padding: '12px 16px',
+                border: '2px solid #e2e8f0',
+                borderRadius: '8px',
+                fontSize: '1rem',
+                minWidth: '120px',
+              }}
+            >
+              <option value="all">All Types</option>
+              {types.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Resources Grid */}
+        {/* Assessment Type Overview Cards */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '20px',
+            marginBottom: '40px',
+          }}
+        >
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+              color: 'white',
+              padding: '25px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>📝</div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Formative</h3>
+            <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
+              {
+                assessmentResources.filter(
+                  (a) => a.type === 'formative' || a.title.toLowerCase().includes('formative'),
+                ).length
+              }{' '}
+              assessments
+            </p>
+          </div>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
+              color: 'white',
+              padding: '25px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>📊</div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Summative</h3>
+            <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
+              {
+                assessmentResources.filter(
+                  (a) => a.type === 'summative' || a.title.toLowerCase().includes('summative'),
+                ).length
+              }{' '}
+              assessments
+            </p>
+          </div>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+              color: 'white',
+              padding: '25px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>🔍</div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Diagnostic</h3>
+            <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
+              {
+                assessmentResources.filter(
+                  (a) => a.type === 'diagnostic' || a.title.toLowerCase().includes('diagnostic'),
+                ).length
+              }{' '}
+              assessments
+            </p>
+          </div>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: 'white',
+              padding: '25px',
+              borderRadius: '15px',
+              textAlign: 'center',
+            }}
+          >
+            <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>👥</div>
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '5px' }}>Peer Assessment</h3>
+            <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
+              {
+                assessmentResources.filter(
+                  (a) => a.type === 'peer' || a.title.toLowerCase().includes('peer'),
+                ).length
+              }{' '}
+              assessments
+            </p>
+          </div>
+        </div>
+
+        {/* Assessments Grid */}
         <div
           style={{
             display: 'grid',
@@ -150,12 +305,12 @@ const RealResourceBrowser: React.FC = () => {
                   marginBottom: '20px',
                 }}
               ></div>
-              <p>Loading 120,583+ educational resources...</p>
+              <p>Loading assessment tools...</p>
             </div>
-          ) : filteredResources.length > 0 ? (
-            filteredResources.slice(0, displayCount).map((resource) => (
+          ) : filteredAssessments.length > 0 ? (
+            filteredAssessments.map((assessment) => (
               <div
-                key={resource.id}
+                key={assessment.id}
                 style={{
                   background: 'white',
                   border: '2px solid #e2e8f0',
@@ -176,12 +331,12 @@ const RealResourceBrowser: React.FC = () => {
               >
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
                   <span style={{ fontSize: '2rem', marginRight: '10px' }}>
-                    {resource.thumbnail || '📚'}
+                    {getAssessmentIcon(assessment.type)}
                   </span>
                   <div>
                     <div
                       style={{
-                        background: '#1e40af',
+                        background: getAssessmentColor(assessment.type),
                         color: 'white',
                         padding: '4px 8px',
                         borderRadius: '4px',
@@ -190,7 +345,7 @@ const RealResourceBrowser: React.FC = () => {
                         marginBottom: '5px',
                       }}
                     >
-                      {resource.subject}
+                      {assessment.type}
                     </div>
                     <div
                       style={{
@@ -202,7 +357,7 @@ const RealResourceBrowser: React.FC = () => {
                         fontWeight: 'bold',
                       }}
                     >
-                      {resource.yearLevel}
+                      {assessment.yearLevel}
                     </div>
                   </div>
                 </div>
@@ -215,7 +370,7 @@ const RealResourceBrowser: React.FC = () => {
                     lineHeight: '1.3',
                   }}
                 >
-                  {resource.title}
+                  {assessment.title}
                 </h3>
 
                 <p
@@ -226,13 +381,13 @@ const RealResourceBrowser: React.FC = () => {
                     marginBottom: '15px',
                   }}
                 >
-                  {resource.description}
+                  {assessment.description}
                 </p>
 
                 {/* Cultural Elements */}
-                {resource.culturalElements && resource.culturalElements.length > 0 && (
+                {assessment.culturalElements && assessment.culturalElements.length > 0 && (
                   <div style={{ marginBottom: '15px' }}>
-                    {resource.culturalElements.slice(0, 2).map((element, index) => (
+                    {assessment.culturalElements.slice(0, 2).map((element, index) => (
                       <span
                         key={index}
                         style={{
@@ -265,7 +420,7 @@ const RealResourceBrowser: React.FC = () => {
                         fontSize: '0.8rem',
                       }}
                     >
-                      ⭐ {resource.rating || '4.8'}
+                      ⭐ {assessment.rating || '4.8'}
                     </span>
                     <span
                       style={{
@@ -276,7 +431,7 @@ const RealResourceBrowser: React.FC = () => {
                         fontSize: '0.8rem',
                       }}
                     >
-                      📥 {resource.downloads || '0'}
+                      📥 {assessment.downloads || '0'}
                     </span>
                   </div>
                   <button
@@ -291,7 +446,7 @@ const RealResourceBrowser: React.FC = () => {
                       cursor: 'pointer',
                     }}
                   >
-                    View Resource
+                    Use Assessment
                   </button>
                 </div>
               </div>
@@ -306,34 +461,13 @@ const RealResourceBrowser: React.FC = () => {
                 fontSize: '1.2rem',
               }}
             >
-              <p>No resources found matching your criteria.</p>
+              <p>No assessments found matching your criteria.</p>
               <p style={{ fontSize: '1rem', marginTop: '10px' }}>
                 Try adjusting your search terms or filters.
               </p>
             </div>
           )}
         </div>
-
-        {/* Load More Section */}
-        {filteredResources.length > displayCount && (
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <button
-              onClick={() => setDisplayCount((prev) => prev + 12)}
-              style={{
-                background: 'linear-gradient(135deg, #1e40af 0%, #059669 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '15px 30px',
-                borderRadius: '10px',
-                fontSize: '1.1rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-              }}
-            >
-              Load More Resources ({filteredResources.length - displayCount} remaining)
-            </button>
-          </div>
-        )}
 
         {/* Results Summary */}
         <div
@@ -347,8 +481,7 @@ const RealResourceBrowser: React.FC = () => {
           }}
         >
           <p style={{ color: '#6b7280', fontSize: '1rem' }}>
-            Showing {Math.min(displayCount, filteredResources.length)} of {filteredResources.length}{' '}
-            resources
+            Showing {filteredAssessments.length} of {assessmentResources.length} assessment tools
             {searchTerm && ` matching "${searchTerm}"`}
             {selectedSubject !== 'all' && ` in ${selectedSubject}`}
             {selectedYear !== 'all' && ` for ${selectedYear}`}
@@ -366,4 +499,4 @@ const RealResourceBrowser: React.FC = () => {
   );
 };
 
-export default RealResourceBrowser;
+export default RealAssessmentBrowser;
