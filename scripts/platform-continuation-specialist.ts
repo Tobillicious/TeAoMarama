@@ -2,7 +2,7 @@
 
 /**
  * 🚀 PLATFORM CONTINUATION SPECIALIST
- * 
+ *
  * Specialized agent for continuing platform development after Cursor crash
  * Focuses on enhancing user experience and optimizing performance for ākonga
  */
@@ -44,7 +44,7 @@ class PlatformContinuationSpecialist {
 
   private async createContinuationTasks(): Promise<void> {
     console.log('📋 CREATING PLATFORM CONTINUATION TASKS...');
-    
+
     this.continuationTasks = [
       {
         id: 'user-experience-enhancement',
@@ -58,7 +58,11 @@ class PlatformContinuationSpecialist {
           'Optimize form usability and accessibility',
           'Implement progressive disclosure patterns',
         ],
-        culturalElements: ['Cultural user journey design', 'Māori language support', 'Cultural accessibility'],
+        culturalElements: [
+          'Cultural user journey design',
+          'Māori language support',
+          'Cultural accessibility',
+        ],
       },
       {
         id: 'performance-optimization',
@@ -72,7 +76,11 @@ class PlatformContinuationSpecialist {
           'Enhance caching strategies',
           'Optimize image and asset delivery',
         ],
-        culturalElements: ['Cultural content optimization', 'Māori language performance', 'Cultural asset delivery'],
+        culturalElements: [
+          'Cultural content optimization',
+          'Māori language performance',
+          'Cultural asset delivery',
+        ],
       },
       {
         id: 'educational-content-enhancement',
@@ -86,7 +94,11 @@ class PlatformContinuationSpecialist {
           'Improve resource categorization and search',
           'Add interactive learning elements',
         ],
-        culturalElements: ['Te Ao Māori curriculum integration', 'Cultural learning outcomes', 'Māori perspectives'],
+        culturalElements: [
+          'Te Ao Māori curriculum integration',
+          'Cultural learning outcomes',
+          'Māori perspectives',
+        ],
       },
       {
         id: 'teacher-tools-enhancement',
@@ -100,7 +112,11 @@ class PlatformContinuationSpecialist {
           'Add collaborative teaching tools',
           'Implement progress tracking systems',
         ],
-        culturalElements: ['Cultural teaching approaches', 'Māori pedagogical methods', 'Cultural assessment criteria'],
+        culturalElements: [
+          'Cultural teaching approaches',
+          'Māori pedagogical methods',
+          'Cultural assessment criteria',
+        ],
       },
       {
         id: 'student-experience-enhancement',
@@ -114,7 +130,11 @@ class PlatformContinuationSpecialist {
           'Add gamification elements',
           'Implement peer collaboration features',
         ],
-        culturalElements: ['Age-appropriate cultural elements', 'Māori learning styles', 'Cultural peer learning'],
+        culturalElements: [
+          'Age-appropriate cultural elements',
+          'Māori learning styles',
+          'Cultural peer learning',
+        ],
       },
       {
         id: 'mobile-optimization',
@@ -128,7 +148,11 @@ class PlatformContinuationSpecialist {
           'Improve mobile form usability',
           'Implement mobile-specific features',
         ],
-        culturalElements: ['Mobile cultural accessibility', 'Touch-friendly cultural elements', 'Mobile Māori language support'],
+        culturalElements: [
+          'Mobile cultural accessibility',
+          'Touch-friendly cultural elements',
+          'Mobile Māori language support',
+        ],
       },
       {
         id: 'accessibility-enhancement',
@@ -142,7 +166,11 @@ class PlatformContinuationSpecialist {
           'Add high contrast mode options',
           'Implement voice control features',
         ],
-        culturalElements: ['Cultural accessibility protocols', 'Māori language accessibility', 'Inclusive cultural design'],
+        culturalElements: [
+          'Cultural accessibility protocols',
+          'Māori language accessibility',
+          'Inclusive cultural design',
+        ],
       },
       {
         id: 'analytics-enhancement',
@@ -156,7 +184,11 @@ class PlatformContinuationSpecialist {
           'Enhance progress visualization',
           'Implement predictive analytics',
         ],
-        culturalElements: ['Cultural learning metrics', 'Māori student success tracking', 'Cultural progress indicators'],
+        culturalElements: [
+          'Cultural learning metrics',
+          'Māori student success tracking',
+          'Cultural progress indicators',
+        ],
       },
       {
         id: 'collaboration-features',
@@ -170,7 +202,11 @@ class PlatformContinuationSpecialist {
           'Enhance parent-teacher communication',
           'Add community sharing features',
         ],
-        culturalElements: ['Cultural collaboration protocols', 'Māori community values', 'Whānau engagement tools'],
+        culturalElements: [
+          'Cultural collaboration protocols',
+          'Māori community values',
+          'Whānau engagement tools',
+        ],
       },
       {
         id: 'security-enhancement',
@@ -184,7 +220,11 @@ class PlatformContinuationSpecialist {
           'Add secure communication features',
           'Implement audit logging',
         ],
-        culturalElements: ['Cultural data protection', 'Māori privacy protocols', 'Cultural security practices'],
+        culturalElements: [
+          'Cultural data protection',
+          'Māori privacy protocols',
+          'Cultural security practices',
+        ],
       },
     ];
 
@@ -193,7 +233,7 @@ class PlatformContinuationSpecialist {
 
   private async executeContinuationTasks(): Promise<void> {
     console.log('🚀 EXECUTING PLATFORM CONTINUATION TASKS...');
-    
+
     for (const task of this.continuationTasks) {
       console.log(`🌟 Continuing: ${task.area} (${task.priority})`);
       await this.applyContinuation(task);
@@ -217,7 +257,7 @@ class PlatformContinuationSpecialist {
 
   private async calculateContinuationMetrics(): Promise<void> {
     console.log('📊 CALCULATING CONTINUATION METRICS...');
-    
+
     this.continuationMetrics = {
       tasksCompleted: this.continuationTasks.length,
       userExperienceScore: 92,
@@ -231,7 +271,7 @@ class PlatformContinuationSpecialist {
 
   private async generateContinuationReport(): Promise<void> {
     console.log('📊 GENERATING CONTINUATION REPORT...');
-    
+
     this.continuationReport = {
       timestamp: new Date().toISOString(),
       specialist: 'Platform Continuation Specialist - King Aronui',
@@ -266,7 +306,10 @@ class PlatformContinuationSpecialist {
       ],
     };
 
-    writeFileSync('reports/platform-continuation-report.json', JSON.stringify(this.continuationReport, null, 2));
+    writeFileSync(
+      'reports/platform-continuation-report.json',
+      JSON.stringify(this.continuationReport, null, 2),
+    );
     console.log('✅ Continuation report generated');
   }
 
@@ -280,7 +323,9 @@ class PlatformContinuationSpecialist {
 
       console.log('🎉 PLATFORM CONTINUATION COMPLETE!');
       console.log('=================================');
-      console.log(`✅ ${this.continuationTasks.length}/${this.continuationTasks.length} continuation tasks completed (100%)`);
+      console.log(
+        `✅ ${this.continuationTasks.length}/${this.continuationTasks.length} continuation tasks completed (100%)`,
+      );
       console.log('✅ User experience enhanced across all pages');
       console.log('✅ Performance optimized for responsiveness');
       console.log('✅ Educational content enhanced and aligned');
@@ -311,7 +356,6 @@ class PlatformContinuationSpecialist {
       console.log('');
       console.log('👑 King Aronui coordinates platform continuation!');
       console.log('🎯 Mission: Ready to serve ākonga of Mangakootukutuku College');
-
     } catch (error) {
       console.error('❌ Platform continuation failed:', error);
       process.exit(1);
