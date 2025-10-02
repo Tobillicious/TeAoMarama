@@ -3,7 +3,7 @@
   "short_name": "TeAoMarama",
   "description": "ERO-ready comprehensive educational resources platform for Aotearoa's future leaders with Māori cultural integration - Professional grade for educational excellence",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#1e40af",
   "orientation": "portrait-primary",
@@ -34,9 +34,9 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "icons/icon-144x144.png",
+      "src": "/vite.svg",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/svg+xml"
     },
     {
       "src": "/vite.svg",

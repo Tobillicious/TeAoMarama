@@ -1,0 +1,908 @@
+{
+  "batchId": "batch-567",
+  "processedDate": "2025-09-10T13:57:43.549Z",
+  "resourceCount": 10,
+  "enhancedCount": 10,
+  "resources": [
+    {
+      "id": "resource-05661",
+      "title": "Year 10 Technology: Resource 5661",
+      "subject": "Technology",
+      "yearLevel": "Year 10",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 10 Technology learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.578126418237825,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.71561361364583,
+        "pedagogicalDepth": 9.100651965770822,
+        "progressiveIndex": 9.419628299560053,
+        "qualityScore": 14.567275314131072,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.317434327460383
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.237805095624795
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.5803790342819628
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.853530438526106
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-08-23T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-10"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 42
+      }
+    },
+    {
+      "id": "resource-05662",
+      "title": "Year 11 Technology: Resource 5662",
+      "subject": "Technology",
+      "yearLevel": "Year 11",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 11 Technology learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 5.910370482295121,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.631177637611241,
+        "pedagogicalDepth": 9.439709598358807,
+        "progressiveIndex": 9.609639764979882,
+        "qualityScore": 14.117676847853286,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.3246776080464686
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.0520981868402393
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.940374718593375
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.8901558520780815
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-02-23T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-11"
+        ],
+        "difficulty": 5,
+        "estimatedDuration": 104
+      }
+    },
+    {
+      "id": "resource-05663",
+      "title": "Year 7 Technology: Resource 5663",
+      "subject": "Technology",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Technology learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.016876941355043,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.842657567037996,
+        "pedagogicalDepth": 9.348114850876517,
+        "progressiveIndex": 8.500087380488594,
+        "qualityScore": 13.952978779843098,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.2428301799412695
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.1773620724688305
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.7855255117916546
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.7303840742863001
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-16T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-7"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 54
+      }
+    },
+    {
+      "id": "resource-05664",
+      "title": "Year 7 Technology: Resource 5664",
+      "subject": "Technology",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Technology learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 6.529810878218115,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.167793640336734,
+        "pedagogicalDepth": 8.987851644144715,
+        "progressiveIndex": 8.704419017083428,
+        "qualityScore": 14.48043363817808,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.3664589028609746
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.295809988695109
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.8877634110272115
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.4005904573766683
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-05-16T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-7"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 100
+      }
+    },
+    {
+      "id": "resource-05665",
+      "title": "Year 9 Technology: Resource 5665",
+      "subject": "Technology",
+      "yearLevel": "Year 9",
+      "type": "multimedia",
+      "description": "Comprehensive multimedia for Year 9 Technology learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 6.748416021946848,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.868068060854155,
+        "pedagogicalDepth": 8.858875982463358,
+        "progressiveIndex": 9.202405030589922,
+        "qualityScore": 14.270705534034876,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.075371881763858
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.0626954621992737
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.9196357407609503
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.4645864273639455
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-07-13T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-9"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 85
+      }
+    },
+    {
+      "id": "resource-05666",
+      "title": "Year 11 Technology: Resource 5666",
+      "subject": "Technology",
+      "yearLevel": "Year 11",
+      "type": "lesson",
+      "description": "Comprehensive lesson for Year 11 Technology learning",
+      "culturalElements": 3,
+      "currentPass": 4,
+      "originalQuality": 6.67982876346733,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 8.958505566805524,
+        "pedagogicalDepth": 9.617828971566166,
+        "progressiveIndex": 9.255292255697698,
+        "qualityScore": 14.442149147921116,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.0689826853473328
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.1791382067569947
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.982771759476667
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.5314277328727912
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-06T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-11"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 42
+      }
+    },
+    {
+      "id": "resource-05667",
+      "title": "Year 7 Technology: Resource 5667",
+      "subject": "Technology",
+      "yearLevel": "Year 7",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 7 Technology learning",
+      "culturalElements": 5,
+      "currentPass": 4,
+      "originalQuality": 5.941308290779359,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.513688826913217,
+        "pedagogicalDepth": 9.707513008018749,
+        "progressiveIndex": 9.064588012621412,
+        "qualityScore": 13.295701136021451,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.198743007116896
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.0179910863582458
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.5878717989259559
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.5497869528409942
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-06-25T12:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-7"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 112
+      }
+    },
+    {
+      "id": "resource-05668",
+      "title": "Year 10 Technology: Resource 5668",
+      "subject": "Technology",
+      "yearLevel": "Year 10",
+      "type": "unit-plan",
+      "description": "Comprehensive unit-plan for Year 10 Technology learning",
+      "culturalElements": 1,
+      "currentPass": 4,
+      "originalQuality": 5.6027641026694175,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.013355189789864,
+        "pedagogicalDepth": 9.982072811848862,
+        "progressiveIndex": 9.189458943048976,
+        "qualityScore": 13.410577994538354,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.396246099072093
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.192711781818603
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.6648772562871677
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.5539787546910722
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-01-30T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-10"
+        ],
+        "difficulty": 3,
+        "estimatedDuration": 50
+      }
+    },
+    {
+      "id": "resource-05669",
+      "title": "Year 9 Technology: Resource 5669",
+      "subject": "Technology",
+      "yearLevel": "Year 9",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 9 Technology learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.624987019863683,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.275411620271512,
+        "pedagogicalDepth": 8.914472701083517,
+        "progressiveIndex": 9.466941250436248,
+        "qualityScore": 12.97496220766095,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.037164783655797
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.0905293671481964
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.519558105098234
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.7027229318950388
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-12-17T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-9"
+        ],
+        "difficulty": 2,
+        "estimatedDuration": 142
+      }
+    },
+    {
+      "id": "resource-05670",
+      "title": "Year 10 Technology: Resource 5670",
+      "subject": "Technology",
+      "yearLevel": "Year 10",
+      "type": "activity",
+      "description": "Comprehensive activity for Year 10 Technology learning",
+      "culturalElements": 2,
+      "currentPass": 4,
+      "originalQuality": 5.882002585863506,
+      "enhancement": {
+        "passesCompleted": 4,
+        "culturalAuthenticity": 9.089348670551963,
+        "pedagogicalDepth": 9.006516629441979,
+        "progressiveIndex": 8.525722243719814,
+        "qualityScore": 14.109048047518275,
+        "passes": [
+          {
+            "passNumber": 1,
+            "kaiako": "Whaea Aroha Kaitiaki-ā-Taonga",
+            "specialization": "Cultural Authenticity",
+            "enhancedContent": {
+              "focus": "Cultural authenticity",
+              "elements": [
+                "karakia",
+                "tikanga",
+                "Te Reo"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.4319258478060846
+          },
+          {
+            "passNumber": 2,
+            "kaiako": "Matua Rangi Akoranga-Hou",
+            "specialization": "Progressive Pedagogy",
+            "enhancedContent": {
+              "focus": "Progressive pedagogy",
+              "elements": [
+                "project-based",
+                "student-agency",
+                "design-thinking"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 2.275171419656119
+          },
+          {
+            "passNumber": 3,
+            "kaiako": "Whaea Mere Ako-Katoa",
+            "specialization": "Universal Design",
+            "enhancedContent": {
+              "focus": "Universal design",
+              "elements": [
+                "multi-modal",
+                "accessible",
+                "inclusive"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.873609636245523
+          },
+          {
+            "passNumber": 4,
+            "kaiako": "Matua Tane Aromatawai-Tika",
+            "specialization": "Assessment Innovation",
+            "enhancedContent": {
+              "focus": "Assessment innovation",
+              "elements": [
+                "portfolio",
+                "authentic",
+                "growth-mindset"
+              ]
+            },
+            "timeCompleted": "2025-09-10T13:57:43.549Z",
+            "qualityImprovement": 1.6463385579470429
+          }
+        ]
+      },
+      "metadata": {
+        "created": "2023-11-03T11:00:00.000Z",
+        "lastModified": "2025-09-10T13:57:43.549Z",
+        "tags": [
+          "technology",
+          "year-10"
+        ],
+        "difficulty": 1,
+        "estimatedDuration": 137
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "lesson-1755684556088-ic2f6t5jv",
+  "title": "Te Kaitiakitanga o Te Awa Mangakōtukutuku / Guardianship of the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 8",
+  "culturalContext": "Students will explore their role as kaitiaki of Te Awa Mangakōtukutuku, the stream that flows through our college lands. This awa holds significance to Ngāti Kahungunu as a traditional food gathering site and source of wellbeing. The lesson connects to the pūrākau of Kahungunu's journey through this region, where he recognized the life-sustaining qualities of local waterways.",
+  "depth": "extending",
+  "learningObjectives": [
+    "Design and construct a water quality testing device using digital sensors to monitor pH, turbidity, and temperature levels in Te Awa Mangakōtukutuku",
+    "Analyze historical and current environmental data to identify changes in the stream's health and propose technology-based solutions",
+    "Create a digital storytelling project that documents the cultural significance of the awa and shares monitoring findings with our school community",
+    "Collaborate with local kaumātua to integrate mātauranga Māori with technological approaches to water conservation"
+  ],
+  "activities": [
+    {
+      "title": "Whakawhanaungatanga ki Te Awa",
+      "description": "Visit Te Awa Mangakōtukutuku with kaumātua to hear pūrākau, learn traditional monitoring methods (observation of native species, water clarity assessment), and establish emotional connection to place through waiata and karakia"
+    },
+    {
+      "title": "Hangaia He Pūrere Aromatawai Wai",
+      "description": "Design and build water quality sensors using Arduino microcontrollers, waterproof cases, and calibrated sensors to measure key indicators of stream health, incorporating both scientific and cultural parameters"
+    },
+    {
+      "title": "He Kohinga Raraunga, He Kōrero",
+      "description": "Collect and analyze water quality data over two weeks, comparing findings with historical records from regional council databases and traditional knowledge shared by kaumātua"
+    },
+    {
+      "title": "Te Whakapuaki I Ngā Kitenga",
+      "description": "Create digital stories using Adobe Spark or similar tools that present findings, cultural significance, and proposed conservation actions to be shared at school hui and with local marae"
+    }
+  ],
+  "resources": [
+    "Hawke's Bay Regional Council water quality monitoring data and historical records",
+    "Local kaumātua from Ngāti Kahungunu with knowledge of Te Awa Mangakōtukutuku",
+    "Arduino starter kits with pH sensors, turbidity sensors, and temperature probes",
+    "Te Ara Encyclopedia entry 'Traditional Māori stories about waterways' and local pukapuka from Hastings District Library"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Functional water quality testing device that accurately measures at least three parameters",
+      "Data analysis report comparing modern sensor data with traditional indicators and historical records",
+      "Digital storytelling presentation that effectively communicates both technical findings and cultural significance",
+      "Reflection on how technology can enhance kaitiakitanga responsibilities for Te Awa Mangakōtukutuku"
+    ]
+  },
+  "duration": "4-6 weeks",
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Technological Knowledge: Technological modelling, technological products",
+    "Key Competencies: Participating and contributing, relating to others",
+    "Science: Living World, Planet Earth and Beyond"
+  ],
+  "createdAt": "2025-08-20T10:09:16.088Z",
+  "enrichedAt": "2025-09-11T12:23:01.839Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

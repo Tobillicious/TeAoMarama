@@ -1,0 +1,70 @@
+{
+  "lessonId": "resource-00079",
+  "title": "Year 11 Social Studies: Resource 79 - Interactive Quizzes",
+  "quizzes": [
+    {
+      "id": "quiz-1-resource-00079",
+      "title": "Pre-Lesson Knowledge Check",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What do you already know about Social Studies?",
+          "type": "multiple-choice",
+          "options": [
+            "A lot",
+            "Some",
+            "Little",
+            "Nothing"
+          ],
+          "correct": "varies"
+        },
+        {
+          "id": 2,
+          "question": "How does this topic connect to your experiences?",
+          "type": "open-ended",
+          "placeholder": "Share your thoughts..."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2-resource-00079",
+      "title": "Lesson Content Review",
+      "questions": [
+        {
+          "id": 3,
+          "question": "What is the main focus of Year 11 Social Studies: Resource 79?",
+          "type": "multiple-choice",
+          "options": [
+            "Understand key concepts in Social Studies",
+            "Apply learning to real-world contexts",
+            "Develop critical thinking skills",
+            "Connect learning to Te Ao Māori perspectives"
+          ],
+          "correct": 0
+        },
+        {
+          "id": 4,
+          "question": "What cultural elements were important in this lesson?",
+          "type": "multiple-select",
+          "options": [
+            "Cultural greeting",
+            "Respectful protocols"
+          ],
+          "correct": "all"
+        }
+      ]
+    },
+    {
+      "id": "quiz-3-resource-00079",
+      "title": "Cultural Understanding Check",
+      "questions": [
+        {
+          "id": 5,
+          "question": "How can you apply cultural learning in your community?",
+          "type": "open-ended",
+          "placeholder": "Describe your ideas..."
+        }
+      ]
+    }
+  ]
+}

@@ -11,11 +11,12 @@
     />
     <!-- theme-color is not supported by Firefox but is supported by Chrome, Edge, and Safari -->
     <meta name="theme-color" content="#1e40af" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="TeAoMarama" />
+    <!-- Removed PWA mobile app capabilities to prevent app-like behavior -->
+    <!-- <meta name="mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="default" /> -->
+    <!-- <meta name="apple-mobile-web-app-title" content="TeAoMarama" /> -->
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/vite.svg" />
+    <!-- <link rel="apple-touch-icon" href="/vite.svg" /> -->
 
     <!-- DNS Prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -59,7 +60,8 @@
       html {
         scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+             text-size-adjust: 100%;
       }
 
       body {
@@ -231,8 +233,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
     /></noscript>
 
-    <!-- Service Worker registration for PWA -->
-    <script>
+    <!-- Service Worker disabled to prevent app-like behavior -->
+    <!-- <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker
@@ -245,7 +247,7 @@
             });
         });
       }
-    </script>
+    </script> -->
 
     <!-- Performance monitoring -->
     <script>
@@ -268,27 +270,10 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-h8qOer3G.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-misc-IybOkyEH.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-database-7UCLagNC.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-react-D3ow3sLr.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-router-DmmrQaBv.js">
-    <link rel="modulepreload" crossorigin href="/assets/educational-platform-DNToupFE.js">
-    <link rel="modulepreload" crossorigin href="/assets/app-core-tp3EZsx1.js">
-    <link rel="modulepreload" crossorigin href="/assets/utils-misc-BOjHsyQs.js">
-    <link rel="modulepreload" crossorigin href="/assets/ai-systems-BeDfwRF8.js">
-    <link rel="modulepreload" crossorigin href="/assets/components-misc-BC1y6KB1.js">
-    <link rel="modulepreload" crossorigin href="/assets/pages-D0Ebu95u.js">
-    <link rel="modulepreload" crossorigin href="/assets/dashboard-misc-Hl6eN0z0.js">
-    <link rel="modulepreload" crossorigin href="/assets/components-modals-qIYV0MLJ.js">
-    <link rel="stylesheet" crossorigin href="/assets/educational-platform-CSkIR7Ny.css">
-    <link rel="stylesheet" crossorigin href="/assets/app-core-Cf9sz83W.css">
-    <link rel="stylesheet" crossorigin href="/assets/ai-systems-J_UKiOUT.css">
-    <link rel="stylesheet" crossorigin href="/assets/components-misc-p_RWi1UV.css">
-    <link rel="stylesheet" crossorigin href="/assets/pages-BiLSh8DX.css">
-    <link rel="stylesheet" crossorigin href="/assets/dashboard-misc-PGtBqCdZ.css">
-    <link rel="stylesheet" crossorigin href="/assets/components-modals-9z1vqEiH.css">
-    <link rel="stylesheet" crossorigin href="/assets/index-BuwwDV0d.css">
+    <script type="module" crossorigin src="/assets/index-BBHfs1Bz.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-BBHfs1Bz.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-BEIMVFFd.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CMtTOIC1.css">
   </head>
   <body>
     <div id="root"></div>

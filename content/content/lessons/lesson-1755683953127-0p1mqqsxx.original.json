@@ -1,0 +1,60 @@
+{
+  "id": "lesson-1755683953127-0p1mqqsxx",
+  "title": "Whakamahi Hangarau ki te Awa o Mangakōtukutuku / Technology Applications for the Mangakōtukutuku Stream",
+  "type": "lesson",
+  "subject": "Technology",
+  "yearLevel": "Year 7",
+  "culturalContext": "Students will explore how technology can support the restoration and protection of Te Awa o Mangakōtukutuku, a culturally significant stream that flows through our rohe. This awa is mentioned in Ngāti Kahungunu pūrākau and was traditionally used for mahinga kai, navigation, and healing. Students will connect with local kaumātua to understand the historical significance and current challenges facing the awa.",
+  "depth": "developing",
+  "learningObjectives": [
+    "Design and create a digital story map that documents the cultural and ecological significance of Te Awa o Mangakōtukutuku using GIS technology",
+    "Develop a functional water quality testing prototype using simple sensors and materials that align with mātauranga Māori environmental monitoring practices",
+    "Create a presentation that proposes technology-based solutions for an identified issue affecting the awa, demonstrating understanding of both technical and cultural considerations"
+  ],
+  "activities": [
+    {
+      "title": "Whakarongo ki te Awa - Listening to the Stream",
+      "description": "Students visit Te Awa o Mangakōtukutuku with local kaumātua to hear pūrākau (stories) and learn about the historical significance of the waterway. They document observations using digital cameras and audio recorders, focusing on both cultural landmarks and potential environmental concerns."
+    },
+    {
+      "title": "Hangaia he Mata Ataata - Creating a Digital Story Map",
+      "description": "Using GIS mapping software, students create interactive digital maps that layer cultural narratives, historical sites, and ecological data points along the awa. They incorporate audio recordings from kaumātua and photographic evidence of current stream conditions."
+    },
+    {
+      "title": "Waihanga Pūrere Mokowā - Prototype Water Testing Device",
+      "description": "Students design and build simple water testing devices using Arduino microcontrollers, pH sensors, and temperature probes. They test these prototypes at various points along the stream, comparing results with traditional Māori methods of water quality assessment."
+    },
+    {
+      "title": "Whakaaro Hangarau - Technology Solution Brainstorm",
+      "description": "Working in small groups, students identify specific issues affecting the awa (e.g., sediment runoff, pollution, habitat loss) and brainstorm technology-based solutions that respect both modern engineering principles and Māori environmental values."
+    },
+    {
+      "title": "Whakaaturanga Matihiko - Digital Presentation",
+      "description": "Students create multimedia presentations showcasing their findings, digital maps, prototype testing results, and proposed solutions. They present these to community members, incorporating both technical specifications and cultural considerations."
+    }
+  ],
+  "resources": [
+    "Local kaumātua from Ngāti Kahungunu with knowledge of Te Awa o Mangakōtukutuku",
+    "ArcGIS Online or Google Earth for digital mapping",
+    "Arduino starter kits with water quality sensors",
+    "'Te Mātauranga o te Taiao' environmental knowledge resources from local marae"
+  ],
+  "assessment": {
+    "type": "summative",
+    "tasks": [
+      "Completed digital story map with cultural and ecological layers",
+      "Functional water testing prototype and data collection report",
+      "Multimedia presentation proposing technology solutions for awa restoration"
+    ]
+  },
+  "nzcAlignment": [
+    "Technological Practice: Planning for practice, brief development, outcome development and evaluation",
+    "Technological Knowledge: Technological modelling, products and systems",
+    "Nature of Technology: Characteristics of technology, characteristics of technological outcomes",
+    "Key Competencies: Participating and contributing, relating to others"
+  ],
+  "duration": "3-4 weeks",
+  "createdAt": "2025-08-20T09:59:13.127Z",
+  "enrichedAt": "2025-09-11T11:58:15.170Z",
+  "enrichedBy": "Aronui_Hangarau"
+}

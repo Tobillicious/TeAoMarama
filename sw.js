@@ -1,39 +1,40 @@
-// Service Worker for Te Kete Ako PWA
-// Provides offline support and performance optimization
+/**
+ * Service Worker for TeAoMarama Platform
+ * Lightweight caching for better performance
+ */
 
-const CACHE_NAME = 'teaomarama-v1';
-const STATIC_CACHE = 'teaomarama-static-v1';
-const DYNAMIC_CACHE = 'teaomarama-dynamic-v1';
+const CACHE_NAME = 'teao-marama-v1';
+const STATIC_CACHE = 'static-v1';
 
-// Core assets to cache immediately
-const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/vite.svg',
-  '/src/styles/globals.css',
-  '/src/styles/components.css',
-  '/resources/index.json',
-];
+// Files to cache - only cache files that actually exist
+const STATIC_FILES = ['/'];
 
-// Install event - cache core assets
+// Install event
 self.addEventListener('install', (event) => {
-  console.log('🔄 Service Worker installing...');
+  console.log('🔧 Service Worker installing...');
   event.waitUntil(
     caches
       .open(STATIC_CACHE)
       .then((cache) => {
-        console.log('📦 Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
+        console.log('📦 Caching static files');
+        // Cache files individually to handle failures gracefully
+        return Promise.allSettled(
+          STATIC_FILES.map((file) =>
+            cache.add(file).catch((err) => {
+              console.warn(`Failed to cache ${file}:`, err);
+              return null;
+            }),
+          ),
+        );
       })
       .then(() => {
-        console.log('✅ Service Worker installed successfully');
+        console.log('✅ Service Worker installed');
         return self.skipWaiting();
       }),
   );
 });
 
-// Activate event - clean up old caches
+// Activate event
 self.addEventListener('activate', (event) => {
   console.log('🚀 Service Worker activating...');
   event.waitUntil(
@@ -42,8 +43,8 @@ self.addEventListener('activate', (event) => {
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log('🗑️ Deleting old cache: ', cacheName);
+            if (cacheName !== CACHE_NAME && cacheName !== STATIC_CACHE) {
+              console.log('🗑️ Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           }),
@@ -56,139 +57,56 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache when offline
+// Fetch event
 self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-  
-  // Skip non-GET requests
-  if (request.method !== 'GET') {
+  // Only handle GET requests
+  if (event.request.method !== 'GET') {
     return;
   }
 
-  // Skip external requests
-  if (url.origin !== location.origin) {
+  // Skip non-HTTP requests
+  if (!event.request.url.startsWith('http')) {
     return;
   }
 
-  // Handle different types of requests
-  if (request.destination === 'document') {
-    // HTML pages - network first, fallback to cache
-    event.respondWith(
-      fetch(request)
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      // Return cached version if available
+      if (response) {
+        return response;
+      }
+
+      // Fetch from network
+      return fetch(event.request)
         .then((response) => {
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => cache.put(request, responseClone));
+          // Don't cache if not a valid response
+          if (!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
           }
-          return response;
-        })
-        .catch(() => {
-          return caches.match(request).then((response) => {
-            if (response) {
-              return response;
-            }
-            // Fallback to offline page
-            return caches.match('/offline.html');
+
+          // Clone the response
+          const responseToCache = response.clone();
+
+          // Cache the response
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
           });
-        }),
-    );
-  } else if (request.destination === 'style' || request.destination === 'script') {
-    // CSS/JS - cache first, fallback to network
-    event.respondWith(
-      caches.match(request).then((response) => {
-        if (response) {
-          return response;
-        }
-        return fetch(request).then((response) => {
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => cache.put(request, responseClone));
-          }
-          return response;
-        });
-      }),
-    );
-  } else if (request.destination === 'image') {
-    // Images - cache first, network fallback
-    event.respondWith(
-      caches.match(request).then((response) => {
-        if (response) {
-          return response;
-        }
-        return fetch(request).then((response) => {
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => cache.put(request, responseClone));
-          }
-          return response;
-        });
-      }),
-    );
-  } else {
-    // Other resources - network first
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => cache.put(request, responseClone));
-          }
+
           return response;
         })
         .catch(() => {
-          return caches.match(request);
-        }),
-    );
+          // Return offline page if available
+          if (event.request.destination === 'document') {
+            return caches.match('/index.html');
+          }
+        });
+    }),
+  );
+});
+
+// Message event for cache management
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
   }
 });
-
-// Background sync for offline actions
-self.addEventListener('sync', (event) => {
-  if (event.tag === 'background-sync') {
-    console.log('🔄 Background sync triggered');
-    event.waitUntil(
-      // Handle offline actions here
-      Promise.resolve(),
-    );
-  }
-});
-
-// Push notifications
-self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data ? event.data.text() : 'Te Kete Ako Update',
-    icon: '/vite.svg',
-    badge: '/vite.svg',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1,
-    },
-    actions: [
-      {
-        action: 'explore',
-        title: 'Explore Resources',
-        icon: '/vite.svg',
-      },
-      {
-        action: 'close',
-        title: 'Close',
-        icon: '/vite.svg',
-      },
-    ],
-  };
-
-  event.waitUntil(self.registration.showNotification('Te Kete Ako', options));
-});
-
-// Notification click handling
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-
-  if (event.action === 'explore') {
-    event.waitUntil(clients.openWindow('/resources'));
-  }
-});
-
-console.log('🧠 Service Worker loaded');
