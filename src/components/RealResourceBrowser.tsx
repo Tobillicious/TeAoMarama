@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useEducation } from '../contexts/EducationContext';
+import React, { useContext, useState } from 'react';
+import { EducationContext } from '../contexts/EducationContext';
 
 const RealResourceBrowser: React.FC = () => {
-  const { resources, loading } = useEducation();
+  const { resources, loading } = useContext(EducationContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');

@@ -82,7 +82,7 @@ interface Resource {
     | 'document';
   subject: string;
   yearLevel: string;
-  description: string;
+    description: string;
   tags: string[];
   culturalElements: string[];
   author: string;
@@ -361,9 +361,8 @@ export const EducationProvider: React.FC<EducationProviderProps> = ({ children }
               `[EducationContext] Loaded ${enhancedResources.length} enhanced resources!`,
             );
 
-            // Convert enhanced resources to our Resource format - Load more for better UX
+            // Convert enhanced resources to our Resource format
             const convertedResources: Resource[] = enhancedResources
-              .slice(0, 100)
               .map((resource) => ({
                 id: resource.id,
                 title: resource.title,
@@ -410,7 +409,7 @@ export const EducationProvider: React.FC<EducationProviderProps> = ({ children }
             title: 'Year 8 Mathematics: Fractions in Daily Life',
             type: 'lesson',
             subject: 'Mathematics',
-            yearLevel: 'Year 8',
+      yearLevel: 'Year 8',
             description:
               'Māori land ownership contexts, rugby statistics, hangi cooking calculations',
             tags: ['fractions', 'Māori contexts', 'real-world math', 'land ownership'],
@@ -441,7 +440,7 @@ export const EducationProvider: React.FC<EducationProviderProps> = ({ children }
             rating: 4.8,
             downloads: 980,
             fileSize: '1.8 MB',
-            duration: '60 minutes',
+      duration: '60 minutes',
             difficulty: 'beginner',
             lastUpdated: '2024-01-20',
             isPremium: false,

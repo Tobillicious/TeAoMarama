@@ -27,7 +27,7 @@ export class ContentIndexer {
 
   // Index content items
   indexContent(items: ContentItem[]): void {
-    items.forEach(item => {
+    items.forEach((item) => {
       this.contentIndex.set(item.id, item);
     });
   }
@@ -42,7 +42,7 @@ export class ContentIndexer {
         item.title.toLowerCase().includes(searchTerm) ||
         item.description.toLowerCase().includes(searchTerm) ||
         item.subject.toLowerCase().includes(searchTerm) ||
-        item.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+        item.tags.some((tag) => tag.toLowerCase().includes(searchTerm))
       ) {
         results.push(item);
       }
@@ -93,4 +93,30 @@ export class ContentIndexer {
 
     return results;
   }
+}
+
+// Export utility functions for compatibility
+export async function loadAllIndexedContent(): Promise<ContentItem[]> {
+  const indexer = new ContentIndexer();
+  return await indexer.loadAllContent();
+}
+
+export function searchContent(content: ContentItem[], query: string): ContentItem[] {
+  const indexer = new ContentIndexer();
+  return indexer.search(content, query);
+}
+
+export function filterContentByCategory(content: ContentItem[], category: string): ContentItem[] {
+  const indexer = new ContentIndexer();
+  return indexer.filter(content, { category });
+}
+
+export function filterContentBySubject(content: ContentItem[], subject: string): ContentItem[] {
+  const indexer = new ContentIndexer();
+  return indexer.filter(content, { subject });
+}
+
+export function sortContent(content: ContentItem[], sortBy: string): ContentItem[] {
+  const indexer = new ContentIndexer();
+  return indexer.sort(content, sortBy as any);
 }

@@ -346,3 +346,4 @@ const specialist = new ContinuousDevelopmentSpecialist();
 specialist.runContinuousDevelopment();
 
 export default ContinuousDevelopmentSpecialist;
+

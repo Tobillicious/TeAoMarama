@@ -135,3 +135,4 @@ const convertedResources: Resource[] = enhancedResources.slice(0, 50).map((resou
 - **Fix issues** rather than just identifying them
 
 **Status**: Ready for collaborative assistance with Claude Code Terminal 55474
+

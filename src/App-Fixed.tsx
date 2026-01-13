@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { EducationProvider } from './contexts/EducationContext';
 import { AuthProvider } from './components/useAuth';
+import { EducationProvider } from './contexts/EducationContext';
 
 // Minimal lazy-loaded components to prevent bundle issues
 const SimpleWorkingHomepage = React.lazy(() => import('./components/SimpleWorkingHomepage'));

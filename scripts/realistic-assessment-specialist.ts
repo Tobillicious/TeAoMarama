@@ -288,3 +288,4 @@ const specialist = new RealisticAssessmentSpecialist();
 specialist.runRealisticAssessment();
 
 export default RealisticAssessmentSpecialist;
+

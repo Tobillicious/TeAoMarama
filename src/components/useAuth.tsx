@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             id: '1',
             email: 'teacher@example.com',
             name: 'Demo Teacher',
-            role: 'teacher'
+            role: 'teacher',
           });
         }
       } catch (error) {
@@ -60,9 +60,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           id: '1',
           email,
           name: email.split('@')[0],
-          role: 'teacher'
+          role: 'teacher',
         };
-        
+
         setUser(mockUser);
         localStorage.setItem('authToken', 'mock-token');
       }
@@ -84,14 +84,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     login,
     logout,
     isAuthenticated: !!user,
-    isLoading
+    isLoading,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = (): AuthContextType => {

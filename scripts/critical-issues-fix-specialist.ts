@@ -327,3 +327,4 @@ const specialist = new CriticalIssuesFixSpecialist();
 specialist.fixCriticalIssues();
 
 export default CriticalIssuesFixSpecialist;
+

@@ -2,7 +2,7 @@
 
 /**
  * Next Phase Enhancement Manager
- *
+ * 
  * This script implements advanced performance optimizations to push
  * the system beyond the current 51% improvement to achieve even
  * better performance scores.
@@ -263,5 +263,5 @@ class NextPhaseEnhancementManager {
 }
 
 // Run the enhancement manager
-const manager = new NextPhaseEnhancementManager();
+  const manager = new NextPhaseEnhancementManager();
 manager.runEnhancements().catch(console.error);

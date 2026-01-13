@@ -323,7 +323,7 @@ This lesson plan is ready for immediate classroom use.
           <div className="learning-objectives">
             <h3>🎯 Learning Objectives</h3>
             <ul>
-              {resource.actualLessonContent?.learningObjectives?.map(
+              {(resource.actualLessonContent.learningObjectives as string[])?.map(
                 (objective: string, index: number) => (
                   <li key={index}>{objective}</li>
                 ),

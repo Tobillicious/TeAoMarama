@@ -1,6 +1,6 @@
-import React from 'react';
+const App = () => {
+  console.log('App-Simple-Test: Rendering...');
 
-const SimpleTestApp: React.FC = () => {
   return (
     <div
       style={{
@@ -10,45 +10,36 @@ const SimpleTestApp: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
         fontFamily: 'Arial, sans-serif',
+        color: 'white',
+        fontSize: '2rem',
+        textAlign: 'center',
+        padding: '40px',
       }}
     >
       <div
         style={{
-          background: 'white',
+          background: 'rgba(255,255,255,0.1)',
           padding: '40px',
           borderRadius: '20px',
-          textAlign: 'center',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+          backdropFilter: 'blur(10px)',
         }}
       >
-        <h1 style={{ color: '#1e40af', fontSize: '2.5rem', marginBottom: '20px' }}>
-          🚨 SITE AUDIT MODE
-        </h1>
-        <p style={{ color: '#6b7280', fontSize: '1.2rem', marginBottom: '30px' }}>
-          React is working! The issue is with the complex App.tsx
-        </p>
+        <h1 style={{ marginBottom: '20px' }}>🔄 Simple Test</h1>
+        <p style={{ marginBottom: '20px' }}>Te Ao Mārama Platform</p>
         <div
           style={{
-            background: '#f3f4f6',
+            background: 'rgba(255,255,255,0.2)',
             padding: '20px',
-            borderRadius: '10px',
-            marginBottom: '20px',
+            borderRadius: '15px',
+            marginTop: '20px',
           }}
         >
-          <h3 style={{ color: '#1e40af', marginBottom: '10px' }}>🔍 Issues Found:</h3>
-          <ul style={{ color: '#374151', textAlign: 'left' }}>
-            <li>Complex component imports causing failures</li>
-            <li>EducationContext may have initialization issues</li>
-            <li>RealAssessmentBrowser/RealResourceBrowser imports failing</li>
-            <li>Multiple lazy-loaded components causing bundle issues</li>
-          </ul>
+          <h3 style={{ marginBottom: '10px' }}>✅ Test Status</h3>
+          <p style={{ margin: 0 }}>React app is working!</p>
         </div>
-        <p style={{ color: '#059669', fontWeight: 'bold' }}>
-          ✅ React is functioning correctly - the problem is in the App architecture
-        </p>
       </div>
     </div>
   );
 };
 
-export default SimpleTestApp;
+export default App;

@@ -28,9 +28,25 @@ interface TeachingTimer {
 }
 
 const RealLessonViewer: React.FC = () => {
-  const params = useParams<{ resourceId: string }>();
-  const resourceId = params?.resourceId;
-  const navigate = useNavigate();
+  // Safety check for React Router context
+  let params: any = null;
+  let resourceId: string | undefined;
+  let navigate: any = null;
+
+  try {
+    params = useParams<{ resourceId: string }>();
+    resourceId = params?.resourceId;
+    navigate = useNavigate();
+  } catch (error) {
+    console.error('❌ React Router context not available:', error);
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h2>🚨 Navigation Error</h2>
+        <p>This component requires proper routing context.</p>
+        <button onClick={() => (window.location.href = '/')}>🏠 Go Home</button>
+      </div>
+    );
+  }
   const [resource, setResource] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 

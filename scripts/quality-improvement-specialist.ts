@@ -283,3 +283,4 @@ const specialist = new QualityImprovementSpecialist();
 specialist.improveQuality();
 
 export default QualityImprovementSpecialist;
+

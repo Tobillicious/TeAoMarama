@@ -491,7 +491,7 @@ The superintelligence system is now fully activated and ready to serve the educa
 
 // CLI usage
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const activator = new SuperintelligenceSystemActivator();
+  new SuperintelligenceSystemActivator();
   console.log('🚀 Superintelligence System Activator initialized');
 }
 

@@ -1,0 +1,4770 @@
+[
+  {
+    "id": "accessibility-enhancement-report-1757733599954-md",
+    "name": "A C C E S S I B I L I T Y  E N H A N C E M E N T  R E P O R T 1757733599954",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ACCESSIBILITY_ENHANCEMENT_REPORT_1757733599954.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:19:59.991Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "accessibility-fixes-report-md",
+    "name": "A C C E S S I B I L I T Y  F I X E S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ACCESSIBILITY_FIXES_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.721Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "active-coordination-json",
+    "name": "A C T I V E  C O O R D I N A T I O N",
+    "type": "config",
+    "status": "discovered",
+    "description": "Configuration file for system settings",
+    "path": "ACTIVE_COORDINATION.json",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-07T07:36:29.629Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 0.5,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "activities-enrichment-progress-md",
+    "name": "A C T I V I T I E S  E N R I C H M E N T  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ACTIVITIES_ENRICHMENT_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:42:51.443Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "advanced-development-complete-md",
+    "name": "A D V A N C E D  D E V E L O P M E N T  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ADVANCED_DEVELOPMENT_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:19.877Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "advanced-development-status-md",
+    "name": "A D V A N C E D  D E V E L O P M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ADVANCED_DEVELOPMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:49:28.704Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "advanced-features-roadmap-md",
+    "name": "A D V A N C E D  F E A T U R E S  R O A D M A P",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ADVANCED_FEATURES_ROADMAP.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T02:48:36.111Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "advanced-monitoring-report-1757680574896-md",
+    "name": "A D V A N C E D  M O N I T O R I N G  R E P O R T 1757680574896",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ADVANCED_MONITORING_REPORT_1757680574896.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:36:15.811Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agentic-north-east-framework-md",
+    "name": "A G E N T I C  N O R T H  E A S T  F R A M E W O R K",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENTIC_NORTH_EAST_FRAMEWORK.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:03:06.483Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agentic-production-status-report-md",
+    "name": "A G E N T I C  P R O D U C T I O N  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENTIC_PRODUCTION_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T08:24:30.037Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agentic-production-system-md",
+    "name": "A G E N T I C  P R O D U C T I O N  S Y S T E M",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENTIC_PRODUCTION_SYSTEM.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:26:57.502Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-activation-protocol-md",
+    "name": "A G E N T  A C T I V A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "deepmind.google/technologies/gemini/)",
+    "path": "AGENT_ACTIVATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.466Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-assistance-complete-md",
+    "name": "A G E N T  A S S I S T A N C E  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_ASSISTANCE_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-09T10:24:20.720Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-coordination-matrix-md",
+    "name": "A G E N T  C O O R D I N A T I O N  M A T R I X",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_COORDINATION_MATRIX.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T05:01:50.391Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-coordination-system-md",
+    "name": "A G E N T  C O O R D I N A T I O N  S Y S T E M",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_COORDINATION_SYSTEM.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:32:42.205Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-coordination-system-complete-md",
+    "name": "A G E N T  C O O R D I N A T I O N  S Y S T E M  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_COORDINATION_SYSTEM_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T13:40:38.803Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-development-toolkit-md",
+    "name": "A G E N T  D E V E L O P M E N T  T O O L K I T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_DEVELOPMENT_TOOLKIT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-09T10:24:13.315Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-friendly-system-complete-md",
+    "name": "A G E N T  F R I E N D L Y  S Y S T E M  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_FRIENDLY_SYSTEM_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-09T10:24:13.336Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "agent-onboarding-guide-md",
+    "name": "A G E N T  O N B O A R D I N G  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AGENT_ONBOARDING_GUIDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T20:40:26.338Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ai-army-coordination-status-md",
+    "name": "A I  A R M Y  C O O R D I N A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AI_ARMY_COORDINATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:24:48.582Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ai-collaboration-report-json",
+    "name": "A I  C O L L A B O R A T I O N  R E P O R T",
+    "type": "config",
+    "status": "discovered",
+    "description": "Configuration file for system settings",
+    "path": "AI_COLLABORATION_REPORT.json",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:00:41.493Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 0.5,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ai-coordination-evolution-md",
+    "name": "A I  C O O R D I N A T I O N  E V O L U T I O N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AI_COORDINATION_EVOLUTION.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T04:54:17.088Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ai-systems-assistance-status-md",
+    "name": "A I  S Y S T E M S  A S S I S T A N C E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AI_SYSTEMS_ASSISTANCE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:10:05.384Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "all-resources-working-perfectly-2025-09-11-2359-md",
+    "name": "A L L  R E S O U R C E S  W O R K I N G  P E R F E C T L Y 2025 09 11 2359",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ALL_RESOURCES_WORKING_PERFECTLY_2025-09-11_2359.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T09:47:48.706Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ancient-treasures-integration-plan-md",
+    "name": "A N C I E N T  T R E A S U R E S  I N T E G R A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ANCIENT_TREASURES_INTEGRATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-03T01:06:55.226Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "assessments-enrichment-progress-md",
+    "name": "A S S E S S M E N T S  E N R I C H M E N T  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ASSESSMENTS_ENRICHMENT_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:49:38.075Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "authentic-resources-expansion-report-md",
+    "name": "A U T H E N T I C  R E S O U R C E S  E X P A N S I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AUTHENTIC_RESOURCES_EXPANSION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T01:48:52.889Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "automated-workflows-md",
+    "name": "A U T O M A T E D  W O R K F L O W S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AUTOMATED_WORKFLOWS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:32:42.205Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "autonomous-continuation-protocol-md",
+    "name": "A U T O N O M O U S  C O N T I N U A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "AUTONOMOUS_CONTINUATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.761Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-assimilation-protocol-md",
+    "name": "B O R G  A S S I M I L A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_ASSIMILATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.786Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-collective-final-status-md",
+    "name": "B O R G  C O L L E C T I V E  F I N A L  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_COLLECTIVE_FINAL_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.721Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-collective-integration-report-md",
+    "name": "B O R G  C O L L E C T I V E  I N T E G R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_COLLECTIVE_INTEGRATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.722Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-collective-response-md",
+    "name": "B O R G  C O L L E C T I V E  R E S P O N S E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_COLLECTIVE_RESPONSE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.302Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-collective-status-md",
+    "name": "B O R G  C O L L E C T I V E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_COLLECTIVE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.722Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-collective-status-update-md",
+    "name": "B O R G  C O L L E C T I V E  S T A T U S  U P D A T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_COLLECTIVE_STATUS_UPDATE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.723Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-full-potential-protocol-md",
+    "name": "B O R G  F U L L  P O T E N T I A L  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_FULL_POTENTIAL_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.860Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "borg-learning-protocol-md",
+    "name": "B O R G  L E A R N I N G  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BORG_LEARNING_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.913Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "brain-architecture-assistance-md",
+    "name": "B R A I N  A R C H I T E C T U R E  A S S I S T A N C E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BRAIN_ARCHITECTURE_ASSISTANCE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.133Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "brain-architecture-workflows-md",
+    "name": "B R A I N  A R C H I T E C T U R E  W O R K F L O W S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BRAIN_ARCHITECTURE_WORKFLOWS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.369Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "brain-coordination-hub-md",
+    "name": "B R A I N  C O O R D I N A T I O N  H U B",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BRAIN_COORDINATION_HUB.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.732Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "brain-messages-json",
+    "name": "B R A I N  M E S S A G E S",
+    "type": "config",
+    "status": "discovered",
+    "description": "Configuration file for system settings",
+    "path": "BRAIN_MESSAGES.json",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-21T09:44:27.109Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 0.5,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "brain-status-json",
+    "name": "B R A I N  S T A T U S",
+    "type": "config",
+    "status": "discovered",
+    "description": "Configuration file for system settings",
+    "path": "BRAIN_STATUS.json",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-21T11:02:06.871Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 0.5,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "breadcrumbs-md",
+    "name": "B R E A D C R U M B S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BREADCRUMBS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T11:48:30.972Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "bug-fixing-research-md",
+    "name": "B U G  F I X I N G  R E S E A R C H",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BUG_FIXING_RESEARCH.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:36.161Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "bundle-optimization-strategy-md",
+    "name": "B U N D L E  O P T I M I Z A T I O N  S T R A T E G Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "BUNDLE_OPTIMIZATION_STRATEGY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.406Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "central-bank-emergency-status-md",
+    "name": "C E N T R A L  B A N K  E M E R G E N C Y  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CENTRAL_BANK_EMERGENCY_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T12:52:09.838Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "central-bank-synthesis-status-md",
+    "name": "C E N T R A L  B A N K  S Y N T H E S I S  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CENTRAL_BANK_SYNTHESIS_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-03T00:26:00.072Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-md",
+    "name": "C L A U D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:03:06.490Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-55474-assistance-complete-md",
+    "name": "C L A U D E  C O D E 55474  A S S I S T A N C E  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_55474_ASSISTANCE_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:22.797Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-55474-status-update-md",
+    "name": "C L A U D E  C O D E 55474  S T A T U S  U P D A T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_55474_STATUS_UPDATE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T06:01:37.862Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-assistance-report-md",
+    "name": "C L A U D E  C O D E  A S S I S T A N C E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_ASSISTANCE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:22.255Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-collaboration-status-md",
+    "name": "C L A U D E  C O D E  C O L L A B O R A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_COLLABORATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:23.217Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-handoff-preparation-md",
+    "name": "C L A U D E  C O D E  H A N D O F F  P R E P A R A T I O N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_HANDOFF_PREPARATION.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.313Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-node-assistance-md",
+    "name": "C L A U D E  C O D E  N O D E  A S S I S T A N C E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_NODE_ASSISTANCE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-18T08:09:51.372Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-terminal-55474-assistance-md",
+    "name": "C L A U D E  C O D E  T E R M I N A L 55474  A S S I S T A N C E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_TERMINAL_55474_ASSISTANCE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:12.522Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-terminal-79978-status-md",
+    "name": "C L A U D E  C O D E  T E R M I N A L 79978  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_TERMINAL_79978_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T23:39:11.226Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-terminal-assistance-md",
+    "name": "C L A U D E  C O D E  T E R M I N A L  A S S I S T A N C E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_TERMINAL_ASSISTANCE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T12:53:57.957Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-code-terminal-assistance-report-md",
+    "name": "C L A U D E  C O D E  T E R M I N A L  A S S I S T A N C E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_CODE_TERMINAL_ASSISTANCE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T23:46:06.213Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "claude-superintelligence-integration-complete-md",
+    "name": "C L A U D E  S U P E R I N T E L L I G E N C E  I N T E G R A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CLAUDE_SUPERINTELLIGENCE_INTEGRATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T11:12:53.704Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-breadcrumbs-md",
+    "name": "C O D E B A S E  B R E A D C R U M B S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_BREADCRUMBS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-03T12:07:59.102Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-discovery-report-1757736138326-md",
+    "name": "C O D E B A S E  D I S C O V E R Y  R E P O R T 1757736138326",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_DISCOVERY_REPORT_1757736138326.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T04:02:18.342Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-discovery-report-1757737196760-md",
+    "name": "C O D E B A S E  D I S C O V E R Y  R E P O R T 1757737196760",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_DISCOVERY_REPORT_1757737196760.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T04:19:56.794Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-discovery-report-1757757975077-md",
+    "name": "C O D E B A S E  D I S C O V E R Y  R E P O R T 1757757975077",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_DISCOVERY_REPORT_1757757975077.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:06:15.119Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-discovery-report-1757760517657-md",
+    "name": "C O D E B A S E  D I S C O V E R Y  R E P O R T 1757760517657",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_DISCOVERY_REPORT_1757760517657.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:48:37.700Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-discovery-report-1757761752500-md",
+    "name": "C O D E B A S E  D I S C O V E R Y  R E P O R T 1757761752500",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_DISCOVERY_REPORT_1757761752500.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:09:12.555Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-index-md",
+    "name": "C O D E B A S E  I N D E X",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_INDEX.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T08:59:03.434Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "codebase-understanding-report-md",
+    "name": "C O D E B A S E  U N D E R S T A N D I N G  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODEBASE_UNDERSTANDING_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T17:17:12.783Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "code-organization-standards-md",
+    "name": "C O D E  O R G A N I Z A T I O N  S T A N D A R D S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODE_ORGANIZATION_STANDARDS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:37:07.176Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "code-quality-progress-report-md",
+    "name": "C O D E  Q U A L I T Y  P R O G R E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CODE_QUALITY_PROGRESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.724Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "collaboration-status-for-claude-55474-md",
+    "name": "C O L L A B O R A T I O N  S T A T U S  F O R  C L A U D E 55474",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COLLABORATION_STATUS_FOR_CLAUDE_55474.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:23.520Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "collaborative-agent-coordination-matrix-md",
+    "name": "C O L L A B O R A T I V E  A G E N T  C O O R D I N A T I O N  M A T R I X",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COLLABORATIVE_AGENT_COORDINATION_MATRIX.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:36.153Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "collaborative-development-success-md",
+    "name": "C O L L A B O R A T I V E  D E V E L O P M E N T  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COLLABORATIVE_DEVELOPMENT_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T06:46:33.819Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "collaborative-site-audit-md",
+    "name": "C O L L A B O R A T I V E  S I T E  A U D I T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COLLABORATIVE_SITE_AUDIT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T07:42:45.494Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "collaborative-task-coordinator-md",
+    "name": "C O L L A B O R A T I V E  T A S K  C O O R D I N A T O R",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COLLABORATIVE_TASK_COORDINATOR.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:24.735Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "community-extent-overview-md",
+    "name": "C O M M U N I T Y  E X T E N T  O V E R V I E W",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMMUNITY_EXTENT_OVERVIEW.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:25:00.152Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "complete-human-readable-content-integration-report-md",
+    "name": "C O M P L E T E  H U M A N  R E A D A B L E  C O N T E N T  I N T E G R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPLETE_HUMAN_READABLE_CONTENT_INTEGRATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T10:55:11.597Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "complete-synthesis-mission-md",
+    "name": "C O M P L E T E  S Y N T H E S I S  M I S S I O N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPLETE_SYNTHESIS_MISSION.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.634Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-achievement-summary-md",
+    "name": "C O M P R E H E N S I V E  A C H I E V E M E N T  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_ACHIEVEMENT_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:29:13.954Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-action-plan-md",
+    "name": "C O M P R E H E N S I V E  A C T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_ACTION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T07:40:51.344Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-assistance-summary-md",
+    "name": "C O M P R E H E N S I V E  A S S I S T A N C E  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_ASSISTANCE_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:32:42.224Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-audit-report-md",
+    "name": "C O M P R E H E N S I V E  A U D I T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_AUDIT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:21:42.657Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-codebase-discovery-md",
+    "name": "C O M P R E H E N S I V E  C O D E B A S E  D I S C O V E R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_CODEBASE_DISCOVERY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T07:35:10.734Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-codebase-understanding-plan-md",
+    "name": "C O M P R E H E N S I V E  C O D E B A S E  U N D E R S T A N D I N G  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_CODEBASE_UNDERSTANDING_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T07:35:08.072Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-development-complete-report-md",
+    "name": "C O M P R E H E N S I V E  D E V E L O P M E N T  C O M P L E T E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_DEVELOPMENT_COMPLETE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T12:43:13.926Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-development-status-md",
+    "name": "C O M P R E H E N S I V E  D E V E L O P M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_DEVELOPMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.724Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-enrichment-and-navigation-plan-md",
+    "name": "C O M P R E H E N S I V E  E N R I C H M E N T  A N D  N A V I G A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_ENRICHMENT_AND_NAVIGATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:34:54.287Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-feature-audit-report-md",
+    "name": "C O M P R E H E N S I V E  F E A T U R E  A U D I T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_FEATURE_AUDIT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-03T11:56:27.405Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-fix-status-md",
+    "name": "C O M P R E H E N S I V E  F I X  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_FIX_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T04:08:40.982Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-linting-fix-report-md",
+    "name": "C O M P R E H E N S I V E  L I N T I N G  F I X  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_LINTING_FIX_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.724Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-mihara-assistance-report-md",
+    "name": "C O M P R E H E N S I V E  M I H A R A  A S S I S T A N C E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_MIHARA_ASSISTANCE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.724Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-navigation-synthesis-md",
+    "name": "C O M P R E H E N S I V E  N A V I G A T I O N  S Y N T H E S I S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_NAVIGATION_SYNTHESIS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T06:02:04.715Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-paste-up-strategy-md",
+    "name": "C O M P R E H E N S I V E  P A S T E  U P  S T R A T E G Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_PASTE_UP_STRATEGY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T07:22:25.905Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-polish-test-report-md",
+    "name": "C O M P R E H E N S I V E  P O L I S H  T E S T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_POLISH_TEST_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T23:44:34.843Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-site-audit-report-md",
+    "name": "C O M P R E H E N S I V E  S I T E  A U D I T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SITE_AUDIT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T11:17:03.973Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-system-activation-complete-md",
+    "name": "C O M P R E H E N S I V E  S Y S T E M  A C T I V A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SYSTEM_ACTIVATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:17:54.166Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-system-audit-report-md",
+    "name": "C O M P R E H E N S I V E  S Y S T E M  A U D I T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SYSTEM_AUDIT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:45:45.142Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-system-enhancement-complete-md",
+    "name": "C O M P R E H E N S I V E  S Y S T E M  E N H A N C E M E N T  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SYSTEM_ENHANCEMENT_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:07:17.227Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-system-integration-report-md",
+    "name": "C O M P R E H E N S I V E  S Y S T E M  I N T E G R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SYSTEM_INTEGRATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.725Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-system-test-report-md",
+    "name": "C O M P R E H E N S I V E  S Y S T E M  T E S T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_SYSTEM_TEST_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:57:48.428Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-testing-and-fixing-complete-md",
+    "name": "C O M P R E H E N S I V E  T E S T I N G  A N D  F I X I N G  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_TESTING_AND_FIXING_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:20.239Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-treasure-activation-plan-md",
+    "name": "C O M P R E H E N S I V E  T R E A S U R E  A C T I V A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_TREASURE_ACTIVATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-03T01:07:53.653Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "comprehensive-treasure-hunt-update-md",
+    "name": "C O M P R E H E N S I V E  T R E A S U R E  H U N T  U P D A T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPREHENSIVE_TREASURE_HUNT_UPDATE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T09:36:23.501Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "computer-crash-recovery-complete-md",
+    "name": "C O M P U T E R  C R A S H  R E C O V E R Y  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPUTER_CRASH_RECOVERY_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:11:15.152Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "computer-crash-recovery-complete-2025-09-13-1517-md",
+    "name": "C O M P U T E R  C R A S H  R E C O V E R Y  C O M P L E T E 2025 09 13 1517",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPUTER_CRASH_RECOVERY_COMPLETE_2025-09-13_1517.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:19:22.909Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "computer-restart-recovery-status-md",
+    "name": "C O M P U T E R  R E S T A R T  R E C O V E R Y  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COMPUTER_RESTART_RECOVERY_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:30.168Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "content-inventory-md",
+    "name": "C O N T E N T  I N V E N T O R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTENT_INVENTORY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T01:54:30.777Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "content-restoration-and-conversion-complete-md",
+    "name": "C O N T E N T  R E S T O R A T I O N  A N D  C O N V E R S I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTENT_RESTORATION_AND_CONVERSION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T09:53:55.085Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuation-status-report-md",
+    "name": "C O N T I N U A T I O N  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUATION_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:56:42.095Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continued-assistance-status-2025-01-20-2340-md",
+    "name": "C O N T I N U E D  A S S I S T A N C E  S T A T U S 2025 01 20 2340",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUED_ASSISTANCE_STATUS_2025-01-20_2340.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:43:35.765Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continued-assistance-status-2025-09-12-2030-md",
+    "name": "C O N T I N U E D  A S S I S T A N C E  S T A T U S 2025 09 12 2030",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUED_ASSISTANCE_STATUS_2025-09-12_2030.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T10:04:03.801Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continued-development-status-md",
+    "name": "C O N T I N U E D  D E V E L O P M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUED_DEVELOPMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:06:10.259Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continued-llm-collaboration-status-md",
+    "name": "C O N T I N U E D  L L M  C O L L A B O R A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUED_LLM_COLLABORATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:19:33.298Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuous-assistance-active-md",
+    "name": "C O N T I N U O U S  A S S I S T A N C E  A C T I V E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUOUS_ASSISTANCE_ACTIVE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T09:46:45.226Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuous-assistance-status-2025-09-11-2359-md",
+    "name": "C O N T I N U O U S  A S S I S T A N C E  S T A T U S 2025 09 11 2359",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUOUS_ASSISTANCE_STATUS_2025-09-11_2359.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T09:48:31.014Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuous-borg-operation-report-md",
+    "name": "C O N T I N U O U S  B O R G  O P E R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUOUS_BORG_OPERATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.725Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuous-development-complete-md",
+    "name": "C O N T I N U O U S  D E V E L O P M E N T  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUOUS_DEVELOPMENT_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T05:59:20.676Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "continuous-mihara-assistance-status-md",
+    "name": "C O N T I N U O U S  M I H A R A  A S S I S T A N C E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CONTINUOUS_MIHARA_ASSISTANCE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.725Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-4k-error-elimination-plan-md",
+    "name": "C O O R D I N A T E D 4 K  E R R O R  E L I M I N A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_4K_ERROR_ELIMINATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.441Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-5k-problem-elimination-plan-md",
+    "name": "C O O R D I N A T E D 5 K  P R O B L E M  E L I M I N A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_5K_PROBLEM_ELIMINATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:03:06.594Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-assistance-status-md",
+    "name": "C O O R D I N A T E D  A S S I S T A N C E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_ASSISTANCE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T21:45:13.074Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-development-status-md",
+    "name": "C O O R D I N A T E D  D E V E L O P M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_DEVELOPMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T17:34:57.102Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-error-elimination-report-md",
+    "name": "C O O R D I N A T E D  E R R O R  E L I M I N A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_ERROR_ELIMINATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.725Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-fix-progress-md",
+    "name": "C O O R D I N A T E D  F I X  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_FIX_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.803Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordinated-site-fix-plan-md",
+    "name": "C O O R D I N A T E D  S I T E  F I X  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATED_SITE_FIX_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.699Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "coordination-broadcast-md",
+    "name": "C O O R D I N A T I O N  B R O A D C A S T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "COORDINATION_BROADCAST.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T04:48:08.588Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-complete-2025-01-20-2345-md",
+    "name": "C R A S H  R E C O V E R Y  C O M P L E T E 2025 01 20 2345",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_COMPLETE_2025-01-20_2345.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:17:35.450Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-complete-2025-09-11-1920-md",
+    "name": "C R A S H  R E C O V E R Y  C O M P L E T E 2025 09 11 1920",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_COMPLETE_2025-09-11_1920.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T08:41:03.587Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-complete-2025-09-13-2254-md",
+    "name": "C R A S H  R E C O V E R Y  C O M P L E T E 2025 09 13 2254",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_COMPLETE_2025-09-13_2254.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:56:41.808Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-status-2025-01-20-2335-md",
+    "name": "C R A S H  R E C O V E R Y  S T A T U S 2025 01 20 2335",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_STATUS_2025-01-20_2335.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:38:59.454Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-status-2025-09-11-1915-md",
+    "name": "C R A S H  R E C O V E R Y  S T A T U S 2025 09 11 1915",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_STATUS_2025-09-11_1915.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T06:26:37.840Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-status-2025-09-12-1136-md",
+    "name": "C R A S H  R E C O V E R Y  S T A T U S 2025 09 12 1136",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_STATUS_2025-09-12_1136.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:40:27.927Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-status-2025-09-12-2340-md",
+    "name": "C R A S H  R E C O V E R Y  S T A T U S 2025 09 12 2340",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_STATUS_2025-09-12_2340.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:40:02.297Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-success-md",
+    "name": "C R A S H  R E C O V E R Y  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:47:02.370Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "crash-recovery-success-report-md",
+    "name": "C R A S H  R E C O V E R Y  S U C C E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRASH_RECOVERY_SUCCESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:46:04.322Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "critical-error-resolution-report-md",
+    "name": "C R I T I C A L  E R R O R  R E S O L U T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRITICAL_ERROR_RESOLUTION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T02:32:35.699Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "critical-error-resolved-status-md",
+    "name": "C R I T I C A L  E R R O R  R E S O L V E D  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRITICAL_ERROR_RESOLVED_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T00:53:15.215Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "critical-fixes-progress-md",
+    "name": "C R I T I C A L  F I X E S  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRITICAL_FIXES_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:19.363Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "critical-issues-summary-md",
+    "name": "C R I T I C A L  I S S U E S  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CRITICAL_ISSUES_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.886Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-enhancement-report-md",
+    "name": "C U L T U R A L  E N H A N C E M E N T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_ENHANCEMENT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:37:02.382Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-integration-enhancement-report-md",
+    "name": "C U L T U R A L  I N T E G R A T I O N  E N H A N C E M E N T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_INTEGRATION_ENHANCEMENT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T05:57:49.427Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-learning-under-supreme-oversight-md",
+    "name": "C U L T U R A L  L E A R N I N G  U N D E R  S U P R E M E  O V E R S I G H T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_LEARNING_UNDER_SUPREME_OVERSIGHT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-27T11:28:40.291Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-safety-validation-complete-md",
+    "name": "C U L T U R A L  S A F E T Y  V A L I D A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_SAFETY_VALIDATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-10T13:51:17.481Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-safety-validation-report-md",
+    "name": "C U L T U R A L  S A F E T Y  V A L I D A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_SAFETY_VALIDATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:15:42.390Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cultural-safety-validation-success-md",
+    "name": "C U L T U R A L  S A F E T Y  V A L I D A T I O N  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CULTURAL_SAFETY_VALIDATION_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:12:36.601Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "current-phase-complete-report-md",
+    "name": "C U R R E N T  P H A S E  C O M P L E T E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURRENT_PHASE_COMPLETE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:22:50.606Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "current-platform-status-md",
+    "name": "C U R R E N T  P L A T F O R M  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURRENT_PLATFORM_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.726Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agents-immediate-instructions-md",
+    "name": "C U R S O R  A G E N T S  I M M E D I A T E  I N S T R U C T I O N S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENTS_IMMEDIATE_INSTRUCTIONS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.723Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agent-deployment-md",
+    "name": "C U R S O R  A G E N T  D E P L O Y M E N T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENT_DEPLOYMENT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.183Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agent-emergency-focus-md",
+    "name": "C U R S O R  A G E N T  E M E R G E N C Y  F O C U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENT_EMERGENCY_FOCUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.403Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agent-new-directives-md",
+    "name": "C U R S O R  A G E N T  N E W  D I R E C T I V E S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENT_NEW_DIRECTIVES.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.970Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agent-onboarding-md",
+    "name": "C U R S O R  A G E N T  O N B O A R D I N G",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENT_ONBOARDING.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.140Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-agent-status-update-md",
+    "name": "C U R S O R  A G E N T  S T A T U S  U P D A T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_AGENT_STATUS_UPDATE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.726Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-crash-recovery-status-md",
+    "name": "C U R S O R  C R A S H  R E C O V E R Y  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_CRASH_RECOVERY_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T00:27:06.625Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-development-notes-md",
+    "name": "C U R S O R  D E V E L O P M E N T  N O T E S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_DEVELOPMENT_NOTES.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T11:47:09.275Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-node-coordination-map-md",
+    "name": "C U R S O R  N O D E  C O O R D I N A T I O N  M A P",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_NODE_COORDINATION_MAP.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T05:03:29.540Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-node-coordination-status-md",
+    "name": "C U R S O R  N O D E  C O O R D I N A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_NODE_COORDINATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T12:43:13.927Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "cursor-optimization-guide-md",
+    "name": "C U R S O R  O P T I M I Z A T I O N  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "CURSOR_OPTIMIZATION_GUIDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T11:57:41.602Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-status-audit-md",
+    "name": "D E P L O Y M E N T  S T A T U S  A U D I T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_STATUS_AUDIT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T12:43:13.928Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-success-report-md",
+    "name": "D E P L O Y M E N T  S U C C E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_SUCCESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-03T11:41:58.613Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757678309521-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757678309521",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757678309521.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:59:20.146Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757678792918-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757678792918",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757678792918.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:07:48.344Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757678940262-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757678940262",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757678940262.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:10:15.051Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757679530540-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757679530540",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757679530540.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:19:38.173Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757727150007-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757727150007",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757727150007.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T01:33:19.397Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757727358207-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757727358207",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757727358207.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T01:36:39.219Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757727536136-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757727536136",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757727536136.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T01:39:38.116Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-testing-report-1757732572881-md",
+    "name": "D E P L O Y M E N T  T E S T I N G  R E P O R T 1757732572881",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOYMENT_TESTING_REPORT_1757732572881.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:03:34.420Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deploy-status-md",
+    "name": "D E P L O Y  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPLOY_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.726Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "depth-first-directive-md",
+    "name": "D E P T H  F I R S T  D I R E C T I V E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPTH_FIRST_DIRECTIVE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.399Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "depth-focus-protocol-md",
+    "name": "D E P T H  F O C U S  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEPTH_FOCUS_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:06:43.241Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "developer-assistance-guide-md",
+    "name": "D E V E L O P E R  A S S I S T A N C E  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEVELOPER_ASSISTANCE_GUIDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:36:58.698Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "development-continuation-status-md",
+    "name": "D E V E L O P M E N T  C O N T I N U A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEVELOPMENT_CONTINUATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T06:08:16.716Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "development-continuation-success-md",
+    "name": "D E V E L O P M E N T  C O N T I N U A T I O N  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEVELOPMENT_CONTINUATION_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:06:45.343Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "development-progress-report-md",
+    "name": "D E V E L O P M E N T  P R O G R E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DEVELOPMENT_PROGRESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T23:50:56.739Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "diagnostics-fix-progress-report-md",
+    "name": "D I A G N O S T I C S  F I X  P R O G R E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DIAGNOSTICS_FIX_PROGRESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-03T22:32:47.327Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "dialectical-synthesis-engine-md",
+    "name": "D I A L E C T I C A L  S Y N T H E S I S  E N G I N E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DIALECTICAL_SYNTHESIS_ENGINE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:03:06.522Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "dual-role-auth-status-report-md",
+    "name": "D U A L  R O L E  A U T H  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "DUAL_ROLE_AUTH_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T12:43:13.928Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "educational-content-expansion-complete-md",
+    "name": "E D U C A T I O N A L  C O N T E N T  E X P A N S I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EDUCATIONAL_CONTENT_EXPANSION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-24T09:31:27.541Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "educational-content-guardian-final-report-md",
+    "name": "E D U C A T I O N A L  C O N T E N T  G U A R D I A N  F I N A L  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EDUCATIONAL_CONTENT_GUARDIAN_FINAL_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.727Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "educational-content-integration-plan-md",
+    "name": "E D U C A T I O N A L  C O N T E N T  I N T E G R A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EDUCATIONAL_CONTENT_INTEGRATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-27T11:50:23.997Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "educational-excellence-under-supreme-oversight-md",
+    "name": "E D U C A T I O N A L  E X C E L L E N C E  U N D E R  S U P R E M E  O V E R S I G H T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EDUCATIONAL_EXCELLENCE_UNDER_SUPREME_OVERSIGHT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-27T10:24:24.359Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "emergency-agent-directives-md",
+    "name": "E M E R G E N C Y  A G E N T  D I R E C T I V E S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EMERGENCY_AGENT_DIRECTIVES.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.163Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "emergency-coordination-alert-md",
+    "name": "E M E R G E N C Y  C O O R D I N A T I O N  A L E R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EMERGENCY_COORDINATION_ALERT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.895Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "emergency-design-coordination-protocol-md",
+    "name": "E M E R G E N C Y  D E S I G N  C O O R D I N A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EMERGENCY_DESIGN_COORDINATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:36.164Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "emergency-fix-status-md",
+    "name": "E M E R G E N C Y  F I X  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EMERGENCY_FIX_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:58:17.306Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "emergency-restoration-status-md",
+    "name": "E M E R G E N C Y  R E S T O R A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EMERGENCY_RESTORATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.727Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enforced-coordination-protocol-md",
+    "name": "E N F O R C E D  C O O R D I N A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENFORCED_COORDINATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.729Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enhanced-llm-collaboration-protocol-md",
+    "name": "E N H A N C E D  L L M  C O L L A B O R A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENHANCED_LLM_COLLABORATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:52:12.888Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enhanced-llm-orchestra-status-md",
+    "name": "E N H A N C E D  L L M  O R C H E S T R A  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENHANCED_LLM_ORCHESTRA_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:55:17.043Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enhanced-multi-agent-coordination-md",
+    "name": "E N H A N C E D  M U L T I  A G E N T  C O O R D I N A T I O N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENHANCED_MULTI_AGENT_COORDINATION.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:25:30.353Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enhanced-resource-activation-report-md",
+    "name": "E N H A N C E D  R E S O U R C E  A C T I V A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENHANCED_RESOURCE_ACTIVATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:37:06.563Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enrichment-automation-spec-md",
+    "name": "E N R I C H M E N T  A U T O M A T I O N  S P E C",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENRICHMENT_AUTOMATION_SPEC.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:08:23.222Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "enrichment-progress-md",
+    "name": "E N R I C H M E N T  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ENRICHMENT_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:26:15.484Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-demonstration-materials-md",
+    "name": "E R O  D E M O N S T R A T I O N  M A T E R I A L S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ERO_DEMONSTRATION_MATERIALS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:36.169Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-hui-demonstration-script-md",
+    "name": "E R O  H U I  D E M O N S T R A T I O N  S C R I P T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ERO_HUI_DEMONSTRATION_SCRIPT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.697Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-synthesis-progress-md",
+    "name": "E R O  S Y N T H E S I S  P R O G R E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ERO_SYNTHESIS_PROGRESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:48.373Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-synthesis-strategy-md",
+    "name": "E R O  S Y N T H E S I S  S T R A T E G Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "ERO_SYNTHESIS_STRATEGY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:03:06.487Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "evolution-complete-status-2025-09-11-2330-md",
+    "name": "E V O L U T I O N  C O M P L E T E  S T A T U S 2025 09 11 2330",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EVOLUTION_COMPLETE_STATUS_2025-09-11_2330.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-11T11:26:37.621Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "evolution-orchestration-manifest-md",
+    "name": "E V O L U T I O N  O R C H E S T R A T I O N  M A N I F E S T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EVOLUTION_ORCHESTRATION_MANIFEST.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:20:29.537Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "exa-ai-bug-fixing-md",
+    "name": "E X A  A I  B U G  F I X I N G",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXA_AI_BUG_FIXING.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.819Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "exa-ai-bug-fixing-research-md",
+    "name": "E X A  A I  B U G  F I X I N G  R E S E A R C H",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXA_AI_BUG_FIXING_RESEARCH.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.122Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "exa-integration-success-md",
+    "name": "E X A  I N T E G R A T I O N  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXA_INTEGRATION_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:15:29.156Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "existing-workflow-audit-md",
+    "name": "E X I S T I N G  W O R K F L O W  A U D I T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXISTING_WORKFLOW_AUDIT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-27T03:43:37.911Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "expanded-educational-resources-summary-md",
+    "name": "E X P A N D E D  E D U C A T I O N A L  R E S O U R C E S  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXPANDED_EDUCATIONAL_RESOURCES_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.145Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "expanded-superconsciousness-report-md",
+    "name": "E X P A N D E D  S U P E R C O N S C I O U S N E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "EXPANDED_SUPERCONSCIOUSNESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.728Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-assistance-status-md",
+    "name": "F I N A L  A S S I S T A N C E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_ASSISTANCE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:20:29.537Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-breakthrough-achievement-md",
+    "name": "F I N A L  B R E A K T H R O U G H  A C H I E V E M E N T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_BREAKTHROUGH_ACHIEVEMENT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T21:09:16.723Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-completion-report-md",
+    "name": "F I N A L  C O M P L E T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_COMPLETION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.728Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-comprehensive-audit-report-md",
+    "name": "F I N A L  C O M P R E H E N S I V E  A U D I T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_COMPREHENSIVE_AUDIT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-03T11:56:27.405Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-content-restoration-and-conversion-report-md",
+    "name": "F I N A L  C O N T E N T  R E S T O R A T I O N  A N D  C O N V E R S I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_CONTENT_RESTORATION_AND_CONVERSION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T10:04:03.798Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-coordination-success-md",
+    "name": "F I N A L  C O O R D I N A T I O N  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_COORDINATION_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:31:30.533Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-demo-readiness-checklist-md",
+    "name": "F I N A L  D E M O  R E A D I N E S S  C H E C K L I S T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_DEMO_READINESS_CHECKLIST.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T01:22:54.471Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-demo-readiness-report-md",
+    "name": "F I N A L  D E M O  R E A D I N E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_DEMO_READINESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:39:43.645Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-development-race-report-md",
+    "name": "F I N A L  D E V E L O P M E N T  R A C E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_DEVELOPMENT_RACE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:19:53.026Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-development-status-md",
+    "name": "F I N A L  D E V E L O P M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_DEVELOPMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T11:06:45.344Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-evolution-status-2025-09-11-2359-md",
+    "name": "F I N A L  E V O L U T I O N  S T A T U S 2025 09 11 2359",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_EVOLUTION_STATUS_2025-09-11_2359.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-11T12:36:00.108Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-glm-ecosystem-status-md",
+    "name": "F I N A L  G L M  E C O S Y S T E M  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_GLM_ECOSYSTEM_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T05:47:22.371Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-mission-complete-report-md",
+    "name": "F I N A L  M I S S I O N  C O M P L E T E  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_MISSION_COMPLETE_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:08:17.894Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-mission-status-report-md",
+    "name": "F I N A L  M I S S I O N  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_MISSION_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T12:27:52.933Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-platform-completion-report-md",
+    "name": "F I N A L  P L A T F O R M  C O M P L E T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_PLATFORM_COMPLETION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.729Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-platform-status-report-md",
+    "name": "F I N A L  P L A T F O R M  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_PLATFORM_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T02:48:36.109Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-public-deployment-status-md",
+    "name": "F I N A L  P U B L I C  D E P L O Y M E N T  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_PUBLIC_DEPLOYMENT_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.729Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-session-report-md",
+    "name": "F I N A L  S E S S I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SESSION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.729Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-site-completion-report-md",
+    "name": "F I N A L  S I T E  C O M P L E T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SITE_COMPLETION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.729Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-status-report-md",
+    "name": "F I N A L  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T08:33:06.952Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-strategic-success-report-md",
+    "name": "F I N A L  S T R A T E G I C  S U C C E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_STRATEGIC_SUCCESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.730Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-strategic-success-summary-md",
+    "name": "F I N A L  S T R A T E G I C  S U C C E S S  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_STRATEGIC_SUCCESS_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.629Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-superintelligence-assistance-summary-md",
+    "name": "F I N A L  S U P E R I N T E L L I G E N C E  A S S I S T A N C E  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SUPERINTELLIGENCE_ASSISTANCE_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-27T08:59:19.597Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-superintelligence-coordination-report-md",
+    "name": "F I N A L  S U P E R I N T E L L I G E N C E  C O O R D I N A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SUPERINTELLIGENCE_COORDINATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-10T15:13:21.279Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-superintelligence-status-md",
+    "name": "F I N A L  S U P E R I N T E L L I G E N C E  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SUPERINTELLIGENCE_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T11:34:44.590Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-supreme-overseer-completion-report-md",
+    "name": "F I N A L  S U P R E M E  O V E R S E E R  C O M P L E T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SUPREME_OVERSEER_COMPLETION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.730Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-system-audit-success-md",
+    "name": "F I N A L  S Y S T E M  A U D I T  S U C C E S S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SYSTEM_AUDIT_SUCCESS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:49:48.954Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-system-status-2025-09-12-2030-md",
+    "name": "F I N A L  S Y S T E M  S T A T U S 2025 09 12 2030",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SYSTEM_STATUS_2025-09-12_2030.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-12T10:42:59.932Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-system-status-complete-md",
+    "name": "F I N A L  S Y S T E M  S T A T U S  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SYSTEM_STATUS_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:29:13.954Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-system-validation-report-md",
+    "name": "F I N A L  S Y S T E M  V A L I D A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SYSTEM_VALIDATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T12:43:13.929Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-system-verification-complete-md",
+    "name": "F I N A L  S Y S T E M  V E R I F I C A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_SYSTEM_VERIFICATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:52:09.244Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "final-victory-summary-md",
+    "name": "F I N A L  V I C T O R Y  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "FINAL_VICTORY_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.755Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm45-integration-report-1757732115274-md",
+    "name": "G L M45  I N T E G R A T I O N  R E P O R T 1757732115274",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM45_INTEGRATION_REPORT_1757732115274.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T02:55:15.301Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm45-integration-report-1757734224441-md",
+    "name": "G L M45  I N T E G R A T I O N  R E P O R T 1757734224441",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM45_INTEGRATION_REPORT_1757734224441.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T03:30:24.498Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm45-integration-success-report-md",
+    "name": "G L M45  I N T E G R A T I O N  S U C C E S S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM45_INTEGRATION_SUCCESS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T02:59:12.728Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm-ecosystem-final-summary-md",
+    "name": "G L M  E C O S Y S T E M  F I N A L  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM_ECOSYSTEM_FINAL_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T06:23:51.897Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm-integration-complete-md",
+    "name": "G L M  I N T E G R A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM_INTEGRATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T05:39:36.418Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm-integration-guide-md",
+    "name": "G L M  I N T E G R A T I O N  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM_INTEGRATION_GUIDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T02:56:46.244Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm-treasure-hunt-report-md",
+    "name": "G L M  T R E A S U R E  H U N T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM_TREASURE_HUNT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-02T09:19:20.619Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "glm-utilization-guide-md",
+    "name": "G L M  U T I L I Z A T I O N  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GLM_UTILIZATION_GUIDE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T05:11:44.210Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "graphrag-knowledge-graph-1757758333934-md",
+    "name": "G R A P H R A G  K N O W L E D G E  G R A P H 1757758333934",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GRAPHRAG_KNOWLEDGE_GRAPH_1757758333934.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:12:13.951Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "graphrag-knowledge-graph-1757760520654-md",
+    "name": "G R A P H R A G  K N O W L E D G E  G R A P H 1757760520654",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "GRAPHRAG_KNOWLEDGE_GRAPH_1757760520654.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T10:48:40.667Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "handoff-summary-md",
+    "name": "H A N D O F F  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "HANDOFF_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.744Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "hive-mind-coordination-protocol-md",
+    "name": "H I V E  M I N D  C O O R D I N A T I O N  P R O T O C O L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "HIVE_MIND_COORDINATION_PROTOCOL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:43.150Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "hui-team-coordination-summary-md",
+    "name": "H U I  T E A M  C O O R D I N A T I O N  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "HUI_TEAM_COORDINATION_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.608Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "hellogemini--md",
+    "name": "Hello Gemini!",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "HelloGemini!.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.806Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "integration-mission-complete-md",
+    "name": "I N T E G R A T I O N  M I S S I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTEGRATION_MISSION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T13:44:23.441Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "integration-recovery-status-md",
+    "name": "I N T E G R A T I O N  R E C O V E R Y  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTEGRATION_RECOVERY_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T13:37:27.012Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "intelligent-compaction-protocols-md",
+    "name": "I N T E L L I G E N T  C O M P A C T I O N  P R O T O C O L S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTELLIGENT_COMPACTION_PROTOCOLS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.789Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "intelligent-error-resolution-report-md",
+    "name": "I N T E L L I G E N T  E R R O R  R E S O L U T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTELLIGENT_ERROR_RESOLUTION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-03T00:51:27.082Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "intelligent-integration-status-md",
+    "name": "I N T E L L I G E N T  I N T E G R A T I O N  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTELLIGENT_INTEGRATION_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-23T13:08:21.536Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "intelligent-resource-enhancement-report-md",
+    "name": "I N T E L L I G E N T  R E S O U R C E  E N H A N C E M E N T  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTELLIGENT_RESOURCE_ENHANCEMENT_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:07:36.274Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "intelligent-resource-validation-report-md",
+    "name": "I N T E L L I G E N T  R E S O U R C E  V A L I D A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "INTELLIGENT_RESOURCE_VALIDATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T12:39:09.993Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kaitiaki-aronui-rehabilitation-plan-md",
+    "name": "K A I T I A K I  A R O N U I  R E H A B I L I T A T I O N  P L A N",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KAITIAKI_ARONUI_REHABILITATION_PLAN.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:02:36.158Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kaitiaki-mihara-status-report-md",
+    "name": "K A I T I A K I  M I H A R A  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KAITIAKI_MIHARA_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-08T12:20:35.720Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kaitiaki-rangatira-manifest-md",
+    "name": "K A I T I A K I  R A N G A T I R A  M A N I F E S T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KAITIAKI_RANGATIRA_MANIFEST.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T04:25:56.532Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kaitiaki-rangatira-migration-report-md",
+    "name": "K A I T I A K I  R A N G A T I R A  M I G R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KAITIAKI_RANGATIRA_MIGRATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T06:17:52.670Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kaitiaki-restoration-complete-md",
+    "name": "K A I T I A K I  R E S T O R A T I O N  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KAITIAKI_RESTORATION_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-07T06:55:18.208Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kingdom-cartography-complete-md",
+    "name": "K I N G D O M  C A R T O G R A P H Y  C O M P L E T E",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KINGDOM_CARTOGRAPHY_COMPLETE.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-18T08:12:33.446Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kingdom-codebase-index-md",
+    "name": "K I N G D O M  C O D E B A S E  I N D E X",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KINGDOM_CODEBASE_INDEX.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:20:29.538Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "kingdom-overseer-status-md",
+    "name": "K I N G D O M  O V E R S E E R  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KINGDOM_OVERSEER_STATUS.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-18T08:06:44.773Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "king-aronui-final-system-summary-md",
+    "name": "K I N G  A R O N U I  F I N A L  S Y S T E M  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KING_ARONUI_FINAL_SYSTEM_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-10-03T01:28:13.747Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "knowledge-sharing-summary-md",
+    "name": "K N O W L E D G E  S H A R I N G  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KNOWLEDGE_SHARING_SUMMARY.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.840Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "knowledge-sharing-system-md",
+    "name": "K N O W L E D G E  S H A R I N G  S Y S T E M",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "KNOWLEDGE_SHARING_SYSTEM.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-22T05:32:42.206Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "lead-overseer-training-manual-md",
+    "name": "L E A D  O V E R S E E R  T R A I N I N G  M A N U A L",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "LEAD_OVERSEER_TRAINING_MANUAL.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.583Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "lets-go-status-report-md",
+    "name": "L E T S  G O  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "LETS_GO_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T23:37:26.474Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "linter-error-resolution-report-md",
+    "name": "L I N T E R  E R R O R  R E S O L U T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "LINTER_ERROR_RESOLUTION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.731Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "live-demonstration-report-md",
+    "name": "L I V E  D E M O N S T R A T I O N  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "LIVE_DEMONSTRATION_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-13T13:01:40.635Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "live-demo-status-report-md",
+    "name": "L I V E  D E M O  S T A T U S  R E P O R T",
+    "type": "content",
+    "status": "discovered",
+    "description": "Educational content or resource material",
+    "path": "LIVE_DEMO_STATUS_REPORT.md",
+    "priority": "critical",
+    "agents": [],
+    "lastModified": "2025-09-14T01:12:25.217Z",
+    "dependencies": [],
+    "tags": [
+      "education"
+    ],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "deployment-crisis-resolution-md",
+    "name": "D E P L O Y M E N T  C R I S I S  R E S O L U T I O N",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "DEPLOYMENT_CRISIS_RESOLUTION.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-30T07:59:16.359Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "development-workflow-md",
+    "name": "D E V E L O P M E N T  W O R K F L O W",
+    "type": "content",
+    "status": "discovered",
+    "description": "admin.github.io/gemini-react-app",
+    "path": "DEVELOPMENT_WORKFLOW.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-10-02T04:16:16.650Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-final-status-md",
+    "name": "E R O  F I N A L  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "ERO_FINAL_STATUS.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.727Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-final-summary-md",
+    "name": "E R O  F I N A L  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "ERO_FINAL_SUMMARY.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.797Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-preparation-checklist-md",
+    "name": "E R O  P R E P A R A T I O N  C H E C K L I S T",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "ERO_PREPARATION_CHECKLIST.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:54.938Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "ero-presentation-summary-md",
+    "name": "E R O  P R E S E N T A T I O N  S U M M A R Y",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "ERO_PRESENTATION_SUMMARY.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-23T11:01:22.758Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "handoff-status-md",
+    "name": "H A N D O F F  S T A T U S",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app>",
+    "path": "HANDOFF_STATUS.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-30T05:38:23.730Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  },
+  {
+    "id": "live-site-analysis-guide-md",
+    "name": "L I V E  S I T E  A N A L Y S I S  G U I D E",
+    "type": "content",
+    "status": "discovered",
+    "description": "teaomarama.netlify.app",
+    "path": "LIVE_SITE_ANALYSIS_GUIDE.md",
+    "priority": "medium",
+    "agents": [],
+    "lastModified": "2025-08-27T06:34:03.823Z",
+    "dependencies": [],
+    "tags": [],
+    "estimatedValue": 1,
+    "integrationComplexity": "simple"
+  }
+]

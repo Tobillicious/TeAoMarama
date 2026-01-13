@@ -379,3 +379,4 @@ const specialist = new AdvancedDevelopmentSpecialist();
 specialist.developAdvancedFeatures();
 
 export default AdvancedDevelopmentSpecialist;
+

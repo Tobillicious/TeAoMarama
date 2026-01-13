@@ -2,7 +2,6 @@
 // Centralized management of all external API integrations
 // Version: 1.0.1
 
-
 export interface APIConfig {
   glm: {
     apiKey: string;
@@ -42,19 +41,26 @@ export class APIConfigManager {
     // Support both import.meta.env (browser) and process.env (Node.js)
     const getEnvVar = (key: string): string => {
       // Check if we're in browser environment with Vite
-      if (typeof window !== 'undefined' && (globalThis as any).import?.meta?.env) {
-        return (globalThis as any).import.meta.env[key] || '';
+      if (typeof window !== 'undefined') {
+        // Try import.meta.env first (Vite)
+        if (typeof import.meta !== 'undefined' && import.meta.env) {
+          return import.meta.env[key] || '';
+        }
+        // Fallback to localStorage for manual config
+        return localStorage.getItem(key) || '';
       }
       // Node.js environment
-      return process.env[key] || '';
+      if (typeof process !== 'undefined' && process.env) {
+        return process.env[key] || '';
+      }
+      return '';
     };
 
     return {
       glm: {
         apiKey: getEnvVar('VITE_GLM_API_KEY'),
         baseUrl:
-          getEnvVar('VITE_GLM_BASE_URL') ||
-          'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+          getEnvVar('VITE_GLM_BASE_URL') || 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
         enabled: !!getEnvVar('VITE_GLM_API_KEY'),
       },
       exa: {

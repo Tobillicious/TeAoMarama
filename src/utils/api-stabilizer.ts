@@ -1,7 +1,7 @@
 /**
  * API Stabilizer for Te Ao Mārama
  * Solves the sporadic API integration issues
- * 
+ *
  * This system ensures reliable API connections and automatically
  * handles failures, retries, and key validation.
  */
@@ -57,7 +57,10 @@ export class APIStabilizer {
 
   private initializeEndpoints() {
     // GLM/DeepSeek API
-    const glmKey = this.getEnvVar('VITE_GLM_API_KEY') || this.getEnvVar('GLM_API_KEY') || this.getEnvVar('DEEPSEEK_API_KEY');
+    const glmKey =
+      this.getEnvVar('VITE_GLM_API_KEY') ||
+      this.getEnvVar('GLM_API_KEY') ||
+      this.getEnvVar('DEEPSEEK_API_KEY');
     if (glmKey) {
       this.registerEndpoint({
         id: 'glm',
@@ -66,13 +69,13 @@ export class APIStabilizer {
         apiKey: glmKey,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${glmKey}`
+          Authorization: `Bearer ${glmKey}`,
         },
         timeout: 30000,
         retryAttempts: 3,
         healthStatus: 'unknown',
         lastHealthCheck: new Date(),
-        successRate: 100
+        successRate: 100,
       });
     }
 
@@ -86,13 +89,13 @@ export class APIStabilizer {
         apiKey: exaKey,
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': exaKey
+          'x-api-key': exaKey,
         },
         timeout: 15000,
         retryAttempts: 2,
         healthStatus: 'unknown',
         lastHealthCheck: new Date(),
-        successRate: 100
+        successRate: 100,
       });
     }
 
@@ -107,14 +110,14 @@ export class APIStabilizer {
         apiKey: supabaseKey,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabaseKey}`,
-          'apikey': supabaseKey
+          Authorization: `Bearer ${supabaseKey}`,
+          apikey: supabaseKey,
         },
         timeout: 10000,
         retryAttempts: 2,
         healthStatus: 'unknown',
         lastHealthCheck: new Date(),
-        successRate: 100
+        successRate: 100,
       });
     }
 
@@ -124,7 +127,7 @@ export class APIStabilizer {
   private getEnvVar(key: string): string | undefined {
     // Try multiple sources for environment variables
     if (typeof process !== 'undefined' && process.env) {
-      return process.env[key];
+      return typeof process !== 'undefined' && process.env ? process.env[key] : null;
     }
     try {
       if (import.meta?.env) {
@@ -152,7 +155,7 @@ export class APIStabilizer {
         success: false,
         error: `Unknown endpoint: ${endpointId}`,
         responseTime: 0,
-        attemptNumber: 1
+        attemptNumber: 1,
       };
     }
 
@@ -163,7 +166,7 @@ export class APIStabilizer {
         error: 'Rate limit exceeded',
         statusCode: 429,
         responseTime: 0,
-        attemptNumber: 1
+        attemptNumber: 1,
       };
     }
 
@@ -171,13 +174,13 @@ export class APIStabilizer {
     if (endpoint.healthStatus === 'unhealthy') {
       // Try to heal the endpoint
       await this.attemptEndpointHealing(endpoint);
-      
+
       if (endpoint.healthStatus === 'unhealthy') {
         return {
           success: false,
           error: 'Endpoint is unhealthy',
           responseTime: 0,
-          attemptNumber: 1
+          attemptNumber: 1,
         };
       }
     }
@@ -188,7 +191,7 @@ export class APIStabilizer {
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         const response = await this.executeRequest<T>(endpoint, request, attempt);
-        
+
         if (response.success) {
           // Update success rate
           this.updateSuccessRate(endpoint, true);
@@ -201,14 +204,14 @@ export class APIStabilizer {
         }
       } catch (error) {
         console.warn(`🚨 API request attempt ${attempt} failed:`, error);
-        
+
         if (attempt === maxRetries) {
           this.updateSuccessRate(endpoint, false);
           return {
             success: false,
             error: error instanceof Error ? error.message : 'Unknown error',
             responseTime: Date.now() - startTime,
-            attemptNumber: attempt
+            attemptNumber: attempt,
           };
         }
       }
@@ -219,14 +222,14 @@ export class APIStabilizer {
       success: false,
       error: 'Max retries exceeded',
       responseTime: Date.now() - startTime,
-      attemptNumber: maxRetries
+      attemptNumber: maxRetries,
     };
   }
 
   private async executeRequest<T>(
-    endpoint: APIEndpoint, 
-    request: APIRequest, 
-    attempt: number
+    endpoint: APIEndpoint,
+    request: APIRequest,
+    attempt: number,
   ): Promise<APIResponse<T>> {
     const startTime = Date.now();
     const url = `${endpoint.baseUrl}${request.endpoint}`;
@@ -240,10 +243,10 @@ export class APIStabilizer {
         method: request.method,
         headers: {
           ...endpoint.headers,
-          'User-Agent': 'TeAoMarama-Educational-Platform/1.0'
+          'User-Agent': 'TeAoMarama-Educational-Platform/1.0',
         },
         body: request.data ? JSON.stringify(request.data) : undefined,
-        signal: controller.signal
+        signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
@@ -264,7 +267,7 @@ export class APIStabilizer {
           error: `HTTP ${fetchResponse.status}: ${fetchResponse.statusText}`,
           statusCode: fetchResponse.status,
           responseTime,
-          attemptNumber: attempt
+          attemptNumber: attempt,
         };
       }
 
@@ -275,16 +278,15 @@ export class APIStabilizer {
         data,
         statusCode: fetchResponse.status,
         responseTime,
-        attemptNumber: attempt
+        attemptNumber: attempt,
       };
-
     } catch (error) {
       clearTimeout(timeoutId);
-      
+
       if (error instanceof Error && error.name === 'AbortError') {
         throw new Error(`Request timeout after ${timeout}ms`);
       }
-      
+
       throw error;
     }
   }
@@ -306,9 +308,9 @@ export class APIStabilizer {
   private getRateLimitForEndpoint(endpointId: string): number {
     // Conservative rate limits per minute
     const limits = {
-      'glm': 20,
-      'exa': 10,
-      'supabase': 100
+      glm: 20,
+      exa: 10,
+      supabase: 100,
     };
     return limits[endpointId as keyof typeof limits] || 10;
   }
@@ -316,7 +318,7 @@ export class APIStabilizer {
   private updateRateLimit(endpointId: string) {
     const now = new Date();
     const resetTime = new Date(now.getTime() + 60000); // Reset in 1 minute
-    
+
     const current = this.rateLimits.get(endpointId);
     if (current && now < current.resetTime) {
       current.requests++;
@@ -330,7 +332,7 @@ export class APIStabilizer {
     const weight = 0.1;
     const currentRate = success ? 100 : 0;
     endpoint.successRate = (1 - weight) * endpoint.successRate + weight * currentRate;
-    
+
     // Update health status based on success rate
     if (endpoint.successRate >= 90) {
       endpoint.healthStatus = 'healthy';
@@ -349,12 +351,12 @@ export class APIStabilizer {
 
   private async performHealthChecks() {
     console.log('🩺 Performing API health checks...');
-    
+
     for (const [id, endpoint] of this.endpoints.entries()) {
       try {
         const healthResponse = await this.checkEndpointHealth(endpoint);
         endpoint.lastHealthCheck = new Date();
-        
+
         if (healthResponse.success) {
           if (endpoint.healthStatus === 'unhealthy') {
             endpoint.healthStatus = 'degraded'; // Gradual recovery
@@ -382,47 +384,47 @@ export class APIStabilizer {
   private async checkEndpointHealth(endpoint: APIEndpoint): Promise<APIResponse> {
     // Simple health check - just try to connect
     const healthEndpoint = this.getHealthCheckEndpoint(endpoint.id);
-    
+
     try {
       const response = await fetch(`${endpoint.baseUrl}${healthEndpoint}`, {
         method: 'GET',
         headers: endpoint.headers,
-        signal: AbortSignal.timeout(5000) // 5 second timeout
+        signal: AbortSignal.timeout(5000), // 5 second timeout
       });
 
       return {
         success: response.ok,
         statusCode: response.status,
         responseTime: 0,
-        attemptNumber: 1
+        attemptNumber: 1,
       };
     } catch (error) {
       return {
         success: false,
         error: error instanceof Error ? error.message : 'Health check failed',
         responseTime: 0,
-        attemptNumber: 1
+        attemptNumber: 1,
       };
     }
   }
 
   private getHealthCheckEndpoint(endpointId: string): string {
     const healthEndpoints = {
-      'glm': '/models', // List models endpoint
-      'exa': '/search', // Search endpoint (will return error but confirms connectivity)
-      'supabase': '/rest/v1/' // REST API root
+      glm: '/models', // List models endpoint
+      exa: '/search', // Search endpoint (will return error but confirms connectivity)
+      supabase: '/rest/v1/', // REST API root
     };
     return healthEndpoints[endpointId as keyof typeof healthEndpoints] || '/';
   }
 
   private async attemptEndpointHealing(endpoint: APIEndpoint): Promise<void> {
     console.log(`🏥 Attempting to heal endpoint: ${endpoint.name}`);
-    
+
     // Try different strategies to heal the endpoint
     const strategies = [
       () => this.refreshAPIKey(endpoint),
       () => this.clearEndpointCache(endpoint),
-      () => this.resetConnectionPool(endpoint)
+      () => this.resetConnectionPool(endpoint),
     ];
 
     for (const strategy of strategies) {
@@ -442,9 +444,10 @@ export class APIStabilizer {
 
   private async refreshAPIKey(endpoint: APIEndpoint): Promise<void> {
     // Try to get a fresh API key from environment
-    const freshKey = this.getEnvVar(`VITE_${endpoint.id.toUpperCase()}_API_KEY`) ||
-                     this.getEnvVar(`${endpoint.id.toUpperCase()}_API_KEY`);
-    
+    const freshKey =
+      this.getEnvVar(`VITE_${endpoint.id.toUpperCase()}_API_KEY`) ||
+      this.getEnvVar(`${endpoint.id.toUpperCase()}_API_KEY`);
+
     if (freshKey && freshKey !== endpoint.apiKey) {
       endpoint.apiKey = freshKey;
       if (endpoint.headers) {
@@ -471,7 +474,7 @@ export class APIStabilizer {
   }
 
   private delay(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   public getEndpointStatus(): Array<{
@@ -481,12 +484,12 @@ export class APIStabilizer {
     successRate: number;
     lastCheck: string;
   }> {
-    return Array.from(this.endpoints.values()).map(endpoint => ({
+    return Array.from(this.endpoints.values()).map((endpoint) => ({
       id: endpoint.id,
       name: endpoint.name,
       health: endpoint.healthStatus,
       successRate: Math.round(endpoint.successRate),
-      lastCheck: endpoint.lastHealthCheck.toISOString()
+      lastCheck: endpoint.lastHealthCheck.toISOString(),
     }));
   }
 
@@ -496,7 +499,7 @@ export class APIStabilizer {
     issues: string[];
   }> {
     console.log('🛠️ Stabilizing all API connections...');
-    
+
     const issues: string[] = [];
     let stabilized = 0;
 
@@ -505,7 +508,7 @@ export class APIStabilizer {
         if (endpoint.healthStatus !== 'healthy') {
           await this.attemptEndpointHealing(endpoint);
         }
-        
+
         // Test the endpoint
         const testResponse = await this.checkEndpointHealth(endpoint);
         if (testResponse.success) {
@@ -515,16 +518,20 @@ export class APIStabilizer {
           issues.push(`${endpoint.name}: ${testResponse.error || 'Health check failed'}`);
         }
       } catch (error) {
-        issues.push(`${endpoint.name}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        issues.push(
+          `${endpoint.name}: ${error instanceof Error ? error.message : 'Unknown error'}`,
+        );
       }
     }
 
-    console.log(`✅ API stabilization complete: ${stabilized}/${this.endpoints.size} endpoints healthy`);
-    
+    console.log(
+      `✅ API stabilization complete: ${stabilized}/${this.endpoints.size} endpoints healthy`,
+    );
+
     return {
       stabilized,
       total: this.endpoints.size,
-      issues
+      issues,
     };
   }
 
@@ -544,10 +551,10 @@ export async function emergencyAPIRestore(): Promise<void> {
   console.log('🚨 Emergency API restoration initiated...');
   const stabilizer = APIStabilizer.getInstance();
   const result = await stabilizer.stabilizeAllAPIs();
-  
+
   if (result.issues.length > 0) {
     console.warn('⚠️ API issues detected:', result.issues);
   }
-  
+
   console.log(`✅ Emergency restoration: ${result.stabilized}/${result.total} APIs operational`);
 }

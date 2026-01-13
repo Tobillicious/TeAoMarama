@@ -30,6 +30,21 @@ const WorkingStudentDashboard: React.FC = () => {
         }}>
           <h2 style={{ color: '#1e40af' }}>👋 Welcome to Te Ao Mārama</h2>
           <p style={{ color: '#6b7280' }}>Please log in to access your student dashboard</p>
+          <button 
+            onClick={() => window.location.href = '/resources'}
+            style={{
+              background: 'linear-gradient(135deg, #1e40af 0%, #059669 100%)',
+              color: 'white',
+              border: 'none',
+              padding: '12px 24px',
+              borderRadius: '10px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              marginTop: '20px'
+            }}
+          >
+            📚 Browse Resources
+          </button>
         </div>
       </div>
     );

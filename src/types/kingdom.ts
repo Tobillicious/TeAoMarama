@@ -89,7 +89,7 @@ export interface RevenueMetrics {
   arpu: number;
 }
 
-export interface AIAgent {
+export interface KingdomAIAgent {
   id: string;
   name: string;
   role: string;

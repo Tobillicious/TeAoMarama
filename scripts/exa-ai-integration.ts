@@ -3,7 +3,7 @@
 /**
  * EXA AI INTEGRATION SCRIPT
  * King Aronui the First - Supreme Overseer
- * 
+ *
  * This script integrates Exa AI for enhanced content discovery and validation
  * Part of the distributed LLM network coordination system
  */
@@ -25,14 +25,14 @@ class ExaAIIntegrator {
     this.config = {
       apiKey: process.env.EXA_API_KEY || '',
       platformAudit: process.argv.includes('--platform-audit'),
-      qualityAssessment: process.argv.includes('--quality-assessment')
+      qualityAssessment: process.argv.includes('--quality-assessment'),
     };
   }
 
   async initialize(): Promise<void> {
     console.log('🔍 EXA AI INTEGRATION ACTIVATED');
     console.log('============================================================');
-    
+
     if (!this.config.apiKey) {
       console.log('⚠️  EXA API key not found - running in demo mode');
       this.runDemoMode();
@@ -42,7 +42,7 @@ class ExaAIIntegrator {
     console.log('🔑 API Key:', this.config.apiKey.substring(0, 8) + '...');
     console.log('🎯 Mission: Enhanced content discovery and validation');
     console.log('🌿 Cultural Context: Te Ao Māori educational platform');
-    
+
     this.isActive = true;
     await this.executeIntegration();
   }
@@ -53,13 +53,13 @@ class ExaAIIntegrator {
     console.log('✅ Scanning educational resources...');
     console.log('✅ Validating cultural content...');
     console.log('✅ Checking link integrity...');
-    
+
     console.log('🔍 PHASE 2: Quality Assessment (Demo Mode)');
     console.log('----------------------------------------');
     console.log('✅ Content quality analysis...');
     console.log('✅ Educational value assessment...');
     console.log('✅ Cultural safety validation...');
-    
+
     console.log('EXA AI INTEGRATION COMPLETE (DEMO MODE)!');
     console.log('============================================================');
     console.log('Content Audits: 3');
@@ -75,20 +75,20 @@ class ExaAIIntegrator {
     console.log('✅ Validating cultural content...');
     console.log('✅ Checking link integrity...');
     console.log('✅ Analyzing content quality...');
-    
+
     console.log('🔍 PHASE 2: Quality Assessment');
     console.log('----------------------------------------');
     console.log('✅ Content quality analysis...');
     console.log('✅ Educational value assessment...');
     console.log('✅ Cultural safety validation...');
     console.log('✅ Link verification...');
-    
+
     console.log('🔍 PHASE 3: Enhanced Discovery');
     console.log('----------------------------------------');
     console.log('✅ Discovering related content...');
     console.log('✅ Validating external resources...');
     console.log('✅ Updating content recommendations...');
-    
+
     console.log('EXA AI INTEGRATION COMPLETE!');
     console.log('============================================================');
     console.log('Content Audits: 5');

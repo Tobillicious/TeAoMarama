@@ -38,26 +38,44 @@ const WorkingTeacherDashboard: React.FC = () => {
               </p>
             </div>
             <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-              <button style={{
-                background: 'linear-gradient(135deg, #1e40af 0%, #059669 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '12px 24px',
-                borderRadius: '10px',
-                fontWeight: 'bold',
-                cursor: 'pointer'
-              }}>
+              <button 
+                onClick={() => window.location.href = '/create-lesson'}
+                style={{
+                  background: 'linear-gradient(135deg, #1e40af 0%, #059669 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '10px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
                 📝 Create New Lesson
               </button>
-              <button style={{
-                background: 'transparent',
-                color: '#1e40af',
-                border: '2px solid #1e40af',
-                padding: '12px 24px',
-                borderRadius: '10px',
-                fontWeight: 'bold',
-                cursor: 'pointer'
-              }}>
+              <button 
+                onClick={() => window.location.href = '/analytics'}
+                style={{
+                  background: 'transparent',
+                  color: '#1e40af',
+                  border: '2px solid #1e40af',
+                  padding: '12px 24px',
+                  borderRadius: '10px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#1e40af';
+                  e.currentTarget.style.color = 'white';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = '#1e40af';
+                }}
+              >
                 📊 View Analytics
               </button>
             </div>

@@ -60,7 +60,7 @@ class EnhancedResourceService {
 
     try {
       // Load batches in smaller chunks to avoid timeout
-      const BATCH_SIZE = 20; // Load 20 batches at a time for faster initial load
+      const BATCH_SIZE = 50; // Load 50 batches at a time
       const allBatchResults: EnhancedResource[] = [];
 
       // Load batches 1-606 (we know we have 606 batch files)
@@ -83,7 +83,7 @@ class EnhancedResourceService {
         this.allResources = [...allBatchResults];
 
         // Small delay to prevent overwhelming the browser
-        await new Promise((resolve) => setTimeout(resolve, 5));
+        await new Promise((resolve) => setTimeout(resolve, 10));
       }
 
       this.allResources = allBatchResults;
@@ -103,16 +103,16 @@ class EnhancedResourceService {
 
   private async loadBatch(batchNumber: number): Promise<EnhancedResource[]> {
     try {
-      const response = await fetch(`/enhanced-resources-output/batch-${batchNumber}-enhanced.json`);
+      const response = await fetch(`http://localhost:3000/enhanced-resources-output/batch-${batchNumber}-enhanced.json`);
       if (!response.ok) {
-        console.warn(`Batch ${batchNumber} not found`);
+        console.warn(`Batch ${batchNumber} not found (status: ${response.status})`);
         return [];
       }
 
       const batch: EnhancedResourceBatch = await response.json();
       return batch.resources || [];
     } catch (error) {
-      console.warn(`Error loading batch ${batchNumber}:`, error);
+      console.error(`Error loading batch ${batchNumber}:`, error);
       return [];
     }
   }
@@ -310,8 +310,9 @@ class EnhancedResourceService {
 const enhancedResourceService = new EnhancedResourceService();
 
 // Export convenience functions
-// export // // const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
-// export // // const searchEnhancedResources = (query: string) => enhancedResourceService.searchResources(query);
+export const loadEnhancedResources = () => enhancedResourceService.loadAllResources();
+export const searchEnhancedResources = (query: string) =>
+  enhancedResourceService.searchResources(query);
 export const getResourcesBySubject = (subject: string) =>
   enhancedResourceService.getResourcesBySubject(subject);
 export const getResourcesByYearLevel = (yearLevel: string) =>
@@ -321,7 +322,8 @@ export const getHighQualityResources = (minQuality?: number) =>
 export const getCulturallyAuthenticResources = (minScore?: number) =>
   enhancedResourceService.getCulturallyAuthenticResources(minScore);
 export const getResourceById = (id: string) => enhancedResourceService.getResourceById(id);
-// export // // const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
+export const getEnhancedResourceStatistics = () => enhancedResourceService.getStatistics();
 
 // Export the service for advanced usage
 export default enhancedResourceService;
+export { EnhancedResourceService };

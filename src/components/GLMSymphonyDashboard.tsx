@@ -122,7 +122,8 @@ const GLMSymphonyDashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    // Load symphony status
+    // Load symphony status without triggering re-initialization
+    console.log('🎼 GLM Symphony Dashboard: Loading status without re-initialization');
     setSymphonyStatus(mockSymphonyStatus);
   }, []);
 

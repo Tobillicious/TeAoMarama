@@ -82,7 +82,7 @@ class RoyalCourtManager {
     ];
 
     keys.forEach((key) => {
-      const value = process.env[key];
+      const value = typeof process !== 'undefined' && process.env ? process.env[key] : null;
       if (value) {
         this.apiKeys.set(key, value);
         console.log(`🔑 Loaded API key: ${key}`);

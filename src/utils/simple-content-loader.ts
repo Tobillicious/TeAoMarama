@@ -1,183 +1,222 @@
-// Simple Content Loader - Loads actual content from directories
-import type { RealResource } from '../types';
+// Simple Content Loader - Actually loads real content files
+// Version: 1.0.0
 
 export interface SimpleResource {
   id: string;
   title: string;
   subject: string;
   yearLevel: string;
-  type: 'lesson' | 'activity' | 'assessment' | 'unit-plan' | 'multimedia';
-  description: string;
-  culturalElements: number;
-  content?: unknown;
-  filename?: string;
-  path?: string;
+  category: 'lesson-plan' | 'assessment' | 'activity' | 'handout' | 'multimedia' | 'unit-plan';
+  content?: string;
+  filePath: string;
+  size: number;
+  lastModified: string;
+  culturalElements: boolean;
+  tags: string[];
 }
 
-let cachedResources: RealResource[] | null = null;
+export class SimpleContentLoader {
+  private static instance: SimpleContentLoader;
+  private resources: SimpleResource[] = [];
+  private isLoaded: boolean = false;
 
-// Helper functions to generate realistic content
-function generateRealisticTitle(type: string, index: number): string {
-  const titles = {
-    lesson: [
-      'Te Reo Māori Basics',
-      'Māori History and Culture',
-      'Traditional Arts and Crafts',
-      'Environmental Stewardship',
-      'Community Leadership',
-      'Storytelling Traditions',
-      'Mathematical Concepts in Māori Culture',
-      'Science Through Māori Perspectives',
-      'Geography of Aotearoa',
-      'Māori Music and Dance',
-    ],
-    activity: [
-      'Interactive Language Learning',
-      'Cultural Art Creation',
-      'Traditional Games',
-      'Nature Exploration',
-      'Community Service Project',
-      'Story Sharing Circle',
-      'Mathematical Problem Solving',
-      'Scientific Investigation',
-      'Map Reading Adventure',
-      'Music and Movement',
-    ],
-    assessment: [
-      'Language Proficiency Test',
-      'Cultural Knowledge Quiz',
-      'Art Portfolio Review',
-      'Environmental Impact Assessment',
-      'Leadership Skills Evaluation',
-      'Storytelling Assessment',
-      'Mathematical Reasoning Test',
-      'Scientific Method Evaluation',
-      'Geographic Analysis',
-      'Performance Assessment',
-    ],
-    'unit-plan': [
-      'Māori Language Immersion',
-      'Cultural Heritage Study',
-      'Arts Integration Unit',
-      'Environmental Science Unit',
-      'Community Leadership Program',
-      'Oral Traditions Unit',
-      'Mathematics in Context',
-      'Scientific Inquiry Unit',
-      'Geographic Studies',
-      'Performing Arts Unit',
-    ],
-    multimedia: [
-      'Interactive Language App',
-      'Cultural Documentary',
-      'Art Gallery Tour',
-      'Virtual Nature Walk',
-      'Community Stories Video',
-      'Digital Storytelling',
-      'Mathematical Simulations',
-      'Science Experiments Video',
-      'Geographic Virtual Tour',
-      'Music and Dance Performance',
-    ],
-  };
+  private constructor() {}
 
-  const typeTitles = titles[type as keyof typeof titles] || [`${type} ${index}`];
-  return typeTitles[index % typeTitles.length] + ` ${index}`;
-}
-
-function getRandomSubject(): string {
-  const subjects = [
-    'Te Reo Māori',
-    'Social Studies',
-    'Mathematics',
-    'Science',
-    'Arts',
-    'Health & PE',
-    'Technology',
-  ];
-  return subjects[Math.floor(Math.random() * subjects.length)];
-}
-
-function getRandomYearLevel(): string {
-  const yearLevels = [
-    'Year 1',
-    'Year 2',
-    'Year 3',
-    'Year 4',
-    'Year 5',
-    'Year 6',
-    'Year 7',
-    'Year 8',
-    'Year 9',
-    'Year 10',
-  ];
-  return yearLevels[Math.floor(Math.random() * yearLevels.length)];
-}
-
-export async function loadSimpleEducationalContent(): Promise<RealResource[]> {
-  if (cachedResources) {
-    return cachedResources;
+  public static getInstance(): SimpleContentLoader {
+    if (!SimpleContentLoader.instance) {
+      SimpleContentLoader.instance = new SimpleContentLoader();
+    }
+    return SimpleContentLoader.instance;
   }
 
-  console.log('🎯 Loading educational content...');
+  public async loadAllResources(): Promise<SimpleResource[]> {
+    if (this.isLoaded) {
+      return this.resources;
+    }
 
-  const allResources: RealResource[] = [];
+    try {
+      // Load from known content files
+      const resources = await this.loadKnownResources();
+      this.resources = resources;
+      this.isLoaded = true;
+      console.log(`Loaded ${resources.length} educational resources`);
+      return resources;
+    } catch (error) {
+      console.error('Error loading educational resources:', error);
+      return [];
+    }
+  }
 
-  try {
-    // Create realistic educational resources that actually work
-    const contentTypes = [
-      { type: 'lesson' as const, count: 25 },
-      { type: 'activity' as const, count: 30 },
-      { type: 'assessment' as const, count: 20 },
-      { type: 'unit-plan' as const, count: 15 },
-      { type: 'multimedia' as const, count: 10 },
+  private async loadKnownResources(): Promise<SimpleResource[]> {
+    const resources: SimpleResource[] = [];
+
+    // Known content files that actually exist
+    const knownFiles = [
+      {
+        path: '/src/content/lessons/lesson-1755683030316-kqepwjlxz.json',
+        title: 'Sample Lesson Plan',
+        subject: 'Mathematics',
+        yearLevel: 'Year 10',
+        category: 'lesson-plan' as const,
+        culturalElements: true,
+        tags: ['statistics', 'data-analysis', 'cultural-context'],
+      },
+      {
+        path: '/src/content/assessments/assessment-1755683030316-nwbaz71bk.json',
+        title: 'Sample Assessment',
+        subject: 'English',
+        yearLevel: 'Year 9',
+        category: 'assessment' as const,
+        culturalElements: false,
+        tags: ['reading-comprehension', 'analysis'],
+      },
+      {
+        path: '/public/resources/handouts/Y10_Mathematics_Statistics_NZ_Data_Analysis.md',
+        title: 'Y10 Mathematics: Statistics NZ Data Analysis',
+        subject: 'Mathematics',
+        yearLevel: 'Year 10',
+        category: 'handout' as const,
+        culturalElements: true,
+        tags: ['statistics', 'nz-data', 'cultural-context'],
+      },
+      {
+        path: '/public/resources/handouts/Y7_English_Close_Reading_0018.md',
+        title: 'Y7 English: Close Reading 0018',
+        subject: 'English',
+        yearLevel: 'Year 7',
+        category: 'handout' as const,
+        culturalElements: true,
+        tags: ['close-reading', 'literacy', 'cultural-stories'],
+      },
     ];
 
-    for (const { type, count } of contentTypes) {
-      console.log(`📚 Creating ${count} ${type} resources`);
-
-      // Create realistic resources for demonstration
-      for (let i = 1; i <= count; i++) {
-        const resource: RealResource = {
-          id: `${type}-${i}`,
-          title: generateRealisticTitle(type, i),
-          subject: getRandomSubject(),
-          yearLevel: getRandomYearLevel(),
-          type: type,
-          description: `Educational ${type} resource with cultural integration and Māori perspectives`,
-          culturalElements: Math.floor(Math.random() * 5) + 1,
-          content: {
-            description: `This ${type} provides engaging educational content with cultural context`,
-            objectives: [
-              'Develop cultural understanding',
-              'Enhance learning outcomes',
-              'Promote inclusive education',
-            ],
-            activities: [
-              'Interactive learning exercises',
-              'Cultural context exploration',
-              'Collaborative group work',
-            ],
-            assessment: 'Formative and summative assessment opportunities',
-          },
-          tags: ['Māori', 'Education', 'Cultural', 'Interactive', 'Inclusive'],
-          qualityMetrics: {
-            qualityScore: Math.floor(Math.random() * 40) + 60, // 60-100
-            culturalSafety: Math.floor(Math.random() * 20) + 80, // 80-100
-            accessibility: Math.floor(Math.random() * 15) + 85, // 85-100
-            educationalValue: Math.floor(Math.random() * 25) + 75, // 75-100
-          },
-        };
-
-        allResources.push(resource);
+    for (const file of knownFiles) {
+      try {
+        const resource = await this.loadResourceFile(file);
+        if (resource) {
+          resources.push(resource);
+        }
+      } catch (error) {
+        console.warn(`Could not load ${file.path}:`, error);
+        // Create a placeholder resource
+        resources.push({
+          id: this.generateId(file.path),
+          title: file.title,
+          subject: file.subject,
+          yearLevel: file.yearLevel,
+          category: file.category,
+          filePath: file.path,
+          size: 0,
+          lastModified: new Date().toISOString(),
+          culturalElements: file.culturalElements,
+          tags: file.tags,
+        });
       }
     }
 
-    console.log(`✅ Loaded ${allResources.length} educational resources`);
-    cachedResources = allResources;
-    return allResources;
-  } catch (error) {
-    console.error('❌ Failed to load educational content:', error);
-    return [];
+    return resources;
+  }
+
+  private async loadResourceFile(fileInfo: any): Promise<SimpleResource | null> {
+    try {
+      // Try to fetch the actual file
+      const response = await fetch(fileInfo.path);
+
+      let content = '';
+      let size = 0;
+
+      if (response.ok) {
+        content = await response.text();
+        size = content.length;
+      }
+
+      return {
+        id: this.generateId(fileInfo.path),
+        title: fileInfo.title,
+        subject: fileInfo.subject,
+        yearLevel: fileInfo.yearLevel,
+        category: fileInfo.category,
+        content,
+        filePath: fileInfo.path,
+        size,
+        lastModified: new Date().toISOString(),
+        culturalElements: fileInfo.culturalElements,
+        tags: fileInfo.tags,
+      };
+    } catch (error) {
+      console.warn(`Error loading ${fileInfo.path}:`, error);
+      return null;
+    }
+  }
+
+  private generateId(filePath: string): string {
+    return filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+  }
+
+  public async getResourceById(id: string): Promise<SimpleResource | null> {
+    await this.loadAllResources();
+    return this.resources.find((r) => r.id === id) || null;
+  }
+
+  public async getResourcesByCategory(
+    category: SimpleResource['category'],
+  ): Promise<SimpleResource[]> {
+    await this.loadAllResources();
+    return this.resources.filter((r) => r.category === category);
+  }
+
+  public async getResourcesBySubject(subject: string): Promise<SimpleResource[]> {
+    await this.loadAllResources();
+    return this.resources.filter((r) => r.subject.toLowerCase().includes(subject.toLowerCase()));
+  }
+
+  public async searchResources(query: string): Promise<SimpleResource[]> {
+    await this.loadAllResources();
+    const lowerQuery = query.toLowerCase();
+
+    return this.resources.filter(
+      (r) =>
+        r.title.toLowerCase().includes(lowerQuery) ||
+        r.subject.toLowerCase().includes(lowerQuery) ||
+        r.content?.toLowerCase().includes(lowerQuery) ||
+        r.tags.some((tag) => tag.toLowerCase().includes(lowerQuery)),
+    );
+  }
+
+  public getStats(): {
+    total: number;
+    byCategory: { [key: string]: number };
+    bySubject: { [key: string]: number };
+    culturalResources: number;
+  } {
+    const stats = {
+      total: this.resources.length,
+      byCategory: {} as { [key: string]: number },
+      bySubject: {} as { [key: string]: number },
+      culturalResources: 0,
+    };
+
+    this.resources.forEach((resource) => {
+      // Category stats
+      stats.byCategory[resource.category] = (stats.byCategory[resource.category] || 0) + 1;
+
+      // Subject stats
+      stats.bySubject[resource.subject] = (stats.bySubject[resource.subject] || 0) + 1;
+
+      // Cultural resources
+      if (resource.culturalElements) {
+        stats.culturalResources++;
+      }
+    });
+
+    return stats;
   }
 }
+
+// Export singleton instance
+export const simpleContentLoader = SimpleContentLoader.getInstance();
+
+// Export function for compatibility
+export const loadSimpleEducationalContent = async () => {
+  return await simpleContentLoader.loadAllResources();
+};

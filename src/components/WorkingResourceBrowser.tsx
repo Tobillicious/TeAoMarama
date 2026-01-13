@@ -37,8 +37,8 @@ const WorkingResourceBrowser: React.FC = () => {
       // Load just a few batches to test
       const workingResources: WorkingResource[] = [];
 
-      // Load batches 1-10 for better resource coverage
-      const totalBatches = 10;
+      // Load more batches for comprehensive resource coverage
+      const totalBatches = 50;
       for (let i = 1; i <= totalBatches; i++) {
         try {
           const response = await fetch(`/enhanced-resources-output/batch-${i}-enhanced.json`);
